@@ -1,0 +1,496 @@
+{
+  "format": "ad-orientem.did-you-know.batch-A-link-accessibility-screen.v1",
+  "date": "2026-11-11",
+  "reviewed_selection": "62 corrected bilingual research-only owner proof",
+  "source_proof_blob_sha": "c383ab60b889c14557f5f2d4aa47ffee5922ab4f",
+  "status": "RESEARCH_SIDE_ACCESSIBILITY_SCREEN_NOT_END_USER_BROWSER_QA",
+  "counts": {
+    "distinct_source_urls": 49,
+    "accessible_source_content": 27,
+    "unesco_bot_challenge": 14,
+    "unesco_cache_miss": 4,
+    "weiser_pdf_opened_no_image_check": 1,
+    "commons_pdf_cache_miss": 1,
+    "macao_generic_event_shell": 1,
+    "indonesia_original_cache_miss": 1,
+    "verified_owner_approval_count": 0
+  },
+  "repaired_by_supplement": {
+    "macao": "https://www.culturalheritage.mo/en/detail/101978",
+    "indonesia": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+    "sassari": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+    "sicily": "https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/"
+  },
+  "interpretation": "A bot challenge or tool cache miss is not evidence that the website fails for ordinary app users. Nor can source indexing alone justify setting deep_link_verified=true.",
+  "release_gates": {
+    "final_user_browser_deep_link_qa_complete": false,
+    "original_Weiser_folio_images_checked_in_this_wave": false,
+    "original_Pitre_folio_image_checked_in_this_wave": false,
+    "owner_approved": false,
+    "global_release_authorized": false,
+    "published": false
+  },
+  "source_links": [
+    {
+      "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "associated_fact_ids": [
+        "DYK-C400-BF-006",
+        "DYK-C400-BF-008",
+        "DYK-C400-BF-014",
+        "DYK-C400-BG-003",
+        "DYK-C400-BG-007",
+        "DYK-C400-BG-011",
+        "DYK-C400-BG-013",
+        "DYK-C400-BG-014",
+        "DYK-C400-BG-019",
+        "DYK-C400-BG-025",
+        "DYK-C400-BG-029",
+        "DYK-C400-BJ-001",
+        "DYK-C400-BJ-002",
+        "DYK-H04-W-A-039",
+        "DYK-H04-W-A-068",
+        "DYK-H04-W-A-096",
+        "DYK-H04-W-B-038",
+        "DYK-H04-W-B-072",
+        "DYK-UM01-019"
+      ],
+      "status": "PDF_METADATA_OPENED_384_PAGES_SCREENSHOT_FAILED",
+      "evidence": "384 page PDF endpoint surfaced; page-image screenshot failed with tool cache miss; folio image not certified",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+      "associated_fact_ids": [
+        "DYK-C400-BG-014"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week",
+      "associated_fact_ids": [
+        "DYK-C400-BJ-001"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860",
+      "associated_fact_ids": [
+        "DYK-C400-BJ-002"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://sanctuaire-laghet.fr/ex-votos/",
+      "associated_fact_ids": [
+        "DYK-CUSTOMS-CANON-DEV-009"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/",
+      "associated_fact_ids": [
+        "DYK-CUSTOMS-CANON-DEV-009"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/03574b.htm",
+      "associated_fact_ids": [
+        "DYK-CW14-033"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.vaticannews.va/en/saints/01/17/st--antony--abbot.html",
+      "associated_fact_ids": [
+        "DYK-CW14-036"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/procession-za-krizen-following-the-cross-on-the-island-of-hvar-00242",
+      "associated_fact_ids": [
+        "DYK-CW15-001"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-mendrisio-01460",
+      "associated_fact_ids": [
+        "DYK-CW15-014"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743?RL=01743",
+      "associated_fact_ids": [
+        "DYK-CW15-020"
+      ],
+      "status": "AUTOMATED_CACHE_MISS",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/dances-and-expressions-associated-with-the-corpus-christi-festivity-01612",
+      "associated_fact_ids": [
+        "DYK-CW15-023"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/venezuela-s-dancing-devils-of-corpus-christi-00639",
+      "associated_fact_ids": [
+        "DYK-CW15-026"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/hopping-procession-of-echternach-00392",
+      "associated_fact_ids": [
+        "DYK-CW15-029"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399",
+      "associated_fact_ids": [
+        "DYK-CW15-047"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/representation-of-the-passion-death-and-resurrection-of-christ-in-iztapalapa-02237",
+      "associated_fact_ids": [
+        "DYK-CW15-049"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://goa-tourism.com/festival/sao-joao/",
+      "associated_fact_ids": [
+        "DYK-CW16-024",
+        "DYK-CW16-027"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://goa-tourism.com/event/feast-of-st-francis-xavier/",
+      "associated_fact_ids": [
+        "DYK-CW16-035"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news",
+      "associated_fact_ids": [
+        "DYK-CW16-040"
+      ],
+      "status": "DIRECT_TOOL_CACHE_MISS_FALLBACK_LINK_ADDED",
+      "evidence": "Search-indexed content supports claim; ANTARA fallback directly read",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+      "associated_fact_ids": [
+        "DYK-CW16-040"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/",
+      "associated_fact_ids": [
+        "DYK-CW16-047"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://philippines.travel/destinations/quezon/index",
+      "associated_fact_ids": [
+        "DYK-CW16-052"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1",
+      "associated_fact_ids": [
+        "DYK-CW16-054"
+      ],
+      "status": "GENERIC_EVENT_SHELL_NO_CLAIM_TEXT",
+      "evidence": "Macao tourism page opens but is a generic empty event shell; Cultural Affairs Bureau fallback directly read",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.culturalheritage.mo/en/detail/101978",
+      "associated_fact_ids": [
+        "DYK-CW16-054"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.catholicsandcultures.org/syro-malabar-catholics-celebrate-holy-thursday-traditional-home-ritual",
+      "associated_fact_ids": [
+        "DYK-CW16-058"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/the-festival-of-the-santisima-trinidad-del-senor-jesus-del-gran-poder-in-the-city-of-la-paz-01389",
+      "associated_fact_ids": [
+        "DYK-CW17-001"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/grand-festival-of-tarija-01477",
+      "associated_fact_ids": [
+        "DYK-CW17-006"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/ichapekene-piesta-the-biggest-festival-of-san-ignacio-de-moxos-00627",
+      "associated_fact_ids": [
+        "DYK-CW17-011"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958",
+      "associated_fact_ids": [
+        "DYK-CW17-017"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/festive-cycle-around-the-devotion-and-worship-towards-saint-john-the-baptist-01682",
+      "associated_fact_ids": [
+        "DYK-CW17-024"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/hatajo-de-negritos-and-hatajo-de-pallitas-from-the-peruvian-south-central-coastline-01309?RL=01309",
+      "associated_fact_ids": [
+        "DYK-CW17-026"
+      ],
+      "status": "AUTOMATED_CACHE_MISS",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/nativity-scene-szopka-tradition-in-krakow-01362",
+      "associated_fact_ids": [
+        "DYK-CW17-031"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/patum-of-berga-00156?RL=00156",
+      "associated_fact_ids": [
+        "DYK-CW17-035"
+      ],
+      "status": "AUTOMATED_CACHE_MISS",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018",
+      "associated_fact_ids": [
+        "DYK-CW17-040"
+      ],
+      "status": "AUTOMATED_BOT_CHALLENGE",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://ich.unesco.org/en/RL/la-parranda-de-san-pedro-of-guarenas-and-guatire-00907",
+      "associated_fact_ids": [
+        "DYK-CW17-046"
+      ],
+      "status": "AUTOMATED_CACHE_MISS",
+      "evidence": "UNESCO indexed/committee source text used for claim evidence; no user-facing browser assertion",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/15569a.htm",
+      "associated_fact_ids": [
+        "DYK-CW18-021"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/13189a.htm",
+      "associated_fact_ids": [
+        "DYK-CW18-037"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/02465b.htm",
+      "associated_fact_ids": [
+        "DYK-CW18-047"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/02418b.htm",
+      "associated_fact_ids": [
+        "DYK-CW18-054",
+        "DYK-GX18-023"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+      "associated_fact_ids": [
+        "DYK-G600-P-028"
+      ],
+      "status": "PDF_COMMONS_CACHE_MISS",
+      "evidence": "Direct Commons page failed tool fetch; Commons search result identifies 632-page source PDF and institutional secondary sources corroborate historical segment",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/",
+      "associated_fact_ids": [
+        "DYK-G600-P-028"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/14424a.htm",
+      "associated_fact_ids": [
+        "DYK-GX15-017"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/02274a.htm",
+      "associated_fact_ids": [
+        "DYK-GX16-006"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/11515b.htm",
+      "associated_fact_ids": [
+        "DYK-GX16-017"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/05730b.htm",
+      "associated_fact_ids": [
+        "DYK-GX16-022"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/12448a.htm",
+      "associated_fact_ids": [
+        "DYK-GX17-021"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/02217c.htm",
+      "associated_fact_ids": [
+        "DYK-GX17-025"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/01220a.htm",
+      "associated_fact_ids": [
+        "DYK-GX18-001"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    },
+    {
+      "url": "https://www.newadvent.org/cathen/07433a.htm",
+      "associated_fact_ids": [
+        "DYK-GX18-016"
+      ],
+      "status": "SOURCE_CONTENT_ACCESSIBLE_BY_WEB_READ",
+      "evidence": "Research-side web text read; not end-user browser deep-link or complete per-claim certification",
+      "release_link_verified": false
+    }
+  ]
+}

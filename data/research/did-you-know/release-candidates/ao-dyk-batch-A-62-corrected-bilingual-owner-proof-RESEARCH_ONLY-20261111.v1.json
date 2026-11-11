@@ -1,0 +1,2783 @@
+{
+  "schema": "AO_DYK_EDITORIAL_DISPLAY_PREVIEW_62_V1",
+  "release_stage": "RESEARCH_ONLY",
+  "published": false,
+  "global_release_authorized": false,
+  "owner_release_decision": "UNAPPROVED",
+  "date": "2026-11-11",
+  "description": "Corrected bilingual editorial proof of owner Batch A. 62 distinct concepts, not a release dataset. Never import it into live Home. No owner approval. Stage retains historic source records in 526 master and 64-card CSV. Three supporting source links added, with original provenance retained and link-quality flags not promoted to release certification. Palazzolo editorial correction: original Pitrè p.355 records live serpents and serpent-shaped loaves together, not a historical replacement; revised bilingual proof accordingly.",
+  "provenance": {
+    "source_526_preview_blob_sha": "33ed6c6d777defd2913214c69ab7ef70c4a45c24",
+    "source_63_preflight_blob_sha": "f89ce51513d125bf32a45250aad99bd41409c01f",
+    "source_wave1_blob_sha": "d0e6d9ce4403d52003bd1b8201de63e41a587e04",
+    "source_wave2_blob_sha": "e5c878f9e51ed2ac96b0718a4d40d4d64b2857f3"
+  },
+  "inventory": {
+    "original_64_interest5": 64,
+    "zapopan_held": "DYK-CW15-038",
+    "preflight_cut": 63,
+    "collapsed_same_event_id": "DYK-G600-P-029",
+    "merged_kept_id": "DYK-G600-P-028",
+    "corrected_title_id": "DYK-C400-BG-014",
+    "owner_proof_count": 62,
+    "customs": 53,
+    "glossary": 9,
+    "owner_approved": 0,
+    "release_eligible": 0
+  },
+  "editorial_overrides": [
+    {
+      "id": "DYK-C400-BG-014",
+      "reason": "Wax candle material and number were incorrect in original title; actual wooden candelieri, number historically variable.",
+      "new_title": {
+        "en": "Sassari's towering wooden candles",
+        "fr": "Les grands cierges de bois de Sassari"
+      },
+      "source": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+      "requires_owner_copy_acceptance": true
+    },
+    {
+      "id": "DYK-G600-P-028",
+      "reason": "Consolidated two accounts of the same Palazzolo Acreide Saint Paul procession. The original Pitrè page 355 describes both the bread and live snakes contemporaneously; the previously proposed chronological 'replacement' inference was unsupported and is withdrawn.",
+      "merged_from": [
+        "DYK-G600-P-028",
+        "DYK-G600-P-029"
+      ],
+      "new_title": {
+        "en": "Serpents and votive bread at Saint Paul's feast",
+        "fr": "Serpents et pains votifs à la fête de saint Paul"
+      },
+      "new_copy": {
+        "en": "At the historical feast of Saint Paul in Palazzolo Acreide, Sicily, serpent handlers called cerauli joined the procession carrying live snakes. Some wore serpent-shaped ring loaves on their heads, while others carried trays holding reptiles and gathered votive offerings.",
+        "fr": "Lors des anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cerauli portaient des serpents vivants. Certains avaient sur la tête des pains en couronne en forme de serpent, tandis que d'autres portaient des plateaux avec des reptiles et recueillaient les offrandes votives."
+      },
+      "source": "https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/",
+      "requires_owner_copy_acceptance": true,
+      "primary_text_evidence": {
+        "reference": "Giuseppe Pitrè, Biblioteca delle tradizioni popolari siciliane, vol. XXI (1900), p. 355, 'La processione ed i serpenti'",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "verification_scope": "Original scanned-volume text indexed; original page image could not be rendered via available web viewer; no page-image certification claimed."
+      }
+    },
+    {
+      "id": "DYK-G600-P-029",
+      "reason": "Retired from release cut as overlap; original title, EN/FR copy and Pitre source remain in immutable original 526 research records.",
+      "disposition": "RESEARCH_ARCHIVE_ONLY"
+    }
+  ],
+  "unresolved_checks": [
+    "Weiser original 384-page scanned PDF: web screenshot failed; original page-image spotchecks outstanding",
+    "Pitre volume 21 original facsimile page-image certification outstanding",
+    "Human bilingual final copy acceptance and semantic release approval",
+    "Explicit owner approval, approved release artifact, Home tests on real approved data, merge and GitHub Pages SHA check",
+    "Known registered-source exceptions (Macao generic event shell, Indonesia page inaccessible, UNESCO bot challenge) documented; final end-user deep-link acceptance remains outstanding"
+  ],
+  "records": [
+    {
+      "id": "DYK-C400-BF-006",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Saint Barbara's cherry branches",
+        "fr": "Les branches de cerisier de la Sainte-Barbe"
+      },
+      "proposed_copy": {
+        "en": "In Czech, Slovak and Austrian Advent customs, a cherry branch cut on Saint Barbara's Day, 4 December, was placed indoors in water to flower by Christmas.",
+        "fr": "Dans des coutumes de l'Avent en Bohême, en Slovaquie et en Autriche, une branche de cerisier coupée le 4 décembre, fête de sainte Barbe, était placée dans l'eau pour fleurir à Noël."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BF-006",
+        "origin_id": "DYK-C400-BF-006",
+        "source_ids_raw": "WEI58-08-019",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "106 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historical_regional\":true,\"not_universal_or_current\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BF-008",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Announcement of Easter on Epiphany",
+        "fr": "L'annonce de la date de Pâques à l'Épiphanie"
+      },
+      "proposed_copy": {
+        "en": "In medieval cathedrals, the date of Easter and other movable feasts could be solemnly announced on 6 January, the feast of Epiphany.",
+        "fr": "Dans les cathédrales médiévales, la date de Pâques et des autres fêtes mobiles pouvait être annoncée solennellement le 6 janvier, fête de l'Épiphanie."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BF-008",
+        "origin_id": "DYK-C400-BF-008",
+        "source_ids_raw": "WEI58-12-005",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "148 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historical_regional\":true,\"not_universal_or_current\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BF-014",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Malta's running Easter procession",
+        "fr": "La procession de Pâques au pas de course à Malte"
+      },
+      "proposed_copy": {
+        "en": "In Maltese Easter processions, bearers sometimes break into a run while carrying the statue of the risen Christ. The custom's historical origin remains uncertain.",
+        "fr": "Lors des processions de Pâques à Malte, les porteurs se mettent parfois à courir avec la statue du Christ ressuscité. L'origine historique de cette coutume demeure incertaine."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BF-014",
+        "origin_id": "DYK-C400-BF-014",
+        "source_ids_raw": "WEI58-16-020",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "220 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historical_regional\":true,\"not_universal_or_current\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-003",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Provençal Christmas loaf shared with poor",
+        "fr": "Le pain de Noël provençal partagé avec les pauvres"
+      },
+      "proposed_copy": {
+        "en": "In southern France, a traditional Christmas loaf called pain calendau was cut crosswise; the first quarter was given to a person in need before the rest was eaten.",
+        "fr": "Dans le sud de la France, un ancien pain de Noël appelé pain calendau était coupé en croix ; le premier quartier était donné à une personne dans le besoin avant le partage du reste."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-003",
+        "origin_id": "DYK-C400-BG-003",
+        "source_ids_raw": "WEI58-09-006",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "117 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-007",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The mock funeral of Lent's herring in Poland",
+        "fr": "Les fausses funérailles du hareng de Carême"
+      },
+      "proposed_copy": {
+        "en": "On Holy Saturday in an old Polish village custom, young people held a mock funeral for herring and sour rye soup, foods eaten throughout Lent. A fish or its effigy was hung from a branch, and a pot of soup was broken.",
+        "fr": "Le Samedi saint, dans une ancienne coutume villageoise polonaise, des jeunes organisaient de fausses funérailles pour le hareng et le żur, soupe aigre de seigle consommés pendant le Carême. Un poisson ou son effigie était suspendu à une branche et un pot de soupe était brisé."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-007",
+        "origin_id": "DYK-C400-BG-007",
+        "source_ids_raw": "WEI58-15-038",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "208 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-011",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Laetare Sunday fountains decorated with flowers",
+        "fr": "Les fontaines fleuries du dimanche de Lætare"
+      },
+      "proposed_copy": {
+        "en": "In parts of Italy, Laetare Sunday was known as the Sunday of Fountains: villagers decorated wells and fountains with branches and flowers as spring returned.",
+        "fr": "Dans certaines régions d'Italie, le dimanche de Lætare était appelé le « dimanche des Fontaines » : les habitants décoraient les puits et les fontaines de branches et de fleurs au retour du printemps."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-011",
+        "origin_id": "DYK-C400-BG-011",
+        "source_ids_raw": "WEI58-14-027",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "184,185 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-013",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Italian Assumption encounter of Mary and Christ",
+        "fr": "La rencontre de l'Assomption à Tivoli"
+      },
+      "proposed_copy": {
+        "en": "On the eve of the Assumption, 14 August, a procession in Tivoli, Italy, brings images of Christ and Our Lady together. In the ancient L'Inchinata custom, the two images bow three times before the assembled faithful.",
+        "fr": "Le 14 août, veille de l'Assomption, une procession à Tivoli, en Italie, réunit les images du Christ et de Notre-Dame. Dans l'ancienne coutume de l'Inchinata, les deux images s'inclinent trois fois devant les fidèles."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-013",
+        "origin_id": "DYK-C400-BG-013",
+        "source_ids_raw": "WEI58-24-006",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "289 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Sassari's towering wooden candles",
+        "fr": "Les grands cierges de bois de Sassari"
+      },
+      "proposed_copy": {
+        "en": "Every 14 August at Sassari in Sardinia, trade guilds shoulder enormous wooden candle-shaped structures through the streets to Santa Maria di Betlem. The Candelieri procession renews an old vow of thanksgiving to Our Lady after plague epidemics.",
+        "fr": "Chaque 14 août, à Sassari en Sardaigne, des corporations de métiers portent dans les rues d'immenses structures en bois en forme de cierges jusqu'à Santa Maria di Betlem. La procession des Candelieri renouvelle un ancien vœu d'action de grâce à la Vierge après des épidémies de peste."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Research correction following city of Sassari festival primary-description review; owner EN/FR acceptance outstanding",
+        "caveat": null,
+        "copy_adjustment_pending": true,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-014",
+        "origin_id": "DYK-C400-BG-014",
+        "source_ids_raw": "WEI58-24-007 | SASSARI-OFFICIAL-CANDELIERI",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+        "source_locator_raw": "289,290 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+        "source_url_qa_note": "City-backed event history supports current wooden candle-shaped festival structures and historically variable number, replacing false wax/seven title.",
+        "supplemental_public_source_confirmed": true
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-019",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Spain's former Mother's Day on 8 December",
+        "fr": "L'ancienne fête des Mères du 8 décembre en Espagne"
+      },
+      "proposed_copy": {
+        "en": "For decades after the Spanish Civil War, Mother's Day in Spain was celebrated on 8 December, the feast of the Immaculate Conception. In 1965 it moved to the first Sunday of May.",
+        "fr": "Pendant plusieurs décennies après la guerre civile espagnole, la fête des Mères en Espagne se célébrait le 8 décembre, fête de l'Immaculée Conception. En 1965, elle fut déplacée au premier dimanche de mai."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-019",
+        "origin_id": "DYK-C400-BG-019",
+        "source_ids_raw": "WEI58-24-025",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "295 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-025",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Basque pilgrimage to Saint Anthony for marriage",
+        "fr": "Un pèlerinage basque pour trouver un époux"
+      },
+      "proposed_copy": {
+        "en": "In a historical Basque tradition, women seeking marriage climbed to a mountain shrine of Saint Anthony of Padua near Durango on his feast, praying for a future husband.",
+        "fr": "Dans une tradition basque ancienne, des femmes souhaitant se marier montaient à un sanctuaire de saint Antoine de Padoue près de Durango, le jour de sa fête, pour prier en vue d'un futur époux."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-025",
+        "origin_id": "DYK-C400-BG-025",
+        "source_ids_raw": "WEI58-27-025",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "327 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BG-029",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Our Lady of the Grain robe on summer pilgrimages",
+        "fr": "La robe de blé de Notre-Dame aux pèlerinages d'été"
+      },
+      "proposed_copy": {
+        "en": "In an older German-speaking Assumption tradition, pilgrims visited Marian shrines where images of Our Lady wore a robe covered with ears of grain. The season from 15 August to 15 September was called Our Lady's Thirty Days.",
+        "fr": "Dans une ancienne tradition de l'Assomption en pays germanophone, les pèlerins visitaient des sanctuaires où des images de la Vierge portaient un manteau couvert d'épis de céréales. La période du 15 août au 15 septembre était appelée les « trente jours de Notre-Dame »."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BG-029",
+        "origin_id": "DYK-C400-BG-029",
+        "source_ids_raw": "WEI58-24-016",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": " / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"historical\":true,\"german_speaking_regions\":true,\"not_universal_or_current\":true}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BJ-001",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Austrian Holy Week wooden ratchets",
+        "fr": "Les crécelles autrichiennes de la Semaine sainte"
+      },
+      "proposed_copy": {
+        "en": "When Holy Week church bells fell silent, children in parts of Austria went through villages sounding wooden ratchets called Ratschen and singing verses to announce prayer times and recall Christ's Passion.",
+        "fr": "Quand les cloches se taisaient pendant la Semaine sainte, des enfants parcouraient les villages de certaines régions d'Autriche avec des crécelles en bois appelées Ratschen, chantant des couplets pour annoncer la prière et rappeler la Passion du Christ."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BJ-001",
+        "origin_id": "DYK-C400-BJ-001",
+        "source_ids_raw": "WEI58-P197-RATSCHENBUBEN | AT-UNESCO-RATSCHEN-2015",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week",
+        "source_locator_raw": "197 / 215",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"region\":\"Austria\",\"religious_context\":\"Holy Week; lay/customary practice, not a universal rubric\",\"current_practice\":\"Regional tradition documented by Austrian UNESCO Commission\"}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-C400-BJ-002",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Valletta's Last Supper charity table",
+        "fr": "La table charitable de la Cène à La Valette"
+      },
+      "proposed_copy": {
+        "en": "At Saint Dominic's Priory in Valletta, Malta, a Holy Week Last Supper table has been prepared since 1784. Its food was traditionally given to poor families after Good Friday, joining the commemoration to charity.",
+        "fr": "Au prieuré Saint-Dominique de La Valette, à Malte, une table de la Cène est préparée pendant la Semaine sainte depuis 1784. Autrefois, les aliments étaient distribués aux familles pauvres après le Vendredi saint, associant la commémoration à la charité."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-C400-BJ-002",
+        "origin_id": "DYK-C400-BJ-002",
+        "source_ids_raw": "WEI58-P196-MALTA-LAST-SUPPER | TIMESMALTA-2024-VALLETTA-SUPPER",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860",
+        "source_locator_raw": "196 / 214",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{\"region\":\"Valletta, Malta\",\"religious_context\":\"Holy Week Catholic charity table, not the Eucharistic rite\",\"current_practice\":\"Historical distribution after Good Friday documented; current arrangements may differ\"}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-DEV-009",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Ex-votos at Notre-Dame de Laghet",
+        "fr": "Les ex-voto de Notre-Dame de Laghet"
+      },
+      "proposed_copy": {
+        "en": "At Notre-Dame de Laghet, near Nice, pilgrims have left ex-votos to give thanks for favours they believed they had received. Offerings displayed at the sanctuary include crutches, wedding bouquets and even car steering wheels.",
+        "fr": "Au sanctuaire Notre-Dame de Laghet, près de Nice, des pèlerins ont déposé des ex-voto pour rendre grâce des bienfaits qu'ils estimaient avoir reçus. On y conserve notamment des béquilles, des bouquets de mariée et même des volants de voiture."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CUSTOMS-CANON-DEV-009",
+        "origin_id": "DYK-CUSTOMS-CANON-DEV-009",
+        "source_ids_raw": "LAGHET-EXVOTO | ALTOETTING-EXVOTO",
+        "source_urls_raw": "https://sanctuaire-laghet.fr/ex-votos/ | https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/",
+        "source_locator_raw": null,
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW14-033",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "From Good Friday to Easter dawn",
+        "fr": "Du Vendredi saint au matin de Pâques"
+      },
+      "proposed_copy": {
+        "en": "In medieval England, an Easter sepulchre, often placed in a niche on the north side of the sanctuary, served as a symbolic tomb: a Host consecrated on Holy Thursday and a cross used on Good Friday were laid in it and brought out on Easter morning. Some parishes paid each year to erect and dismantle a wooden one.",
+        "fr": "Dans l'Angleterre médiévale, le Saint-Sépulcre de Pâques, souvent placé dans une niche du côté nord du sanctuaire, servait de tombeau symbolique : une hostie consacrée le Jeudi saint et la croix de la Passion du Vendredi saint y étaient déposées, puis sorties le matin de Pâques. Certaines paroisses payaient chaque année pour monter et démonter un sépulcre de bois."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW14-033",
+        "origin_id": "DYK-CW14-033",
+        "source_ids_raw": "CE-NEWADVENT-CHAP",
+        "source_urls_raw": "https://www.newadvent.org/cathen/03574b.htm",
+        "source_locator_raw": "Chapels of repose; deposition and Easter retrieval",
+        "source_record_path": "Catholic Encyclopedia: Chapel | https://www.newadvent.org/cathen/03574b.htm",
+        "historical_geographic_scope_raw": "HISTORICAL: medieval English use",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW14-036",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Why Saint Antony appears with a pig",
+        "fr": "Pourquoi saint Antoine est représenté avec un porc"
+      },
+      "proposed_copy": {
+        "en": "The pig often shown beside Saint Antony the Abbot recalls medieval Antonine hospitallers, who raised pigs and used their fat to treat sufferers of ergotism.",
+        "fr": "Le porc souvent représenté auprès de saint Antoine abbé rappelle les religieux hospitaliers antonins, qui élevaient des porcs et utilisaient leur graisse pour soigner les personnes atteintes d'ergotisme."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW14-036",
+        "origin_id": "DYK-CW14-036",
+        "source_ids_raw": "VATICANNEWS-ANT",
+        "source_urls_raw": "https://www.vaticannews.va/en/saints/01/17/st--antony--abbot.html",
+        "source_locator_raw": "St Antony and blessing of animals; iconography",
+        "source_record_path": "Vatican News: St Antony Abbot | https://www.vaticannews.va/en/saints/01/17/st--antony--abbot.html",
+        "historical_geographic_scope_raw": "HISTORICAL: Antonine hospital tradition",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-001",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Hvar's six night processions",
+        "fr": "Les six processions nocturnes de Hvar"
+      },
+      "proposed_copy": {
+        "en": "On Holy Thursday night on the Croatian island of Hvar, six villages send cross-led processions through one another's villages, each returning to its starting point. In the Za Križen procession, the cross-bearer walks about 25 kilometres barefoot or in socks without resting, then runs the last hundred metres to his parish priest's blessing.",
+        "fr": "Le soir du Jeudi saint, sur l'île croate de Hvar, six villages envoient des processions menées par une croix à travers les villages voisins, chacune revenant à son point de départ. Dans la procession Za Križen, le porteur de croix marche environ 25 kilomètres, pieds nus ou en chaussettes, sans s'arrêter, puis court les cent derniers mètres pour recevoir la bénédiction de son curé."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-001",
+        "origin_id": "DYK-CW15-001",
+        "source_ids_raw": "UNESCO-ICH-00242",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/procession-za-krizen-following-the-cross-on-the-island-of-hvar-00242",
+        "source_locator_raw": "Article overview / nomination 00242",
+        "source_record_path": "UNESCO ICH: Za Križen procession, Hvar",
+        "historical_geographic_scope_raw": "Croatia; Hvar; Holy Thursday",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-014",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Illuminated paintings at Mendrisio",
+        "fr": "Les peintures illuminées de Mendrisio"
+      },
+      "proposed_copy": {
+        "en": "In Mendrisio, Switzerland, the streets are darkened for the Holy Thursday and Good Friday processions and lit by translucent paintings illuminated from within, a technique developed from the late eighteenth century; participants also carry hundreds of lanterns bearing symbols of Christ's Passion.",
+        "fr": "À Mendrisio, en Suisse, les rues sont plongées dans l'obscurité pour les processions du Jeudi saint et du Vendredi saint et éclairées par des peintures translucides illuminées de l'intérieur, une technique mise au point à partir de la fin du XVIIIe siècle ; les participants portent aussi des centaines de lanternes ornées de symboles de la Passion du Christ."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-014",
+        "origin_id": "DYK-CW15-014",
+        "source_ids_raw": "UNESCO-ICH-01460",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/holy-week-processions-in-mendrisio-01460",
+        "source_locator_raw": "Article overview / nomination 01460",
+        "source_record_path": "UNESCO ICH: Holy Week, Mendrisio",
+        "historical_geographic_scope_raw": "Switzerland; Mendrisio; Holy Week",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-020",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Two-kilometre Corpus Christi flower carpets",
+        "fr": "Les tapis de fleurs longs de deux kilomètres"
+      },
+      "proposed_copy": {
+        "en": "In some Polish villages, families lay carpets across the Corpus Christi procession route, sometimes for almost two kilometres, using not just petals but bark, sand, fresh-cut grass and aromatic calamus leaves.",
+        "fr": "Dans certains villages polonais, des familles disposent des tapis sur le parcours de la procession de la Fête-Dieu, parfois sur près de deux kilomètres, avec non seulement des pétales mais aussi de l'écorce, du sable, de l'herbe fraîchement coupée et des feuilles d'acore aromatique."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-020",
+        "origin_id": "DYK-CW15-020",
+        "source_ids_raw": "UNESCO-ICH-01743",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743?RL=01743",
+        "source_locator_raw": "Article overview / nomination 01743",
+        "source_record_path": "UNESCO ICH: flower carpets at Corpus Christi, Poland",
+        "historical_geographic_scope_raw": "Poland; Corpus Christi",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-023",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Saint Michael defeats the devil in Panama",
+        "fr": "Saint Michel contre le diable à Panama"
+      },
+      "proposed_copy": {
+        "en": "On the eve of Corpus Christi in Panama, masked dancers and musicians stage the contest between Saint Michael and the devil; in the procession itself, devil-masked dancers follow the priest carrying the Blessed Sacrament in a monstrance.",
+        "fr": "À la veille de la Fête-Dieu, au Panama, des danseurs masqués et des musiciens mettent en scène le combat de saint Michel contre le diable ; dans la procession elle-même, des danseurs aux masques de diable suivent le prêtre qui porte le Saint-Sacrement dans un ostensoir."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-023",
+        "origin_id": "DYK-CW15-023",
+        "source_ids_raw": "UNESCO-ICH-01612",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/dances-and-expressions-associated-with-the-corpus-christi-festivity-01612",
+        "source_locator_raw": "Article overview / nomination 01612",
+        "source_record_path": "UNESCO ICH: Corpus Christi dances, Panama",
+        "historical_geographic_scope_raw": "Panama; Corpus Christi",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-026",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The devils surrender to the Eucharist",
+        "fr": "Les diables s'inclinent devant l'Eucharistie"
+      },
+      "proposed_copy": {
+        "en": "On Venezuela's central coast, confraternities of masked Dancing Devils, wearing crosses, scapulars and blessed palms, bow in surrender before the Blessed Sacrament on Corpus Christi, representing the triumph of good over evil.",
+        "fr": "Sur la côte centrale du Venezuela, des confréries de Diables dansants masqués, portant croix, scapulaires et palmes bénies, s'inclinent en signe de soumission devant le Saint-Sacrement à la Fête-Dieu, pour représenter le triomphe du bien sur le mal."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-026",
+        "origin_id": "DYK-CW15-026",
+        "source_ids_raw": "UNESCO-ICH-00639",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/venezuela-s-dancing-devils-of-corpus-christi-00639",
+        "source_locator_raw": "Article overview / nomination 00639",
+        "source_record_path": "UNESCO ICH: Dancing Devils, Venezuela",
+        "historical_geographic_scope_raw": "Venezuela; Corpus Christi",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-029",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Pentecost Tuesday hopping in Luxembourg",
+        "fr": "La procession dansante après la Pentecôte"
+      },
+      "proposed_copy": {
+        "en": "On the Tuesday after Pentecost, pilgrims in Echternach, Luxembourg, move in a distinctive hopping procession honouring Saint Willibrord, with documentary traces going back to about the year 1100.",
+        "fr": "Le mardi après la Pentecôte, à Echternach, au Luxembourg, des pèlerins avancent en une procession sautillante caractéristique en l'honneur de saint Willibrord, dont les premières traces écrites remontent à environ l'an 1100."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-029",
+        "origin_id": "DYK-CW15-029",
+        "source_ids_raw": "UNESCO-ICH-00392",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/hopping-procession-of-echternach-00392",
+        "source_locator_raw": "Article overview / nomination 00392",
+        "source_record_path": "UNESCO ICH: Echternach",
+        "historical_geographic_scope_raw": "Luxembourg; Echternach; Pentecost Tuesday",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-047",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Wooden masks of Parachicos",
+        "fr": "Les masques de bois des Parachicos"
+      },
+      "proposed_copy": {
+        "en": "In the Parachicos dances of Chiapa de Corzo, Mexico, held in January in honour of Saint Anthony Abbot, the Lord of Esquipulas and Saint Sebastian, dancers wear carved wooden masks and colourful ribbons and carry maracas called chinchines, led by a masked figure, the Patron, who carries a guitar and a whip and recites praises answered by the dancers.",
+        "fr": "Dans les danses des Parachicos de Chiapa de Corzo, au Mexique, qui ont lieu en janvier en l'honneur de saint Antoine abbé, du Seigneur d'Esquipulas et de saint Sébastien, les danseurs portent des masques de bois sculpté et des rubans colorés et agitent des maracas appelées chinchines, menés par un personnage masqué, le Patron, muni d'une guitare et d'un fouet, qui récite des louanges auxquelles répondent les danseurs."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-047",
+        "origin_id": "DYK-CW15-047",
+        "source_ids_raw": "UNESCO-ICH-00399",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399",
+        "source_locator_raw": "Article overview / nomination 00399",
+        "source_record_path": "UNESCO ICH: Parachicos of Chiapa de Corzo",
+        "historical_geographic_scope_raw": "Mexico; Chiapa de Corzo; January",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW15-049",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A cholera vow behind Iztapalapa's Passion",
+        "fr": "Le vœu né d'une épidémie de choléra"
+      },
+      "proposed_copy": {
+        "en": "The Passion representation at Iztapalapa in Mexico began after the community vowed to hold a procession in thanksgiving for surviving a nineteenth-century cholera epidemic; the annual celebration extends beyond Holy Week and concludes with the blessing of a cross on 3 May.",
+        "fr": "La représentation de la Passion à Iztapalapa, au Mexique, est née lorsque la communauté fit le vœu d'organiser une procession en action de grâce pour avoir survécu à une épidémie de choléra au XIXe siècle ; la célébration annuelle dépasse la Semaine sainte et s'achève par la bénédiction d'une croix le 3 mai."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW15-049",
+        "origin_id": "DYK-CW15-049",
+        "source_ids_raw": "UNESCO-ICH-02237",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/representation-of-the-passion-death-and-resurrection-of-christ-in-iztapalapa-02237",
+        "source_locator_raw": "Article overview / nomination 02237",
+        "source_record_path": "UNESCO ICH: Iztapalapa Passion",
+        "historical_geographic_scope_raw": "Mexico; Iztapalapa; nineteenth-century origins",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-024",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Jumping into wells on Saint John's feast",
+        "fr": "Les sauts dans les puits pour la Saint-Jean"
+      },
+      "proposed_copy": {
+        "en": "The Goan feast of Saint John the Baptist includes the local custom of jumping into village wells when the monsoon has begun.",
+        "fr": "À Goa, la fête de saint Jean-Baptiste comprend la coutume locale de sauter dans les puits des villages au début de la mousson."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-024",
+        "origin_id": "DYK-CW16-024",
+        "source_ids_raw": "GOA-GTDC-SAO-JOAO",
+        "source_urls_raw": "https://goa-tourism.com/festival/sao-joao/",
+        "source_locator_raw": "Sao Joao wells and monsoon",
+        "source_record_path": "Goa Tourism Sao Joao",
+        "historical_geographic_scope_raw": "India; Goa; June 24",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-027",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Two boats tied together at Baga",
+        "fr": "Deux barques réunies à Baga"
+      },
+      "proposed_copy": {
+        "en": "At Baga in Goa, the São João celebration includes the sangodd, formed by tying two boats together with bamboo for a communal voyage, with an altar of Saint John the Baptist aboard; at Siolim, decorated boats are paraded along the river near the church.",
+        "fr": "À Baga, à Goa, la fête de São João comprend le sangodd, formé de deux bateaux attachés par des bambous pour une traversée collective, avec à bord un autel de saint Jean-Baptiste ; à Siolim, des bateaux décorés défilent sur la rivière près de l'église."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-027",
+        "origin_id": "DYK-CW16-027",
+        "source_ids_raw": "GOA-GTDC-SAO-JOAO",
+        "source_urls_raw": "https://goa-tourism.com/festival/sao-joao/",
+        "source_locator_raw": "Baga sangodd boats",
+        "source_record_path": "Goa Tourism Sao Joao",
+        "historical_geographic_scope_raw": "India; Goa; Baga; June 24",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-035",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A decennial exposition in Old Goa",
+        "fr": "Une exposition décennale à Vieux-Goa"
+      },
+      "proposed_copy": {
+        "en": "Goa's Catholic tradition includes a special public exposition of Saint Francis Xavier's relics approximately every ten years, distinct from his annual December feast.",
+        "fr": "La tradition catholique de Goa comporte une exposition publique particulière des reliques de saint François Xavier environ tous les dix ans, distincte de sa fête annuelle de décembre."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-035",
+        "origin_id": "DYK-CW16-035",
+        "source_ids_raw": "GOA-GTDC-XAVIER",
+        "source_urls_raw": "https://goa-tourism.com/event/feast-of-st-francis-xavier/",
+        "source_locator_raw": "Relic exposition every ten years",
+        "source_record_path": "Goa Tourism St Francis Xavier pilgrimage",
+        "historical_geographic_scope_raw": "India; Old Goa; approximately every ten years",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-040",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A seven-kilometre candlelit route",
+        "fr": "Un parcours de sept kilomètres aux cierges"
+      },
+      "proposed_copy": {
+        "en": "In Larantuka on Flores, Indonesia, Holy Week blends older Portuguese devotions with local practice: on Holy Thursday, participants in the Tikam Turo set candles along the seven-kilometre route of the next day's procession, and the Marian statue called Tuan Ma is washed and clothed in dark mourning colours before Good Friday.",
+        "fr": "À Larantuka, sur l'île de Florès, en Indonésie, la Semaine sainte mêle d'anciennes dévotions portugaises et des pratiques locales : le Jeudi saint, les participants du Tikam Turo disposent des bougies le long du parcours de sept kilomètres de la procession du lendemain, et la statue mariale appelée Tuan Ma est lavée et revêtue de couleurs sombres de deuil avant le Vendredi saint."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-040",
+        "origin_id": "DYK-CW16-040",
+        "source_ids_raw": "INDONESIA-TOURISM-SEMANA-SANTA | ANTARA-LARANTUKA-2017",
+        "source_urls_raw": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news | https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+        "source_locator_raw": "Tikam Turo candle route",
+        "source_record_path": "Indonesia Tourism Semana Santa Larantuka",
+        "historical_geographic_scope_raw": "Indonesia; East Flores; Holy Thursday",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+        "source_url_qa_note": "Registered Indonesia Tourism URL is search-indexed but direct retrieval failed; ANTARA article remains readable and explicitly corroborates seven-kilometre Tikam Turo candle route and Tuan Ma clothing.",
+        "supplemental_public_source_confirmed": true
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-047",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The first Peñafrancia transfer is on land",
+        "fr": "La première translation de Peñafrancia se fait à terre"
+      },
+      "proposed_copy": {
+        "en": "At Naga in the Philippines, the image of Our Lady of Peñafrancia is taken from her shrine to the cathedral in the Traslación, honoured there with nine days of Masses and prayer, then carried back to the shrine in a celebrated procession on the Naga River.",
+        "fr": "À Naga, aux Philippines, l'image de Notre-Dame de Peñafrancia est transportée de son sanctuaire à la cathédrale lors de la Traslación, honorée pendant neuf jours de messes et de prières, puis ramenée au sanctuaire dans une célèbre procession fluviale sur la rivière Naga."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-047",
+        "origin_id": "DYK-CW16-047",
+        "source_ids_raw": "NAGA-TOURISM-PENAFRANCIA-HISTORY",
+        "source_urls_raw": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/",
+        "source_locator_raw": "Traslacion to cathedral",
+        "source_record_path": "Naga City Tourism Peñafrancia history",
+        "historical_geographic_scope_raw": "Philippines; Naga; September",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-052",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Rice decorations for Saint Isidore",
+        "fr": "Des décorations de riz pour saint Isidore"
+      },
+      "proposed_copy": {
+        "en": "Every 15 May in Lucban, Philippines, the Pahiyas harvest festival honours Saint Isidore: households decorate their façades with colourful kiping made from rice and display harvested produce as a public expression of thanksgiving.",
+        "fr": "Chaque 15 mai à Lucban, aux Philippines, la fête de la moisson Pahiyas honore saint Isidore : les familles ornent leurs façades de kiping colorés faits de riz et exposent les produits de la récolte en signe public d'action de grâce."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-052",
+        "origin_id": "DYK-CW16-052",
+        "source_ids_raw": "PH-TOURISM-QUEZON-PAHIYAS",
+        "source_urls_raw": "https://philippines.travel/destinations/quezon/index",
+        "source_locator_raw": "Pahiyas festival and kiping",
+        "source_record_path": "Philippines tourism Pahiyas Lucban",
+        "historical_geographic_scope_raw": "Philippines; Lucban; May 15",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-054",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Fatima's May procession in Macao",
+        "fr": "La procession de Fatima en mai à Macao"
+      },
+      "proposed_copy": {
+        "en": "Each 13 May in Macao, Catholics carry an image of Our Lady of Fátima from Saint Dominic's Church to the chapel of Our Lady of Penha; two girls and a boy in traditional Portuguese costume represent the three children of the 1917 apparitions, and the procession, begun in 1929, is now recognised as local intangible cultural heritage.",
+        "fr": "Chaque 13 mai à Macao, des catholiques portent une image de Notre-Dame de Fátima de l'église Saint-Dominique à la chapelle de Notre-Dame de la Penha ; deux filles et un garçon en costume portugais traditionnel représentent les trois enfants des apparitions de 1917, et la procession, née en 1929, est aujourd'hui reconnue comme élément du patrimoine culturel immatériel local."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-054",
+        "origin_id": "DYK-CW16-054",
+        "source_ids_raw": "MACAO-TOURISM-FATIMA-2024 | MACAO-CULTURAL-HERITAGE-FATIMA",
+        "source_urls_raw": "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1 | https://www.culturalheritage.mo/en/detail/101978",
+        "source_locator_raw": "2024 Macao tourism procession",
+        "source_record_path": "Macao Government Tourism Fatima procession",
+        "historical_geographic_scope_raw": "Macao; May 13",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://www.culturalheritage.mo/en/detail/101978",
+        "source_url_qa_note": "Registered tourism event URL resolves to a generic empty event shell; Macao government Cultural Affairs Bureau has persistent full description, dates, heritage status, processional route and participants.",
+        "supplemental_public_source_confirmed": true
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW16-058",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Unleavened bread after Holy Thursday Mass",
+        "fr": "Du pain azyme après la messe du Jeudi saint"
+      },
+      "proposed_copy": {
+        "en": "In some Syro-Malabar Catholic homes in Kerala, families share a round unleavened Pesaha appam after Holy Thursday Mass in remembrance of the Last Supper: a small cross of Palm Sunday palm may top the bread, and the head of the family cuts it, dips it in sweet coconut milk and gives portions to those gathered.",
+        "fr": "Dans certains foyers catholiques syro-malabars du Kerala, les familles partagent après la messe du Jeudi saint un pain rond sans levain, le Pesaha appam, en mémoire de la Cène : une petite croix en palme du dimanche des Rameaux peut le surmonter, et le chef de famille le coupe, le trempe dans du lait de coco sucré et en distribue des parts aux personnes présentes."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW16-058",
+        "origin_id": "DYK-CW16-058",
+        "source_ids_raw": "CATHOLICS-CULTURES-PESAHA-2019",
+        "source_urls_raw": "https://www.catholicsandcultures.org/syro-malabar-catholics-celebrate-holy-thursday-traditional-home-ritual",
+        "source_locator_raw": "Pesaha appam domestic observance",
+        "source_record_path": "Catholics and Cultures Syro-Malabar Pesaha",
+        "historical_geographic_scope_raw": "India; Kerala; Holy Thursday; Syro-Malabar families",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-001",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Dancing at the Feast of the Trinity",
+        "fr": "Danser pour la fête de la Trinité"
+      },
+      "proposed_copy": {
+        "en": "In La Paz, Bolivia, the Gran Poder celebration brings thousands of dancers into the streets as an offering to an image of Jesus associated with Holy Trinity Sunday; sixty-nine fraternities prepare devotional music and dances, and the day after the main parade devotees carry the image on their shoulders, offering incense, flowers and confetti.",
+        "fr": "À La Paz, en Bolivie, la fête du Gran Poder fait défiler des milliers de danseurs en offrande à une image de Jésus liée au dimanche de la Sainte Trinité ; soixante-neuf fraternités préparent la musique et les danses de dévotion, et le lendemain du grand défilé, les fidèles portent l'image sur leurs épaules en offrant de l'encens, des fleurs et des confettis."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-001",
+        "origin_id": "DYK-CW17-001",
+        "source_ids_raw": "UNESCO-ICH-01389",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/the-festival-of-the-santisima-trinidad-del-senor-jesus-del-gran-poder-in-the-city-of-la-paz-01389",
+        "source_locator_raw": "UNESCO overview: city festival and sacred dancing",
+        "source_record_path": "UNESCO ICH: festival of Jesús del Gran Poder, La Paz",
+        "historical_geographic_scope_raw": "Bolivia; La Paz; Holy Trinity feast",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-006",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Why Tarija honours Saint Roch",
+        "fr": "Pourquoi Tarija honore saint Roch"
+      },
+      "proposed_copy": {
+        "en": "Tarija's festival of Saint Roch in Bolivia grew from colonial-era prayers for the saint's intercession during epidemics; devotees dance in colourful costumes and masks in processions between the city's churches, and the traditional festival is distinctive for having no alcoholic drinks.",
+        "fr": "La fête de saint Roch à Tarija, en Bolivie, est née de prières coloniales pour obtenir l'intercession du saint lors d'épidémies ; les fidèles dansent en costumes et masques colorés dans des processions entre les églises de la ville, et la fête traditionnelle se distingue par l'absence de boissons alcoolisées."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-006",
+        "origin_id": "DYK-CW17-006",
+        "source_ids_raw": "UNESCO-ICH-01477",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/grand-festival-of-tarija-01477",
+        "source_locator_raw": "UNESCO overview: colonial disease-protection origin",
+        "source_record_path": "UNESCO ICH: Grand Festival of Tarija",
+        "historical_geographic_scope_raw": "Bolivia; Tarija; historical local devotion",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-011",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A Jesuit-era Saint Ignatius celebration",
+        "fr": "Une fête de saint Ignace héritée des missions"
+      },
+      "proposed_copy": {
+        "en": "At San Ignacio de Moxos in Bolivia, the Ichapekene Piesta combines a story associated with Saint Ignatius of Loyola and the Jesuit missions with Moxeño traditions: twelve dancers dressed as solar warriors act out a conflict with the guardians of a sacred flag, and around midnight fireworks rise from performers' wide-brimmed hats.",
+        "fr": "À San Ignacio de Moxos, en Bolivie, l'Ichapekene Piesta associe un récit lié à saint Ignace de Loyola et aux missions jésuites aux traditions moxeñas : douze danseurs vêtus en guerriers solaires mettent en scène un conflit avec les gardiens d'un drapeau sacré, et vers minuit des feux d'artifice jaillissent des chapeaux à large bord des participants."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-011",
+        "origin_id": "DYK-CW17-011",
+        "source_ids_raw": "UNESCO-ICH-00627",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/ichapekene-piesta-the-biggest-festival-of-san-ignacio-de-moxos-00627",
+        "source_locator_raw": "UNESCO overview: Jesuit encounter and Indigenous narrative",
+        "source_record_path": "UNESCO ICH: Ichapekene Piesta",
+        "historical_geographic_scope_raw": "Bolivia; San Ignacio de Moxos; local syncretic festival",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-017",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The gorge sanctuary of Ch'utillos",
+        "fr": "Le sanctuaire de la gorge de Ch'utillos"
+      },
+      "proposed_copy": {
+        "en": "In Potosí, Bolivia, the Ch'utillos festival, associated with Saint Bartholomew and Saint Ignatius of Loyola as well as Indigenous traditions, brings a dance parade to a sanctuary in the rocky Mullu Punku gorge, and some rural groups travel as far as two hundred kilometres to join it.",
+        "fr": "À Potosí, en Bolivie, la fête des Ch'utillos, associée à saint Barthélemy et à saint Ignace de Loyola ainsi qu'à des traditions autochtones, conduit un défilé de danses jusqu'à un sanctuaire dans le défilé rocheux de Mullu Punku, et certains groupes ruraux viennent de plus de deux cents kilomètres pour y participer."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-017",
+        "origin_id": "DYK-CW17-017",
+        "source_ids_raw": "UNESCO-ICH-01958",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958",
+        "source_locator_raw": "UNESCO overview: sanctuary in Mullu Punku gorge",
+        "source_record_path": "UNESCO ICH: Ch'utillos, Potosí",
+        "historical_geographic_scope_raw": "Bolivia; Potosí; August festival",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-024",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A symbolic river immersion of Saint John",
+        "fr": "Une immersion symbolique de saint Jean"
+      },
+      "proposed_copy": {
+        "en": "In some Venezuelan communities, Saint John the Baptist festivities begin as early as May and continue until 16 July around his 24 June feast; on 24 June, some Sanjuanero communities immerse his image in a local river to recall Christ's baptism.",
+        "fr": "Dans certaines communautés vénézuéliennes, les fêtes de saint Jean-Baptiste commencent dès le mois de mai et se poursuivent jusqu'au 16 juillet, autour de sa fête du 24 juin ; le 24 juin, certaines communautés sanjuaneras plongent son image dans une rivière locale pour rappeler le baptême du Christ."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-024",
+        "origin_id": "DYK-CW17-024",
+        "source_ids_raw": "UNESCO-ICH-01682",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/festive-cycle-around-the-devotion-and-worship-towards-saint-john-the-baptist-01682",
+        "source_locator_raw": "UNESCO overview: saint's image immersed",
+        "source_record_path": "UNESCO ICH: Venezuelan Saint John Baptist cycle",
+        "historical_geographic_scope_raw": "Venezuela; June 24; Sanjuanero practice",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-026",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Peruvian Christmas shepherd dances",
+        "fr": "Les danses péruviennes des bergers de Noël"
+      },
+      "proposed_copy": {
+        "en": "On Peru's south-central coast, the Christmas dances Hatajo de Negritos, performed chiefly by men who stamp their heels to a long fiddle, singing and bells, and Hatajo de Pallitas, usually performed by women, dramatize the shepherds' visit to the infant Jesus and the arrival of the Magi.",
+        "fr": "Sur la côte centre-sud du Pérou, les danses de Noël Hatajo de Negritos, exécutées surtout par des hommes qui frappent du talon au son d'un long violon, de chants et de clochettes, et Hatajo de Pallitas, le plus souvent dansée par des femmes, mettent en scène la visite des bergers à l'Enfant Jésus et l'arrivée des Rois mages."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-026",
+        "origin_id": "DYK-CW17-026",
+        "source_ids_raw": "UNESCO-ICH-01309",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/hatajo-de-negritos-and-hatajo-de-pallitas-from-the-peruvian-south-central-coastline-01309?RL=01309",
+        "source_locator_raw": "UNESCO overview: Christian nativity scenes",
+        "source_record_path": "UNESCO ICH: Hatajo de Negritos and Pallitas",
+        "historical_geographic_scope_raw": "Peru; Ica region; December–January",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-031",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A Nativity scene with Krakow towers",
+        "fr": "Une crèche avec les tours de Cracovie"
+      },
+      "proposed_copy": {
+        "en": "Krakow's szopka Nativity cribs, a tradition that developed in the nineteenth century, set the Holy Family amid miniature towers and façades inspired by the city's architecture, sometimes with figures from its history and modern life; makers present them together in the main square on the first Thursday of December.",
+        "fr": "Les crèches szopka de Cracovie, tradition née au XIXe siècle, placent la Sainte Famille parmi des tours et des façades miniatures inspirées de l'architecture de la ville, parfois avec des personnages de son histoire et de la vie moderne ; les artisans les présentent ensemble sur la place principale le premier jeudi de décembre."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-031",
+        "origin_id": "DYK-CW17-031",
+        "source_ids_raw": "UNESCO-ICH-01362",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/nativity-scene-szopka-tradition-in-krakow-01362",
+        "source_locator_raw": "UNESCO overview: architectural miniature",
+        "source_record_path": "UNESCO ICH: Krakow szopka",
+        "historical_geographic_scope_raw": "Poland; Krakow; Christmas nativity craft",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-035",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The drum that opens Berga's Patum",
+        "fr": "Le tambour qui ouvre la Patum de Berga"
+      },
+      "proposed_copy": {
+        "en": "Berga's Patum festival in Catalonia, linked to the week of Corpus Christi, grew out of medieval pageants: a large drum, the Tabal, signals its start, and costumed figures such as the horse-shaped Cavallets, the mule-like dragons called Guites and the fire demons called Plens take part before the festival culminates in a collective dance, the Tirabol.",
+        "fr": "La Patum de Berga, en Catalogne, liée à la semaine de la Fête-Dieu, est née de pageants médiévaux : un grand tambour, le Tabal, en annonce le début, et des figures costumées comme les Cavallets en forme de chevaux, les dragons-mules appelés Guites et les démons de feu appelés Plens y participent avant que la fête ne culmine dans une danse collective, le Tirabol."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-035",
+        "origin_id": "DYK-CW17-035",
+        "source_ids_raw": "UNESCO-ICH-00156",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/patum-of-berga-00156?RL=00156",
+        "source_locator_raw": "UNESCO overview: Tabal announces festivities",
+        "source_record_path": "UNESCO ICH: Patum of Berga",
+        "historical_geographic_scope_raw": "Spain; Berga; Corpus Christi week",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-040",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A medieval sung drama at the Assumption",
+        "fr": "Un drame médiéval chanté pour l'Assomption"
+      },
+      "proposed_copy": {
+        "en": "The Mystery Play of Elche in Spain has portrayed Mary's death, Assumption and coronation in sung drama since the mid-fifteenth century, presented in two acts on 14 and 15 August in Valencian, with some passages in Latin.",
+        "fr": "Le Mystère d'Elche, en Espagne, représente depuis le milieu du XVe siècle la mort, l'Assomption et le couronnement de Marie dans un drame chanté, présenté en deux actes les 14 et 15 août, en valencien avec quelques passages en latin."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-040",
+        "origin_id": "DYK-CW17-040",
+        "source_ids_raw": "UNESCO-ICH-00018",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018",
+        "source_locator_raw": "UNESCO overview: Mystery Play history",
+        "source_record_path": "UNESCO ICH: Mystery Play of Elche",
+        "historical_geographic_scope_raw": "Spain; Elche; August 14–15",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW17-046",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "María Ignacia's story in Saint Peter's feast",
+        "fr": "L'histoire de María Ignacia à la fête de saint Pierre"
+      },
+      "proposed_copy": {
+        "en": "At the Parranda de San Pedro in Guarenas and Guatire, Venezuela, the local festival of Saint Peter includes a midnight Mass and a procession with images of the apostle, and a central element is the dramatized story of María Ignacia, an enslaved woman whose daughter was said to have been healed through Saint Peter.",
+        "fr": "À la Parranda de San Pedro de Guarenas et Guatire, au Venezuela, la fête locale de saint Pierre comprend une messe de minuit et une procession avec des images de l'apôtre, et l'un de ses éléments centraux est l'histoire théâtralisée de María Ignacia, une esclave dont la fille aurait été guérie par l'intercession de saint Pierre."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW17-046",
+        "origin_id": "DYK-CW17-046",
+        "source_ids_raw": "UNESCO-ICH-00907",
+        "source_urls_raw": "https://ich.unesco.org/en/RL/la-parranda-de-san-pedro-of-guarenas-and-guatire-00907",
+        "source_locator_raw": "UNESCO overview: healing legend",
+        "source_record_path": "UNESCO ICH: La Parranda de San Pedro",
+        "historical_geographic_scope_raw": "Venezuela; Guarenas–Guatire; folk narrative",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW18-021",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The Stations were once walked in reverse",
+        "fr": "Le chemin de croix autrefois parcouru à l'envers"
+      },
+      "proposed_copy": {
+        "en": "In fifteenth-century Jerusalem, some Passion pilgrims walked from Calvary back towards Pilate's house, reversing the direction now familiar in the Stations of the Cross.",
+        "fr": "À Jérusalem, au XVe siècle, certains pèlerins de la Passion allaient du Calvaire vers la maison de Pilate, à l'inverse du sens aujourd'hui habituel du chemin de croix."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW18-021",
+        "origin_id": "DYK-CW18-021",
+        "source_ids_raw": "CE-WAY-OF-CROSS",
+        "source_urls_raw": "https://www.newadvent.org/cathen/15569a.htm",
+        "source_locator_raw": "Way of Cross; William Wey and reverse route",
+        "source_record_path": "Catholic Encyclopedia: Way of the Cross",
+        "historical_geographic_scope_raw": "Jerusalem; fifteenth century",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW18-037",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Rosary processions on Lepanto's Sunday",
+        "fr": "Les processions du Rosaire le dimanche de Lépante"
+      },
+      "proposed_copy": {
+        "en": "On the first Sunday of October 1571, members of Rosary confraternities held processions in Rome while the naval battle of Lepanto was being fought.",
+        "fr": "Le premier dimanche d'octobre 1571, des membres des confréries du Rosaire organisèrent des processions à Rome pendant que se déroulait la bataille navale de Lépante."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW18-037",
+        "origin_id": "DYK-CW18-037",
+        "source_ids_raw": "CE-FEAST-ROSARY",
+        "source_urls_raw": "https://www.newadvent.org/cathen/13189a.htm",
+        "source_locator_raw": "Feast of Rosary; confraternity processions",
+        "source_record_path": "Catholic Encyclopedia: Feast of the Holy Rosary",
+        "historical_geographic_scope_raw": "Rome, Italy; October 1571",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW18-047",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A dark screen behind a Spanish altar",
+        "fr": "Un écran sombre derrière un autel espagnol"
+      },
+      "proposed_copy": {
+        "en": "Some older Spanish churches held up black velvet behind the altar so worshippers could more easily see the Host at its elevation.",
+        "fr": "Dans certaines anciennes églises d'Espagne, on tendait du velours noir derrière l'autel pour permettre aux fidèles de mieux voir l'hostie lors de l'élévation."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW18-047",
+        "origin_id": "DYK-CW18-047",
+        "source_ids_raw": "CE-BENEDICTION",
+        "source_urls_raw": "https://www.newadvent.org/cathen/02465b.htm",
+        "source_locator_raw": "Benediction; black velvet elevation screens",
+        "source_record_path": "Catholic Encyclopedia: Benediction of the Blessed Sacrament",
+        "historical_geographic_scope_raw": "Spain; historical elevation devotion",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-CW18-054",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Church bells alerted farmworkers to the elevation",
+        "fr": "Les cloches avertissaient les travailleurs de l'élévation"
+      },
+      "proposed_copy": {
+        "en": "From the thirteenth century, some churches rang a large bell at the elevation so people working in nearby fields could pause to adore the Eucharist.",
+        "fr": "Dès le XIIIe siècle, certaines églises sonnaient une grosse cloche à l'élévation afin que les personnes travaillant dans les champs voisins puissent s'arrêter pour adorer l'Eucharistie."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-CW18-054",
+        "origin_id": "DYK-CW18-054",
+        "source_ids_raw": "CE-CHURCH-BELLS",
+        "source_urls_raw": "https://www.newadvent.org/cathen/02418b.htm",
+        "source_locator_raw": "Bells; elevation audible beyond church",
+        "source_record_path": "Catholic Encyclopedia: Bells",
+        "historical_geographic_scope_raw": "Western Europe; thirteenth century onward",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-G600-P-028",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Serpents and votive bread at Saint Paul's feast",
+        "fr": "Serpents et pains votifs à la fête de saint Paul"
+      },
+      "proposed_copy": {
+        "en": "At the historical feast of Saint Paul in Palazzolo Acreide, Sicily, serpent handlers called cerauli joined the procession carrying live snakes. Some wore serpent-shaped ring loaves on their heads, while others carried trays holding reptiles and gathered votive offerings.",
+        "fr": "Lors des anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cerauli portaient des serpents vivants. Certains avaient sur la tête des pains en couronne en forme de serpent, tandis que d'autres portaient des plateaux avec des reptiles et recueillaient les offrandes votives."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Pitrè, Feste patronali in Sicilia (1900), p.355, describes live snakes and serpent-shaped ring bread coexisting in the same historical procession; correction removes unsubstantiated later-replacement chronology. Owner final EN/FR signoff remains pending.",
+        "caveat": null,
+        "copy_adjustment_pending": true,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-G600-P-028",
+        "origin_id": "DYK-G600-P-028",
+        "source_ids_raw": "PIT1900-IT-094 | PIT1900-IT-095",
+        "source_urls_raw": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf | https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/",
+        "source_locator_raw": "355 / 413",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX15-017",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A hanging Eucharistic dove",
+        "fr": "La colombe eucharistique suspendue"
+      },
+      "proposed_copy": {
+        "en": "In medieval churches the Eucharist could be reserved in a dove-shaped container hanging from a cord above the altar beneath a small canopy; an eleventh-century customary of Cluny mentions a golden pyx kept inside such a dove-shaped vessel.",
+        "fr": "Dans les églises médiévales, l'Eucharistie pouvait être conservée dans un récipient en forme de colombe suspendu à une cordelette au-dessus de l'autel, sous un petit dais ; une coutume de Cluny du XIe siècle mentionne une pyxide d'or placée dans un tel vase en forme de colombe."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX15-017",
+        "origin_id": "DYK-GX15-017",
+        "source_ids_raw": "CE-TABERNACLE",
+        "source_urls_raw": "https://www.newadvent.org/cathen/14424a.htm",
+        "source_locator_raw": "Article overview / nomination CE-TABERNACLE",
+        "source_record_path": "Catholic Encyclopedia: Tabernacle",
+        "historical_geographic_scope_raw": "Western Church; medieval",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX16-006",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A golden lamb at the Lateran font",
+        "fr": "Un agneau d'or aux fonts du Latran"
+      },
+      "proposed_copy": {
+        "en": "Rome's Lateran baptistery has an octagonal inner structure upheld by eight columns, and an ancient description recalls its decorated basin adorned with a golden lamb and seven silver stags that spouted water.",
+        "fr": "Le baptistère du Latran, à Rome, possède une structure intérieure octogonale soutenue par huit colonnes, et une description ancienne évoque son bassin décoré d'un agneau d'or et de sept cerfs d'argent qui jetaient de l'eau."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX16-006",
+        "origin_id": "DYK-GX16-006",
+        "source_ids_raw": "CE-NEWADVENT-BAPTISMAL-FONT",
+        "source_urls_raw": "https://www.newadvent.org/cathen/02274a.htm",
+        "source_locator_raw": "Constantinian font from Liber Pontificalis",
+        "source_record_path": "Catholic Encyclopedia Baptismal Font",
+        "historical_geographic_scope_raw": "Rome; Lateran baptistery; late antique description",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX16-017",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Easter wax for poor people's funerals",
+        "fr": "La cire pascale pour les funérailles des pauvres"
+      },
+      "proposed_copy": {
+        "en": "In some older English churches, the used Paschal candle was melted into smaller tapers given free for the funerals of poor people.",
+        "fr": "Dans certaines églises anglaises anciennes, on fondait le cierge pascal usagé pour fabriquer de petits cierges offerts gratuitement aux funérailles des pauvres."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX16-017",
+        "origin_id": "DYK-GX16-017",
+        "source_ids_raw": "CE-NEWADVENT-PASCHAL-CANDLE",
+        "source_urls_raw": "https://www.newadvent.org/cathen/11515b.htm",
+        "source_locator_raw": "Used Paschal candle wax and funerals",
+        "source_record_path": "Catholic Encyclopedia Paschal Candle",
+        "historical_geographic_scope_raw": "England; late medieval and early modern usage",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX16-022",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Exsultet rolls in medieval Italy",
+        "fr": "Les rouleaux d'Exsultet de l'Italie médiévale"
+      },
+      "proposed_copy": {
+        "en": "In medieval Italy, some deacons sang the Easter Exsultet from long illuminated parchment rolls, unrolling them as the chant progressed; some tenth- and eleventh-century rolls included miniature portraits of the rulers named in the proclamation.",
+        "fr": "Dans l'Italie médiévale, certains diacres chantaient l'Exsultet pascal à partir de longs rouleaux de parchemin enluminés, qu'ils déroulaient au fil du chant ; certains rouleaux des Xe et XIe siècles comportaient des portraits en miniature des souverains cités dans la proclamation."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX16-022",
+        "origin_id": "DYK-GX16-022",
+        "source_ids_raw": "CE-NEWADVENT-EXULTET",
+        "source_urls_raw": "https://www.newadvent.org/cathen/05730b.htm",
+        "source_locator_raw": "Exultet Rolls",
+        "source_record_path": "Catholic Encyclopedia Exultet",
+        "historical_geographic_scope_raw": "Italy; tenth–eleventh-century manuscripts",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX17-021",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "A lion and dragon at Rogations",
+        "fr": "Un lion et un dragon aux Rogations"
+      },
+      "proposed_copy": {
+        "en": "Some older English Rogation processions carried two symbolic standards depicting a lion and a dragon, alongside the customary cross.",
+        "fr": "Certaines anciennes processions anglaises des Rogations portaient deux enseignes symboliques figurant un lion et un dragon, en plus de la croix habituelle."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX17-021",
+        "origin_id": "DYK-GX17-021",
+        "source_ids_raw": "CE-NEWADVENT-PROCESSIONAL-CROSS",
+        "source_urls_raw": "https://www.newadvent.org/cathen/12448a.htm",
+        "source_locator_raw": "Processional Cross: lion and dragon vexilla",
+        "source_record_path": "Catholic Encyclopedia, Processional Cross",
+        "historical_geographic_scope_raw": "England; medieval Rogations",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX17-025",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Why the word baldachin points to Baghdad",
+        "fr": "Pourquoi baldaquin rappelle Bagdad"
+      },
+      "proposed_copy": {
+        "en": "The Italian word baldacchino derives from the medieval name for Baghdad, a source of the costly fabrics once used to make altar canopies.",
+        "fr": "Le mot italien baldacchino vient du nom médiéval de Bagdad, d'où provenaient des étoffes précieuses jadis employées pour les dais d'autel."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX17-025",
+        "origin_id": "DYK-GX17-025",
+        "source_ids_raw": "CE-NEWADVENT-BALDACHIN",
+        "source_urls_raw": "https://www.newadvent.org/cathen/02217c.htm",
+        "source_locator_raw": "Baldachinum: Baghdad etymology",
+        "source_record_path": "Catholic Encyclopedia, Baldachinum of the Altar",
+        "historical_geographic_scope_raw": "Medieval word history",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX18-001",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Wax Agnus Dei discs differ from the Mass prayer",
+        "fr": "Les médaillons Agnus Dei ne sont pas la prière de la messe"
+      },
+      "proposed_copy": {
+        "en": "Historical papal Agnus Dei sacramentals were wax discs bearing a lamb, not the Agnus Dei prayer recited or sung in the Ordinary of Mass.",
+        "fr": "Les Agnus Dei pontificaux anciens étaient des médaillons de cire portant un agneau, et non la prière Agnus Dei récitée ou chantée dans l'Ordinaire de la messe."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX18-001",
+        "origin_id": "DYK-GX18-001",
+        "source_ids_raw": "CE-AGNUS-DEI-WAX",
+        "source_urls_raw": "https://www.newadvent.org/cathen/01220a.htm",
+        "source_locator_raw": "Agnus Dei; definition and symbolic form",
+        "source_record_path": "Catholic Encyclopedia: Agnus Dei (wax medallions)",
+        "historical_geographic_scope_raw": "Historical Catholic sacramentals",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX18-016",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Ancient atrium fountains before modern stoups",
+        "fr": "Les fontaines d'atrium avant les bénitiers"
+      },
+      "proposed_copy": {
+        "en": "The early church holy-water stoup developed from ablution fountains in the atria of basilicas, where worshippers washed hands and feet before entry.",
+        "fr": "Le bénitier d'église s'est développé à partir de fontaines d'ablution placées dans les atriums des basiliques, où les fidèles se lavaient mains et pieds avant d'entrer."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX18-016",
+        "origin_id": "DYK-GX18-016",
+        "source_ids_raw": "CE-HOLY-WATER-FONTS",
+        "source_urls_raw": "https://www.newadvent.org/cathen/07433a.htm",
+        "source_locator_raw": "Holy Water Fonts; cantharus and phiala",
+        "source_record_path": "Catholic Encyclopedia: Holy Water Fonts",
+        "historical_geographic_scope_raw": "Late antique basilica architecture",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-GX18-023",
+      "category": "GLOSSARY",
+      "source_track": "GLOSSARY_NEW_SOURCE_WAVE",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Why bells were called baptized",
+        "fr": "Pourquoi l'on disait les cloches baptisées"
+      },
+      "proposed_copy": {
+        "en": "In the older pontifical blessing of a bell, the bishop washed it with water and salt, anointed it with the oil of the sick on seven spots outside and with chrism on four inside, and gave it a saint's name, leading to the popular expression \"bell baptism\".",
+        "fr": "Dans l'ancienne bénédiction pontificale d'une cloche, l'évêque la lavait avec de l'eau et du sel, l'oignait de l'huile des malades en sept endroits à l'extérieur et du saint chrême en quatre endroits à l'intérieur, et lui donnait le nom d'un saint, d'où l'expression populaire « baptême de la cloche »."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-GX18-023",
+        "origin_id": "DYK-GX18-023",
+        "source_ids_raw": "CE-CHURCH-BELLS",
+        "source_urls_raw": "https://www.newadvent.org/cathen/02418b.htm",
+        "source_locator_raw": "Bells; Benediction of bells",
+        "source_record_path": "Catholic Encyclopedia: Bells",
+        "historical_geographic_scope_raw": "Historical Roman bell consecration",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-H04-W-A-039",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Brébeuf's Christmas hymn in the Huron language",
+        "fr": "Le chant de Noël du père Brébeuf en langue huronne"
+      },
+      "proposed_copy": {
+        "en": "Saint Jean de Brébeuf composed a Christmas hymn in the Huron language, Jesus Ahatonhia, using a melody associated with a sixteenth-century French popular tune.",
+        "fr": "Saint Jean de Brébeuf composa un chant de Noël en langue huronne, Jesus Ahatonhia, sur une mélodie apparentée à un air populaire français du XVIe siècle."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-H04-W-A-039",
+        "origin_id": "DYK-H04-W-A-039",
+        "source_ids_raw": "WEI58-07-003",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": " / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-H04-W-A-068",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "English mince pies shaped like a manger",
+        "fr": "Les tartelettes de Noël anglaises en forme de mangeoire"
+      },
+      "proposed_copy": {
+        "en": "In pre-Reformation England, Christmas mince pies were sometimes made in the shape of a manger, with a small image of the Christ Child placed on top.",
+        "fr": "Dans l'Angleterre d'avant la Réforme, certaines petites tourtes de Noël, les mince pies, étaient façonnées comme une mangeoire, parfois surmontée d'une petite figure de l'Enfant Jésus."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-H04-W-A-068",
+        "origin_id": "DYK-H04-W-A-068",
+        "source_ids_raw": "WEI58-09-013",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": " / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-H04-W-A-096",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "The ceremonial burial of the Alleluia",
+        "fr": "L'enterrement cérémoniel de l'Alléluia"
+      },
+      "proposed_copy": {
+        "en": "In fifteenth-century Toul in France, choirboys held a symbolic \"burial of the Alleluia\" before Septuagesima, carrying a little coffin with crosses, candles and incense.",
+        "fr": "À Toul, en France, au XVe siècle, des enfants de chœur organisaient un « enterrement de l'Alléluia » symbolique avant la Septuagésime, portant un petit cercueil accompagné de croix, de cierges et d'encens."
+      },
+      "editorial": {
+        "claude_verdict": "REWRITE",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-H04-W-A-096",
+        "origin_id": "DYK-H04-W-A-096",
+        "source_ids_raw": "WEI58-13-007",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": " / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "King Edward I's 450 Easter eggs",
+        "fr": "Les 450 œufs de Pâques du roi Édouard Ier"
+      },
+      "proposed_copy": {
+        "en": "A historical account of the English royal household says that Edward I had 450 Easter eggs dyed or gilded as gifts for members of his court.",
+        "fr": "Selon un témoignage ancien concernant la cour d'Angleterre, Édouard Ier fit teindre ou dorer 450 œufs de Pâques destinés aux membres de sa maison."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-H04-W-B-038",
+        "origin_id": "DYK-H04-W-B-038",
+        "source_ids_raw": "WEI58-17-012",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "234 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-H04-W-B-072",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Trinity columns raised in thanksgiving",
+        "fr": "Des colonnes de la Trinité élevées en action de grâce"
+      },
+      "proposed_copy": {
+        "en": "In Central Europe, public columns dedicated to the Holy Trinity were sometimes erected in thanksgiving after deliverance from outbreaks of plague.",
+        "fr": "En Europe centrale, des colonnes publiques dédiées à la Sainte Trinité étaient parfois élevées en action de grâce après la fin d'épidémies de peste."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-H04-W-B-072",
+        "origin_id": "DYK-H04-W-B-072",
+        "source_ids_raw": "WEI58-20-010",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "258 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    },
+    {
+      "id": "DYK-UM01-019",
+      "category": "CUSTOMS",
+      "source_track": "CUSTOMS",
+      "interest_tier": "PRIORITY",
+      "interest_score": 5,
+      "proposed_title": {
+        "en": "Nine angelic choirs at Mainz's Corpus Christi",
+        "fr": "Les neuf chœurs des anges à la Fête-Dieu de Mayence"
+      },
+      "proposed_copy": {
+        "en": "At a Corpus Christi procession in Mainz in 1613, hundreds of children dressed as the nine choirs of angels marched before the Blessed Sacrament, while others scattered flowers along the route.",
+        "fr": "Lors d'une procession de la Fête-Dieu à Mayence en 1613, des centaines d'enfants vêtus comme les neuf chœurs des anges marchaient devant le Saint-Sacrement, tandis que d'autres répandaient des fleurs sur le parcours."
+      },
+      "editorial": {
+        "claude_verdict": "KEEP",
+        "copy_basis": "Claude KEEP/REWRITE",
+        "caveat": null,
+        "copy_adjustment_pending": false,
+        "owner_decision": null
+      },
+      "research_provenance": {
+        "master_fact_id": "DYK-UM01-019",
+        "origin_id": "DYK-UM01-019",
+        "source_ids_raw": "WEI58-21-015",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_locator_raw": "265 / ",
+        "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+        "historical_geographic_scope_raw": "{}",
+        "source_check_result_raw": null,
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+      },
+      "release_gate": {
+        "owner_approved": false,
+        "editorial_final_en_signoff": false,
+        "editorial_final_fr_signoff": false,
+        "semantic_novelty_approved": false,
+        "source_reference_checked": false,
+        "release_authorized": false,
+        "published": false
+      },
+      "eligibility": "RESEARCH_ONLY"
+    }
+  ],
+  "source_link_fixes": [
+    {
+      "id": "DYK-CW16-054",
+      "supplemental_id": "MACAO-CULTURAL-HERITAGE-FATIMA",
+      "preferred_url": "https://www.culturalheritage.mo/en/detail/101978",
+      "why": "Registered tourism event URL resolves to a generic empty event shell; Macao government Cultural Affairs Bureau has persistent full description, dates, heritage status, processional route and participants.",
+      "original_link_preserved": true
+    },
+    {
+      "id": "DYK-CW16-040",
+      "supplemental_id": "ANTARA-LARANTUKA-2017",
+      "preferred_url": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+      "why": "Registered Indonesia Tourism URL is search-indexed but direct retrieval failed; ANTARA article remains readable and explicitly corroborates seven-kilometre Tikam Turo candle route and Tuan Ma clothing.",
+      "original_link_preserved": true
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "supplemental_id": "SASSARI-OFFICIAL-CANDELIERI",
+      "preferred_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+      "why": "City-backed event history supports current wooden candle-shaped festival structures and historically variable number, replacing false wax/seven title.",
+      "original_link_preserved": true
+    }
+  ],
+  "source_text_errata": [
+    {
+      "id": "DYK-G600-P-028",
+      "finding": "Unsupported replacement chronology removed; contemporaneous ritual elements retained",
+      "verified_against": "Pitrè 1900 printed p. 355, indexed original text",
+      "original_folio_image_reviewed": false
+    }
+  ]
+}

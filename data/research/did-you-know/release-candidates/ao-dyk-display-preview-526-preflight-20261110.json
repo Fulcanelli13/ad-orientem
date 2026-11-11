@@ -1,0 +1,57 @@
+{
+  "schema": "AO_DYK_526_PREFLIGHT_REPORT_V1",
+  "state": "RESEARCH_ONLY",
+  "created": "2026-11-10",
+  "checks": {
+    "row_count": 526,
+    "selection_ids_unique": true,
+    "all_ids_in_master": true,
+    "all_bilingual_titles_and_copy_present": true,
+    "source_ids_present": true,
+    "release_gates_all_false": true,
+    "eligibility_all_research_only": true
+  },
+  "distributions": {
+    "category": {
+      "CUSTOMS": 381,
+      "GLOSSARY": 145
+    },
+    "priority": {
+      "PRIORITY": 332,
+      "RESERVE": 194
+    },
+    "editorial": {
+      "KEEP": 360,
+      "REWRITE": 166
+    }
+  },
+  "gaps": {
+    "source_locator_blank": 88,
+    "scope_blank": 0,
+    "pdf_references": 222,
+    "other_references": 304,
+    "copy_adjustments": [
+      "DYK-CW15-038",
+      "DYK-CW15-035",
+      "DYK-GL-G255-01",
+      "DYK-GL-G429-01",
+      "DYK-GX18-006"
+    ],
+    "title_collisions": [
+      {
+        "title": "lavabo",
+        "ids": [
+          "DYK-GX14-013",
+          "DYK-GL-G216-01"
+        ]
+      }
+    ]
+  },
+  "architectural_notes": [
+    "Existing H225 and other DYK release loaders require individual provenance and approval flags; this preview does not satisfy those gates.",
+    "Existing Home published-fact card uses generic topic labels; proposed EN/FR titles are additional data and need separate UI wiring if displayed.",
+    "No source URL was opened or verified in Claude editorial review or this schema mapping.",
+    "No source-check flags are inferred from metadata and no published facts or live rotation source files are modified."
+  ],
+  "result": "DATA_MODEL_PREPARED_IMPORT_NOT_AUTHORIZED"
+}

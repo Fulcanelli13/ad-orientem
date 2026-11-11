@@ -1,0 +1,97 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_SECOND_SEMANTIC_SCREEN_V1",
+  "date": "2026-11-10",
+  "state": "PRELIMINARY_EDITORIAL_OVERLAP_HOLDS_NOT_SOURCE_CERTIFICATION",
+  "method": "Manual topical comparison of pairs surfaced by EN lexical screening and canonical-custom thematic comparison; distinct source IDs do not guarantee distinct customs.",
+  "counts": {
+    "input_after_first_dedup": 370,
+    "strong_additional_semantic_holds": 8,
+    "provisionally_retained": 362,
+    "unfilled_new_discovery_slots": 38
+  },
+  "decisions": [
+    {
+      "exclude": "DYK-G365-W-A-024",
+      "keep": "DYK-UM02-004",
+      "reason": "Same Saint Nicholas Eve custom of children writing gift-request letters to the Christ Child; retained copy includes the windowsill detail.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-G365-W-A-104",
+      "keep": "DYK-UM02-001",
+      "reason": "Same English Mothering Sunday mother/family visit and simnel cake; retained version additionally documents apprentices/servants and the mother church.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-CUSTOMS-CANON-EPIP-002",
+      "keep": "DYK-H04-W-A-093",
+      "reason": "Both center on keeping an extra galette des Rois slice for the poor; retained version has an additional historically distinctive charitable variation. Hidden fève is not a separate discovery.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-H04-W-B-077",
+      "keep": "DYK-H04-W-B-076",
+      "reason": "Both describe birch greenery decorating houses and streets for Corpus Christi processions; retained version specifies candles and holy pictures in windows.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-G365-W-B-123",
+      "keep": "DYK-UM02-016",
+      "reason": "Both describe blessing seed/grain at the Nativity of the Virgin Mary on 8 September; retained version specifies winter planting and regional scope.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-G640-P-006",
+      "keep": "DYK-G560-P-014",
+      "reason": "Both describe seasonal first fruits in the market at the same Saints Cosmas and Damian Palermo feast; retained version identifies concrete produce.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-CUSTOMS-CANON-DOM-003",
+      "keep": "DYK-CUSTOMS-CANON-DOM-002",
+      "reason": "Same domestic holy-water font (bénitier) and household holy-water usage with the same collection link; negative statement about the font not blessing water is weak as a separate discovery.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    },
+    {
+      "exclude": "DYK-CUSTOMS-CANON-DEAD-001",
+      "keep": "DYK-CUSTOMS-CANON-DEAD-003",
+      "reason": "Both describe cemetery visits and prayers for departed relatives around All Souls' Day; region-specific variation does not establish a new independent custom.",
+      "decision": "HOLD_EXCLUDED_FROM_NEW_RELEASE_STAGE_PENDING_PRIMARY_SOURCE_AND_FINAL_EDITORIAL_SIGNOFF"
+    }
+  ],
+  "additional_event_clusters_for_manual_review": [
+    {
+      "ids": [
+        "DYK-G600-P-016",
+        "DYK-G640-P-028",
+        "DYK-G640-P-029",
+        "DYK-G600-P-018"
+      ],
+      "topic": "St Agatha candelore at Catania; guild procession, house calls, cathedral placement and dancing may be distinct details but repetitive as cards"
+    },
+    {
+      "ids": [
+        "DYK-G600-P-010",
+        "DYK-G600-P-011",
+        "DYK-G600-P-012",
+        "DYK-UM01-023"
+      ],
+      "topic": "Santa Croce Camerina St Joseph hospitality, vow, maccu dish and pastries; consider combining food descriptions"
+    },
+    {
+      "ids": [
+        "DYK-G600-P-002",
+        "DYK-G640-P-026"
+      ],
+      "topic": "Ribera St Joseph stragula; different procession details but same object"
+    },
+    {
+      "ids": [
+        "DYK-CUSTOMS-CANON-DOM-006",
+        "DYK-CUSTOMS-CANON-DOM-007"
+      ],
+      "topic": "Sacred Heart consecration versus household image enthronement; verify separate devotional actions"
+    }
+  ],
+  "policy": "No release until source-by-source verification and native EN/FR review. The 8 editorial holds are a conservative staging decision; no historical source record is deleted."
+}

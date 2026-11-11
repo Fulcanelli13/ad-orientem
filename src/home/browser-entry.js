@@ -764,6 +764,18 @@ export function createHomeOwner(win=globalThis){
       if(publishedId){
         const date=dyk.dataset?.homeDykFactDate;
         const language=dyk.closest(".homeScreen")?.dataset?.homeLanguage==="fr"?"fr":"en";
+        // A future, explicitly authorized 526-card release uses the same
+        // source modal, but never the unpublished research JSON.
+        if(dyk.dataset?.homeDykBank==="526"){
+          void import("./dyk-526-home-bridge.js")
+            .then(m=>m.openDyk526HomeSource(win,{id:publishedId,date,language,trigger:dyk}))
+            .then(opened=>{if(!opened)showRouteError("home.did-you-know",dyk);})
+            .catch(error=>{
+              try{win?.console?.error?.("DYK 526 source unavailable",error)}catch{}
+              showRouteError("home.did-you-know",dyk);
+            });
+          return;
+        }
         void import("./dyk-published-feed.js")
           .then(m=>m.openDykPublishedSource(win,{id:publishedId,date,language,trigger:dyk}))
           .then(opened=>{if(!opened)showRouteError("home.did-you-know",dyk);})

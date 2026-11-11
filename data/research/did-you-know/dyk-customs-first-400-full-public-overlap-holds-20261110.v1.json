@@ -1,0 +1,321 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_H225_FULL_CROSSBANK_PROVENANCE_V1",
+  "date": "2026-11-10",
+  "status": "EXPLICIT_EDITORIAL_OVERLAP_HOLDS_NOT_RELEASE",
+  "provenance": {
+    "research_bank": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+    "public_history_manifests": [
+      "data/did-you-know/weiser-historical-20-publication.v1.json",
+      "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",
+      "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
+      "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+      "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
+      "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json",
+      "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"
+    ],
+    "public_glossary_overlay": "src/home/did-you-know-glossary.js"
+  },
+  "counts": {
+    "bilingual_research_corpus": 400,
+    "published_historical_records": 201,
+    "published_glossary_fallbacks": 24,
+    "visible_H225_pool": 225,
+    "same_original_research_record_already_published": 26,
+    "additional_same_source_canonical_records": 2,
+    "total_records_to_hold_from_claim_of_all_new": 28,
+    "maximum_not_yet_published_original_record_candidates_before_other_gates": 374,
+    "upper_bound_after_holding_all_overlapping_source_records": 372
+  },
+  "method": "Direct ID, source_id, and published research_record_id crosswalk. Exact-text/lexical checks do not establish provenance novelty. Do not infer distinct claims solely from rewritten copy.",
+  "overlaps": [
+    {
+      "research_id": "DYK-CUSTOMS-CANON-BLSS-001",
+      "public_id": "DYK-H125-X-002",
+      "source_id": "ROMR-BLAISE-1956",
+      "class": "SAME_SOURCE_ID_REQUIRES_TOPICAL_REVIEW",
+      "public_manifest": "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
+      "public_en": "A 1956 Catholic blessing book directs the priest to hold two blessed candles in the form of a cross under a person's chin for Saint Blaise's throat blessing.",
+      "candidate_en": "On 3 February, the feast of Saint Blaise, a traditional blessing invokes the saint's intercession against illnesses of the throat. In the older Roman Ritual, a priest uses two crossed blessed candles during the prayer.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-CUSTOMS-CANON-SJOS-001",
+      "public_id": "DYK-H125-X-004",
+      "source_id": "BR-DIOCESE-STJOSEPH-2026",
+      "class": "SAME_SOURCE_ID_REQUIRES_TOPICAL_REVIEW",
+      "public_manifest": "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
+      "public_en": "On 19 March 2026, Baton Rouge's Saint Joseph Cathedral blessed a Sicilian-style food altar after noon Mass, then welcomed visitors to a meatless lunch.",
+      "candidate_en": "At a traditional Sicilian Saint Joseph's table, food is displayed and shared in honour of the saint, often with gifts for people in need. Some Catholic parishes continue the custom around 19 March.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-A-048",
+      "public_id": "DYK-R50-W-002",
+      "source_id": "WEI58-08-006",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "In older English and French Christmas customs, three candles joined at their base represented the Holy Trinity, according to Weiser.",
+      "candidate_en": "In some older Christmas customs in England and France, three candles joined at the base formed one festive light: their three flames symbolised the Holy Trinity.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-A-051",
+      "public_id": "DYK-R50-W-001",
+      "source_id": "WEI58-08-010",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "The Paradise plays of medieval Europe used an apple-hung fir tree to depict Eden; Weiser traces a later Christmas-tree custom to this theatrical image.",
+      "candidate_en": "In medieval religious plays depicting Adam and Eve in Eden, a fir tree decorated with apples could represent the tree of Paradise. The Paradise tree is one historical tradition associated with the later Christmas tree.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-010",
+      "public_id": "DYK-R50-W-004",
+      "source_id": "WEI58-15-021",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "In the central European 'Green Thursday' custom, a meal might begin with green-herb soup and continue with spinach and eggs, Weiser records.",
+      "candidate_en": "In some Central European households, Holy Thursday was called « Green Thursday » and could be marked with a meal of herb soup, spinach and eggs.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-105",
+      "public_id": "DYK-R50-W-010",
+      "source_id": "WEI58-24-014",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "According to Weiser, in Portugal and other coastal regions the sea and fishermen's boats were blessed on the afternoon of the Assumption, 15 August.",
+      "candidate_en": "On the Assumption, 15 August, an older custom especially associated with Portugal involved blessing the sea and the boats of fishermen during the afternoon.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-165",
+      "public_id": "DYK-R50-W-016",
+      "source_id": "WEI58-27-031",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "Weiser describes Breton fishermen celebrating Saint John's Eve at sea by raising a barrel of old clothing to a ship's yardarm, setting it alight, then praying and singing around the mast.",
+      "candidate_en": "In an older Breton custom for Saint John the Baptist's feast, fishermen were said to hoist a barrel of old clothes on a boat's mast and set it alight, then pray and sing around the mast.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM01-007",
+      "public_id": "DYK-R50-W-009",
+      "source_id": "WEI58-10-004",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "In northern Slavic Christmas customs, a puppet theatre called szopka alternated scenes of the Nativity with secular sketches, Weiser records.",
+      "candidate_en": "In a northern Slavic Christmas puppet theatre called szopka, scenes of the Nativity alternated with comic or secular sketches.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM01-014",
+      "public_id": "DYK-R50-W-006",
+      "source_id": "WEI58-14-023",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "Weiser records an older Lenten custom in European towns of distributing pretzels to the poor, when the twisted bread was particularly associated with Lent.",
+      "candidate_en": "In some Central European towns, a Lenten charitable custom involved distributing pretzels to people in need on several days during the season.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-008",
+      "public_id": "DYK-R50-W-013",
+      "source_id": "BULK150-025",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "Cross-marked buns became an old Good Friday custom in England and Ireland; claims that keeping them warded off danger were folklore, not Catholic teaching.",
+      "candidate_en": "In older Good Friday customs in England and Ireland, families made buns marked with a cross. Beliefs that keeping such buns could ward off danger belonged to folklore, not Catholic doctrine.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-015",
+      "public_id": "DYK-R50-W-008",
+      "source_id": "BULK150-035",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "Weiser describes Assumption-linked harvest thanksgiving in Hungary and decorated harvest wreaths brought to Warsaw in Poland before being blessed in churches.",
+      "candidate_en": "In older Central European Assumption customs, harvest thanksgiving processions occurred in Hungary; in Poland, decorated harvest wreaths were carried to public celebrations and later blessed in churches.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-034",
+      "public_id": "DYK-H175-P-001",
+      "source_id": "PIT1900-NEW-045",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
+      "public_en": "Pitrè counted roughly fifty people drawn from Palermo's fishing trades as bearers of a particular saints' processional litter.",
+      "candidate_en": "In an older Palermo procession for Saints Cosmas and Damian, about fifty fishermen and fishmongers together carried the platform bearing the saints' images.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-035",
+      "public_id": "DYK-H150-P-002",
+      "source_id": "PIT1900-NEW-048",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+      "public_en": "Children in Pitrè's account of an old Palermo procession carried little ceramic water pitchers, called quartare, decorated with flowers.",
+      "candidate_en": "In an older Palermo procession for Saints Cosmas and Damian, children carried small water jugs decorated with flowers.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-046",
+      "public_id": "DYK-H175-P-002",
+      "source_id": "PIT1900-NEW-085",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
+      "public_en": "In an old June Eucharistic festival at Geraci Siculo, Pitrè reports that local shepherds processed on horseback rather than walking.",
+      "candidate_en": "At Geraci Siculo in Sicily, shepherds marked an older June celebration of the Blessed Sacrament with a mounted procession through the town.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM03-033",
+      "public_id": "DYK-H150-P-005",
+      "source_id": "PIT1900-NEW-037",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+      "public_en": "At a historic Palermo fair, produce sellers displayed watercolour narrative panels recounting episodes from the lives of the physician-martyrs Cosmas and Damian.",
+      "candidate_en": "During older Palermo festivities for Saints Cosmas and Damian, some fruit sellers decorated their market stalls with painted scenes from the saints' lives.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM03-037",
+      "public_id": "DYK-H150-P-006",
+      "source_id": "PIT1900-NEW-059",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+      "public_en": "Pitrè described the old devotional standard kept in Piazza Armerina as adorned with silver sheet-metal work and jewels donated in thanksgiving.",
+      "candidate_en": "At Piazza Armerina in Sicily, a historical Marian banner used in local festivities was adorned with worked silver and jewels offered in devotion.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-G365-CAL-020",
+      "public_id": "DYK-R50B-W-001",
+      "source_id": "WEI58-26-016",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "For All Souls' Day in Puerto Rico, women carried flowers and water to distant graves because the cemeteries had no water; a priest stopped to pray at each grave, Weiser records.",
+      "candidate_en": "In an older Puerto Rican All Souls' custom, families visited cemeteries with flowers and prayers for departed relatives.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-G365-W-B-062",
+      "public_id": "DYK-R50-W-005",
+      "source_id": "WEI58-19-018",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "For Pentecost, some Europeans climbed hills at dawn to pray, calling it 'catching the Holy Ghost': a symbolic folk expression, not a literal doctrine.",
+      "candidate_en": "In parts of Europe, an older Pentecost custom involved climbing a hill at daybreak to pray, recalling the feast of the Holy Spirit.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-A-074",
+      "public_id": "DYK-R50-W-012",
+      "source_id": "WEI58-10-011",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "On Saint Stephen's Day, Swedish 'Staffan riders' once paraded through towns singing songs honouring a figure called the 'Saint of Horses'.",
+      "candidate_en": "In older Sweden, groups of riders went out on Saint Stephen's Day, 26 December, in a customary horseback celebration distinct from a priestly blessing of horses.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-A-078",
+      "public_id": "DYK-R50B-W-016",
+      "source_id": "WEI58-10-018",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "On Holy Innocents' Day, novices in some religious communities sat first at meals; the most recently professed member might even act as superior for a day, Weiser reports.",
+      "candidate_en": "On the feast of the Holy Innocents, 28 December, some older communities gave children or younger members temporary ceremonial honours.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-A-109",
+      "public_id": "DYK-R50B-W-002",
+      "source_id": "WEI58-14-024",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "Traditional Polish Lenten fare included herring and żur, a sour soup made from fermented rye, as Weiser describes.",
+      "candidate_en": "In traditional Polish Lenten cooking, meals sometimes featured sour rye soup and herring, foods suited to the season's penitential dietary customs.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-014",
+      "public_id": "DYK-R50B-W-009",
+      "source_id": "WEI58-15-028",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "In historical Holy Week processions, some Spanish confraternities walked in penitential hoods with lighted candles and images of Christ's Passion; related customs reached Latin America.",
+      "candidate_en": "In older Holy Week processions in Spain and Latin America, some penitential confraternities wore distinctive hoods while walking together through the streets.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-028",
+      "public_id": "DYK-R50-W-007",
+      "source_id": "WEI58-16-022",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "After Easter Mass, an old European 'Easter walk' led people through fields behind a decorated crucifix or, in some places, the Easter candle.",
+      "candidate_en": "In some older European Easter customs, families walked through the fields carrying a crucifix and praying together.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-035",
+      "public_id": "DYK-R50B-W-014",
+      "source_id": "WEI58-16-031",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "One Easter Friday pilgrimage in the Austrian Tyrol involved walking ten hours each way to a shrine, Weiser reports.",
+      "candidate_en": "On the Friday after Easter, some regional pilgrimages brought worshippers to a nearby shrine on foot or on horseback.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-H04-W-B-044",
+      "public_id": "DYK-R50B-W-006",
+      "source_id": "WEI58-17-023",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "A Russian Easter preparation called paska was moulded with a cross on each side and the initials of Jesus Christ, according to Weiser's account of Slavic foods.",
+      "candidate_en": "A historical Russian Easter preparation called paska was moulded with crosses on its sides and the initials of Jesus Christ.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM01-009",
+      "public_id": "DYK-R50-W-003",
+      "source_id": "WEI58-15-002",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "public_en": "In an old Holy Week custom described by Weiser, households carried out thorough spring cleaning during the three days after Palm Sunday.",
+      "candidate_en": "In one older Holy Week household custom, the three days following Palm Sunday were devoted to a thorough spring cleaning before Easter.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-022",
+      "public_id": "DYK-R50B-W-008",
+      "source_id": "WEI58-02-008",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "For the First Fridays, Weiser records a domestic devotion: families lit vigil lamps before an image of the Sacred Heart, alongside Mass and Communion at church.",
+      "candidate_en": "In the Catholic devotion to the Sacred Heart of Jesus, the first Friday of each month is a particular day for prayer in honour of his love.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    },
+    {
+      "research_id": "DYK-UM02-024",
+      "public_id": "DYK-R50B-W-011",
+      "source_id": "WEI58-03-003",
+      "class": "SAME_ORIGINAL_RESEARCH_RECORD_ALREADY_PUBLISHED",
+      "public_manifest": "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "public_en": "According to Weiser, Pope Gelasius I prescribed in 494 that ordinations be conferred on Ember Saturdays, strengthening their link with prayer and fasting for sacred orders.",
+      "candidate_en": "The traditional Ember Days included prayers asking God's blessing on the seasons and giving thanks for the harvest.",
+      "reader_approval": "HOLD_ALREADY_PUBLIC_OR_SOURCE_OVERLAP"
+    }
+  ],
+  "release_gate": {
+    "already_live_research_records_cannot_be_republished_as_new": true,
+    "same_source_canonical_cases_need_manual_fact_level_adjudication": true,
+    "additional_claim_source_folio_review_required": true,
+    "complete_semantic_and_French_signoff_required": true,
+    "home_publication_authorized": false
+  }
+}

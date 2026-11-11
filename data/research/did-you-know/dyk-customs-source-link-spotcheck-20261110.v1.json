@@ -1,0 +1,52 @@
+{
+  "schema": "AO_DYK_CUSTOMS_SOURCE_LINK_SPOTCHECK_20261110_V1",
+  "as_of": "2026-11-10",
+  "state": "FIVE_CANONICAL_CUSTOMS_SPOTCHECKED_OTHER_CLAIMS_UNASSESSED",
+  "counts": {
+    "fact_claims_spotchecked": 5,
+    "full_claim_supported": 3,
+    "partial_support": 1,
+    "fetch_unavailable": 1,
+    "confirmed_broken_source_links": 1,
+    "full_historical_print_page_corpus_certification": false
+  },
+  "records": [
+    {
+      "id": "DYK-CUSTOMS-CANON-DEV-009",
+      "status": "SUPPORTED_BY_OFFICIAL_SANCTUARY_PAGE",
+      "source_url": "https://sanctuaire-laghet.fr/ex-votos/",
+      "evidence": "Laghet sanctuary lists ex-votos including crutches, wedding bouquets and car steering wheels; page describes offerings as thanksgiving.",
+      "original_source_link_accessible": true
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-SANT-001",
+      "status": "SUPPORTED_BY_SANCTUARY_HISTORY_PAGE",
+      "source_url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/",
+      "evidence": "Sanctuary page identifies Louise Bouffier in Toulon and a revival of Pain des pauvres in 1890, with offerings for the poor.",
+      "original_source_link_accessible": true
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-BLSS-003",
+      "status": "SUPPORTED_WITH_LINK_REPAIR_REQUIRED",
+      "broken_url": "https://materdeiparish.com/2016/12/blessing-wine-feast-st-john-tuesday-december-27th/",
+      "replacement_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380",
+      "evidence": "Roman Ritual blessing specifies wine brought by people for St John's feast, linked to the traditional poisoned-wine account. The original parish URL returned 404."
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-ADVT-001",
+      "status": "PARTIAL_SOURCE_SUPPORT",
+      "source_url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+      "evidence": "USCCB affirms the Advent wreath in home and church, and domestic candle-lighting; the opened page alone does not explicitly substantiate four candles lit successively on four Sundays.",
+      "hold": "Retain as draft pending exact four-candle source witness."
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-SNIC-001",
+      "status": "LINK_FETCH_502_NOT_PROVEN_DEAD",
+      "source_url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+      "evidence": "Indexed diocesan page describes gifts and sweets in Alsace/Lorraine Saint Nicholas festivities. Direct page request returned gateway error during audit.",
+      "hold": "Retest browser reachability before release."
+    }
+  ],
+  "note": "Source spotchecks are explicitly limited to these five canonical entries. No source-image or full 362-card certification is asserted; cross-bank duplicates and French copy remain under broader QA.",
+  "publication_authorized": false
+}

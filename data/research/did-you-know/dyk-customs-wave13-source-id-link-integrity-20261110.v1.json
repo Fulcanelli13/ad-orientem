@@ -1,0 +1,41 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE13_SOURCE_ID_LINK_INTEGRITY_V1",
+  "date": "2026-11-10",
+  "status": "ALL_400_ACTIVE_SOURCE_IDS_MATCH_ACTIVE_SOURCE_LINK_REFS",
+  "counts": {
+    "records_checked": 400,
+    "records_with_source_id_link_mismatch_before": 1,
+    "remaining_source_id_link_mismatches": 0,
+    "publication_approved": 0
+  },
+  "correction": {
+    "id": "DYK-CUSTOMS-CANON-BLSS-003",
+    "old_source_ids": [
+      "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+      "UK-PARISH-STJOHN-WINE"
+    ],
+    "new_active_source_ids": [
+      "ROMAN_RITUAL_STJOHN_WINE_CATHOLICCULTURE"
+    ],
+    "superseded_links": [
+      {
+        "source_id": "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "url": "https://materdeiparish.com/2016/12/blessing-wine-feast-st-john-tuesday-december-27th/",
+        "title": "Traditional Blessing of Wine on St John the Evangelist's Feast"
+      },
+      {
+        "source_id": "UK-PARISH-STJOHN-WINE",
+        "url": "https://stjohnstadworth.org.uk/our-parish/patron-saint/",
+        "title": "St John the Evangelist — Patron Saint (traditional wine blessing)"
+      }
+    ],
+    "claim_supported_by": "Philip T. Weller (1964), Roman Ritual transcription",
+    "browser_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380"
+  },
+  "limitations": [
+    "ID alignment is a referential-integrity check, not confirmation of HTTP availability for every source or original source claim fidelity.",
+    "1964 Weller English transcription must not be relabelled a direct 1962 Roman Ritual witness.",
+    "The earlier parish 404 and superseded source IDs remain in the record for traceability."
+  ],
+  "publication_authorized": false
+}

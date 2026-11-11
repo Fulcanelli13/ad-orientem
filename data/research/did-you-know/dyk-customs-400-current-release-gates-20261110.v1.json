@@ -1,0 +1,78 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_RELEASE_GATES_STATUS_20261110_V1",
+  "date": "2026-11-10",
+  "status": "400_PROVISIONAL_EN_FR_RECORDS_AFTER_WAVE13_FOLIO_AUDIT_RELEASE_NOT_AUTHORIZED",
+  "authoritative_selection": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+  "latest_deduplication": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json",
+  "additional_source_reviews": [
+    "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json"
+  ],
+  "counts": {
+    "original_edited_bilingual_manuscript": 400,
+    "source_linked_provisional_new_cards": 400,
+    "inherited_staged_cards": 355,
+    "wave09": 15,
+    "wave10": 23,
+    "wave11": 1,
+    "wave12": 4,
+    "wave13": 2,
+    "exact_unique_ids": 400,
+    "exact_unique_english": 400,
+    "exact_unique_french": 400,
+    "source_links": 431,
+    "distinct_source_urls": 55,
+    "count_with_at_least_one_https_source": 400,
+    "explicit_original_folio_visual_checks_in_staging_metadata": 62,
+    "independently_corroborated_or_supplementary_evidence_in_staging_metadata": 18,
+    "wave13_existing_source_claims_visually_reviewed": 25,
+    "wave13_existing_source_claims_collapsed": 2,
+    "publication_ready_new_cards": 0,
+    "remaining_without_explicit_checked_flag": 338,
+    "active_source_id_link_mismatches": 0,
+    "active_source_id_link_matches": 400
+  },
+  "method_note": "Explicit original-page flag count is staging metadata only, not a census of all historical research. The 25 source claim checks this wave include two subsequently merged records; the after-merge selection has 62 explicit original-folio flags. Distinct source URLs and HTTPS source link counts do not prove that hyperlinks resolve or claims are supported.",
+  "pending_gates": {
+    "claim_to_original_folio_verification_remaining": true,
+    "independent_historical_claim_checks_remaining": true,
+    "whole_bank_manual_semantic_signoff_remaining": true,
+    "native_english_copy_signoff_remaining": true,
+    "native_french_copy_signoff_remaining": true,
+    "source_url_browser_qa_remaining": true,
+    "home_320_and_390px_tests_remaining": true,
+    "github_pages_exact_commit_verification_remaining": true
+  },
+  "known_clusters": [
+    "Catania St Agatha candelore",
+    "Santa Croce Camerina St Joseph meal",
+    "Ribera St Joseph stragula",
+    "Regional Emmaus walks",
+    "Sicilian statue/procession related events"
+  ],
+  "corrected_duplicate": {
+    "removed_from_selection": "DYK-G365-W-B-113",
+    "retained": "DYK-UM02-013",
+    "replacement": "DYK-C400-BH-001",
+    "original_manuscript_unchanged": true
+  },
+  "publication_authorized": false,
+  "instructions": "Research-only PR #2776 remains draft. Do not change Home runtime, merge release, or deploy via GitHub Pages until all required signoffs. Never deploy via Vercel.",
+  "source_verification_next_batches": [
+    {
+      "focus": "Weiser 1958 source-page triage: pp.74, 96, 117–118, 234–235",
+      "priority": "Complete exact-page comparisons and repair misleading translations before publishing"
+    },
+    {
+      "focus": "Pitrè 1900 Sicilian source-specific cards (166+ links)",
+      "priority": "Original 1900 page/Italian-anchor checks for retained feast customs, especially candelore and Saint Joseph meals"
+    },
+    {
+      "focus": "Canonical/institutional source cards (non-Weiser, non-Pitrè)",
+      "priority": "Check actual institutional links and exact claim support; replace failed links without inventing sources"
+    }
+  ],
+  "last_reconciled_stage_file_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+  "last_link_integrity_audit": "data/research/did-you-know/dyk-customs-wave13-source-id-link-integrity-20261110.v1.json",
+  "audit_note": "All 400 active source IDs match source link IDs, but actual URL reachability/claim support across 55 distinct URLs is not fully certified."
+}

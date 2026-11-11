@@ -1,0 +1,28 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_QA_HANDOFF_V1",
+  "date": "2026-11-10",
+  "state": "SUPERSEDED_BY_EDITORIAL_QA_20261110",
+  "replaced_by": "data/research/did-you-know/dyk-customs-first-400-editorial-qa-20261110.v1.json",
+  "reason": "Editorial replacement removed a non-Catholic Moravian custom, a generic pilgrimage definition and a Latin-translation glossary entry; four bilingual copy-edit waves now form the effective reader review view.",
+  "initial_snapshot": {
+    "total": 400,
+    "by_family": {
+      "CANONICAL_CUSTOMS": 36,
+      "PITRE_1900": 172,
+      "WEISER_1958": 192
+    }
+  },
+  "current_snapshot": {
+    "total": 400,
+    "by_family": {
+      "CANONICAL_CUSTOMS": 35,
+      "WEISER_1958": 190,
+      "PITRE_1900": 175
+    },
+    "editorial_rewrites": 145,
+    "not_yet_rewritten": 255,
+    "source_page_holds": 68,
+    "publications_authorized": 0
+  },
+  "publication_gate": "REVIEW_ONLY_NOT_RELEASE"
+}

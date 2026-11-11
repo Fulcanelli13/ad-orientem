@@ -1,0 +1,415 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE12_CLUSTER_CONSOLIDATION_V1",
+  "date": "2026-11-10",
+  "state": "RESEARCH_ONLY_MERGED_SAME_EVENT_MICROFACTS_NOT_SOURCE_CERTIFIED",
+  "inputs": {
+    "prior_staging": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+    "existing_publication_manifests": [
+      "data/did-you-know/weiser-historical-20-publication.v1.json",
+      "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
+      "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
+      "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",
+      "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
+      "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+      "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
+      "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json",
+      "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"
+    ]
+  },
+  "counts": {
+    "pre": 400,
+    "microfacts_collapsed": 4,
+    "independent_new_replacements": 4,
+    "post": 400,
+    "unique_ids": 400,
+    "unique_english": 400,
+    "unique_french": 400,
+    "source_links": 427,
+    "publication_signoffs": 0
+  },
+  "holds": [
+    {
+      "drop": "DYK-G640-P-029",
+      "keep": "DYK-G600-P-016",
+      "justification": "Cathedral placement of the same St Agatha candelore is an elaboration, not a standalone discovery.",
+      "en": "For Saint Agatha's feast at Catania in Sicily, guilds carried huge gilded candle structures called candelore; before and after the procession, these stood beside the columns of the cathedral.",
+      "fr": "Pour la fête de sainte Agathe à Catane, en Sicile, les corporations portaient d'immenses structures dorées appelées candelore ; avant et après la procession, celles-ci se trouvaient près des colonnes de la cathédrale.",
+      "removed_text": {
+        "en": "For Saint Agatha's festival at Catania in Sicily, the great processional candle structures called candelore were arranged beside columns of the cathedral before or after the procession.",
+        "fr": "Pour la fête de sainte Agathe à Catane, en Sicile, les grandes structures processionnelles appelées candelore étaient disposées près des colonnes de la cathédrale avant ou après la procession."
+      },
+      "removed_source_ids": [
+        "PIT1900-IT-059"
+      ],
+      "removed_source_links": [
+        {
+          "source_id": "PIT1900-IT-059",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              222
+            ],
+            "scan_pdf_page_1based": 280,
+            "italian_anchor": "prima e dopo entro il Duomo, lungo i pilastri"
+          }
+        }
+      ],
+      "kept_prior_reader_copy": {
+        "en": "For Saint Agatha's feast at Catania, Sicily, trade guilds carried great gilded processional candle structures called candelore, beginning on 3 February.",
+        "fr": "Pour la fête de sainte Agathe à Catane, en Sicile, les corporations portaient de grandes structures processionnelles dorées appelées candelore, dès le 3 février."
+      }
+    },
+    {
+      "drop": "DYK-G600-P-011",
+      "keep": "DYK-G600-P-012",
+      "justification": "Maccu is another course of the same Santa Croce Camerina votive meal; combine the foods into one contextual card.",
+      "en": "At Santa Croce Camerina in Sicily, the old Saint Joseph votive meal served guests representing the Holy Family enormous buccellati pastries, vegetable pies and a local dish called maccu.",
+      "fr": "À Santa Croce Camerina, en Sicile, l'ancien repas votif de la Saint-Joseph servait à des convives représentant la Sainte Famille d'énormes buccellati, des tourtes aux légumes et un plat local appelé maccu.",
+      "removed_text": {
+        "en": "At Santa Croce Camerina in Sicily, a Saint Joseph votive meal for guests representing the Holy Family included a local dish called maccu.",
+        "fr": "À Santa Croce Camerina, en Sicile, un repas votif de la Saint-Joseph offert à des convives représentant la Sainte Famille comportait un plat local appelé maccu."
+      },
+      "removed_source_ids": [
+        "PIT1900-IT-045"
+      ],
+      "removed_source_links": [
+        {
+          "source_id": "PIT1900-IT-045",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              451
+            ],
+            "scan_pdf_page_1based": 509,
+            "italian_anchor": "un piatto di macco"
+          }
+        }
+      ],
+      "kept_prior_reader_copy": {
+        "en": "At Santa Croce Camerina, Sicily, an old Saint Joseph votive meal included immense buccellati pastries and vegetable pies prepared for its ceremonial guests.",
+        "fr": "À Santa Croce Camerina, en Sicile, un ancien repas votif de la Saint-Joseph comprenait d'immenses pâtisseries appelées buccellati et des tourtes de légumes préparées pour les convives."
+      }
+    },
+    {
+      "drop": "DYK-G640-P-026",
+      "keep": "DYK-G600-P-002",
+      "justification": "Same Ribera stragula wheeled structure: merge its procession position with the material description.",
+      "en": "At Saint Joseph's feast in Ribera, Sicily, his statue was followed in procession by a great wheeled stràgula, decorated with laurel branches and large ring-shaped loaves of bread.",
+      "fr": "Pour la Saint-Joseph à Ribera, en Sicile, une grande stràgula roulante, ornée de laurier et de larges pains en couronne, suivait la statue du saint dans la procession.",
+      "removed_text": {
+        "en": "At Ribera in Sicily, Saint Joseph's statue was carried through town during his feast, followed by the great wheeled stràgula covered in laurel branches.",
+        "fr": "À Ribera, en Sicile, la statue de saint Joseph parcourait la ville en procession pendant sa fête, suivie de la grande stràgula roulante couverte de laurier."
+      },
+      "removed_source_ids": [
+        "PIT1900-IT-020"
+      ],
+      "removed_source_links": [
+        {
+          "source_id": "PIT1900-IT-020",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              447
+            ],
+            "scan_pdf_page_1based": 505,
+            "italian_anchor": "processione della statua di S."
+          }
+        }
+      ],
+      "kept_prior_reader_copy": {
+        "en": "At Ribera in Sicily, Saint Joseph's feast once featured a huge wheeled structure called a stràgula, covered with laurel branches and decorated with large ring-shaped loaves of bread.",
+        "fr": "À Ribera, en Sicile, la fête de saint Joseph comprenait autrefois une immense structure roulante appelée stràgula, couverte de laurier et décorée de grandes couronnes de pain."
+      }
+    },
+    {
+      "drop": "DYK-G640-P-007",
+      "keep": "DYK-G560-P-017",
+      "justification": "Same Cosmas and Damian procession itinerary: cathedral veneration and Capuchinelle running stage are one continuous discovery.",
+      "en": "In a historical Palermo procession for Saints Cosmas and Damian, bearers hurried their statues to the cathedral to honour Saint Rosalia's relics, then ran with them toward the Capuchinelle district.",
+      "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, les porteurs conduisaient en hâte leurs statues à la cathédrale pour honorer les reliques de sainte Rosalie, puis couraient avec elles vers le quartier des Capuchinelle.",
+      "removed_text": {
+        "en": "In a historic Palermo procession for Saints Cosmas and Damian, the statue bearers ran with the saints' images toward the Capuchinelle district.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, les porteurs couraient avec les statues des saints en direction du quartier des Capuchinelle."
+      },
+      "removed_source_ids": [
+        "PIT1900-NEW-044"
+      ],
+      "removed_source_links": [
+        {
+          "source_id": "PIT1900-NEW-044",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              79
+            ],
+            "scan_pdf_page_1based": 141,
+            "italian_anchor": "prender la rincorsa e volare verso"
+          }
+        }
+      ],
+      "kept_prior_reader_copy": {
+        "en": "At the first stop of a historic Palermo procession for Saints Cosmas and Damian, their statues were hurried toward the cathedral to honour Saint Rosalia's relics.",
+        "fr": "À la première halte d'une ancienne procession des saints Côme et Damien à Palerme, leurs statues étaient portées en hâte vers la cathédrale pour honorer les reliques de sainte Rosalie."
+      }
+    }
+  ],
+  "replacements": [
+    {
+      "id": "DYK-C400-BJ-001",
+      "title": "Austrian Holy Week wooden ratchets",
+      "reader_copy": {
+        "en": "When Holy Week church bells fell silent, children in parts of Austria went through villages sounding wooden ratchets called Ratschen and singing verses to announce prayer times and recall Christ's Passion.",
+        "fr": "Quand les cloches se taisaient pendant la Semaine sainte, des enfants parcouraient les villages de certaines régions d'Autriche avec des crécelles en bois appelées Ratschen, chantant des couplets pour annoncer la prière et rappeler la Passion du Christ."
+      },
+      "source_ids": [
+        "WEI58-P197-RATSCHENBUBEN",
+        "AT-UNESCO-RATSCHEN-2015"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-P197-RATSCHENBUBEN",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              197
+            ],
+            "pdf_page_1based": 215,
+            "verified_original_page_image": true,
+            "passage": "Ratschenbuben ... commemorate the events of Christ's Passion"
+          }
+        },
+        {
+          "source_id": "AT-UNESCO-RATSCHEN-2015",
+          "url": "https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week",
+          "title": "Austrian UNESCO Commission — Ratschen during Holy Week",
+          "witness_role": "INDEPENDENT_INSTITUTIONAL_CURRENT_CUSTOM"
+        }
+      ],
+      "scope": {
+        "region": "Austria",
+        "religious_context": "Holy Week; lay/customary practice, not a universal rubric",
+        "current_practice": "Regional tradition documented by Austrian UNESCO Commission"
+      },
+      "review": {
+        "original_printed_page_checked": true,
+        "independent_institutional_source_checked": true,
+        "full_native_en_fr_signoff": false,
+        "publication_authorized": false
+      },
+      "source_wave": 12,
+      "review_status": "PRIMARY_PAGE_CHECKED_SECONDARY_EVIDENCE_STATUS_LISTED_NATIVE_SIGNOFF_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BJ-002",
+      "title": "Valletta's Last Supper charity table",
+      "reader_copy": {
+        "en": "At Saint Dominic's Priory in Valletta, Malta, a Holy Week Last Supper table has been prepared since 1784. Its food was traditionally given to poor families after Good Friday, joining the commemoration to charity.",
+        "fr": "Au prieuré Saint-Dominique de La Valette, à Malte, une table de la Cène est préparée pendant la Semaine sainte depuis 1784. Autrefois, les aliments étaient distribués aux familles pauvres après le Vendredi saint, associant la commémoration à la charité."
+      },
+      "source_ids": [
+        "WEI58-P196-MALTA-LAST-SUPPER",
+        "TIMESMALTA-2024-VALLETTA-SUPPER"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-P196-MALTA-LAST-SUPPER",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              196
+            ],
+            "pdf_page_1based": 214,
+            "verified_original_page_image": true,
+            "passage": "In Malta, a Last Supper Table is richly laden by the faithful with food that is later distributed to the poor"
+          }
+        },
+        {
+          "source_id": "TIMESMALTA-2024-VALLETTA-SUPPER",
+          "url": "https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860",
+          "title": "Times of Malta — Last Supper table at St Dominic’s, Valletta",
+          "witness_role": "LOCAL_ARCHCONFRATERNITY_HISTORY_AND_1784_ORIGIN"
+        }
+      ],
+      "scope": {
+        "region": "Valletta, Malta",
+        "religious_context": "Holy Week Catholic charity table, not the Eucharistic rite",
+        "current_practice": "Historical distribution after Good Friday documented; current arrangements may differ"
+      },
+      "review": {
+        "original_printed_page_checked": true,
+        "independent_local_source_checked": true,
+        "full_native_en_fr_signoff": false,
+        "publication_authorized": false
+      },
+      "source_wave": 12,
+      "review_status": "PRIMARY_PAGE_CHECKED_SECONDARY_EVIDENCE_STATUS_LISTED_NATIVE_SIGNOFF_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BJ-003",
+      "title": "Martinmas thanksgiving after Mass",
+      "reader_copy": {
+        "en": "In medieval western Europe, Saint Martin's Day on 11 November often marked harvest thanksgiving. People first attended Mass, then celebrated their filled barns with games, processions and a festive dinner.",
+        "fr": "Dans l'Europe occidentale médiévale, la Saint-Martin du 11 novembre marquait souvent l'action de grâce pour les récoltes. Après la messe, on célébrait les granges remplies par des jeux, des défilés et un repas de fête."
+      },
+      "source_ids": [
+        "WEI58-22-008"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-22-008",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              270
+            ],
+            "pdf_page_1based": 288,
+            "verified_original_page_image": true,
+            "passage": "People first went to Mass and observed the rest of the day with games, dances, parades, and a festive dinner"
+          }
+        }
+      ],
+      "scope": {
+        "region": "medieval western and central Europe",
+        "religious_context": "local harvest thanksgiving associated with Saint Martin, not universally prescribed Mass custom",
+        "current_practice_not_inferred": true
+      },
+      "review": {
+        "original_printed_page_checked": true,
+        "independent_claim_corroboration_complete": false,
+        "full_native_en_fr_signoff": false,
+        "publication_authorized": false
+      },
+      "source_wave": 12,
+      "review_status": "PRIMARY_PAGE_CHECKED_SECONDARY_EVIDENCE_STATUS_LISTED_NATIVE_SIGNOFF_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BJ-004",
+      "title": "Valencia's Saint Joseph Fallas bonfires",
+      "reader_copy": {
+        "en": "In Valencia, the Fallas festival culminates on 19 March, Saint Joseph's Day, when towering satirical figures are burned. The celebration is traditionally linked to carpenters honouring their patron, though its exact origins are debated.",
+        "fr": "À Valence, la fête des Fallas culmine le 19 mars, jour de la Saint-Joseph, par l'embrasement de grandes figures satiriques. On la rattache traditionnellement aux menuisiers honorant leur patron, bien que ses origines exactes soient discutées."
+      },
+      "source_ids": [
+        "WEI58-27-021",
+        "VALENCIAN-TOURISM-FALLAS-HISTORY",
+        "VALENCIA-FALLAS-ORIGIN-CRITIQUE"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-27-021",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              325
+            ],
+            "pdf_page_1based": 343,
+            "verified_original_page_image": true,
+            "passage": "the best one receives a prize ... others are burned in joyful bonfires ... in honor of Saint Joseph"
+          }
+        },
+        {
+          "source_id": "VALENCIAN-TOURISM-FALLAS-HISTORY",
+          "url": "https://www.comunitatvalenciana.com/en/festivities/fallas/history",
+          "title": "Comunitat Valenciana — History of Fallas",
+          "witness_role": "REGIONAL_OFFICIAL_CIVIC_FESTIVAL_HISTORY"
+        },
+        {
+          "source_id": "VALENCIA-FALLAS-ORIGIN-CRITIQUE",
+          "url": "https://www.distritofallas.com/historia/",
+          "title": "Distrito Fallas — historical origins discussion",
+          "witness_role": "NOTES_LACK_OF_DIRECT_DOCUMENTARY_PROOF_FOR_CARPENTER_ORIGIN"
+        }
+      ],
+      "scope": {
+        "region": "Valencia, Spain",
+        "religious_context": "civic festival aligned with Saint Joseph's patronal feast, not a Catholic liturgical rite",
+        "exact_historical_origin_contested": true
+      },
+      "review": {
+        "original_printed_page_checked": true,
+        "official_regional_secondary_checked": true,
+        "origin_legend_qualified": true,
+        "full_native_en_fr_signoff": false,
+        "publication_authorized": false
+      },
+      "source_wave": 12,
+      "review_status": "PRIMARY_PAGE_CHECKED_SECONDARY_EVIDENCE_STATUS_LISTED_NATIVE_SIGNOFF_PENDING",
+      "publication_authorized": false
+    }
+  ],
+  "rejected_candidate_sources_already_published": [
+    {
+      "source_id": "WEI58-20-011",
+      "public_id": "DYK-R50B-W-012",
+      "topic": "1680 Vienna Holy Trinity thanksgiving sermon and trumpet fanfare"
+    },
+    {
+      "source_id": "WEI58-15-019",
+      "public_id": "DYK-R50B-W-005",
+      "topic": "Medieval royal Holy Thursday footwashing and almsgiving"
+    }
+  ],
+  "independence_cautions": [
+    "Weiser source page visuals were checked for the four new reader claims, but do not certify hundreds of inherited cards.",
+    "The 1958 Martinmas description has no independent source captured in this wave; it remains a historical claim pending source corroboration.",
+    "The Valencia carpenters' origin is a traditional explanation, not established by unique contemporary documentary proof.",
+    "The Pitrè 1900 Sicilian same-event consolidations retain exact source IDs and anchors but primary scan re-verification remains open."
+  ],
+  "scoped_retained_clusters": [
+    {
+      "name": "Catania candelore",
+      "retained_ids": [
+        "DYK-G600-P-016",
+        "DYK-G640-P-028",
+        "DYK-G600-P-018"
+      ],
+      "reason": "Processional structure, guild household visits and ceremonial dance are distinct actions; cathedral placement merged."
+    },
+    {
+      "name": "Santa Croce Camerina votive meal",
+      "retained_ids": [
+        "DYK-UM01-023",
+        "DYK-G600-P-010",
+        "DYK-G600-P-012"
+      ],
+      "reason": "Three poor ceremonial guests, penitential barefoot walk and elaborate feast food are distinct actions; maccu food detail merged."
+    },
+    {
+      "name": "Ribera stragula",
+      "retained_ids": [
+        "DYK-G600-P-002",
+        "DYK-G600-P-003",
+        "DYK-G600-P-006"
+      ],
+      "reason": "Structure and procession, decorated oxen, distribution to helpers are different temporal customs; statue procession merged."
+    },
+    {
+      "name": "Palermo Cosmas Damian",
+      "retained_ids": [
+        "DYK-G560-P-017"
+      ],
+      "reason": "Two running stops of the same statue procession combined."
+    },
+    {
+      "name": "Regional Easter Emmaus walks",
+      "retained_ids": [
+        "DYK-CUSTOMS-CANON-EAST-001",
+        "DYK-H04-W-B-033"
+      ],
+      "reason": "German/Austrian family walk and French Canadian grandparent visit are geographically separate forms; keep pending French Canada source folio check."
+    }
+  ],
+  "home_runtime_changed": false,
+  "publication_authorized": false
+}

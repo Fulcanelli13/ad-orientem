@@ -1,0 +1,2146 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_COPY_EDIT_WAVE_02_V1",
+  "date": "2026-11-10",
+  "status": "EDITORIAL_DRAFT_ONLY_NOT_LIVE",
+  "record_count": 46,
+  "source_corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+  "policy": [
+    "Original EN/FR source copy retained verbatim; these are proposed reader-facing revisions, not live publication.",
+    "Author names remain in provenance and bibliography, never on reader-facing cards.",
+    "Keep historical scope, location, date and practice; no universal liturgical claims.",
+    "No claim-level image certification implied from editing source summaries.",
+    "No change to H7 production or publish manifest."
+  ],
+  "records": [
+    {
+      "id": "DYK-G560-P-024",
+      "editorial_issue": "LOCAL_PROCESSION_ROUTE",
+      "original_copy": {
+        "en": "Pitrè notes that the two physician-saints' Palermo procession followed the old walls toward fishing neighbourhoods instead of taking the garden route used by other saints.",
+        "fr": "Pitrè précise qu'à Palerme la procession des deux saints médecins longeait les anciens remparts vers les quartiers de pêcheurs, plutôt que de passer par les jardins empruntés par d'autres saints."
+      },
+      "reader_copy": {
+        "en": "In an old Palermo procession for Saints Cosmas and Damian, the route ran beside the former city walls toward fishing neighbourhoods, unlike processions that followed the garden roads.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, le parcours longeait les anciens remparts vers les quartiers de pêcheurs, contrairement à d'autres processions qui passaient par les jardins."
+      },
+      "source_ids": [
+        "PIT1900-NEW-052"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-052",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              83
+            ],
+            "scan_pdf_page_1based": 145,
+            "italian_anchor": "cosi i ss cosimo e damiano si conducono verso il mare"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-024",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-011",
+      "editorial_issue": "NAME_LOCAL_DISH",
+      "original_copy": {
+        "en": "At Santa Croce Camerina, Pitrè lists a local dish called maccu among foods served to guests representing the Holy Family at a Saint Joseph votive meal.",
+        "fr": "À Santa Croce Camerina, Pitrè cite un mets local appelé maccu parmi les plats servis aux convives représentant la Sainte Famille lors d’un repas votif de la Saint-Joseph."
+      },
+      "reader_copy": {
+        "en": "At Santa Croce Camerina in Sicily, a Saint Joseph votive meal for guests representing the Holy Family included a local dish called maccu.",
+        "fr": "À Santa Croce Camerina, en Sicile, un repas votif de la Saint-Joseph offert à des convives représentant la Sainte Famille comportait un plat local appelé maccu."
+      },
+      "source_ids": [
+        "PIT1900-IT-045"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-045",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              451
+            ],
+            "scan_pdf_page_1based": 509,
+            "italian_anchor": "un piatto di macco"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-011",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-018",
+      "editorial_issue": "LOCAL_ACTION",
+      "original_copy": {
+        "en": "Pitrè describes Catania's bearers making a heavy candelora sway or dance in rhythm to music as they passed the guild supporters.",
+        "fr": "Pitrè décrit les porteurs de Catane faisant osciller ou danser une lourde candelora au rythme de la musique devant les membres de leur corporation."
+      },
+      "reader_copy": {
+        "en": "At Catania's Saint Agatha festival, bearers of the heavy gilded candelore made the structures sway or dance in time with music before members of their trade guilds.",
+        "fr": "À Catane, pour la fête de sainte Agathe, les porteurs des lourdes candelore dorées les faisaient osciller ou « danser » au rythme de la musique devant les membres de leurs corporations."
+      },
+      "source_ids": [
+        "PIT1900-IT-058"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-058",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              220
+            ],
+            "scan_pdf_page_1based": 278,
+            "italian_anchor": "balla a suon di musica"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-018",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-026",
+      "editorial_issue": "VOW_SCOPE",
+      "original_copy": {
+        "en": "For Saint Sebastian's feast at Melilli, Pitrè records some pilgrims travelling ten to twelve miles barefoot or with minimal clothing as part of a personal vow.",
+        "fr": "Pour la fête de saint Sébastien à Melilli, Pitrè rapporte que certains pèlerins parcouraient seize à dix-neuf kilomètres pieds nus ou légèrement vêtus pour accomplir un vœu personnel."
+      },
+      "reader_copy": {
+        "en": "At Melilli in Sicily, some historical pilgrims fulfilled personal vows to Saint Sebastian by walking sixteen to nineteen kilometres barefoot or lightly clothed to his feast.",
+        "fr": "À Melilli, en Sicile, certains pèlerins accomplissaient autrefois un vœu à saint Sébastien en parcourant seize à dix-neuf kilomètres pieds nus ou légèrement vêtus pour sa fête."
+      },
+      "source_ids": [
+        "PIT1900-IT-087"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-087",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              288
+            ],
+            "scan_pdf_page_1based": 346,
+            "italian_anchor": "dodici miglia"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-026",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-029",
+      "editorial_issue": "STRIKING_LOCAL_OFFERING",
+      "original_copy": {
+        "en": "Pitrè also describes ribbon-decorated trays carried aloft at Palazzolo Acreide, with actual living reptiles resting on them among the festival offerings.",
+        "fr": "Pitrè décrit aussi à Palazzolo Acreide des plateaux ornés de rubans portés bien haut, sur lesquels reposaient de véritables reptiles vivants parmi les offrandes de fête."
+      },
+      "reader_copy": {
+        "en": "At an old Saint Paul festival in Palazzolo Acreide, Sicily, offerings included ribbon-decorated trays carried aloft with live reptiles resting on them.",
+        "fr": "Lors d'une ancienne fête de saint Paul à Palazzolo Acreide, en Sicile, les offrandes comprenaient des plateaux ornés de rubans, portés en hauteur, sur lesquels reposaient des reptiles vivants."
+      },
+      "source_ids": [
+        "PIT1900-IT-095"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-095",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              355
+            ],
+            "scan_pdf_page_1based": 413,
+            "italian_anchor": "un vassoio con sopravi scorsoni"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-029",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-030",
+      "editorial_issue": "LOCAL_PLANT",
+      "original_copy": {
+        "en": "For Saint Paul's feast at Palazzolo Acreide, devotees offered bundles of fragrant spicaddossu, described by Pitrè as a lavender-like local herb.",
+        "fr": "À Palazzolo Acreide, pour la fête de saint Paul, des fidèles offraient des bouquets de spicaddossu odorant, une herbe locale que Pitrè rapproche de la lavande."
+      },
+      "reader_copy": {
+        "en": "For Saint Paul's feast at Palazzolo Acreide, worshippers offered fragrant bunches of a local herb called spicaddossu, compared in historical accounts to lavender.",
+        "fr": "Pour la fête de saint Paul à Palazzolo Acreide, des fidèles offraient des bouquets odorants d'une herbe locale appelée spicaddossu, rapprochée de la lavande dans les descriptions anciennes."
+      },
+      "source_ids": [
+        "PIT1900-IT-100"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-100",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              357
+            ],
+            "scan_pdf_page_1based": 415,
+            "italian_anchor": "spicaddossu, spiga"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-030",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G600-P-040",
+      "editorial_issue": "PROCESSIONAL_THEATRE",
+      "original_copy": {
+        "en": "Pitrè says Marineo's Saint Cyrus street drama moved from place to place through the town from late morning until about five in the afternoon.",
+        "fr": "Pitrè précise que la représentation de rue de saint Cyr à Marineo se déplaçait de place en place depuis la fin de la matinée jusqu'à environ cinq heures de l'après-midi."
+      },
+      "reader_copy": {
+        "en": "In Marineo, Sicily, an old street drama about Saint Cyrus moved between public spaces from late morning until about five in the afternoon, rather than remaining on one stage.",
+        "fr": "À Marineo, en Sicile, une ancienne représentation de rue consacrée à saint Cyr se déplaçait entre plusieurs places de la fin de la matinée jusque vers cinq heures de l'après-midi, au lieu de rester sur une seule scène."
+      },
+      "source_ids": [
+        "PIT1900-NEW-118"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-118",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              137
+            ],
+            "scan_pdf_page_1based": 199,
+            "italian_anchor": "alle cinque dopo mez zogiorno"
+          }
+        }
+      ],
+      "scope": {
+        "historical_only": true,
+        "limited_to_original_locality": true,
+        "modern_observance_not_assumed": true,
+        "reported_folk_beliefs_not_doctrinal_certification": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-561-600-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G600-P-040",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-006",
+      "editorial_issue": "HISTORICAL_CHANGE",
+      "original_copy": {
+        "en": "Pitrè says an older Saint Rosalia festival race in Palermo once used boys from charitable institutions as jockeys, before authorities substituted riderless horses.",
+        "fr": "Selon Pitrè, une ancienne course du festino de sainte Rosalie à Palerme employait des garçons issus d'établissements d'assistance comme jockeys, avant l'adoption de courses de chevaux sans cavaliers."
+      },
+      "reader_copy": {
+        "en": "At an older Saint Rosalia festival in Palermo, horse races first featured boys from charitable institutions as jockeys; later, authorities introduced riderless horse races.",
+        "fr": "Lors d'anciennes fêtes de sainte Rosalie à Palerme, des garçons issus d'établissements d'assistance participaient d'abord comme jockeys aux courses de chevaux ; des courses sans cavaliers furent introduites ensuite."
+      },
+      "source_ids": [
+        "PIT1900-NEW-012"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-012",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              17
+            ],
+            "scan_pdf_page_1based": 83,
+            "italian_anchor": "fantini in carne e in ossa"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-006",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-015",
+      "editorial_issue": "FOLKLORE_NOT_DOCTRINE",
+      "original_copy": {
+        "en": "A Sicilian folk omen recorded by Pitrè warned engaged women against accepting quinces at Saints Cosmas and Damian's feast lest the gift foretell quarrels; it was folklore, not doctrine.",
+        "fr": "Une croyance populaire sicilienne recueillie par Pitrè déconseillait aux fiancées d'accepter des coings à la fête des saints Côme et Damien, ce cadeau étant censé présager des querelles : il s'agit de folklore, non de doctrine."
+      },
+      "reader_copy": {
+        "en": "In Sicilian folklore surrounding the feast of Saints Cosmas and Damian, engaged women were warned that accepting a quince might foretell quarrels with their future husbands. This was a popular omen, not a Church teaching.",
+        "fr": "Dans le folklore sicilien entourant la fête des saints Côme et Damien, on déconseillait aux fiancées d'accepter un coing, censé annoncer des querelles avec leur futur époux. Il s'agissait d'un présage populaire, non d'un enseignement de l'Église."
+      },
+      "source_ids": [
+        "PIT1900-NEW-036"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-036",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              74
+            ],
+            "scan_pdf_page_1based": 136,
+            "italian_anchor": "delle cotogne che a nessun patto"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-015",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-026",
+      "editorial_issue": "HOUSE_VISIT_CONTEXT",
+      "original_copy": {
+        "en": "When Saint James's statue was brought to homes in Gratteri, Pitrè reports that the image sometimes remained there until an offering arrived, amid cheers and music.",
+        "fr": "Quand la statue de saint Jacques était apportée dans les maisons de Gratteri, Pitrè rapporte qu'elle y demeurait parfois jusqu'à la remise d'une offrande, au milieu des acclamations et de la musique."
+      },
+      "reader_copy": {
+        "en": "In Gratteri, Sicily, when Saint James's statue was carried into homes during the local feast, it sometimes remained there until an offering had been made, amid music and acclamations.",
+        "fr": "À Gratteri, en Sicile, lorsque la statue de saint Jacques entrait dans les maisons pendant la fête locale, elle y demeurait parfois jusqu'à la remise d'une offrande, au milieu de la musique et des acclamations."
+      },
+      "source_ids": [
+        "PIT1900-NEW-076"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-076",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              124
+            ],
+            "scan_pdf_page_1based": 186,
+            "italian_anchor": "finche la elemosina non venga"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-026",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-027",
+      "editorial_issue": "FOLK_BELIEF_QUALIFIER",
+      "original_copy": {
+        "en": "At Gratteri, some garden owners believed vegetation trampled during Saint James's procession would regrow especially well; Pitrè recorded the belief without proving its efficacy.",
+        "fr": "À Gratteri, certains propriétaires de jardins croyaient que les plantes piétinées lors de la procession de saint Jacques repousseraient mieux ; Pitrè rapporte cette croyance sans en établir l'efficacité."
+      },
+      "reader_copy": {
+        "en": "At Gratteri, Sicily, some owners believed that plants trampled during Saint James's procession would grow back especially well. This was a local folk belief, not an established effect.",
+        "fr": "À Gratteri, en Sicile, certains habitants croyaient que les plantes piétinées pendant la procession de saint Jacques repousseraient particulièrement bien. C'était une croyance populaire locale, non un effet établi."
+      },
+      "source_ids": [
+        "PIT1900-NEW-079"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-079",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              125
+            ],
+            "scan_pdf_page_1based": 187,
+            "italian_anchor": "piu rigoglioso di prima"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-027",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-029",
+      "editorial_issue": "LOCAL_HOUSEHOLD_SEQUENCE",
+      "original_copy": {
+        "en": "At Geraci Siculo's historical Blessed Sacrament observance, Pitrè describes a small piece of dairy paste sprinkled at home with holy water using an olive branch, then salted and kept in glass.",
+        "fr": "Dans une ancienne célébration du Saint-Sacrement à Geraci Siculo, Pitrè décrit un morceau de pâte laitière aspergé d'eau bénite à la maison avec un rameau d'olivier, puis salé et conservé dans du verre."
+      },
+      "reader_copy": {
+        "en": "At Geraci Siculo in Sicily, a household custom linked to the Blessed Sacrament feast involved sprinkling a small piece of dairy paste with holy water using an olive branch, then salting and preserving it in glass.",
+        "fr": "À Geraci Siculo, en Sicile, un ancien usage domestique lié à la fête du Saint-Sacrement consistait à asperger d'eau bénite, avec un rameau d'olivier, un morceau de pâte laitière, puis à le saler et à le conserver dans du verre."
+      },
+      "source_ids": [
+        "PIT1900-NEW-088"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-088",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              127
+            ],
+            "scan_pdf_page_1based": 189,
+            "italian_anchor": "un ramoscello d ulivo immerso"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-029",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-033",
+      "editorial_issue": "DATE_TRANSLATION",
+      "original_copy": {
+        "en": "In Marineo, Pitrè records an archbishop's order moving the annual Saint Cyrus feast to the penultimate Sunday of August, with celebrations spread across three days.",
+        "fr": "À Marineo, Pitrè rapporte un ordre archiépiscopal déplaçant la fête annuelle de saint Cyr au pénultième dimanche d'août, avec des célébrations réparties sur trois jours."
+      },
+      "reader_copy": {
+        "en": "At Marineo in Sicily, an archbishop's order moved the annual Saint Cyrus feast to the second-to-last Sunday of August; the local celebration lasted three days.",
+        "fr": "À Marineo, en Sicile, une décision de l'archevêque déplaça la fête annuelle de saint Cyr à l'avant-dernier dimanche d'août ; les célébrations locales duraient trois jours."
+      },
+      "source_ids": [
+        "PIT1900-NEW-100"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-100",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              133
+            ],
+            "scan_pdf_page_1based": 195,
+            "italian_anchor": "rimandata alla penultima domenica"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-033",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G560-P-037",
+      "editorial_issue": "PROCESSIONAL_CART",
+      "original_copy": {
+        "en": "Pitrè describes eight oxen, led by fancifully costumed drivers, hauling a Saint Cyrus triumphal cart through Marineo's main streets.",
+        "fr": "Pitrè décrit huit bœufs, conduits par des charretiers aux costumes fantaisistes, tirant un char triomphal de saint Cyr dans les rues principales de Marineo."
+      },
+      "reader_copy": {
+        "en": "For Saint Cyrus's festival at Marineo in Sicily, eight oxen driven by men in fanciful costumes drew a triumphal cart through the principal streets.",
+        "fr": "Pour la fête de saint Cyr à Marineo, en Sicile, huit bœufs conduits par des charretiers aux costumes fantaisistes tiraient un char triomphal dans les rues principales."
+      },
+      "source_ids": [
+        "PIT1900-NEW-114"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-114",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              136
+            ],
+            "scan_pdf_page_1based": 198,
+            "italian_anchor": "buoi"
+          }
+        }
+      ],
+      "scope": {
+        "historical_sicily_only": true,
+        "modern_continuity_not_assumed": true,
+        "liturgical_law_not_inferred": true,
+        "folk_miracles_not_endorsed": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-521-560-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G560-P-037",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-001",
+      "editorial_issue": "DISTINGUISH_PRAYER_FROM_HISTORICAL_EVENT",
+      "original_copy": {
+        "en": "A Palermo Saint Rosalia street-novena verse recorded by Pitrè mentioned plague reports from Malta and protection attributed to the saint.",
+        "fr": "Un couplet de neuvaine chanté dans les rues de Palerme pour sainte Rosalie, recueilli par Pitrè, évoquait la peste à Malte et la protection attribuée à la sainte."
+      },
+      "reader_copy": {
+        "en": "A traditional street-novena verse for Saint Rosalia in Palermo referred to reports of plague in Malta and to protection attributed to the saint. It preserves an old local expression of devotion.",
+        "fr": "À Palerme, un couplet de neuvaine chanté dans la rue pour sainte Rosalie évoquait des nouvelles de peste à Malte et la protection attribuée à la sainte. Il témoigne d'une ancienne expression locale de piété."
+      },
+      "source_ids": [
+        "PIT1900-NEW-004"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-004",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              12
+            ],
+            "scan_pdf_page_1based": 78,
+            "italian_anchor": "malta"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-001",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-004",
+      "editorial_issue": "SPECIFY_CHURCH_OCCASION",
+      "original_copy": {
+        "en": "Pitrè describes Palermo Cathedral brightly illuminated for Vespers during a historic Saint Rosalia festino.",
+        "fr": "Pitrè décrit la cathédrale de Palerme vivement illuminée pour les vêpres durant un ancien festino de sainte Rosalie."
+      },
+      "reader_copy": {
+        "en": "During an older Saint Rosalia festival in Palermo, the cathedral was brightly illuminated for the celebration of Vespers.",
+        "fr": "Lors d'une ancienne fête de sainte Rosalie à Palerme, la cathédrale était vivement illuminée pour la célébration des vêpres."
+      },
+      "source_ids": [
+        "PIT1900-NEW-016"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-016",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              28
+            ],
+            "scan_pdf_page_1based": 90,
+            "italian_anchor": "il duomo tutto"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-004",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-008",
+      "editorial_issue": "FOLK_BELIEF_QUALIFIER",
+      "original_copy": {
+        "en": "Pitrè reports a Palermo belief that children's procession water jugs had healing powers at the feast of Saints Cosmas and Damian; no formal blessing is established.",
+        "fr": "Pitrè rapporte qu'à Palerme on attribuait des vertus curatives aux cruches d'eau des enfants de la procession des saints Côme et Damien ; aucune bénédiction formelle n'est établie."
+      },
+      "reader_copy": {
+        "en": "In an old Palermo procession for Saints Cosmas and Damian, some people attributed healing powers to the water jugs carried by children. The surviving account does not establish that the water had received a formal blessing.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, certains attribuaient des vertus curatives aux cruches d'eau portées par des enfants. Le témoignage conservé n'établit pas que cette eau ait été bénite selon un rite."
+      },
+      "source_ids": [
+        "PIT1900-NEW-050"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-050",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              82
+            ],
+            "scan_pdf_page_1based": 144,
+            "italian_anchor": "acqua dei nostri piccolini dopo la processione"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-008",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-009",
+      "editorial_issue": "FOLKLORE_NOT_DOCTRINE",
+      "original_copy": {
+        "en": "At Geraci's Blessed Sacrament feast, Pitrè found a folk belief that children needed a festival toy horse for a fortunate year; this was not an ecclesiastical teaching.",
+        "fr": "À la fête du Saint-Sacrement à Geraci, Pitrè rapporte la croyance populaire selon laquelle un enfant devait recevoir un cheval-jouet de la fête pour connaître une bonne année ; ce n'était pas un enseignement de l'Église."
+      },
+      "reader_copy": {
+        "en": "At a historic Blessed Sacrament festival in Geraci, Sicily, a popular belief held that children should receive a toy horse for a fortunate year. This was folklore, not an ecclesiastical promise.",
+        "fr": "Lors d'une ancienne fête du Saint-Sacrement à Geraci, en Sicile, une croyance populaire voulait qu'un enfant reçoive un cheval-jouet pour connaître une bonne année. Il s'agissait de folklore, non d'une promesse de l'Église."
+      },
+      "source_ids": [
+        "PIT1900-NEW-091"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-091",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              127
+            ],
+            "scan_pdf_page_1based": 189,
+            "italian_anchor": "non passera bene tutto l anno"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-009",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-012",
+      "editorial_issue": "TRADITION_QUALIFIER",
+      "original_copy": {
+        "en": "A historical account quoted by Pitrè says Piazza Armerina's hidden Marian banner was found following a public supplication permitted by the bishop; this remains a reported tradition.",
+        "fr": "Un récit historique cité par Pitrè rapporte que la bannière mariale cachée de Piazza Armerina fut retrouvée après une supplication publique autorisée par l'évêque ; cela demeure une tradition rapportée."
+      },
+      "reader_copy": {
+        "en": "A local tradition at Piazza Armerina in Sicily recounts that a hidden Marian banner was recovered following public prayers authorised by the bishop. This remains a reported tradition rather than an independently established episode.",
+        "fr": "À Piazza Armerina, en Sicile, une tradition locale raconte qu'une bannière mariale cachée fut retrouvée après une supplication publique autorisée par l'évêque. Ce récit demeure une tradition rapportée, non un épisode établi indépendamment."
+      },
+      "source_ids": [
+        "PIT1900-NEW-058"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-058",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              558
+            ],
+            "scan_pdf_page_1based": 616,
+            "italian_anchor": "vescovo"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-012",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-017",
+      "editorial_issue": "FOLK_BELIEF_QUALIFIER",
+      "original_copy": {
+        "en": "At Geraci, Pitrè reports a belief that a piece of dairy produce kept from the Blessed Sacrament festival protected livestock for a year; its efficacy was not established.",
+        "fr": "À Geraci, Pitrè rapporte la croyance selon laquelle un morceau de produit laitier conservé après la fête du Saint-Sacrement protégeait le bétail pendant un an ; cette efficacité n'est pas établie."
+      },
+      "reader_copy": {
+        "en": "At Geraci's historical Blessed Sacrament festival, some people kept a piece of dairy produce in the belief that it would protect livestock for a year. The protection was a local folk belief, not an established effect.",
+        "fr": "À Geraci, lors d'une ancienne fête du Saint-Sacrement, certains conservaient un morceau de produit laitier dans l'idée qu'il protégerait le bétail pendant un an. Cette protection relevait d'une croyance populaire locale, non d'un effet établi."
+      },
+      "source_ids": [
+        "PIT1900-NEW-089"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-089",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              127
+            ],
+            "scan_pdf_page_1based": 189,
+            "italian_anchor": "talismano"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-017",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-020",
+      "editorial_issue": "SCOPE_AND_SUBJECT",
+      "original_copy": {
+        "en": "Women wearing their festival dress walked barefoot in Marineo's Saint Cyrus procession, Pitrè reports.",
+        "fr": "Des femmes en habit de fête marchaient pieds nus dans la procession de saint Cyr à Marineo, rapporte Pitrè."
+      },
+      "reader_copy": {
+        "en": "At Marineo's historical procession of Saint Cyrus, some women walked barefoot while wearing their festival clothing.",
+        "fr": "Lors d'une ancienne procession de saint Cyr à Marineo, certaines femmes marchaient pieds nus tout en portant leurs habits de fête."
+      },
+      "source_ids": [
+        "PIT1900-NEW-106"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-106",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              133
+            ],
+            "scan_pdf_page_1based": 195,
+            "italian_anchor": "scalzi"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-020",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G640-P-029",
+      "editorial_issue": "DEFINE_OBJECT",
+      "original_copy": {
+        "en": "Pitrè records Catania's Saint Agatha candelore arranged by the cathedral columns before or after the procession.",
+        "fr": "Pitrè décrit les candelore de sainte Agathe disposées près des colonnes de la cathédrale de Catane avant ou après la procession."
+      },
+      "reader_copy": {
+        "en": "For Saint Agatha's festival at Catania in Sicily, the great processional candle structures called candelore were arranged beside columns of the cathedral before or after the procession.",
+        "fr": "Pour la fête de sainte Agathe à Catane, en Sicile, les grandes structures processionnelles appelées candelore étaient disposées près des colonnes de la cathédrale avant ou après la procession."
+      },
+      "source_ids": [
+        "PIT1900-IT-059"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-059",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              222
+            ],
+            "scan_pdf_page_1based": 280,
+            "italian_anchor": "prima e dopo entro il Duomo, lungo i pilastri"
+          }
+        }
+      ],
+      "scope": {
+        "historical_local_description_only": true,
+        "modern_continuity_not_assumed": true,
+        "folklore_not_doctrinally_endorsed": true,
+        "not_a_universal_1962_rubric": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-next-601-640-pitre-inherited-folio-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G640-P-029",
+        "original_category": null,
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-034",
+      "editorial_issue": "OCCASION_AND_PEOPLE",
+      "original_copy": {
+        "en": "Pitrè described a group of about fifty fishermen and fishmongers carrying the processional litter of Saints Cosmas and Damian in Palermo.",
+        "fr": "Pitrè décrit une cinquantaine de pêcheurs et de poissonniers portant le brancard de procession des saints Côme et Damien à Palerme."
+      },
+      "reader_copy": {
+        "en": "In an older Palermo procession for Saints Cosmas and Damian, about fifty fishermen and fishmongers together carried the platform bearing the saints' images.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, une cinquantaine de pêcheurs et de poissonniers portaient ensemble le brancard supportant les images des saints."
+      },
+      "source_ids": [
+        "PIT1900-NEW-045"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-045",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-034",
+        "original_category": "PITRE_1900",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-023",
+      "editorial_issue": "REMOVE_META_INTRO",
+      "original_copy": {
+        "en": "Did you know that Pitrè's account of Santa Croce Camerina describes three poor residents being welcomed to a Saint Joseph votive feast?",
+        "fr": "Saviez-vous que le récit de Pitrè sur Santa Croce Camerina décrit l'accueil de trois habitants pauvres à un repas votif en l'honneur de saint Joseph ?"
+      },
+      "reader_copy": {
+        "en": "At Santa Croce Camerina in Sicily, an old Saint Joseph votive meal welcomed three poor local residents as ceremonial guests.",
+        "fr": "À Santa Croce Camerina, en Sicile, un ancien repas votif pour saint Joseph accueillait trois habitants pauvres comme convives d'honneur."
+      },
+      "source_ids": [
+        "PIT1900-IT-036"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-036",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              450
+            ],
+            "scan_pdf_page_1based": 508,
+            "italian_anchor": "tre poveri, che sceglie"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Santa Croce Camerina, Ragusa, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-023",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-041",
+      "editorial_issue": "REMOVE_META_INTRO",
+      "original_copy": {
+        "en": "Did you know that sixteen men carried a life-size statue of Saint James through Gratteri in Pitrè's historical account?",
+        "fr": "Saviez-vous que seize hommes transportaient une statue grandeur nature de saint Jacques à travers Gratteri, selon le récit historique de Pitrè ?"
+      },
+      "reader_copy": {
+        "en": "At Gratteri in Sicily, sixteen men carried a life-size statue of Saint James through the village during the local feast.",
+        "fr": "À Gratteri, en Sicile, seize hommes portaient une statue grandeur nature de saint Jacques dans le village pendant la fête locale."
+      },
+      "source_ids": [
+        "PIT1900-NEW-074"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-074",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              124
+            ],
+            "scan_pdf_page_1based": 186,
+            "italian_anchor": "sedici uomini"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Gratteri, Palermo, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Gratteri, Palermo, Sicily"
+          ],
+          "section": "SAINT_JAMES_GRATTERI",
+          "reported_historical_only": true,
+          "not_current_calendar_event": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-041",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-014",
+      "editorial_issue": "MODES_OF_PILGRIMAGE",
+      "original_copy": {
+        "en": "Pitrè described pilgrims reaching the Loreto shrine at Altavilla by foot, carriage, train or boat.",
+        "fr": "Pitrè décrivait des pèlerins se rendant au sanctuaire de Notre-Dame de Lorette à Altavilla à pied, en voiture, en train ou en bateau."
+      },
+      "reader_copy": {
+        "en": "Pilgrims travelling to the Loreto shrine at Altavilla in Sicily once arrived on foot, by carriage, by train or by boat.",
+        "fr": "Les pèlerins qui se rendaient autrefois au sanctuaire Notre-Dame de Lorette à Altavilla, en Sicile, arrivaient à pied, en voiture, en train ou par bateau."
+      },
+      "source_ids": [
+        "PIT1900-W05-OBS-014"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-W05-OBS-014",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              88
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-H04-P-014",
+        "original_category": "customs",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-P-129",
+      "editorial_issue": "HISTORICAL_SIMILE",
+      "original_copy": {
+        "en": "Pitrè recorded a three-day Marian festival at Sambuca, where pilgrims' procession lights were likened to a river of fire.",
+        "fr": "Pitrè a décrit à Sambuca une fête mariale de trois jours, dont les lumières portées en procession par les pèlerins évoquaient un fleuve de feu."
+      },
+      "reader_copy": {
+        "en": "At Sambuca in Sicily, a three-day Marian festival featured a procession whose many lights were likened in historical descriptions to a river of fire.",
+        "fr": "À Sambuca, en Sicile, une fête mariale de trois jours comprenait une procession dont les nombreuses lumières évoquaient, selon les descriptions anciennes, un fleuve de feu."
+      },
+      "source_ids": [
+        "PIT1900-W05-OBS-129"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-W05-OBS-129",
+          "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-P-129",
+        "original_category": "PITRE_1900",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-024",
+      "editorial_issue": "LOCAL_TERM",
+      "original_copy": {
+        "en": "In Pachino, Sicily, Pitrè recorded families feeding and giving gifts to groups of four to thirty guests called vicchiareddi at Saint Joseph's feast.",
+        "fr": "À Pachino, en Sicile, Pitrè rapporte que des familles nourrissaient et gratifiaient de cadeaux des groupes de quatre à trente invités appelés vicchiareddi pour la fête de saint Joseph."
+      },
+      "reader_copy": {
+        "en": "At Pachino in Sicily, families once welcomed groups of four to thirty guests called vicchiareddi during Saint Joseph's feast, providing them with food and gifts.",
+        "fr": "À Pachino, en Sicile, des familles accueillaient autrefois pour la Saint-Joseph des groupes de quatre à trente invités appelés vicchiareddi, auxquels elles offraient nourriture et cadeaux."
+      },
+      "source_ids": [
+        "PIT1900-IT-049"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-049",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              464
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM01-024",
+        "original_category": "customs",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-026",
+      "editorial_issue": "REMOVE_META_INTRO",
+      "original_copy": {
+        "en": "Did you know that Pitrè describes Palermo's monumental Saint Rosalia festival cart being built during the weeks before the July festivities.",
+        "fr": "Saviez-vous que Pitrè décrit la construction du grand char de sainte Rosalie à Palerme dans les semaines précédant les fêtes de juillet."
+      },
+      "reader_copy": {
+        "en": "In Palermo, Sicily, construction of the monumental cart for Saint Rosalia's July festival could begin several weeks before the celebrations.",
+        "fr": "À Palerme, en Sicile, la construction du char monumental destiné aux fêtes de sainte Rosalie en juillet pouvait commencer plusieurs semaines avant les célébrations."
+      },
+      "source_ids": [
+        "PIT1900-NEW-005"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-005",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              13
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": null,
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "place": "Palermo, Sicily",
+          "festival_section": "ROSALIA_PALERMO",
+          "year": "1900_SOURCE_REPORT",
+          "not_claiming_ongoing_observance": true,
+          "no_1962_rubric_inference": true,
+          "no_universal_claim": true,
+          "not_calendar_rule": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM03-026",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-005",
+      "editorial_issue": "HOUSEHOLD_PRACTICE",
+      "original_copy": {
+        "en": "Weiser reports that on Sundays some families lit a candle or lamp before an image of the Holy Trinity.",
+        "fr": "Weiser rapporte que, le dimanche, certaines familles allumaient une bougie ou une lampe devant une image de la Sainte Trinité."
+      },
+      "reader_copy": {
+        "en": "In some older Catholic Sunday household customs, a family lit a candle or lamp before an image of the Holy Trinity.",
+        "fr": "Dans certains anciens usages dominicaux de foyers catholiques, une famille allumait un cierge ou une lampe devant une image de la Sainte Trinité."
+      },
+      "source_ids": [
+        "WEI58-01-008"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-01-008",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              17
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-005",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-013",
+      "editorial_issue": "EXPLAIN_EMBER_DAYS",
+      "original_copy": {
+        "en": "Weiser links the Ember Days with prayers by the faithful for priestly vocations and the sanctification of priests; the Ember Saturdays were also traditional ordination days.",
+        "fr": "Weiser rattache les Quatre-Temps aux prières des fidèles pour les vocations sacerdotales et la sanctification des prêtres ; les samedis des Quatre-Temps étaient aussi des jours traditionnels d'ordination."
+      },
+      "reader_copy": {
+        "en": "During the traditional Ember Days, Catholics prayed for priestly vocations and the holiness of priests; the Ember Saturdays also served historically as days for ordination.",
+        "fr": "Pendant les Quatre-Temps traditionnels, les fidèles priaient pour les vocations sacerdotales et la sainteté des prêtres ; les samedis des Quatre-Temps étaient également des jours d'ordination dans l'ancien usage."
+      },
+      "source_ids": [
+        "WEI58-03-002"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-03-002",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-013",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-039",
+      "editorial_issue": "MISSIONARY_HYMN_SCOPE",
+      "original_copy": {
+        "en": "According to Weiser, Saint Jean de Brébeuf composed a Christmas hymn in the Huron language, Jesus Ahatonhia, adapting a sixteenth-century French folk melody.",
+        "fr": "Selon Weiser, saint Jean de Brébeuf composa en langue huronne un chant de Noël, Jesus Ahatonhia, en adaptant une mélodie populaire française du XVIe siècle."
+      },
+      "reader_copy": {
+        "en": "Saint Jean de Brébeuf composed a Christmas hymn in the Huron language, Jesus Ahatonhia, using a melody associated with a sixteenth-century French popular tune.",
+        "fr": "Saint Jean de Brébeuf composa un chant de Noël en langue huronne, Jesus Ahatonhia, sur une mélodie apparentée à un air populaire français du XVIe siècle."
+      },
+      "source_ids": [
+        "WEI58-07-003"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-07-003",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-039",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-047",
+      "editorial_issue": "BLESSED_OBJECT_USE",
+      "original_copy": {
+        "en": "Weiser describes Christmas candles blessed by a priest and placed on the table in some Polish, Ukrainian and Russian homes.",
+        "fr": "Weiser décrit des cierges de Noël bénis par un prêtre puis placés sur la table dans certains foyers polonais, ukrainiens et russes."
+      },
+      "reader_copy": {
+        "en": "In some Polish, Ukrainian and Russian Christmas household traditions, a priest blessed candles that families then placed on their festive table.",
+        "fr": "Dans certaines coutumes familiales de Noël en Pologne, en Ukraine et en Russie, un prêtre bénissait des cierges que les familles plaçaient ensuite sur la table de fête."
+      },
+      "source_ids": [
+        "WEI58-08-005"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-08-005",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              96
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-047",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-058",
+      "editorial_issue": "HISTORICAL_ETYMOLOGY_QUALIFIER",
+      "original_copy": {
+        "en": "Weiser traces Britain's Boxing Day to Saint Stephen's Day alms boxes and workers' savings boxes, traditionally opened after Christmas.",
+        "fr": "Weiser rattache le Boxing Day britannique, jour de saint Étienne, aux troncs d'aumônes et aux tirelires des travailleurs traditionnellement ouverts après Noël."
+      },
+      "reader_copy": {
+        "en": "A historical explanation of Britain's Boxing Day, following Saint Stephen's Day on 26 December, associates the day with opening alms boxes and workers' savings boxes after Christmas.",
+        "fr": "Une explication historique du Boxing Day britannique, lié au 26 décembre et à la Saint-Étienne, rattache cette journée à l'ouverture de troncs d'aumônes et de tirelires d'ouvriers après Noël."
+      },
+      "source_ids": [
+        "WEI58-08-025"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-08-025",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-058",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-063",
+      "editorial_issue": "REGIONAL_TERM",
+      "original_copy": {
+        "en": "Weiser records the Irish Gaelic name Oidhche na ceapairi (‘Night of Cakes’) for Christmas Eve, when families traditionally baked a cake for each household member.",
+        "fr": "Weiser donne le nom gaélique irlandais Oidhche na ceapairi (« nuit des gâteaux ») à la veille de Noël, où l'on préparait traditionnellement un gâteau pour chaque membre de la famille."
+      },
+      "reader_copy": {
+        "en": "In an older Irish Christmas Eve custom, families baked a cake for each household member. One historical account gives the Irish name Oidhche na ceapairi, or « Night of Cakes », for the occasion.",
+        "fr": "Dans une ancienne coutume irlandaise de la veille de Noël, on préparait un gâteau pour chaque membre de la famille. Un témoignage ancien donne à cette soirée le nom gaélique Oidhche na ceapairi, « nuit des gâteaux »."
+      },
+      "source_ids": [
+        "WEI58-09-005"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-09-005",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-063",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-077",
+      "editorial_issue": "EXPLAIN_MEDIEVAL_ROLE",
+      "original_copy": {
+        "en": "Weiser recounts medieval ‘boy bishop’ observances in which a choirboy in episcopal dress presided over a devotional ceremony; the custom later shifted toward Holy Innocents and was restricted in some places.",
+        "fr": "Weiser relate l'ancienne coutume de « l'évêque des enfants » : un jeune choriste en habits épiscopaux présidait une cérémonie de dévotion ; l'usage fut ensuite lié aux Saints Innocents et restreint en certains lieux."
+      },
+      "reader_copy": {
+        "en": "In a medieval custom sometimes called the « boy bishop », a choirboy dressed as a bishop presided over a devotional ceremony. In some places the observance became associated with Holy Innocents' Day and was later restricted.",
+        "fr": "Dans la coutume médiévale dite de « l'évêque des enfants », un jeune choriste vêtu comme un évêque présidait une cérémonie de dévotion. En certains lieux, cet usage fut associé aux Saints Innocents puis soumis à des restrictions."
+      },
+      "source_ids": [
+        "WEI58-10-017"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-10-017",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-077",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-A-107",
+      "editorial_issue": "ETYMOLOGY_CAUTION",
+      "original_copy": {
+        "en": "Weiser recounts a traditional explanation of the pretzel's shape as two arms crossed in prayer during Lent.",
+        "fr": "Weiser rapporte une interprétation traditionnelle de la forme du bretzel comme deux bras croisés en prière pendant le Carême."
+      },
+      "reader_copy": {
+        "en": "One traditional explanation of the pretzel's shape connects its crossed loops with the arms of someone praying during Lent. This is a historical interpretation of the pastry, not a proven unique origin.",
+        "fr": "Une interprétation traditionnelle de la forme du bretzel rapproche ses boucles croisées des bras d'une personne en prière pendant le Carême. Il ne s'agit pas d'une origine unique historiquement démontrée."
+      },
+      "source_ids": [
+        "WEI58-14-022"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-14-022",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              183
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-A-107",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-018",
+      "editorial_issue": "PLACE_AND_DATE",
+      "original_copy": {
+        "en": "Weiser describes regions where priests went from house to house on Holy Saturday to bless Easter food arranged on flower-decorated tables.",
+        "fr": "Weiser décrit des régions où les prêtres passaient de maison en maison le Samedi saint pour bénir les mets de Pâques disposés sur des tables ornées de fleurs."
+      },
+      "reader_copy": {
+        "en": "In some older European Easter customs, priests visited homes on Holy Saturday to bless festival foods arranged on tables decorated with flowers.",
+        "fr": "Dans certaines anciennes coutumes pascales européennes, des prêtres visitaient les maisons le Samedi saint pour bénir les mets de fête disposés sur des tables ornées de fleurs."
+      },
+      "source_ids": [
+        "WEI58-15-037"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-15-037",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-018",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-042",
+      "editorial_issue": "BLESSED_EGG_CUSTOM",
+      "original_copy": {
+        "en": "At Easter breakfast in Russia and among Ukrainians and Poles, Weiser describes a father dividing a blessed Easter egg among relatives and guests before the first meal.",
+        "fr": "Au petit déjeuner pascal en Russie et chez des Ukrainiens et des Polonais, Weiser décrit le père partageant un œuf béni entre proches et invités avant le premier repas."
+      },
+      "reader_copy": {
+        "en": "At Easter breakfast in some Russian, Ukrainian and Polish families, the father divided one blessed egg among relatives and guests before the meal began.",
+        "fr": "Au petit déjeuner de Pâques, dans certaines familles russes, ukrainiennes et polonaises, le père partageait un œuf béni entre les parents et les invités avant le repas."
+      },
+      "source_ids": [
+        "WEI58-17-018"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-17-018",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-042",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-059",
+      "editorial_issue": "BIBLICAL_SYMBOL",
+      "original_copy": {
+        "en": "Weiser describes a historical Pentecost sequence ceremony in which the sound of a violent wind was imitated with trumpets in some countries, including France.",
+        "fr": "Weiser décrit une ancienne cérémonie de la séquence de Pentecôte où le bruit d'un vent violent était imité au moyen de trompettes dans certains pays, notamment en France."
+      },
+      "reader_copy": {
+        "en": "In some older Pentecost ceremonies, including examples reported in France, trumpets imitated the sound of a violent wind during the Pentecost sequence, recalling the coming of the Holy Spirit.",
+        "fr": "Dans certaines anciennes cérémonies de Pentecôte, notamment en France, des trompettes imitaient le bruit d'un vent violent pendant la séquence, rappelant la venue du Saint-Esprit."
+      },
+      "source_ids": [
+        "WEI58-19-015"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-19-015",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-059",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-060",
+      "editorial_issue": "TIME_AND_SYMBOL",
+      "original_copy": {
+        "en": "According to Weiser, some thirteenth-century French cathedrals released living white doves during the Pentecost sequence as a symbol of the Holy Spirit.",
+        "fr": "Selon Weiser, dans certaines cathédrales françaises du XIIIe siècle, on lâchait des colombes blanches vivantes pendant la séquence de Pentecôte pour symboliser le Saint-Esprit."
+      },
+      "reader_copy": {
+        "en": "In some French cathedrals in the thirteenth century, living white doves were released during the Pentecost sequence as a symbol of the Holy Spirit.",
+        "fr": "Dans certaines cathédrales françaises du XIIIe siècle, des colombes blanches vivantes étaient lâchées pendant la séquence de Pentecôte pour symboliser le Saint-Esprit."
+      },
+      "source_ids": [
+        "WEI58-19-016"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-19-016",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-060",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-105",
+      "editorial_issue": "LOCAL_BLESSING",
+      "original_copy": {
+        "en": "Weiser describes an Assumption Day custom, especially in Portugal, of blessing the sea and fishermen's boats on the afternoon of 15 August.",
+        "fr": "Weiser décrit une coutume du jour de l'Assomption, particulièrement au Portugal, consistant à bénir la mer et les bateaux de pêche dans l'après-midi du 15 août."
+      },
+      "reader_copy": {
+        "en": "On the Assumption, 15 August, an older custom especially associated with Portugal involved blessing the sea and the boats of fishermen during the afternoon.",
+        "fr": "Le 15 août, fête de l'Assomption, une ancienne coutume particulièrement liée au Portugal consistait à bénir la mer et les bateaux des pêcheurs dans l'après-midi."
+      },
+      "source_ids": [
+        "WEI58-24-014"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-24-014",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-105",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-116",
+      "editorial_issue": "POPULAR_SEASON_NOT_RUBRIC",
+      "original_copy": {
+        "en": "Weiser records that, in many homes, the Christmas crib and decorations stayed until Candlemas on 2 February, the close of the popular Christmas season—not a change to the Church's liturgical calendar.",
+        "fr": "Weiser rapporte que, dans de nombreux foyers, crèche et décorations de Noël restaient en place jusqu'à la Chandeleur, le 2 février, qui marquait la fin du temps populaire de Noël, sans modifier le calendrier liturgique."
+      },
+      "reader_copy": {
+        "en": "In some Catholic homes, the Christmas crib and decorations once remained until Candlemas on 2 February, a popular devotional endpoint for the Christmas celebrations.",
+        "fr": "Dans certains foyers catholiques, la crèche et les décorations de Noël restaient autrefois en place jusqu'à la Chandeleur, le 2 février, qui marquait la fin populaire des célébrations de Noël."
+      },
+      "source_ids": [
+        "WEI58-25-012"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-25-012",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-116",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-137",
+      "editorial_issue": "LOCAL_DEAD_DEVOTIONS",
+      "original_copy": {
+        "en": "In Philippine communities described by Weiser, the nine days before All Souls included prayers, candles at graves, cleaning tombs and repainting crosses.",
+        "fr": "Dans des communautés des Philippines décrites par Weiser, les neuf jours avant la Commémoration des défunts comprenaient prières, cierges sur les tombes, nettoyage des sépultures et peinture des croix."
+      },
+      "reader_copy": {
+        "en": "In some historical Philippine communities, the nine days before All Souls' Day included prayers, lighting candles at graves, cleaning tombs and repainting crosses.",
+        "fr": "Dans certaines communautés des Philippines autrefois, les neuf jours précédant la Commémoration des défunts comprenaient des prières, des cierges sur les tombes, le nettoyage des sépultures et la remise en peinture des croix."
+      },
+      "source_ids": [
+        "WEI58-26-017"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-017",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-137",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-138",
+      "editorial_issue": "FOLK_DRAMA",
+      "original_copy": {
+        "en": "In the Philippines, Weiser reports that young men went from house to house on All Saints' evening, singing and requesting cookies, sweets or pastries while representing souls freed from purgatory.",
+        "fr": "Aux Philippines, Weiser rapporte que, le soir de la Toussaint, de jeunes hommes passaient de maison en maison, chantant et demandant biscuits, sucreries ou pâtisseries, en représentant des âmes délivrées du purgatoire."
+      },
+      "reader_copy": {
+        "en": "In a historical Philippine All Saints' Eve custom, young men went from house to house singing and asking for sweets or pastries while representing souls released from purgatory.",
+        "fr": "Dans un ancien usage philippin de la veille de la Toussaint, de jeunes hommes allaient de maison en maison en chantant et en demandant des douceurs, tout en représentant des âmes délivrées du purgatoire."
+      },
+      "source_ids": [
+        "WEI58-26-018"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-018",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-138",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-156",
+      "editorial_issue": "ATTRIBUTION_UNCERTAINTY",
+      "original_copy": {
+        "en": "The ninth-century Book of Armagh attributes Saint Patrick's Breastplate, or Lorica, to Saint Patrick; Weiser explicitly presents the actual authorship as uncertain.",
+        "fr": "Le Livre d'Armagh, du IXe siècle, attribue à saint Patrick sa célèbre prière de la Cuirasse ou Lorica ; Weiser souligne que son attribution historique reste incertaine."
+      },
+      "reader_copy": {
+        "en": "An old tradition attributes Saint Patrick's Breastplate, also called the Lorica, to Saint Patrick himself. Its actual historical authorship remains uncertain.",
+        "fr": "Une ancienne tradition attribue à saint Patrick sa célèbre prière de la Cuirasse, ou Lorica. Son auteur historique demeure incertain."
+      },
+      "source_ids": [
+        "WEI58-27-014"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-27-014",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-156",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    }
+  ]
+}

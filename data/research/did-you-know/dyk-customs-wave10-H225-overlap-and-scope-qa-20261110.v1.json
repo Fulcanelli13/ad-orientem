@@ -1,0 +1,192 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE10_H225_CROSSBANK_AND_SCOPE_ADJUDICATION_V1",
+  "date": "2026-11-10",
+  "state": "400_PROVISIONAL_RESEARCH_RECORDS_NOT_CERTIFIED_FOR_PUBLICATION",
+  "inputs": {
+    "prior_staging": "data/research/did-you-know/dyk-customs-377-provisional-new-selection-20261110.v3.json",
+    "new_witness_drafts": "data/research/did-you-know/dyk-customs-source-folio-wave10-28-proposals-20261110.v1.json",
+    "scope_replacements": "data/research/did-you-know/dyk-customs-source-folio-wave10-catholic-scope-replacements-20261110.v1.json",
+    "public_home_history": "201 published historical records from nine manifests + 24 Glossary fallback facts"
+  },
+  "method": "Compared all candidate source IDs and reader statements with nine Home publication manifests and 377 staged records; 24 Glossary fallback texts underwent theme/lexical screening. All historical source assertions have printed-folio image checks, but independent certification and final EN/FR signoff have not been performed for every claim.",
+  "counts": {
+    "old_provisional": 377,
+    "new_folio_drafts": 28,
+    "already_live_same_source_claim_exclusions": 5,
+    "strict_catholic_scope_holds": 2,
+    "scope_compliant_replacement_proposals": 2,
+    "net_additional_provisional": 23,
+    "new_provisional_total": 400,
+    "unique_english": 400,
+    "unique_french": 400,
+    "unique_ids": 400,
+    "glossary_fallbacks_examined": 24,
+    "high_similarity_glossary_matches": 0,
+    "new_wave_same_theme_pairs_above_025": 0,
+    "all_records_full_primary_certified": false
+  },
+  "already_published_holds": [
+    {
+      "id": "DYK-C400-BG-005",
+      "public": "DYK-G520-W-004",
+      "source": "WEI58-15-009",
+      "reason": "Same Polish/Ukrainian Palm Sunday Boże Rany custom already published."
+    },
+    {
+      "id": "DYK-C400-BG-006",
+      "public": "DYK-R50B-W-015",
+      "source": "WEI58-15-020",
+      "reason": "Same French flying Easter bells story already published."
+    },
+    {
+      "id": "DYK-C400-BG-008",
+      "public": "DYK-G520-W-005",
+      "source": "WEI58-16-013",
+      "reason": "Same Easter Vigil extinction and rekindling of domestic fires already published."
+    },
+    {
+      "id": "DYK-C400-BG-017",
+      "public": "DYK-G520-W-008",
+      "source": "WEI58-24-022",
+      "reason": "Same Seville Los Seises Immaculate Conception dance already published."
+    },
+    {
+      "id": "DYK-C400-BG-021",
+      "public": "DYK-G520-W-011",
+      "source": "WEI58-27-032",
+      "reason": "Same French St John burning wheels custom already published."
+    }
+  ],
+  "religious_scope_holds": [
+    {
+      "id": "DYK-C400-BG-015",
+      "source": "WEI58-24-010",
+      "reason": "Armenian tradition source does not distinguish Armenian Catholic from Armenian Apostolic practice; exclude from strictly Catholic priority until ecclesial scope is established."
+    },
+    {
+      "id": "DYK-C400-BG-026",
+      "source": "WEI58-28-026",
+      "reason": "Scandinavian Lussi winter-spirit inscriptions are explicitly non-liturgical folklore and not established here as a Catholic devotional act."
+    }
+  ],
+  "kept_additions": [
+    {
+      "id": "DYK-C400-BG-001",
+      "source_id": "WEI58-05-006"
+    },
+    {
+      "id": "DYK-C400-BG-002",
+      "source_id": "WEI58-09-004"
+    },
+    {
+      "id": "DYK-C400-BG-003",
+      "source_id": "WEI58-09-006"
+    },
+    {
+      "id": "DYK-C400-BG-004",
+      "source_id": "WEI58-15-007"
+    },
+    {
+      "id": "DYK-C400-BG-007",
+      "source_id": "WEI58-15-038"
+    },
+    {
+      "id": "DYK-C400-BG-009",
+      "source_id": "WEI58-17-014"
+    },
+    {
+      "id": "DYK-C400-BG-010",
+      "source_id": "WEI58-17-013"
+    },
+    {
+      "id": "DYK-C400-BG-011",
+      "source_id": "WEI58-14-027"
+    },
+    {
+      "id": "DYK-C400-BG-012",
+      "source_id": "WEI58-14-028"
+    },
+    {
+      "id": "DYK-C400-BG-013",
+      "source_id": "WEI58-24-006"
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "source_id": "WEI58-24-007"
+    },
+    {
+      "id": "DYK-C400-BG-016",
+      "source_id": "WEI58-24-011"
+    },
+    {
+      "id": "DYK-C400-BG-018",
+      "source_id": "WEI58-24-024"
+    },
+    {
+      "id": "DYK-C400-BG-019",
+      "source_id": "WEI58-24-025"
+    },
+    {
+      "id": "DYK-C400-BG-020",
+      "source_id": "WEI58-27-020"
+    },
+    {
+      "id": "DYK-C400-BG-022",
+      "source_id": "WEI58-27-035"
+    },
+    {
+      "id": "DYK-C400-BG-023",
+      "source_id": "WEI58-06-016"
+    },
+    {
+      "id": "DYK-C400-BG-024",
+      "source_id": "WEI58-12-016"
+    },
+    {
+      "id": "DYK-C400-BG-025",
+      "source_id": "WEI58-27-025"
+    },
+    {
+      "id": "DYK-C400-BG-027",
+      "source_id": "WEI58-10-012"
+    },
+    {
+      "id": "DYK-C400-BG-028",
+      "source_id": "WEI58-27-017"
+    },
+    {
+      "id": "DYK-C400-BG-029",
+      "source_id": "WEI58-24-016"
+    },
+    {
+      "id": "DYK-C400-BG-030",
+      "source_id": "WEI58-28-006"
+    }
+  ],
+  "within_wave_pairs_to_review": [],
+  "glossary_possible_overlap_hits": [],
+  "exact_same_source_ids_within_400_staging": [
+    [
+      "DYK-CUSTOMS-CANON-BLSS-004",
+      "DYK-CUSTOMS-CANON-DEAD-003"
+    ],
+    [
+      "DYK-CUSTOMS-CANON-BLSS-004",
+      "DYK-CUSTOMS-CANON-DOM-013"
+    ],
+    [
+      "DYK-CUSTOMS-CANON-DEAD-003",
+      "DYK-CUSTOMS-CANON-DOM-013"
+    ]
+  ],
+  "publication_gates": {
+    "primary_claim_source_certification_complete": false,
+    "independent_secondary_historical_corroboration_complete": false,
+    "full_400_manual_semantic_deduplication_complete": false,
+    "english_native_final_approval": false,
+    "french_native_final_approval": false,
+    "source_urls_browser_qa_complete": false,
+    "home_reader_mobile_QA_complete": false,
+    "published": false
+  }
+}
