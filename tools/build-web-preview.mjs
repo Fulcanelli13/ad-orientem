@@ -24,6 +24,11 @@ const excludedResearchPaths=[
  "assets/staged",
  "data/artwork/sacred-art-category-match-989-267.v1.json",
  "data/artwork/research-priority-16-source-audit-20261109.v1.json",
+ // Keep the 26 MB exact museum-source photograph in Git research only.
+ // Public Pages serves the licensed 470 KB full-frame WebP derivative.
+ "data/artwork/releases/source-masters",
+ "data/artwork/releases/2026-03-15-07-01-two-frozen-class-i-source-manifest.v1.json",
+ "data/artwork/releases/2026-03-15-07-01-two-class-i-photo-byte-proof.v1.json",
  "data/geography/research",
  "data/office/research",
  "data/prayer/stations/san-polo-tiepolo-oils-1747",
