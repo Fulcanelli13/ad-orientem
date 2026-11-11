@@ -21,7 +21,8 @@ const publishedPaths = [
   "data/shrines/illustrated-place-guides-world-marian-r1.v1.json",
 ];
 const shrineByPlace = new Map(shrineSeed.shrines.map(s => [s.place_id,s]));
-const sourceById = new Map(sourceSeed.sources.map(s => [s.id,s]));
+const researchOnlySources = read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json").sources;
+const sourceById = new Map([...sourceSeed.sources,...researchOnlySources].map(s => [s.id,s]));
 const publishedIDs = new Set(publishedPaths.flatMap(p =>
   read(p).guides.filter(g => g.publication==="PUBLISHED").map(g => g.place_id)));
 const wave1IDs = new Set(wave1.rows.map(r => r.place_id));
@@ -56,7 +57,11 @@ for (let i=0; i<guides.length; i++) {
     for (const p of section.paragraphs) {
       const source = sourceById.get(p.source_id);
       assert.ok(source, "No matching source " + p.source_id);
-      assert.ok(shrine.source_ids.includes(p.source_id),"Source not linked to shrine " + guide.place_id);
+      assert.ok(shrine.source_ids.includes(p.source_id)||
+        (guide.research_source_ids?.includes(p.source_id)&&
+          source.scope==="RESEARCH_ONLY"&&source.place_id===guide.place_id&&
+          guide.bibliography_urls.includes(p.source_url)),
+        "A source must belong to its canonical site");
       assert.equal(p.source_url,source.url);
       assert.match(p.source_url,/^https:\/\//);
       assert.ok(p.en.length>=145 && p.fr.length>=145,"Missing bilingual substance " + guide.place_id);
