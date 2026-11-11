@@ -78,7 +78,8 @@ export function releasedTwoFrozenClassIHomeArtwork2026(date,principalId,properPa
   selectionKind:"FROZEN_CLASS_I_TWO_EXACT_LOCAL_SOURCE_PHOTOS",
   ownerArtworkDecisionNewlyCreated:false,
   photographCropCertified:false,
-  offlineOriginalCertified:true,
+  offlineImageCertified:true,
+  offlineOriginalCertified:r.originalRetainedInPublishedAsset,
   isUpscaled:false,
   photoSourceIsMuseumMaster:false
  });
