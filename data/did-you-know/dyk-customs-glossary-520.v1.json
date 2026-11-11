@@ -8,7 +8,7 @@
   },
   "created": "2026-11-11",
   "origin": "Editorial bilingual DYK 526 preview (Claude KEEP/REWRITE) with corrected 62-card overrides",
-  "publishing_note": "Existing bilingual Home DYK bank with 378 Customs and 275 source-backed Glossary discoveries. The original 520 records are preserved; glossary discovery waves A (17), B (58), and C (58) link directly to canonical concept IDs and original registry sources. First Friday/Saturday cues and corrected O Salutaris versicle remain intact.",
+  "publishing_note": "One bilingual Home DYK content bank with 378 Customs and 275 Glossary discoveries. All 653 have reader-facing discovery topics; only records with explicit textual or unambiguous observance cues carry structured year-independent calendar context. Dates are educational relevance, not assertions about the observed 1962 Mass; no liturgical occurrence or transfer is inferred from a cultural custom.",
   "excluded_ids": [
     "DYK-CW15-035",
     "DYK-CW15-038",
@@ -34,7 +34,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-04"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-008",
@@ -52,7 +58,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-014",
@@ -70,7 +82,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "EASTER"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-003",
@@ -88,7 +106,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-007",
@@ -106,7 +131,17 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_SATURDAY"
+        ],
+        "seasons": [
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-011",
@@ -124,7 +159,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "LAETARE"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-013",
@@ -142,7 +183,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-14"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-014",
@@ -162,7 +209,13 @@
           "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-14"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-019",
@@ -180,7 +233,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-08"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-025",
@@ -198,7 +257,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-C400-BG-029",
@@ -216,7 +276,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BJ-001",
@@ -236,7 +302,16 @@
           "https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_WEEK"
+        ],
+        "seasons": [
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BJ-002",
@@ -256,7 +331,13 @@
           "https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-DEV-009",
@@ -276,7 +357,8 @@
           "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-033",
@@ -294,7 +376,13 @@
         "url": "https://www.newadvent.org/cathen/03574b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-036",
@@ -312,7 +400,8 @@
         "url": "https://www.vaticannews.va/en/saints/01/17/st--antony--abbot.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW15-001",
@@ -330,7 +419,13 @@
         "url": "https://ich.unesco.org/en/RL/procession-za-krizen-following-the-cross-on-the-island-of-hvar-00242",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-014",
@@ -348,7 +443,14 @@
         "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-mendrisio-01460",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY",
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-020",
@@ -366,7 +468,13 @@
         "url": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743?RL=01743",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-023",
@@ -384,7 +492,13 @@
         "url": "https://ich.unesco.org/en/RL/dances-and-expressions-associated-with-the-corpus-christi-festivity-01612",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "09-29"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-026",
@@ -402,7 +516,13 @@
         "url": "https://ich.unesco.org/en/RL/venezuela-s-dancing-devils-of-corpus-christi-00639",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-029",
@@ -420,7 +540,13 @@
         "url": "https://ich.unesco.org/en/RL/hopping-procession-of-echternach-00392",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST_TUESDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-047",
@@ -438,7 +564,8 @@
         "url": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW15-049",
@@ -456,7 +583,13 @@
         "url": "https://ich.unesco.org/en/RL/representation-of-the-passion-death-and-resurrection-of-christ-in-iztapalapa-02237",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "05-03"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-024",
@@ -474,7 +607,8 @@
         "url": "https://goa-tourism.com/festival/sao-joao/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW16-027",
@@ -492,7 +626,8 @@
         "url": "https://goa-tourism.com/festival/sao-joao/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-035",
@@ -510,7 +645,8 @@
         "url": "https://goa-tourism.com/event/feast-of-st-francis-xavier/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-040",
@@ -530,7 +666,14 @@
           "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY",
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-047",
@@ -548,7 +691,8 @@
         "url": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-052",
@@ -566,7 +710,13 @@
         "url": "https://philippines.travel/destinations/quezon/index",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "05-15"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-054",
@@ -586,7 +736,13 @@
           "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "05-13"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-058",
@@ -604,7 +760,13 @@
         "url": "https://www.catholicsandcultures.org/syro-malabar-catholics-celebrate-holy-thursday-traditional-home-ritual",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-001",
@@ -622,7 +784,13 @@
         "url": "https://ich.unesco.org/en/RL/the-festival-of-the-santisima-trinidad-del-senor-jesus-del-gran-poder-in-the-city-of-la-paz-01389",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "TRINITY_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-006",
@@ -640,7 +808,13 @@
         "url": "https://ich.unesco.org/en/RL/grand-festival-of-tarija-01477",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-16"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-011",
@@ -658,7 +832,8 @@
         "url": "https://ich.unesco.org/en/RL/ichapekene-piesta-the-biggest-festival-of-san-ignacio-de-moxos-00627",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW17-017",
@@ -676,7 +851,8 @@
         "url": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-CW17-024",
@@ -694,7 +870,13 @@
         "url": "https://ich.unesco.org/en/RL/festive-cycle-around-the-devotion-and-worship-towards-saint-john-the-baptist-01682",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-24"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-026",
@@ -712,7 +894,14 @@
         "url": "https://ich.unesco.org/en/RL/hatajo-de-negritos-and-hatajo-de-pallitas-from-the-peruvian-south-central-coastline-01309?RL=01309",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-031",
@@ -730,7 +919,8 @@
         "url": "https://ich.unesco.org/en/RL/nativity-scene-szopka-tradition-in-krakow-01362",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW17-035",
@@ -748,7 +938,13 @@
         "url": "https://ich.unesco.org/en/RL/patum-of-berga-00156?RL=00156",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-040",
@@ -766,7 +962,14 @@
         "url": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-14",
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-CW17-046",
@@ -784,7 +987,8 @@
         "url": "https://ich.unesco.org/en/RL/la-parranda-de-san-pedro-of-guarenas-and-guatire-00907",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-021",
@@ -802,7 +1006,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-037",
@@ -820,7 +1025,8 @@
         "url": "https://www.newadvent.org/cathen/13189a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-047",
@@ -838,7 +1044,8 @@
         "url": "https://www.newadvent.org/cathen/02465b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-CW18-054",
@@ -856,7 +1063,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G600-P-028",
@@ -876,7 +1084,8 @@
           "https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GX15-017",
@@ -894,7 +1103,8 @@
         "url": "https://www.newadvent.org/cathen/14424a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX16-006",
@@ -912,7 +1122,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX16-017",
@@ -930,7 +1141,14 @@
         "url": "https://www.newadvent.org/cathen/11515b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-GX16-022",
@@ -948,7 +1166,8 @@
         "url": "https://www.newadvent.org/cathen/05730b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-021",
@@ -966,7 +1185,8 @@
         "url": "https://www.newadvent.org/cathen/12448a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-025",
@@ -984,7 +1204,8 @@
         "url": "https://www.newadvent.org/cathen/02217c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GX18-001",
@@ -1002,7 +1223,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-016",
@@ -1020,7 +1242,8 @@
         "url": "https://www.newadvent.org/cathen/07433a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX18-023",
@@ -1038,7 +1261,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-H04-W-A-039",
@@ -1056,7 +1280,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-068",
@@ -1074,7 +1305,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-096",
@@ -1092,7 +1324,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "SEPTUAGESIMA"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-038",
@@ -1110,7 +1348,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "EASTER"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-072",
@@ -1128,7 +1372,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM01-019",
@@ -1146,7 +1391,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-002",
@@ -1164,7 +1415,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-003",
@@ -1182,7 +1440,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-C400-BF-004",
@@ -1200,7 +1459,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-005",
@@ -1218,7 +1484,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-010",
@@ -1236,7 +1509,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-26"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-011",
@@ -1254,7 +1533,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "ASH_WEDNESDAY"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-013",
@@ -1272,7 +1557,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-016",
@@ -1290,7 +1581,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-C400-BF-017",
@@ -1308,7 +1600,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-17"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-001",
@@ -1326,7 +1624,16 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-24"
+        ],
+        "seasons": [
+          "advent"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-002",
@@ -1344,7 +1651,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-009",
@@ -1362,7 +1676,19 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "EASTER"
+        ],
+        "seasons": [
+          "ascension",
+          "easter",
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-012",
@@ -1380,7 +1706,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "LAETARE"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-016",
@@ -1398,7 +1730,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-020",
@@ -1416,7 +1754,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-023",
@@ -1434,7 +1778,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-C400-BG-027",
@@ -1452,7 +1797,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-26"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-028",
@@ -1470,7 +1821,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BH-001",
@@ -1490,7 +1847,13 @@
           "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/backerzeugnisse/striezel.html"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BJ-004",
@@ -1511,7 +1874,13 @@
           "https://www.distritofallas.com/historia/"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BK-001",
@@ -1531,7 +1900,13 @@
           "https://www.erzdioezese-wien.at/roratemesse"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BK-002",
@@ -1551,7 +1926,13 @@
           "https://www.newadvent.org/cathen/15564a.htm"
         ]
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-ADVT-002",
@@ -1569,7 +1950,13 @@
         "url": "https://www.catholicculture.org/commentary/straws-in-manger-preparing-our-hearts-for-christs-birth/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-BLSS-003",
@@ -1587,7 +1974,13 @@
         "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-27"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-EAST-001",
@@ -1605,7 +1998,13 @@
         "url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "EASTER_MONDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-EPIP-001",
@@ -1623,7 +2022,13 @@
         "url": "https://www.kindermissionswerk.org/en/ueber-uns/the-carol-singers-campaign",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-LIFE-002",
@@ -1643,7 +2048,8 @@
           "https://schola-sainte-cecile.com/2015/02/02/benediction-des-relevailles/"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CUSTOMS-CANON-SANT-001",
@@ -1661,7 +2067,8 @@
         "url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CUSTOMS-CANON-SCHR-001",
@@ -1679,7 +2086,13 @@
         "url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "07-25"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-XMAS-001",
@@ -1697,7 +2110,14 @@
         "url": "https://stjohnvianney.vermontcatholic.org/oplatki",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-001",
@@ -1715,7 +2135,8 @@
         "url": "https://www.newadvent.org/cathen/15557b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-003",
@@ -1733,7 +2154,8 @@
         "url": "https://www.newadvent.org/cathen/15557b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-004",
@@ -1751,7 +2173,13 @@
         "url": "https://www.newadvent.org/cathen/15557b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-005",
@@ -1769,7 +2197,13 @@
         "url": "https://www.newadvent.org/cathen/10068a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-006",
@@ -1787,7 +2221,13 @@
         "url": "https://www.newadvent.org/cathen/10068a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-007",
@@ -1805,7 +2245,13 @@
         "url": "https://www.newadvent.org/cathen/10068a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-008",
@@ -1823,7 +2269,8 @@
         "url": "https://www.newadvent.org/cathen/03245b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-011",
@@ -1841,7 +2288,13 @@
         "url": "https://www.newadvent.org/cathen/03245b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-013",
@@ -1859,7 +2312,8 @@
         "url": "https://www.newadvent.org/cathen/03246a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-015",
@@ -1877,7 +2331,8 @@
         "url": "https://www.newadvent.org/cathen/05399b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-019",
@@ -1895,7 +2350,8 @@
         "url": "https://www.newadvent.org/cathen/12446c.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-022",
@@ -1913,7 +2369,14 @@
         "url": "https://www.newadvent.org/cathen/12446c.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-024",
@@ -1931,7 +2394,8 @@
         "url": "https://www.newadvent.org/cathen/13110b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-025",
@@ -1949,7 +2413,16 @@
         "url": "https://www.newadvent.org/cathen/13110b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "04-25"
+        ],
+        "observances": [
+          "GREATER_ROGATION"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-026",
@@ -1967,7 +2440,13 @@
         "url": "https://www.newadvent.org/cathen/13110b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "MINOR_ROGATIONS"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-037",
@@ -1985,7 +2464,13 @@
         "url": "https://www.newadvent.org/cathen/04390b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-042",
@@ -2003,7 +2488,8 @@
         "url": "https://www.newadvent.org/cathen/12446c.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW15-005",
@@ -2021,7 +2507,13 @@
         "url": "https://ich.unesco.org/en/RL/festivity-of-saint-blaise-the-patron-of-dubrovnik-00232",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-03"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-008",
@@ -2039,7 +2531,13 @@
         "url": "https://ich.unesco.org/en/RL/procession-of-the-holy-blood-in-bruges-00263?RL=00263",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "ASCENSION"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-011",
@@ -2057,7 +2555,16 @@
         "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-popayn-00259",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_WEEK"
+        ],
+        "seasons": [
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-034",
@@ -2075,7 +2582,8 @@
         "url": "https://ich.unesco.org/en/RL/maltese-village-festa-an-annual-community-celebration-01871",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW15-041",
@@ -2093,7 +2601,8 @@
         "url": "https://ich.unesco.org/en/RL/celebration-in-honor-of-the-budsla-icon-of-our-lady-budsla-fest-01387",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-CW15-043",
@@ -2111,7 +2620,8 @@
         "url": "https://ich.unesco.org/en/RL/cirio-de-nazare-a-cultural-expression-of-faith-00602",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-CW15-051",
@@ -2129,7 +2639,8 @@
         "url": "https://ich.unesco.org/en/RL/the-confraternity-of-flowers-and-palms-02240",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW15-053",
@@ -2147,7 +2658,8 @@
         "url": "https://ich.unesco.org/en/RL/celebrations-of-big-shoulder-borne-processional-structures-00721?RL=00721",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW15-054",
@@ -2165,7 +2677,8 @@
         "url": "https://ich.unesco.org/en/RL/celebrations-of-big-shoulder-borne-processional-structures-00721?RL=00721",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW15-056",
@@ -2183,7 +2696,8 @@
         "url": "https://ich.unesco.org/en/RL/festivity-of-the-virgen-of-guadalupe-patroness-of-sucre-02306?RL=02306",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-001",
@@ -2201,7 +2715,13 @@
         "url": "https://www.vaticannews.va/fr/eglise/news/2019-09/a-maurice-le-pape-se-recueillera-sur-la-tombe-du-pere-laval.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE",
+      "calendar_context": {
+        "fixed_dates": [
+          "09-09"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-007",
@@ -2219,7 +2739,13 @@
         "url": "https://seychelles.com/blog-details/1881/highlights/feast-assumption-showcase-seychelles-culture",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-011",
@@ -2237,7 +2763,8 @@
         "url": "https://mulembe.ao/en/destinations/muxima-santuario",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-015",
@@ -2255,7 +2782,13 @@
         "url": "https://www.vaticannews.va/en/africa/news/2024-05/3-june-2024-pilgrimages-and-preparations-for-the-uganda-martyrs.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-03"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-017",
@@ -2273,7 +2806,13 @@
         "url": "https://www.vaticannews.va/en/africa/news/2024-05/3-june-2024-pilgrimages-and-preparations-for-the-uganda-martyrs.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-03"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-021",
@@ -2291,7 +2830,13 @@
         "url": "https://www.vaticannews.va/fr/afrique/news/2021-11/rwanda-40-ans-des-apparitions-a-kibeho.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-28"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-025",
@@ -2309,7 +2854,13 @@
         "url": "https://goa-tourism.com/festival/sao-joao/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-24"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-030",
@@ -2327,7 +2878,8 @@
         "url": "https://www.thegoan.net/goa-news/feast-of-our-lady-of-remedios-at-cuelim-on-january-6/107949.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-037",
@@ -2345,7 +2897,14 @@
         "url": "https://npgov.lk/attraction/madhu-madha-church/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "07-02",
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-044",
@@ -2363,7 +2922,14 @@
         "url": "https://rcam.org.ph/misa-de-aguinaldo-simbang-gabi-masses/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-062",
@@ -2381,7 +2947,8 @@
         "url": "https://catholicshrinebasilica.com/basilica-of-our-lady-of-the-mount-bandra-mumbai/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-CW17-044",
@@ -2399,7 +2966,8 @@
         "url": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW17-049",
@@ -2417,7 +2985,13 @@
         "url": "https://ich.unesco.org/en/RL/rabinal-achi-dance-drama-tradition-00144?RL=00144",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-25"
+        ]
+      }
     },
     {
       "id": "DYK-CW18-001",
@@ -2435,7 +3009,8 @@
         "url": "https://www.newadvent.org/cathen/01486b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-005",
@@ -2453,7 +3028,14 @@
         "url": "https://www.newadvent.org/cathen/01486b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-CW18-007",
@@ -2471,7 +3053,8 @@
         "url": "https://www.newadvent.org/cathen/01487a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-008",
@@ -2489,7 +3072,8 @@
         "url": "https://www.newadvent.org/cathen/01487a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-012",
@@ -2507,7 +3091,8 @@
         "url": "https://www.newadvent.org/cathen/01487a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-014",
@@ -2525,7 +3110,8 @@
         "url": "https://www.newadvent.org/cathen/07432a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-020",
@@ -2543,7 +3129,14 @@
         "url": "https://www.newadvent.org/cathen/07432a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-CW18-023",
@@ -2561,7 +3154,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-026",
@@ -2579,7 +3173,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-027",
@@ -2597,7 +3192,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-030",
@@ -2615,7 +3211,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-032",
@@ -2633,7 +3230,8 @@
         "url": "https://www.newadvent.org/cathen/13188b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-035",
@@ -2651,7 +3249,8 @@
         "url": "https://www.newadvent.org/cathen/13188b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-036",
@@ -2669,7 +3268,8 @@
         "url": "https://www.newadvent.org/cathen/13188b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-042",
@@ -2687,7 +3287,8 @@
         "url": "https://www.newadvent.org/cathen/02465b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-046",
@@ -2705,7 +3306,8 @@
         "url": "https://www.newadvent.org/cathen/02465b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-049",
@@ -2723,7 +3325,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-050",
@@ -2741,7 +3344,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-052",
@@ -2759,7 +3363,13 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-G365-W-A-034",
@@ -2777,7 +3387,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-24"
+        ]
+      }
     },
     {
       "id": "DYK-G365-W-B-025",
@@ -2795,7 +3411,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-G560-P-003",
@@ -2813,7 +3436,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-006",
@@ -2831,7 +3455,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-011",
@@ -2849,7 +3474,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-013",
@@ -2867,7 +3493,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-015",
@@ -2885,7 +3512,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-018",
@@ -2903,7 +3531,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-019",
@@ -2921,7 +3550,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-020",
@@ -2939,7 +3569,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-021",
@@ -2957,7 +3588,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-022",
@@ -2975,7 +3607,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-G560-P-027",
@@ -2993,7 +3631,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G560-P-031",
@@ -3011,7 +3650,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-037",
@@ -3029,7 +3669,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-039",
@@ -3047,7 +3688,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-002",
@@ -3065,7 +3707,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-005",
@@ -3083,7 +3731,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-007",
@@ -3101,7 +3755,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-014",
@@ -3119,7 +3779,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-015",
@@ -3137,7 +3803,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-018",
@@ -3155,7 +3827,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-019",
@@ -3173,7 +3846,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-023",
@@ -3191,7 +3865,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-13"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-024",
@@ -3209,7 +3889,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-13"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-026",
@@ -3227,7 +3913,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-G600-P-027",
@@ -3245,7 +3932,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-G600-P-032",
@@ -3263,7 +3951,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-033",
@@ -3281,7 +3970,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-034",
@@ -3299,7 +3989,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G640-P-012",
@@ -3317,7 +4008,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-GL-G011-01",
@@ -3337,7 +4029,8 @@
           "https://www.vatican.va/content/pius-x/en.html"
         ]
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G027-01",
@@ -3355,7 +4048,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1166-1190_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G030-02",
@@ -3373,7 +4067,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G036-02",
@@ -3391,7 +4086,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G039-01",
@@ -3409,7 +4105,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/twenty-third-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G047-01",
@@ -3427,7 +4124,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G054-01",
@@ -3445,7 +4143,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G059-02",
@@ -3463,7 +4162,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G067-02",
@@ -3481,7 +4181,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G076-01",
@@ -3499,7 +4200,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G104-01",
@@ -3517,7 +4219,8 @@
         "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G106-01",
@@ -3535,7 +4238,8 @@
         "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G115-02",
@@ -3553,7 +4257,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fourth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G116-01",
@@ -3571,7 +4276,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann330-367_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G119-01",
@@ -3589,7 +4295,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann368-430_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G122-01",
@@ -3607,7 +4314,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann460-572_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G126-01",
@@ -3625,7 +4333,8 @@
         "url": "https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19720815_ministeria-quaedam.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G129-01",
@@ -3643,7 +4352,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann330-367_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G138-01",
@@ -3661,7 +4371,8 @@
         "url": "https://www.newadvent.org/cathen/13675a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G144-01",
@@ -3679,7 +4390,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1311-1363_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G147-01",
@@ -3697,7 +4409,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1311-1363_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G151-01",
@@ -3715,7 +4428,8 @@
         "url": "https://www.newadvent.org/summa/3081.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G179-01",
@@ -3733,7 +4447,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G201-01",
@@ -3751,7 +4466,8 @@
         "url": "https://www.newadvent.org/cathen/15388a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G290-01",
@@ -3769,7 +4485,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GL-G305-01",
@@ -3787,7 +4504,8 @@
         "url": "https://www.newadvent.org/cathen/09435a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GL-G311-01",
@@ -3806,7 +4524,8 @@
         "alternative_urls": []
       },
       "origin": "GLOSSARY",
-      "glossary_concept_id": "G311"
+      "glossary_concept_id": "G311",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GL-G338-01",
@@ -3824,7 +4543,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1205-1243_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GL-G379-01",
@@ -3842,7 +4562,8 @@
         "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-200.v0.2.json",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GL-G386-01",
@@ -3860,7 +4581,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GL-G406-01",
@@ -3878,7 +4600,8 @@
         "url": "https://www.newadvent.org/cathen/13679b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G412-02",
@@ -3896,7 +4619,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G431-01",
@@ -3914,7 +4638,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1671-1716_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G446-01",
@@ -3932,7 +4657,8 @@
         "url": "https://books.google.com/books?id=l2PZAAAAMAAJ",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GX14-004",
@@ -3950,7 +4676,8 @@
         "url": "https://www.newadvent.org/cathen/09601b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-008",
@@ -3968,7 +4695,8 @@
         "url": "https://www.newadvent.org/cathen/01428c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-010",
@@ -3986,7 +4714,8 @@
         "url": "https://www.newadvent.org/cathen/01428c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-013",
@@ -4004,7 +4733,8 @@
         "url": "https://www.newadvent.org/cathen/09044b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX14-018",
@@ -4022,7 +4752,8 @@
         "url": "https://www.newadvent.org/cathen/03561a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX14-020",
@@ -4040,7 +4771,8 @@
         "url": "https://www.newadvent.org/cathen/03767a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-024",
@@ -4058,7 +4790,8 @@
         "url": "https://www.newadvent.org/cathen/03767a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX14-030",
@@ -4076,7 +4809,8 @@
         "url": "https://www.newadvent.org/cathen/12115a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GX14-033",
@@ -4094,7 +4828,8 @@
         "url": "https://www.newadvent.org/cathen/09601b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX15-001",
@@ -4112,7 +4847,8 @@
         "url": "https://www.newadvent.org/cathen/15388a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-005",
@@ -4130,7 +4866,8 @@
         "url": "https://www.newadvent.org/cathen/15388a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-007",
@@ -4148,7 +4885,8 @@
         "url": "https://www.newadvent.org/cathen/11344a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-008",
@@ -4166,7 +4904,13 @@
         "url": "https://www.newadvent.org/cathen/11344a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-GX15-010",
@@ -4184,7 +4928,8 @@
         "url": "https://www.newadvent.org/cathen/11344a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX15-015",
@@ -4202,7 +4947,8 @@
         "url": "https://www.newadvent.org/cathen/14424a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-016",
@@ -4220,7 +4966,8 @@
         "url": "https://www.newadvent.org/cathen/14424a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GX15-020",
@@ -4238,7 +4985,8 @@
         "url": "https://www.newadvent.org/cathen/14424a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-024",
@@ -4256,7 +5004,8 @@
         "url": "https://www.newadvent.org/cathen/12588a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GX15-027",
@@ -4274,7 +5023,8 @@
         "url": "https://www.newadvent.org/cathen/12588a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX15-029",
@@ -4292,7 +5042,8 @@
         "url": "https://www.newadvent.org/cathen/09435a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-032",
@@ -4310,7 +5061,8 @@
         "url": "https://www.newadvent.org/cathen/10218a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-001",
@@ -4328,7 +5080,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-004",
@@ -4346,7 +5099,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-008",
@@ -4364,7 +5118,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX16-011",
@@ -4382,7 +5137,8 @@
         "url": "https://www.newadvent.org/cathen/02276b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX16-012",
@@ -4400,7 +5156,8 @@
         "url": "https://www.newadvent.org/cathen/02276b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-014",
@@ -4418,7 +5175,14 @@
         "url": "https://www.newadvent.org/cathen/11515b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-GX16-015",
@@ -4436,7 +5200,8 @@
         "url": "https://www.newadvent.org/cathen/11515b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-018",
@@ -4454,7 +5219,14 @@
         "url": "https://www.newadvent.org/cathen/11515b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-GX16-020",
@@ -4472,7 +5244,8 @@
         "url": "https://www.newadvent.org/cathen/11515b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-001",
@@ -4490,7 +5263,8 @@
         "url": "https://www.newadvent.org/cathen/13181a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-003",
@@ -4508,7 +5282,16 @@
         "url": "https://www.newadvent.org/cathen/13181a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter",
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-GX17-005",
@@ -4526,7 +5309,8 @@
         "url": "https://www.newadvent.org/cathen/13181a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-006",
@@ -4544,7 +5328,8 @@
         "url": "https://www.newadvent.org/cathen/13181a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-008",
@@ -4562,7 +5347,8 @@
         "url": "https://www.newadvent.org/cathen/13181a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX17-016",
@@ -4580,7 +5366,14 @@
         "url": "https://www.newadvent.org/cathen/12448a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "seasons": [
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-GX17-020",
@@ -4598,7 +5391,8 @@
         "url": "https://www.newadvent.org/cathen/12448a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-028",
@@ -4616,7 +5410,8 @@
         "url": "https://www.newadvent.org/cathen/02217c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-008",
@@ -4634,7 +5429,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-009",
@@ -4652,7 +5448,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-012",
@@ -4670,7 +5467,8 @@
         "url": "https://www.newadvent.org/cathen/13403b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX18-014",
@@ -4688,7 +5486,8 @@
         "url": "https://www.newadvent.org/cathen/13403b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-015",
@@ -4706,7 +5505,8 @@
         "url": "https://www.newadvent.org/cathen/13403b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GX18-025",
@@ -4724,7 +5524,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-H04-P-015",
@@ -4742,7 +5543,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-017",
@@ -4760,7 +5562,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-061",
@@ -4778,7 +5581,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-069",
@@ -4796,7 +5600,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-097",
@@ -4814,7 +5619,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-098",
@@ -4832,7 +5638,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-122",
@@ -4850,7 +5657,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-129",
@@ -4868,7 +5676,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-023",
@@ -4886,7 +5695,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-026",
@@ -4904,7 +5719,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-035",
@@ -4922,7 +5744,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-A-049",
@@ -4940,7 +5763,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-058",
@@ -4958,7 +5788,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-26"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-059",
@@ -4976,7 +5812,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-062",
@@ -4994,7 +5837,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-24"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-063",
@@ -5012,7 +5861,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-072",
@@ -5030,7 +5886,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-077",
@@ -5048,7 +5905,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-081",
@@ -5066,7 +5924,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-A-082",
@@ -5084,7 +5943,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-093",
@@ -5102,7 +5962,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-094",
@@ -5120,7 +5986,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "ASH_WEDNESDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-102",
@@ -5138,7 +6010,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "PILGRIMAGE",
+      "calendar_context": {
+        "observances": [
+          "HOLY_WEEK"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-004",
@@ -5156,7 +6034,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-020",
@@ -5174,7 +6058,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_SATURDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-022",
@@ -5192,7 +6082,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-033",
@@ -5210,7 +6107,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "EASTER_MONDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-037",
@@ -5228,7 +6131,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-042",
@@ -5246,7 +6156,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "observances": [
+          "EASTER"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-059",
@@ -5264,7 +6180,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-060",
@@ -5282,7 +6204,16 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ],
+        "seasons": [
+          "pentecost"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-061",
@@ -5300,7 +6231,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-082",
@@ -5318,7 +6250,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-083",
@@ -5336,7 +6274,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-088",
@@ -5354,7 +6298,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-096",
@@ -5372,7 +6317,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-B-104",
@@ -5390,7 +6336,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-119",
@@ -5408,7 +6360,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-122",
@@ -5426,7 +6379,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-125",
@@ -5444,7 +6398,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "09-08"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-131",
@@ -5462,7 +6422,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-133",
@@ -5480,7 +6446,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02",
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-134",
@@ -5498,7 +6471,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-138",
@@ -5516,7 +6495,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-01"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-147",
@@ -5534,7 +6519,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-160",
@@ -5552,7 +6543,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-H04-W-B-168",
@@ -5570,7 +6562,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-29"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-172",
@@ -5588,7 +6586,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "07-25"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-001",
@@ -5606,7 +6610,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-003",
@@ -5624,7 +6635,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-004",
@@ -5642,7 +6660,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-011",
@@ -5660,7 +6684,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM01-012",
@@ -5678,7 +6703,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM01-013",
@@ -5696,7 +6722,17 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ],
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-020",
@@ -5714,7 +6750,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM01-024",
@@ -5732,7 +6769,13 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-001",
@@ -5750,7 +6793,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM02-007",
@@ -5768,7 +6812,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM02-014",
@@ -5786,7 +6831,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-003",
@@ -5804,7 +6855,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-008",
@@ -5822,7 +6879,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM03-009",
@@ -5840,7 +6898,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-014",
@@ -5858,7 +6922,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-29"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-017",
@@ -5876,7 +6946,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-21"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-018",
@@ -5894,7 +6970,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-019",
@@ -5912,7 +6995,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-19"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-023",
@@ -5930,7 +7019,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-042",
@@ -5948,7 +7043,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-C400-BF-009",
@@ -5966,7 +7062,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BF-012",
@@ -5984,7 +7086,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-004",
@@ -6002,7 +7110,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-010",
@@ -6020,7 +7134,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "EASTER"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-018",
@@ -6038,7 +7158,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-08"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-022",
@@ -6056,7 +7182,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-C400-BG-024",
@@ -6074,7 +7201,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BG-030",
@@ -6092,7 +7225,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-29"
+        ]
+      }
     },
     {
       "id": "DYK-C400-BJ-003",
@@ -6110,7 +7249,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-11"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-ADVT-003",
@@ -6128,7 +7273,13 @@
         "url": "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-16"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-BLSS-002",
@@ -6149,7 +7300,13 @@
           "https://www.maryimmaculateoflourdesnewtonma.org/blessing-of-herbs-and-first-fruits-on-the-assumption-of-our-lady"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-BLSS-004",
@@ -6170,7 +7327,13 @@
           "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "observances": [
+          "HOLY_SATURDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-CORP-001",
@@ -6190,7 +7353,13 @@
           "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-DOM-002",
@@ -6208,7 +7377,8 @@
         "url": "https://mucem.org/les-collections-du-mucem/explorez-les-collections/?keyword=b%C3%A9nitier+de+chevet",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CUSTOMS-CANON-DOM-007",
@@ -6226,7 +7396,13 @@
         "url": "https://sacrecoeur-paray.org/prier/introniser-le-sacre-coeur/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "observances": [
+          "SACRED_HEART"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-DOM-011",
@@ -6244,7 +7420,13 @@
         "url": "https://liturgie.catholique.fr/lexique/chandeleur/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-DOM-013",
@@ -6264,7 +7446,13 @@
           "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
         ]
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-HTHU-001",
@@ -6282,7 +7470,13 @@
         "url": "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-MARI-002",
@@ -6300,7 +7494,8 @@
         "url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CUSTOMS-CANON-NDAY-001",
@@ -6318,7 +7513,8 @@
         "url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CUSTOMS-CANON-ROGA-001",
@@ -6336,7 +7532,8 @@
         "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CUSTOMS-CANON-SNIC-001",
@@ -6354,7 +7551,13 @@
         "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-06"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-002",
@@ -6372,7 +7575,8 @@
         "url": "https://www.newadvent.org/cathen/15557b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-010",
@@ -6390,7 +7594,13 @@
         "url": "https://www.newadvent.org/cathen/03245b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-014",
@@ -6408,7 +7618,8 @@
         "url": "https://www.newadvent.org/cathen/03246a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW14-017",
@@ -6426,7 +7637,8 @@
         "url": "https://www.newadvent.org/cathen/05399b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-028",
@@ -6444,7 +7656,13 @@
         "url": "https://www.newadvent.org/cathen/01775b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "ASH_WEDNESDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-029",
@@ -6462,7 +7680,8 @@
         "url": "https://www.newadvent.org/cathen/01775b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW14-034",
@@ -6480,7 +7699,13 @@
         "url": "https://www.newadvent.org/cathen/01767b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-038",
@@ -6498,7 +7723,13 @@
         "url": "https://www.newadvent.org/cathen/04390b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-039",
@@ -6516,7 +7747,13 @@
         "url": "https://www.newadvent.org/cathen/03245b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-CW14-040",
@@ -6534,7 +7771,13 @@
         "url": "https://www.newadvent.org/cathen/03245b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-017",
@@ -6552,7 +7795,16 @@
         "url": "https://ich.unesco.org/en/RL/holy-week-in-guatemala-01854",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_WEEK"
+        ],
+        "seasons": [
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-CW15-032",
@@ -6570,7 +7822,8 @@
         "url": "https://ich.unesco.org/en/RL/maltese-village-festa-an-annual-community-celebration-01871",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW15-055",
@@ -6588,7 +7841,8 @@
         "url": "https://ich.unesco.org/en/RL/celebrations-of-big-shoulder-borne-processional-structures-00721?RL=00721",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-022",
@@ -6606,7 +7860,8 @@
         "url": "https://www.vaticannews.va/fr/afrique/news/2021-11/rwanda-40-ans-des-apparitions-a-kibeho.html",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW16-023",
@@ -6624,7 +7879,13 @@
         "url": "https://goa-tourism.com/festival/sao-joao/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-24"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-034",
@@ -6642,7 +7903,13 @@
         "url": "https://goa-tourism.com/event/feast-of-st-francis-xavier/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-03"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-043",
@@ -6660,7 +7927,13 @@
         "url": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "GOOD_FRIDAY"
+        ]
+      }
     },
     {
       "id": "DYK-CW16-050",
@@ -6678,7 +7951,8 @@
         "url": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW17-020",
@@ -6696,7 +7970,8 @@
         "url": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-029",
@@ -6714,7 +7989,8 @@
         "url": "https://www.newadvent.org/cathen/15569a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-038",
@@ -6732,7 +8008,8 @@
         "url": "https://www.newadvent.org/cathen/13189a.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CW18-044",
@@ -6750,7 +8027,8 @@
         "url": "https://www.newadvent.org/cathen/02465b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-053",
@@ -6768,7 +8046,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-CW18-055",
@@ -6786,7 +8065,8 @@
         "url": "https://www.newadvent.org/cathen/02418b.htm",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_NEW_SOURCE_WAVE"
+      "origin": "CUSTOMS_NEW_SOURCE_WAVE",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G365-W-A-031",
@@ -6804,7 +8084,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-24"
+        ]
+      }
     },
     {
       "id": "DYK-G365-W-A-089",
@@ -6822,7 +8108,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-G365-W-B-091",
@@ -6840,7 +8132,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "08-15"
+        ]
+      }
     },
     {
       "id": "DYK-G560-P-001",
@@ -6858,7 +8156,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-004",
@@ -6876,7 +8175,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-007",
@@ -6894,7 +8194,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-008",
@@ -6912,7 +8213,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-014",
@@ -6930,7 +8232,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-016",
@@ -6948,7 +8251,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G560-P-017",
@@ -6966,7 +8270,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G560-P-025",
@@ -6984,7 +8289,16 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ],
+        "seasons": [
+          "pentecost"
+        ]
+      }
     },
     {
       "id": "DYK-G560-P-026",
@@ -7002,7 +8316,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-029",
@@ -7020,7 +8335,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G560-P-035",
@@ -7038,7 +8354,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-010",
@@ -7056,7 +8373,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-012",
@@ -7074,7 +8397,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-013",
@@ -7092,7 +8421,13 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-G600-P-020",
@@ -7110,7 +8445,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-021",
@@ -7128,7 +8464,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-022",
@@ -7146,7 +8483,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G600-P-031",
@@ -7164,7 +8502,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G600-P-039",
@@ -7182,7 +8521,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G640-P-001",
@@ -7200,7 +8540,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G640-P-008",
@@ -7218,7 +8559,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G640-P-009",
@@ -7236,7 +8578,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G640-P-017",
@@ -7254,7 +8597,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-G640-P-020",
@@ -7272,7 +8616,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-G640-P-031",
@@ -7290,7 +8635,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-G640-P-036",
@@ -7308,7 +8654,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GL-G013-01",
@@ -7326,7 +8673,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fifth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G016-01",
@@ -7344,7 +8692,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G018-01",
@@ -7362,7 +8711,8 @@
         "url": "https://www.vatican.va/content/pius-x/en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G020-01",
@@ -7380,7 +8730,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fifth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G033-01",
@@ -7398,7 +8749,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G037-01",
@@ -7416,7 +8768,8 @@
         "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G038-01",
@@ -7434,7 +8787,8 @@
         "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G041-01",
@@ -7452,7 +8806,8 @@
         "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G044-01",
@@ -7470,7 +8825,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "DOCTRINE"
     },
     {
       "id": "DYK-GL-G051-01",
@@ -7488,7 +8844,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G082-02",
@@ -7506,7 +8863,8 @@
         "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G084-01",
@@ -7524,7 +8882,8 @@
         "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G089-01",
@@ -7542,7 +8901,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G093-02",
@@ -7560,7 +8920,13 @@
         "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ]
+      }
     },
     {
       "id": "DYK-GL-G131-01",
@@ -7578,7 +8944,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann129-144_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G187-01",
@@ -7596,7 +8963,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G196-01",
@@ -7614,7 +8982,8 @@
         "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G216-01",
@@ -7632,7 +9001,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GL-G252-01",
@@ -7650,7 +9020,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G261-01",
@@ -7668,7 +9039,8 @@
         "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G269-01",
@@ -7686,7 +9058,8 @@
         "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GL-G351-01",
@@ -7704,7 +9077,8 @@
         "url": "https://www.newadvent.org/cathen/12428b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G355-01",
@@ -7722,7 +9096,8 @@
         "url": "https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20000928_notification_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G359-01",
@@ -7740,7 +9115,8 @@
         "url": "https://www.newadvent.org/cathen/11188a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G382-01",
@@ -7758,7 +9134,8 @@
         "url": "https://archive.org/details/sp07mr62-editio-typica",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "LATIN"
     },
     {
       "id": "DYK-GL-G421-01",
@@ -7776,7 +9153,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G427-01",
@@ -7794,7 +9172,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G432-01",
@@ -7812,7 +9191,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G433-01",
@@ -7830,7 +9210,8 @@
         "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GL-G443-01",
@@ -7848,7 +9229,8 @@
         "url": "https://www.newadvent.org/cathen/10487b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "discovery_topic": "CANON_LAW"
     },
     {
       "id": "DYK-GX14-012",
@@ -7866,7 +9248,8 @@
         "url": "https://www.newadvent.org/cathen/01428c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX14-019",
@@ -7884,7 +9267,8 @@
         "url": "https://www.newadvent.org/cathen/03561a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX14-021",
@@ -7902,7 +9286,8 @@
         "url": "https://www.newadvent.org/cathen/03767a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-023",
@@ -7920,7 +9305,8 @@
         "url": "https://www.newadvent.org/cathen/03767a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-025",
@@ -7938,7 +9324,8 @@
         "url": "https://www.newadvent.org/cathen/04276a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX14-032",
@@ -7956,7 +9343,8 @@
         "url": "https://www.newadvent.org/cathen/01428c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX15-003",
@@ -7974,7 +9362,8 @@
         "url": "https://www.newadvent.org/cathen/15388a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-004",
@@ -7992,7 +9381,8 @@
         "url": "https://www.newadvent.org/cathen/15388a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-019",
@@ -8010,7 +9400,8 @@
         "url": "https://www.newadvent.org/cathen/14424a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX15-033",
@@ -8028,7 +9419,8 @@
         "url": "https://www.newadvent.org/cathen/10218a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-002",
@@ -8046,7 +9438,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-007",
@@ -8064,7 +9457,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-009",
@@ -8082,7 +9476,8 @@
         "url": "https://www.newadvent.org/cathen/02274a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX16-025",
@@ -8100,7 +9495,8 @@
         "url": "https://www.newadvent.org/cathen/05730b.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX16-027",
@@ -8118,7 +9514,13 @@
         "url": "https://www.newadvent.org/cathen/01347a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE",
+      "calendar_context": {
+        "observances": [
+          "HOLY_WEEK"
+        ]
+      }
     },
     {
       "id": "DYK-GX17-011",
@@ -8136,7 +9538,8 @@
         "url": "https://www.newadvent.org/cathen/03519c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-012",
@@ -8154,7 +9557,8 @@
         "url": "https://www.newadvent.org/cathen/03519c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GX17-013",
@@ -8172,7 +9576,8 @@
         "url": "https://www.newadvent.org/cathen/03519c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX17-026",
@@ -8190,7 +9595,8 @@
         "url": "https://www.newadvent.org/cathen/02217c.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX17-029",
@@ -8208,7 +9614,8 @@
         "url": "https://www.newadvent.org/cathen/01351a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-004",
@@ -8226,7 +9633,13 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_SATURDAY"
+        ]
+      }
     },
     {
       "id": "DYK-GX18-005",
@@ -8244,7 +9657,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "ARCHITECTURE"
     },
     {
       "id": "DYK-GX18-007",
@@ -8262,7 +9676,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-GX18-010",
@@ -8280,7 +9695,8 @@
         "url": "https://www.newadvent.org/cathen/01220a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-GX18-018",
@@ -8298,7 +9714,8 @@
         "url": "https://www.newadvent.org/cathen/07433a.htm",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY_NEW_SOURCE_WAVE"
+      "origin": "GLOSSARY_NEW_SOURCE_WAVE",
+      "discovery_topic": "CHURCH_HISTORY"
     },
     {
       "id": "DYK-H04-P-023",
@@ -8316,7 +9733,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "PILGRIMAGE"
     },
     {
       "id": "DYK-H04-P-025",
@@ -8334,7 +9752,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-037",
@@ -8352,7 +9771,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-046",
@@ -8370,7 +9790,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-P-054",
@@ -8388,7 +9809,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-P-072",
@@ -8406,7 +9828,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-P-080",
@@ -8424,7 +9847,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-P-085",
@@ -8442,7 +9866,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-114",
@@ -8460,7 +9885,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-P-145",
@@ -8478,7 +9904,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-149",
@@ -8496,7 +9923,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-P-152",
@@ -8514,7 +9942,8 @@
         "url": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-W-A-003",
@@ -8532,7 +9961,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-A-005",
@@ -8550,7 +9980,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-013",
@@ -8568,7 +9999,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-A-047",
@@ -8586,7 +10018,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-080",
@@ -8604,7 +10043,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-W-A-091",
@@ -8622,7 +10062,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "fixed_dates": [
+          "01-06"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-099",
@@ -8640,7 +10086,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-A-107",
@@ -8658,7 +10111,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "lent",
+          "passion"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-003",
@@ -8676,7 +10136,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-006",
@@ -8694,7 +10160,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PALM_SUNDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-007",
@@ -8712,7 +10184,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-018",
@@ -8730,7 +10208,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "HOLY_SATURDAY"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-036",
@@ -8748,7 +10232,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-B-047",
@@ -8766,7 +10251,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-048",
@@ -8784,7 +10275,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "seasons": [
+          "ascension"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-075",
@@ -8802,7 +10299,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-076",
@@ -8820,7 +10323,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-086",
@@ -8838,7 +10347,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "observances": [
+          "CORPUS_CHRISTI"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-090",
@@ -8856,7 +10371,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "LITURGY"
     },
     {
       "id": "DYK-H04-W-B-093",
@@ -8874,7 +10390,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-11"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-094",
@@ -8892,7 +10414,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-11"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-097",
@@ -8910,7 +10438,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-116",
@@ -8928,7 +10457,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-128",
@@ -8946,7 +10481,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-H04-W-B-137",
@@ -8964,7 +10500,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-149",
@@ -8982,7 +10524,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-03"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-156",
@@ -9000,7 +10548,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-17"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-163",
@@ -9018,7 +10572,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-H04-W-B-167",
@@ -9036,7 +10591,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "06-29"
+        ]
+      }
     },
     {
       "id": "DYK-H04-W-B-179",
@@ -9054,7 +10615,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-13"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-005",
@@ -9072,7 +10639,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-006",
@@ -9090,7 +10664,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-010",
@@ -9108,7 +10689,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "PENTECOST"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-015",
@@ -9126,7 +10713,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-07"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-017",
@@ -9144,7 +10737,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-UM01-018",
@@ -9162,7 +10762,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-004",
@@ -9180,7 +10786,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "12-06"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-013",
@@ -9198,7 +10810,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "02-02"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-016",
@@ -9216,7 +10834,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "09-08"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-017",
@@ -9234,7 +10858,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM02-020",
@@ -9252,7 +10877,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION",
+      "calendar_context": {
+        "fixed_dates": [
+          "03-19"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-021",
@@ -9270,7 +10901,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "observances": [
+          "HOLY_THURSDAY"
+        ]
+      }
     },
     {
       "id": "DYK-UM02-041",
@@ -9288,7 +10925,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-UM03-001",
@@ -9306,7 +10944,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "ascension",
+          "easter"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-006",
@@ -9324,7 +10969,8 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM03-011",
@@ -9342,7 +10988,13 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "fixed_dates": [
+          "11-02"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-025",
@@ -9360,7 +11012,14 @@
         "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS",
+      "calendar_context": {
+        "seasons": [
+          "advent",
+          "christmas"
+        ]
+      }
     },
     {
       "id": "DYK-UM03-030",
@@ -9378,7 +11037,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-UM03-035",
@@ -9396,7 +11056,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS"
+      "origin": "CUSTOMS",
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM03-041",
@@ -9414,7 +11075,8 @@
         "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
         "alternative_urls": []
       },
-      "origin": "CUSTOMS_EXTRA_REVIEW"
+      "origin": "CUSTOMS_EXTRA_REVIEW",
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-GL-G071-01",
@@ -9597,7 +11259,12 @@
       "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
       "glossary_concept_id": "G332",
       "discovery_topic": "DEVOTION",
-      "calendar_cue": "FIRST_FRIDAY"
+      "calendar_cue": "FIRST_FRIDAY",
+      "calendar_context": {
+        "observances": [
+          "SACRED_HEART"
+        ]
+      }
     },
     {
       "id": "DYK-GL-G333-01",
