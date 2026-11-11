@@ -29,7 +29,7 @@ import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js"
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
-import {createScholaMassTextSynchronizer} from "./reader-schola-mass-text-sync.js";
+import {createScholaMassTextSynchronizer,scholaMassTextAnchors} from "./reader-schola-mass-text-sync.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -154,6 +154,7 @@ const SHELL_STYLE = `
   scrollbar-width:none;touch-action:pan-x
 }
 .ao-schola-follow-strip::-webkit-scrollbar{display:none}
+.ao-schola-follow-syllable[hidden]{display:none!important}
 .ao-schola-follow-syllable{
   display:inline-flex;align-items:center;justify-content:center;
   flex:0 0 auto;min-width:20px;min-height:22px;border:0;border-radius:5px;
@@ -3494,7 +3495,29 @@ export function createReaderDomAdapter({
                   progress.style.width=(100*(index+1)/count).toFixed(2)+"%";
               }
             });
-            if(scholaDockFollower.start(score.gabc)){
+            let minimumIndex=0;
+            if(["GLORIA","CREDO"].includes(score.scholaTrackId)){
+              // The GABC includes the celebrant's intonation. The Schola
+              // follows only its first source-owned choir cue, never rewinds
+              // the Mass reader to a priest-owned intonation card.
+              const initial=scholaMassTextAnchors(score.gabc,[{
+                id:schola?.firstCueId??"FIRST_SCHOLA_CUE",
+                latin:schola?.firstLatin??""
+              }]);
+              if(initial.anchors.length!==1){
+                scholaDockFollower.destroy();scholaDockFollower=null;
+                dock.dataset.notationFollow="unavailable";
+                return;
+              }
+              minimumIndex=initial.offsets.findIndex(x=>
+                x>=initial.anchors[0].start);
+              if(minimumIndex<=0){
+                scholaDockFollower.destroy();scholaDockFollower=null;
+                dock.dataset.notationFollow="unavailable";
+                return;
+              }
+            }
+            if(scholaDockFollower.start(score.gabc,{minimumIndex})){
               if(scholaPaused)scholaDockFollower.pause?.();
               dock.dataset.notationFollow="estimated";
               const status=root.querySelector('[data-role="schola-status"]');
