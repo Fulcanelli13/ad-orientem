@@ -78,7 +78,7 @@ export function createScholaFollowClock({
  if(typeof schedule!=="function"||typeof cancel!=="function")
   throw new TypeError("Timers required");
  const duration=Math.max(500,Math.min(9000,Number(stepMs)||1600));
- let count=0,index=0,running=false,paused=false,timer=null,destroyed=false;
+ let count=0,index=0,minimum=0,running=false,paused=false,timer=null,destroyed=false;
  const release=()=>{if(timer!==null){cancel(timer);timer=null;}};
  function tick(){
   timer=null;
@@ -90,11 +90,13 @@ export function createScholaFollowClock({
   else running=false; // last lyric does NOT mean singing has ended
  }
  function arm(){release();if(running&&index<count-1)timer=schedule(tick,duration);}
- function start(total){
+ function start(total,{index:initialIndex=0,minimumIndex=0}={}){
   release();if(destroyed)return false;
-  count=Math.floor(Number(total)||0);index=0;paused=false;
+  count=Math.floor(Number(total)||0);paused=false;
   if(count<1||count>600){count=0;running=false;return false;}
-  running=count>1;
+  minimum=Math.max(0,Math.min(count-1,Math.floor(Number(minimumIndex)||0)));
+  index=Math.max(minimum,Math.min(count-1,Math.floor(Number(initialIndex)||0)));
+  running=index<count-1;
   onStep(Object.freeze({index,count,origin:"estimated"}));arm();
   return true;
  }
@@ -102,7 +104,7 @@ export function createScholaFollowClock({
   if(destroyed||count<1)return false;
   const n=Number(next);
   if(!Number.isFinite(n))return false;
-  index=Math.max(0,Math.min(count-1,Math.floor(n)));
+  index=Math.max(minimum,Math.min(count-1,Math.floor(n)));
   running=!paused&&index<count-1;
   onStep(Object.freeze({index,count,origin:"manual"}));arm();
   return true;
@@ -112,10 +114,10 @@ export function createScholaFollowClock({
   paused=true;running=false;release();return true;}
  function resume(){if(destroyed||count<1)return false;
   paused=false;running=index<count-1;arm();return true;}
- function destroy(){release();running=false;paused=false;count=0;destroyed=true;}
+ function destroy(){release();running=false;paused=false;count=0;minimum=0;destroyed=true;}
  return Object.freeze({
   start,seek,shift,pause,resume,destroy,
-  getState:()=>Object.freeze({index,count,running,paused,pending:timer!==null,destroyed})
+  getState:()=>Object.freeze({index,count,minimum,running,paused,pending:timer!==null,destroyed})
  });
 }
 
@@ -241,7 +243,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
  staff.addEventListener("pointerdown",pointDown);
  staff.addEventListener("pointerup",pointUp);
  staff.addEventListener("pointercancel",pointCancel);
- function start(gabc){
+ function start(gabc,{minimumIndex=0,initialIndex=minimumIndex}={}){
   if(destroyed)return false;
   sourceParts=scholaGabcSyllables(gabc);
   parts=trackId==="KYRIE"?scholaKyrieSourceOccurrences(gabc):sourceParts;
@@ -252,6 +254,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    const node=document.createElement("button");
    node.type="button";node.dataset.scholaSyllableIndex=String(part.index);
    node.className="ao-schola-follow-syllable";
+   node.hidden=part.index<minimumIndex;
    node.textContent=part.label;
    node.setAttribute("aria-label","Resynchronise expected chant at syllable "+
     (part.index+1)+" of "+parts.length+": "+part.label);
@@ -267,7 +270,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    strip.replaceChildren();strip.hidden=true;buttons=[];
    return false;
   }
-  return clock.start(parts.length);
+  return clock.start(parts.length,{index:initialIndex,minimumIndex});
  }
  function destroy(){
   if(destroyed)return;destroyed=true;clock.destroy();
