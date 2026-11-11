@@ -12,6 +12,8 @@ const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const L=(language,en,fr)=>language==="fr"?fr:en;
 const https=v=>/^https:\/\/[^\s<>"']+$/i.test(T(v));
+// A link back to our legacy Find index is not original venue provenance.
+const externalSource=u=>https(u)&&!/^https:\/\/(?:www\.)?adorientem\.church\/find(?:[/?#]|$)/i.test(T(u));
 const values=v=>A(v).map(T).filter(Boolean);
 const unknown=lang=>L(lang,"Not established","Non établi");
 const human=(v)=>T(v).replaceAll("_"," ").replace(/\s+/g," ");
@@ -76,7 +78,7 @@ const link=(url,title,cls)=>https(url)?'<a'+(cls?' class="'+E(cls)+'"':'')+' hre
 const heading=(title,lang)=>'<h3>'+E(title)+'</h3>';
 export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  const v=buildTlmChurchProfile(item,language),venue=v.venue;
- const sourceLinks=A(item?.source_links).filter(s=>https(s?.url));
+ const sourceLinks=A(item?.source_links).filter(s=>externalSource(s?.url));
  const contact=venue?.contact??{};
  // Apply exactly the same approved-image gate as the compact church card.
  const hasPhoto=eligibleRenderedDirectoryImage(item?.cover_media,item);
@@ -142,13 +144,24 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
     "Ministère "+ministry.institute_id+" · livres habituels ; pas toutes les messes de cette église"))+'</p>':'')+'</section>';
  // Give every source-backed CL2 site a useful first action, even if it has
  // no independently publishable recurring Mass timetable or contact object.
- const primaryLink=(siteContact&&https(siteContact.review_source_url)?siteContact.review_source_url:null)||
-   values(contact.schedule_url).find(https)||
-   (exact&&https(scoped.source_url)?scoped.source_url:null)||
-   values(contact.website).find(https)||sourceLinks[0]?.url;
+ const primaryLink=(siteContact&&externalSource(siteContact.review_source_url)?siteContact.review_source_url:null)||
+   values(contact.schedule_url).find(externalSource)||
+   (exact&&externalSource(scoped.source_url)?scoped.source_url:null)||
+   values(contact.website).find(externalSource)||sourceLinks[0]?.url;
  if(primaryLink)html+='<div class="aoTlmProfilePrimaryAction">'+
    link(primaryLink,L(language,"Consult original church / Mass information",
      "Consulter la source originale de l’église ou des messes"))+'</div>';
+ else {
+   // A search is an escape hatch, NEVER original provenance or a GPS destination.
+   const query=[T(item?.title),T(item?.source_location_description)||T(item?.address?.formatted)||T(item?.subtitle),T(item?.country_code)].filter(Boolean).join(", ");
+   if(query)html+='<div class="aoTlmProfilePrimaryAction">'+
+     link("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query),
+       L(language,"Search for this church (results not verified)",
+         "Rechercher cette église (résultats non vérifiés)"))+'</div>'+
+     '<p class="aoTlmProfileCaution">'+E(L(language,
+       "External search only—not an official source, a verified church entrance or proof of a current Mass. Confirm directly before travelling.",
+       "Recherche externe uniquement : ni source officielle, ni entrée vérifiée, ni preuve de messe actuelle. Confirmez avant tout déplacement."))+'</p>';
+ }
  // A named site/contact is verifiable independently from ANY Mass timing,
  // ownership, priest, ecclesial stance, or liturgical book. One CL2 site only.
  if(siteContact){

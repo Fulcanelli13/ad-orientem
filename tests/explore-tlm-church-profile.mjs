@@ -101,6 +101,26 @@ assert.match(mismatched,/data-visual-kind="emblem"/);
  const venueFr=renderTlmChurchProfile(sourceOnly,"fr");
  assert.match(venueFr,/Source originale du lieu/);
  assert.match(venueFr,/Identité liturgique en bref/);
+ // Some CL2 churches inherit only HTTP historic URLs or an internal Find
+ // backlink. Offer a transparent search, never disguise it as first-party evidence.
+ const noExternal={...sourceOnly,source_id:"AO-EUR-DE-127",cover_media:null,
+   title:"St Joseph",country_code:"DE",
+   source_location_description:"Selters, Germany (locality only; street not established)",
+   source_links:[],raw:null,actions:[]};
+ const fallbackEn=renderTlmChurchProfile(noExternal,"en");
+ assert.match(fallbackEn,/Search for this church \(results not verified\)/);
+ assert.match(fallbackEn,/google.com\/maps\/search\/\?api=1&amp;query=/);
+ assert.match(fallbackEn,/not an official source, a verified church entrance or proof of a current Mass/);
+ assert.doesNotMatch(fallbackEn,/Consult original church \/ Mass information/);
+ const legacySelf={...noExternal,source_links:[{url:"https://adorientem.church/find?country=DE",title:"Old source"}]};
+ const fallbackSelf=renderTlmChurchProfile(legacySelf,"en");
+ assert.match(fallbackSelf,/Search for this church \(results not verified\)/);
+ assert.doesNotMatch(fallbackSelf,/href="https:\/\/adorientem.church\/find/);
+ const fallbackFr=renderTlmChurchProfile(noExternal,"fr");
+ assert.match(fallbackFr,/Rechercher cette église \(résultats non vérifiés\)/);
+ // Existing genuine primary sources retain priority and never show the search.
+ assert.doesNotMatch(venueHtml,/Search for this church \(results not verified\)/);
+
  // Never accept a photo based on a similar name, nearby coordinates, or an
  // institution emblem. Exact venue-id and release/rights flags are mandatory.
  assert.doesNotMatch(renderTlmChurchProfile({...sourceOnly,source_id:"UNRELATED"}),
