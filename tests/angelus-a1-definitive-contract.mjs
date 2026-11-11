@@ -9,7 +9,7 @@ import {ANGELUS_A1_CSS} from "../src/pray/angelus-a1-definitive-styles.js";
 assert.equal(ANGELUS_A1_VERSION,"angelus-a1-three-bells-caption-v1");
 assert.equal(ANGELUS_A1_TREATMENT,"caption");
 assert.deepEqual(angelusA1StagePlan("angelus"),[
- "Angelus Domini","Ecce ancilla","Et Verbum caro","Ora pro nobis","Oremus"]);
+ "Angelus Domini","Ecce ancilla","Et Verbum caro","Oremus","Conclusio"]);
 assert.equal(angelusA1StagePlan("regina").length,4);
 assert.equal(angelusA1StagePlan("angelus",false).length,4);
 assert.equal(angelusA1StagePlan("regina",false).length,3);
