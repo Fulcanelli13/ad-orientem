@@ -122,7 +122,12 @@
   });
   window.AO_SANCTUARY_EMBED_TEST=Object.freeze({
     present,originalCardCount:originals.length,
-    getState:()=>Object.freeze({...last,form:st.form,solemn:st.solemn,inc:st.inc})
+    getState:()=>Object.freeze({...last,form:st.form,solemn:st.solemn,inc:st.inc}),
+    getVisualFx:()=>Object.freeze({
+      elevationStage:Boolean(M3.eng?.vp?.classList?.contains?.("elev")),
+      elevationGlowVisible:Boolean((M3.eng?.bbs??[]).some(b=>
+        b?.el?.classList?.contains?.("glow")&&b.show))
+    })
   });
   if(window.parent!==window)
     window.parent.postMessage({type:READY,version:1,originalCards:originals.length},

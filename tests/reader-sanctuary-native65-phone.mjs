@@ -99,6 +99,9 @@ try{
    scholaOnly:true
   }));
   assert.equal(improper.ok,false,"Proper Schola gesture triggered sanctuary movement");
+  assert.deepEqual(await frame.evaluate(()=>
+    window.AO_SANCTUARY_EMBED_TEST.getState()),original,
+    "Schola-only cue must not even select a different sanctuary scene");
   // The original animated scene must re-arm its exact action when a
   // source-focused rubric exits and the reader later scrolls back into it.
   // These are isolated bridge probes, not invented priest observations.
@@ -122,9 +125,9 @@ try{
     const enter=event("AO.SM.C0174");
     const held=event("AO.SM.C0174");
     const exit=event("AO.SM.C0175");
-    const dormant=window.M3?.eng?.bbs?.filter(b=>
-      b?.el?.classList?.contains("glow")).every(b=>b.show===false);
-    const classOff=!window.M3?.eng?.vp?.classList?.contains("elev");
+    const fx=api.getVisualFx();
+    const dormant=!fx.elevationGlowVisible;
+    const classOff=!fx.elevationStage;
     const again=event("AO.SM.C0174");
     return {enter:enter.choreography,held:held.choreography,
       exit:exit.choreography,again:again.choreography,
