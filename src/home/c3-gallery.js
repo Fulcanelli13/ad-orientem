@@ -171,7 +171,8 @@ export function hydrateC3Art(root,state,win=globalThis){
     const a=row?.status==="GREEN"?p?.effectiveArtwork?.(row.primaryArtId):null;
     if(mainInfo&&authoritative){
       mainInfo.__c3Artwork={
-        title:authoritative.title,artist:authoritative.artist,
+        title:state?.language==="fr"&&authoritative.titleFr?authoritative.titleFr:authoritative.title,
+        artist:authoritative.artist,
         date:"",rights:authoritative.rights,
         source:authoritative.source,image:homeArtworkAssetUrl(authoritative.infoImage,win)
       };
