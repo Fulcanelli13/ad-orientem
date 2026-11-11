@@ -191,8 +191,9 @@ try{
       throw Error("Actual Ordinary reader must have scroll travel: "+JSON.stringify(origin));
     await page.waitForFunction(previous=>{
       const staff=document.querySelector('[data-role="schola-approved-staff"]');
-      return staff?.dataset.scholaFollowOrigin==="reader-scroll" &&
-        staff.dataset.scholaFollowIndex!==previous;
+      return document.querySelector('[data-role="schola-follow-strip"]')
+        ?.dataset.scholaFollowOrigin==="reader-scroll" &&
+        staff?.dataset.scholaFollowIndex!==previous;
     },origin.earlierIndex,{timeout:5000});
     const changed=await page.evaluate(()=>({
       index:document.querySelector('[data-role="schola-approved-staff"]')
