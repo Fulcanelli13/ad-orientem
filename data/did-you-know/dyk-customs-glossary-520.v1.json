@@ -335,7 +335,7 @@
       "discovery_topic": "CUSTOMS",
       "calendar_context": {
         "observances": [
-          "GOOD_FRIDAY"
+          "HOLY_WEEK"
         ]
       }
     },
@@ -495,8 +495,8 @@
       "origin": "CUSTOMS_NEW_SOURCE_WAVE",
       "discovery_topic": "DEVOTION",
       "calendar_context": {
-        "fixed_dates": [
-          "09-29"
+        "observances": [
+          "CORPUS_CHRISTI"
         ]
       }
     },
@@ -1536,8 +1536,8 @@
       "origin": "CUSTOMS_NEW_SOURCE_WAVE",
       "discovery_topic": "CUSTOMS",
       "calendar_context": {
-        "observances": [
-          "ASH_WEDNESDAY"
+        "seasons": [
+          "septuagesima"
         ]
       }
     },
@@ -1822,12 +1822,7 @@
         "alternative_urls": []
       },
       "origin": "CUSTOMS_NEW_SOURCE_WAVE",
-      "discovery_topic": "DEVOTION",
-      "calendar_context": {
-        "fixed_dates": [
-          "03-19"
-        ]
-      }
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-C400-BH-001",
@@ -5286,8 +5281,6 @@
       "discovery_topic": "ARCHITECTURE",
       "calendar_context": {
         "seasons": [
-          "ascension",
-          "easter",
           "lent",
           "passion"
         ]
@@ -5990,7 +5983,7 @@
       "discovery_topic": "CUSTOMS",
       "calendar_context": {
         "observances": [
-          "ASH_WEDNESDAY"
+          "SHROVE_TUESDAY"
         ]
       }
     },
@@ -6013,8 +6006,9 @@
       "origin": "CUSTOMS",
       "discovery_topic": "PILGRIMAGE",
       "calendar_context": {
-        "observances": [
-          "HOLY_WEEK"
+        "seasons": [
+          "lent",
+          "passion"
         ]
       }
     },
@@ -6450,7 +6444,6 @@
       "discovery_topic": "CUSTOMS",
       "calendar_context": {
         "fixed_dates": [
-          "02-02",
           "11-01"
         ]
       }
@@ -6725,9 +6718,6 @@
       "origin": "CUSTOMS",
       "discovery_topic": "DEVOTION",
       "calendar_context": {
-        "fixed_dates": [
-          "03-19"
-        ],
         "seasons": [
           "advent",
           "christmas"
@@ -7000,6 +6990,9 @@
       "calendar_context": {
         "fixed_dates": [
           "01-19"
+        ],
+        "seasons": [
+          "christmas"
         ]
       }
     },
@@ -7397,12 +7390,7 @@
         "alternative_urls": []
       },
       "origin": "CUSTOMS",
-      "discovery_topic": "DEVOTION",
-      "calendar_context": {
-        "observances": [
-          "SACRED_HEART"
-        ]
-      }
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-CUSTOMS-CANON-DOM-011",
@@ -10089,9 +10077,8 @@
       "origin": "CUSTOMS",
       "discovery_topic": "CUSTOMS",
       "calendar_context": {
-        "seasons": [
-          "lent",
-          "passion"
+        "observances": [
+          "SHROVE_TUESDAY"
         ]
       }
     },
@@ -10790,7 +10777,10 @@
       "discovery_topic": "DEVOTION",
       "calendar_context": {
         "fixed_dates": [
-          "12-06"
+          "12-05"
+        ],
+        "seasons": [
+          "advent"
         ]
       }
     },
@@ -10878,12 +10868,7 @@
         "alternative_urls": []
       },
       "origin": "CUSTOMS",
-      "discovery_topic": "DEVOTION",
-      "calendar_context": {
-        "fixed_dates": [
-          "03-19"
-        ]
-      }
+      "discovery_topic": "DEVOTION"
     },
     {
       "id": "DYK-UM02-021",
@@ -10902,12 +10887,7 @@
         "alternative_urls": []
       },
       "origin": "CUSTOMS",
-      "discovery_topic": "CUSTOMS",
-      "calendar_context": {
-        "observances": [
-          "HOLY_THURSDAY"
-        ]
-      }
+      "discovery_topic": "CUSTOMS"
     },
     {
       "id": "DYK-UM02-041",
@@ -11259,12 +11239,7 @@
       "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
       "glossary_concept_id": "G332",
       "discovery_topic": "DEVOTION",
-      "calendar_cue": "FIRST_FRIDAY",
-      "calendar_context": {
-        "observances": [
-          "SACRED_HEART"
-        ]
-      }
+      "calendar_cue": "FIRST_FRIDAY"
     },
     {
       "id": "DYK-GL-G333-01",
