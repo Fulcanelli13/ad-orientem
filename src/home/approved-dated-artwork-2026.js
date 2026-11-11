@@ -209,7 +209,8 @@ export function renderApproved2026HomeArtwork(slot,state,win=globalThis){
  }
  const img=win.document.createElement("img");
  img.className="aoC3DatedImage";
- img.src=homeArtworkAssetUrl(chosen.image,win);img.alt=chosen.title+" — "+chosen.artist;
+ img.src=homeArtworkAssetUrl(chosen.image,win);
+ img.alt=(state?.language==="fr"&&chosen.titleFr?chosen.titleFr:chosen.title)+" — "+chosen.artist;
  img.loading="eager";img.decoding="async";img.referrerPolicy="no-referrer";
  img.dataset.aoHomeAuthoritativeDate=chosen.date;
  img.dataset.aoHomeAuthoritativeArtwork=chosen.artworkId;
