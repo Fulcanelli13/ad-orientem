@@ -11,6 +11,7 @@ on:
       - "src/mass/reader-dom.js"
       - "tests/schola-notation-follow.mjs"
       - "tests/reader-schola-mass-text-sync.mjs"
+      - "tests/reader-schola-card-follow.mjs"
       - "tests/schola-mass-sync-phone.mjs"
       - "tests/schola-mass-sync-native65-e2e.mjs"
       - "tests/schola-notation-follow-phone.mjs"
@@ -40,6 +41,7 @@ jobs:
         run: |
           node tests/schola-notation-follow.mjs
           node tests/reader-schola-mass-text-sync.mjs
+          node tests/reader-schola-card-follow.mjs
       - name: Install Playwright Chromium
         run: |
           npm install --no-audit --no-fund
