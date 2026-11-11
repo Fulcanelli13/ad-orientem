@@ -171,3 +171,23 @@ test("pause and manual seeking preserve one Schola syllable cursor without any p
  clock.destroy();
  assert.equal(clock.getState().destroyed,true);
 });
+
+test("the priest's intonation cannot be selected by the Schola follow clock",()=>{
+ const callbacks=[],pending=[];
+ const clock=createScholaFollowClock({
+  schedule:fn=>{pending.push(fn);return pending.length},
+  cancel:()=>{},
+  onStep:event=>callbacks.push(event.index)
+ });
+ assert.equal(clock.start(196,{index:9,minimumIndex:9}),true);
+ assert.equal(clock.getState().index,9);
+ assert.equal(clock.getState().minimum,9);
+ assert.equal(clock.seek(0),true);
+ assert.equal(clock.getState().index,9);
+ assert.equal(clock.shift(-100),true);
+ assert.equal(clock.getState().index,9);
+ assert.equal(callbacks.at(-1),9);
+ assert.equal(clock.seek(19),true);
+ assert.equal(clock.getState().index,19);
+ clock.destroy();
+});
