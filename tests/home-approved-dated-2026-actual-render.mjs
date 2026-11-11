@@ -40,10 +40,17 @@ for(const [date,path] of Object.entries(paths)){
   assert.equal(art.image,"/assets/prayer/released/heart-jesus-full-original.jpg");
   assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_LOCAL_ORIGINAL");
   assert.equal(art.imageStatus,"PREVIOUSLY_RELEASED_LOCAL_ORIGINAL");
+ }else if(date==="2026-11-01"){
+  // Existing frozen Saraceni painting now decodes from byte-verified Met CC0 original.
+  assert.equal(art.image,"/assets/home/class-i-2026/saraceni-paradise-met-1971-93-original.jpg");
+  assert.equal(art.selectionKind,"FROZEN_CLASS_I_SARACENI_MET_CC0_EXACT_LOCAL_SOURCE_PHOTO");
+  assert.equal(art.imageStatus,"LOCAL_SARACENI_MET_1971_93_CC0_ORIGINAL_BYTE_VERIFIED");
  }else assert.equal(art.image,record.image);
  assert.equal(art.source,record.source);
- if(date!=="2026-06-12")assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_DATE");
- if(date!=="2026-06-12")assert.ok(art.imageStatus.includes("NOT_OFFLINE_CERTIFIED"));
+ if(!["2026-06-12","2026-11-01"].includes(date)){
+  assert.equal(art.selectionKind,"PREVIOUSLY_APPROVED_CLASS_I_DATE");
+  assert.ok(art.imageStatus.includes("NOT_OFFLINE_CERTIFIED"));
+ }
  assert.equal(approved2026HomeArtwork(build(date,"wrong-principal",path)),null);
  assert.equal(approved2026HomeArtwork(build(date,record.principalId,path+"-wrong")),null);
  state.resolution.date="2026-01-01";
@@ -156,4 +163,4 @@ const heldKing=APPROVED_CLASS_I_2026.find(x=>x.date==="2026-10-25");
 assert.equal(approved2026HomeArtwork(build(heldKing.date,heldKing.principalId,"Sancti/10-DU")),null,
  "Photo released in another Prayer module must not silently bypass the King date rights hold");
 
-console.log("PASS actual Home resolver: eight Class I previews + Ash Wednesday + two previously released Gospel dates; source/principal/Proper safeguards");
+console.log("PASS actual Home resolver: local Met Saraceni, other protected Class I previews, Ash Wednesday and Gospel dates; source/principal/Proper safeguards");
