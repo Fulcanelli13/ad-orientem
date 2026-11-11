@@ -76,7 +76,7 @@ try{
     const family=libraryVariantFamily(id);
     if(family){
      const details=page.locator(scope+'[data-ao-prayer-family="'+family+'"]');
-     if(!await details.evaluate(el=>el.open))await details.locator("> summary").click();
+     if(!await details.evaluate(el=>el.open))await details.locator("summary").first().click();
     }
     const entry=page.locator(scope+'[data-p435930-lib-open="'+id+'"]');
     assert.equal(await entry.count(),1,"Missing public Library source identity: "+id);
@@ -85,7 +85,7 @@ try{
     await reader.locator('[data-ao-devo-card="'+id+'"]').waitFor({state:"attached",timeout:15000});
     const state=await reader.evaluate(el=>({
      owner:el.closest(".aoP435930Mount")?.dataset.aoPrayView,
-     source:el.querySelectorAll(".aoP435930Source").length,
+     source:document.querySelectorAll("#aoPray435930.open .aoP435930Source").length,
      charCount:el.querySelector('[data-ao-devo-card]')?.textContent?.trim().length||0,
      overflow:Math.max(0,el.scrollWidth-el.clientWidth)
     }));
