@@ -164,9 +164,9 @@ try{
         if(!dock||!panel||!staff||!scroll||!line)return {mounted:false};
         dock.dataset.active="true";dock.dataset.collapsed="false";
         panel.hidden=false;panel.dataset.scoreStatus="approved";
-        const r=await fetch("/tests/fixtures/live-handoff-kyrie-XI-source.gabc");
-        if(!r.ok)throw new Error("Handoff Kyrie XI source missing");
-        const gabc=await r.text();
+        const sourceResponse=await fetch("/tests/fixtures/live-handoff-kyrie-XI-source.gabc");
+        if(!sourceResponse.ok)throw new Error("Handoff Kyrie XI source missing");
+        const gabc=await sourceResponse.text();
         const {createOfflineChantEngraver}=await import("/src/mass/reader-chant-engraver.js");
         const engraver=createOfflineChantEngraver({viewport:staff,document});
         const rendered=await engraver.engrave(gabc);
