@@ -19,5 +19,20 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Pray the Angelus or Regina Cæli",
+      "short_name": "Angelus",
+      "description": "Open the traditional Marian prayer for the current liturgical season.",
+      "url": "./?ao=angelus",
+      "icons": [
+        {
+          "src": "./assets/generated-inline/art-4f9962f074ca9166a7d6.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }
