@@ -311,6 +311,83 @@ try{
       assert.equal(switching.staffCount,0);
       c.steps.push({name:"stage-e-manual-nonpublishing-kyriale",
         source:"EXPLICIT_MASS_11_REFERENCE_ONLY",research,referenceMetrics,switching});
+      // The actual 1962 Advent I Gradual source has TWO separate matching
+      // 1961 references in one source paragraph. Neither is to be inferred
+      // from a calendar title; require an explicit user score choice.
+      const proper=await page.evaluate(async()=>{
+        const host=document.createElement("section");
+        host.id="stageEProperQA";host.className="ao-reader-shell ao-live-band-enabled";
+        host.style.cssText="position:fixed;z-index:1000;left:0;right:0;bottom:0;height:146px;max-width:100vw;background:#111b1c;display:block";
+        const dock=document.createElement("div");dock.className="ao-schola-dock";
+        dock.dataset.active="true";dock.dataset.collapsed="false";
+        dock.style.cssText="display:block;position:relative;width:100%;height:146px";
+        const title=document.createElement("div");title.className="ao-schola-title";
+        title.textContent="SCHOLA · ADVENT PROPER";
+        const toggle=document.createElement("button");toggle.type="button";
+        toggle.dataset.scholaToggle="";toggle.textContent="HIDE";
+        const main=document.createElement("div");main.className="ao-schola-main";
+        dock.append(title,toggle,main);host.append(dock);document.body.append(host);
+        const text="Universi qui te exspectant non confundentur Domine. "+
+          "Ostende nobis Domine misericordiam tuam et salutare tuum da nobis.";
+        const schola={owner:"R17_NATIVE_SCHOLA",trackId:"GRADUAL",
+          segmentId:"GRADUAL.1",cueId:null,latin:text,
+          musicStatus:"EXPECTED_NOT_OBSERVED",index:2};
+        const itinerary={supported:true,properProgramme:[{trackId:"GRADUAL",
+          source:"THIS_MASS_RESOLVED_1962_PROPER",
+          status:"SOURCE_TEXT_ONLY_NOT_APPROVED_SCORE",
+          lines:[{id:"GRADUAL.1",latin:text}]}]};
+        const prepared={session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",
+          date:"2026-11-29",proper:{sourcePath:"Tempora/Adv1-0"},overlays:[]}}};
+        const {installLiveHandoffResearchNotation}=await import(
+          "/src/mass/reader-live-handoff-research-notation.js");
+        const view=installLiveHandoffResearchNotation({root:host,document,prepared,
+          preview:{getScholaState:()=>({schola}),getScholaPerformance:()=>itinerary}});
+        const available=view.refresh(true);
+        window.__aoStageEProper={view,host,schola,prepared};
+        return {available,state:view.getState()};
+      });
+      assert.equal(proper.available,true,option.name+" source-bound Proper references not found");
+      assert.equal(proper.state.referenceCount,2,
+        option.name+" combined Gradual/Alleluia not distinguished");
+      await page.locator("#stageEProperQA [data-ao-reference-score-trigger]").click();
+      const choice=page.locator("#stageEProperQA [data-ao-reference-score-choice]");
+      assert.equal(await choice.isVisible(),true,
+        option.name+" dual-score source paragraph silently selected a melody");
+      assert.equal(await page.locator("#stageEProperQA [data-ao-reference-score-panel] svg").count(),0);
+      await choice.selectOption("GREGOBASE-1169");
+      await page.locator("#stageEProperQA [data-ao-reference-score-panel] svg")
+        .waitFor({state:"visible",timeout:15000});
+      assert.equal(await page.evaluate(()=>window.__aoStageEProper.view.getState().scoreId),
+        "GREGOBASE-1169");
+      await choice.selectOption("GREGOBASE-1115");
+      await page.waitForFunction(()=>window.__aoStageEProper?.view?.getState?.()?.scoreId
+        ==="GREGOBASE-1115",null,{timeout:10000});
+      await page.locator("#stageEProperQA [data-ao-reference-score-panel] svg")
+        .waitFor({state:"visible",timeout:15000});
+      const properMetrics=await page.evaluate(()=>{
+        const {view,host,schola,prepared}=window.__aoStageEProper;
+        const scroll=host.querySelector(".ao-live-chant-scroll");
+        scroll.scrollLeft=300;
+        const result={scoreId:view.getState().scoreId,referenceCount:view.getState().referenceCount,
+          nativeScholaIndex:schola.index,scrollLeft:scroll.scrollLeft,
+          documentWidth:document.documentElement.scrollWidth,
+          approvedScore:host.querySelector(".ao-schola-dock").dataset.approvedScore??"false"};
+        prepared.session.resolvedMass.proper.sourcePath="Tempora/Adv2-0";
+        view.refresh();
+        result.afterSourceMismatch=view.getState();
+        result.afterSourceMismatchPanelHidden=host.querySelector("[data-ao-reference-score-panel]").hidden;
+        view.dispose();host.remove();delete window.__aoStageEProper;
+        return result;
+      });
+      assert.equal(properMetrics.scoreId,"GREGOBASE-1115");
+      assert.equal(properMetrics.referenceCount,2);
+      assert.equal(properMetrics.nativeScholaIndex,2);
+      assert.equal(properMetrics.approvedScore,"false");
+      assert.ok(properMetrics.scrollLeft>250);
+      assert.ok(properMetrics.documentWidth<=option.width+2);
+      assert.equal(properMetrics.afterSourceMismatch.available,false);
+      assert.equal(properMetrics.afterSourceMismatchPanelHidden,true);
+      c.steps.push({name:"stage-e-source-bound-multi-proper",metrics:properMetrics});
       assert.equal(c.errors.length,0,"Browser page errors: "+c.errors.join("; "));
       c.pass=true;
     }catch(e){
