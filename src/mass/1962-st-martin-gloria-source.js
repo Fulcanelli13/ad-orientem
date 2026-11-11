@@ -19,8 +19,13 @@ export function reconcile1962StMartinGloria({legacy,proper,calendarResolution,ov
  const original=calendarResolution.proper?.data??calendarResolution.proper;
  // Exclude observed-source Masses, votives, Requiems, nuptial and
  // other distinct rites. A church's actual choice always owns its own rubric.
+ const legacyId=String(legacy.calendarDay?.id??"").trim();
+ // The v3.4.6 host can carry a display title as its old calendar ID.
+ // The live 1962 Calendar principal + exact Proper, not that alias, own the day.
+ const legacyCompatible=!legacyId||legacyId===id||
+   legacyId===calendarResolution.day?.main?.title||legacyId===path;
  if(!/^\d{4}-11-11$/.test(String(legacy.date??""))||
-    String(legacy.calendarDay?.id??"")!==id||
+    !legacyCompatible||
     String(legacy.requestedCelebrationId??"mass_of_day")!=="mass_of_day"||
     String(legacy.celebrationId??"mass_of_day")!=="mass_of_day"||
     !["CALENDAR","MASS_OF_DAY"].includes(String(legacy.celebrationType??"CALENDAR").toUpperCase())||
