@@ -224,6 +224,93 @@ try{
       c.steps.push({name:"stage-e-source-gated-scroll-fixture",metrics:chant,lyric});
       await page.screenshot({path:resolve(output,option.name+"-kyrie-XI-reference-only.png"),
         animations:"disabled",fullPage:false});
+      // A SEPARATE DOM harness uses the real source-indexed Kyrie XI GABC,
+      // native-style dock and exact review-only control. No replacement of
+      // the native Schola controller and no promoted score is made.
+      const research=await page.evaluate(async()=>{
+        const host=document.createElement("section");
+        host.id="stageEReferenceQA";
+        host.className="ao-reader-shell ao-live-band-enabled";
+        host.style.cssText="position:fixed;z-index:1000;left:0;right:0;bottom:0;height:146px;max-width:100vw;background:#111b1c;display:block";
+        const dock=document.createElement("div");dock.className="ao-schola-dock";
+        dock.dataset.active="true";dock.dataset.collapsed="false";
+        dock.style.cssText="display:block;position:relative;width:100%;height:146px";
+        const title=document.createElement("div");title.className="ao-schola-title";
+        title.textContent="SCHOLA · TEST REFERENCE";
+        const toggle=document.createElement("button");toggle.type="button";
+        toggle.dataset.scholaToggle="";toggle.textContent="HIDE";
+        const main=document.createElement("div");main.className="ao-schola-main";
+        const setting=document.createElement("select");
+        setting.dataset.scholaKyrialeChoice="KYRIE";
+        for(const id of ["MASS_11","MASS_08"]){
+          const option=document.createElement("option");
+          option.value=id;option.textContent=id;setting.append(option);
+        }
+        setting.value="MASS_11";
+        dock.append(title,toggle,main);host.append(setting,dock);
+        document.body.append(host);
+        const {installLiveHandoffResearchNotation}=await import(
+          "/src/mass/reader-live-handoff-research-notation.js");
+        const source={owner:"R17_NATIVE_SCHOLA",trackId:"KYRIE",
+          cueId:"AO.SM.C0041",trackSourceCueIds:["AO.SM.C0041","AO.SM.C0042"],
+          trackSourceLatin:"Kyrie eleison Christe eleison",
+          musicStatus:"EXPECTED_NOT_OBSERVED",composedWorkId:null};
+        const view=installLiveHandoffResearchNotation({root:host,document,
+          preview:{getScholaState:()=>({schola:source})},
+          prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}}});
+        const available=view.refresh(true);
+        window.__aoStageEReference={view,host,setting};
+        return {available,initial:view.getState(),
+          approvedScore:dock.dataset.approvedScore??"false"};
+      });
+      assert.equal(research.available,true,option.name+" research reference not available");
+      assert.equal(research.initial.approval,"RESEARCH_ONLY");
+      assert.equal(research.approvedScore,"false");
+      await page.locator("#stageEReferenceQA [data-ao-reference-score-trigger]").click();
+      await page.waitForFunction(()=>Boolean(document.querySelector(
+        "#stageEReferenceQA [data-ao-reference-score-panel] svg")),
+        null,{timeout:12000});
+      const referenceMetrics=await page.evaluate(()=>{
+        const host=document.querySelector("#stageEReferenceQA");
+        const panel=host.querySelector("[data-ao-reference-score-panel]");
+        const scroll=host.querySelector(".ao-live-chant-scroll");
+        const dock=host.querySelector(".ao-schola-dock");
+        scroll.scrollLeft=350;
+        return {caption:host.querySelector("[data-ao-reference-score-caption]")?.textContent,
+          horizontalExtent:scroll.scrollWidth-scroll.clientWidth,
+          horizontalPosition:scroll.scrollLeft,opened:!panel.hidden,
+          scoreId:window.__aoStageEReference.view.getState().scoreId,
+          approvedScore:dock.dataset.approvedScore??"false",
+          documentWidth:document.documentElement.scrollWidth};
+      });
+      assert.equal(referenceMetrics.caption,"1961 REFERENCE · NOT APPROVED");
+      assert.equal(referenceMetrics.scoreId,"GREGOBASE-2982");
+      assert.equal(referenceMetrics.opened,true);
+      assert.equal(referenceMetrics.approvedScore,"false");
+      assert.ok(referenceMetrics.horizontalExtent>500,
+        option.name+" historical staff does not scroll");
+      assert.ok(referenceMetrics.horizontalPosition>=300);
+      assert.ok(referenceMetrics.documentWidth<=option.width+2,
+        option.name+" research score leaks horizontal viewport");
+      await page.screenshot({path:resolve(output,option.name+"-research-kyrie-XI.png"),
+        animations:"disabled",fullPage:false});
+      const switching=await page.evaluate(()=>{
+        const {view,setting,host}=window.__aoStageEReference;
+        setting.value="MASS_08";
+        setting.dispatchEvent(new Event("change",{bubbles:true}));
+        const panel=host.querySelector("[data-ao-reference-score-panel]");
+        const after={available:view.getState().available,open:view.getState().open,
+          hidden:panel.hidden,staffCount:panel.querySelectorAll("svg").length};
+        view.dispose();host.remove();delete window.__aoStageEReference;
+        return after;
+      });
+      assert.equal(switching.available,true);
+      assert.equal(switching.open,false,
+        "Changing to a different Kyriale setting kept the old notation");
+      assert.equal(switching.hidden,true);
+      assert.equal(switching.staffCount,0);
+      c.steps.push({name:"stage-e-manual-nonpublishing-kyriale",
+        source:"EXPLICIT_MASS_11_REFERENCE_ONLY",research,referenceMetrics,switching});
       assert.equal(c.errors.length,0,"Browser page errors: "+c.errors.join("; "));
       c.pass=true;
     }catch(e){
