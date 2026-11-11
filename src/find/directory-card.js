@@ -210,6 +210,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     :ministry?L(language,"Roman rite · 1962 Missal · "+ministry.institute_id+" tradition",
        "Rite romain · Missel de 1962 · tradition "+ministry.institute_id):null;
   const illustrative=tlmApproximateMapLabel(item,language);
+  const listOnly=item?.map_publishable===false&&item?.map_state==="ADDRESS_ONLY";
   return '<button type="button" class="aoFindCard aoExploreCard aoTlmVenueCard" data-explore-item="'+E(item.item_id)+'" data-explore-lens="tlm">'
     +'<span class="aoTlmVenueVisual" data-visual-kind="'+(photo?"photo":"fallback")+'">'
     +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':renderDirectoryIdentityFallback(item,language,"card"))
@@ -221,6 +222,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +(riteBooks?'<span class="aoTlmVenueSourceEdition" data-tlm-rite-missal>'+E(riteBooks)+'</span>':'')
     +'<span class="aoTlmVenueSchedule"'+(illustrative?' data-tlm-approximate-source="'+tlmApproximateMapSource(item)+'"':"")+'>'+inlineIcon('schedule')+'<span>'+E(illustrative||schedule)+'</span></span>'
     +(status?'<span class="aoTlmVenueStatus">'+E(tlmVenueStatusLabel(status,language))+'</span>':'')
+    +(listOnly?'<span class="aoTlmVenueStatus" data-tlm-list-only-card>'+E(L(language,"List only · no map marker","Fiche en liste · sans repère cartographique"))+'</span>':"")
     +'<span class="aoTlmVenueFoot"><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';
 }
