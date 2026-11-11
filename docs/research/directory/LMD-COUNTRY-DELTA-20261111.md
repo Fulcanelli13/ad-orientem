@@ -29,6 +29,32 @@ The 128 old name-only suggestions require identity checks; historical suggestion
 
 The **1,531 archived positions** and **1,570 current LMD country-reported positions** come from different dates and selection processes. Their raw numerical difference of 39 is **not** a verified list of 39 new venues. These source-ID counts also **must not be added** to the separately validated Mauritius/Ireland 21 current identity matches without de-duplication.
 
+## Archived directory locality reconciliation — 282 additional potential matches
+
+A second deterministic comparison now covers **every one of the 1,413 archived LMD records not already linked by an exact source ID or URL**. It uses the archive's existing LMD source slug, the current CL2 country, normalised church dedication and at least one distinctive locality token in the CL2 physical description. This is **not a new crawl of the LMD website**.
+
+| Archived listing classification | Rows |
+|---|---:|
+| Existing CL2 ID/URL provenance, preserved unchanged | **118** |
+| Previously unlinked, one plausible current CL2 site from both name and locality | **280** |
+| Previously unlinked, two competing current CL2 sites at the same textual score | **2** |
+| No sufficiently specific dedications-plus-locality match | **1,131** |
+| **All archived positions** | **1,531** |
+
+All **282** locality-matched rows remain **research-only candidate relationships**, not independently verified physical-building identity, currently celebrated Masses or authorised canonical link merges. Neither the remaining 1,131 nor Ad Orientem-only sites are presumed incorrect. The row-level proposed IDs and **56-country** status summary are in the existing [archive crosswalk JSON](../../../data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json), not a duplicate register.
+
+**Historical matching error exposed:** eight previous name-only candidate suggestions conflict with the new location-specific proposal. Examples:
+
+- Colorado Springs, Omaha and Rapid City “Immaculate Conception” were previously suggested as matches to the **El Paso** CL2 site. Distinct current CL2 sites exist in their actual named cities; these proposals still need building identity verification before linking LMD source IDs.
+- La Roche-sur-Yon and Angers “Notre-Dame” listings had older suggestions for other French towns with the same dedication. City-specific CL2 candidate sites now replace these as research leads.
+- Freiburg im Breisgau's Adelhauser Kirche and Le Havre's Saint Michael of Ingouville similarly require their own current locality rather than a same-name church elsewhere.
+
+**Potential same-city CL2 collisions:** “All Souls” in Sanford (US) and “Nossa Senhora das Dores” in Brasília (BR) each produce **two** viable CL2 IDs at the same textual confidence. Preserve both canonical IDs and do **not** auto-merge until exact physical-site/source lineage is checked.
+
+**Largest remaining no-direct-or-textual-match archive queues** (not proven missing sites): US **338**, France **198**, Poland **112**, Italy **96**, GB **81**, Brazil **74**, Germany **61**. Italy and Brazil have older dedicated source research already preserved in PRs #1716 and #1694; do not repeat those screens.
+
+The matcher intentionally fails closed on dedication-only matching; its threshold requires country equality, at least two significant title words, strong rarity-adjusted title coverage, and a distinctive word shared with the CL2 address/locality. A street address marked “locality only” remains unverified even if its city word matches. None of these 282 claims is automatically promoted into production or the Excel approval master.
+
 ## Geographic candidates — more meaningful than raw totals
 **Fourteen** LMD-listed countries/territories have **zero** physical sites in the current CL2 country field. Their LMD country pages collectively report **20 venue positions**.
 
