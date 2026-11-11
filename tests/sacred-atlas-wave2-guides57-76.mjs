@@ -15,7 +15,8 @@ const publishedFiles = [
   "data/shrines/illustrated-place-guides-ireland.v1.json",
   "data/shrines/illustrated-place-guides-world-marian-r1.v1.json",
 ];
-const sourceById = new Map(source.sources.map(s => [s.id, s]));
+const researchOnlySources = read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json").sources;
+const sourceById = new Map([...source.sources,...researchOnlySources].map(s => [s.id,s]));
 const shrineByPlace = new Map(seeds.shrines.map(s => [s.place_id, s]));
 const wave1 = new Set(closure.rows.map(r => r.place_id));
 const published = new Set(publishedFiles.flatMap(path =>
@@ -46,7 +47,9 @@ for (let i = 0; i < guides.length; i++) {
   assert.equal(g.sections.length,3);
   assert.ok(g.subtitle_en.length>35 && g.subtitle_fr.length>35);
   assert.equal(g.image_policy,"APPROVED_CANONICAL_PLACE_MEDIA_ONLY");
-  assert.equal(g.source_evidence_scope,"CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
+  assert.equal(g.source_evidence_scope,
+    g.draft_order<=66?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
+    "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
   assert.equal(g.next_gate,"SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION");
   assert.equal(new Set(g.sections.map(s => s.id)).size,3);
   for(const section of g.sections) {
@@ -55,7 +58,11 @@ for (let i = 0; i < guides.length; i++) {
     for(const paragraph of section.paragraphs) {
       const citation=sourceById.get(paragraph.source_id);
       assert.ok(citation, "Unknown existing source " + paragraph.source_id);
-      assert.ok(shrine.source_ids.includes(paragraph.source_id), "Source detached from canonical shrine");
+      assert.ok(shrine.source_ids.includes(paragraph.source_id)||
+        (g.research_source_ids?.includes(paragraph.source_id)&&
+          citation.scope==="RESEARCH_ONLY"&&citation.place_id===g.place_id&&
+          g.bibliography_urls.includes(paragraph.source_url)),
+        "A source must belong to its canonical site");
       assert.equal(paragraph.source_url,citation.url,"Must preserve original sourced URL");
       assert.match(paragraph.source_url,/^https:\/\//);
       assert.ok(paragraph.en.length >= 145 && paragraph.fr.length >= 145,
