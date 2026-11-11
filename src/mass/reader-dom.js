@@ -186,7 +186,7 @@ const SHELL_STYLE = `
 .ao-schola-score-dialog p{margin:7px 16px;color:#b1c0b2;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-dialog .ao-schola-score-viewport{box-sizing:border-box;max-height:calc(90dvh - 140px);overflow:auto;min-height:180px;width:100%;padding:14px 12px;color:#f0e0c0}
 .ao-schola-score-dialog .ao-schola-score-viewport svg{display:block;max-width:100%;height:auto;fill:currentColor}
-.ao-schola-score-dialog .ao-schola-score-viewport svg :is(use,rect,polygon,polyline){fill:currentColor}
+.ao-schola-score-dialog .ao-schola-score-viewport svg :is(use,rect,polygon,polyline,text,tspan){fill:currentColor}
 .ao-schola-score-dialog .ao-schola-score-viewport svg :is(.staffLine,.ledgerLine,path[stroke],polyline[stroke]){stroke:currentColor}
 .ao-schola-score-dialog a{display:inline-block;margin:5px 16px 14px;color:#ead8a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
 @media(max-width:480px){.ao-schola-score-dialog{width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.ao-schola-score-dialog .ao-schola-score-viewport{max-height:calc(100dvh - 150px)}}
