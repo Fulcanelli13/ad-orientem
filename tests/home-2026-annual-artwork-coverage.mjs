@@ -39,6 +39,13 @@ for(let i=0;i<365;i++){
   assert.equal(one.selection?.artist,"Matthias Stom");
   assert.equal(one.selection?.artworkId,"thyssen-375-1976-66");
   assert.equal(one.selection?.editorialBasis,"LATER_EXPLICIT_OWNER_DATE_APPROVAL_20261026");
+ }else if(one.date==="2026-04-07"){
+  assert.equal(src.selection?.artist,"Anthony van Dyck");
+  assert.equal(one.selection?.title,
+   "Christ's First Apparition to the Disciples (Rockox Triptych central panel)");
+  assert.equal(one.selection?.artist,"Peter Paul Rubens");
+  assert.equal(one.selection?.artworkId,"kmska-307");
+  assert.equal(one.selection?.editorialBasis,"LATER_EXPLICIT_OWNER_DATE_APPROVAL_20261026");
  }else{
   assert.equal(one.selection?.title??null,src.selection?.title??null);
   assert.equal(one.selection?.artist??null,src.selection?.artist??null);
