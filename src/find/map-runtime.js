@@ -4,6 +4,7 @@ import { attachExploreMapStatus } from "./map-status.js";
 import { mappedVenueViewportStats } from "./mass-map-viewport-context.js";
 import { applyExploreDarkCartography } from "./explore-cartography-style.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
+import {directoryVenueMapGroup} from "./tlm-venue-visual-policy.js";
 import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
 import {
   registerExploreCategoryMedallions,exploreCategoryMedallionExpression,
@@ -199,7 +200,7 @@ export function exploreMapFeatures(items){
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate||g.indicative_only),
         indicative_only:Boolean(g.indicative_only),
-        provider_group:item?.lens==="tlm"?massMapProviderGroup(item?.community_id):"OTHER",
+        provider_group:item?.lens==="tlm"?massMapProviderGroup(directoryVenueMapGroup(item)):"OTHER",
       },
     });
   }
