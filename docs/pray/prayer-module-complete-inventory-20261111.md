@@ -1,6 +1,8 @@
 # Ad Orientem — Prayer Module final-scope inventory
 
-**Audited:** 11 November 2026 · **Repository baseline:** `main` · **Decision:** frozen existing Prayer scope, not an open-ended collection of historical prayers.
+**Baseline audited:** 11 November 2026 · **Reconciled after:** GitHub Pages release run #42971928438 · **Decision:** frozen existing Prayer scope, not an open-ended collection of historical prayers.
+
+**Current release disposition (11 Nov):** The source-owned Prayer module's relevant technical release gates passed on GitHub Pages. The original nine acquisition PRs are **all closed unmerged**; their 23 proposed units are historical proposals, **not released texts**. Canonical source references are now 48/48 present by effective `sourceUrl` or existing provenance witness; the Immaculate Heart English-only historical recension remains intentionally untranslated in FR/LA. Owner-wide original-print collation and a complete denomination of every ICKSP or red-booklet prayer are **not certified**. [Release evidence](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42971928438) · [closure tracking](https://github.com/Fulcanelli13/ad-orientem/issues/2831).
 
 > **Counting rule:** A canonical text, novena programme, routed reader, historical wording variant, source link and acquisition candidate are different units; their counts must NEVER be added to create a false “total prayers” figure. This inventory fixes **what constitutes the module**, records where bodies live, and separates work still to do from optional acquisitions. A source-owner record does not independently certify original printed editions or phone access.
 
@@ -16,9 +18,9 @@
 | Communion Treasury prayers | **11** | Five EN/FR/LA and six English-only, already source-owned |
 | Further ownership foundation records | **17** | Litanies, consecration, alternate witnesses, source links, other prayers; **not** 17 extra unique prayers |
 | Historical acquisition-candidate master | **97** | Research/approval queue, not an extra published collection |
-| Recent proposed acquisition units | **23** | Across 9 open draft PRs, **not part of approved baseline** |
+| Historical proposed acquisition units | **23** | Across 9 PRs, **all closed unmerged**; not part of approved baseline |
 
-Current `main` still has **two missing direct canonical sourceUrl fields** (`mass_confiteor` and `adoration_lord_i_am_not_worthy`), although alternate reader/provenance witnesses exist. Draft [#2835](https://github.com/Fulcanelli13/ad-orientem/pull/2835) repairs the direct links. Draft [#2836](https://github.com/Fulcanelli13/ad-orientem/pull/2836) repairs the missing-language standalone reader notice and unqualified Essentials copy. Neither is a new prayer.
+**Source and language repair completed:** [#2835](https://github.com/Fulcanelli13/ad-orientem/pull/2835) merged the two direct canonical Latin digital-witness links (`mass_confiteor` and `adoration_lord_i_am_not_worthy`); effective canonical source-reference coverage is **48/48** using direct source URL or recorded provenance, with **24/48 directly populated `sourceUrl`**. This is **not** an original-print/translation certificate. [#2836](https://github.com/Fulcanelli13/ad-orientem/pull/2836) merged the standalone reader's French missing-language notice and qualified Essentials source copy, without changing the held Immaculate Heart source text or inventing French/Latin.
 
 ## 2. Canonical 48 — full named list, grouped by existing owner category
 
@@ -185,7 +187,7 @@ These are **products/readers**, not 41 extra prayers. Their existing owner files
 
 `pray.library` · `pray.sacred_hymns`
 
-**Cross-links are intentional.** A prayer in the Rosary, Morning/Evening, Confession, Mass preparation, or the Communion Treasury may be the *same source-owned text*, not another work. The historic 41-route ledger recorded **zero whole-route/all-variant certificates**; individual component and phone test suites already exist and should be reused. It is invalid to call every prayer inaccessible simply because this aggregate certificate was not issued.
+**Cross-links are intentional.** A prayer in the Rosary, Morning/Evening, Confession, Mass preparation, or the Communion Treasury may be the *same source-owned text*, not another work. The historical 41-route ledger originally recorded zero whole-route/all-variant certificates. Since then, [#2846](https://github.com/Fulcanelli13/ad-orientem/pull/2846) passed **164/164 online route-entry observations** (41 routes × 2 widths × EN/FR) and **80/80 cold-offline first-use route-entry observations** (40 non-Rosary routes × 2 representative profiles after initial PWA installation). Existing full-stage suites cover the 19 novenas and major guided journeys. These are **not** a certificate for every nested state, first-ever offline installation, uncached Scripture or independently collated printed text.
 
 ## 5. Sacred hymns — 11 named source-owned records
 
@@ -254,24 +256,28 @@ The Office of the Dead belongs to the **Divine Office** workstream (source and V
 
 The original 97-row acquisition master is **research and triage**: 33 ICKSP, 28 Raccolta, 16 Sensus, 10 Lasance, 6 Baltimore and 4 Catechism. Its October release snapshot has 5 live source-scoped, 5 released post-B22, 25 owned but not certified, 21 intent-only, 5 elsewhere, 13 source/variant holds, 19 editorial deferrals and 4 excluded. The 97 rows overlap existing owners; **do not add them to the above totals**.
 
-Nine draft acquisition PRs [#2812](https://github.com/Fulcanelli13/ad-orientem/pull/2812), #2815, #2817, #2821, #2822, #2823, #2824, #2825 and #2829 propose **23 units**. Scope audit [#2832](https://github.com/Fulcanelli13/ad-orientem/pull/2832) tentatively classifies **2 keep candidates**, **9 revise/decide**, **12 defer unless concretely requested**. These are not owner approvals, and some are alternate historical recensions of one devotion.
+The nine **historical** acquisition PRs [#2812](https://github.com/Fulcanelli13/ad-orientem/pull/2812), #2815, #2817, #2821, #2822, #2823, #2824, #2825 and #2829 proposed **23 units**. **All nine are now closed unmerged; none of their proposal text entered the public Prayer module.** The original [#2832](https://github.com/Fulcanelli13/ad-orientem/pull/2832) preliminary 2 keep / 9 decide / 12 defer triage was a historical recommendation, **not** approval. The August Queen and two Infant Jesus works from the last two drafts are **deferred, not rejected**. Future additions require an explicit new owner request plus source/rights/editorial checks; do not reopen the 97-item master as a default acquisition backlog.
 
-## 9. What remains — finite release checklist
+## 9. Final finite closure register — 11 November 2026
 
-| Priority | Closure task | Finished when… |
+| Scope | Evidence-based disposition | Remaining obligation |
 |---|---|---|
-| **P0** | Fix final included work list | No undecided *required* acquisitions; 23 staged units assigned keep/revise/defer/close, with actual owner sign-off |
-| **P0** | Confirm exact red-booklet and ICKSP required works | Each selected work maps to existing reader, qualified new text or explicit exclusion; no invented coverage denominator |
-| **P0** | Integrate the two focused canonical repair PRs | [#2835](https://github.com/Fulcanelli13/ad-orientem/pull/2835) and [#2836](https://github.com/Fulcanelli13/ad-orientem/pull/2836) pass merged-head tests and preserve all original prayer texts |
-| **P0** | Repair reader-language gaps **only where needed** | Every accepted devotional reader identifies actual source language; appropriate EN/FR forms render, historical translations labelled; no invented Latin |
-| **P0** | Complete user-path acceptance | All retained reader routes, 19 novenas and major stage variants usable at 320px/390px in EN/FR, with navigation, offline handling, source disclosure and no empty stages |
-| **P0** | Clean draft queue and release | No unnecessary prayer PRs remain; accepted changes integrated without overlapping `presentation-runtime.js` / `package.json` conflicts; one tested GitHub Pages release |
-| **P1** | Targeted source-critical exceptions | Wrong edition, truncation, litany recension, OCR error, indulgence attribution corrected; digital witness never falsely certified as original-print collation |
+| **Canonical 48 identities and references** | **ACCEPTED for the released reader scope.** EN 48/48; FR 47/48; LA 47/48; effective reference links 48/48 after merged #2835. | Preserve the intentional English-only Immaculate Heart witness and its bilingual missing-language notice. Do not substitute a different consecration text or invent Latin. |
+| **Novenas / guided journeys** | **ACCEPTED for the tested scope.** 19 registered programmes; full-stage novena and guided Adoration/Confession/Benediction suites already exist and passed, plus the 36/36 public Holy Face states. | Original printed-edition line-by-line certificates are separate editorial evidence, not an outstanding code regression gate. |
+| **Online and offline Prayer entry** | **ACCEPTED.** 164/164 online route-entry observations and 80/80 first-use cold-offline entry observations after installed PWA. | Do not imply all nested guided states, Rosary beads, uncached Scripture, or offline-first installation were tested. |
+| **Published source-language reader and phone fit** | **ACCEPTED for public canary.** GitHub Pages run [#42971928438](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42971928438) passed **12/12** 320/390 EN/FR canonical/Immaculate Heart/Communion paths, with source and fallback disclosure; the separate Holy Face check passed **36/36**; published offline snapshot also passed. | Human final visual/editorial sign-off remains distinct from automated geometry and source ownership assertions. |
+| **Communion Treasury** | **ACCEPTED with qualified languages.** 11 works: five EN/FR/LA; six historical EN-only with visible French UI fallback and `lang=en`, repaired/guarded by #2844. | Do not claim source-proven French translations for the English-only six or an exact complete 2013 booklet collation. |
+| **Additional sacred hymns** | **RETAIN EXISTING.** 11 source-owned names; three seasonal hymn recensions lack a French body. | Preserve language ownership. Translate only if a specific required reader warrants an editorial translation; do not mark the Latin original as French. |
+| **ICKSP/ICRSP and red-booklet scope** | **EXPLICITLY BOUNDED, not 100% claimed.** Historical crosswalk covers 33 Institute-labelled candidates and 19 overlapping booklet pointers/witness records, not each website or the complete physical booklet. Existing 11 P0/P1 Institute candidates have 7 source-owned/live and 4 optional alternatives. | An authoritative exhaustive required-work denominator has not been defined. Treat only a newly evidenced owner-required omission as a release decision; do not invent completion percentages. |
+| **Nine acquisition drafts / 23 proposals** | **CLOSED UNMERGED.** No automatic acquisition remains queued. | Deferred August Queen and two Infant Jesus proposals are not required for this release. Future inclusion needs a fresh explicit decision and proper source/rights/editorial review. |
+| **GitHub publication and branch hygiene** | **ACCEPTED.** #2835/#2836/#2844/#2846/#2850/#2851 merged; public GitHub Pages release and phone/offline jobs green. Redundant #2853 closed unmerged. | GitHub Actions + GitHub Pages exclusively. No further Prayer CI expansion without a reproducible defect. |
 
-**Publication boundary:** GitHub Actions and GitHub Pages only. This inventory authorises **no further automatic acquisitions**.
+**Release-closure interpretation:** Existing technical requirements for the tested Prayer reader scope are met. The remaining actions are deliberate final owner editorial/visual approval and any *concrete* later source discrepancy, not a new general research or acquisition cycle. Keep a documented historical-edition limitation rather than portraying an absent edition certificate as a missing prayer.
 
 ## 10. Current readiness conclusion
 
-**Already present:** all 48 canonical text identities; all 19 novena programmes; all 41 registered Prayer destinations; existing hymn, Communion, chaplet, litany, personal devotion, Confession, bedside and source-owned supplementary modules. They are real source-owned works, not mere planned features.
+**Implemented and technically accepted for the tested scope:** 48 canonical prayer identities; 19 novena programmes; 41 registered entry routes; existing hymn, Communion, chaplet, litany, intercession, Confession, bedside and supplementary reader owners; source-language fallbacks, mobile entry and installed PWA cold-offline navigation. The exact public Prayer witness canary and Holy Face published-stage acceptance have both passed on [GitHub Pages run #42971928438](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42971928438).
 
-**Actually unfinished:** agreement on the last optional content, limited needed translations/source-recension fixes, integrated mobile/end-to-end verification, and release/PR cleanup. The current repo does not support a defensible 100% ICKSP or red-booklet coverage percentage; those exact owner-required denominators have not been fixed. There is **no basis for an indefinite new-prayer research programme**.
+**Unresolved editorial/definition limitations—not unimplemented routes:** no independently audited universal ICKSP work denominator or complete 2013 red-booklet work denominator; no general original-print text certificate; intentional English-only Immaculate Heart and Communion witnesses; three hymn recensions without French owner bodies. None authorises making up translations, retroactively approving all 97 historical master rows or starting another acquisition series.
+
+**Final decision boundary:** Treat the current Prayer Module as technically release-ready for its evidenced scope. Final closure of [#2831](https://github.com/Fulcanelli13/ad-orientem/issues/2831) requires affirmative owner sign-off on this bounded, source-transparent scope, not another broad engineering pass.
