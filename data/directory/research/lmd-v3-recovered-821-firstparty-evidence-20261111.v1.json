@@ -1,0 +1,116 @@
+{
+  "schema": "AO_LMD_V3_SECONDARY_NO_MATCH_SIX_FIRSTPARTY_EVIDENCE_V1",
+  "date": "2026-11-11",
+  "purpose": "Recover independently verified institutions from V2 821 no-strong-CL2 textual-match archives with location-name variants, plus new Excel physical-site candidate; this is distinct from a 2026 LMD source-site crawl.",
+  "counts": {
+    "reviewed": 6,
+    "existing_building_owner_confirmed": 5,
+    "credible_new_building_excel_candidates": 1,
+    "possible_same_building_double_cl2_pairs": 1,
+    "approved_new_site": 0,
+    "approved_pin": 0,
+    "approved_mass_schedule": 0
+  },
+  "cases": [
+    {
+      "source_id": "LMD:church-of-saint-anne-medina-united-states",
+      "evidence_class": "EXISTING_PHYSICAL_BUILDING_AND_TRADITIONAL_ROMAN_RITE_VERIFIED",
+      "cl2_ids": [
+        "RG-BDFB0609F50E",
+        "RG-FD68993F38D5"
+      ],
+      "current_church_name": "Church of Saint Anne",
+      "physical_location": "200 Hamel Road, Hamel, MN 55340 (Hamel/Medina area)",
+      "institutional_urls": [
+        "https://saintannehamel.org/events/mass-in-the-extraordinary-form-traditional-latin-mass",
+        "https://saintannehamel.org/calendar",
+        "https://saintannehamel.org/"
+      ],
+      "disposition": "Owner calendar explicitly labels Tuesday Mass in Extraordinary Form/Traditional Latin Mass in November 2026. Two CL2 IDs for the one named Hamel/Medina church share institutional website; high priority SAME_PHYSICAL_SITE_DOUBLE_CL2_ID_EXCEL_REVIEW. Do not merge automatically.",
+      "ritual_basis": "Extraordinary Form/Traditional Latin Mass owner-confirmed",
+      "new_site_candidate": false
+    },
+    {
+      "source_id": "LMD:mater-misericordiae-church-phoenix-united-states",
+      "evidence_class": "EXISTING_PHYSICAL_BUILDING_AND_1962_MISSAL_VERIFIED",
+      "cl2_ids": [
+        "RG-34B652453CC8"
+      ],
+      "current_church_name": "Mater Misericordiae Parish",
+      "physical_location": "1537 West Monroe Street, Phoenix, AZ 85007",
+      "institutional_urls": [
+        "https://fssp.com/apostolate/fssp-phoenix/",
+        "https://phoenixlatinmass.org/"
+      ],
+      "disposition": "Official FSSP directory confirms that Mater Misericordiae at Monroe Street offers liturgical books of 1962; existing RG-34B652453CC8 has name and FSSP source but blank physical description. FSSP also serves separate St Edward church; do not merge the two sites. No timetable/coordinate import.",
+      "ritual_basis": "FSSP explicit 1962 Roman books",
+      "new_site_candidate": false
+    },
+    {
+      "source_id": "LMD:holy-family-log-church-sauget-united-states",
+      "evidence_class": "EXISTING_PHYSICAL_BUILDING_AND_INSTITUTE_TRADITIONAL_MASS_VERIFIED",
+      "cl2_ids": [
+        "RG-9D79E31A64C4"
+      ],
+      "current_church_name": "Holy Family Log Church",
+      "physical_location": "116 Church Street, Cahokia, Illinois 62206",
+      "institutional_urls": [
+        "https://institute-christ-king.org/cahokia-home"
+      ],
+      "disposition": "ICKSP official church site explicitly identifies Holy Family Log Church 116 Church Street Cahokia, whereas older LMD archive labels locale Sauget. This is a SAME NAMED PHYSICAL CHURCH despite regional locality variation; CL2 already contains it. Do not add a Sauget duplicate or infer regular schedule from archive.",
+      "ritual_basis": "Institute owner traditional Roman form; no schedule imported",
+      "new_site_candidate": false
+    },
+    {
+      "source_id": "LMD:abbaye-notre-dame-fontgombault-abbey-fontgombault-france",
+      "evidence_class": "EXISTING_PHYSICAL_BUILDING_AND_TRADITIONAL_LITURGY_VERIFIED",
+      "cl2_ids": [
+        "RG-9FB229163D37"
+      ],
+      "current_church_name": "Abbaye Notre-Dame de Fontgombault",
+      "physical_location": "1 L'Abbaye, 36220 Fontgombault, France",
+      "institutional_urls": [
+        "https://abbaye-fontgombault.fr/website/pages/FR/vie_monastique.html",
+        "https://abbaye-fontgombault.fr/website/pages/FR/contact.html"
+      ],
+      "disposition": "Abbey itself confirms its traditional liturgical practice and postal address. Current CL2 already has this named abbey at same address. A separate abbey chapel/visitor entrance must not be manufactured from the old directory position.",
+      "ritual_basis": "Owner states liturgie traditionnelle; precise ceremonial books not independently equated to 1962 Roman ordinary parish",
+      "new_site_candidate": false
+    },
+    {
+      "source_id": "LMD:saint-edward-the-confessor-church-phoenix-united-states",
+      "evidence_class": "EXISTING_PHYSICAL_BUILDING_AND_1962_MISSAL_VERIFIED",
+      "cl2_ids": [
+        "RG-6A352025FC8C"
+      ],
+      "current_church_name": "St Edward the Confessor Church",
+      "physical_location": "4410 East Southern Avenue, Phoenix, AZ 85042",
+      "institutional_urls": [
+        "https://www.fssp.org/en/find-us/where-are-we/",
+        "https://fssp.com/apostolate/fssp-phoenix/"
+      ],
+      "disposition": "FSSP lists St Edward as the distinct second worship church of the Mater Misericordiae parish. Existing CL2 record has St Edward name but no address; independent official source supplies physical street and confirms 1962 books at the parish's sites. Keep it separate from Mater Misericordiae building. No production location change.",
+      "ritual_basis": "FSSP 1962 Roman apostolate; venue source exact current service to be checked",
+      "new_site_candidate": false
+    },
+    {
+      "source_id": "LMD:cor-jesu-oratory-boyd-united-states",
+      "evidence_class": "FIRST_PARTY_PHYSICAL_CHURCH_NOT_IN_CL2_EXCEL_CANDIDATE_RITE_HOLD",
+      "cl2_ids": [],
+      "current_church_name": "Cor Jesu Oratory, Institute of Saint Joseph",
+      "physical_location": "Oratory next to institute former school, County Highway MM, Boyd, Wisconsin. Owner lists institute centre 31360 County Highway MM; precise oratory entrance not established.",
+      "institutional_urls": [
+        "https://instituteofstjoseph.com/join-the-institute"
+      ],
+      "disposition": "Institute owner 2026–27 schedule identifies Cor Jesu Oratory as a dedicated church beside its former school, not a generic center. No Boyd church or Cor Jesu named site found in the inspected 2,580 CL2 index. The earlier independent directory claims old-rite Mass, but owner's page references Liturgy of Hours and Mass without clearly specifying the 1962 Roman Missal. One physical-site Excel research candidate, exact address and ritual books held. Do not create card/pin automatically.",
+      "ritual_basis": "Mass at chapel owner-confirmed; present 1962 books unverified",
+      "new_site_candidate": true
+    }
+  ],
+  "prohibitions": [
+    "Do not promote the owner-provided address into live CL2/pins without original Excel master approval.",
+    "A Latin celebration must not be labeled the Roman Missal 1962 unless an institutional source establishes it.",
+    "Do not count two canonical IDs for the same named sanctuary as two independently occupied physical places.",
+    "No dates/schedules copied from independent directory; dated owner notices used only for rite identity."
+  ]
+}
