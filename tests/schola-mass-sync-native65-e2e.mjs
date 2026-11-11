@@ -88,9 +88,12 @@ try{
       }
       throw Error("NO_SOURCE_SYLLABLE_FOR_CARD:"+id);
     });
-    const first=api.model.cards.find(c=>c.sectionId===ordered[0]);
+    // Gloria/Credo's first card is the celebrant's intonation. The source
+    // GABC includes it, but the Schola follower starts at the next card.
+    const choirStart=track==="KYRIE"?0:1;
+    const first=api.model.cards.find(c=>c.sectionId===ordered[choirStart]);
     api.showSequence(first.sequence);
-    return {cards:api.model.totalCards,ordered,positions,
+    return {cards:api.model.totalCards,ordered,positions,choirStart,
       sourceSection:mapping.sourceSectionId,count:mapping.count};
    },{gabc:source.gabc,track});
    assert.equal(target.cards,65);
@@ -100,6 +103,11 @@ try{
    await page.waitForFunction(()=>document.querySelector(".ao-schola-dock")
      ?.dataset.notationFollow==="estimated",null,{timeout:25000});
    await page.locator("[data-schola-notation-pause]").click();
+   if(target.choirStart){
+    assert.equal(await page.locator(
+      '.ao-schola-follow-strip button[data-schola-syllable-index="0"]').isVisible(),
+      false,"Schola cannot control celebrant-owned intonation syllables");
+   }
    const baseline=await page.evaluate(()=>{
     const api=window.__AO_PHONE_PREVIEW;
     return {track:api.getScholaState()?.trackId,
@@ -108,7 +116,7 @@ try{
       totalCards:api.model.totalCards};
    });
    assert.equal(baseline.track,track);
-   for(const {id,index} of [...target.positions.slice(1),target.positions[0]]){
+   for(const {id,index} of [...target.positions.slice(target.choirStart+1),target.positions[target.choirStart]]){
     const btn=page.locator('.ao-schola-follow-strip button[data-schola-syllable-index="'+index+'"]');
     assert.equal(await btn.count(),1,"Missing GABC source-syllable control "+track+" "+index);
     await btn.click();
