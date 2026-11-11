@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 74,
+    "newInstitutionalCoreChecks": 94,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 167,
-    "onlyCitationScope": 505,
+    "currentUniqueCoreResearchChecks": 187,
+    "onlyCitationScope": 485,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 34
+    "newCoreResearchChecksSinceLastPass": 20
   },
   "source_quality_findings": [
     {
@@ -55,6 +55,23 @@
       "type": "PAPAL_SOURCE_TO_CLAIM_REWRITE",
       "finding": "Replaced a generic relic-warning visitor paragraph with Benedict XVI's documented contemporary martyrs memorial and Sant'Egidio stewardship.",
       "source": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
+    },
+    {
+      "place_id": "place:CZ:svata-hora-pribram",
+      "type": "CUSTODIAN_DOMAIN_REDIRECT_TO_COMMERCIAL_ACCOMMODATION",
+      "finding": "The formerly cited svata-hora.cz redirects to nasvate.cz accommodation booking; former cited 2025 PDF unverified. Replaced all three visitor source links with current Roman Catholic parish's historical and 2026 pilgrimage pages. The wider canonical source registry may still need its own migration assessment.",
+      "sources": [
+        "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+        "https://farnost-svatahora.cz/poute/hlavni-poute"
+      ]
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "type": "DDF_LETTER_DISTINGUISHES_HEALING_FROM_APPARITIONS",
+      "finding": "Direct Vatican DDF letter dated 22 August, announced with 30 August 2024 nihil obstat, cites 8 September 1983 diocesan miraculous healing recognition while making no determination about supernatural apparition origin.",
+      "sources": [
+        "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html"
+      ]
     }
   ],
   "source_corrections": [
@@ -99,6 +116,30 @@
       "old_url": "https://saintetunique.com/contact/",
       "new_url": "https://saintetunique.com/foire-aux-questions/",
       "reason": "Contact page establishes building but not distinction between ostension and usual reliquary veneration; FAQ does."
+    },
+    {
+      "key": "2|97|history",
+      "old_url": "https://svata-hora.cz/",
+      "new_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "reason": "Verified exact institutional source replacing prior official/non-authoritative or inaccessible source"
+    },
+    {
+      "key": "2|97|identity",
+      "old_url": "https://svata-hora.cz/",
+      "new_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "reason": "Verified exact institutional source replacing prior official/non-authoritative or inaccessible source"
+    },
+    {
+      "key": "2|97|pilgrimage",
+      "old_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
+      "new_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
+      "reason": "Verified exact institutional source replacing prior official/non-authoritative or inaccessible source"
+    },
+    {
+      "key": "2|86|identity",
+      "old_url": "https://www.diocese-bourges.org/actualites/2852-nihil-obstat-a-la-devotion-mariale-au-sanctuaire-de-pellevoisin/",
+      "new_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
+      "reason": "Verified exact institutional source replacing prior official/non-authoritative or inaccessible source"
     }
   ],
   "paragraphs": [
@@ -295,13 +336,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fleury abbey itself dates double foundation 630–650 and translation of Benedict's relics c.660; competing Montecassino custody is not conclusively resolved.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.abbaye-fleury.com/histoire.html",
+      "evidence_scope": "MONASTIC_RELIC_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
@@ -415,13 +459,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Manfredonia archdiocese attributes late fifth-century Michael Gargano appearances, bull and Lawrence to Liber de apparitione; source describes veneration, not supernatural proof.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/",
+      "evidence_scope": "DIOCESAN_DEVOTIONAL_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:san-michele-gargano",
@@ -540,13 +587,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Emmitsburg Seton shrine explicitly distinguishes her tomb and basilica from historical Seton houses and museum.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://setonshrine.org/visit-the-seton-shrine-historic-site-and-museum/",
+      "evidence_scope": "CUSTODIAN_BURIAL_AND_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:US:seton-emmitsburg",
@@ -601,13 +651,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Abbey itself frames cult of Maurice and Theban martyrs as longstanding tradition at Agaune; their Passion is separate from archaeology.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+      "evidence_scope": "CUSTODIAN_MARTYR_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CH:abbaye-saint-maurice-agaune",
@@ -639,13 +692,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Abbey catalogue identifies treasury, Saint Martin vase and multiple art/reliquary items; legends explicitly distinguished from object provenance.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/tresor/",
+      "evidence_scope": "CUSTODIAN_TREASURY_OBJECTS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:DE:aachener-dom-four-textiles",
@@ -839,13 +895,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vatican basilica account documents Ostian Way burial area, inscribed slab, sarcophagus and tomb visibility under papal altar.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+      "evidence_scope": "PAPAL_BASILICA_ARCHAEOLOGY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:saint-paul-outside-walls-rome",
@@ -880,13 +939,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vatican basilica lists the traditional chain of Paul among relic exhibits, separate from his tomb and first-century attribution.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/esposizioni.htm",
+      "evidence_scope": "PAPAL_BASILICA_RELIC_EXHIBITS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:santa-maria-vallicella-rome",
@@ -1147,13 +1209,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montfort Basilica describes distinct tombs of Saint Louis-Marie Grignion de Montfort and Blessed Marie-Louise Trichet in same church.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/",
+      "evidence_scope": "CUSTODIAN_BURIAL_SITES",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-montfort-saint-laurent",
@@ -1187,13 +1252,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montfort Basilica publishes current visits and prayer conditions separately from historical funerary tradition.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basiliquemontfort.com/infos-pratiques/",
+      "evidence_scope": "CUSTODIAN_VISITOR_PRACTICES",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-denis",
@@ -1207,13 +1275,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint-Denis municipality associates basilica with traditional martyr burial and late fifth-century church by Saint Geneviève.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.saintdenis.fr/basilique-cathedrale",
+      "evidence_scope": "CIVIC_MARTYR_AND_ARCHITECTURAL_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-denis",
@@ -1227,13 +1298,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Municipal site describes Saint-Denis royal necropolis and Dagobert burial separately from saint relic veneration.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.saintdenis.fr/basilique-cathedrale",
+      "evidence_scope": "CIVIC_ROYAL_NECROPOLIS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-denis",
@@ -1268,13 +1342,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "UNESCO lists Vézelay abbey and hill, ninth-century Benedictine origins, medieval pilgrimage to Magdalene's reputed relics.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://whc.unesco.org/en/list/84/",
+      "evidence_scope": "UNESCO_MEDIEVAL_PILGRIMAGE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
@@ -1308,13 +1385,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vézelay basilica's pastoral history treats Magdalene's relic identity as a devotional tradition, distinct from Provençal relic claims.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basiliquedevezelay.org/marie-madeleine/",
+      "evidence_scope": "CUSTODIAN_MAGDALENE_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:cathedrale-notre-dame-amiens",
@@ -1649,13 +1729,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Auriesville shrine explicitly defends its Ossernenon location while reporting an alternate 2025 historical proposal; no uncontested archaeological conclusion.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.ourladyofmartyrsshrine.org/auriesville-is-ossernenon",
+      "evidence_scope": "CUSTODIAN_CONTESTED_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:US:auriesville-martyrs",
@@ -1708,13 +1791,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montréal Oratory documents tomb location, bronze representation and pilgrim prayer at Brother André's tomb.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+      "evidence_scope": "CUSTODIAN_TOMB_AND_ART",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CA:oratoire-saint-joseph-montreal",
@@ -5287,7 +5373,7 @@
     },
     {
       "place_id": "place:FR:pellevoisin",
-      "guide_revision": "fnv1a32-fcf11852",
+      "guide_revision": "fnv1a32-ff1f35c5",
       "draft_order": 86,
       "wave": 2,
       "section_id": "history",
@@ -5305,27 +5391,30 @@
     },
     {
       "place_id": "place:FR:pellevoisin",
-      "guide_revision": "fnv1a32-fcf11852",
+      "guide_revision": "fnv1a32-ff1f35c5",
       "draft_order": 86,
       "wave": 2,
       "section_id": "identity",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.diocese-bourges.org/actualites/2852-nihil-obstat-a-la-devotion-mariale-au-sanctuaire-de-pellevoisin/",
-      "source_id": "AO-ED-PELLEVOISIN-DDF-20261111",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
+      "source_id": "AO-ED-PELLEVOISIN-VATICAN-LETTER-20261111",
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Direct DDF 22 Aug 2024 letter does not judge apparition supernatural origin, but separately cites approved miraculous healing in 1983 and Scapular papal history; English and French corrected.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
+      "evidence_scope": "VATICAN_DDF_DIFFERENTIATED_JUDGMENTS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:pellevoisin",
-      "guide_revision": "fnv1a32-fcf11852",
+      "guide_revision": "fnv1a32-ff1f35c5",
       "draft_order": 86,
       "wave": 2,
       "section_id": "pilgrimage",
@@ -5929,65 +6018,73 @@
     },
     {
       "place_id": "place:CZ:svata-hora-pribram",
-      "guide_revision": "fnv1a32-b5099359",
+      "guide_revision": "fnv1a32-90fdadc0",
       "draft_order": 97,
       "wave": 2,
       "section_id": "history",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://svata-hora.cz/",
-      "source_id": "SHR-SVATA-HORA-OFFICIAL",
+      "source_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "source_id": "AO-ED-SVATA-HORA-PARISH-HISTORY-20261111",
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Active Catholic parish's historical page documents shrine, Marian statue and reports of pilgrimages and cures, with supernatural episodes attributed as tradition. Replaces an accommodation-company domain.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "evidence_scope": "ACTIVE_CATHOLIC_PARISH_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CZ:svata-hora-pribram",
-      "guide_revision": "fnv1a32-b5099359",
+      "guide_revision": "fnv1a32-90fdadc0",
       "draft_order": 97,
       "wave": 2,
       "section_id": "identity",
       "priority": "STANDARD_EDITORIAL_REVIEW",
-      "source_url": "https://svata-hora.cz/",
-      "source_id": "SHR-SVATA-HORA-OFFICIAL",
+      "source_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "source_id": "AO-ED-SVATA-HORA-PARISH-HISTORY-20261111",
       "claim_flags": [
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Catholic parish's official history documents single sanctuary of basilica, chapels, central image and surrounding pilgrimage grounds.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
+      "evidence_scope": "ACTIVE_CATHOLIC_PARISH_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CZ:svata-hora-pribram",
-      "guide_revision": "fnv1a32-b5099359",
+      "guide_revision": "fnv1a32-90fdadc0",
       "draft_order": 97,
       "wave": 2,
       "section_id": "pilgrimage",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
-      "source_id": "PIL-SVATA-HORA-FEAST",
+      "source_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
+      "source_id": "AO-ED-SVATA-HORA-PARISH-PILGRIMAGES-20261111",
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY",
-        "HISTORICAL_YEAR_OR_DATED_EVENT",
-        "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
+        "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official parish programme dates principal 2026 pilgrimage to 15–16 August and coronation anniversary to 13–14 June; the prior 2025 PDF did not receive visual verification.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
+      "evidence_scope": "ACTIVE_CATHOLIC_PARISH_PROGRAMME_2026",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CZ:stara-boleslav-st-wenceslas",
@@ -6237,13 +6334,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lithuanian sanctuary identifies the Apparition Chapel as a distinct sacred building and reports 1608 Marian tradition; regional basilica is separate place of worship.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://siluva.lt/apie-sventove/",
+      "evidence_scope": "CUSTODIAN_APPARITION_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:LT:siluva-apparition-chapel",

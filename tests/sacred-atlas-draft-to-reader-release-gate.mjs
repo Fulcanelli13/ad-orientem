@@ -21,9 +21,12 @@ const dateReconciliation=read("data/shrines/research/sacred-atlas-source-date-re
 const claimResearchLedger=read("data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 assert.equal(claimResearchLedger.state,"RESEARCH_ONLY_NO_EDITOR_APPROVAL_NO_RELEASE");
 assert.equal(claimResearchLedger.paragraphs.length,672);
-assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks,167);
-assert.equal(claimResearchLedger.summary.onlyCitationScope,505);
-assert.equal(claimResearchLedger.summary.newCoreResearchChecksSinceLastPass,34);
+assert.ok(wave2.find(g=>g.draft_order===97).sections.every(sec=>!sec.paragraphs.some(p=>p.source_url.includes("svata-hora.cz"))),"Svatá Hora draft must not cite the domain now redirecting to commercial accommodation");
+assert.ok(wave2.find(g=>g.draft_order===97).research_source_ids.length>=2);
+assert.match(wave2.find(g=>g.draft_order===86).sections.find(s=>s.id==="identity").paragraphs[0].en,/healing as miraculous/);
+assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks,187);
+assert.equal(claimResearchLedger.summary.onlyCitationScope,485);
+assert.equal(claimResearchLedger.summary.newCoreResearchChecksSinceLastPass,20);
 assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks+claimResearchLedger.summary.onlyCitationScope,672);
 assert.equal(claimResearchLedger.summary.editorialApprovals,0);
 assert.equal(claimResearchLedger.summary.ownerAuthorizations,0);

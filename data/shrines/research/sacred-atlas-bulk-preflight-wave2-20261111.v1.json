@@ -14,12 +14,12 @@
     "high_priority_paragraphs": 152,
     "distinct_places": 168,
     "source_types": {
-      "canonical": 385,
-      "research": 119
+      "canonical": 382,
+      "research": 122
     },
     "flag_counts": {
       "HISTORICAL_YEAR_OR_DATED_EVENT": 100,
-      "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY": 47,
+      "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY": 46,
       "PROGRAMME_ACCESS_OR_LITURGY": 187,
       "REPORTED_SUPERNATURAL_OR_DEVOTIONAL": 47,
       "GEOGRAPHY_ROUTE_PRECISION": 107,
@@ -1781,7 +1781,7 @@
       "shrine_id": "shrine:FR:pellevoisin",
       "name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides77-86-20261110.v1.json",
-      "revision": "fnv1a32-fcf11852",
+      "revision": "fnv1a32-ff1f35c5",
       "publication_authorized": false,
       "sections": [
         {
@@ -1802,10 +1802,10 @@
         {
           "section_id": "identity",
           "paragraph_index": 0,
-          "source_id": "AO-ED-PELLEVOISIN-DDF-20261111",
-          "source_url": "https://www.diocese-bourges.org/actualites/2852-nihil-obstat-a-la-devotion-mariale-au-sanctuaire-de-pellevoisin/",
+          "source_id": "AO-ED-PELLEVOISIN-VATICAN-LETTER-20261111",
+          "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Diocesan announcement of Dicastery 30 August 2024 nihil obstat for devotional fruits related to fifteen reported 1876 Marian apparitions; norms do not certify supernatural occurrence.",
+          "source_metadata_excerpt": "Vatican DDF 22 August 2024 letter: permits devotion without judging supernatural authenticity of apparitions; recalls 1983 ecclesiastical recognition of Estelle Faguette's healing and established Scapular history.",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -2417,16 +2417,16 @@
       "shrine_id": "shrine:CZ:svata-hora",
       "name": "Svatá Hora",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides97-106-20261110.v1.json",
-      "revision": "fnv1a32-b5099359",
+      "revision": "fnv1a32-90fdadc0",
       "publication_authorized": false,
       "sections": [
         {
           "section_id": "history",
           "paragraph_index": 0,
-          "source_id": "SHR-SVATA-HORA-OFFICIAL",
-          "source_url": "https://svata-hora.cz/",
+          "source_id": "AO-ED-SVATA-HORA-PARISH-HISTORY-20261111",
+          "source_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Canonical Svatá Hora identity, address and pilgrimage basilica context",
+          "source_metadata_excerpt": "Current Catholic parish's original history of Marian statue, historical chapels, reported cures, pilgrimage and early-modern building sequence. The former svata-hora.cz address redirects to unrelated apartment bookings.",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -2439,10 +2439,10 @@
         {
           "section_id": "identity",
           "paragraph_index": 0,
-          "source_id": "SHR-SVATA-HORA-OFFICIAL",
-          "source_url": "https://svata-hora.cz/",
+          "source_id": "AO-ED-SVATA-HORA-PARISH-HISTORY-20261111",
+          "source_url": "https://farnost-svatahora.cz/navstivte-nas/historie-svate-hory",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Canonical Svatá Hora identity, address and pilgrimage basilica context",
+          "source_metadata_excerpt": "Current Catholic parish's original history of Marian statue, historical chapels, reported cures, pilgrimage and early-modern building sequence. The former svata-hora.cz address redirects to unrelated apartment bookings.",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -2455,16 +2455,15 @@
         {
           "section_id": "pilgrimage",
           "paragraph_index": 0,
-          "source_id": "PIL-SVATA-HORA-FEAST",
-          "source_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
+          "source_id": "AO-ED-SVATA-HORA-PARISH-PILGRIMAGES-20261111",
+          "source_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Annual Assumption-season pilgrimage feast with Rosary, candlelight procession, procession with the miraculous statue and blessings",
+          "source_metadata_excerpt": "Official 2026 pilgrimage programme documents 13–14 June coronation anniversary, 15–16 August principal pilgrimage and other dated celebrations; not the unverified 2025 poster.",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
             "PROGRAMME_ACCESS_OR_LITURGY",
-            "HISTORICAL_YEAR_OR_DATED_EVENT",
-            "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
           ],
           "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
           "second_editor_approved": false,
