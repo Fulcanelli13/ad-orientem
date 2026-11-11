@@ -27,9 +27,11 @@ for(const entry of index.batches){
 }
 const selected=await load(".tmp/schola-1962-selected-annual/2026-selected-full1049-inline-crosswalk.json");
 const result=buildFull1961SourceStudy({batches,selected2026:selected});
-if(result.counts.sourceGabcTotal!==1215||
+if(result.counts.sourceGabcTotal!==1220||
    result.counts.originalProperGabc!==1195||
    result.counts.existingOrdinaryGabc!==20||
+   result.counts.importedSequenceGabc!==5||
+   result.counts.separateUnimportedSequenceLeads!==0||
    result.counts.selected2026.matched!==true||
    result.publication.publicScores!==0||
    result.entries.some(item=>item.publication!=="RESEARCH_ONLY_NOT_MUSICALLY_APPROVED"))
@@ -69,5 +71,5 @@ console.log("FULL_EXISTING_1961_GABC_REVIEW "+
  JSON.stringify({scores:result.counts.sourceGabcTotal,
   roles:result.counts.byRole,
   corroboratedSelected2026:result.counts.selected2026,
-  fiveSequencesNotYetImported:result.counts.separateUnimportedSequenceLeads,
+  importedSequences:result.counts.importedSequenceGabc,
   publicScores:0,htmlBytes:Buffer.byteLength(html)}));
