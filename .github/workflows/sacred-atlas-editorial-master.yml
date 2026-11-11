@@ -49,3 +49,4 @@ jobs:
           node tests/sacred-atlas-wave2-guides57-200.mjs
           node tests/sacred-atlas-wave2-guides57-224.mjs
           node tests/sacred-atlas-draft-to-reader-release-gate.mjs
+          node scripts/compile-approved-sacred-place-guides.mjs --check
