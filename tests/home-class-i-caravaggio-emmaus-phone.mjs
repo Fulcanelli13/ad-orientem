@@ -22,7 +22,7 @@ const server=http.createServer(async(req,res)=>{
 const target={
  date:"2026-04-06",id:"tempora:Pasc0-1:1:w",
  image:"/assets/home/class-i-2026/caravaggio-emmaus-ng172-1601-fullframe-2400.webp",
- artworkId:"primary:2026-04-06",title:"The Supper at Emmaus",
+ artworkId:"frozen-date:2026-04-06",title:"The Supper at Emmaus",
  artist:"Caravaggio",
  status:"LOCAL_EMMAUS_1601_NG172_PD_ART_FULLFRAME_BYTE_VERIFIED",
  width:2400,height:1707
