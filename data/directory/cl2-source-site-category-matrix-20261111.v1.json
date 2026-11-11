@@ -1,0 +1,1016 @@
+{
+  "schema": "AO_CL2_SOURCE_SITE_CATEGORY_MATRIX_V1",
+  "created_on": "2026-11-11",
+  "scope": "SOURCE_LABEL_CONTEXT_NOT_VERIFIED_VENUE_OWNERSHIP_MINISTRY_OR_CELEBRANT",
+  "source_index": "data/directory/generated/cl2-physical-site-index.v1.json",
+  "join_manifest": "data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json",
+  "columns": [
+    "literal_source_affiliation",
+    "category",
+    "classification_basis",
+    "reported_group_hint",
+    "visual_lane"
+  ],
+  "summary": {
+    "site_total": 2580,
+    "exact_source_ministry_sites": 1335,
+    "by_category": {
+      "PRIESTLY_SOCIETY_OR_CLERGY": 1392,
+      "UNRESOLVED": 345,
+      "DIOCESAN_OR_PARISH_CONTEXT": 633,
+      "DIRECTORY_GROUP_ONLY": 74,
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP": 25,
+      "RELIGIOUS_HOUSE": 97,
+      "MIXED_OR_HOST_RELATIONSHIP": 14
+    },
+    "by_basis": {
+      "SOURCE_REPORTED": 2161,
+      "UNVERIFIED": 345,
+      "DIRECTORY_NOT_OPERATOR": 74
+    },
+    "unresolved_or_directory_group_only": 419,
+    "distinct_labels": 140
+  },
+  "rows": [
+    [
+      "",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "AASJMV",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "AASJMV",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Archdiocese of Siena; 2025 custodianship Equestrian Order of Holy Sepulchre",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Benedictine",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "BENEDICTINE | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "BENEDICTINE NUNS | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Bénédictines",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "BÉNÉDICTINS DE BELLAIGUE",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINES_BELLAIGUE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "CANONESSES | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Canons of St John Cantius",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CANONS_ST_JOHN_CANTIUS",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "CANONS REGULAR | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Canons Regular of Saint John Cantius",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CANONS_ST_JOHN_CANTIUS",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Capucins de Morgon",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CAPUCHINS_MORGON",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Carmelite",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CARMELITE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "CARMELITE NUNS | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CARMELITE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Carmélites",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CARMELITE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Carmelites of Holy Face",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CARMELITE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Clarisses",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "CMRI",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "CMRI",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "CMRI / Hobsonville Church booking",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "CMRI DIRECTORY (affiliation of celebrant not inferred)",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "CMRI directory / affiliated clergy",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Communauté bénédictine de Bellefontaine",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Confraternita San Carlo Borromeo / local organiser",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Congregation of St. Pius V (CSPV)",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPV",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Daughters of Mary, Mother of Israels Hope",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Diocesan",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocesan / Una Voce (unassessed)",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocesan / Una Voce (unassessed) | FSSP",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocesan | Unclassified (LMD source)",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocesan/FSSP organizer",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocesan/FSSP organizer | FSSP",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocese Guarulhos",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Diocese São José dos Campos",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Discalced Carmelite nuns",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "CARMELITE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Discepole del Cenacolo",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dominicaines Contemplatives",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "DOMINICAINES DE FANJEAUX",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAINES_FANJEAUX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dominicaines enseignantes du Saint-Nom-de-Jésus",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dominicaines enseignantes du Saint-Nom-de-Jésus et du Coeur Immaculé de Marie",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dominicains",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "DOMINICAINS D AVRILLÉ",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICANS_AVRILLE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dominican",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "DOMINICAN FAMILY | Owner-listed",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "DOMINICAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Dompfarrei St. Georg / Pro Missa Tridentina",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Duszpasterstwo Wiernych Tradycji Łacińskiej Diecezji Świdnickiej",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Franciscaines du Trévoux",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Fraternité de la Transfiguration",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "TRANSFIGURATION",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FRATERNITÉ DE LA TRANSFIGURATION",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "TRANSFIGURATION",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Friendly community — unclassified",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "FSSP",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP | FSSP AUSTRIA",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP | FSSP SCOTLAND",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP | FSSP UK AND IRELAND",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP AUSTRIA",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP GERMANY",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP listed; parish venue",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "FSSP per specialist",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "FSSP SOUTH TYROL",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "FSSP SWITZERLAND",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "FSSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Fundación Mater Dei / CMRI directory",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "IBP",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "IBP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "ICKSP",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "ICKSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "ICKSP / ICRSP 2026 printed annuaire",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "ICKSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "ICKSP GREAT BRITAIN",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "ICKSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "ICKSP ITALY",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "ICKSP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Independent",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Independent Monastic",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "INDEPENDENT ST EDMUND MISSION OR OTHER",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Institute of Saint Philip Neri",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "INSTITUTE_ST_PHILIP_NERI",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Instituto Bom Pastor",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "IBP",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Irmandade Nossa Senhora do Carmo / Colégio Santo Tomás de Aquino",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Istituto Mater Boni Consilii",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "IMBC",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Local coetus",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Local diocesan community / Alleati dell'Eucaristia",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Local Steinen parish not yet verified as TLM operator",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Marias Lamm",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Militia Templi",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "MILITIA_TEMPLI",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Monastic",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Mosteiro da Santa Cruz / Resistance",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "MOSTEIRO_SANTA_CRUZ",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Mosteiro da Santa Cruz & associated Benedictines",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Mouvement de la Jeunesse Catholique de France",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Oasis de Jesús Sacerdote",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Oratorians",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "ORATORIAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Oratório Santo Antônio / Associação Cultural Santo Antônio",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Other",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Parafia bł. Edmunda Bojanowskiego",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parafia Maryi Królowej, Archidiecezja Poznańska",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parafia Matki Bożej Królowej Polski / Duszpasterstwo Tradycji Łacińskiej",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parafia Wniebowzięcia NMP — Duszpasterstwo Tradycji Łacińskiej",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parish (celebrant unknown)",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parish / Fr Gabriel Ertl (liturgical role not independently certified)",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Parish diocesan",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Père Avril",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Personalpfarrei Maria Immaculata",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Petites servantes de saint Jean-Baptiste",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Philippines — diocesan / religious LMD",
+      "MIXED_OR_HOST_RELATIONSHIP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Poor Clare Colettine nuns",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Premonstratensian",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "PREMONSTRATENSIAN",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Pro Missa Tridentina directory",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Pro Missa Tridentina; local parish owner outstanding",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Religiosas Ecuménicas de Guadalupe",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Religious",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Religious/Monastic",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Roman Catholic Institute / cooperating clergy",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "RCI",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Santuario Nostra Signora di Pontelungo / Diocese of Albenga-Imperia",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Schola Veritatis",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Servi Jesu et Mariae",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SJM",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Siervas de Jesús Sacerdote y del Corazón de María",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Sisters of Saint Benedict Center",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Slaves of Immaculate Heart of Mary",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Sociedad Sacerdotal Trento",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Society of the Missionaries of Divine Mercy",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SMMD",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Sœurs de la Fraternité Saint Pie X",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Sœurs de la Fraternité Saint-Pie X",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Sœurs de la Transfiguration",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPV / Congregation of St Pius V directory (specific body unconfirmed)",
+      "DIRECTORY_GROUP_ONLY",
+      "DIRECTORY_NOT_OPERATOR",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "SSPX",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX (FSSPX)",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX / FSSPX",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX | SSPX / FSSPX",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX FRANCE AND RELATED",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX GREAT BRITAIN AND IRELAND",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX ITALY",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX Marian Corps / Resistance",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      "SSPX_RESISTANCE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "SSPX-associated community",
+      "MIXED_OR_HOST_RELATIONSHIP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "SSVM / diocesan host",
+      "MIXED_OR_HOST_RELATIONSHIP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Suore Consolatrici del Sacro Cuore di Gesù",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Traditional Benedictine; liturgical books unverified",
+      "RELIGIOUS_HOUSE",
+      "SOURCE_REPORTED",
+      "BENEDICTINE",
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Traditional Mass Philippines independent clergy",
+      "PRIESTLY_SOCIETY_OR_CLERGY",
+      "SOURCE_REPORTED",
+      null,
+      "EMBLEM_OR_NEUTRAL"
+    ],
+    [
+      "Una Voce Japan",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "UNA VOCE SCOTLAND",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "UNASSESSED",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Unclassified (LMD source)",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Unconfirmed",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Unknown",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "UNVERIFIED_OPERATOR_LMS_DISCOVERY",
+      "UNRESOLVED",
+      "UNVERIFIED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Vereinigung St Nikolaus von der Flüe",
+      "LAY_ASSOCIATION_OR_LOCAL_GROUP",
+      "SOURCE_REPORTED",
+      null,
+      "NEUTRAL"
+    ],
+    [
+      "Wallfahrt Maria Vesperbild / Bistum Augsburg",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ],
+    [
+      "Wallfahrtsgemeinde St. Marien Kevelaer",
+      "DIOCESAN_OR_PARISH_CONTEXT",
+      "SOURCE_REPORTED",
+      null,
+      "DIOCESAN_PHOTO"
+    ]
+  ]
+}
