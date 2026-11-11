@@ -5,22 +5,34 @@ on:
       - feat/sacred-art-batch1-released-gallery-20261108
     paths:
       - 'src/art/released-gallery-batch1.v1.js'
+      - 'src/art/released-module-paintings.v1.js'
+      - 'src/art/exact-owner-rejections.v1.js'
+      - 'src/art/sacred-art-taxonomy-v1.js'
+      - 'src/art/sacred-art-crossmodule-links-v1.js'
+      - 'assets/prayer/released/bouts-annunciation-original.jpg'
       - 'src/home/c3-gallery.js'
       - 'src/home/today-h4-view.js'
       - 'src/home/browser-entry.js'
       - 'src/home/c3-styles.js'
       - 'data/artwork/sacred-art-batch1-25-release-progress.v1.json'
       - 'tests/sacred-art-batch1-released-gallery.mjs'
+      - 'tests/sacred-art-rejected-bouts-runtime.mjs'
       - '.github/workflows/sacred-art-batch1-gallery.yml'
   pull_request:
     paths:
       - 'src/art/released-gallery-batch1.v1.js'
+      - 'src/art/released-module-paintings.v1.js'
+      - 'src/art/exact-owner-rejections.v1.js'
+      - 'src/art/sacred-art-taxonomy-v1.js'
+      - 'src/art/sacred-art-crossmodule-links-v1.js'
+      - 'assets/prayer/released/bouts-annunciation-original.jpg'
       - 'src/home/c3-gallery.js'
       - 'src/home/today-h4-view.js'
       - 'src/home/browser-entry.js'
       - 'src/home/c3-styles.js'
       - 'data/artwork/sacred-art-batch1-25-release-progress.v1.json'
       - 'tests/sacred-art-batch1-released-gallery.mjs'
+      - 'tests/sacred-art-rejected-bouts-runtime.mjs'
       - '.github/workflows/sacred-art-batch1-gallery.yml'
 permissions:
   contents: read
@@ -35,6 +47,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test released gallery and no-promotion protections
         run: node tests/sacred-art-batch1-released-gallery.mjs
+      - name: Enforce exact global Bouts rejection across C3, Prayer and public bytes
+        run: node tests/sacred-art-rejected-bouts-runtime.mjs
       - name: Test existing H7 Home art UX
         run: node tests/home-c3-gallery.mjs
       - name: Test existing Prayer art placement and release controls

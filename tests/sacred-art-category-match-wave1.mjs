@@ -45,11 +45,11 @@ for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
 }
 assert.equal(lexicalSaintScopeException({workGroupId:"not-reviewed"},"CHR-MIRACLE"),null);
 
-assert.equal(SACRED_ART_CURATED_WORKS_V1.length,25);
-assert.equal(SACRED_ART_CURATED_WORKS_V1.filter(w=>w.photoModuleId).length,16);
+assert.equal(SACRED_ART_CURATED_WORKS_V1.length,24);
+assert.equal(SACRED_ART_CURATED_WORKS_V1.filter(w=>w.photoModuleId).length,15);
 assert.equal(SACRED_ART_CURATED_WORKS_V1.filter(w=>!w.photoModuleId).length,9);
-assert.equal(SACRED_ART_RELEASED_GALLERY_V1.length,16);
-assert.equal(new Set(SACRED_ART_CURATED_WORKS_V1.map(w=>w.id)).size,25);
+assert.equal(SACRED_ART_RELEASED_GALLERY_V1.length,15);
+assert.equal(new Set(SACRED_ART_CURATED_WORKS_V1.map(w=>w.id)).size,24);
 assert.equal(new Set(Object.keys(SACRED_ART_CATEGORIES_V1)).size,14);
 for(const [id,source] of Object.entries(RELEASED_MODULE_PAINTINGS)){
  const w=sacredArtReleasedPhotoClassification(id);
@@ -160,4 +160,4 @@ if(existsSync(new URL("../"+gen,import.meta.url))){
  assert.ok(master.policies.preserveAllPriorUserApprovalsAndRejections);
  assert.ok(master.policies.neverPromoteLexicalTagToVerifiedDepiction);
 }
-console.log("PASS: 25 actual published+matched artwork classifications, 41 existing Prayer slots; 989 provisional research groups and 267 existing Prayer positions preserved.");
+console.log("PASS: 24 public-eligible classifications (15 released + 9 pending), 41 existing Prayer slots; historical counts and decisions retained.");

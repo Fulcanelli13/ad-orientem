@@ -51,7 +51,10 @@ assert.equal(ids.length,138);
 assert.equal(new Set(ids).size,138,"No slot may be acquired twice");
 const allPending=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).filter(id=>
  resolvePrayerEditorialArtwork(id).state==="APPROVED_EXACT_PHOTO_PENDING");
-assert.equal(allPending.length,134,"Four release reuses should reduce the active queue by exactly four");
-assert.deepEqual(ids.filter(id=>!reusedReleased.has(id)).sort(),allPending.sort(),
- "All remaining exact-photo pending slots must be accounted for");
-console.log("PASS: historical 138-slot Prayer source queue, four previously released exact-work reuses, 134 still photo-pending; no hold or Rosary override");
+// Historical queue never included four Bouts photos because they were then released.
+const withdrawnBouts=["STG-pray.angelus-04","STG-pray.angelus-05",
+ "STG-pray.angelus-06","STG-pray.rosary-02"];
+assert.equal(allPending.length,138,"Four reused works plus four withdrawn Bouts balance");
+assert.deepEqual([...ids.filter(id=>!reusedReleased.has(id)),...withdrawnBouts].sort(),allPending.sort(),
+ "No changed selections beyond four source reuses and exact rejected Bouts photo exclusion");
+console.log("PASS: historical 138-slot source queue; four approved photo reuses, four rejected Bouts slots pending; 138 active pending");

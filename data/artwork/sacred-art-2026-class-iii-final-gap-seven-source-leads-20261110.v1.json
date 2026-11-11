@@ -1,0 +1,123 @@
+{
+  "schema": "AO_SACRED_ART_2026_CLASS_III_FINAL_GAP_SEVEN_NEW_SOURCE_LEADS_V1",
+  "asOf": "2026-11-10",
+  "scope": "Seven artwork-title/object matches for 10 dates absent from frozen 365-day and 989-group records. No new photo acquired or art admitted.",
+  "counts": {
+    "newNamedWorkLeads": 7,
+    "fullFeastOrSaintIdentities": 5,
+    "partialGroupIdentities": 2,
+    "stillNoArtworkObjectForDate": 3,
+    "newDateApprovals": 0,
+    "newProductionImages": 0
+  },
+  "remainingGaps": [
+    {
+      "date": "2026-04-22",
+      "observance": "Sts. Soter & Caius",
+      "reason": "No identified painting of both popes; avoid falsely equating with Soter/Caius unrelated subjects."
+    },
+    {
+      "date": "2026-06-05",
+      "observance": "St. Boniface",
+      "reason": "No exact historical oil-painting object confirmed; reject Boniface of Tarsus and other namesakes."
+    },
+    {
+      "date": "2026-07-28",
+      "observance": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
+      "reason": "No painting of entire four-saint observance confirmed; standalone Nazarius/Celsus would be partial."
+    }
+  ],
+  "policy": [
+    "Only artwork subject proposals. Source pages are NOT native source photograph files.",
+    "The secondary Commons Servites lead does not automatically enter the handpicked gallery pool.",
+    "An object's public-domain age or open metadata does not certify the actual photograph for monetised use.",
+    "Partial martyr-group paintings must not be described as all saints depicted.",
+    "No calendar assignments, owner approval, photo acquisition, asset changes or public deployments."
+  ],
+  "artworkResearch": [
+    {
+      "date": "2026-02-11",
+      "observance": "Our Lady of Lourdes",
+      "title": "Apparizione della Madonna a Lourdes",
+      "artist": "Southern Italian school",
+      "objectId": "ICCD-1700126164",
+      "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1700126164",
+      "sourceAuthority": "ITALIAN_NATIONAL_CULTURAL_CATALOGUE",
+      "medium": "Oil on canvas, 1888",
+      "scope": "EXACT_FEAST_APPARITION",
+      "caution": "Documented historic original but catalogue calls it modest in quality and poor condition; evaluate stronger artistic alternative before publication."
+    },
+    {
+      "date": "2026-02-12",
+      "observance": "Seven Holy Servite Founders",
+      "title": "The Madonna Presents the Dead Christ to the Seven Holy Founders of the Servites",
+      "artist": "Gaspare Diziani",
+      "objectId": "TREVISO-DIZIANI-SERVITE-FOUNDERS",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/Category:The_Madonna_presents_the_dead_Christ_to_the_seven_holy_founders_of_the_Servites_by_Gaspare_Diziani",
+      "sourceAuthority": "SECONDARY_COMMONS_REFERENCE_TO_TREVISO_MUNICIPAL_MUSEUM",
+      "medium": "Historical painting, c.1750",
+      "scope": "EXACT_ALL_SEVEN_FOUNDERS",
+      "caution": "Artwork lead only; first-party Treviso collection identity has not been independently retrieved. Commons-only photograph is NOT admitted to curation."
+    },
+    {
+      "date": "2026-05-04",
+      "observance": "St. Monica",
+      "title": "Saints Augustine and Monica",
+      "artist": "Ary Scheffer",
+      "objectId": "NATIONAL_GALLERY_NG1170",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/ary-scheffer-saints-augustine-and-monica",
+      "sourceAuthority": "NATIONAL_GALLERY_LONDON_FIRST_PARTY",
+      "medium": "Oil painting, 1854",
+      "scope": "EXACT_SAINT_IN_TWO_SAINT_SCENE",
+      "caution": "Nineteenth-century rather than preferred dark Baroque; depicts Monica and her son in contemplative dialogue."
+    },
+    {
+      "date": "2026-05-12",
+      "observance": "Sts. Nereus, Achilleus, Domitilla, & Pancras",
+      "title": "I Santi Nereo, Achilleo e Domitilla",
+      "artist": "Cristoforo Roncalli (Pomarancio)",
+      "objectId": "ICCD-1201030011",
+      "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1201030011",
+      "sourceAuthority": "ITALIAN_NATIONAL_CULTURAL_CATALOGUE",
+      "medium": "Oil on canvas, 1598–1599",
+      "scope": "PARTIAL_FEAST_GROUP_THREE_OF_FOUR",
+      "caution": "EXACTLY Nereus, Achilleus and Domitilla appear. Pancras is not documented as depicted; the full-four group remains unmatched."
+    },
+    {
+      "date": "2026-07-10",
+      "observance": "Seven Holy Brothers and Sts. Rufina & Secunda",
+      "title": "The Martyrdom of Saint Rufina and Saint Secunda (The Painting by Three Artists)",
+      "artist": "Cerano; Morazzone; Giulio Cesare Procaccini",
+      "objectId": "BRERA-RUFINA-SECUNDA-1620",
+      "sourceUrl": "https://pinacotecabrera.org/en/collezioni/collezione-on-line/the-martyrdom-of-st-rufina-and-st-secunda-the-painting-by-three-artists/",
+      "sourceAuthority": "PINACOTECA_DI_BRERA_FIRST_PARTY",
+      "medium": "Oil on canvas, 1620–1624",
+      "scope": "PARTIAL_FEAST_GROUP_TWO_OF_NINE",
+      "caution": "Depicts Rufina and Secunda only; the Seven Holy Brothers are NOT represented, so do not caption as a complete feast group."
+    },
+    {
+      "date": "2026-08-07",
+      "observance": "St. Cajetan",
+      "title": "San Gaetano da Thiene riceve Gesù Bambino dalla Madonna",
+      "artist": "Giovan Gioseffo Dal Sole",
+      "objectId": "ZERI-122877",
+      "sourceUrl": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/122877/Dal%20Sole%20Giovan%20Gioseffo%2C%20San%20Gaetano%20da%20Thiene%20riceve%20Ges%C3%B9%20Bambino%20dalla%20Madonna",
+      "sourceAuthority": "FONDAZIONE_ZERI_OBJECT_CATALOGUE",
+      "medium": "Oil on canvas, c.1690–1710",
+      "scope": "EXACT_SAINT_AND_VISION",
+      "caution": "Original recorded at Galleria Estense, Modena. Photographic rights and precise original image file are not established."
+    },
+    {
+      "date": "2026-08-12",
+      "observance": "St. Clare",
+      "title": "Madonna and Child with Saints Francis and Clare",
+      "artist": "Cima da Conegliano",
+      "objectId": "MET-435901",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435901",
+      "sourceAuthority": "METROPOLITAN_MUSEUM_FIRST_PARTY",
+      "medium": "Oil on wood, ca. 1510",
+      "scope": "EXACT_SAINT_IN_GROUP_SCENE",
+      "caution": "Clare of Assisi confirmed by museum. Renaissance rather than preferred Baroque; keep as alternative unless artistically approved for date."
+    }
+  ]
+}

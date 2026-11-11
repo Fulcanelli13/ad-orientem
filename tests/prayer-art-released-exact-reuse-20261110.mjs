@@ -26,9 +26,9 @@ for (const [slotId, artId] of expected) {
 }
 const counts=prayerEditorialPublicationSummary();
 assert.equal(counts.total,267);
-assert.equal(counts.states.PUBLISHED_EXACT_PHOTO,55);
-assert.equal(counts.states.APPROVED_EXACT_PHOTO_PENDING,134);
+assert.equal(counts.states.PUBLISHED_EXACT_PHOTO,51,"Historical 51 minus Bouts four plus independent reuse four");
+assert.equal(counts.states.APPROVED_EXACT_PHOTO_PENDING,138,"Historical 138 plus Bouts four minus reuse four");
 assert.equal(resolvePrayerEditorialArtwork("HERO-03").state,"SCOPE_HOLD");
 assert.equal(resolvePrayerEditorialArtwork("COV-pray.confession").state,"PROTECTED_EXISTING_COVER");
 assert.equal(resolvePrayerEditorialArtwork("COV-dead_de_profundis").state,"APPROVED_EXACT_PHOTO_PENDING");
-console.log("PASS four existing exact Prayer photographs reused (55/267 published, 134 approved exact pending); all holds remain protected");
+console.log("PASS four existing exact Prayer photographs reused (51/267 published, 138 approved exact pending; rejected Bouts source absent); all holds remain protected");

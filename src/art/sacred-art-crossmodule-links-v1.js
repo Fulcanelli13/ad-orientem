@@ -12,7 +12,6 @@ import {APPROVED_CLASS_I_2026} from "../calendar/approved-class-i-heroes-2026.js
 const freezeList=(values,kind)=>Object.freeze(values.map(id=>Object.freeze({id,relation:kind})));
 const ROSARY_SCENES=Object.freeze({
  "released-photo:angelus":["joy1"],
- "released-photo:bouts":["joy1"],
  "released-photo:visit":["joy3"],
  "released-photo:cavallino":["joy3"],
  "released-photo:hondius":["joy5"],
@@ -24,7 +23,6 @@ const ROSARY_SCENES=Object.freeze({
 });
 const ATLAS_SCENES=Object.freeze({
  "released-photo:angelus":["nazareth-e1"],
- "released-photo:bouts":["nazareth-e1"],
  "released-photo:visit":["bethlehem-e1"],
  "released-photo:cavallino":["bethlehem-e1"],
  "released-photo:hondius":["jerusalem-temple-e2"],

@@ -5,18 +5,20 @@ import {resolvePrayerEditorialArtwork,prayerEditorialPublicationSummary} from ".
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const p="data/prayer/artwork-editorial-20261101/";
+const rejectedBoutsSource="https://clevelandart.org/art/1942.635";
+const bannedSlots=new Set(["STG-pray.angelus-04","STG-pray.angelus-05",
+ "STG-pray.angelus-06","STG-pray.rosary-02"]);
+// Four other historical slots are approved for the same *already released*
+// physical originals. The original source audit stays immutable.
+const reusedSlots=new Set(["HERO-22","STG-programme.first_saturday-01",
+ "COV-pray.adoration","COV-pray.forty_hours"]);
+assert.equal([...reusedSlots].filter(id=>bannedSlots.has(id)).length,0);
+
 const audit=JSON.parse(read(p+"gallery-archive-crosswalk-267-20261103.v1.json"));
 const master=JSON.parse(read(p+"curatorial-master-267-20261101.v1.json"));
 const gallery=JSON.parse(read("data/artwork/research-semantic-candidates-989.v1.json"));
 const norm=s=>String(s??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const k=(artist,title)=>norm(artist)+"|"+norm(title);
-// The 3 November editorial crosswalk intentionally stays a frozen snapshot;
-// these four work-identical source photos were released later from the
-// existing production asset registry, without changing painting selection.
-const releasedAfterAudit=new Set([
- "HERO-22","STG-programme.first_saturday-01",
- "COV-pray.adoration","COV-pray.forty_hours"
-]);
 const galleryByWork=new Map();
 for(const g of gallery.artworks){
  const key=k(g.artist,g.title);
@@ -44,13 +46,22 @@ for(const row of audit.assignments){
  assert.equal(row.painting?.artist||null,compiled.selected?.artist||null,row.slot);
  assert.equal(row.painting?.title||null,compiled.selected?.title||null,row.slot);
  assert.equal(row.painting?.sourcePage||null,compiled.selected?.sourcePage||null,row.slot);
- const live=resolvePrayerEditorialArtwork(row.slot);
- const expectedLiveState=releasedAfterAudit.has(row.slot)?"PUBLISHED_EXACT_PHOTO":row.currentRuntime.state;
- assert.equal(live.state,expectedLiveState,
-  "Only explicit later releases may differ from frozen crosswalk: "+row.slot);
- if(releasedAfterAudit.has(row.slot)){
+ const current=resolvePrayerEditorialArtwork(row.slot);
+ if(bannedSlots.has(row.slot)){
+  // Prior audit was correct at its own date. The later owner rejection
+  // withdraws only the exact Bouts photograph; no historical record is changed.
+  assert.equal(row.painting?.sourcePage,rejectedBoutsSource,row.slot);
+  assert.equal(row.currentRuntime.state,"PUBLISHED_EXACT_PHOTO",row.slot);
+  assert.equal(current.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
+  assert.equal(current.artId,null,row.slot);
+  assert.equal(current.photo,null,row.slot);
+ }else if(reusedSlots.has(row.slot)){
   assert.equal(row.currentRuntime.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
-  assert.ok(live.photo&&live.artId,row.slot);
+  assert.equal(current.state,"PUBLISHED_EXACT_PHOTO",row.slot);
+  assert.ok(current.photo&&current.artId,"Exact approved reusable photo missing "+row.slot);
+ }else{
+  assert.equal(row.currentRuntime.state,current.state,
+   "Snapshot runtime changed outside rejected/reused originals: "+row.slot);
  }
  assert.equal(row.publicationEnabledByAudit,false,"Never publish from this audit");
  const expected=row.painting?(galleryByWork.get(k(row.painting.artist,row.painting.title))||[]):[];
@@ -70,18 +81,18 @@ assert.equal(audit.counts.gallery989ExactTitleArtistPositions,matched);
 assert.equal(audit.counts.gallery989UniqueGroupPositions,unique);
 assert.equal(audit.counts.gallery989AmbiguousGroupPositions,ambiguous);
 assert.equal(audit.counts.gallery989UniqueMatchedGroupIDs,groupIDs.size);
-const currentStates=prayerEditorialPublicationSummary().states;
-const expectedStates={...audit.counts.states,
- PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO+releasedAfterAudit.size,
- APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING-releasedAfterAudit.size
-};
-assert.deepEqual(expectedStates,currentStates);
+assert.deepEqual(prayerEditorialPublicationSummary().states,{
+ ...audit.counts.states,
+ PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO-bannedSlots.size+reusedSlots.size,
+ APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING+bannedSlots.size-reusedSlots.size
+},"Historical audit differs only by four rejected Bouts originals and four unrelated approved exact work reuses");
 assert.equal(audit.counts.pendingDistinctWorkSourceKeys,audit.pendingDistinctWorksByPotentialReuse.length);
 for(const work of audit.pendingDistinctWorksByPotentialReuse){
  assert.equal(work.publicationPermission,false);
  assert.ok(work.positionCount>0);
  assert.equal(work.slots.length,work.positionCount);
  for(const id of work.slots)assert.equal(resolvePrayerEditorialArtwork(id).state,
-  releasedAfterAudit.has(id)?"PUBLISHED_EXACT_PHOTO":"APPROVED_EXACT_PHOTO_PENDING",id);
+  reusedSlots.has(id)?"PUBLISHED_EXACT_PHOTO":"APPROVED_EXACT_PHOTO_PENDING",id);
 }
-console.log("PASS: 267 Prayer positions, "+matched+" gallery title matches, "+currentStates.PUBLISHED_EXACT_PHOTO+" live exact photos; four later reuses distinguished from frozen crosswalk");
+console.log("PASS: 267 Prayer positions; four rejected Bouts releases withheld, four other exact-work photos reused, "+
+ prayerEditorialPublicationSummary().states.PUBLISHED_EXACT_PHOTO+" photo positions; no research-only publication");

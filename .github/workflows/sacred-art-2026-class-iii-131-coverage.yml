@@ -1,0 +1,26 @@
+name: Sacred Art 2026 Class III 131-date artwork coverage
+
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/sacred-art-2026-class-iii-131-curatorial-master-20261110.v1.json'
+      - 'data/artwork/sacred-art-2026-class-iii-final-gap-seven-source-leads-20261110.v1.json'
+      - 'tests/sacred-art-2026-class-iii-131-curatorial-master.test.mjs'
+      - '.github/workflows/sacred-art-2026-class-iii-131-coverage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-class-iii-editorial-coverage:
+    name: All 131 Class III days, owner scope and image-release fail closed
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit 131 artwork dossiers without network or file publication
+        run: node tests/sacred-art-2026-class-iii-131-curatorial-master.test.mjs
