@@ -286,13 +286,32 @@ try{
         const nativeFull=await page.evaluate(()=>{
           const modal=document.querySelector("dialog[data-ao-reference-full-score]");
           const score=modal?.querySelector("[data-ao-reference-full-staff]");
+          const note=score?.querySelector("svg use.note")??score?.querySelector("svg use");
+          const staffLine=score?.querySelector("svg .staffLine");
           return {open:modal?.open===true,hasSvg:Boolean(score?.querySelector("svg")),
             scoreId:modal?.dataset.aoReferenceFullScore,
+            noteFound:Boolean(note),staffLineFound:Boolean(staffLine),
+            noteInk:note?getComputedStyle(note).fill:null,
+            staffInk:staffLine?getComputedStyle(staffLine).stroke:null,
             scholaIndex:window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.index,
             sourceUrl:modal?.querySelector("a")?.href};
         });
         assert.equal(nativeFull.open,true);
         assert.equal(nativeFull.hasSvg,true);
+        assert.equal(nativeFull.noteFound,true,"Exsurge square-note glyph missing");
+        assert.equal(nativeFull.staffLineFound,true,"Original staff-line SVG missing");
+        // Geometry alone allowed black notation on an almost-black panel.
+        // Assert the REAL glyph's computed fill and staff-line stroke.
+        const lightEnough=ink=>{
+          const m=String(ink??"").match(/^rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)/);
+          if(!m)return false;
+          const [r,g,b]=m.slice(1,4).map(Number);
+          return (0.2126*r+0.7152*g+0.0722*b)>115;
+        };
+        assert.ok(lightEnough(nativeFull.noteInk),
+          "Gregorian square notes visually disappear on the dark modal: "+nativeFull.noteInk);
+        assert.ok(lightEnough(nativeFull.staffInk),
+          "Gregorian staff lines visually disappear on the dark modal: "+nativeFull.staffInk);
         assert.equal(nativeFull.scoreId,"GREGOBASE-2982");
         assert.equal(nativeFull.scholaIndex,beforeReference);
         assert.match(nativeFull.sourceUrl||"",/gregobase/);
@@ -320,6 +339,16 @@ try{
           "Manually opening notation advanced independent Schola");
         assert.ok(checkedReference.width<=c.width+2,
           "Historical reference created page overflow");
+        const inlineInk=await page.evaluate(()=>{
+          const svg=document.querySelector(
+            "#ao-r17-native-reader-preview [data-ao-reference-score-staff] svg");
+          const glyph=svg?.querySelector("use.note")??svg?.querySelector("use");
+          const staff=svg?.querySelector(".staffLine");
+          return {note:glyph?getComputedStyle(glyph).fill:null,
+            staff:staff?getComputedStyle(staff).stroke:null};
+        });
+        assert.ok(lightEnough(inlineInk.note),"Compact Schola neumes have insufficient contrast");
+        assert.ok(lightEnough(inlineInk.staff),"Compact Schola staff is illegible");
         c.steps.push({name:"actual-native-explicit-kyriale-reference",
           metrics:checkedReference});
         await page.screenshot({path:resolve(OUT,c.name+"-native-kyrie-XI-reference.png"),
