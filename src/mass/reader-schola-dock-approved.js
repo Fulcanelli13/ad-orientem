@@ -4,6 +4,7 @@
 // promotion record tied to the actual track, setting and source.
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
 import {selectApprovedInlineScore,selectedMassInlineSettings} from "./reader-inline-chant-selector.js";
+import {selectApprovedCompleteScholaTrackScore} from "./reader-live-handoff-schola-track-score.js";
 
 export const SCHOLA_DOCK_APPROVAL_SCHEMA="ao-schola-dock-score-approval-v1";
 // Zero Schola promotions as at 10 November 2026. The separately approved
@@ -81,9 +82,20 @@ export function selectApprovedScholaDockScore({
   });
   if(selected)matches.push(selected);
  }
- return matches.length===1 ? Object.freeze({
+ // A whole approved Kyriale setting can span every native Schola cue in a
+ // movement. Require the *complete* native source-track identity, rather
+ // than approving each priest-card/syllable as a separate musical score.
+ const fullScore=selectApprovedCompleteScholaTrackScore({
+   schola,form,resolvedMass,settings,approvedScores,approvalRegistry,
+   schema:SCHOLA_DOCK_APPROVAL_SCHEMA
+ });
+ // Two mutually eligible source records are an ambiguity, never an occasion
+ // to choose whichever row happened to appear first.
+ if(matches.length+Number(Boolean(fullScore))!==1)return null;
+ if(fullScore)return fullScore;
+ return Object.freeze({
   ...matches[0],score_status:"approved",
   scholaTrackId:track,scholaSegmentId:segmentId,
   musicalPerformance:"EXPECTED_NOT_OBSERVED"
- }) : null;
+ });
 }

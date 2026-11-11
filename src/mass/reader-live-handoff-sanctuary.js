@@ -7,6 +7,7 @@ import {LIVE_HANDOFF_SOURCE_POINTS, LIVE_HANDOFF_ALTAR_PLAN,
 import {resolveMassLiturgicalTheme} from "./reader-liturgical-theme.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 import {R17_FINAL_APPROVED_MASS_ASSETS} from "./reader-final-approved-assets.js";
+import {projectLiveHandoffStatusSigns} from "./reader-live-handoff-status-signs.js";
 
 const freeze=Object.freeze;
 const STATIONS=freeze({
@@ -75,10 +76,11 @@ export function projectLiveHandoffSanctuary({gate,nativeState,prepared}={}){
   const server=priest&&simpleServer
     ?freeze({station:"FOOT",pose:"stand",scope:"REFERENCE_PRESENCE_ONLY",
       bell:false,paten:false,route:null}):null;
+  const signs=projectLiveHandoffStatusSigns({gate,nativeState,priest,faithful,server,form});
   return freeze({
     status:!cueMatches?"CURRENT_CUE_NOT_SOURCE_MATCHED":
       priest?"SOURCE_STATION_REFERENCE":"PRIEST_POSITION_NOT_CONFIRMED",
-    priest,faithful,server,form,colour,requiem,
+    priest,faithful,server,signs,form,colour,requiem,
     candles:form==="LOW"?2:form==="MISSA_CANTATA_SIMPLE"||
       form==="MISSA_CANTATA_INCENSE"||form==="SOLEMN"?6:null,
     ministers:"SOLEMN_REVIEW_HOLD",

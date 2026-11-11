@@ -244,29 +244,10 @@ try{
   const afterScroll=await card.evaluate(el=>el.scrollTop);
   assert.ok(afterScroll>beforeScroll,"real touch swipe did not scroll prayer card");
 
-  await card.evaluate(el=>{
-    const target=el.querySelector('[data-cue-id="AO.SM.C0174"]');
-    const cr=el.getBoundingClientRect();
-    const tr=target.getBoundingClientRect();
-    const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
-    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
-  });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
-  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
-  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
-  assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
-  // Regression: the section explanation must follow scroll-to-cue updates.
-  // Static card navigation itself has no attested LIVE cue and must not
-  // preempt the precise ceremonial rubric or the existing action rails.
-  await page.waitForFunction(()=>{
-    const shell=document.querySelector("[data-ao-reader-shell]");
-    const explanation=document.querySelector('[data-role="objective-context"]');
-    return shell?.dataset.objectiveContext==="true" &&
-      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
-  },null,{timeout:5000});
-  // CDP touchend can leave kinetic scrolling active after the first C0174
-  // focus event. Wait for physical scroll quiescence, then anchor the exact
-  // elevation cue before checking its native state and painted rail.
+  // A real CDP touchend can leave kinetic motion after scrollTop is set.
+  // Do not assert a transient cue while inertial scrolling can still replace
+  // it; stabilize once, then assert cue, bell, context and painted action
+  // together. This keeps the actual source-owned focus requirement intact.
   await page.evaluate(async()=>{
     const card=document.querySelector(".ao-prayer-card");
     if(!card)throw Error("PHONE_PRAYER_CARD_MISSING");
@@ -308,6 +289,19 @@ try{
       context?.dataset.blockId==="AO.SM.B052" &&
       rail?.dataset.actionTextFallback==="true";
   },null,{timeout:3500}).then(()=>true,()=>false);
+  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
+  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174",
+    "Host elevation source cue not stable after real touch and quiescent scroll");
+  assert.equal(elevationState?.bell?.label,"ELEVATION BELL",
+    "Host elevation action cue lost its bell state");
+  const objectiveReady=await page.evaluate(()=>{
+    const shell=document.querySelector("[data-ao-reader-shell]");
+    const explanation=document.querySelector('[data-role="objective-context"]');
+    return shell?.dataset.objectiveContext==="true" &&
+      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
+  });
+  assert.equal(objectiveReady,true,
+    "Source-owned B052 context did not follow the stable Host elevation cue");
   if(!elevationPainted){
     const diagnostic=await page.evaluate(()=>{
       const source=window.__AO_PHONE_PREVIEW?.getNativeEventState();

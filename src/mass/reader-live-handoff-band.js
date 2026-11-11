@@ -1,11 +1,15 @@
 // Owner LIVE handoff Stage B: opt-in shell only. This module never owns the
 // Mass sequence, actual Schola progression, rubrics or ceremonial animations.
-import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-crosswalk.js";
+import {resolveLiveHandoffSourceCrosswalk,liveHandoffCrosswalkAccepted,liveHandoffReferenceForNativeCard} from "./reader-live-handoff-source-crosswalk.js";
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
 import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,liveHandoffSideViewOrientation,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
+import {renderClaudeNativeSanctuary,renderClaudeNativeRouteOverlay} from "./reader-live-handoff-claude-sanctuary.js";
+import {claudeWheelRender,claudeTimelineRender,CLAUDE_PORT_CSS} from "./reader-live-handoff-claude-stage-d.js";
 import {projectLiveHandoffTimeline,projectLiveHandoffWheel} from "./reader-live-handoff-timeline.js";
+import {installLiveHandoffChantStrip,LIVE_HANDOFF_CHANT_STRIP_CSS} from "./reader-live-handoff-chant-strip.js";
+import {installLiveHandoffResearchNotation,LIVE_HANDOFF_RESEARCH_NOTATION_CSS} from "./reader-live-handoff-research-notation.js";
 import {renderLiveHandoffTimelineHtml,renderLiveHandoffWheelHtml,LIVE_HANDOFF_STAGE_D_CSS} from "./reader-live-handoff-stage-d-render.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
@@ -38,10 +42,9 @@ export function liveBandSourceGate({model,currentCard,mode}={}){
   if(!currentCard?.sectionId)
     return freeze({ok:false,reason:"NATIVE_CURRENT_CARD_REQUIRED",crosswalk:null,reference:null});
   const crosswalk=resolveLiveHandoffSourceCrosswalk({model,form:model?.corpusFamily});
-  if(crosswalk.status!=="EXACT_NATIVE_65_CROSSWALK")
+  if(!liveHandoffCrosswalkAccepted(crosswalk.status))
     return freeze({ok:false,reason:crosswalk.status,crosswalk,reference:null});
-  const reference=crosswalk.mappings.find(item=>
-    item.nativeCardId===currentCard.sectionId && item.status==="MATCHED_SOURCE_CARD")??null;
+  const reference=liveHandoffReferenceForNativeCard(crosswalk,currentCard.sectionId);
   return freeze({ok:Boolean(reference),
     reason:reference?null:"NATIVE_CARD_OUTSIDE_SOURCE_CROSSWALK",crosswalk,reference});
 }
@@ -62,6 +65,12 @@ export function approvedStageBPlanSvg(){
 }
 const CSS=[
 ".ao-reader-shell.ao-live-band-enabled{grid-template-rows:56px 64px minmax(96px,min(var(--ao-live-band-height,230px),calc(100dvh - 380px))) minmax(0,1fr);transition:grid-template-rows .24s ease}",
+// The Claude preview removes the native posture ribbon. Restore only the
+// existing verified faithful posture ART (never synthesized text/gestures)
+// in the existing left rail when the current native source matches; the
+// shell's source-gated flag is cleared upon a mismatched cue or exit.
+".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-reader-stage .ao-rail-left{display:block!important}",
+".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-reader-stage .ao-rail-left .ao-rail-item[data-channel='posture'][data-active='true'][data-icon-visible='true']{display:grid!important;opacity:1}",
 ".ao-live-band[hidden]{display:none!important}",
 ".ao-live-band{position:relative;min-height:0;overflow:hidden;background:linear-gradient(145deg,#111b1c,#192322 55%,#121a1a);border-bottom:1px solid rgba(225,205,148,.24)}",
 ".ao-lb-window{height:calc(100% - 31px);overflow:hidden;touch-action:pan-y}",
@@ -122,7 +131,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   if(shell.querySelector("[data-ao-live-band]"))
     return freeze({mounted:false,reason:"ALREADY_MOUNTED",dispose(){}});
   const style=doc.createElement("style");
-  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS;
+  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS+"\n"+CLAUDE_PORT_CSS+"\n"+LIVE_HANDOFF_CHANT_STRIP_CSS+"\n"+LIVE_HANDOFF_RESEARCH_NOTATION_CSS;
   const band=doc.createElement("section");band.className="ao-live-band";
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
@@ -145,6 +154,42 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       +'" aria-pressed="'+(i===0)+'"></button>').join("")
     +'</div><button type="button" class="ao-lb-handle" data-lb-handle aria-label="Resize band; double tap for adaptive height"></button></div>';
   shell.insertBefore(style,stage);shell.insertBefore(band,stage);
+  // In the native reader the Schola dock is absolutely positioned against the
+  // entire shell. In the preview's extra grid row, it can cover sanctuary
+  // pagination on narrow phones. Keep that very same native dock/controller,
+  // but anchor its positioning to the prayer stage while the preview is live.
+  // Moving the existing element preserves all Schola state and listeners.
+  const nativeDock=shell.querySelector(".ao-schola-dock");
+  const originalDockParent=nativeDock?.parentNode??null;
+  const originalDockNext=nativeDock?.nextSibling??null;
+  const chantStrip=installLiveHandoffChantStrip({root:shell,document:doc});
+  const researchNotation=installLiveHandoffResearchNotation({root:shell,document:doc,preview,prepared});
+  function locateNativeDock(inStage){
+    if(!nativeDock||!originalDockParent)return;
+    if(inStage){
+      if(nativeDock.parentNode!==stage)stage.appendChild(nativeDock);
+    }else if(nativeDock.parentNode!==originalDockParent){
+      originalDockParent.insertBefore(nativeDock,
+        originalDockNext?.parentNode===originalDockParent?originalDockNext:null);
+    }
+  }
+  // Restore the existing native MUSIC selector inside Claude's single slim
+  // header. This proxy invokes the same source-owned control; it does not
+  // create a separate playlist or alter Schola playback/position.
+  const nativeMusic=shell.querySelector("[data-schola-events-open]");
+  const slimHeader=shell.querySelector(".ao-reader-top-ribbon");
+  const musicAccess=doc.createElement("button");
+  musicAccess.type="button";
+  musicAccess.className="ao-claude-music-access";
+  musicAccess.textContent="MUSIC";
+  musicAccess.setAttribute("aria-label","Open native independent Schola music events");
+  musicAccess.hidden=true;
+  slimHeader?.appendChild(musicAccess);
+  musicAccess.addEventListener("click",event=>{
+    event.stopPropagation();
+    nativeMusic?.click();
+  });
+
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
   let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0,lastSceneSignature=null;
@@ -161,7 +206,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   const routeCount=band.querySelector("[data-lb-route-count]");
   const routePrev=band.querySelector("[data-lb-route-prev]");
   const routeNext=band.querySelector("[data-lb-route-next]");
-  let lastTimelineSignature=null;
+  let lastTimelineSignature=null,claudeZoomSpan=8;
   function setPage(index){
     page=bound(Number(index)||0,0,2);
     frame.style.transform="translateX(-"+(page*100)+"%)";
@@ -194,7 +239,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     if(!svg)return false;
     let overlay=svg.querySelector("[data-lb-route-overlay]");
     if(!overlay){
-      svg.insertAdjacentHTML("beforeend",renderLiveHandoffPreviewRouteOverlay({
+      svg.insertAdjacentHTML("beforeend",renderClaudeNativeRouteOverlay({
         scene:lastScene,route:activeRoute,step
       }));
       overlay=svg.querySelector("[data-lb-route-overlay]");
@@ -242,6 +287,15 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     routeButtons();
     return applyRouteStep(0);
   }
+  timelineHost.addEventListener("click",event=>{
+    const control=event.target?.closest?.("[data-claude-zoom]");
+    if(!control||!timelineHost.contains(control))return;
+    const spans=[3,5,8,13,21,40];
+    const index=spans.indexOf(claudeZoomSpan);
+    const direction=Number(control.dataset.claudeZoom)||0;
+    claudeZoomSpan=spans[Math.max(0,Math.min(spans.length-1,index+direction))];
+    lastTimelineSignature=null;refresh();
+  });
   routeStart.addEventListener("click",startRoutePreview);
   routePrev.addEventListener("click",()=>applyRouteStep(routeStep-1));
   routeNext.addEventListener("click",()=>applyRouteStep(routeStep+1));
@@ -256,8 +310,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const mode=preview.getPresentationMode?.()??model?.presentationMode;
     let result;
     if(model===lastModel&&lastCrosswalk&&String(mode).toUpperCase()==="LIVE"&&card?.sectionId){
-      const ref=lastCrosswalk.status==="EXACT_NATIVE_65_CROSSWALK"
-        ?lastCrosswalk.mappings.find(x=>x.nativeCardId===card.sectionId):null;
+      const ref=liveHandoffReferenceForNativeCard(lastCrosswalk,card.sectionId);
       result=freeze({ok:Boolean(ref),reason:ref?null:"NATIVE_CARD_OUTSIDE_SOURCE_CROSSWALK",
         crosswalk:lastCrosswalk,reference:ref});
     }else{
@@ -266,8 +319,16 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     }
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
-    shell.dataset.aoLiveBandGate=result.reason??"EXACT_NATIVE_65_CROSSWALK";
-    if(!result.ok){availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
+    locateNativeDock(result.ok);
+    chantStrip.setEnabled(result.ok);
+    researchNotation.refresh(result.ok);
+    musicAccess.hidden=!result.ok || !nativeMusic || nativeMusic.hidden ||
+      String(prepared?.session?.resolvedMass?.form??"").toUpperCase()==="LOW";
+    if(slimHeader)
+      slimHeader.dataset.claudeMusicAccess=String(!musicAccess.hidden);
+    shell.dataset.aoLiveBandGate=result.reason??result.crosswalk?.status??"EXACT_NATIVE_65_CROSSWALK";
+    if(!result.ok){delete shell.dataset.aoLivePreviewPosture;
+      availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
       timelineHost.replaceChildren();wheelHost.replaceChildren();
       return freeze({mounted:true,visible:false,reason:result.reason});}
     const ref=result.reference,sequence=Number(ref.nativeSequence);
@@ -276,6 +337,17 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     // the static architecture, not an invented celebrant or minister.
     const nativeState=preview.getNativeEventState?.();
     const scene=projectLiveHandoffSanctuary({gate:result,nativeState,prepared});
+    // The native LIVE ribbon normally owns persistent faithful posture, but
+    // Claude's compact preview hides that ribbon. Restore the existing left
+    // rail tile only for a currently source-matched posture, never a stale
+    // unanchored icon or a duplicate of an exact posture-change cue.
+    const postureTile=shell.querySelector('.ao-rail-left [data-channel="posture"]');
+    const changeTile=shell.querySelector('.ao-rail-left [data-channel="posture-change"]');
+    const exactChange=changeTile?.dataset.active==="true" &&
+      changeTile.dataset.sourceRailAnchor==="exact";
+    shell.dataset.aoLivePreviewPosture=String(Boolean(scene.faithful &&
+      postureTile?.dataset.active==="true" &&
+      postureTile.dataset.iconVisible==="true" && !exactChange));
     const incenseRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
     const turnRoute=projectLiveHandoffSourceTurnPreview({gate:result,nativeState,prepared});
     const potentialRoute=incenseRoute.ok?incenseRoute:turnRoute;
@@ -285,10 +357,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     lastScene=scene;
     routeButtons();
     const sceneSignature=JSON.stringify([scene.status,scene.priest,scene.faithful,
-      scene.server,scene.candles,scene.colour,scene.requiem]);
+      scene.server,scene.signs,scene.candles,scene.colour,scene.requiem]);
     if(sceneSignature!==lastSceneSignature){
       if(activeRoute)stopRoutePreview();
-      sanctuaryContent.innerHTML=renderLiveHandoffSanctuarySvg(scene);
+      sanctuaryContent.innerHTML=renderClaudeNativeSanctuary(scene);
       lastSceneSignature=sceneSignature;
     }
     band.dataset.sanctuarySourceStatus=scene.status;
@@ -297,14 +369,16 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const timeline=projectLiveHandoffTimeline({gate:result,nativeState,
       scholaState:preview.getScholaState?.(),model});
     const wheel=projectLiveHandoffWheel(timeline);
-    const timelineSignature=JSON.stringify([timeline.reason,timeline.position,
+    const timelineSignature=JSON.stringify([claudeZoomSpan,timeline.reason,timeline.position,
       timeline.lanes?.map(l=>[l.id,l.status,l.text,l.location]),wheel.current?.title]);
     if(timelineSignature!==lastTimelineSignature){
-      timelineHost.innerHTML=renderLiveHandoffTimelineHtml(timeline);
-      wheelHost.innerHTML=renderLiveHandoffWheelHtml(wheel);
+      const timelineSize=timelineHost.getBoundingClientRect();
+      timelineHost.innerHTML=claudeTimelineRender(timeline,{span:claudeZoomSpan,
+        width:timelineSize.width||390,height:timelineSize.height||230});
+      wheelHost.innerHTML=claudeWheelRender(wheel,timeline,nativeState);
       lastTimelineSignature=timelineSignature;
     }
-    band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_65":"SOURCE_HOLD";
+    band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_"+timeline.total:"SOURCE_HOLD";
     lastId=ref.nativeCardId;
     const height=liveBandHeightForReference(ref.referenceId,preference);
     shell.style.setProperty("--ao-live-band-height",height+"px");
@@ -364,7 +438,11 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       routePreviewKind:activeRoute?.kind??availableRoute?.kind??null,
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
+      researchNotation.dispose();chantStrip.dispose();locateNativeDock(false);
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
-      shell.style.removeProperty("--ao-live-band-height");band.remove();style.remove();}
+      delete shell.dataset.aoLivePreviewPosture;
+      shell.style.removeProperty("--ao-live-band-height");musicAccess.remove();
+      if(slimHeader)delete slimHeader.dataset.claudeMusicAccess;
+      band.remove();style.remove();}
   });
 }

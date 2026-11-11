@@ -1,0 +1,53 @@
+name: LIVE handoff literal Claude renderer fidelity
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-claude-*.js'
+      - 'src/mass/reader-live-handoff-band.js'
+      - 'tests/reader-live-handoff-claude-*.mjs'
+      - 'tests/reader-live-handoff-native66-split.mjs'
+      - 'tests/reader-live-handoff-research-notation.mjs'
+      - 'src/mass/reader-live-handoff-proper-notation.js'
+      - 'tests/reader-live-handoff-proper-notation.mjs'
+      - 'src/mass/reader-live-handoff-source-crosswalk.js'
+      - 'src/mass/reader-live-handoff-timeline.js'
+      - 'src/mass/reader-schola.js'
+      - 'src/mass/reader-schola-dock-approved.js'
+      - 'src/mass/reader-schola-score-integrity.js'
+      - 'tests/reader-schola-score-integrity.mjs'
+      - 'tests/live-handoff-visual-acceptance.mjs'
+      - 'tests/live-handoff-native-mass-e2e.mjs'
+      - '.github/workflows/live-handoff-claude-fidelity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-geometry-and-figures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify literal Claude modules and all source semantics
+        run: |
+          node --check src/mass/reader-live-handoff-claude-figs.js
+          node --check src/mass/reader-live-handoff-claude-sanctuary.js
+          node --check src/mass/reader-live-handoff-claude-stage-d.js
+          node --check src/mass/reader-live-handoff-band.js
+          node --check src/mass/reader-live-handoff-schola-track-score.js
+          node --test tests/reader-live-handoff-schola-track-scores.mjs
+          node --check src/mass/reader-schola-score-integrity.js
+          node --check src/mass/reader-dom.js
+          node --test tests/reader-schola-score-integrity.mjs
+          node --check src/mass/reader-live-handoff-research-notation.js
+          node --test tests/reader-live-handoff-research-notation.mjs
+          node --check src/mass/reader-live-handoff-proper-notation.js
+          node --test tests/reader-live-handoff-proper-notation.mjs
+          node --test tests/reader-live-handoff-claude-source.mjs
+          node --test tests/reader-live-handoff-claude-stage-d.mjs
+          node --test tests/reader-live-handoff-native66-split.mjs
+          node --test tests/reader-live-handoff-routes.mjs
+          node --test tests/reader-live-handoff-turns.mjs
+          node --test tests/reader-live-handoff-stage-d.mjs

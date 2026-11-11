@@ -28,6 +28,7 @@ import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js
 import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js";
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
+import {verifyApprovedScholaGabc} from "./reader-schola-score-integrity.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -172,11 +173,21 @@ const SHELL_STYLE = `
 .ao-schola-score-dialog::backdrop{background:rgba(0,0,0,.87)}
 .ao-schola-score-dialog header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(225,207,145,.23)}
 .ao-schola-score-dialog header b{font:600 15px/1.45 var(--ao-font-liturgical,Georgia,serif)}
-.ao-schola-score-dialog [data-schola-score-close]{min-width:44px;min-height:44px;border:1px solid rgba(225,207,145,.25);border-radius:7px;background:transparent;color:#fff;cursor:pointer}
+.ao-schola-score-dialog :is([data-schola-score-close],[data-ao-reference-print-toggle]){min-width:44px;min-height:44px;border:1px solid rgba(225,207,145,.25);border-radius:7px;background:transparent;color:#fff;cursor:pointer}
+.ao-schola-score-dialog [data-ao-reference-print-toggle][hidden]{display:none!important}
+.ao-schola-score-dialog [data-ao-reference-print-toggle][aria-pressed="true"]{border-color:#d5b675;color:#f2d898}
+.ao-schola-score-dialog [data-ao-reference-print-view][hidden],.ao-schola-score-dialog [data-ao-reference-full-staff][hidden]{display:none!important}
+.ao-schola-score-dialog [data-ao-reference-print-view] img{display:block;width:720px;max-width:none;height:auto;margin:10px 0 18px;background:#f7f7f7}
+.ao-schola-score-dialog [data-ao-reference-print-view] img[hidden]{display:none!important}
+.ao-schola-score-dialog [data-ao-reference-print-view] p{margin:8px 0;color:#d7d0ba;max-width:760px;white-space:normal}
+.ao-schola-score-dialog [data-ao-reference-print-status="unavailable"]{color:#f0d09b}
+.ao-schola-score-dialog [data-ao-reference-print-view] [data-ao-reference-print-page-link]{display:block;width:max-content;max-width:100%;margin:4px 0 12px}
+.ao-schola-score-dialog [data-ao-reference-print-view] a{margin:6px 0 20px}
 .ao-schola-score-dialog p{margin:7px 16px;color:#b1c0b2;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-dialog .ao-schola-score-viewport{box-sizing:border-box;max-height:calc(90dvh - 140px);overflow:auto;min-height:180px;width:100%;padding:14px 12px;color:#f0e0c0}
-.ao-schola-score-dialog .ao-schola-score-viewport svg{display:block;max-width:100%;height:auto}
-.ao-schola-score-dialog .ao-schola-score-viewport svg :is(path,polygon,polyline,line,text){fill:currentColor}
+.ao-schola-score-dialog .ao-schola-score-viewport svg{display:block;max-width:100%;height:auto;fill:currentColor}
+.ao-schola-score-dialog .ao-schola-score-viewport svg :is(use,rect,polygon,polyline,text,tspan){fill:currentColor}
+.ao-schola-score-dialog .ao-schola-score-viewport svg :is(.staffLine,.ledgerLine,path[stroke],polyline[stroke]){stroke:currentColor}
 .ao-schola-score-dialog a{display:inline-block;margin:5px 16px 14px;color:#ead8a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
 @media(max-width:480px){.ao-schola-score-dialog{width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.ao-schola-score-dialog .ao-schola-score-viewport{max-height:calc(100dvh - 150px)}}
 .ao-schola-events-menu h3{margin:7px 9px 3px;font:600 15px var(--ao-font-ui,system-ui,sans-serif)}
@@ -3403,11 +3414,20 @@ export function createReaderDomAdapter({
     panel.hidden=false;panel.dataset.scoreStatus="loading";
     staff.setAttribute("aria-label","Approved Gregorian notation for "+schola.trackId+
       ". Expected, not observed. No audio recognition.");
-    try{
-      const doc=root.ownerDocument??globalThis.document;
-      scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
-      scholaDockEngraver.observe?.();
-      void scholaDockEngraver.engrave(score.gabc).then(ok=>{
+    // The score and independent promotion record agree on their declared
+    // hash, but the actual GABC MUST also match before engraving/publication.
+    // If the reader moves to another source cue while hashing, token rejects
+    // the stale async result; the loading panel remains invisible.
+    const doc=root.ownerDocument??globalThis.document;
+    void verifyApprovedScholaGabc(score,{
+      cryptoImpl:doc?.defaultView?.crypto
+    }).then(proof=>{
+      if(token!==scholaDockScoreRequest)return;
+      if(!proof.valid){clearScholaDockNotation();return;}
+      try{
+        scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
+        scholaDockEngraver.observe?.();
+        void scholaDockEngraver.engrave(score.gabc).then(ok=>{
         if(token!==scholaDockScoreRequest)return;
         if(!ok){clearScholaDockNotation();return;}
         panel.dataset.scoreStatus="approved";
@@ -3436,10 +3456,13 @@ export function createReaderDomAdapter({
           }
         }
         sourceRailTracker?.refresh?.();
-      }).catch(()=>{
-        if(token===scholaDockScoreRequest)clearScholaDockNotation();
-      });
-    }catch{if(token===scholaDockScoreRequest)clearScholaDockNotation();}
+        }).catch(()=>{
+          if(token===scholaDockScoreRequest)clearScholaDockNotation();
+        });
+      }catch{if(token===scholaDockScoreRequest)clearScholaDockNotation();}
+    }).catch(()=>{
+      if(token===scholaDockScoreRequest)clearScholaDockNotation();
+    });
   }
 
   function syncScholaContent(){

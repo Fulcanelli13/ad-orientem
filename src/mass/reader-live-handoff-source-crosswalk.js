@@ -8,6 +8,12 @@
 // This adapter does not change Mass order, liturgical conditions, choir time,
 // displayed text, rite controllers, or 65-card reader state.
 const freeze=Object.freeze;
+export const LIVE_HANDOFF_CERTIFIED_CROSSWALK_STATES=freeze([
+ "EXACT_NATIVE_65_CROSSWALK",
+ "SOURCE_CERTIFIED_66_PRE_GOSPEL_SPLIT"
+]);
+export const liveHandoffCrosswalkAccepted=state=>
+ LIVE_HANDOFF_CERTIFIED_CROSSWALK_STATES.includes(String(state??""));
 export const LIVE_HANDOFF_CROSSWALK_SCHEMA="ao-live-handoff-native65-crosswalk-v1";
 
 const SOURCE_SPANS=freeze([
@@ -111,9 +117,11 @@ export const LIVE_HANDOFF_OUTSIDE_MASS_REFERENCES=freeze([
  freeze({referenceId:"Q1",rite:"AFTER_MASS",controller:"EXISTING_AFTER_MASS",outside65:true})
 ]);
 
-function acceptableTitle(anchor,card,form){
+function acceptableTitle(anchor,card,form,preGospelSplit=false){
  const value=String(card?.title??"");
  if(value===anchor.referenceTitle)return "EXACT_PROTOTYPE_TITLE";
+ if(preGospelSplit&&anchor.referenceId==="C12"&&value==="Gradual")
+  return "SOURCE_CERTIFIED_SEPARATE_GRADUAL_PRE_GOSPEL";
  const low=String(form??"").toUpperCase()==="LOW";
  if(low&&anchor.referenceTitle.includes("The Celebrant's Intonation")&&
    value===anchor.referenceTitle.replace("The Celebrant's Intonation","Opening"))
@@ -132,7 +140,7 @@ function acceptableTitle(anchor,card,form){
 const blank=reason=>freeze({
  schema:LIVE_HANDOFF_CROSSWALK_SCHEMA,status:"SOURCE_HOLD",reason,
  nativeCardCount:0,sourceMatches:0,exactReferenceMatches:0,
- mappings:freeze([]),holds:freeze([]),additionalNativeCards:freeze([]),
+ mappings:freeze([]),expandedMappings:freeze([]),holds:freeze([]),additionalNativeCards:freeze([]),
  outsideMass:LIVE_HANDOFF_OUTSIDE_MASS_REFERENCES,
  independentScholaProgression:true,visualClockIsNotObservedSinging:true,
  publicReaderChanged:false
@@ -171,6 +179,15 @@ export function resolveLiveHandoffSourceCrosswalk({model,form}={}){
   byId.set(id,card);
  }
  const used=new Set(),holds=[];
+ // H7 live source currently has a separate AO.CARD.006.2 Alleluia,
+ // whereas Claude's 65 card reference groups Gradual and Alleluia at C12.
+ // Certify that ONE exact source-owned difference; never use count alone.
+ const splitCard=byId.get("AO.LIVECURATED.AO.CARD.006.2");
+ const preGospelSplit=cards.length===66 && splitCard?.title==="Alleluia" &&
+   splitCard?.sourceSectionId==="AO.CARD.006" &&
+   splitCard?.stateOnly!==true &&
+   (evidence(splitCard).sourceCueIds.length>0 ||
+    evidence(splitCard).sourceBlockIds.length>0);
  const entries=LIVE_HANDOFF_REFERENCE_ANCHORS.map(anchor=>{
    const native=byId.get(anchor.expectedNativeId);
    if(!native){
@@ -183,7 +200,7 @@ export function resolveLiveHandoffSourceCrosswalk({model,form}={}){
    const ev=evidence(native);
    const isCanon=anchor.sourceKey.startsWith("AO.CANON.");
    const sourceOwner=isCanon?ev.canonSegmentId:ev.sourceMacroId;
-   const titleStatus=acceptableTitle(anchor,native,form??model?.corpusFamily);
+   const titleStatus=acceptableTitle(anchor,native,form??model?.corpusFamily,preGospelSplit);
    const structuralMatch=sourceOwner===anchor.sourceKey;
    // Nonspoken state-only cards are legitimate only when 1962 rite
    // conditions explicitly mark their suppression.
@@ -210,9 +227,37 @@ export function resolveLiveHandoffSourceCrosswalk({model,form}={}){
      nativeTitle:String(card.title??""),sourceMacroId:card.sourceSectionId??null,
      reason:"SOURCE_OWNED_ADDITIONAL_OR_SPECIAL_INSERTION",
      notANewReferenceCard:true}));
- if(additional.length)holds.push(freeze({referenceId:null,
-   reason:"SOURCE_ADDITIONAL_CARDS_NOT_IN_65_HANDOFF_REFERENCE",
-   count:additional.length}));
+
+ const splitAnchor=entries.find(row=>row.referenceId==="C12");
+ const nextAnchor=entries.find(row=>row.referenceId==="C13");
+ const recognizedSplit=preGospelSplit&&additional.length===1&&
+   additional[0]?.nativeCardId==="AO.LIVECURATED.AO.CARD.006.2" &&
+   splitAnchor?.status==="MATCHED_SOURCE_CARD" &&
+   splitAnchor?.titleStatus==="SOURCE_CERTIFIED_SEPARATE_GRADUAL_PRE_GOSPEL" &&
+   splitAnchor.nativeSequence+1===splitCard.sequence &&
+   nextAnchor?.nativeSequence===splitCard.sequence+1;
+ if(additional.length&&!recognizedSplit)
+   holds.push(freeze({referenceId:null,
+     reason:"SOURCE_ADDITIONAL_CARDS_NOT_IN_65_HANDOFF_REFERENCE",
+     count:additional.length}));
+ const splitSupplement=recognizedSplit?freeze({
+   ...splitAnchor,
+   expectedNativeId:"AO.LIVECURATED.AO.CARD.006.2",
+   nativeCardId:"AO.LIVECURATED.AO.CARD.006.2",
+   nativeSequence:splitCard.sequence,
+   nativeTitle:splitCard.title,
+   evidence:evidence(splitCard),
+   sourceKey:"AO.CARD.006",
+   cutOrdinal:2,
+   status:"MATCHED_SOURCE_CARD",
+   titleStatus:"SOURCE_CERTIFIED_SEPARATE_ALLELUIA_PRE_GOSPEL",
+   splitNativeSupplement:true,
+   notANewReferenceCard:true
+ }):null;
+ const expandedMappings=freeze([
+   ...entries,
+   ...(splitSupplement?[splitSupplement]:[])
+ ].sort((a,b)=>Number(a.nativeSequence)-Number(b.nativeSequence)));
  const exact=entries.filter(e=>e.status==="MATCHED_SOURCE_CARD").length;
  // Order belongs to the live model. A future source insertion must NEVER
  // allow handoff Cnn to reassign the native sequence of any real prayer.
@@ -224,10 +269,12 @@ export function resolveLiveHandoffSourceCrosswalk({model,form}={}){
  return freeze({
    schema:LIVE_HANDOFF_CROSSWALK_SCHEMA,
    status:holds.length===0&&cards.length===65?"EXACT_NATIVE_65_CROSSWALK":
+     holds.length===0&&recognizedSplit&&cards.length===66
+       ?"SOURCE_CERTIFIED_66_PRE_GOSPEL_SPLIT":
      "SOURCE_VARIANT_OR_DRIFT_HOLD",
    reason:holds.length?"REVIEW_SOURCE_VARIANTS_NOT_PROTOTYPE_RENUMBERING":null,
    nativeCardCount:cards.length,sourceMatches:mapped.length,
-   exactReferenceMatches:exact,mappings:freeze(entries),
+   exactReferenceMatches:exact,mappings:freeze(entries),expandedMappings,
    holds:freeze(holds),additionalNativeCards:freeze(additional),
    outsideMass:LIVE_HANDOFF_OUTSIDE_MASS_REFERENCES,
    independentScholaProgression:true,visualClockIsNotObservedSinging:true,
@@ -235,9 +282,21 @@ export function resolveLiveHandoffSourceCrosswalk({model,form}={}){
  });
 }
 export function nativeCardForHandoffReference({crosswalk,model,referenceId}={}){
- if(crosswalk?.status!=="EXACT_NATIVE_65_CROSSWALK"||
+ if(!liveHandoffCrosswalkAccepted(crosswalk?.status)||
    !Array.isArray(model?.cards))return null;
  const row=crosswalk.mappings.find(x=>x.referenceId===String(referenceId??""));
  return row?.status==="MATCHED_SOURCE_CARD"
   ?model.cards.find(c=>c.sectionId===row.nativeCardId)??null:null;
+}
+
+/** Resolve an ACTUAL native source card to its handoff reference, including
+ * the one independently verified Gradual/Alleluia split. Neither reference
+ * numbers nor the underlying native sequence are rewritten.
+ */
+export function liveHandoffReferenceForNativeCard(crosswalk,nativeCardId){
+ if(!liveHandoffCrosswalkAccepted(crosswalk?.status))return null;
+ const row=crosswalk.expandedMappings?.find(ref=>
+   ref.status==="MATCHED_SOURCE_CARD"&&
+   ref.nativeCardId===String(nativeCardId??""));
+ return row??null;
 }
