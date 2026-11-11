@@ -37,7 +37,9 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
       // visitor's historical account. Both languages need reader-ready prose.
       const enMeta=/\b(?:the|a|an)\s+(?:atlas(?:\s+(?:card|entry))?|guide(?:\s+(?:card|profile))?|visitor\s+card|historical\s+profile|profile)\s+(?:should|must|may|can|needs?)\b/i;
       const frMeta=/\b(?:le|la|un|une)\s+(?:guide|fiche|atlas|profil)\s+(?:doit|devrait|peut|ne\s+doit)\b/i;
-      if(enMeta.test(p.en||"")||frMeta.test(p.fr||""))
+      const enMemo=/\b(?:atlas|guide|profile|visitor card|pilgrimage card|historical profile|editorial)\b/i;
+      const frMemo=/\b(?:atlas|guide|fiche|profil|éditorial)\b/i;
+      if(enMeta.test(p.en||"")||frMeta.test(p.fr||"")||enMemo.test(p.en||"")||frMemo.test(p.fr||""))
         issues.push("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY");
       const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
         rows(guide.bibliography_urls).includes(p.source_url);

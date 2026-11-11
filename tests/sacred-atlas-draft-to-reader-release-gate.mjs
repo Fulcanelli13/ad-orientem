@@ -38,6 +38,7 @@ const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITE
 
 
 const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
+assert.equal(editorialProse.length,0,"Wave-2 visitor copy still contains internal Atlas/guide/profile instructions");
 
 for(const n of [69,70,72,73,75,76]){
   const g=wave2.find(x=>x.draft_order===n);
