@@ -145,7 +145,7 @@ export function buildFull1961SourceStudy({batches,selected2026=null}={}){
  for(const score of entries)byRole[score.role]=(byRole[score.role]??0)+1;
  return {
   schema:FULL_SCORE_STUDY_SCHEMA,
-  source:"EXISTING_GREGOBBASE_2024_SNAPSHOT_AND_EXISTING_ORDINARY_GABC",
+  source:"EXISTING_GREGOBASE_2024_SNAPSHOT_AND_EXISTING_ORDINARY_GABC",
   rights:"CC0 source transcriptions; printed scans and sound not included",
   counts:{originalProperGabc:1195,existingOrdinaryGabc:20,
    sourceGabcTotal:1215,byRole,selected2026: selected,
