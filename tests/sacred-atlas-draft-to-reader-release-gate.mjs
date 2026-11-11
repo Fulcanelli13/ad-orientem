@@ -186,3 +186,60 @@ console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2
   " "+geographicOnly.length+" locator-only, "+identityOnly.length+" site-identity-only,"+
   " "+editorialProse.length+" meta-instruction copy diagnoses;"+
   " approved-only existing EN/FR folio adapter, source checks, image gate and version locks");
+
+// Consolidated, fail-closed full-corpus preflight: this is one mechanical audit
+// of ALL 224 guide drafts, not 224 second-editor decisions or publication approvals.
+// The review matrix stores exact revisions so even one content change invalidates
+// the matching check until the batch preflight is refreshed.
+{
+  const matrices=[
+    read("data/shrines/research/sacred-atlas-bulk-preflight-wave1-20261111.v1.json"),
+    read("data/shrines/research/sacred-atlas-bulk-preflight-wave2-20261111.v1.json")
+  ];
+  const reviewRows=matrices.flatMap(m=>m.guides);
+  assert.deepEqual(matrices.map(m=>m.guides.length),[56,168]);
+  assert.equal(reviewRows.length,224);
+  assert.equal(new Set(reviewRows.map(g=>g.place_id)).size,224);
+  assert.equal(reviewRows.reduce((n,g)=>n+g.sections.length,0),672);
+  assert.deepEqual(matrices.map(m=>m.summary.paragraphs),[168,504]);
+  assert.equal(matrices.reduce((n,m)=>n+m.summary.checked_first_pass,0),93);
+  assert.equal(matrices.reduce((n,m)=>n+m.summary.scoped_only,0),579);
+  for(const m of matrices){
+    assert.equal(m.state,"RESEARCH_ONLY_NO_SOURCE_TO_CLAIM_CERTIFICATION");
+    assert.equal(m.summary.invalid.length,0);
+  }
+  const allSources=new Map(sources.map(s=>[s.id,s]));
+  const byPlace=new Map(drafts.map(g=>[g.place_id,g]));
+  for(const row of reviewRows){
+    const original=byPlace.get(row.place_id);
+    assert.ok(original,"Orphan full-corpus review Place: "+row.place_id);
+    assert.equal(row.revision,sacredGuideRevision(original),"Stale guide version: "+row.place_id);
+    assert.equal(row.publication_authorized,false);
+    assert.equal(row.sections.length,3);
+    for(const entry of row.sections){
+      const paragraph=original.sections.find(s=>s.id===entry.section_id)
+        ?.paragraphs?.[entry.paragraph_index];
+      assert.ok(paragraph,"Missing reviewed paragraph: "+row.place_id);
+      assert.equal(paragraph.source_id??null,entry.source_id??null);
+      assert.equal(paragraph.source_url,entry.source_url);
+      assert.equal(entry.automated_citation_link_pass,true);
+      assert.equal(entry.second_editor_approved,false);
+      assert.equal(entry.owner_publication_authorized,false);
+      if(entry.source_id){
+        const src=allSources.get(entry.source_id);
+        assert.equal(src?.url,entry.source_url);
+        assert.ok(byPlace.get(row.place_id).research_source_ids?.includes(entry.source_id)||
+          seed.shrines.find(s=>s.place_id===row.place_id)?.source_ids.includes(entry.source_id));
+      }else{
+        assert.ok(original.bibliography_urls.includes(entry.source_url),
+          "Unscoped Wave-1 bibliography reference");
+      }
+    }
+  }
+  // Publication is an independent, approval-only pathway.
+  assert.equal(reviewDecisions.reviews.length,0);
+  assert.equal(approvedBank.guides.length,0);
+  console.log("PASS full Sacred Atlas corpus preflight: 224 draft guides / "+
+    "672 source-scoped EN/FR paragraphs / 93 earlier research prechecks / "+
+    "579 additional mechanical checks / zero owner approvals.");
+}
