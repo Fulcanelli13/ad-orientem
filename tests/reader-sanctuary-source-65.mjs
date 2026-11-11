@@ -27,6 +27,11 @@ const D=JSON.parse(source.slice(0,end));
 const cards=D.cards.filter(c=>/^C\d{2}$/.test(c.id));
 assert.equal(cards.length,65);
 const presented=[],listeners={},st={form:"sung",solemn:false,inc:true};
+let glowVisible=true,elevClass=true;
+const glow={show:true,el:{classList:{contains:name=>name==="glow"}}};
+const engine={bbs:[glow],vp:{classList:{
+ remove:name=>{if(name==="elev")elevClass=false}
+}}};
 let rebuilds=0;
 const root={parentNode:{removeChild(){}},id:"pgPlan"};
 const document={
@@ -42,7 +47,12 @@ assert.doesNotMatch(bridge,/\bsetTime\s*\(/,
  "The original demonstration timeline may never control the native LIVE reader");
 runInNewContext(bridge,{
  D,st,document,window:win,location:{search:"?aoSanctuary=1",origin:"https://example.test"},
- M3:{show:(card,animate)=>presented.push([card.id,animate])},
+ M3:{eng:engine,show:(card,animate)=>{
+  presented.push([card.id,animate]);
+  if(card.id==="C36"||card.id==="C38"){
+   glow.show=!animate;elevClass=!animate;
+  }
+ }},
  rebuild(){rebuilds++},
  URLSearchParams
 });
@@ -83,6 +93,10 @@ assert.equal(send(elevation,{sourceCueId:"AO.SM.C0175",certifiedSourceFocus:true
 assert.equal(presented.length,beforeExit+1,
  "Leaving exact elevation cue must command a source-static visual hold");
 assert.deepEqual(presented.at(-1),["C36",false]);
+assert.equal(glow.show,false,
+ "Source-exited elevation must not leave the original glowing visual active");
+assert.equal(elevClass,false,
+ "Source-exited elevation must remove the original elevation stage class");
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
  sourceSectionId:"AO.CANON.06"}).choreography,"SOURCE_TRIGGERED",
  "Reverse scroll into the same source rubric must replay the elevation");

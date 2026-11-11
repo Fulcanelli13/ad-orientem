@@ -55,6 +55,19 @@
     SOLEMN:{form:"sung",solemn:true,inc:true}
   });
   let last=null;
+  function quietInactiveElevation(card){
+    if(card?.id!=="C36"&&card?.id!=="C38")return;
+    // Claude's ORIGINAL static scene leaves its elevation glow lit.
+    // In cue-linked LIVE, that visual effect belongs ONLY to the active
+    // Consecration rubric, not to the entire card or a Schola timestamp.
+    // Clear the original engine's glow billboard without editing its
+    // geometry, camera, actors or timed elevation choreography.
+    const engine=M3.eng;
+    engine?.vp?.classList?.remove?.("elev");
+    for(const billboard of engine?.bbs??[])
+      if(billboard?.el?.classList?.contains?.("glow"))
+        billboard.show=false;
+  }
   const ack=(ok,code,extra={})=>({type:ACK,ok,code,...extra});
   function present(message){
     if(message?.type!==PROTOCOL||message.version!==1)
@@ -88,8 +101,10 @@
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&
       (cue!==last.playedCue||!validCue||
         sourceSectionId!==last.sourceSectionId));
-    if(last?.key!==nextKey||exiting)
-      M3.show(card,false); // Original M3 handles FX cancellation and static stage.
+    if(last?.key!==nextKey||exiting){
+      M3.show(card,false); // Original engine cancels pending action keyframes.
+      quietInactiveElevation(card);
+    }
     const play=Boolean(validCue&&cues[cue]?.card===id&&
       cues[cue]?.section===sourceSectionId&&
       (last?.key!==nextKey||last?.playedCue!==cue));

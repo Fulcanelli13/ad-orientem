@@ -122,13 +122,18 @@ try{
     const enter=event("AO.SM.C0174");
     const held=event("AO.SM.C0174");
     const exit=event("AO.SM.C0175");
+    const dormant=window.M3?.eng?.bbs?.filter(b=>
+      b?.el?.classList?.contains("glow")).every(b=>b.show===false);
+    const classOff=!window.M3?.eng?.vp?.classList?.contains("elev");
     const again=event("AO.SM.C0174");
     return {enter:enter.choreography,held:held.choreography,
-      exit:exit.choreography,again:again.choreography};
+      exit:exit.choreography,again:again.choreography,
+      dormant,classOff};
   });
   assert.deepEqual(rearm,{
     enter:"SOURCE_TRIGGERED",held:"STATIC_STAGE",
-    exit:"STATIC_STAGE",again:"SOURCE_TRIGGERED"
+    exit:"STATIC_STAGE",again:"SOURCE_TRIGGERED",
+    dormant:true,classOff:true
   },"Returning to source-owned rubric must re-arm original 3D animation");
   const next=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.getState());
   assert.equal(next.card,"C36");
