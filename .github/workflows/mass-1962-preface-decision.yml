@@ -40,6 +40,12 @@ on:
       - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
+# Only superseded runs for the same pull request may be cancelled.
+# Manual and main-branch runs remain independently executable.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   verify-preface-owner:
     runs-on: ubuntu-latest
