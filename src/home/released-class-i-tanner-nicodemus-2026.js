@@ -8,7 +8,7 @@ import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 export const TANNER_NICODEMUS_2026_LOCAL_ORIGINAL=Object.freeze({
  date:"2026-05-25",principalId:"tempora:Pasc7-1:1:r",properPath:"Tempora/Pasc7-1",
  artworkId:"frozen-date:2026-05-25",
- title:"Nicodemus",artist:"Henry Ossawa Tanner",
+ title:"Nicodemus",titleFr:"Nicodème",artist:"Henry Ossawa Tanner",
  sourceObject:"https://www.pafa.org/museum/collection/item/nicodemus",
  collectionIdentity:"Pennsylvania Academy of the Fine Arts, 1900.1",
  photoFilePage:"https://commons.wikimedia.org/wiki/File:Nicodemus_Visiting_Jesus,_by_Henry_Ossawa_Tanner.jpg",
@@ -34,7 +34,7 @@ export function releasedTannerNicodemusForClassI2026(date,principalId,properPath
    frozen.selection?.editorialBasis!==r.editorialBasis)return null;
  return Object.freeze({
   date,principalId,properPath,artworkId:r.artworkId,
-  title:r.title,artist:r.artist,source:r.sourceObject,
+  title:r.title,titleFr:r.titleFr,artist:r.artist,source:r.sourceObject,
   image:r.image,infoImage:r.image,
   imageSource:r.photoFilePage,collectionIdentity:r.collectionIdentity,
   photoCredit:r.photoCredit,rights:r.photoReuseBasis,
