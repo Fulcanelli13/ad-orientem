@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import {sanctuaryCueProjection,SANCTUARY_PROTOCOL,
  createReaderSanctuaryPreview} from "../src/mass/reader-sanctuary-visual.js";
 const card={sectionId:"AO.LIVECURATED.AO.CARD.003.2",

@@ -99,8 +99,58 @@ try{
    scholaOnly:true
   }));
   assert.equal(improper.ok,false,"Proper Schola gesture triggered sanctuary movement");
+  // The original animated scene must re-arm its exact action when a
+  // source-focused rubric exits and the reader later scrolls back into it.
+  // These are isolated bridge probes, not invented priest observations.
+  await page.evaluate(()=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    const c=api.model.cards.find(x=>x.sourceSectionId==="AO.CANON.06" &&
+      x.title==="Words of Consecration and Elevation · Host");
+    if(!c)throw Error("Canonical Host elevation card missing");
+    api.showSequence(c.sequence);
+  });
+  await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+    ?.getState()?.card==="C36",null,{timeout:12000});
+  const rearm=await frame.evaluate(()=>{
+    const api=window.AO_SANCTUARY_EMBED_TEST;
+    const event=(cue,certified=true)=>api.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      sourceSectionId:"AO.CANON.06",
+      cardTitle:"Words of Consecration and Elevation · Host",
+      sourceCueId:cue,certifiedSourceFocus:certified,scholaOnly:false
+    });
+    const enter=event("AO.SM.C0174");
+    const held=event("AO.SM.C0174");
+    const exit=event("AO.SM.C0175");
+    const again=event("AO.SM.C0174");
+    return {enter:enter.choreography,held:held.choreography,
+      exit:exit.choreography,again:again.choreography};
+  });
+  assert.deepEqual(rearm,{
+    enter:"SOURCE_TRIGGERED",held:"STATIC_STAGE",
+    exit:"STATIC_STAGE",again:"SOURCE_TRIGGERED"
+  },"Returning to source-owned rubric must re-arm original 3D animation");
   const next=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.getState());
-  assert.equal(next.card,original.card);
+  assert.equal(next.card,"C36");
+  const switched=await page.evaluate(()=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    api.setPresentationMode("MISSAL");
+    const region=document.querySelector(".ao-sanctuary-window");
+    const shell=document.querySelector(".ao-reader-shell");
+    return {mode:api.model.presentationMode,hidden:region?.hidden,
+      active:shell?.classList.contains("ao-sanctuary-preview")};
+  });
+  assert.equal(switched.mode,"MISSAL");
+  assert.equal(switched.hidden,true,"Missal must hide animated sanctuary");
+  assert.equal(switched.active,false,"Missal must restore original reader geometry");
+  const restored=await page.evaluate(()=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    api.setPresentationMode("LIVE");
+    const region=document.querySelector(".ao-sanctuary-window");
+    return {mode:api.model.presentationMode,hidden:region?.hidden};
+  });
+  assert.equal(restored.mode,"LIVE");
+  assert.equal(restored.hidden,false,"LIVE must restore source-linked sanctuary");
   if(width===390)await page.screenshot({path:resolve(shots,form+"-390.png"),
    animations:"disabled"});
   assert.deepEqual(errors,[],"Native LIVE browser errors "+form+" "+width);
