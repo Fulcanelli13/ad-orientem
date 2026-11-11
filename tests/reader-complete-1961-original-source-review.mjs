@@ -18,12 +18,13 @@ const batches=sourceIndex.batches.map(({path,contentSha256,bytes})=>{
 const baseline=buildFull1961SourceStudy({batches});
 const scores=new Map(baseline.entries.map(x=>[x.id,x]));
 
-test("the full existing original 1961 source bank is 1195 Proper + 20 explicitly selected Ordinary",()=>{
+test("the full existing 1961 bank has 1195 Proper, 20 Ordinary and five imported Sequences",()=>{
  assert.equal(baseline.schema,FULL_SCORE_STUDY_SCHEMA);
  assert.equal(baseline.counts.originalProperGabc,1195);
  assert.equal(baseline.counts.existingOrdinaryGabc,20);
- assert.equal(baseline.counts.sourceGabcTotal,1215);
- assert.equal(scores.size,1215);
+ assert.equal(baseline.counts.importedSequenceGabc,5);
+ assert.equal(baseline.counts.sourceGabcTotal,1220);
+ assert.equal(scores.size,1220);
  assert.deepEqual(Object.fromEntries(Object.entries(baseline.counts.byRole)
   .filter(([name])=>["INTROIT","GRADUAL","ALLELUIA","TRACT","OFFERTORY","COMMUNION"].includes(name))
   .sort(([a],[b])=>a.localeCompare(b))),{
@@ -56,13 +57,29 @@ test("Proper GABC and SHA exactly preserve the archive's original musical charac
   assert.equal(item.originalGabcSha256,src.sha256);
  }
 });
-test("five authentic Sequences remain external source leads, not fabricated scores",()=>{
+test("five 1961 Sequences preserve complete pinned original GregoBase source GABC",()=>{
  assert.equal(FULL_SCORE_STUDY_SEQUENCE_LEADS.length,5);
- assert.equal(baseline.counts.separateUnimportedSequenceLeads,5);
+ assert.equal(baseline.counts.separateUnimportedSequenceLeads,0);
  assert.deepEqual(FULL_SCORE_STUDY_SEQUENCE_LEADS.map(x=>x.sourceId).sort((a,b)=>a-b),
   [68,308,681,1086,1198]);
+ const found=baseline.entries.filter(x=>x.category==="SEQUENCE");
+ assert.equal(found.length,5);
  for(const sequence of FULL_SCORE_STUDY_SEQUENCE_LEADS){
-  assert.equal(sequence.scoreImported,false);
+  const row=scores.get("GREGOBASE-"+sequence.sourceId);
+  const original=file("data/mass/chant-corpus/gr1961-sequence-"+sequence.sourceId+".gabc");
+  const raw=original.toString("utf8");
+  const gitBlob=createHash("sha1").update("blob "+original.length+"\0").update(original).digest("hex");
+  assert.equal(sequence.scoreImported,true);
+  assert.equal(sequence.sourceBlobSha1,gitBlob);
+  assert.equal(row.sourceBlobSha1,gitBlob);
+  assert.equal(row.gabc,raw);
+  assert.equal(row.originalGabcSha256,createHash("sha256").update(original).digest("hex"));
+  assert.equal(row.role,"SEQUENCE");
+  assert.equal(row.category,"SEQUENCE");
+  assert.equal(row.sourceUrl,sequence.sourceUrl);
+  assert.equal(row.folio,sequence.folio);
+  assert.deepEqual(row.sourceMatch2026,[]);
+  assert.equal(row.publication,"RESEARCH_ONLY_NOT_MUSICALLY_APPROVED");
   assert.match(sequence.sourceUrl,/^https:\/\/gregobase\.selapa\.net\/chant\.php\?id=\d+$/);
  }
 });
