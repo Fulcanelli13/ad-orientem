@@ -1,4 +1,5 @@
 import {loadDyk520Release,dyk520Model} from "./dyk-520-release.js";
+import {ensureLearnModule} from "../learn/lazy-module-registry.js";
 import {loadDyk225Release,dyk225Model} from "./dyk-h225-release.js";
 export {loadDyk225Release,dyk225Candidates,dyk225Model} from "./dyk-h225-release.js";
 import {loadDyk200Release,dyk200Model} from "./dyk-h200-release.js";
@@ -564,6 +565,7 @@ const STYLE='.aoDykPublishedShade{position:fixed;inset:0;z-index:2147483620;back
 '.aoDykPublishedCard h2{margin:12px 0;font:500 24px/1.3 var(--ao-font-display,Georgia,serif)}'+
 '.aoDykPublishedCard a{display:inline-block;min-height:44px;padding:6px 0;color:var(--ao-link,#f0d295);overflow-wrap:anywhere}'+
 '.aoDykPublishedCard button{float:right;min-width:44px;min-height:44px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:8px;font-size:22px}'+
+'.aoDykPublishedCard button[data-dyk-glossary-entry]{float:none;min-height:44px;padding:8px 12px;font:inherit;cursor:pointer}'+
 '@media(min-width:720px){.aoDykPublishedShade{align-items:center;padding:20px}.aoDykPublishedCard{border-radius:16px}}';
 export function dykPublishedMarkup(model){
  if(!model?.published||!safeUrl(model.sourceUrl)||!Array.isArray(model.links)||!model.links.length||
@@ -579,6 +581,9 @@ export function dykPublishedMarkup(model){
    '<p>'+esc(fr?"Source originale":"Original source")+' · '+esc(model.sourceId)+'</p>'+
    model.links.map((x,i)=>'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+
      esc(x.page===null?x.label:(fr?"Consulter la source, PDF p. ":"Read source, PDF p. ")+x.page)+'</a></p>').join("")+
+   (/^G\d{3}$/.test(model.glossaryConceptId||"")?
+    '<p><button type="button" data-dyk-glossary-entry="'+esc(model.glossaryConceptId)+'">'+
+    esc(fr?"Lire la définition dans le glossaire":"Read the glossary definition")+'</button></p>':"")+
    '<small>'+esc(fr?"Contexte historique ou rubrique de 1962 selon la source citée.":"Historical context or 1962 rubric, as identified in the cited source.")+'</small>'+
    '</article></div>';
 }
@@ -614,7 +619,15 @@ export async function openDykPublishedSource(win,{id,date,language="en",trigger}
  const close=()=>{node.remove();try{trigger?.focus?.({preventScroll:true})}catch{trigger?.focus?.()}};
  if(!shade)return false;
  node.addEventListener("click",event=>{
-   if(event.target===shade||event.target?.closest?.("[data-dyk-published-close]"))close();
+   if(event.target===shade||event.target?.closest?.("[data-dyk-published-close]")){close();return;}
+   const glossaryButton=event.target?.closest?.("[data-dyk-glossary-entry]");
+   const entryId=glossaryButton?.dataset?.dykGlossaryEntry;
+   if(!/^G\d{3}$/.test(entryId||""))return;
+   event.preventDefault?.();
+   void Promise.resolve().then(()=>ensureLearnModule("learn.glossary",win))
+     .then(()=>win?.AO_GLOSSARY_V1?.open?.({entryId,origin:"context",trigger}))
+     .then(opened=>{if(opened===true)node.remove();})
+     .catch(error=>{try{win?.console?.error?.("Glossary discovery unavailable",error)}catch{}});
  });
  node.addEventListener("keydown",event=>{
    if(event.key==="Escape"){event.preventDefault?.();close();return}
