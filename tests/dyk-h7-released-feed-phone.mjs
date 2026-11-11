@@ -13,7 +13,7 @@ const master=JSON.parse(await readFile(resolve(root,
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json"),"utf8"));
 const fixture=structuredClone(master);
 fixture.publication_stage="APPROVED_PARTIAL_LIVE";
-const fact=fixture.records.find(x=>x.id==="DYK-UM02-014");
+const fact=fixture.records.find(x=>x.id==="DYK-UM03-012");
 assert.ok(fact);
 fact.editorial_approval=true;fact.release_authorized=true;
 fact.pilot_home_copy.final_english_signoff=true;
@@ -25,6 +25,8 @@ fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual date on which the test-only R34 approval wins the
 // combined previously published and newly curated Customs/Glossary rotation.
 // The new 520 IDs legitimately change which fact appears on each civil date.
+// Use a R34 ID NOT present in the independently curated public bank: a shared
+// ID can be live from that bank without authorizing its separate R34 record.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
 const r50=JSON.parse(await readFile(resolve(root,
@@ -97,7 +99,7 @@ try{
      const b=document.querySelector(".homeScreen [data-home-dyk-open]");
      return Boolean(b&&!b.disabled&&(b.dataset.homeDykEntry||b.dataset.homeDykFactId));
    },null,{timeout:45000});
-   assert.equal(await page.locator("[data-home-dyk-fact-id='DYK-UM02-014']").count(),0,
+   assert.equal(await page.locator("[data-home-dyk-fact-id='DYK-UM03-012']").count(),0,
      "Unapproved R34 research cannot appear on the public Home");
    // Synthetic fixture is contained in this test's browser interception. It is
    // never written into R34 or published with the application.
@@ -105,12 +107,12 @@ try{
       route=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(fixture)}));
    await page.reload({waitUntil:"domcontentloaded"});
    await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{timeout:45000});
-   const published=page.locator("[data-home-dyk-fact-id='DYK-UM02-014']");
+   const published=page.locator("[data-home-dyk-fact-id='DYK-UM03-012']");
    await published.waitFor({state:"visible",timeout:45000});
    assert.equal(await published.getAttribute("data-home-dyk-entry"),null,
       "Approved release must not open an unrelated Glossary entry");
    await published.click();
-   const modal=page.locator("[data-dyk-published='DYK-UM02-014']");
+   const modal=page.locator("[data-dyk-published='DYK-UM03-012']");
    await modal.waitFor({state:"visible",timeout:30000});
    assert.equal(await modal.getAttribute("role"),"dialog");
    assert.equal((await modal.locator("a[href*='#page=331']").count()),1);
