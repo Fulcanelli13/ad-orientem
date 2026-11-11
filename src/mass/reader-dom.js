@@ -118,6 +118,19 @@ const SHELL_STYLE = `
 .ao-schola-proper-order .ao-schola-proper-translation{white-space:pre-wrap;margin:4px 7px 11px}
 .ao-schola-proper-order button[data-schola-event-select]{margin:8px 6px;width:calc(100% - 12px);border:1px solid rgba(225,207,145,.24)}
 
+.ao-schola-dock[data-approved-score="true"] .ao-schola-title{
+  gap:4px;padding-right:49px;min-width:0
+}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-title .ao-icon-mask{
+  width:24px;height:24px;flex:0 0 24px
+}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-page{
+  display:none!important
+}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-status{
+  flex:1 1 auto;min-width:0;overflow:hidden;white-space:nowrap;
+  text-overflow:ellipsis
+}
 .ao-schola-notation-pause{display:none!important}
 .ao-schola-dock[data-approved-score="true"]:not([data-collapsed="true"])
  .ao-schola-notation-pause{
@@ -3521,7 +3534,7 @@ export function createReaderDomAdapter({
               if(scholaPaused)scholaDockFollower.pause?.();
               dock.dataset.notationFollow="estimated";
               const status=root.querySelector('[data-role="schola-status"]');
-              if(status)status.textContent="EST. FOLLOW · NOT HEARD";
+              if(status)status.textContent="EST. · NOT HEARD";
               panel.setAttribute("aria-label",
                 "Approved notation. Estimated source-syllable follow; tap or swipe to resynchronise. Singing is not detected.");
             }else{
