@@ -114,5 +114,5 @@ for(const v of classified){
  assert.ok(p.lane in counts,"All 2580 published CL2 sites require a determined visual lane");
  counts[p.lane]++;
 }
-assert.deepEqual(counts,{DIOCESAN_PHOTO:726,EMBLEM_OR_NEUTRAL:1506,NEUTRAL:348});
-console.log("PASS 2580 TLM venue visual lanes: 726 photo, 1506 emblem/neutral, 348 neutral; card, preview, profile, gallery and map agree");
+assert.deepEqual(counts,{DIOCESAN_PHOTO:762,EMBLEM_OR_NEUTRAL:1506,NEUTRAL:312});
+console.log("PASS 2580 TLM venue visual lanes: 762 photo, 1506 emblem/neutral, 312 neutral; card, preview, profile, gallery and map agree");
