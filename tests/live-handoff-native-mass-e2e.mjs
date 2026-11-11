@@ -28,6 +28,8 @@ async function read(page){
     const stage=shell?.querySelector(".ao-reader-stage");
     const nativeDock=shell?.querySelector(".ao-schola-dock");
     const firstDot=band?.querySelector(".ao-lb-dot");
+    const headerTitle=shell?.querySelector('.ao-reader-top-ribbon [data-role="section-title"]');
+    const headerTitleStyle=headerTitle?getComputedStyle(headerTitle):null;
     const schola=api?.getScholaState?.()??null;
     const card=api?.getCurrentCard?.()??null;
     const rect=el=>{
@@ -47,6 +49,8 @@ async function read(page){
       scholaComplete:schola?.complete??null,
       scholaTotal:schola?.total??null,
       viewportW:innerWidth,viewportH:innerHeight,
+      headerTitle:{text:headerTitle?.textContent??"",whiteSpace:headerTitleStyle?.whiteSpace??null,
+        textOverflow:headerTitleStyle?.textOverflow??null,height:rect(headerTitle)?.h??null},
       documentW:document.documentElement.scrollWidth,
       documentH:document.documentElement.scrollHeight,
       bandVisible:band&&!band.hidden,
@@ -88,6 +92,10 @@ function verify(m,{width,height,name},label){
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
   assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
+  assert.equal(m.headerTitle.whiteSpace,"nowrap",name+" "+label+" LIVE preview title wraps");
+  assert.equal(m.headerTitle.textOverflow,"ellipsis",name+" "+label+" LIVE preview title is not truncated");
+  assert.ok(m.headerTitle.height>0&&m.headerTitle.height<24,
+    name+" "+label+" LIVE preview title exceeds one header line: "+JSON.stringify(m.headerTitle));
   assert.equal(m.scholaDockInStage,true,name+" "+label+" Schola dock escaped the prayer stage");
   assert.equal(m.firstDotUnobstructed,true,name+" "+label+" sanctuary selector intercepted; dock="+JSON.stringify(m.scholaDock));
   if(m.scholaDock?.h>0)
