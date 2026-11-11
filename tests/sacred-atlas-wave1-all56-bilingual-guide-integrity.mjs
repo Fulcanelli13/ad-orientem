@@ -17,7 +17,11 @@ const official=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const media=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
-const ids=m.batch_plan.shrine_guide_expansion[0].place_ids;
+const plannedIds=m.batch_plan.shrine_guide_expansion[0].place_ids;
+// The editorial queue re-ranked the same 56 sites without changing their membership.
+const ids=q.rows.map(row=>row.place_id);
+assert.deepEqual([...ids].sort(),[...plannedIds].sort(),
+  "Editorial Wave-1 site membership must match the 530-place master plan");
 const byId=new Map(m.places.map(p=>[p.place_id,p]));
 const shrineIds=new Set(official.shrines.map(x=>x.shrine_id));
 assert.equal(m.summary.extended_guides,33);

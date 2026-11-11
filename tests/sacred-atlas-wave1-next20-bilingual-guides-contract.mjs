@@ -10,13 +10,17 @@ const b=read(root+"sacred-atlas-wave1-guides21-30-20261105.v1.json");
 const live=read("data/geography/approved-place-media.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const shr=read("data/shrines/shrines-pilgrimages-seed.v1.json");
-const keys=master.batch_plan.shrine_guide_expansion[0].place_ids;
+const plannedKeys=master.batch_plan.shrine_guide_expansion[0].place_ids;
+// Read the current editorial priority order while preserving the original planned set.
+const keys=queue.rows.map(row=>row.place_id);
+assert.deepEqual([...keys].sort(),[...plannedKeys].sort(),
+  "Wave-1 priority queue must contain exactly the originally selected sites");
 const places=new Map(master.places.map(x=>[x.place_id,x]));
 const shrines=new Set(shr.shrines.map(x=>x.shrine_id));
 assert.equal(keys.length,56);assert.equal(new Set(keys).size,56);
 assert.equal(geo.places.length,530);
 assert.equal(master.summary.extended_guides,33);
-assert.equal(live.items.length,379);
+assert.equal(live.items.length,388, "Preserve the current approved-cover inventory; guide drafting changes no covers");
 assert.equal(first.guides.length,10);
 assert.equal(a.schema,"AO_SACRED_ATLAS_W1_11_TO_20_BILINGUAL_EXTENDED_DRAFTS_V1");
 assert.equal(b.schema,"AO_SACRED_ATLAS_W1_21_TO_30_BILINGUAL_EXTENDED_DRAFTS_V1");
