@@ -53,6 +53,31 @@ These are **country-level candidate leads**, not 20 verified active chapels, not
 
 Another high-priority mismatch is Poland: **117** LMD-reported positions vs **92** CL2 sites (43 SSPX-labelled, leaving 49 other sites). The raw differences of 25 or 68 are **not** verified missing-site counts; church identities, chapels within churches, historic Mass sites and source scopes may overlap.
 
+## All 20 zero-country positions dispositioned against independent sources (11 Nov)
+
+The bounded [first-party/owner evidence triage](../../../data/directory/research/lmd-20-country-gaps-firstparty-triage-20261111.v1.json) now classifies **all 20 country-gap positions** without accepting them into CL2:
+
+| Disposition | Positions | Import decision |
+|---|---:|---|
+| Independent church/institute or diocese plus explicitly traditional/1962 celebration | **5** | **Candidate for existing Excel identity and evidence review only** |
+| Historic explicitly traditional rite but no fresh current owner timetable | **1** | Current celebration hold |
+| Independent older-rite calendar clue but chapel-versus-church geometry uncertain | **1** | Building identity and rite approval hold |
+| Catholic physical institution corroborated, no independent 1962 celebration | **8** | Rite/activity hold |
+| Archived LMD or current country-list lead without independent confirmation | **5** | Evidence hold |
+| **Total** | **20** | **0 approved imports** |
+
+**The five strongly evidenced candidates:** Sacred Heart (Jesu Hjerte) in Copenhagen, St Mary's in Helsinki, Jesuits' Church in Valletta, San José in Villa Caparra/Guaynabo, and San Martín de Porres in Arecibo. Institutional links appear individually in the JSON. These are not five automatic new pins: exact identity and local approval still belong to the existing CL2 Excel register.
+
+**Specific non-trivial holds:**
+- Puerto Rico: Una Voce's updated 2026 Arecibo **13:00** notice conflicts with the diocesan schedule's **14:00** figure. Guaynabo's organiser and parish calendars have different coverage and historical clock revisions. **No times imported.**
+- Liechtenstein: St Martin's ordinary parish building is not automatically the same visitor entrance as the chapel listed for the *Alte Messe*. Do not create two pins from a title collision.
+- Vatican City: the Bocciata and Clementine chapels belong to the same St Peter's Basilica building; two source venue entries do not establish two distinct physical buildings. Neither is a verified public recurring schedule.
+- Monaco: the diocese's 2026 **Latin** Mass is not alone proof that the **1962** Missal was used.
+- Luxembourg: earlier explicit traditional Mass evidence is not a fresh 2026 owner schedule.
+- Denmark, Finland, Malta and Puerto Rico: the existence of local church/owner evidence does not bypass existing Excel review and current CL27 timetable gates.
+
+The 20 positions comprise **17** already in the October source archive and **3** currently known only through LMD country pages (Israel one; Ukraine two). No LMD bulk page extraction is required to preserve these cases. Other missing-country uncertainty remains recorded exactly as a hold, not as a negative finding against Ad Orientem.
+
 ## Matching and disposition rules
 1. Same physical venue confirmed by source-owned address + city + institutional reference: link to the existing CL2 ID; never create a duplicate.
 2. Name+locality only: strong *identity lead*; hold exact entrance, schedule, priest, rite and jurisdiction claims.
