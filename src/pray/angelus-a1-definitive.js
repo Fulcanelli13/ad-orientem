@@ -34,8 +34,9 @@ export function angelusA1Painting({form="angelus",dateKey=""}={}){
   artist:art.artist,title:art.title,source:art.source,camera:CAMERA[id]
  });
 }
-export function angelusA1StagePlan(form="angelus"){
- return form==="regina"?STAGE_TITLES.regina:STAGE_TITLES.angelus;
+export function angelusA1StagePlan(form="angelus",historicalConclusion=true){
+ const stages=form==="regina"?STAGE_TITLES.regina:STAGE_TITLES.angelus;
+ return historicalConclusion?stages:stages.slice(0,-1);
 }
 function camera(view,index=0,instant=false){
  if(!view?.isConnected)return;
@@ -60,7 +61,7 @@ function camera(view,index=0,instant=false){
 export function syncAngelusA1(mount,index=0){
  const view=mount?.querySelector(".aoA1Definitive");
  if(!view)return false;
- const step=Math.max(0,Math.min(angelusA1StagePlan(view.dataset.aoA1Form).length-1,Number(index)||0));
+ const step=Math.max(0,Math.min(view.querySelectorAll(".aoA1Dots button").length-1,Number(index)||0));
  view.dataset.aoA1Stage=String(step);
  view.querySelectorAll(".aoA1Dots button").forEach((b,i)=>b.setAttribute("aria-current",i===step?"step":"false"));
  view.querySelectorAll(".aoA1BellGroup").forEach((group,i)=>group.classList.toggle("is-lit",i<=Math.min(3,step)));
@@ -117,7 +118,7 @@ export function decorateAngelusA1({mount,form="angelus",language="en",dateKey=""
  view.insertBefore(scene,view.firstChild);
  const dots=doc.createElement("nav");dots.className="aoA1Dots";
  dots.setAttribute("aria-label",language==="fr"?"Étapes de la prière":"Prayer stages");
- angelusA1StagePlan(form).forEach((title,index)=>{
+ angelusA1StagePlan(form,cardDeck.plan.some(item=>item.id==="conclusion")).forEach((title,index)=>{
   const b=doc.createElement("button");b.type="button";
   b.dataset.aoA1Step=String(index);
   b.setAttribute("aria-label",String(index+1)+". "+title);
