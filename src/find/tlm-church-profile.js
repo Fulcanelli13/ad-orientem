@@ -93,6 +93,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
    L(language,"Multiple ministries","Plusieurs ministères"):listedAffiliation;
  const siteContact=item?.site_contact_evidence??null;
  const preliminary=Boolean(item?.preliminary_group)||T(item?.map_state)==="PROVISIONAL"||v.unverified;
+ const listOnly=item?.kind==="TLM_VENUE"&&item?.map_publishable===false&&T(item?.map_state)==="ADDRESS_ONLY";
  const statusText=preliminary?L(language,"Provisional venue · check source","Lieu provisoire · consulter la source"):
    T(item?.status)||L(language,"Consult original sources","Consulter les sources originales");
  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoTlmChurchProfile" role="dialog" aria-modal="true" aria-label="'+E(item?.title)+'" data-tlm-church-profile="'+E(item?.source_id)+'">';
@@ -154,7 +155,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  else {
    // A search is an escape hatch, NEVER original provenance or a GPS destination.
    const query=[T(item?.title),T(item?.source_location_description)||T(item?.address?.formatted)||T(item?.subtitle),T(item?.country_code)].filter(Boolean).join(", ");
-   if(query)html+='<div class="aoTlmProfilePrimaryAction">'+
+   if(query&&!listOnly)html+='<div class="aoTlmProfilePrimaryAction">'+
      link("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query),
        L(language,"Search for this church (results not verified)",
          "Rechercher cette église (résultats non vérifiés)"))+'</div>'+
@@ -313,6 +314,20 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  html+=renderDirectoryGallery(item,language);
  html+='<section class="aoTlmProfilePanel"><h3>'+E(L(language,"Visit & contacts","Visite et coordonnées"))+'</h3>';
  if(address)html+='<p class="aoTlmProfileAddress">'+E(address)+'</p>';
+ if(listOnly){
+  // Source-listed physical sites remain accessible without inventing a GPS
+  // coordinate. External Maps searches are NOT navigation to a verified pin.
+  const searchQuery=[T(item?.title),T(item?.source_location_description)||address||T(item?.subtitle),
+    T(item?.country_code)].filter(Boolean).join(", ");
+  html+='<p class="aoTlmProfileCaution" data-tlm-list-only-notice>'+
+    E(L(language,"List-only site: no verified map position. This is not a confirmed church entrance or current Mass location.",
+      "Lieu uniquement en liste : aucun repère cartographique vérifié. Cela ne confirme ni l’entrée de l’église ni une messe actuelle."))+
+    '</p>';
+  if(searchQuery)html+='<div class="aoTlmProfileActions" data-tlm-list-only-search>'+
+    link("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(searchQuery),
+      L(language,"Search by church name and source address (results unverified)",
+        "Rechercher par nom et adresse d’origine (résultats non vérifiés)"))+'</div>';
+ }
  // The CL2 physical-site master may contain a more precise source description
  // than an inherited R49 locality. Show it as a source description, never
  // silently promote it to a verified address or church entrance.
