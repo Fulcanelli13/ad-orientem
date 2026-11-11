@@ -158,6 +158,8 @@ export function createNativeScholaController(args={}){
       schola:segment?Object.freeze({
         label:segment.latin??segment.english,
         latin:segment.latin,english:segment.english,
+        firstLatin:track.segments[0]?.latin??null,
+        firstCueId:track.segments[0]?.cueId??null,
         trackId:track.id,segmentId:segment.id,cueId:segment.cueId,
         index,total:track.segments.length,complete,
         benedictusHold:hold,sanctusPerformance,
