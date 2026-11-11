@@ -18,6 +18,10 @@ const reviews=read(reviewFile);
 assert.equal(reviews.schema,"AO_SACRED_ATLAS_BILINGUAL_GUIDE_EDITORIAL_DECISIONS_V1");
 const seed=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const sources=read("data/shrines/source-registry.v1.json");
+const researchSources=read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json");
+assert.equal(researchSources.state,"RESEARCH_ONLY_NOT_RELEASED");
+assert.ok(researchSources.sources.every(s=>s.scope==="RESEARCH_ONLY"&&s.place_id&&
+  !sources.sources.some(c=>c.id===s.id)),"Research sources must remain outside the public registry");
 const drafts=[
   ...wave1.flatMap(n=>read("data/shrines/research/sacred-atlas-wave1-"+n+"-20261105.v1.json").guides),
   ...wave2.flatMap(n=>read("data/shrines/research/sacred-atlas-wave2-guides"+n+"-20261110.v1.json").guides),
@@ -27,7 +31,7 @@ const published=publishedNames.flatMap(n=>
   .filter(g=>g.publication==="PUBLISHED");
 assert.equal(drafts.length,224);
 assert.equal(published.length,33);
-const compiled=buildReviewedSacredGuideCorpus(drafts,seed.shrines,sources.sources,reviews.reviews,published);
+const compiled=buildReviewedSacredGuideCorpus(drafts,seed.shrines,[...sources.sources,...researchSources.sources],reviews.reviews,published);
 const base=read(destination);
 const output={
   schema:"AO_ILLUSTRATED_PLACE_GUIDES_V1",
