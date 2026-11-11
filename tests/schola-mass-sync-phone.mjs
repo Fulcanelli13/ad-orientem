@@ -55,6 +55,10 @@ try{
     const {createScholaNotationFollower}=await import("/src/mass/reader-schola-notation-follow.js");
     const {createScholaMassTextSynchronizer,scholaMassTextAnchors}=
       await import("/src/mass/reader-schola-mass-text-sync.js");
+    const legacyPause=document.querySelectorAll("[data-schola-pause]");
+    const notationPause=document.querySelectorAll("[data-schola-notation-pause]");
+    if(legacyPause.length!==1||notationPause.length!==1)
+      throw Error("New compact pause must not shadow legacy Schola Pause selector");
     const reader=document.querySelector(".ao-prayer-card");
     const body=reader.querySelector('[data-role="paragraphs"]');
     for(const [n,text] of lines.map((text,i)=>[i+1,text])){
@@ -74,7 +78,7 @@ try{
       throw Error("Approved notation Pause control must be visible");
     const staff=dock.querySelector('[data-role="schola-approved-staff"]');
     const strip=dock.querySelector('[data-role="schola-follow-strip"]');
-    const engraver=createOfflineChantEngraver({viewport:staff,document});
+    const engraver=createOfflineChantEngraver({viewport:staff,document,horizontalStaffWidth:1200});
     if(!await engraver.engrave(gabc))throw Error("Original GABC engraving failed");
     const plan=scholaMassTextAnchors(gabc,lines.map((latin,i)=>({
       id:"SOURCE-"+(i+1),latin
