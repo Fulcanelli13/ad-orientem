@@ -28,6 +28,7 @@ import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js
 import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js";
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
+import {verifyApprovedScholaGabc} from "./reader-schola-score-integrity.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -3403,11 +3404,20 @@ export function createReaderDomAdapter({
     panel.hidden=false;panel.dataset.scoreStatus="loading";
     staff.setAttribute("aria-label","Approved Gregorian notation for "+schola.trackId+
       ". Expected, not observed. No audio recognition.");
-    try{
-      const doc=root.ownerDocument??globalThis.document;
-      scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
-      scholaDockEngraver.observe?.();
-      void scholaDockEngraver.engrave(score.gabc).then(ok=>{
+    // The score and independent promotion record agree on their declared
+    // hash, but the actual GABC MUST also match before engraving/publication.
+    // If the reader moves to another source cue while hashing, token rejects
+    // the stale async result; the loading panel remains invisible.
+    const doc=root.ownerDocument??globalThis.document;
+    void verifyApprovedScholaGabc({...score,score_status:"approved"},{
+      cryptoImpl:doc?.defaultView?.crypto
+    }).then(proof=>{
+      if(token!==scholaDockScoreRequest)return;
+      if(!proof.valid){clearScholaDockNotation();return;}
+      try{
+        scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
+        scholaDockEngraver.observe?.();
+        void scholaDockEngraver.engrave(score.gabc).then(ok=>{
         if(token!==scholaDockScoreRequest)return;
         if(!ok){clearScholaDockNotation();return;}
         panel.dataset.scoreStatus="approved";
@@ -3436,10 +3446,13 @@ export function createReaderDomAdapter({
           }
         }
         sourceRailTracker?.refresh?.();
-      }).catch(()=>{
-        if(token===scholaDockScoreRequest)clearScholaDockNotation();
-      });
-    }catch{if(token===scholaDockScoreRequest)clearScholaDockNotation();}
+        }).catch(()=>{
+          if(token===scholaDockScoreRequest)clearScholaDockNotation();
+        });
+      }catch{if(token===scholaDockScoreRequest)clearScholaDockNotation();}
+    }).catch(()=>{
+      if(token===scholaDockScoreRequest)clearScholaDockNotation();
+    });
   }
 
   function syncScholaContent(){
