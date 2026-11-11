@@ -259,7 +259,7 @@ try{
           preview:{getScholaState:()=>({schola:source})},
           prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}}});
         const available=view.refresh(true);
-        window.__aoStageEReference={view,host,setting};
+        window.__aoStageEReference={view,host,setting,source};
         return {available,initial:view.getState(),
           approvedScore:dock.dataset.approvedScore??"false"};
       });
@@ -294,6 +294,25 @@ try{
         option.name+" research score leaks horizontal viewport");
       await page.screenshot({path:resolve(output,option.name+"-research-kyrie-XI.png"),
         animations:"disabled",fullPage:false});
+      await page.locator("#stageEReferenceQA [data-ao-reference-full-open]").click();
+      await page.waitForFunction(()=>document.querySelector(
+        'dialog[data-ao-reference-full-score="GREGOBASE-2982"]')?.dataset.aoReferenceFullReady==="true",
+        null,{timeout:20000});
+      const fullKyrie=await page.evaluate(()=>{
+        const dialog=document.querySelector('dialog[data-ao-reference-full-score]');
+        const staff=dialog.querySelector("[data-ao-reference-full-staff]");
+        return {open:dialog.open,score:dialog.dataset.aoReferenceFullScore,
+          hasSvg:Boolean(staff.querySelector("svg")),viewportHeight:staff.clientHeight,
+          sourceLink:dialog.querySelector("a")?.href,
+          nativeScholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
+      });
+      assert.equal(fullKyrie.open,true);
+      assert.equal(fullKyrie.score,"GREGOBASE-2982");
+      assert.equal(fullKyrie.hasSvg,true);
+      assert.match(fullKyrie.sourceLink||"",/gregobase/);
+      assert.equal(fullKyrie.nativeScholaIndex,before.scholaIndex);
+      await page.locator('dialog[data-ao-reference-full-score] [data-schola-score-close]').click();
+      assert.equal(await page.locator('dialog[data-ao-reference-full-score]').count(),0);
       const switching=await page.evaluate(()=>{
         const {view,setting,host}=window.__aoStageEReference;
         setting.value="MASS_08";
@@ -301,7 +320,6 @@ try{
         const panel=host.querySelector("[data-ao-reference-score-panel]");
         const after={available:view.getState().available,open:view.getState().open,
           hidden:panel.hidden,staffCount:panel.querySelectorAll("svg").length};
-        view.dispose();host.remove();delete window.__aoStageEReference;
         return after;
       });
       assert.equal(switching.available,true);
@@ -309,8 +327,66 @@ try{
         "Changing to a different Kyriale setting kept the old notation");
       assert.equal(switching.hidden,true);
       assert.equal(switching.staffCount,0);
+      // A long Credo is much taller than the 63px travelling strip.
+      // Its FULL view must expose every wrapped staff system by vertical
+      // scrolling, without changing the native source Schola clock.
+      const credo=await page.evaluate(()=>{
+        const {source,view,setting}=window.__aoStageEReference;
+        source.trackId="CREDO";
+        source.cueId="AO.SM.C0091";
+        source.trackSourceCueIds=["AO.SM.C0091","AO.SM.C0092"];
+        source.trackSourceLatin="Credo in unum Deum Patrem omnipotentem";
+        setting.dataset.scholaKyrialeChoice="CREDO";
+        const choice=document.createElement("option");
+        choice.value="CREDO_03";choice.textContent="Credo III";
+        setting.append(choice);setting.value="CREDO_03";
+        setting.dispatchEvent(new Event("change",{bubbles:true}));
+        return {available:view.getState().available,scoreCount:view.getState().referenceCount};
+      });
+      assert.equal(credo.available,true);
+      await page.locator("#stageEReferenceQA [data-ao-reference-score-trigger]").click();
+      await page.locator("#stageEReferenceQA [data-ao-reference-score-staff] svg")
+        .waitFor({state:"visible",timeout:18000});
+      await page.locator("#stageEReferenceQA [data-ao-reference-full-open]").click();
+      await page.waitForFunction(()=>document.querySelector(
+        'dialog[data-ao-reference-full-score="GREGOBASE-749"]')?.dataset.aoReferenceFullReady==="true",
+        null,{timeout:20000});
+      const fullCredo=await page.evaluate(()=>{
+        const dialog=document.querySelector('dialog[data-ao-reference-full-score]');
+        const staff=dialog.querySelector("[data-ao-reference-full-staff]");
+        const svg=staff.querySelector("svg");
+        const extent=staff.scrollHeight-staff.clientHeight;
+        staff.scrollTop=staff.scrollHeight;
+        return {scoreId:dialog.dataset.aoReferenceFullScore,
+          height:svg.getBoundingClientRect().height,scrollExtent:extent,
+          scrollPosition:staff.scrollTop,documentWidth:document.documentElement.scrollWidth,
+          approvedScore:window.__aoStageEReference.host.querySelector(".ao-schola-dock").dataset.approvedScore??"false",
+          independentScholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
+      });
+      assert.equal(fullCredo.scoreId,"GREGOBASE-749");
+      assert.ok(fullCredo.scrollExtent>100,
+        option.name+" complete Credo not accessible beyond first staff");
+      assert.ok(fullCredo.scrollPosition>100);
+      assert.ok(fullCredo.documentWidth<=option.width+2,
+        option.name+" full Credo leaked horizontal page overflow");
+      assert.equal(fullCredo.approvedScore,"false");
+      assert.equal(fullCredo.independentScholaIndex,before.scholaIndex);
+      await page.screenshot({path:resolve(output,option.name+"-full-credo-III.png"),
+        animations:"disabled",fullPage:false});
+      const teardown=await page.evaluate(()=>{
+        const {source,view,host}=window.__aoStageEReference;
+        source.trackId="OFFERTORY";view.refresh();
+        const modalGone=!document.querySelector('dialog[data-ao-reference-full-score]');
+        const hidden=host.querySelector("[data-ao-reference-score-panel]").hidden;
+        view.dispose();host.remove();delete window.__aoStageEReference;
+        return {modalGone,hidden};
+      });
+      assert.equal(teardown.modalGone,true,
+        "Source change left the full-score modal open on stale music");
+      assert.equal(teardown.hidden,true);
       c.steps.push({name:"stage-e-manual-nonpublishing-kyriale",
-        source:"EXPLICIT_MASS_11_REFERENCE_ONLY",research,referenceMetrics,switching});
+        source:"EXPLICIT_MASS_11_REFERENCE_ONLY",research,referenceMetrics,
+        switching,fullKyrie,credo,fullCredo,teardown});
       // The actual 1962 Advent I Gradual source has TWO separate matching
       // 1961 references in one source paragraph. Neither is to be inferred
       // from a calendar title; require an explicit user score choice.
