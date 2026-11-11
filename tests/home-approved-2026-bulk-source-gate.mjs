@@ -58,7 +58,13 @@ for(const row of rows){
  };
  const hero=approved2026HomeArtwork(state);
  assert.equal(hero?.artworkId,row.artworkId);
- assert.equal(hero?.image,chosen.image);
+ // The frozen Commons source and photo provenance remain untouched.
+ // Two of these dates now render their identical, prior-released CMA originals.
+ if(["2026-05-31","2026-12-25"].includes(row.date)){
+  assert.equal(hero?.imageStatus,"PREVIOUSLY_RELEASED_LOCAL_EXACT_ORIGINAL");
+  assert.match(hero.image,/^\/assets\/prayer\/released\//);
+  assert.equal(hero.ownerArtworkDecisionNewlyCreated,false);
+ }else assert.equal(hero?.image,chosen.image);
  const missing={...state,resolution:{...state.resolution,date:"2026-02-01"}};
  assert.equal(approved2026HomeArtwork(missing),null);
  const wrong={...state,resolution:{...state.resolution,day:{main:{id:"sancti:wrong"}}}};

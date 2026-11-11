@@ -31,7 +31,8 @@ await new Promise((yes,no)=>{server.once("error",no);server.listen(0,"127.0.0.1"
 const origin="http://127.0.0.1:"+server.address().port+"/index.html";
 const cases=[
  {date:"2026-02-18",width:390,principal:"tempora:Quadp3-3:1:v",
-  artId:"met-436839",title:"The Penitent Magdalen",remote:true},
+  artId:"met-436839",title:"The Penitent Magdalen",
+  asset:"/assets/prayer/released/latour-penitent-magdalen-frameless.jpg",remote:false},
  {date:"2026-03-19",width:390,principal:"sancti:03-19:1:w",
   artId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",title:"The Dream of Saint Joseph",
   asset:"/assets/prayer/released/joseph-whole-original.jpg"},
@@ -49,10 +50,17 @@ const cases=[
   asset:"/assets/prayer/released/joseph-whole-original.jpg"}
 ];
 const expandedCases=[
- ...Object.values(APPROVED_2026_OTHER_DATE_PREVIEWS).map((r,i)=>({
-  date:r.date,width:i%2?320:390,principal:r.principalId,
-  artId:r.artworkId,title:r.title,remote:true
- })),
+ ...Object.values(APPROVED_2026_OTHER_DATE_PREVIEWS).map((r,i)=>{
+  // Two exact previously released CMA source originals now replace remote
+  // thumbnails in the Home renderer. Keep the date and work IDs frozen.
+  const localCma={
+   "2026-05-31":"/assets/prayer/released/girardin-trinity-original.jpg",
+   "2026-12-25":"/assets/prayer/released/cavallino-shepherds-original.jpg"
+  }[r.date];
+  return {date:r.date,width:i%2?320:390,principal:r.principalId,
+   artId:r.artworkId,title:r.title,remote:!localCma,
+   ...(localCma?{asset:localCma}:{})};
+ }),
  {date:"2026-04-02",width:390,principal:"tempora:Quad6-4r:1:w",
   artId:"ART-hilippe-de-hampaigne-a-etite-ne",title:"La Petite Cène",remote:true},
  {date:"2026-05-27",width:320,principal:"tempora:Pasc7-3:1:r",
