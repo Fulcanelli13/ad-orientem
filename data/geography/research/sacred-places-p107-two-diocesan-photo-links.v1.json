@@ -1,0 +1,79 @@
+{
+  "schema": "AO_SACRED_PLACES_P107_TWO_DIOCESAN_PHOTO_LINKS_V1",
+  "date": "2026-11-11",
+  "scope": "SOURCE_EXACT_EXISTING_CL2_VENUE_TO_EXISTING_APPROVED_SACRED_PLACE",
+  "baseline": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 26
+  },
+  "new_places": 0,
+  "confirmed_directory_links_added": 2,
+  "published_new": [],
+  "published_links": [
+    {
+      "link_id": "link:directory-place:GB:westminster-cathedral",
+      "venue_id": "AO-B35-L-GB-91CDCC69A421",
+      "place_id": "place:GB:westminster-cathedral",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-B35-L-GB-91CDCC69A421",
+        "SG-R79-SITE-SG-INV-0264"
+      ],
+      "physical_anchor_id": "RG-01F176BB1074",
+      "identity_evidence_url": "https://westminstercathedral.org.uk/",
+      "place_address": "Westminster Cathedral, Victoria Street, London SW1P 1QW, United Kingdom",
+      "photo_asset": "assets/approved/place-media/pf-718ed6d79ce70af01a892d.webp",
+      "identity_basis": "Exact unique named Westminster Cathedral in London, first-party cathedral website, existing independently reviewed place and photo",
+      "new_images": 0,
+      "new_pins": 0,
+      "new_mass_times": 0
+    },
+    {
+      "link_id": "link:directory-place:DE:maria-vesperbild",
+      "venue_id": "AO-RSCH-B69-3A43E996D0D9",
+      "place_id": "place:DE:maria-vesperbild",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-RSCH-B69-3A43E996D0D9",
+        "SHR-MARIA-VESPERBILD"
+      ],
+      "physical_anchor_id": "RG-B69-3A43E996D0D9",
+      "identity_evidence_url": "https://maria-vesperbild.de/",
+      "place_address": "Schellenbacher Straße 4, 86473 Ziemetshausen, Germany",
+      "photo_asset": "assets/approved/place-media/pf-6aceb6203e1f582b6cbd22.webp",
+      "identity_basis": "Identical unique church name, 86473 municipality and Schellenbacher Straße 4 on existing CL2 and source-reviewed Sacred Place records",
+      "new_images": 0,
+      "new_pins": 0,
+      "new_mass_times": 0
+    }
+  ],
+  "holds": [
+    {
+      "cl2_anchor_id": "RG-711F83579471",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "reason": "Listed Catholic National Shrine basilica may be a different structure from the approved Slipper Chapel photo; do not reuse as an exact same-building cover."
+    }
+  ],
+  "policy": {
+    "preserve_existing_places": true,
+    "no_new_photo_rights_review": true,
+    "use_existing_approved_exact_linked_images_only": true,
+    "no_new_map_pins": true,
+    "no_new_liturgy_status_or_ownership_inference": true,
+    "zero_cost": true
+  }
+}
