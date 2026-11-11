@@ -4,6 +4,7 @@ This file supersedes the **63-card proposed release-cut preflight** *for owner e
 
 ## Files
 
+- [**Editable owner review Google Sheet — Final 62**](https://docs.google.com/spreadsheets/d/1i4RxqYuE8clRbB3_qFATxzOenEuCSsYhvpCXzsDm6CY/edit#gid=71007) — authoritative owner review tab for this corrected release proposal. It has 62 rows, the current EN/FR text, preserved decision dropdowns, and **zero entered owner decisions**. The previous 64-card sheet is retained only for provenance; do not use it as release authorization.
 - [Owner-readable bilingual CSV](./ao-dyk-batch-A-owner-proof-62-UNAPPROVED-20261111.csv) — 62 full EN/FR proposed titles and facts, source IDs, supporting URLs, decisions and notes fields; both owner fields are **blank**.
 - [Full structured 62-card editorial proof](./ao-dyk-batch-A-62-corrected-bilingual-owner-proof-RESEARCH_ONLY-20261111.v1.json) — research-only schema, all prior publication gates **false**, source lineage retained.
 - [Research-side source-link accessibility screen](./ao-dyk-batch-A-62-source-link-accessibility-screen-20261111.v1.json) — 49 unique URLs; statuses are not end-user browser checks.
