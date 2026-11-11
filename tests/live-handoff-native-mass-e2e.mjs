@@ -24,7 +24,8 @@ async function read(page){
     const api=window.AO_R17_NATIVE_READER_PREVIEW;
     const root=document.querySelector("#ao-r17-native-reader-preview");
     const shell=root?.querySelector("[data-ao-reader-shell]");
-$1    const stage=shell?.querySelector(".ao-reader-stage");
+    const band=shell?.querySelector("[data-ao-live-band]");
+    const stage=shell?.querySelector(".ao-reader-stage");
     const nativeDock=shell?.querySelector(".ao-schola-dock");
     const firstDot=band?.querySelector(".ao-lb-dot");
     const schola=api?.getScholaState?.()??null;
@@ -57,7 +58,8 @@ $1    const stage=shell?.querySelector(".ao-reader-stage");
       laneCount:band?.querySelectorAll("[data-native-lane]")?.length??0,
       independentScholaMarks:0,
       mainPrayer:rect(shell?.querySelector('[data-role="card"]')),
-$1      stage:rect(stage),
+      shell:rect(shell),band:rect(band),
+      stage:rect(stage),
       scholaDock:rect(nativeDock),
       scholaDockInStage:Boolean(nativeDock&&stage?.contains(nativeDock)),
       firstDotUnobstructed:(()=>{
@@ -85,7 +87,8 @@ function verify(m,{width,height,name},label){
   assert.equal(m.wheelCount,m.nativeCardCount,name+" "+label+" wheel does not reflect native source cuts");
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
-$1  assert.equal(m.scholaDockInStage,true,name+" "+label+" Schola dock escaped the prayer stage");
+  assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
+  assert.equal(m.scholaDockInStage,true,name+" "+label+" Schola dock escaped the prayer stage");
   assert.equal(m.firstDotUnobstructed,true,name+" "+label+" sanctuary selector intercepted; dock="+JSON.stringify(m.scholaDock));
   if(m.scholaDock?.h>0)
     assert.ok(m.scholaDock.y>=m.stage.y-2,
