@@ -72,7 +72,7 @@ assert.ok(registry.researchedColourSourcePhotographsNonpublic.every(x=>x.sourceI
 assert.ok(registry.separatelyUserApprovedPrayerPaintingsOnPR2532.every(x=>x.ownerApprovedWorkOnly===true&&x.noPlacementApprovalDerivedFromThisLedger===true));
 
 // Distinguish title-only leads from approved exact originals; preserve true historical scope.
-assert.equal(registry.calendarDates.filter(x=>x.draftResearchOnly).length,306);
+assert.equal(registry.calendarDates.filter(x=>x.draftResearchOnly).length,311);
 assert.equal(registry.calendarDates.filter(x=>x.nextProductionAction==="RELEASE_EXISTING_FROZEN_CLASS_I_SELECTION").length,29);
 assert.equal(registry.calendarDates.filter(x=>x.nextProductionAction==="VERIFY_EXISTING_SEASONAL_CONTEXTUAL_RENDER").length,105);
 assert.equal(registry.calendarDates.filter(x=>x.nextProductionAction==="CLASS_II_DRAFT_SELECTION_VALIDATE_AND_RELEASE").length,75);
