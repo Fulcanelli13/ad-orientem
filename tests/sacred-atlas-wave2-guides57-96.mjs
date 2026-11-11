@@ -47,7 +47,7 @@ for(let i=0;i<guides.length;i++){
   assert.equal(guide.state,"BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED");
   assert.equal(guide.image_policy,"APPROVED_CANONICAL_PLACE_MEDIA_ONLY");
   assert.equal(guide.source_evidence_scope,
-    guide.draft_order<=66?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
+    guide.draft_order<=76?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
     "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
   assert.equal(guide.sections.length,3);
   assert.equal(new Set(guide.sections.map(s=>s.id)).size,3);
