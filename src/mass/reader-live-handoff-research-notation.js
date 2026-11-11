@@ -277,13 +277,51 @@ export function installLiveHandoffResearchNotation({
        explanation.textContent="Original 1961 printed "+original.printedPages.join(", ")+
          " · whole folio, including other chants. Source comparison only; no musical approval.";
        printed.append(explanation);
+       const scanStatus=document.createElement("p");
+       scanStatus.dataset.aoReferencePrintStatus="loading";
+       scanStatus.setAttribute("role","status");
+       scanStatus.textContent="Loading original 1961 printed folio. Direct source links remain available below.";
+       printed.append(scanStatus);
+       const scans=original.originalPageImages.map(()=>false);
+       const failed=new Set();
+       const updateScanStatus=()=>{
+         if(!dialog.isConnected)return;
+         const loaded=scans.filter(Boolean).length;
+         if(loaded===scans.length){
+           scanStatus.dataset.aoReferencePrintStatus="loaded";
+           scanStatus.textContent="Original 1961 printed folio loaded from the source.";
+         }else if(loaded+failed.size===scans.length){
+           scanStatus.dataset.aoReferencePrintStatus=loaded?"partial":"unavailable";
+           scanStatus.textContent=loaded
+             ?"Some original pages could not be displayed here. Use their direct source links below."
+             :"The original page images could not be displayed here. Open the original edition or individual source pages below.";
+         }else{
+           scanStatus.dataset.aoReferencePrintStatus="loading";
+           scanStatus.textContent="Loading original 1961 printed folio. Direct source links remain available below.";
+         }
+       };
        original.originalPageImages.forEach((url,index)=>{
+         const printedPage=original.printedPages[index]??original.printedPages.at(-1);
          const image=document.createElement("img");
-         image.alt=original.title+" · original printed folio "+
-           (original.printedPages[index]??original.printedPages.at(-1));
-         image.loading="lazy";image.decoding="async";image.src=url;
+         image.alt=original.title+" · original printed folio "+printedPage;
+         image.loading="eager";image.decoding="async";
          image.dataset.aoReferencePrintImage=String(index);
-         printed.append(image);
+         image.hidden=true;
+         const link=document.createElement("a");
+         link.href=url;link.target="_blank";link.rel="noopener noreferrer";
+         link.dataset.aoReferencePrintPageLink=String(index);
+         link.textContent="Open original 1961 printed folio "+printedPage;
+         image.addEventListener("load",()=>{
+           if(image.naturalWidth>0){
+             scans[index]=true;image.hidden=false;
+           }else failed.add(index);
+           updateScanStatus();
+         },{once:true});
+         image.addEventListener("error",()=>{
+           image.hidden=true;failed.add(index);updateScanStatus();
+         },{once:true});
+         printed.append(image,link);
+         image.src=url;
        });
        const pdf=document.createElement("a");
        pdf.href=original.originalEditionPdf;
