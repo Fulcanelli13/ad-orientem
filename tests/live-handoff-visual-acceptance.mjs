@@ -321,7 +321,12 @@ try{
         const originalUrls=[...printed.querySelectorAll("img")].map(i=>i.getAttribute("src"));
         const staff=modal.querySelector("[data-ao-reference-full-staff]");
         return {displayed:!printed.hidden,staffHidden:staff.hidden,originalUrls,
-          pdf:printed.querySelector("a")?.getAttribute("href"),
+          originalPageLinks:[...printed.querySelectorAll("[data-ao-reference-print-page-link]")]
+            .map(link=>link.getAttribute("href")),
+          scanStatus:printed.querySelector("[data-ao-reference-print-status]")
+            ?.dataset.aoReferencePrintStatus,
+          loadingCopy:printed.querySelector("[role='status']")?.textContent?.trim(),
+          pdf:printed.querySelector("a[href*='kyriale-solesmes.pdf']")?.getAttribute("href"),
           screenWidth:document.documentElement.scrollWidth,
           retainedScholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
       });
@@ -331,6 +336,10 @@ try{
         "https://gregobase.selapa.net/sources/2/915.png",
         "https://gregobase.selapa.net/sources/2/916.png"
       ]);
+      assert.deepEqual(originalKyrie.originalPageLinks,originalKyrie.originalUrls);
+      assert.ok(originalKyrie.loadingCopy?.length>15,
+        option.name+" original score has no loading/failure explanation");
+      assert.ok(["loading","loaded","partial","unavailable"].includes(originalKyrie.scanStatus));
       assert.match(originalKyrie.pdf||"",/#page=40$/);
       assert.equal(originalKyrie.retainedScholaIndex,before.scholaIndex);
       assert.ok(originalKyrie.screenWidth<=option.width+2,
