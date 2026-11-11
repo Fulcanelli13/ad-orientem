@@ -23,6 +23,42 @@ distinct sites have existing source-ID exact ministry links for the 1,418
 FSSP, ICKSP, SSPX, IBP and AASJMV CL27 records. These links do not certify
 the current Mass or whole-building ownership.
 
+## First-party exact-site witness upgrades (11 November)
+
+After the baseline census, a separate source-exact witness overlay resolves
+**26 formerly unresolved venues** without changing a CL2 anchor or treating an
+organiser as a property owner:
+
+| Venue category | Added | Current category total |
+| --- | ---: | ---: |
+| Diocesan / parish context | 20 | 653 |
+| Religious house | 2 | 99 |
+| Mixed / hosted venue | 4 | 18 |
+
+The remaining operator/category hold count is **393**, consisting of 319
+unresolved and 74 directory-only associations. Overall **2,187 / 2,580**
+venues now have a positive source-reported or separately verified category,
+including 26 individually validated first-party cases.
+
+The witnesses deliberately include mixed examples:
+
+- St Aloysius Parish in Thorold: a parish in the diocese served by FSSP
+  priests, without declaring the whole building FSSP-owned.
+- St Paul's College Chapel, Hikurangi's Holy Name of Mary and Lawson's Our
+  Lady of the Nativity: FSSP official listing proves a hosted ministry, not
+  venue title or the Missal at every other celebration.
+- Silverstream Priory and Notre Dame Priory, Colebrook: Benedictine houses.
+- Holy Family, Toronto: parish administered by Oratorians, not a blanket
+  Roman/1962 assertion.
+- Westminster Cathedral: unequivocal diocesan cathedral. The current use
+  of the word *Latin* is not accepted as a 1962 Missal certification.
+
+Each upgraded row preserves its original source-affiliation text, exact CL2
+anchor and source ID, and cites the individual first-party identity page.
+`src/find/tlm-exact-venue-categories.js` applies the 26-item witness overlay
+only after the baseline category matrix. Neither the album/photograph nor
+institute emblem nor liturgical books are changed in this pass.
+
 ## Major outstanding holds
 
 - 209 Latin Mass Society discovery rows labelled unverified operator.
