@@ -231,6 +231,23 @@ try{
     });
     try{
       await enterNativeMass(page,c);
+      // Browser-WebCrypto is the final fail-closed check before any
+      // approved score is painted. Exercise already approved Ite VIII bytes
+      // without adding a new Schola publication or calling audio detection.
+      const scoreIntegrity=await page.evaluate(async()=>{
+        const {verifyApprovedScholaGabc}=await import(
+          "/src/mass/reader-schola-score-integrity.js");
+        const {APPROVED_MASS_INLINE_GABC}=await import(
+          "/src/mass/reader-inline-chant-approved.js");
+        return await Promise.all(APPROVED_MASS_INLINE_GABC.map(row=>
+          verifyApprovedScholaGabc({...row,score_status:"approved"},{
+            cryptoImpl:window.crypto
+          })));
+      });
+      assert.equal(scoreIntegrity.length,2,"Existing approved Ite VIII records absent");
+      assert.equal(scoreIntegrity.every(x=>x.valid===true),true,
+        "Browser failed actual GABC cryptographic source check");
+      c.steps.push({name:"browser-crypto-approved-source-integrity",proofs:scoreIntegrity});
       const musicAccess=page.locator(".ao-claude-music-access");
       if(c.form!=="LOW"){
         await musicAccess.waitFor({state:"visible",timeout:10000});
