@@ -100,13 +100,13 @@ export function createScholaFollowClock({
   onStep(Object.freeze({index,count,origin:"estimated"}));arm();
   return true;
  }
- function seek(next){
+ function seek(next,origin="manual"){
   if(destroyed||count<1)return false;
   const n=Number(next);
   if(!Number.isFinite(n))return false;
   index=Math.max(minimum,Math.min(count-1,Math.floor(n)));
   running=!paused&&index<count-1;
-  onStep(Object.freeze({index,count,origin:"manual"}));arm();
+  onStep(Object.freeze({index,count,origin}));arm();
   return true;
  }
  function shift(delta){return seek(index+Number(delta||0));}
@@ -281,7 +281,8 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
   strip.replaceChildren();strip.hidden=true;
  }
  return Object.freeze({
-  start,destroy,seek:index=>clock.seek(index),shift:by=>clock.shift(by),
+  start,destroy,seek:index=>clock.seek(index),
+  followReader:index=>clock.seek(index,"reader-scroll"),shift:by=>clock.shift(by),
   pause:()=>clock.pause(),resume:()=>clock.resume(),
   getState:()=>Object.freeze({...clock.getState(),syllables:parts.length,
    mapped:targets.length===sourceParts.length&&sourceParts.length>0,
