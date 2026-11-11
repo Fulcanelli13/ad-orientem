@@ -17,7 +17,8 @@ export function scholaGabcSyllables(gabc){
  for(const match of body.matchAll(re)){
   // Each GABC lyric syllable precedes the neume group attached to it.
   // Clefs, barlines and spacing commands have no lexical syllable.
-  const raw=match[1].replace(MARKUP,"").replace(/[{}~*]/g,"").trim();
+  const raw=match[1].replace(/<i>[\s\S]*?<\/i>/gi,"")
+   .replace(MARKUP,"").replace(/[{}~*]/g,"").trim();
   if(!LETTER.test(raw))continue;
   const label=raw.replace(/[-_]+$/,"").trim();
   if(!label||!LETTER.test(label))continue;
@@ -27,16 +28,57 @@ export function scholaGabcSyllables(gabc){
  return Object.freeze(items);
 }
 
+/** Source-specified Kyrie repetitions, not added pitches. A complete
+ * ninefold performance must be written as 3 Kyrie, 3 Christe, 3 Kyrie by
+ * the explicit "iij"/"ij" print cues. Unknown notation returns ORIGINAL
+ * syllables: no guessed repeat count or editorial melody substitution. */
+export function scholaKyrieSourceOccurrences(gabc){
+ const source=scholaGabcSyllables(gabc);
+ const body=String(gabc??"").split("%%")[1]??"";
+ if(!source.length||!body.includes("<i>"))return source;
+ const chunks=body.split("(::)").filter(chunk=>/\p{L}/u.test(chunk.replace(/<[^>]*>/g,"")));
+ const phrases=[];let sourceCursor=0,hasRepeats=false;
+ for(const chunk of chunks){
+  const local=scholaGabcSyllables("name: Kyrie source span;\n%%\n"+chunk+"(::)");
+  if(!local.length)continue;
+  const markers=[...chunk.matchAll(/<i>\s*([^<]+)<\/i>/giu)].map(m=>m[1].trim().toLowerCase());
+  let copies=1;
+  if(markers.length){
+   if(markers.length!==1)return source;
+   const directive=markers[0].replace(/[.\s]/g,"");
+   if(!["ij","iij"].includes(directive))return source;
+   copies=directive==="iij"?3:2;
+   hasRepeats=true;
+  }
+  const title=local.map(s=>s.identity).join("");
+  if(!["kyrieeleison","christeeleison"].includes(title))return source;
+  phrases.push({local,copies,sourceCursor,title});
+  sourceCursor+=local.length;
+ }
+ if(!hasRepeats||sourceCursor!==source.length)return source;
+ const labels=phrases.flatMap(p=>Array(p.copies).fill(p.title));
+ if(labels.length!==9||
+    !labels.slice(0,3).every(x=>x==="kyrieeleison")||
+    !labels.slice(3,6).every(x=>x==="christeeleison")||
+    !labels.slice(6).every(x=>x==="kyrieeleison"))return source;
+ const performed=[];
+ for(const phrase of phrases)for(let pass=0;pass<phrase.copies;pass++)
+  for(const token of phrase.local)
+   performed.push(Object.freeze({...token,index:performed.length,
+    sourceIndex:phrase.sourceCursor+token.index,repeatPass:pass+1}));
+ return Object.freeze(performed);
+}
+
 // Musical durations are unobserved. This deterministic visual cadence is
 // approximate and can be corrected by touch at any syllable.
 export function createScholaFollowClock({
- stepMs=1600,schedule=globalThis.setTimeout,cancel=globalThis.clearTimeout,
+ stepMs=1600,autoplay=true,schedule=globalThis.setTimeout,cancel=globalThis.clearTimeout,
  onStep=()=>{}
 }={}){
  if(typeof schedule!=="function"||typeof cancel!=="function")
   throw new TypeError("Timers required");
  const duration=Math.max(500,Math.min(9000,Number(stepMs)||1600));
- let count=0,index=0,running=false,timer=null,destroyed=false;
+ let count=0,index=0,minimum=0,running=false,paused=false,timer=null,destroyed=false;
  const release=()=>{if(timer!==null){cancel(timer);timer=null;}};
  function tick(){
   timer=null;
@@ -48,28 +90,34 @@ export function createScholaFollowClock({
   else running=false; // last lyric does NOT mean singing has ended
  }
  function arm(){release();if(running&&index<count-1)timer=schedule(tick,duration);}
- function start(total){
+ function start(total,{index:initialIndex=0,minimumIndex=0}={}){
   release();if(destroyed)return false;
-  count=Math.floor(Number(total)||0);index=0;
+  count=Math.floor(Number(total)||0);paused=false;
   if(count<1||count>600){count=0;running=false;return false;}
-  running=count>1;
-  onStep(Object.freeze({index,count,origin:"estimated"}));arm();
+  minimum=Math.max(0,Math.min(count-1,Math.floor(Number(minimumIndex)||0)));
+  index=Math.max(minimum,Math.min(count-1,Math.floor(Number(initialIndex)||0)));
+  running=autoplay&&index<count-1;
+  onStep(Object.freeze({index,count,origin:autoplay?"estimated":"initial"}));arm();
   return true;
  }
- function seek(next){
+ function seek(next,origin="manual"){
   if(destroyed||count<1)return false;
   const n=Number(next);
   if(!Number.isFinite(n))return false;
-  index=Math.max(0,Math.min(count-1,Math.floor(n)));
-  running=index<count-1;
-  onStep(Object.freeze({index,count,origin:"manual"}));arm();
+  index=Math.max(minimum,Math.min(count-1,Math.floor(n)));
+  running=autoplay&&!paused&&index<count-1;
+  onStep(Object.freeze({index,count,origin}));arm();
   return true;
  }
  function shift(delta){return seek(index+Number(delta||0));}
- function destroy(){release();running=false;count=0;destroyed=true;}
+ function pause(){if(destroyed||count<1)return false;
+  paused=true;running=false;release();return true;}
+ function resume(){if(destroyed||count<1)return false;
+  paused=false;running=autoplay&&index<count-1;arm();return true;}
+ function destroy(){release();running=false;paused=false;count=0;minimum=0;destroyed=true;}
  return Object.freeze({
-  start,seek,shift,destroy,
-  getState:()=>Object.freeze({index,count,running,pending:timer!==null,destroyed})
+  start,seek,shift,pause,resume,destroy,
+  getState:()=>Object.freeze({index,count,minimum,running,paused,pending:timer!==null,destroyed})
  });
 }
 
@@ -108,12 +156,12 @@ export function mapScholaSvgLyrics(svg,syllables){
 }
 
 export function createScholaNotationFollower({staff,strip,document=staff?.ownerDocument,
- window=document?.defaultView,stepMs=1600}={}){
+ window=document?.defaultView,stepMs=1600,autoplay=true,onPosition=()=>{},trackId=null}={}){
  if(!staff?.addEventListener||!strip?.replaceChildren||!document?.createElement)
   throw new TypeError("Schola staff, syllable strip and document required");
- let parts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
+ let parts=[],sourceParts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
  const clock=createScholaFollowClock({
-  stepMs,
+  stepMs,autoplay,
   schedule:window?.setTimeout?.bind(window)??globalThis.setTimeout,
   cancel:window?.clearTimeout?.bind(window)??globalThis.clearTimeout,
   onStep:({index,origin})=>{
@@ -125,16 +173,28 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
     if(i===index)buttons[i].setAttribute("aria-current","true");
     else buttons[i].removeAttribute("aria-current");
    }
-   for(let i=0;i<targets.length;i++)targets[i].dataset.scholaFollowActive=String(i===index);
+   const sourceIndex=parts[index]?.sourceIndex??index;
+   for(let i=0;i<targets.length;i++)targets[i].dataset.scholaFollowActive=String(i===sourceIndex);
    const button=buttons[index];
    if(button)strip.scrollLeft=Math.max(0,button.offsetLeft-
      (strip.clientWidth-button.offsetWidth)/2);
-   const node=targets[index];
+   const node=targets[sourceIndex];
    if(node?.getBoundingClientRect){
     const position=node.getBoundingClientRect(),parent=staff.getBoundingClientRect();
-    staff.scrollTop+=position.top-parent.top-(staff.clientHeight-position.height)/2;
+    // Scroll REAL neumes horizontally, not just the lyric-strip buttons.
+    // Vertical movement is only the necessary system transition within the
+    // authentic Exsurge engraving of a long Gloria or Credo.
+    staff.scrollLeft+=position.left-parent.left-
+      (staff.clientWidth-position.width)/2;
+    staff.scrollTop+=position.top-parent.top-
+      (staff.clientHeight-position.height)/2;
    }
    staff.dataset.scholaFollowIndex=String(index);
+   // The Schola position is authoritative for linked visual surfaces.
+   // The Mass text synchronizer receives this same syllable index, never
+   // a second timer or an inferred priest cue.
+   try{onPosition(Object.freeze({index,count:parts.length,origin,
+     sourceIndex,lyricsMapped:targets.length===sourceParts.length}))}catch{}
   }
  });
  function click(event){
@@ -166,31 +226,51 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    const d=(x-event.clientX)**2+(y-event.clientY)**2;
    if(d<distance){distance=d;winner=i;}
   });
-  if(winner>=0)clock.seek(winner);
+  if(winner>=0){
+   // A repeated Kyrie printed phrase has several performed occurrences but
+   // one original neume group. A staff tap stays in the closest occurrence;
+   // it must not jump back to the first Kyrie solely because the note is reused.
+   const activeIndex=clock.getState().index;
+   const options=parts.filter(part=>(part.sourceIndex??part.index)===winner);
+   if(options.length){
+    options.sort((a,b)=>Math.abs(a.index-activeIndex)-Math.abs(b.index-activeIndex));
+    clock.seek(options[0].index);
+   }
+  }
  }
  const pointCancel=()=>{startPoint=null;};
  strip.addEventListener("click",click);
  staff.addEventListener("pointerdown",pointDown);
  staff.addEventListener("pointerup",pointUp);
  staff.addEventListener("pointercancel",pointCancel);
- function start(gabc){
+ function start(gabc,{minimumIndex=0,initialIndex=minimumIndex}={}){
   if(destroyed)return false;
-  parts=scholaGabcSyllables(gabc);buttons=[];targets=[];strip.replaceChildren();
+  sourceParts=scholaGabcSyllables(gabc);
+  parts=trackId==="KYRIE"?scholaKyrieSourceOccurrences(gabc):sourceParts;
+  buttons=[];targets=[];strip.replaceChildren();
   if(!parts.length){strip.hidden=true;return false;}
   const frag=document.createDocumentFragment();
   for(const part of parts){
    const node=document.createElement("button");
    node.type="button";node.dataset.scholaSyllableIndex=String(part.index);
    node.className="ao-schola-follow-syllable";
+   node.hidden=part.index<minimumIndex;
    node.textContent=part.label;
    node.setAttribute("aria-label","Resynchronise expected chant at syllable "+
     (part.index+1)+" of "+parts.length+": "+part.label);
    buttons.push(node);frag.append(node);
   }
   strip.append(frag);strip.hidden=false;
-  targets=mapScholaSvgLyrics(staff.querySelector("svg"),parts);
-  staff.dataset.scholaLyricsMapped=String(targets.length===parts.length);
-  return clock.start(parts.length);
+  targets=mapScholaSvgLyrics(staff.querySelector("svg"),sourceParts);
+  const exact=targets.length===sourceParts.length;
+  staff.dataset.scholaLyricsMapped=String(exact);
+  if(!exact){
+   // A visually rendered SVG with incomplete source-to-lyric alignment
+   // is not a synchronized score. Never drive the reader by guesswork.
+   strip.replaceChildren();strip.hidden=true;buttons=[];
+   return false;
+  }
+  return clock.start(parts.length,{index:initialIndex,minimumIndex});
  }
  function destroy(){
   if(destroyed)return;destroyed=true;clock.destroy();
@@ -201,8 +281,11 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
   strip.replaceChildren();strip.hidden=true;
  }
  return Object.freeze({
-  start,destroy,seek:index=>clock.seek(index),shift:by=>clock.shift(by),
+  start,destroy,seek:index=>clock.seek(index),
+  followReader:index=>clock.seek(index,"reader-scroll"),shift:by=>clock.shift(by),
+  pause:()=>clock.pause(),resume:()=>clock.resume(),
   getState:()=>Object.freeze({...clock.getState(),syllables:parts.length,
-   mapped:targets.length===parts.length&&parts.length>0,active})
+   mapped:targets.length===sourceParts.length&&sourceParts.length>0,
+   sourceSyllables:sourceParts.length,active})
  });
 }
