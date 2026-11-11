@@ -78,7 +78,7 @@ test("sanctuary declines unsupported faithful posture instead of inventing stand
    "No posture profile may produce kneeling/sitting silhouettes");
  // There are three source-designed choir members, but the faithful row is
  // separate: no source posture means no fictional row of standing laity.
- assert.equal((unknown.match(/class="ppl">([^<]|<[^>]*>)*<\/g)||[]).length,0);
+ assert.match(unknown,/<g class="ppl"><\/g);
  assert.ok(stand.length>unknown.length);
  const unsupported=renderClaudeNativeSanctuary(scene({
    faithful:{posture:"UNCONFIRMED"}
