@@ -85,9 +85,15 @@ const poondiFake={...fake,place_id:poondi.place_id,revision:sacredGuideRevision(
 assert.equal(reviewedSacredGuideForReader(poondi,byPlace.get(poondi.place_id),sources,poondiFake),null,
  "Mapcarta locator must not be accepted as sentence-by-sentence historical evidence");
 
-// Public loader must remain restricted to six published guide banks; drafts are
+// Public loader may only load six existing banks and the separate approved-only bank; drafts are
 // never fetched in the background or included just because they were authored.
 const dataService=readFileSync(new URL("../src/find/explore-data-service.js",import.meta.url),"utf8");
+const approvedBank=read("data/shrines/illustrated-place-guides-reviewed-bilingual.v1.json");
+const reviewDecisions=read("data/shrines/research/sacred-atlas-bilingual-guide-editorial-decisions.v1.json");
+assert.deepEqual(approvedBank.guides,[],"No public stories before substantive release review");
+assert.deepEqual(reviewDecisions.reviews,[],"No synthetic approvals may persist");
+assert.match(dataService,/illustratedReviewedBilingual:moduleUrl/);
+assert.match(dataService,/fetchJson\(EXPLORE_DATA_URLS\.illustratedReviewedBilingual/);
 assert.doesNotMatch(dataService,/sacred-atlas-wave[12]-/);
 assert.match(dataService,/filter\(row=>row\?\.publication==="PUBLISHED"\)/);
 console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2 source checks;"+
