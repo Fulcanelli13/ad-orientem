@@ -178,7 +178,10 @@ const SHELL_STYLE = `
 .ao-schola-score-dialog [data-ao-reference-print-toggle][aria-pressed="true"]{border-color:#d5b675;color:#f2d898}
 .ao-schola-score-dialog [data-ao-reference-print-view][hidden],.ao-schola-score-dialog [data-ao-reference-full-staff][hidden]{display:none!important}
 .ao-schola-score-dialog [data-ao-reference-print-view] img{display:block;width:720px;max-width:none;height:auto;margin:10px 0 18px;background:#f7f7f7}
+.ao-schola-score-dialog [data-ao-reference-print-view] img[hidden]{display:none!important}
 .ao-schola-score-dialog [data-ao-reference-print-view] p{margin:8px 0;color:#d7d0ba;max-width:760px;white-space:normal}
+.ao-schola-score-dialog [data-ao-reference-print-status="unavailable"]{color:#f0d09b}
+.ao-schola-score-dialog [data-ao-reference-print-view] [data-ao-reference-print-page-link]{display:block;width:max-content;max-width:100%;margin:4px 0 12px}
 .ao-schola-score-dialog [data-ao-reference-print-view] a{margin:6px 0 20px}
 .ao-schola-score-dialog p{margin:7px 16px;color:#b1c0b2;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-dialog .ao-schola-score-viewport{box-sizing:border-box;max-height:calc(90dvh - 140px);overflow:auto;min-height:180px;width:100%;padding:14px 12px;color:#f0e0c0}
