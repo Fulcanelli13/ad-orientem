@@ -240,6 +240,52 @@ try{
         await musicMenu.locator('[data-schola-event-select="KYRIE"]').click();
         await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW
           ?.getScholaState?.()?.trackId==="KYRIE",null,{timeout:10000});
+        // Real H7 entry: pick a source-indexed Kyriale setting in the EXISTING
+        // parish programme, then manually request its historical reference.
+        // No synthetic score injection or automatic promotion is permitted.
+        const beforeReference=await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW
+          ?.getScholaState?.()?.index??null);
+        await page.evaluate(()=>{
+          const select=document.querySelector(
+            '#ao-r17-native-reader-preview [data-schola-kyriale-choice="KYRIE"]');
+          if(!select)throw new Error("Native Kyriale selection missing");
+          select.value="MASS_11";
+          select.dispatchEvent(new Event("change",{bubbles:true}));
+        });
+        const refTrigger=page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-trigger]");
+        await refTrigger.waitFor({state:"visible",timeout:10000});
+        await refTrigger.click();
+        const refSvg=page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-panel] svg");
+        await refSvg.waitFor({state:"visible",timeout:15000});
+        const checkedReference=await page.evaluate(()=>{
+          const shell=document.querySelector("#ao-r17-native-reader-preview");
+          const dock=shell?.querySelector(".ao-schola-dock");
+          const staff=shell?.querySelector("[data-ao-reference-score-staff]");
+          const native=window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.();
+          return {sourceLabel:staff?.getAttribute("aria-label")??null,
+            approvedScore:dock?.dataset.approvedScore??"false",
+            nativeTrack:native?.trackId??null,nativeIndex:native?.index??null,
+            width:document.documentElement.scrollWidth};
+        });
+        assert.match(checkedReference.sourceLabel||"",/Research-only Kyrie XI/);
+        assert.equal(checkedReference.approvedScore,"false",
+          "Research reference was incorrectly marked as an approved LIVE score");
+        assert.equal(checkedReference.nativeTrack,"KYRIE");
+        assert.equal(checkedReference.nativeIndex,beforeReference,
+          "Manually opening notation advanced independent Schola");
+        assert.ok(checkedReference.width<=c.width+2,
+          "Historical reference created page overflow");
+        c.steps.push({name:"actual-native-explicit-kyriale-reference",
+          metrics:checkedReference});
+        await page.screenshot({path:resolve(OUT,c.name+"-native-kyrie-XI-reference.png"),
+          animations:"disabled",fullPage:false});
+        await page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-close]").click();
+        assert.equal(await page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-panel]").isVisible(),false);
+
       }else{
         assert.equal(await musicAccess.isVisible(),false,
           "Low Mass incorrectly presents a Schola chooser");
