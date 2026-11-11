@@ -8,16 +8,16 @@ review, source-to-building match or new affiliation is performed here.
 
 | Site-category visual lane | CL2 sites | Hero treatment |
 | --- | ---: | --- |
-| Diocesan/parish context | 726 | Existing approved, exact-linked church photograph; neutral diocesan church illustration otherwise |
+| Diocesan/parish context | 762 | Existing approved, exact-linked church photograph; neutral diocesan church illustration otherwise |
 | Source-reported institute and religious house | 1,506 | Institution emblem or general order-family arms **only where the actual source category gives that group**; named source identity or neutral illustration if no suitable emblem |
-| Mixed / hosted, lay association, source-unknown and directory-only | 348 | Neutral church/venue illustration; never inherit the host ministry's emblem |
+| Mixed / hosted, lay association, source-unknown and directory-only | 312 | Neutral church/venue illustration; never inherit the host ministry's emblem |
 | **Total** | **2,580** | All retain existing CL2 anchors, source IDs and place/media records |
 
 **Important distinctions**
 
 - Category census coverage is complete as a *visual routing decision*, not
-  as verified association: **2,283** currently have a defensible positive
-  source-context category and **297** remain held (223 unresolved, 74
+  as verified association: **2,325** currently have a defensible positive
+  source-context category and **255** remain held (181 unresolved, 74
   directory-only). Neutral is an intentional correct state, not an
   institute identity waiting to be guessed.
 - An institute may celebrate Mass in a diocesan church without owning it.
@@ -54,7 +54,7 @@ evidence of a diocesan operator.
 
 ## Required acceptance
 
-`tests/tlm-classified-visual-lanes.mjs` guards exactly 726/1,506/348
+`tests/tlm-classified-visual-lanes.mjs` guards exactly 762/1,506/312
 category lanes, the preservation of approved media data, representative
 source-exact FSSP/ICKSP/Benedictine examples, mixed and directory-only
 negative cases, legacy category-free behavior, and consistent outputs
