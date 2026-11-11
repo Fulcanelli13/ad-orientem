@@ -285,6 +285,26 @@ The 20 positions comprise **17** already in the October source archive and **3**
 - **Not complete:** line-by-line reconciliation of the other LMD venue listings, independent church identity/source review, systematic current schedules and full permission/legal screening for any large-scale LMD data import. Historical LMD links are **not** the same as fresh live matches.
 - The website's [terms](https://www.latinmassdir.org/terms-and-conditions/) restrict reproduction, duplication and redistribution. This register stores **only published country-level aggregates, link pointers and our own canonical IDs**. Do not bulk copy the source directory's venue profiles, schedules or photographs or implement a crawler against the site.
 
+## Consolidated worldwide archive disposition — all 1,531 historical entries (11 Nov 2026)
+
+The [canonical consolidated research triage](../../../data/directory/research/lmd-20261111-consolidated-1531-closed-triage.v1.json) is now the **single, exhaustive historic-archive review surface**. It assigns one explicit, QA-checked disposition to **each of 1,531** distinct venue-source identities from the **9 October 2026** internal LMD archive, without re-fetching or reproducing LMD venue text or schedules. It combines existing CL2 provenance, the initial name/locality screens, institutional URLs, later owner checks, all 16 multiple-match resolutions, the 256 one-candidate outstanding cases, the 821 name-mismatch cases, and the 20 zero-country triages.
+
+**The entire remaining 1,077-record backlog has been *classified* in this single consolidation**, rather than left in small batches. This does *not* mean 1,077 owners have verified each site. Specifically:
+
+| Previously outstanding category | All records dispositioned | Meaning |
+|---|---:|---|
+| V2 single-site leads lacking owner corroboration | **256/256** | Still **256 owner-evidence holds**; CL2 source-link readiness already separated into 215 external candidates, 21 directory-only, 18 AO-only, 2 no retained URLs |
+| V2 no strong name/locality match | **821/821** | **126** have internal title+locality lead from wider index scan, **104** title-only lead, **54** homonymous/multiple-site hold, **514** no defensible CL2 internal lead; **23** have institutionally/owner-based evidence or country gap dispositions superseding initial text-only status |
+| **Total backlog given a disposition** | **1,077/1,077** | **0 forced matches, 0 auto-approved new sites or schedules** |
+
+**Full 1,531 archive**: the source buckets reconcile exactly to 118 historically direct provenance links, 282 first-pass textual co-location leads, 13 archived original institutional-URL cases, 281 later single textual candidates, 16 competing textual cases, and 821 later no-strong-textual cases. These are mutually exclusive *baseline groups* summing to **1,531**. Every row has its original source ID and one final review disposition, with no mass/schedule import approval. The **1,570 current country-reported positions** are a *different scope/date*, not a row-level census of the October 1,531 archive.
+
+**Eight independently supported new-physical-site Excel candidates** are explicitly marked, **not created**: St Mary of the Angels Chapel (Winona MN); Christ the King Church (8510 Wornall Rd, Kansas City MO); Cor Jesu Oratory (Boyd WI, 1962 rite unconfirmed); Sacred Heart (Copenhagen DK); St Mary's (Helsinki FI); Jesuits' Church (Valletta MT); San José Parish (Guaynabo PR); and San Martín de Porres Parish (Arecibo PR). The exact existing Excel master, building identity, classification, institute/diocese and duplicate rules remain mandatory. A further **eight source-identified institutions retain older-rite evidence holds**, and additional items have historic-schedule or building-identity holds; these are **not** approved Mass venues from the archive alone.
+
+This completes **finite internal archive-level triage**, not complete independent verification of every 2026 venue or reconciliation of the *live* LMD provider's currently reported 1,570 positions. The other source's independent scope may exclude SSPX, and its omissions are not grounds for removing our existing sites.
+
+**QA invariants** reported by the consolidated file: 1,531 unique source IDs; exact 1,531 resolution total; 118 historical direct-provenance matches; 282 original textual leads; 13 owner-URL source cases; 281 later singles; 16 later multiples; 821 later no-strong-textual; all 256/821 examined; all 20 zero-country cases represented; 2,580 existing canonical physical sites preserved; 0 approved additions; 0 automatic merges; 0 times imported. Work stops at source evidence holds rather than inventing certification for them.
+
 ## Finite closure criterion
 A *complete LMD comparison* means every legally accessible current LMD venue candidate can be mapped to one unique CL2 ID, a genuinely proposed new physical site, an explained scope exclusion or a precisely named evidence hold — **without inventing unresolved truths**. The existing 2,583 cards remain production-accepted regardless of these holds. This document is the first bounded country census, **not** the finished worldwide row-level audit.
 
