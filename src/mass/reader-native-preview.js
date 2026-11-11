@@ -63,6 +63,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { buildOrdinaryScholaCardFollowMap } from "./reader-schola-card-follow.js";
 import {scholaTextExceptionForCue,scholaEventVisibleInMusicMenu,scholaMusicMenuLabel} from "./reader-schola-text-cue-policy.js";
 import { createComposedScholaTextController } from "./reader-composed-schola-text.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
@@ -1428,6 +1429,7 @@ export async function mountNativeReaderPreview({
   let activeCueId=null;
   let modeSwitchCueLock=null;
   let scholaPinnedByCatchup=false;
+  let linkedScholaCardCache=null;
   let selectedScholaEvent=null;
   // Per-Mass volatile observations; never inherit them from parish profiles,
   // earlier Masses, source cues, an animation timer or priest-card movement.
@@ -2809,7 +2811,7 @@ export async function mountNativeReaderPreview({
     return state;
   }
 
-  function showCard(card,{directJump=false,preserveSchola=false}={}){
+  function showCard(card,{directJump=false,preserveSchola=false,scholaVisualFollow=false}={}){
     if(!card) return null;
     postLowMassLeonineOpened=false;
     root.dataset.r17PostMass="";
@@ -2847,7 +2849,7 @@ export async function mountNativeReaderPreview({
     if(changed){
       modeSwitchCueLock=null;
       enteredCanonicalCueSequence=true;
-      observedPriestEvent=null;
+      if(!scholaVisualFollow)observedPriestEvent=null;
       activeCueId=null;
       clearEventCinematic({resetCue:true});
       transientGuard.begin();
@@ -3241,6 +3243,43 @@ export async function mountNativeReaderPreview({
       const value=composedScholaText.next(native,workId,prepared.readerPreferences?.language??"en")
         ??ready.scholaState.next();
       queue();return value;
+    },
+    onScholaLinkedSyllable:({trackId,index,gabc,fromCardId})=>{
+      // Source-exact visual page turning only for the existing Ordinary
+      // presentation. No claimed audio, no inference from priest scroll,
+      // no change to the active choir phrase or observed priest event.
+      if(!["KYRIE","GLORIA","CREDO"].includes(trackId)||
+         String(readerModel?.presentationMode??"").toUpperCase()!=="LIVE"||
+         scholaPinnedByCatchup||!current||current.sectionId!==fromCardId||
+         ready.scholaState.project()?.trackId!==trackId)return false;
+      const sourceSection=current.sourceSectionId??current.sectionId;
+      if(!linkedScholaCardCache||
+         linkedScholaCardCache.gabc!==gabc||
+         linkedScholaCardCache.trackId!==trackId||
+         linkedScholaCardCache.cards!==readerModel.cards){
+        linkedScholaCardCache={
+          gabc,trackId,cards:readerModel.cards,
+          map:buildOrdinaryScholaCardFollowMap({
+            gabc,trackId,cards:readerModel.cards
+          })
+        };
+      }
+      const mapping=linkedScholaCardCache.map;
+      if(!mapping.supported)return false;
+      const target=mapping.cardForIndex(index);
+      if(!target||!visibleCardAllowed(target)||
+         target.sectionId===current.sectionId||
+         (target.sourceSectionId??target.sectionId)!==sourceSection)
+        return false;
+      const before=ready.scholaState.project();
+      showCard(target,{
+        directJump:true,preserveSchola:true,scholaVisualFollow:true
+      });
+      const after=ready.scholaState.project();
+      if(after.trackId!==before.trackId||after.index!==before.index||
+         after.complete!==before.complete)
+        throw new Error("SCHOLA_VISUAL_CARD_CHANGE_MUTATED_CHOIR_CLOCK");
+      return true;
     },
     onScholaRelease:()=>{
       // The printed Benedictus appears before the Canon. The *sung* second
