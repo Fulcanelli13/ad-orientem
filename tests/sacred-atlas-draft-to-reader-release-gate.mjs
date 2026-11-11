@@ -18,6 +18,13 @@ const seed=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const canonicalSources=read("data/shrines/source-registry.v1.json").sources;
 const researchSupplement=read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json");
 const dateReconciliation=read("data/shrines/research/sacred-atlas-source-date-reconciliation-20261111.v1.json");
+const claimResearchLedger=read("data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
+assert.equal(claimResearchLedger.state,"RESEARCH_ONLY_NO_EDITOR_APPROVAL_NO_RELEASE");
+assert.equal(claimResearchLedger.paragraphs.length,672);
+assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks+claimResearchLedger.summary.onlyCitationScope,672);
+assert.equal(claimResearchLedger.summary.editorialApprovals,0);
+assert.equal(claimResearchLedger.summary.ownerAuthorizations,0);
+assert.ok(claimResearchLedger.paragraphs.every(r=>r.full_paragraph_certified===false&&r.french_second_editor_approved===false&&r.owner_authorized===false&&r.release_state==="HOLD_PENDING_EDITOR_AND_OWNER"));
 assert.equal(dateReconciliation.paragraph_date_evidence.length,48);
 assert.equal(dateReconciliation.summary.original_date_flags,48);
 assert.ok(dateReconciliation.paragraph_date_evidence.every(r=>r.full_paragraph_verified===false&&r.second_editor_approved===false&&r.owner_release_authorized===false));
@@ -271,6 +278,16 @@ console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2
   assert.equal(reviewRows.length,224);
   assert.equal(new Set(reviewRows.map(g=>g.place_id)).size,224);
   assert.equal(reviewRows.reduce((n,g)=>n+g.sections.length,0),672);
+  const researchByKey=new Map(claimResearchLedger.paragraphs.map(r=>[r.place_id+"|"+r.section_id,r]));
+  assert.equal(researchByKey.size,672,"Unique paragraph research records");
+  for(const g of reviewRows)for(const s of g.sections){
+    const r=researchByKey.get(g.place_id+"|"+s.section_id);
+    assert.ok(r,"Missing research register paragraph");
+    assert.equal(r.guide_revision,g.revision);
+    assert.equal(r.source_url,s.source_url);
+    assert.equal(r.priority,s.editorial_review_priority);
+    assert.equal(r.source_id??null,s.source_id??null);
+  }
   assert.deepEqual(matrices.map(m=>m.summary.paragraphs),[168,504]);
   assert.equal(matrices.reduce((n,m)=>n+m.summary.high_priority_paragraphs,0),
     reviewRows.flatMap(g=>g.sections).filter(s=>s.editorial_review_priority==="TARGETED_SOURCE_REVIEW").length,

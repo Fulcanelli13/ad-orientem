@@ -1587,14 +1587,20 @@
       "place_id": "place:CA:martyrs-shrine-midland",
       "draft_order": 64,
       "section_id": "identity",
-      "source_id": "SHR-MARTYRS-MINISTRY",
-      "source_url": "https://martyrs-shrine.com/our-ministry/",
-      "review_type": "EXTERNAL_INSTITUTIONAL_SOURCE_PARAGRAPH_CHECK_20261111",
-      "evidence_status": "INSTITUTIONAL_SEARCH_EXCERPT_SUPPORT_WITH_SOURCE_FETCH_LIMITATION",
-      "source_check_note": "Site claims reviewed against publicly available institution or official organiser pages; reported miracles and legends are explicitly attributed, never authenticated.",
+      "source_id": "AO-ED-MIDLAND-STE-MARIE-20261111",
+      "source_url": "https://hhp.on.ca/digital-tour-of-sainte-marie/",
+      "review_type": "CORRECTED_PRIMARY_SOURCE_DATE_AND_SITE_RECHECK_20261111",
+      "evidence_status": "PRIMARY_HERITAGE_OPERATOR_CORROBORATES_REVISED_1967_DATE",
+      "source_check_note": "Historical first pass superseded after original 1965 date was corrected; heritage operator explicitly states 1967 public opening. Does not certify all claims or French second-editor approval.",
       "english_french_reader_copy_review": "FIRST_PASS_SOURCE_AND_LANGUAGE_CHECK_NOT_SECOND_EDITOR",
       "source_to_claim_second_editor_approved": false,
-      "owner_release_authorized": false
+      "owner_release_authorized": false,
+      "superseded_evidence": {
+        "source_id": "SHR-MARTYRS-MINISTRY",
+        "source_url": "https://martyrs-shrine.com/our-ministry/",
+        "review_type": "EXTERNAL_INSTITUTIONAL_SOURCE_PARAGRAPH_CHECK_20261111",
+        "evidence_status": "INSTITUTIONAL_SEARCH_EXCERPT_SUPPORT_WITH_SOURCE_FETCH_LIMITATION"
+      }
     },
     {
       "place_id": "place:CA:martyrs-shrine-midland",
