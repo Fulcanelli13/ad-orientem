@@ -1,0 +1,543 @@
+{
+  "format": "ad-orientem.did-you-know.batch-A-source-certification-wave-02.v1",
+  "date": "2026-11-11",
+  "stage": "SOURCE_TEXT_EVIDENCE_ONLY_NOT_RELEASE_CERTIFIED",
+  "review_scope": "44 of 63 Batch A not present in prior 19-claim wave",
+  "source_preflight_blob_sha": "f89ce51513d125bf32a45250aad99bd41409c01f",
+  "source_display_blob_sha": "33ed6c6d777defd2913214c69ab7ef70c4a45c24",
+  "previous_wave_blob_sha": "d0e6d9ce4403d52003bd1b8201de63e41a587e04",
+  "counts": {
+    "reviewed_in_wave": 44,
+    "text_supported": 42,
+    "historical_or_corrob": 19,
+    "unesco_index_or_decision": 18,
+    "institutional_web": 5,
+    "held_same_event": 2,
+    "requires_copy_title_correction": 1,
+    "prior_wave_claims": 19,
+    "all_batch_A_claims_research_screened": 63,
+    "uncertified_owner_release_candidates": 63
+  },
+  "clarification": "Historical Weiser evidence is from an accessible OCR HTML transcription of the book or corroborating institutions; the registered 384-page PDF was inaccessible to web screenshot and has not received page-image certification in this wave. UNESCO text was found in indexed UNESCO result/committee decisions, despite main direct URL bot challenges. Citation/source URLs have not received release-browser link QA.",
+  "review_records": [
+    {
+      "id": "DYK-C400-BF-006",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Printed tradition describes 4 December cherry twig placed in water to bloom by Christmas.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Saint Barbara's cherry branches",
+      "registered_source_ids": "WEI58-08-019",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BF-008",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Printed Epiphany section describes announcing Easter and movable feasts on 6 January.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Announcement of Easter on Epiphany",
+      "registered_source_ids": "WEI58-12-005",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BF-014",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://behold.mt/en/the-run-with-the-risen-christ/",
+      "note": "Maltese archdiocesan cultural article documents bearers running with the Risen Christ; competing origin accounts are explicitly uncertain.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Malta's running Easter procession",
+      "registered_source_ids": "WEI58-16-020",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-003",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://www.gutenberg.org/cache/epub/14788/pg14788-images.html",
+      "note": "Weiser Christmas-food text and a public-domain Provençal account substantiate the cross-scored Christmas loaf and one-quarter charity gift.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Provençal Christmas loaf shared with poor",
+      "registered_source_ids": "WEI58-09-006",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-007",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Printed Holy Saturday chapter describes mock burial of herring and żur with suspended fish and shattered pot.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The mock funeral of Lent's herring in Poland",
+      "registered_source_ids": "WEI58-15-038",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-011",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Printed Laetare chapter associates Italian Fontana Sunday with decoration of wells and fountains.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Laetare Sunday fountains decorated with flowers",
+      "registered_source_ids": "WEI58-14-027",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-013",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://www.parrocchiasanlorenzotivoli.it/inchinata/",
+      "note": "Tivoli cathedral parish attests 14 August encounter; Weiser describes the triple ritual bow. Do not infer a universal Assumption practice.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Italian Assumption encounter of Mary and Christ",
+      "registered_source_ids": "WEI58-24-006",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+      "note": "Sassari's guild procession on 14 August to Santa Maria di Betlem is documented; modern candle towers are made of wood, not seven wax candles. Existing EN title is materially false and needs editing.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Seven enormous wax candles for the Assumption in Sardinia",
+      "registered_source_ids": "WEI58-24-007",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-019",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://www.bne.es/es/blog/blog-bne/el-dia-de-la-madre-empezo-celebrarse-en-espana-para-fomentar-en-los-ninos-el-respeto-las-mujeres",
+      "note": "Spain's National Library independently confirms the 8 December practice after Civil War and move to first Sunday in May in 1965.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Spain's former Mother's Day on 8 December",
+      "registered_source_ids": "WEI58-24-025",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-025",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser's Saint Antony passage records a Basque feast-day mountain pilgrimage near Durango to seek a spouse.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Basque pilgrimage to Saint Anthony for marriage",
+      "registered_source_ids": "WEI58-27-025",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BG-029",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser Assumption text connects German-speaking Lady-of-Grain images with the period from 15 August to 15 September.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Our Lady of the Grain robe on summer pilgrimages",
+      "registered_source_ids": "WEI58-24-016",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-C400-BJ-001",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week",
+      "note": "Austrian UNESCO Commission describes wooden Ratschen and children visiting villages with set chants when bells are silent.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Austrian Holy Week wooden ratchets",
+      "registered_source_ids": "WEI58-P197-RATSCHENBUBEN | AT-UNESCO-RATSCHEN-2015",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://www.unesco.at/en/culture/intangible-cultural-heritage/inventory/element/ratschen-during-holy-week"
+    },
+    {
+      "id": "DYK-C400-BJ-002",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "INDEPENDENT_WEB_TEXT_AND_HISTORICAL_PROVENANCE",
+      "supporting_url": "https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860",
+      "note": "Times of Malta records origin in 1784 at St Dominic's and distribution of displayed Last Supper food to poor families.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Valletta's Last Supper charity table",
+      "registered_source_ids": "WEI58-P196-MALTA-LAST-SUPPER | TIMESMALTA-2024-VALLETTA-SUPPER",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://timesofmalta.com/article/last-supper-table-st-dominic-valletta.1089860"
+    },
+    {
+      "id": "DYK-H04-W-A-039",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser identifies Brébeuf's Huron Christmas hymn and adaptation from a sixteenth-century French song.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Brébeuf's Christmas hymn in the Huron language",
+      "registered_source_ids": "WEI58-07-003",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-H04-W-A-068",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser reports pre-Reformation English mince pies made in manger form with Christ Child figure.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "English mince pies shaped like a manger",
+      "registered_source_ids": "WEI58-09-013",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-H04-W-A-096",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser reproduces the fifteenth-century Toul statute describing choirboys and the ceremonial Alleluia coffin.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The ceremonial burial of the Alleluia",
+      "registered_source_ids": "WEI58-13-007",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser records Edward I and 450 decorated eggs distributed to royal household at Easter.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "King Edward I's 450 Easter eggs",
+      "registered_source_ids": "WEI58-17-012",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-H04-W-B-072",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser records Central European Trinity columns associated with deliverance from plague.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Trinity columns raised in thanksgiving",
+      "registered_source_ids": "WEI58-20-010",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-UM01-019",
+      "category": "HISTORICAL_PRINT_OR_CORROBORATION",
+      "method": "WEISER_ACCESSIBLE_OCR_TEXT_NOT_SCAN",
+      "supporting_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+      "note": "Weiser records Mainz 1613 Corpus Christi, hundreds of children depicting angelic choirs and scattering flowers.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_IMAGE_OR_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Nine angelic choirs at Mainz's Corpus Christi",
+      "registered_source_ids": "WEI58-21-015",
+      "registered_source_urls": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf"
+    },
+    {
+      "id": "DYK-CW15-001",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/decisions/4.COM/13.33",
+      "note": "UNESCO 4.COM 13.33 decision documents six Hvar village processions, 25 km route and final sprint.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Hvar's six night processions",
+      "registered_source_ids": "UNESCO-ICH-00242",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/procession-za-krizen-following-the-cross-on-the-island-of-hvar-00242"
+    },
+    {
+      "id": "DYK-CW15-014",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/holy-week-processions-in-mendrisio-01460",
+      "note": "UNESCO nomination description corroborates internally illuminated Mendrisio transparencies, dates and lantern processions.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Illuminated paintings at Mendrisio",
+      "registered_source_ids": "UNESCO-ICH-01460",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/holy-week-processions-in-mendrisio-01460"
+    },
+    {
+      "id": "DYK-CW15-020",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/Decisions/16.COM/8.b.33",
+      "note": "UNESCO decision 16.COM 8.b.33 supports Polish Corpus Christi carpets, 2 km and natural materials.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Two-kilometre Corpus Christi flower carpets",
+      "registered_source_ids": "UNESCO-ICH-01743",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743?RL=01743"
+    },
+    {
+      "id": "DYK-CW15-023",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/dances-and-expressions-associated-with-the-corpus-christi-festivity-01612",
+      "note": "UNESCO Panama Corpus Christi record describes Saint Michael against devil and monstrance procession.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Saint Michael defeats the devil in Panama",
+      "registered_source_ids": "UNESCO-ICH-01612",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/dances-and-expressions-associated-with-the-corpus-christi-festivity-01612"
+    },
+    {
+      "id": "DYK-CW15-026",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/venezuela-s-dancing-devils-of-corpus-christi-00639",
+      "note": "UNESCO Venezuela record mentions devil masks, crosses, scapulars, blessed palms and surrender before Eucharist.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The devils surrender to the Eucharist",
+      "registered_source_ids": "UNESCO-ICH-00639",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/venezuela-s-dancing-devils-of-corpus-christi-00639"
+    },
+    {
+      "id": "DYK-CW15-029",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/hopping-procession-of-echternach-00392",
+      "note": "UNESCO Luxembourg record gives Pentecost Tuesday, Willibrord and documentary evidence from 1100.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Pentecost Tuesday hopping in Luxembourg",
+      "registered_source_ids": "UNESCO-ICH-00392",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/hopping-procession-of-echternach-00392"
+    },
+    {
+      "id": "DYK-CW15-047",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399",
+      "note": "UNESCO Parachicos record details wooden masks, chinchines, patron with guitar and whip and three feast patrons.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Wooden masks of Parachicos",
+      "registered_source_ids": "UNESCO-ICH-00399",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399"
+    },
+    {
+      "id": "DYK-CW15-049",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/representation-of-the-passion-death-and-resurrection-of-christ-in-iztapalapa-02237",
+      "note": "UNESCO Iztapalapa record explicitly cites nineteenth-century cholera thanksgiving vow and 3 May cross blessing.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A cholera vow behind Iztapalapa's Passion",
+      "registered_source_ids": "UNESCO-ICH-02237",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/representation-of-the-passion-death-and-resurrection-of-christ-in-iztapalapa-02237"
+    },
+    {
+      "id": "DYK-CW17-001",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/the-festival-of-the-santisima-trinidad-del-senor-jesus-del-gran-poder-in-the-city-of-la-paz-01389",
+      "note": "UNESCO Gran Poder record reports sixty-nine fraternities and next-day incense, flowers and confetti.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Dancing at the Feast of the Trinity",
+      "registered_source_ids": "UNESCO-ICH-01389",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/the-festival-of-the-santisima-trinidad-del-senor-jesus-del-gran-poder-in-the-city-of-la-paz-01389"
+    },
+    {
+      "id": "DYK-CW17-006",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/grand-festival-of-tarija-01477",
+      "note": "UNESCO Tarija record describes St Roch epidemic intercession, dances and alcohol-free festival.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Why Tarija honours Saint Roch",
+      "registered_source_ids": "UNESCO-ICH-01477",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/grand-festival-of-tarija-01477"
+    },
+    {
+      "id": "DYK-CW17-011",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/ichapekene-piesta-the-biggest-festival-of-san-ignacio-de-moxos-00627",
+      "note": "UNESCO Moxos record describes twelve sun warriors and fireworks from broad-brimmed hats.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A Jesuit-era Saint Ignatius celebration",
+      "registered_source_ids": "UNESCO-ICH-00627",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/ichapekene-piesta-the-biggest-festival-of-san-ignacio-de-moxos-00627"
+    },
+    {
+      "id": "DYK-CW17-017",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958",
+      "note": "UNESCO Ch'utillos record confirms Mullu Punku sanctuary and rural attendees travelling up to 200 km.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The gorge sanctuary of Ch'utillos",
+      "registered_source_ids": "UNESCO-ICH-01958",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/ch-utillos-the-festival-of-san-bartolome-and-san-ignacio-de-loyola-the-meeting-of-cultures-in-potosi-01958"
+    },
+    {
+      "id": "DYK-CW17-024",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/festive-cycle-around-the-devotion-and-worship-towards-saint-john-the-baptist-01682",
+      "note": "UNESCO Venezuelan Saint John record confirms May-to-July cycle and 24 June river image immersion.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A symbolic river immersion of Saint John",
+      "registered_source_ids": "UNESCO-ICH-01682",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/festive-cycle-around-the-devotion-and-worship-towards-saint-john-the-baptist-01682"
+    },
+    {
+      "id": "DYK-CW17-026",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/Decisions/14.COM/10.b.29",
+      "note": "UNESCO committee decision confirms the two Peruvian Christmas shepherd dances, gendered participation and music.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Peruvian Christmas shepherd dances",
+      "registered_source_ids": "UNESCO-ICH-01309",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/hatajo-de-negritos-and-hatajo-de-pallitas-from-the-peruvian-south-central-coastline-01309?RL=01309"
+    },
+    {
+      "id": "DYK-CW17-031",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/nativity-scene-szopka-tradition-in-krakow-01362",
+      "note": "UNESCO Krakow record confirms nineteenth-century szopka architectural cribs and first December Thursday display.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A Nativity scene with Krakow towers",
+      "registered_source_ids": "UNESCO-ICH-01362",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/nativity-scene-szopka-tradition-in-krakow-01362"
+    },
+    {
+      "id": "DYK-CW17-035",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/patum-of-berga-00156?RL=00156",
+      "note": "UNESCO Berga record details Tabal, Cavallets, Guites, Plens and Tirabol.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The drum that opens Berga's Patum",
+      "registered_source_ids": "UNESCO-ICH-00156",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/patum-of-berga-00156?RL=00156"
+    },
+    {
+      "id": "DYK-CW17-040",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018",
+      "note": "UNESCO Elche record confirms fifteenth century sung two-act drama on 14–15 August in Valencian and Latin.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A medieval sung drama at the Assumption",
+      "registered_source_ids": "UNESCO-ICH-00018",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/mystery-play-of-elche-00018"
+    },
+    {
+      "id": "DYK-CW17-046",
+      "category": "UNESCO_INTANGIBLE_HERITAGE",
+      "method": "UNESCO_INDEXED_OR_DECISION_TEXT_MAIN_PAGE_MAY_BOT_CHALLENGE",
+      "supporting_url": "https://ich.unesco.org/en/RL/la-parranda-de-san-pedro-of-guarenas-and-guatire-00907",
+      "note": "UNESCO Parranda record confirms midnight Mass, street procession and Maria Ignacia healing story as narrative.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "María Ignacia's story in Saint Peter's feast",
+      "registered_source_ids": "UNESCO-ICH-00907",
+      "registered_source_urls": "https://ich.unesco.org/en/RL/la-parranda-de-san-pedro-of-guarenas-and-guatire-00907"
+    },
+    {
+      "id": "DYK-CW16-040",
+      "category": "TOURISM_OR_CULTURAL_INSTITUTION",
+      "method": "INSTITUTIONAL_WEB_TEXT_MATCH",
+      "supporting_url": "https://www.indonesia.travel/de/en/travel-ideas/culture/unique-easter-traditions-in-indonesia",
+      "note": "Indonesian national tourism page corroborates 7 km Tikam Turo candle route and Tuan Ma mourning attire.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "A seven-kilometre candlelit route",
+      "registered_source_ids": "INDONESIA-TOURISM-SEMANA-SANTA",
+      "registered_source_urls": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news"
+    },
+    {
+      "id": "DYK-CW16-047",
+      "category": "TOURISM_OR_CULTURAL_INSTITUTION",
+      "method": "INSTITUTIONAL_WEB_TEXT_MATCH",
+      "supporting_url": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/",
+      "note": "Naga city tourism article directly describes land Traslación, nine-day novena and river return.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "The first Peñafrancia transfer is on land",
+      "registered_source_ids": "NAGA-TOURISM-PENAFRANCIA-HISTORY",
+      "registered_source_urls": "https://tourism.naga.gov.ph/bishop-gainza-and-the-present-day-novena-and-processions/"
+    },
+    {
+      "id": "DYK-CW16-052",
+      "category": "TOURISM_OR_CULTURAL_INSTITUTION",
+      "method": "INSTITUTIONAL_WEB_TEXT_MATCH",
+      "supporting_url": "https://ncca.gov.ph/about-culture-and-arts/in-focus/colorful-houses-turn-up-this-may/",
+      "note": "Philippines travel confirms 15 May and kiping; Philippine National Commission for Culture and Arts and Quezon govt confirm Saint Isidore and harvest thanksgiving.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Rice decorations for Saint Isidore",
+      "registered_source_ids": "PH-TOURISM-QUEZON-PAHIYAS",
+      "registered_source_urls": "https://philippines.travel/destinations/quezon/index"
+    },
+    {
+      "id": "DYK-CW16-054",
+      "category": "TOURISM_OR_CULTURAL_INSTITUTION",
+      "method": "INSTITUTIONAL_WEB_TEXT_MATCH",
+      "supporting_url": "https://www.culturalheritage.mo/en/detail/101978",
+      "note": "Macao official cultural heritage registry confirms 13 May route, dressed children, 1929 origin and intangible status.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Fatima's May procession in Macao",
+      "registered_source_ids": "MACAO-TOURISM-FATIMA-2024",
+      "registered_source_urls": "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1"
+    },
+    {
+      "id": "DYK-CW16-058",
+      "category": "TOURISM_OR_CULTURAL_INSTITUTION",
+      "method": "INSTITUTIONAL_WEB_TEXT_MATCH",
+      "supporting_url": "https://www.catholicsandcultures.org/syro-malabar-catholics-celebrate-holy-thursday-traditional-home-ritual",
+      "note": "Catholics & Cultures directly confirms Syro-Malabar family appam rite, palm cross, coconut syrup and after-Mass timing.",
+      "status": "CLAIM_TEXT_SUPPORTED_SOURCE_LINK_QA_NOT_COMPLETE",
+      "proposed_title_en": "Unleavened bread after Holy Thursday Mass",
+      "registered_source_ids": "CATHOLICS-CULTURES-PESAHA-2019",
+      "registered_source_urls": "https://www.catholicsandcultures.org/syro-malabar-catholics-celebrate-holy-thursday-traditional-home-ritual"
+    },
+    {
+      "id": "DYK-G600-P-028",
+      "reason": "Same Palazzolo Acreide Saint Paul festival as other staged card; Italian Ministry of Culture catalogue substantiates former live-serpent carriers but both must be consolidated to prevent microfact inflation.",
+      "supporting_url": "https://catalogo.cultura.gov.it/detail/DemoEthnoAnthropologicalHeritage/19iccd_modi_6078521352541",
+      "method": "INSTITUTIONAL_SECONDARY_RECORD",
+      "status": "HOLD_SAME_EVENT_PAIR",
+      "proposed_title_en": "Live snakes at Saint Paul's Sicilian feast",
+      "registered_source_ids": "PIT1900-IT-094",
+      "registered_source_urls": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf"
+    },
+    {
+      "id": "DYK-G600-P-029",
+      "reason": "Shares reptile procession narrative with DYK-G600-P-028. Distinct ribbon-trays/spicaddossu particulars not fully certified from original Pitrè folio in this pass; avoid two public cards for one event.",
+      "supporting_url": "https://catalogo.cultura.gov.it/detail/DemoEthnoAnthropologicalHeritage/19iccd_modi_6078521352541",
+      "method": "INSTITUTIONAL_SECONDARY_RECORD_PARTIAL",
+      "status": "HOLD_SAME_EVENT_PAIR",
+      "proposed_title_en": "Ribbon-decorated offerings for Saint Paul",
+      "registered_source_ids": "PIT1900-IT-095",
+      "registered_source_urls": "https://commons.wikimedia.org/wiki/File:Biblioteca_delle_tradizioni_popolari_siciliane_(IA_afm3499.0021.001.umich.edu).pdf"
+    }
+  ],
+  "editorial_corrections": [
+    {
+      "id": "DYK-C400-BG-014",
+      "type": "MATERIAL_TITLE_ERROR",
+      "original_en": "Seven enormous wax candles for the Assumption in Sardinia",
+      "proposal_en": "Sassari's towering wooden candles",
+      "original_fr": "Les cierges géants de l'Assomption à Sassari",
+      "proposal_fr": "Les grands cierges de bois de Sassari",
+      "why": "Current Faradda uses large wooden candle-shaped structures; historical wax offerings should not be conflated with present forms or obsolete count seven.",
+      "action": "EDIT_FIRST_DO_NOT_AUTO_PUBLISH"
+    }
+  ],
+  "semantic_holds": [
+    {
+      "id": "DYK-G600-P-028",
+      "status": "HOLD_SAME_EVENT_PAIR",
+      "reason": "Same Palazzolo Acreide Saint Paul festival as other staged card; Italian Ministry of Culture catalogue substantiates former live-serpent carriers but both must be consolidated to prevent microfact inflation."
+    },
+    {
+      "id": "DYK-G600-P-029",
+      "status": "HOLD_SAME_EVENT_PAIR",
+      "reason": "Shares reptile procession narrative with DYK-G600-P-028. Distinct ribbon-trays/spicaddossu particulars not fully certified from original Pitrè folio in this pass; avoid two public cards for one event."
+    }
+  ],
+  "release_gates": {
+    "owner_approvals": 0,
+    "source_link_browser_qa_complete": false,
+    "all_original_folio_images_reviewed": false,
+    "native_en_fr_final_signoff": false,
+    "semantic_novelty_full_signoff": false,
+    "release_authorized": false,
+    "feature_enabled": false,
+    "published": false,
+    "merge_or_deploy": false,
+    "vercel_prohibited": true
+  },
+  "next": "Resolve one Sassari bilingual title, consolidate two Sicilian same-event cards or exclude both, and complete source/link and editorial signoff for remainder. Owner approval separate."
+}
