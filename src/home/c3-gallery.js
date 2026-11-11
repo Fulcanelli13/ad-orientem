@@ -6,7 +6,7 @@ import { SACRED_ART_CATEGORIES_V1, sacredArtReleasedPhotoClassification } from "
 import { sacredArtCrossModuleLinks } from "../art/sacred-art-crossmodule-links-v1.js";
 import { sacredArtGalleryTargets } from "./sacred-art-gallery-targets.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
-import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
+import {approved2026HomeArtwork,homeArtworkAssetUrl} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ");
 const cleanArt=a=>a&&a.qualityGate==="PASS"&&typeof a.file==="string"&&
@@ -173,7 +173,7 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork={
         title:authoritative.title,artist:authoritative.artist,
         date:"",rights:authoritative.rights,
-        source:authoritative.source,image:authoritative.infoImage
+        source:authoritative.source,image:homeArtworkAssetUrl(authoritative.infoImage,win)
       };
       mainInfo.hidden=false;
     }else if(mainInfo&&datedPreview){
