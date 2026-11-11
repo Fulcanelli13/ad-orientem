@@ -1,0 +1,341 @@
+{
+  "schema": "AO_LMD_V2_SINGLE_CANDIDATES_OWNER_CHECK_20_V1",
+  "checked_at": "2026-11-11",
+  "source_crosswalk": "data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json",
+  "basis": "First-party parish, FSSP, ICKSP, diocesan and on-site liturgy corroboration; no current LMD bulk scrape, no direct CL2 mutation.",
+  "counts": {
+    "checked": 20,
+    "existing_cl2_identity_corrob": 20,
+    "romanish_liturgical_older_form_supported": 17,
+    "dominican_rite_explicit": 1,
+    "older_rite_unconfirmed": 2,
+    "original_single_candidates_after_prior_five": 276,
+    "remaining_singles_not_independently_owner_checked": 256,
+    "new_sites_approved": 0,
+    "merged_ids": 0,
+    "imported_mass_times": 0
+  },
+  "cases": [
+    {
+      "source_id": "LMD:saint-anne-church-san-diego-united-states",
+      "cl2_id": "RG-3AD0A68231F8",
+      "name": "St Anne Parish, San Diego",
+      "physical_location": "2337 Irving Avenue, San Diego CA 92113",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-san-diego/",
+        "https://stannesd.com/our-parish/"
+      ],
+      "notes": "FSSP and parish confirm the church location and 1962 liturgical books.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:saint-benedict-parish-fort-worth-united-states",
+      "cl2_id": "RG-FA463E7B0F6D",
+      "name": "St Benedict Parish, Fort Worth",
+      "physical_location": "2920 Azle Avenue, Fort Worth TX 76106",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fwdioc.org/parish-finder/st-benedict",
+        "https://fssp.com/apostolate/fssp-fort-worth/"
+      ],
+      "notes": "Diocese identifies physical site and FSSP ministry; parish confirms exclusively traditional liturgy.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:saint-damien-church-edmond-united-states",
+      "cl2_id": "RG-F1CA29076105",
+      "name": "St Damien, Edmond",
+      "physical_location": "8455 NW 234th Street, Edmond OK 73025",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-oklahoma-city/",
+        "https://www.stdamiens.com/contact-us"
+      ],
+      "notes": "FSSP states liturgical books in force in 1962 and parish confirms location.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-family-church-dayton-united-states",
+      "cl2_id": "RG-1CC72F88063E",
+      "name": "Holy Family, Dayton",
+      "physical_location": "Holy Family Church, intersection of 5th Street and Findlay Street, Dayton OH",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-dayton/",
+        "https://www.daytonlatinmass.org/about/chaplain/"
+      ],
+      "notes": "FSSP affirms 1962 Roman books. IMPORTANT physical church is at 5th and Findlay, while 140 S Findlay St in CL2 is church office/residence MAILING address. Do not promote 140 S Findlay to exact visitor entrance without Excel checks.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:sacred-heart-church-fort-wayne-united-states",
+      "cl2_id": "RG-00B9A2B208EF",
+      "name": "Sacred Heart Parish, Fort Wayne",
+      "physical_location": "4643 Gaywood Drive, Fort Wayne IN 46806",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://sacredheartfw.org/",
+        "https://sacredheartfw.org/directions/"
+      ],
+      "notes": "Parish explicitly lists FSSP ministry, traditional Roman Rite, and physical visitor address.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:north-american-martyrs-parish-edmonds-united-states",
+      "cl2_id": "RG-9ACA8CAAE8CB",
+      "name": "North American Martyrs, Edmonds",
+      "physical_location": "9924 232nd Street SW, Edmonds WA 98020",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://www.northamericanmartyrs.org/about",
+        "https://www.northamericanmartyrs.org/contact"
+      ],
+      "notes": "FSSP parish states 1962 Missale Romanum and church street address.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:our-lady-of-sorrows-springdale-united-states",
+      "cl2_id": "RG-1126D5B9C5B7",
+      "name": "Our Lady of Sorrows, Springdale",
+      "physical_location": "1600 West Graham Road, Springdale AR 72762",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-springdale/",
+        "https://www.ourladyofsorrowsnwa.org/"
+      ],
+      "notes": "FSSP and owner explicitly confirm Missale Romanum 1962 and location.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-ghost-church-bethlehem-united-states",
+      "cl2_id": "RG-7CBF7331FD4E",
+      "name": "Holy Ghost, Bethlehem",
+      "physical_location": "417 Carlton Avenue, Bethlehem PA 18015",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-allentown-pennsylvania/"
+      ],
+      "notes": "FSSP confirms Traditional Latin Mass and physical parish address.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:saint-cecilia-church-clarkdale-united-states",
+      "cl2_id": "RG-F215944D6BD9",
+      "name": "St Cecilia, Clarkdale",
+      "physical_location": "850 Main Street, Clarkdale AZ 86324",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://fssp.com/apostolate/fssp-clarkdale/"
+      ],
+      "notes": "FSSP explicitly names this church, address and daily traditional Latin liturgy.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:pope-saint-leo-oratory-columbus-united-states",
+      "cl2_id": "RG-33FE09F8ECB4",
+      "name": "St Leo Oratory, Columbus",
+      "physical_location": "221 Hanford Street, Columbus OH 43206",
+      "rite_evidence_level": "EXTRAORDINARY_FORM_INSTITUTE",
+      "official_evidence_urls": [
+        "https://www.institute-christ-king.org/columbus-home"
+      ],
+      "notes": "ICKSP confirms same named oratory and street address. No schedule imported.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:saint-gianna-oratory-at-holy-family-church-tucson-united-states",
+      "cl2_id": "RG-257A01CF2311",
+      "name": "St Gianna Oratory, Tucson",
+      "physical_location": "Holy Family Church, 338 W University Boulevard, Tucson AZ 85705",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://institute-christ-king.org/tucson-about",
+        "https://institute-christ-king.org/tucson-home"
+      ],
+      "notes": "ICKSP explicitly identifies 1962 Latin Mass in Holy Family Church. Two communities (parish ordinary form and ICKSP oratory) share ONE physical worship site; priestly apostolate should not be counted as a new building or confused with mailing PO Box.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-family-church-latrobe-united-states",
+      "cl2_id": "RG-3935C183A2BA",
+      "name": "Holy Family Church, Latrobe",
+      "physical_location": "1200 Ligonier Street, Latrobe PA 15650",
+      "rite_evidence_level": "EXTRAORDINARY_FORM_ORGANISER_ATTESTED",
+      "official_evidence_urls": [
+        "https://www.holyfamilylatrobe.org/mass-times",
+        "https://www.latinmasslatrobe.com/"
+      ],
+      "notes": "Official parish labels Sunday Latin Mass; independent resident traditional-Mass organisation explicitly says Extraordinary Form. Physical site confirmed; no times imported.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:our-lady-of-the-valley-parish-easthampton-united-states",
+      "cl2_id": "RG-C2BEEFFBC54E",
+      "name": "Our Lady of the Valley, Easthampton",
+      "physical_location": "33 Adams Street, Easthampton MA 01027",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://olveasthampton.org/",
+        "https://olveasthampton.org/traditional-latin-mass/"
+      ],
+      "notes": "Parish identifies itself as home of diocesan Traditional Latin Mass community and confirms street address.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:sacred-heart-of-mary-boulder-united-states",
+      "cl2_id": "RG-504AA71483CB",
+      "name": "Sacred Heart of Mary, Boulder",
+      "physical_location": "6739 South Boulder Road, Boulder CO 80303",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://sacredheartofmary.org/traditional-latin-mass",
+        "https://sacredheartofmary.org/"
+      ],
+      "notes": "Parish explicitly distinguishes Roman Missal 1962 TLM from a separately advertised Latin Novus Ordo; confirms address. Do not label all Latin Mass as traditional.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-rosary-parish-portland-united-states",
+      "cl2_id": "RG-34F2CA8BE433",
+      "name": "Holy Rosary, Portland",
+      "physical_location": "375 Northeast Clackamas Street, Portland OR 97232",
+      "rite_evidence_level": "DOMINICAN_RITE_NOT_1962_ROMAN",
+      "official_evidence_urls": [
+        "https://holyrosarypdx.org/dominicanrite",
+        "https://holyrosarypdx.org/home"
+      ],
+      "notes": "Dominican friars explicitly say Latin Mass is the Extraordinary Form of the DOMINICAN Rite, not the 1962 Roman Missal. Identity confirmed but rite classification demands separate older-Dominican taxonomy.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:church-of-the-nativity-menlo-park-united-states",
+      "cl2_id": "RG-7A75E8D68125",
+      "name": "Church of the Nativity, Menlo Park",
+      "physical_location": "210 Oak Grove Avenue, Menlo Park CA 94025",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://www.nativitymenlo.org/"
+      ],
+      "notes": "Parish's current November 2026 homepage explicitly advertises Sunday Traditional Latin Mass at this church; schedules not imported.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:church-of-the-holy-trinity-poughkeepsie-united-states",
+      "cl2_id": "RG-12F5DAFA95DE",
+      "name": "Church of the Holy Trinity, Poughkeepsie",
+      "physical_location": "775 Main Street, Poughkeepsie NY 12603",
+      "rite_evidence_level": "1962_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://www.holytrinitypoughkeepsie.com/"
+      ],
+      "notes": "Parish explicitly calls its Sunday Latin celebration Tridentine according to 1962 Roman Missal; street site confirmed.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:saint-adelaide-parish-peabody-united-states",
+      "cl2_id": "RG-CEACFF4B8949",
+      "name": "St Adelaide, Peabody",
+      "physical_location": "712 Lowell Street, Peabody MA 01960",
+      "rite_evidence_level": "TRADITIONAL_ROMAN_EXPLICIT",
+      "official_evidence_urls": [
+        "https://www.saintadelaide.com/",
+        "https://www.saintadelaide.com/schedule-of-liturgies-devotions"
+      ],
+      "notes": "Parish directly lists Traditional Latin Mass and its 712 Lowell Street contact address; verify exact church-versus-office entrance before changing a locality-only CL2 location. Separate associated St Ann parish is not identical worship site.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-comforter-church-charlottesville-united-states",
+      "cl2_id": "RG-AF3FF77B11F0",
+      "name": "Holy Comforter, Charlottesville",
+      "physical_location": "208 E Jefferson Street, Charlottesville VA 22902",
+      "rite_evidence_level": "LATIN_ONLY_1962_RITE_UNCONFIRMED",
+      "official_evidence_urls": [
+        "https://holycomforterparish.org/events-archive/latin-mass-2026-10-25/"
+      ],
+      "notes": "Parish 25 October 2026 event identifies the church and Latin Mass; event calls it simply Latin, not explicitly 1962 Missal, therefore current older-rite status remains a hold.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    },
+    {
+      "source_id": "LMD:holy-rosary-church-cedar-united-states",
+      "cl2_id": "RG-C5DA3B951966",
+      "name": "Holy Rosary, Cedar",
+      "physical_location": "6982 S Schomberg Road, Cedar MI 49621",
+      "rite_evidence_level": "PHYSICAL_SITE_ONLY_OLD_RITE_UNCONFIRMED",
+      "official_evidence_urls": [
+        "https://www.holyrosarycedar.org/"
+      ],
+      "notes": "Owner confirms Holy Rosary physical church and site address, but public homepage does not establish 1962 Missal use; hold rite and recurrence instead of inventing traditional Mass.",
+      "same_building_identity_independently_corrob": true,
+      "cl2_source_id_link_approved": false,
+      "cl2_schedule_import_approved": false,
+      "cl2_coordinate_change_approved": false
+    }
+  ],
+  "guardrails": [
+    "The 20 are a subset of the existing 281 single V2 textual leads (5 were independently confirmed previously); not newly discovered LMD venues.",
+    "Site identity and exact current rite are different fields; preserving Latin-only or ritual-family uncertainty is mandatory.",
+    "Portland's Dominican Rite Mass must not be silently classified as 1962 Roman Missal.",
+    "Dayton church/mailing address, Tucson shared Holy Family building, and Peabody parish-office entrance are distinct physical-geometry considerations.",
+    "No owner-sourced Mass schedule is automatically imported into CL27; original Excel master must approve edits.",
+    "No automatic CL2 source provenance rewriting or alias merging."
+  ]
+}
