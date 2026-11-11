@@ -1,0 +1,54 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B34",
+  "asOf": "2026-11-12",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B33",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B34-01",
+      "kind": "CLASS_II_PHYSICAL_PARENT_RECONSTRUCTION_DISTINCTION",
+      "subject": "28 October Simon and Jude",
+      "object": "Städel 830, Stefan Lochner, Martyrdom of Ss Simon and Judas",
+      "sources": [
+        "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+        "https://sammlung.staedelmuseum.de/en/work/two-altarpiece-wings-with-the-martyrdom-of-the-apostles"
+      ],
+      "findingEn": "Städel's current object record connects panel 830 to the two apostolic martyrdom wings and identifies related external works at two other institutions: a probably associated Last Judgment central panel (Wallraf-Richartz Museum, Cologne, wrm 66) and separated exterior wing paintings at Alte Pinakothek, Munich (WAF 501 and WAF 502). These are related physical components, not duplicates of the Simon and Jude scene; the probable original central-panel association must remain qualified.",
+      "findingFr": "La notice du Städel rattache le panneau 830 aux deux volets des martyres des Apôtres et signale des éléments extérieurs conservés à Cologne (Jugement dernier, wrm 66, attribution au même ensemble probable) et à Munich (WAF 501 et WAF 502, faces extérieures détachées). Ces objets distincts ne sont pas des doublons du martyre de Simon et Jude; le rattachement du panneau central demeure hypothétique.",
+      "rights": "STADEL_830_PICTURE_PUBLIC_DOMAIN; OTHER_INSTITUTIONS_PHOTOGRAPHS_NOT_CHECKED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B34-02",
+      "kind": "ACQUISITION_ATTEMPT_BLOCKED",
+      "subject": "NGA 1939.1.42 Andrea di Bartolo Nativity of the Virgin",
+      "sources": [
+        "https://www.nga.gov/artworks/183-nativity-virgin",
+        "https://api.nga.gov/iiif/789d7bcb-9bb2-4fdc-b049-1c9e8ebcce51/full/full/0/default.jpg"
+      ],
+      "findingEn": "NGA object-specific record continues to mark media free and public domain. A direct image fetch from the runtime failed at DNS resolution for api.nga.gov, before any HTTP response; no bytes, hashes, pixel dimensions or mobile crop QA were produced. Do not classify the image as downloaded.",
+      "findingFr": "La NGA indique que l'image de l'objet est libre et dans le domaine public. La tentative de téléchargement direct a échoué à la résolution DNS d'api.nga.gov, avant toute réponse HTTP. Aucun fichier, empreinte, dimension ou contrôle de recadrage mobile n'a été obtenu.",
+      "rights": "NGA_OBJECT_SPECIFIC_PUBLIC_DOMAIN",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Retry NGA 1939.1.42 and 1939.1.72, Städel 830 original acquisition in a network-enabled environment; hash and inspect mobile crops",
+    "Approved Class I: Strozzi NT 108873 independent exact photo rights; Benson auction photo rights; Carracci Vatican inventory; Gaulli Louvre reproduction rights",
+    "Locate an exact Lateran dedication image without substituting related scenes"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
