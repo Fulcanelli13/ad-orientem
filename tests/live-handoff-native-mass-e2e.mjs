@@ -404,10 +404,12 @@ try{
           const selectedSettings=selectedMassInlineSettings({
             localProgramme:common.localProgramme,resolvedMass:common.resolvedMass
           });
+          const directDiagnostics=[];
           const direct=selectApprovedCompleteScholaTrackScore({
             schola:native,form:common.form,resolvedMass:common.resolvedMass,
             settings:selectedSettings,approvedScores:[testScore],
-            approvalRegistry:[testPromotion],schema:SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA
+            approvalRegistry:[testPromotion],schema:SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA,
+            diagnostic:event=>directDiagnostics.push(event)
           });
           const {isExplicitRequiemMass}=await import(
             "/src/mass/reader-requiem-conditions.js");
@@ -481,7 +483,7 @@ try{
               sourceCueIds:sourceCueIds.slice(0,20),
               sourceLatin:sourceLatin.slice(0,300),
               nativeLatin:native.latin,
-              selectedSettings,directEligible:Boolean(direct),
+              selectedSettings,directEligible:Boolean(direct),directDiagnostics,
               failedChecks:Object.entries(selectionChecks).filter(([,pass])=>pass===false).map(([key])=>key),
               gabcFirstLine:research.gabc.split("\n").at(-4),
               hash:sha.slice(0,10)}
