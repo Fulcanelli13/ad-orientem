@@ -2,7 +2,7 @@ import {test} from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
-import {createScholaFollowClock,scholaGabcSyllables} from "../src/mass/reader-schola-notation-follow.js";
+import {createScholaFollowClock,scholaGabcSyllables,scholaKyrieSourceOccurrences} from "../src/mass/reader-schola-notation-follow.js";
 import {normalizeScholaLatin,scholaMassTextAnchors,
  createScholaMassTextSynchronizer} from "../src/mass/reader-schola-mass-text-sync.js";
 
@@ -64,6 +64,36 @@ test("every original 1962 Sung Gloria and Credo paragraph aligns across the ENTI
 test("isolated repeated Gloria wording is not assigned to an arbitrary occurrence",()=>{
  const plan=scholaMassTextAnchors(gloria.gabc,[{id:"isolated",latin:"Iesu Christe."}]);
  assert.equal(plan.anchors.length,0);
+});
+
+test("Kyrie VIII ninefold 1962 text uses the ORIGINAL source-notated repeat instructions",()=>{
+ const original=scholaGabcSyllables(kyrie.gabc);
+ const played=scholaKyrieSourceOccurrences(kyrie.gabc);
+ assert.equal(original.length,27,"original Kyrie VIII has four notated invocations");
+ assert.equal(played.length,60,"the printed iij./ij. instructions expand to nine source invocations");
+ assert.equal(new Set(played.map(x=>x.sourceIndex)).size,original.length);
+ assert.ok(played.some(x=>x.repeatPass===3));
+ const corpus=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
+ const block=corpus.blocks.find(x=>x.Block_ID==="AO.SM.B015");
+ const rows=block.units.filter(u=>u.clock==="SCHOLA_PUBLIC")
+   .map(u=>({id:u.cue_id,latin:u.latin}));
+ assert.equal(rows.length,9);
+ const plan=scholaMassTextAnchors(kyrie.gabc,rows,{trackId:"KYRIE"});
+ assert.equal(plan.anchors.length,9,"all nine canonical Kyrie text cues must map");
+ const length=plan.syllables.map(s=>normalizeScholaLatin(s.label)).join("").length;
+ assert.equal(plan.anchors[0].start,0);
+ assert.equal(plan.anchors.at(-1).end,length);
+ assert.equal(plan.anchors.reduce((sum,x)=>sum+x.end-x.start,0),length);
+ assert.equal(plan.anchors[2].end,plan.anchors[3].start);
+ // Repetition uses old printed noteheads; a repeated occurrence has a
+ // distinct performance coordinate but the same source-neume index.
+ assert.equal(played[0].sourceIndex,played[7].sourceIndex);
+ assert.notEqual(played[0].index,played[7].index);
+});
+test("an isolated Kyrie cue cannot guess which of nine invocations it represents",()=>{
+ const alone=scholaMassTextAnchors(kyrie.gabc,
+   [{id:"one",latin:"Kýrie, eléison."}],{trackId:"KYRIE"});
+ assert.equal(alone.anchors.length,0);
 });
 
 test("unknown vernacular or mismatched Latin does not move the Mass scroll",()=>{
