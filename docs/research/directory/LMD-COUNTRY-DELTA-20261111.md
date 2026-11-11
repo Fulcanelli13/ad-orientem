@@ -43,17 +43,46 @@ A second deterministic comparison now covers **every one of the 1,413 archived L
 
 All **282** locality-matched rows remain **research-only candidate relationships**, not independently verified physical-building identity, currently celebrated Masses or authorised canonical link merges. Neither the remaining 1,131 nor Ad Orientem-only sites are presumed incorrect. The row-level proposed IDs and **56-country** status summary are in the existing [archive crosswalk JSON](../../../data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json), not a duplicate register.
 
-**Historical matching error exposed:** eight previous name-only candidate suggestions conflict with the new location-specific proposal. Examples:
+**Historical matching error screen (subsequently reviewed against first-party evidence):** eight old name-only suggestions were inconsistent with the initial locality-specific screen. Their final dispositions are recorded in the ten-case review below; not every disagreement means the historical suggestion was entirely wrong.
 
-- Colorado Springs, Omaha and Rapid City “Immaculate Conception” were previously suggested as matches to the **El Paso** CL2 site. Distinct current CL2 sites exist in their actual named cities; these proposals still need building identity verification before linking LMD source IDs.
+- Colorado Springs, Omaha and Rapid City “Immaculate Conception” were historically linked to multiple same-dedication FSSP church names, including **El Paso**. The owners identify three distinct existing localities. **Colorado Springs additionally announced a new worship building effective 8 November 2026**; the current CL2 location needs Excel review.
 - La Roche-sur-Yon and Angers “Notre-Dame” listings had older suggestions for other French towns with the same dedication. City-specific CL2 candidate sites now replace these as research leads.
-- Freiburg im Breisgau's Adelhauser Kirche and Le Havre's Saint Michael of Ingouville similarly require their own current locality rather than a same-name church elsewhere.
+- Freiburg im Breisgau's Adelhauser Kirche is actually represented **twice in current CL2** at the same building with different diocesan/FSSP labels; a historical FSSP match was pointing to one of those two correctly. Le Havre's Saint Michael of Ingouville matches its existing local FSSP chapel, not a same-dedication church in Dijon.
 
-**Potential same-city CL2 collisions:** “All Souls” in Sanford (US) and “Nossa Senhora das Dores” in Brasília (BR) each produce **two** viable CL2 IDs at the same textual confidence. Preserve both canonical IDs and do **not** auto-merge until exact physical-site/source lineage is checked.
+**The two ambiguous same-city screens have been resolved at the physical-building level:** the two Sanford All Souls locations are **different buildings** (the historic chapel at 800 S Oak Avenue and main parish church at 3280 W 1st Street), so neither CL2 ID may be deleted based merely on the parish name; the generic locality-only CL2 site's exact building remains a further Excel identity hold. Brasília's two Nossa Senhora das Dores CL2 entries refer to **the same IBP chapel and address** and constitute a strong potential double canonical identity for supervised Excel alias review. Freiburg is a second independently evidenced same-building duplicate pair. No merge has been made.
 
 **Largest remaining no-direct-or-textual-match archive queues** (not proven missing sites): US **338**, France **198**, Poland **112**, Italy **96**, GB **81**, Brazil **74**, Germany **61**. Italy and Brazil have older dedicated source research already preserved in PRs #1716 and #1694; do not repeat those screens.
 
 The matcher intentionally fails closed on dedication-only matching; its threshold requires country equality, at least two significant title words, strong rarity-adjusted title coverage, and a distinctive word shared with the CL2 address/locality. A street address marked “locality only” remains unverified even if its city word matches. None of these 282 claims is automatically promoted into production or the Excel approval master.
+
+## Ten high-ambiguity archive matches — first-party identity resolution (11 Nov 2026)
+
+The [ten-case identity ledger](../../../data/directory/research/lmd-ten-ambiguous-conflict-identity-resolutions-20261111.v1.json) resolves **both** multiple-CL2 locality cases and checks **all eight** pre-existing historical name-only suggestion conflicts against owner, diocesan or institute evidence. Each archive row preserves its original suggestion and classification and carries a **separate evidence overlay**; this is not a silent replacement of provenance.
+
+| Evidence disposition | Cases | Result |
+|---|---:|---|
+| Locality-specific existing physical CL2 identity verified | **6** | Omaha, Rapid City, La Roche-sur-Yon, Angers, Saint-Maur-des-Fossés and Le Havre |
+| Same building represented by two CL2 records | **2** | Brasília `RG-3C3AAA8BD104` + `RG-FECDA1DB9A9E`; Freiburg `RG-0A6B76396C09` + `RG-CC7E25BA567F` — **strong duplicate candidates, not authorised merges** |
+| Two distinct physical buildings of the same parish | **1** | Sanford, Florida: separate main church and historic chapel — **do not merge** |
+| Same parish identity but announced change of physical Mass venue | **1** | Colorado Springs: **current address and geometry review required** |
+| **Total** | **10** | **0 auto-merged IDs, 0 new sites, 0 production changes** |
+
+**Sanford — physical separation, not automatic deduplication.** [The parish's own page](https://www.asccsanford.org/mass-times) names the **main All Souls Catholic Church at 3280 W 1st Street**, and the **All Souls Historic Chapel at 800 S Oak Avenue**. The historic-chapel archive reference corresponds to existing CL2 `RG-A5A7B8559AF2`. Another CL2 `RG-84277A3C62ED` is named only “All Souls” with a locality-only address and **must not be assumed to be the same chapel**. Its correct main-church attribution requires Excel review; do not merge the two physically separate buildings.
+
+**Brasília — one building despite two CL2 records.** [The Instituto Bom Pastor's own Brasília page](https://ibpamericalatina.org/casa/brasilia/) names **Capela Nossa Senhora das Dores, Av. das Paineiras, Entrequadra 9/10, Jardim Botânico III**, exactly as both CL2 records do. Their **Diocesan** versus **IBP** labels reflect site-operator/minister classification to reconcile, not two physical chapels. Alias/role reconciliation belongs in the Excel canonical master.
+
+**Freiburg — one building despite two CL2 records.** [The FSSP](https://petrusbruderschaft.de/pages/wo-wir-sind/schweiz/niederlassungen/thalwil/freiburg.php) states that the archdiocese made the Adelhauser Kirche at **Adelhauserstraße 31A** available for older-rite Mass from March 2025, with FSSP ministry. Current CL2 contains both `RG-0A6B76396C09` (diocesan-labelled) and `RG-CC7E25BA567F` (FSSP-labelled) for that same church. Historical name suggestion `RG-CC7E25BA567F` was not an unrelated-city error; treat both as one **physical-building duplicate candidate** awaiting approved canonical merge.
+
+**Colorado Springs — important 8 November 2026 location change.** [Immaculate Conception Parish's current FSSP site](https://www.cosfssp.org/) explicitly says that **from Sunday 8 November 2026**, Sunday Masses move into a *new church building* at **2715 E Pikes Peak Avenue**. Existing CL2 `RG-E6BFCFC669A3` contains an unverified **2745 E Pikes Peak Avenue** address. This is a **potential physical-site relocation / provenance problem**; do not create a second “Immaculate Conception” card or silently overwrite the old address, coordinate or historical source. Verify the replacement building, operator and geometry in the original Excel master before deployment.
+
+**Other old name-match errors now grounded in the proper locality:**
+- [Omaha Immaculate Conception](https://latinmassomaha.org/about/) is `RG-F1132C8E46E5`, 2708 S 24th St; [Rapid City's](https://fssp-rapidcity.org/contact) distinct church is `RG-4943D1C3E848`, 922 5th St. They must not be equated with El Paso's unrelated Immaculate Conception.
+- [La Roche-sur-Yon's parish](https://stlouisdelaroche.fr/la-paroisse-et-ses-eglises/) identifies Notre-Dame at **14 rue Lazare Carnot**, with the [2025–26 parish schedule](https://stlouisdelaroche.fr/wp-content/uploads/2025/09/Horaires-messes-2025-2026_pour-imprim-A5.pdf) explicitly defining the Sunday Tridentine rite as the **1962 Missal**. Match existing `RG-F1ED8101F0B9`, not Bourges or Chambéry.
+- [Angers Notre-Dame-des-Victoires parish](https://cathedralestmauricenotredame.diocese49.org/rite-st-jean-xxiii-2/) teaches and [schedules](https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-2/) its Saint John XXIII Missal worship; match `RG-6CC764E4B257`, not other Notre-Dame dedications.
+- [FSSP Saint-Maur-des-Fossés](https://www.fssp.org/en/find-us/where-are-we/) identifies Notre-Dame du Rosaire at Place des Marronniers: current `RG-1FB1C4BCCBF2`; the [diocese](https://catholiques-val-de-marne.cef.fr/diocese/communes/saint-maur-des-fosses/notre-dame-rosaire/) gives a parish/contact address (11 avenue Joffre), which must not be silently equated to the building entrance.
+- [FSSP Le Havre](https://www.fssp.org/en/find-us/where-are-we/) identifies the chapel of Saint-Michel d'Ingouville on rue Saint-Michel: current `RG-2EA3A303947B`, not an Église Saint-Michel in Dijon.
+
+The old **118 direct provenance / 280 single textual / 2 multiple textual / 1,131 no-strong-textual** baseline remains preserved for reproducibility. The new ten-case findings are **identity evidence overlays**, not a recalculated census or authorisation to replace the original **2,580 canonical site** dataset.
 
 ## Independent owner-source resolution + Poland 2026 changes
 
