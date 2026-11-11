@@ -24,10 +24,12 @@ const sources=[...canonicalSources,...researchSupplement.sources];
 const drafts=[...wave1,...wave2],byPlace=new Map(seed.shrines.map(s=>[s.place_id,s]));
 
 const scopedChecks=researchSupplement.paragraph_research_checks||[];
-assert.equal(scopedChecks.length,33,"The 11-site research cohort has three paragraph source checks per guide");
-assert.equal(new Set(scopedChecks.map(r=>r.place_id)).size,11);
+assert.equal(scopedChecks.length,63,"Two research cohorts must retain all paragraph evidence rows");
+assert.equal(new Set(scopedChecks.map(r=>r.place_id)).size,21,
+  "Eleven plus ten source-reviewed sites, with no duplicate site expansion");
 const draftById=new Map(drafts.map(g=>[g.place_id,g]));
 const researchById=new Map(researchSupplement.sources.map(s=>[s.id,s]));
+const canonicalById=new Map(canonicalSources.map(s=>[s.id,s]));
 const seenCheckedSections=new Set();
 for(const row of scopedChecks){
   assert.equal(row.source_to_claim_second_editor_approved,false,
@@ -36,14 +38,26 @@ for(const row of scopedChecks){
     "A research source check must not authorize publication");
   const draft=draftById.get(row.place_id);
   const section=draft?.sections.find(s=>s.id===row.section_id);
-  const evidence=researchById.get(row.source_id);
+  const researchEvidence=researchById.get(row.source_id);
+  const canonicalEvidence=canonicalById.get(row.source_id);
+  const evidence=researchEvidence||canonicalEvidence;
   assert.ok(draft&&section&&evidence,"Orphan research paragraph/source reference");
-  assert.equal(evidence.scope,"RESEARCH_ONLY");
-  assert.equal(evidence.release_approved,false);
-  assert.equal(evidence.place_id,row.place_id,"Wrong-site historical source link");
+  if(researchEvidence){
+    assert.equal(researchEvidence.scope,"RESEARCH_ONLY");
+    assert.equal(researchEvidence.release_approved,false);
+    assert.equal(researchEvidence.place_id,row.place_id,"Wrong-site historical source link");
+    assert.ok(draft.research_source_ids?.includes(row.source_id),
+      "Research source missing from draft source list");
+  }else{
+    const canonicalShrine=seed.shrines.find(s=>s.place_id===row.place_id);
+    assert.ok(canonicalShrine?.source_ids.includes(row.source_id),
+      "Canonical source not assigned to the same physical shrine");
+  }
   assert.equal(section.paragraphs[0].source_id,row.source_id);
   assert.equal(section.paragraphs[0].source_url,row.source_url);
   assert.equal(evidence.url,row.source_url);
+  assert.ok(draft.bibliography_urls.includes(row.source_url),
+    "Paragraph evidence is missing from its guide bibliography");
   const key=row.place_id+":"+row.section_id;
   assert.ok(!seenCheckedSections.has(key),"Duplicate paragraph evidence check");
   seenCheckedSections.add(key);
