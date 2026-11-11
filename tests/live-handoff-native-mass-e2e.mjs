@@ -329,6 +329,107 @@ try{
         assert.equal(await page.locator(
           "#ao-r17-native-reader-preview [data-ao-reference-score-panel]").isVisible(),false);
 
+        // Promotion eligibility must bind the REAL R17 Schola source-track,
+        // not the two-cue synthetic sample in unit tests. Test-only rows
+        // simulate independent approval; neither production registry is
+        // modified. The existing Kyrie XVI remains unapproved research.
+        await page.evaluate(()=>{
+          const select=document.querySelector(
+            '#ao-r17-native-reader-preview [data-schola-kyriale-choice="KYRIE"]');
+          if(!select)throw new Error("Kyrie XVI source setting missing");
+          select.value="MASS_16";
+          select.dispatchEvent(new Event("change",{bubbles:true}));
+        });
+        const actualTrackEligibility=await page.evaluate(async()=>{
+          const {offlineKyrialeResearchScore}=await import(
+            "/src/mass/reader-kyriale-research-gabc.js");
+          const {selectApprovedScholaDockScore,
+            SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA,SCHOLA_DOCK_SCORE_APPROVALS
+          }=await import("/src/mass/reader-schola-dock-approved.js");
+          const {APPROVED_MASS_INLINE_GABC}=await import(
+            "/src/mass/reader-inline-chant-approved.js");
+          const native=window.AO_R17_NATIVE_READER_PREVIEW.getScholaState().schola;
+          const research=offlineKyrialeResearchScore("KYRIE","MASS_16");
+          const sourceCueIds=native?.trackSourceCueIds??[];
+          const sourceLatin=native?.trackSourceLatin??"";
+          if(!research || !sourceLatin || !sourceCueIds.length)
+            throw Error("REAL_NATIVE_KYRIE_XVI_SOURCE_NOT_READY");
+          const digest=new Uint8Array(await crypto.subtle.digest("SHA-256",
+            new TextEncoder().encode(research.gabc)));
+          const sha=[...digest].map(n=>n.toString(16).padStart(2,"0")).join("");
+          const testScore={
+            schema:"ao-mass-inline-approved-gabc-v1",
+            scoreId:"E2E_TEST_ONLY_KYRIE_XVI_NOT_PUBLISHED",
+            scoreScope:"FULL_SCHOLA_TRACK",
+            selectionKey:"KYRIE",settingId:"MASS_16",riteScope:"ORDINARY",
+            sourceCueIds,sourceLatin,
+            approval:"USER_AND_MUSICAL_SOURCE_REVIEWED",
+            publication:"PUBLIC_APPROVED",sourceTextVerified:true,
+            musicalNotationVerified:true,
+            sourceWitness:"Synthetic test row, original Graduale Romanum 1961 folio 54*",
+            sourceUrl:"https://gregobase.selapa.net/chant.php?id=545",
+            gabc:research.gabc,gabcSha256:sha
+          };
+          const testPromotion={
+            schema:SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA,
+            scoreScope:"FULL_SCHOLA_TRACK",score_status:"approved",
+            scoreId:testScore.scoreId,trackId:"KYRIE",
+            settingId:"MASS_16",riteScope:"ORDINARY",licence:"CC0-1.0",
+            sourceUrl:testScore.sourceUrl,gabcSha256:sha,
+            sourceCueIds,sourceLatin
+          };
+          const common={
+            schola:native,form:"MISSA_CANTATA_INCENSE",
+            resolvedMass:{form:"MISSA_CANTATA_INCENSE",overlays:[]},
+            localProgramme:{ordinarySelections:{KYRIE:"MASS_16"}}
+          };
+          const realWorld=selectApprovedScholaDockScore(common);
+          const simulated=selectApprovedScholaDockScore({
+            ...common,approvedScores:[testScore],
+            approvalRegistry:[testPromotion]
+          });
+          const wrongSource=selectApprovedScholaDockScore({
+            ...common,approvedScores:[testScore],
+            approvalRegistry:[{...testPromotion,
+              sourceCueIds:sourceCueIds.slice(1)}]
+          });
+          const wrongSelection=selectApprovedScholaDockScore({
+            ...common,localProgramme:{ordinarySelections:{KYRIE:"MASS_11"}},
+            approvedScores:[testScore],approvalRegistry:[testPromotion]
+          });
+          return {
+            actualTrack:native.trackId,trackCueCount:sourceCueIds.length,
+            actualCue:native.cueId,actualIndex:native.index,
+            selectedResearchScore:research.scoreId,sourceApproved:research.scoreApproved,
+            liveApprovals:SCHOLA_DOCK_SCORE_APPROVALS.length,
+            publicMassInlineKeys:APPROVED_MASS_INLINE_GABC.map(x=>x.selectionKey),
+            defaultSelected:Boolean(realWorld),
+            simulatedEligible:simulated?.scoreId===testScore.scoreId,
+            simulatedStatus:simulated?.musicalPerformance,
+            wrongSourceEligible:Boolean(wrongSource),
+            wrongSettingEligible:Boolean(wrongSelection)
+          };
+        });
+        assert.equal(actualTrackEligibility.actualTrack,"KYRIE");
+        assert.ok(actualTrackEligibility.trackCueCount>1,
+          "Real 1962 Kyrie must bind more than a synthetic two-cue stub");
+        assert.equal(actualTrackEligibility.selectedResearchScore,"GREGOBASE-545");
+        assert.equal(actualTrackEligibility.sourceApproved,false);
+        assert.equal(actualTrackEligibility.liveApprovals,0);
+        assert.deepEqual(actualTrackEligibility.publicMassInlineKeys,
+          ["DISMISSAL","DISMISSAL"]);
+        assert.equal(actualTrackEligibility.defaultSelected,false,
+          "Unapproved 1961 Kyrie entered the real automatic Schola dock");
+        assert.equal(actualTrackEligibility.simulatedEligible,true,
+          "If separately approved, a source-exact Kyrie XVI cannot bind to actual R17 Schola track");
+        assert.equal(actualTrackEligibility.simulatedStatus,"EXPECTED_NOT_OBSERVED");
+        assert.equal(actualTrackEligibility.wrongSourceEligible,false);
+        assert.equal(actualTrackEligibility.wrongSettingEligible,false);
+        assert.equal(actualTrackEligibility.actualIndex,beforeReference,
+          "Changing source setting advanced the independent native Schola");
+        c.steps.push({name:"native-h7-kyrie-xvi-real-track-approval-gate",
+          metrics:actualTrackEligibility,authority:"SYNTHETIC_POSITIVE_ROWS_TEST_ONLY"});
+
       }else{
         assert.equal(await musicAccess.isVisible(),false,
           "Low Mass incorrectly presents a Schola chooser");
