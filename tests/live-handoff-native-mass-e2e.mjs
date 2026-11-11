@@ -416,10 +416,10 @@ try{
           const equalCues=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&
             a.length===b.length&&a.every((v,i)=>v===b[i]);
           const norm=s=>String(s??"").trim().normalize("NFD")
-            .replace(/[\\u0300-\\u036f]/g,"")
+            .replace(/[\u0300-\u036f]/g,"")
             .replace(/[æœ]/gi,ch=>ch.toLowerCase()==="æ"?"ae":"oe")
-            .replace(/[^\\p{L}\\p{N}]+/gu," ").toLowerCase().trim()
-            .replace(/\\s+/g," ");
+            .replace(/[^\p{L}\p{N}]+/gu," ").toLowerCase().trim()
+            .replace(/\s+/g," ");
           const selectionChecks={
             basicTrack:native.trackId==="KYRIE",
             nativeOwner:native.owner==="R17_NATIVE_SCHOLA",
@@ -427,18 +427,41 @@ try{
             notComposed:!native.composedWorkId,
             cueCount:sourceCueIds.length,
             cueUniqueness:new Set(sourceCueIds).size===sourceCueIds.length,
-            cueFormat:sourceCueIds.every(c=>/^AO\\.SM\\.C\\d{4}$/.test(c)),
+            cueFormat:sourceCueIds.every(c=>/^AO\.SM\.C\d{4}$/.test(c)),
             cueInTrack:sourceCueIds.includes(native.cueId),
+            nativeLatin:Boolean(String(native.latin??"").trim()),
+            sourceLatin:Boolean(String(sourceLatin).trim()),
+            sungForm:["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(common.form),
             setting:selectedSettings.KYRIE,
             riteScope,
             rowSchema:testPromotion.schema===SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA,
             rowScope:testPromotion.scoreScope==="FULL_SCHOLA_TRACK",
+            rowStatus:testPromotion.score_status==="approved",
+            rowTrack:testPromotion.trackId===native.trackId,
+            rowSetting:testPromotion.settingId===selectedSettings.KYRIE,
+            rowRite:testPromotion.riteScope===riteScope,
+            rowLicence:testPromotion.licence==="CC0-1.0",
+            rowSha:/^[a-f0-9]{64}$/.test(testPromotion.gabcSha256),
+            rowURL:/^https:\/\//.test(testPromotion.sourceUrl),
             rowMatch:equalCues(testPromotion.sourceCueIds,sourceCueIds),
             rowLatin:norm(testPromotion.sourceLatin)===norm(sourceLatin),
             scoreSchema:testScore.schema==="ao-mass-inline-approved-gabc-v1",
+            scoreId:testScore.scoreId===testPromotion.scoreId,
+            scoreScope:testScore.scoreScope==="FULL_SCHOLA_TRACK",
+            scoreKey:testScore.selectionKey===native.trackId,
+            scoreSetting:testScore.settingId===selectedSettings.KYRIE,
+            scoreRite:testScore.riteScope===riteScope,
+            scoreApproval:testScore.approval==="USER_AND_MUSICAL_SOURCE_REVIEWED",
+            scorePublication:testScore.publication==="PUBLIC_APPROVED",
+            scoreTextVerified:testScore.sourceTextVerified===true,
+            scoreMusicVerified:testScore.musicalNotationVerified===true,
+            scoreWitness:typeof testScore.sourceWitness==="string"&&testScore.sourceWitness.length>5,
+            scoreURL:testScore.sourceUrl===testPromotion.sourceUrl,
+            scoreHash:testScore.gabcSha256===testPromotion.gabcSha256,
             scoreMatch:equalCues(testScore.sourceCueIds,sourceCueIds),
             scoreLatin:norm(testScore.sourceLatin)===norm(sourceLatin),
-            gibberishGabc:!(/%%\\s*\\([cf][1-4]\\)/.test(testScore.gabc)),
+            sourceGabc:typeof testScore.gabc==="string",
+            gabcHeader:/%%\s*\([cf][1-4]\)/.test(testScore.gabc),
             hasEnd:testScore.gabc.includes("(::)")
           };
           return {
