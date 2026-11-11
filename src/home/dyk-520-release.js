@@ -3,14 +3,14 @@
 // provenance remains in the separate research registry, not in the app bundle.
 const SOURCE=new URL("../../data/did-you-know/dyk-customs-glossary-520.v1.json",import.meta.url);
 const SCHEMA="AO_DYK_CUSTOMS_GLOSSARY_520_V1";
-const isUrl=s=>typeof s==="string"&&/^https:\/\/[^\\s<>"']+$/.test(s);
+const isUrl=s=>typeof s==="string"&&/^https:\/\/[^\s<>"']+$/.test(s);
 const clean=s=>typeof s==="string"?s.trim():"";
 const validDate=s=>{
- if(typeof s!=="string"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(s))return false;
+ if(typeof s!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(s))return false;
  const d=new Date(s+"T12:00:00Z");
  return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===s;
 };
-const norm=s=>clean(s).normalize("NFKC").toLocaleLowerCase().replace(/\\s+/g," ");
+const norm=s=>clean(s).normalize("NFKC").toLocaleLowerCase().replace(/\s+/g," ");
 let pending=null;
 export function loadDyk520Release(win=globalThis){
  if(pending)return pending;
