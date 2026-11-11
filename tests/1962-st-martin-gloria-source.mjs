@@ -29,6 +29,15 @@ assert.equal(matched.sourceDecision.priorLegacyGloria,false);
 assert.equal(matched.sourceDecision.priorProperGloria,false);
 assert.equal(data.hasGloria,false,"Historic upstream witness must remain immutable");
 
+const historicalHost=prepareMassSessionFromV346({
+ ...legacy,calendarDay:{id:"St. Martin of Tours",title:"St. Martin of Tours"}
+},{proper,calendarResolution:calendar,form:"MISSA_CANTATA_INCENSE",presentationMode:"LIVE"});
+assert.equal(historicalHost.resolvedMass.provenance.gloria,true,
+ "Legacy host feast display ID must not defeat canonical Calendar+Proper identity");
+assert.equal(historicalHost.resolvedMass.proper.data.hasGloria,true,
+ "Correct the actual reader Proper, not only the legacy Boolean");
+
+
 const prepared=prepareMassSessionFromV346(legacy,{
  proper,calendarResolution:calendar,form:"MISSA_CANTATA_INCENSE",presentationMode:"LIVE"
 });
