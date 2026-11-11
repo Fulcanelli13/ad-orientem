@@ -348,11 +348,14 @@ try{
             "#ao-r17-native-reader-preview [data-ao-reference-score-staff] svg");
           const glyph=svg?.querySelector("use.note")??svg?.querySelector("use");
           const staff=svg?.querySelector(".staffLine");
+          const lyric=svg?.querySelector("text");
           return {note:glyph?getComputedStyle(glyph).fill:null,
-            staff:staff?getComputedStyle(staff).stroke:null};
+            staff:staff?getComputedStyle(staff).stroke:null,
+            lyric:lyric?getComputedStyle(lyric).fill:null};
         });
         assert.ok(lightEnough(inlineInk.note),"Compact Schola neumes have insufficient contrast");
         assert.ok(lightEnough(inlineInk.staff),"Compact Schola staff is illegible");
+        assert.ok(lightEnough(inlineInk.lyric),"Compact Latin text is illegible");
         c.steps.push({name:"actual-native-explicit-kyriale-reference",
           metrics:checkedReference});
         await page.screenshot({path:resolve(OUT,c.name+"-native-kyrie-XI-reference.png"),
