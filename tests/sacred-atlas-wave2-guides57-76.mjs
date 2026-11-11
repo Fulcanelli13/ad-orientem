@@ -48,7 +48,7 @@ for (let i = 0; i < guides.length; i++) {
   assert.ok(g.subtitle_en.length>35 && g.subtitle_fr.length>35);
   assert.equal(g.image_policy,"APPROVED_CANONICAL_PLACE_MEDIA_ONLY");
   assert.equal(g.source_evidence_scope,
-    g.draft_order<=66?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
+    g.draft_order<=76?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
     "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
   assert.equal(g.next_gate,"SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION");
   assert.equal(new Set(g.sections.map(s => s.id)).size,3);
