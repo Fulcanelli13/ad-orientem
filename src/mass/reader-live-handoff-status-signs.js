@@ -24,7 +24,7 @@ export function projectLiveHandoffStatusSigns({gate,nativeState,priest,server,fo
   const certified=gate?.ok===true &&
     gate.reference?.status==="MATCHED_SOURCE_CARD" &&
     gate.reference?.nativeCardId===gate.reference?.expectedNativeId &&
-    /^AO\\.SM\\.C\\d{4}$/.test(cue) &&
+    /^AO\.SM\.C\d{4}$/.test(cue) &&
     gate.reference?.evidence?.sourceCueIds?.includes(cue) &&
     nativeState?.cueProjectionSupported===true;
   if(!certified)return blank();
