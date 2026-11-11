@@ -66,11 +66,22 @@ for(const r of frozen){
  assert.equal(actual.artworkId,r.artworkId);
  assert.equal(actual.title,r.title);
  assert.equal(actual.artist,r.artist);
- assert.equal(actual.selectionKind,"PREVIOUSLY_SELECTED_2026_FROZEN_EXACT_WORK_PREVIEW");
- assert.equal(actual.imageStatus,"REMOTE_FROZEN_SELECTED_EXACT_WORK_PREVIEW_NOT_OFFLINE_CERTIFIED");
- assert.match(actual.image,/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:Redirect\/file\//);
- assert.match(actual.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
- assert.equal(actual.sourcePhotoSha1,r.photoSha1);
+ // The old snapshot remains remote-only source evidence, but the two
+ // exact already-selected photos now have separate verified local releases.
+ if(["2026-03-15","2026-07-01"].includes(r.date)){
+  assert.equal(actual.selectionKind,"FROZEN_CLASS_I_TWO_EXACT_LOCAL_SOURCE_PHOTOS");
+  assert.ok(actual.image.startsWith("/assets/home/class-i-2026/"));
+  assert.equal(actual.photoOriginalSha1,r.photoSha1);
+  assert.match(actual.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+  assert.equal(actual.ownerArtworkDecisionNewlyCreated,false);
+  assert.equal(actual.photographCropCertified,false);
+ }else{
+  assert.equal(actual.selectionKind,"PREVIOUSLY_SELECTED_2026_FROZEN_EXACT_WORK_PREVIEW");
+  assert.equal(actual.imageStatus,"REMOTE_FROZEN_SELECTED_EXACT_WORK_PREVIEW_NOT_OFFLINE_CERTIFIED");
+  assert.match(actual.image,/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:Redirect\/file\//);
+  assert.match(actual.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+  assert.equal(actual.sourcePhotoSha1,r.photoSha1);
+ }
  assert.equal(approved2026HomeArtwork({...state,resolution:{...state.resolution,
   day:{main:{id:"wrong-principal"}}}}),null);
  assert.equal(approved2026HomeArtwork({...state,resolution:{...state.resolution,
