@@ -69,6 +69,9 @@ try{
     dock.dataset.collapsed="false";
     const panel=dock.querySelector('[data-role="schola-approved-score"]');
     panel.hidden=false;panel.dataset.scoreStatus="approved";
+    const pauseControl=dock.querySelector("[data-schola-notation-pause]");
+    if(getComputedStyle(pauseControl).display==="none")
+      throw Error("Approved notation Pause control must be visible");
     const staff=dock.querySelector('[data-role="schola-approved-staff"]');
     const strip=dock.querySelector('[data-role="schola-follow-strip"]');
     const engraver=createOfflineChantEngraver({viewport:staff,document});
