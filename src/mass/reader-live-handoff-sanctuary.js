@@ -76,7 +76,7 @@ export function projectLiveHandoffSanctuary({gate,nativeState,prepared}={}){
   const server=priest&&simpleServer
     ?freeze({station:"FOOT",pose:"stand",scope:"REFERENCE_PRESENCE_ONLY",
       bell:false,paten:false,route:null}):null;
-  const signs=projectLiveHandoffStatusSigns({gate,nativeState,priest,server,form});
+  const signs=projectLiveHandoffStatusSigns({gate,nativeState,priest,faithful,server,form});
   return freeze({
     status:!cueMatches?"CURRENT_CUE_NOT_SOURCE_MATCHED":
       priest?"SOURCE_STATION_REFERENCE":"PRIEST_POSITION_NOT_CONFIRMED",
