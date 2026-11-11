@@ -17,7 +17,8 @@ export function scholaGabcSyllables(gabc){
  for(const match of body.matchAll(re)){
   // Each GABC lyric syllable precedes the neume group attached to it.
   // Clefs, barlines and spacing commands have no lexical syllable.
-  const raw=match[1].replace(MARKUP,"").replace(/[{}~*]/g,"").trim();
+  const raw=match[1].replace(/<i>[\s\S]*?<\/i>/gi,"")
+   .replace(MARKUP,"").replace(/[{}~*]/g,"").trim();
   if(!LETTER.test(raw))continue;
   const label=raw.replace(/[-_]+$/,"").trim();
   if(!label||!LETTER.test(label))continue;
