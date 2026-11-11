@@ -20,7 +20,8 @@ const publishedFiles = [
   "data/shrines/illustrated-place-guides-world-marian-r1.v1.json",
 ];
 const shrineByPlace = new Map(seeds.shrines.map(s => [s.place_id,s]));
-const sourceById = new Map(source.sources.map(s => [s.id,s]));
+const researchOnlySources = read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json").sources;
+const sourceById = new Map([...source.sources,...researchOnlySources].map(s => [s.id,s]));
 const published = new Set(publishedFiles.flatMap(p => read(p).guides.filter(g => g.publication==="PUBLISHED").map(g => g.place_id)));
 const wave1 = new Set(closure.rows.map(x=>x.place_id));
 const parts = wave2Paths.map(read);
@@ -45,7 +46,9 @@ for(let i=0;i<guides.length;i++){
   assert.equal(guide.publication_authorized,false);
   assert.equal(guide.state,"BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED");
   assert.equal(guide.image_policy,"APPROVED_CANONICAL_PLACE_MEDIA_ONLY");
-  assert.equal(guide.source_evidence_scope,"CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
+  assert.equal(guide.source_evidence_scope,
+    guide.draft_order<=66?"PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED":
+    "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH");
   assert.equal(guide.sections.length,3);
   assert.equal(new Set(guide.sections.map(s=>s.id)).size,3);
   assert.ok(guide.subtitle_en.length>35&&guide.subtitle_fr.length>35);
@@ -55,7 +58,11 @@ for(let i=0;i<guides.length;i++){
     for(const p of section.paragraphs){
       const src=sourceById.get(p.source_id);
       assert.ok(src,"Unknown source record: "+p.source_id);
-      assert.ok(shrine.source_ids.includes(p.source_id),"Source belongs to a different Shrine");
+      assert.ok(shrine.source_ids.includes(p.source_id)||
+        (guide.research_source_ids?.includes(p.source_id)&&
+          src.scope==="RESEARCH_ONLY"&&src.place_id===guide.place_id&&
+          guide.bibliography_urls.includes(p.source_url)),
+        "Source belongs to a different Shrine");
       assert.equal(p.source_url,src.url);
       assert.match(p.source_url,/^https:\/\//);
       assert.ok(p.en.length>=145&&p.fr.length>=145,"Incomplete bilingual section "+guide.place_id);
