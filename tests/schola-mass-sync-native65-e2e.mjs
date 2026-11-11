@@ -91,13 +91,28 @@ try{
     // Gloria/Credo's first card is the celebrant's intonation. The source
     // GABC includes it, but the Schola follower starts at the next card.
     const choirStart=track==="KYRIE"?0:1;
-    const first=api.model.cards.find(c=>c.sectionId===ordered[choirStart]);
+    const first=api.model.cards.find(c=>c.sectionId===ordered[0]);
     api.showSequence(first.sequence);
     return {cards:api.model.totalCards,ordered,positions,choirStart,
       sourceSection:mapping.sourceSectionId,count:mapping.count};
    },{gabc:source.gabc,track});
    assert.equal(target.cards,65);
    assert.equal(target.ordered.length,cardsExpected,JSON.stringify(target));
+   // A priest intonation card must hold the estimated choir cursor.
+   if(target.choirStart){
+    await page.waitForFunction(()=>document.querySelector(".ao-schola-dock")
+      ?.dataset.notationFollow==="awaiting-choir",null,{timeout:25000});
+    const pre=await page.evaluate(()=>({
+      card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+      readerIndex:document.querySelector(".ao-prayer-card")?.dataset.scholaTextFollowIndex
+    }));
+    assert.equal(pre.card,target.ordered[0],"Priest intonation card lost");
+    assert.equal(pre.readerIndex,undefined,"Choir follow moved priest intonation");
+    await page.evaluate(id=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      api.showSequence(api.model.cards.find(c=>c.sectionId===id).sequence);
+    },target.ordered[target.choirStart]);
+   }
    // The runtime has loaded authentic source GABC through its *test-only*
    // selector; its independent Schola clock remains an expected cue.
    await page.waitForFunction(()=>document.querySelector(".ao-schola-dock")
