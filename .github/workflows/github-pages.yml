@@ -154,14 +154,16 @@ jobs:
         env:
           AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/github-pages-phone-live-acceptance.mjs
-      - name: Verify original French 1895 Holy Face Novena all nine days live on 320/390 EN/FR phones
-        env:
-          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
-        run: node tests/pray-holy-face-1895-french-live-pages-phone.mjs
+      # Independent public Prayer reader canary must run before the existing
+      # Holy Face novena gate: a failure in either must not hide the other result.
       - name: Check real public Prayer Library English/French source and Communion fallback at 320/390
         env:
           AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/pray-public-pages-library-witness-phone-20261111.mjs
+      - name: Verify original French 1895 Holy Face Novena all nine days live on 320/390 EN/FR phones
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
+        run: node tests/pray-holy-face-1895-french-live-pages-phone.mjs
       - name: Preserve public deployment phone screenshots and read-only evidence
         if: always()
         uses: actions/upload-artifact@v4
