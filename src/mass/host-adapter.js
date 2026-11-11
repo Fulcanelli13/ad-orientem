@@ -9,6 +9,7 @@ import {select1962PassionFridayCommemorationsForMassForm} from "./1962-passion-f
 import { makeResolvedMass, compileMassPlan } from "./session-engine.js";
 import {required1962ResidualPrefaceOwner} from "./1962-residual-preface-source.js";
 import {deriveActualMassMusicToneContext} from "./reader-mass-actual-tone-context.js";
+import {reconcile1962StMartinGloria} from "./1962-st-martin-gloria-source.js";
 
 const LEGACY_EXCEPTIONAL = Object.freeze({
   "good-friday-1962": "GOOD_FRIDAY",
@@ -178,7 +179,10 @@ export function adaptV346ResolvedMass(legacy, options={}) {
        resolverDay.day?.main?.id===legacy.calendarDay?.id)
       selectedProper=passionFriday.proper;
   }
-  const proper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
+  const sourceProper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
+  const stMartinGloria=reconcile1962StMartinGloria({legacy,proper:sourceProper,
+    calendarResolution:options.calendarResolution??null,overlays,distinctRite});
+  const proper=stMartinGloria.proper;
   // The host classifies the *Mass of the day* as CALENDAR even for All
   // Souls. Its exact canonical 1962 Proper is nevertheless a Requiem:
   // activate the funeral Mass rules from authenticated identity and donor,
@@ -236,7 +240,9 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       votiveClass:rogationSelection?.selection==="ROGATION_MASS"?2:(legacy.votiveClass??null),
       requiemClass:legacy.requiemClass??null,
       colour:rogationSelection?.selection==="ROGATION_MASS"?"violet":(legacy.colour??null),
-      gloria:rogationSelection?.selection==="ROGATION_MASS"?false:(legacy.gloria??proper?.data?.hasGloria??proper?.hasGloria??null),
+      gloria:rogationSelection?.selection==="ROGATION_MASS"?false:
+        (stMartinGloria.gloria??legacy.gloria??proper?.data?.hasGloria??proper?.hasGloria??null),
+      gloriaSourceReconciliation:stMartinGloria.sourceDecision,
       credo:rogationSelection?.selection==="ROGATION_MASS"?rogationSelection.credo:(legacy.credo??proper?.data?.hasCredo??proper?.hasCredo??null),
       sequencePresent:options.sequencePresent??legacy.sequencePresent??null,
       chantSetting:options.chantSetting??legacy.chantSetting??null,
