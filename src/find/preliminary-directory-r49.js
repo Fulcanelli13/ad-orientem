@@ -1,5 +1,6 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import { CL2_SITE_CATEGORY_MATRIX_URL,attachCL2SiteCategories } from "./tlm-site-category-associations.js";
+import { CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL,attachCL2ExactVenueCategoryWitnesses } from "./tlm-exact-venue-categories.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL,attachPublishedWeeklySourceProgrammes} from "./tlm-source-weekly-mass-programme.js";
@@ -359,6 +360,21 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     const census=await categories.json();
     if(census?.schema==="AO_CL2_SOURCE_SITE_CATEGORY_MATRIX_V1")
       cache=attachCL2SiteCategories(cache,physicalIndex,census);
+  }
+  // First-party verification can upgrade an exact site's venue context.
+  // These local witnesses never assign ministers, ecclesial status, Una Cum,
+  // Missal editions, Mass times or logo rights. Historical offline versions
+  // without this add-on keep the original category census.
+  let verifiedVenueResponse=null;
+  try{
+    verifiedVenueResponse=await fetchImpl(CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // Older cached snapshots lack the optional exact venue witness layer.
+  }
+  if(verifiedVenueResponse?.ok){
+    const verified=await verifiedVenueResponse.json();
+    if(verified?.schema==="AO_CL2_EXACT_VENUE_CATEGORY_WITNESS_V1"&&cache.some(x=>x.site_category))
+      cache=attachCL2ExactVenueCategoryWitnesses(cache,physicalIndex,verified);
   }
   return cache;
 }
