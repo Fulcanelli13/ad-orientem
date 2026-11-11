@@ -1,0 +1,29 @@
+name: P0 1962 St Martin Gloria source and 390px live phone
+on:
+  pull_request:
+    paths:
+      - 'src/mass/1962-st-martin-gloria-source.js'
+      - 'src/mass/host-adapter.js'
+      - 'tests/1962-st-martin-gloria-source.mjs'
+      - 'tests/1962-nov11-st-martin-gloria-phone.mjs'
+      - '.github/workflows/p0-1962-st-martin-gloria-phone.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-nov11-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source-owner Gloria and 15 omission/mismatch guards
+        run: node tests/1962-st-martin-gloria-source.mjs && node tests/host-adapter.mjs
+      - name: Install actual 390px browser harness
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Real Home to St Martin 1962 LIVE Gloria and Mass VIII suite
+        run: node tests/1962-nov11-st-martin-gloria-phone.mjs
