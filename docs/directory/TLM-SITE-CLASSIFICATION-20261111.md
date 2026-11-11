@@ -26,21 +26,21 @@ the current Mass or whole-building ownership.
 ## First-party exact-site witness upgrades (11 November)
 
 After the baseline census, a separate source-exact witness overlay resolves
-**26 formerly unresolved venues** without changing a CL2 anchor or treating an
+**37 formerly unresolved venues** without changing a CL2 anchor or treating an
 organiser as a property owner:
 
 | Venue category | Added | Current category total |
 | --- | ---: | ---: |
-| Diocesan / parish context | 20 | 653 |
-| Religious house | 2 | 99 |
+| Diocesan / parish context | 24 | 657 |
+| Religious house | 9 | 106 |
 | Mixed / hosted venue | 4 | 18 |
 
-The remaining operator/category hold count is **393**, consisting of 319
-unresolved and 74 directory-only associations. Overall **2,187 / 2,580**
+The remaining operator/category hold count is **382**, consisting of 308
+unresolved and 74 directory-only associations. Overall **2,198 / 2,580**
 venues now have a positive source-reported or separately verified category,
-including 26 individually validated first-party cases.
+including 37 individually validated first-party cases.
 
-The witnesses deliberately include mixed examples:
+The verified sources include 11 additional UK cathedral/monastery identities, notably Wrexham, Portsmouth, Leeds, Newcastle, Belmont Abbey, Tyburn, Farnborough, Douai, Prinknash, Buckfast and St Dominic’s Priory. These sources do not certify 1962 use at the sites.\n\nThe witnesses deliberately include mixed examples:
 
 - St Aloysius Parish in Thorold: a parish in the diocese served by FSSP
   priests, without declaring the whole building FSSP-owned.
@@ -55,7 +55,7 @@ The witnesses deliberately include mixed examples:
 
 Each upgraded row preserves its original source-affiliation text, exact CL2
 anchor and source ID, and cites the individual first-party identity page.
-`src/find/tlm-exact-venue-categories.js` applies the 26-item witness overlay
+`src/find/tlm-exact-venue-categories.js` applies the 37-item witness overlay
 only after the baseline category matrix. Neither the album/photograph nor
 institute emblem nor liturgical books are changed in this pass.
 
