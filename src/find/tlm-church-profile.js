@@ -3,6 +3,7 @@
  * Read-only presentation: no duplicate Place, schedule or ecclesial assertion registry.
  */
 import {massInstitutionEmblem} from "./institution-emblems.js";
+import {directoryVenueVisualPolicy} from "./tlm-venue-visual-policy.js";
 import {institutionalRiteMissal} from "./tlm-institutional-rite-missal.js";
 import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
 import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
@@ -81,14 +82,18 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  const sourceLinks=A(item?.source_links).filter(s=>externalSource(s?.url));
  const contact=venue?.contact??{};
  // Apply exactly the same approved-image gate as the compact church card.
+ const visualPolicy=directoryVenueVisualPolicy(item);
  const hasPhoto=eligibleRenderedDirectoryImage(item?.cover_media,item);
  const address=T(venue?.address?.formatted)||T(item?.address?.formatted)||[venue?.address?.line1,venue?.address?.postal_code,venue?.address?.city,venue?.address?.country_code].map(T).filter(Boolean).join(", ");
  const listedAffiliation=T(item?.eyebrow)||T(item?.community_id)||unknown(language);
- const listedEmblem=massInstitutionEmblem(item?.community_id);
+ const listedEmblem=visualPolicy.emblem;
  const one=v.ministries.length===1?v.ministries[0]:null;
  // Emblems identify a reported ministry, never the building's ownership
  // or the ecclesial position / Una Cum of a particular celebration.
- const introEmblem=!v.ministries.length?listedEmblem:one?massInstitutionEmblem(one.raw?.community_id):null;
+ const introEmblem=visualPolicy.lane==="DIOCESAN_PHOTO"||visualPolicy.lane==="NEUTRAL"
+   ?null:visualPolicy.lane==="LEGACY"
+     ?(!v.ministries.length?listedEmblem:one?massInstitutionEmblem(one.raw?.community_id):null)
+     :listedEmblem;
  const introLabel=one?one.community:v.ministries.length>1?
    L(language,"Multiple ministries","Plusieurs ministères"):listedAffiliation;
  const siteContact=item?.site_contact_evidence??null;
