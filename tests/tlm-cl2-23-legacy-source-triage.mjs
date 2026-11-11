@@ -15,11 +15,11 @@ assert.equal(gap.length,196);
 const eligible=gap.map(site=>{
  const urls=site.source_ids.flatMap(id=>{
   const r=r49.get(id);
-  return r?[r[8],...String(r[9]??"").split(/\\s*;\\s*/)].filter(Boolean):[];
+  return r?[r[8],...String(r[9]??"").split(/\s*;\s*/)].filter(Boolean):[];
  });
  return {site,urls};
 }).filter(({urls})=>!urls.some(url=>/^https:\/\//i.test(url)&&
- !/^https:\/\/(?:www\\.)?adorientem\\.church\/find/i.test(url)));
+ !/^https:\/\/(?:www\.)?adorientem\.church\/find/i.test(url)));
 assert.equal(eligible.length,23);
 const expected=new Map(eligible.map(({site,urls})=>[site.effective_anchor_id,{site,urls}]));
 const seen=new Set();
