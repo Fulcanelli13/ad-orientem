@@ -19,3 +19,10 @@ assert.equal(sanctuaryCueProjection({card,state:{nativeCueId:"SCHOLA:OFFERTORY"}
  form:"MISSA_CANTATA_SIMPLE",mode:"LIVE"}).sourceCueId,null);
 assert.equal(createReaderSanctuaryPreview({enabled:false}).active,false);
 console.log("PASS: LIVE sanctuary receives exact native card and cue only, no Schola or Missal source");
+
+
+const visualSource=readFileSync(new URL("../src/mass/reader-sanctuary-visual.js",import.meta.url),"utf8");
+assert.match(visualSource,/region\.hidden=true;shell\.classList\.remove\("ao-sanctuary-preview"\)/,
+ "Missal or unsupported rite must remove the sanctuary layout, not merely stop animation");
+assert.match(visualSource,/region\.hidden=false;shell\.classList\.add\("ao-sanctuary-preview"\)/,
+ "Switching back to LIVE must restore original resizable sanctuary presentation");

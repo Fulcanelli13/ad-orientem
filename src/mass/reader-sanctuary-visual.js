@@ -92,7 +92,14 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
  const project=input=>{
   if(destroyed)return false;
   const p=sanctuaryCueProjection(input);
-  if(!p)return false;
+  if(!p){
+    // A LIVE→MISSAL switch, omitted source-only card or unsupported rite
+    // cannot leave a stale visual action covering the canonical reader.
+    region.hidden=true;shell.classList.remove("ao-sanctuary-preview");
+    pending=null;previous=null;
+    return false;
+  }
+  region.hidden=false;shell.classList.add("ao-sanctuary-preview");
   const k=JSON.stringify(p);
   if(k===previous)return true;
   previous=k;pending=p;send(p);return true;

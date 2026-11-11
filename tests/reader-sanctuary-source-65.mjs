@@ -77,6 +77,16 @@ assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true
 assert.deepEqual(presented.at(-1),["C36",true]);
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
  sourceSectionId:"AO.CANON.06"}).choreography,"STATIC_STAGE");
+const beforeExit=presented.length;
+assert.equal(send(elevation,{sourceCueId:"AO.SM.C0175",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CANON.06"}).choreography,"STATIC_STAGE");
+assert.equal(presented.length,beforeExit+1,
+ "Leaving exact elevation cue must command a source-static visual hold");
+assert.deepEqual(presented.at(-1),["C36",false]);
+assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CANON.06"}).choreography,"SOURCE_TRIGGERED",
+ "Reverse scroll into the same source rubric must replay the elevation");
+assert.deepEqual(presented.at(-1),["C36",true]);
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.equal(st.form,"low");
 assert.ok(rebuilds>=2,"All forms reuse the original renderer's mount path");

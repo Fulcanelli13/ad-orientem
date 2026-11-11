@@ -81,13 +81,21 @@
       st.form=form.form;st.solemn=form.solemn;st.inc=form.inc;
       rebuild(); // Original engine; its shapes, animations and camera are preserved.
     }
-    if(last?.key!==nextKey)M3.show(card,false); // Static scene; never start an action on navigation.
+    // A held ceremonial animation must end when its *exact* source cue
+    // leaves the reading focus. Otherwise scrolling backwards to an
+    // elevation would fail to re-arm it, and stale gesture/lighting FX
+    // would survive after the corresponding rubric disappeared.
+    const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&
+      (cue!==last.playedCue||!validCue||
+        sourceSectionId!==last.sourceSectionId));
+    if(last?.key!==nextKey||exiting)
+      M3.show(card,false); // Original M3 handles FX cancellation and static stage.
     const play=Boolean(validCue&&cues[cue]?.card===id&&
       cues[cue]?.section===sourceSectionId&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     last={key:nextKey,card:id,cue,sourceSectionId,
-      playedCue:play?cue:last?.key===nextKey?last.playedCue:null};
+      playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE"});
   }
