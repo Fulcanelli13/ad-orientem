@@ -4,7 +4,7 @@
 // Default --check is read-only; --write is a deliberate release-file mutation.
 import assert from "node:assert/strict";
 import {readFileSync,writeFileSync} from "node:fs";
-import {buildReviewedSacredGuideCorpus} from "../src/find/sacred-guide-review-release.js";
+import {buildReviewedSacredGuideCorpus,resolveSacredGuideBatchAuthorization} from "../src/find/sacred-guide-review-release.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const wave2=["57-66","67-76","77-86","87-96","97-106","107-116",
 "117-126","127-136","137-146","147-156","157-166","167-176",
@@ -31,7 +31,8 @@ const published=publishedNames.flatMap(n=>
   .filter(g=>g.publication==="PUBLISHED");
 assert.equal(drafts.length,224);
 assert.equal(published.length,33);
-const compiled=buildReviewedSacredGuideCorpus(drafts,seed.shrines,[...sources.sources,...researchSources.sources],reviews.reviews,published);
+const effectiveReviews=resolveSacredGuideBatchAuthorization(reviews.reviews,reviews.owner_batch_authorization);
+const compiled=buildReviewedSacredGuideCorpus(drafts,seed.shrines,[...sources.sources,...researchSources.sources],effectiveReviews,published);
 const base=read(destination);
 const output={
   schema:"AO_ILLUSTRATED_PLACE_GUIDES_V1",

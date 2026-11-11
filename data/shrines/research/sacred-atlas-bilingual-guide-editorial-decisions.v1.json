@@ -3,5 +3,6 @@
   "as_of": "2026-11-11",
   "publication": "RESEARCH_ONLY_NO_OWNER_APPROVALS",
   "reviews": [],
-  "instructions": "Review entries must identify the exact guide revision, editor, review date, reviewed EN/FR copy, ecclesial identity, owner release authorization and separate paragraph-level supporting URLs with editor notes; scripts/compile-approved-sacred-place-guides.mjs validates and compiles. Empty reviews means zero new public stories."
+  "instructions": "A source and EN/FR editor supplies exact guide revision, evidence URL and paragraph notes for each approved guide. The owner may then explicitly authorize a list of exact reviewed revisions in ONE OWNER_EXACT_REVISION_BATCH record; missing, stale or unsigned records cannot release content. The optional PARTIAL_VERIFIED_SECTIONS scope may omit individually held paragraphs; held text is never published. No editorial or owner approvals exist yet.",
+  "owner_batch_authorization": null
 }

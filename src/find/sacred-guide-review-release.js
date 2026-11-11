@@ -84,22 +84,39 @@ export function reviewedSacredGuideForReader(guide,shrine,sourceRecords=[],revie
      review.owner_release_authorized!==true||
      !filled(review.editor)||!/^20\d\d-\d\d-\d\d$/.test(review.reviewed_on)||
      !https(review.official_url)||!filled(review.region_en)||!filled(review.region_fr))return null;
+  // An exact-revision owner-authorised PARTIAL release may omit specific held
+  // paragraphs. It can never publish an unchecked paragraph, and cannot be
+  // inferred merely because one reviewer left evidence incomplete.
+  const partial=review.release_scope==="PARTIAL_VERIFIED_SECTIONS";
+  if(review.release_scope && !partial&&review.release_scope!=="COMPLETE_VERIFIED_SECTIONS")return null;
+  if(partial&&(review.hold_policy!=="OMIT_UNVERIFIED_PARAGRAPHS"||
+      review.verified_paragraphs_only!==true))return null;
   const paragraphEvidence=rows(review.paragraph_evidence);
   if(paragraphEvidence.length!==assessment.paragraph_count)return null;
   const seen=new Set(),sections=[];
+  let held=0,published=0;
   for(const section of guide.sections){
     const paragraphs=[];
     for(let i=0;i<section.paragraphs.length;i++){
       const key=section.id+":"+i,e=paragraphEvidence.find(row=>row.key===key);
-      if(!e||seen.has(key)||e.checked!==true||!https(e.source_url)||
-         geographicUrl(e.source_url)||!filled(e.editor_note))return null;
-      seen.add(key);
       const p=section.paragraphs[i];
+      if(!e||seen.has(key)||!https(e.source_url)||
+         e.source_url!==p.source_url||geographicUrl(e.source_url))return null;
+      seen.add(key);
+      if(e.checked===false){
+        if(!partial||!filled(e.hold_reason))return null;
+        held++;
+        continue;
+      }
+      if(e.checked!==true||!filled(e.editor_note))return null;
       paragraphs.push({en:p.en,fr:p.fr,source_url:e.source_url});
+      published++;
     }
-    sections.push({id:section.id,title_en:section.title_en,title_fr:section.title_fr,paragraphs});
+    if(paragraphs.length)
+      sections.push({id:section.id,title_en:section.title_en,title_fr:section.title_fr,paragraphs});
   }
-  if(seen.size!==paragraphEvidence.length)return null;
+  if(seen.size!==paragraphEvidence.length||published<1||
+     (partial&&held<1)||(!partial&&held>0))return null;
   return Object.freeze({
     place_id:guide.place_id,publication:"PUBLISHED",
     official_url:review.official_url,region_en:review.region_en,region_fr:review.region_fr,
@@ -109,6 +126,40 @@ export function reviewedSacredGuideForReader(guide,shrine,sourceRecords=[],revie
     programmes:Object.freeze([]),visit:null,
   });
 }
+
+// One explicit owner decision may authorize an exact list of already
+// editor-approved guide revisions. Missing or stale authorization fails closed;
+// the owner decision does not substitute for source, language or identity review.
+export function resolveSacredGuideBatchAuthorization(reviews=[],batch=null){
+  const entries=rows(reviews);
+  if(batch==null)return entries;
+  if(batch.kind!=="OWNER_EXACT_REVISION_BATCH"||batch.authorized!==true||
+     !filled(batch.owner)||!/^20\d\d-\d\d-\d\d$/.test(batch.authorized_on)||
+     !rows(batch.approved_revisions).length)
+    throw Error("INVALID_OWNER_BATCH_AUTHORIZATION");
+  const byPlace=new Map(),approved=new Set();
+  for(const r of entries){
+    if(!filled(r?.place_id)||byPlace.has(r.place_id))
+      throw Error("DUPLICATE_OR_INVALID_EDITORIAL_REVIEW");
+    byPlace.set(r.place_id,r);
+  }
+  for(const row of batch.approved_revisions){
+    if(!filled(row?.place_id)||!filled(row?.revision)||approved.has(row.place_id))
+      throw Error("DUPLICATE_OR_INVALID_BATCH_GUIDE_REVISION");
+    const review=byPlace.get(row.place_id);
+    if(!review||review.decision!=="APPROVED_FOR_PUBLICATION"||
+       review.revision!==row.revision||review.source_to_claim_checked!==true||
+       review.english_reviewed!==true||review.french_reviewed!==true||
+       review.ecclesial_identity_checked!==true||!filled(review.editor)||
+       !/^20\d\d-\d\d-\d\d$/.test(review.reviewed_on)||
+       !rows(review.paragraph_evidence).length)
+      throw Error("UNREVIEWED_OR_STALE_BATCH_GUIDE: "+row.place_id);
+    approved.add(row.place_id);
+  }
+  return entries.map(r=>approved.has(r.place_id)?
+    {...r,owner_release_authorized:true}:r);
+}
+
 export function buildReviewedSacredGuideCorpus(guides=[],shrines=[],sources=[],reviews=[],published=[]){
   const byPlace=new Map(rows(shrines).map(s=>[s.place_id,s]));
   const byReview=new Map();

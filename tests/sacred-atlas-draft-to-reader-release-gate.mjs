@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {inspectSacredGuideEvidence,sacredGuideRevision,reviewedSacredGuideForReader,
-  buildReviewedSacredGuideCorpus} from "../src/find/sacred-guide-review-release.js";
+  buildReviewedSacredGuideCorpus,resolveSacredGuideBatchAuthorization} from "../src/find/sacred-guide-review-release.js";
 import {publishedPlaceIntro} from "../src/find/place-editorial-reuse.js";
 import {renderPlaceEditorialOpening} from "../src/find/place-editorial-presentation.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -151,6 +151,54 @@ assert.ok(rendered&&rendered.publication==="PUBLISHED");
 assert.equal(rendered.sections.length,3);
 assert.equal(rendered.gallery.length,0);
 assert.equal(rendered.image_policy,"USE_APPROVED_PLACE_MEDIA_ONLY");
+// A wholly synthetic, owner-authorised partial review may omit precisely
+// identified held sections. This never releases any unreviewed research copy.
+const partialEvidence=fake.paragraph_evidence.map((e,i)=>i===1?
+  {...e,checked:false,hold_reason:"UNVERIFIED_HISTORICAL_CLAIM"}:e);
+const partialReview={...fake,release_scope:"PARTIAL_VERIFIED_SECTIONS",
+  hold_policy:"OMIT_UNVERIFIED_PARAGRAPHS",verified_paragraphs_only:true,
+  paragraph_evidence:partialEvidence};
+const partialRendered=reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,partialReview);
+assert.ok(partialRendered&&partialRendered.publication==="PUBLISHED");
+assert.equal(partialRendered.sections.length,2);
+assert.ok(!partialRendered.sections.some(s=>s.id===kevelaer.sections[1].id));
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...partialReview,owner_release_authorized:false}),null);
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...partialReview,hold_policy:null}),null);
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...fake,paragraph_evidence:partialEvidence}),null);
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...partialReview,paragraph_evidence:partialEvidence.map(e=>e.checked===false?
+    {...e,hold_reason:""}:e)}),null);
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...partialReview,paragraph_evidence:fake.paragraph_evidence}),null);
+assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,{...fake,paragraph_evidence:fake.paragraph_evidence.map((e,i)=>i===0?
+    {...e,source_url:"https://example.com/borrowed-source"}:e)}),null);
+// Synthetic fixture only: a single exact-revision owner batch decision works
+// for pre-reviewed EN/FR evidence without 224 separate owner toggles.
+const unsignedFake={...fake,owner_release_authorized:false};
+const testOwnerBatch={kind:"OWNER_EXACT_REVISION_BATCH",authorized:true,
+  owner:"SYNTHETIC_OWNER_FIXTURE",authorized_on:"2026-11-11",
+  approved_revisions:[{place_id:kevelaer.place_id,revision:sacredGuideRevision(kevelaer)}]};
+const effectiveFixture=resolveSacredGuideBatchAuthorization([unsignedFake],testOwnerBatch);
+assert.equal(effectiveFixture.length,1);
+assert.equal(effectiveFixture[0].owner_release_authorized,true);
+assert.ok(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),
+  sources,effectiveFixture[0]));
+assert.throws(()=>resolveSacredGuideBatchAuthorization([unsignedFake],
+  {...testOwnerBatch,authorized:false}),/INVALID_OWNER_BATCH_AUTHORIZATION/);
+assert.throws(()=>resolveSacredGuideBatchAuthorization([unsignedFake],
+  {...testOwnerBatch,approved_revisions:[{place_id:kevelaer.place_id,
+    revision:"fnv1a32-stale"}]}),/UNREVIEWED_OR_STALE_BATCH_GUIDE/);
+assert.throws(()=>resolveSacredGuideBatchAuthorization([{...unsignedFake,
+  source_to_claim_checked:false}],testOwnerBatch),/UNREVIEWED_OR_STALE_BATCH_GUIDE/);
+assert.throws(()=>resolveSacredGuideBatchAuthorization([unsignedFake],
+  {...testOwnerBatch,approved_revisions:[...testOwnerBatch.approved_revisions,
+    ...testOwnerBatch.approved_revisions]}),/DUPLICATE_OR_INVALID_BATCH_GUIDE_REVISION/);
+
 assert.ok(rendered.sections.every(s=>s.paragraphs.every(p=>p.en&&p.fr&&p.source_url)));
 const intro=publishedPlaceIntro(kevelaer.place_id,[{guides:[rendered]}]);
 assert.ok(intro&&intro.introduction.en&&intro.introduction.fr);
@@ -176,8 +224,15 @@ assert.equal(reviewedSacredGuideForReader(poondi,byPlace.get(poondi.place_id),so
 const dataService=readFileSync(new URL("../src/find/explore-data-service.js",import.meta.url),"utf8");
 const approvedBank=read("data/shrines/illustrated-place-guides-reviewed-bilingual.v1.json");
 const reviewDecisions=read("data/shrines/research/sacred-atlas-bilingual-guide-editorial-decisions.v1.json");
-assert.deepEqual(approvedBank.guides,[],"No public stories before substantive release review");
-assert.deepEqual(reviewDecisions.reviews,[],"No synthetic approvals may persist");
+const effectiveReviews=resolveSacredGuideBatchAuthorization(
+  reviewDecisions.reviews,reviewDecisions.owner_batch_authorization);
+const validatedReleased=buildReviewedSacredGuideCorpus(drafts,seed.shrines,sources,
+  effectiveReviews,published);
+assert.deepEqual(approvedBank.guides,validatedReleased.guides,
+  "Public bank must equal exactly the editor-and-owner approved corpus");
+assert.equal(approvedBank.guides.length,effectiveReviews.filter(r=>
+  r.decision==="APPROVED_FOR_PUBLICATION"&&r.owner_release_authorized===true).length,
+  "Every published guide must have a genuine exact-revision approval");
 assert.match(dataService,/illustratedReviewedBilingual:moduleUrl/);
 assert.match(dataService,/fetchJson\(EXPLORE_DATA_URLS\.illustratedReviewedBilingual/);
 assert.doesNotMatch(dataService,/sacred-atlas-wave[12]-/);
@@ -236,10 +291,9 @@ console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2
       }
     }
   }
-  // Publication is an independent, approval-only pathway.
-  assert.equal(reviewDecisions.reviews.length,0);
-  assert.equal(approvedBank.guides.length,0);
+  // Publication is an independent editor-and-owner approval pathway.
+  assert.deepEqual(approvedBank.guides,validatedReleased.guides);
   console.log("PASS full Sacred Atlas corpus preflight: 224 draft guides / "+
     "672 source-scoped EN/FR paragraphs / 93 earlier research prechecks / "+
-    "579 additional mechanical checks / zero owner approvals.");
+    "579 additional mechanical checks / approval-only publication gate.");
 }
