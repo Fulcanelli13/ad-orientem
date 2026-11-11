@@ -1,6 +1,7 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {projectLiveHandoffStatusSigns} from "../src/mass/reader-live-handoff-status-signs.js";
 import {claudeHandoffFig} from "../src/mass/reader-live-handoff-claude-figs.js";
 import {renderClaudeNativeSanctuary,renderClaudeNativeRouteOverlay}
   from "../src/mass/reader-live-handoff-claude-sanctuary.js";
@@ -91,4 +92,73 @@ test("mounted band calls the direct original renderer and keeps native source ow
  assert.match(source,/projectLiveHandoffSanctuary\(\{gate:result,nativeState,prepared\}\)/);
  assert.match(source,/PREVIEW_NOT_REQUESTED/);
  assert.doesNotMatch(source,/setScholaProgress\(|setInterval\(/);
+});
+
+test("expected sanctuary signs require the exact current source cue and actor",()=>{
+ const cue="AO.SM.C0054";
+ const gate={ok:true,reference:{status:"MATCHED_SOURCE_CARD",
+   nativeCardId:"AO.LIVECURATED.AO.CARD.003.1",
+   expectedNativeId:"AO.LIVECURATED.AO.CARD.003.1",
+   evidence:{sourceCueIds:[cue]}}};
+ const nativeState={
+   nativeCueId:cue,cueProjectionSupported:true,
+   priestVoice:{value:"SUNG / CLEAR",owner:"R17_CUE_SOURCE",cueId:cue},
+   response:{label:"Et cum spiritu tuo",text:"Et cum spiritu tuo",cueId:cue},
+   bell:{label:"SOURCE BELL CUE",cueId:cue},
+   ownership:{priestVoice:"R17_CUE_NATIVE_RUN",response:"R17_CUE_NATIVE",
+     bell:"R17_EXACT_SOURCE_CUE"}
+ };
+ const opts={gate,nativeState,priest:{station:"CENTER"},
+   server:{station:"FOOT"},form:"MISSA_CANTATA_INCENSE"};
+ const marked=projectLiveHandoffStatusSigns(opts);
+ assert.deepEqual([marked.priest,marked.response,marked.bell],
+   ["SUNG",true,true]);
+ assert.equal(marked.schola,false);
+ assert.equal(marked.organ,false);
+ assert.equal(marked.observedSound,false);
+ const svg=renderClaudeNativeSanctuary(scene({signs:marked}));
+ for(const kind of ["priest","response","bell"])
+   assert.match(svg,new RegExp('data-live-status="'+kind+'"'));
+ assert.match(svg,/Expected source bell cue, not detected ringing/);
+ assert.doesNotMatch(svg,/data-live-status="schola"|data-live-status="organ"|>PRIEST<|>YOU</);
+ const cueChanged=projectLiveHandoffStatusSigns({
+   ...opts,nativeState:{...nativeState,nativeCueId:"AO.SM.C0055"}
+ });
+ assert.equal(cueChanged.priest,null);
+ assert.equal(cueChanged.response,false);
+ assert.equal(cueChanged.bell,false);
+ assert.doesNotMatch(renderClaudeNativeSanctuary(scene({signs:cueChanged})),
+   /data-live-status=/);
+ const missingActor=projectLiveHandoffStatusSigns({...opts,priest:null,server:null});
+ assert.equal(missingActor.priest,null);
+ assert.equal(missingActor.bell,false);
+});
+test("private, spoken and held priest voice statuses do not invent audible events",()=>{
+ const cue="AO.SM.C0110";
+ const gate={ok:true,reference:{status:"MATCHED_SOURCE_CARD",
+  nativeCardId:"NATIVE-1",expectedNativeId:"NATIVE-1",
+  evidence:{sourceCueIds:[cue]}}};
+ const common={gate,priest:{station:"CENTER"},server:{station:"FOOT"},
+   form:"MISSA_CANTATA_SIMPLE"};
+ const nativeState={nativeCueId:cue,cueProjectionSupported:true,
+   priestVoice:{value:"SECRET / QUIET",cueId:cue,owner:"R17_CUE_SOURCE"},
+   bell:{cueId:cue,label:"Warning bell",suppressed:true},
+   ownership:{priestVoice:"R17_CUE_NATIVE_RUN",bell:"R17_EXACT_SOURCE_CUE"}};
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState}).priest,"QUIET");
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState}).bell,false);
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState:{
+   ...nativeState,priestVoice:{...nativeState.priestVoice,value:"CLEAR SPOKEN"}
+ }}).priest,"ALOUD");
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState:{
+   ...nativeState,priestVoice:{...nativeState.priestVoice,value:"QUIET PRIEST TRACK"}
+ }}).priest,null);
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState:{
+   ...nativeState,ownership:{priestVoice:"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED"}
+ }}).priest,null);
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState:{
+   ...nativeState,cueProjectionSupported:false
+ }}).source,"NO_VERIFIED_CURRENT_SOURCE_CUE");
+ assert.equal(projectLiveHandoffStatusSigns({...common,nativeState:{
+   ...nativeState,priestVoice:{...nativeState.priestVoice,value:"SUNG / CLEAR"}
+ },form:"LOW"}).priest,null);
 });
