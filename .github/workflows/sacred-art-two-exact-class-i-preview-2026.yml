@@ -1,0 +1,24 @@
+name: Sacred Art 2026 two exact Class I colour previews
+on:
+  pull_request:
+    paths:
+      - 'src/home/approved-class-i-exact-source-previews-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'tests/home-two-class-i-exact-source-previews-2026.mjs'
+      - '.github/workflows/sacred-art-two-exact-class-i-preview-2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-owner-identity:
+    name: Raphael and Tanner 1962 date-bound preview identity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check src/home/approved-class-i-exact-source-previews-2026.js
+          node tests/home-two-class-i-exact-source-previews-2026.mjs
