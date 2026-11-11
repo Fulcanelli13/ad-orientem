@@ -23,6 +23,7 @@ on:
       - 'tests/reader-complete-1961-original-source-review.mjs'
       - 'tests/reader-complete-1961-source-html-browser.mjs'
       - 'data/mass/chant-corpus/gr1961-proper-*.json'
+      - 'data/mass/chant-corpus/gr1961-sequence-*.gabc'
       - 'scripts/schola/build-2026-score-publication-worklist.mjs'
       - 'tests/reader-schola-2026-release-worklist.mjs'
       - 'src/mass/1962-plural-martyr-french-source.js'
@@ -156,7 +157,7 @@ jobs:
         run: |
           node scripts/schola/reconcile-2026-27-variant-source-candidates.mjs
           node tests/schola-2026-27-variant-owner-candidates.mjs
-      - name: Upload original 60, 24 pre-Gospel and complete 1215-source study packets
+      - name: Upload original 60, 24 pre-Gospel and complete 1220-source study packets
         if: always()
         uses: actions/upload-artifact@v4
         with:
