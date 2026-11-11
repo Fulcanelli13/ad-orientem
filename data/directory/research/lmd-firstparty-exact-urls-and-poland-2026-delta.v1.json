@@ -1,0 +1,167 @@
+{
+  "schema": "AO_LMD_FIRSTPARTY_SOURCE_AND_2026_POLAND_DELTA_V1",
+  "date": "2026-11-11",
+  "sources": [
+    "data/directory/research/approved-mass-worldwide-crosswalk-20261009.v1.json",
+    "data/directory/generated/cl2-physical-site-index.v1.json",
+    "https://www.latinmassdir.org/trends/2026/pl/"
+  ],
+  "counts": {
+    "archived_exact_original_source_cases": 4,
+    "cl2_ids_in_exact_source_cases": 5,
+    "owner_confirmed_older_rite_cases": 3,
+    "source_owner_building_confirmed_but_rite_hold": 1,
+    "possible_same_building_cl2_collision_groups": 1,
+    "poland_2026_lmd_added_positions": 8,
+    "poland_lmd_canceled_positions": 1,
+    "poland_new_positions_already_in_cl2": 1,
+    "new_cl2_approved": 0,
+    "canonical_merged": 0,
+    "scheduled_times_imported": 0
+  },
+  "firstparty_exact_url_evidence": [
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:annunciation-monastery-of-the-poor-clare-colettine-nuns-minooka-united-states",
+      "cl2_ids": [
+        "RG-4ED6CD089356",
+        "RG-AFAA6529F2CD"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "POTENTIAL_DOUBLE_CANONICAL_IDENTITY_REVIEW_NOT_AUTO_MERGE",
+      "owner_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "summary": "Both CL2 rows are the same named monastery at 6200 E Minooka Rd. One records FSSP ministry and the other convent ownership; check CL2 entity model before any alias operation. Monastery confirms daily Traditional Latin Mass."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:ave-maria-church-ave-maria-united-states",
+      "cl2_ids": [
+        "RG-F6A26D3ABFF8"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "EXISTING_SITE_OWNER_EVIDENCE_ENRICHMENT_ONLY",
+      "owner_url": "https://www.avemariaparish.org/",
+      "summary": "Current parish identifies Ave Maria church, Florida and explicitly lists Sunday Extraordinary Form. Existing CL2 site only has locality-level address; do not infer precise entrance."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:basilica-of-saint-stephen-new-orleans-united-states",
+      "cl2_ids": [
+        "RG-97E3BC28CBFC"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": false,
+      "action": "EXISTING_SITE_OLD_RITE_SCHEDULE_AND_CHURCH_ROOM_HOLD",
+      "owner_url": "https://www.goodshepherdparishnola.com/",
+      "summary": "Parish and archdiocese identify St Stephen at 1025 Napoleon Ave. Parish says first Friday Latin Mass, not by itself a 1962 Missal attestation; archdiocesan last-Sunday EF claim must be venue-scoped and reconciled to parish/OLGC locations before certification."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:chapel-of-the-blessed-sacrament-gibson-united-states",
+      "cl2_ids": [
+        "RG-C2B98DF5683B"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "EXISTING_SITE_DIOCESAN_OWNER_SOURCE_ENRICHMENT_ONLY",
+      "owner_url": "https://htdiocese.org/blessedsacramentchapel",
+      "summary": "Diocese explicitly sanctions and approves Extraordinary Form worship at Blessed Sacrament Chapel and states 138 Carroll St, Gibson LA. Existing CL2 address remains locality-only; do not auto-promote exact geography or Mass times."
+    }
+  ],
+  "poland_2026_trend_dispositions": [
+    {
+      "key": "LMD_COUNTRY_TREND:PL:OSTROW_WIELKOPOLSKI",
+      "label": "Kościół Chrystusa Króla, Ostrów Wielkopolski",
+      "kind": "LMD_CANCELED",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "NO_MATCH_IN_CL2_DO_NOT_DELETE_OR_SUPPRESS_ANYTHING",
+      "note": "2026 LMD canceled position not found under matching town in current Polish CL2. Historic cancellation does not prove another church wrong."
+    },
+    {
+      "key": "LMD:kosciol-sw-trojcy-wlodzienin-poland",
+      "label": "Holy Trinity church, Włodzienin",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://parafiawlodzienin-wojnowice.pl/",
+      "status": "OFFICIAL_PHYSICAL_PARISH_1962_RITE_UNCONFIRMED",
+      "note": "Parish confirms building and ordinary schedule; owner site does not independently distinguish 1962 old rite."
+    },
+    {
+      "key": "LMD:kaplica-pw-matki-bozej-lesnianskiej-styrzyniec-poland",
+      "label": "Our Lady of Leśna chapel, Styrzyniec",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
+      "note": "No same-town CL2 identity found and no independent owner old-rite evidence established."
+    },
+    {
+      "key": "LMD_COUNTRY_TREND:PL:STARY_SLAWACINEK",
+      "label": "Our Lady of Częstochowa chapel, Stary Sławacinek",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "NEWER_THAN_OCTOBER_ARCHIVE_CANDIDATE_NOT_APPROVED",
+      "note": "Current 2026 LMD trend includes this listing, but no corresponding October archived source key or same-locality CL2 entry was found. Independent owner verification required."
+    },
+    {
+      "key": "LMD:kosciol-sw-wojciecha-i-matki-bozej-snieznej-mikolow-poland",
+      "label": "Old church of St Adalbert and Our Lady of the Snows, Mikołów",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [
+        "RG-783CD50DD217"
+      ],
+      "other_url": "https://www.bazylikamikolow.pl/duszpasterstwo/msze-i-nabozenstwa",
+      "status": "EXISTING_CL2_LOCALITY_MATCH_OWNER_TRADITIONAL_RITE_CONFIRMED",
+      "note": "Current parish identifies old church and traditional Roman Rite on second and fourth Sundays. CL2 title is shorter; do not create another site; treat change as same-physical-venue owner-evidence enrichment."
+    },
+    {
+      "key": "LMD:kosciol-ojcow-piarow-pw-matki-bozej-laskawej-i-sw-wojciecha-lowicz-poland",
+      "label": "Piarist church of Our Lady of Grace and St Adalbert, Łowicz",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
+      "note": "No same-town current CL2 site. Independent owner traditional-rite and physical-identity evidence needed."
+    },
+    {
+      "key": "LMD:kaplica-matki-bozej-niepokalanej-brwinow-poland",
+      "label": "Immaculate Mother of God chapel, Brwinów",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
+      "note": "No same-town CL2 site found; independent source needed."
+    },
+    {
+      "key": "LMD:kosciol-rektoralny-pw-swietego-ducha-w-sandomierzu-sandomierz-poland",
+      "label": "Holy Spirit Rectoral Church, Sandomierz",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://diecezjasandomierska.pl/sandomierz-rektorat-pw-ducha-swietego/",
+      "status": "DIOCESE_PHYSICAL_SITE_CONFIRMED_1962_RITE_HOLD",
+      "note": "Diocesan church identity verified, but diocesan public Mass timetable does not explicitly certify old-rite recurrence."
+    },
+    {
+      "key": "LMD:kosciol-p-w-sw-jakuba-wiekszego-w-obrze-obra-poland",
+      "label": "St James the Greater church, Obra",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
+      "note": "No matched Obra locality in CL2; do not confuse Obra with Ostra Brama in Olsztyn."
+    }
+  ],
+  "guardrails": [
+    "The original first-party URL equality is direct corroboration of a source relationship, not permission to rewrite historical provenance or automatically merge CL2 sites.",
+    "An institution's owner-reported Mass time must not be imported into CL27 schedules without separate current-site and rite validation.",
+    "Same postal address and same monastery strongly indicate one physical-site identity; FSSP ministry and convent owner fields must remain distinct before dedup.",
+    "The LMD 'new' status is a change in LMD listings, NOT proof of a new physical church.",
+    "The eight recent LMD Poland additions are not eight proven missing CL2 sites; at least one is already present under an abbreviated title.",
+    "Do not suppress any Ad Orientem-only site based on LMD omission or canceled status.",
+    "All cases remain research-only; use CL2 Excel approval for any proposed new group or merge."
+  ]
+}
