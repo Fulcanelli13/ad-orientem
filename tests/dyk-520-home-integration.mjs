@@ -12,7 +12,7 @@ assert.equal(bank.counts.customs,378);
 assert.equal(bank.counts.glossary,159);
 const candidates=dyk520Candidates(bank,date);
 assert.equal(candidates.length,537,"The real Home adapter must accept the original 520 plus 17 glossary discoveries");
-assert.equal(new Set(candidates.map(x=>x.id)).size,520);
+assert.equal(new Set(candidates.map(x=>x.id)).size,537);
 assert.ok(candidates.every(r=>r.source_family==="CURATED_CUSTOMS_GLOSSARY_2026"));
 const excluded=new Set(["DYK-CW15-035","DYK-CW15-038","DYK-G600-P-029","DYK-GL-G255-01","DYK-GL-G429-01","DYK-GX18-006"]);
 assert.deepEqual(new Set(bank.excluded_ids),excluded);
