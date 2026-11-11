@@ -63,7 +63,8 @@ export function dyk526ApprovedCandidates(data,{enabled=false}={}){
  const uniqueEn=new Set(),uniqueFr=new Set();
  const candidates=[];
  for(const row of data.records){
-   if(!eligible(row))continue;
+   // One uncertified record invalidates the whole release, not just that card.
+  if(!eligible(row))return [];
    const titleEn=normalize(row.proposed_title.en),titleFr=normalize(row.proposed_title.fr);
    const factEn=normalize(row.proposed_copy.en),factFr=normalize(row.proposed_copy.fr);
    // Do not silently publish title collisions or exact repeated copy.
