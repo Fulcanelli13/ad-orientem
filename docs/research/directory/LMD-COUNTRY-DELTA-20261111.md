@@ -84,6 +84,37 @@ The [ten-case identity ledger](../../../data/directory/research/lmd-ten-ambiguou
 
 The old **118 direct provenance / 280 single textual / 2 multiple textual / 1,131 no-strong-textual** baseline remains preserved for reproducibility. The new ten-case findings are **identity evidence overlays**, not a recalculated census or authorisation to replace the original **2,580 canonical site** dataset.
 
+## Remaining 1,118 no-original-URL archive rows — complete second locality classification (11 Nov 2026)
+
+A second, intentionally **non-authoritative** title-and-locality comparison has now dispositioned **every one of the 1,118** archived records with no retained original first-party URL and no prior strong same-country match. It reuses only the October source IDs and the current CL2 physical index; there was **no further worldwide LMD website scrape**. Individual results are held on their original rows in [the existing 1,531-row archive crosswalk](../../../data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json), under `secondary_archive_locality_screen_20261111`. Original row `status` and provenance are unchanged.
+
+| Follow-on textual outcome | Archive records | Meaning |
+|---|---:|---|
+| **One** plausible existing CL2 site with same country, name fragment and address locality | **281** | Review identity against the actual church/owner. **Not independently verified** by this automated screen |
+| **Multiple** plausible CL2 sites | **16** | Requires exact building, municipality/state, and ministry-role disambiguation |
+| **No** sufficiently aligned CL2 name **and** locality | **821** | **Not** 821 proven missing venues; includes name variants, ambiguous geography, absent original sources and genuinely new-site possibilities |
+| **Total classified** | **1,118** | **0 new CL2 sites, 0 auto-linked old archive IDs** |
+
+Among these 1,118, **513** contain a locality fragment shared with at least one current CL2 geographic description; **605** did not match any geographic-description locality fragment by this strict parser. Of the 513, **216** yielded locality-only overlap without a satisfactory church-name overlap: **same town alone is not the same building**. All figures are scoped to the *archived* records, **not** the live LMD site's current count.
+
+The second matcher suppresses postal numbers, street words, country names and obvious church-name headers before extracting probable location segments from CL2 descriptions. It requires at least one significant shared dedication/title token *as well as* the locality fragment. However, abbreviated church names, homonymous towns, old chapel names, differing scripts and partially verified CL2 street fields still create both false matches and missed matches. For that reason **all 281 + 16 remain candidate links only**, with `proof_of_same_physical_site=false` and `cl2_import_or_alias_approved=false`.
+
+### Five of the 281 single candidates independently confirmed
+
+[The separate first-party evidence ledger](../../../data/directory/research/lmd-1118-v2-firstparty-confirmations-20261111.v1.json) corroborates five proposed **existing CL2 physical identities** against current official institutional sources:
+
+| Existing CL2 identity | Evidence | Important caveat |
+|---|---|---|
+| **Minneapolis All Saints** `RG-C7B3D8B5A0B3` | [FSSP parish](https://www.fsspminneapolis.org/) confirms church at **434 5th Avenue NE** and traditional Roman Rite | **435 4th Street NE** is a parish-registration / mailing address found on the same owner site; not a replacement church entrance |
+| **Saint Paul St Agnes** `RG-368B7B3B5FA3` | [Parish](https://churchofsaintagnes.org/home) confirms **535 Thomas Avenue** and explicitly identifies its Sunday 8 AM EF Low Mass | Do not assume every service labelled only “Latin” uses the same liturgical books |
+| **Indianapolis Holy Rosary** `RG-CF187910B7D3` | [Parish 15 Nov 2026 event](https://www.holyrosaryindy.org/events/low-mass-extraordinary-form/20261115) explicitly specifies **1962 Missal Low Mass** at **520 Stevens Street** | Event is still scheduled as of 11 Nov; no claim it has already occurred, or that future times are guaranteed |
+| **Kansas City Old St Patrick** `RG-AA3084B4438A` | [Diocese](https://kcsjcatholic.org/locator/) explicitly identifies **1962 Missale Romanum** at **806 Cherry Street**; [ICKSP owner](https://www.institute-christ-king.org/kansascity-home/) confirms address | North Kansas City office/mail address is not the church |
+| **Sarasota Christ the King** `RG-7120BD16562F` | [FSSP parish](https://christthekingsarasota.org/about/) and [Venice diocese](https://dioceseofvenice.org/find-a-parish/) confirm the Latin Mass apostolate at **1900 Meadowood Street** | Do not auto-import current timetable |
+
+These **five confirmed matches are a subset of the 281 candidates**, not five additional LMD positions. Independent identity evidence can now be reviewed by the CL2 master owner, but **no production source-ID rewrites, Mass times, coordinates or cards** are approved or changed. The other **276** single candidates remain unverified by owner-source evidence in this pass.
+
+**Finite audit direction:** screen the **16 competing-ID cases** for false same-town collisions and existing CL2 duplicates; prioritize independent identity checks of the other **276** high-specificity singles; then triage the **821** with the same caution (especially France, Poland and Italy). A complete disposition is not the same as full current world-directory verification.
+
 ## Independent owner-source resolution + Poland 2026 changes
 
 A [separate evidence-linked delta ledger](../../../data/directory/research/lmd-firstparty-exact-urls-and-poland-2026-delta.v1.json) has closed a **first-party URL comparison** of the remaining **1,131** archived LMD rows without a strong ID, name and locality match.
