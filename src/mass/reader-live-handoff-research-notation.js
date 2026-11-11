@@ -68,7 +68,7 @@ export const LIVE_HANDOFF_RESEARCH_NOTATION_CSS=[
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-live-chant-scroll{height:63px!important;max-height:63px!important;border-top:1px solid rgba(222,202,143,.14)}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff{width:4096px!important;min-width:4096px!important;max-width:none!important;height:63px!important;overflow:hidden}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff svg{max-width:none!important;height:auto!important;fill:currentColor}",
- ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff svg :is(use,rect,polygon,polyline){fill:currentColor}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff svg :is(use,rect,polygon,polyline,text,tspan){fill:currentColor}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff svg :is(.staffLine,.ledgerLine,path[stroke],polyline[stroke]){stroke:currentColor}",
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-dock[data-ao-research-reference='true']:not([data-collapsed='true']){height:146px!important;min-height:146px!important;max-height:146px!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-dock[data-ao-research-reference='true'] :is(.ao-schola-main,.ao-schola-meta,.ao-schola-upcoming){display:none!important}",
