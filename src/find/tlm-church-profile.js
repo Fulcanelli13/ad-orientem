@@ -155,7 +155,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  else {
    // A search is an escape hatch, NEVER original provenance or a GPS destination.
    const query=[T(item?.title),T(item?.source_location_description)||T(item?.address?.formatted)||T(item?.subtitle),T(item?.country_code)].filter(Boolean).join(", ");
-   if(query&&!listOnly)html+='<div class="aoTlmProfilePrimaryAction">'+
+   if(query)html+='<div class="aoTlmProfilePrimaryAction"'+(listOnly?' data-tlm-list-only-search':'')+'>'+
      link("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query).replace(/\x27/g,"%27"),
        L(language,"Search for this church (results not verified)",
          "Rechercher cette église (résultats non vérifiés)"))+'</div>'+
@@ -323,7 +323,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
     E(L(language,"List-only site: no verified map position. This is not a confirmed church entrance or current Mass location.",
       "Lieu uniquement en liste : aucun repère cartographique vérifié. Cela ne confirme ni l’entrée de l’église ni une messe actuelle."))+
     '</p>';
-  if(searchQuery)html+='<div class="aoTlmProfileActions" data-tlm-list-only-search>'+
+  if(searchQuery&&primaryLink)html+='<div class="aoTlmProfileActions" data-tlm-list-only-search>'+
     link("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(searchQuery).replace(/\x27/g,"%27"),
       L(language,"Search by church name and source address (results unverified)",
         "Rechercher par nom et adresse d’origine (résultats non vérifiés)"))+'</div>';
