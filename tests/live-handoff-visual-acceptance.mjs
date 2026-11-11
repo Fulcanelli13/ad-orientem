@@ -311,6 +311,37 @@ try{
       assert.equal(fullKyrie.hasSvg,true);
       assert.match(fullKyrie.sourceLink||"",/gregobase/);
       assert.equal(fullKyrie.nativeScholaIndex,before.scholaIndex);
+      const originalButton=page.locator(
+        'dialog[data-ao-reference-full-score] [data-ao-reference-print-toggle]');
+      await originalButton.waitFor({state:"visible",timeout:3000});
+      await originalButton.click();
+      const originalKyrie=await page.evaluate(()=>{
+        const modal=document.querySelector("dialog[data-ao-reference-full-score]");
+        const printed=modal.querySelector("[data-ao-reference-print-view]");
+        const originalUrls=[...printed.querySelectorAll("img")].map(i=>i.getAttribute("src"));
+        const staff=modal.querySelector("[data-ao-reference-full-staff]");
+        return {displayed:!printed.hidden,staffHidden:staff.hidden,originalUrls,
+          pdf:printed.querySelector("a")?.getAttribute("href"),
+          screenWidth:document.documentElement.scrollWidth,
+          retainedScholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
+      });
+      assert.equal(originalKyrie.displayed,true);
+      assert.equal(originalKyrie.staffHidden,true);
+      assert.deepEqual(originalKyrie.originalUrls,[
+        "https://gregobase.selapa.net/sources/2/915.png",
+        "https://gregobase.selapa.net/sources/2/916.png"
+      ]);
+      assert.match(originalKyrie.pdf||"",/#page=40$/);
+      assert.equal(originalKyrie.retainedScholaIndex,before.scholaIndex);
+      assert.ok(originalKyrie.screenWidth<=option.width+2,
+        option.name+" original folio comparison leaked page horizontally");
+      await page.screenshot({path:resolve(output,option.name+"-kyrie-original-1961.png"),
+        animations:"disabled",fullPage:false});
+      await originalButton.click();
+      assert.equal(await page.locator(
+        'dialog[data-ao-reference-full-score] [data-ao-reference-print-view]').isVisible(),false);
+      assert.equal(await page.locator(
+        'dialog[data-ao-reference-full-score] [data-ao-reference-full-staff] svg').isVisible(),true);
       await page.locator('dialog[data-ao-reference-full-score] [data-schola-score-close]').click();
       assert.equal(await page.locator('dialog[data-ao-reference-full-score]').count(),0);
       const switching=await page.evaluate(()=>{
@@ -386,7 +417,7 @@ try{
       assert.equal(teardown.hidden,true);
       c.steps.push({name:"stage-e-manual-nonpublishing-kyriale",
         source:"EXPLICIT_MASS_11_REFERENCE_ONLY",research,referenceMetrics,
-        switching,fullKyrie,credo,fullCredo,teardown});
+        switching,fullKyrie,originalKyrie,credo,fullCredo,teardown});
       // The actual 1962 Advent I Gradual source has TWO separate matching
       // 1961 references in one source paragraph. Neither is to be inferred
       // from a calendar title; require an explicit user score choice.
