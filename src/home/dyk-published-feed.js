@@ -584,7 +584,7 @@ export function dykPublishedMarkup(model){
    (/^G\d{3}$/.test(model.glossaryConceptId||"")?
     '<p><button type="button" data-dyk-glossary-entry="'+esc(model.glossaryConceptId)+'">'+
     esc(fr?"Lire la définition dans le glossaire":"Read the glossary definition")+'</button></p>':"")+
-   '<small>'+esc(fr?"Contexte historique ou rubrique de 1962 selon la source citée.":"Historical context or 1962 rubric, as identified in the cited source.")+'</small>'+
+   (model.glossaryConceptId?"":'<small>'+esc(fr?"Contexte historique ou rubrique de 1962 selon la source citée.":"Historical context or 1962 rubric, as identified in the cited source.")+'</small>')+
    '</article></div>';
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
