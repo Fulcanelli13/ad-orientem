@@ -1,0 +1,51 @@
+name: LIVE Sanctuary source and choreography acceptance
+on:
+  pull_request:
+    paths:
+      - "assets/mass/live-sanctuary/**"
+      - "src/mass/reader-sanctuary-visual.js"
+      - "src/mass/reader-native-preview.js"
+      - "tests/reader-sanctuary-source-65.mjs"
+      - "tests/reader-sanctuary-native65-phone.mjs"
+      - ".github/workflows/live-sanctuary-source.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  source-and-native:
+    name: Original artwork and native 65-card LIVE verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: |
+          node --check src/mass/reader-native-preview.js
+          node --check src/mass/reader-sanctuary-visual.js
+          node --check assets/mass/live-sanctuary/ao-sanctuary-embedded.js
+          node --check tests/reader-sanctuary-native65-phone.mjs
+      - name: Protect original artwork, exact source cues, rubrics and cinematics
+        run: |
+          node tests/reader-sanctuary-source-65.mjs
+          node tests/reader-sanctuary-visual.mjs
+          node tests/reader-cue-focus.mjs
+          node tests/reader-cinematic-scenes.mjs
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Actual 65-card Low Sung Solemn portrait landscape desktop
+        run: node tests/reader-sanctuary-native65-phone.mjs
+      - name: Confirm LIVE rubric and cinematic enter-exit behaviour
+        run: node tests/reader-cinematic-scenes-phone.mjs
+      - name: Capture source visual screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanctuary-native-live-review
+          path: artifacts/sanctuary-live/*.png
+          if-no-files-found: warn
+          retention-days: 7
