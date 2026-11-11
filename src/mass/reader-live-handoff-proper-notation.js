@@ -6,6 +6,11 @@ import {referenceScoresForParagraph} from "./reader-inline-proper-reference.js";
 const freeze=Object.freeze;
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const PROPER=new Set(["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE","OFFERTORY","COMMUNION"]);
+const RESEARCH_STATUS=new Set([
+ "RESEARCH_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED",
+ "ARCHIVED_REFERENCE_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED",
+ "ARCHIVED_GR1961_TEXT_REFERENCE_NOT_MUSICALLY_CERTIFIED"
+]);
 const clean=v=>String(v??"").trim();
 const normalize=v=>clean(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .replace(/[æœ]/gi,x=>x.toLowerCase()==="æ"?"ae":"oe")
@@ -44,7 +49,7 @@ export function selectLiveHandoffProperReferences({
  const chosen=[];
  for(const score of matches){
    if(score?.publicScoreApproved!==false ||
-      score.sourceStatus!=="RESEARCH_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED"||
+      !RESEARCH_STATUS.has(score.sourceStatus)||
       !/^GREGOBASE-\d+$/.test(clean(score.id))||
       !/^https:\/\//.test(clean(score.sourceUrl))||
       typeof score.gabc!=="string" || !score.gabc.includes("%%") ||
