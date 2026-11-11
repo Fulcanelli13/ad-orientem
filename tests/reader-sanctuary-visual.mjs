@@ -37,3 +37,6 @@ assert.match(visualSourceLandscape,/if\(drag\.landscape\)setWidth\(/,
 assert.match(visualSourceLandscape,
  /\.ao-reader-shell\.ao-sanctuary-preview\[data-schola-visible="true"\][\s\S]*?\.ao-prayer-card\{\s*height:100%!important/,
  "The old native viewport-height hack must not crush a side-by-side prayer scroller");
+
+assert.match(visualSourceLandscape,/height:82px;\s*max-height:36%/,
+ "Compact landscape resize handle must stay above the floating Schola overlay");

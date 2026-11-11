@@ -87,6 +87,18 @@ try{
   assert.ok(rect&&rect.height>0,"Resizable original sanctuary absent");
   const x=rect.x+rect.width/2,y=rect.y+rect.height/2;
   const sideways=width>height&&height<=540;
+  const hit=await page.evaluate(({x,y})=>{
+    const grip=document.querySelector(".ao-sanctuary-resize");
+    const at=document.elementFromPoint(x,y);
+    return {onGrip:Boolean(grip&&(grip===at||grip.contains(at))),
+      target:at?.className??at?.tagName,
+      orientation:grip?.getAttribute("aria-orientation")};
+  },{x,y});
+  assert.equal(hit.onGrip,true,
+    "The Schola dock or iframe obscures the actual sanctuary resize handle: "+
+     JSON.stringify({form,width,height,rect,hit}));
+  assert.equal(hit.orientation,sideways?"vertical":"horizontal",
+    "Resize grip must expose correct portrait/landscape orientation");
   await page.mouse.move(x,y);await page.mouse.down();
   await page.mouse.move(x+(sideways?-35:0),y+(sideways?0:-35),{steps:5});await page.mouse.up();
   const after=await page.evaluate(()=>({

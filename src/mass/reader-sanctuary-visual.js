@@ -71,8 +71,12 @@ const CSS=String.raw`
     height:100%!important
  }
  .ao-sanctuary-preview .ao-sanctuary-resize{
-  left:auto;right:0;top:0;bottom:0;width:16px;height:100%;
-  cursor:ew-resize
+  /* The floating Schola dock occupies the lower half of this stage.
+     A full-height divider's midpoint receives its pointer events instead.
+     Leave the draggable tab at the unobstructed top, without raising the
+     entire sanctuary above the Schola or intercepting its controls. */
+  left:auto;right:0;top:0;bottom:auto;width:16px;height:82px;
+  max-height:36%;cursor:ew-resize
  }
  .ao-sanctuary-preview .ao-sanctuary-resize:before{
   width:3px;height:38px
@@ -112,6 +116,10 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
  win.addEventListener("message",receive);
  const compactLandscape=()=>win.matchMedia?.(
   "(orientation: landscape) and (max-height: 540px)")?.matches===true;
+ const syncGripOrientation=()=>grip.setAttribute("aria-orientation",
+  compactLandscape()?"vertical":"horizontal");
+ syncGripOrientation();
+ win.addEventListener?.("resize",syncGripOrientation);
  const height=()=>Math.max(80,Math.min(win.innerHeight*.65,
    parseFloat(win.getComputedStyle(region).height)||230));
  const width=()=>Math.max(120,region.getBoundingClientRect?.().width||210);
@@ -159,6 +167,7 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
  const destroy=()=>{
   if(destroyed)return;destroyed=true;
   win.removeEventListener("message",receive);
+  win.removeEventListener?.("resize",syncGripOrientation);
   grip.removeEventListener("pointerdown",down);
   grip.removeEventListener("pointermove",move);
   grip.removeEventListener("pointerup",up);
