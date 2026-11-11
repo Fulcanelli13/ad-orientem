@@ -19,7 +19,7 @@ const blank=()=>freeze({
   source:"NO_VERIFIED_CURRENT_SOURCE_CUE",
   observedSound:false
 });
-export function projectLiveHandoffStatusSigns({gate,nativeState,priest,server,form}={}){
+export function projectLiveHandoffStatusSigns({gate,nativeState,priest,faithful,server,form}={}){
   const cue=String(nativeState?.nativeCueId??"");
   const certified=gate?.ok===true &&
     gate.reference?.status==="MATCHED_SOURCE_CARD" &&
@@ -42,7 +42,7 @@ export function projectLiveHandoffStatusSigns({gate,nativeState,priest,server,fo
   }
 
   const response=nativeState?.response;
-  const responseSign=Boolean(response?.cueId===cue &&
+  const responseSign=Boolean(faithful && response?.cueId===cue &&
     String(response?.text??response?.label??"").trim() &&
     nativeState?.ownership?.response==="R17_CUE_NATIVE");
 
