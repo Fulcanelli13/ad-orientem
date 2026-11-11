@@ -48,7 +48,7 @@ const html=template.replace("__SOURCE_CATALOGUE_JSON__",payload)
  .replace("__VENDORED_EXSURGE_JS__",exsurge.replace(/<\/script/gi,"<\\/script"));
 if(html.includes("__SOURCE_CATALOGUE_JSON__")||
    html.includes("__VENDORED_EXSURGE_JS__")||
-   !html.includes('data.aoSourceScoreReviewReady="true"')||
+   !html.includes('document.body.dataset.aoSourceScoreReviewReady="true"')||
    html.length<500000)
  throw Error("FULL_1961_SOURCE_REVIEW_HTML_INCOMPLETE");
 await mkdir(dir,{recursive:true});
