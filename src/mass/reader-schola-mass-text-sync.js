@@ -140,10 +140,48 @@ export function createScholaMassTextSynchronizer({
   reader.dataset.scholaTextFollowParagraph=anchor.id;
   return true;
  }
+ /** Return a GABC source position for the Latin reading line currently
+  * crossing the existing LIVE focus rail. No cue/rubric DOM is changed.
+  * A rubric-only area or unknown vernacular yields null (fail closed).
+  * Ties on one text line preserve the previous syllable position. */
+ function indexAtFocus(previousIndex=0){
+  if(!enabled())return null;
+  const plan=read();
+  if(!plan.anchors.length||!plan.offsets?.length)return null;
+  const cardRect=reader.getBoundingClientRect();
+  const focusY=cardRect.top+reader.clientHeight*.39;
+  let best=null;
+  for(const anchor of plan.anchors){
+   if(!anchor.element?.isConnected||!anchor.element?.getBoundingClientRect)continue;
+   const paragraphRect=anchor.element.getBoundingClientRect();
+   if(focusY<paragraphRect.top-4||focusY>paragraphRect.bottom+4)continue;
+   for(let i=0;i<plan.offsets.length;i++){
+    const charOffset=plan.offsets[i];
+    if(charOffset<anchor.start||charOffset>=anchor.end)continue;
+    const char=characterAt(anchor.element,charOffset-anchor.start);
+    if(!char)continue;
+    const doc=reader.ownerDocument;
+    if(typeof doc?.createRange!=="function")continue;
+    const range=doc.createRange();
+    range.setStart(char.node,char.offset);
+    range.setEnd(char.node,Math.min(char.node.textContent.length,
+      char.offset+char.length));
+    const rect=range.getBoundingClientRect();
+    if(!rect?.height)continue;
+    const distance=Math.abs(rect.top+rect.height/2-focusY);
+    const previousDistance=Math.abs(i-previousIndex);
+    if(!best||distance<best.distance-.5||
+      (Math.abs(distance-best.distance)<=.5&&
+       previousDistance<best.previousDistance))
+      best={index:i,distance,previousDistance};
+   }
+  }
+  return best?.index??null;
+ }
  function destroy(){
   cachedBody=null;cachedRows=[];cachedAnchors=null;cachedSignature=null;
   delete reader.dataset.scholaTextFollowIndex;
   delete reader.dataset.scholaTextFollowParagraph;
  }
- return Object.freeze({follow,destroy,inspect:read});
+ return Object.freeze({follow,indexAtFocus,destroy,inspect:read});
 }
