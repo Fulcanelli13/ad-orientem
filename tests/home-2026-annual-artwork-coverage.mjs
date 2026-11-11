@@ -127,6 +127,17 @@ for(const [date,proper,expected] of [
  published.set(date,art);
 }
 assert.equal(published.size,30,"28 previously mapped plus two exact frozen original photos");
+ // Easter Monday 2026 exact frozen Caravaggio title, locally illustrated by
+ // the London 1601 NG172 work (physical version not independently owner-locked).
+const emmausDay=annualHomeArtworkDay2026("2026-04-06");
+const emmaus=approved2026HomeArtwork(build(emmausDay.date,emmausDay.principalId,"Tempora/Pasc0-1"));
+assert.equal(emmaus?.selectionKind,"FROZEN_CLASS_I_CARAVAGGIO_EMMAUS_1601_LONDON_VERIFIED_SOURCE");
+assert.equal(emmaus?.imageStatus,"LOCAL_EMMAUS_1601_NG172_PD_ART_FULLFRAME_BYTE_VERIFIED");
+assert.equal(emmaus?.physicalVersionOwnerApprovalPreviouslyRecorded,false);
+assert.equal(emmaus?.photographCropCertified,false);
+assert.ok(existsSync(new URL(".."+emmaus.image,import.meta.url)));
+published.set(emmausDay.date,emmaus);
+assert.equal(published.size,31,"30 prior mapped dates plus verified Easter Monday 1601 Caravaggio");
 
 
 
@@ -157,14 +168,14 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,135);
+assert.equal(published.size+seasonal.length,136);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,24);
+assert.equal(dateSelectedPending.length,23);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");
 }
 const wrong=build("2026-01-03","sancti:wrong","Commune/C10");
 assert.equal(approved2026HomeArtwork(wrong),null);
-console.log("PASS annual artwork 365/365 indexed: 25 previously mapped, 105 seasonal local originals, 235 image-mapping exceptions");
+console.log("PASS annual artwork 365/365 indexed: 31 dated mapped, 105 seasonal local originals, 229 mapping exceptions");
 console.log("PASS 53 preserved dated selections, 12 Marian Saturdays, 59 other Class IV ferias, 34 Class III seasonal ferias, 2 protected rights holds");
