@@ -118,6 +118,11 @@ export const CLASS_I_REUSED_LOCAL_EXACT_PHOTOS_2026=Object.freeze({
 export function releasedExactClassIPhotoReuse2026(date,principalId,properPath){
  const rule=CLASS_I_REUSED_LOCAL_EXACT_PHOTOS_2026[date];
  if(!rule||!principalId||!properPath)return null;
+ if(date==="2026-12-25"){
+  const mass=principalId.match(/^sancti:12-25m([123]):1:w$/);
+  const proper=properPath.match(/^Sancti\/12-25m([123])$/);
+  if(!mass||!proper||mass[1]!==proper[1])return null;
+ }
  const frozen=annualHomeArtworkDay2026(date);
  if(frozen?.rank!=="I"||frozen.selection?.title!==rule.title||
     frozen.selection?.artist!==rule.artist||
