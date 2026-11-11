@@ -33,7 +33,7 @@ for(const entry of entries){
 }
 // The published definitions use term names, not internal G-IDs, UI instructions,
 // editorial directives or implementation-layer terminology.
-const residualEditorial=/\\bG\\d{3}\\b|\\b(?:phrase layer|gesture registry|search may|the canonical objects|source-backed|editorial note|should be presented|should be taught|current descriptions should|translation must preserve)\\b|(?:couche des phrases|registre des gestes|objets canoniques|doivent être présentés|doit être enseigné|doivent être exposés)/iu;
+const residualEditorial=/\bG\d{3}\b|\b(?:phrase layer|gesture registry|search may|the canonical objects|source-backed|editorial note|should be presented|should be taught|current descriptions should|translation must preserve)\b|(?:couche des phrases|registre des gestes|objets canoniques|doivent être présentés|doit être enseigné|doivent être exposés)/iu;
 for(const entry of entries){
  for(const field of ["short_definition","explanation"]){
   for(const language of ["en","fr"]){
