@@ -31,8 +31,36 @@ const STOM_EMMAUS_2026=Object.freeze({
  newPhotoApprovalCreated:false,
  ownerApprovedCrop:false
 });
+const RUBENS_ROCKOX_2026=Object.freeze({
+ date:"2026-04-07",
+ principalId:"tempora:Pasc0-2:1:w",
+ properPath:"Tempora/Pasc0-2",
+ ownerDecisionDate:"2026-10-26",
+ supersedes:Object.freeze({
+  title:"Appearance of Christ to His Disciples",
+  artist:"Anthony van Dyck",artworkId:null,
+  editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL"
+ }),
+ selection:Object.freeze({
+  title:"Christ's First Apparition to the Disciples (Rockox Triptych central panel)",
+  artist:"Peter Paul Rubens",
+  artworkId:"kmska-307",
+  editorialBasis:"LATER_EXPLICIT_OWNER_DATE_APPROVAL_20261026"
+ }),
+ museumObject:"https://vlaamsekunstcollectie.be/en/collection/307",
+ museumIdentity:"Royal Museum of Fine Arts Antwerp (KMSKA), centre panel inventory 307, Rockox Triptych",
+ candidatePhotoPage:"https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Christ%27s_First_Apparition_to_the_Disciples_(central_panel_of_the_Rockox_Triptych).jpg",
+ photoSourceInstitution:"The Flemish Art Collection / KMSKA",
+ sourcePhotographStatus:"CC0_INSTITUTIONAL_SOURCE_CANDIDATE_PENDING_LOCAL_QA",
+ image:null,
+ sourceRightsNotes:"Flemish Art Collection exact object 307 displays image CC0; candidate Commons photograph is a cropped image of the exact centre panel. Actual source bytes, mobile visual fidelity, title ambiguity and released-image attribution must be verified before publication.",
+ iconographicCaution:"Traditionally called The Incredulity of Thomas, but museum research questions whether Thomas appears; do not certify an exact Gospel identification.",
+ newPhotoApprovalCreated:false,
+ ownerApprovedCrop:false
+});
 export const CLASS_I_OWNER_SUPERSESSIONS_2026=Object.freeze({
- "2026-04-06":STOM_EMMAUS_2026
+ "2026-04-06":STOM_EMMAUS_2026,
+ "2026-04-07":RUBENS_ROCKOX_2026
 });
 export function classIOwnerSupersession2026(date,principalId,properPath){
  const row=CLASS_I_OWNER_SUPERSESSIONS_2026[date];
