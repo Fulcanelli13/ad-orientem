@@ -36,7 +36,7 @@ export function createScholaFollowClock({
  if(typeof schedule!=="function"||typeof cancel!=="function")
   throw new TypeError("Timers required");
  const duration=Math.max(500,Math.min(9000,Number(stepMs)||1600));
- let count=0,index=0,running=false,timer=null,destroyed=false;
+ let count=0,index=0,running=false,paused=false,timer=null,destroyed=false;
  const release=()=>{if(timer!==null){cancel(timer);timer=null;}};
  function tick(){
   timer=null;
@@ -50,7 +50,7 @@ export function createScholaFollowClock({
  function arm(){release();if(running&&index<count-1)timer=schedule(tick,duration);}
  function start(total){
   release();if(destroyed)return false;
-  count=Math.floor(Number(total)||0);index=0;
+  count=Math.floor(Number(total)||0);index=0;paused=false;
   if(count<1||count>600){count=0;running=false;return false;}
   running=count>1;
   onStep(Object.freeze({index,count,origin:"estimated"}));arm();
@@ -61,15 +61,19 @@ export function createScholaFollowClock({
   const n=Number(next);
   if(!Number.isFinite(n))return false;
   index=Math.max(0,Math.min(count-1,Math.floor(n)));
-  running=index<count-1;
+  running=!paused&&index<count-1;
   onStep(Object.freeze({index,count,origin:"manual"}));arm();
   return true;
  }
  function shift(delta){return seek(index+Number(delta||0));}
- function destroy(){release();running=false;count=0;destroyed=true;}
+ function pause(){if(destroyed||count<1)return false;
+  paused=true;running=false;release();return true;}
+ function resume(){if(destroyed||count<1)return false;
+  paused=false;running=index<count-1;arm();return true;}
+ function destroy(){release();running=false;paused=false;count=0;destroyed=true;}
  return Object.freeze({
-  start,seek,shift,destroy,
-  getState:()=>Object.freeze({index,count,running,pending:timer!==null,destroyed})
+  start,seek,shift,pause,resume,destroy,
+  getState:()=>Object.freeze({index,count,running,paused,pending:timer!==null,destroyed})
  });
 }
 
@@ -207,6 +211,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
  }
  return Object.freeze({
   start,destroy,seek:index=>clock.seek(index),shift:by=>clock.shift(by),
+  pause:()=>clock.pause(),resume:()=>clock.resume(),
   getState:()=>Object.freeze({...clock.getState(),syllables:parts.length,
    mapped:targets.length===parts.length&&parts.length>0,active})
  });
