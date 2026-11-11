@@ -1,17 +1,17 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dyk520Candidates,dyk520Model,loadDyk520Release} from "../src/home/dyk-520-release.js";
+import {dyk520Candidates,dyk520CalendarCandidates,dyk520Model,loadDyk520Release} from "../src/home/dyk-520-release.js";
 import {dykHomeRotationSlot,dykPublishedMarkup} from "../src/home/dyk-published-feed.js";
 import {hydrateHomeDidYouKnow,HOME_DYK_GLOSSARY_IDS} from "../src/home/did-you-know-glossary.js";
 
 const bank=JSON.parse(readFileSync("data/did-you-know/dyk-customs-glossary-520.v1.json","utf8"));
 const glossary=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
 const date="2026-11-11";
-assert.equal(bank.count,520);
+assert.equal(bank.count,537);
 assert.equal(bank.counts.customs,378);
-assert.equal(bank.counts.glossary,142);
+assert.equal(bank.counts.glossary,159);
 const candidates=dyk520Candidates(bank,date);
-assert.equal(candidates.length,520,"The real Home adapter must accept all 520 records");
+assert.equal(candidates.length,537,"The real Home adapter must accept the original 520 plus 17 glossary discoveries");
 assert.equal(new Set(candidates.map(x=>x.id)).size,520);
 assert.ok(candidates.every(r=>r.source_family==="CURATED_CUSTOMS_GLOSSARY_2026"));
 const excluded=new Set(["DYK-CW15-035","DYK-CW15-038","DYK-G600-P-029","DYK-GL-G255-01","DYK-GL-G429-01","DYK-GX18-006"]);
@@ -41,7 +41,43 @@ for(let offset=0;offset<1500;offset++){
  assert.ok(pick);
  picks.add(pick);
 }
-assert.equal(picks.size,544,"All new cards and 24 Glossary fallback facts must rotate");
+assert.equal(picks.size,561,"All 537 curated cards and 24 Glossary fallback facts must rotate");
+// The added glossary cards are excerpts of the existing source-backed
+// 450-concept registry, not an independent set of invented definitions.
+const registry=JSON.parse(readFileSync("data/glossary/source-registry.v1.json","utf8"));
+const conceptFiles=[1,2,3].map((part)=>
+ JSON.parse(readFileSync("data/glossary/concepts-"+String((part-1)*150+1).padStart(3,"0")+"-"+String(part*150).padStart(3,"0")+".v1.json","utf8")));
+const concepts=new Map(conceptFiles.flatMap(x=>x.entries).map(x=>[x.id,x]));
+const sources=new Map(registry.sources.map(x=>[x.id,x]));
+const added=bank.records.filter(x=>x.origin==="GLOSSARY_EDUCATIONAL_DISCOVERY_20261111");
+assert.equal(added.length,17);
+for(const r of added){
+ const concept=concepts.get(r.glossary_concept_id);
+ const source=sources.get(r.source.id);
+ assert.ok(concept&&source,r.id+" missing canonical source");
+ assert.ok(concept.definition_source_ids.includes(source.id),r.id+" source not on concept");
+ assert.equal(r.source.url,source.canonical_url,r.id+" source URL drift");
+ assert.equal(r.category,"GLOSSARY");
+ assert.ok(["LITURGY","DEVOTION","DOCTRINE","LATIN","ARCHITECTURE","CANON_LAW"].includes(r.discovery_topic));
+ for(const lang of ["en","fr"]){
+  assert.ok(r.title[lang]&&r.fact[lang].length>50,r.id+" missing "+lang);
+  const model=dyk520Model(bank,r.id,date,lang);
+  assert.equal(model.glossaryConceptId,r.glossary_concept_id);
+  assert.match(dykPublishedMarkup(model),/data-dyk-glossary-entry=/);
+ }
+}
+const originalG311=bank.records.find(r=>r.id==="DYK-GL-G311-01");
+assert.ok(originalG311.fact.en.includes("final two stanzas"));
+assert.ok(!originalG311.fact.en.includes("Panem de caelo"));
+const correctedPanem=bank.records.find(r=>r.id==="DYK-GL-G314-01");
+assert.ok(correctedPanem.fact.en.includes("praestitisti eis"));
+assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-04").map(r=>r.id),["DYK-GL-G332-01"]);
+assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-05").map(r=>r.id),["DYK-GL-G333-01"]);
+assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-11"),[]);
+const invalidCue=structuredClone(bank);
+invalidCue.records.find(r=>r.id==="DYK-GL-G332-01").calendar_cue="ANY_DAY";
+assert.deepEqual(dyk520Candidates(invalidCue,date),[]);
+
 const clone=structuredClone(bank);
 clone.records[0].fact.fr="";
 assert.deepEqual(dyk520Candidates(clone,date),[],"One invalid record fails the full bank");
@@ -54,7 +90,10 @@ const selectedDay=Array.from({length:25},(_,i)=>
  new Date(Date.UTC(2026,10,11+i)).toISOString().slice(0,10))
  .find(day=>dykHomeRotationSlot(day,ids,HOME_DYK_GLOSSARY_IDS).startsWith("DYK-"));
 assert.ok(selectedDay);
-const expectedId=dykHomeRotationSlot(selectedDay,ids,HOME_DYK_GLOSSARY_IDS);
+const calendarRows=dyk520CalendarCandidates(bank,selectedDay);
+const expectedId=calendarRows.length?
+ dykHomeRotationSlot(selectedDay,calendarRows.map(r=>r.id),[]):
+ dykHomeRotationSlot(selectedDay,ids,HOME_DYK_GLOSSARY_IDS);
 const screen={dataset:{homeLanguage:"en"}};
 const nodes=Object.fromEntries(["[data-home-dyk-title]","[data-home-dyk-fact]","[data-home-dyk-source]"]
  .map(key=>[key,{textContent:""}]));
@@ -80,4 +119,4 @@ await new Promise(resolve=>setImmediate(resolve));
 assert.equal(button.dataset.homeDykFactId,expectedId);
 assert.equal(nodes["[data-home-dyk-fact]"].textContent,
  bank.records.find(r=>r.id===expectedId).fact.fr);
-console.log("PASS DYK 520: 378 Customs + 142 Glossary, 520 bilingual models, sources, full no-repeat rotation and real Home hydration");
+console.log("PASS DYK 537: 378 Customs + 159 Glossary, canonical glossary links, calendar cues, 537 bilingual models, full rotation and Home hydration");
