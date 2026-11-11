@@ -13,6 +13,12 @@ assert.deepEqual([p.date,p.principalId,p.properPath,p.frozenTitle,p.frozenArtist
 assert.equal(p.physicalWork,"National Gallery, London, NG172, 1601");
 assert.equal(p.physicalWorkReference,row.museumObject);
 assert.equal(p.commonsFilePage,row.source);
+assert.equal(p.sourceSha1,"72adc134bebed87eb8043e29f9844b1490ce0ad7");
+assert.equal(p.sourceSha256,"0ad5e515781f1ef52e5d60b43002a98ff0dceaf8707f9c9b8e944d97feea824f");
+assert.equal(p.publishedImageSha256,"b6590b5a5167fda18143087cbfbfa5bb4e73e4420cd14ee5f7d3101de0d03513");
+assert.equal(row.sourceOriginalSha1,p.sourceSha1);
+assert.equal(row.sourceOriginalSha256,p.sourceSha256);
+assert.equal(row.displayedWebPSha256,p.publishedImageSha256);
 assert.match(p.sameTitleExcluded,/1606.*Brera/);
 assert.equal(p.physicalVersionOwnerApprovalPreviouslyRecorded,false);
 assert.equal(p.cropOwnerApprovalCreated,false);
