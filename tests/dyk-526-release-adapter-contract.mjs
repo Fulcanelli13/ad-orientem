@@ -107,6 +107,22 @@ for(const mutator of [
  const broken=clone(approved);mutator(broken.records[0]);
  assert.deepEqual(dyk526ApprovedCandidates(broken,{enabled:true}),[]);
 }
+// Never silently publish a subset of an ostensibly approved release if any
+// bundled card lacks one of the required per-record certifications.
+const mixedApproval=clone(approved);
+const withheld=clone(first);
+withheld.id="DYK-SYNTHETIC-WITHHELD";
+withheld.research_provenance.master_fact_id=withheld.id;
+withheld.published_source.source_id="SYNTHETIC-WITHHELD";
+withheld.published_source.source_record_id="SYNTHETIC-WITHHELD";
+withheld.proposed_title={en:"A withheld second card",fr:"Une seconde carte retenue"};
+withheld.proposed_copy={en:"A distinct historical Catholic practice held back pending source certification.",
+ fr:"Une pratique catholique ancienne distincte retenue dans l'attente de la vérification des sources."};
+withheld.release_gate.source_reference_checked=false;
+mixedApproval.records.push(withheld);
+assert.deepEqual(dyk526ApprovedCandidates(mixedApproval,{enabled:true}),[],
+ "A mixed approved/unapproved manifest must fail in its entirety");
+
 const duplicateIds=clone(approved);duplicateIds.records.push(clone(first));
 assert.deepEqual(dyk526ApprovedCandidates(duplicateIds,{enabled:true}),[]);
 
