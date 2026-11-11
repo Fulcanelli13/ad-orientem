@@ -276,6 +276,32 @@ try{
         const refSvg=page.locator(
           "#ao-r17-native-reader-preview [data-ao-reference-score-panel] svg");
         await refSvg.waitFor({state:"visible",timeout:15000});
+        // The compact 63px horizontal score can show only one staff system.
+        // The explicit FULL action must render a separate complete score in
+        // the actual native H7 session without moving the Schola position.
+        await page.locator("#ao-r17-native-reader-preview [data-ao-reference-full-open]").click();
+        await page.waitForFunction(()=>document.querySelector(
+          'dialog[data-ao-reference-full-score="GREGOBASE-2982"]'
+        )?.dataset.aoReferenceFullReady==="true",null,{timeout:20000});
+        const nativeFull=await page.evaluate(()=>{
+          const modal=document.querySelector("dialog[data-ao-reference-full-score]");
+          const score=modal?.querySelector("[data-ao-reference-full-staff]");
+          return {open:modal?.open===true,hasSvg:Boolean(score?.querySelector("svg")),
+            scoreId:modal?.dataset.aoReferenceFullScore,
+            scholaIndex:window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.index,
+            sourceUrl:modal?.querySelector("a")?.href};
+        });
+        assert.equal(nativeFull.open,true);
+        assert.equal(nativeFull.hasSvg,true);
+        assert.equal(nativeFull.scoreId,"GREGOBASE-2982");
+        assert.equal(nativeFull.scholaIndex,beforeReference);
+        assert.match(nativeFull.sourceUrl||"",/gregobase/);
+        await page.screenshot({path:resolve(OUT,c.name+"-native-full-kyrie-XI.png"),
+          animations:"disabled",fullPage:false});
+        await page.locator('dialog[data-ao-reference-full-score] [data-schola-score-close]').click();
+        assert.equal(await page.locator('dialog[data-ao-reference-full-score]').count(),0);
+        c.steps.push({name:"native-h7-complete-kyriale-reference",metrics:nativeFull});
+
         const checkedReference=await page.evaluate(()=>{
           const shell=document.querySelector("#ao-r17-native-reader-preview");
           const dock=shell?.querySelector(".ao-schola-dock");
