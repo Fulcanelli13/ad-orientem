@@ -130,6 +130,19 @@ try{
     // Keep the real 320/390px visible-painting requirement, but wait for its
     // final rendered geometry rather than sampling the first animation frame.
     await trueCard.waitFor({state:"visible",timeout:15000});
+    const firstPaint=await trueCard.evaluate(img=>{
+      const r=img.getBoundingClientRect(),css=getComputedStyle(img);
+      const parent=img.parentElement?.getBoundingClientRect();
+      const ancestor=img.closest(".aoEssentialFlowArt, .aoClaudeHolyPlate");
+      return {naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
+        width:r.width,height:r.height,left:r.left,right:r.right,complete:img.complete,
+        selectedPresentation:ancestor?.className,ownerDisplay:ancestor&&getComputedStyle(ancestor).display,
+        ancestorWidth:ancestor?.getBoundingClientRect().width,
+        ancestorHeight:ancestor?.getBoundingClientRect().height,
+        imgDisplay:css.display,imgFit:css.objectFit,imgMaxHeight:css.maxHeight,
+        parentWidth:parent?.width,parentHeight:parent?.height};
+    });
+    console.info("Actual Sign of Cross first visible painting",JSON.stringify(firstPaint));
     await page.waitForFunction(()=>{
       const selector='#aoPray435930.open .aoEssentialFlowArt[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img,'+
         '#aoPray435930.open .aoClaudeHolyFront .aoClaudeHolyPlate[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img';
