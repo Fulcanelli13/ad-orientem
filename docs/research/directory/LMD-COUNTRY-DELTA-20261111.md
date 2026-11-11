@@ -55,6 +55,24 @@ All **282** locality-matched rows remain **research-only candidate relationships
 
 The matcher intentionally fails closed on dedication-only matching; its threshold requires country equality, at least two significant title words, strong rarity-adjusted title coverage, and a distinctive word shared with the CL2 address/locality. A street address marked “locality only” remains unverified even if its city word matches. None of these 282 claims is automatically promoted into production or the Excel approval master.
 
+## Independent owner-source resolution + Poland 2026 changes
+
+A [separate evidence-linked delta ledger](../../../data/directory/research/lmd-firstparty-exact-urls-and-poland-2026-delta.v1.json) has closed a **first-party URL comparison** of the remaining **1,131** archived LMD rows without a strong ID, name and locality match.
+
+- **Four** previously unlinked archived LMD rows share **exact original institutional URLs** with **five** existing CL2 IDs. This is source-provenance corroboration, *not* an automatic CL2 source-ID reassignment. The owners for three cases independently attest Traditional Latin/Extraordinary Form Masses: the Poor Clares' Annunciation Monastery in Minooka, Ave Maria Parish in Florida, and Blessed Sacrament Chapel in Gibson. Their published times remain separate from Ad Orientem's approved CL27 timetable.
+- **One physical-site identity collision:** both `RG-4ED6CD089356` and `RG-AFAA6529F2CD` describe **Annunciation Monastery at 6200 E Minooka Road** and point to the monastery's identical liturgical-schedule URL. The former is labelled FSSP (ministry association); the latter is labelled Poor Clare Colettine nuns (site owner). **Potential duplicate physical church; review the institutional-role distinction in the canonical Excel master before approving any alias/merge.** Neither current ID was removed or changed.
+- **St Stephen's Basilica, New Orleans:** matching official parish URL confirms the physical parish identity, but the parish's *First Friday Latin Mass* listing is not sufficient proof of a 1962-Missal service at the precise basilica venue. Diocesan information additionally references an Extraordinary Form occasion and other Good Shepherd worship sites. Keep rite/room/date evidence held.
+- **1,127** of the 1,131 remain without *any shared exact first-party URL* found in the archived/source-index comparison. They are **not** 1,127 confirmed missing venues.
+
+The [LMD Poland 2026 change log](https://www.latinmassdir.org/trends/2026/pl/) reports **eight newly listed venues and one cancellation**; these are changes to LMD's coverage, **not** necessarily newly opened or closed churches. Comparing all nine against CL2:
+
+- **One new LMD listing is an existing Ad Orientem record:** Mikołów St Wojciech / Our Lady of the Snows old church = `RG-783CD50DD217` (abbreviated CL2 title). [The parish's own schedule](https://www.bazylikamikolow.pl/duszpasterstwo/msze-i-nabozenstwa) establishes the traditional Roman rite in that specific old church. **Do not create a duplicate.**
+- **Two further listed churches have independent owner/diocesan physical-building evidence but no independently established 1962-Missal recurrence from the reviewed official pages:** Holy Trinity in Włodzienin and the Holy Spirit rectoral church in Sandomierz. Hold their rite and times.
+- **Five other newly listed positions** lack same-locality CL2 matches in the inspected current site fields; without local institutional evidence, retain candidates rather than invent sites.
+- The canceled Ostrów Wielkopolski entry has no exact same-town CL2 physical-site identity. **Do not delete or suppress** unrelated CL2 churches based on this LMD status.
+
+The owner-source and Polish-change audit has **zero imported Mass times, zero new pins, zero accepted sites and zero automatic merges**. Current findings are usable for a *bounded identity/evidence review*, not a reason to run fresh worldwide source scraping.
+
 ## Geographic candidates — more meaningful than raw totals
 **Fourteen** LMD-listed countries/territories have **zero** physical sites in the current CL2 country field. Their LMD country pages collectively report **20 venue positions**.
 
