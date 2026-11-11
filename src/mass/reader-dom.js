@@ -3455,6 +3455,7 @@ export function createReaderDomAdapter({
       if(scholaDockFollower){
         if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
         else scholaDockFollower.resume?.();
+        dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"estimated";
       }
       return;
     }
