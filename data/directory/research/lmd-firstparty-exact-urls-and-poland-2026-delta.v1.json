@@ -17,7 +17,11 @@
     "poland_new_positions_already_in_cl2": 1,
     "new_cl2_approved": 0,
     "canonical_merged": 0,
-    "scheduled_times_imported": 0
+    "scheduled_times_imported": 0,
+    "poland_2026_independent_owner_or_diocesan_institution_identifications": 8,
+    "poland_2026_new_positions_with_independent_older_rite_confirmation": 3,
+    "poland_2026_new_positions_with_older_rite_unconfirmed_or_exact_chapel_hold": 5,
+    "poland_2026_excel_import_approved": 0
   },
   "firstparty_exact_url_evidence": [
     {
@@ -94,18 +98,30 @@
       "label": "Our Lady of Leśna chapel, Styrzyniec",
       "kind": "LMD_NEW",
       "cl2_site_ids": [],
-      "other_url": null,
-      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
-      "note": "No same-town CL2 identity found and no independent owner old-rite evidence established."
+      "other_url": "https://diecezja.siedlce.pl/parafie/parafia-narodzenia-nmp/",
+      "status": "DIOCESE_CHAPEL_PHYSICAL_IDENTITY_CONFIRMED_OLD_RITE_AND_SCHEDULE_HOLD",
+      "note": "The Siedlce diocesan parish register explicitly identifies the Our Lady of Leśna chapel in Styrzyniec and a parish Sunday chapel Mass. This proves the chapel's existence but does not independently verify a 1962-Missal service there; LMD's older-rite time must not be substituted for the parish's published ordinary chapel time.",
+      "additional_evidence": [
+        {
+          "url": "https://parafianabrzeskiej.eu/?page_id=988",
+          "type": "PARISH_CHAPEL_RECOGNITION_AND_UNSPECIFIED_RITE_MASS"
+        }
+      ]
     },
     {
       "key": "LMD_COUNTRY_TREND:PL:STARY_SLAWACINEK",
       "label": "Our Lady of Częstochowa chapel, Stary Sławacinek",
       "kind": "LMD_NEW",
       "cl2_site_ids": [],
-      "other_url": null,
-      "status": "NEWER_THAN_OCTOBER_ARCHIVE_CANDIDATE_NOT_APPROVED",
-      "note": "Current 2026 LMD trend includes this listing, but no corresponding October archived source key or same-locality CL2 entry was found. Independent owner verification required."
+      "other_url": "https://diecezja.siedlce.pl/parafie/parafia-narodzenia-nmp/",
+      "status": "DIOCESE_CHAPEL_PHYSICAL_IDENTITY_CONFIRMED_OLD_RITE_AND_SCHEDULE_HOLD",
+      "note": "Siedlce diocesan parish register explicitly identifies the Our Lady of Częstochowa chapel in Sławacinek Stary. The parish publishes Sunday worship at that chapel without identifying the 1962 rite. LMD's listing is not by itself independent older-rite certification.",
+      "additional_evidence": [
+        {
+          "url": "https://parafianabrzeskiej.eu/?page_id=988",
+          "type": "PARISH_CHAPEL_RECOGNITION_AND_UNSPECIFIED_RITE_MASS"
+        }
+      ]
     },
     {
       "key": "LMD:kosciol-sw-wojciecha-i-matki-bozej-snieznej-mikolow-poland",
@@ -123,18 +139,34 @@
       "label": "Piarist church of Our Lady of Grace and St Adalbert, Łowicz",
       "kind": "LMD_NEW",
       "cl2_site_ids": [],
-      "other_url": null,
-      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
-      "note": "No same-town current CL2 site. Independent owner traditional-rite and physical-identity evidence needed."
+      "other_url": "https://www.lowicz.pijarzy.pl/",
+      "status": "OWNER_FIRSTPARTY_TRADITIONAL_ROMAN_RITE_AT_IDENTIFIED_CHURCH_CONFIRMED",
+      "note": "The Piarist church's 1 November 2026 owner notice explicitly announces the Extraordinary Form (Vetus Ordo) and states first-Sunday-of-month recurrence. The Piarist province independently identifies the same rectoral church and address at ul. Pijarska 2. Existing CL2 locality match remains absent; candidate for Excel physical-site review, not approved import or copied timetable.",
+      "additional_evidence": [
+        {
+          "url": "https://pijarzy.pl/strona%2C14.html",
+          "type": "ORDER_INSTITUTIONAL_PHYSICAL_SITE_ADDRESS"
+        },
+        {
+          "url": "https://www.lowicz.pijarzy.pl/6-wrzesnia-2026-r",
+          "type": "OWNER_2026_PRIOR_OLDER_RITE_MASS_CONFIRMATION"
+        }
+      ]
     },
     {
       "key": "LMD:kaplica-matki-bozej-niepokalanej-brwinow-poland",
       "label": "Immaculate Mother of God chapel, Brwinów",
       "kind": "LMD_NEW",
       "cl2_site_ids": [],
-      "other_url": null,
-      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
-      "note": "No same-town CL2 site found; independent source needed."
+      "other_url": "https://archwwa.pl/zakony-i-zgromadzenia/",
+      "status": "ARCHDIOCESE_MONASTERY_ADDRESS_CONFIRMED_SPECIFIC_CHAPEL_AND_1962_HOLD",
+      "note": "Warsaw archdiocese independently lists the Poor Clare Capuchin nuns' enclosed monastery at Kępińska 57, Brwinów; that is the address used by the LMD chapel lead. It does not independently identify the titled chapel or certify older-rite Mass within it. The archdiocese separately lists a Tridentine Mass at St Florian's parish at Biskupicka 2; do NOT merge the two worship spaces or transfer parish times to the convent.",
+      "additional_evidence": [
+        {
+          "url": "https://archwwa.pl/parafie/brwinow-sw-floriana/",
+          "type": "DIFFERENT_PARISH_AND_OLDER_RITE_MASS_DO_NOT_CONFLATE"
+        }
+      ]
     },
     {
       "key": "LMD:kosciol-rektoralny-pw-swietego-ducha-w-sandomierzu-sandomierz-poland",
@@ -150,9 +182,10 @@
       "label": "St James the Greater church, Obra",
       "kind": "LMD_NEW",
       "cl2_site_ids": [],
-      "other_url": null,
-      "status": "UNRESOLVED_ARCHIVED_VENUE_LEAD_NOT_APPROVED",
-      "note": "No matched Obra locality in CL2; do not confuse Obra with Ostra Brama in Olsztyn."
+      "other_url": "https://oblaci.pl/2026/01/19/obra-msze-swiete-trydenckie-w-przyklasztornym-kosciele-sw-jakuba/",
+      "status": "ORDER_FIRSTPARTY_TRADITIONAL_ROMAN_RITE_AT_IDENTIFIED_CHURCH_CONFIRMED_RECURRENCE_HOLD",
+      "note": "Missionary Oblates' 19 January 2026 report directly identifies St James' monastery church in Obra as hosting Traditional Roman Rite Mass, with permission and named celebrant. It reports a January celebration, a subsequent break and plans to resume regularly from April; this does not prove an uninterrupted November 2026 timetable. Candidate for Excel review, no schedule import.",
+      "additional_evidence": []
     }
   ],
   "guardrails": [
@@ -162,6 +195,7 @@
     "The LMD 'new' status is a change in LMD listings, NOT proof of a new physical church.",
     "The eight recent LMD Poland additions are not eight proven missing CL2 sites; at least one is already present under an abbreviated title.",
     "Do not suppress any Ad Orientem-only site based on LMD omission or canceled status.",
-    "All cases remain research-only; use CL2 Excel approval for any proposed new group or merge."
+    "All cases remain research-only; use CL2 Excel approval for any proposed new group or merge.",
+    "For Brwinów, the St Florian parish's older-rite Mass is a different physical church from the separately indexed Poor Clare Capuchin nuns' chapel; preserve chapel-specific certification hold."
   ]
 }
