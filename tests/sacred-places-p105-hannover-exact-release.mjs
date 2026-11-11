@@ -17,13 +17,16 @@ const proposed={places:530,sources:846,crosswalk:530,unlinked:257,geo_areas:146,
 assert.equal(p105.schema,"AO_SACRED_PLACES_P105_HANNOVER_CLEMENS_EXACT_PLACE_V1");
 assert.deepEqual(p105.baseline,baseline);
 assert.deepEqual(p105.proposed,proposed);
-assert.equal(RELEASES.at(-2).id,"P105");
-assert.equal(LEDGER.releases.at(-2).id,"P105");
-assert.equal(RELEASES.at(-1).id,"P106");
-assert.deepEqual(RELEASES.at(-1).data.baseline,proposed,"P106 must chain from unchanged P105 counts");
+assert.equal(RELEASES.at(-3).id,"P105");
+assert.equal(LEDGER.releases.at(-3).id,"P105");
+assert.equal(RELEASES.at(-2).id,"P106");
+assert.deepEqual(RELEASES.at(-2).data.baseline,proposed,"P106 must chain from unchanged P105 counts");
+assert.equal(RELEASES.at(-1).id,"P107");
+assert.deepEqual([RELEASES.at(-1).data.baseline.directory_links,RELEASES.at(-1).data.proposed.directory_links],
+ [24,26],"P107 adds only two later exact venue links");
 assert.equal(RELEASES.find(r=>r.id==="P104").data.proposed.places,529);
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links,LIVE.unlinked],[530,846,24,257]);
-assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.directoryPlaceLinks.length],[530,846,530,24]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links,LIVE.unlinked],[530,846,26,257]);
+assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.directoryPlaceLinks.length],[530,846,530,26]);
 assert.deepEqual([cross.counts.places_with_linked_records,cross.counts.places_without_direct_claim],[273,257]);
 assert.equal(cross.distinct_place_links.directory_links,23);
 assert.equal(p105.published_new.length,1);
@@ -70,4 +73,4 @@ for(const hold of p105.research_holds){
 }
 assert.equal(p105.research_holds.length,2);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
-console.log("PASS P105 frozen Hannover + P106 appended: 530 Places / 846 sources / 24 links; no new pin or schedule claims.");
+console.log("PASS P105 frozen Hannover + P106 + P107: 530 Places / 846 sources / 26 links; no new pin or schedule claims.");
