@@ -29,6 +29,7 @@ import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js"
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
+import {createScholaMassTextSynchronizer} from "./reader-schola-mass-text-sync.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -2961,6 +2962,7 @@ export function createReaderDomAdapter({
   let scholaScoreDialog=null,scholaScoreEngraver=null,scholaScoreReturnFocus=null,scholaScoreRequest=0;
   let scholaDockEngraver=null,scholaDockScoreIdentity=null,scholaDockScoreRequest=0;
   let scholaDockFollower=null;
+  let scholaMassTextSync=null;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3372,6 +3374,7 @@ export function createReaderDomAdapter({
   function clearScholaDockNotation(){
     ++scholaDockScoreRequest;
     scholaDockFollower?.destroy?.();scholaDockFollower=null;
+    scholaMassTextSync?.destroy?.();scholaMassTextSync=null;
     scholaDockEngraver?.destroy?.();scholaDockEngraver=null;
     scholaDockScoreIdentity=null;
     const dock=root.querySelector(".ao-schola-dock");
@@ -3417,8 +3420,23 @@ export function createReaderDomAdapter({
           // No audio, no claim about current choir syllable. This clock
           // follows only the exact reviewed score's printed GABC syllables.
           try{
+            // Follow source-owned Latin in the existing vertical Mass card,
+            // and horizontally in Schola, from ONE notation syllable cursor.
+            // Never select or approve scores here: the gate above already
+            // required exact score, chosen setting, track and source segment.
+            const reader=root.querySelector(".ao-prayer-card");
+            if(reader){
+              scholaMassTextSync=createScholaMassTextSynchronizer({
+                reader,gabc:score.gabc,enabled:()=>mode==="LIVE" &&
+                  root.querySelector(".ao-prayer-card")===reader &&
+                  current?.scholaShared===true &&
+                  current?.scholaVisible===true &&
+                  current?.schola?.trackId===score.scholaTrackId
+              });
+            }
             scholaDockFollower=createScholaNotationFollower({
-              staff,strip,document:doc,window:doc?.defaultView
+              staff,strip,document:doc,window:doc?.defaultView,
+              onPosition:({index})=>scholaMassTextSync?.follow(index)
             });
             if(scholaDockFollower.start(score.gabc)){
               dock.dataset.notationFollow="estimated";
