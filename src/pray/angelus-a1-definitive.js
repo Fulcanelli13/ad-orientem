@@ -82,16 +82,36 @@ function labelPrayerUnits(root){
   if(heading.parentElement?.dataset.aoConclusionPart==="doxology")heading.textContent="Gloria Patri";
  }
 }
+function titleStageCards(host,plan){
+ for(const [index,card] of [...host.querySelectorAll(".aoDevoCard")].entries()){
+  const title=card.querySelector(".aoDevoCardTitle");
+  if(!title||!plan[index])continue;
+  const eyebrow=card.ownerDocument.createElement("span");
+  eyebrow.className="aoA1Eyebrow";
+  eyebrow.textContent=plan[index].title;
+  title.parentElement.insertBefore(eyebrow,title);
+  title.textContent=plan[index].latin;
+ }
+}
 function anchorRitualIcon(card,markup){
  if(!markup)return;
  const first=card.querySelector(".aoP435930PrayerUnit");
  if(!first)return;
  for(const face of first.querySelectorAll("[data-face-v],[data-face-la]")){
   const paragraph=face.querySelector(".aoAngelusDialogueLine");
-  if(!paragraph||paragraph.querySelector(".aoA1IconSlot"))continue;
+  if(paragraph?.querySelector(".aoA1IconSlot"))continue;
   const slot=card.ownerDocument.createElement("span");
   slot.className="aoA1IconSlot";slot.setAttribute("aria-hidden","true");
-  slot.innerHTML=markup;paragraph.insertBefore(slot,paragraph.firstChild);
+  slot.innerHTML=markup;
+  if(paragraph){paragraph.insertBefore(slot,paragraph.firstChild);continue}
+  // In individual recitation the first Gloria is a continuous line.
+  // Keep its posture icon in THAT line's scrolling row, not a fixed rail.
+  const line=face.querySelector(".aoFolioGloria .aoDevoAppendixLine");
+  if(!line)continue;
+  const text=card.ownerDocument.createElement("span");
+  text.className="aoA1AppendixText";text.textContent=line.textContent;
+  line.classList.add("aoA1AppendixIconRow");
+  line.replaceChildren(slot,text);
  }
 }
 let current=null;
@@ -141,6 +161,7 @@ export function decorateAngelusA1({mount,form="angelus",language="en",dateKey=""
   view.append(bells);
  }
  labelPrayerUnits(view);
+ titleStageCards(host,cardDeck.plan);
  for(const card of host.querySelectorAll(".aoDevoCard")){
   const gesture=form==="angelus"&&card.dataset.aoDevoCard==="incarnation";
   anchorRitualIcon(card,gesture?gestureMarkup:postureMarkup);
