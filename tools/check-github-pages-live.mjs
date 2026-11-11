@@ -95,25 +95,25 @@ for(const path of discoveryManifests){
 assert.equal(discoveryCount,225,"Public H7 Discovery manifest population must total 225");
 ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
 
-// The 520 Customs/Glossary facts now share this Home surface. A stale
+// The 537 Customs/Glossary facts now share this Home surface. A stale
 // deployed 225-card build must never pass only because the old manifests match.
 const dyk520=JSON.parse((await released(newDyk520Path)).toString("utf8"));
 assert.equal(dyk520.schema,"AO_DYK_CUSTOMS_GLOSSARY_520_V1");
 assert.equal(dyk520.release_stage,"INTEGRATED_CONTENT");
-assert.equal(dyk520.count,520);
+assert.equal(dyk520.count,537);
 assert.equal(dyk520.counts?.customs,378);
-assert.equal(dyk520.counts?.glossary,142);
-assert.equal(dyk520.records?.length,520);
-assert.deepEqual(new Set(dyk520.records.map(r=>r.id)).size,520);
+assert.equal(dyk520.counts?.glossary,159);
+assert.equal(dyk520.records?.length,537);
+assert.equal(new Set(dyk520.records.map(r=>r.id)).size,537);
 for(const r of dyk520.records){
- assert.ok(r.id&&["CUSTOMS","GLOSSARY"].includes(r.category),"Malformed DYK 520 ID/category");
+ assert.ok(r.id&&["CUSTOMS","GLOSSARY"].includes(r.category),"Malformed DYK ID/category");
  for(const language of ["en","fr"]){
-  assert.ok(r.title?.[language]?.trim(),"DYK 520 missing "+language+" title: "+r.id);
-  assert.ok(r.fact?.[language]?.trim(),"DYK 520 missing "+language+" fact: "+r.id);
+  assert.ok(r.title?.[language]?.trim(),"DYK missing "+language+" title: "+r.id);
+  assert.ok(r.fact?.[language]?.trim(),"DYK missing "+language+" fact: "+r.id);
  }
- assert.match(r.source?.url||"",/^https:\/\//,"DYK 520 missing linked source: "+r.id);
+ assert.match(r.source?.url||"",/^https:\/\//,"DYK missing linked source: "+r.id);
 }
-ok("Discovery 520 new Customs/Glossary bilingual facts, 378/142 distribution, and Home loader exact-byte release parity");
+ok("Discovery 537 curated Customs/Glossary bilingual facts, 378/159 distribution, and Home loader exact-byte release parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
