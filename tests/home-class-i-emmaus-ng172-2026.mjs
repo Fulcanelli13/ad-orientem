@@ -46,7 +46,13 @@ assert.equal(frozen.selection.title,row.title);
 assert.equal(frozen.selection.artist,row.artist);
 assert.equal(frozen.selection.artworkId,null);
 assert.equal(frozen.selection.editorialBasis,"NEW_DATE_SPECIFIC_APPROVAL");
-assert.equal(frozen.selection.publicationCertified,false);
+// The production day projection intentionally omits this audit-only field.
+// Read the immutable original evidence for the actual release-held status.
+const archived=JSON.parse(read("data/artwork/2026-prior-date-artwork-evidence.v1.json").toString("utf8"));
+const historical=archived.days.find(x=>x.date===row.date);
+assert.equal(historical.selection.publicationCertified,false);
+assert.equal(historical.selection.title,row.title);
+assert.equal(historical.selection.artist,row.artist);
 const state=(date=row.date,principal=row.principalId,proper=row.properPath)=>({
  selectedDate:date,route:"home",resolving:false,
  resolution:{date,status:"ready",day:{main:{id:principal}},
