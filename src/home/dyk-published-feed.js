@@ -1,3 +1,4 @@
+import {loadDyk520Release,dyk520Model} from "./dyk-520-release.js";
 import {loadDyk225Release,dyk225Model} from "./dyk-h225-release.js";
 export {loadDyk225Release,dyk225Candidates,dyk225Model} from "./dyk-h225-release.js";
 import {loadDyk200Release,dyk200Model} from "./dyk-h200-release.js";
@@ -574,7 +575,7 @@ export function dykPublishedMarkup(model){
    '<article class="aoDykPublishedCard" role="dialog" aria-modal="true" aria-labelledby="ao-dyk-published-title" data-dyk-published="'+esc(model.id)+'">'+
    '<button type="button" data-dyk-published-close aria-label="'+(fr?"Fermer":"Close")+'">×</button>'+
    '<small>'+esc(model.label)+'</small><h2 id="ao-dyk-published-title">'+
-   (fr?"Le saviez-vous ?":"Did you know?")+'</h2><p>'+esc(model.fact)+'</p>'+
+   (model.title?esc(model.title):(fr?"Le saviez-vous ?":"Did you know?"))+'</h2><p>'+esc(model.fact)+'</p>'+
    '<p>'+esc(fr?"Source originale":"Original source")+' · '+esc(model.sourceId)+'</p>'+
    model.links.map((x,i)=>'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+
      esc(x.page===null?x.label:(fr?"Consulter la source, PDF p. ":"Read source, PDF p. ")+x.page)+'</a></p>').join("")+
@@ -583,7 +584,7 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b,mixed,h125,h150,h175,h200,h225]=await Promise.all([
+ const [data,historical,r50,r50b,mixed,h125,h150,h175,h200,h225,new520]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
@@ -593,9 +594,11 @@ export async function openDykPublishedSource(win,{id,date,language="en",trigger}
    loadDyk150Release(win).catch(()=>null),
    loadDyk175Release(win).catch(()=>null),
    loadDyk200Release(win).catch(()=>null),
-   loadDyk225Release(win).catch(()=>null)
+   loadDyk225Release(win).catch(()=>null),
+   loadDyk520Release(win).catch(()=>null)
  ]);
- const model=dykPublishedModel(data,id,date,language)||
+ const model=dyk520Model(new520,id,date,language)||
+   dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
    dykWeiser16Model(r50,id,date,language)||
    dykWeiserSecond16Model(r50b,id,date,language)||
