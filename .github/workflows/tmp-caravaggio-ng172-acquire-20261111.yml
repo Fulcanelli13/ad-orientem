@@ -90,4 +90,7 @@ jobs:
           git add -- data/artwork/releases/source-masters/caravaggio-emmaus-ng172-london-1601-original.jpg assets/home/class-i-2026/caravaggio-emmaus-ng172-1601-fullframe-2400.webp data/artwork/releases/2026-04-06-caravaggio-ng172-1601-byte-proof.v1.json
           git diff --cached --quiet && exit 1
           git commit -m 'Acquire Caravaggio 1601 London NG172 source and full-frame lightweight original derivative'
+          # Preserve other contributor edits made while the image was downloading.
+          git fetch origin feat/sacred-art-class-i-emmaus-1601-20261111
+          git rebase origin/feat/sacred-art-class-i-emmaus-1601-20261111
           git push origin HEAD:feat/sacred-art-class-i-emmaus-1601-20261111
