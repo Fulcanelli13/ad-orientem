@@ -14,7 +14,7 @@ const scene=(opts={})=>({
  status:"SOURCE_STATION_REFERENCE",
  priest:{station:"CENTER",facing:"LITURGICAL_EAST",pose:"stand",positionReferenceCueId:"AO.SM.C0022"},
  faithful:{posture:"STAND"},
- server:{station:"FOOT",scope:"REFERENCE_PRESENCE_ONLY"},
+ server:{station:"FOOT",pose:"stand",scope:"REFERENCE_PRESENCE_ONLY"},
  form:"MISSA_CANTATA_INCENSE",colour:"GREEN",candles:6,requiem:false,
  ...opts
 });
@@ -67,6 +67,38 @@ test("architecture remains with unknown clergy; cannot infer observed movement",
  assert.match(p,/ao-claude-architecture/);
  assert.equal((p.match(/M-11,-78 Q2,-82 12,-78/g)||[]).length,0);
  assert.equal(renderClaudeNativeSanctuary(null),"");
+});
+test("sanctuary declines unsupported faithful posture instead of inventing standing",()=>{
+ const unknown=renderClaudeNativeSanctuary(scene({faithful:null}));
+ const stand=renderClaudeNativeSanctuary(scene());
+ assert.match(unknown,/class="schola"/,
+   "Keeping the original choir and pew artwork must not depend on posture");
+ assert.match(unknown,/class="ppl"/);
+ assert.equal((unknown.match(/preserveAspectRatio="xMidYMax meet"/g)||[]).length,0,
+   "No posture profile may produce kneeling/sitting silhouettes");
+ // There are three source-designed choir members, but the faithful row is
+ // separate: no source posture means no fictional row of standing laity.
+ assert.equal((unknown.match(/class="ppl">([^<]|<[^>]*>)*<\/g)||[]).length,0);
+ assert.ok(stand.length>unknown.length);
+ const unsupported=renderClaudeNativeSanctuary(scene({
+   faithful:{posture:"UNCONFIRMED"}
+ }));
+ assert.equal(unsupported,unknown,
+   "Unknown faithful posture must fail closed to an unposed congregation");
+});
+test("server only uses source-authored static standing reference, never invented kneeling",()=>{
+ const approved=renderClaudeNativeSanctuary(scene());
+ assert.match(approved,/data-actor="server" data-reference-pose="stand"/);
+ const absent=renderClaudeNativeSanctuary(scene({
+   server:{station:"FOOT",pose:"kneel",scope:"REFERENCE_PRESENCE_ONLY"}
+ }));
+ assert.doesNotMatch(absent,/data-actor="server"/,
+   "An unsupported kneeling server cue must not enter the scene");
+ const unowned=renderClaudeNativeSanctuary(scene({
+   server:{station:"FOOT",pose:"stand",scope:"UNVERIFIED"}
+ }));
+ assert.doesNotMatch(unowned,/data-actor="server"/);
+ assert.doesNotMatch(approved,/data-reference-pose="kneel"/);
 });
 test("manual incense overlay renders Claude's supplied priest, not old silhouette",()=>{
  const cue="AO.SM.C0122";
