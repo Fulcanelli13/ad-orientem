@@ -18,7 +18,7 @@ test("build provenance includes fourteen San Polo photographs, attribution and a
  assert.equal(p.workflow_run_id,"1234567");
  assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,18);
  assert.equal(SAN_POLO_CYCLE_CRITICAL_PATHS.length,17);
- assert.equal(Object.keys(p.critical_sha256).length,52+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
+ assert.equal(Object.keys(p.critical_sha256).length,54+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
  for(const path of SAN_POLO_CYCLE_CRITICAL_PATHS)
   assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing optional San Polo exact release proof: "+path);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
@@ -28,7 +28,7 @@ test("build provenance includes fourteen San Polo photographs, attribution and a
  for(const file of ["src/pray/novena-runtime.js","src/pray/holy-face-janvier-1887-b25.js","src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
- assert.equal(DISCOVERY_CRITICAL_PATHS.length,13);
+ assert.equal(DISCOVERY_CRITICAL_PATHS.length,15);
  for(const path of DISCOVERY_CRITICAL_PATHS)assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing Discovery proof: "+path);
  assert.equal(NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS.length,9);
  for(const file of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS)
@@ -71,6 +71,12 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const staleDiscovery={...p,critical_sha256:{...p.critical_sha256}};
  delete staleDiscovery.critical_sha256['data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json'];
  assert.throws(()=>verifyReleaseProof(staleDiscovery,{expectedSha:shaA,expectedRunId:'1234567',indexHtml:html}),/Missing critical release digest/);
+ const staleDyk520={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleDyk520.critical_sha256["data/did-you-know/dyk-customs-glossary-520.v1.json"];
+ assert.throws(()=>verifyReleaseProof(staleDyk520,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleDyk520Loader={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleDyk520Loader.critical_sha256["src/home/dyk-520-release.js"];
+ assert.throws(()=>verifyReleaseProof(staleDyk520Loader,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleSchola={...p,critical_sha256:{...p.critical_sha256}};
  delete staleSchola.critical_sha256["src/mass/reader-schola.js"];
  assert.throws(()=>verifyReleaseProof(staleSchola,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
