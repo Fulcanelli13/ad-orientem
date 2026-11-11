@@ -1,3 +1,4 @@
+import {effectiveFrozenClassISelection2026} from "./class-i-2026-owner-supersessions.js";
 /* Generated from data/artwork/2026-prior-date-artwork-evidence.v1.json.
  * An annual index is not a grant of artwork, image, or source-photo approval.
  * Selection and candidate provenance remain separate from actual publication.
@@ -8,9 +9,7 @@ export const ANNUAL_HOME_ARTWORK_DAYS_2026 = Object.freeze(Object.fromEntries(
  RAW.map(([date,rank,principalId,selected,candidateSourceCount,contextualReuseEligible])=>[
   date,Object.freeze({
    date,rank,principalId,candidateSourceCount,contextualReuseEligible,
-   selection:selected?Object.freeze({
-    title:selected[0],artist:selected[1],artworkId:selected[2],editorialBasis:selected[3]
-   }):null
+   selection:effectiveFrozenClassISelection2026(date,rank,principalId,selected)
   })
  ])
 ));

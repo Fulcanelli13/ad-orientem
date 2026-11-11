@@ -18,6 +18,7 @@ import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-
 import {releasedSaraceniParadiseClassI2026} from "./released-class-i-saraceni-paradise-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
+import {classIOwnerSupersession2026} from "./class-i-2026-owner-supersessions.js";
 
 const CLASS_I_PROPER=Object.freeze({
  "2026-03-29":"Tempora/Quad6-0r",
@@ -179,6 +180,11 @@ export function approved2026HomeArtwork(state,provider=null){
  const observed=exactResolved(state);
  if(!observed)return null;
  const {date,principalId,properPath}=observed;
+ // The 26 October Stom approval supersedes the archived 20 October
+ // Caravaggio choice. Never render the wrong painting or the museum-sourced
+ // Commons file while commercial photographic rights remain uncleared.
+ const laterOwnerSelection=classIOwnerSupersession2026(date,principalId,properPath);
+ if(laterOwnerSelection?.image===null)return null;
  const locked=approvedClassIHeroForDate(date,principalId);
  if(locked){
   const expected=CLASS_I_PROPER[date];
