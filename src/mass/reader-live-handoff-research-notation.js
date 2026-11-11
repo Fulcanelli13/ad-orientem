@@ -242,8 +242,8 @@ export function installLiveHandoffResearchNotation({
    const original=schola1961OriginalFacsimile(selected.trackId,selected.settingId);
    const hasPrintedOriginal=Boolean(original?.originalPageImages?.length&&
      original.originalPageImages.every(url=>
-       /^https:\/\/gregobase\\.selapa\\.net\/sources\/\\d+\/\\d+\\.png$/.test(url))&&
-     /^https:\/\/media\\.churchmusicassociation\\.org\/pdf\/kyriale-solesmes\\.pdf#page=\\d+$/.test(original.originalEditionPdf));
+       /^https:\/\/gregobase\.selapa\.net\/sources\/\d+\/\d+\.png$/.test(url))&&
+     /^https:\/\/media\.churchmusicassociation\.org\/pdf\/kyriale-solesmes\.pdf#page=\d+$/.test(original.originalEditionPdf));
    const printToggle=document.createElement("button");
    printToggle.type="button";printToggle.dataset.aoReferencePrintToggle="";
    printToggle.textContent="PRINT";printToggle.hidden=!hasPrintedOriginal;
