@@ -9,7 +9,6 @@ on:
       - "src/pray/presentation-runtime.js"
       - "src/pray/confession-path-styles.js"
       - "data/pray/prayer-release-coverage-evidence.v1.json"
-      - "package.json"
       - ".github/workflows/pray-confession-benediction-stage-matrix.yml"
   push:
     branches: [main]

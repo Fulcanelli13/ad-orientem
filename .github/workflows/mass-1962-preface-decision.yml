@@ -3,6 +3,24 @@ on:
   workflow_dispatch:
   pull_request:
     branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026, fix/mass-1962-easter-preface-variants-20261026]
+    paths:
+      - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-easter-preface-form.js'
+      - 'src/mass/1962-in-albis-secret-source.js'
+      - 'data/mass/1962-in-albis-secret-source.v1.json'
+      - 'tests/mass-1962-in-albis-secret-source.mjs'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/reader-proper-runtime-recovery.mjs'
+      - 'tests/mass-1962-lent-preface-recovery.mjs'
+      - 'tests/mass-1962-lent-preface-production.mjs'
+      - 'tests/mass-1962-easter-preface-variants.mjs'
+      - 'tests/mass-1962-easter-preface-production.mjs'
+      - 'tests/mass-1962-preface-reader-handoff.mjs'
+      - 'src/mass/host-adapter.js'
+      - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
+      - 'tests/mass-1962-preface-decision.mjs'
+      - '.github/workflows/mass-1962-preface-decision.yml'
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'

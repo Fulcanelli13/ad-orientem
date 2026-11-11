@@ -9,7 +9,6 @@ on:
       - "src/pray/prayer-design-pilot.js"
       - "sw.js"
       - "data/pray/prayer-language-route-matrix.v1.json"
-      - "package.json"
       - ".github/workflows/pray-nonrosary-first-offline-40-route.yml"
   push:
     branches: [main]

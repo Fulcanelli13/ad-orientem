@@ -15,7 +15,6 @@ on:
       - "src/pray/presentation-runtime.js"
       - "src/pray/prayer-source-faces.v1.js"
       - "data/pray/prayer-release-coverage-evidence.v1.json"
-      - "package.json"
       - ".github/workflows/pray-nine-canonical-phone-faces.yml"
   push:
     branches: [main]

@@ -8,7 +8,6 @@ on:
       - "src/pray/night-home-adoration-b29.js"
       - "src/pray/adoration-four-purpose-options.js"
       - "data/pray/prayer-release-coverage-evidence.v1.json"
-      - "package.json"
       - ".github/workflows/pray-adoration-full-stage-phone.yml"
   push:
     branches: [main]

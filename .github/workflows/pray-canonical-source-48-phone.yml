@@ -7,7 +7,6 @@ on:
       - src/pray/presentation-runtime.js
       - tests/pray-canonical-48-source-certification-phone.mjs
       - data/pray/prayer-source-certification-inventory.v3.json
-      - package.json
       - .github/workflows/pray-canonical-source-48-phone.yml
   push:
     branches: [main]

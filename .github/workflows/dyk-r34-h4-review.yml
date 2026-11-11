@@ -12,7 +12,6 @@ on:
       - "tests/dyk-h7-*.mjs"
       - "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json"
       - "tests/dyk-r34-*.mjs"
-      - "package.json"
   workflow_dispatch:
 
 permissions:

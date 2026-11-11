@@ -13,7 +13,6 @@ on:
       - "src/pray/traditional-pray-runtime.js"
       - "src/pray/novena-runtime.js"
       - "src/pray/rosary-scripture-policy.js"
-      - "package.json"
       - ".github/workflows/pray-41-route-entry-variants.yml"
   push:
     branches: [main]

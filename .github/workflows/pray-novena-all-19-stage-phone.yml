@@ -11,7 +11,6 @@ on:
       - "src/pray/icksp-immaculate-conception-novena.v1.js"
       - "src/pray/holy-face-janvier-1887-b25.js"
       - "data/pray/prayer-release-coverage-evidence.v1.json"
-      - "package.json"
       - ".github/workflows/pray-novena-all-19-stage-phone.yml"
   push:
     branches: [main]

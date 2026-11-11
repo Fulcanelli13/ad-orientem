@@ -11,7 +11,6 @@ on:
       - "tools/directory/report-icksp-live-schedule-drift.mjs"
       - "tests/directory-sspx-403-partial-snapshots.mjs"
       - "tests/directory-icksp-live-schedule-drift.mjs"
-      - "package.json"
   schedule:
     - cron: "17 3 * * 1"
   push:
