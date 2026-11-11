@@ -20,7 +20,7 @@ export function validateCL2ExactVenueCategoryWitnesses(index,manifest){
   manifest.reviewed_on!=="2026-11-11"||
   manifest.source_index!=="data/directory/generated/cl2-physical-site-index.v1.json"||
   !Array.isArray(index?.records)||index.records.length!==2580||
-  !Array.isArray(manifest.records)||manifest.records.length!==26)
+  !Array.isArray(manifest.records)||manifest.records.length!==37)
    throw Error("Invalid CL2 exact venue category witness manifest");
  const indexByAnchor=new Map(index.records.map(r=>[r[0],r]));
  const seen=new Set(),byAnchor=new Map(),stats={reviewed_exact_venues:0,from_initial_unresolved:0,by_category:{}};
