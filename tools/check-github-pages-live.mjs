@@ -95,16 +95,16 @@ for(const path of discoveryManifests){
 assert.equal(discoveryCount,225,"Public H7 Discovery manifest population must total 225");
 ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
 
-// The 537 Customs/Glossary facts now share this Home surface. A stale
+// The expanding Customs/Glossary bank shares this Home surface. A stale
 // deployed 225-card build must never pass only because the old manifests match.
 const dyk520=JSON.parse((await released(newDyk520Path)).toString("utf8"));
 assert.equal(dyk520.schema,"AO_DYK_CUSTOMS_GLOSSARY_520_V1");
 assert.equal(dyk520.release_stage,"INTEGRATED_CONTENT");
-assert.equal(dyk520.count,537);
+assert.ok(dyk520.count>=595,"Published DYK bank must include the second 58-card glossary wave");
 assert.equal(dyk520.counts?.customs,378);
-assert.equal(dyk520.counts?.glossary,159);
-assert.equal(dyk520.records?.length,537);
-assert.equal(new Set(dyk520.records.map(r=>r.id)).size,537);
+assert.equal(dyk520.counts?.glossary,dyk520.count-dyk520.counts.customs);
+assert.equal(dyk520.records?.length,dyk520.count);
+assert.equal(new Set(dyk520.records.map(r=>r.id)).size,dyk520.count);
 for(const r of dyk520.records){
  assert.ok(r.id&&["CUSTOMS","GLOSSARY"].includes(r.category),"Malformed DYK ID/category");
  for(const language of ["en","fr"]){
@@ -113,7 +113,7 @@ for(const r of dyk520.records){
  }
  assert.match(r.source?.url||"",/^https:\/\//,"DYK missing linked source: "+r.id);
 }
-ok("Discovery 537 curated Customs/Glossary bilingual facts, 378/159 distribution, and Home loader exact-byte release parity");
+ok("Discovery expanding Customs/Glossary bilingual facts, 378 Customs, 217+ Glossary, and Home loader exact-byte release parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
