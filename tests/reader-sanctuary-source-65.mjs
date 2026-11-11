@@ -9,7 +9,21 @@ assert.equal(createHash("sha256").update(html).digest("hex"),
  "The owner's original 3-D art and animation source must remain byte-for-byte unchanged");
 assert.match(html,/ao-sanctuary-embedded\.js/);
 const source=html.slice(html.indexOf("const D=")+8);
-const D=JSON.parse(source);
+let depth=0,end=-1,quoted=false,escape=false;
+for(let i=0;i<source.length;i++){
+ const char=source[i];
+ if(quoted){
+   if(escape)escape=false;
+   else if(char==="\\")escape=true;
+   else if(char==='"')quoted=false;
+   continue;
+ }
+ if(char==='"'){quoted=true;continue}
+ if(char==="{")depth++;
+ else if(char==="}"&&--depth===0){end=i+1;break}
+}
+assert.ok(end>0,"Original sanctuary data object was not found");
+const D=JSON.parse(source.slice(0,end));
 const cards=D.cards.filter(c=>/^C\d{2}$/.test(c.id));
 assert.equal(cards.length,65);
 const presented=[],listeners={},st={form:"sung",solemn:false,inc:true};
