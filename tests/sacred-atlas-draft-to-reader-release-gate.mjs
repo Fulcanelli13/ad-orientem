@@ -37,6 +37,16 @@ const geographicOnly=diagnoses.filter(x=>x.issues.includes("GEOGRAPHIC_LOCATOR_N
 const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITED_TO_SITE_IDENTITY"));
 assert.ok(geographicOnly.length>=10,"Known geolocator-only draft cohort must remain flagged");
 assert.ok(identityOnly.length>=10,"Site-identity-only source metadata must remain flagged");
+const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
+assert.ok(editorialProse.length>=70,
+  "Internal guide-writing instructions in visitor prose must be detected before promotion");
+for(const n of [69,70,72,73,75,76]){
+  const g=wave2.find(x=>x.draft_order===n);
+  assert.ok(g);
+  assert.ok(!inspectSacredGuideEvidence(g,byPlace.get(g.place_id),sources).issues
+    .includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"),
+    "Bilingual editorial rewrite did not remove guidance memo language from "+g.place_id);
+}
 
 // A complete *synthetic test approval* proves schema compatibility and the
 // existing rendering path; it is never stored in data or treated as authorization.
@@ -97,5 +107,6 @@ assert.match(dataService,/fetchJson\(EXPLORE_DATA_URLS\.illustratedReviewedBilin
 assert.doesNotMatch(dataService,/sacred-atlas-wave[12]-/);
 assert.match(dataService,/filter\(row=>row\?\.publication==="PUBLISHED"\)/);
 console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2 source checks;"+
-  " "+geographicOnly.length+" locator-only, "+identityOnly.length+" site-identity-only diagnoses;"+
+  " "+geographicOnly.length+" locator-only, "+identityOnly.length+" site-identity-only,"+
+  " "+editorialProse.length+" meta-instruction copy diagnoses;"+
   " approved-only existing EN/FR folio adapter, source checks, image gate and version locks");
