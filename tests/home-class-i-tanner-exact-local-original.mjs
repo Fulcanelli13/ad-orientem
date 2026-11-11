@@ -4,7 +4,7 @@ import {createHash} from "node:crypto";
 import {annualHomeArtworkDay2026} from "../src/home/annual-home-artwork-2026.js";
 import {TANNER_NICODEMUS_2026_LOCAL_ORIGINAL,releasedTannerNicodemusForClassI2026}
  from "../src/home/released-class-i-tanner-nicodemus-2026.js";
-import {approved2026HomeArtwork,homeArtworkAssetUrl} from "../src/home/approved-dated-artwork-2026.js";
+import {approved2026HomeArtwork,homeArtworkAssetUrl,renderApproved2026HomeArtwork} from "../src/home/approved-dated-artwork-2026.js";
 
 const row=TANNER_NICODEMUS_2026_LOCAL_ORIGINAL;
 const manifest=JSON.parse(readFileSync(new URL(
@@ -55,6 +55,21 @@ assert.equal(art.image,row.image);
 assert.equal(art.source,row.sourceObject);
 assert.equal(art.imageSource,row.photoFilePage);
 assert.equal(art.photoOriginalSha1,proof.sha1);
+assert.equal(art.titleFr,"Nicodème");
+const created=[];
+const mockWin={location:{pathname:"/ad-orientem/"},document:{
+ createElement(name){assert.equal(name,"img");const el={
+  dataset:{},isConnected:true,addEventListener(){}};created.push(el);return el;}
+}};
+const slot={children:[],replaceChildren(...x){this.children=x;},
+ closest(){return {classList:{remove(){},add(){}},querySelector(){return null}};}};
+const frenchState={...state(),language:"fr"};
+assert.ok(renderApproved2026HomeArtwork(slot,frenchState,mockWin));
+assert.equal(created[0].src,"/ad-orientem"+row.image);
+assert.equal(created[0].alt,"Nicodème — Henry Ossawa Tanner");
+const englishState={...state(),language:"en"};
+assert.ok(renderApproved2026HomeArtwork(slot,englishState,mockWin));
+assert.equal(created[1].alt,"Nicodemus — Henry Ossawa Tanner");
 assert.equal(art.offlineOriginalCertified,true);
 assert.equal(art.photographCropCertified,false);
 assert.equal(art.ownerArtworkDecisionNewlyCreated,false);
