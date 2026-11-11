@@ -59,6 +59,9 @@ export const LIVE_HANDOFF_RESEARCH_NOTATION_CSS=[
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel{position:relative;max-height:105px;overflow:hidden;margin:3px 0 0}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption{display:flex;justify-content:space-between;align-items:center;gap:6px;height:22px;white-space:nowrap;color:#dbca9b;font:600 9px/1 system-ui,sans-serif}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption button{min-width:32px;min-height:21px;border:0;background:transparent;color:#ebe0c4;font-size:13px;cursor:pointer}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption button[hidden]{display:none!important}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption span{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption [data-ao-reference-full-open]{width:43px;min-width:43px;min-height:25px;font:700 10px/1 system-ui,sans-serif}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption select{display:block;min-width:0;max-width:58%;height:23px;padding:2px 5px;border:1px solid rgba(225,205,145,.4);border-radius:5px;background:#152020;color:#e9dabb;font:600 10px/1.1 system-ui,sans-serif}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption select[hidden]{display:none!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-live-chant-scroll{height:63px!important;max-height:63px!important;border-top:1px solid rgba(222,202,143,.14)}",
@@ -98,11 +101,16 @@ export function installLiveHandoffResearchNotation({
  closeButton.type="button";closeButton.textContent="×";
  closeButton.dataset.aoReferenceScoreClose="";
  closeButton.setAttribute("aria-label","Close historical reference score");
+ const fullButton=document.createElement("button");
+ fullButton.type="button";fullButton.textContent="FULL";
+ fullButton.dataset.aoReferenceFullOpen="";
+ fullButton.setAttribute("aria-label","Open complete historical Gregorian score with all staff systems");
+ fullButton.hidden=true;
  const picker=document.createElement("select");
  picker.dataset.aoReferenceScoreChoice="";
  picker.hidden=true;
  picker.setAttribute("aria-label","Choose one of the source-matched 1961 Gregorian references");
- caption.append(message,picker,closeButton);
+ caption.append(message,picker,fullButton,closeButton);
  const scroller=document.createElement("div");
  scroller.className="ao-live-chant-scroll";
  scroller.setAttribute("aria-label","Scroll the printed historical research transcription horizontally");
@@ -116,6 +124,7 @@ export function installLiveHandoffResearchNotation({
  dock.insertBefore(panel,dock.querySelector(".ao-schola-main"));
  let enabled=false,disposed=false,activeKey=null,engraver=null,token=0;
  let candidates=[],selectedScoreId=null,pickerInventory="";
+ let fullDialog=null,fullEngraver=null,fullRequest=0;
  const keyOf=selected=>[selected.trackId,
    selected.settingId??selected.sourceSegmentId,selected.scoreId].join("|");
  const getCandidates=()=>{
@@ -138,9 +147,16 @@ export function installLiveHandoffResearchNotation({
      approvedScoreVisible:dock.dataset.approvedScore==="true"
    });
  };
+ const closeFull=()=>{
+   ++fullRequest;fullEngraver?.destroy?.();fullEngraver=null;
+   const dialog=fullDialog;fullDialog=null;
+   if(dialog?.open)dialog.close();
+   dialog?.remove();
+   if(dialog&&fullButton.isConnected&&!panel.hidden)fullButton.focus?.();
+ };
  const close=()=>{
-   ++token;engraver?.destroy?.();engraver=null;activeKey=null;
-   staff.replaceChildren();panel.hidden=true;
+   closeFull();++token;engraver?.destroy?.();engraver=null;activeKey=null;
+   staff.replaceChildren();panel.hidden=true;fullButton.hidden=true;
    delete dock.dataset.aoResearchReference;
    trigger.setAttribute("aria-expanded","false");
  };
@@ -195,7 +211,7 @@ export function installLiveHandoffResearchNotation({
    close();activeKey=key;const request=++token;
    message.textContent="1961 REFERENCE · NOT APPROVED";
    panel.hidden=false;dock.dataset.aoResearchReference="true";
-   trigger.setAttribute("aria-expanded","true");
+   trigger.setAttribute("aria-expanded","true");fullButton.hidden=false;
    staff.setAttribute("aria-label","Research-only "+selected.title+
      " from "+selected.printedWitness+". No performance observed.");
    try{
@@ -207,7 +223,62 @@ export function installLiveHandoffResearchNotation({
      return true;
    }catch{if(request===token)close();return false;}
  };
+ const openFull=async()=>{
+   // A full reader is a deliberate reference action, not automatic notation.
+   // Revalidate against the CURRENT native source before opening the modal.
+   if(!refresh()||!activeKey||panel.hidden)return false;
+   const selected=candidates.find(x=>keyOf(x)===activeKey);
+   if(!selected)return false;
+   closeFull();
+   const dialog=document.createElement("dialog");
+   dialog.className="ao-schola-score-dialog";
+   dialog.dataset.aoReferenceFullScore=selected.scoreId;
+   dialog.dataset.aoReferenceFullReady="loading";
+   dialog.setAttribute("aria-label","Complete 1961 historical Gregorian source reference; musical review pending");
+   const header=document.createElement("header");
+   const title=document.createElement("b");
+   title.textContent=selected.title+" · full Gregorian notation";
+   const closeButtonFull=document.createElement("button");
+   closeButtonFull.type="button";closeButtonFull.dataset.scholaScoreClose="";
+   closeButtonFull.textContent="Close";
+   closeButtonFull.setAttribute("aria-label","Close full historical score");
+   header.append(title,closeButtonFull);dialog.append(header);
+   const notice=document.createElement("p");
+   notice.textContent="1961 research transcription · NOT musically approved. This reference does not report singing or advance the Schola.";
+   dialog.append(notice);
+   const fullStaff=document.createElement("div");
+   fullStaff.className="ao-schola-score-viewport";
+   fullStaff.dataset.aoReferenceFullStaff="";
+   fullStaff.setAttribute("role","img");
+   fullStaff.setAttribute("aria-label","Complete historical "+selected.title+" printed notation; provisional");
+   dialog.append(fullStaff);
+   const witness=document.createElement("a");
+   witness.href=selected.sourceUrl;
+   witness.target="_blank";witness.rel="noopener noreferrer";
+   witness.textContent="Source transcription and printed witness";
+   dialog.append(witness);
+   const onClose=()=>closeFull();
+   closeButtonFull.addEventListener("click",onClose);
+   dialog.addEventListener("cancel",event=>{event.preventDefault();closeFull();});
+   dialog.addEventListener("click",event=>{if(event.target===dialog)closeFull();});
+   (document.body??document.documentElement)?.append(dialog);
+   fullDialog=dialog;
+   const request=++fullRequest;
+   dialog.showModal?.();closeButtonFull.focus?.();
+   try{
+     fullEngraver=createOfflineChantEngraver({viewport:fullStaff,document});
+     fullEngraver.observe?.();
+     const ok=await fullEngraver.engrave(selected.gabc);
+     if(request!==fullRequest)return false;
+     if(!ok||!fullStaff.querySelector("svg")){
+       closeFull();return false;
+     }
+     dialog.dataset.aoReferenceFullReady="true";
+     return true;
+   }catch{if(request===fullRequest)closeFull();return false;}
+ };
  const onTrigger=()=>{void open();};
+ const onFull=()=>{void openFull();};
  const onPickerChange=()=>{
    selectedScoreId=picker.value||null;
    close();void open();
@@ -218,6 +289,7 @@ export function installLiveHandoffResearchNotation({
  };
  const onClose=()=>close();
  trigger.addEventListener("click",onTrigger);
+ fullButton.addEventListener("click",onFull);
  picker.addEventListener("change",onPickerChange);
  closeButton.addEventListener("click",onClose);
  root.addEventListener("change",onChange);
@@ -225,6 +297,7 @@ export function installLiveHandoffResearchNotation({
    if(disposed)return;
    refresh(false);disposed=true;
    trigger.removeEventListener("click",onTrigger);
+   fullButton.removeEventListener("click",onFull);
    picker.removeEventListener("change",onPickerChange);
    closeButton.removeEventListener("click",onClose);
    root.removeEventListener("change",onChange);
@@ -232,7 +305,8 @@ export function installLiveHandoffResearchNotation({
  }
  return freeze({mounted:true,refresh,dispose,
    getState:()=>freeze({enabled,available:candidates.length>0,open:Boolean(activeKey),
-     scoreId:activeKey?.split("|")[2]??null,referenceCount:candidates.length,
+     scoreId:activeKey?.split("|")[2]??null,fullScoreOpen:Boolean(fullDialog),
+     referenceCount:candidates.length,
      requiresManualChoice:candidates.length>1,
      approval:"RESEARCH_ONLY",automaticPublication:false})});
 }
