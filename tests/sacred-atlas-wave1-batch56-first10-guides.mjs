@@ -7,12 +7,15 @@ const draft=read("data/shrines/research/sacred-atlas-wave1-first10-extended-guid
 const geography=read("data/geography/seed-registry.v1.json");
 const media=read("data/geography/approved-place-media.v1.json");
 const shrine=read("data/shrines/shrines-pilgrimages-seed.v1.json");
-const keys=master.batch_plan.shrine_guide_expansion[0].place_ids;
+const plannedKeys=master.batch_plan.shrine_guide_expansion[0].place_ids;
+const keys=queue.rows.map(r=>r.place_id);
+assert.deepEqual([...keys].sort(),[...plannedKeys].sort(),
+  "Prioritised Wave-1 queue must preserve the original selected site membership");
 const existing=new Map(master.places.map(p=>[p.place_id,p]));
 const geoids=new Set(geography.places.map(p=>p.place_id));
 const shrineids=new Set(shrine.shrines.map(p=>p.shrine_id));
 assert.equal(master.summary.extended_guides,33);
-assert.equal(media.items.length,379);
+assert.equal(media.items.length,388, "Current approved covers must remain untouched by guide drafting");
 assert.equal(geography.places.length,530);
 assert.equal(keys.length,56);
 assert.equal(new Set(keys).size,56);
@@ -81,6 +84,6 @@ for(let i=0;i<10;i++){
 }
 assert.match(draft.guides[0].sections[1].paragraphs[0].en,/does not establish the supernatural authenticity/);
 assert.match(draft.guides[3].sections[0].paragraphs[0].en,/Montecassino/);
-assert.match(draft.guides[6].sections[1].paragraphs[0].en,/2026 edition/);
+assert.match(draft.guides[6].sections[1].paragraphs[0].en,/September 2026 programme/);
 assert.match(draft.guides[9].sections[2].paragraphs[0].en,/2028/);
-console.log("Sacred Atlas W1 PASS: frozen first ten 3-section EN/FR guides plus evolving 56-place queue; "+queue.counts.short_source_synopses_only+" still held, 33 production guides and 379 covers unchanged.");
+console.log("Sacred Atlas W1 PASS: frozen first ten 3-section EN/FR guides plus evolving 56-place queue; "+queue.counts.short_source_synopses_only+" still held, 33 production guides and 388 current approved covers unchanged.");
