@@ -2997,6 +2997,7 @@ export function createReaderDomAdapter({
   let scholaDockEngraver=null,scholaDockScoreIdentity=null,scholaDockScoreRequest=0;
   let scholaDockFollower=null;
   let scholaMassTextSync=null;
+  let scholaDockAwaitingChoir=null;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3422,6 +3423,7 @@ export function createReaderDomAdapter({
     ++scholaDockScoreRequest;
     scholaDockFollower?.destroy?.();scholaDockFollower=null;
     scholaMassTextSync?.destroy?.();scholaMassTextSync=null;
+    scholaDockAwaitingChoir=null;
     scholaDockEngraver?.destroy?.();scholaDockEngraver=null;
     scholaDockScoreIdentity=null;
     const dock=root.querySelector(".ao-schola-dock");
@@ -3452,15 +3454,18 @@ export function createReaderDomAdapter({
     const awaitingChoir=Boolean(["GLORIA","CREDO"].includes(score.scholaTrackId) &&
       current?.scholaShared!==true);
     if(identity===scholaDockScoreIdentity){
-      if(scholaDockFollower){
+      if(scholaDockFollower&&awaitingChoir!==scholaDockAwaitingChoir){
+        scholaDockAwaitingChoir=awaitingChoir;
         if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
         else scholaDockFollower.resume?.();
         dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"estimated";
       }
+      // A scroll/cue repaint must never restart the Schola's own cadence.
       return;
     }
     clearScholaDockNotation();
     scholaDockScoreIdentity=identity;
+    scholaDockAwaitingChoir=awaitingChoir;
     const token=++scholaDockScoreRequest;
     panel.hidden=false;panel.dataset.scoreStatus="loading";
     staff.setAttribute("aria-label","Approved Gregorian notation for "+schola.trackId+
