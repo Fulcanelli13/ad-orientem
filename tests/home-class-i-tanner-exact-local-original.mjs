@@ -4,7 +4,7 @@ import {createHash} from "node:crypto";
 import {annualHomeArtworkDay2026} from "../src/home/annual-home-artwork-2026.js";
 import {TANNER_NICODEMUS_2026_LOCAL_ORIGINAL,releasedTannerNicodemusForClassI2026}
  from "../src/home/released-class-i-tanner-nicodemus-2026.js";
-import {approved2026HomeArtwork} from "../src/home/approved-dated-artwork-2026.js";
+import {approved2026HomeArtwork,homeArtworkAssetUrl} from "../src/home/approved-dated-artwork-2026.js";
 
 const row=TANNER_NICODEMUS_2026_LOCAL_ORIGINAL;
 const manifest=JSON.parse(readFileSync(new URL(
@@ -35,6 +35,13 @@ assert.equal(source[0],0xff);assert.equal(source[1],0xd8);
 assert.equal(source[source.length-2],0xff);assert.equal(source[source.length-1],0xd9);
 assert.match(manifest.photographicSourceRights,/Barbara Katus/);
 assert.match(manifest.photographicSourceRights,/non-US/);
+assert.equal(homeArtworkAssetUrl(row.image,{location:{pathname:"/ad-orientem/"}}),
+ "/ad-orientem"+row.image,"GitHub Pages project must not request host-root image");
+assert.equal(homeArtworkAssetUrl(row.image,{location:{pathname:"/"}}),row.image);
+assert.equal(homeArtworkAssetUrl("https://upload.wikimedia.org/test.jpg",
+ {location:{pathname:"/ad-orientem/"}}),"https://upload.wikimedia.org/test.jpg");
+const detailSource=readFileSync(new URL("../src/home/c3-gallery.js",import.meta.url),"utf8");
+assert.match(detailSource,/homeArtworkAssetUrl\\(authoritative.infoImage,win\\)/);
 assert.equal(row.visuallyApprovedForCalendarCrop,false);
 assert.equal(row.ownerArtworkDecisionNewlyCreated,false);
 const state=(principal=row.principalId,path=row.properPath)=>({
