@@ -31,9 +31,19 @@ for(let i=0;i<365;i++){
  assert.equal(one.rank,src.rank);
  assert.equal(one.candidateSourceCount,src.catalogue.length+src.externalExistingResearch.length+src.study.length);
  assert.equal(one.contextualReuseEligible,src.rank==="IV"||src.coverageState==="TEMPORAL_SEASONAL_REUSE_NEEDED");
- assert.equal(one.selection?.title??null,src.selection?.title??null);
- assert.equal(one.selection?.artist??null,src.selection?.artist??null);
- assert.equal(one.selection?.artworkId??null,src.selection?.artworkId??null);
+ if(one.date==="2026-04-06"){
+  // The immutable 20 October archive says Caravaggio, but a later 26 October
+  // explicit owner decision supersedes it with Matthias Stom, Thyssen 375.
+  assert.equal(src.selection?.artist,"Caravaggio");
+  assert.equal(one.selection?.title,"The Supper at Emmaus");
+  assert.equal(one.selection?.artist,"Matthias Stom");
+  assert.equal(one.selection?.artworkId,"thyssen-375-1976-66");
+  assert.equal(one.selection?.editorialBasis,"LATER_EXPLICIT_OWNER_DATE_APPROVAL_20261026");
+ }else{
+  assert.equal(one.selection?.title??null,src.selection?.title??null);
+  assert.equal(one.selection?.artist??null,src.selection?.artist??null);
+  assert.equal(one.selection?.artworkId??null,src.selection?.artworkId??null);
+ }
  assert.equal(annualHomeArtworkDay2026(one.date,"wrong:principal"),null);
 }
 const build=(date,principalId,properPath,gospel="Matthew 1:1–16")=>({
