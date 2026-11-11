@@ -3492,7 +3492,12 @@ export function createReaderDomAdapter({
             // Never select or approve scores here: the gate above already
             // required exact score, chosen setting, track and source segment.
             const reader=root.querySelector(".ao-prayer-card");
-            if(reader){
+            // ONLY the Ordinary's shared text is coupled to the Schola.
+            // Propers are independently advancing choir music: they must
+            // NEVER scroll a Mass paragraph or change its current card.
+            const sharedOrdinary=["KYRIE","GLORIA","CREDO"].includes(
+              score.scholaTrackId);
+            if(reader&&sharedOrdinary){
               scholaMassTextSync=createScholaMassTextSynchronizer({
                 reader,gabc:score.gabc,trackId:score.scholaTrackId,
                 enabled:()=>mode==="LIVE" &&
@@ -3511,7 +3516,7 @@ export function createReaderDomAdapter({
                 // Only an exact source-verified movement may select the
                 // adjacent reading card. This is DISPLAY navigation, not a
                 // Schola observation or a priest event clock update.
-                if(!followed&&mode==="LIVE"&&
+                if(!followed&&sharedOrdinary&&mode==="LIVE"&&
                    current?.scholaShared===true &&
                    current?.scholaVisible===true &&
                    current?.schola?.trackId===score.scholaTrackId &&
