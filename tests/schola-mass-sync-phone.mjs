@@ -33,7 +33,7 @@ const server=createServer((req,res)=>{
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
 const browser=await chromium.launch({headless:true});
 try{
- for(const width of [320,390]){
+ for(const width of [320,390,1280]){
   for(const [movement,setting,lines] of [
    ["GLORIA","MASS_08",["Glória in excélsis Deo.",
      "Et in terra pax homínibus bonæ voluntátis."]],
@@ -94,16 +94,33 @@ try{
       paragraph:reader.dataset.scholaTextFollowParagraph,
       horizontal:strip.scrollLeft,stripIndex:strip.dataset.scholaFollowIndex,
       mapped:follow.getState().mapped,staffSvg:!!staff.querySelector("svg")};
+    // Seek real note positions across the score, not merely the lyric strip.
+    // The 1200px Exsurge SVG must extend beyond the dock at phone AND desktop
+    // widths, and the reader's staff must actually scroll horizontally.
+    let maxScoreHorizontal=0;
+    for(let i=0;i<follow.getState().syllables;i+=Math.max(1,Math.floor(
+      follow.getState().syllables/16))){
+      staff.scrollLeft=0;
+      follow.seek(i);
+      maxScoreHorizontal=Math.max(maxScoreHorizontal,staff.scrollLeft);
+    }
+    const staffGeometry={scrollWidth:staff.scrollWidth,clientWidth:staff.clientWidth,
+      maxHorizontal:maxScoreHorizontal,svgWidth:staff.querySelector("svg")?.getBoundingClientRect().width};
     follow.pause();
     const paused=follow.getState().paused;
     follow.destroy();textSync.destroy();engraver.destroy();
-    return {initial,later,paused,readerHeight:reader.clientHeight,
+    return {initial,later,paused,staffGeometry,readerHeight:reader.clientHeight,
       readerMax:reader.scrollHeight-reader.clientHeight};
    },{gabc:score.gabc,lines,trackId:movement});
    assert.equal(result.later.paragraph,"SOURCE-"+lines.length,JSON.stringify(result));
    assert.equal(result.later.index,result.later.stripIndex*1);
    assert.ok(result.later.scroll>result.initial.scroll+20,JSON.stringify(result));
    assert.ok(result.later.horizontal>=0&&result.later.staffSvg,JSON.stringify(result));
+   assert.equal(result.later.mapped,true,"The entire original SVG lyric map must align");
+   assert.ok(result.staffGeometry.scrollWidth>result.staffGeometry.clientWidth+40,
+      "Engraved score must be horizontally scrollable: "+JSON.stringify(result));
+   assert.ok(result.staffGeometry.maxHorizontal>10,
+      "Seeking source syllables must move the actual neume SVG horizontally: "+JSON.stringify(result));
    assert.equal(result.paused,true);
    assert.deepEqual(errors,[]);
    console.log("SCHOLA_SHARED_CURSOR_PHONE_PASS "+width+" "+movement+" "+JSON.stringify(result));
