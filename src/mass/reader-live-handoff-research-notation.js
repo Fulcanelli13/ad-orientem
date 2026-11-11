@@ -3,6 +3,7 @@
 // the canonical Schola controller, its independent clock, or the Mass text.
 // The 20 existing offline GABCs are editorial research, not published scores.
 import {offlineKyrialeResearchScore} from "./reader-kyriale-research-gabc.js";
+import {selectLiveHandoffProperReferences} from "./reader-live-handoff-proper-notation.js";
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 
 const freeze=Object.freeze;
@@ -58,6 +59,8 @@ export const LIVE_HANDOFF_RESEARCH_NOTATION_CSS=[
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel{position:relative;max-height:105px;overflow:hidden;margin:3px 0 0}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption{display:flex;justify-content:space-between;align-items:center;gap:6px;height:22px;white-space:nowrap;color:#dbca9b;font:600 9px/1 system-ui,sans-serif}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption button{min-width:32px;min-height:21px;border:0;background:transparent;color:#ebe0c4;font-size:13px;cursor:pointer}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption select{display:block;min-width:0;max-width:58%;height:23px;padding:2px 5px;border:1px solid rgba(225,205,145,.4);border-radius:5px;background:#152020;color:#e9dabb;font:600 10px/1.1 system-ui,sans-serif}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-caption select[hidden]{display:none!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-live-chant-scroll{height:63px!important;max-height:63px!important;border-top:1px solid rgba(222,202,143,.14)}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff{width:4096px!important;min-width:4096px!important;max-width:none!important;height:63px!important;overflow:hidden}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel .ao-schola-approved-staff svg{max-width:none!important;height:auto!important}",
@@ -95,7 +98,11 @@ export function installLiveHandoffResearchNotation({
  closeButton.type="button";closeButton.textContent="×";
  closeButton.dataset.aoReferenceScoreClose="";
  closeButton.setAttribute("aria-label","Close historical reference score");
- caption.append(message,closeButton);
+ const picker=document.createElement("select");
+ picker.dataset.aoReferenceScoreChoice="";
+ picker.hidden=true;
+ picker.setAttribute("aria-label","Choose one of the source-matched 1961 Gregorian references");
+ caption.append(message,picker,closeButton);
  const scroller=document.createElement("div");
  scroller.className="ao-live-chant-scroll";
  scroller.setAttribute("aria-label","Scroll the printed historical research transcription horizontally");
@@ -107,14 +114,26 @@ export function installLiveHandoffResearchNotation({
  scroller.append(staff);panel.append(caption,scroller);
  dock.insertBefore(trigger,dock.querySelector("[data-schola-toggle]"));
  dock.insertBefore(panel,dock.querySelector(".ao-schola-main"));
- let enabled=false,disposed=false,activeKey=null,engraver=null,token=0,candidate=null;
- const getCandidate=()=>{
-   const state=preview.getScholaState?.()?.schola;
-   const selected=state&&root.querySelector?.('[data-schola-kyriale-choice="'+state.trackId+'"]');
-   return selectLiveHandoffResearchNotation({
-     schola:state,
-     form:prepared?.session?.resolvedMass?.form,
-     settingId:selected?.value??"",
+ let enabled=false,disposed=false,activeKey=null,engraver=null,token=0;
+ let candidates=[],selectedScoreId=null,pickerInventory="";
+ const keyOf=selected=>[selected.trackId,
+   selected.settingId??selected.sourceSegmentId,selected.scoreId].join("|");
+ const getCandidates=()=>{
+   const schola=preview.getScholaState?.()?.schola;
+   if(!schola)return [];
+   const selected=root.querySelector?.('[data-schola-kyriale-choice="'+schola.trackId+'"]');
+   const ordinary=selectLiveHandoffResearchNotation({
+     schola,form:prepared?.session?.resolvedMass?.form,
+     settingId:selected?.value??"",sourceGate:enabled,
+     approvedScoreVisible:dock.dataset.approvedScore==="true"
+   });
+   if(ordinary)return [ordinary];
+   // The exact source path, resolved date, Latin paragraph and musical role
+   // are checked by the already established canonical Proper registry.
+   return selectLiveHandoffProperReferences({
+     schola,form:prepared?.session?.resolvedMass?.form,
+     resolvedMass:prepared?.session?.resolvedMass,
+     itinerary:preview.getScholaPerformance?.(),
      sourceGate:enabled,
      approvedScoreVisible:dock.dataset.approvedScore==="true"
    });
@@ -125,29 +144,57 @@ export function installLiveHandoffResearchNotation({
    delete dock.dataset.aoResearchReference;
    trigger.setAttribute("aria-expanded","false");
  };
+ const syncPicker=()=>{
+   const inventory=candidates.map(keyOf).join(";");
+   if(inventory!==pickerInventory){
+     pickerInventory=inventory;picker.replaceChildren();
+     const first=document.createElement("option");
+     first.value="";first.textContent="Choose source score";picker.append(first);
+     for(const score of candidates){
+       const option=document.createElement("option");
+       option.value=score.scoreId;
+       option.textContent=score.scoreRole ? score.scoreRole+" · "+score.title:score.title;
+       picker.append(option);
+     }
+   }
+   picker.hidden=candidates.length<2;
+   if(!candidates.some(x=>x.scoreId===selectedScoreId))selectedScoreId=null;
+   picker.value=selectedScoreId??"";
+ };
  const refresh=on=>{
    if(disposed)return false;
    if(typeof on==="boolean")enabled=on;
-   candidate=enabled?getCandidate():null;
-   if(!candidate||!enabled){
-     close();trigger.hidden=true;return false;
+   candidates=enabled?getCandidates():[];
+   if(!candidates.length){
+     close();trigger.hidden=true;selectedScoreId=null;
+     pickerInventory="";picker.replaceChildren();return false;
    }
+   syncPicker();
    trigger.hidden=false;
-   trigger.title="View historical reference "+candidate.title+
-     " (not reviewed or published; not heard)";
-   const nextKey=candidate.trackId+"|"+candidate.settingId+"|"+candidate.scoreId;
-   if(activeKey&&activeKey!==nextKey)close();
+   trigger.title=candidates.length>1
+     ?"Choose a source-bound historical reference (not approved or heard)"
+     :"View historical reference "+candidates[0].title+" (not approved or heard)";
+   if(activeKey&&!candidates.some(c=>keyOf(c)===activeKey))close();
    return true;
  };
  const open=async()=>{
-   if(!refresh()||!candidate)return false;
-   const selected=candidate,key=selected.trackId+"|"+selected.settingId+"|"+selected.scoreId;
+   if(!refresh())return false;
+   const selected=candidates.length===1?candidates[0]:
+     candidates.find(c=>c.scoreId===selectedScoreId);
+   if(!selected){
+     // A source paragraph may genuinely contain two distinct appointed
+     // chants (Gradual and Alleluia). Do not silently choose one.
+     close();panel.hidden=false;
+     dock.dataset.aoResearchReference="true";
+     trigger.setAttribute("aria-expanded","true");
+     message.textContent="CHOOSE 1961 REFERENCE · NOT APPROVED";
+     picker.hidden=false;return true;
+   }
+   const key=keyOf(selected);
    if(activeKey===key){close();return true;}
-   close();
-   activeKey=key;const request=++token;
+   close();activeKey=key;const request=++token;
    message.textContent="1961 REFERENCE · NOT APPROVED";
-   panel.hidden=false;
-   dock.dataset.aoResearchReference="true";
+   panel.hidden=false;dock.dataset.aoResearchReference="true";
    trigger.setAttribute("aria-expanded","true");
    staff.setAttribute("aria-label","Research-only "+selected.title+
      " from "+selected.printedWitness+". No performance observed.");
@@ -157,29 +204,35 @@ export function installLiveHandoffResearchNotation({
      const ok=await engraver.engrave(selected.gabc);
      if(request!==token)return false;
      if(!ok||!staff.querySelector("svg")){close();return false;}
-     // This reference has no live playback or source-approved syllable clock.
      return true;
    }catch{if(request===token)close();return false;}
  };
  const onTrigger=()=>{void open();};
+ const onPickerChange=()=>{
+   selectedScoreId=picker.value||null;
+   close();void open();
+ };
  const onChange=event=>{
    if(event.target?.matches?.("[data-schola-kyriale-choice],[data-schola-ordinary-setting],[data-schola-music-setting],[data-schola-profile-select]"))
      refresh();
  };
  const onClose=()=>close();
  trigger.addEventListener("click",onTrigger);
+ picker.addEventListener("change",onPickerChange);
  closeButton.addEventListener("click",onClose);
  root.addEventListener("change",onChange);
  function dispose(){
    if(disposed)return;
    refresh(false);disposed=true;
    trigger.removeEventListener("click",onTrigger);
+   picker.removeEventListener("change",onPickerChange);
    closeButton.removeEventListener("click",onClose);
    root.removeEventListener("change",onChange);
    trigger.remove();panel.remove();
  }
  return freeze({mounted:true,refresh,dispose,
-   getState:()=>freeze({enabled,available:Boolean(candidate),open:Boolean(activeKey),
-     scoreId:activeKey?.split("|")[2]??null,
+   getState:()=>freeze({enabled,available:candidates.length>0,open:Boolean(activeKey),
+     scoreId:activeKey?.split("|")[2]??null,referenceCount:candidates.length,
+     requiresManualChoice:candidates.length>1,
      approval:"RESEARCH_ONLY",automaticPublication:false})});
 }
