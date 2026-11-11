@@ -19,11 +19,8 @@ const identical=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&
 
 export function selectApprovedCompleteScholaTrackScore({
  schola,form,resolvedMass,settings,approvedScores,approvalRegistry,
- schema,diagnostic=null
+ schema
 }={}){
- const note=(gate,checks)=>{
-   if(typeof diagnostic==="function")diagnostic(Object.freeze({gate,checks}));
- };
  const track=clean(schola?.trackId),cues=schola?.trackSourceCueIds;
  if(!ORDINARY.has(track) ||
     !["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(clean(form).toUpperCase()) ||
@@ -34,19 +31,9 @@ export function selectApprovedCompleteScholaTrackScore({
     new Set(cues).size!==cues.length ||
     !cues.includes(schola?.cueId) || !clean(schola?.trackSourceLatin)||
     !clean(schola?.latin) || !Array.isArray(approvedScores) ||
-    !Array.isArray(approvalRegistry) || !schema){
-   note("NATIVE_PRECONDITION",{
-     track,owner:schola?.owner,cue:schola?.cueId,
-     sourceCuesValid:Array.isArray(cues)&&cues.every(c=>CUE.test(c)),
-     sourceCueUnique:Array.isArray(cues)&&new Set(cues).size===cues.length,
-     activeCueIncluded:Array.isArray(cues)&&cues.includes(schola?.cueId),
-     nativeLatin:clean(schola?.latin),sourceLatin:clean(schola?.trackSourceLatin),
-     hasScores:Array.isArray(approvedScores),hasRegistry:Array.isArray(approvalRegistry),
-     schema:Boolean(schema)
-   });return null;
- }
+    !Array.isArray(approvalRegistry) || !schema)return null;
  const setting=clean(settings?.[track]);
- if(!setting){note("SETTING_MISSING",{track,settings});return null;}
+ if(!setting)return null; // Never infer a setting from form, date or title.
  const riteScope=isExplicitRequiemMass({session:{resolvedMass}})?"REQUIEM":"ORDINARY";
  const trackLatin=normalized(schola.trackSourceLatin);
  const matches=[];
@@ -57,17 +44,7 @@ export function selectApprovedCompleteScholaTrackScore({
       row.licence!=="CC0-1.0"||!SHA.test(clean(row.gabcSha256))||
       !/^https:\/\//.test(clean(row.sourceUrl))||
       !identical(row.sourceCueIds,cues)||
-      normalized(row.sourceLatin)!==trackLatin){
-     note("PROMOTION_ROW_REJECTED",{
-       schema:row.schema===schema,scope:row.scoreScope==="FULL_SCHOLA_TRACK",
-       status:row.score_status==="approved",track:row.trackId===track,
-       setting:row.settingId===setting,rite:row.riteScope===riteScope,
-       licence:row.licence==="CC0-1.0",
-       sha:SHA.test(clean(row.gabcSha256)),url:/^https:\/\//.test(clean(row.sourceUrl)),
-       cues:identical(row.sourceCueIds,cues),
-       latin:normalized(row.sourceLatin)===trackLatin
-     });continue;
-   }
+      normalized(row.sourceLatin)!==trackLatin)continue;
    const score=approvedScores.find(candidate=>
      candidate?.schema===INLINE_CHANT_SCHEMA&&
      candidate?.scoreId===row.scoreId &&
@@ -88,29 +65,7 @@ export function selectApprovedCompleteScholaTrackScore({
      /%%\s*\([cf][1-4]\)/.test(candidate.gabc) &&
      candidate.gabc.includes("(::)"));
    if(score)matches.push(score);
-   else note("SCORE_ROW_REJECTED",{
-     scores:approvedScores.length,
-     candidateChecks:approvedScores.map(candidate=>({
-       schema:candidate?.schema===INLINE_CHANT_SCHEMA,
-       scoreId:candidate?.scoreId===row.scoreId,
-       scope:candidate?.scoreScope==="FULL_SCHOLA_TRACK",
-       selectionKey:candidate?.selectionKey===track,
-       setting:candidate?.settingId===setting,
-       rite:candidate?.riteScope===riteScope,
-       reviewed:candidate?.approval==="USER_AND_MUSICAL_SOURCE_REVIEWED",
-       publication:candidate?.publication==="PUBLIC_APPROVED",
-       text:candidate?.sourceTextVerified===true,
-       music:candidate?.musicalNotationVerified===true,
-       witness:typeof candidate?.sourceWitness==="string"&&candidate.sourceWitness.length>5,
-       url:candidate?.sourceUrl===row.sourceUrl,sha:candidate?.gabcSha256===row.gabcSha256,
-       cues:identical(candidate?.sourceCueIds,cues),
-       latin:normalized(candidate?.sourceLatin)===trackLatin,
-       gabc:typeof candidate?.gabc==="string"&&/%%\\s*\\([cf][1-4]\\)/.test(candidate.gabc),
-       gabcEnd:candidate?.gabc?.includes("(::)")
-     }))
-   });
  }
- note("MATCH_COUNT",{count:matches.length});
  return matches.length===1?freeze({
    ...matches[0],score_status:"approved",scholaTrackId:track,
    scholaSegmentId:clean(schola?.segmentId),scholaSourceCueIds:freeze([...cues]),
