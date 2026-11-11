@@ -33,12 +33,17 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
     for(const p of rows(section?.paragraphs)){
       paragraphCount++;
       if(!filled(p.en)||!filled(p.fr))issues.push("MISSING_BILINGUAL_PARAGRAPH");
-      if(!https(p.source_url)||!filled(p.source_id)||!rows(shrine?.source_ids).includes(p.source_id)||
-        bySource.get(p.source_id)?.url!==p.source_url)issues.push("BROKEN_CANONICAL_SOURCE_LINK");
-      used.add(p.source_id);
+      const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
+        rows(guide.bibliography_urls).includes(p.source_url);
+      const registryLink=filled(p.source_id)&&rows(shrine?.source_ids).includes(p.source_id)&&
+        bySource.get(p.source_id)?.url===p.source_url;
+      if(!https(p.source_url)||!(registryLink||wave1Bibliography))
+        issues.push("BROKEN_CANONICAL_SOURCE_LINK");
+      used.add(registryLink?p.source_id:p.source_url);
     }
   }
-  const sources=[...used].map(id=>bySource.get(id)).filter(Boolean);
+  const sources=[...used].map(id=>bySource.get(id)||
+    (https(id)?{id,url:id,contribution:"WAVE1_DIRECT_SOURCE_IN_GUIDE_BIBLIOGRAPHY"}:null)).filter(Boolean);
   const locatorOnly=sources.length>0&&sources.every(s=>geographicUrl(s.url));
   if(locatorOnly)issues.push("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE");
   const identityOnly=sources.length>0&&sources.every(s=>
@@ -60,7 +65,6 @@ export function reviewedSacredGuideForReader(guide,shrine,sourceRecords=[],revie
      review.revision!==assessment.revision||
      review.decision!=="APPROVED_FOR_PUBLICATION"||
      review.source_to_claim_checked!==true||
-     review.french_reviewed===true&&review.english_reviewed!==true||
      review.french_reviewed!==true||
      review.english_reviewed!==true||
      review.ecclesial_identity_checked!==true||
