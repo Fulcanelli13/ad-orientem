@@ -173,7 +173,8 @@ export function hydrateC3Art(root,state,win=globalThis){
       mainInfo.__c3Artwork={
         title:state?.language==="fr"&&authoritative.titleFr?authoritative.titleFr:authoritative.title,
         artist:authoritative.artist,
-        date:"",rights:authoritative.rights,
+        date:"",rights:authoritative.rights+
+          (authoritative.photoCredit?" · "+(state?.language==="fr"?"Photo : ":"Photograph: ")+authoritative.photoCredit:""),
         source:authoritative.source,image:homeArtworkAssetUrl(authoritative.infoImage,win)
       };
       mainInfo.hidden=false;
