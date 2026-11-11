@@ -1,5 +1,6 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
 import {createScholaFollowClock,scholaGabcSyllables} from "../src/mass/reader-schola-notation-follow.js";
 import {normalizeScholaLatin,scholaMassTextAnchors,
@@ -29,6 +30,40 @@ test("Credo III uses the same source-cursor mapping, not a second phrase timer",
  assert.equal(aligned.anchors.length,2);
  assert.ok(aligned.anchors[0].start<aligned.anchors[1].start);
  assert.equal(normalizeScholaLatin("cæli, Jésu"),"caeliiesu");
+});
+
+test("every original 1962 Sung Gloria and Credo paragraph aligns across the ENTIRE source score",()=>{
+ const corpus=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
+ for(const {label,block,score} of [
+  {label:"GLORIA",block:"AO.SM.B016",score:gloria},
+  {label:"CREDO",block:"AO.SM.B027",score:credo}
+ ]){
+  const owned=corpus.blocks.find(b=>b.Block_ID===block);
+  assert.ok(owned?.units?.length,label);
+  const [first,second]=owned.units;
+  assert.equal(first.clock,"PUBLIC_TEXT",label);
+  assert.equal(second.clock,"SCHOLA_PUBLIC",label);
+  const rows=[{
+   id:first.cue_id+"+"+second.cue_id,
+   latin:first.latin+" "+second.latin
+  },...owned.units.filter(u=>u.clock==="SCHOLA_PUBLIC"&&u!==second)
+    .map(u=>({id:u.cue_id,latin:u.latin}))];
+  const map=scholaMassTextAnchors(score.gabc,rows);
+  const fullLength=scholaGabcSyllables(score.gabc)
+    .map(s=>normalizeScholaLatin(s.label)).join("").length;
+  assert.equal(map.anchors.length,rows.length,label+" missing source cue mapping");
+  assert.equal(map.anchors[0].start,0,label+" must begin at source note 1");
+  assert.equal(map.anchors.at(-1).end,fullLength,label+" must reach Amen without omissions");
+  assert.equal(map.anchors.reduce((sum,p)=>sum+p.end-p.start,0),fullLength,
+    label+" source underlay must be fully covered without inferred words");
+  for(let i=1;i<map.anchors.length;i++)
+   assert.equal(map.anchors[i-1].end,map.anchors[i].start,label+" discontinuity");
+ }
+});
+
+test("isolated repeated Gloria wording is not assigned to an arbitrary occurrence",()=>{
+ const plan=scholaMassTextAnchors(gloria.gabc,[{id:"isolated",latin:"Iesu Christe."}]);
+ assert.equal(plan.anchors.length,0);
 });
 
 test("unknown vernacular or mismatched Latin does not move the Mass scroll",()=>{
