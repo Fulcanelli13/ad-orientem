@@ -35,8 +35,8 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
       if(!filled(p.en)||!filled(p.fr))issues.push("MISSING_BILINGUAL_PARAGRAPH");
       // Editorial instructions belong in the source review, never in the
       // visitor's historical account. Both languages need reader-ready prose.
-      const enMeta=/\\b(?:the|a|an)\\s+(?:atlas(?:\\s+(?:card|entry))?|guide(?:\\s+(?:card|profile))?|visitor\\s+card|historical\\s+profile|profile)\\s+(?:should|must|may|can|needs?)\\b/i;
-      const frMeta=/\\b(?:le|la|un|une)\\s+(?:guide|fiche|atlas|profil)\\s+(?:doit|devrait|peut|ne\\s+doit)\\b/i;
+      const enMeta=/\b(?:the|a|an)\s+(?:atlas(?:\s+(?:card|entry))?|guide(?:\s+(?:card|profile))?|visitor\s+card|historical\s+profile|profile)\s+(?:should|must|may|can|needs?)\b/i;
+      const frMeta=/\b(?:le|la|un|une)\s+(?:guide|fiche|atlas|profil)\s+(?:doit|devrait|peut|ne\s+doit)\b/i;
       if(enMeta.test(p.en||"")||frMeta.test(p.fr||""))
         issues.push("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY");
       const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
