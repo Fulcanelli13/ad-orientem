@@ -195,7 +195,33 @@ try{
         option.name+" Stage E leaked horizontal page overflow");
       assert.equal(chant.independentScholaIndex,before.scholaIndex,
         "synthetic score scrolling advanced native choir clock");
-      c.steps.push({name:"stage-e-source-gated-scroll-fixture",metrics:chant});
+      // The pre-existing Schola lyric follower, not a reader-card timestamp,
+      // sets this attribute. Verify Stage E only follows that source-matched
+      // glyph and makes no changes to the underlying music state.
+      const lyric=await page.evaluate(async()=>{
+        const staff=document.querySelector('[data-role="schola-approved-staff"]');
+        const scroll=document.querySelector('[data-ao-live-chant-scroll]');
+        const texts=[...staff.querySelectorAll("svg text")].filter(el=>
+          el.getBoundingClientRect().width>0);
+        if(texts.length<2)return {mapped:false,count:texts.length};
+        texts.forEach(t=>delete t.dataset.scholaFollowActive);
+        const last=texts[texts.length-1];
+        scroll.scrollLeft=0;
+        last.dataset.scholaFollowActive="true";
+        staff.dataset.scholaFollowIndex="100";
+        await new Promise(resolve=>requestAnimationFrame(resolve));
+        const box=scroll.getBoundingClientRect(),glyph=last.getBoundingClientRect();
+        const marker=box.x+box.width*.3;
+        return {mapped:true,count:texts.length,scrollLeft:scroll.scrollLeft,
+          glyphAtMarker:Math.abs((glyph.x+glyph.width/2)-marker)<7,
+          scholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
+      });
+      assert.equal(lyric.mapped,true,option.name+" missing rendered source lyric glyphs");
+      assert.equal(lyric.glyphAtMarker,true,
+        option.name+" independent source-syllable follower did not align to gold line");
+      assert.equal(lyric.scholaIndex,before.scholaIndex,
+        "notation-follow visual position altered actual native Schola progression");
+      c.steps.push({name:"stage-e-source-gated-scroll-fixture",metrics:chant,lyric});
       await page.screenshot({path:resolve(output,option.name+"-kyrie-XI-reference-only.png"),
         animations:"disabled",fullPage:false});
       assert.equal(c.errors.length,0,"Browser page errors: "+c.errors.join("; "));
