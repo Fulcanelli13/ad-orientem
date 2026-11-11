@@ -24,9 +24,10 @@ export function loadDyk520Release(win=globalThis){
 // Validate the entire publication input: malformed rows never become Home facts.
 export function dyk520Candidates(data,date){
  if(!validDate(date)||data?.schema!==SCHEMA||
-    data.release_stage!=="INTEGRATED_CONTENT"||data.count!==520||
-    data.counts?.customs!==378||data.counts?.glossary!==142||
-    !Array.isArray(data.records)||data.records.length!==520)return [];
+    data.release_stage!=="INTEGRATED_CONTENT"||
+    data.counts?.customs!==378||data.counts?.glossary<142||
+    data.count!==data.counts.customs+data.counts.glossary||
+    !Array.isArray(data.records)||data.records.length!==data.count)return [];
  const ids=new Set(),titles={en:new Set(),fr:new Set()},facts={en:new Set(),fr:new Set()};
  let customs=0,glossary=0;
  for(const r of data.records){
@@ -36,7 +37,13 @@ export function dyk520Candidates(data,date){
      clean(r.fact?.en).length<25||clean(r.fact?.fr).length<25||
      !clean(r.source?.id)||!isUrl(r.source?.url)||
      !Array.isArray(r.source.alternative_urls)||
-     !r.source.alternative_urls.every(isUrl))return [];
+     !r.source.alternative_urls.every(isUrl)||
+     (r.glossary_concept_id!==undefined&&
+       (r.category!=="GLOSSARY"||!/^G\d{3}$/.test(r.glossary_concept_id)||
+       !r.id.includes("-"+r.glossary_concept_id+"-")))||
+     (r.calendar_cue!==undefined&&!["FIRST_FRIDAY","FIRST_SATURDAY"].includes(r.calendar_cue))||
+     (r.discovery_topic!==undefined&&
+       !["LITURGY","DEVOTION","DOCTRINE","LATIN","ARCHITECTURE","CANON_LAW"].includes(r.discovery_topic)))return [];
   ids.add(r.id);
   for(const lang of ["en","fr"]){
    const title=norm(r.title[lang]),fact=norm(r.fact[lang]);
@@ -45,11 +52,13 @@ export function dyk520Candidates(data,date){
   }
   if(r.category==="CUSTOMS")customs++;else glossary++;
  }
- if(customs!==378||glossary!==142)return [];
+ if(customs!==data.counts.customs||glossary!==data.counts.glossary)return [];
  return data.records.map(r=>({
   id:r.id,category:r.category,title:r.title,
   pilot_home_copy:r.fact,source_family:"CURATED_CUSTOMS_GLOSSARY_2026",
-  source_id:r.source.id,source:r.source
+  source_id:r.source.id,source:r.source,
+  glossary_concept_id:r.glossary_concept_id??(/^DYK-GL-(G\d{3})-\d{2}$/.exec(r.id)?.[1]??null),
+  discovery_topic:r.discovery_topic??null,calendar_cue:r.calendar_cue??null
  }));
 }
 export function dyk520Model(data,id,date,language="en"){
@@ -64,8 +73,21 @@ export function dyk520Model(data,id,date,language="en"){
     (fr?"Coutumes et traditions":"Customs and traditions"):
     (fr?"Découvertes du glossaire":"Glossary discoveries"),
   sourceId:row.source_id,sourceUrl:row.source.url,
+  glossaryConceptId:row.glossary_concept_id,
   links:[{page:null,url:row.source.url,
     label:fr?"Consulter la source":"Read the source"}],
   published:true
  });
+}
+
+// Date relevance is additive: the full bilingual bank stays in the ordinary
+// Home rotation, while first-of-month devotions receive priority on their day.
+export function dyk520CalendarCandidates(data,date){
+ if(!validDate(date))return [];
+ const rows=dyk520Candidates(data,date);
+ const day=Number(date.slice(8,10));
+ const weekday=new Date(date+"T12:00:00Z").getUTCDay();
+ if(day<1||day>7)return [];
+ const cue=weekday===5?"FIRST_FRIDAY":weekday===6?"FIRST_SATURDAY":null;
+ return cue?rows.filter(r=>r.calendar_cue===cue):[];
 }
