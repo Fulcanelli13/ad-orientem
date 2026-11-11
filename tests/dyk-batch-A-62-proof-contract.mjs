@@ -67,7 +67,12 @@ assert.equal(sassari.proposed_title.en,"Sassari's towering wooden candles");
 assert.equal(sassari.proposed_title.fr,"Les grands cierges de bois de Sassari");
 const sicily=proof.records.find(r=>r.id==="DYK-G600-P-028");
 assert.match(sicily.proposed_copy.en,/serpent-shaped ring loaves/);
-assert.match(sicily.proposed_copy.fr,/pains votifs/);
+assert.match(sicily.proposed_copy.fr,/pains en couronne/);
+assert.match(sicily.proposed_copy.en,/carrying live snakes/);
+assert.doesNotMatch(sicily.proposed_copy.en,/replac(?:ed|ing)|later/,
+ "Pitrè p.355 describes simultaneous live serpents and bread, not a later replacement");
+assert.doesNotMatch(sicily.proposed_copy.fr,/remplac|plus tard/,
+ "The corrected French copy must not imply unproved chronology");
 for(const row of [sassari,sicily])assert.equal(row.editorial.copy_adjustment_pending,true);
 assert.deepEqual(dyk526ApprovedCandidates(proof,{enabled:true}),[],
  "Research-only owner proof must never become a public release");
