@@ -3409,7 +3409,7 @@ export function createReaderDomAdapter({
     // If the reader moves to another source cue while hashing, token rejects
     // the stale async result; the loading panel remains invisible.
     const doc=root.ownerDocument??globalThis.document;
-    void verifyApprovedScholaGabc({...score,score_status:"approved"},{
+    void verifyApprovedScholaGabc(score,{
       cryptoImpl:doc?.defaultView?.crypto
     }).then(proof=>{
       if(token!==scholaDockScoreRequest)return;
