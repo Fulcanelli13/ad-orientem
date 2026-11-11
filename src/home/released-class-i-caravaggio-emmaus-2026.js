@@ -21,6 +21,9 @@ export const CARAVAGGIO_EMMAUS_NG172_2026=Object.freeze({
  source:"https://commons.wikimedia.org/wiki/File:Supper_at_Emmaus-Caravaggio_(1601).jpg",
  image:"/assets/home/class-i-2026/caravaggio-emmaus-ng172-1601-fullframe-2400.webp",
  imageStatus:"LOCAL_EMMAUS_1601_NG172_PD_ART_FULLFRAME_BYTE_VERIFIED",
+ sourceOriginalSha1:"72adc134bebed87eb8043e29f9844b1490ce0ad7",
+ sourceOriginalSha256:"0ad5e515781f1ef52e5d60b43002a98ff0dceaf8707f9c9b8e944d97feea824f",
+ displayedWebPSha256:"b6590b5a5167fda18143087cbfbfa5bb4e73e4420cd14ee5f7d3101de0d03513",
  sourceRights:"Commons faithful 2D reproduction under Public Domain Mark / PD-Art; public domain in the US, but photographic rights may vary by jurisdiction. Source: self-scanned historical print, not an institutional museum master. Full-frame uncropped WEBP for mobile.",
  rejectedPhysicalLookalike:"Caravaggio Supper at Emmaus (1606), Pinacoteca di Brera, 2296",
  physicalVersionOwnerApprovalPreviouslyRecorded:false
@@ -42,6 +45,8 @@ export function releasedCaravaggioEmmausClassI2026(date,principalId,properPath){
   artist:row.artist,source:row.source,imageSource:row.source,
   image:row.image,infoImage:row.image,
   collectionIdentity:row.collectionIdentity,museumObject:row.museumObject,
+  sourceOriginalSha1:row.sourceOriginalSha1,
+  displayedWebPSha256:row.displayedWebPSha256,
   rights:row.sourceRights,imageStatus:row.imageStatus,
   selectionKind:"FROZEN_CLASS_I_CARAVAGGIO_EMMAUS_1601_LONDON_VERIFIED_SOURCE",
   physicalVersionOwnerApprovalPreviouslyRecorded:false,
