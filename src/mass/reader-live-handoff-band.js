@@ -318,7 +318,8 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     if(slimHeader)
       slimHeader.dataset.claudeMusicAccess=String(!musicAccess.hidden);
     shell.dataset.aoLiveBandGate=result.reason??result.crosswalk?.status??"EXACT_NATIVE_65_CROSSWALK";
-    if(!result.ok){availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
+    if(!result.ok){delete shell.dataset.aoLivePreviewPosture;
+      availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
       timelineHost.replaceChildren();wheelHost.replaceChildren();
       return freeze({mounted:true,visible:false,reason:result.reason});}
     const ref=result.reference,sequence=Number(ref.nativeSequence);
@@ -327,6 +328,16 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     // the static architecture, not an invented celebrant or minister.
     const nativeState=preview.getNativeEventState?.();
     const scene=projectLiveHandoffSanctuary({gate:result,nativeState,prepared});
+    // The native LIVE ribbon normally owns persistent faithful posture, but
+    // Claude's compact preview hides that ribbon. Restore the existing left
+    // rail tile only for a currently source-matched posture, never a stale
+    // unanchored icon or a duplicate of an exact posture-change cue.
+    const postureTile=shell.querySelector('.ao-rail-left [data-channel="posture"]');
+    const changeTile=shell.querySelector('.ao-rail-left [data-channel="posture-change"]');
+    const exactChange=changeTile?.dataset.active==="true" &&
+      changeTile.dataset.sourceRailAnchor==="exact";
+    shell.dataset.aoLivePreviewPosture=String(Boolean(scene.faithful &&
+      postureTile?.dataset.active==="true" && !exactChange));
     const incenseRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
     const turnRoute=projectLiveHandoffSourceTurnPreview({gate:result,nativeState,prepared});
     const potentialRoute=incenseRoute.ok?incenseRoute:turnRoute;
@@ -419,6 +430,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
       chantStrip.dispose();locateNativeDock(false);
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
+      delete shell.dataset.aoLivePreviewPosture;
       shell.style.removeProperty("--ao-live-band-height");musicAccess.remove();
       if(slimHeader)delete slimHeader.dataset.claudeMusicAccess;
       band.remove();style.remove();}
