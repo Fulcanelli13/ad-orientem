@@ -27,7 +27,7 @@ const CSS=String.raw`
  position:relative;min-height:0;height:100%;overflow:hidden;z-index:4;background:#0b0d12
 }
 .ao-sanctuary-preview .ao-sanctuary-window iframe{
- display:block;width:100%;height:100%;border:0;pointer-events:none;background:#090b10
+ display:block;width:100%;height:100%;border:0;pointer-events:auto;background:#090b10
 }
 .ao-sanctuary-preview .ao-sanctuary-resize{
  position:absolute;bottom:0;left:0;right:0;height:16px;touch-action:none;
