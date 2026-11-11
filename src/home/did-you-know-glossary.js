@@ -1,4 +1,4 @@
-import {loadDyk520Release,dyk520Candidates,dyk520CalendarCandidates} from "./dyk-520-release.js";
+import {loadDyk520Release,dyk520EligibleCandidates,dyk520CalendarCandidates} from "./dyk-520-release.js";
 import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,loadDykWeiser16Release,dykWeiser16Candidates,loadDykWeiserSecond16Release,dykWeiserSecond16Candidates,loadDykMixed24Release,dykMixed24Candidates,loadDyk125Release,dyk125Candidates,loadDyk150Release,dyk150Candidates,loadDyk175Release,dyk175Candidates,loadDyk200Release,dyk200Candidates,loadDyk225Release,dyk225Candidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
@@ -184,11 +184,11 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       ...(h175?dyk175Candidates(h175,date):[]),
       ...(h200?dyk200Candidates(h200,date):[]),
       ...(h225?dyk225Candidates(h225,date):[]),
-      ...(new520?dyk520Candidates(new520,date):[])
+      ...(new520?dyk520EligibleCandidates(new520,date):[])
     ];
     const calendarRows=new520?dyk520CalendarCandidates(new520,date):[];
-    // First Friday/Saturday devotional discoveries take priority on their own day.
-    // On other dates, preserve the usual complete-bank deterministic rotation.
+    // Date-specific customs and Roman calendar contexts take priority on their
+    // relevant days. Evergreen items remain in the eligible rotation.
     const slot=calendarRows.length?
       dykHomeRotationSlot(date,calendarRows.map(row=>row.id),[]):
       dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
