@@ -396,7 +396,11 @@ try{
           return {open:modal?.open,printed:print?.hidden===false,
             gabcHidden:score?.hidden===true,
             scanUrl:image?.getAttribute("src"),
-            pdfUrl:print?.querySelector("a")?.getAttribute("href"),
+            imageVisibility:image?.hidden===false,
+            sourceFallback:print?.querySelector("[data-ao-reference-print-page-link]")?.getAttribute("href"),
+            scanStatus:print?.querySelector("[data-ao-reference-print-status]")?.dataset.aoReferencePrintStatus,
+            statusVisible:Boolean(print?.querySelector("[role='status']")?.textContent?.trim()),
+            pdfUrl:print?.querySelector("a[href$='.pdf#page=56']")?.getAttribute("href"),
             noApproval:print?.textContent?.includes("no musical approval"),
             scholaIndex:window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.index};
         });
@@ -404,6 +408,11 @@ try{
         assert.equal(printWitness.printed,true);
         assert.equal(printWitness.gabcHidden,true);
         assert.match(printWitness.scanUrl||"",/\/sources\/2\/931\.png$/);
+        assert.match(printWitness.sourceFallback||"",/\/sources\/2\/931\.png$/,
+          "Printed folio must keep a direct source page link if an image fails");
+        assert.equal(printWitness.statusVisible,true,
+          "External print loading failed without a visible progress/fallback message");
+        assert.ok(["loading","loaded","partial","unavailable"].includes(printWitness.scanStatus));
         assert.match(printWitness.pdfUrl||"",/kyriale-solesmes\.pdf#page=56$/);
         assert.equal(printWitness.noApproval,true);
         assert.equal(printWitness.scholaIndex,beforeReference,
