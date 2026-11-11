@@ -16,8 +16,8 @@ const CAMERA=Object.freeze({
 });
 const STAGE_FRAMES={angelus:["a","b","c","w","w"],regina:["a","b","c","w"]};
 const STAGE_TITLES={
- angelus:["Angelus Domini","Ecce ancilla","Et Verbum caro","Ora pro nobis","Oremus"],
- regina:["Regina cæli","Resurrexit","Gaude et lætare","Oremus"]
+ angelus:["Angelus Domini","Ecce ancilla","Et Verbum caro","Oremus","Conclusio"],
+ regina:["Regina cæli","Resurrexit","Gaude et lætare","Conclusio"]
 };
 const LABELS={hail:"Ave Maria",collect:"Oratio"};
 /**
