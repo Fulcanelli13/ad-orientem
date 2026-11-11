@@ -2,6 +2,13 @@
 // Schola strip. This is a visual follow surface, not an observed choir or
 // priest clock. A production caller MUST first pass the approved-score gate.
 import {scholaGabcSyllables,scholaKyrieSourceOccurrences} from "./reader-schola-notation-follow.js";
+/** Canonical visual linkage boundary. Proper chant remains a second,
+ * independently advancing reading surface at every stage of the Mass. */
+export const SCHOLA_MASS_LINKED_TRACKS=Object.freeze(["KYRIE","GLORIA","CREDO"]);
+export function isScholaMassLinked(trackId){
+ return SCHOLA_MASS_LINKED_TRACKS.includes(String(trackId??""));
+}
+
 
 export function normalizeScholaLatin(value){
  return String(value??"").normalize("NFD")
