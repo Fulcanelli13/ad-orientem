@@ -409,6 +409,38 @@ try{
             settings:selectedSettings,approvedScores:[testScore],
             approvalRegistry:[testPromotion],schema:SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA
           });
+          const {isExplicitRequiemMass}=await import(
+            "/src/mass/reader-requiem-conditions.js");
+          const riteScope=isExplicitRequiemMass({session:{
+            resolvedMass:common.resolvedMass}})?"REQUIEM":"ORDINARY";
+          const equalCues=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&
+            a.length===b.length&&a.every((v,i)=>v===b[i]);
+          const norm=s=>String(s??"").trim().normalize("NFD")
+            .replace(/[\\u0300-\\u036f]/g,"")
+            .replace(/[æœ]/gi,ch=>ch.toLowerCase()==="æ"?"ae":"oe")
+            .replace(/[^\\p{L}\\p{N}]+/gu," ").toLowerCase().trim()
+            .replace(/\\s+/g," ");
+          const selectionChecks={
+            basicTrack:native.trackId==="KYRIE",
+            nativeOwner:native.owner==="R17_NATIVE_SCHOLA",
+            nativeMusicStatus:native.musicStatus==="EXPECTED_NOT_OBSERVED",
+            notComposed:!native.composedWorkId,
+            cueCount:sourceCueIds.length,
+            cueUniqueness:new Set(sourceCueIds).size===sourceCueIds.length,
+            cueFormat:sourceCueIds.every(c=>/^AO\\.SM\\.C\\d{4}$/.test(c)),
+            cueInTrack:sourceCueIds.includes(native.cueId),
+            setting:selectedSettings.KYRIE,
+            riteScope,
+            rowSchema:testPromotion.schema===SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA,
+            rowScope:testPromotion.scoreScope==="FULL_SCHOLA_TRACK",
+            rowMatch:equalCues(testPromotion.sourceCueIds,sourceCueIds),
+            rowLatin:norm(testPromotion.sourceLatin)===norm(sourceLatin),
+            scoreSchema:testScore.schema==="ao-mass-inline-approved-gabc-v1",
+            scoreMatch:equalCues(testScore.sourceCueIds,sourceCueIds),
+            scoreLatin:norm(testScore.sourceLatin)===norm(sourceLatin),
+            gibberishGabc:!(/%%\\s*\\([cf][1-4]\\)/.test(testScore.gabc)),
+            hasEnd:testScore.gabc.includes("(::)")
+          };
           return {
             actualTrack:native.trackId,trackCueCount:sourceCueIds.length,
             actualCue:native.cueId,actualIndex:native.index,
@@ -426,7 +458,7 @@ try{
               sourceCueIds:sourceCueIds.slice(0,20),
               sourceLatin:sourceLatin.slice(0,300),
               nativeLatin:native.latin,
-              selectedSettings,directEligible:Boolean(direct),
+              selectedSettings,directEligible:Boolean(direct),selectionChecks,
               gabcFirstLine:research.gabc.split("\n").at(-4),
               hash:sha.slice(0,10)}
           };
