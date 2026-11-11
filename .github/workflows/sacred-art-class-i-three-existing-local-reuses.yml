@@ -1,0 +1,26 @@
+name: Sacred Art Class I three exact existing local photograph reuses
+on:
+  pull_request:
+    paths:
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'tests/home-class-i-three-released-photo-reuse.mjs'
+      - 'tests/home-approved-2026-bulk-source-gate.mjs'
+      - '.github/workflows/sacred-art-class-i-three-existing-local-reuses.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  three-exact-release-photo-reuses:
+    name: Exact local files, date identity, source rights and held exclusions
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check src/home/approved-dated-artwork-2026.js
+          node tests/home-class-i-three-released-photo-reuse.mjs
+          node tests/home-approved-2026-bulk-source-gate.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
