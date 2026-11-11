@@ -4,7 +4,7 @@ import {readFileSync} from "node:fs";
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
 import {createScholaFollowClock,scholaGabcSyllables,scholaKyrieSourceOccurrences} from "../src/mass/reader-schola-notation-follow.js";
 import {normalizeScholaLatin,scholaMassTextAnchors,
- createScholaMassTextSynchronizer} from "../src/mass/reader-schola-mass-text-sync.js";
+ createScholaMassTextSynchronizer,isScholaMassLinked} from "../src/mass/reader-schola-mass-text-sync.js";
 
 const gloria=offlineKyrialeResearchScore("GLORIA","MASS_08");
 const credo=offlineKyrialeResearchScore("CREDO","CREDO_03");
@@ -189,5 +189,71 @@ test("the priest's intonation cannot be selected by the Schola follow clock",()=
  assert.equal(callbacks.at(-1),9);
  assert.equal(clock.seek(19),true);
  assert.equal(clock.getState().index,19);
+ clock.destroy();
+});
+
+test("only Kyrie, Gloria and Credo visually couple Mass text and Schola",()=>{
+ for(const id of ["KYRIE","GLORIA","CREDO"])
+  assert.equal(isScholaMassLinked(id),true,id);
+ for(const id of ["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE",
+   "OFFERTORY","COMMUNION","PROPER_INTROIT","PROPER_GRADUAL",
+   "PROPER_ALLELUIA","PROPER_TRACT","PROPER_SEQUENCE",
+   "PROPER_OFFERTORY","PROPER_COMMUNION",
+   "SANCTUS_BENEDICTUS","AGNUS_DEI","",null,undefined])
+  assert.equal(isScholaMassLinked(id),false,
+    String(id)+" must remain a distinct Schola timeline");
+});
+
+test("reader scroll selects an exact Latin source position without moving text or rubrics",()=>{
+ const latin="Glória in excélsis Deo.";
+ const textNode={nodeType:3,textContent:latin,childNodes:[]};
+ let offset=0,scrollTop=0;
+ const line={textContent:latin,isConnected:true,childNodes:[textNode],
+  getBoundingClientRect:()=>({top:110-scrollTop,bottom:146-scrollTop,height:36})};
+ const paragraph={isConnected:true,hidden:false,
+  dataset:{kind:"TEXT",paragraphId:"AO.SM.C0053"},
+  querySelectorAll:()=>[line]};
+ const rubric={isConnected:true,hidden:false,
+  dataset:{kind:"RUBRIC",paragraphId:"AO.RUB.C0053"},
+  querySelectorAll:()=>[]};
+ const body={querySelectorAll:()=>[rubric,paragraph]};
+ const reader={
+  clientHeight:300,dataset:{},
+  get scrollTop(){return scrollTop},
+  set scrollTop(value){scrollTop=value},
+  ownerDocument:{createRange:()=>({
+   setStart(_node,at){offset=at},
+   setEnd(){},
+   getBoundingClientRect(){return {
+    top:110-scrollTop+Math.floor(offset/12)*18,
+    bottom:128-scrollTop+Math.floor(offset/12)*18,height:18
+   }}
+  })},
+  querySelector:()=>body,querySelectorAll:()=>[],
+  getBoundingClientRect:()=>({top:0,bottom:300,height:300})
+ };
+ const sync=createScholaMassTextSynchronizer({reader,gabc:gloria.gabc});
+ const index=sync.indexAtFocus(0);
+ assert.ok(Number.isInteger(index),"Mass focus must resolve a source syllable");
+ assert.equal(scrollTop,0,"reverse sync must not itself move the Mass text");
+ assert.equal(rubric.dataset.kind,"RUBRIC",
+   "The original source rubric is untouched by the scroll synchronizer");
+ assert.equal(reader.dataset.scholaTextFollowIndex,undefined,
+   "Reverse sync must not invoke the forward text scroll");
+ sync.destroy();
+});
+
+test("Schola clock exposes reader-scroll origin without a second timer",()=>{
+ const events=[],queue=[];
+ const clock=createScholaFollowClock({
+  schedule:fn=>{queue.push(fn);return queue.length},
+  cancel:()=>{},
+  onStep:e=>events.push(e)
+ });
+ clock.start(16);clock.pause();
+ clock.seek(9,"reader-scroll");
+ assert.equal(clock.getState().index,9);
+ assert.equal(clock.getState().running,false);
+ assert.equal(events.at(-1).origin,"reader-scroll");
  clock.destroy();
 });
