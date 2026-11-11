@@ -340,6 +340,63 @@ try{
           select.value="MASS_16";
           select.dispatchEvent(new Event("change",{bubbles:true}));
         });
+        // Full historical PRINT uses the original 1961 scan, not a rendered
+        // substitute; it is opt-in and can switch back to GABC without
+        // changing the source track or its nine independent cues.
+        await refTrigger.waitFor({state:"visible",timeout:10000});
+        await refTrigger.click();
+        await page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-panel] svg"
+        ).waitFor({state:"visible",timeout:15000});
+        await page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-full-open]"
+        ).click();
+        await page.waitForFunction(()=>document.querySelector(
+          'dialog[data-ao-reference-full-score="GREGOBASE-545"]'
+        )?.dataset.aoReferenceFullReady==="true",null,{timeout:20000});
+        const printToggle=page.locator(
+          'dialog[data-ao-reference-full-score="GREGOBASE-545"] [data-ao-reference-print-toggle]');
+        await printToggle.waitFor({state:"visible",timeout:8000});
+        await printToggle.click();
+        const printWitness=await page.evaluate(()=>{
+          const modal=document.querySelector(
+            'dialog[data-ao-reference-full-score="GREGOBASE-545"]');
+          const print=modal?.querySelector("[data-ao-reference-print-view]");
+          const score=modal?.querySelector("[data-ao-reference-full-staff]");
+          const image=print?.querySelector("img[data-ao-reference-print-image]");
+          return {open:modal?.open,printed:print?.hidden===false,
+            gabcHidden:score?.hidden===true,
+            scanUrl:image?.getAttribute("src"),
+            pdfUrl:print?.querySelector("a")?.getAttribute("href"),
+            noApproval:print?.textContent?.includes("no musical approval"),
+            scholaIndex:window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.index};
+        });
+        assert.equal(printWitness.open,true);
+        assert.equal(printWitness.printed,true);
+        assert.equal(printWitness.gabcHidden,true);
+        assert.match(printWitness.scanUrl||"",/\/sources\/2\/931\.png$/);
+        assert.match(printWitness.pdfUrl||"",/kyriale-solesmes\.pdf#page=56$/);
+        assert.equal(printWitness.noApproval,true);
+        assert.equal(printWitness.scholaIndex,beforeReference,
+          "Opening original source image advanced the native Schola");
+        await printToggle.click();
+        const backToGabc=await page.evaluate(()=>{
+          const m=document.querySelector('dialog[data-ao-reference-full-score]');
+          return {originalHidden:m?.querySelector("[data-ao-reference-print-view]")?.hidden,
+            notationVisible:m?.querySelector("[data-ao-reference-full-staff]")?.hidden===false,
+            stillRendered:Boolean(m?.querySelector("[data-ao-reference-full-staff] svg"))};
+        });
+        assert.equal(backToGabc.originalHidden,true);
+        assert.equal(backToGabc.notationVisible,true);
+        assert.equal(backToGabc.stillRendered,true);
+        await page.locator(
+          'dialog[data-ao-reference-full-score] [data-schola-score-close]'
+        ).click();
+        await page.locator(
+          "#ao-r17-native-reader-preview [data-ao-reference-score-close]"
+        ).click();
+        c.steps.push({name:"native-h7-kyrie-xvi-1961-print-versus-gabc",
+          metrics:printWitness,backToGabc});
         const actualTrackEligibility=await page.evaluate(async()=>{
           const {offlineKyrialeResearchScore}=await import(
             "/src/mass/reader-kyriale-research-gabc.js");
