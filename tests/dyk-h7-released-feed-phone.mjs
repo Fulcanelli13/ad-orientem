@@ -4,6 +4,7 @@ import {readFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {chromium} from "@playwright/test";
 import {dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dyk520EligibleCandidates,dyk520CalendarCandidates} from "../src/home/dyk-520-release.js";
 const root=resolve(".");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".json":"application/json; charset=utf-8",".mjs":"text/javascript; charset=utf-8",
@@ -51,23 +52,24 @@ const curated=JSON.parse(await readFile(resolve(root,
 assert.ok(curated.count>=653,"Test must include the expanded public DYK pool");
 assert.equal(curated.count,curated.records.length);
 assert.equal(curated.counts.customs+curated.counts.glossary,curated.count);
-const fullPublicIds=[...historicalIds,...curated.records.map(x=>x.id)];
+// Use the same contextual eligibility and fixed-date priority as actual Home.
+// The release-only R34 fixture and public H225 facts must still be reachable.
+const slotFor=(date,extraIds=[])=>{
+ const contextual=dyk520CalendarCandidates(curated,date);
+ if(contextual.length)return dykHomeRotationSlot(date,contextual.map(r=>r.id),[]);
+ const eligible=dyk520EligibleCandidates(curated,date);
+ return dykHomeRotationSlot(date,[...historicalIds,...eligible.map(r=>r.id),...extraIds],DYK_GLOSSARY_FALLBACK_IDS);
+};
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
-const isFirstFridayOrSaturday=date=>{
- const day=Number(date.slice(8,10)),weekday=new Date(date+"T12:00:00Z").getUTCDay();
- return day<=7&&(weekday===5||weekday===6);
-};
-const testDate=Array.from({length:2200},(_,i)=>
+const testDate=Array.from({length:2600},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
- .find(date=>!isFirstFridayOrSaturday(date)&&
-  dykHomeRotationSlot(date,[...fullPublicIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
-assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
-const h225Date=Array.from({length:2200},(_,i)=>
+ .find(date=>slotFor(date,[fact.id])===fact.id);
+assert.ok(testDate,"Test-only R34 release must receive one legitimate contextual daily slot");
+const h225Date=Array.from({length:2600},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
- .find(date=>!isFirstFridayOrSaturday(date)&&
-  dykHomeRotationSlot(date,fullPublicIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H225-R-001");
-assert.ok(h225Date,"The first H225 fact must remain reachable in the combined public rotation");
+ .find(date=>slotFor(date)==="DYK-H225-R-001");
+assert.ok(h225Date,"The first H225 fact must remain reachable under date-aware rotation");
 fact.publication_days=[testDate];
 const server=http.createServer(async(req,res)=>{
  try{
