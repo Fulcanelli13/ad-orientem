@@ -3267,6 +3267,16 @@ export async function mountNativeReaderPreview({
       const mapping=linkedScholaCardCache.map;
       if(!mapping.supported)return false;
       const target=mapping.cardForIndex(index);
+      const ownedTrack=ready.scholaState.tracks?.find(x=>x.id===trackId);
+      const firstChoirCue=ownedTrack?.segments?.[0]?.cueId;
+      const firstChoirCard=firstChoirCue?readerModel.cards.find(card=>
+        (card.sourceSectionId??card.sectionId)===sourceSection &&
+        (card.paragraphs??[]).some(p=>
+          (p.sourceCueIds??[]).includes(firstChoirCue))):null;
+      // Gregorian source prints the priest's Gloria/Credo intonation, but
+      // its card must never be selected by Schola-owned auto progression.
+      if(!firstChoirCard||target?.sequence<firstChoirCard.sequence)
+        return false;
       if(!target||!visibleCardAllowed(target)||
          target.sectionId===current.sectionId||
          (target.sourceSectionId??target.sectionId)!==sourceSection)
