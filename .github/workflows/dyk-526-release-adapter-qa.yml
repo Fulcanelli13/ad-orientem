@@ -34,11 +34,13 @@ jobs:
           node --check src/home/did-you-know-glossary.js
           node --check src/home/browser-entry.js
           node --check tests/dyk-526-release-adapter-contract.mjs
+          node --check tests/dyk-batch-A-62-proof-contract.mjs
           node --check tests/dyk-526-home-bridge-contract.mjs
           node --check tests/dyk-526-home-phone.mjs
       - name: Exercise release gates, simulated bilingual selection and existing Home
         run: |
           node tests/dyk-526-release-adapter-contract.mjs
+          node tests/dyk-batch-A-62-proof-contract.mjs
           node tests/dyk-526-home-bridge-contract.mjs
           node tests/home-dyk-glossary.mjs
 
