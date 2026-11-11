@@ -7,6 +7,8 @@ on:
       - 'tests/reader-live-handoff-claude-*.mjs'
       - 'tests/reader-live-handoff-native66-split.mjs'
       - 'tests/reader-live-handoff-research-notation.mjs'
+      - 'src/mass/reader-live-handoff-proper-notation.js'
+      - 'tests/reader-live-handoff-proper-notation.mjs'
       - 'src/mass/reader-live-handoff-source-crosswalk.js'
       - 'src/mass/reader-live-handoff-timeline.js'
       - 'src/mass/reader-schola.js'
@@ -36,6 +38,8 @@ jobs:
           node --test tests/reader-live-handoff-schola-track-scores.mjs
           node --check src/mass/reader-live-handoff-research-notation.js
           node --test tests/reader-live-handoff-research-notation.mjs
+          node --check src/mass/reader-live-handoff-proper-notation.js
+          node --test tests/reader-live-handoff-proper-notation.mjs
           node --test tests/reader-live-handoff-claude-source.mjs
           node --test tests/reader-live-handoff-claude-stage-d.mjs
           node --test tests/reader-live-handoff-native66-split.mjs
