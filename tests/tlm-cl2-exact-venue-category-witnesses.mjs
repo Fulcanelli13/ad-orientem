@@ -63,6 +63,18 @@ assert.equal(byId("RG-6504A98F8FAF").site_category.related_ministry_hint,"ICKSP"
 assert.equal(byId("RG-293E1CE7BC2A").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT");
 assert.equal(byId("RG-B120BF4FF522").site_category.related_ministry_hint,"ROSMINIANS");
 assert.equal(byId("RG-3923AED1F35D").site_category.category,"MIXED_OR_HOST_RELATIONSHIP");
+assert.equal(byId("RG-850C2D798754").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT",
+ "Beccles St Benet transferred from the Benedictines to diocesan administration in 2024");
+assert.equal(byId("RG-8DF43C14A584").site_category.category,"MIXED_OR_HOST_RELATIONSHIP",
+ "Hadspen is a diocese-listed Mass centre, not proof of society ownership");
+assert.equal(byId("RG-28AC6F34CF2D").site_category.category,"MIXED_OR_HOST_RELATIONSHIP",
+ "Lancaster University's Catholic chaplaincy is not a separate church operator");
+for(const historicalHold of ["RG-832AB0C2265E","RG-02AEBA830666"]){
+ assert.equal(byId(historicalHold).site_category.category,"UNRESOLVED",
+ "Past religious associations must not imply a current resident operator");
+ assert.equal(byId(historicalHold).site_category.visual_lane,"NEUTRAL");
+}
+
 const tampered=structuredClone(witness);
 tampered.records[0].exact_name="Different church";
 assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,tampered),/Unsafe site-category witness/);
