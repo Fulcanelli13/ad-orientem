@@ -1,0 +1,18 @@
+import assert from "node:assert/strict";
+import {readFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
+const root=new URL("..",import.meta.url);
+const read=p=>readFileSync(new URL(p,root));
+const proof=JSON.parse(read("data/artwork/releases/2026-04-06-caravaggio-ng172-1601-byte-proof.v1.json").toString("utf8"));
+const publicAsset="assets/home/class-i-2026/caravaggio-emmaus-ng172-1601-fullframe-2400.webp";
+const sourceArchive="data/artwork/releases/source-masters/caravaggio-emmaus-ng172-london-1601-original.jpg";
+const local=read(publicAsset),deployed=read("dist/web-preview/"+publicAsset);
+const hash=b=>createHash("sha256").update(b).digest("hex");
+assert.equal(publicAsset,proof.publishedHomeImage);
+assert.equal(hash(local),proof.publishedImageSha256);
+assert.equal(hash(deployed),hash(local));
+assert.equal(deployed.length,proof.publishedImageBytes);
+assert.equal(existsSync(new URL("dist/web-preview/"+sourceArchive,root)),false);
+assert.equal(existsSync(new URL("dist/web-preview/data/artwork/releases/2026-04-06-caravaggio-ng172-1601-byte-proof.v1.json",root)),false);
+assert.equal(existsSync(new URL("dist/web-preview/.github/workflows/tmp-caravaggio-ng172-acquire-20261111.yml",root)),false);
+console.log("PASS uncropped 1601 London Caravaggio WEBP in curated static Pages; 8.6MB archive and research proof excluded");
