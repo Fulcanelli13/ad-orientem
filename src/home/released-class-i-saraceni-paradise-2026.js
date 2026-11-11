@@ -14,7 +14,7 @@ export const SARACENI_PARADISE_2026=Object.freeze({
  title:"Paradise",titleFr:"Le Paradis",
  artist:"Carlo Saraceni",
  artworkId:"primary:2026-11-01",
- editorialBasis:"NEW_DATE_SPECIFIC_APPROVAL",
+ editorialBasis:"APPROVED_DATE_SPECIFIC_20261019",
  image:"/assets/home/class-i-2026/saraceni-paradise-met-1971-93-original.jpg",
  source:"https://commons.wikimedia.org/wiki/File:Paradise_MET_DT1448.jpg",
  collectionIdentity:"Metropolitan Museum of Art, 1971.93",
