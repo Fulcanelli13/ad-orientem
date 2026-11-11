@@ -12,6 +12,7 @@ import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.
 import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-previews.js";
 import {sourceVerifiedClassI2026Preview} from "./approved-class-i-exact-source-previews-2026.js";
 import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-nicodemus-2026.js";
+import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-friday-san-polo-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -229,6 +230,10 @@ export function approved2026HomeArtwork(state,provider=null){
  // historical source evidence, not the public primary image.
  const tanner=releasedTannerNicodemusForClassI2026(date,principalId,properPath);
  if(tanner)return tanner;
+ // Exact owner-selected Good Friday Station XII: one of fourteen existing
+ // scoped-licensed San Polo photographs, no new asset or Stations cycle change.
+ const goodFriday=releasedGoodFridaySanPoloHomeArtwork2026(date,principalId,properPath);
+ if(goodFriday)return goodFriday;
  const additional=sourceVerifiedClassI2026Preview(date,principalId,properPath);
  if(additional)return additional;
  // Date-specific locks win. Contextual reuse is restricted to 105 identified

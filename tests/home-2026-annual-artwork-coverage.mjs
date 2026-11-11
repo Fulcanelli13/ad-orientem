@@ -87,6 +87,15 @@ assert.equal(nicodemus?.selectionKind,"FROZEN_OWNER_SELECTED_CLASS_I_EXACT_LOCAL
 assert.ok(existsSync(new URL(".."+nicodemus.image,import.meta.url)));
 published.set(nicodemusDay.date,nicodemus);
 assert.equal(published.size,26,"25 prior mapped dates plus newly local Tanner selection");
+ // Exact previously licensed San Polo station XII is the frozen Good Friday work.
+const goodFridayDay=annualHomeArtworkDay2026("2026-04-03");
+const goodFriday=approved2026HomeArtwork(build(goodFridayDay.date,goodFridayDay.principalId,"Tempora/Quad6-5r"));
+assert.equal(goodFriday?.selectionKind,"FROZEN_CLASS_I_GOOD_FRIDAY_EXISTING_LICENSED_PHOTO_REUSE");
+assert.equal(goodFriday?.imageStatus,"LOCAL_SAN_POLO_XII_CC_BY_SA_4_0_EXACT_SOURCE_DATE_IMAGE");
+assert.ok(existsSync(new URL(".."+goodFriday.image,import.meta.url)));
+published.set(goodFridayDay.date,goodFriday);
+assert.equal(published.size,27,"26 previously mapped dates plus exact Good Friday Station XII");
+
 const seasonal=[];
 for(const day of all.filter(x=>x.contextualReuseEligible)){
  const path=day.principalId.startsWith("commune:C10")?"Commune/C10":"Tempora/feria";
@@ -114,9 +123,9 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,131);
+assert.equal(published.size+seasonal.length,132);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,28);
+assert.equal(dateSelectedPending.length,27);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");
