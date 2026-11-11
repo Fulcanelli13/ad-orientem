@@ -22,12 +22,13 @@ export function scholaMassTextAnchors(gabc,paragraphs=[]){
  const anchors=[];let cursor=0;
  for(const item of paragraphs){
   const text=normalizeScholaLatin(item?.latin);
-  if(!item?.id||text.length<14)continue;
+  if(!item?.id||text.length<7)continue;
   const at=joined.indexOf(text,cursor);
   if(at<0)continue;
-  // An exact repeat could refer to a different musical section. Without an
-  // independent cue-to-score anchor, do not attach its words to either span.
-  if(joined.indexOf(text,at+1)>=0)continue;
+  // A repeated full phrase (e.g. Iesu Christe, twice in Gloria VIII) is
+  // unambiguous only after a prior exact phrase established its position.
+  // On an isolated, unanchored reader card, do not guess which repeat it is.
+  if(!anchors.length&&joined.indexOf(text,at+1)>=0)continue;
   anchors.push(Object.freeze({id:String(item.id),start:at,end:at+text.length,
    latin:text,sourceSyllableOffset:offsets.findIndex(x=>x>=at)}));
   cursor=at+text.length;
