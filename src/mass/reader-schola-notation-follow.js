@@ -38,13 +38,13 @@ export function scholaKyrieSourceOccurrences(gabc){
  const chunks=body.split("(::)").filter(chunk=>/\p{L}/u.test(chunk.replace(/<[^>]*>/g,"")));
  const phrases=[];let sourceCursor=0,hasRepeats=false;
  for(const chunk of chunks){
-  const local=scholaGabcSyllables("name: Kyrie source span;\\n%%\\n"+chunk+"(::)");
+  const local=scholaGabcSyllables("name: Kyrie source span;\n%%\n"+chunk+"(::)");
   if(!local.length)continue;
-  const markers=[...chunk.matchAll(/<i>\\s*([^<]+)<\\/i>/giu)].map(m=>m[1].trim().toLowerCase());
+  const markers=[...chunk.matchAll(/<i>\s*([^<]+)<\/i>/giu)].map(m=>m[1].trim().toLowerCase());
   let copies=1;
   if(markers.length){
    if(markers.length!==1)return source;
-   const directive=markers[0].replace(/[.\\s]/g,"");
+   const directive=markers[0].replace(/[.\s]/g,"");
    if(!["ij","iij"].includes(directive))return source;
    copies=directive==="iij"?3:2;
    hasRepeats=true;
