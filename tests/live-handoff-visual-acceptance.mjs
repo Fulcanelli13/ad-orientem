@@ -155,7 +155,7 @@ try{
       // Stage E: synthetic staff fixture exercises ONLY the already-gated
       // Exsurge presentation viewport. It is not an approved score or an
       // observation of an actual Schola performance on this feast.
-      const chant=await page.evaluate(()=>{
+      const chant=await page.evaluate(async()=>{
         const q=sel=>document.querySelector(sel);
         const panel=q('[data-role="schola-approved-score"]');
         const dock=q(".ao-schola-dock"),staff=q('[data-role="schola-approved-staff"]');
@@ -164,13 +164,13 @@ try{
         if(!dock||!panel||!staff||!scroll||!line)return {mounted:false};
         dock.dataset.active="true";dock.dataset.collapsed="false";
         panel.hidden=false;panel.dataset.scoreStatus="approved";
-        const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
-        svg.setAttribute("viewBox","0 0 4096 63");
-        svg.setAttribute("width","4096");svg.setAttribute("height","63");
-        const path=document.createElementNS("http://www.w3.org/2000/svg","path");
-        path.setAttribute("d","M0 15 H4096 M0 22 H4096 M0 29 H4096 M0 36 H4096");
-        path.setAttribute("stroke","#ebdfc2");svg.appendChild(path);
-        staff.replaceChildren(svg);
+        const r=await fetch("/tests/fixtures/live-handoff-kyrie-XI-source.gabc");
+        if(!r.ok)throw new Error("Handoff Kyrie XI source missing");
+        const gabc=await r.text();
+        const {createOfflineChantEngraver}=await import("/src/mass/reader-chant-engraver.js");
+        const engraver=createOfflineChantEngraver({viewport:staff,document});
+        const rendered=await engraver.engrave(gabc);
+        if(!rendered||!staff.querySelector("svg"))throw new Error("Local Exsurge emitted no Gregorian staff");
         const before=scroll.scrollLeft;
         scroll.scrollLeft=480;
         const r=scroll.getBoundingClientRect(),mark=line.getBoundingClientRect();
@@ -178,11 +178,15 @@ try{
           before,after:scroll.scrollLeft,extent:scroll.scrollWidth-scroll.clientWidth,
           markerWithin:mark.x>=r.x&&mark.x<=r.x+r.width,
           markerAt30Percent:Math.abs(mark.x-(r.x+r.width*.3))<3,
+          engraverRendered:rendered,hasGregorianSvg:Boolean(staff.querySelector("svg")),
+          sourceFixture:"HANDOFF_GREGOBASEx2982_NOT_APPROVED",
           documentW:document.documentElement.scrollWidth,
           independentScholaIndex:window.__aoHandoffFixture.selected().scholaIndex};
       });
       assert.equal(chant.mounted,true,option.name+" Stage E did not mount");
       assert.equal(chant.source,"APPROVED_NATIVE_ONLY");
+      assert.equal(chant.engraverRendered,true,option.name+" Exsurge source render failed");
+      assert.equal(chant.hasGregorianSvg,true);
       assert.ok(chant.extent>600,option.name+" score should horizontally scroll");
       assert.ok(chant.after>=450,option.name+" scroll gesture surface does not move");
       assert.equal(chant.markerWithin,true);
@@ -192,6 +196,8 @@ try{
       assert.equal(chant.independentScholaIndex,before.scholaIndex,
         "synthetic score scrolling advanced native choir clock");
       c.steps.push({name:"stage-e-source-gated-scroll-fixture",metrics:chant});
+      await page.screenshot({path:resolve(output,option.name+"-kyrie-XI-reference-only.png"),
+        animations:"disabled",fullPage:false});
       assert.equal(c.errors.length,0,"Browser page errors: "+c.errors.join("; "));
       c.pass=true;
     }catch(e){
