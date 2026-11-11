@@ -1,14 +1,14 @@
 {
   "schema": "AO_DYK_CUSTOMS_GLOSSARY_520_V1",
   "release_stage": "INTEGRATED_CONTENT",
-  "count": 520,
+  "count": 537,
   "counts": {
     "customs": 378,
-    "glossary": 142
+    "glossary": 159
   },
   "created": "2026-11-11",
   "origin": "Editorial bilingual DYK 526 preview (Claude KEEP/REWRITE) with corrected 62-card overrides",
-  "publishing_note": "Content integrated on feature branch; not merged into GitHub Pages public main as part of data import. Five copy holds and one duplicate same-event card are excluded.",
+  "publishing_note": "Integrated bilingual Home DYK bank. Glossary-derived discovery additions link back to existing corrected Glossary concepts and the canonical glossary source registry; Customs retain their historical provenance. The 520 original records remain, with one O Salutaris-versicle correction.",
   "excluded_ids": [
     "DYK-CW15-035",
     "DYK-CW15-038",
@@ -3797,15 +3797,16 @@
         "fr": "O Salutaris Hostia"
       },
       "fact": {
-        "en": "At Benediction, the O salutaris comes from Thomas Aquinas's hymn Verbum supernum prodiens, and the Tantum ergo is the closing portion of his Pange lingua; the Genitori Genitoque praises the Trinity, and Panem de caelo is a versicle meaning \"You gave them bread from heaven\".",
-        "fr": "Au Salut du Saint-Sacrement, l'O salutaris provient de l'hymne Verbum supernum prodiens de Thomas d'Aquin, et le Tantum ergo est la partie finale de son Pange lingua ; le Genitori Genitoque loue la Trinité, et Panem de caelo est un verset signifiant « Vous leur avez donné le pain du ciel »."
+        "en": "The familiar O salutaris Hostia comes from the final two stanzas of Saint Thomas Aquinas's hymn Verbum supernum prodiens. It is traditionally sung as a separate hymn during exposition of the Blessed Sacrament.",
+        "fr": "Le célèbre O salutaris Hostia reprend les deux dernières strophes de l’hymne Verbum supernum prodiens de saint Thomas d’Aquin. Il est traditionnellement chanté séparément lors de l’exposition du Saint-Sacrement."
       },
       "source": {
         "id": "PRAY-CANONICAL-CORPUS",
         "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/canonical-data.js",
         "alternative_urls": []
       },
-      "origin": "GLOSSARY"
+      "origin": "GLOSSARY",
+      "glossary_concept_id": "G311"
     },
     {
       "id": "DYK-GL-G338-01",
@@ -9414,6 +9415,350 @@
         "alternative_urls": []
       },
       "origin": "CUSTOMS_EXTRA_REVIEW"
+    },
+    {
+      "id": "DYK-GL-G071-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The three little crosses at the Gospel",
+        "fr": "Les trois petites croix de l’Évangile"
+      },
+      "fact": {
+        "en": "At the Gospel, the faithful traditionally trace small crosses on the forehead, lips and breast—a prayer to receive Christ's word in their minds, on their lips and in their hearts.",
+        "fr": "À l’Évangile, les fidèles tracent traditionnellement de petites croix sur le front, les lèvres et la poitrine : un geste de prière pour accueillir la parole du Christ dans l’esprit, sur les lèvres et dans le cœur."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G071",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G098-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Two very different kinds of scapular",
+        "fr": "Deux formes bien différentes de scapulaire"
+      },
+      "fact": {
+        "en": "The scapular worn with some religious habits is a full garment; the small devotional scapular worn by lay faithful comes from that tradition but is not the same garment.",
+        "fr": "Le scapulaire de certains habits religieux est un vêtement de grande taille ; le petit scapulaire de dévotion porté par les fidèles laïcs s’inspire de cette tradition sans être le même vêtement."
+      },
+      "source": {
+        "id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G098",
+      "discovery_topic": "DEVOTION"
+    },
+    {
+      "id": "DYK-GL-G141-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Apostasy, heresy and schism are different",
+        "fr": "L’apostasie, l’hérésie et le schisme diffèrent"
+      },
+      "fact": {
+        "en": "In Catholic canon law, apostasy means abandoning the Christian faith as a whole; heresy concerns obstinate rejection or doubt of a truth of divine and Catholic faith; schism concerns a rupture of ecclesiastical communion.",
+        "fr": "Dans le droit canonique catholique, l’apostasie désigne l’abandon total de la foi chrétienne ; l’hérésie concerne la négation ou le doute obstinés d’une vérité de foi divine et catholique ; le schisme concerne une rupture de la communion ecclésiastique."
+      },
+      "source": {
+        "id": "SRC-CIC83-747-755",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G141",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G142-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A doctrinal error is not automatically formal heresy",
+        "fr": "Une erreur doctrinale n’est pas automatiquement une hérésie formelle"
+      },
+      "fact": {
+        "en": "Catholic theology distinguishes material heresy, when a doctrinal error is held without the required obstinacy, from formal heresy, which involves knowing and obstinate rejection of a truth proposed as divinely revealed.",
+        "fr": "La théologie catholique distingue l’hérésie matérielle, erreur doctrinale soutenue sans l’obstination requise, de l’hérésie formelle, qui implique le refus conscient et obstiné d’une vérité proposée comme divinement révélée."
+      },
+      "source": {
+        "id": "SRC-CIC83-747-755",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G142",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G150-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "What una cum actually means",
+        "fr": "Que signifie vraiment una cum ?"
+      },
+      "fact": {
+        "en": "The words una cum mean 'together with' in the Roman Canon, where the Pope and local bishop are named. By themselves, these words cannot establish the entire canonical situation of a priest or community.",
+        "fr": "Les mots una cum signifient « en union avec » dans le Canon romain, où sont nommés le Pape et l’évêque du lieu. À eux seuls, ils ne permettent pas d’établir toute la situation canonique d’un prêtre ou d’une communauté."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G150",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G178-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Penance means more than Confession",
+        "fr": "La pénitence ne se limite pas à la Confession"
+      },
+      "fact": {
+        "en": "In Catholic usage, 'penance' can name the sacrament of Confession, but it can also mean repentance and penitential works such as prayer, fasting and almsgiving.",
+        "fr": "Dans le langage catholique, « pénitence » peut désigner le sacrement de Confession, mais aussi le repentir et les œuvres de pénitence comme la prière, le jeûne et l’aumône."
+      },
+      "source": {
+        "id": "TRENT-XIV-PENANCE",
+        "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G178",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G222-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "An acolyte was once a minor order",
+        "fr": "L’acolyte appartenait autrefois aux ordres mineurs"
+      },
+      "fact": {
+        "en": "In the older Roman discipline, an acolyte belonged to one of the minor orders and served especially with candles and cruets. In the present Latin discipline, acolyte is an instituted lay ministry, not a minor order.",
+        "fr": "Dans l’ancienne discipline romaine, l’acolyte recevait l’un des ordres mineurs et assurait notamment le service des cierges et des burettes. Dans la discipline latine actuelle, l’acolytat est un ministère laïc institué, non un ordre mineur."
+      },
+      "source": {
+        "id": "SRC-CIC17-CLERICAL-CURSUS",
+        "url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf",
+        "alternative_urls": [
+          "https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19720815_ministeria-quaedam.html"
+        ]
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G222",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G314-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Three Latin words do not translate the whole versicle",
+        "fr": "Trois mots latins ne traduisent pas tout le verset"
+      },
+      "fact": {
+        "en": "Panem de caelo means 'bread from heaven'. The longer Benediction versicle Panem de caelo praestitisti eis means 'Thou gavest them bread from heaven'; the final words are essential to the full translation.",
+        "fr": "Panem de caelo signifie « du pain du ciel ». Le verset plus long du Salut, Panem de caelo praestitisti eis, signifie « Vous leur avez donné le pain du ciel » : la traduction complète exige les derniers mots."
+      },
+      "source": {
+        "id": "PRAY-CANONICAL-CORPUS",
+        "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/canonical-data.js",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G314",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G332-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "First Friday is a devotion, not an obligation",
+        "fr": "Le premier vendredi est une dévotion, non une obligation"
+      },
+      "fact": {
+        "en": "The First Friday devotion honours the Sacred Heart of Jesus through prayer, Holy Communion and reparation. It is a voluntary devotional observance rather than a universal obligation imposed by canon law.",
+        "fr": "La dévotion du premier vendredi honore le Sacré-Cœur de Jésus par la prière, la Sainte Communion et la réparation. C’est une pratique dévotionnelle volontaire, non une obligation universelle imposée par le droit canonique."
+      },
+      "source": {
+        "id": "PIUS-XI-MISERENTISSIMUS",
+        "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G332",
+      "discovery_topic": "DEVOTION",
+      "calendar_cue": "FIRST_FRIDAY"
+    },
+    {
+      "id": "DYK-GL-G333-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The five First Saturdays include a quarter-hour meditation",
+        "fr": "Les cinq premiers samedis comprennent un quart d’heure de méditation"
+      },
+      "fact": {
+        "en": "The First Saturday devotion associated with Fatima includes Confession, Holy Communion, five decades of the Rosary and fifteen minutes of meditation on its mysteries, offered in reparation on five consecutive first Saturdays.",
+        "fr": "La dévotion des premiers samedis liée à Fatima comprend la Confession, la Sainte Communion, cinq dizaines du Rosaire et quinze minutes de méditation de ses mystères, offertes en réparation pendant cinq premiers samedis consécutifs."
+      },
+      "source": {
+        "id": "SRC-FATIMA-FIRST-SATURDAYS",
+        "url": "https://www.fatima.pt/en/pages/first-saturdays",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G333",
+      "discovery_topic": "DEVOTION",
+      "calendar_cue": "FIRST_SATURDAY"
+    },
+    {
+      "id": "DYK-GL-G364-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Spiritus can mean wind as well as spirit",
+        "fr": "Spiritus peut signifier le vent autant que l’esprit"
+      },
+      "fact": {
+        "en": "In liturgical Latin, spiritus can mean breath, wind or a human spirit; in a Trinitarian context Spiritus refers to the Holy Ghost. The surrounding words determine which sense is intended.",
+        "fr": "Dans le latin liturgique, spiritus peut signifier le souffle, le vent ou l’esprit humain ; dans un contexte trinitaire, Spiritus désigne le Saint-Esprit. Ce sont les mots environnants qui déterminent le sens."
+      },
+      "source": {
+        "id": "CORE-LATIN-200-V0.2",
+        "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-200.v0.2.json",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G364",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G401-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The church entrance once had a special place for catechumens",
+        "fr": "L’entrée de l’église accueillait parfois les catéchumènes"
+      },
+      "fact": {
+        "en": "In many early churches the narthex was a vestibule before the nave. In some periods it served as a waiting or gathering place associated with catechumens and penitents.",
+        "fr": "Dans de nombreuses églises anciennes, le narthex était un vestibule précédant la nef. À certaines époques, il servait de lieu d’attente ou de rassemblement pour les catéchumènes et les pénitents."
+      },
+      "source": {
+        "id": "SRC-HIST-NARTHEX",
+        "url": "https://www.newadvent.org/cathen/10704b.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G401",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G403-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A church choir can be a place, not just singers",
+        "fr": "Dans une église, le chœur n’est pas seulement un groupe de chanteurs"
+      },
+      "fact": {
+        "en": "In church architecture, the choir is an area traditionally used by clergy or singers for liturgical functions. The same word also names the group of people who sing, so the meaning depends on the context.",
+        "fr": "Dans l’architecture d’une église, le chœur est un espace traditionnellement occupé par les clercs ou les chanteurs pendant les offices. Le même mot désigne aussi l’ensemble des chanteurs ; le sens dépend donc du contexte."
+      },
+      "source": {
+        "id": "SRC-HIST-CHOIR",
+        "url": "https://www.newadvent.org/cathen/03693a.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G403",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G417-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A baldachin is not the same as a processional canopy",
+        "fr": "Le baldaquin fixe n’est pas le dais de procession"
+      },
+      "fact": {
+        "en": "A fixed baldachin stands or hangs above an altar or throne, while a processional canopy is carried over the Blessed Sacrament. Both provide a covering, but they have different ceremonial uses.",
+        "fr": "Un baldaquin fixe s’élève ou se suspend au-dessus d’un autel ou d’un trône, tandis qu’un dais de procession est porté au-dessus du Saint-Sacrement. Tous deux forment une couverture, mais leurs usages cérémoniels diffèrent."
+      },
+      "source": {
+        "id": "SRC-P16-RETABLE-CIBORIUM",
+        "url": "https://www.newadvent.org/cathen/01356d.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G417",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G424-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Betrothal once had formal canonical effects",
+        "fr": "Les anciennes fiançailles avaient parfois des effets canoniques"
+      },
+      "fact": {
+        "en": "In older canon law, sponsalia meant a formal promise of future marriage and could carry particular legal effects. A modern engagement does not automatically create those earlier canonical effects.",
+        "fr": "Dans l’ancien droit canonique, les sponsalia étaient une promesse formelle de mariage futur pouvant produire certains effets juridiques. Les fiançailles modernes n’entraînent pas automatiquement ces anciens effets canoniques."
+      },
+      "source": {
+        "id": "SRC-CIC17-1017",
+        "url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G424",
+      "discovery_topic": "CANON_LAW"
+    },
+    {
+      "id": "DYK-GL-G425-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Why marriage banns were publicly announced",
+        "fr": "Pourquoi les bans de mariage étaient publiés"
+      },
+      "fact": {
+        "en": "Marriage banns traditionally announced an intended wedding to the parish so that anyone aware of an impediment could raise it before the marriage was celebrated.",
+        "fr": "Les bans de mariage annonçaient traditionnellement un mariage à venir dans la paroisse, afin que toute personne connaissant un empêchement puisse le signaler avant la célébration."
+      },
+      "source": {
+        "id": "SRC-CIC83-1066-1067",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G425",
+      "discovery_topic": "CANON_LAW"
+    },
+    {
+      "id": "DYK-GL-G430-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The nuptial blessing is not the marriage consent",
+        "fr": "La bénédiction nuptiale n’est pas le consentement matrimonial"
+      },
+      "fact": {
+        "en": "At a traditional Roman Nuptial Mass, the nuptial blessing asks God's favour upon the newly married couple. It is a distinct liturgical act from the spouses' exchange of matrimonial consent.",
+        "fr": "À la Messe nuptiale du rite romain traditionnel, la bénédiction nuptiale invoque la faveur de Dieu sur les nouveaux époux. C’est un acte liturgique distinct de l’échange de leur consentement matrimonial."
+      },
+      "source": {
+        "id": "SRC-MR62-NUPTIAL",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111",
+      "glossary_concept_id": "G430",
+      "discovery_topic": "LITURGY"
     }
   ]
 }
