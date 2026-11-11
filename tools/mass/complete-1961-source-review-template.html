@@ -50,7 +50,7 @@ small,.small{font-size:12px;color:var(--muted)}
 <header>
 <div class="eyebrow">Ad Orientem / Schola / Source-preserving archive</div>
 <h1>Gregorian music · 1961 original GABC</h1>
-<p>All existing 1,195 Proper transcriptions and 20 Ordinary transcriptions, with exact original source identities. The Exsurge engraver displays the archived notes and Latin underlay; it never composes an alternative score.</p>
+<p>All existing 1,195 Proper, 20 Ordinary and five Sequence transcriptions (1,220 total), with pinned original source identities. The Exsurge engraver displays the archived notes and Latin underlay; it never composes an alternative score.</p>
 </header>
 <main>
 <p class="warning"><strong>Research-only.</strong> Source matching does not certify pitch, neumes, rhythm, complete Latin, variant, the local Schola's actual selection, or publication rights for book scans and recordings. No scores on this page are approved for the public Mass reader.</p>
@@ -58,7 +58,7 @@ small,.small{font-size:12px;color:var(--muted)}
 <label style="flex:2;min-width:180px">Search chant or source ID
 <input id="query" type="search" placeholder="Gloria, Credo, Introit, GREGOBASE-749..."></label>
 <label style="flex:1;min-width:150px">Chant family
-<select id="family"><option value="">All available</option><option value="ORDINARY">All Ordinary</option><option value="PROPER">All Propers</option><option>KYRIE</option><option>GLORIA</option><option>CREDO</option><option>SANCTUS_BENEDICTUS</option><option>AGNUS_DEI</option><option>INTROIT</option><option>GRADUAL</option><option>ALLELUIA</option><option>TRACT</option><option>OFFERTORY</option><option>COMMUNION</option></select></label>
+<select id="family"><option value="">All available</option><option value="ORDINARY">All Ordinary</option><option value="PROPER">All Propers</option><option value="SEQUENCE">All Sequences</option><option>KYRIE</option><option>GLORIA</option><option>CREDO</option><option>SANCTUS_BENEDICTUS</option><option>AGNUS_DEI</option><option>INTROIT</option><option>GRADUAL</option><option>ALLELUIA</option><option>TRACT</option><option>OFFERTORY</option><option>COMMUNION</option></select></label>
 <label style="flex:1;min-width:150px">2026 selected Mass date (optional)
 <input id="date" type="date" min="2026-01-01" max="2026-12-31"></label>
 <label style="flex:1;min-width:140px">Annual source evidence
@@ -88,8 +88,8 @@ small,.small{font-size:12px;color:var(--muted)}
 </section>
 </div>
 <section class="panel sequences">
-<h3>Sequences · separate source-import queue</h3>
-<p class="small">The following five Mass Sequences are <strong>not included</strong> in the 1,195 Proper GABC records or the 20 Ordinary examples. Their existing original-source IDs are retained; no notation is drawn unless a corresponding unchanged transcription is separately imported and checked.</p>
+<h3>Sequences · original transcriptions now archived</h3>
+<p class="small">All five original GregoBase 1961 GABC transcriptions have been added to this research catalogue, separately from the 1,195 Propers and 20 Ordinary examples. Choose <strong>All Sequences</strong> in the filter to engrave an imported score with Exsurge. The texts, variants and musical details remain under editorial review; no Sequence is automatically assigned to a Mass.</p>
 <ul id="sequences"></ul>
 </section>
 <p class="small">Research output only. Nothing here changes the canonical 65 Mass cards, 1962 calendar selection, Schola event state or the production approved-score registry. No web music service is required for score rendering.</p>
@@ -112,7 +112,7 @@ function resetScore(){
 function choose(id){
  const item=byId.get(id);if(!item)return;
  chosen=item;resetScore();$("title").textContent=item.title;
- badges([item.category,item.role,item.settingId||"1961 Proper",item.id]);
+ badges([item.category,item.role,item.settingId||(item.category==="SEQUENCE"?"1961 Sequence":"1961 Proper"),item.id]);
  const printedFolio=item.category==="ORDINARY"?
   item.folio:"Graduale Romanum, Solesmes 1961 · p. "+(item.folio||"unrecorded");
  $("scoreInfo").textContent=printedFolio+" · "+
@@ -130,6 +130,8 @@ function choose(id){
    " · source-text match only; not a musical approval").join("\n\n"):
   item.category==="ORDINARY"?
    "Ordinary must be selected explicitly in the local music programme. No calendar-based setting inferred.":
+  item.category==="SEQUENCE"?
+   "Original complete Sequence transcription archived. Its exact Mass, rite and permitted liturgical use are not assigned automatically.":
    "No individually corroborated 2026 selected Mass occurrence in this annual source crosswalk. The archived score remains searchable.";
  $("render").disabled=false;
 }
@@ -150,7 +152,8 @@ function refresh(){
  $("tally").textContent=found.length+" of "+data.counts.sourceGabcTotal+
   " original archived transcriptions · "+data.counts.originalProperGabc+
   " Propers · "+data.counts.existingOrdinaryGabc+
-  " Ordinary · "+data.counts.selected2026.occurrences+
+  " Ordinary · "+data.counts.importedSequenceGabc+
+  " Sequences · "+data.counts.selected2026.occurrences+
   " source-only annual occurrences · 0 approved";
  if(keep&&found.some(x=>x.id===keep))list.value=keep;
  else {chosen=null;$("render").disabled=true;
@@ -194,7 +197,7 @@ for(const item of data.sequenceLeads){
  a.href=item.sourceUrl;a.target="_blank";a.rel="noopener noreferrer";
  a.textContent=item.title+" · GregoBase "+item.sourceId;
  li.append(a,document.createTextNode(" · GR 1961 p. "+item.folio+
-  " · separate transcription still required"));$("sequences").append(li);
+  " · original GABC archived, review only"));$("sequences").append(li);
 }
 refresh();document.body.dataset.aoSourceScoreReviewReady="true";
 })();
