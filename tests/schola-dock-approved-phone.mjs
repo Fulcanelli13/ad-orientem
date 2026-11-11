@@ -27,7 +27,8 @@ try{
    const svg=staff.querySelector("svg");
    const d=dock.getBoundingClientRect(),s=staff.getBoundingClientRect(),v=svg.getBoundingClientRect();
    return {screen:innerWidth,dock:{x:d.x,right:d.right,width:d.width,height:d.height},
-    staff:{x:s.x,right:s.right,width:s.width},svg:{x:v.x,right:v.right,width:v.width},
+    staff:{x:s.x,right:s.right,width:s.width,clientWidth:staff.clientWidth,scrollWidth:staff.scrollWidth},
+    svg:{x:v.x,right:v.right,width:v.width},
     scoreVisible:!dock.querySelector('[data-role="schola-approved-score"]').hidden,
     controlsHidden:getComputedStyle(dock.querySelector(".ao-schola-meta")).display==="none"};
   });
@@ -35,8 +36,11 @@ try{
   assert.equal(result.controlsHidden,true);
   assert.ok(result.dock.x>=-1 && result.dock.right<=width+1,
     width+"px dock extends beyond the mobile screen: "+JSON.stringify(result));
-  assert.ok(result.staff.right<=width+1&&result.svg.right<=width+1,
-    width+"px staff overflows the mobile screen: "+JSON.stringify(result));
+  assert.ok(result.staff.x>=-1&&result.staff.right<=width+1,
+    width+"px SCORE VIEWPORT extends beyond mobile screen: "+JSON.stringify(result));
+  assert.ok(result.svg.width>result.staff.width+50 &&
+    result.staff.scrollWidth>result.staff.clientWidth+50,
+    width+"px source SVG must extend HORIZONTALLY INSIDE clipped staff viewport: "+JSON.stringify(result));
   assert.ok(result.dock.height>=120&&result.dock.height<=135,
     width+"px approved-score dock wrong compact height: "+JSON.stringify(result));
   console.log("SCHOLA_APPROVED_DOCK_PHONE="+JSON.stringify(result));
