@@ -6,6 +6,7 @@ on:
       - 'src/mass/reader-live-handoff-band.js'
       - 'tests/reader-live-handoff-claude-*.mjs'
       - 'tests/reader-live-handoff-native66-split.mjs'
+      - 'tests/reader-live-handoff-research-notation.mjs'
       - 'src/mass/reader-live-handoff-source-crosswalk.js'
       - 'src/mass/reader-live-handoff-timeline.js'
       - 'src/mass/reader-schola.js'
@@ -33,6 +34,8 @@ jobs:
           node --check src/mass/reader-live-handoff-band.js
           node --check src/mass/reader-live-handoff-schola-track-score.js
           node --test tests/reader-live-handoff-schola-track-scores.mjs
+          node --check src/mass/reader-live-handoff-research-notation.js
+          node --test tests/reader-live-handoff-research-notation.mjs
           node --test tests/reader-live-handoff-claude-source.mjs
           node --test tests/reader-live-handoff-claude-stage-d.mjs
           node --test tests/reader-live-handoff-native66-split.mjs
