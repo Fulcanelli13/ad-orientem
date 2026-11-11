@@ -7,7 +7,7 @@ import {hydrateHomeDidYouKnow,HOME_DYK_GLOSSARY_IDS} from "../src/home/did-you-k
 const bank=JSON.parse(readFileSync("data/did-you-know/dyk-customs-glossary-520.v1.json","utf8"));
 const glossary=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
 const date="2026-11-11";
-assert.ok(bank.count>=595,"The bilingual discovery bank must retain the new 58-card glossary wave");
+assert.ok(bank.count>=653,"The bilingual discovery bank must retain all three glossary discovery waves");
 assert.equal(bank.counts.customs,378);
 assert.equal(bank.counts.glossary,bank.count-378);
 const candidates=dyk520Candidates(bank,date);
@@ -87,6 +87,23 @@ assert.equal(new Set(bank.records.filter(r=>r.glossary_concept_id).map(r=>r.glos
  bank.records.filter(r=>r.glossary_concept_id).length,
  "No duplicated direct glossary concept cards");
 
+// Third glossary wave: only canonical concepts with source-backed bilingual
+// educational copy may join the published Home rotation.
+const thirdWave=bank.records.filter(r=>r.origin==="GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C");
+assert.equal(thirdWave.length,58);
+assert.equal(new Set(thirdWave.map(r=>r.glossary_concept_id)).size,58);
+for(const row of thirdWave){
+ const concept=concepts.get(row.glossary_concept_id),source=sources.get(row.source.id);
+ assert.ok(concept&&source,row.id+" requires an existing source-backed glossary entry");
+ assert.ok(concept.definition_source_ids.includes(source.id),row.id+" is not sourced to the canonical concept");
+ assert.equal(row.source.url,source.canonical_url,row.id+" has a mismatched source URL");
+ for(const lang of ["en","fr"]){
+  assert.ok(row.title[lang].length>12&&row.fact[lang].length>45,row.id+" requires informative bilingual text");
+  const model=dyk520Model(bank,row.id,date,lang);
+  assert.equal(model.glossaryConceptId,row.glossary_concept_id);
+  assert.match(dykPublishedMarkup(model),/data-dyk-glossary-entry=/);
+ }
+}
 const originalG311=bank.records.find(r=>r.id==="DYK-GL-G311-01");
 assert.ok(originalG311.fact.en.includes("final two stanzas"));
 assert.ok(!originalG311.fact.en.includes("Panem de caelo"));
@@ -140,4 +157,4 @@ await new Promise(resolve=>setImmediate(resolve));
 assert.equal(button.dataset.homeDykFactId,expectedId);
 assert.equal(nodes["[data-home-dyk-fact]"].textContent,
  bank.records.find(r=>r.id===expectedId).fact.fr);
-console.log("PASS DYK 595+: 378 Customs + 217+ Glossary, canonical glossary links, calendar cues, bilingual models, full rotation and Home hydration");
+console.log("PASS DYK 653+: 378 Customs + 275+ Glossary, canonical glossary links, calendar cues, bilingual models, full rotation and Home hydration");
