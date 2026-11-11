@@ -18,4 +18,22 @@ for(const e of entries){
   for(const id of e.definition_source_ids)assert.ok(e.source_ids.includes(id),e.id+" definition source is not in owner source_ids: "+id);
   assert.ok(!/text pending|à venir|to be populated/i.test(e.short_definition.en+" "+e.short_definition.fr+" "+e.explanation.en+" "+e.explanation.fr),e.id+" contains placeholder copy");
 }
+// User-facing definitions must explain Catholic, liturgical or historical terms;
+// notes addressed to the application's editors or classification machinery belong
+// in internal governance files, not in the reader's glossary.
+const internalMeta=/\b(?:the app|the application|the glossary|this glossary|in Ad Orientem|the directory|directory data|the UI|user.interface mode|project taxonomy|project data type|the lexical entry|this entry exists|should link to|must link to|search must|the app must)\b|(?:l’application|le glossaire|dans Ad Orientem|l’annuaire|l’entrée lexicale|taxonomie de projet|type de donnée du projet|la recherche doit|l’application doit)/iu;
+for(const entry of entries){
+ for(const field of ["short_definition","explanation"]){
+  for(const language of ["en","fr"]){
+   const content=entry[field]?.[language]||"";
+   assert.doesNotMatch(content,internalMeta,
+    entry.id+" "+field+"/"+language+" contains internal implementation commentary");
+  }
+ }
+}
+const apostasy=entries.find(e=>e.id==="G141"),heresy=entries.find(e=>e.id==="G142"),schism=entries.find(e=>e.id==="G143");
+assert.match(apostasy.explanation.en,/Christian faith as a whole/i);
+assert.match(heresy.explanation.en,/material heresy.*formal heresy/i);
+assert.match(schism.explanation.en,/Roman Pontiff/i);
+
 console.log("Glossary definition completeness: 450/450 EN/FR entries are source-backed.");
