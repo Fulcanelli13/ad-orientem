@@ -29,11 +29,12 @@ const server=http.createServer(async(req,res)=>{
 const liveOrigin=process.env.AO_VISUAL_AUDIT_ORIGIN
   ?new URL(process.env.AO_VISUAL_AUDIT_ORIGIN):null;
 if(liveOrigin&&(liveOrigin.protocol!=="https:"||
-  liveOrigin.hostname!=="ad-orientem.vercel.app"||liveOrigin.pathname!=="/"))
+  liveOrigin.hostname!=="fulcanelli13.github.io"||
+  liveOrigin.pathname!=="/ad-orientem/"||liveOrigin.search||liveOrigin.hash))
   throw Error("Visual production audit target must be the canonical public site");
 if(!liveOrigin)
   await new Promise((ok,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",ok)});
-const origin=liveOrigin?.origin??("http://127.0.0.1:"+server.address().port);
+const origin=liveOrigin?.href??("http://127.0.0.1:"+server.address().port+"/");
 console.log("Nine-route audit target: "+origin);
 const rows=[];
 let browser;
@@ -140,7 +141,8 @@ try {
    console.log(label+" "+name+" "+record.status+(record.error?" "+record.error:""));
   }
   try{
-   await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.goto(new URL("index.html?aoR17Reader=native",origin).href,
+    {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>
     window.AO_APP_SHELL_V1?.status?.().visibleOwner===true &&
     !!document.querySelector(".homeScreen"),null,{timeout:35000});
