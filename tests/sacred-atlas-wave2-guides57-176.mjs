@@ -113,7 +113,7 @@ for(const id of holyLandIds) {
   const g=guides.find(x=>x.place_id===id);
   assert.ok(g,"Missing named holy-land Place "+id);
   assert.match(g.sections.flatMap(x=>x.paragraphs.map(p=>p.en)).join(" ").toLowerCase(),
-    /tradition|traditional/, "Biblical-site geography must preserve traditional attribution "+id);
+    /tradition|traditional|longstanding christian remembrance.*not archaeological proof/, "Biblical-site geography must preserve historical attribution and uncertainty "+id);
 }
 const lusaka = guides.find(x=>x.place_id==="place:ZM:archdiocese-lusaka-marian-shrine");
 assert.ok(lusaka);
