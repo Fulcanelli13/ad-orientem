@@ -2999,6 +2999,7 @@ export function createReaderDomAdapter({
   let scholaMassTextSync=null;
   let scholaDockAwaitingChoir=null;
   let scholaProgrammaticScrollTop=null;
+  let scholaReaderScrollFrame=null;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -4368,6 +4369,10 @@ export function createReaderDomAdapter({
   }
 
   function unbind(){
+    if(scholaReaderScrollFrame!==null){
+      root.ownerDocument?.defaultView?.cancelAnimationFrame?.(scholaReaderScrollFrame);
+      scholaReaderScrollFrame=null;
+    }
     sourceRailTracker?.destroy();
     sourceRailTracker=null;
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
@@ -4723,11 +4728,23 @@ export function createReaderDomAdapter({
           return;
         }
         scholaProgrammaticScrollTop=null;
-        const position=scholaMassTextSync.indexAtFocus(
-          scholaDockFollower.getState().index);
-        if(Number.isInteger(position) &&
-           position!==scholaDockFollower.getState().index)
-          scholaDockFollower.followReader(position);
+        // At most one geometry read per animation frame. The original
+        // rubric/cinematic scroll listeners run independently and first.
+        if(scholaReaderScrollFrame!==null)return;
+        const raf=scrollCard.ownerDocument?.defaultView?.requestAnimationFrame;
+        if(typeof raf!=="function")return;
+        scholaReaderScrollFrame=raf.call(scrollCard.ownerDocument.defaultView,()=>{
+          scholaReaderScrollFrame=null;
+          if(!scholaDockFollower||!scholaMassTextSync||
+             mode!=="LIVE"||!isScholaMassLinked(current?.schola?.trackId)||
+             current?.scholaShared!==true||current?.scholaVisible!==true)
+            return;
+          const position=scholaMassTextSync.indexAtFocus(
+            scholaDockFollower.getState().index);
+          if(Number.isInteger(position) &&
+             position!==scholaDockFollower.getState().index)
+            scholaDockFollower.followReader(position);
+        });
       },{passive:true});
       scrollCard.addEventListener("wheel",event=>{
         if(!event.deltaY)return;
