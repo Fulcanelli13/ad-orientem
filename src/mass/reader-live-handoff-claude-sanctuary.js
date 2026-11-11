@@ -28,8 +28,8 @@ function originalClaudeArchFragment({frontal,veil,candles}){
 function claudeSeats(fig,posture,selected=false){
  const COLS=[230,184,138],SEATS=[];
  COLS.forEach((x,ci)=>[168,234,366,432].forEach((y,ri)=>{if(!(ci===2&&ri<2))SEATS.push([x,y])}));
- const people=SEATS.map(([x,y],i)=>{
-   if(posture==="STAND" || !["KNEEL","SIT"].includes(posture))
+ const people=(["STAND","KNEEL","SIT"].includes(posture)?SEATS:[]).map(([x,y],i)=>{
+   if(posture==="STAND")
      return fig("lay","stand",i===5?"#d4b16a":"#8e959e",{x,y:y+22,s:.5,dir:1});
    const icon=R17_FINAL_APPROVED_MASS_ASSETS[posture==="KNEEL"?"final_kneel":"final_sit"];
    const flt=i===5?"invert(.72) sepia(.9) saturate(1.5) hue-rotate(4deg)":"invert(.6)";
@@ -87,14 +87,22 @@ function claudeSourcePlanSVG(scene,fig){
  const colour=Object.hasOwn(colours,scene?.colour)?colours[scene.colour]:colours.GREEN;
  const veil=scene?.requiem?colours.VIOLET:colour;
  const railGlow=scene?.choir==="SOURCE_VERIFIED_SCHOLA_ACTIVE"?'.schGlow{opacity:.28}':"";
- const posture=scene?.faithful?.posture||"STAND";
+ // No default to STAND: posture must come from the current, source-matched
+ // native faithful profile. Keep the source artwork/pews when it is unknown.
+ const posture=scene?.faithful?.posture??null;
  const old=sourceStationGeometry(scene?.priest?.station);
  const pos=old?{x:525-.87*old[1],y:300+.86*(old[0]-300)}:null;
  const dir=["PEOPLE","PEOPLE_DURING_TURN","COMMUNICANT"].includes(scene?.priest?.facing)?-1:1;
  const priest=pos?fig("priest",sourcePose(scene?.priest?.positionReferenceCueId,scene?.priest?.station),colour,
    {x:pos.x,y:pos.y+12,dir,s:.74}):"";
- const isSimple=scene?.server&&scene.form!=="SOLEMN";
- const server=isSimple?fig("server","kneel","",{x:525-.87*202,y:300+.86*(360-300)+12,dir:1,s:.58}):"";
+ const isSimple=scene?.server?.scope==="REFERENCE_PRESENCE_ONLY"&&
+   scene.server.pose==="stand"&&scene.form!=="SOLEMN";
+ // A static source reference cannot justify a kneeling server. The original
+ // Claude sprite family is retained, but only the source-authored standing
+ // presence can be shown until a verified server gesture exists.
+ const server=isSimple?'<g data-actor="server" data-reference-pose="stand">'+
+   fig("server","stand","",{x:525-.87*202,y:300+.86*(360-300)+12,dir:1,s:.58})+
+   '</g>':"";
  const people=claudeSeats(fig,posture);
  const signs=claudeStatusMarks(scene?.signs,pos,Boolean(isSimple));
  // Direct from Claude's final Plan: architecture and congregation live in
