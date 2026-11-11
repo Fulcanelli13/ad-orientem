@@ -95,6 +95,9 @@ assert.ok(inspectSacredGuideEvidence(malicious,byPlace.get(malicious.place_id),s
   .includes("BROKEN_CANONICAL_SOURCE_LINK"),"Another Place cannot lend its historical citation");
 const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
 assert.equal(editorialProse.length,0,"Wave-2 visitor copy still contains internal Atlas/guide/profile instructions");
+const wave1Editorial=wave1.filter(g=>inspectSacredGuideEvidence(g,byPlace.get(g.place_id),sources)
+  .issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
+assert.equal(wave1Editorial.length,0,"Wave-1 visitor copy still contains implementation or photo-curation instructions");
 
 for(const n of [69,70,72,73,75,76]){
   const g=wave2.find(x=>x.draft_order===n);
@@ -137,6 +140,10 @@ const fakeGeoGuide={...kevelaer,sections:kevelaer.sections.map(sec=>({
 const fakeGeoShrine={...byPlace.get(kevelaer.place_id),source_ids:[testLocator.id]};
 assert.ok(inspectSacredGuideEvidence(fakeGeoGuide,fakeGeoShrine,[testLocator])
  .issues.includes("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE"));
+const fakeAppGuide={...kevelaer,sections:kevelaer.sections.map((sec,i)=>
+  i===0?{...sec,paragraphs:sec.paragraphs.map(p=>({...p,en:p.en+" The app does not certify miracles."}))}:sec)};
+assert.ok(inspectSacredGuideEvidence(fakeAppGuide,byPlace.get(kevelaer.place_id),sources)
+  .issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
 const fakeEditorialGuide={...kevelaer,sections:kevelaer.sections.map((sec,i)=>
  i===0?{...sec,paragraphs:sec.paragraphs.map(p=>({
   ...p,en:p.en+" The Atlas should invent a helpful historical fact.",

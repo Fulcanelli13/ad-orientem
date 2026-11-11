@@ -39,7 +39,9 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
       const frMeta=/\b(?:le|la|un|une)\s+(?:guide|fiche|atlas|profil)\s+(?:doit|devrait|peut|ne\s+doit)\b/i;
       const enMemo=/\b(?:atlas|guide|profile|visitor card|pilgrimage card|historical profile|editorial)\b/i;
       const frMemo=/\b(?:atlas|guide|fiche|profil|éditorial)\b/i;
-      if(enMeta.test(p.en||"")||frMeta.test(p.fr||"")||enMemo.test(p.en||"")||frMemo.test(p.fr||""))
+      const enImplementation=/\b(?:the|this|our)\s+(?:app|application)\b|\bcanonical\s+(?:map|place|geographic)\b|route[- ]geometry|\b(?:approved\s+(?:photograph|image)|photograph(?:ic)?\s+(?:requires?|must|should|would need))\b/i;
+      const frImplementation=/\bl[’\x27]application\b|\bgéographiques?\s+canoniques?\b|\bitinéraire\s+cartographié\s+doit\b/i;
+      if(enMeta.test(p.en||"")||frMeta.test(p.fr||"")||enMemo.test(p.en||"")||frMemo.test(p.fr||"")||enImplementation.test(p.en||"")||frImplementation.test(p.fr||""))
         issues.push("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY");
       const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
         rows(guide.bibliography_urls).includes(p.source_url);
