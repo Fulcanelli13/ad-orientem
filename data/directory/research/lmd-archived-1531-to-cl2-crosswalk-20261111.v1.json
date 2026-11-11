@@ -128,7 +128,19 @@
       "old_name_only_candidate_cl2_ids": [],
       "lmd_archive_source_state": "MASS_CLAIM_WITH_ORIGINAL_LINK_TO_CHECK",
       "independent_active_mass_verified": false,
-      "new_site_approved": false
+      "new_site_approved": false,
+      "exact_shared_firstparty_source_evidence": {
+        "cl2_candidate_ids": [
+          "RG-4ED6CD089356",
+          "RG-AFAA6529F2CD"
+        ],
+        "source_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+        "same_named_building_independently_attested": true,
+        "independent_traditional_rite_owner_attested": true,
+        "source_scope": "POTENTIAL_DOUBLE_CANONICAL_IDENTITY_REVIEW_NOT_AUTO_MERGE",
+        "identity_dedup_approved": false,
+        "cl27_schedule_approved": false
+      }
     },
     {
       "source_id": "LMD:ave-maria-church-ave-maria-united-states",
@@ -138,7 +150,18 @@
       "old_name_only_candidate_cl2_ids": [],
       "lmd_archive_source_state": "MASS_CLAIM_WITH_ORIGINAL_LINK_TO_CHECK",
       "independent_active_mass_verified": false,
-      "new_site_approved": false
+      "new_site_approved": false,
+      "exact_shared_firstparty_source_evidence": {
+        "cl2_candidate_ids": [
+          "RG-F6A26D3ABFF8"
+        ],
+        "source_url": "https://www.avemariaparish.org/",
+        "same_named_building_independently_attested": true,
+        "independent_traditional_rite_owner_attested": true,
+        "source_scope": "EXISTING_SITE_OWNER_EVIDENCE_ENRICHMENT_ONLY",
+        "identity_dedup_approved": false,
+        "cl27_schedule_approved": false
+      }
     },
     {
       "source_id": "LMD:basilica-of-saint-stephen-new-orleans-united-states",
@@ -148,7 +171,18 @@
       "old_name_only_candidate_cl2_ids": [],
       "lmd_archive_source_state": "MASS_CLAIM_WITH_ORIGINAL_LINK_TO_CHECK",
       "independent_active_mass_verified": false,
-      "new_site_approved": false
+      "new_site_approved": false,
+      "exact_shared_firstparty_source_evidence": {
+        "cl2_candidate_ids": [
+          "RG-97E3BC28CBFC"
+        ],
+        "source_url": "https://www.goodshepherdparishnola.com/",
+        "same_named_building_independently_attested": true,
+        "independent_traditional_rite_owner_attested": false,
+        "source_scope": "EXISTING_SITE_OLD_RITE_SCHEDULE_AND_CHURCH_ROOM_HOLD",
+        "identity_dedup_approved": false,
+        "cl27_schedule_approved": false
+      }
     },
     {
       "source_id": "LMD:basilica-of-saints-peter-paul-lewiston-united-states",
@@ -406,7 +440,18 @@
       "old_name_only_candidate_cl2_ids": [],
       "lmd_archive_source_state": "MASS_CLAIM_WITH_ORIGINAL_LINK_TO_CHECK",
       "independent_active_mass_verified": false,
-      "new_site_approved": false
+      "new_site_approved": false,
+      "exact_shared_firstparty_source_evidence": {
+        "cl2_candidate_ids": [
+          "RG-C2B98DF5683B"
+        ],
+        "source_url": "https://htdiocese.org/blessedsacramentchapel",
+        "same_named_building_independently_attested": true,
+        "independent_traditional_rite_owner_attested": true,
+        "source_scope": "EXISTING_SITE_DIOCESAN_OWNER_SOURCE_ENRICHMENT_ONLY",
+        "identity_dedup_approved": false,
+        "cl27_schedule_approved": false
+      }
     },
     {
       "source_id": "LMD:chapel-of-the-immaculate-conception-at-saint-john-the-apostle-church-leesburg-united-states",
@@ -21858,5 +21903,15 @@
         "old_name_suggestion_conflicts": 0
       }
     ]
+  },
+  "exact_shared_firstparty_source_screen": {
+    "checked_source_rows": 1131,
+    "source_rows_with_shared_exact_owner_urls": 4,
+    "cl2_venue_identifiers_affected": 5,
+    "one_multi_id_physical_site_conflict": 1,
+    "no_shared_exact_owner_source_link": 1127,
+    "evidence_record": "data/directory/research/lmd-firstparty-exact-urls-and-poland-2026-delta.v1.json",
+    "notes": "These 4 source-owner URL relationships have no exact source-ID nor LMD-URL match to CL2; the existing provenance classification remains unchanged. Three owners attest older rite, St Stephen's Latin Mass alone does not certify 1962 Missal and location.",
+    "all_publication_approvals": false
   }
 }
