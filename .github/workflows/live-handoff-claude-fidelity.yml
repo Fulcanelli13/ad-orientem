@@ -8,6 +8,8 @@ on:
       - 'tests/reader-live-handoff-native66-split.mjs'
       - 'src/mass/reader-live-handoff-source-crosswalk.js'
       - 'src/mass/reader-live-handoff-timeline.js'
+      - 'src/mass/reader-schola.js'
+      - 'src/mass/reader-schola-dock-approved.js'
       - 'tests/live-handoff-visual-acceptance.mjs'
       - 'tests/live-handoff-native-mass-e2e.mjs'
       - '.github/workflows/live-handoff-claude-fidelity.yml'
@@ -29,6 +31,8 @@ jobs:
           node --check src/mass/reader-live-handoff-claude-sanctuary.js
           node --check src/mass/reader-live-handoff-claude-stage-d.js
           node --check src/mass/reader-live-handoff-band.js
+          node --check src/mass/reader-live-handoff-schola-track-score.js
+          node --test tests/reader-live-handoff-schola-track-scores.mjs
           node --test tests/reader-live-handoff-claude-source.mjs
           node --test tests/reader-live-handoff-claude-stage-d.mjs
           node --test tests/reader-live-handoff-native66-split.mjs
