@@ -25,6 +25,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R15} from "../src/find/cl2-illustrative-l
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "../src/find/cl2-illustrative-locality-pins-r16.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "../src/find/cl2-illustrative-locality-pins-r17-r18.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
@@ -43,6 +44,25 @@ assert.equal(world.length,2583,"2,580 distinct CL2 physical sites + 3 published 
 assert.equal(new Set(world.map(item=>item.item_id)).size,2583);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2580);
 assert.equal(world.filter(x=>x.map_publishable).length,2569);
+// FINAL CATALOGUE CONTRACT: all 2,583 source-owned sites must render
+// unique, interactive compact cards AND complete EN/FR profile views.
+// Individual 14-site list-only safety checks stay in tlm-unpinned-card-access.
+for(const item of world){
+ assert.ok(item.item_id&&item.source_id&&item.title&&item.kind==="TLM_VENUE",
+   "Every admitted physical venue must retain a canonical source identity");
+ for(const lang of ["en","fr"]){
+   const card=renderDirectoryVenueCard(item,lang);
+   assert.ok(card.startsWith('<button type="button"')&&
+     card.includes('data-explore-item=')&&card.includes("aoTlmVenueTitle"),
+     lang+": source site has no searchable interactive card: "+item.item_id);
+   const profile=renderTlmChurchProfile(item,lang);
+   assert.ok(profile.includes('class="aoFindSheet aoTlmChurchProfile"')&&
+     profile.includes('role="dialog"')&&profile.includes('data-tlm-church-profile='),
+     lang+": source site has no full church profile: "+item.item_id);
+ }
+}
+console.log("PASS 2,583/2,583 source-owned EN/FR TLM compact cards and full profiles");
+
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);

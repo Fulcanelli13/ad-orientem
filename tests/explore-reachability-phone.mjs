@@ -243,6 +243,43 @@ try{
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
+   // Touch-test all fourteen unpinned source-listed site cards, not just a
+   // single representative. These entries must have full profiles without
+   // fabricated GPS destinations, and the list filter must be reversible.
+   await page.locator('#ao-find-modular-root [data-find-filter="siteEvidence"][data-find-filter-value="ADDRESS_ONLY"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===14,
+     null,{timeout:12000});
+   const pending=page.locator('#ao-find-modular-root .aoFindList [data-explore-item]');
+   assert.equal(await pending.count(),14,"All 14 unpinned CL2 cards must be visible in the live list");
+   const checked=[];
+   for(let i=0;i<14;i++){
+     const entry=pending.nth(i);
+     const id=await entry.getAttribute("data-explore-item");
+     assert.ok(id&&!checked.includes(id),"List-only site cards must be distinct");
+     assert.equal(await entry.locator("[data-tlm-list-only-card]").count(),1,
+       "Source-listed venue needs a visible list-only label: "+id);
+     checked.push(id);
+     await entry.tap({timeout:12000});
+     const preview=page.locator('#ao-find-modular-root .aoExploreQuickPreview');
+     await preview.waitFor({state:"visible",timeout:12000});
+     await preview.locator("[data-explore-expand-detail]").tap({timeout:12000});
+     const detail=page.locator('#ao-find-modular-root .aoTlmChurchProfile[role="dialog"]');
+     await detail.waitFor({state:"visible",timeout:12000});
+     assert.equal(await detail.locator("[data-tlm-list-only-notice]").count(),1,
+       "List-only venue wrongly presented as verified GPS: "+id);
+     const search=detail.locator("[data-tlm-list-only-search] a[href]");
+     assert.equal(await search.count(),1,"No safe name/address search: "+id);
+     assert.match(await search.getAttribute("href"),/^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=/,
+       "Search must not claim a verified destination GPS: "+id);
+     await detail.locator("[data-explore-collapse-detail]").tap({timeout:12000});
+     await page.locator('#ao-find-modular-root .aoExploreQuickPreview').waitFor({state:"visible",timeout:12000});
+     await page.locator('#ao-find-modular-root button[data-find-close-detail]').first().tap({timeout:12000});
+     await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheet[role=dialog]"),null,{timeout:12000});
+   }
+   console.log("TLM_LIST_ONLY_PHONE_PASS "+JSON.stringify(checked));
+   await page.locator('#ao-find-modular-root [data-find-filter="siteEvidence"][data-find-filter-value="ALL"]').tap();
+   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
+     snapshot.count,{timeout:12000});
   }
   // All five remaining public lenses must have a meaningful Map/List state, including sparse lenses.
   await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').tap();

@@ -37,6 +37,8 @@ for(const church of unpinned){
     assert.ok(card.includes('data-explore-item="'+church.item_id+'"'));
     assert.ok(card.includes("aoTlmVenueVisual")&&card.includes("aoTlmVenueTitle"));
     assert.ok(card.includes("aoTlmVenueSchedule"));
+    assert.ok(card.includes("data-tlm-list-only-card"),
+      lang+": list-only church card must disclose missing verified map marker");
     if(lang==="fr"){
       assert.ok(card.includes("RÉPERTORIÉ · MESSE NON VÉRIFIÉE"));
       assert.ok(!card.includes("RESEARCH-LISTED"));
@@ -46,6 +48,11 @@ for(const church of unpinned){
     assert.ok(profile.includes("aoTlmProfileEssentials")&&profile.includes("aoTlmProfileSourceSection"));
     assert.ok(profile.includes("aoTlmProfileAddress"));
     assert.ok(profile.includes("aoTlmProfileMedia"));
+    assert.ok(profile.includes("data-tlm-list-only-notice")&&
+      profile.includes('data-tlm-list-only-search'),
+      lang+": list-only profile must disclose uncertainty and offer a name/address lookup");
+    assert.match(profile,/https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=/,
+      lang+": lookup is a search rather than an invented GPS route");
     if(church.source_links.some(s=>s.url?.startsWith("https://")))
       assert.ok(profile.includes("aoTlmProfileSources"),"Keep original reference available");
     assert.doesNotMatch(profile,/data-tlm-celebration-evidence=|Directions on Google Maps/,
@@ -76,4 +83,8 @@ const frenchPreview=renderExploreToString(buildExploreViewModel({
 }));
 assert.ok(frenchPreview.includes("Lieu physique répertorié"),
   "The French church preview must use its translated source-safety description");
+console.log("TLM_ATLAS_14_LIST_ONLY "+JSON.stringify(unpinned.map(c=>({
+ cl2:c.physical_group_id,source_id:c.source_id,title:c.title,country:c.country_code,
+ source_count:c.source_links?.length??0,source_location:c.source_location_description
+}))));
 console.log("PASS TLM list-only records: 14 bilingual alias/historical directory records remain accessible without duplicate physical-site pins");
