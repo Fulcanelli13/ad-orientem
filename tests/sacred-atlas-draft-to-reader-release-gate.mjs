@@ -110,7 +110,7 @@ const poondi=wave2.find(x=>x.place_id==="place:IN:basilica-of-our-lady-of-lourde
 assert.ok(poondi);
 const poondiFake={...fake,place_id:poondi.place_id,revision:sacredGuideRevision(poondi),
  paragraph_evidence:poondi.sections.map(s=>({
-   key:s.id+":0",checked:true,source_url:s.paragraphs[0].source_url,editor_note:"SYNTHETIC_ONLY",
+   key:s.id+":0",checked:true,source_url:testLocator.url,editor_note:"SYNTHETIC_ONLY",
  }))};
 assert.equal(reviewedSacredGuideForReader(poondi,byPlace.get(poondi.place_id),sources,poondiFake),null,
  "Mapcarta locator must not be accepted as sentence-by-sentence historical evidence");
