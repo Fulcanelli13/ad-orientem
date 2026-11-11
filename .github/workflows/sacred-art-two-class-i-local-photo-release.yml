@@ -10,6 +10,8 @@ on:
       - 'data/artwork/releases/2026-03-15-07-01-two-*'
       - 'tests/home-two-frozen-class-i-local-photos-2026.mjs'
       - 'tests/home-two-frozen-class-i-photo-phone.mjs'
+      - 'tests/home-two-frozen-class-i-curated-pages-payload.mjs'
+      - 'tools/build-web-preview.mjs'
       - 'tests/home-2026-frozen-selected-source-gate.mjs'
       - 'tests/home-2026-annual-artwork-coverage.mjs'
       - '.github/workflows/sacred-art-two-class-i-local-photo-release.yml'
@@ -31,6 +33,10 @@ jobs:
           node tests/home-two-frozen-class-i-local-photos-2026.mjs
           node tests/home-2026-frozen-selected-source-gate.mjs
           node tests/home-2026-annual-artwork-coverage.mjs
+      - name: Prove curated static Pages cannot leak the 26 MB source original
+        run: |
+          node tools/build-web-preview.mjs
+          node tests/home-two-frozen-class-i-curated-pages-payload.mjs
   actual-home-320-390-photo-render:
     needs: exact-source-rights-and-dates
     runs-on: ubuntu-latest
