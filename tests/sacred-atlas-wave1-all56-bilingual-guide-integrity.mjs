@@ -21,7 +21,7 @@ const ids=m.batch_plan.shrine_guide_expansion[0].place_ids;
 const byId=new Map(m.places.map(p=>[p.place_id,p]));
 const shrineIds=new Set(official.shrines.map(x=>x.shrine_id));
 assert.equal(m.summary.extended_guides,33);
-assert.equal(media.items.length,379);
+assert.equal(media.items.length,388, "Current main-approved Place cover inventory must be preserved");
 assert.equal(gallery.items.length,42);
 assert.equal(geo.places.length,530);
 assert.equal(ids.length,56);
