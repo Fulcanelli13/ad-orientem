@@ -146,6 +146,23 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       +'" aria-pressed="'+(i===0)+'"></button>').join("")
     +'</div><button type="button" class="ao-lb-handle" data-lb-handle aria-label="Resize band; double tap for adaptive height"></button></div>';
   shell.insertBefore(style,stage);shell.insertBefore(band,stage);
+  // In the native reader the Schola dock is absolutely positioned against the
+  // entire shell. In the preview's extra grid row, it can cover sanctuary
+  // pagination on narrow phones. Keep that very same native dock/controller,
+  // but anchor its positioning to the prayer stage while the preview is live.
+  // Moving the existing element preserves all Schola state and listeners.
+  const nativeDock=shell.querySelector(".ao-schola-dock");
+  const originalDockParent=nativeDock?.parentNode??null;
+  const originalDockNext=nativeDock?.nextSibling??null;
+  function locateNativeDock(inStage){
+    if(!nativeDock||!originalDockParent)return;
+    if(inStage){
+      if(nativeDock.parentNode!==stage)stage.appendChild(nativeDock);
+    }else if(nativeDock.parentNode!==originalDockParent){
+      originalDockParent.insertBefore(nativeDock,
+        originalDockNext?.parentNode===originalDockParent?originalDockNext:null);
+    }
+  }
   // Restore the existing native MUSIC selector inside Claude's single slim
   // header. This proxy invokes the same source-owned control; it does not
   // create a separate playlist or alter Schola playback/position.
@@ -292,6 +309,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     }
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
+    locateNativeDock(result.ok);
     musicAccess.hidden=!result.ok || !nativeMusic || nativeMusic.hidden ||
       String(prepared?.session?.resolvedMass?.form??"").toUpperCase()==="LOW";
     if(slimHeader)
@@ -396,6 +414,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       routePreviewKind:activeRoute?.kind??availableRoute?.kind??null,
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
+      locateNativeDock(false);
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
       shell.style.removeProperty("--ao-live-band-height");musicAccess.remove();
       if(slimHeader)delete slimHeader.dataset.claudeMusicAccess;
