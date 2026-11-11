@@ -29,7 +29,11 @@ permissions:
   contents: read
 jobs:
   bilingual-phone:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    # Pinned browser, OS libraries and test harness bypass apt mirror DNS failure.
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host --user 1001
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +41,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - name: Verify container-bundled Chromium is installed
+        run: node -e 'const { chromium } = require("@playwright/test"); require("node:fs").accessSync(chromium.executablePath())'
       - name: Source witness contract
         run: node tests/pray-novena-witness-contract.mjs
       - name: Guided stage source/ARIA contract

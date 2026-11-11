@@ -116,7 +116,11 @@ concurrency:
 
 jobs:
   urgent-mass-entry:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    # Pinned browser, OS libraries and test harness bypass apt mirror DNS failure.
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host --user 1001
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
@@ -126,7 +130,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Mass versus explicit resume contract
         run: node tests/app-shell-contract.mjs
-      - run: npx playwright install --with-deps chromium
+      - name: Verify container-bundled Chromium is installed
+        run: node -e 'const { chromium } = require("@playwright/test"); require("node:fs").accessSync(chromium.executablePath())'
       - name: Real phone — Follow Mass must expose source-owned preflight
         run: node tests/mass-preflight-entry-phone.mjs
 
@@ -161,14 +166,19 @@ jobs:
     # Validate actual phone journeys on PRs, not only after merging into main.
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     needs: app-shell-contract
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    # Pinned browser, OS libraries and test harness bypass apt mirror DNS failure.
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host --user 1001
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - name: Verify container-bundled Chromium is installed
+        run: node -e 'const { chromium } = require("@playwright/test"); require("node:fs").accessSync(chromium.executablePath())'
       # Fail fast on incomplete composed Mass prayers before costly full-phone journeys.
       - run: node tools/calendar/proper-source-batch-100.mjs --focus-gaps
       - run: npm run test:field-current-week

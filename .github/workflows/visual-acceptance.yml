@@ -43,7 +43,11 @@ jobs:
     # Drafts opt in explicitly; ordinary draft PRs still skip costly visual E2E.
     # This allows a visual-review request before making a PR merge-ready.
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false || contains(github.event.pull_request.labels.*.name, 'visual-review')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    # Pinned browser, OS libraries and test harness bypass apt mirror DNS failure.
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host --user 1001
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,7 +56,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - name: Verify container-bundled Chromium is installed
+        run: node -e 'const { chromium } = require("@playwright/test"); require("node:fs").accessSync(chromium.executablePath())'
       # The opt-in purpose of this workflow is the live Explore map
       # screenshot review. Run it first so a bad mobile interaction fails
       # promptly without spending CI time on unrelated Mass captures.
