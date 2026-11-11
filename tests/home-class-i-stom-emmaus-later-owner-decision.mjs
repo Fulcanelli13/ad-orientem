@@ -55,7 +55,7 @@ assert.equal(tueArchive.selection.artist,"Anthony van Dyck");
 assert.equal(tueArchive.selection.title,"Appearance of Christ to His Disciples");
 const tueAnnual=annualHomeArtworkDay2026(tue.date,tue.principalId);
 assert.deepEqual(tueAnnual.selection,tue.selection);
-assert.equal(approved2026HomeArtwork(state("2026-04-07",tue.principalId,tue.properPath)),null);
+
 const annual=annualHomeArtworkDay2026(date,id);
 assert.equal(annual.rank,"I");
 assert.equal(annual.selection.artist,"Matthias Stom");
@@ -75,6 +75,8 @@ const state=(d=date,p=id,path=proper)=>({
 });
 assert.equal(approved2026HomeArtwork(state()),null,
  "Do not show Caravaggio or Thyssen-sourced photography without clearance");
+assert.equal(approved2026HomeArtwork(state("2026-04-07",tue.principalId,tue.properPath)),null,
+ "Do not publish earlier Van Dyck or unverified Rubens source for the later approved date");
 assert.equal(approved2026HomeArtwork(state(date,id,"bad")),null);
 assert.equal(approved2026HomeArtwork(state(date,"wrong",proper)),null);
 assert.equal(approved2026HomeArtwork(state("2026-04-07",id,proper)),null);
