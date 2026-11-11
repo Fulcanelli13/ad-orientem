@@ -45,8 +45,20 @@
   ].join("");
   document.head.append(css);
   const cues=Object.freeze({
+    // Source-owned OFFERTORY ACTION, not the independent Schola Proper:
+    // C0120 blesses incense; C0121 begins the actual incensation of
+    // the offerings; C0122 continues at cross/altar. The original C24
+    // sequence is illustrative and does not report observed priest timing.
+    // No incense at Low or simple Missa Cantata.
+    "AO.SM.C0121":{card:"C24",section:"AO.CARD.010",
+      forms:["MISSA_CANTATA_INCENSE","SOLEMN"]},
     "AO.SM.C0174":{card:"C36",section:"AO.CARD.015"},
     "AO.SM.C0181":{card:"C38",section:"AO.CARD.016"}
+    // Do NOT attach C13 transfer to C0081: source specifies the priest
+    // arriving at the Gospel book, not the server's earlier movement;
+    // Solemn C0081 is deacon-led Gospel preparation.
+    // Do NOT attach C57 walk to C0246: distribution is already at the rail.
+    // Both need independently source-owned non-text movement events.
   });
   const forms=Object.freeze({
     LOW:{form:"low",solemn:false,inc:false},
@@ -123,8 +135,10 @@
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
     }
-    const play=Boolean(validCue&&cues[cue]?.card===id&&
-      cues[cue]?.section===sourceSectionId&&
+    const binding=validCue?cues[cue]:null;
+    const play=Boolean(binding?.card===id&&
+      binding.section===sourceSectionId&&
+      (!binding.forms||binding.forms.includes(String(message.form).toUpperCase()))&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
