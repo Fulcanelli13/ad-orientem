@@ -4,6 +4,7 @@
 // The 20 existing offline GABCs are editorial research, not published scores.
 import {offlineKyrialeResearchScore} from "./reader-kyriale-research-gabc.js";
 import {selectLiveHandoffProperReferences} from "./reader-live-handoff-proper-notation.js";
+import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js";
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 
 const freeze=Object.freeze;
@@ -238,11 +239,21 @@ export function installLiveHandoffResearchNotation({
    const header=document.createElement("header");
    const title=document.createElement("b");
    title.textContent=selected.title+" · full Gregorian notation";
+   const original=schola1961OriginalFacsimile(selected.trackId,selected.settingId);
+   const hasPrintedOriginal=Boolean(original?.originalPageImages?.length&&
+     original.originalPageImages.every(url=>
+       /^https:\/\/gregobase\\.selapa\\.net\/sources\/\\d+\/\\d+\\.png$/.test(url))&&
+     /^https:\/\/media\\.churchmusicassociation\\.org\/pdf\/kyriale-solesmes\\.pdf#page=\\d+$/.test(original.originalEditionPdf));
+   const printToggle=document.createElement("button");
+   printToggle.type="button";printToggle.dataset.aoReferencePrintToggle="";
+   printToggle.textContent="PRINT";printToggle.hidden=!hasPrintedOriginal;
+   printToggle.setAttribute("aria-label","Compare with original 1961 Solesmes printed folio");
+   printToggle.setAttribute("aria-pressed","false");
    const closeButtonFull=document.createElement("button");
    closeButtonFull.type="button";closeButtonFull.dataset.scholaScoreClose="";
    closeButtonFull.textContent="Close";
    closeButtonFull.setAttribute("aria-label","Close full historical score");
-   header.append(title,closeButtonFull);dialog.append(header);
+   header.append(title,printToggle,closeButtonFull);dialog.append(header);
    const notice=document.createElement("p");
    notice.textContent="1961 research transcription · NOT musically approved. This reference does not report singing or advance the Schola.";
    dialog.append(notice);
@@ -252,6 +263,39 @@ export function installLiveHandoffResearchNotation({
    fullStaff.setAttribute("role","img");
    fullStaff.setAttribute("aria-label","Complete historical "+selected.title+" printed notation; provisional");
    dialog.append(fullStaff);
+   const printed=document.createElement("div");
+   printed.className="ao-schola-score-viewport";
+   printed.dataset.aoReferencePrintView="";printed.hidden=true;
+   printed.setAttribute("aria-label","Original 1961 printed source folio; not a modern transcription approval");
+   dialog.append(printed);
+   const onPrint=()=>{
+     if(!hasPrintedOriginal||fullDialog!==dialog)return;
+     const show=printed.hidden;
+     if(show&&!printed.hasChildNodes()){
+       const explanation=document.createElement("p");
+       explanation.textContent="Original 1961 printed "+original.printedPages.join(", ")+
+         " · whole folio, including other chants. Source comparison only; no musical approval.";
+       printed.append(explanation);
+       original.originalPageImages.forEach((url,index)=>{
+         const image=document.createElement("img");
+         image.alt=original.title+" · original printed folio "+
+           (original.printedPages[index]??original.printedPages.at(-1));
+         image.loading="lazy";image.decoding="async";image.src=url;
+         image.dataset.aoReferencePrintImage=String(index);
+         printed.append(image);
+       });
+       const pdf=document.createElement("a");
+       pdf.href=original.originalEditionPdf;
+       pdf.target="_blank";pdf.rel="noopener noreferrer";
+       pdf.textContent="Open original 1961 printed edition";
+       printed.append(pdf);
+     }
+     printed.hidden=!show;fullStaff.hidden=show;
+     printToggle.setAttribute("aria-pressed",String(show));
+     printToggle.textContent=show?"GABC":"PRINT";
+     dialog.dataset.aoReferencePrintActive=String(show);
+   };
+   printToggle.addEventListener("click",onPrint);
    const witness=document.createElement("a");
    witness.href=selected.sourceUrl;
    witness.target="_blank";witness.rel="noopener noreferrer";
