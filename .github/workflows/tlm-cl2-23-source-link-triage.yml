@@ -1,0 +1,25 @@
+name: TLM CL2 23 weak-link source triage (research only)
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-23-legacy-source-links-20261111.v1.json'
+      - 'tests/tlm-cl2-23-legacy-source-triage.mjs'
+      - '.github/workflows/tlm-cl2-23-source-link-triage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-only-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert 23 exact CL2 anchors and zero public promotions
+        run: node tests/tlm-cl2-23-legacy-source-triage.mjs
+      - name: Preserve production directory projection
+        run: |
+          node tests/cl2-worldwide-directory-acceptance.mjs
+          node tests/explore-tlm-church-profile.mjs

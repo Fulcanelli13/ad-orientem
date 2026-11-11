@@ -1,0 +1,508 @@
+{
+  "schema": "AO_TLM_CL2_23_SOURCE_LINK_TRIAGE_V1",
+  "reviewed_on": "2026-11-11",
+  "status": "RESEARCH_ONLY_NOT_APPROVED_NOT_PUBLIC",
+  "source_owner": "CL2 Excel site master; this is a non-authoritative handoff",
+  "baseline_main_sha": "cfd30897c3f49723e40ea03728dac2c5ef0269ae",
+  "release_rules": [
+    "No public source URL, site identity, schedule, GPS point, Mass use, operator, ownership, rite or liturgical book is changed by this dossier.",
+    "Every candidate URL is an evidence lead, not an approved CL2 source until the canonical Excel row has been source-reviewed and approved.",
+    "Residence, seminary, monastery or district house and public worship church remain separate physical subjects.",
+    "Do not infer a current Mass or its celebrant from a linked institutional address.",
+    "Legacy HTTP-only sources are preserved verbatim for provenance; no unverified automatic HTTPS rewrite.",
+    "The six self-referential links are not first-party witnesses; external-search fallback is an expressly unverified lookup, not source evidence."
+  ],
+  "counts": {
+    "source_less_cl2_index": 196,
+    "target_weak_link_records": 23,
+    "historical_http_only": 17,
+    "self_reference_only": 6,
+    "candidate_first_party": 16,
+    "held": 7
+  },
+  "records": [
+    {
+      "cl2_anchor": "RG-0FEEDA4E996C",
+      "source_ids": [
+        "AO-EUR-DE-113"
+      ],
+      "name": "St Christophorus",
+      "country": "DE",
+      "affiliation_as_listed": "Diocesan",
+      "physical_description": "65618 Selters (Taunus) (locality only; street not established — source unverified)",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=DE&page=6"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-1581BFDCFD5B",
+      "source_ids": [
+        "ao-fssp-haus-st-ludgerus-lothringer-str-13-d-46045-oberhausen-deutschland"
+      ],
+      "name": "Haus St. Ludgerus",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.oberhausen.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/oberhausen/termine.php",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "Official Oberhausen source names Haus St. Ludgerus at Lothringer Str. 13; this is the house, not St. Joseph church at Str. 154.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-23167A238D74",
+      "source_ids": [
+        "AO-EUR-DE-137"
+      ],
+      "name": "St Martin",
+      "country": "DE",
+      "affiliation_as_listed": "ICKSP",
+      "physical_description": "66346 Püttlingen (locality only; street not established — source unverified)",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=DE&page=7"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-281D3DE598FD",
+      "source_ids": [
+        "ao-fssp-maison-sainte-solange-5-rue-macdonald-f-18000-bourges-france"
+      ],
+      "name": "Maison Sainte-Solange",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.fssp.fr/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://www.fssp.fr/mentions-legales/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS_REVIEW",
+      "evidence_note": "French provincial legal notice gives FSSP address at 5 rue Macdonald; local Bourges site has a 9 rue Macdonald catechism mention, so do not import a new visitor address.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-4018AD4A3A6B",
+      "source_ids": [
+        "AO-ASIA-PH-006"
+      ],
+      "name": "Mother of Perpetual Help, Seaside Chapel",
+      "country": "PH",
+      "affiliation_as_listed": "Diocesan",
+      "physical_description": "Tagbilaran City, Philippines (no street address given)",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=PH"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-4177975BE08A",
+      "source_ids": [
+        "AO-EUR-DE-127"
+      ],
+      "name": "St Joseph",
+      "country": "DE",
+      "affiliation_as_listed": "Diocesan",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=DE&page=7"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-508D4590E51B",
+      "source_ids": [
+        "ao-fssp-haus-st-engelbertus-johann-heinrich-platz-12-d-50935-koln-deutschland"
+      ],
+      "name": "Haus St. Engelbertus",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.maria-hilf-koeln.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://koeln.petrusbruderschaft.de/kontakt/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "Köln apostolate names Haus St. Engelbert at Johann-Heinrich-Platz 12, distinct from Maria Hilf church at Rolandstraße 59.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-52AAF3EB0498",
+      "source_ids": [
+        "ao-fssp-haus-st-ulrich-und-afra-milchberg-13-d-86150-augsburg-deutschland"
+      ],
+      "name": "Haus St.Ulrich und Afra",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "St. Margareth (former hospital church), near Basilika St. Ulrich und Afra, Augsburg, Germany",
+      "legacy_source_urls": [
+        "http://www.augsburg.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen.php",
+      "evidence_scope": "APOSTOLATE_ADDRESS_ONLY",
+      "evidence_note": "FSSP Niederlassungen lists Augsburg at Milchberg 13, but does not independently certify the historical Haus St.Ulrich und Afra alias.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-581602A3146D",
+      "source_ids": [
+        "ao-fssp-haus-st-benedikt-st-pelagibergstr-7-ch-9225-st-pelagiberg-suisse"
+      ],
+      "name": "Haus St. Benedikt",
+      "country": "CH",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.stpelagiberg.ch/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://stpelagiberg.ch/kontakt/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "Local FSSP site identifies Haus St. Benedikt at St. Pelagibergstrasse 7, separate from parish and Kurhaus chapel.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-59FF3FE9A9C3",
+      "source_ids": [
+        "ao-fssp-maison-saint-dominique-savio-14-rue-des-moines-f-78000-versailles-france"
+      ],
+      "name": "Maison Saint-Dominique Savio",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.fsspversailles.org/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://www.fssp.fr/nous-decouvrir/liste-des-pretres/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "French province current priest directory identifies Maison Saint-Dominique Savio, 14 rue des Moines, Versailles.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-715B6B4A02EE",
+      "source_ids": [
+        "AO-EUR-DE-116"
+      ],
+      "name": "St Dionysius",
+      "country": "DE",
+      "affiliation_as_listed": "Diocesan",
+      "physical_description": "86681 Fünfstetten (locality only; street not established — source unverified)",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=DE&page=6"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-73B519AAE7E0",
+      "source_ids": [
+        "ao-fssp-maison-saint-aignan-21-rue-de-la-couronne-f-28000-chartres-france"
+      ],
+      "name": "Maison Saint-Aignan",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://fssp-chartres.org/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://fssp-chartres.org/contact/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "Local FSSP Chartres contact identifies Maison Saint-Aignan at 21 rue de la Couronne.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-798677933C6B",
+      "source_ids": [
+        "ao-fssp-haus-maria-immaculata-franklinstra-e-40-d-70435-stuttgart-zuffenhausen-deutschland"
+      ],
+      "name": "Haus Maria Immaculata",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.stuttgart.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/stuttgart/anfahrt.php",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "FSSP Stuttgart directions identify Haus Maria Immaculata at Franklinstr. 40, distinct from worship at St Albert.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-80080AA19F97",
+      "source_ids": [
+        "ao-fssp-maison-saint-exupere-18-rue-du-pont-creon-f-14000-caen-france"
+      ],
+      "name": "Maison Saint-Exupère",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.fsspcaen.com/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://www.fssp.fr/nous-decouvrir/liste-des-pretres/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "French province current priest directory identifies Maison Saint-Exupère, 18 rue du Pont Créon, Caen.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-87013B7A9916",
+      "source_ids": [
+        "ao-fssp-chapelle-notre-dame-de-monserrato-73-chemin-de-scala-santa-f-20200-bastia-france"
+      ],
+      "name": "Chapelle Notre-Dame de Monserrato",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "Chapelle Notre-Dame de Monserrato, Corsica, France (address not confirmed)",
+      "legacy_source_urls": [
+        "http://corse.catholique.fr/forme-extraordinaire-du-rite/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-8971841EBF4E",
+      "source_ids": [
+        "ao-fssp-haus-st-lantpertus-altheimer-eck-15-d-80331-munchen-deutschland"
+      ],
+      "name": "Haus St. Lantpertus",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "Damenstiftskirche St. Anna, Munich city centre, Germany (no exact street address on page)",
+      "legacy_source_urls": [
+        "http://www.muenchen.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen.php",
+      "evidence_scope": "APOSTOLATE_ADDRESS_ONLY",
+      "evidence_note": "FSSP Niederlassungen lists München at Altheimer Eck 15, but does not independently establish that the house is called St. Lantpertus.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-91AB1DED0539",
+      "source_ids": [
+        "ao-fssp-priesterseminar-st-petrus-kirchstrasse-16-d-88145-opfenbach-wigratzbad-deutschland"
+      ],
+      "name": "Priesterseminar St. Petrus",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.fssp.eu/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen.php",
+      "evidence_scope": "EXACT_SEMINARY_ADDRESS",
+      "evidence_note": "German FSSP directory identifies Priesterseminar St. Petrus at Kirchstrasse 16 in Wigratzbad; distinct from district house.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-AEDF450BAD90",
+      "source_ids": [
+        "ao-fssp-maison-notre-dame-des-victoires-16-boulevard-du-gave-f-65100-lourdes-france"
+      ],
+      "name": "Maison Notre-Dame des Victoires",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.tarbes-lourdes.fssp.fr/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://www.fssp.fr/nous-decouvrir/liste-des-pretres/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "French province current priest directory identifies Maison Notre-Dame des Victoires, 16 boulevard du Gave, Lourdes.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-D104C9C93632",
+      "source_ids": [
+        "AO-EUR-PL-015"
+      ],
+      "name": "Chapel of Marian Apparition",
+      "country": "PL",
+      "affiliation_as_listed": "Diocesan",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "https://adorientem.church/find?country=PL"
+      ],
+      "gap_type": "SELF_REFERENTIAL_DIRECTORY_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": null,
+      "evidence_scope": "NO_DIRECT_CURRENT_FIRST_PARTY_MATCH_RECORDED",
+      "evidence_note": "No direct authoritative venue/house match established within this bounded review; keep existing source identity and approximate location untouched.",
+      "disposition": "HOLD_REQUIRE_EXACT_SOURCE",
+      "next_gate": "Find first-party source naming the exact building and its current role; retain no-link search fallback without claiming an official source.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-D3492E768151",
+      "source_ids": [
+        "ao-fssp-haus-st-martin-von-tours-linkentalstrasse-29-d-74172-neckarsulm-deutschland"
+      ],
+      "name": "Haus St. Martin von Tours",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "Linkentalstraße 29, Neckarsulm, Germany (Frauenkirche address not given)",
+      "legacy_source_urls": [
+        "http://www.neckarsulm.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/neckarsulm/home.php",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "FSSP Neckarsulm identifies its residence at Linkentalstrasse 29; the public Mass is at Frauenkirche, a distinct building.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-D6B8BD4C241E",
+      "source_ids": [
+        "ao-fssp-haus-st-michael-kapellenweg-5-d-88145-opfenbach-wigratzbad-deutschland"
+      ],
+      "name": "Haus St. Michael",
+      "country": "DE",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "Kapellenweg 5, Wigratzbad, Germany",
+      "legacy_source_urls": [
+        "http://www.distriktshaus.petrusbruderschaft.de/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/distriktshaus/home.php",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "FSSP Wigratzbad district house identifies Haus St. Michael at Kapellenweg 5; do not conflate seminary or chapels.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-E53F648234DC",
+      "source_ids": [
+        "ao-fssp-maison-saint-georges-52-rue-des-menestrels-f-66100-perpignan-france"
+      ],
+      "name": "Maison Saint-Georges",
+      "country": "FR",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://fsspperpignan.blogspot.fr/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://www.fssp.fr/nous-decouvrir/liste-des-pretres/",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "French province priest directory identifies Maison Saint-Georges, 52 rue des Menestrels, Perpignan.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    },
+    {
+      "cl2_anchor": "RG-FA93D3CDF5B2",
+      "source_ids": [
+        "ao-fssp-haus-hl-bruder-klaus-engelgasse-14-ch-5647-oberruti-suisse"
+      ],
+      "name": "Haus Hl. Bruder Klaus",
+      "country": "CH",
+      "affiliation_as_listed": "FSSP",
+      "physical_description": "",
+      "legacy_source_urls": [
+        "http://www.oberrueti.petrusbruderschaft.ch/"
+      ],
+      "gap_type": "LEGACY_HTTP_ONLY",
+      "reviewed_on": "2026-11-11",
+      "candidate_https_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/schweiz/niederlassungen/oberrueti/anfahrt.php",
+      "evidence_scope": "EXACT_HOUSE_ADDRESS",
+      "evidence_note": "FSSP Oberrüti directions identify Haus hl. Bruder Klaus at Engelgasse 14; Masses at St Mauritius in Niederwil are a different site.",
+      "disposition": "FIRST_PARTY_REPLACEMENT_CANDIDATE_FOR_EXCEL_REVIEW",
+      "next_gate": "Enter the exact proposed link and evidence scope in the canonical CL2 Excel master under this existing anchor; source/identity review and explicit approval before app promotion. No Mass time or house-to-church inference.",
+      "public_release_approved": false
+    }
+  ]
+}
