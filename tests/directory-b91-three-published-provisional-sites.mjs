@@ -93,9 +93,9 @@ assert.equal(live.filter(x=>x.map_publishable).length,2569);
 assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.equal(live.filter(x=>x.site_category).length,2580,
  "Every canonical physical site must have a source-context category");
-assert.equal(live.filter(x=>x.site_category?.category==="UNRESOLVED").length,234);
+assert.equal(live.filter(x=>x.site_category?.category==="UNRESOLVED").length,223);
 assert.equal(live.filter(x=>x.site_category?.category==="DIRECTORY_GROUP_ONLY").length,74);
-assert.equal(live.filter(x=>x.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,111);
+assert.equal(live.filter(x=>x.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,122);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
