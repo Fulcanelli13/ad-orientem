@@ -38,6 +38,7 @@ on:
       - 'data/research/icrsp-france-ordo-2026-11-09-29-independent.v1.json'
       - 'tests/github-pages-phone-live-acceptance.mjs'
       - 'tests/pray-holy-face-1895-french-live-pages-phone.mjs'
+      - 'tests/pray-public-pages-library-witness-phone-20261111.mjs'
       - 'tests/installed-pages-live-phone.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
@@ -51,6 +52,7 @@ on:
       - 'tests/github-pages-release-proof.test.mjs'
       - 'tests/github-pages-phone-live-acceptance.mjs'
       - 'tests/pray-holy-face-1895-french-live-pages-phone.mjs'
+      - 'tests/pray-public-pages-library-witness-phone-20261111.mjs'
       - 'tests/installed-pages-live-phone.mjs'
       - 'tools/build-web-preview.mjs'
       - 'tests/prayer-stations-curated-release-hold.mjs'
@@ -91,7 +93,7 @@ jobs:
       - name: Verify St Martin 1962 source Gloria against conflicting upstream Proper
         run: node tests/1962-st-martin-gloria-source.mjs
       - name: Validate public 390px LIVE/Missal and returning-user phone smoke code
-        run: node --check tests/github-pages-phone-live-acceptance.mjs && node --check tests/pray-holy-face-1895-french-live-pages-phone.mjs
+        run: node --check tests/github-pages-phone-live-acceptance.mjs && node --check tests/pray-holy-face-1895-french-live-pages-phone.mjs && node --check tests/pray-public-pages-library-witness-phone-20261111.mjs
       - name: Validate public committed offline snapshot and consent test code
         run: node --check tests/installed-pages-live-phone.mjs && node --check tests/offline-snapshot-e2e.mjs && node tests/installed-pages-first-boot-retry-contract.mjs
       - name: Build allowlisted static release
@@ -138,7 +140,7 @@ jobs:
     needs: deploy
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -156,6 +158,10 @@ jobs:
         env:
           AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/pray-holy-face-1895-french-live-pages-phone.mjs
+      - name: Check real public Prayer Library English/French source and Communion fallback at 320/390
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
+        run: node tests/pray-public-pages-library-witness-phone-20261111.mjs
       - name: Preserve public deployment phone screenshots and read-only evidence
         if: always()
         uses: actions/upload-artifact@v4
