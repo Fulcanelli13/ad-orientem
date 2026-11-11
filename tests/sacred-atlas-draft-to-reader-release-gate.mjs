@@ -35,11 +35,10 @@ for(const d of diagnoses){
 }
 const geographicOnly=diagnoses.filter(x=>x.issues.includes("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE"));
 const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITED_TO_SITE_IDENTITY"));
-assert.ok(geographicOnly.length>=10,"Known geolocator-only draft cohort must remain flagged");
-assert.ok(identityOnly.length>=10,"Site-identity-only source metadata must remain flagged");
+
+
 const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
-assert.ok(editorialProse.length>=70,
-  "Internal guide-writing instructions in visitor prose must be detected before promotion");
+
 for(const n of [69,70,72,73,75,76]){
   const g=wave2.find(x=>x.draft_order===n);
   assert.ok(g);
@@ -70,6 +69,26 @@ assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id
  ...fake,revision:"fnv1a32-stale"}),null);
 assert.equal(reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),sources,{
  ...fake,paragraph_evidence:fake.paragraph_evidence.slice(1)}),null);
+// Negative fixtures are synthetic, so editorial cleanup can reduce real
+// issue counts to zero without causing a test regression.
+const testLocator={id:"TEST_GEO_ONLY",url:"https://mapcarta.com/W123456",
+ directness:"SECONDARY",contribution:"Map location only"};
+const fakeGeoGuide={...kevelaer,sections:kevelaer.sections.map(sec=>({
+ ...sec,paragraphs:sec.paragraphs.map(p=>({
+ ...p,source_id:testLocator.id,source_url:testLocator.url,
+ }))}))};
+const fakeGeoShrine={...byPlace.get(kevelaer.place_id),source_ids:[testLocator.id]};
+assert.ok(inspectSacredGuideEvidence(fakeGeoGuide,fakeGeoShrine,[testLocator])
+ .issues.includes("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE"));
+const fakeEditorialGuide={...kevelaer,sections:kevelaer.sections.map((sec,i)=>
+ i===0?{...sec,paragraphs:sec.paragraphs.map(p=>({
+  ...p,en:p.en+" The Atlas should invent a helpful historical fact.",
+ }))}:sec)};
+assert.ok(inspectSacredGuideEvidence(fakeEditorialGuide,byPlace.get(kevelaer.place_id),sources)
+ .issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
+assert.equal(reviewedSacredGuideForReader(fakeEditorialGuide,
+ byPlace.get(kevelaer.place_id),sources,{
+ ...fake,revision:sacredGuideRevision(fakeEditorialGuide)}),null);
 const rendered=reviewedSacredGuideForReader(kevelaer,byPlace.get(kevelaer.place_id),sources,fake);
 assert.ok(rendered&&rendered.publication==="PUBLISHED");
 assert.equal(rendered.sections.length,3);
