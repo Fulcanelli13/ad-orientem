@@ -5579,6 +5579,21 @@ function qa(){
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
 window.AO_PRAY_V435930={restoreSearch:restorePraySearch,restoreHandoff,captureAppBackHandoff,captureRosaryAppBackHandoff,suspendRosaryAppBackHandoff,restoreRosaryAppBackHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+
+// PWA Home Screen shortcut deep-link, not an OS-native widget.
+// The existing liturgical-calendar owner chooses Angelus or Regina Cæli.
+function openAngelusHomeShortcut(){
+ try{
+  if(new URLSearchParams(window.location.search).get("ao")!=="angelus")return false;
+  S.angelusMode="auto";save();
+  CLAUDE_ANGELUS_HOUR=claudeHorariumHourFromClock(new Date().getHours());
+  ANGELUS_CARD_INDEX=0;
+  ANGELUS_COVER_DISMISSED=true; // Open prayer directly, not an intro cover.
+  return open("pray.angelus_regina",{returnContext:null});
+ }catch(error){console.warn("Angelus PWA shortcut could not open",error);return false}
+}
+if(document.readyState==="complete")queueMicrotask(openAngelusHomeShortcut);
+else window.addEventListener("load",openAngelusHomeShortcut,{once:true});
 })();
 
 
