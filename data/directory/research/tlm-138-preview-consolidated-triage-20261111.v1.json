@@ -4,7 +4,7 @@
   "policy": "RESEARCH_ONLY. Diocesan-site photo lane; institutes prefer emblem, hosted venues neutral. Source Commons/parish witness, exact physical building, licence/photographer and visual composition are separate release gates. Preview SHA mismatch against Wikimedia source original does not itself imply defective or unusable archived image; preserve derivative provenance. No new publication approval.",
   "parent_recovery_manifest": "data/directory/research/tlm-archive-157-diocesan-image-recovery-20261111.v1.json",
   "original_sha1_audit": "data/directory/research/tlm-19-exact-original-source-license-20261111.v1.json",
-  "provenance": "Derived from 13 owner-held ZIPs audited for image decoding and preview SHA256 in Ad_Orientem_TLM_157_Archived_Church_Photo_Recovery.zip; excludes 19 original-byte matches documented in independent source register; previous contact-sheet visual QA reconciled plus three additional low-priority composition warnings.",
+  "provenance": "Derived from 13 owner-held ZIPs audited for image decoding and preview SHA256 in Ad_Orientem_TLM_157_Archived_Church_Photo_Recovery.zip; excludes 19 original-byte matches documented in independent source register; previous contact-sheet visual QA reconciled plus three additional low-priority composition warnings. Every individual archived preview SHA-256 and preview pixel dimensions are now cross-checked against all three original P739 audit-part registries.",
   "verification": "Metadata-based global triage plus reviewed seven photo contact sheets. Current Commons file-page licences and original-file SHA1 NOT revalidated for these 138 during this pass; archived licences are historical claims, not publication authorizations. No new original files downloaded.",
   "release_decision": "NONE_OF_THE_138_NEWLY_APPROVED; existing four approved covers remain untouched.",
   "summary": {
@@ -23,7 +23,10 @@
       "REJECT_WRONG_BUILDING": 1,
       "HOLD_POSSIBLE_CL2_DUPLICATE": 2,
       "ALREADY_APPROVED_EXACT_SITE_COVER": 4
-    }
+    },
+    "crosswalk_rows": 138,
+    "preview_sha256_rows_fully_crosswalked": 138,
+    "unique_archived_preview_sha256": 137
   },
   "records": [
     {
@@ -60,7 +63,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "50cbd386ab474f92e137b4f0194818dfe9c1df2af836f1847b8e72508fcf4468",
+      "preview_dimensions": [
+        1920,
+        1728
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 2,
@@ -96,7 +106,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "9dfb267df42dc550561bd608c8bfa4a26c795e21b8f73f9cd4bed70e898beace",
+      "preview_dimensions": [
+        1920,
+        1189
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 3,
@@ -132,7 +149,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "14b13856d7dead635be6ff9c8f6edf916a1d7057866a49ef2b3a4e21a07bc959",
+      "preview_dimensions": [
+        1920,
+        1333
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 4,
@@ -168,7 +192,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "7a39e20d2261d2e5fc00771fff9df7ebf1e1edbf13e86514bfa05dfa9587bfdc",
+      "preview_dimensions": [
+        1920,
+        1516
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 5,
@@ -204,7 +235,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "eef24e801379c44dc13286fe8cf347205f1cc6e5f0e9472f8ccf8f272a0c69ca",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 6,
@@ -241,7 +279,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b2719c6f79d29af00520ea84c1de19610ef5e145bb0c5d112bc614b81e8ac84b",
+      "preview_dimensions": [
+        1920,
+        2561
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 7,
@@ -278,7 +323,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "16140e8a31287b1c2664d032f306e8d6844595d7fe8e76991fcc9e2e74f74e41",
+      "preview_dimensions": [
+        1920,
+        1567
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 8,
@@ -315,7 +367,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "67be7840634ae1c4ae399323fca50a67dc1384fe1f7712d21237da9e70732849",
+      "preview_dimensions": [
+        1920,
+        2888
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 9,
@@ -353,7 +412,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "1d61c35cfad2e155edbb80ab2b746a21ef9c9286593d6eb9651f27c36444cd70",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 10,
@@ -389,7 +455,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "3ec3788fa499a494b51caf7d77eff743aef5eb9786c0e73176206543d2ff261c",
+      "preview_dimensions": [
+        1920,
+        1314
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 11,
@@ -425,7 +498,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f578bbe396e35c58ce1f05a3d74db3ad58ae5c30ab184e60a8ebcadc8cbd6e89",
+      "preview_dimensions": [
+        1920,
+        1800
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 12,
@@ -461,7 +541,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "dcce31187b1863b5781b06453554b811ca30bc26a3a7f3d9120a12ac78480395",
+      "preview_dimensions": [
+        1920,
+        1920
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 13,
@@ -497,7 +584,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "1b1bb5281d1cdd44020173508eb220a2bc51b7cb2449e969a8d4a325a00185fe",
+      "preview_dimensions": [
+        1920,
+        1234
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 14,
@@ -531,7 +625,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e9d21bfcd32776810e8fae3b8dfa8888a7fff5b7eabfaffeff56f7288611502d",
+      "preview_dimensions": [
+        1920,
+        1514
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 15,
@@ -567,7 +668,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "eb8d3cd56b1f66c8ab3f87bb70c17a0386d3cf47bab57193dedfaafd7858c932",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 16,
@@ -603,7 +711,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e7dad9fcdfeb0a7b9928ce916374b9c386338586fe8c2a835f857bcc8a71454b",
+      "preview_dimensions": [
+        3840,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 17,
@@ -639,7 +754,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "5363483a7b4cdcfb0b046d90e9f997f66ccb5a9ae75dee9e7da4235f5510440b",
+      "preview_dimensions": [
+        1920,
+        1368
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 18,
@@ -675,7 +797,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "16f6bf377e3dba3a3d933504bb879bf7b9f4baf666846c8630709c620cba8785",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 19,
@@ -711,7 +840,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c65e9f8c1d997f24ebe480c73125fd785ca7a66735e5e130d398d1dba953cfee",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 20,
@@ -747,7 +883,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "6469aea146aa8174cc9b3976a4e6f5fa9a53f609a94411b57d31cc48cec7c661",
+      "preview_dimensions": [
+        1920,
+        2717
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 21,
@@ -783,7 +926,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "15d876638d235a39ba373aa769dc8f444df8a507aab84003df6fc31c2a1bf657",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 22,
@@ -819,7 +969,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e2f2df7796445abefad229b5de80db00a738d674b3f6601adaaeeeec0c4f9132",
+      "preview_dimensions": [
+        1920,
+        2858
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 23,
@@ -855,7 +1012,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e3c39e2e1449b272679d1e45bd6fa0c1b32418d4a9784b5ba7ecd81c1263461a",
+      "preview_dimensions": [
+        1920,
+        1281
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 24,
@@ -891,7 +1055,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "93e249edc09878009a41998acb7c3b4a9063c8e1b58746a99d7f1c59e8959ea7",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 25,
@@ -927,7 +1098,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "72e7bc451374213eecb5266d353d103737483f07530c4cb620db1a9b6cc4421a",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 26,
@@ -963,7 +1141,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "d15045200ef71cce59f1956ed7a0d9f4f8e5c8ca4a28a6c29009bba0dc8460c9",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 27,
@@ -999,7 +1184,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "95b2884fa892190e868bbd2da01f6e59f8c761a4d94de3497f98f3cca4316994",
+      "preview_dimensions": [
+        1920,
+        1275
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 28,
@@ -1035,7 +1227,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "2e55502ed8bff7b9b724bddc2a72b9a0e58d512028365b8799d36a4de8a81498",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 29,
@@ -1071,7 +1270,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "99f45930140023ccc5f50e356a7bd5c64376c9af5fbcb10519f29daae572409f",
+      "preview_dimensions": [
+        1920,
+        1429
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 30,
@@ -1109,7 +1315,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "a5315458ecd2bb39a85a5d7d011ad0b2285f7920fac1cfd7437a07a32a4c7abd",
+      "preview_dimensions": [
+        960,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 31,
@@ -1145,7 +1358,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "565a9b3ce3079b8b730e3eda2c15f01ecf999e9099ea024613e6499fd19525df",
+      "preview_dimensions": [
+        1920,
+        1155
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 32,
@@ -1181,7 +1401,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "906695cba3993eb79aa2e2c6aad2173e5e6755dfeea76fc4134409fb86ae48f1",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 33,
@@ -1217,7 +1444,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "7c83656078465b3cd4ad5345a0c04f7775dcc1f890c686a798c18208b6355557",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 34,
@@ -1253,7 +1487,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "045648851383020383681e80927a40bffa07fa747b001dc1123d1a679558434f",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 35,
@@ -1289,7 +1530,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "ee802d062869e4bd58f4ad44c80f64287a753484fd5c76b2d45663dd4113f14a",
+      "preview_dimensions": [
+        1920,
+        1471
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 36,
@@ -1325,7 +1573,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "732b2eb3eb519bc72465ac9556f14fe38efd4e5b4a009e1ec73e3a42db8b81d6",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 37,
@@ -1361,7 +1616,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "baab158b57b5bf2608c1007c472426f83f598a1e19ee1bff1ff33349ea4d927f",
+      "preview_dimensions": [
+        1920,
+        1442
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 38,
@@ -1397,7 +1659,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b738009d16198940873ded73385f7b446151db89ab4da88b220fb0c4662dd4ab",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 39,
@@ -1431,7 +1700,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "05f37609c50e7c2208a08408f2043ca85ad30471a48ffb91a2d9f4d44f23e8cc",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 40,
@@ -1467,7 +1743,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "3d1c038ad32480e8f62d68b2e74f111d0e32d0edc13570045702c7e5d63277b7",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 41,
@@ -1504,7 +1787,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "9920636db4002342620b3c506f928e0a79fcff3fbf592b8c2054586210dfe12b",
+      "preview_dimensions": [
+        1920,
+        578
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 42,
@@ -1541,7 +1831,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "0ddfecdaa3d622bbc6887773b8a62da229985082272b0c1c47495b9087388219",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 43,
@@ -1578,7 +1875,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f505b2a5137f839cc534896d42e8fc35aeb564e5876545ad4f4e497c4ac77454",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 44,
@@ -1614,7 +1918,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "3fcfaf6ac8bf1e8ccaef6ce46efec9a9c7cfe86d000f174fd790e47dc831d9f0",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 45,
@@ -1651,7 +1962,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "3b99dbbbcdcbb621242c06bc61ebc139c68209054620b990d25f10dbae8ca827",
+      "preview_dimensions": [
+        1920,
+        1345
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 46,
@@ -1687,7 +2005,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f5cd3d7e38f33949cc11ab9e1aba371fe3f95f69c247fa2ff3ccf06b7513b082",
+      "preview_dimensions": [
+        1920,
+        1473
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 47,
@@ -1723,7 +2048,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "2ee3cc2e1d03181ecb17b5fa9aad0a5b9c66ced0c584c18c87d60f77a0bec71b",
+      "preview_dimensions": [
+        1920,
+        2582
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 48,
@@ -1760,7 +2092,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "a3901050ab34ddb0554c591f2d371ac8ef44584abd62ed0a12190acfe0e4fe9b",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 49,
@@ -1796,7 +2135,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "4e93d878831573c003bda08ff260f88081e084aab66cf8b4d7970306d78bb188",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 50,
@@ -1832,7 +2178,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "75352facd569315fb59080209ea4f08473577a937a71f8a969bb26b18a66d770",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 51,
@@ -1869,7 +2222,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "2b0cb6a65376142ee5412adb2a2955a7f7d3477dc714db5b07c7bf15b4da7db4",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 52,
@@ -1908,7 +2268,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c198554423fd1b30abc27169d765b61afcb3f85655d413aceee7405f2462a6f1",
+      "preview_dimensions": [
+        1920,
+        2844
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 53,
@@ -1944,7 +2311,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e853bf476e6e20b262c2568dc0ae43c7c8e9205a3ee7ad70865242165142a618",
+      "preview_dimensions": [
+        1920,
+        1486
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 54,
@@ -1980,7 +2354,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "838069eb3ec4ba08c4852721b420b05ad61f0e57265fc32f0e538dab71100019",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 55,
@@ -2016,7 +2397,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "0cf2204fd2671237627e2c179c22a6c217f3d7a221481313f8aa9fc9cfe96d11",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 56,
@@ -2052,7 +2440,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "17758740fc0a29d07c088f35ddc42adca30b0abca287e7d6d55b01c972a37084",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 57,
@@ -2089,7 +2484,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "2a4a2099581831dbe27c2ffcf3a7937c56272c985c5b335a73eb652c4450f72a",
+      "preview_dimensions": [
+        1920,
+        1887
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 58,
@@ -2126,7 +2528,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "5b3c133cae9714469668d51c70a9613b2a0878b34eebcc20d394c5f3e1ad1702",
+      "preview_dimensions": [
+        1920,
+        3619
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 59,
@@ -2162,7 +2571,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f5ed7e6f529b8c560d6ba4b27545666c97f93dcfcdbce0a39b121e1a7b0f9972",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 60,
@@ -2200,7 +2616,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "3ab32d9fa8e906b461a2851b9f05be062c6d9410cae2634b80d9f609d7782bec",
+      "preview_dimensions": [
+        1920,
+        1629
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 61,
@@ -2236,7 +2659,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "bac2c6c52003b901a81c8c429a19bcd7387f0452c43c44633bc854355cfc3753",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 62,
@@ -2273,7 +2703,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "206e7f3019b2b522ae43e978a4c7431eeae1c826c1a9843ad8d38c2957f101a4",
+      "preview_dimensions": [
+        1920,
+        1920
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 63,
@@ -2309,7 +2746,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "df244093590e4e1ac317ccd616bb5d5421a1dbabdc6cee91eaa918e9734c9dd8",
+      "preview_dimensions": [
+        1920,
+        1080
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 64,
@@ -2345,7 +2789,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e67752377f03b05ac47278730bc6577b2a6ac823d05bdaf6c14aa424f27e6282",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 65,
@@ -2382,7 +2833,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "ad1a5f854c2452cf045f56069aca6dc6ef112ebb353691f38850c596999b8442",
+      "preview_dimensions": [
+        1920,
+        1271
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 66,
@@ -2421,7 +2879,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b5053184d23e99bdc6eab2747b05d65f0be3667cd347864e9e5a3e9f2b1bb012",
+      "preview_dimensions": [
+        1920,
+        2974
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 67,
@@ -2457,7 +2922,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "092de65528e8777525290e500be82067cf9f91bff80b1a7abc8498e9a0ed5c0d",
+      "preview_dimensions": [
+        1920,
+        1460
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 68,
@@ -2493,7 +2965,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "273e6c7069764d16aafc68b3a7132d46969c958a8fbbde06a5cf4d3889bc1cf9",
+      "preview_dimensions": [
+        1920,
+        2493
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 69,
@@ -2529,7 +3008,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "4ddf92ca71799db995a1f7f09b2564a99e7877497f8aca39aae8b7f99bdaca19",
+      "preview_dimensions": [
+        1920,
+        1489
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 70,
@@ -2566,7 +3052,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "cf9d9e0862d0cf29999fda605bdf6c9c0a3ed77870f97bdc5af3f971d73c8ec9",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 71,
@@ -2603,7 +3096,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "9f7da97ce8a076184182f9bf0f3b50a4f17db5ee0f36321dfceaa8dc69598bb7",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 72,
@@ -2640,7 +3140,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "5be363afd89254592759410515a231ea68599d2e0ccc07acae3542da1d25f093",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 73,
@@ -2676,7 +3183,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "09122fb0850d2c9dd33f8603a6fa4a2bc38281625a538dc95d79bf2e3cb35d4e",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 74,
@@ -2713,7 +3227,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f9141b892520040b31caead67d7d662538f3b5dd4fafd54d8edd51b4468c43a7",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 75,
@@ -2749,7 +3270,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "7c5ffdc73542ad1c3043aa5b04905b27feeae8bba23e8f8a2920d482a5dad2a1",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 76,
@@ -2786,7 +3314,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "166927a11a028651ab3b3861b253fbee1526ee5166b376a65c119aca0faec8f3",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 77,
@@ -2822,7 +3357,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f3b68f345eded2f655c9dd70f1a6cf983aa0c3c5b3955609e97fe76077c31cdb",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 78,
@@ -2858,7 +3400,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e40842b49a2d2fe4150ac05b4ba284b27995dc380c734f699ae431a934a1cba9",
+      "preview_dimensions": [
+        1920,
+        2269
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 79,
@@ -2895,7 +3444,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f5d166d4f6cc38b7a2257477764f14335241ebc2133fbfcf99422da61bd7229f",
+      "preview_dimensions": [
+        1920,
+        2645
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 80,
@@ -2932,7 +3488,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "6f014b15c7aa7f4866113f86f089184e19400189a18f05cc086644a1a6a61d6b",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 81,
@@ -2968,7 +3531,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "8f0de8ea01c90a554527ca2c5066f248addb5de921470e9c5e1797d35e07bc1c",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 82,
@@ -3004,7 +3574,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "60d4c3ec87939df1c86321a14ac6f32ddac12ce7537271663cdc306b8f751432",
+      "preview_dimensions": [
+        1920,
+        2550
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 83,
@@ -3040,7 +3617,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "a3fe4bb8527346fafee3a679a9c4fe375332618de7ac7db769fb6547742e95bd",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 84,
@@ -3076,7 +3660,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "75d8b411632049e12a296fe6c27eac69b68b44f353cf66027ab5a60e272d2d1a",
+      "preview_dimensions": [
+        1920,
+        2414
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 85,
@@ -3112,7 +3703,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "92348d0ef18468ce4371c69a100d3bde5837b3727d9901625c799e22fcd16fa1",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 86,
@@ -3148,7 +3746,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "63fe5288109e88d98a1f36ce6bf399a2499f4a08eb38cc5090df859452817b54",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 87,
@@ -3184,7 +3789,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "cc7ac04fec8d18f1f91c1961dbdd17d0e32ff9e8edf8a67d0a33feda4ac2c780",
+      "preview_dimensions": [
+        1920,
+        1217
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 88,
@@ -3220,7 +3832,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "1ed54f928ed11a318196d38aebafc26ad8e94f814251c1c4ed49467f25f43aa6",
+      "preview_dimensions": [
+        1920,
+        1516
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 89,
@@ -3256,7 +3875,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e10168930f0f2ae654e6a48647b95d7bf2939084030905922e7754e5c8c09958",
+      "preview_dimensions": [
+        1920,
+        1080
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 90,
@@ -3292,7 +3918,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "35ca7c7da7bdcae3d42ee2e9346388179ce4e9a48299055f94721060b74cb9a3",
+      "preview_dimensions": [
+        1920,
+        2880
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 91,
@@ -3328,7 +3961,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e2c08574df64fa9b53826e7be08ca63b39cbbec72bb9d4948981d0678cb3dfb9",
+      "preview_dimensions": [
+        1920,
+        2101
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 92,
@@ -3364,7 +4004,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "6b13bbf1a9e4f2f9b741d7fcd5862d6455ebf9eafd766451f6df023cee06e6b6",
+      "preview_dimensions": [
+        1920,
+        1481
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 93,
@@ -3400,7 +4047,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c7831abd266dac49e384b2490e9d1386c224aed48c84d421d65291a68d22dce8",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 94,
@@ -3437,7 +4091,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "81538f6aa7e5052c362f01334b2a5b11aa21fe4a8f79ce55e5ec284c08dba3b3",
+      "preview_dimensions": [
+        1920,
+        2886
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 95,
@@ -3474,7 +4135,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e91004b1e5d2418cd26202970ef784d4b4a0656e34dec24396a38050da5aa214",
+      "preview_dimensions": [
+        1920,
+        1933
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 96,
@@ -3512,7 +4180,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b116e08806e1f2256f4ae8d1f409d33b737e0a48054f4205abe634232b0edc3c",
+      "preview_dimensions": [
+        1920,
+        1444
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 97,
@@ -3548,7 +4223,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "6ea1a995a9982b32c2308b642bd3d1ac3af0a31b455cfd51d569d7d8a71f1608",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 98,
@@ -3585,7 +4267,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "de75bcb0f931739f128743b1c591597ccba78a78d2c4d014d0644a986d144dcd",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 99,
@@ -3622,7 +4311,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "0b7c6a73c3d1e8f8c6006447f4cbe30c5bcfa81a57803bbb489933e45c2ac764",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 100,
@@ -3661,7 +4357,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b116e08806e1f2256f4ae8d1f409d33b737e0a48054f4205abe634232b0edc3c",
+      "preview_dimensions": [
+        1920,
+        1444
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 101,
@@ -3698,7 +4401,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "89e63b4b39a4973ac33ae3f4097cc84f7263334bedcafda23d65a2bbdacf1816",
+      "preview_dimensions": [
+        1920,
+        1430
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 102,
@@ -3735,7 +4445,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "82a04c2738f8ae2b89e46df2a912982ee19f428923c1329e9261397296b9c642",
+      "preview_dimensions": [
+        1920,
+        2165
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 103,
@@ -3772,7 +4489,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "7295ddb4b7f18925bbbbf6c9963d67a1deb48536aa0845bcdceafe4b548c8bbc",
+      "preview_dimensions": [
+        1920,
+        1170
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 104,
@@ -3809,7 +4533,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "631c5deabd965670cea19e419b81a2e14590264241e21931b251bcf77e32c468",
+      "preview_dimensions": [
+        1920,
+        1536
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 105,
@@ -3846,7 +4577,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f9ce7237612a09c02205680e362d4e649ede58f3fb50848fe4be0ae631ef3115",
+      "preview_dimensions": [
+        1920,
+        2387
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 106,
@@ -3883,7 +4621,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "e95e64d8ab3bc47fb509a92a7f964a77a8b88cc6f02c75904edda9fa6ac6db94",
+      "preview_dimensions": [
+        1920,
+        1853
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 107,
@@ -3920,7 +4665,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "365ab1dcaed5c1d6eaf568aa4ef8c0920252356e3e45a24d8269c21ebea5cdb3",
+      "preview_dimensions": [
+        1920,
+        1152
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 108,
@@ -3957,7 +4709,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "61d92540869b42a1859e249d237c73e22fb6358f134a07237d1ad1ef166b0778",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 109,
@@ -3994,7 +4753,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "faa579fb2d4c47a8ba9f1a87b774b339396ef277c3a92f45cfa3d547280d627f",
+      "preview_dimensions": [
+        1920,
+        1269
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 110,
@@ -4030,7 +4796,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "6b7fb9c8e61572ce98ac17f55c8bbc9646159855183dfa4bd143b625660be994",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 111,
@@ -4067,7 +4840,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "4b7d7478c35076d46b5d54021741a61bd1979d7f4f9323eb38f3b55a30193527",
+      "preview_dimensions": [
+        1920,
+        2114
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 112,
@@ -4104,7 +4884,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "5d50b52bb2bece65be1448975609103798b1e7f526c439afd00ea93dd11eae43",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 113,
@@ -4141,7 +4928,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "1887aa71b8f8560213f0051f9a6d19c06a8c6f8165b875828dcd0523d37a6feb",
+      "preview_dimensions": [
+        1920,
+        1315
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 114,
@@ -4177,7 +4971,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "32accf7acefd3e10549ee7c58f13d70b70a832846c6d6a1628fbc384ac1ff52c",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 115,
@@ -4213,7 +5014,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "425b6b85fcf0dce1502935cac56c99c4b7c3f1d257ad3b325c7c7d0dfd38d928",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 116,
@@ -4250,7 +5058,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "2dbc5f34506d675117bdded609b216deb3b2f8c5286b7d27ab48bd882b947550",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 117,
@@ -4287,7 +5102,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "b4176e858ae98ebeab32c951d2764188b7505fa3d2988934edf247fa73b9568a",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 118,
@@ -4324,7 +5146,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "ef2c5f3b24c5f7cf5bebbe951239495f25cdc28fedfbb3e83ac6a075dc1b67b0",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 119,
@@ -4361,7 +5190,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c904d5c434fdb07d633a6754c82c902ea1edee77c7877f7f978cf8578f8d0d79",
+      "preview_dimensions": [
+        1920,
+        1921
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 120,
@@ -4398,7 +5234,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "d23d9c7132187607ebcbe214ad6c2e08023304059e3b81401e057435a44d5764",
+      "preview_dimensions": [
+        1920,
+        2891
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 121,
@@ -4435,7 +5278,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "bf55d3cef8cb66fdb469f30671cd6790b670dc4ec07e0fb1232a8deb321fadcd",
+      "preview_dimensions": [
+        1920,
+        1446
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 122,
@@ -4472,7 +5322,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "15d46b90e5a5d24b1142f2c146b4c396f4ff7592b346e5d46732f26474a80015",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 123,
@@ -4509,7 +5366,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "29b127c4b356644812b671523886fdab575cd15bd6a5efc0bb040dd08872f1d8",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 124,
@@ -4546,7 +5410,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "93c86545da6d8c0f8a7d3a8b471e839a15d03970ffb47ec04eec4447b0ae26e8",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 125,
@@ -4583,7 +5454,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "27db705f3520f0a23301faa40c688d121e9a54355eabcd4858167ab7668e0485",
+      "preview_dimensions": [
+        1920,
+        2379
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 126,
@@ -4620,7 +5498,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "9ad1de126b70142963115cf93c276eab8d47bfabca55e912b98467fcb9d2a4e7",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 127,
@@ -4657,7 +5542,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "a40b9ecdb09b5d363af2585ebad0be7365521c7201d54bc3f4a56e7b4aec26ff",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 128,
@@ -4694,7 +5586,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "ccc1e16f24527fad37f03e08f479b5933d4e118f59e4c3dc1a220c5631f6a4b1",
+      "preview_dimensions": [
+        1920,
+        1102
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 129,
@@ -4731,7 +5630,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "39698ac8598e120e438cb024b072ea0c47d46cb1297387f41c15d8ee1d7a2a0d",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 130,
@@ -4770,7 +5676,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "19c835d58a516b02ff06501bbefbef194f9bc71f0029de7b169457e2925a852b",
+      "preview_dimensions": [
+        1920,
+        1080
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph shows a plausible church exterior and source filename aligns with the listed church/locality. Exact building identity and publication rights still require first-party verification."
     },
     {
       "index": 131,
@@ -4807,7 +5720,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "08ca85697f97f5aa56c51bd3df623a31fa7477b8f31c15160071605914beb735",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 132,
@@ -4844,7 +5764,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c5704389ced395cbc031deb53d7e49f11d5f94aec471efece9064424af623d2c",
+      "preview_dimensions": [
+        1920,
+        1413
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 133,
@@ -4881,7 +5808,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "865fd960ea1fe7b0cff07cf7b1b74523a473a5c1495469e7e953647c37f8ab70",
+      "preview_dimensions": [
+        1920,
+        2560
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     },
     {
       "index": 134,
@@ -4918,7 +5852,14 @@
       "original_source_recheck_required_before_release": true,
       "exact_building_recheck_required_before_release": true,
       "composition_detail_gate_required_before_release": true,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "48a9df800de7ab59bb0c2f866ed9a5880bd12e5db74c78bbde91c74257d08fac",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 135,
@@ -4954,7 +5895,14 @@
       "original_source_recheck_required_before_release": false,
       "exact_building_recheck_required_before_release": false,
       "composition_detail_gate_required_before_release": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "c63b17f3e67104efa0b9f5b46525c80b658367daef91acf3ab462c4829e906ad",
+      "preview_dimensions": [
+        1920,
+        2180
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 136,
@@ -4990,7 +5938,14 @@
       "original_source_recheck_required_before_release": false,
       "exact_building_recheck_required_before_release": false,
       "composition_detail_gate_required_before_release": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "f67acc07ff2f8f6929c422b543a9a04ed2d41f0e0c560a5a283a4a6bf60d94af",
+      "preview_dimensions": [
+        1920,
+        1280
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Photograph depicts a building consistent with the venue name and recorded locality/address. This is a provisional image lead, not independently confirmed exact-site, legal-rights, or publication verification."
     },
     {
       "index": 137,
@@ -5026,7 +5981,14 @@
       "original_source_recheck_required_before_release": false,
       "exact_building_recheck_required_before_release": false,
       "composition_detail_gate_required_before_release": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "85b0d5d1bf330c5def96fae5b41155456b5c8977d4aa70d27d05160aed5f8d86",
+      "preview_dimensions": [
+        1920,
+        1444
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Building exterior and file locality/name appear compatible; exact source/geometry confirmation and image rights remain required."
     },
     {
       "index": 138,
@@ -5063,7 +6025,14 @@
       "original_source_recheck_required_before_release": false,
       "exact_building_recheck_required_before_release": false,
       "composition_detail_gate_required_before_release": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "preview_sha256_from_original_archive_csv": "7d597b31e3b0437579409a30802ef71ff059908e0caef9049d77be853d225466",
+      "preview_dimensions": [
+        1920,
+        1440
+      ],
+      "original_screening_status": "PROMISING_EXTERIOR_NEEDS_SOURCE_VERIFICATION",
+      "original_screening_reason": "Visually a building and Commons title/locality are consistent with this venue; candidate exterior only. Exact physical building, crop quality and original Commons rights remain unverified."
     }
   ]
 }
