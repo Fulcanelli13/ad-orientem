@@ -235,8 +235,7 @@ try{
    const search=page.locator("#ao-find-modular-root [data-find-query]");
    await search.fill("Cantius");
    // An institute-affiliation search may return other churches served by
-   // the Canons (e.g. Sacred Heart, Springfield). The approved visual reference
-   // is the physical St John Cantius Church in Chicago, source V19:SJC-001.
+   // the Canons (e.g. Sacred Heart, Springfield). The source venue is the Canons' own Chicago church, source V19:SJC-001;\n   // its approved photo stays in the corpus but the public hero is named identity.
    // Select its stable R49 identity, not the first affiliation match.
    const exact=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:V19:SJC-001"]');
    try{
@@ -260,9 +259,10 @@ try{
    const title=await exact.innerText();
    assert.match(title,/St\.? John Cantius Church/i,"Search must find the exact Chicago church, not an affiliated venue");
    const approvedPhoto=exact.locator(".aoTlmVenueVisual > img");
-   assert.equal(await approvedPhoto.count(),1,
-    "Exact Chicago church must display its approved Place photograph, not an affiliation emblem");
-   assert.match(await approvedPhoto.getAttribute("src"),/assets\/approved\/place-media\/US-st-john-cantius-chicago\.webp$/);
+   assert.equal(await approvedPhoto.count(),0,
+     "The Canons' own Chicago religious house should show source-named identity, not a church photo");
+   assert.equal(await exact.locator('.aoTlmVenueVisual [data-visual-kind="named"]').count(),1,
+     "No cleared house-specific Canons emblem exists; retain source-derived monogram");
    await exact.click();
    const preview=page.locator(".aoExploreQuickPreview");
    await preview.waitFor({state:"visible",timeout:12000});
@@ -305,25 +305,29 @@ try{
    await preview.waitFor({state:"visible"});
    assert.equal(await page.locator(".aoTlmChurchProfile").count(),0,"Back must restore preview");
 
-   // Real exact-venue photograph test: the 2,582-site CL2 directory has
-   // source-owned photos without a Sacred Place. Opening screen 5 must not
-   // regress to an institute emblem when the compact card displays the photo.
+   // Real approved image retention test: classified SSPX Groombridge
+   // uses its source-matched society emblem. The approved exact-venue photo
+   // remains in the media registry but must not override the hero.
    await preview.locator("[data-find-close-detail]").click();
    await page.locator(".aoExploreQuickPreview").waitFor({state:"detached"});
    await page.locator("#ao-find-modular-root [data-find-query]").fill("Groombridge");
    const groombridge=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:SSPXMAP:OPE-002280"]');
    await groombridge.waitFor({state:"visible",timeout:15000});
    const venueCardPhoto=groombridge.locator('.aoTlmVenueVisual > img');
-   assert.equal(await venueCardPhoto.count(),1,"Groombridge must retain its approved exact-venue photograph");
-   assert.match(await venueCardPhoto.getAttribute("src"),/assets\/approved\/directory-media\/GB-groombridge-st-pius-v.webp$/);
+   assert.equal(await venueCardPhoto.count(),0,
+     "An SSPX site should use its institutional emblem instead of an approved photo");
+   assert.equal(await groombridge.locator('.aoTlmVenueVisual [data-visual-kind="emblem"]').count(),1,
+     "Groombridge must display its SSPX emblem in the compact card");
    await groombridge.click();
    const venuePreview=page.locator(".aoExploreQuickPreview");
    await venuePreview.waitFor({state:"visible"});
    await venuePreview.locator("[data-explore-expand-detail]").click();
    const venueExpanded=page.locator(".aoTlmChurchProfile");
    await venueExpanded.waitFor({state:"visible"});
-   assert.equal(await venueExpanded.locator('.aoTlmProfileHero img[src$="GB-groombridge-st-pius-v.webp"]').count(),1,
-     "Expanded church profile must preserve the exact approved venue image");
+   assert.equal(await venueExpanded.locator('.aoTlmProfileHero img[src$="GB-groombridge-st-pius-v.webp"]').count(),0,
+     "Full church profile must not override a source-backed institute hero with a photo");
+   assert.equal(await venueExpanded.locator('.aoTlmProfileMedia [data-visual-kind="emblem"]').count(),1,
+     "The same institute emblem must appear in the full profile");
    assert.match(await venueExpanded.innerText(),/Station Road, Groombridge TN3 9QX/i,
      "The physical-site address should not disappear from expanded details");
    assert.equal(await venueExpanded.locator(".aoTlmProfileEssentials .aoTlmProfileDatum").count(),3);
@@ -334,8 +338,8 @@ try{
      overflow:el.scrollWidth-el.clientWidth,viewport:innerWidth
    }));
    assert.ok(venueMetrics.left>=-2&&venueMetrics.right<=width+2&&venueMetrics.overflow<=2,
-     "Approved venue photo/profile must not overflow: "+JSON.stringify(venueMetrics));
-   await captures("04-approved-venue-profile");
+     "Classified institute identity/profile must not overflow: "+JSON.stringify(venueMetrics));
+   await captures("04-classified-institute-profile");
 
    // A map pin is not a prerequisite for a publishable church card. Validate
    // the real map → list-only aliases/historical Directory → preview → full profile interaction
