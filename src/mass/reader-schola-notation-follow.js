@@ -179,7 +179,13 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    const node=targets[sourceIndex];
    if(node?.getBoundingClientRect){
     const position=node.getBoundingClientRect(),parent=staff.getBoundingClientRect();
-    staff.scrollTop+=position.top-parent.top-(staff.clientHeight-position.height)/2;
+    // Scroll REAL neumes horizontally, not just the lyric-strip buttons.
+    // Vertical movement is only the necessary system transition within the
+    // authentic Exsurge engraving of a long Gloria or Credo.
+    staff.scrollLeft+=position.left-parent.left-
+      (staff.clientWidth-position.width)/2;
+    staff.scrollTop+=position.top-parent.top-
+      (staff.clientHeight-position.height)/2;
    }
    staff.dataset.scholaFollowIndex=String(index);
    // The Schola position is authoritative for linked visual surfaces.
@@ -218,7 +224,17 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    const d=(x-event.clientX)**2+(y-event.clientY)**2;
    if(d<distance){distance=d;winner=i;}
   });
-  if(winner>=0)clock.seek(winner);
+  if(winner>=0){
+   // A repeated Kyrie printed phrase has several performed occurrences but
+   // one original neume group. A staff tap stays in the closest occurrence;
+   // it must not jump back to the first Kyrie solely because the note is reused.
+   const activeIndex=clock.getState().index;
+   const options=parts.filter(part=>(part.sourceIndex??part.index)===winner);
+   if(options.length){
+    options.sort((a,b)=>Math.abs(a.index-activeIndex)-Math.abs(b.index-activeIndex));
+    clock.seek(options[0].index);
+   }
+  }
  }
  const pointCancel=()=>{startPoint=null;};
  strip.addEventListener("click",click);
@@ -243,7 +259,14 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
   }
   strip.append(frag);strip.hidden=false;
   targets=mapScholaSvgLyrics(staff.querySelector("svg"),sourceParts);
-  staff.dataset.scholaLyricsMapped=String(targets.length===sourceParts.length);
+  const exact=targets.length===sourceParts.length;
+  staff.dataset.scholaLyricsMapped=String(exact);
+  if(!exact){
+   // A visually rendered SVG with incomplete source-to-lyric alignment
+   // is not a synchronized score. Never drive the reader by guesswork.
+   strip.replaceChildren();strip.hidden=true;buttons=[];
+   return false;
+  }
   return clock.start(parts.length);
  }
  function destroy(){
