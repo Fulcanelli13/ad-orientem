@@ -195,7 +195,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
   body.tabIndex=0; // Keyboard users can focus the scroll region and switch cards.
   entry.unitIndices.forEach(j=>body.append(units[j]));
-  if(parts&&((layout==="a1"&&entry.id==="conclusion")||(layout!=="a1"&&form==="angelus"&&entry.id==="collect"))){
+  const legacyCollect=entry.id==="collect"&&parts;
+  if((layout==="a1"&&entry.id==="conclusion"&&parts)||(layout!=="a1"&&form==="angelus"&&legacyCollect)){
    APPENDIX.forEach(([id,en,titleFr,latin,appendixIndex])=>{
     const group=create(doc,"section","aoFolioConclusionPart");
     group.dataset.aoConclusionPart=id;
