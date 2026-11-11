@@ -99,6 +99,59 @@ export const EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS=Object.freeze({
  "2026-02-18":ASH_WEDNESDAY
 });
 const iso=/^2026-\d{2}-\d{2}$/;
+/** Exact Class I photo originals already in the Prayer release registry. */
+export const CLASS_I_REUSED_LOCAL_EXACT_PHOTOS_2026=Object.freeze({
+ "2026-02-18":Object.freeze({artworkId:"met-436839",moduleId:"latour",releasePr:2354,
+  title:"The Penitent Magdalen",artist:"Georges de La Tour",
+  originalSource:"https://www.metmuseum.org/art/collection/search/436839",collectionIdentity:null}),
+ "2026-05-31":Object.freeze({artworkId:"cma-136507",moduleId:"girardin",releasePr:2340,
+  title:"The Trinity",artist:"Laurent Girardin",
+  originalSource:"https://clevelandart.org/art/1960.79",collectionIdentity:"Cleveland Museum of Art, 1960.79"}),
+ "2026-12-25":Object.freeze({artworkId:"cma-143644",moduleId:"cavallino",releasePr:2340,
+  title:"Adoration of the Shepherds",artist:"Bernardo Cavallino",
+  originalSource:"https://clevelandart.org/art/1968.100",collectionIdentity:"Cleveland Museum of Art, 1968.100"})
+});
+/** Reuse only the exact previously approved painting and exact source photo.
+ * Preserves 1962 principal/Proper date locks and Christmas's three Masses.
+ * Not new photo, crop, owner approval or Calendar phone certification.
+ */
+export function releasedExactClassIPhotoReuse2026(date,principalId,properPath){
+ const rule=CLASS_I_REUSED_LOCAL_EXACT_PHOTOS_2026[date];
+ if(!rule||!principalId||!properPath)return null;
+ const frozen=annualHomeArtworkDay2026(date);
+ if(frozen?.rank!=="I"||frozen.selection?.title!==rule.title||
+    frozen.selection?.artist!==rule.artist||
+    frozen.selection?.artworkId!==rule.artworkId)return null;
+ const selected=date==="2026-02-18"
+  ? EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS[date]
+  : extraApproved2026HomeArtwork(date,principalId,properPath);
+ if(!selected||selected.title!==rule.title||
+    selected.artist!==rule.artist||selected.artworkId!==rule.artworkId||
+    (date==="2026-02-18"&&(selected.principalId!==principalId||
+      selected.properPath!==properPath||selected.source!==rule.originalSource))||
+    (rule.collectionIdentity&&selected.collectionIdentity!==rule.collectionIdentity))
+    return null;
+ const photo=RELEASED_MODULE_PAINTINGS[rule.moduleId];
+ if(!photo||photo.releasePr!==rule.releasePr||
+    photo.source!==rule.originalSource||photo.title!==rule.title||
+    photo.artist!==rule.artist||
+    !/^assets\\/(?:prayer|home)\\/.+\\.(?:jpg|jpeg|webp|png)$/.test(photo.image??"")||
+    !/^assets\\/(?:prayer|home)\\/.+\\.(?:jpg|jpeg|webp|png)$/.test(photo.original??"")||
+    !/public.domain|PD-Art|CC0/i.test(photo.photographRights??""))return null;
+ return Object.freeze({
+  date,principalId,properPath,artworkId:rule.artworkId,
+  title:photo.title,artist:photo.artist,source:photo.source,
+  image:"/"+photo.image,infoImage:"/"+photo.original,
+  rights:photo.photographRights,releasePr:photo.releasePr,
+  imageStatus:"PREVIOUSLY_RELEASED_LOCAL_EXACT_ORIGINAL",
+  selectionKind:"FROZEN_CLASS_I_EXACT_PHOTO_REUSED_FROM_PRAYER",
+  editorialBasis:frozen.selection.editorialBasis,
+  offlineOriginalCertifiedByPriorRelease:true,
+  calendarPhoneVisualAcceptanceCertified:false,
+  ownerArtworkDecisionNewlyCreated:false
+ });
+}
+
 function exactResolved(state){
  const date=state?.selectedDate,r=state?.resolution;
  if(!iso.test(date??"")||state?.resolving||!r||r.date!==date||
@@ -145,6 +198,8 @@ export function approved2026HomeArtwork(state,provider=null){
   return localModulePreview(date,principalId,properPath,localRule,
    "PREVIOUSLY_SELECTED_DATE_REUSES_RELEASED_MODULE_ORIGINAL");
  }
+ const reusedExact=releasedExactClassIPhotoReuse2026(date,principalId,properPath);
+ if(reusedExact)return reusedExact;
  const extra=EXTRA_RELEASED_2026_HOME_DATE_PREVIEWS[date];
  if(extra){
   if(extra.principalId!==principalId||extra.properPath!==properPath)return null;
