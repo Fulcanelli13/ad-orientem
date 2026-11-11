@@ -82,7 +82,9 @@ ok("Published CSS and JS exact-byte digests");
 // Discovery is loaded after the Home shell, so inspect its own live assets.
 // Every approved public manifest and both present loaders must match this exact run.
 for(const path of DISCOVERY_CRITICAL_PATHS)await released(path);
-const discoveryManifests=DISCOVERY_CRITICAL_PATHS.filter(x=>x.startsWith("data/did-you-know/"));
+const newDyk520Path="data/did-you-know/dyk-customs-glossary-520.v1.json";
+const discoveryManifests=DISCOVERY_CRITICAL_PATHS.filter(x=>
+ x.startsWith("data/did-you-know/")&&x!==newDyk520Path);
 let discoveryCount=24; // The source-owned Glossary is the 24-fact fallback.
 for(const path of discoveryManifests){
  const data=JSON.parse((await released(path)).toString("utf8"));
@@ -92,6 +94,26 @@ for(const path of discoveryManifests){
 }
 assert.equal(discoveryCount,225,"Public H7 Discovery manifest population must total 225");
 ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
+
+// The 520 Customs/Glossary facts now share this Home surface. A stale
+// deployed 225-card build must never pass only because the old manifests match.
+const dyk520=JSON.parse((await released(newDyk520Path)).toString("utf8"));
+assert.equal(dyk520.schema,"AO_DYK_CUSTOMS_GLOSSARY_520_V1");
+assert.equal(dyk520.release_stage,"INTEGRATED_CONTENT");
+assert.equal(dyk520.count,520);
+assert.equal(dyk520.counts?.customs,378);
+assert.equal(dyk520.counts?.glossary,142);
+assert.equal(dyk520.records?.length,520);
+assert.deepEqual(new Set(dyk520.records.map(r=>r.id)).size,520);
+for(const r of dyk520.records){
+ assert.ok(r.id&&["CUSTOMS","GLOSSARY"].includes(r.category),"Malformed DYK 520 ID/category");
+ for(const language of ["en","fr"]){
+  assert.ok(r.title?.[language]?.trim(),"DYK 520 missing "+language+" title: "+r.id);
+  assert.ok(r.fact?.[language]?.trim(),"DYK 520 missing "+language+" fact: "+r.id);
+ }
+ assert.match(r.source?.url||"",/^https:\/\//,"DYK 520 missing linked source: "+r.id);
+}
+ok("Discovery 520 new Customs/Glossary bilingual facts, 378/142 distribution, and Home loader exact-byte release parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
