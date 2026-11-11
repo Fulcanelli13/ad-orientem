@@ -3376,7 +3376,7 @@ export function createReaderDomAdapter({
     if(user)scholaUserPaused=Boolean(paused);
     scholaPaused=Boolean(paused);
     if(scholaDockFollower){
-      if(scholaPaused)scholaDockFollower.pause?.();
+      if(scholaPaused||scholaDockAwaitingChoir)scholaDockFollower.pause?.();
       else scholaDockFollower.resume?.();
     }
     if(scholaAnimation){
