@@ -16,6 +16,13 @@ assert.equal(batch.counts.nineQueueTotalApprovedPrayerPositions,41);
 assert.equal(batch.productionAlreadyReleased.length,16);
 assert.equal(batch.nextNineSourcePhotographWorkQueue.length,9);
 for(const photo of batch.productionAlreadyReleased){
+  if(photo.moduleId==="bouts"){
+    // Historical progress remains immutable, but this exact CMA original
+    // received an explicit later global owner rejection (15 October W68).
+    assert.equal(photo.source,"https://clevelandart.org/art/1942.635");
+    assert.equal(RELEASED_MODULE_PAINTINGS.bouts,undefined);
+    continue;
+  }
   const source=RELEASED_MODULE_PAINTINGS[photo.moduleId];
   assert.ok(source,"Known release registry required for "+photo.id);
   assert.equal(photo.source,source.source);
@@ -32,10 +39,10 @@ for(const painting of batch.nextNineSourcePhotographWorkQueue){
 assert.equal(selected.counts.approve,25);
 assert.equal(selected.counts.reject,35);
 assert.ok(selected.rows.every(x=>x.appPublicationApproved===false),"The selected 25 cannot become released through gallery indexing");
-assert.equal(Object.keys(RELEASED_MODULE_PAINTINGS).length,16);
-assert.equal(SACRED_ART_RELEASED_GALLERY_V1.length,16,"Batch 1 index must reflect existing 16 released module photos");
-assert.equal(new Set(SACRED_ART_RELEASED_GALLERY_V1.map(p=>p.id)).size,16);
-assert.equal(new Set(SACRED_ART_RELEASED_GALLERY_V1.map(p=>p.source)).size,16,"Every gallery entry requires a unique exact source");
+assert.equal(Object.keys(RELEASED_MODULE_PAINTINGS).length,15);
+assert.equal(SACRED_ART_RELEASED_GALLERY_V1.length,15,"One of 16 historically released photos is now globally rejected");
+assert.equal(new Set(SACRED_ART_RELEASED_GALLERY_V1.map(p=>p.id)).size,15);
+assert.equal(new Set(SACRED_ART_RELEASED_GALLERY_V1.map(p=>p.source)).size,15,"Every eligible gallery entry requires a unique exact source");
 for(const a of SACRED_ART_RELEASED_GALLERY_V1){
   const original=RELEASED_MODULE_PAINTINGS[a.moduleId];
   assert.ok(original);
@@ -60,7 +67,7 @@ for(const a of SACRED_ART_RELEASED_GALLERY_V1){
   assert.ok(releasedGalleryBySource(a.source)===a,"Gallery source join must be exact");
 }
 assert.equal(releasedGalleryAt(-1),null);
-assert.equal(releasedGalleryAt(16),null);
+assert.equal(releasedGalleryAt(15),null);
 assert.equal(releasedGalleryAt(1.25),null);
 assert.equal(releasedGalleryBySource("https://commons.wikimedia.org/wiki/File:not-reviewed.jpg"),null);
 assert.equal(releasedGalleryBySource(""),null);
@@ -89,7 +96,7 @@ assert.equal(elements.get("[data-c3-art-image]").src,one.original);
 assert.equal(elements.get("[data-home-c3-gallery-nav]").hidden,true);
 assert.equal(openC3ReleasedArtGallery(root),true);
 assert.equal(dialog.__c3GalleryIndex,5,"Anchor gallery to the painting whose info was opened");
-assert.equal(elements.get("[data-home-c3-gallery-counter]").textContent,"6 / 16");
+assert.equal(elements.get("[data-home-c3-gallery-counter]").textContent,"6 / 15");
 assert.equal(elements.get("[data-c3-art-image]").src,one.image);
 assert.equal(stepC3ReleasedArtGallery(root,1),true);
 assert.equal(dialog.__c3GalleryIndex,6);
@@ -112,7 +119,7 @@ assert.equal(showC3ArtInfo(root,{__c3Artwork:heldPreview}),true);
 assert.equal(openC3ReleasedArtGallery(root),true);
 assert.equal(dialog.__c3GalleryIndex,0);
 assert.equal(stepC3ReleasedArtGallery(root,-1),true);
-assert.equal(dialog.__c3GalleryIndex,15,"Gallery navigation wraps safely");
+assert.equal(dialog.__c3GalleryIndex,14,"Gallery navigation wraps safely");
 assert.equal(returnFromC3ReleasedArtGallery(root),true);
 assert.equal(elements.get("[data-c3-art-image]").src,heldPreview.image);
 assert.equal(elements.get("[data-c3-art-source]").href,heldPreview.source);
@@ -128,4 +135,4 @@ for(const name of ["gallery-open","gallery-prev","gallery-next","gallery-back"])
 assert.ok(home.includes("data-home-c3-gallery-nav hidden"));
 assert.ok(css.includes("data-home-c3-gallery-nav][hidden]"));
 assert.ok(!home.includes("data-home-c3-gallery-publish"),"No action may publish unapproved artwork");
-console.log("Sacred Art Batch 1 PASS: 16 previously released photographs browsable in the existing artwork dialog; 25 approved but unpublished image selections remain quarantined.");
+console.log("Sacred Art Batch 1 PASS: 15 of 16 historical photos remain display-eligible after exact Bouts rejection; 25 pending photos remain quarantined.");

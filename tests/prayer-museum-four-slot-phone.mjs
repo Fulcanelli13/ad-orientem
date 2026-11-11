@@ -2,7 +2,7 @@
  * Browser acceptance for exact original photos at 320/390 EN/FR.
  * Renders the real published slot adapter in the actual Prayer root and
  * exercises the real Prayer library route for Sign of the Cross.
- * The 16 isolated slot screenshots are route-independent QA witnesses; they
+ * The 12 eligible original-photo screenshots plus four denied-photo checks are QA witnesses; they
  * DO NOT replace all route-specific navigation tests.
  */
 import assert from "node:assert/strict";
@@ -27,7 +27,6 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const works=[
- {id:"bouts",slot:"STG-pray.angelus-04",filename:"bouts-annunciation-original.jpg",minHeight:3000},
  {id:"cavallino",slot:"COV-pray.little_crown",filename:"cavallino-shepherds-original.jpg",minHeight:2800},
  {id:"girardin",slot:"COV-foundations_sign_of_cross",filename:"girardin-trinity-original.jpg",minHeight:3000},
  {id:"hondius",slot:"STG-pray.rosary-06",filename:"hondius-doctors-original.jpg",minHeight:2900}
@@ -56,6 +55,25 @@ try{
      if((await toggle.textContent()).trim()==="EN")await toggle.click();
      assert.equal((await page.locator(rootSelector+" [data-p435930-session-language]").textContent()).trim(),"FR");
      await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+    }
+    // Assert the four formerly released, now explicitly rejected CMA
+    // originals are absent in the *actual* 320/390 EN/FR browser runtime.
+    const rejected=await page.evaluate(async()=>{
+      const mod=await import("/src/pray/art-slot-map.v1.js");
+      const slots=["STG-pray.angelus-04","STG-pray.angelus-05",
+        "STG-pray.angelus-06","STG-pray.rosary-02"];
+      return slots.map(slotId=>{
+        const x=mod.resolvePrayerEditorialArtwork(slotId);
+        return {slotId,state:x.state,artId:x.artId,photo:x.photo,
+          html:mod.prayerEditorialArtworkMarkup(slotId)};
+      });
+    });
+    assert.equal(rejected.length,4);
+    for(const x of rejected){
+      assert.equal(x.state,"APPROVED_EXACT_PHOTO_PENDING",x.slotId);
+      assert.equal(x.artId,null,x.slotId);
+      assert.equal(x.photo,null,x.slotId);
+      assert.equal(x.html,"",x.slotId);
     }
     const checked=[];
     for(const work of works){
@@ -107,6 +125,32 @@ try{
       rootSelector+' .aoClaudeHolyFront .aoClaudeHolyPlate'+signSlot);
      assert.equal(await trueCard.count(),1,"Sign of the Cross must display the exact original in its active prayer reader");
     assert.ok((await trueCard.getAttribute("src")).endsWith("girardin-trinity-original.jpg"));
+    // The route remounts asynchronously. A successfully decoded image can
+    // briefly have a zero-size rectangle until the active card is laid out.
+    // Keep the real 320/390px visible-painting requirement, but wait for its
+    // final rendered geometry rather than sampling the first animation frame.
+    await trueCard.waitFor({state:"visible",timeout:15000});
+    const firstPaint=await trueCard.evaluate(img=>{
+      const r=img.getBoundingClientRect(),css=getComputedStyle(img);
+      const parent=img.parentElement?.getBoundingClientRect();
+      const ancestor=img.closest(".aoEssentialFlowArt, .aoClaudeHolyPlate");
+      return {naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
+        width:r.width,height:r.height,left:r.left,right:r.right,complete:img.complete,
+        selectedPresentation:ancestor?.className,ownerDisplay:ancestor&&getComputedStyle(ancestor).display,
+        ancestorWidth:ancestor?.getBoundingClientRect().width,
+        ancestorHeight:ancestor?.getBoundingClientRect().height,
+        imgDisplay:css.display,imgFit:css.objectFit,imgMaxHeight:css.maxHeight,
+        parentWidth:parent?.width,parentHeight:parent?.height};
+    });
+    console.info("Actual Sign of Cross first visible painting",JSON.stringify(firstPaint));
+    await page.waitForFunction(()=>{
+      const selector='#aoPray435930.open .aoEssentialFlowArt[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img,'+
+        '#aoPray435930.open .aoClaudeHolyFront .aoClaudeHolyPlate[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img';
+      const img=document.querySelector(selector);
+      if(!img||!img.complete||img.naturalWidth<2800)return false;
+      const r=img.getBoundingClientRect();
+      return r.width>90&&r.height>120;
+    },null,{timeout:15000});
     const front=await trueCard.evaluate(async img=>{
      img.loading="eager";await img.decode();
      const r=img.getBoundingClientRect();
@@ -114,7 +158,7 @@ try{
        naturalWidth:img.naturalWidth,fit:getComputedStyle(img).objectFit,
        horizontalOverflow:document.documentElement.scrollWidth-innerWidth};
     });
-    assert.ok(front.naturalWidth>=2800&&front.width>90&&front.height>120,"Actual Holy Card photograph decode");
+    assert.ok(front.naturalWidth>=2800&&front.width>90&&front.height>120,"Actual Holy Card photograph decode and visible geometry "+JSON.stringify(front));
     assert.equal(front.fit,"contain","The entire painting must be shown without cropping");
     assert.ok(front.top<=(width===320?640:844),"The painting must be visible without scrolling past the card");
     assert.ok(front.horizontalOverflow<=1,"No actual Holy Card overflow");
@@ -139,5 +183,5 @@ try{
  await new Promise(ok=>server.close(ok));
 }
 assert.equal(cases.length,4);
-await writeFile(resolve(folder,"report.json"),JSON.stringify({cases,images:4,canonicalPositions:15,actualRouteSamples:4},null,2)+"\n");
-console.log("PASS: four selected museum source images decoded uncropped and no overflow at 320/390 EN/FR; exact Sign of the Cross live-route sampled");
+await writeFile(resolve(folder,"report.json"),JSON.stringify({cases,images:3,revokedOriginals:1,rejectedHistoricalSlots:4,canonicalPositions:15,actualRouteSamples:4},null,2)+"\n");
+console.log("PASS: three eligible museum images decoded uncropped at 320/390 EN/FR; four historical Bouts slots held, and exact Sign of the Cross live route sampled");

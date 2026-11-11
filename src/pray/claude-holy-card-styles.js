@@ -326,8 +326,12 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  background:#14191e;color:#e9d9c5;
  font-size:10px;text-align:center;overflow-wrap:anywhere;
 }
+/* At short-phone height the former 220px lace collapsed the approved
+ * 2830×3400 Trinity original to a tiny illustration. Keep the front painting
+ * legible on 320×640 while preserving the full-source contain fit and a
+ * independently scrollable prayer-text back. */
 @media(max-height:640px){
- #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:220px;min-height:220px}
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:300px;min-height:300px}
 }
 
 /* Even a published art image can be unloaded during the first gallery

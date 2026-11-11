@@ -8,11 +8,13 @@
  * research groups and the 25 user-approved but unreleased photo records.
  */
 import { RELEASED_MODULE_PAINTINGS } from "./released-module-paintings.v1.js";
+import { isOwnerRejectedReleasedOriginal } from "./exact-owner-rejections.v1.js";
 
 const imagePath = /^assets\/(?:prayer|home)\/[a-z0-9/_.-]+\.(?:jpg|jpeg|png|webp)$/i;
 const permittedRights = /\bCC0\b|\bPD-Art\b|public domain/i;
 
 function releasedEntry(id, photo) {
+  if(isOwnerRejectedReleasedOriginal({id,...photo}))return null;
   if(!photo || !photo.title || !photo.artist ||
      !/^https:\/\//.test(photo.source ?? "") ||
      !imagePath.test(photo.image ?? "") ||
@@ -37,7 +39,7 @@ function releasedEntry(id, photo) {
   });
 }
 
-/** Stable insertion order: exactly the known previous 16 released photos. */
+/** Stable insertion order: previously released photos still eligible after exact owner rejections. */
 export const SACRED_ART_RELEASED_GALLERY_V1 = Object.freeze(
   Object.entries(RELEASED_MODULE_PAINTINGS)
     .map(([id, photo]) => releasedEntry(id, photo))

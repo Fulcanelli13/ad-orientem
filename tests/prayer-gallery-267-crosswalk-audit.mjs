@@ -5,6 +5,10 @@ import {resolvePrayerEditorialArtwork,prayerEditorialPublicationSummary} from ".
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const p="data/prayer/artwork-editorial-20261101/";
+const rejectedBoutsSource="https://clevelandart.org/art/1942.635";
+const bannedSlots=new Set(["STG-pray.angelus-04","STG-pray.angelus-05",
+ "STG-pray.angelus-06","STG-pray.rosary-02"]);
+
 const audit=JSON.parse(read(p+"gallery-archive-crosswalk-267-20261103.v1.json"));
 const master=JSON.parse(read(p+"curatorial-master-267-20261101.v1.json"));
 const gallery=JSON.parse(read("data/artwork/research-semantic-candidates-989.v1.json"));
@@ -37,8 +41,19 @@ for(const row of audit.assignments){
  assert.equal(row.painting?.artist||null,compiled.selected?.artist||null,row.slot);
  assert.equal(row.painting?.title||null,compiled.selected?.title||null,row.slot);
  assert.equal(row.painting?.sourcePage||null,compiled.selected?.sourcePage||null,row.slot);
- assert.equal(row.currentRuntime.state,resolvePrayerEditorialArtwork(row.slot).state,
-  "Snapshot runtime has changed; regenerate audit after image releases: "+row.slot);
+ const current=resolvePrayerEditorialArtwork(row.slot);
+ if(bannedSlots.has(row.slot)){
+  // Prior audit was correct at its own date. The later owner rejection
+  // withdraws only the exact Bouts photograph; no historical record is changed.
+  assert.equal(row.painting?.sourcePage,rejectedBoutsSource,row.slot);
+  assert.equal(row.currentRuntime.state,"PUBLISHED_EXACT_PHOTO",row.slot);
+  assert.equal(current.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
+  assert.equal(current.artId,null,row.slot);
+  assert.equal(current.photo,null,row.slot);
+ }else{
+  assert.equal(row.currentRuntime.state,current.state,
+   "Snapshot runtime changed outside rejected work: "+row.slot);
+ }
  assert.equal(row.publicationEnabledByAudit,false,"Never publish from this audit");
  const expected=row.painting?(galleryByWork.get(k(row.painting.artist,row.painting.title))||[]):[];
  assert.deepEqual(row.gallery989.groupIDs,expected,"Wrong gallery match: "+row.slot);
@@ -57,7 +72,11 @@ assert.equal(audit.counts.gallery989ExactTitleArtistPositions,matched);
 assert.equal(audit.counts.gallery989UniqueGroupPositions,unique);
 assert.equal(audit.counts.gallery989AmbiguousGroupPositions,ambiguous);
 assert.equal(audit.counts.gallery989UniqueMatchedGroupIDs,groupIDs.size);
-assert.deepEqual(audit.counts.states,prayerEditorialPublicationSummary().states);
+assert.deepEqual(prayerEditorialPublicationSummary().states,{
+ ...audit.counts.states,
+ PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO-bannedSlots.size,
+ APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING+bannedSlots.size
+},"Frozen historic 267-slot audit must differ only by four now-rejected photo releases");
 assert.equal(audit.counts.pendingDistinctWorkSourceKeys,audit.pendingDistinctWorksByPotentialReuse.length);
 for(const work of audit.pendingDistinctWorksByPotentialReuse){
  assert.equal(work.publicationPermission,false);

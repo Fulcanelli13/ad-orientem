@@ -1,5 +1,5 @@
 /**
- * User-approved source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296/#2302, CMA/Met Open Access #2340 and Met #2354.
+ * Publicly eligible historical source photographs with provenance: Met #2277, NGA #2293, Commons PD-Art #2296/#2302, CMA/Met Open Access #2340 and Met #2354.
  * This asset list is distinct from approved editorial paintings and research archives.
  */
 export const RELEASED_MODULE_PAINTINGS=Object.freeze({
@@ -93,15 +93,9 @@ export const RELEASED_MODULE_PAINTINGS=Object.freeze({
     photographRights:"Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
     releasePr:2302
   }),
-  bouts:Object.freeze({
-    title:"The Annunciation",
-    artist:"Albert Bouts",
-    source:"https://clevelandart.org/art/1942.635",
-    original:"assets/prayer/released/bouts-annunciation-original.jpg",
-    image:"assets/prayer/released/bouts-annunciation-original.jpg",
-    photographRights:"The Cleveland Museum of Art Open Access · CC0",
-    releasePr:2340
-  }),
+  // The historically released CMA 1942.635 'bouts' entry is excluded from
+  // public display by the 15 October global exact-original rejection.
+  // Keep the original decision/release evidence in Git history and PR #2726.
   cavallino:Object.freeze({
     title:"Adoration of the Shepherds",
     artist:"Bernardo Cavallino",
