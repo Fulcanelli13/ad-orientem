@@ -1,0 +1,26 @@
+name: Sacred Art 2026 definitive closeout integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/sacred-art-2026-definitive-closeout-20261111.v1.json'
+      - 'data/artwork/README-sacred-art-release-closeout-20261111.md'
+      - 'tests/sacred-art-2026-definitive-closeout.test.mjs'
+      - '.github/workflows/sacred-art-2026-definitive-closeout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-sacred-art-closeout:
+    name: Verify 365 Calendar, 267 Prayer, acquired-vs-live image truth
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify closeout ledger without any image acquisition or public release
+        run: node tests/sacred-art-2026-definitive-closeout.test.mjs
