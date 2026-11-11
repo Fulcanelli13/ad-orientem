@@ -397,6 +397,18 @@ try{
             ...common,localProgramme:{ordinarySelections:{KYRIE:"MASS_11"}},
             approvedScores:[testScore],approvalRegistry:[testPromotion]
           });
+          const {selectedMassInlineSettings}=await import(
+            "/src/mass/reader-inline-chant-selector.js");
+          const {selectApprovedCompleteScholaTrackScore}=await import(
+            "/src/mass/reader-live-handoff-schola-track-score.js");
+          const selectedSettings=selectedMassInlineSettings({
+            localProgramme:common.localProgramme,resolvedMass:common.resolvedMass
+          });
+          const direct=selectApprovedCompleteScholaTrackScore({
+            schola:native,form:common.form,resolvedMass:common.resolvedMass,
+            settings:selectedSettings,approvedScores:[testScore],
+            approvalRegistry:[testPromotion],schema:SCHOLA_DOCK_SCORE_APPROVAL_SCHEMA
+          });
           return {
             actualTrack:native.trackId,trackCueCount:sourceCueIds.length,
             actualCue:native.cueId,actualIndex:native.index,
@@ -407,7 +419,16 @@ try{
             simulatedEligible:simulated?.scoreId===testScore.scoreId,
             simulatedStatus:simulated?.musicalPerformance,
             wrongSourceEligible:Boolean(wrongSource),
-            wrongSettingEligible:Boolean(wrongSelection)
+            wrongSettingEligible:Boolean(wrongSelection),
+            diagnostic:{nativeOwner:native.owner,
+              cueId:native.cueId,segmentId:native.segmentId,
+              musicStatus:native.musicStatus,hasComposedWork:Boolean(native.composedWorkId),
+              sourceCueIds:sourceCueIds.slice(0,20),
+              sourceLatin:sourceLatin.slice(0,300),
+              nativeLatin:native.latin,
+              selectedSettings,directEligible:Boolean(direct),
+              gabcFirstLine:research.gabc.split("\n").at(-4),
+              hash:sha.slice(0,10)}
           };
         });
         assert.equal(actualTrackEligibility.actualTrack,"KYRIE");
@@ -421,7 +442,8 @@ try{
         assert.equal(actualTrackEligibility.defaultSelected,false,
           "Unapproved 1961 Kyrie entered the real automatic Schola dock");
         assert.equal(actualTrackEligibility.simulatedEligible,true,
-          "If separately approved, a source-exact Kyrie XVI cannot bind to actual R17 Schola track");
+          "If separately approved, Kyrie XVI did not bind to real R17 source: "+
+          JSON.stringify(actualTrackEligibility.diagnostic));
         assert.equal(actualTrackEligibility.simulatedStatus,"EXPECTED_NOT_OBSERVED");
         assert.equal(actualTrackEligibility.wrongSourceEligible,false);
         assert.equal(actualTrackEligibility.wrongSettingEligible,false);
