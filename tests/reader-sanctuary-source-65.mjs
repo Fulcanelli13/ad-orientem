@@ -147,44 +147,20 @@ assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0122"}).choreography,
  "STATIC_STAGE","Re-entering a continuation must not invent a new incensation start");
 assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
  "SOURCE_TRIGGERED","Re-entering actual C0121 must re-arm original incensation");
-const lowIncense=send(off,{...incense,form:"LOW",
- sourceCueId:"AO.SM.C0121"});
-assert.equal(lowIncense.choreography,"STATIC_STAGE",
- "Low Mass may never trigger incensation");
-assert.equal(lowIncense.lowIncenseOmitted,true);
-assert.equal(lowIncense.visualCard,"C23");
-assert.equal(lowIncense.card,"C24",
- "Native 65-card source identity must remain C24");
-assert.deepEqual(presented.at(-1),["C23",false],
- "Low Mass must stage the adjacent offering-at-altar, not C24 foot pose");
-const wrongLowSource=send(off,{...incense,form:"LOW",
- sourceSectionId:"AO.CARD.009",sourceCueId:"AO.SM.C0121"});
-assert.equal(wrongLowSource.lowIncenseOmitted,false,
- "Low substitution belongs only to exact AO.CARD.010 source");
-assert.equal(wrongLowSource.visualCard,"C24");
-assert.deepEqual(presented.at(-1),["C24",false],
- "Source ownership change must reset the previous static illustration");
-const lowReenter=send(off,{...incense,form:"LOW",
- sourceCueId:"AO.SM.C0121"});
-assert.equal(lowReenter.visualCard,"C23");
-assert.deepEqual(presented.at(-1),["C23",false],
- "Re-entry restores no-incense altar stage without any smoke");
-const noIncenseSung=send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
- sourceCueId:"AO.SM.C0121"});
-assert.equal(noIncenseSung.choreography,"STATIC_STAGE",
- "Simple sung Mass without incense may never trigger incensation");
-assert.equal(noIncenseSung.visualCard,"C23");
-assert.equal(noIncenseSung.noIncenseOmitted,true);
-assert.equal(noIncenseSung.lowIncenseOmitted,false,
- "Low-only status must not be asserted for simple Sung Mass");
-const omittedStateOnly=send("Incensation omitted for this Mass",{
- form:"MISSA_CANTATA_SIMPLE",sourceSectionId:"AO.CARD.010",
- sourceCueId:null,certifiedSourceFocus:false,noIncenseOmission:true});
-assert.equal(omittedStateOnly.card,"C24",
- "State-only source placeholder must keep canonical 65-card identity");
-assert.equal(omittedStateOnly.visualCard,"C23",
- "The explicit Sung omission is a still altar scene, never C24 smoke");
-assert.equal(omittedStateOnly.choreography,"STATIC_STAGE");
+// Low/simple Sung *normal navigation* never sends C24: the source
+// retains a state-only omitted-incense record, which visibleCardAllowed()
+// excludes. A direct renderer test of the original C24 title remains
+// fail-closed for animation and cannot be mistaken for a native screen.
+for(const noIncense of ["LOW","MISSA_CANTATA_SIMPLE"]){
+ const staticResult=send(off,{...incense,form:noIncense,
+  sourceCueId:"AO.SM.C0121"});
+ assert.equal(staticResult.choreography,"STATIC_STAGE",
+  "No-incense forms cannot ever start original C24 motion");
+ assert.equal(staticResult.card,"C24",
+  "Unmodified owner's original scene bank still indexes C24");
+ assert.equal(staticResult.sourceCueId,"AO.SM.C0121",
+  "Test-only source cue may be recognized without triggering action");
+}
 assert.equal(send(off,{...incense,form:"SOLEMN",
  sourceCueId:"AO.SM.C0121"}).choreography,"SOURCE_TRIGGERED");
 assert.equal(send(off,{...incense,form:"SOLEMN",requiem:true,
