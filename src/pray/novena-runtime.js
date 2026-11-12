@@ -21,6 +21,8 @@ import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
+import {renderNovenaRoseWindow,selectNovenaRoseDay} from "./novena-rose-window.v1.js";
+import "./novena-rose-window-styles.js";
 import { installSequentialDevotionalReader,novenaStageChapters } from "./devotional-sequence-adapter.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
 import { formatDisplayDate } from "../app/date-format.js";
@@ -156,7 +158,8 @@ function renderDetail(n){
     <small>${esc(c.label+startNote)}</small>
    </div>
    ${modeNav()}
-   ${novenaDayFolio(n,suggest)}
+   ${n.id==="holy_ghost"?renderNovenaRoseWindow(n,suggest,{french:isFr()}):""}
+   ${n.id==="holy_ghost"?'<details class="aoN1RoseQuickDays"><summary>'+esc(L("Quick day index","Index des neuf jours"))+'</summary>'+novenaDayFolio(n,suggest)+'</details>':novenaDayFolio(n,suggest)}
    <button type="button" class="aoP435930Primary aoN1PrayDay" data-n1-begin="${suggest}">${esc(c.kind==='active'?L('Pray today · Day '+suggest,'Prier aujourd’hui · Jour '+suggest):L('Pray day '+suggest,'Prier le jour '+suggest))}</button>
    ${n.id==="st_therese"?`<div class="aoN1Info" data-n1-therese-source><h3>${esc(L("Institute of Christ the King · St Thérèse","Institut du Christ-Roi · Sainte Thérèse"))}</h3><p>${esc(L("The Institute’s perpetual Tuesday novena, prayer for missionaries and historical prayer to St Thérèse are separate from the existing Twenty-Four Glory Bes novena.","La neuvaine perpétuelle du mardi, la prière pour les missionnaires et la prière historique de l’Institut sont distinctes de la présente neuvaine des vingt-quatre Gloria Patri."))}</p><button type="button" data-n1-icksp-therese>${esc(L("Open Institute devotions","Ouvrir les dévotions de l’Institut"))}</button></div>`:""}
    <details class="aoN1AboutDisclosure">
@@ -458,7 +461,19 @@ function back(){
  });
 }
 function goHome(){if(returnToScripture())return true;BASE_CLOSE();const p=window.AO_APP_SHELL_V1?.navigate?.('home');if(p&&typeof p.catch==='function')p.catch(()=>window.AO_NAV_V362?.openHome?.());else if(!p)window.AO_NAV_V362?.openHome?.();return true}
-function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-icksp-therese],[data-n1-therese-weekly],[data-n1-therese-back],[data-n1-supplement],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-about],[data-n1-mode],[data-n1-show-en],[data-n1-common-latin],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-icksp-therese],[data-n1-therese-weekly]')){N.screen='weekly';return render()};if(b.matches('[data-n1-therese-back]')){N.screen='overview';N.id=null;return render()}if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=ALL_NOVENAS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Supplement){
+function onClick(e){const b=e.target.closest?.('button,[data-n1-flip],[data-n1-rose-day]');if(!b)return;if(!b.matches('[data-n1-rose-day],[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-icksp-therese],[data-n1-therese-weekly],[data-n1-therese-back],[data-n1-supplement],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-about],[data-n1-mode],[data-n1-show-en],[data-n1-common-latin],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();
+ if(b.matches('[data-n1-rose-day]')){
+  const day=Number(b.dataset.n1RoseDay),rose=b.closest("[data-n1-rose-window]");
+  if(N.screen!=="detail"||N.id!=="holy_ghost"||!rose||!Number.isInteger(day)||day<1||day>9)return;
+  if(Number(rose.dataset.n1RoseSelected)===day){
+   N.day=day;N.stage=0;N.showEnglish=false;N.screen="day";return render();
+  }
+  selectNovenaRoseDay(rose,day,{french:isFr()});
+  const begin=mount()?.querySelector("[data-n1-begin]");
+  if(begin){begin.dataset.n1Begin=String(day);begin.textContent=L("Pray day "+day,"Prier le jour "+day);}
+  return;
+ }
+ if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-icksp-therese],[data-n1-therese-weekly]')){N.screen='weekly';return render()};if(b.matches('[data-n1-therese-back]')){N.screen='overview';N.id=null;return render()}if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=ALL_NOVENAS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Supplement){
   const id=b.dataset.n1Supplement;if(!ADDITIONAL_NOVENAS[id])return;
   detailFromOverview=N.screen==='overview';dayAboutOpen=false;N.id=id;N.screen='day';
   const state=calStatus(ALL_NOVENAS[id]);N.day=state.kind==='active'?state.day:1;
@@ -466,6 +481,12 @@ function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)re
  }
  if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';dayAboutOpen=false;N.id=b.dataset.n1Select;N.screen='day';N.day=calStatus(ALL_NOVENAS[N.id]).kind==='active'?calStatus(ALL_NOVENAS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.matches('[data-n1-about]')){if(N.screen!=='day')return;dayAboutOpen=true;N.screen='detail';return render()}if(b.dataset.n1Day){dayAboutOpen=false;N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-common-latin]')){N.commonLatin=!N.commonLatin;const scroll=mount()?.querySelector('.aoDevoCardScroll')?.scrollTop||0;render();queueMicrotask(()=>{const card=mount()?.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=scroll});return}if(b.matches('[data-n1-show-en]')){const anchor=witnessAnchor(b);N.showEnglish=!N.showEnglish;return render({witnessFocus:anchor})}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=ALL_NOVENAS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
 document.addEventListener('click',onClick,true);
+document.addEventListener('keydown',e=>{
+ if(e.key!=="Enter"&&e.key!==" ")return;
+ const petal=e.target.closest?.("[data-n1-rose-day]");
+ if(!petal)return;
+ e.preventDefault();petal.dispatchEvent(new MouseEvent("click",{bubbles:true}));
+},true);
 const oldOpen=PR.open.bind(PR);PR.open=function(id,opts={}){if(id==='pray.novenas'||id==='novenas'||id==='novena')return open(opts);return oldOpen(id,opts)};
 const MOD=window.AO_MODULES;
 if(MOD&&!MOD.__aoNovenasV3){
