@@ -100,7 +100,8 @@ try{
    // Requiem omitted scenes remain indexed in the 65-scene matrix, but
    // no screenshot should incorrectly present them as a celebrated rite.
    const omitted=form.requiem&&requiemOmissions.has(c.id);
-   const excluded=c.id==="C24"&&form.protocol==="LOW";
+   const excluded=c.id==="C24"&&
+     ["LOW","MISSA_CANTATA_SIMPLE"].includes(form.protocol);
    const section="AO.CARD."+String(Number(c.macro.slice(-2))).padStart(3,"0");
    let result=null,actors=null,cameraShot=null,imageName=null;
    if(!omitted){
@@ -158,11 +159,12 @@ try{
           "Server must stand outside celebrant's seated silhouette");
       }
     }
-    if(c.id==="C24"&&form.protocol==="LOW"){
+    if(c.id==="C24"&&excluded){
       assert.equal(result.visualCard,"C23");
-      assert.equal(result.lowIncenseOmitted,true);
+      assert.equal(result.noIncenseOmitted,true);
+      assert.equal(result.lowIncenseOmitted,form.protocol==="LOW");
       assert.equal(actors.priest.z,.4,
-        "No-incense Low Mass is a still Offertory stage AT the altar");
+        "No-incense Low or simple Sung Mass stages the existing altar scene");
     }
     const need=holds[c.id]??[];
     imageName="images/"+form.id+"/"+c.id+".png";
@@ -173,7 +175,7 @@ try{
     await page.screenshot({path:resolve(output,imageName),animations:"disabled"});
    }
    const issues=holds[c.id]?[holds[c.id][0]]:[];
-   if(excluded)issues.push("LOW_NO_INCENSE");
+   if(excluded)issues.push("1962_FORM_NO_INCENSE");
    if(omitted)issues.push("REQUIEM_OMITTED");
    rows.push({form:form.id,formName:form.name,id:c.id,title:c.title,
     section:c.section,sourceSectionId:section,sourceMacro:c.macro,
@@ -182,6 +184,7 @@ try{
     renderedOwnerScene:result?.visualCard??null,
     sediliaStage:result?.sediliaStage??null,
     lowIncenseOmitted:result?.lowIncenseOmitted??false,
+    noIncenseOmitted:result?.noIncenseOmitted??false,
     capture:omitted?"OMITTED":excluded?"INACTIVE_INCENSE":"STILL",
     evidence:"PROTOTYPE_STATIC_NOT_CEREMONIAL_CERTIFICATION",
     visualReview:issues.length?"REVIEW_REQUIRED":"AWAITING_OWNER_VISUAL_REVIEW",
