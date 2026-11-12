@@ -33,7 +33,7 @@ function parseNotes(raw,state,syllable,groupIndex,verseIndex,nextOrdinal){
   let i=0;
   while(i<raw.length){
     const ch=raw[i];
-    if(/\s/.test(ch)||ch==='!'){i++;continue;}
+    if(/\s/.test(ch)||ch==='!'||ch==='/'){i++;continue;}
     if(!NOTE.test(ch))throw new UnsupportedGabcMelodyError('UNSUPPORTED_NOTATION',raw+' at '+i);
     const letter=ch.toLowerCase();
     // In GABC ix/iy mark a flat/natural on i; they do not sound i.
