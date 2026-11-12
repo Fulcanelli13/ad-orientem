@@ -26,7 +26,7 @@ assert.deepEqual(compiled.sourceNotes.map(n=>n.sourceNoteOrdinal),Array.from({le
 assert.deepEqual(compiled.phrases.map(p=>p.reduce((n,g)=>n+g.notes.length,0)),[9,7,9,15]);
 assert.deepEqual(compiled.groups.map(g=>g.notes.length),m43.originalPrintedGroupCountsReadFromFacsimile.map(x=>x.printedNoteheadCountManuallyCounted));
 assert.equal(m43.sourceVersusOriginalPrintCountCheck.exactCountAgreement,true);
-assert.equal(m43.original1961PrintedWitness.pdfPage1Based,56);
+assert.equal(m43.original1961PrintedWitness.pageNumberInPdf1Based,56);
 assert.equal(audit.printWitness.pdfSha256,m43.original1961PrintedWitness.originalPdfSha256);
 assert.deepEqual(compiled.sourceNotes.filter(n=>n.horizontalEpisema).map(n=>n.sourceNoteOrdinal),[7,14,23]);
 assert.deepEqual(compiled.sourceNotes.filter(n=>n.mora).map(n=>n.sourceNoteOrdinal),[9,16,25,40]);
