@@ -5,7 +5,7 @@
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
   "source_ledger_blob_sha": "a39d24aa67594ce209bad5c7cf1f0e228ceecd78",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed. All 85 original source URL differences now have a documented research disposition: seven earlier and four newly repaired citation-scope defects, 23 source-quality upgrades, 12 URL equivalences, 33 retained paragraph-appropriate citations and six explicit inaccessible-source holds. This is not independent EN/FR sentence-level approval.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed. All 85 original source URL differences now have a documented research disposition: seven earlier and four newly repaired citation-scope defects, 23 source-quality upgrades, 12 URL equivalences, 33 retained paragraph-appropriate citations and six explicit inaccessible-source holds. This is not independent EN/FR sentence-level approval. Earlier seven-defect counters updated to eleven repaired citation-scope defects, preserving the difference between a broken/mis-scoped citation and an untrue historical sentence. Some source judgments rely on custodian-indexed evidence and are not complete independent direct-URL reinspection.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -17,13 +17,13 @@
       "URL_DRIFT_OR_ACCESS_RECHECK": 6,
       "COMPLEMENTARY_SOURCE_NOT_AUTOMATIC_REPLACEMENT": 15
     },
-    "verified_citation_errors": 7,
+    "verified_citation_errors": 11,
     "independently_certified_paragraphs": 0,
     "owner_approved_guides": 0,
     "direct_url_spot_checks": 44,
-    "confirmed_citation_scope_defects": 7,
+    "confirmed_citation_scope_defects": 11,
     "remaining_without_direct_url_spot_check": 41,
-    "resolved_citation_scope_defects": 7,
+    "resolved_citation_scope_defects": 11,
     "current_differing_urls": 51,
     "unrepaired_confirmed_scope_defects": 0,
     "remaining_affected_guides": 0,
@@ -35,7 +35,11 @@
     "access_hold_guides": 4,
     "citation_defects_repaired": 11,
     "total_adjudicated": 85,
-    "incomplete_due_to_access": 6
+    "incomplete_due_to_access": 6,
+    "research_stage_dispositions_only": true,
+    "all_direct_urls_reopened": false,
+    "release_approval_granted": false,
+    "source_access_holds_require_editor_review": 6
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
