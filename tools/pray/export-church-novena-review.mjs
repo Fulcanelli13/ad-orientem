@@ -9,19 +9,13 @@
 import {mkdir, writeFile} from "node:fs/promises";
 import {dirname, resolve} from "node:path";
 import {pathToFileURL} from "node:url";
+import {CHURCH_NOVENA_IDS} from "../../src/pray/church-novena-ids.v1.js";
+export {CHURCH_NOVENA_IDS};
 import {NOVENA_CORPUS_V4} from "../../src/pray/novena-corpus-v4.js";
 import {ICKSP_DIVINE_INFANT_KING_NOVENA_V1} from "../../src/pray/icksp-divine-infant-king-novena.v1.js";
 import {ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1} from "../../src/pray/icksp-immaculate-conception-novena.v1.js";
 import {NOVENA_HOLY_FACE_1887_B25} from "../../src/pray/holy-face-janvier-1887-b25.js";
 
-export const CHURCH_NOVENA_IDS=Object.freeze([
-  "holy_ghost","christmas","corpus_christi","sacred_heart",
-  "immaculate_conception","annunciation","assumption","seven_sorrows",
-  "st_joseph","holy_souls","perpetual_help","st_therese",
-  "st_anthony_nine_tuesdays","christ_the_king","immaculate_heart",
-  "st_michael","divine_infant_king","icksp_immaculate_conception",
-  "holy_face_1887"
-]);
 
 const SPECIAL=Object.freeze({
   [ICKSP_DIVINE_INFANT_KING_NOVENA_V1.id]:ICKSP_DIVINE_INFANT_KING_NOVENA_V1,
