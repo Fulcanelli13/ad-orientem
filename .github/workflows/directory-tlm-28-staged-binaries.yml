@@ -1,0 +1,27 @@
+name: TLM 28 staged WebP integrity
+on:
+  pull_request:
+    paths:
+      - "assets/staged/directory-photo-recovery-20261111/**"
+      - "data/directory/research/tlm-28-release-candidates-20261112.v1.json"
+      - "tests/directory-tlm-28-staged-binaries.mjs"
+      - ".github/workflows/directory-tlm-28-staged-binaries.yml"
+  push:
+    branches: [main]
+    paths:
+      - "assets/staged/directory-photo-recovery-20261111/**"
+      - "data/directory/research/tlm-28-release-candidates-20261112.v1.json"
+      - "tests/directory-tlm-28-staged-binaries.mjs"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify exact staged WebP image bytes and prevent premature publication
+        run: node tests/directory-tlm-28-staged-binaries.mjs
