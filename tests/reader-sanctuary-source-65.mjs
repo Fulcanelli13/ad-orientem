@@ -183,7 +183,36 @@ assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
  sourceSectionId:"AO.CARD.016"}).choreography,"SOURCE_TRIGGERED",
  "Restoring LIVE must re-arm the source illustration");
 
+// Five R20 Sunday aspersion stages are OUTSIDE the canonical 65 Cnn cards.
+ // Never play Claude's entire P1 nave walk on a chant, stage navigation
+ // or the faithful's acknowledgement of having been sprinkled.
+const asp=(stage,records,extra={})=>api.present({
+ type:"AO_SANCTUARY_CUE_V1",version:1,sourceRiteId:"ASPERGES",
+ form:"SOLEMN",riteStageId:stage,sourceRecordIds:records,
+ observedSprinkled:false,scholaOnly:false,...extra
+});
+assert.equal(asp("ASP-R01",["ASP-010"]).card,"P1");
+assert.deepEqual(presented.at(-1),["P1",false],
+ "Initial Asperges must show the original scene without invented movement");
+assert.equal(asp("ASP-R02",["ASP-020","ASP-030"]).choreography,"STATIC_STAGE");
+assert.equal(asp("ASP-R02",["ASP-020","ASP-030"],
+ {scholaOnly:true}).code,"CHOIR_EVENT_NOT_MASS_CUE");
+assert.equal(asp("ASP-R03",["ASP-040"]).sprinkling,"NONE",
+ "Receiving the prayer card cannot imply being sprinkled");
+assert.equal(asp("ASP-R03",["ASP-040"],{observedSprinkled:true}).sprinkling,
+ "EXPLICIT_PERSONAL_OBSERVATION");
+assert.equal(asp("ASP-R03",["ASP-040"],{observedSprinkled:true}).sprinkling,
+ "NONE","Repeated projection must not invent a second physical observation");
+assert.equal(asp("ASP-R02",["ASP-020","ASP-030"],
+ {observedSprinkled:true}).code,"PERSONAL_SPRINKLING_STAGE_REQUIRED");
+assert.equal(asp("ASP-R04",["ASP-050"]).choreography,"STATIC_STAGE");
+assert.equal(asp("ASP-R05",["ASP-060"]).card,"P1");
+assert.equal(asp("ASP-R05",["ASP-030"]).code,
+ "ASPERGES_NATIVE_STAGE_SOURCE_REQUIRED");
+assert.equal(asp("ASP-R03",["ASP-040"],{form:"LOW"}).code,
+ "ASPERGES_SUNG_FORM_REQUIRED");
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
+
 assert.ok(bridge.includes("stageSungSediliaAcolyte(card)"));
 assert.ok(bridge.includes("singerSedilia=new Set("));
 assert.equal(html.includes("stageSungSediliaAcolyte"),false,
