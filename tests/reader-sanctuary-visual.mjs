@@ -48,6 +48,42 @@ assert.equal(sanctuaryCueProjection({card,
  "A non-Communion source card cannot replay the return event");
 assert.equal(sanctuaryCueProjection({card:c57,state:expected,form:"MISSAL"}),null,
  "Changing to MISSAL must not send canonical return cinematics");
+const observedReturn={eventId:"MC-COM-320",
+ nativeCardId:"AO.LIVECURATED.AO.CARD.025.1",
+ sourceSectionId:"AO.CARD.025",actor:"PRIEST",observed:true,
+ action:"RETURN_TO_ALTAR",owner:"EXPLICIT_PRIEST_COMMUNION_OBSERVATION"};
+assert.equal(sanctuaryCueProjection({card:c57,form:"SOLEMN",
+ state:{nativeCueId:"AO.SM.C0246",observedCommunionReturn:observedReturn}})
+ .canonicalCommunionEventId,"MC-COM-320",
+ "Only a genuine explicit native observer may forward a priest return");
+for(const bad of [
+ {...observedReturn,observed:false},
+ {...observedReturn,actor:"SCHOLA"},
+ {...observedReturn,action:"DISTRIBUTE_COMMUNION"},
+ {...observedReturn,eventId:"MC-COM-305"},
+ {...observedReturn,nativeCardId:"AO.LIVECURATED.AO.CARD.024.2"},
+ {...observedReturn,owner:"CARD_SCROLL"}
+]){
+ assert.equal(sanctuaryCueProjection({card:c57,form:"SOLEMN",state:{
+  nativeCueId:"AO.SM.C0246",observedCommunionReturn:bad
+ }}).canonicalCommunionEventId,null,
+ "Unverified or foreign observations must never start priest return");
+}
+const cancelled=sanctuaryCueProjection({card:c57,form:"SOLEMN",state:{
+ observedCommunionReturn:observedReturn,communionReturnCancelled:true,
+ nativeEventId:"MC-COM-320"
+}});
+assert.equal(cancelled.communionReturnCancelled,true);
+assert.equal(cancelled.canonicalCommunionEventId,null,
+ "An explicit observer cancellation must defeat even a stale native return");
+assert.equal(sanctuaryCueProjection({card,form:"SOLEMN",state:{
+ observedCommunionReturn:observedReturn
+}}).canonicalCommunionEventId,null,
+ "An observed C57 return must not cross into another source card");
+assert.equal(sanctuaryCueProjection({card:c57,form:"MISSA_CANTATA_SIMPLE",
+ state:{observedCommunionReturn:observedReturn}})
+ .canonicalCommunionEventId,null,
+ "Sung form cannot inherit an uncertified low/solemn return observation");
 
 assert.equal(sanctuaryCueProjection({card,state,form:"SOLEMN",mode:"MISSAL"}),null);
 assert.equal(sanctuaryCueProjection({card,state,form:"UNVERIFIED",mode:"LIVE"}),null);
