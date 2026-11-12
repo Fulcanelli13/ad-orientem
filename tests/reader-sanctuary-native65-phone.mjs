@@ -110,6 +110,24 @@ try{
         sourceCueId:cue,certifiedSourceFocus:true,requiem,
         scholaOnly:false
       });
+      // Ritus VI.5: the SUBDEACON transfers the Missal, while the
+      // deacon prepares the distinct Gospel book. C0081 shows only the
+      // static completed-transfer stage, never an unsourced server walk.
+      const prep="Preparation for the Gospel";
+      const prepareBefore=send(prep,"AO.CARD.007","AO.SM.C0080",false);
+      const transfer=send(prep,"AO.CARD.007","AO.SM.C0081",false);
+      const nearMissal=(()=>{
+        const a=M3.actors()?.S;
+        return {x:a?.x,z:a?.z,face:a?.face,prop:a?.prop,
+          pose:a?.pose,path:a?.path??null,
+          played:window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue};
+      })();
+      const leaveTransfer=send(prep,"AO.CARD.007","AO.SM.C0082",false);
+      const returned=(()=>{
+        const a=M3.actors()?.S;
+        return {x:a?.x,z:a?.z,prop:a?.prop,path:a?.path??null};
+      })();
+      const requiemTransfer=send(prep,"AO.CARD.007","AO.SM.C0081",true);
       const gospel="Proclamation of the Holy Gospel";
       send(gospel,"AO.CARD.007","AO.SM.C0084",false);
       const ministers=()=>Object.fromEntries(
@@ -156,6 +174,10 @@ try{
       const ordinaryChalice={thurifer:elevation("T"),subdeacon:elevation("S"),
         actor:cOrd.elevationIncenseActor};
       return {ordinary,requiem,restored,
+        missalTransfer:{prepareBefore:prepareBefore.solemnMissalTransfer,
+          transfer:transfer.solemnMissalTransfer,nearMissal,
+          leaveTransfer:leaveTransfer.solemnMissalTransfer,
+          returned,requiemTransfer:requiemTransfer.solemnMissalTransfer},
         requiemIncense:held.choreography,
         ordinaryIncense:normal.choreography,
         ordinaryElevation,ordinaryExit,requiemHost,
@@ -167,7 +189,26 @@ try{
       A1:{visible:true,prop:"torch"},A2:{visible:true,prop:"torch"}
     };
     const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
-      requiemExit,ordinaryChalice,...gospelAndOffertory}=conditional;
+      requiemExit,ordinaryChalice,missalTransfer,...gospelAndOffertory}=conditional;
+    assert.equal(missalTransfer.prepareBefore,null,
+      "A preparatory text before C0081 must not simulate the transfer");
+    assert.equal(missalTransfer.transfer,"COMPLETED_TRANSFER_STATIC",
+      "Only C0081 may show the subdeacon beside the transferred Missal");
+    assert.equal(missalTransfer.nearMissal.x,-1.45);
+    assert.equal(missalTransfer.nearMissal.z,.95);
+    assert.equal(missalTransfer.nearMissal.pose,"stand");
+    assert.equal(missalTransfer.nearMissal.prop,null,
+      "Do not draw a second Gospel-side Missal in the subdeacon's hands");
+    assert.equal(missalTransfer.nearMissal.path,null,
+      "A source focus is not a filmed priest/deacon/subdeacon journey");
+    assert.equal(missalTransfer.nearMissal.played,null,
+      "C13 does not start Claude's unsourced Missal-transfer animation");
+    assert.equal(missalTransfer.leaveTransfer,null);
+    assert.ok(missalTransfer.returned.x>=-.1,
+      "Leaving C0081 must reset the subdeacon's static position");
+    assert.equal(missalTransfer.returned.path,null);
+    assert.equal(missalTransfer.requiemTransfer,"COMPLETED_TRANSFER_STATIC",
+      "Requiem omits certain rites but not the subdeacon's Missal transfer");
     assert.deepEqual(gospelAndOffertory,{
       ordinary:ordinaryMinisters,
       requiem:{
@@ -371,6 +412,30 @@ try{
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
+  }
+  // The regular source focus owner, not a test-only direct bridge call,
+  // must project C0081 to the static subdeacon-at-Gospel-side scene.
+  if(form==="SOLEMN"&&width===390){
+    const transfer=await focusNativeSourceCue(page,"AO.SM.C0081");
+    assert.equal(transfer.found,true,
+      "C13 lacks source-focus authority for Solemn subdeacon Missal arrival: "+
+      JSON.stringify(transfer));
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnMissalTransfer===true,
+      null,{timeout:12000});
+    const atMissal=await frame.evaluate(()=>{
+      const a=M3.actors().S;
+      return {id:window.AO_SANCTUARY_EMBED_TEST.getState().card,
+        x:a.x,pose:a.pose,path:a.path,prop:a.prop};
+    });
+    assert.deepEqual(atMissal,{id:"C13",x:-1.45,pose:"stand",path:null,prop:null});
+    const leaving=await focusNativeSourceCue(page,"AO.SM.C0082");
+    assert.equal(leaving.found,true,
+      "C13 Missal stage did not hand off to the Gospel source cue: "+
+      JSON.stringify(leaving));
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnMissalTransfer!==true,
+      null,{timeout:12000});
   }
   // Real native reader scroll, not a direct test-only present() call:
   // the original Offertory incense sequence spans four 1962 priest cues.
