@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 206,
+    "newInstitutionalCoreChecks": 209,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 299,
-    "onlyCitationScope": 373,
+    "currentUniqueCoreResearchChecks": 302,
+    "onlyCitationScope": 370,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 17
+    "newCoreResearchChecksSinceLastPass": 3
   },
   "source_quality_findings": [
     {
@@ -112,6 +112,15 @@
       "finding": "Current parish news index proves existence and July 18–25 dates of 2026 Apollinaris octave, but original article is not retrievable. Specific programme detail and any current access must remain under source-owner review.",
       "sources": [
         "https://www.katholisch-in-lindlar.de/news/index.html"
+      ]
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "type": "TWO_PARAGRAPHS_RETAINED_PENDING_DIRECT_ECCLESIAL_EVIDENCE",
+      "finding": "History and identity sections are the final two high-risk citation-scope holds; the cited Japanese Bishops Conference 2016 article is not a source for the precise weeping chronology, and the Bishop Ito 1984 English letter is hosted on a third-party transcription site. Neither fact nor recognition authority should be inferred by source association alone; obtain primary diocese/Holy See documentation or rewrite with explicit source limits before any editor certification.",
+      "sources": [
+        "https://www.cbcj.catholic.jp/2016/09/01/13352/",
+        "https://www.1260.org/Mary/Apparitions_Akita/Akita_Ito_Letter_of_approval_en.htm"
       ]
     }
   ],
@@ -8280,13 +8289,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Rome's municipal tourism authority identifies San Bartolomeo all'Isola and the tradition of Saint Bartholomew's remains under its high altar; custodian Sant'Egidio also recalls the relic tradition and modern martyrs memorial. This is reported provenance, not forensic authentication.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.turismoroma.it/en/node/695",
+      "evidence_scope": "CIVIC_AND_CUSTODIAN_APOSTLE_TOMB_TRADITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:san-bartolomeo-isola",
@@ -10933,13 +10945,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The Singapore church's own official history confirms its Gothic architecture, Lourdes grotto replica and restored fifteen Rosary stained-glass windows; physical site and artwork are not an apparition claim.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://ourladyoflourdes.sg/history-of-the-church",
+      "evidence_scope": "PARISH_GOTHIC_GROTTO_AND_ROSARY_WINDOWS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
@@ -10953,13 +10968,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official Singapore parish homepage confirms functioning Catholic worship, Masses and local community at 50 Ophir Road; heritage authority separately confirms protected monument status, neither an apparition shrine nor standing traditional-Latin programme.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://ourladyoflourdes.sg/",
+      "evidence_scope": "OFFICIAL_PARISH_PASTORAL_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
