@@ -23,6 +23,12 @@ for(const form of ['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']){
  assert.equal(kyrieXviAuditionEligible({form,settingId:'MASS_16',isRequiem:true}),false);
 }
 assert.equal(kyrieXviAuditionEligible({form:'LOW',settingId:'MASS_16'}),false);
+assert.equal(kyrieXviAuditionEligible({
+ form:'SOLEMN',settingId:'MASS_16',mode:'MISSAL'
+}),false,'Missal must not expose live Schola research audio');
+assert.equal(kyrieXviAuditionEligible({
+ form:'SOLEMN',settingId:'MASS_16',mode:'LIVE'
+}),true);
 const dom=readFileSync(new URL('../src/mass/reader-dom.js',import.meta.url),'utf8');
 assert.ok(dom.includes('createKyrieXviResearchAudition'), 'Research audition not connected to existing reader adapter');
 assert.ok(dom.includes('kyrieResearchAudition?.sync()'), 'Schola selection changes must refresh preview gate');
