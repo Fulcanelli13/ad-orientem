@@ -199,6 +199,10 @@ export function createKyrieXviResearchAudition({root,
   }
   async function open(){
     if(trigger.hidden)return;
+    // Once an explicitly chosen chant opens in its own nonmodal player,
+    // collapse the configuration sheet so the Mass text remains visible.
+    const musicPlan=root.querySelector('[data-schola-local-panel]');
+    if(musicPlan?.open)musicPlan.open=false;
     panel.hidden=false;
     // Manual popover enters the browser top layer without making the Mass
     // reader inert. A modal dialog would break independent priest navigation.
