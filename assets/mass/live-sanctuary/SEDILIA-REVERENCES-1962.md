@@ -33,22 +33,24 @@ Each registered occurrence is an **independent event**, each with `BEGIN` and `E
 1. At sedilia during Kyrie, sequence, Epistle/readings and, where applicable, homily: evaluate Holy Name of Jesus, Blessed Virgin, saint of Mass, specific sung and spoken formulas, any prescribed uncovering/touching the biretta, and individual actors. These are **conditional proper- and source-text-dependent events**, not merely eight fixed Ordinary events.
 2. Every seated arrival/departure: receiving/putting on biretta, removal prior to rising, handover to M.C./deacon, correct seating and side positioning. No automatic timing from Cnn card entry.
 3. Across **all 65 scenes and special rites**, record each priest/sacred-minister head inclination, profound bow, genuflection, knee bend, biretta off/on and any exception as distinct source-bound actions (not all actions involve headwear). Existing Live icon cues and gestural rail remain authoritative; the sedilia visual is a consumer, not a competing rubric owner.
-4. O'Connell placement audit and user review: C08–C09/C12/C17–C19 now stage the original donor's side-facing bent-knee seated SVG, not the front-facing upright illusion. The updated actor facing is illustrative and **still requires screenshot acceptance**, including proper knee-to-seat contact and no silhouettes overlapping. C18 is explicitly different because the deacon performs the burse/corporal duty. Verify source-focused C13 C0081 ordinary/Requiem stills, and C11–C14 as one consolidated correction batch.
+4. O'Connell placement audit and user review: donor C08–C09/C12/C17–C19 seated figures are **rejected placeholders**. Headwear event routing survives, but figure anatomy must be replaced as a complete rig. C18 is explicitly different because the deacon performs the burse/corporal duty. Verify source-focused C13 C0081 ordinary/Requiem stills, and C11–C14 as one consolidated correction batch.
 
 Release requires exact-source actor/pose assertions, enter/exit/reset browser tests including modal transitions and Christmas/Annunciation rejection, latest-head technical gates **and owner visual acceptance**. Draft and unmerged; GitHub Actions + GitHub Pages only; never deploy to Vercel.
 
 ## 12 November follow-up — completed corrections on draft branch
 
 - Do not force all P/D/S to sit: only seated native actors receive biretta transitions; C18 deacon stays at his altar duty.
-- Side-view seated sprites use the unchanged original M3 SVG's bent knees instead of the misleading front-facing upright figure.
+- The donor's side-view seated sprite remains **visually rejected**, despite its `sit` pose and scene/source compatibility. See the binding correction below.
 - C13 Requiem Gospel preparation suppresses thurifer and acolyte candle props already **before** C14; preserves the two unlit acolytes and resets to normal on ordinary Mass selection.
 - Browser acceptance now requests focused screenshots: C08 biretta off/on, C18 Incarnatus with distinct deacon duty, C13 regular/Requiem exact C0081.
 - All corrections are review-only until latest-head CI and human visual approval.
 
-## 12 November seated anatomy rejection and correction
+## 12 November owner rejection — active binding decision
 
-**Owner rejection:** the previous C08 / C09 / C12 visual rendered clergy like upright figures behind a solid wooden box. Calling their legs visible because the source SVG contained a `sit` pose was wrong: the bench's front face occluded the knee and shin, and the original short skirt looked like a standing robe.
+The first geometry correction merely exposed rectangular, white trouser-like legs. The owner rejected the image. Five subsequently rendered draped-SVG experiments were inspected and also rejected because the upper body, hips, thighs, knees, alb and chasuble/dalmatic never became one coherent seated figure.
 
-**Corrected in draft PR:** actor placement moves from inside the solid sedilia at `x=4.04` to its front lip at `x=3.71` (solid bench begins at `x=3.86`), while preserving each minister's separate longitudinal `z` position. The erroneous `+.52m` actor-height offset was removed because it made figures float and the donor's own actorTick reset it. Each original side-view seated actor receives a **runtime-only** SVG refinement: horizontal thigh, bent knee, vertical shin, and correctly aligned shoe. The adapter applies this after every native actor redraw; source `index.html` remains byte-identical. The correction was tested by rendering the original 65-scene sanctuary locally, comparing side-by-side at the same camera and C08 state. This evidence demonstrates the visible anatomy but does not certify every production scenario.
+**Action:** the artificial bent-leg path and translated shoe were removed from the branch, and its regression assertions replaced with tests prohibiting their return. The static donor source remains a visual placeholder under `DONOR_SEDILIA_REVIEW_HOLD`; there is **no accepted seated-clergy artwork** yet. A source event's BEGIN/END may still be tested without certifying the figure geometry.
 
-**Browser regression acceptance:** verify actual lower-body SVG knee geometry, shoe alignment, seated P/D/S occupying three distinct original stations, and feet remaining on the actual floor; do not rely only on a `pose==="sit"` flag. Screenshots must show the entire legs with the bench behind, not an angled close-up of three torsos. Retain owner visual approval and latest-head CI as release holds.
+The previous claims in this research log that the side-view donor SVG or a bent-knee patch "corrected" seated anatomy are **superseded** by the rejection above. The recipient's explicit visual approval is required, not merely successful DOM/SVG geometry assertions.
+
+**Replacement contract:** [SEDILIA-CHARACTER-REPLACEMENT.md](SEDILIA-CHARACTER-REPLACEMENT.md), specifying complete rigged figures, proper cloth draping, natural seating and biretta handling, image-based review at all six seated scenes, and a zero-cost offline 3D-to-WebP asset strategy. Do not ship more lower-leg path patches or merge the draft PR.
