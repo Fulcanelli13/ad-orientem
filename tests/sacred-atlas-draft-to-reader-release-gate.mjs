@@ -42,6 +42,24 @@ assert.ok(researchSupplement.sources.every(s=>s.scope==="RESEARCH_ONLY"&&s.place
 const sources=[...canonicalSources,...researchSupplement.sources];
 const drafts=[...wave1,...wave2],byPlace=new Map(seed.shrines.map(s=>[s.place_id,s]));
 
+// Reader copy must describe the sites, not instruct a future editor how to write them.
+// This is a style guard only; it cannot certify historical truth or translation.
+const editorialInstruction=/(?:should (?:be presented|not be confused|not be presented|not be merged)|must (?:be presented|not be confused)|ne doit pas être présenté|doit être présenté|ne doit pas être confondu)/i;
+for(const guide of drafts){
+  for(const section of guide.sections){
+    for(const p of section.paragraphs){
+      assert.ok(!editorialInstruction.test(p.en+" "+p.fr),
+        "Internal editorial instruction in visitor prose: "+guide.place_id+"/"+section.id);
+    }
+  }
+}
+assert.equal(drafts.length,224,"Exactly 224 research-only guides");
+assert.equal(drafts.reduce((n,g)=>n+g.sections.length,0),672,
+  "Exactly 672 paired EN/FR sections");
+assert.match(wave2.find(g=>g.draft_order===121).sections.find(s=>s.id==="identity").paragraphs[0].en,/no judgment on the Akita events/i,
+  "Official Niigata diocesan reading must not be converted to a universal supernatural approval");
+
+
 const scopedChecks=researchSupplement.paragraph_research_checks||[];
 assert.equal(scopedChecks.length,93,"All 93 first-pass source paragraph checks must remain intact");
 assert.equal(new Set(scopedChecks.map(r=>r.place_id)).size,31,
@@ -338,5 +356,5 @@ console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2
   assert.deepEqual(approvedBank.guides,validatedReleased.guides);
   console.log("PASS full Sacred Atlas corpus preflight: 224 draft guides / "+
     "672 source-scoped EN/FR paragraphs / 93 earlier research prechecks / "+
-    "579 additional mechanical checks / approval-only publication gate.");
+    "672 first-pass core-claim research checks / 0 independent editorial approvals / approval-only publication gate.");
 }
