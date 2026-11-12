@@ -1,0 +1,161 @@
+{
+  "schema": "AO_TLM_P112_THREE_EXACT_VENUE_COVERS_TWO_FINAL_HOLDS_V1",
+  "as_of": "2026-11-12",
+  "source_pr": 2895,
+  "source_research_branch": "research/tlm-p111-four-site-photo-comparison-20261112",
+  "source_research_head": "296de67bace3dbf0e6882901e06684b49173eae1",
+  "source_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/43223015106",
+  "baseline": {
+    "approved_direct_venue_covers": 25,
+    "recovered_batch": 28,
+    "remaining_held": 5
+  },
+  "proposed": {
+    "new_exact_covers": 3,
+    "approved_direct_venue_covers_after": 28,
+    "remaining_held_after": 2,
+    "new_pins": 0,
+    "coordinate_changes": 0,
+    "place_records_added": 0,
+    "affiliation_changes": 0,
+    "mass_schedules_added": 0,
+    "previously_approved_cover_replacements": 0
+  },
+  "approved": [
+    {
+      "cl2_anchor": "RG-10BAB9521232",
+      "venue_id": "AO-B34-L-GB-D7DA8CC0BE16",
+      "name": "English Martyrs, Strood",
+      "asset_path": "assets/approved/directory-media/GB-RG-10BAB9521232-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Catholic_Church_of_the_English_Martyrs,_Strood_-_geograph.org.uk_-_1053668.jpg",
+      "original_sha1": "9b6337123bb47270df19201902bfe2542cc129d1",
+      "source_bytes": 79842,
+      "derivative_sha256": "029b340fd84f3687e987c4f94d0b3079215e49f1229336d688eb9745f50c4aaf",
+      "credit": "David Anstiss",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "width": 640,
+      "height": 481,
+      "original_dimensions": [
+        640,
+        481
+      ],
+      "git_blob_sha": "0f99699fa272b8857e1838137d754b2d70f48374",
+      "research_stage_path": "assets/staged/directory-p111-four-held-20261112/RG-10BAB9521232-candidate-01.webp",
+      "review": "Candidate 01 has a distinct complete church body, entrance and green roof at full frame; superior to held glare and extensive car-park original; 640px original adequate for 320/390px card.",
+      "alt_en": "The modern brown-brick Catholic Church of the English Martyrs in Strood, seen from the street with angular green roofs, arched side windows and a wooden entrance.",
+      "alt_fr": "Église catholique moderne des Martyrs anglais à Strood, vue depuis la rue, avec murs de brique brune, toitures vertes anguleuses, fenêtres cintrées et entrée en bois.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets."
+    },
+    {
+      "cl2_anchor": "RG-15198DD7A6FE",
+      "venue_id": "AO-B35-L-GB-D1A88E153706",
+      "name": "St Francis, Maidstone",
+      "asset_path": "assets/approved/directory-media/GB-RG-15198DD7A6FE-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Catholic_Church,_Maidstone_-_geograph.org.uk_-_383041.jpg",
+      "original_sha1": "40fd68f0718f478a9fd7e057625429bf7d4d487f",
+      "source_bytes": 84959,
+      "derivative_sha256": "fe7faf2d03a15ff228d626d19e059e587f508c2bbd6e73f97513277aebc7a56e",
+      "credit": "John Salmon",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "width": 640,
+      "height": 479,
+      "original_dimensions": [
+        640,
+        479
+      ],
+      "git_blob_sha": "197af945fbb4b03050d63a0c3a645fc972a6f9c6",
+      "research_stage_path": "assets/staged/directory-p111-four-held-20261112/RG-15198DD7A6FE-candidate-02.webp",
+      "review": "Candidate 02 shows a comprehensible full church and later entrance wing without obstructive cars or pedestrians; brighter and clearer than held oblique historic vehicle view; 640px source suits 320/390px card.",
+      "alt_en": "St Francis Roman Catholic Church in Maidstone, showing its tall Gothic window and stone gable behind a low modern entrance building, viewed from a quiet street corner.",
+      "alt_fr": "Église catholique Saint-François à Maidstone, avec grande fenêtre gothique et pignon en pierre derrière un bâtiment d'entrée plus bas, vue depuis un carrefour tranquille.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets."
+    },
+    {
+      "cl2_anchor": "RG-AAFBFCE94AA0",
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "name": "St Joseph's, Aldershot",
+      "asset_path": "assets/approved/directory-media/GB-RG-AAFBFCE94AA0-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Josephs_Aldershot_Side_View.jpg",
+      "original_sha1": "4e1800ccc78ee3f31798860ca7a532f5b62e2c3f",
+      "source_bytes": 170939,
+      "derivative_sha256": "b547cb8dfcca3ef9a76f951a377b1b39855aa0fd2ba4d496b0c921f13aab53b3",
+      "credit": "Jack1956",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 960,
+      "height": 720,
+      "original_dimensions": [
+        960,
+        720
+      ],
+      "git_blob_sha": "fd7c9897bf4ac6f38e736f18d625004f3d310bc9",
+      "research_stage_path": "assets/staged/directory-p111-four-held-20261112/RG-AAFBFCE94AA0-candidate-03.webp",
+      "review": "Candidate 03 from exact Commons category gives full ensemble, not just the curved apse; 960px width, no vehicles blocking church, source CC0. Truthfully labelled side view, never presented as front façade.",
+      "alt_en": "Wide side view of St Joseph's Catholic Church in Aldershot, showing its red-brick parish buildings, rounded apse and adjoining stone-and-brick church beside a quiet street; not its main entrance.",
+      "alt_fr": "Vue latérale élargie de l'église catholique Saint-Joseph à Aldershot, avec bâtiments paroissiaux en brique rouge, abside arrondie et église en pierre et brique le long d'une rue calme ; ce n'est pas l'entrée principale.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets."
+    }
+  ],
+  "held": [
+    {
+      "cl2_anchor": "RG-7C7DC29FFFAB",
+      "venue_id": "AO-AMER-R28-US-31-17",
+      "reason": "HOLD_PRECISE_OLD_TOWN_CHAPEL_SITE_ID",
+      "next_evidence": "Reconcile Old Town Chapel (121 Park Avenue) versus current 1505 White Pine Canyon parish and source_marker_unassessed pin in Excel Location Master/CL2; no photo attribution until exact physical location approved."
+    },
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "venue_id": "AO-B34-L-GB-FDC98808D553",
+      "reason": "NO_SUPERIOR_EXACT_CHURCH_EXTERIOR",
+      "next_evidence": "Two new Commons Stow candidates show predominantly statue and lawn or sign and distant church. Existing road view remains held. Seek an unobstructed front exterior of the correct Catholic church; not nearby Anglican St Edward's."
+    }
+  ],
+  "staged_comparisons": [
+    {
+      "cl2_anchor": "RG-10BAB9521232",
+      "site": "English Martyrs, Strood",
+      "source_candidates": 2,
+      "contact_sheet": "assets/staged/directory-p111-four-held-20261112/RG-10BAB9521232-contact.jpg",
+      "selected": true
+    },
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "site": "Our Lady and St Kenelm, Stow-on-the-Wold",
+      "source_candidates": 2,
+      "contact_sheet": "assets/staged/directory-p111-four-held-20261112/RG-ABBC659D0388-contact.jpg",
+      "selected": false
+    },
+    {
+      "cl2_anchor": "RG-15198DD7A6FE",
+      "site": "St Francis, Maidstone",
+      "source_candidates": 3,
+      "contact_sheet": "assets/staged/directory-p111-four-held-20261112/RG-15198DD7A6FE-contact.jpg",
+      "selected": true
+    },
+    {
+      "cl2_anchor": "RG-AAFBFCE94AA0",
+      "site": "St Joseph's, Aldershot",
+      "source_candidates": 3,
+      "contact_sheet": "assets/staged/directory-p111-four-held-20261112/RG-AAFBFCE94AA0-contact.jpg",
+      "selected": true
+    }
+  ],
+  "safeguards": {
+    "prior_25_approved_covers_unchanged": true,
+    "old_21_release_snapshot_unchanged": true,
+    "p110_source_ledger_unchanged": true,
+    "park_city_hold": true,
+    "stow_hold": true,
+    "lewiston_excluded": true,
+    "source_byte_identity": true,
+    "site_based_no_inference": true,
+    "no_new_pins": true,
+    "no_paid_services": true
+  },
+  "editorial_note": "P112 selection based on visual inspection of all 10 original-sha1 verified candidates. Retain only exact subject church photos. Low-resolution 640px Geograph shots are acceptable only as light 320/390px visual covers, not archival originals. No cropped or synthetic images; no individual owner hand-pick implied."
+}
