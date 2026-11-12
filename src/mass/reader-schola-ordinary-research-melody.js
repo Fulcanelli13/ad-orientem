@@ -11,16 +11,16 @@ const freeze=Object.freeze;
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'GLORIA',settingId:'MASS_08',scoreId:'GREGOBASE-961',
-    title:'Gloria VIII',sourceFingerprint:'a5986d2a',printedSections:18,
+    title:'Gloria VIII',sourceFingerprint:'a5986d2a',gabcSegments:18,
     sourceFolio:'Graduale Romanum (1961) p. 29*'}),
   freeze({movement:'CREDO',settingId:'CREDO_03',scoreId:'GREGOBASE-749',
-    title:'Credo III',sourceFingerprint:'78ccb2e5',printedSections:19,
+    title:'Credo III',sourceFingerprint:'78ccb2e5',gabcSegments:19,
     sourceFolio:'Graduale Romanum (1961) p. 64*'}),
   freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_08',scoreId:'GREGOBASE-1384',
-    title:'Sanctus VIII · Benedictus',sourceFingerprint:'653ac9f9',printedSections:1,
+    title:'Sanctus VIII · Benedictus',sourceFingerprint:'653ac9f9',gabcSegments:1,
     sourceFolio:'Graduale Romanum (1961) p. 30*'}),
   freeze({movement:'AGNUS_DEI',settingId:'MASS_08',scoreId:'GREGOBASE-2760',
-    title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',printedSections:3,
+    title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',gabcSegments:3,
     sourceFolio:'Graduale Romanum (1961) p. 31*'})
 ]);
 const bySelection=new Map(ORDINARY_M54_RESEARCH_SOURCES.map(
@@ -85,7 +85,7 @@ export function compileOrdinaryM54ResearchMelody({
     return null;
   try{
     const counts=printedSectionNoteCounts(selected.gabc,exsurge);
-    if(!Array.isArray(counts)||counts.length!==spec.printedSections||
+    if(!Array.isArray(counts)||counts.length!==spec.gabcSegments||
        counts.some(n=>!Number.isInteger(n)||n<=0))return null;
     // A Gloria/Credo section delimiter is NOT a Kyrie repeat instruction.
     // We explicitly perform each source-written section exactly once.
@@ -94,7 +94,7 @@ export function compileOrdinaryM54ResearchMelody({
       exsurge,scoreId:spec.scoreId,expectedFingerprint:spec.sourceFingerprint,
       expectedPhraseNoteCounts:counts,phraseSequence
     });
-    if(melody.phraseCount!==spec.printedSections||
+    if(melody.phraseCount!==spec.gabcSegments||
        melody.sourceNoteCount!==counts.reduce((a,b)=>a+b,0)||
        melody.performance.length!==melody.sourceNoteCount)
       return null;
