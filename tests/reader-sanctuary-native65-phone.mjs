@@ -99,6 +99,41 @@ try{
   const frame=page.frames().find(x=>x.url().includes(
    "/assets/mass/live-sanctuary/index.html"));
   assert.ok(frame,"Original Claude scene iframe was not loaded");
+  // Source-checked Solemn Requiem exceptions: visual only, not a new
+  // Mass resolver or an inferred celebrant/Schola clock.
+  if(form==="SOLEMN"&&width===390){
+    const conditional=await frame.evaluate(()=>{
+      const api=window.AO_SANCTUARY_EMBED_TEST;
+      const send=(title,section,cue,requiem)=>api.present({
+        type:"AO_SANCTUARY_CUE_V1",version:1,
+        form:"SOLEMN",cardTitle:title,sourceSectionId:section,
+        sourceCueId:cue,certifiedSourceFocus:true,requiem,
+        scholaOnly:false
+      });
+      const gospel="Proclamation of the Holy Gospel";
+      send(gospel,"AO.CARD.007","AO.SM.C0084",false);
+      const visibility=()=>["T","A1","A2"].map(k=>M3.actors()?.[k]?.vis===true);
+      const ordinary=visibility();
+      send(gospel,"AO.CARD.007","AO.SM.C0084",true);
+      const requiem=visibility();
+      send(gospel,"AO.CARD.007","AO.SM.C0084",false);
+      const restored=visibility();
+      const offertory="Offertory · Incensation";
+      const held=send(offertory,"AO.CARD.010","AO.SM.C0121",true);
+      const normal=send(offertory,"AO.CARD.010","AO.SM.C0121",false);
+      return {ordinary,requiem,restored,
+        requiemIncense:held.choreography,
+        ordinaryIncense:normal.choreography};
+    });
+    assert.deepEqual(conditional,{
+      ordinary:[true,true,true],requiem:[false,false,false],
+      restored:[true,true,true],
+      requiemIncense:"STATIC_STAGE",
+      ordinaryIncense:"SOURCE_TRIGGERED"
+    },"Requiem source exception must suppress ordinary Gospel torches and "+
+      "thurifer and false C24 ending, then restore ordinary Solemn choreography");
+    await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.clear());
+  }
   const model=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
    if(api?.model?.totalCards!==65)throw Error("Canonical 65 LIVE cards missing");
