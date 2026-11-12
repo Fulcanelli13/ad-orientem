@@ -1,0 +1,79 @@
+{
+  "version": "APOLOGETICS_QUESTION_RECOVERY_20261012_V1",
+  "status": "SOURCE_EXTRACTED_PARTIAL_HISTORICAL_RECOVERY",
+  "as_of": "2026-10-12",
+  "records": 282,
+  "unique_ids": 282,
+  "counts_by_collection": {
+    "Canonical Apologetics": 60,
+    "Canonical Church Crisis": 81,
+    "Biblical and patristic supplement": 26,
+    "Sedevacantism debates": 8,
+    "Contemporary controversies I": 6,
+    "Contemporary controversies II": 12,
+    "Contemporary controversies III": 21,
+    "Traditional Mass objections 026–050": 25,
+    "Traditional Mass objections 051–065": 15,
+    "Traditional Mass objections 066–075": 10,
+    "Apostolate — live question scenarios": 8,
+    "Apostolate — proposed question scenarios": 10
+  },
+  "counts_by_editorial_audience": [
+    {
+      "audience": "Anglicans",
+      "count": 2
+    },
+    {
+      "audience": "Atheists, agnostics and secular critics",
+      "count": 21
+    },
+    {
+      "audience": "General Catholic questions and objections",
+      "count": 64
+    },
+    {
+      "audience": "Jehovah's Witnesses",
+      "count": 3
+    },
+    {
+      "audience": "Jews and questions about Judaism",
+      "count": 14
+    },
+    {
+      "audience": "Muslims",
+      "count": 9
+    },
+    {
+      "audience": "Protestant Christians",
+      "count": 99
+    },
+    {
+      "audience": "Religious pluralists and non-Christian interlocutors",
+      "count": 8
+    },
+    {
+      "audience": "Traditional Catholics, SSPX and sedevacantist interlocutors",
+      "count": 144
+    }
+  ],
+  "source_files": [
+    "data/learn/apologetics-canonical.v1.json",
+    "data/learn/church-crisis-canonical.v1.json",
+    "data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json",
+    "data/learn/sedevacantism-preconciliar-debates.v1.json",
+    "data/learn/contemporary-controversies-source-pack.v1.json",
+    "data/learn/contemporary-controversies-batch2-source-pack.v1.json",
+    "data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json",
+    "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+    "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
+    "data/learn/traditionis-custodes-debates.v1.json",
+    "src/apostolate/corpus.js",
+    "data/learn/apologetics-reconciliation.v1.json"
+  ],
+  "historical_position_gaps": {
+    "apologetics_projected_positions": 318,
+    "crisis_projected_positions": 233,
+    "tlm_missing_exact_original": 25
+  },
+  "note": "264 earlier source records + 8 exact live Apostolate titles + 10 reconciliation-listed proposed titles. All are 282 distinct source-file IDs, not the restored 318 historical A-question texts."
+}

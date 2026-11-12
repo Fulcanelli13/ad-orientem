@@ -1,0 +1,543 @@
+{
+  "schema": "AO_CANON_EIGHT_ORIGINAL_QUESTION_CONVERSATION_PILOT_V1",
+  "date": "2026-10-18",
+  "ownerBranch": "research/apologetics-question-recovery-20261012",
+  "status": "EDITORIAL_QA_ONLY_NO_PUBLIC_CONVERSATION",
+  "selection": "Eight fixed-seed sample questions previously shown to the user from 452 historic question-title candidates.",
+  "governance": {
+    "characterPresentation": "MONSIEUR_LE_CHANOINE",
+    "historicWordingCertainty": "0/452 original transcript-verified",
+    "sourceOwnership": "No new parallel doctrinal/canonical registry; original owner referenced by ID only",
+    "publication": "All false; source claims, opponent arguments, native French and exact authorial voice need human approval",
+    "dialogueMode": "concise answer, serious question or objection, reasoned response, two scoped follow-up questions",
+    "prohibition": "No public runtime, Mass reader, original owner, publication flag or narrative voice changes",
+    "objectionPrecision": "All objection sentences are editorially formulated. Never quote them as a named opponent's exact words; only cite original documents after pinpoint source/context review."
+  },
+  "sampleSize": 8,
+  "questions": [
+    {
+      "questionId": "ERR-012",
+      "originalQuestion": "Is Modernism just historical-critical biblical scholarship?",
+      "originalBank": "ERR",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "CR-DOC-01",
+      "answerResearchLevel": "SOURCE_ANCHORED_EDITORIAL_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "No. St Pius X condemned Modernism as an interconnected account of revelation, dogma and religious experience, not simply the practice of studying ancient texts historically. Historical or linguistic research becomes theologically problematic when it begins by excluding supernatural revelation or treats dogma as merely changeable religious consciousness. To assess an individual writer, examine actual propositions and their context—not a label.",
+        "fr": "Non. Saint Pie X a condamné le modernisme comme un ensemble d'erreurs touchant la Révélation, le dogme et l'expérience religieuse, non comme la simple étude historique des textes anciens. La recherche historique ou philologique pose un problème théologique lorsqu'elle exclut d'emblée la Révélation surnaturelle ou réduit le dogme à une conscience religieuse changeante. Pour juger un auteur, il faut examiner ses propositions réelles et leur contexte, non une étiquette."
+      },
+      "seriousObjection": {
+        "en": "Does not Pascendi criticize the methods of biblical historians themselves?",
+        "fr": "Mais Pascendi ne critique-t-elle pas aussi les méthodes des historiens de la Bible ?"
+      },
+      "reasonedResponse": {
+        "en": "It criticizes a particular modernist separation of historical criticism from faith and its underlying philosophy. That does not justify calling every critical textual comparison or scholarly historical finding Modernist; the precise method and presuppositions must be identified.",
+        "fr": "Elle critique une séparation moderniste de la critique historique et de la foi ainsi que ses présupposés philosophiques. Cela ne justifie pas de qualifier de moderniste toute comparaison textuelle critique ou toute découverte historique : il faut préciser la méthode et ses présupposés."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What did Pius X mean by 'immanence'?",
+            "fr": "Que signifiait l'« immanence » chez les modernistes ?"
+          },
+          "sourceReviewScope": "ERR-014; CR-DOC-01"
+        },
+        {
+          "label": {
+            "en": "How is legitimate development of doctrine different?",
+            "fr": "Comment distinguer développement doctrinal légitime et modernisme ?"
+          },
+          "sourceReviewScope": "ERR-016; CR-DOC-02"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Pius X, Pascendi dominici gregis (1907)",
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+          "scope": "Papal condemnation; account of the modernist historian and dogma",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Pius X, Pascendi (French)",
+          "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+          "scope": "French first-party text",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "Review exact passages of Pascendi against the narrower historical-critical method; avoid imputing condemned positions to unnamed current scholars."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_CHALLENGE_UNATTRIBUTED; Pascendi source cited for answer, no named opponent quotation."
+    },
+    {
+      "questionId": "PEN-010",
+      "originalQuestion": "Are miraculous gifts supposed to have ceased with the Apostles?",
+      "originalBank": "PEN",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "APOL-004",
+      "answerResearchLevel": "CATHOLIC_BASELINE_SOURCED_OPPONENT_INCOMPLETE",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "Catholic teaching does not require us to believe that every charism disappeared when the Apostles died. St Paul lists diverse gifts of the Spirit; Lumen gentium §12 and the Catechism describe both ordinary and extraordinary charisms, including miracles and tongues. That does not authenticate every modern claim. Gifts must be discerned and must serve charity and the Church's good, not confer spiritual rank on the recipient.",
+        "fr": "La doctrine catholique n'impose pas de croire que tous les charismes ont disparu à la mort des Apôtres. Saint Paul décrit la diversité des dons de l'Esprit ; Lumen gentium §12 et le Catéchisme évoquent les charismes ordinaires et extraordinaires, dont les miracles et le don des langues. Cela ne rend pas authentique toute prétention actuelle. Les dons doivent être discernés et servir la charité ainsi que le bien de l'Église ; ils ne confèrent pas un rang spirituel supérieur."
+      },
+      "seriousObjection": {
+        "en": "Some Christians argue that extraordinary signs served only to authenticate the first apostles. Must their conclusion be rejected outright?",
+        "fr": "Certains chrétiens estiment que les signes extraordinaires servaient uniquement à accréditer les premiers Apôtres. Faut-il rejeter purement et simplement leur conclusion ?"
+      },
+      "reasonedResponse": {
+        "en": "Separate two claims: not every age or person is promised particular miracles, but the Church has not declared all extraordinary charisms impossible after the apostolic age. The full debate requires the specific cessationist author's original argument before a denominational rebuttal is presented.",
+        "fr": "Il faut distinguer deux affirmations : aucun siècle ni aucun fidèle ne reçoit la promesse de miracles particuliers, mais l'Église n'a pas déclaré impossibles tous les charismes extraordinaires après l'âge apostolique. Une réfutation confessionnelle exige d'abord le texte original d'un auteur cessationniste déterminé."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What is a charism as distinct from a sacrament?",
+            "fr": "Qu'est-ce qu'un charisme, à distinguer d'un sacrement ?"
+          },
+          "sourceReviewScope": "Catechism §2003"
+        },
+        {
+          "label": {
+            "en": "What exactly does a cessationist confession argue?",
+            "fr": "Que soutient précisément une confession cessationniste ?"
+          },
+          "sourceReviewScope": "HOLD: missing individual historic proponent original context"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Lumen gentium (1964), §12",
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+          "scope": "Charisms, extraordinary gifts, discernment",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Catechism §2003",
+          "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/ii_grace.html",
+          "scope": "Gift of tongues, miracles and common good",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Catechism §§799–801",
+          "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_2_the_church_-_people_of_god%2C_body_of_christ%2C_temple_of_the_holy_spirit.html",
+          "scope": "Authenticity and discernment",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "Opposing cessationist original work/confession not collated; do not ascribe generic objection to all Protestants.",
+        "Existing APOL-004 Hume miracles dossier is not a direct cessationism response."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "HYPOTHETICAL_CESSATIONIST_ARGUMENT_UNATTRIBUTED; must not be identified with a denomination without original confession."
+    },
+    {
+      "questionId": "LIT-064",
+      "originalQuestion": "Does the 1969 GIRM controversy prove that the new Mass formally denied sacrifice or the Real Presence?",
+      "originalBank": "LIT",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "CR-LIT-07",
+      "answerResearchLevel": "HISTORICAL_COMPARISON_INCOMPLETE",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "No. The original 1969 General Instruction and the new Missal prompted a substantial critique of how Eucharistic sacrifice and propitiation were expressed. The Ottaviani–Bacci letter transmitted a serious objection to the reform's doctrinal clarity. But a critique of expression is not, by itself, a demonstration that the promulgated rite formally denied sacrifice or the Real Presence. The original 1969, revised 1970 and subsequent texts must be compared separately, including the Roman Canon retained as Eucharistic Prayer I.",
+        "fr": "Non. La Présentation générale de 1969 et le nouveau Missel ont suscité une critique importante de la manière dont étaient exprimés le sacrifice eucharistique et la propitiation. La lettre Ottaviani–Bacci transmettait une objection sérieuse à la clarté doctrinale de la réforme. Toutefois, une critique de l'expression ne démontre pas, à elle seule, que le rite promulgué niait formellement le sacrifice ou la Présence réelle. Il faut comparer séparément les textes de 1969, ceux révisés en 1970 et les éditions ultérieures, sans omettre le Canon romain conservé comme Prière eucharistique I."
+      },
+      "seriousObjection": {
+        "en": "Is the original critique worthless because Rome changed the General Instruction?",
+        "fr": "La critique initiale perd-elle toute valeur parce que Rome a modifié la Présentation générale ?"
+      },
+      "reasonedResponse": {
+        "en": "No. The criticism remains historical evidence of a real dispute and may help assess the reform's wording. Equally, later clarified language cannot be treated as if it were already present in the original 1969 text. Neither the original complaint nor its later revision alone proves blanket doctrinal invalidity.",
+        "fr": "Non. Elle reste un témoignage historique d'une véritable controverse et peut éclairer l'analyse des formulations. Inversement, on ne doit pas lire rétroactivement les précisions ultérieures dans le texte de 1969. Ni l'objection initiale ni sa révision ne suffisent, prises isolément, à établir l'invalidité doctrinale générale du rite."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What changed between 1969 and 1970?",
+            "fr": "Qu'est-ce qui a changé entre 1969 et 1970 ?"
+          },
+          "sourceReviewScope": "HOLD: collate exact original GIRM n.7 and 1970 revision"
+        },
+        {
+          "label": {
+            "en": "Does the Roman Canon still express sacrifice?",
+            "fr": "Le Canon romain exprime-t-il toujours le sacrifice ?"
+          },
+          "sourceReviewScope": "CR-LIT-06/07, original prayers"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Paul VI, Missale Romanum (1969)",
+          "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+          "scope": "Official promulgation and Roman Canon retention",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Ottaviani–Bacci critique (1969), Fordham copy",
+          "url": "https://sourcebooks.web.fordham.edu/mod/1969ottoviani.asp",
+          "scope": "Historical opposing argument, edition and attribution to be checked",
+          "witnessKind": "HISTORIC_TEXT_COPY_NOT_FULLY_COLLATED"
+        },
+        {
+          "authority": "1969 GIRM n.7 with revisions, French comparison",
+          "url": "https://laportelatine.org/formation/magistere/institutio-generalis-missalis-romani-en-francais-version-revue-corrigee-et-amendee-plusieurs-fois-depuis-1969",
+          "scope": "Comparative historical lead, not authoritative original edition",
+          "witnessKind": "SECONDARY_REPRODUCTION_NOT_ORIGINAL_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "Physical original 1969 and 1970 IGMR text edition collation still pending.",
+        "Distinguish drafted critique from signed cardinals' letter and subsequent evaluation.",
+        "Do not conflate weakened language with denial of dogma, validity, liceity or ritual identity."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "HISTORIC_OTTAVIANI_BACCI_CRITIQUE_PARAPHRASE; original 1969/1970 edition and historian attribution pending."
+    },
+    {
+      "questionId": "PROT-025",
+      "originalQuestion": "What are indulgences actually supposed to forgive?",
+      "originalBank": "PROT",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "APOL-040",
+      "answerResearchLevel": "PRIMARY_SOURCE_REPAIR_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "An indulgence does not forgive the guilt of sin: that guilt must already have been forgiven. It concerns the temporal punishment that may remain after forgiveness. The Church distinguishes a partial indulgence from a plenary indulgence according to whether that temporal punishment is remitted in part or wholly. Its grant presupposes the prescribed work and the faithful person's proper dispositions; it is neither a purchase of salvation nor a substitute for repentance and sacramental Confession.",
+        "fr": "Une indulgence ne pardonne pas la faute du péché : celle-ci doit déjà avoir été pardonnée. Elle concerne la peine temporelle qui peut subsister après ce pardon. L'Église distingue l'indulgence partielle de l'indulgence plénière selon que cette peine est remise en partie ou entièrement. Le don de l'indulgence suppose l'œuvre prescrite et les dispositions requises du fidèle ; il ne s'agit ni d'acheter le salut ni de remplacer le repentir ou la confession sacramentelle."
+      },
+      "seriousObjection": {
+        "en": "Is this a way to buy forgiveness or bypass God's judgment?",
+        "fr": "Est-ce un moyen d'acheter le pardon ou de contourner le jugement de Dieu ?"
+      },
+      "reasonedResponse": {
+        "en": "No. The Church explicitly defines indulgences as applying to sins whose guilt is already remitted. The distinction between culpability, forgiveness and the remaining effects of sin is central. Historical abuse or misuse deserves examination, but it does not redefine the doctrine itself.",
+        "fr": "Non. L'Église les définit expressément comme concernant des péchés dont la faute est déjà remise. La distinction entre culpabilité, pardon et conséquences du péché est essentielle. Les abus historiques doivent être examinés, mais ils ne constituent pas la définition de la doctrine."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "Why can consequences of sin remain after Confession?",
+            "fr": "Pourquoi des conséquences du péché subsistent-elles après la confession ?"
+          },
+          "sourceReviewScope": "CCC §§1472–1473"
+        },
+        {
+          "label": {
+            "en": "What are the conditions for a plenary indulgence?",
+            "fr": "Quelles sont les conditions d'une indulgence plénière ?"
+          },
+          "sourceReviewScope": "Original operative indulgence norms; edition/current condition review"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Catechism §§1471–1479",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/x_indulgences.index.html",
+          "scope": "Exact definition and distinction between guilt and temporal punishment",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Paul VI, Indulgentiarum doctrina (1967), norms 1–7",
+          "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+          "scope": "Primary text; partial/plenary and conditions",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "The source evidence is new to this pilot, not imported into APOL-040 canonical owner; requires owner-consented substantive integration.",
+        "Specific current indulgenced acts/conditions must be confirmed against the operative Enchiridion, not generated from old indulgence formulas."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_OBJECTION_TO_INDULGENCES_NOT_QUOTED_FROM_NAMED_OPPONENT."
+    },
+    {
+      "questionId": "SAN-009",
+      "originalQuestion": "Is there any biblical precedent for relics?",
+      "originalBank": "SAN",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "APOL-037",
+      "answerResearchLevel": "SOURCE_ANCHORED_EDITORIAL_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "Yes. When a dead man touched the bones of the prophet Elisha, Scripture relates that he revived (4 Kings 13:21 in the Douay-Rheims numbering; 2 Kings 13:21 in many modern editions). Acts 19:11–12 also recounts healings associated with cloths carried from St Paul. These passages show that God's power can work through material things connected to holy people. They do not certify every claimed relic or by themselves settle every later devotional practice.",
+        "fr": "Oui. Lorsque le corps d'un mort toucha les os du prophète Élisée, l'Écriture rapporte qu'il revint à la vie (4 Rois 13,21 dans la numérotation de la Vulgate ; 2 Rois 13,21 dans de nombreuses éditions modernes). Les Actes 19,11–12 rapportent aussi des guérisons associées à des linges ayant touché saint Paul. Ces passages montrent que Dieu peut agir par des objets liés à des personnes saintes. Ils n'authentifient pas pour autant toute relique prétendue ni toutes les pratiques dévotionnelles postérieures."
+      },
+      "seriousObjection": {
+        "en": "But many claimed relics have doubtful authenticity. Why should anyone trust them?",
+        "fr": "Mais l'authenticité de nombreuses reliques est douteuse. Pourquoi leur accorder confiance ?"
+      },
+      "reasonedResponse": {
+        "en": "A particular relic can indeed be misidentified or fraudulent. Calvin's historic criticism of multiplied relic claims must not be dismissed without evidence. The Catholic reply distinguishes a lawful principle of veneration from the authenticity of this specific object: each historical identification requires its own evidence.",
+        "fr": "Une relique particulière peut effectivement être mal identifiée ou frauduleuse. La critique historique de Calvin sur la multiplication des reliques ne doit pas être écartée sans preuves. La réponse catholique distingue le principe légitime de la vénération et l'authenticité de tel objet précis : chaque attribution historique exige ses propres preuves."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "Why venerate relics rather than worship them?",
+            "fr": "Pourquoi vénérer les reliques sans les adorer ?"
+          },
+          "sourceReviewScope": "APOL-037"
+        },
+        {
+          "label": {
+            "en": "How does the Church assess a relic's authenticity?",
+            "fr": "Comment l'Église vérifie-t-elle l'authenticité d'une relique ?"
+          },
+          "sourceReviewScope": "HOLD: ecclesiastical relic authentication sources needed"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "4 Kings/2 Kings 13:21",
+          "url": "https://bible.usccb.org/bible/2kings/13",
+          "scope": "Verse 21, modern numbering 2 Kings; traditional Vulgate/Douay numbering 4 Kings; avoid mis-linking to 2 Kings DRA (2 Samuel)",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Acts 19:11–12",
+          "url": "https://www.biblegateway.com/passage/?search=Acts%2019%3A11-12&version=DRA",
+          "scope": "Cloths and healing associated with Paul",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Calvin, Treatise on Relics (1543)",
+          "url": "https://www.gutenberg.org/ebooks/32136",
+          "scope": "Historical criticism of authenticity and alleged misuse",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Council of Trent Session XXV",
+          "url": "https://www.papalencyclicals.net/councils/trent/twenty-fifth-session.htm",
+          "scope": "Decree on saints and relics; secondary reproduction of council text",
+          "witnessKind": "SECONDARY_REPRODUCTION_PENDING_PRIMARY_TEXT_COLLATION"
+        }
+      ],
+      "unresolvedChecks": [
+        "Do not derive blanket authenticity or a precise universal rite from cited miracles.",
+        "Original Calvin text and its translation require quote-level review before direct historical quotations."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "CALVIN_RELIC_AUTHENTICITY_ARGUMENT_EDITORIAL_PARAPHRASE; quoted original translation unapproved."
+    },
+    {
+      "questionId": "PROT-013",
+      "originalQuestion": "Is infant Baptism ‘Catholic versus Protestant’?",
+      "originalBank": "PROT",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "APOL-024",
+      "answerResearchLevel": "MULTI_DENOMINATION_PRIMARY_SOURCE_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "No. The issue is not simply Catholics versus all Protestants. The historic Lutheran, Reformed, Anglican and Methodist confessions retain infant Baptism, though they explain its effects differently. The Second London Baptist Confession, by contrast, makes a personal profession of repentance and faith a condition for its proper recipients. Catholic teaching treats Baptism as a grace offered before a child can profess faith, with parents and godparents responsible for later Christian formation.",
+        "fr": "Non. La question n'oppose pas simplement les catholiques à tous les protestants. Les confessions historiques luthérienne, réformée, anglicane et méthodiste conservent le baptême des enfants, même si elles en expliquent différemment les effets. En revanche, la Deuxième Confession baptiste de Londres exige la profession personnelle de repentir et de foi des personnes qui peuvent recevoir le baptême. L'enseignement catholique voit dans le baptême un don de grâce qui peut précéder la profession personnelle de l'enfant, accompagné de la responsabilité ultérieure des parents et parrains."
+      },
+      "seriousObjection": {
+        "en": "Does this mean all infant-baptizing churches teach exactly the Catholic doctrine of sacramental regeneration?",
+        "fr": "Cela signifie-t-il que toutes les Églises baptisant les enfants professent exactement la doctrine catholique de la régénération sacramentelle ?"
+      },
+      "reasonedResponse": {
+        "en": "No. Agreement about the recipients of Baptism does not erase disagreements about grace, covenant, sacramental causality and ecclesial membership. Compare each denomination's own confession instead of treating common practice as identical theology.",
+        "fr": "Non. L'accord sur les personnes à baptiser ne supprime pas les désaccords sur la grâce, l'alliance, la causalité sacramentelle et l'appartenance ecclésiale. Il faut comparer les confessions propres à chaque tradition plutôt que de prendre une pratique commune pour une théologie identique."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What do Baptists say about the covenant and personal faith?",
+            "fr": "Que disent les baptistes de l'alliance et de la foi personnelle ?"
+          },
+          "sourceReviewScope": "BAP-EV-010–013"
+        },
+        {
+          "label": {
+            "en": "Does infant Baptism confer grace in the same way in every confession?",
+            "fr": "Le baptême des enfants communique-t-il la grâce de la même manière partout ?"
+          },
+          "sourceReviewScope": "LUT-008–009, REF-017–018, WES-019–020"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Catechism §§1250–1255",
+          "url": "https://www.vatican.va/archive/ENG0015/__P3K.HTM",
+          "scope": "Catholic infant Baptism and formation",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Second London Baptist Confession ch.29 §2",
+          "url": "https://www.sg-audiotreasures.org/1689/1689.htm",
+          "scope": "Baptist personal profession requirement",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Westminster Confession 28.4",
+          "url": "https://wts.edu/wcf",
+          "scope": "Reformed infant Baptism",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Anglican Thirty-Nine Articles XXVII",
+          "url": "https://www.anglicanmissioninengland.org/about/about-amie/thirty-nine-articles-of-religion/",
+          "scope": "Anglican infant Baptism",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Methodist Articles of Religion XVII",
+          "url": "https://www.umc.org/en/content/articles-of-religion",
+          "scope": "Methodist infant Baptism",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "Full original Lutheran Augsburg Confession Article IX still to collate as distinct source; avoid presenting unverified quotation as primary witness.",
+        "Do not assume all non-denominational Evangelicals share Baptist positions.",
+        "Existing APOL-024 lacked the multi-denomination comparison; new primary citations are editorial additions only."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "BAPTIST_CONFESSION_RELIGIOUS_POSITION_SOURCE_REFERENCED; editorial question not quoted."
+    },
+    {
+      "questionId": "MAR-017",
+      "originalQuestion": "Does Revelation 12 simply prove the Assumption?",
+      "originalBank": "MAR",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "APOL-033",
+      "answerResearchLevel": "SOURCE_ANCHORED_EDITORIAL_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "Not by itself. The woman clothed with the sun in Apocalypse/Revelation 12 can be read in relation to God's people, the Church and the Blessed Virgin Mary. Pius XII cites its Marian use as one among the traditional figures brought forward in explaining the Assumption; he does not present this verse alone as a complete historical proof. The doctrine of the Assumption rests on the Church's definitive teaching and the wider witness considered in Munificentissimus Deus.",
+        "fr": "Pas à lui seul. La femme revêtue du soleil dans l'Apocalypse 12 peut être comprise en rapport avec le peuple de Dieu, l'Église et la bienheureuse Vierge Marie. Pie XII mentionne son interprétation mariale parmi les figures traditionnelles invoquées pour expliquer l'Assomption ; il ne présente pas ce seul verset comme une démonstration historique exhaustive. Le dogme de l'Assomption repose sur l'enseignement définitif de l'Église et sur l'ensemble des témoignages considérés dans Munificentissimus Deus."
+      },
+      "seriousObjection": {
+        "en": "If Pius XII mentioned the woman clothed with the sun, is anyone obliged to agree she signifies Mary and the Assumption exclusively?",
+        "fr": "Puisque Pie XII mentionne la femme revêtue du soleil, faut-il croire qu'elle désigne exclusivement Marie et son Assomption ?"
+      },
+      "reasonedResponse": {
+        "en": "No. The defined teaching concerns Mary's bodily assumption into heavenly glory; the use of a particular symbolic image and its exegetical layers should not be inflated into an exclusive dogmatic reading that the definition itself did not make.",
+        "fr": "Non. La définition concerne l'élévation corporelle de Marie dans la gloire céleste ; l'emploi d'une image symbolique et ses divers niveaux d'interprétation ne doivent pas être transformés en lecture exégétique exclusive que la définition elle-même n'a pas imposée."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What did Pius XII actually define?",
+            "fr": "Qu'a exactement défini Pie XII ?"
+          },
+          "sourceReviewScope": "Munificentissimus Deus §44"
+        },
+        {
+          "label": {
+            "en": "Why does Revelation 12 also refer to the Church?",
+            "fr": "Pourquoi Apocalypse 12 renvoie-t-elle aussi à l'Église ?"
+          },
+          "sourceReviewScope": "Scriptural interpretation with contextual/exegetical review"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Pius XII, Munificentissimus Deus (1950) §27, §44",
+          "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+          "scope": "Marian typology and definition",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        },
+        {
+          "authority": "Revelation 12",
+          "url": "https://bible.usccb.org/bible/revelation/12",
+          "scope": "Biblical imagery and context",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "Full patristic history of woman's ecclesial and Marian readings not collation-approved; avoid exclusive reading."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_EXEGETICAL_CHALLENGE_NOT_A_NAMED_PROTESTANT_QUOTE."
+    },
+    {
+      "questionId": "ERR-009",
+      "originalQuestion": "Is “magic” merely stage magic?",
+      "originalBank": "ERR",
+      "originalExcerptVerified": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE",
+      "originalCanonicalOwner": "learn.catechism",
+      "answerResearchLevel": "PRIMARY_SOURCE_REPAIR_DRAFT",
+      "publicationAllowed": false,
+      "canonicalOwnerPermissionGranted": false,
+      "independentTheologicalReview": false,
+      "nativeFrenchApproval": false,
+      "answer": {
+        "en": "No. A stage magician creates a theatrical illusion using natural techniques; no occult force is being invoked merely because an audience is deceived in a performance. The magic or sorcery condemned by Catholic teaching concerns attempts to control occult powers or obtain supernatural power over others. The moral distinction depends on the act, intention and whether the practice involves superstition, occult invocation or dishonest exploitation—not on the word 'magic' alone.",
+        "fr": "Non. Un prestidigitateur produit une illusion scénique par des moyens naturels ; aucune puissance occulte n'est invoquée du seul fait que le public assiste à un tour. La magie ou la sorcellerie condamnée par l'enseignement catholique concerne la tentative de maîtriser des puissances occultes ou d'exercer un pouvoir surnaturel sur autrui. La distinction morale dépend de l'acte, de l'intention et d'éventuelles pratiques superstitieuses, invocations occultes ou exploitations frauduleuses, non du seul mot « magie »."
+      },
+      "seriousObjection": {
+        "en": "But if an illusionist pretends to have supernatural powers, is that always harmless?",
+        "fr": "Mais si un illusionniste prétend avoir des pouvoirs surnaturels, est-ce toujours sans conséquence ?"
+      },
+      "reasonedResponse": {
+        "en": "Not automatically. A clearly staged entertainment act is different from deliberately persuading vulnerable people that one has genuine occult authority in order to exploit them. Catechism §2117 identifies the condemned practice by its occult aim and also warns against exploiting another person's credulity.",
+        "fr": "Pas nécessairement. Un spectacle présenté clairement comme divertissement diffère du fait de persuader délibérément des personnes vulnérables que l'on possède un véritable pouvoir occulte pour les exploiter. Le Catéchisme §2117 définit la pratique réprouvée par sa visée occulte et met aussi en garde contre l'exploitation de la crédulité d'autrui."
+      },
+      "followups": [
+        {
+          "label": {
+            "en": "What about séances, mediums and divination?",
+            "fr": "Que penser des séances spirites, médiums et pratiques divinatoires ?"
+          },
+          "sourceReviewScope": "CCC §§2116–2117"
+        },
+        {
+          "label": {
+            "en": "When does deception for entertainment become sinful fraud?",
+            "fr": "Quand la tromperie scénique devient-elle une fraude moralement coupable ?"
+          },
+          "sourceReviewScope": "Original Catholic moral teaching on deception and harm; exact source review pending"
+        }
+      ],
+      "sources": [
+        {
+          "authority": "Catechism §§2116–2117",
+          "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.index.html",
+          "scope": "Magic, sorcery, divination, credulity",
+          "witnessKind": "PRIMARY_TEXT_SOURCE_WITNESS_NOT_CLAIM_CERTIFIED"
+        }
+      ],
+      "unresolvedChecks": [
+        "The stage-magic distinction is a reasoned application of CCC §2117, not an explicitly named activity within the cited paragraph.",
+        "Requires review of fraudulent performance and claims of real psychic powers under moral source owner."
+      ],
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_APPLICATION_CASE_NOT_A_SOURCE_QUOTATION."
+    }
+  ]
+}

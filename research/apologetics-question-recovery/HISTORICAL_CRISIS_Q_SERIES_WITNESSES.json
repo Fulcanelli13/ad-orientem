@@ -1,0 +1,53 @@
+{
+  "status": "HISTORICAL_CONVERSATION_SEARCH_RANGE_ONLY",
+  "original_messages": [
+    {
+      "timestamp_utc": "2026-10-07T19:30:58Z",
+      "identified_range": "Q051–Q150",
+      "historical_topic_descriptions": [
+        "Vatican II authority",
+        "ecumenism",
+        "liturgical reform",
+        "SSPX and Archbishop Lefebvre",
+        "Mass theology"
+      ],
+      "individual_original_question_texts_extracted": 0,
+      "uncertain_owner": "Earlier search describes crisis-related heresy questions, but exact per-ID questions are not returned."
+    },
+    {
+      "timestamp_utc": "2026-10-07T19:26:56Z",
+      "identified_range": "Q126–Q250",
+      "historical_topic_descriptions": [
+        "SSPX",
+        "sedevacantism",
+        "historical Church crises",
+        "conciliarism and Gallicanism",
+        "Jansenism",
+        "Modernism",
+        "Communism",
+        "liturgical reform",
+        "pre-Vatican-II developments"
+      ],
+      "individual_original_question_texts_extracted": 0,
+      "uncertain_owner": "Question IDs Q rather than C; do not assume 1:1 alignment to original C001–233 forensic positions."
+    },
+    {
+      "timestamp_utc": "2026-10-07T19:26:56Z",
+      "identified_range": "Q176–Q200",
+      "historical_topic_descriptions": [
+        "sedevacantism",
+        "Bellarmine",
+        "Cajetan",
+        "manifest heresy",
+        "universal peaceful acceptance",
+        "Cassiciacum thesis",
+        "conclavism",
+        "una cum"
+      ],
+      "individual_original_question_texts_extracted": 0,
+      "uncertain_owner": "Subset of broader Q126–Q250 witness, not an additional 25-question corpus."
+    }
+  ],
+  "warning": "These are historical response-range witnesses from personal conversation retrieval summaries, NOT exact individual question sentences. They do not prove the 233 historical C-series and 250 Q-series can be merged. No ID replacement or numeric addition permitted.",
+  "verified_original_question_count": 0
+}
