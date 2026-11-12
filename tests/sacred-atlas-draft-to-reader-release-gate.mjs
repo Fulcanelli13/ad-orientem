@@ -26,7 +26,7 @@ assert.equal(citationTriage.source_ledger_path,
   "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
   p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
-assert.equal(citationDifferences.length,50,"50 raw citation URL differences remain by design");
+assert.equal(citationDifferences.length,45,"45 raw citation URL differences remain by design");
 assert.equal(citationTriage.entries.length,85,"Keep all 85 original differences for provenance");
 const citationLedgerByKey=new Map(claimResearchLedger.paragraphs.map(p=>[p.draft_order+":"+p.section_id,p]));
 const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
@@ -34,9 +34,9 @@ assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citat
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,12);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE").length,12);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,0);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION").length,5);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION").length,0);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE").length,33);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,23);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,28);
 for(const classified of citationTriage.entries){
   const p=citationLedgerByKey.get(classified.key);
   assert.ok(p,"Orphan citation triage entry");
@@ -76,10 +76,30 @@ for(const classified of citationTriage.entries){
   assert.equal(classified.french_second_editor_approved,false);
   assert.equal(classified.owner_authorized,false);
 }
-assert.equal(citationTriage.summary.current_differing_urls,50);
+assert.equal(citationTriage.summary.current_differing_urls,45);
 assert.equal(citationTriage.summary.remaining_active_triage,0);
-assert.equal(citationTriage.summary.access_hold_paragraphs,5);
-assert.equal(citationTriage.summary.access_hold_guides,3);
+assert.equal(citationTriage.summary.access_hold_paragraphs,0);
+assert.equal(citationTriage.summary.access_hold_guides,0);
+
+assert.equal(citationTriage.summary.owner_approved_guides,0);
+assert.equal(citationTriage.summary.independently_certified_paragraphs,0);
+for(const [order,section,url] of [
+  [49,"origin","https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf"],
+  [49,"titulus","https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf"],
+  [79,"history","https://visitbraga.travel/highlights/monumentos/basilica-do-sameiro/"],
+  [119,"history","https://whc.unesco.org/document/221350"],
+  [119,"identity","https://en.jerusalem-patriarchate.info/announcements/statement-for-the-church-of-the-holy-sepulchre/"]
+]){
+  const guide=[...wave1,...wave2].find(x=>x.draft_order===order);
+  const para=guide.sections.find(x=>x.id===section).paragraphs[0];
+  assert.equal(para.source_url,url,"Access-held institutional citation upgrade missing");
+  const triage=citationTriage.entries.find(x=>x.key===order+":"+section);
+  assert.equal(triage.decision_status,"SOURCE_UPGRADED_RESEARCH_ONLY");
+  assert.equal(triage.repair.new_guide_source_url,url);
+  assert.equal(triage.repair.full_english_french_certification,false);
+  assert.equal(triage.repair.owner_approval,false);
+}
+
 const f2026=wave2.find(g=>g.draft_order===91).sections.find(s=>s.id==="pilgrimage").paragraphs[0];
 assert.equal(f2026.source_url,"https://www.katholisch-in-lindlar.de/news/index.html");
 assert.match(f2026.en,/18–25 July 2026/);
@@ -87,7 +107,7 @@ const santa2026=wave1.find(g=>g.draft_order===49).sections.find(s=>s.id==="closu
 assert.match(santa2026.en,/23 October 2026/);
 assert.equal(santa2026.source_url,"https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/");
 assert.equal(citationTriage.summary.original_citation_preferred_no_change,33);
-assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,23);
+assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,28);
 assert.equal(citationTriage.summary.source_equivalent_no_change,12);
 for(const [order,sourceId] of [[77,"AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"],
   [106,"AO-ED-CORNILLON-SANCTUARY-20261112"],

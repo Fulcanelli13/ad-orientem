@@ -3,9 +3,9 @@
   "as_of": "2026-11-12",
   "state": "RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED",
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
-  "source_ledger_blob_sha": "f18339b61a2cff9cc2c7aeb9b1293154e0515888",
+  "source_ledger_blob_sha": "e35e7b59bbf9d09db76ecee2738768c3e05496fd",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed. All 85 original source URL differences now have a documented research disposition: seven earlier and four newly repaired citation-scope defects, 23 source-quality upgrades, 12 URL equivalences, 33 retained paragraph-appropriate citations and five explicit inaccessible-source holds. This is not independent EN/FR sentence-level approval. Earlier seven-defect counters updated to twelve repaired citation-scope defects, preserving the difference between a broken/mis-scoped citation and an untrue historical sentence. Some source judgments rely on custodian-indexed evidence and are not complete independent direct-URL reinspection. Follow-up on 12 November: the Frielingsdorf 2026 expired detailed parish article has been replaced by the parish's accessible dated index; the Rome Diocese's 19 October notice supersedes April Santa Croce closure language. Remaining five access-held paragraphs are not certified.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed. All 85 original source URL differences now have a documented research disposition: seven earlier and four newly repaired citation-scope defects, 23 source-quality upgrades, 12 URL equivalences, 33 retained paragraph-appropriate citations and five explicit inaccessible-source holds. This is not independent EN/FR sentence-level approval. Earlier seven-defect counters updated to twelve repaired citation-scope defects, preserving the difference between a broken/mis-scoped citation and an untrue historical sentence. Some source judgments rely on custodian-indexed evidence and are not complete independent direct-URL reinspection. Follow-up on 12 November: the Frielingsdorf 2026 expired detailed parish article has been replaced by the parish's accessible dated index; the Rome Diocese's 19 October notice supersedes April Santa Croce closure language. Remaining five access-held paragraphs are not certified. On 12 November, five previously inaccessible citations were replaced at research stage with directly inspected, distinct institutional sources (Vatican Jubilee Santa Croce booklet for 2, Braga municipal Sameiro for 1, UNESCO Holy Sepulchre physical sites for 1, Greek Orthodox Patriarchate Status Quo for 1). Original inaccessible URLs and old triage comparisons remain provenance. All five remain without independent English/French, second-editor or owner approval.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -20,26 +20,26 @@
     "verified_citation_errors": 12,
     "independently_certified_paragraphs": 0,
     "owner_approved_guides": 0,
-    "direct_url_spot_checks": 45,
+    "direct_url_spot_checks": 50,
     "confirmed_citation_scope_defects": 12,
-    "remaining_without_direct_url_spot_check": 40,
+    "remaining_without_direct_url_spot_check": 35,
     "resolved_citation_scope_defects": 12,
-    "current_differing_urls": 50,
+    "current_differing_urls": 45,
     "unrepaired_confirmed_scope_defects": 0,
     "remaining_affected_guides": 0,
     "source_equivalent_no_change": 12,
     "remaining_active_triage": 0,
-    "source_upgrades_without_proven_claim_error": 23,
+    "source_upgrades_without_proven_claim_error": 28,
     "original_citation_preferred_no_change": 33,
-    "access_hold_paragraphs": 5,
-    "access_hold_guides": 3,
+    "access_hold_paragraphs": 0,
+    "access_hold_guides": 0,
     "citation_defects_repaired": 12,
     "total_adjudicated": 85,
-    "incomplete_due_to_access": 5,
+    "incomplete_due_to_access": 0,
     "research_stage_dispositions_only": true,
     "all_direct_urls_reopened": false,
     "release_approval_granted": false,
-    "source_access_holds_require_editor_review": 5
+    "source_access_holds_require_editor_review": 0
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -242,18 +242,28 @@
       "triage_class": "DATED_PROGRAMME_OR_ACCESS_SCOPE",
       "suggested_next_action": "Compare original and alternate source dates and temporal claims. Never infer current access or recurring programme from a dated announcement; retain or supplement the most relevant citation.",
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
-      "research_evidence_note": "The Rome Diocese's 19 October 2026 notice supersedes the April closure and documents planned reopening on 23 October. Attribution to St Helena and Titulus epigraphy remain source-access held pending full original custodian corroboration.",
+      "research_evidence_note": "Directly inspected official Vatican Jubilee 2025 Santa Croce booklet: traditional Helena cross discovery and distinct relics of Cross, Nail, Crown, Thomas and Good Thief; attribution carefully retained.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "access_hold": {
+      "repair": {
+        "original_source_url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
+        "original_source_id": null,
+        "new_guide_source_url": "https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf",
+        "new_guide_source_id": null,
+        "verification_basis": "Directly inspected official Vatican Jubilee 2025 Santa Croce booklet: traditional Helena cross discovery and distinct relics of Cross, Nail, Crown, Thomas and Good Thief; attribution carefully retained.",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      },
+      "direct_url_spot_check": {
         "checked_on": "2026-11-12",
-        "reason": "Original basilica relic-description page was inaccessible to direct inspection. The Diocese of Rome's accessible reopening notice corroborates the presence of named Passion relics, but does not fully establish the paragraph's Helena provenance or inscription-language details.",
-        "source_directly_verified": false,
-        "editorial_release_allowed": false,
-        "owner_authorized": false
+        "new_institutional_target_directly_inspected": true,
+        "original_custodian_directly_inspected": false,
+        "original_fetch_limitation": "Original custodian URL inaccessible to independent direct client; alternative public institutional source retrieved and compared to paragraph.",
+        "full_english_french_claim_certified": false
       }
     },
     {
@@ -266,18 +276,28 @@
       "triage_class": "DATED_PROGRAMME_OR_ACCESS_SCOPE",
       "suggested_next_action": "Compare original and alternate source dates and temporal claims. Never infer current access or recurring programme from a dated announcement; retain or supplement the most relevant citation.",
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
-      "research_evidence_note": "The Rome Diocese's 19 October 2026 notice supersedes the April closure and documents planned reopening on 23 October. Attribution to St Helena and Titulus epigraphy remain source-access held pending full original custodian corroboration.",
+      "research_evidence_note": "Directly inspected Vatican Jubilee Santa Croce booklet: wooden Titulus, Hebrew Greek Latin scripts, distinct reliquaries and material relic fragments; no scientific authenticity claimed.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "access_hold": {
+      "repair": {
+        "original_source_url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
+        "original_source_id": null,
+        "new_guide_source_url": "https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf",
+        "new_guide_source_id": null,
+        "verification_basis": "Directly inspected Vatican Jubilee Santa Croce booklet: wooden Titulus, Hebrew Greek Latin scripts, distinct reliquaries and material relic fragments; no scientific authenticity claimed.",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      },
+      "direct_url_spot_check": {
         "checked_on": "2026-11-12",
-        "reason": "Original basilica relic-description page was inaccessible to direct inspection. The Diocese of Rome's accessible reopening notice corroborates the presence of named Passion relics, but does not fully establish the paragraph's Helena provenance or inscription-language details.",
-        "source_directly_verified": false,
-        "editorial_release_allowed": false,
-        "owner_authorized": false
+        "new_institutional_target_directly_inspected": true,
+        "original_custodian_directly_inspected": false,
+        "original_fetch_limitation": "Original custodian URL inaccessible to independent direct client; alternative public institutional source retrieved and compared to paragraph.",
+        "full_english_french_claim_certified": false
       }
     },
     {
@@ -317,18 +337,28 @@
       "triage_class": "DATED_PROGRAMME_OR_ACCESS_SCOPE",
       "suggested_next_action": "Compare original and alternate source dates and temporal claims. Never infer current access or recurring programme from a dated announcement; retain or supplement the most relevant citation.",
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
-      "research_evidence_note": "Sameiro custodian names Marian hill sanctuary; annual first June Sunday procession departs Braga Cathedral; Marian feast 12 June and monthly May–October candle processions are specified.",
+      "research_evidence_note": "Direct inspection of official Visit Braga civic heritage page confirms independent hilltop Sameiro sanctuary, Martinho's 1863 Marian monument, dome, basilica and crypt; old contact page remained inaccessible.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "access_hold": {
+      "repair": {
+        "original_source_url": "https://santuariodosameiro.pt/contatos-e-horarios/",
+        "original_source_id": "SHR-SAMEIRO-CONTACT",
+        "new_guide_source_url": "https://visitbraga.travel/highlights/monumentos/basilica-do-sameiro/",
+        "new_guide_source_id": "AO-ED-SAMEIRO-BRAGA-CIVIC-20261112",
+        "verification_basis": "Direct inspection of official Visit Braga civic heritage page confirms independent hilltop Sameiro sanctuary, Martinho's 1863 Marian monument, dome, basilica and crypt; old contact page remained inaccessible.",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      },
+      "direct_url_spot_check": {
         "checked_on": "2026-11-12",
-        "reason": "Both Sameiro contact/hours and pilgrimage pages returned HTTP 403 in current verification; source replacement cannot be responsibly decided.",
-        "source_directly_verified": false,
-        "editorial_release_allowed": false,
-        "owner_authorized": false
+        "new_institutional_target_directly_inspected": true,
+        "original_custodian_directly_inspected": false,
+        "original_fetch_limitation": "Original custodian URL inaccessible to independent direct client; alternative public institutional source retrieved and compared to paragraph.",
+        "full_english_french_claim_certified": false
       }
     },
     {
@@ -1040,18 +1070,28 @@
       "triage_class": "COMPLEMENTARY_SOURCE_NOT_AUTOMATIC_REPLACEMENT",
       "suggested_next_action": "Compare the sentence-level claims: both sources may cover distinct points. Retain original where valid and add exact institutional corroboration only when necessary.",
       "evidence_scope": "FRANCISCAN_CUSTODY_GOLGOTHA_AND_TOMB",
-      "research_evidence_note": "Holy Land Custody's English institutional history locates Christian veneration of Golgotha and the Tomb in one Holy Sepulchre complex and distinguishes the respective chapels and custodianships.",
+      "research_evidence_note": "Directly inspected institutional UNESCO World Heritage status PDF describes Church of the Holy Sepulchre enclosing the two traditional Crucifixion and Tomb sites; original Franciscans' FR URL 403.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "access_hold": {
+      "repair": {
+        "original_source_url": "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/",
+        "original_source_id": "SHR-PIL-PS-holy-sepulchre-jerusalem",
+        "new_guide_source_url": "https://whc.unesco.org/document/221350",
+        "new_guide_source_id": "AO-ED-HOLY-SEPULCHRE-UNESCO-SITES-20261112",
+        "verification_basis": "Directly inspected institutional UNESCO World Heritage status PDF describes Church of the Holy Sepulchre enclosing the two traditional Crucifixion and Tomb sites; original Franciscans' FR URL 403.",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      },
+      "direct_url_spot_check": {
         "checked_on": "2026-11-12",
-        "reason": "French and English Holy Sepulchre Custody pages both returned HTTP 403 during inspection; require direct source review before editor certification.",
-        "source_directly_verified": false,
-        "editorial_release_allowed": false,
-        "owner_authorized": false
+        "new_institutional_target_directly_inspected": true,
+        "original_custodian_directly_inspected": false,
+        "original_fetch_limitation": "Original custodian URL inaccessible to independent direct client; alternative public institutional source retrieved and compared to paragraph.",
+        "full_english_french_claim_certified": false
       }
     },
     {
@@ -1064,18 +1104,28 @@
       "triage_class": "COMPLEMENTARY_SOURCE_NOT_AUTOMATIC_REPLACEMENT",
       "suggested_next_action": "Compare the sentence-level claims: both sources may cover distinct points. Retain original where valid and add exact institutional corroboration only when necessary.",
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
-      "research_evidence_note": "Holy Land Franciscans explicitly document shared Status Quo with Greek Orthodox and Armenian Apostolic custodianship at Holy Sepulchre, not exclusive Roman Catholic custody.",
+      "research_evidence_note": "Directly inspected Greek Orthodox Patriarchate 2020 statement naming Orthodox, Latin Franciscan and Armenian communities under Status Quo; no contemporary access inferred.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "access_hold": {
+      "repair": {
+        "original_source_url": "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/",
+        "original_source_id": "SHR-PIL-PS-holy-sepulchre-jerusalem",
+        "new_guide_source_url": "https://en.jerusalem-patriarchate.info/announcements/statement-for-the-church-of-the-holy-sepulchre/",
+        "new_guide_source_id": "AO-ED-HOLY-SEPULCHRE-STATUS-QUO-20261112",
+        "verification_basis": "Directly inspected Greek Orthodox Patriarchate 2020 statement naming Orthodox, Latin Franciscan and Armenian communities under Status Quo; no contemporary access inferred.",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      },
+      "direct_url_spot_check": {
         "checked_on": "2026-11-12",
-        "reason": "The Franciscan Custody's Holy Sepulchre custodianship pages were inaccessible to direct inspection; shared Greek Orthodox/Armenian/Latin responsibilities require source-scoped verification.",
-        "source_directly_verified": false,
-        "editorial_release_allowed": false,
-        "owner_authorized": false
+        "new_institutional_target_directly_inspected": true,
+        "original_custodian_directly_inspected": false,
+        "original_fetch_limitation": "Original custodian URL inaccessible to independent direct client; alternative public institutional source retrieved and compared to paragraph.",
+        "full_english_french_claim_certified": false
       }
     },
     {
