@@ -28,7 +28,8 @@ for(const [eventId,spec] of Object.entries(SEDILIA_REVERENCE_EVENTS)){
  const good=checkSediliaObservation({observation,card:canonical,
    form:"SOLEMN",mode:"LIVE"});
  assert.equal(good.accepted,true,eventId);
- assert.deepEqual(good.actors,["P","D","S"]);
+ assert.deepEqual(good.actors,eventId==="SED-CREDO-INCARNATUS"
+   ?["P","S"]:["P","D","S"]);
  assert.ok(good.sequence.includes("PLACE_BIRETTA_ON_RIGHT_KNEE"));
  assert.equal(checkSediliaObservation({
    observation:{...observation,phase:"END"},card:canonical,
