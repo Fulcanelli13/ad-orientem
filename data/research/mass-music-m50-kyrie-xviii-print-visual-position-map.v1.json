@@ -1,0 +1,613 @@
+{
+  "schema": "ao-schola-m50-1961-print-visual-positions-v1",
+  "scoreId": "GREGOBASE-2522",
+  "title": "Kyrie XVIII, Deus Genitor alme — provisional print-to-transcription visual map",
+  "purpose": "Make the historical print comparison independently inspectable; not a source approval.",
+  "provenance": {
+    "printedWitness": "Graduale Romanum (Solesmes), 1961, folio 57*, PDF page 59",
+    "originalPdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "originalPdfSha256": "119b084b5c0689fc3e87541143731f6526c404a018bc97d18e8c98a7635ce2bd",
+    "evidenceWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/43254526777",
+    "evidenceArtifactId": 13961905363,
+    "renderDpi": 420,
+    "nativeScanResolutionIndependentlyConfirmed": false,
+    "crop1": {
+      "filename": "kyrie-xviii-first-printed-staff.png",
+      "width": 1867,
+      "height": 333,
+      "sha256": "59eb7cad1f1aab60323e39244fbedad3f654533cfdd2e0743abb35cb1653358c",
+      "staffLinesYApprox": [
+        73,
+        119,
+        166,
+        212
+      ]
+    },
+    "crop2": {
+      "filename": "kyrie-xviii-second-printed-staff.png",
+      "width": 1880,
+      "height": 299,
+      "sha256": "8efad88d5bef81ad6cb570edaa8c819c4edf22e62018bb5235259e160e9ce546",
+      "staffLinesYApprox": [
+        20,
+        65,
+        110,
+        155
+      ]
+    },
+    "originalFacsimileImagesNotAddedToPublicAssets": true
+  },
+  "method": "Visual alignment of each visibly engraved square/diamond head to four-line staff using original 420-dpi folio crops; x/y are approximate crop positions, not image-derived machine centroids. Source-ledger parity is tested independently. No OCR was used.",
+  "observedStructure": {
+    "writtenNotesByPhrase": [
+      10,
+      8,
+      10,
+      16
+    ],
+    "total": 44,
+    "printedRepeatLabels": [
+      "iij.",
+      "iij.",
+      "ij.",
+      null
+    ],
+    "threeKyrieThreeChristeThreeKyrieInvocationPlan": true,
+    "visiblePunctaMoraSourceOrdinals": [
+      10,
+      18,
+      28,
+      44
+    ],
+    "visibleHorizontalEpisemaSourceOrdinals": [
+      8,
+      26
+    ],
+    "finalPhraseDiamondHeadsSourceOrdinals": [
+      40,
+      41
+    ]
+  },
+  "notePositions": [
+    {
+      "ordinal": 1,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        330,
+        119
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 2,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        362,
+        119
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 3,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        385,
+        143
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 4,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        455,
+        166
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 5,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        455,
+        143
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 6,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        525,
+        166
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 7,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        635,
+        189
+      ],
+      "observedStaffPosition": 2,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 8,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        706,
+        166
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 9,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        774,
+        143
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 10,
+      "phrase": 1,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        841,
+        143
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 11,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1117,
+        96
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 12,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1184,
+        96
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 13,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1184,
+        72
+      ],
+      "observedStaffPosition": 7,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 14,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1276,
+        96
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 15,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1299,
+        119
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 16,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1368,
+        96
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 17,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1437,
+        96
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 18,
+      "phrase": 2,
+      "staffSystem": 1,
+      "approximateInkCenterPx": [
+        1533,
+        143
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 19,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        100,
+        65
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 20,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        130,
+        65
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 21,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        157,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 22,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        226,
+        110
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 23,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        226,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 24,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        290,
+        110
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 25,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        384,
+        132
+      ],
+      "observedStaffPosition": 2,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 26,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        455,
+        110
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 27,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        518,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 28,
+      "phrase": 3,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        586,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 29,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        807,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 30,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        837,
+        65
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 31,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        837,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 32,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        897,
+        110
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 33,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        897,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 34,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        964,
+        110
+      ],
+      "observedStaffPosition": 3,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 35,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        993,
+        132
+      ],
+      "observedStaffPosition": 2,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 36,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1086,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 37,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1111,
+        65
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 38,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1148,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 39,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1148,
+        20
+      ],
+      "observedStaffPosition": 7,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 40,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1180,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "diamond",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 41,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1210,
+        65
+      ],
+      "observedStaffPosition": 5,
+      "visualNoteheadShape": "diamond",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 42,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1273,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 43,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1340,
+        43
+      ],
+      "observedStaffPosition": 6,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    },
+    {
+      "ordinal": 44,
+      "phrase": 4,
+      "staffSystem": 2,
+      "approximateInkCenterPx": [
+        1412,
+        87
+      ],
+      "observedStaffPosition": 4,
+      "visualNoteheadShape": "square_or_attached_neume",
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+    }
+  ],
+  "remainingEditorialBoundaries": {
+    "scoreApproved": false,
+    "performanceRhythmCertified": false,
+    "independent1961PhysicalInkCertification": false,
+    "neumeShapeAndIndividualSignCertification": false,
+    "visualComparisonWithoutExternalGregorianEditor": true,
+    "requiresExpertVerificationOfLigaturesAndSmallerMarks": true,
+    "unambiguousFinalShapeRule": "The two diamond heads occur within the final long e- neume, and must never become extra performed syllables.",
+    "noAutomaticMassCalendarAssignment": true,
+    "excludeRequiem": true
+  },
+  "status": "PROVISIONAL_PRINT_VISUAL_ALIGNMENT_NOT_APPROVED"
+}
