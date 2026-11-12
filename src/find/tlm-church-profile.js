@@ -107,8 +107,10 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
   '<button type="button" class="aoTlmProfileClose" data-find-close-detail aria-label="'+E(L(language,"Close","Fermer"))+'">×</button></nav>';
  html+='<div class="aoTlmProfileSpotlight"><div class="aoTlmProfileMedia">';
  if(hasPhoto){const m=item.cover_media;
+  const changes=language==="fr"?m.changes_fr:m.changes_en;
   html+='<figure class="aoTlmProfileHero"><img loading="lazy" decoding="async" src="'+E(m.asset_path)+'" alt="'+E(language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption><details class="aoTlmProfileCredits"><summary>'+E(L(language,"Photograph & credit","Photographie et crédit"))+'</summary><div>'+
-   E(m.credit)+' · '+link(m.license_url,m.license)+' · '+link(m.source_url,L(language,"Original photograph","Photographie originale"))+'</div></details></figcaption></figure>';
+   E(m.credit)+' · '+link(m.license_url,m.license)+' · '+link(m.source_url,L(language,"Original photograph","Photographie originale"))+
+   (changes?' · '+E(changes):'')+'</div></details></figcaption></figure>';
  }else html+=renderDirectoryIdentityFallback(item,language,"detail");
  html+='</div><header class="aoTlmProfileHeading"><small>'+E(L(language,"TRADITIONAL MASS · CHURCH PROFILE","MESSE TRADITIONNELLE · FICHE D’ÉGLISE"))+'</small>'+
   '<h2>'+E(item?.title)+'</h2><p class="aoTlmProfileLocation">'+E(item?.subtitle)+'</p>'+
