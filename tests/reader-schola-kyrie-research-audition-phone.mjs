@@ -119,9 +119,15 @@ try{
      assert.match(start,/source note \d+\/40/);
      await page.waitForFunction(()=>Number(document.querySelector('[data-kyrie-staff]')
        ?.dataset.performanceNoteOrdinal)>=3,null,{timeout:8500});
-     const sourceNow=await player.locator('[data-kyrie-staff]').getAttribute('data-source-note-ordinal');
-     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
-       .getAttribute('id'),'note-'+sourceNow,
+     const nowAlignment=await page.evaluate(()=>{
+       const staff=document.querySelector('[data-kyrie-staff]');
+       return {
+         ordinal:staff.dataset.sourceNoteOrdinal,
+         marked:[...staff.querySelectorAll('svg use.note[data-schola-notehead-active="true"]')]
+           .map(node=>node.id)
+       };
+     });
+     assert.deepEqual(nowAlignment.marked,['note-'+nowAlignment.ordinal],
        'The highlighted physical notehead must be exactly the source note currently sounding');
      const minimise=player.locator('[data-kyrie-action="minimize"]');
      await minimise.click();
@@ -154,10 +160,16 @@ try{
      await minimise.click();
      assert.equal(await player.getAttribute('data-minimized'),'false');
      assert.equal(await player.locator('[data-kyrie-staff]').isVisible(),true);
-     const sourceAfter=await player.locator('[data-kyrie-staff]').getAttribute('data-source-note-ordinal');
-     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
-       .getAttribute('id'),'note-'+sourceAfter,
-       'Expanding the score restores the correct individual notehead without losing playback');
+     const expandedAlignment=await page.evaluate(()=>{
+       const staff=document.querySelector('[data-kyrie-staff]');
+       return {
+         ordinal:staff.dataset.sourceNoteOrdinal,
+         marked:[...staff.querySelectorAll('svg use.note[data-schola-notehead-active="true"]')]
+           .map(node=>node.id)
+       };
+     });
+     assert.deepEqual(expandedAlignment.marked,['note-'+expandedAlignment.ordinal],
+       'Expanding the score restores exact source-note highlighting without losing playback');
      await player.locator('[data-kyrie-action="stop"]').click();
      assert.match(await player.locator('[data-kyrie-position]').textContent(),
        /Invocation 1\/9/);
