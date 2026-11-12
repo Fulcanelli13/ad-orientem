@@ -1,0 +1,176 @@
+{
+  "schema": "ao-schola-m49-kyrie-xviii-1961-printed-folio-source-review.v1",
+  "reviewedOn": "2026-11-12",
+  "scoreId": "GREGOBASE-2522",
+  "movement": "KYRIE",
+  "setting": "MASS_18",
+  "name": "Kyrie XVIII — Deus Genitor alme",
+  "sourceGabcFingerprintUtf16Fnv1a32": "db6e8276",
+  "printedWitness": {
+    "edition": "Graduale Romanum (Solesmes), 1961, Kyriale",
+    "folio": "57*",
+    "pdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "pdfPage1Based": 59,
+    "visualSourceCheck": "Original scanned source page directly inspected on 12 Nov 2026, PDF page 59: title 'XVIII. — In feriis Adventus et Quadragesimae' followed by the 4 Kyrie/Christe phrases on two printed staff systems.",
+    "openingHeading": "XVIII. — In feriis Adventus et Quadragesimae",
+    "usageContinuation": "In vigiliis, feriis IV temporum et in Missa Rogationum.",
+    "chantAscription": "[Deus Genitor alme]",
+    "notRequiemEvidence": "This printed heading does not independently license applying this transcription to an Ad Orientem Requiem. Requiem selection remains separate.",
+    "otherOriginalReferences": [
+      {
+        "edition": "The Liber Usualis (Solesmes), 1961",
+        "folio": "62"
+      },
+      {
+        "edition": "Chants of the Church (Solesmes), 1956",
+        "folio": "44"
+      }
+    ],
+    "onlineRecord": "https://gregobase.selapa.net/chant.php?id=2522",
+    "historicalSourcePdfImageNotAddedToAssets": true,
+    "copyingOriginalScanNotAuthorizedByThisAudit": true
+  },
+  "observedPrint": {
+    "sourcePageAndFourOriginalPhrasesVisible": true,
+    "twoPrintedSystems": true,
+    "phraseRepeatLabels": [
+      "iij.",
+      "iij.",
+      "ij.",
+      null
+    ],
+    "lyricSequence": [
+      "Ký-ri-e e-lé-i-son",
+      "Christe e-lé-i-son",
+      "Ký-ri-e e-lé-i-son",
+      "Ký-ri-e e-lé-i-son"
+    ],
+    "phrasePlanIndicesZeroBased": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    "sourceNotationMatchesOverallFourPhraseStructure": true,
+    "fullPhysicalNoteheadByNoteheadManualCountCertified": false,
+    "exactOriginalPixelLevelRhythmicSignAttachmentCertified": false,
+    "exactPitchContourFrom1961ScanIndependentlyAudited": false,
+    "reason": "The available web PDF screenshot establishes original folio, printed phrase structure and repetition labels. Small rhythmic marks and each original 1961 notehead require controlled high-resolution facsimile-by-facsimile audit before approval."
+  },
+  "transcriptionAndExsurge": {
+    "gabcSyllabicGroupsByPhrase": [
+      7,
+      6,
+      7,
+      7
+    ],
+    "gabcSyllableNoteCountsByPhrase": [
+      [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        3,
+        2,
+        2,
+        6,
+        1,
+        1,
+        1
+      ]
+    ],
+    "gabcSyllabicGroupsTotal": 27,
+    "rendererNeumeGroupsByPhrase": [
+      8,
+      6,
+      8,
+      9
+    ],
+    "rendererNeumeGroupsTotal": 31,
+    "exsurgeNoteheadsByPhrase": [
+      10,
+      8,
+      10,
+      16
+    ],
+    "exsurgeNoteheadsTotal": 44,
+    "sourceNoteOrdinalsOfPunctumMora": [
+      10,
+      18,
+      28,
+      44
+    ],
+    "sourceNoteOrdinalsOfHorizontalEpisema": [
+      8,
+      26
+    ],
+    "visibleLastPhraseGabcFragments": [
+      "g!hwi",
+      "fg",
+      "fe",
+      "ih/ijIH",
+      "i'",
+      "i",
+      "g."
+    ],
+    "sourceNoteheadVsRenderedNoteheadCountMatched": true,
+    "midiPitchParityStrictParserVersusExsurge": true,
+    "sameSyllableCanContainMultipleRendererNeumes": true,
+    "printedPhysicalGroupCountNotAssumedFromRendererCount": true
+  },
+  "performance": {
+    "plan": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    "invocations": 9,
+    "expandedNoteEvents": 90,
+    "tempoModel": "ILLUSTRATIVE_NOT_AUTHORITATIVE",
+    "certifiedRhythm": false,
+    "audioApproved": false,
+    "livePlayerEnabled": false,
+    "automaticAssignment": false
+  },
+  "editorialNextGates": [
+    "Re-examine original 1961 folio 57* at sufficient native scan resolution to count 44 separate physical noteheads independently of transcription and rendering.",
+    "Independently compare note-by-note staff position, inflections, punctum mora, horizontal episema, virga/inclinata and lyric underlay against the facsimile. Record each discrepancy with source coordinates.",
+    "Evaluate Kyrie XVIII repetition wording and performance plan with an experienced Gregorian editor; the GABC note schedule is not authentic timing certification.",
+    "Keep Requiem Kyrie material and any Kyrie XVIII alternate setting separate; do not assign this to Requiem automatically.",
+    "Only then review whether a second opt-in research audition is appropriate; no promotion to approved Schola score merely because the parser passes."
+  ],
+  "status": "PARTIAL_SOURCE_AND_STRUCTURE_REVIEW__NOT_EDITORIALLY_APPROVED"
+}
