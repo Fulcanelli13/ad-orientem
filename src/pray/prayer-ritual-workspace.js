@@ -7,6 +7,7 @@
  */
 import {prayerCeremonialSceneState,renderPrayerCeremonialScene} from "./prayer-ceremonial-stage.v1.js";
 import "./prayer-ritual-workspace-styles.js";
+import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 
 export const PRAYER_RITUAL_WORKSPACE_VERSION="prayer-ritual-workspace-v1";
 export const RITUAL_VIEW_MODES=Object.freeze(["scene","both","text"]);
@@ -76,6 +77,25 @@ export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATI
   })();
   if(!figure)return null;
   visual.append(figure);
+  if(kind==="confession"){
+    // Reuse the existing publicly released NGA Murillo photograph. Stage 0
+    // already has this image in its canonical owner; move that DOM node,
+    // don't duplicate its downloaded asset, credit or source contract.
+    const released=root.querySelector(".aoPrayerConfessionCover");
+    const frame=released??(()=>{
+      const host=doc.createElement("div");
+      host.innerHTML=releasedModulePhotoMarkup("confession",{
+        className:"aoPrayerConfessionCover"
+      });
+      return host.firstElementChild;
+    })();
+    if(frame){
+      frame.classList.add("aoPrayerRitualSceneArt");
+      frame.dataset.aoRitualArtSource="released-murillo-nga";
+      figure.insertBefore(frame,figure.firstChild);
+      figure.classList.add("aoPrayerCeremonialScene--painted");
+    }
+  }
   const tabs=doc.createElement("nav");
   tabs.className="aoPrayerRitualViews";
   tabs.setAttribute("aria-label",L(french,"Presentation views","Vues de présentation"));
