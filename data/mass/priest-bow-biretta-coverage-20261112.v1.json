@@ -3,9 +3,9 @@
   "date": "2026-11-12",
   "status": "REVIEW_HOLD",
   "authority": "data/mass/gesture-matrix.v1.json",
-  "note": "25 source-identified priest bow gestures are not 25 observed stage clocks; choir-phase sedilia cues live in their own register. Must audit all 65 Mass scenes, entrances, returns, conditional gestures and special rites before completeness certification.",
+  "note": "27 distinct source-identified bow cues (25 matrix plus 2 verified-ceremonial research records missing from matrix); all need independent gesture/actor staging, not inferred priest or choir time. Eight sung sedilia events are separate.",
   "sourceMatrixCount": 142,
-  "priestBowRecords": 25,
+  "priestBowRecords": 27,
   "sediliaChoirDistinctEvents": 8,
   "capRemovalRegistryStatus": "PARTIAL_SEDILIA_SUNG_PHASE_ONLY",
   "priestBow": [
@@ -49,6 +49,20 @@
       "presentationIcon": "priest_profound_bow_rich",
       "stage": "SOURCE_IDENTIFIED_VISUAL_NOT_YET_CERTIFIED",
       "sourceOfMoment": "PRIEST_RECITATION_OR_RUBRIC_NOT_CHOIR_CLOCK",
+      "animationAcceptance": "HOLD"
+    },
+    {
+      "id": "B01-003",
+      "sourceCueId": "AO.SM.C0056",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_ADORAMUS_TE",
+      "triggerLatin": null,
+      "authority": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "condition": "GLORIA_APPOINTED",
+      "sourceRubricEventId": "B01-003",
+      "presentationIcon": null,
+      "sourceOfMoment": "PRIEST_RECITATION_OR_RUBRIC_NOT_CHOIR_CLOCK",
+      "stage": "SOURCE_IDENTIFIED_VISUAL_NOT_YET_CERTIFIED",
       "animationAcceptance": "HOLD"
     },
     {
@@ -304,6 +318,20 @@
       "animationAcceptance": "HOLD"
     },
     {
+      "id": "B01-020",
+      "sourceCueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "action": "CONSECRATION_HOST_QUIETLY_BOWED_ELBOWS_ON_ALTAR",
+      "triggerLatin": null,
+      "authority": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "condition": "DEFAULT",
+      "sourceRubricEventId": "B01-020",
+      "presentationIcon": null,
+      "sourceOfMoment": "PRIEST_RECITATION_OR_RUBRIC_NOT_CHOIR_CLOCK",
+      "stage": "SOURCE_IDENTIFIED_VISUAL_NOT_YET_CERTIFIED",
+      "animationAcceptance": "HOLD"
+    },
+    {
       "id": "GM.P.C0176.01",
       "sourceCueId": "AO.SM.C0176",
       "actor": "PRIEST",
@@ -368,5 +396,22 @@
     "Sung and Solemn visual closeups owner approved",
     "explicit Christmas Annunciation kneeling choreography approved",
     "special rites and clergy entering/leaving sanctuary inventoried"
-  ]
+  ],
+  "sourceCeremonialBatch": "data/mass/ritus-1962-verified-ceremonial-batch01.v1.json",
+  "reconciliation": {
+    "matrixPristBows": 25,
+    "fromVerifiedResearchMissingInMatrix": [
+      {
+        "eventId": "B01-003",
+        "cue": "AO.SM.C0056",
+        "action": "BOW_HEAD_ADORAMUS_TE"
+      },
+      {
+        "eventId": "B01-020",
+        "cue": "AO.SM.C0173",
+        "action": "CONSECRATION_HOST_QUIETLY_BOWED_ELBOWS_ON_ALTAR"
+      }
+    ],
+    "distinctCueTotal": 27
+  }
 }
