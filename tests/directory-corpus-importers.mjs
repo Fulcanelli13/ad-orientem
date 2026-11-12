@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
-import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
+import { parseFsspDirectoryHtml, parseFsspOfficialMarkers, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
 import { ICKSP_US_URL, ICKSP_INTL_URL, parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset, structuredIckspOfficialAddress, runIckspImport } from "../tools/directory/import-icksp.mjs";
 import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
 import { phoneCandidates } from "../tools/directory/lib/html-source-utils.mjs";
@@ -47,6 +47,29 @@ const fsspControlHtml=`
 <table><tr><td>←</td><td>Move left</td><td></td></tr>
 <tr><td>Home</td><td>Jump left by 75%</td><td></td></tr></table>`;
 assert.equal(parseFsspDirectoryHtml(fsspControlHtml).length,0,"FSSP UI controls survived venue parsing");
+
+
+const officialFsspMarker={
+  id:"5993",map_id:"1",approved:"1",title:"Maternal Heart of Mary Parish",
+  address:"Charles O'Neill Way - Lewisham NSW 2049 - Australia",
+  description:"<b>Diocese:</b> Sydney<br><b>Masses:</b> Sun. 10.30 a.m. (Sung)",
+  link:"https://www.maternalheart.org",lat:"-33.8",lng:"151.15"
+};
+const apiFssp=parseFsspOfficialMarkers([officialFssp]);
+assert.equal(apiFssp.length,1);
+assert.equal(apiFssp[0].title,"Maternal Heart of Mary Parish");
+assert.equal(apiFssp[0].countryCode,"AU");
+assert.equal(apiFssp[0].upstreamMarkerId,"5993");
+assert.equal(apiFssp[0].diocese,"Sydney");
+assert.match(apiFssp[0].massRaw,/10\\.30/);
+assert.equal(apiFssp[0].officialGeo,undefined,
+ "Unapproved FSSP source coordinates must not be promoted into the raw importer");
+assert.equal(buildFsspDataset(apiFssp).venues[0].upstream.marker_id,"5993");
+assert.throws(()=>parseFsspOfficialMarkers({records:[officialFssp]}),/schema drift/);
+assert.throws(()=>parseFsspOfficialMarkers([officialFssp,{...officialFssp}]),/duplicate source marker ID/);
+assert.throws(()=>parseFsspOfficialMarkers([{...officialFssp,id:"5994",address:"Unknown place"}]),/unknown country/);
+assert.deepEqual(parseFsspOfficialMarkers([{...officialFssp,map_id:"2"}]),[],
+ "Other WordPress maps must not enter the FSSP worldwide corpus");
 
 
 const ickspUsHtml=`
