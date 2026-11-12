@@ -1452,6 +1452,7 @@ export async function mountNativeReaderPreview({
   let observedCommunionReturn=null;
   let communionReturnCancelled=false;
   let observedSediliaReverence=null;
+  let sediliaReverenceCancelled=false;
   const priestEventIndex=new Map(ready.events.map(e=>[e.id,e]));
   let scheduled=false;
   let initialCardRender=true;
@@ -2023,6 +2024,7 @@ export async function mountNativeReaderPreview({
         current?.sectionId===observedSediliaReverence.nativeCardId&&
         readerModel?.presentationMode==="LIVE"?observedSediliaReverence:null,
       incarnatusKneelException:resolveIncarnatusSungAction(resolvedMass)==="KNEEL",
+      sediliaReverenceCancelled,
       observedCommunionReturn:observedCommunionReturn&&
         (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025"&&
         current?.sectionId===observedCommunionReturn.nativeCardId&&
@@ -2860,7 +2862,9 @@ export async function mountNativeReaderPreview({
       observedCommunionReturn=null;
       communionReturnCancelled=false;
     }
-    if(previous?.sectionId!==card.sectionId)observedSediliaReverence=null;
+    if(previous?.sectionId!==card.sectionId){
+      observedSediliaReverence=null;sediliaReverenceCancelled=false;
+    }
     // Explicit priest-side state persists between Gloria/Credo subcards but
     // must not leak into an unrelated source Mass section.
     if(previous && (previous.sourceSectionId??previous.sectionId)!==
@@ -3059,6 +3063,7 @@ export async function mountNativeReaderPreview({
     observedCommunionReturn=null;
     communionReturnCancelled=true;
     observedSediliaReverence=null;
+    sediliaReverenceCancelled=false;
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
@@ -3402,6 +3407,7 @@ export async function mountNativeReaderPreview({
     communionReturnCancelled=false;
     observedPriestEvent=null;
     observedSediliaReverence=null;
+    sediliaReverenceCancelled=false;
     canonManualUI?.destroy();
     canonManualUI=null;
     clearCanonObservation();
@@ -3760,12 +3766,13 @@ export async function mountNativeReaderPreview({
         owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION",
         nativeCardId:current.sectionId,sourceSectionId:current.sourceSectionId
       });
+      sediliaReverenceCancelled=false;
       queue();return Object.freeze({...outcome,duplicate:false});
     },
     getObservedSediliaReverence:()=>observedSediliaReverence,
     clearObservedSediliaReverence:()=>{
       const had=Boolean(observedSediliaReverence);
-      observedSediliaReverence=null;queue();
+      observedSediliaReverence=null;sediliaReverenceCancelled=true;queue();
       return Object.freeze({cleared:had});
     },
     // Priest-mode adapter. A caller must independently observe a canonical
