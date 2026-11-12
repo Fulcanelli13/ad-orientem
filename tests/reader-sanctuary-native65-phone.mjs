@@ -615,14 +615,28 @@ try{
         c.sourceSectionId==="AO.CARD.010");
       if(hits.length!==1)return {matches:hits.map(c=>c.title)};
       api.showSequence(hits[0].sequence);
-      return {matches:1,sequence:hits[0].sequence,title:hits[0].title};
+      return {matches:1,sequence:hits[0].sequence,title:hits[0].title,
+        stateOnly:hits[0].stateOnly,sectionId:hits[0].sectionId,
+        sourceSectionId:hits[0].sourceSectionId,
+        selected:api.getCurrentCard()?.title};
     });
     assert.equal(lowCard.matches,1,
       "The Low Mass incensation omission must map to one native source card");
-    await frame.waitForFunction(()=>{
-      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
-      return a?.card==="C24"&&a?.lowIncenseOmitted===true;
-    },null,{timeout:12000});
+    await page.waitForTimeout(600);
+    const actualState=await frame.evaluate(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.());
+    const parentState=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const region=document.querySelector(".ao-sanctuary-window");
+      return {card:api.getCurrentCard()?.title,
+        source:api.getCurrentCard()?.sourceSectionId,
+        stateOnly:api.getCurrentCard()?.stateOnly,
+        previewHidden:region?.hidden,
+        activeCue:api.getActiveCue?.()};
+    });
+    assert.ok(actualState?.card==="C24"&&actualState?.lowIncenseOmitted===true,
+      "Low C24 source-to-visual handoff failed: "+
+      JSON.stringify({lowCard,parentState,actualState}));
     const stage=await frame.evaluate(()=>{
       const a=window.AO_SANCTUARY_EMBED_TEST.getState(),p=M3.actors().P;
       return {card:a.card,visual:a.visualCardId,pose:p.pose,x:p.x,z:p.z,
