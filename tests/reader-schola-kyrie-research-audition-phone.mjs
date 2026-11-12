@@ -34,6 +34,7 @@ try{
  await mkdir(shots,{recursive:true});
  const base='http://127.0.0.1:'+server.address().port+
    '/tests/fixtures/reader-phone-harness.html';
+ const failures=[];
  for(const [width,mode,form,requiem] of [
    [320,'LIVE','MISSA_CANTATA_INCENSE',false],
    [390,'LIVE','SOLEMN',false],
@@ -124,6 +125,11 @@ try{
    assert.deepEqual(errors,[],'Real reader browser errors');
    console.log('PASS Kyrie audition in actual reader',
      JSON.stringify({width,mode,form,requiem,cardCount:ready.total}));
+  }catch(error){
+   const failure={width,mode,form,requiem,error:String(error?.stack??error)};
+   failures.push(failure);
+   console.error('FAIL Kyrie audition phone case',JSON.stringify(failure));
   }finally{await context.close();}
  }
+ assert.deepEqual(failures,[],'All five real-reader Schola research audition cases must pass');
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
