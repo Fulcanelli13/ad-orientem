@@ -74,3 +74,9 @@ console.log(JSON.stringify({source_http:report.source_metadata.status,server_tab
   responses:report.request_stats.filter(x=>/json|ajax|wpgmz|map/.test(x.path?.path||"")).slice(0,25),
   page_errors:report.page_errors.slice(0,8),coverage_verified:report.coverage_verified,
   IMPORTANT:"Zero rows have been imported or published"},null,2));
+console.log("FSSP_DIAGNOSTIC_DETAIL",JSON.stringify({
+ source_metadata:report.source_metadata,
+ last_browser:report.visits.at(-1),
+ requests:report.request_stats.slice(0,100),
+ request_count:report.request_stats.length
+},null,2));
