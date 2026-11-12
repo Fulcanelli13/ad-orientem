@@ -225,6 +225,43 @@ try{
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
   }
+  // Real native reader scroll, not a direct test-only present() call:
+  // the original Offertory incense sequence spans four 1962 priest cues.
+  // Scrolling through C0122-C0124 must not truncate the original C24
+  // actor/smoke keyframes or re-start the motion at each prayer.
+  if(form==="SOLEMN"&&width===390){
+    const entering=await focusNativeSourceCue(page,"AO.SM.C0121");
+    assert.equal(entering.found,true,"No native incense start focus: "+
+      JSON.stringify(entering));
+    assert.equal(entering.sourceSectionId,"AO.CARD.010");
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue==="AO.SM.C0121",
+      null,{timeout:12000});
+    for(const continuation of ["AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"]){
+      const state=await focusNativeSourceCue(page,continuation);
+      assert.equal(state.found,true,
+        "Cannot focus continuing incense prayer "+continuation+": "+
+        JSON.stringify(state));
+      await frame.waitForFunction(cue=>{
+        const s=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+        return s?.card==="C24"&&s?.cue===cue&&
+          s?.playedCue==="AO.SM.C0121";
+      },continuation,{timeout:12000});
+    }
+    const leaving=await focusNativeSourceCue(page,"AO.SM.C0125");
+    assert.equal(leaving.found,true,"No source-owned exit into Lavabo: "+
+      JSON.stringify(leaving));
+    await frame.waitForFunction(()=>{
+      const state=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return state?.card==="C25"&&!state.playedCue;
+    },null,{timeout:12000});
+    const returning=await focusNativeSourceCue(page,"AO.SM.C0121");
+    assert.equal(returning.found,true,
+      "Cannot return to initial incense source cue: "+JSON.stringify(returning));
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue==="AO.SM.C0121",
+      null,{timeout:12000});
+  }
   // The original animated scene must re-arm its exact action when a
   // source-focused rubric exits and the reader later scrolls back into it.
   // These are isolated bridge probes, not invented priest observations.
