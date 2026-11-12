@@ -82,11 +82,12 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
    sed.nativeCardId===card.sectionId&&
    sed.sourceSectionId===sourceSectionId&&spec.section===sourceSectionId&&
    spec.card===card.title&&["BEGIN","END"].includes(sed.phase)&&
-   !isExplicitRequiemMass(prepared));
+   (!prepared||!isExplicitRequiemMass(prepared)));
  return Object.freeze({
   type:SANCTUARY_PROTOCOL,version:1,form,
   seatedReverenceObservation:verifiedSed?sed:null,
   incarnatusKneelException:state?.incarnatusKneelException===true,
+  sediliaReverenceCancelled:state?.sediliaReverenceCancelled===true,
   sourceSectionId,
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
