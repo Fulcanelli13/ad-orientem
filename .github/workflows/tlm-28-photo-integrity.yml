@@ -1,0 +1,18 @@
+name: TLM Atlas 28-photo staging integrity
+on:
+  pull_request:
+    paths:
+      - 'assets/staged/directory-photo-recovery-20261111/**'
+      - 'data/directory/research/tlm-28-*20261112*'
+      - 'tools/verify-tlm-28-staged-assets.py'
+      - '.github/workflows/tlm-28-photo-integrity.yml'
+  workflow_dispatch:
+jobs:
+  staging-integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact source identity, image bytes and no publication flags
+        run: python3 tools/verify-tlm-28-staged-assets.py
