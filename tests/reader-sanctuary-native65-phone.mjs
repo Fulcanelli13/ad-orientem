@@ -449,6 +449,28 @@ try{
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
   }
+  // Verify C11 is also reached via the native source-owned paragraph,
+  // not merely via a direct iframe probe in the preceding test.
+  if(form==="SOLEMN"&&width===390){
+    const epistle=await focusNativeSourceCue(page,"AO.SM.C0075");
+    assert.equal(epistle.found,true,
+      "C11 must own the native source for the subdeacon's Epistolarium: "+
+      JSON.stringify(epistle));
+    assert.equal(epistle.sourceSectionId,"AO.CARD.005");
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnEpistle===true,
+      null,{timeout:12000});
+    const atEpistle=await frame.evaluate(()=>{
+      const a=M3.actors().S;
+      return {id:window.AO_SANCTUARY_EMBED_TEST.getState().card,
+        x:a.x,pose:a.pose,prop:a.prop,path:a.path};
+    });
+    assert.equal(atEpistle.id,"C11");
+    assert.ok(atEpistle.x>0);
+    assert.equal(atEpistle.pose,"stand");
+    assert.equal(atEpistle.prop,"book");
+    assert.equal(atEpistle.path,null);
+  }
   // The regular source focus owner, not a test-only direct bridge call,
   // must project C0081 to the static subdeacon-at-Gospel-side scene.
   if(form==="SOLEMN"&&width===390){
