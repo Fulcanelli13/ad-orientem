@@ -3,9 +3,9 @@
   "as_of": "2026-11-12",
   "state": "RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED",
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
-  "source_ledger_blob_sha": "5189d4eb2dc964e105bc51798dc794fb03880cfa",
+  "source_ledger_blob_sha": "a39d24aa67594ce209bad5c7cf1f0e228ceecd78",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed. All 85 original source URL differences now have a documented research disposition: seven earlier and four newly repaired citation-scope defects, 23 source-quality upgrades, 12 URL equivalences, 33 retained paragraph-appropriate citations and six explicit inaccessible-source holds. This is not independent EN/FR sentence-level approval.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -24,13 +24,18 @@
     "confirmed_citation_scope_defects": 7,
     "remaining_without_direct_url_spot_check": 41,
     "resolved_citation_scope_defects": 7,
-    "current_differing_urls": 65,
+    "current_differing_urls": 51,
     "unrepaired_confirmed_scope_defects": 0,
-    "remaining_affected_guides": 27,
+    "remaining_affected_guides": 0,
     "source_equivalent_no_change": 12,
-    "remaining_active_triage": 41,
-    "source_upgrades_without_proven_claim_error": 13,
-    "original_citation_preferred_no_change": 12
+    "remaining_active_triage": 0,
+    "source_upgrades_without_proven_claim_error": 23,
+    "original_citation_preferred_no_change": 33,
+    "access_hold_paragraphs": 6,
+    "access_hold_guides": 4,
+    "citation_defects_repaired": 11,
+    "total_adjudicated": 85,
+    "incomplete_due_to_access": 6
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -46,10 +51,17 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Jesuit Pateo do Collegio history documents São Paulo 1554 foundation memory, Anchieta mission and later reconstruction of church inaugurated 1979, with Claudio Pastro intervention 2009.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Jesuit Anchieta biography directly documents 25 January 1554 college inauguration; alternate church page mainly describes reconstruction.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "30:anchieta",
@@ -63,10 +75,17 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Jesuit Pateo do Collegio history documents São Paulo 1554 foundation memory, Anchieta mission and later reconstruction of church inaugurated 1979, with Claudio Pastro intervention 2009.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "The Jesuit Anchieta biography directly discusses his teaching, Tupi language study and Indigenous mission contacts.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "31:foundation",
@@ -80,10 +99,20 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Alba Discalced Carmelite convent identifies Teresa's foundation 25 Jan 1571, 1582 death, body/heart/left arm as traditional relics and CARMUS museum opened 2014.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://carmelitasalba.org/",
+        "original_source_id": null,
+        "new_guide_source_url": "https://carmelitasalba.org/historia-y-arte/fundacion-del-convento/",
+        "new_guide_source_id": null,
+        "verification_basis": "Alba de Tormes Carmelite foundation dated 25 January 1571 by the monastery's own historical documentation",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "39:carmel",
@@ -133,10 +162,20 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Venice Patriarchate documents San Geremia as diocesan Saint Lucy sanctuary and December 2024 temporary translation of saint-attributed relics to Syracuse and other Sicilian dioceses.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+        "original_source_id": null,
+        "new_guide_source_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+        "new_guide_source_id": null,
+        "verification_basis": "Venice Patriarch's 13 December 2024 homily describes San Geremia as the diocesan Saint Lucy shrine and an international pilgrimage destination",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "47:translation",
@@ -150,10 +189,20 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Venice Patriarchate documents San Geremia as diocesan Saint Lucy sanctuary and December 2024 temporary translation of saint-attributed relics to Syracuse and other Sicilian dioceses.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+        "original_source_id": null,
+        "new_guide_source_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+        "new_guide_source_id": null,
+        "verification_basis": "The same 2024 patriarchal homily expressly describes a temporary visit of Saint Lucy's body to Sicily",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "47:prayer",
@@ -167,10 +216,17 @@
       "evidence_scope": "DIRECT_OPERATOR_PRIMARY_SOURCE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Venice Patriarch's December 2024 homily at Saint Lucy's diocesan shrine documents veneration and the saint's temporary pilgrimage translation to Sicily; not a claim of permanent Sicilian custody.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Existing original 13 December 2024 patriarchal homily PDF is readable and supports sanctuary hospitality and temporary Sicily pilgrimage; linked HTML is a duplicate.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "49:origin",
@@ -184,10 +240,17 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "Santa Croce relics page timed out and current basilica homepage returned 502 to inspection client. Source wording is historical devotional attribution, not independent archaeological verification.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "49:titulus",
@@ -201,10 +264,17 @@
       "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "Santa Croce relics page and modern institutional homepage unavailable to direct inspection; inscription and relic provenance cannot receive source certification from these fetches.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "77:history",
@@ -245,10 +315,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Sameiro custodian names Marian hill sanctuary; annual first June Sunday procession departs Braga Cathedral; Marian feast 12 June and monthly May–October candle processions are specified.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "Both Sameiro contact/hours and pilgrimage pages returned HTTP 403 in current verification; source replacement cannot be responsibly decided.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "80:identity",
@@ -310,10 +387,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Doylestown shrine's dedicated pilgrimage programme identifies long-distance approaches from Great Meadows, Trenton and Philadelphia and requires current event dates.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Doylestown shrine's current homepage is appropriate for general visitor/programme advisories; deep pilgrimage route not needed for this general paragraph.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "87:identity",
@@ -327,10 +411,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Montligeon custodian confirms prayer for deceased and multiple 'Pèlerinages du Ciel' in November; exact 2026 programme is date-specific.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Montligeon sanctuary page explicitly describes prayer for the deceased and pilgrim intercession; event page is time-limited.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "88:pilgrimage",
@@ -344,10 +435,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Augsburg Diocese Wigratzbad's own prayer-site describes grace chapel, atonement church and current liturgical/confession schedule, not necessarily Latin 1962 rite.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Wigratzbad Gottesdienstordnung directly lists current liturgies and differentiates Sühnekirche and Gnadenkapelle.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "89:identity",
@@ -361,10 +459,20 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Amberg Mariahilfberg church official history records pilgrimage church and Marian image, Bergfest on Visitation 2 July with foot pilgrims.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.mariahilfberg-amberg.de/index.html",
+        "original_source_id": "SHR-MARIAHILF-AMBERG",
+        "new_guide_source_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+        "new_guide_source_id": "AO-ED-CITATION-89-IDENTITY-20261112",
+        "verification_basis": "Mariahilfberg church's official history describes local Marian image and 1634 hill procession",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "91:pilgrimage",
@@ -378,10 +486,17 @@
       "evidence_scope": "PARISH_2026_OCTAVE_INDEX",
       "research_evidence_note": "Lindlar parish's accessible news index dates 2026 St Apollinaris octave at Frielingsdorf to 18–25 July; original detailed article cannot be fetched. This establishes a year-specific programme, not perpetual access or route.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "Frielingsdorf 2026 event article now returns 404. Historical parish-news search index corroborates 18–25 July 2026 but the specific page is unavailable; do not confuse with Remagen's separate Apollinaris pilgrimage.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "92:pilgrimage",
@@ -443,10 +558,17 @@
       "evidence_scope": "DIRECT_OPERATOR_PRIMARY_SOURCE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Stará Boleslav Marian and Saint Wenceslas pilgrimage custodian names separate ancient basilica, martyr site and year-specific national Wenceslas pilgrimage.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Stará Boleslav homepage explicitly identifies Palladium and St Wenceslas memorial identity; annual pilgrimage programme is different scope.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "100:history",
@@ -460,10 +582,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Fiskdale St Anne–St Patrick parish documents chapel spaces, ongoing shrine and annual July 18–26 St Anne novena begun 1887, with procession, Rosary and Mass.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original St Anne shrine page establishes chapels and functioning parish sanctuary; annual novena was handled in separate pilgrimage section.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "100:identity",
@@ -501,10 +630,20 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Fiskdale St Anne–St Patrick parish documents chapel spaces, ongoing shrine and annual July 18–26 St Anne novena begun 1887, with procession, Rosary and Mass.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.stannestpatrickparish.com/st-annes-shrine",
+        "original_source_id": "SHR-ST-ANNE-FISKDALE",
+        "new_guide_source_url": "https://stannestpatrickparish.com/novena-to-st-anne",
+        "new_guide_source_id": "AO-ED-CITATION-100-PILGRIMAGE-20261112",
+        "verification_basis": "Fiskdale parish describes 18–26 July novena with procession Rosary and Mass",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "101:identity",
@@ -518,10 +657,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Warmia archdiocese documents distinctive Gietrzwałd sanctuary and 8 September Nativity-linked annual feast pilgrimages (year-specific schedules).",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original 2026 Warmia 149th-anniversary source directly covers 1877 Gietrzwałd narrative; alternative 2024 event is less appropriate.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "101:pilgrimage",
@@ -535,10 +681,20 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Warmia archdiocese documents distinctive Gietrzwałd sanctuary and 8 September Nativity-linked annual feast pilgrimages (year-specific schedules).",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/",
+        "original_source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
+        "new_guide_source_url": "https://www.archwarmia.pl/aktualnosci/gietrzwald-czeka-na-pielgrzymow-2/",
+        "new_guide_source_id": "AO-ED-CITATION-101-PILGRIMAGE-20261112",
+        "verification_basis": "Warmia Archdiocese confirms 2026 main gathering on 13 September distinct from Nativity feast on 8 September",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "102:identity",
@@ -552,10 +708,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Šiluva custodian describes Marian apparition chapel and 2026 Šilinės annual festival with separate days, intentions and processions.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Šiluva shrine identity page directly covers Marian chapel and historical setting; dated 2026 festival does not replace site history.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "102:pilgrimage",
@@ -569,10 +732,20 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Šiluva custodian describes Marian apparition chapel and 2026 Šilinės annual festival with separate days, intentions and processions.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://siluva.lt/apie-sventove/",
+        "original_source_id": "SHR-SILUVA-OFFICIAL",
+        "new_guide_source_url": "https://siluva.lt/silines-2026-jubilieju-metais-siluva-kviecia-ne-tik-prisiminti-bet-ir-kurti-baznycios-ateiti/",
+        "new_guide_source_id": "AO-ED-CITATION-102-PILGRIMAGE-20261112",
+        "verification_basis": "Šiluva shrine's 31 August 2026 notice gives 2026 celebrations from 5 to 15 September",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "104:history",
@@ -586,10 +759,17 @@
       "evidence_scope": "BETANIA_REPORTED_TESTIMONY_CHRONOLOGY",
       "research_evidence_note": "Betania devotee association documents claimed Marian experiences from 1976 and public testimony in 1984; reports treated as reported experiences, not independent physical verification.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original English Betania association report documents attributed 1976–1984 local experiences, distinguished from proven supernatural phenomena; Spanish alternative is parallel.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "104:identity",
@@ -639,10 +819,17 @@
       "evidence_scope": "BETANIA_CUSTODIAN_SITE_PILGRIMAGE",
       "research_evidence_note": "Betania foundation identifies exact Finca Betania as shrine near Cúa and distinguishes the pilgrimage site from variable present services and access; no perpetual schedule inferred.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original English-language Betania association provides exact shrine identity; Spanish counterpart adds no independently current liturgy.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "106:history",
@@ -761,10 +948,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Notre-Dame du Perpétuel Secours Paris parish documents local church and 25 June 1966 minor basilica papal decree; distinguishes worldwide icon devotion from parish worship.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Notre-Dame du Perpétuel Secours Paris homepage demonstrates named parish worship and Marian title; historical decree source is complementary.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "113:history",
@@ -778,10 +972,20 @@
       "evidence_scope": "CUSTODIAN_1846_MARIAN_ACCOUNT",
       "research_evidence_note": "French La Salette shrine history explicitly dates 19 September 1846 reported apparition to shepherd children Maximin and Mélanie.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://lasalette.cef.fr/",
+        "original_source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
+        "new_guide_source_url": "https://www.lasalette.cef.fr/lhistoire/",
+        "new_guide_source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+        "verification_basis": "La Salette sanctuary custodian's history of 19 September 1846 and the two shepherd children",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "113:identity",
@@ -795,10 +999,20 @@
       "evidence_scope": "CUSTODIAN_RECONCILIATION_AND_ECCLESIAL_RECEPTION",
       "research_evidence_note": "Official La Salette shrine attributes message of conversion and reconciliation and identifies Diocese of Grenoble's recognition after five-year inquiry.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://lasalette.cef.fr/",
+        "original_source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
+        "new_guide_source_url": "https://www.lasalette.cef.fr/lhistoire/",
+        "new_guide_source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+        "verification_basis": "La Salette shrine's own history describes conversion message and local ecclesiastical reception",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "119:history",
@@ -812,10 +1026,17 @@
       "evidence_scope": "FRANCISCAN_CUSTODY_GOLGOTHA_AND_TOMB",
       "research_evidence_note": "Holy Land Custody's English institutional history locates Christian veneration of Golgotha and the Tomb in one Holy Sepulchre complex and distinguishes the respective chapels and custodianships.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "French and English Holy Sepulchre Custody pages both returned HTTP 403 during inspection; require direct source review before editor certification.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "119:identity",
@@ -829,10 +1050,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Holy Land Franciscans explicitly document shared Status Quo with Greek Orthodox and Armenian Apostolic custodianship at Holy Sepulchre, not exclusive Roman Catholic custody.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "EVIDENCE_ACCESS_HOLD_NO_PUBLICATION",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "access_hold": {
+        "checked_on": "2026-11-12",
+        "reason": "The Franciscan Custody's Holy Sepulchre custodianship pages were inaccessible to direct inspection; shared Greek Orthodox/Armenian/Latin responsibilities require source-scoped verification.",
+        "source_directly_verified": false,
+        "editorial_release_allowed": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "121:history",
@@ -966,10 +1194,20 @@
       "evidence_scope": "CIVIC_AND_CUSTODIAN_APOSTLE_TOMB_TRADITION",
       "research_evidence_note": "Rome's municipal tourism authority identifies San Bartolomeo all'Isola and the tradition of Saint Bartholomew's remains under its high altar; custodian Sant'Egidio also recalls the relic tradition and modern martyrs memorial. This is reported provenance, not forensic authentication.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+        "original_source_id": "SHR-IT-san-bartolomeo-isola",
+        "new_guide_source_url": "https://www.turismoroma.it/en/node/695",
+        "new_guide_source_id": "AO-ED-CITATION-131-HISTORY-20261112",
+        "verification_basis": "Rome municipal heritage site gives San Bartolomeo apostolic dedication and attributed relic tradition",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "145:history",
@@ -983,10 +1221,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Municipal Visit Schio identifies Canossian Sacra Famiglia church as Saint Josephine Bakhita sanctuary at 51 via Fusinato, with burial shrine and linked historical exhibition.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Visit Schio English municipal page is accessible and identifies Bakhita's Church of the Holy Family; Italian deep link is equivalent municipality documentation.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "145:identity",
@@ -1000,10 +1245,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Municipal Visit Schio identifies Canossian Sacra Famiglia church as Saint Josephine Bakhita sanctuary at 51 via Fusinato, with burial shrine and linked historical exhibition.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Visit Schio English civic heritage record directly concerns Canossian Bakhita and local religious identity.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "145:pilgrimage",
@@ -1017,10 +1269,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Municipal Visit Schio identifies Canossian Sacra Famiglia church as Saint Josephine Bakhita sanctuary at 51 via Fusinato, with burial shrine and linked historical exhibition.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Visit Schio English page is relevant to specific church, exhibition and visiting context; current hours require rechecking.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "153:history",
@@ -1034,10 +1293,17 @@
       "evidence_scope": "CAPUCHIN_1640_IMAGE_CUSTODY_TRADITION",
       "research_evidence_note": "Manoppello sanctuary's own history reproduces Capuchin Donato da Bomba 1640 narrative placing devotional image tradition in sixteenth-century Manoppello; not proof of supernatural origin.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Current Manoppello custodian's Volto Santo page and indexed text describe seventeenth-century historical record. Proposed /storia/ URL returned 404 to direct fetch, so do not replace functioning citation.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "154:history",
@@ -1195,10 +1461,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Luján basilica own pilgrim and liturgical programme identifies venerated Virgin image, basilica and distinct annual youth, Gaucho and Bolivian pilgrimages with year-specific routes.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Luján basilica home describes Marian patronage, image and shrine; alternative pilgrimage calendar is not a historical replacement.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "159:identity",
@@ -1212,10 +1485,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Luján basilica own pilgrim and liturgical programme identifies venerated Virgin image, basilica and distinct annual youth, Gaucho and Bolivian pilgrimages with year-specific routes.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Luján basilica homepage identifies the Marian shrine and architecture better than pilgrimage itinerary calendar.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "159:pilgrimage",
@@ -1229,10 +1509,20 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Luján basilica own pilgrim and liturgical programme identifies venerated Virgin image, basilica and distinct annual youth, Gaucho and Bolivian pilgrimages with year-specific routes.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://santuariodelujan.org.ar/",
+        "original_source_id": "SG-PROFILE-20261010-06",
+        "new_guide_source_url": "https://santuariodelujan.org.ar/peregrinaciones/",
+        "new_guide_source_id": "AO-ED-CITATION-159-PILGRIMAGE-20261112",
+        "verification_basis": "Luján sanctuary lists distinct annual youth Gaucho and Bolivian pilgrimages",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "185:history",
@@ -1480,10 +1770,20 @@
       "evidence_scope": "FORTALEZA_PARISH_CUSTODIAN_IDENTITY",
       "research_evidence_note": "Fortaleza parish and sanctuary operator explicitly identifies actual Brazilian Our Lady of Fatima church and ongoing Eucharistic and Marian worship, not original Portuguese apparition site.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://igrejadefatima.com.br/contato/",
+        "original_source_id": "SG-R75-SITE-SG-INV-0482",
+        "new_guide_source_url": "https://igrejadefatima.com.br/",
+        "new_guide_source_id": "AO-ED-CITATION-191-HISTORY-20261112",
+        "verification_basis": "Fortaleza Nossa Senhora de Fátima parish-sanctuary operator homepage identifies local Brazilian ministry",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "193:history",
@@ -1497,10 +1797,20 @@
       "evidence_scope": "CUSTODIAN_MONTEVIDEO_GROTTO_DEVELOPMENT",
       "research_evidence_note": "Montevideo shrine's own history documents local 1940s Lourdes grotto development as derivative of Massabielle in France.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_UPGRADED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://iglesiacatolica.org.uy/virgen-de-lourdes-montevideo/",
+        "original_source_id": "SG-R75-SITE-SG-INV-0532",
+        "new_guide_source_url": "https://grutadelourdes.org/sobre-nosotros/",
+        "new_guide_source_id": "AO-ED-CITATION-193-HISTORY-20261112",
+        "verification_basis": "Montevideo Gruta de Lourdes custodian's about/history page identifies shrine and historical local origins",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     },
     {
       "key": "198:history",
@@ -1619,10 +1929,17 @@
       "evidence_scope": "DIRECT_OPERATOR_PRIMARY_SOURCE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Poondi Madha Basilica's custodian states its mission beginnings 1714-18, Marian shrine status, 1999 minor-basilica title and continuing local pilgrims.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Poondi sanctuary homepage is appropriate authority for changing notices; About page is historical and insufficient as current programme replacement.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "203:pilgrimage",
@@ -1660,10 +1977,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Archdiocese of Cebu confirms August 2026 Saint Joseph Mandaue shrine 25th anniversary and exact S. B. Cabahug address and patronal 8 May feast.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Cebu Archdiocese's dated 8 August 2026 article directly confirms the 25th anniversary of St Joseph Mandaue dedication and national shrine status.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "209:history",
@@ -1905,10 +2229,20 @@
       "evidence_scope": "DIOCESAN_2025_JUBILEE_EVENT",
       "research_evidence_note": "Diocesan January 2025 Jubilee launch report documents co-cathedral as the focus for time-bound holy door event, not enduring special pilgrimage entitlement.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "repair": {
+        "original_source_url": "https://www.catholicdiocesebelize.org/en/parishes",
+        "original_source_id": "SG-R77-SITE-SG-INV-0449",
+        "new_guide_source_url": "https://www.catholicdiocesebelize.org/en/news/holy-doors-of-holy-redeemer-cathedral-opened",
+        "new_guide_source_id": "AO-ED-CITATION-222-IDENTITY-20261112",
+        "verification_basis": "Belize diocese 13 January 2025 report lists Our Lady of Guadalupe Co-Cathedral as a Jubilee 2025 Sacred Site and Holy Door",
+        "repair_date": "2026-11-12",
+        "full_english_french_certification": false,
+        "owner_approval": false
+      }
     }
   ]
 }
