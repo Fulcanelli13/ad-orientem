@@ -583,6 +583,50 @@ try{
       window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnMissalTransfer!==true,
       null,{timeout:12000});
   }
+  // Actual native C57 card handoff: priest is already at the rail,
+  // Solemn deacon holds the static paten, the next card removes it.
+  // This is not permission to run Claude's timed Communion approach.
+  if(form==="SOLEMN"&&width===390){
+    const railCard=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const matches=api.model.cards.filter(c=>
+        c.title==="Communion of the Faithful"&&
+        c.sourceSectionId==="AO.CARD.025");
+      if(matches.length!==1)return {matches:matches.length};
+      api.showSequence(matches[0].sequence);
+      return {matches:1,sequence:matches[0].sequence};
+    });
+    assert.equal(railCard.matches,1,
+      "Actual C57 source card missing from native 65-card model");
+    await frame.waitForFunction(()=>{
+      const api=window.AO_SANCTUARY_EMBED_TEST;
+      return api?.getState?.()?.card==="C57"&&
+        api.getState().communionStation==="AT_RAIL_STATIC";
+    },null,{timeout:12000});
+    const actual=await frame.evaluate(()=>{
+      const priest=M3.actors().P,deacon=M3.actors().D;
+      return {priestX:priest.x,priestZ:priest.z,
+        priestPath:priest.path,playedCue:window
+          .AO_SANCTUARY_EMBED_TEST.getState().playedCue,
+        deaconVisible:deacon.vis,
+        patenCount:deacon.b.el.querySelectorAll(
+          ".ao-sanctuary-communion-paten").length};
+    });
+    assert.equal(actual.priestZ,4.36);
+    assert.equal(actual.priestPath,null);
+    assert.equal(actual.playedCue,null,
+      "Real Communion distribution may not trigger the earlier approach");
+    assert.equal(actual.deaconVisible,true);
+    assert.equal(actual.patenCount,1);
+    await page.evaluate(sequence=>
+      window.__AO_PHONE_PREVIEW.showSequence(sequence+1),railCard.sequence);
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.card==="C58",
+      null,{timeout:12000});
+    assert.equal(await frame.evaluate(()=>M3.actors().D?.b?.el
+      ?.querySelectorAll(".ao-sanctuary-communion-paten")?.length??0),0,
+      "Native C57→C58 exit must remove the Communion paten");
+  }
   // Real native reader scroll, not a direct test-only present() call:
   // the original Offertory incense sequence spans four 1962 priest cues.
   // Scrolling through C0122-C0124 must not truncate the original C24
