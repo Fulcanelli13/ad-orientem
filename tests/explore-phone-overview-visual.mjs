@@ -109,7 +109,7 @@ try{
       language+" "+width+"px closed rail covers the real map: "+JSON.stringify(closed));
     await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-closed-real.png"),animations:"disabled"});
     await rail.locator('[data-mapcn-discover-toggle]').click();
-    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="true",null,{timeout:15000});
+    await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="true"&&rail.getBoundingClientRect().height>=170;},null,{timeout:15000});
     const opened=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
       aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
     assert.equal(opened.aria,"true",language+" "+width+"px expanded results rail not accessible");
