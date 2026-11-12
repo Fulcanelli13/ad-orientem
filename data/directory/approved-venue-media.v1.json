@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_TLM_VENUE_MEDIA_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "items": [
     {
       "venue_id": "SSPXMAP:OPE-002280",
@@ -530,6 +530,52 @@
       "reviewed_at": "2026-11-12",
       "review_method": "Original Commons SHA-1 and current rights/author checked; exact first-party/source-matched CL2 church; full-frame composition crosschecked against owner's archive using 64-bit perceptual fingerprint (max distance 2/64). No individual owner hand-selection claimed.",
       "status": "APPROVED"
+    },
+    {
+      "venue_id": "AO-B34-L-GB-FDC98808D553",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-ABBC659D0388.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_and_St_Kenelm_Church%2C_Stow-on-the-Wold_by_Des_Blenkinsopp_Geograph_3062623.jpg",
+      "source_sha1": "56c107cbc33b3db9ce55af6a4fe168afe82085b1",
+      "derivative_sha256": "02496485b17a307620b7cb67c8f67032469eeefc34660a5103998330cc3a080f",
+      "credit": "Des Blenkinsopp",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1600,
+      "height": 1140,
+      "orientation": "landscape",
+      "alt_en": "Low stone church of Our Lady and St Kenelm at Stow-on-the-Wold, viewed from the street.",
+      "alt_fr": "Église en pierre Notre-Dame-et-Saint-Kenelm à Stow-on-the-Wold, vue depuis la rue.",
+      "changes_en": "Wikimedia original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels, and encoded as WebP; no colour retouch or composite.",
+      "changes_fr": "Original Wikimedia, orientation EXIF normalisée, réduction sans recadrage à 1 600 pixels au maximum, puis conversion en WebP ; aucune retouche des couleurs ni composition.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "P109 exact CL2 source venue and independently verified Commons original, source credit, licence, and 1600px WebP derivative SHA-256; full-frame mobile-safe composition visually reviewed against 28-photo audit and accepted with truthful side/streetscape disclosure. No crop or image enhancement; no individual owner-handpick claim."
+    },
+    {
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-AAFBFCE94AA0.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_St_Joseph%2C_Aldershot.JPG",
+      "source_sha1": "d83f4530cefcafebbe4e3f2bc5a102e73a889d34",
+      "derivative_sha256": "ebfe45ff628f6e19274533b1d3644e9d8bbd9b121aff98cbb5f47a641f731795",
+      "credit": "Lewis Hulbert",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1600,
+      "height": 1226,
+      "orientation": "landscape",
+      "alt_en": "Rounded red-brick apse of St Joseph's church in Aldershot, seen from the side rather than the main entrance.",
+      "alt_fr": "Abside arrondie en briques rouges de l’église Saint-Joseph à Aldershot, vue de côté plutôt que depuis l’entrée principale.",
+      "changes_en": "Wikimedia original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels, and encoded as WebP; no colour retouch or composite.",
+      "changes_fr": "Original Wikimedia, orientation EXIF normalisée, réduction sans recadrage à 1 600 pixels au maximum, puis conversion en WebP ; aucune retouche des couleurs ni composition.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "P109 exact CL2 source venue and independently verified Commons original, source credit, licence, and 1600px WebP derivative SHA-256; full-frame mobile-safe composition visually reviewed against 28-photo audit and accepted with truthful side/streetscape disclosure. No crop or image enhancement; no individual owner-handpick claim."
     }
   ],
   "editorial_policy": {
@@ -538,7 +584,7 @@
     "publication": "Only APPROVED media with existing local asset hash may be shown; do not infer from similar church name, city, institution or provisional pin",
     "priority": "Existing canonical Place cover first; approved exact venue cover only when Place photo unavailable",
     "new_mappings": "A media image is attached to an existing 2,582-directory venue source ID; no new Place or geocoding is implied",
-    "status": "WAVE_A_PLUS_21_EXACT_DIOCESAN_EXTERIORS_20261112",
-    "safety": "No institution-owned/emblem venue receives generic diocesan photos; seven weak/identity candidates held, Lewiston address conflict excluded."
+    "status": "WAVE_A_PLUS_23_EXACT_DIOCESAN_EXTERIORS_20261112",
+    "safety": "Two additional full-frame covers selected in P109; five weak/identity-risk photo candidates remain held; original 21 and Wave A preserved; Lewiston excluded."
   }
 }

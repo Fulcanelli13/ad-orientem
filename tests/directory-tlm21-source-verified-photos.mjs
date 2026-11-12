@@ -13,7 +13,8 @@ const witnesses=read("data/directory/cl2-exact-venue-category-witnesses-20261111
 const geo=read("data/geography/seed-registry.v1.json");
 assert.equal(l.schema,"AO_TLM_21_SOURCE_VERIFIED_DIOCESAN_COVERS_RELEASE_V1");
 assert.deepEqual(l.counts,{prior_approved_venue_media:2,new_exact_diocesan_venue_photos:21,approved_after:23,staged_batch:28,held_batch:7,worldwide_site_count_unchanged:2580,new_map_pins:0,new_mass_schedules:0});
-assert.equal(media.items.length,23);
+const followup=read("data/directory/research/tlm-p109-two-usable-covers-five-holds-20261112.v1.json");
+assert.equal(media.items.length,l.counts.approved_after+followup.increment.new_approved_count,"Existing P108 21 records plus explicit P109 incremental releases");
 assert.equal(l.published.length,21);
 assert.equal(l.held.length,7);
 assert.equal(index.records.length,2580);
@@ -71,8 +72,12 @@ for(const p of l.published){
 }
 assert.equal(venueIds.size,21);assert.equal(assets.size,21);assert.equal(hashes.size,21);
 for(const hold of l.held){
- assert.ok(!media.items.some(m=>m.venue_id===hold.venue_id));
+ if(followup.promotedVenueIds.includes(hold.venue_id)){
+  assert.ok(media.items.some(m=>m.venue_id===hold.venue_id),"Explicit P109 promotion must exist");
+ }else{
+  assert.ok(!media.items.some(m=>m.venue_id===hold.venue_id),"Unpromoted historical hold cannot be published");
+ }
  assert.ok(hold.reason==="CROP_REVIEW"||/CROP|HOLD/.test(hold.reason));
 }
 assert.ok(!media.items.some(m=>m.venue_id==="AO-AMER-R28-US-21-03"),"Lewiston conflict cannot be automatically published");
-console.log("TLM21_VERIFIED_PUBLIC_EXACT_DIOCESAN_COVERS_PASS: 21 unique source/site/hash/rights/EN-FR/visual-lane records; 7 held");
+console.log("TLM21_VERIFIED_PUBLIC_EXACT_DIOCESAN_COVERS_PASS: 21 immutable source/site/hash/rights/EN-FR records; 2 explicit P109 promotions, 5 remain held");

@@ -1,0 +1,109 @@
+{
+  "schema": "AO_TLM_23_PUBLISHED_EXACT_VENUE_COVERS_AFTER_P109_V1",
+  "date": "2026-11-12",
+  "scope": "Incremental closure of the 28-photo recovered set after PR #2885; adds two full-frame source-verified diocesan exteriors and holds five inferior/identity-risk images",
+  "baseline": {
+    "new_venue_photos": 21,
+    "approved_total": 23,
+    "recovered_batch": 28,
+    "held": 7
+  },
+  "increment": {
+    "new_approved_count": 2,
+    "approved_total_after": 25,
+    "held_after": 5
+  },
+  "promotedVenueIds": [
+    "AO-B34-L-GB-FDC98808D553",
+    "AO-B35-L-GB-089C7ED97E0F"
+  ],
+  "promoted": [
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "venue_id": "AO-B34-L-GB-FDC98808D553",
+      "asset_path": "assets/approved/directory-media/GB-RG-ABBC659D0388.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Our_Lady_and_St_Kenelm_Church%2C_Stow-on-the-Wold_by_Des_Blenkinsopp_Geograph_3062623.jpg",
+      "original_sha1": "56c107cbc33b3db9ce55af6a4fe168afe82085b1",
+      "source_author": "Des Blenkinsopp",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "derivative_sha256": "02496485b17a307620b7cb67c8f67032469eeefc34660a5103998330cc3a080f",
+      "width": 1600,
+      "height": 1140,
+      "source_staging_path": "assets/staged/directory-commons-rebuilt-20261112/RG-ABBC659D0388.webp",
+      "visual_disposition": "FULL_FRAME_ACCEPTABLE_CHURCH_AND_PARISH_SIGN_VISIBLE",
+      "hero_limitations": "Streetscape includes road and adjacent parochial buildings; full low stone church shown"
+    },
+    {
+      "cl2_anchor": "RG-AAFBFCE94AA0",
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "asset_path": "assets/approved/directory-media/GB-RG-AAFBFCE94AA0.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_St_Joseph%2C_Aldershot.JPG",
+      "original_sha1": "d83f4530cefcafebbe4e3f2bc5a102e73a889d34",
+      "source_author": "Lewis Hulbert",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "derivative_sha256": "ebfe45ff628f6e19274533b1d3644e9d8bbd9b121aff98cbb5f47a641f731795",
+      "width": 1600,
+      "height": 1226,
+      "source_staging_path": "assets/staged/directory-commons-rebuilt-20261112/RG-AAFBFCE94AA0.webp",
+      "visual_disposition": "FULL_FRAME_ACCEPTABLE_DISTINCTIVE_APSE_SIDE_ARCHITECTURE",
+      "hero_limitations": "No entrance façade; distinctly labelled as side/apse view, no crop"
+    }
+  ],
+  "held": [
+    {
+      "cl2_anchor": "RG-0B11C840F55E",
+      "venue_id": "AO-B34-L-GB-52D1803A1F95",
+      "production_status": "HELD_NO_APPROVED_COVER",
+      "reason": "CROP_REVIEW_CAR_FOREGROUND",
+      "editorial_note": "Foreground vehicle competes with the façade; evaluate other exact-site September 2025 Commons frames (2),(3),(4). Do not apply an arbitrary crop that cuts off the porch."
+    },
+    {
+      "cl2_anchor": "RG-7C7DC29FFFAB",
+      "venue_id": "AO-AMER-R28-US-31-17",
+      "production_status": "HELD_NO_APPROVED_COVER",
+      "reason": "HOLD_PRECISE_CHAPEL_ID_OLD_TOWN_NOT_MODERN_PARISH",
+      "editorial_note": "CL2 site is labelled generically St Mary Park City, locality only. Historic Old Town Chapel 121 Park Avenue differs from modern parish church 1505 White Pine Canyon Road. Exact physical-site identity split/confirmation required before using this photo."
+    },
+    {
+      "cl2_anchor": "RG-10BAB9521232",
+      "venue_id": "AO-B34-L-GB-D7DA8CC0BE16",
+      "production_status": "HELD_NO_APPROVED_COVER",
+      "reason": "CROP_REVIEW",
+      "editorial_note": "Modern front façade discernible but direct sunlight/lens flare and extensive parking/asphalt weaken card hero; seek a cleaner exact-building photo, not a generic English Martyrs site."
+    },
+    {
+      "cl2_anchor": "RG-15198DD7A6FE",
+      "venue_id": "AO-B35-L-GB-D1A88E153706",
+      "production_status": "HELD_NO_APPROVED_COVER",
+      "reason": "CROP_REVIEW",
+      "editorial_note": "Strong vehicles/pedestrians foreground and side perspective; seek unobstructed Week Street entrance, preserving source and exact-building evidence."
+    },
+    {
+      "cl2_anchor": "RG-18825D70FD67",
+      "venue_id": "V19:DIO-GB-BIRM-OXFORD-SGA",
+      "production_status": "HELD_NO_APPROVED_COVER",
+      "reason": "CROP_REVIEW",
+      "editorial_note": "Church small/distant across road and tree obscures frontage; find a closer exact-site view from 322 Woodstock Road with compatible reuse rights."
+    }
+  ],
+  "constraints": {
+    "source_staging_unchanged": true,
+    "prior_21_approved_photos_preserved": true,
+    "prior_2_wave_a_preserved": true,
+    "no_coordinates_or_pins": true,
+    "no_affiliations_or_institute_claims": true,
+    "no_mass_schedule_changes": true,
+    "lewiston_excluded": true,
+    "already_approved_place_covers_preferential": true
+  },
+  "release_gates": [
+    "Exact CL2 venue source identity",
+    "Current Commons original-source SHA-1/credit/licence verification",
+    "Approved asset bytes identical to pinned source-regenerated staging Git blob",
+    "Bilingual EN/FR photo/rights and transformation disclosure",
+    "Mobile cards and original-source links",
+    "Required main gate, Directory foundation, public Pages test acceptance"
+  ]
+}
