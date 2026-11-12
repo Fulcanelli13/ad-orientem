@@ -110,8 +110,12 @@ try{
      // the separate Schola score is open. Programmatic API navigation alone
      // does not prove the floating player leaves the reader usable.
      await page.locator('[data-reader-nav="next"]').click({timeout:7000});
-     assert.equal(await page.locator('#ao-r17-native-reader-preview')
-       .getAttribute('data-ao-last-nav-input'),'click:next',
+     // createReaderDomAdapter receives the inner host, not the outer
+     // #ao-r17-native-reader-preview wrapper. Read the navigation marker
+     // from that actual event owner to avoid false negatives.
+     const navMarker=await page.locator('#ao-r17-native-reader-preview > div')
+       .first().getAttribute('data-ao-last-nav-input');
+     assert.equal(navMarker,'click:next',
        'An open Kyrie player must not intercept the priest reader arrow');
      // The real production 65-card reader, not an illustrative split view.
      await page.evaluate(()=>{
