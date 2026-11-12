@@ -144,23 +144,48 @@
         "EXPLICIT_PERSONAL_OBSERVATION":"NONE"});
   }
 
-  // Fortescue, Ceremonies of the Roman Rite Described, ch. XIII §1:
-  // at a sung Mass while the celebrant sits, his acolytes STAND at
-  // either side of the sedilia. Claude's one-server visual left the
-  // server kneeling at the altar. Resolve the demonstrably wrong posture
-  // using the existing figure and actor engine, WITHOUT editing the
-  // owner's original source HTML or fabricating a new seated pose.
-  // Exact two-acolyte/M.C. positions still require O'Connell review.
-  const singerSedilia=new Set(["C08","C09","C12","C17","C18","C19"]);
-  function stageSungSediliaAcolyte(card){
-    if(st.form!=="sung"||st.solemn||!singerSedilia.has(card?.id))return;
-    const acolyte=M3.actors?.()?.M;
-    if(!acolyte||acolyte.vis!==true)return;
-    acolyte.path=null;acolyte.turn=null;
-    acolyte.pose="stand";acolyte.prop=null;
-    // One acolyte on the sanctuary/altar side of the existing sedile.
-    // Final second-acolyte choreography remains on ceremonial hold.
-    acolyte.x=3.14;acolyte.z=1.75;acolyte.face=90;
+  // Stage the owner-supplied SEDILIA scene without replacing its art.
+  // Original pew seat: x=3.86..4.36, z=1.02..2.5, surface h=.62.
+  // Earlier actor targets x=3.62 stand IN FRONT of that bench, so even
+  // the owner's existing "sit" sprites looked like three standing clergy.
+  // This visual alignment is illustrative, NOT a new ceremonial clock.
+  const sungSedilia=new Set(["C08","C09","C12","C17","C18","C19"]);
+  function clearSediliaPlacement(){
+    for(const id of ["P","D","S"])
+      if(M3.actors?.()?.[id])delete M3.actors()[id]._aoSeatBaseline;
+  }
+  function stageSedilia(card,form){
+    if(!form||form.form!=="sung"||!sungSedilia.has(card?.id)){
+      clearSediliaPlacement();
+      return null;
+    }
+    const actors=M3.actors?.();
+    if(!actors)return null;
+    const seated=form.solemn?["P","D","S"]:["P"];
+    for(const id of seated){
+      const a=actors[id];
+      if(!a||a.vis!==true||a.pose!=="sit")continue;
+      a.path=null;a.turn=null;
+      // Existing M3 figure remains sitting, now actually over the
+      // original wooden seat; lower robe/feet sit above its surface.
+      // When the original scene was just re-staged, its normal floor
+      // height is restored; never stack offsets on repeated focus.
+      if(a._aoSeatBaseline==null)a._aoSeatBaseline=a.b.h;
+      a.x=4.04;a.b.h=a._aoSeatBaseline+.52;
+    }
+    // One existing server at the sanctuary side: not kneeling in front
+    // of a seated priest, and no longer obscuring the celebrant's sprite.
+    // Solemn clergy are already accompanied by the original ministers;
+    // additional acolyte/M.C. station assignments are still on hold.
+    if(!form.solemn){
+      const acolyte=actors.M;
+      if(acolyte?.vis===true){
+        acolyte.path=null;acolyte.turn=null;
+        acolyte.pose="stand";acolyte.prop=null;
+        acolyte.x=2.36;acolyte.z=1.8;acolyte.face=90;
+      }
+    }
+    return "ORIGINAL_SEDILIA_SEATED";
   }
   function stageSolemnGospel(card,requiem,form,sectionId){
     if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return;
@@ -367,6 +392,7 @@
     showObservedSprinkle(false);
     clearElevationMinisterIncense();
     clearCommunionPaten();
+    clearSediliaPlacement();
     aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
@@ -442,11 +468,19 @@
     // 16-second animation as soon as C0122 is focused. Elevations remain
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
+    const lowIncenseOmitted=id==="C24"&&form.form==="low"&&
+      sourceSectionId==="AO.CARD.010";
+    const visualCard=lowIncenseOmitted?byId.get("C23"):card;
     if(last?.key!==nextKey||exiting||missalFocusExit||
        epistleFocusExit||returnRewind){
       clearElevationMinisterIncense();
       clearCommunionPaten();
-      M3.show(card,false); // Original engine cancels pending action keyframes.
+      clearSediliaPlacement();
+      // Low Mass has NO C24 incensation. Its canonical reader card stays
+      // C24, but the owner renderer holds the immediately preceding
+      // C23 offering-at-altar stage instead of the original C24 "foot"
+      // position, which would be false for Low Mass.
+      M3.show(visualCard,false); // Original engine cancels action keyframes.
       quietInactiveElevation(card);
     }
     const binding=validCue?cues[cue]:null;
@@ -460,7 +494,7 @@
       !(requiem&&id==="C24")&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
-    stageSungSediliaAcolyte(card);
+    const sediliaStage=stageSedilia(card,form);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
       card,form,sourceSectionId
@@ -477,6 +511,7 @@
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
+      sediliaStage,lowIncenseOmitted,
       communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
@@ -484,7 +519,9 @@
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
-      communionStation,
+      communionStation,sediliaStage,
+      visualCard:visualCard.id,
+      lowIncenseOmitted,
       communionReturnTriggered:beginReturn,
       canonicalCommunionEventId:validCommunionEvent,
       elevationIncenseActor:elevationActor});
