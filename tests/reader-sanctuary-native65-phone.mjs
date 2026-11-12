@@ -398,6 +398,103 @@ try{
   assert.equal(communion.otherCueCount,solemnPaten);
   assert.equal(communion.requiemCount,solemnPaten,
     "Requiem still has the Solemn deacon assisting at Communion");
+  // The canonical MC-COM-320 is a non-text E64 source event:
+  // its "distribution concludes / priest returns" label may move
+  // the original priest actor toward the altar. Neither C0246 text,
+  // MC-COM-305 SCHOLA nor MC-COM-300/310 distribution starts a route.
+  const returnAudit=await frame.evaluate(form=>{
+    const api=window.AO_SANCTUARY_EMBED_TEST;
+    const message=(eventId=null,section="AO.CARD.025",requiem=false)=>({
+      type:"AO_SANCTUARY_CUE_V1",version:1,
+      form,cardTitle:"Communion of the Faithful",sourceSectionId:section,
+      sourceCueId:"AO.SM.C0246",certifiedSourceFocus:true,
+      canonicalCommunionEventId:eventId,requiem,scholaOnly:false
+    });
+    const send=(...args)=>api.present(message(...args));
+    const path=()=>M3.actors()?.P?.path?.pts?.map(p=>[...p])??null;
+    const count=()=>M3.actors()?.D?.b?.el?.querySelectorAll(
+      ".ao-sanctuary-communion-paten")?.length??0;
+    const begin=send("MC-COM-300"),beginPath=path();
+    const during=send("MC-COM-310"),duringPath=path();
+    const antiphon=send("MC-COM-305"),antiphonPath=path();
+    const lacking=send(null),lackingPath=path();
+    const back=send("MC-COM-320"),backPath=path(),backPaten=count();
+    const repeats=send("MC-COM-320"),repeatPath=path();
+    const unknownAfterReturn=send(null),heldPath=path();
+    const rewound=send("MC-COM-310"),rewoundPath=path();
+    const sourceWrong=send("MC-COM-320","AO.CARD.024");
+    const wrongPath=path();
+    const validAgain=send("MC-COM-320"),againPath=path();
+    const requiemAgain=send("MC-COM-320","AO.CARD.025",true);
+    const reqPath=path();
+    const clear=api.clear();
+    return {form,
+      begin:begin.communionStation,beginPath,
+      during:during.communionStation,duringPath,
+      antiphon:antiphon.canonicalCommunionEventId,antiphonPath,
+      lacking:lacking.communionReturnTriggered,lackingPath,
+      back:back.communionStation,triggered:back.communionReturnTriggered,
+      backPaten,backPath,
+      repeats:repeats.communionReturnTriggered,repeatPath,
+      unknownAfterReturn:unknownAfterReturn.communionReturnTriggered,heldPath,
+      rewound:rewound.communionStation,rewoundPath,
+      sourceWrong:sourceWrong.communionStation,wrongPath,
+      validAgain:validAgain.communionReturnTriggered,againPath,
+      requiemAgain:requiemAgain.communionReturnTriggered,reqPath,
+      afterClear:api.getState().card,
+      clear:clear.code};
+  },form);
+  assert.equal(returnAudit.begin,"AT_RAIL_STATIC");
+  assert.equal(returnAudit.during,"AT_RAIL_STATIC");
+  assert.equal(returnAudit.antiphon,null,
+    "Independent Communion Schola event cannot stage priest movement");
+  assert.equal(returnAudit.lacking,false,
+    "C0246 text with no native event is never a movement start");
+  assert.equal(returnAudit.beginPath,null);
+  assert.equal(returnAudit.duringPath,null);
+  assert.equal(returnAudit.antiphonPath,null);
+  assert.equal(returnAudit.lackingPath,null);
+  assert.equal(returnAudit.rewoundPath,null,
+    "Back to distribution event must cancel priest's return path");
+  assert.equal(returnAudit.wrongPath,null,
+    "Wrong source macro must not animate a return");
+  assert.equal(returnAudit.sourceWrong,null);
+  assert.equal(returnAudit.clear,"SOURCE_VISUAL_CLEARED");
+  assert.equal(returnAudit.afterClear,undefined);
+  if(["SOLEMN","LOW"].includes(form)){
+    assert.equal(returnAudit.back,"PRIEST_RETURN_SOURCE_EVENT");
+    assert.equal(returnAudit.triggered,true);
+    assert.deepEqual(returnAudit.backPath,
+      [[0,4.36],[0,2.05],[0,.4]],
+      "The source return must follow original sanctuary rail-foot-altar stations");
+    assert.equal(returnAudit.backPaten,0,
+      "Solemn paten must be removed when distribution concludes");
+    assert.equal(returnAudit.repeats,false,
+      "A repeated source event must not restart the journey");
+    assert.deepEqual(returnAudit.repeatPath,returnAudit.backPath);
+    assert.equal(returnAudit.unknownAfterReturn,false,
+      "Lack of event refresh must not trigger another return");
+    assert.deepEqual(returnAudit.heldPath,returnAudit.backPath,
+      "Transient event loss must not abort the begun priest return");
+    assert.equal(returnAudit.rewound,"AT_RAIL_STATIC");
+    assert.equal(returnAudit.validAgain,true,
+      "Rewinding into distribution must re-arm explicit source return");
+    assert.deepEqual(returnAudit.againPath,returnAudit.backPath);
+    assert.equal(returnAudit.requiemAgain,true,
+      "Requiem form transition must re-arm the return source event");
+    assert.deepEqual(returnAudit.reqPath,returnAudit.backPath);
+  }else{
+    assert.equal(returnAudit.back,"AT_RAIL_STATIC");
+    assert.equal(returnAudit.triggered,false,
+      "Uncertified Sung-source variant must not borrow Solemn event");
+    assert.equal(returnAudit.backPath,null);
+    assert.equal(returnAudit.repeats,false);
+    assert.equal(returnAudit.repeatPath,null);
+    assert.equal(returnAudit.heldPath,null);
+    assert.equal(returnAudit.validAgain,false);
+    assert.equal(returnAudit.againPath,null);
+    assert.equal(returnAudit.requiemAgain,false);
+  }
   const model=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
    if(api?.model?.totalCards!==65)throw Error("Canonical 65 LIVE cards missing");
