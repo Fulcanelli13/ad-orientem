@@ -4,6 +4,7 @@ import {createHash} from "node:crypto";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {attachApprovedDirectoryMedia,eligibleDirectoryImage,eligibleVenueImage,eligibleRenderedDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,renderDirectoryIdentityFallback,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
 const hash="a".repeat(64);
 const photo={
   place_id:"place:FR:test",status:"APPROVED",asset_path:"assets/approved/place-media/FR-test.webp",
@@ -12,6 +13,7 @@ const photo={
   source_url:"https://commons.wikimedia.org/wiki/File:Example.jpg",
   derivative_sha256:hash,rights_verified:true,subject_verified:true,crop_reviewed:true,
   alt_en:"The correct church",alt_fr:"La bonne église",
+  changes_en:"Resized from the original; no crop applied.",changes_fr:"Redimensionnée depuis l'original ; sans recadrage.",
 };
 const item={
   item_id:"tlm:public-venue-1",source_id:"public-venue-1",kind:"TLM_VENUE",lens:"tlm",
@@ -126,6 +128,15 @@ const vm=buildExploreViewModel({language:"en",lens:"tlm",items:[linked],view:"li
 assert.match(renderExploreToString(vm),/aoTlmVenueCard/);
 const vm2=buildExploreViewModel({language:"fr",lens:"tlm",items:[linked],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
 assert.match(renderExploreToString(vm2),/aoTlmPreviewPhoto/);
+assert.match(renderExploreToString(vm2),/Redimensionnée depuis l&#039;original ; sans recadrage/,
+  "French modification notice must accompany photographer and licence in the preview");
+const vm2en=buildExploreViewModel({language:"en",lens:"tlm",items:[linked],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
+assert.match(renderExploreToString(vm2en),/Resized from the original; no crop applied/,
+  "English modification notice must accompany photographer and licence in the preview");
+assert.match(renderTlmChurchProfile(linked,"en"),/Resized from the original; no crop applied/,
+  "Full church profile must display English image modifications");
+assert.match(renderTlmChurchProfile(linked,"fr"),/Redimensionnée depuis l&#039;original ; sans recadrage/,
+  "Full church profile must display French image modifications");
 const noPhotoMap=buildExploreViewModel({language:"en",lens:"tlm",items:[item],view:"map",selectedId:item.item_id,filters:{directoryGroup:"ALL"}});
 assert.match(renderExploreToString(noPhotoMap),/aoTlmVenueIdentity--preview/);
 assert.match(renderExploreToString(noPhotoMap),/FSSP_emblem/);
