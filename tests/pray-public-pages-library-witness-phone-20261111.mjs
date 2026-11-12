@@ -65,7 +65,13 @@ try{
    await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="'+ui+'"]')
     .click();
    await page.waitForFunction(value=>document.documentElement.lang===value,ui,{timeout:12000});
-   assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray")))?.ok,true);
+   // Settings has an explicit close/return contract; do not navigate through it.
+   await page.locator('#ao-settings-modular-root [data-settings-close]').click();
+   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
+     !document.querySelector("#ao-settings-modular-root"),null,{timeout:20000});
+   const prayed=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
+   assert.equal(prayed?.ok,true,
+     "Pray navigation failed after closing Settings: "+JSON.stringify(prayed));
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function"&&
     typeof globalThis.AO_TRADITIONAL_PRAY_V381?.open==="function",
     null,{timeout:40000});
