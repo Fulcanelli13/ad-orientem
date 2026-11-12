@@ -130,12 +130,23 @@ assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
 assert.deepEqual(presented.at(-1),["C24",true]);
 assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
  "STATIC_STAGE","Same focused priest cue must not restart animation");
-assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0122"}).choreography,
- "STATIC_STAGE");
-assert.deepEqual(presented.at(-1),["C24",false],
- "Leaving the source-owned incense cue must cancel pending animation");
+const originalIncenseAnimationCalls=presented.length;
+for(const continuation of ["AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"]){
+ assert.equal(send(off,{...incense,sourceCueId:continuation}).choreography,
+  "STATIC_STAGE","Incense continuation must not restart action at "+continuation);
+}
+assert.equal(presented.length,originalIncenseAnimationCalls,
+ "Continuing source prayers must not cancel the original 16-second sequence");
 assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
- "SOURCE_TRIGGERED","Reverse scroll must re-arm incense");
+ "STATIC_STAGE","Reverse scroll within ongoing incensation must not restart it");
+assert.equal(send("Offertory · Lavabo and Offering to the Trinity",{
+ ...incense,sourceCueId:"AO.SM.C0125"}).choreography,"STATIC_STAGE");
+assert.deepEqual(presented.at(-1),["C25",false],
+ "Leaving the incensation source card must cancel pending original keyframes");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0122"}).choreography,
+ "STATIC_STAGE","Re-entering a continuation must not invent a new incensation start");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
+ "SOURCE_TRIGGERED","Re-entering actual C0121 must re-arm original incensation");
 assert.equal(send(off,{...incense,form:"LOW",
  sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
  "Low Mass may never trigger incensation");
@@ -157,6 +168,20 @@ assert.equal(send("Communion of the Faithful",{form:"SOLEMN",
  sourceSectionId:"AO.CARD.025",sourceCueId:"AO.SM.C0246",
  certifiedSourceFocus:true}).choreography,"STATIC_STAGE",
  "Distribution at the rail must not invent an earlier priest walk");
+
+// Hiding the viewer for MISSAL must explicitly cancel original timers,
+ // smoke/elevation FX and restore an action-free source stage.
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.016"}).choreography,"SOURCE_TRIGGERED");
+assert.equal(api.clear().code,"SOURCE_VISUAL_CLEARED");
+assert.deepEqual(presented.at(-1),["C38",false],
+ "Clear must stop the current visual action without mutating canonical Mass");
+assert.equal(glow.show,false);
+assert.equal(elevClass,false);
+assert.equal(api.getState().card,undefined);
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.016"}).choreography,"SOURCE_TRIGGERED",
+ "Restoring LIVE must re-arm the source illustration");
 
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.ok(bridge.includes("stageSungSediliaAcolyte(card)"));
