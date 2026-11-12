@@ -3,66 +3,27 @@
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {createOfflineChantEngraver} from './reader-chant-engraver.js';
 import {scholaGabcSyllables,mapScholaSvgLyrics} from './reader-schola-notation-follow.js';
+import {compileGabcMelody,scheduleGabcMelody} from './reader-schola-gabc-melody.js';
 
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
-const DIATONIC=Object.freeze({c:0,d:2,e:4,f:5,g:7,h:9,i:11,j:12,k:14,l:16,m:17});
 export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='LIVE'}={}){
   return String(mode??'').toUpperCase()==='LIVE' &&
     SUNG.has(String(form??'').toUpperCase()) &&
     settingId==='MASS_16' && !isRequiem;
 }
-// Parse the existing four GABC invocation lines; this is *not* a general GABC
-// parser. Bail out if the source changes rather than guessing repetitions.
+// The source identity, counts and repeat plan remain specifically guarded;
+// the melodic parser and timing model are shared by future research scores.
 export function compileKyrieXviAudition(gabc){
-  const lines=String(gabc??'').split('%%')[1]?.trim().split(/\r?\n/).filter(Boolean)??[];
-  if(lines.length!==4)return null;
-  let global=0;
-  const verses=lines.map((line,verseIndex)=>{
-    const groups=[];
-    for(const match of line.matchAll(/([^()]*)\(([^()]*)\)/g)){
-      const raw=match[2];
-      if(/^\s*[cf][1-4]\s*$/.test(raw))continue;
-      const pitches=[...raw.matchAll(/[c-mC-M]/g)].map(x=>x[0]);
-      if(!pitches.length)continue;
-      const rawSyllable=match[1].replace(/<[^>]*>/g,'').replace(/\*|\{|\}/g,'').trim();
-      if(!/[\p{L}]/u.test(rawSyllable))return null;
-      groups.push(Object.freeze({
-        groupIndex:0,verseIndex,syllable:rawSyllable,
-        notes:Object.freeze(pitches.map((letter,position)=>Object.freeze({
-          sourceNoteOrdinal:++global,
-          midi:60+DIATONIC[letter.toLowerCase()],
-          mora:/\./.test(raw) && position===pitches.length-1,
-          episema:/_/.test(raw) && position===pitches.length-1,
-        })))
-      }));
-    }
-    return groups;
-  });
-  const flat=verses.flat();
-  if(flat.length!==27 || global!==40 ||
-    verses.map(x=>x.reduce((n,g)=>n+g.notes.length,0)).join(',')!=='9,7,9,15' ||
-    !gabc.includes('<i>iij.</i>') || !gabc.includes('<i>ij.</i>'))return null;
-  // A printed syllable is visited repeatedly; its note index remains stable.
-  let nextGroup=0;
-  const source=verses.map(groups=>groups.map(group=>Object.freeze({...group,groupIndex:nextGroup++})));
-  const performance=[];
-  for(let invocation=0;invocation<REPEATS.length;invocation++){
-    const verseIndex=REPEATS[invocation];
-    const groups=source[verseIndex];
-    for(let gi=0;gi<groups.length;gi++){
-      const group=groups[gi];
-      for(let ni=0;ni<group.notes.length;ni++){
-        performance.push(Object.freeze({
-          ...group.notes[ni],groupIndex:group.groupIndex,
-          invocation:invocation+1,verseIndex,
-          phraseEnd:gi===groups.length-1 && ni===group.notes.length-1
-        }));
-      }
-    }
-  }
-  return Object.freeze({sourceNoteCount:global,sourceGroupCount:flat.length,
-    invocations:REPEATS.length,performance:Object.freeze(performance)});
+  try{
+    const compiled=compileGabcMelody(gabc,{phraseSequence:REPEATS});
+    if(compiled.sourceNoteCount!==40||compiled.sourceGroupCount!==27||
+      compiled.phraseCount!==4||compiled.performance.length!==81||
+      compiled.phrases.map(x=>x.reduce((n,g)=>n+g.notes.length,0)).join(',')!=='9,7,9,15'||
+      !gabc.includes('<i>iij.</i>')||!gabc.includes('<i>ij.</i>'))
+      return null;
+    return compiled;
+  }catch{return null;} // source/notation changed: do not guess.
 }
 
 const STYLES=`
@@ -122,6 +83,7 @@ export function createKyrieXviResearchAudition({root,
   const score=offlineKyrialeResearchScore('KYRIE','MASS_16');
   const compiled=compileKyrieXviAudition(score?.gabc);
   if(!compiled)throw new Error('Kyrie XVI source changed; audition withheld');
+  const demoTiming=scheduleGabcMelody(compiled);
   const staff=panel.querySelector('[data-kyrie-staff]');
   const position=panel.querySelector('[data-kyrie-position]');
   const playButton=panel.querySelector('[data-kyrie-action="play"]');
@@ -147,6 +109,10 @@ export function createKyrieXviResearchAudition({root,
   function paint(){
     const note=compiled.performance[index];
     position.textContent=note?`Invocation ${note.invocation}/9 · source note ${note.sourceNoteOrdinal}/40`: 'Complete';
+    // Stable exact source-note cursor; rendered lyric emphasis remains
+    // at syllable level until physical notehead geometry is independently mapped.
+    staff.dataset.sourceNoteOrdinal=note?String(note.sourceNoteOrdinal):'complete';
+    staff.dataset.performanceNoteOrdinal=note?String(index+1):'complete';
     for(let i=0;i<lyricTargets.length;i++){
       const active=Boolean(note&&note.groupIndex===i);
       lyricTargets[i].dataset.kyriePreviewCurrent=String(active);
@@ -182,12 +148,12 @@ export function createKyrieXviResearchAudition({root,
     if(!note){silence();paint();return}
     paint();
     const speed=Number(speedNode.value)||1;
-    const duration=(note.mora?.53:note.episema?.40:.30)/speed;
+    const duration=demoTiming.events[index].durationMs/1000/speed;
     try{sound(note,duration)}catch{silence();position.textContent='Audio unavailable in this browser';return}
     timeoutId=view.setTimeout(()=>{
       releaseVoices();index++;
       if(index>=compiled.performance.length){silence();paint();return}
-      if(note.phraseEnd){timeoutId=view.setTimeout(advance,.28/speed*1000)}
+      if(note.phraseEnd){timeoutId=view.setTimeout(advance,demoTiming.events[index-1].gapAfterMs/speed)}
       else advance();
     },duration*1000);
   }
