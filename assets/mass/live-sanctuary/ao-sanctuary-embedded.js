@@ -201,7 +201,11 @@
   // not a source for an observed minister clock or certified coordinates.
   css.textContent += [
     ".ao-sanctuary-iframe .bb.ao-source-elevation-incense .thur{",
-    "animation:swing2 .7s ease-in-out 3!important}"
+    // Claude's original elevSeq reveals the Host/Chalice at +2500 ms.
+    // This delay synchronises ONLY the existing prototype visuals; it
+    // does not claim observed priest or thurifer timing.
+    "animation:swing2 .7s ease-in-out 3!important;",
+    "animation-delay:2.5s!important}"
   ].join("");
   function clearElevationMinisterIncense(){
     for(const id of ["T","S"])
