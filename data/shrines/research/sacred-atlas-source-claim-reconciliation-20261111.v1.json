@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 189,
+    "newInstitutionalCoreChecks": 206,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 282,
-    "onlyCitationScope": 390,
+    "currentUniqueCoreResearchChecks": 299,
+    "onlyCitationScope": 373,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 32
+    "newCoreResearchChecksSinceLastPass": 17
   },
   "source_quality_findings": [
     {
@@ -96,6 +96,22 @@
       "sources": [
         "https://www.miracoloeucaristico.eu/",
         "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/"
+      ]
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "type": "OBSOLETE_CATHEDRAL_SOURCE_ROUTE_REPLACE_BEFORE_CERTIFICATION",
+      "finding": "The draft's Trierer Dom /gottesdienste/innenstadtkirchen/sankt-matthias URL is obsolete. Current cathedral chapter route is /aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html and supports Benedictine St Matthias's tomb and church setting. Research alternate verified; guide source link remains to be updated before certification.",
+      "sources": [
+        "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+      ]
+    },
+    {
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "type": "DATE_SPECIFIC_PARISH_PROGRAMME_LINK_NOW_UNAVAILABLE",
+      "finding": "Current parish news index proves existence and July 18–25 dates of 2026 Apollinaris octave, but original article is not retrievable. Specific programme detail and any current access must remain under source-owner review.",
+      "sources": [
+        "https://www.katholisch-in-lindlar.de/news/index.html"
       ]
     }
   ],
@@ -5822,13 +5838,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lindlar parish's accessible news index dates 2026 St Apollinaris octave at Frielingsdorf to 18–25 July; original detailed article cannot be fetched. This establishes a year-specific programme, not perpetual access or route.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.katholisch-in-lindlar.de/news/index.html",
+      "evidence_scope": "PARISH_2026_OCTAVE_INDEX",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:bettbrunn-st-salvator",
@@ -6667,13 +6686,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Argentine Bishops Conference 26 September 2016 article reports the 25 September Mass and procession at San Nicolás; its reference to a 1983 apparition is reported tradition, not an independent acceptance of every private message.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://episcopado.org/ver/1310",
+      "evidence_scope": "BISHOPS_2016_FEAST_AND_TRADITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
@@ -7479,13 +7501,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Holy Land Custody's English institutional history locates Christian veneration of Golgotha and the Tomb in one Holy Sepulchre complex and distinguishes the respective chapels and custodianships.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.custodia.org/en/sanctuaries/basilica-of-the-holy-sepulchre/",
+      "evidence_scope": "FRANCISCAN_CUSTODY_GOLGOTHA_AND_TOMB",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PS:holy-sepulchre-jerusalem",
@@ -7768,13 +7793,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Argenteuil Holy Tunic custodians' FAQ confirms this is the Basilica of Saint-Denys at Argenteuil, with a reliquary normally accessible for veneration and exceptional full ostension 18 April–11 May 2025.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://saintetunique.com/foire-aux-questions/",
+      "evidence_scope": "CUSTODIAN_ARGENTEUIL_SITE_AND_OSTENSION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:kolner-dom-three-kings",
@@ -7806,13 +7834,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cologne Cathedral Chapter's catalogue identifies the Shrine of the Three Kings as a distinct reliquary inside the cathedral, built ca. 1190–1220 for bones transferred in 1164; replace the draft's non-custodian site before certification.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein",
+      "evidence_scope": "CATHEDRAL_CHAPTER_SHRINE_CATALOGUE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:kolner-dom-three-kings",
@@ -7987,13 +8018,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Amalfi diocesan museum's exact crypt description locates the traditionally ascribed relics of Apostle Andrew beneath the cathedral and records the 8 May 1208 transfer narrative as local custody, not forensic proof.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://museodiocesanoamalfi.it/app/it/la-cripta/",
+      "evidence_scope": "DIOCESAN_AMALFI_ANDREW_RELIC_HISTORY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:amalfi-sant-andrea",
@@ -8007,13 +8041,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Amalfi diocesan museum directly describes cathedral crypt, Saint Andrew's shrine and later decoration; place is the crypt within the cathedral, not other apostolic sites.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://museodiocesanoamalfi.it/app/it/la-cripta/",
+      "evidence_scope": "DIOCESAN_AMALFI_CRYPT_SITE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:amalfi-sant-andrea",
@@ -8176,13 +8213,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Updated Trier Cathedral Chapter St Matthias page identifies Benedictine abbey and church, the Matthias tomb in the crypt, and reported apostle remains as local veneration, not independent identification.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html",
+      "evidence_scope": "TRIER_CATHEDRAL_MATTHIAS_ABBEY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:trier-sankt-matthias",
@@ -8196,13 +8236,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Trier Cathedral Chapter details simultaneous Benedictine monastery and parish church, and distinct tombs of Trier founding bishops Eucharius and Valerius alongside Matthias.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html",
+      "evidence_scope": "TRIER_ABBEY_CHURCH_DISTINCTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:trier-sankt-matthias",
@@ -8569,13 +8612,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The Gesù church's official custodian page identifies church as mother church of the Society of Jesus and resting place of its founder Ignatius of Loyola; do not confuse with separate Church of Sant'Ignazio in Campo Marzio.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.chiesadelgesu.org/la-chiesa/",
+      "evidence_scope": "CUSTODIAN_GESU_IGNATIUS_TOMB",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:chiesa-gesu-rome",
@@ -8820,13 +8866,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Maria Ausiliatrice basilica custodian specifies the venerated tomb/bronze urn of Don Bosco in its named altar chapel as distinct from broader Salesian educational mission.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilicamariaausiliatrice.it/basilica-3/",
+      "evidence_scope": "SALESIAN_BASILICA_DON_BOSCO_URN",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:maria-ausiliatrice-torino",
@@ -9266,13 +9315,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official Visit Poitiers describes Saint-Hilaire-le-Grand built at the presumed tomb of Hilary, remodelled in the nineteenth century, and its confession crypt housing relics; distinguishes architecture from independent proof of bodily identity.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+      "evidence_scope": "CIVIC_UNESCO_HILARY_RELIC_AND_BUILDING",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
@@ -9625,13 +9677,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Manoppello sanctuary's own history reproduces Capuchin Donato da Bomba 1640 narrative placing devotional image tradition in sixteenth-century Manoppello; not proof of supernatural origin.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.voltosanto.it/storia/",
+      "evidence_scope": "CAPUCHIN_1640_IMAGE_CUSTODY_TRADITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:santuario-volto-santo-manoppello",
@@ -10938,13 +10993,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Singapore National Heritage Board national-monument entry dates building of present Hougang neo-Gothic church to 1898–1901, dedicated 8 December 1901, with 1933 transept and sanctuary expansion; no apparition claim.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary",
+      "evidence_scope": "SINGAPORE_HERITAGE_BUILDING_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
@@ -11311,13 +11369,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "In his 4 February 1994 ad limina address to Honduran bishops, John Paul II explicitly describes Our Lady of Suyapa as heavenly patroness of Honduras, corroborating national devotion but not proving the image's origin legend.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/content/john-paul-ii/es/speeches/1994/february/documents/hf_jp-ii_19940204_limina-honduras.html",
+      "evidence_scope": "VATICAN_SUYAPA_PATRONAGE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:HN:suyapa-basilica",
@@ -11928,13 +11989,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fortaleza Our Lady of Fatima parish/shrine's own contact page supplies exact parish site, local Archdiocese of Fortaleza context and contact; no original 1917 Fatima apparition, TLM schedule or alleged local miracle is inferred.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://igrejadefatima.com.br/contato/",
+      "evidence_scope": "CUSTODIAN_FORTALEZA_LOCAL_SITE_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
@@ -12139,13 +12203,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Allentown Immaculate Conception parish's own history explicitly dates its designation as US National Shrine of Our Lady of Guadalupe to December 1974, distinguishing Pennsylvania church from Mexico City's basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.immaculateconceptionallentown.org/history.html",
+      "evidence_scope": "CUSTODIAN_ALLENTOWN_1974_DESIGNATION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:allentown-guadalupe-national-shrine",
