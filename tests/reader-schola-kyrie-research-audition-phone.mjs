@@ -60,7 +60,7 @@ try{
    if(mode==='LIVE'&&!requiem)assert.equal(ready.total,65);
    const plan=page.locator('[data-schola-local-panel]');
    await plan.waitFor({state:'attached',timeout:20000});
-   await plan.locator('summary').first().click();
+   if(form!=='LOW'&&!requiem)await plan.locator('summary').first().click();
    const picker=page.locator('[data-schola-kyriale-choice="KYRIE"]');
    await picker.waitFor({state:'attached',timeout:20000});
    const trigger=page.locator('[data-kyrie-research-audition-open]');
@@ -111,7 +111,7 @@ try{
      await player.waitFor({state:'hidden',timeout:15000});
      assert.equal(await trigger.isVisible(),false);
      assert.equal(await page.evaluate(()=>document.querySelectorAll(
-       '[data-schola-dock][data-approved-score="true"]').length),0,
+       '.ao-schola-dock[data-approved-score="true"]').length),0,
        'Research audition must never promote the live Schola dock score');
    }
    assert.equal(await page.evaluate(
