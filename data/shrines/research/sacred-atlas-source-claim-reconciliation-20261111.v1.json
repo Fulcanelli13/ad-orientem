@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 157,
+    "newInstitutionalCoreChecks": 189,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 250,
-    "onlyCitationScope": 422,
+    "currentUniqueCoreResearchChecks": 282,
+    "onlyCitationScope": 390,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 34
+    "newCoreResearchChecksSinceLastPass": 32
   },
   "source_quality_findings": [
     {
@@ -79,6 +79,23 @@
       "finding": "Draft's colognecathedral.de source is not the Cologne Cathedral Chapter's institutional site. Use the cathedral's own Dreikönigenschrein catalogue as precise source before counting source-to-claim verification.",
       "sources": [
         "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
+      ]
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "type": "CITATION_DOES_NOT_PROVE_CLAIM",
+      "finding": "The cited Japanese Bishops' Conference 2016 article discusses native religious congregations and bibliographically mentions a book on Akita's weeping statue; it does not substantiate the guide's asserted 1975–1982 tears chronology or Bishop Ito's letter. Keep both paragraphs source-only pending appropriate direct evidence.",
+      "sources": [
+        "https://www.cbcj.catholic.jp/2016/09/01/13352/"
+      ]
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "type": "OFFICIAL_SITE_UNDER_CONSTRUCTION_SUPPLEMENT_WITH_BEWEB",
+      "finding": "The guide's named Franciscan shrine homepage now gives only contact and photos; Italian bishops' BeWeB detailed history supplies substantive custody and location evidence in the research record. Replace weak citations before certified publication.",
+      "sources": [
+        "https://www.miracoloeucaristico.eu/",
+        "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/"
       ]
     }
   ],
@@ -6726,13 +6743,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Le Puy diocese explicitly identifies its early fever-healing foundation account as tradition, not independently verified event.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/",
+      "evidence_scope": "DIOCESAN_FOUNDATION_LEGEND",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:cathedrale-notre-dame-le-puy",
@@ -9842,13 +9862,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Łagiewniki sanctuary names original convent chapel as site of Faustina's tomb and Mercy image and distinguishes larger pilgrim complex.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/",
+      "evidence_scope": "CUSTODIAN_FAUSTINA_TOMB_IMAGE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
@@ -10250,13 +10273,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Zakopane Pallottine national shrine chronology gives vow linked to the 13 May 1981 attack and later formal national shrine decree of 2018.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://smbf.pl/en/the-national-shrine/",
+      "evidence_scope": "CUSTODIAN_1981_VOTIVE_SHRINE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
@@ -10971,13 +10997,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lusaka archdiocese reports 15 August 2025 Roma pro-cathedral to Marian shrine pilgrimage and Eucharist with consecration.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+      "evidence_scope": "ARCHDIOCESAN_2025_PILGRIMAGE_ROUTE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
@@ -10994,13 +11023,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The same 15 August 2025 report distinguishes Roma pro-cathedral starting point from Marian Shrine destination, not a permanent route.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+      "evidence_scope": "ARCHDIOCESAN_2025_ROUTE_DISTINCTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:HU:mariapocs-greek-catholic-basilica",
@@ -11014,13 +11046,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Hungarian National Heritage Memorial Committee calls Máriapócs a Greek Catholic basilian monastery with 1696 weeping-icon tradition.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.nekb.gov.hu/nemzeti-emlekhelyek/mariapocs/mariapocs-kegytemplom-es-bazilita-monostor",
+      "evidence_scope": "NATIONAL_HERITAGE_GREEK_CATHOLIC_ICON",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:HU:mariapocs-greek-catholic-basilica",
@@ -11091,13 +11126,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Manaoag shrine's Dominican history records 1926 canonical coronation and 11 October 2014 minor basilica declaration.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.manaoagminorbasilica.org/whoweare",
+      "evidence_scope": "CUSTODIAN_CORONATION_VS_BASILICA",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PH:manaoag-rosary-basilica",
@@ -11131,13 +11169,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Esquipulas municipality documents longstanding Black Christ crucifix veneration from 1595 and later sanctuary construction.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://muniesquipulas.gob.gt/2023/03/01/9-de-marzo-de-2023-428-anos-de-veneracion-del-cristo-negro/",
+      "evidence_scope": "CIVIC_BLACK_CHRIST_DEVOTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:GT:esquipulas-black-christ-basilica",
@@ -11190,13 +11231,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Paraguay's official tourism catalogue identifies Caacupé as its principal Marian sanctuary, noting title and annual pilgrimage without certifying miracles.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://visitparaguay.travel/places/basilica-nuestra-senora-de-los-milagros-de-caacupe",
+      "evidence_scope": "NATIONAL_TOURISM_MARIAN_SANCTUARY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PY:caacupe-our-lady-miracles",
@@ -11441,13 +11485,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Holy See homily explicitly locates John Paul II Eucharistic celebration at Levoča on 3 July 1995.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/content/john-paul-ii/it/homilies/1995/documents/hf_jp-ii_hom_19950703_levoca.html",
+      "evidence_scope": "PAPAL_1995_LEVOCA_LITURGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:SK:levoca-marianska-hora-basilica",
@@ -11616,13 +11663,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Paul VI apostolic letter Quanto Christifideles of 22 December 1977 elevates Nuestra Señora de la Caridad del Cobre to minor basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html",
+      "evidence_scope": "PAPAL_1977_BASILICA_DECREE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CU:el-cobre-caridad-basilica",
@@ -11639,13 +11689,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Paul VI's decree identifies named Cuban Marian sanctuary and centuries of national Marian veneration; it does not establish present-day Mass times.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html",
+      "evidence_scope": "PAPAL_COBRE_SANCTUARY_STATUS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:SI:brezje-mary-help-basilica",
@@ -11774,13 +11827,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Rigaud sanctuary first-person history confirms founding devotion in 1874 through Brother Ludger Pauzé and distinct Lourdes site in France.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://lourdesrigaud.ca/sanctuary-short-story/",
+      "evidence_scope": "CUSTODIAN_RIGAUD_1874_FOUNDATION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
@@ -11893,13 +11949,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Alta Gracia Carmelite sanctuary's own site confirms named Argentine Lourdes grotto and long local history, not a new apparition.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://santuariolourdesal.wixsite.com/grutadealtagracia",
+      "evidence_scope": "CUSTODIAN_ALTA_GRACIA_SHRINE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
@@ -11951,13 +12010,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montevideo shrine's own history documents local 1940s Lourdes grotto development as derivative of Massabielle in France.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://grutadelourdes.org/sobre-nosotros/",
+      "evidence_scope": "CUSTODIAN_MONTEVIDEO_GROTTO_DEVELOPMENT",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
@@ -11972,13 +12034,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The Montevideo sanctuary's historical timeline records bishops' 1958 designation as national shrine.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://grutadelourdes.org/sobre-nosotros/",
+      "evidence_scope": "CUSTODIAN_1958_NATIONAL_SANCTUARY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
@@ -12032,13 +12097,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fátima Portugal official international shrine directory gives Namaacha construction in 1942 and formal inauguration 29 August 1944.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha",
+      "evidence_scope": "FATIMA_SISTER_SHRINE_1944_DATE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:MZ:namaacha-fatima-sanctuary",
@@ -12147,13 +12215,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Westminster Cathedral itself identifies the active Catholic archiepiscopal cathedral and liturgical dedication distinct from unverified Precious Blood relic claims.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://westminstercathedral.org.uk/the-cathedral/",
+      "evidence_scope": "CATHEDRAL_CATHOLIC_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:GB:westminster-cathedral",
@@ -12245,13 +12316,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Orvieto Duomo custodian identifies the Chapel of the Corporal and its link to Eucharistic tradition at geographically distinct Bolsena.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal",
+      "evidence_scope": "CATHEDRAL_BOLSENA_CORPORAL_PROVENANCE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:duomo-orvieto",
@@ -12265,13 +12339,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Orvieto Cathedral Chapel of Corporal preserves venerated altar cloth tied to Bolsena event; place and event must remain distinct.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal",
+      "evidence_scope": "CATHEDRAL_CORPORAL_CHAPEL",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:duomo-orvieto",
@@ -13121,13 +13198,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Colombo archdiocese report dated 2 September 2026 says Annual Sick Day Blessing was celebrated at Tewatta Basilica 30 August 2026.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.archdioceseofcolombo.lk/article/2026_Sick_Day_Blessing_at_Tewatta_Basilica/97",
+      "evidence_scope": "ARCHDIOCESE_2026_SICK_DAY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
@@ -13256,13 +13336,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vatican News 2026 La Vang pilgrimage report recounts Marian apparition tradition during 1798 persecution as living devotional memory.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html",
+      "evidence_scope": "VATICAN_NEWS_LOCAL_DEVOTIONAL_TRADITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:VN:our-lady-la-vang-national-shrine",
@@ -13391,13 +13474,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Rabat archdiocese records Our Lady of Lourdes Casablanca patronal parish celebration on 16 February 2025, not guaranteed future programme.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://dioceserabat.org/casablanca-celebration-de-la-fete-patronale-de-la-paroisse-notre-dame-de-lourdes/",
+      "evidence_scope": "ARCHDIOCESE_RABAT_2025_PATRONAL_FEAST",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
@@ -13431,13 +13517,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Italian bishops' BeWeB thematic essay identifies Lanciano San Francesco sanctuary, its conventual Franciscan custody and Eucharistic miracle tradition; current named custodian homepage is under construction.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/",
+      "evidence_scope": "ITALIAN_BISHOPS_CHURCH_HERITAGE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
@@ -13451,13 +13540,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Italian bishops' BeWeB documentation identifies physical objects and relic custody at San Francesco, distinct from independent authentication of miraculous ancient origin.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "evidence_scope": "ITALIAN_BISHOPS_OBJECT_CUSTODY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
@@ -13492,13 +13584,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Portugal national heritage inventory documents Santo Estêvão, its alternate Santíssimo Milagre names, national monument status and 13th-century miracle legend.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433",
+      "evidence_scope": "NATIONAL_CULTURE_RELIC_LEGEND_DISTINCTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PT:santarem-santissimo-milagre",
@@ -13530,13 +13625,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Portuguese National Heritage catalogue records church's Catholic devotional identification and relic custody as tradition, without proof of event or permanent ostension.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433",
+      "evidence_scope": "NATIONAL_HERITAGE_EUCHARISTIC_DEVOTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CN:sheshan-our-lady-help-christians",
@@ -13669,13 +13767,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Belize Catholic diocesan parish register identifies Our Lady of Guadalupe Co-Cathedral at East Ring Road, Belmopan; not an apparition site.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.catholicdiocesebelize.org/en/parishes",
+      "evidence_scope": "DIOCESAN_BELMOPAN_COCATHEDRAL",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
@@ -13691,13 +13792,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Diocesan January 2025 Jubilee launch report documents co-cathedral as the focus for time-bound holy door event, not enduring special pilgrimage entitlement.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.catholicdiocesebelize.org/en/news/catholic-diocese-of-belize-city-and-belmopan-launch-jubilee-2025-1",
+      "evidence_scope": "DIOCESAN_2025_JUBILEE_EVENT",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
@@ -13732,13 +13836,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Jesuit provincial article dated February 2026 documents the Lourdes parish in Montes de Oca, with founding community history and original 1912 chapel.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/",
+      "evidence_scope": "JESUIT_CUSTODIAN_LOCAL_PARISH",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
@@ -13791,13 +13898,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "UCA Catholic directory identifies Our Lady of Fatima Church at 73 Randle Road within Archdiocese of Karachi; no Portuguese event transplanted.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379",
+      "evidence_scope": "CATHOLIC_DIRECTORY_PHYSICAL_PARISH_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PK:karachi-our-lady-fatima-parish",
@@ -13812,13 +13922,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Catholic directory supports Karachi parish name, address and Marian patronage only, not national shrine, relic or recurring pilgrim Mass schedule.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379",
+      "evidence_scope": "CATHOLIC_DIRECTORY_CLAIM_BOUNDARY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PK:karachi-our-lady-fatima-parish",
