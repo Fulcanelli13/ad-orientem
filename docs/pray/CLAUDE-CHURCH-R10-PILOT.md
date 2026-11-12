@@ -20,6 +20,9 @@ node tools/pray/stage-claude-church-r8.mjs \
   --source /path/to/unzipped/Ad_Orientem \
   --dest assets/pray-church
 node tests/pray-claude-church-host-r10.mjs
+# Full 3D Church test (only after the original R8 source is supplied):
+AO_R8_SOURCE=/path/to/unzipped/Ad_Orientem \\
+  node tests/pray-claude-church-staged-phone.mjs
 ```
 
 The target is a **staging surface**, not permission to publish. The copy is local and does not fetch proprietary media. The importer **does not copy font files**. The original source and artwork files remain the owner's review package; no alternative paintings or rebuilt 3D geometry are substituted.
@@ -45,3 +48,5 @@ The source staging and iframe owner have Node contract tests. R9's successful 76
 Before publication, perform an actual served-app browser test with staged originals at 320px and 390px for both languages, test every Church door and the lectern, verify full painting references, Back and Home exit, screen-reader and keyboard access, and inspect the approved image source/licence records. In particular, test performance on a physical phone and validate that suspend actually stops R8's animation loop.
 
 **This PR is not a release and contains no R8 painting files or font bundles.** Pages exclusion is intentional. Do not merge or deploy until gates are green and the original source has been reviewed in the production shell. Deployment policy remains **GitHub Actions + GitHub Pages only**, never Vercel.
+
+The staged browser test above **fails loudly if the original R8 files are absent**. It is not part of default CI because the owner-supplied image bundle is not committed or licensed for public publication. It exercises the original Places menu, Votive Candles entry, a real N3 St Joseph novena, Back-to-original-gallery and west-door Home exit at 320/390px and EN/FR. Successful execution is a prerequisite to lifting the publication hold; it is not assumed from the green host unit test.
