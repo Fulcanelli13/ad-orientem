@@ -8,13 +8,14 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const l=read("data/directory/research/tlm-21-source-verified-photo-release-20261112.v1.json");
 const media=read("data/directory/approved-venue-media.v1.json");
 const p110=read("data/directory/research/tlm-p110-two-clean-cover-release-20261112.v1.json");
+const p112=read("data/directory/research/tlm-p112-three-photo-cover-release-20261112.v1.json");
 const index=read("data/directory/generated/cl2-physical-site-index.v1.json");
 const labels=read("data/directory/cl2-source-site-category-matrix-20261111.v1.json");
 const witnesses=read("data/directory/cl2-exact-venue-category-witnesses-20261111.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 assert.equal(l.schema,"AO_TLM_21_SOURCE_VERIFIED_DIOCESAN_COVERS_RELEASE_V1");
 assert.deepEqual(l.counts,{prior_approved_venue_media:2,new_exact_diocesan_venue_photos:21,approved_after:23,staged_batch:28,held_batch:7,worldwide_site_count_unchanged:2580,new_map_pins:0,new_mass_schedules:0});
-assert.equal(media.items.length,l.counts.approved_after+p110.proposed.new_clean_alternate_covers);
+assert.equal(media.items.length,l.counts.approved_after+p110.proposed.new_clean_alternate_covers+p112.proposed.new_exact_covers);
 assert.equal(p110.proposed.new_clean_alternate_covers,2);
 assert.equal(l.published.length,21);
 assert.equal(l.held.length,7);
@@ -73,14 +74,14 @@ for(const p of l.published){
 }
 assert.equal(venueIds.size,21);assert.equal(assets.size,21);assert.equal(hashes.size,21);
 for(const hold of l.held){
- const alt=p110.approved.find(x=>x.venue_id===hold.venue_id);
+ const alt=p110.approved.find(x=>x.venue_id===hold.venue_id)||p112.approved.find(x=>x.venue_id===hold.venue_id);
  if(alt){
   const img=media.items.find(x=>x.venue_id===hold.venue_id);
-  assert.equal(img?.asset_path,alt.asset_path,"Only P110 explicitly source-verified alternate may resolve a historical hold");
+  assert.equal(img?.asset_path,alt.asset_path,"Only P110/P112 explicitly source-verified alternate may resolve a historical hold");
   assert.equal(img?.derivative_sha256,alt.derivative_sha256);
   assert.equal(img?.source_sha1,alt.original_sha1);
- }else assert.ok(!media.items.some(m=>m.venue_id===hold.venue_id),"Historical hold without explicit P110 release stays blocked");
+ }else assert.ok(!media.items.some(m=>m.venue_id===hold.venue_id),"Historical hold without explicit P110/P112 release stays blocked");
  assert.ok(hold.reason==="CROP_REVIEW"||/CROP|HOLD/.test(hold.reason));
 }
 assert.ok(!media.items.some(m=>m.venue_id==="AO-AMER-R28-US-21-03"),"Lewiston conflict cannot be automatically published");
-console.log("TLM21_VERIFIED_PUBLIC_EXACT_DIOCESAN_COVERS_PASS: 21 immutable source/site/hash/rights/EN-FR records; exactly two P110 alternates and five retained holds");
+console.log("TLM21_VERIFIED_PUBLIC_EXACT_DIOCESAN_COVERS_PASS: 21 immutable source/site/hash/rights/EN-FR records; two P110 and three P112 alternates, with two retained holds");

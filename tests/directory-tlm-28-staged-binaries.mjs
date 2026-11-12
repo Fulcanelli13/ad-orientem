@@ -12,6 +12,8 @@ const witnesses=read("data/directory/cl2-exact-venue-category-witnesses-20261111
 const approved=read("data/directory/approved-venue-media.v1.json");
 const p110=read("data/directory/research/tlm-p110-two-clean-cover-release-20261112.v1.json");
 const alternateByVenue=new Map(p110.approved.map(x=>[x.venue_id,x]));
+const p112=read("data/directory/research/tlm-p112-three-photo-cover-release-20261112.v1.json");
+const p112ByVenue=new Map(p112.approved.map(x=>[x.venue_id,x]));
 const geo=read("data/geography/seed-registry.v1.json");
 const licenseUrls={
  "CC-BY-3.0":"https://creativecommons.org/licenses/by/3.0/",
@@ -49,7 +51,7 @@ for(const rec of meta.entries){
  assert.ok(promoted.length<=1,"Multiple approved covers for "+venue);
  const released=promoted[0];
  if(released){
-  const alt=alternateByVenue.get(venue);
+  const alt=alternateByVenue.get(venue)||p112ByVenue.get(venue);
   if(alt){
    assert.equal(alt.cl2_anchor,id,"Explicit P110 replacement must use the same CL2 site");
    assert.equal(released.asset_path,alt.asset_path,"Approved alternative must use exact source-verified path");
@@ -76,7 +78,7 @@ for(const rec of meta.entries){
  assert.match(rec.approved_asset_path,/^assets\/approved\/directory-media\/[A-Z0-9-]+\.webp$/);
  assert.ok(!approvedPaths.has(rec.approved_asset_path),"Competing approved asset path");
  approvedPaths.add(rec.approved_asset_path);
- assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),Boolean(released&&!alternateByVenue.has(venue)),
+ assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),Boolean(released&&!alternateByVenue.has(venue)&&!p112ByVenue.has(venue)),
   "Approved asset must exist if and only if exact approved venue record exists");
  const bytes=readFileSync(new URL("../"+relative,import.meta.url));
  assert.equal(bytes.toString("ascii",0,4),"RIFF");

@@ -8,6 +8,7 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const ledger=read("data/directory/research/tlm-p110-two-clean-cover-release-20261112.v1.json");
 const media=read("data/directory/approved-venue-media.v1.json");
+const p112=read("data/directory/research/tlm-p112-three-photo-cover-release-20261112.v1.json");
 const older=read("data/directory/research/tlm-21-source-verified-photo-release-20261112.v1.json");
 const held=read("data/directory/research/tlm-7-held-photo-resolution-20261112.v1.json");
 const physical=read("data/directory/generated/cl2-physical-site-index.v1.json");
@@ -22,7 +23,8 @@ assert.deepEqual(ledger.proposed,{
  new_map_pins:0,new_site_records:0,new_mass_schedules:0,prior_approved_covers_replaced:0
 });
 assert.equal(media.schema,"AO_APPROVED_TLM_VENUE_MEDIA_V1");
-assert.equal(media.items.length,25);
+assert.equal(media.items.length,ledger.proposed.direct_venue_covers_after+p112.proposed.new_exact_covers);
+assert.equal(p112.proposed.new_exact_covers,3);
 assert.equal(older.published.length,21);
 assert.equal(held.records.length,7);
 assert.equal(ledger.approved.length,2);
@@ -30,8 +32,8 @@ assert.equal(ledger.held.length,5);
 assert.deepEqual(new Set(ledger.approved.map(x=>x.cl2_anchor)),new Set(["RG-0B11C840F55E","RG-18825D70FD67"]));
 assert.deepEqual(new Set(ledger.held.map(x=>x.cl2_anchor)),
  new Set(["RG-7C7DC29FFFAB","RG-10BAB9521232","RG-ABBC659D0388","RG-15198DD7A6FE","RG-AAFBFCE94AA0"]));
-assert.equal(new Set(media.items.map(x=>x.venue_id)).size,25);
-assert.equal(new Set(media.items.map(x=>x.asset_path)).size,25);
+assert.equal(new Set(media.items.map(x=>x.venue_id)).size,media.items.length,"All approved venue_id values must remain unique after explicit P112 additions");
+assert.equal(new Set(media.items.map(x=>x.asset_path)).size,media.items.length,"All approved asset_path values must remain unique after explicit P112 additions");
 assert.equal(physical.records.length,2580);
 assert.ok(DIRECTORY_CARD_STYLE.includes("object-fit:contain;object-position:center"),"Cover must not crop church architecture");
 const source=new Map(physical.records.map(r=>[r[0],r]));
@@ -103,8 +105,15 @@ for(const p of ledger.approved){
  }
 }
 for(const row of ledger.held){
- assert.ok(!media.items.some(m=>m.venue_id===row.venue_id),"Unreviewed original/alternate photo published");
+ const promoted=p112.approved.find(x=>x.venue_id===row.venue_id);
+ if(promoted){
+  const img=media.items.find(x=>x.venue_id===row.venue_id);
+  assert.equal(promoted.cl2_anchor,row.cl2_anchor);
+  assert.equal(img?.asset_path,promoted.asset_path,"Only source-verified P112 photo may resolve a historical P110 hold");
+  assert.equal(img?.source_sha1,promoted.original_sha1);
+  assert.equal(img?.derivative_sha256,promoted.derivative_sha256);
+ }else assert.ok(!media.items.some(m=>m.venue_id===row.venue_id),"Unreviewed original/alternate photo published");
  assert.ok(row.reason&&row.next_evidence);
 }
 assert.ok(!media.items.some(x=>x.venue_id==="AO-AMER-R28-US-21-03"),"Lewiston conflicting site excluded");
-console.log("P110 PASS: two Commons-SHA1 verified exact-site covers, byte-identical Git blobs, all 23 old covers, five publication holds and EN/FR attribution");
+console.log("P110 PASS: two Commons-SHA1 verified exact-site covers, byte-identical Git blobs, all 23 old covers, three P112 exact site promotions, two remaining holds, and EN/FR attribution");

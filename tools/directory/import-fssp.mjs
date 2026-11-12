@@ -7,6 +7,7 @@ import { writeDirectoryDataset } from "./lib/write-directory-dataset.mjs";
 import { selectOfficialGeoFromHtml } from "./lib/official-geo-utils.mjs";
 
 export const FSSP_DIRECTORY_URL="https://www.fssp.org/en/find-us/where-are-we/";
+export const FSSP_MARKERS_URL="https://www.fssp.org/wp-json/wpgmza/v1/markers";
 export const FSSP_SOURCE_ID="SRC_FSSP_WORLD_DIRECTORY";
 
 function slugify(value){
@@ -64,6 +65,43 @@ function rowRecord(row,pageUrl,index){
 
 export function parseFsspDirectoryHtml(html,{pageUrl=FSSP_DIRECTORY_URL}={}){
   return extractTableRows(html).map((row,index)=>rowRecord(row,pageUrl,index)).filter(Boolean);
+}
+
+
+/**
+ * First-party WP Go Maps REST data powering the exact FSSP worldwide directory.
+ * Only map 1 is the public directory. Do not admit control rows, anonymous
+ * records, duplicate marker IDs, empty addresses or unknown countries.
+ * Source-provided coordinates are intentionally NOT published from this
+ * research importer; CL2/Excel approval remains the map admission gate.
+ */
+export function parseFsspOfficialMarkers(payload){
+  if(!Array.isArray(payload))throw new Error("FSSP official markers schema drift: expected array");
+  const markers=payload.filter(m=>m&&String(m.map_id??"")==="1");
+  const ids=new Set();
+  return markers.map((m,index)=>{
+    const markerId=String(m.id??"").trim();
+    const title=stripTags(String(m.title??"")).trim();
+    const address=stripTags(String(m.address??"")).trim();
+    const description=stripTags(String(m.description??"")).trim();
+    if(!markerId||ids.has(markerId))throw new Error("FSSP official markers: missing or duplicate source marker ID");
+    ids.add(markerId);
+    if(!title||!address||!description||isDirectoryControlRow(title,address))
+      throw new Error(`FSSP official markers: incomplete or control record ${markerId}`);
+    const countryCode=countryCodeFromText(address)??countryCodeFromText(description);
+    if(!countryCode)throw new Error(`FSSP official markers: unknown country for marker ${markerId}`);
+    const rawLink=String(m.link??"").trim();
+    let link=null;
+    if(rawLink){
+      try{const parsed=new URL(rawLink);if(["http:","https:"].includes(parsed.protocol))link=parsed.href;}
+      catch{}
+    }
+    return {index,title,address,description,countryCode,detailUrl:null,
+      diocese:dioceseFromText(description),massRaw:massText(description),
+      upstreamMarkerId:markerId,
+      emails:emailAddresses(description),phones:phoneCandidates(description),
+      externalLinks:link?[link]:[]};
+  });
 }
 
 function normalizedHost(url){
@@ -172,7 +210,7 @@ export function buildFsspDataset(records,{retrievedAt=new Date().toISOString()}=
       venue_id:venueId,
       name:{official:record.title,alternate:[]},
       venue_type:venueType(record.title),
-      upstream:{provider:"FSSP_WORLD_DIRECTORY",row_index:record.index,detail_url:record.detailUrl??null},
+      upstream:{provider:"FSSP_WORLD_DIRECTORY",row_index:record.index,detail_url:record.detailUrl??null,marker_id:record.upstreamMarkerId??null},
       address:{line1:null,line2:null,postal_code:null,city:null,region:null,country_code:record.countryCode,country:null,formatted:record.address},
       geo:record.officialGeo??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:record.diocese,type:"diocese"},
@@ -207,20 +245,40 @@ async function renderFsspDirectoryHtml(url=FSSP_DIRECTORY_URL){
 }
 
 export async function runFsspImport({out="data/directory/generated/fssp",concurrency=6,fetchImpl=fetch}={}){
-  let html=await fetchText(FSSP_DIRECTORY_URL,{fetchImpl});
-  let base=parseFsspDirectoryHtml(html);
-  if(base.length===0){
-    html=await renderFsspDirectoryHtml(FSSP_DIRECTORY_URL);
+  let base=null,carrier="official_markers_api",sourceFailure=null;
+  try{
+    const response=await fetchImpl(FSSP_MARKERS_URL,{
+      headers:{"Accept":"application/json","User-Agent":"AdOrientemDirectory/1.0"},
+      signal:AbortSignal.timeout(28000)
+    });
+    const returnedHost=new URL(response.url||FSSP_MARKERS_URL).hostname;
+    if(!["www.fssp.org","fssp.org"].includes(returnedHost))
+      throw new Error("FSSP official marker endpoint redirected to non-FSSP host");
+    if(!response.ok)throw new Error(`FSSP official marker endpoint HTTP ${response.status}`);
+    base=parseFsspOfficialMarkers(await response.json());
+  }catch(error){sourceFailure=String(error?.message??error);base=null;}
+  if(!base){
+    carrier="official_html_table";
+    let html=await fetchText(FSSP_DIRECTORY_URL,{fetchImpl});
     base=parseFsspDirectoryHtml(html);
+    if(base.length===0){
+      html=await renderFsspDirectoryHtml(FSSP_DIRECTORY_URL);
+      base=parseFsspDirectoryHtml(html);
+    }
   }
   if(base.length < 100) {
-    throw new Error(`FSSP import coverage guard: expected at least 100 official directory rows, received ${base.length}.`);
+    throw new Error(`FSSP import coverage guard: expected at least 100 official directory rows, received ${base.length} (carrier ${carrier}; marker endpoint: ${sourceFailure??"ok"}).`);
   }
+  // The runtime contract requires 400 distinct current venues. Reject a
+  // partial REST response here, before writing any directory candidate.
+  if(carrier==="official_markers_api"&&base.length<400)
+    throw new Error(`FSSP official marker coverage drift: ${base.length} < 400`);
   const previouslyUnresolved=await loadPreviouslyUnresolved(out);
-  const records=await concurrentMap(base,concurrency,record=>enrichDetail(record,{
-    fetchImpl,
-    linkedGeoRecovery:previouslyUnresolved.has(canonicalVenueIdForRecord(record))
-  }));
+  const records=carrier==="official_markers_api"?base:
+    await concurrentMap(base,concurrency,record=>enrichDetail(record,{
+      fetchImpl,
+      linkedGeoRecovery:previouslyUnresolved.has(canonicalVenueIdForRecord(record))
+    }));
   const retrievedAt=new Date().toISOString();
   const dataset=buildFsspDataset(records,{retrievedAt});
   const countryKnown=dataset.venues.filter(v=>v.address.country_code).length;
@@ -228,6 +286,7 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
     provider:"FSSP",retrievedAt,...dataset,
     coverage:{
       source_rows:base.length,
+      carrier,
       canonical_unique_rows:dataset.venues.length,
       exact_duplicate_rows:dataset.exactDuplicateRows.length,
       detail_pages_attempted:base.filter(r=>r.detailUrl).length,

@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_TLM_VENUE_MEDIA_V1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "items": [
     {
       "venue_id": "SSPXMAP:OPE-002280",
@@ -576,6 +576,75 @@
       "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche des couleurs ni photomontage.",
       "reviewed_at": "2026-11-12",
       "review_method": "Original Wikimedia Commons bytes and metadata were fetched in GitHub Actions P110 and the SHA-1, creator and licence checked; full-frame WebP SHA-256 pinned; exact diocesan CL2 source venue checked; 320/390px simulated photo composition personally inspected, clear church identity. Browser release acceptance remains a CI gate; no owner-handpicked claim."
+    },
+    {
+      "venue_id": "AO-B34-L-GB-D7DA8CC0BE16",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-10BAB9521232-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Catholic_Church_of_the_English_Martyrs,_Strood_-_geograph.org.uk_-_1053668.jpg",
+      "source_sha1": "9b6337123bb47270df19201902bfe2542cc129d1",
+      "derivative_sha256": "029b340fd84f3687e987c4f94d0b3079215e49f1229336d688eb9745f50c4aaf",
+      "credit": "David Anstiss",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 640,
+      "height": 481,
+      "orientation": "landscape",
+      "alt_en": "The modern brown-brick Catholic Church of the English Martyrs in Strood, seen from the street with angular green roofs, arched side windows and a wooden entrance.",
+      "alt_fr": "Église catholique moderne des Martyrs anglais à Strood, vue depuis la rue, avec murs de brique brune, toitures vertes anguleuses, fenêtres cintrées et entrée en bois.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "P112: exact-category Commons original and binary SHA-1/creator/licence verified by GitHub Actions in P111; independent full-frame contact-sheet inspection selected clearer church architecture; historic source and exact CL2 venue established; unchanged staged binary reused. Native EN/FR card and 320/390 browser release gates mandatory. Not described as individually owner-approved."
+    },
+    {
+      "venue_id": "AO-B35-L-GB-D1A88E153706",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-15198DD7A6FE-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Catholic_Church,_Maidstone_-_geograph.org.uk_-_383041.jpg",
+      "source_sha1": "40fd68f0718f478a9fd7e057625429bf7d4d487f",
+      "derivative_sha256": "fe7faf2d03a15ff228d626d19e059e587f508c2bbd6e73f97513277aebc7a56e",
+      "credit": "John Salmon",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 640,
+      "height": 479,
+      "orientation": "landscape",
+      "alt_en": "St Francis Roman Catholic Church in Maidstone, showing its tall Gothic window and stone gable behind a low modern entrance building, viewed from a quiet street corner.",
+      "alt_fr": "Église catholique Saint-François à Maidstone, avec grande fenêtre gothique et pignon en pierre derrière un bâtiment d'entrée plus bas, vue depuis un carrefour tranquille.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "P112: exact-category Commons original and binary SHA-1/creator/licence verified by GitHub Actions in P111; independent full-frame contact-sheet inspection selected clearer church architecture; historic source and exact CL2 venue established; unchanged staged binary reused. Native EN/FR card and 320/390 browser release gates mandatory. Not described as individually owner-approved."
+    },
+    {
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-AAFBFCE94AA0-p112.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Josephs_Aldershot_Side_View.jpg",
+      "source_sha1": "4e1800ccc78ee3f31798860ca7a532f5b62e2c3f",
+      "derivative_sha256": "b547cb8dfcca3ef9a76f951a377b1b39855aa0fd2ba4d496b0c921f13aab53b3",
+      "credit": "Jack1956",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 960,
+      "height": 720,
+      "orientation": "landscape",
+      "alt_en": "Wide side view of St Joseph's Catholic Church in Aldershot, showing its red-brick parish buildings, rounded apse and adjoining stone-and-brick church beside a quiet street; not its main entrance.",
+      "alt_fr": "Vue latérale élargie de l'église catholique Saint-Joseph à Aldershot, avec bâtiments paroissiaux en brique rouge, abside arrondie et église en pierre et brique le long d'une rue calme ; ce n'est pas l'entrée principale.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching, compositing or object removal.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche de couleur, composition ou suppression d'objets.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "P112: exact-category Commons original and binary SHA-1/creator/licence verified by GitHub Actions in P111; independent full-frame contact-sheet inspection selected clearer church architecture; historic source and exact CL2 venue established; unchanged staged binary reused. Native EN/FR card and 320/390 browser release gates mandatory. Not described as individually owner-approved."
     }
   ],
   "editorial_policy": {
@@ -584,7 +653,7 @@
     "publication": "Only APPROVED media with existing local asset hash may be shown; do not infer from similar church name, city, institution or provisional pin",
     "priority": "Existing canonical Place cover first; approved exact venue cover only when Place photo unavailable",
     "new_mappings": "A media image is attached to an existing 2,582-directory venue source ID; no new Place or geocoding is implied",
-    "status": "WAVE_A_PLUS_23_EXACT_DIOCESAN_EXTERIORS_20261112",
-    "safety": "P110 adds two source-verified, visually inspected alternate church exteriors, 25 direct-venue approved photos total, five historic weak/identity holds. No pins or existing Place covers changed. Lewiston excluded."
+    "status": "WAVE_A_PLUS_26_EXACT_DIOCESAN_EXTERIORS_20261112",
+    "safety": "P112 adds three exact-site source-verified cleaner views for Strood, Maidstone and Aldershot. Prior 25 approved covers preserved. Stow composition and Park City historic chapel identity remain held. Lewiston excluded."
   }
 }
