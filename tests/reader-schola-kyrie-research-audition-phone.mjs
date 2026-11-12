@@ -81,8 +81,12 @@ try{
      assert.deepEqual(await player.locator('[data-kyrie-tone] option').allTextContents(),
        ['Flute','Pure tone'],'Bells or unapproved sound choices entered the player');
      assert.equal(await player.locator('[data-kyrie-pitch]').inputValue(),'0');
-     await player.locator('[data-kyrie-pitch]').fill('3');
-     await player.locator('[data-kyrie-speed]').fill('1.3');
+     await player.locator('[data-kyrie-pitch]').evaluate(node=>{
+       node.value='3';node.dispatchEvent(new Event('input',{bubbles:true}));
+     });
+     await player.locator('[data-kyrie-speed]').evaluate(node=>{
+       node.value='1.3';node.dispatchEvent(new Event('input',{bubbles:true}));
+     });
      await player.locator('[data-kyrie-tone]').selectOption('pure');
      assert.equal(await player.locator('[data-kyrie-pitch-value]').textContent(),'3');
      assert.equal(await player.locator('[data-kyrie-speed-value]').textContent(),'1.3×');
