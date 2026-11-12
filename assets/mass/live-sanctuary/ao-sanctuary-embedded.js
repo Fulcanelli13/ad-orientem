@@ -401,7 +401,7 @@
       ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(nativeCommunionEvent)
         ?nativeCommunionEvent:null;
     const beginReturn=validCommunionEvent==="MC-COM-320"&&
-      last?.communionReturnActive!==true;
+      (last?.communionReturnActive!==true||last?.key!==nextKey);
     const returnRewind=last?.communionReturnActive===true&&
       (!validCommunionEvent?
         id!=="C57"||sourceSectionId!=="AO.CARD.025":
