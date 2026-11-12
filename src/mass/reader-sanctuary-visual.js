@@ -1,3 +1,4 @@
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 // Source-linked visual receiver for the owner-supplied 65-scene sanctuary.
 // NO new Mass timer, rubric owner, priest observation, chant selection, or
 // reconstruction of the original 3D artwork is introduced here.
@@ -38,7 +39,7 @@ export function sanctuaryAspergesProjection({aspergesState,form,mode="LIVE"}={})
  });
 }
 
-export function sanctuaryCueProjection({card,state,aspergesState=null,form,mode="LIVE"}={}){
+export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=null,form,mode="LIVE"}={}){
  if(aspergesState)return sanctuaryAspergesProjection({aspergesState,form,mode});
  if(String(mode).toUpperCase()!=="LIVE"||!FORMS.has(form)||
     !card?.sectionId||!String(card.title??"").trim()||
@@ -50,6 +51,9 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,form,mode=
   sourceSectionId:String(card.sourceSectionId??card.sectionId),
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
+  // Solemn Requiem has specific ceremonial omissions at Gospel/Offertory.
+  // The established resolved-Mass predicate, never a date/title guess, owns this.
+  requiem:prepared?isExplicitRequiemMass(prepared):false,
   scholaOnly:false,
  });
 }
