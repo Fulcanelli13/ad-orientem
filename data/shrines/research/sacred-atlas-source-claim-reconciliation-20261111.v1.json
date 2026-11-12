@@ -255,6 +255,18 @@
       "old_url": "https://www.miracoloeucaristico.eu/",
       "new_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
       "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
+    },
+    {
+      "key": "1|39|carmel",
+      "old_url": "https://carmeldelisieux.fr/lieux-a-visiter/",
+      "new_url": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/la-beatification-et-la-canonisation/retour-de-therese-au-carmel/",
+      "reason": "Source-scope citation repair after institutional source review; historical research only, no independent EN/FR certification"
+    },
+    {
+      "key": "2|104|identity",
+      "old_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/",
+      "new_url": "https://www.mariaesperanza.org/comunicacion-escrita-de-monsenor-pio-bello-ricardo/",
+      "reason": "Source-scope citation repair after institutional source review; historical research only, no independent EN/FR certification"
     }
   ],
   "paragraphs": [
@@ -2819,19 +2831,19 @@
     },
     {
       "place_id": "place:FR:carmel-lisieux",
-      "guide_revision": "fnv1a32-ddc1204e",
+      "guide_revision": "fnv1a32-3671200b",
       "draft_order": 39,
       "wave": 1,
       "section_id": "carmel",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://carmeldelisieux.fr/lieux-a-visiter/",
+      "source_url": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/la-beatification-et-la-canonisation/retour-de-therese-au-carmel/",
       "source_id": null,
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
       "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Carmel archives record Thérèse's original burial in Lisieux cemetery and transfer of remains to Carmel on 26 March 1923; custodian lists reliquary chapel separately from Basilica.",
+      "research_evidence_note": "Carmel Lisieux archives directly date St Thérèse's translation from the municipal cemetery to Carmel on 26 March 1923; archive page fetch returned 403 but indexed institutional content and related archived letters corroborate date. Does not describe access arrangements.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -2842,7 +2854,7 @@
     },
     {
       "place_id": "place:FR:carmel-lisieux",
-      "guide_revision": "fnv1a32-ddc1204e",
+      "guide_revision": "fnv1a32-3671200b",
       "draft_order": 39,
       "wave": 1,
       "section_id": "memory",
@@ -2865,7 +2877,7 @@
     },
     {
       "place_id": "place:FR:carmel-lisieux",
-      "guide_revision": "fnv1a32-ddc1204e",
+      "guide_revision": "fnv1a32-3671200b",
       "draft_order": 39,
       "wave": 1,
       "section_id": "visit",
@@ -7091,7 +7103,7 @@
     },
     {
       "place_id": "place:VE:finca-betania",
-      "guide_revision": "fnv1a32-754ac3e8",
+      "guide_revision": "fnv1a32-5baa7383",
       "draft_order": 104,
       "wave": 2,
       "section_id": "history",
@@ -7114,17 +7126,17 @@
     },
     {
       "place_id": "place:VE:finca-betania",
-      "guide_revision": "fnv1a32-754ac3e8",
+      "guide_revision": "fnv1a32-5baa7383",
       "draft_order": 104,
       "wave": 2,
       "section_id": "identity",
       "priority": "STANDARD_EDITORIAL_REVIEW",
-      "source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/",
-      "source_id": "SHR-BETANIA-ASSOCIATION",
+      "source_url": "https://www.mariaesperanza.org/comunicacion-escrita-de-monsenor-pio-bello-ricardo/",
+      "source_id": "AO-ED-BETANIA-1991-BISHOP-LETTER-20261112",
       "claim_flags": [],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "The association reproduces Bishop Pío Bello Ricardo's signed 27 April 1991 letter explicitly restricting episcopally sanctioned Betania content to his 21 November 1987 pastoral instruction; local recognition should not be extended to every message.",
+      "research_evidence_note": "Association reproduces dated 1991 episcopal correspondence specifying that sanction covers only claims in the 21 November 1987 pastoral instruction; diocesan original not inspected. Distinguishes local recognition from indiscriminate approval of later messages.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -7135,7 +7147,7 @@
     },
     {
       "place_id": "place:VE:finca-betania",
-      "guide_revision": "fnv1a32-754ac3e8",
+      "guide_revision": "fnv1a32-5baa7383",
       "draft_order": 104,
       "wave": 2,
       "section_id": "pilgrimage",
