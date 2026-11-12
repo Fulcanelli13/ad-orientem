@@ -14,11 +14,23 @@ export function churchPilotEnabled(win=globalThis){
 export function createChurchHost(win=globalThis,{framePath=FRAME_PATH}={}){
   let frame=null,active=false,paused=false,previousOverflow="",loading=null;
   let onFrameMessage=null;
+  // Claude's R8 accepts ?lang=... on boot and AO.on({type:"settings"})
+  // while open. Keep the Church in the same language as the parent app.
+  const settings=()=>({
+    ao:1,type:"settings",
+    lang:String(win.document?.documentElement?.lang||"en").toLowerCase().startsWith("fr")?"fr":"en",
+    lc:win.document?.documentElement?.dataset?.lc||"r"
+  });
+  const sendSettings=()=>{
+    try{frame?.contentWindow?.postMessage?.(settings(),win.location.origin)}catch{}
+  };
 
   const localUrl=(resume=false)=>{
     const origin=new URL(win.location.href);
     const url=new URL(framePath,origin);
     if(url.origin!==origin.origin)throw Error("Prayer Church must be same-origin");
+    // Avoid an English first paint before the asynchronous settings message.
+    url.searchParams.set("lang",settings().lang);
     if(resume)url.searchParams.set("resume","1");
     return url;
   };
@@ -79,6 +91,7 @@ export function createChurchHost(win=globalThis,{framePath=FRAME_PATH}={}){
       const ok=await loaded;
       if(!ok){close();return false}
       active=true;paused=false;
+      sendSettings();
       el.focus?.();
       return true;
     })().finally(()=>{loading=null});
@@ -98,6 +111,7 @@ export function createChurchHost(win=globalThis,{framePath=FRAME_PATH}={}){
     frame.removeAttribute("aria-hidden");
     paused=false;
     send("resume");
+    sendSettings();
     frame.focus?.();
     return true;
   }
