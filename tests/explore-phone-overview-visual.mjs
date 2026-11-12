@@ -94,7 +94,30 @@ try{
     assert.deepEqual(errors,[],"Browser errors: "+errors.slice(0,3).join("; "));
     const name=language+"-"+width+"-explore.png";
     await page.screenshot({path:resolve(output,name),animations:"disabled"});
-    results.push({language,width,...metrics,file:name});
+    // Atlas R1, on actual MapLibre tiles and markers rather than the layout
+    // test's deterministic map stub: six EN/FR three-width visual pairs.
+    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]').click();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred",null,{timeout:15000});
+    const rail=page.locator('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+    await rail.waitFor({state:"visible",timeout:15000});
+    const closed=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+      expanded:el.dataset.discoverExpanded,
+      aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+    assert.equal(closed.expanded,"false",language+" "+width+"px Sacred Places should open map-first");
+    assert.equal(closed.aria,"false",language+" "+width+"px rail aria does not match its state");
+    assert.ok(closed.height>=72&&closed.height<=100,
+      language+" "+width+"px closed rail covers the real map: "+JSON.stringify(closed));
+    await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-closed-real.png"),animations:"disabled"});
+    await rail.locator('[data-mapcn-discover-toggle]').click();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="true",null,{timeout:15000});
+    const opened=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+      aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+    assert.equal(opened.aria,"true",language+" "+width+"px expanded results rail not accessible");
+    assert.ok(opened.height>closed.height+90&&opened.height<=Math.min(height*.48,420)+3,
+      language+" "+width+"px expanded rail geometry wrong: "+JSON.stringify(opened));
+    await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-expanded-real.png"),animations:"disabled"});
+    results.push({language,width,...metrics,file:name,railClosed:closed.height,railExpanded:opened.height,
+      sacredScreenshots:[language+"-"+width+"-sacred-closed-real.png",language+"-"+width+"-sacred-expanded-real.png"]});
     console.log("PASS Explore actual map "+name+"; attribution and hint separate");
   }finally{await ctx.close();}
  }
