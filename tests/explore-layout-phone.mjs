@@ -101,7 +101,7 @@ try{
         width+"px collapsed Sacred Places rail still occupies map: "+JSON.stringify(before));
       await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-closed.png"),animations:"disabled"});
       await rail.locator('[data-mapcn-discover-toggle]').tap();
-      await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="true");
+      await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="true"&&rail.getBoundingClientRect().height>=170;},null,{timeout:10000});
       const expanded=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
         aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
       assert.equal(expanded.aria,"true",width+"px expanded rail must announce itself");
@@ -111,7 +111,7 @@ try{
         width+"px expanded Places rail covers too much of the map");
       await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-expanded.png"),animations:"disabled"});
       await rail.locator('[data-mapcn-discover-toggle]').tap();
-      await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="false");
+      await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="false"&&rail.getBoundingClientRect().height<=100;},null,{timeout:10000});
     }
     await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="discover"]').tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="discover");
