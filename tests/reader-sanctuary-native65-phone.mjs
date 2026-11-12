@@ -179,6 +179,7 @@ try{
         Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
     },null,{timeout:12000});
     await frame.evaluate(()=>M3.snap()); // settle the original sedilia camera
+    const sediliaCamera=await frame.evaluate(()=>({...M3.eng.cam,T:[...M3.eng.cam.T]}));
     await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C08-Solemn-observed-biretta-off.png")
@@ -213,6 +214,14 @@ try{
     await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C18-Solemn-observed-Incarnatus.png")
+    });
+    // Review camera ONLY. The donor's actual C18 shot is a wide
+    // nave view; this supplemental zoom makes the seated headwear
+    // and profound bow legible without altering production choreography.
+    await frame.evaluate(cam=>{M3.eng.cam=cam;},sediliaCamera);
+    await frame.waitForTimeout(35);
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C18-Solemn-Incarnatus-sedilia-closeup.png")
     });
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
     assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW
