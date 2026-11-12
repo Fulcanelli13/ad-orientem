@@ -1,0 +1,66 @@
+{
+  "schema": "AO_TLM_P111_FOUR_SITE_EXACT_COMMONS_REVIEW_INPUT_V1",
+  "date": "2026-11-12",
+  "publication_approved": false,
+  "approved_media_baseline": 25,
+  "sites": [
+    {
+      "cl2_anchor": "RG-10BAB9521232",
+      "venue_id": "AO-B34-L-GB-D7DA8CC0BE16",
+      "name": "English Martyrs, Strood",
+      "first_party": "https://www.englishmartyrsrccstrood.org/",
+      "category": "Category:Church of the English Martyrs, Strood",
+      "file_titles": [
+        "File:The Catholic Church of the English Martyrs, Strood - geograph.org.uk - 1053668.jpg",
+        "File:The Catholic Church of the English Martyrs, Strood - geograph.org.uk - 1057786.jpg"
+      ],
+      "candidate_limit": 2,
+      "excluded_original": "File:Catholic Church of the English Martyrs, Strood, Kent.jpg",
+      "visual_goal": "Clear, recognizable full entrance and main building; minimize glare, asphalt foreground."
+    },
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "venue_id": "AO-B34-L-GB-FDC98808D553",
+      "name": "Our Lady and St Kenelm, Stow-on-the-Wold",
+      "first_party": "https://www.stow-bourtoncatholic.net/our-parishes",
+      "category": null,
+      "file_titles": [
+        "File:St Kenelm Catholic Church - geograph.org.uk - 7174852.jpg",
+        "File:The Catholic church - geograph.org.uk - 1812561.jpg"
+      ],
+      "candidate_limit": 2,
+      "excluded_original": "File:Our Lady and St Kenelm Church, Stow-on-the-Wold by Des Blenkinsopp Geograph 3062623.jpg",
+      "visual_goal": "The actual Catholic church must be prominent and unmistakeable; reject St Edward's Anglican church."
+    },
+    {
+      "cl2_anchor": "RG-15198DD7A6FE",
+      "venue_id": "AO-B35-L-GB-D1A88E153706",
+      "name": "St Francis, Maidstone",
+      "first_party": "https://www.stfrancisparish.org.uk/contact/",
+      "category": "Category:St Francis, Maidstone",
+      "file_titles": [],
+      "candidate_limit": 3,
+      "excluded_original": "File:St. Francis Roman Catholic Church, Maidstone - geograph.org.uk - 3584755.jpg",
+      "visual_goal": "Clear principal church exterior without cars and pedestrians dominating; accept historic small image if credible for a 390px card."
+    },
+    {
+      "cl2_anchor": "RG-AAFBFCE94AA0",
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "name": "St Joseph's, Aldershot",
+      "first_party": "https://portsmouthdiocese.org.uk/parish/st-josephs-st-marys-aldershot/",
+      "category": "Category:Church of St Joseph, Aldershot",
+      "file_titles": [],
+      "candidate_limit": 7,
+      "excluded_original": "File:Church of St Joseph, Aldershot.JPG",
+      "visual_goal": "Clear front-facing original of exact Roman Catholic parish church, not other Aldershot church; exclude interior, altar and architectural close-up."
+    }
+  ],
+  "rules": [
+    "Image data/source and review only, never approved media or Place/pin edits",
+    "Only exact named Commons files or exact-site Commons categories",
+    "Reject filenames of interiors or different churches; review category context, source author and licence",
+    "Original media SHA1 checked against Commons imageinfo and downloaded bytes",
+    "No crop, no visual edits, no synthetic removals",
+    "Store EN/FR publication metadata only after chosen full-frame image receives editorial acceptance"
+  ]
+}
