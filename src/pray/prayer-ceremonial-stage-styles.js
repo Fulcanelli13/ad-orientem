@@ -5,7 +5,7 @@
  */
 export const PRAYER_CEREMONIAL_SCENE_CSS=String.raw`
 #aoPray435930 .aoPrayerCeremonialScene{position:relative;min-width:0;margin:12px auto 18px;border:1px solid rgba(208,184,145,.22);border-radius:14px;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#1c2530 0%,#111720 42%,#090d13 100%);color:#dfd0b8;isolation:isolate}
-#aoPray435930 .aoPrayerCeremonialScene figcaption{position:relative;z-index:3;padding:8px 14px 12px;margin:0;text-align:center;letter-spacing:.05em;font:500 .76rem/1.4 system-ui,sans-serif}
+#aoPray435930 .aoPrayerCeremonialScene figcaption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 #aoPray435930 .aoPrayerSceneVault{position:relative;min-height:136px;height:clamp(136px,24vw,190px);max-width:690px;margin:0 auto;overflow:hidden}
 #aoPray435930 .aoPrayerSceneArch{position:absolute;inset:10% 22% 0;border:13px solid rgba(176,150,116,.12);border-radius:48% 48% 0 0;box-shadow:inset 0 0 24px #06090f}
 #aoPray435930 .aoPrayerSceneWindow{position:absolute;left:19%;top:20%;height:42%;width:10%;border-radius:48% 48% 3px 3px;border:5px solid #41392f;background:linear-gradient(115deg,#3d2b1c,#a38853 30%,#332e29 65%);opacity:.62}
