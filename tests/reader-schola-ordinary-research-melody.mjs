@@ -32,9 +32,9 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  assert.ok(output,'M54 compiler rejected '+spec.movement+' original research source');
  assert.equal(output.sourceNotes,output.playedNotes,
    'Non-Kyrie movement must not inherit 3+3+2+1 Kyrie repetitions');
- assert.equal(output.melody.phraseCount,spec.printedSections);
- assert.equal(output.melody.invocations,spec.printedSections);
- assert.equal(output.sourceSections.length,spec.printedSections);
+ assert.equal(output.melody.phraseCount,spec.gabcSegments);
+ assert.equal(output.melody.invocations,spec.gabcSegments);
+ assert.equal(output.sourceSections.length,spec.gabcSegments);
  assert.equal(output.sourceSections.reduce((sum,n)=>sum+n,0),output.sourceNotes);
  assert.equal(output.melody.performance.at(-1).sourceNoteOrdinal,output.sourceNotes);
  assert.equal(output.timing.certifiedGregorianTiming,false);
@@ -69,7 +69,7 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  }),null);
  results.push({
    movement:spec.movement,settingId:spec.settingId,scoreId:spec.scoreId,
-   sourceSections:spec.printedSections,sourceNotes:output.sourceNotes,
+   sourceSections:spec.gabcSegments,sourceNotes:output.sourceNotes,
    playedNotes:output.playedNotes
  });
 }
