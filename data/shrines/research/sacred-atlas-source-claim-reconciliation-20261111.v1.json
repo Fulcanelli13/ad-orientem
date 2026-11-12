@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 569,
+    "newInstitutionalCoreChecks": 570,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 662,
-    "onlyCitationScope": 10,
+    "currentUniqueCoreResearchChecks": 663,
+    "onlyCitationScope": 9,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 15
+    "newCoreResearchChecksSinceLastPass": 16
   },
   "source_quality_findings": [
     {
@@ -8194,7 +8194,7 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-cbe9813e",
+      "guide_revision": "fnv1a32-594b9114",
       "draft_order": 121,
       "wave": 2,
       "section_id": "history",
@@ -8204,17 +8204,20 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Bishops' Conference article states seven years of reported weeping starting in 1975, and Akita convent's own Japanese history dates the reports precisely 4 January 1975–15 September 1981. Earlier EN/FR draft and research-source metadata incorrectly ended in 1982; both corrected. Reports are attributed, not independently validated supernatural events.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.seitaihoshikai.com/",
+      "evidence_scope": "PRIMARY_BISHOPS_CONFERENCE_PLUS_EXACT_CUSTODIAN_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-cbe9813e",
+      "guide_revision": "fnv1a32-594b9114",
       "draft_order": 121,
       "wave": 2,
       "section_id": "identity",
@@ -8234,7 +8237,7 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-cbe9813e",
+      "guide_revision": "fnv1a32-594b9114",
       "draft_order": 121,
       "wave": 2,
       "section_id": "pilgrimage",
