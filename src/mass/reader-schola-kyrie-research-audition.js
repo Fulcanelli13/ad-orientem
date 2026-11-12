@@ -66,12 +66,12 @@ export function compileKyrieXviAudition(gabc){
 const STYLES=`
 .ao-kyrie-audition-launch{display:block;width:100%;margin:7px 0;padding:11px 8px;border:1px solid #bba574;border-radius:8px;background:#27342d;color:#f7eccb;font:600 12px system-ui;cursor:pointer}
 .ao-kyrie-audition-launch[hidden]{display:none!important}
- .ao-kyrie-audition{box-sizing:border-box;position:fixed;inset:auto 14px 18px auto;margin:0;width:min(430px,calc(100vw - 28px));max-height:min(84dvh,650px);overflow-y:auto;z-index:1100;background:#13201d;border:1px solid #8e7a4a;border-radius:14px;color:#efe9d9;padding:12px;box-shadow:0 18px 50px #0009;font:12px/1.4 system-ui}
+ .ao-kyrie-audition{box-sizing:border-box;position:fixed;inset:64px 14px auto auto;margin:0;width:min(430px,calc(100vw - 28px));max-height:min(36dvh,320px);overflow-y:auto;z-index:1100;background:#13201d;border:1px solid #8e7a4a;border-radius:14px;color:#efe9d9;padding:12px;box-shadow:0 18px 50px #0009;font:12px/1.4 system-ui}
 .ao-kyrie-audition[hidden]{display:none!important}
 .ao-kyrie-audition h3{margin:0;font:19px Georgia,serif;color:#f0dcaa}
 .ao-kyrie-audition .ao-kyrie-head{display:flex;justify-content:space-between;gap:9px;align-items:center}
 .ao-kyrie-audition .ao-kyrie-small{color:#c7bd9d;font-size:11px;margin:8px 0}
-.ao-kyrie-audition .ao-kyrie-staff{max-height:172px;overflow:auto;border-radius:6px;background:#f8f7ef;color:#1b201d;padding:7px}
+.ao-kyrie-audition .ao-kyrie-staff{max-height:110px;overflow:auto;border-radius:6px;background:#f8f7ef;color:#1b201d;padding:7px}
 .ao-kyrie-audition .ao-kyrie-staff svg{width:100%;height:auto;max-width:100%}
 .ao-kyrie-audition .ao-kyrie-staff svg text[data-kyrie-preview-current=true]{fill:#a35f24!important;stroke:#a35f24;stroke-width:.28px}
 .ao-kyrie-audition .ao-kyrie-controls{display:flex;gap:7px;align-items:center;justify-content:space-between;margin:9px 0}
