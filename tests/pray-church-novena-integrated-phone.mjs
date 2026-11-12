@@ -90,22 +90,25 @@ try{
     assert.ok(dayNine?.body>20,id+" day nine card is blank");
     assert.ok(dayNine?.width<=2,id+" document overflow at "+width+"px");
     // This is the ACTUAL reader Back control, not a mocked onCloseReturn call.
-    const restored=await page.evaluate(async id=>{
-     for(let tries=0;tries<3;tries++){
-      if(window.__churchR9.returns.length)return window.__churchR9.returns.at(-1);
+    const previousReturns=await page.evaluate(()=>window.__churchR9.returns.length);
+    const restored=await page.evaluate(async previous=>{
+     for(let tries=0;tries<4;tries++){
+      // A return from an earlier programme does not count as this journey.
+      if(window.__churchR9.returns.length>previous)return window.__churchR9.returns.at(-1);
       const b=document.querySelector('#aoPray435930.open [data-n1-back]');
       if(!b)break;
       b.click();await Promise.resolve();await new Promise(r=>setTimeout(r,0));
      }
      await Promise.resolve();await new Promise(r=>setTimeout(r,0));
-     return window.__churchR9.returns.at(-1)||null;
-    },id);
+     return window.__churchR9.returns.length>previous?
+       window.__churchR9.returns.at(-1):null;
+    },previousReturns);
     assert.equal(restored?.id,id,id+" reader Back did not reach originating Church callback");
     assert.equal(restored?.route,"novena:"+id);
     assert.equal(restored?.context?.gallery,"votive-candles");
     assert.equal(restored?.context?.selected,"novena:"+id);
     const returnCount=await page.evaluate(()=>window.__churchR9.returns.length);
-    assert.equal(returnCount,report.passed.filter(x=>x.width===width&&x.lang===lang).length+1,
+    assert.equal(returnCount,previousReturns+1,
      id+" restored gallery more than once");
     assert.equal(await page.locator("#aoPray435930.open .aoN1Reader").count(),0,
      id+" stale reader remained over Church after Back");
