@@ -41,24 +41,10 @@ export function sanctuaryAspergesProjection({aspergesState,form,mode="LIVE"}={})
 
 export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=null,form,mode="LIVE"}={}){
  if(aspergesState)return sanctuaryAspergesProjection({aspergesState,form,mode});
- // A 1962_FORM_NO_INCENSE block has no prayer text by design, yet the
- // original 65-card LIVE model still presents its state-only C24 marker.
- // This ONE source-verified omission is allowed a silent C23 altar still,
- // never a ritual action or a fake C24 incensation. All other omitted or
- // state-only cards continue to have NO animated sanctuary projection.
- const noIncenseOmission=Boolean(card?.stateOnly===true&&
-   ["LOW","MISSA_CANTATA_SIMPLE"].includes(form)&&
-   card?.sectionId==="AO.LIVECURATED.AO.CARD.010.5"&&
-   card?.sourceSectionId==="AO.CARD.010"&&
-   card?.title==="Incensation omitted for this Mass"&&
-   card?.omittedByRite==="1962_FORM_NO_INCENSE"&&
-   (card?.paragraphs??[]).length===0&&
-   (card?.blocks??[]).some(b=>b.blockId==="AO.SM.B036"&&
-     b.omittedByRite==="1962_FORM_NO_INCENSE"));
  if(String(mode).toUpperCase()!=="LIVE"||!FORMS.has(form)||
-    !card?.sectionId||!String(card.title??"").trim()||
-    (card.stateOnly===true&&!noIncenseOmission))return null;
- const candidate=noIncenseOmission?"":String(state?.nativeCueId??"");
+     !card?.sectionId||!String(card.title??"").trim()||
+     card.stateOnly===true)return null;
+ const candidate=String(state?.nativeCueId??"");
  const sourceCueId=/^AO\.SM\.C\d{4}$/.test(candidate)?candidate:null;
  const sourceSectionId=String(card.sourceSectionId??card.sectionId);
  // The canonical MC event graph has distinct physical states for faithful
@@ -94,7 +80,6 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
   canonicalCommunionEventId:communionEventId,
-  noIncenseOmission,
   communionReturnCancelled,
   // Solemn Requiem has specific ceremonial omissions at Gospel/Offertory.
   // The established resolved-Mass predicate, never a date/title guess, owns this.
