@@ -25,6 +25,20 @@ The GitHub Actions workflow `LIVE Sanctuary source and choreography acceptance` 
 
 **All other cards** are only *mapped and captured*, not automatically approved. Source-linked static stages must remain coherent in all five form variants. Any observed art mismatch enters this register in a single review batch.
 
+## Consolidated correction pass — source and visual acceptance
+
+| Priority | Scope | Applied in staging adapter | Status |
+| --- | --- | --- | --- |
+| P0 | C08/C09/C12/C17–C19 sedilia | Existing celebrant/deacon/subdeacon `sit` sprites moved over original bench, not standing in front; existing Sung server stands clear of priest; heights are non-accumulating | **Implemented; re-capture and owner visual approval still required** |
+| P0 | C24 Low incensation omission | Native `AO.CARD.010` / C24 remains present, but 3D view uses existing C23 altar-side still; no smoke, no bell, no ceremonial motion | **Implemented; browser and visual regression required** |
+| P0 | C11 Solemn Epistolarium | Source-card static subdeacon book, no invented journey | Hold movement pending departure/route evidence |
+| P0 | C13 Missal transfer | C0081 completed arrival static only | Hold route and exact handoff |
+| P0 | C14 Solemn/Requiem Gospel | Ordinary book reassigned to subdeacon; Requiem omits thurifer and candles, retains two acolytes; positions approximate | Pending ceremonial visual review |
+| P0 | C56/C57 Communion | Source-gated priest return; unobserved approach remains disabled | Pending route/observer ownership |
+| P0 | C36/C38 elevation, C58/C59 Ablutions/back-transfer, C63 Requiem blessing | Existing source cues and rite holds retained | No new approval implied |
+
+Do **not** remove P0 holds merely because the stage is technically corrected. The owner must see the real five-form gallery and confirm that original seated figures genuinely read as seated, no minister obstructs the celebrant, and Low C24 stays at the altar.
+
 ## Every scene
 
 | Scene | Original caption | Source macro | Low station | Sung station | Solemn Requiem | Editorial state |
