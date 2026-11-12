@@ -112,12 +112,17 @@ try{
       });
       const gospel="Proclamation of the Holy Gospel";
       send(gospel,"AO.CARD.007","AO.SM.C0084",false);
-      const visibility=()=>["T","A1","A2"].map(k=>M3.actors()?.[k]?.vis===true);
-      const ordinary=visibility();
+      const ministers=()=>Object.fromEntries(
+        ["D","S","T","A1","A2"].map(id=>{
+          const a=M3.actors()?.[id];
+          return [id,{visible:a?.vis===true,prop:a?.prop??null}];
+        })
+      );
+      const ordinary=ministers();
       send(gospel,"AO.CARD.007","AO.SM.C0084",true);
-      const requiem=visibility();
+      const requiem=ministers();
       send(gospel,"AO.CARD.007","AO.SM.C0084",false);
-      const restored=visibility();
+      const restored=ministers();
       const offertory="Offertory · Incensation";
       const held=send(offertory,"AO.CARD.010","AO.SM.C0121",true);
       const normal=send(offertory,"AO.CARD.010","AO.SM.C0121",false);
@@ -125,13 +130,24 @@ try{
         requiemIncense:held.choreography,
         ordinaryIncense:normal.choreography};
     });
+    const ordinaryMinisters={
+      D:{visible:true,prop:null},S:{visible:true,prop:"book"},
+      T:{visible:true,prop:"thurible"},
+      A1:{visible:true,prop:"torch"},A2:{visible:true,prop:"torch"}
+    };
     assert.deepEqual(conditional,{
-      ordinary:[true,true,true],requiem:[false,false,false],
-      restored:[true,true,true],
+      ordinary:ordinaryMinisters,
+      requiem:{
+        D:{visible:true,prop:null},S:{visible:true,prop:null},
+        T:{visible:false,prop:null},
+        A1:{visible:true,prop:"book"},A2:{visible:true,prop:null}
+      },
+      restored:ordinaryMinisters,
       requiemIncense:"STATIC_STAGE",
       ordinaryIncense:"SOURCE_TRIGGERED"
-    },"Requiem source exception must suppress ordinary Gospel torches and "+
-      "thurifer and false C24 ending, then restore ordinary Solemn choreography");
+    },"The subdeacon holds the ordinary Gospel book; in a Solemn Requiem "+
+      "the two unlit acolytes remain to support the book without thurifer "+
+      "or the inaccurate ordinary Offertory incense choreography");
     await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.clear());
   }
   const model=await page.evaluate(()=>{
