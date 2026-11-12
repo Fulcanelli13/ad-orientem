@@ -26,16 +26,17 @@ assert.equal(citationTriage.source_ledger_path,
   "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
   p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
-assert.equal(citationDifferences.length,65,"Exact-revision differing URLs after source upgrades");
+assert.equal(citationDifferences.length,51,"51 raw citation URL differences remain by design");
 assert.equal(citationTriage.entries.length,85,"Keep all 85 original differences for provenance");
 const citationLedgerByKey=new Map(claimResearchLedger.paragraphs.map(p=>[p.draft_order+":"+p.section_id,p]));
 const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
 assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,7);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,11);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE").length,12);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,41);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE").length,12);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,13);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,0);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION").length,6);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE").length,33);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,23);
 for(const classified of citationTriage.entries){
   const p=citationLedgerByKey.get(classified.key);
   assert.ok(p,"Orphan citation triage entry");
@@ -49,6 +50,12 @@ for(const classified of citationTriage.entries){
       "Repaired citation does not point to its checked evidence");
     assert.equal(classified.repair.full_english_french_certification,false);
     assert.equal(classified.repair.owner_approval,false);
+  }else if(classified.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION"){
+    assert.equal(p.source_url,classified.source_url);
+    assert.equal(p.evidence_checked_url,classified.evidence_checked_url);
+    assert.equal(classified.access_hold.source_directly_verified,false);
+    assert.equal(classified.access_hold.editorial_release_allowed,false);
+    assert.equal(classified.access_hold.owner_authorized,false);
   }else if(classified.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE"){
     assert.equal(p.source_url,classified.source_url);
     assert.equal(p.evidence_checked_url,classified.evidence_checked_url);
@@ -69,10 +76,11 @@ for(const classified of citationTriage.entries){
   assert.equal(classified.french_second_editor_approved,false);
   assert.equal(classified.owner_authorized,false);
 }
-assert.equal(citationTriage.summary.current_differing_urls,65);
-assert.equal(citationTriage.summary.remaining_active_triage,41);
-assert.equal(citationTriage.summary.original_citation_preferred_no_change,12);
-assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,13);
+assert.equal(citationTriage.summary.current_differing_urls,51);
+assert.equal(citationTriage.summary.remaining_active_triage,0);
+assert.equal(citationTriage.summary.access_hold_paragraphs,6);
+assert.equal(citationTriage.summary.original_citation_preferred_no_change,33);
+assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,23);
 assert.equal(citationTriage.summary.source_equivalent_no_change,12);
 for(const [order,sourceId] of [[77,"AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"],
   [106,"AO-ED-CORNILLON-SANCTUARY-20261112"],
@@ -82,6 +90,10 @@ for(const [order,sourceId] of [[77,"AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"],
   const g=wave2.find(x=>x.draft_order===order);
   assert.ok(g.research_source_ids.includes(sourceId),"Specific institutional source omitted");
   assert.ok(g.sections.some(s=>s.paragraphs[0].source_id===sourceId),"Section missing improved citation");
+}
+for(const [o,s,phrase] of [[101,"pilgrimage","13 September"],[102,"pilgrimage","5 to 15 September"],[222,"identity","4 January 2025"],[100,"pilgrimage","18 to 26 July"]]){
+ const p=wave2.find(g=>g.draft_order===o).sections.find(x=>x.id===s).paragraphs[0];
+ assert.ok(p.en.includes(phrase),"Date-scoped correction missing: "+o+"/"+s);
 }
 const lisieuxGuide=wave1.find(g=>g.draft_order===39);
 const lisieuxParagraph=lisieuxGuide.sections.find(s=>s.id==="carmel").paragraphs[0];
