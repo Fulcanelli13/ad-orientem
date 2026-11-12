@@ -1,0 +1,33 @@
+name: FSSP live directory loader diagnostic, research only
+on:
+  push:
+    branches: [research/fssp-live-directory-loader-diagnostic-20261112]
+    paths:
+      - .github/workflows/fssp-live-directory-loader-diagnostic.yml
+      - tools/directory/research-fssp-dynamic-loader.mjs
+permissions:
+  contents: read
+jobs:
+  diagnose-public-source:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing project dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Inspect public FSSP source without modifying live directory data
+        run: node tools/directory/research-fssp-dynamic-loader.mjs
+      - name: Preserve bounded research metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fssp-dynamic-loader-research-20261112
+          path: data/directory/research/fssp-dynamic-loader-diagnostic-20261112.v1.json
+          retention-days: 14
+          if-no-files-found: warn
