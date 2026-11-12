@@ -1,0 +1,29 @@
+name: Prayer Church R10 original host pilot (not published)
+
+on:
+  pull_request:
+    paths:
+      - 'src/pray/church-host.v1.js'
+      - 'src/pray/browser-entry.js'
+      - 'tools/pray/stage-claude-church-r8.mjs'
+      - 'tests/pray-claude-church-host-r10.mjs'
+      - 'tools/build-web-preview.mjs'
+      - '.github/workflows/pray-claude-church-host-r10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  church-host-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test original-Church staging and opt-in host lifecycle
+        run: node tests/pray-claude-church-host-r10.mjs
+      - name: Validate the production Prayer-to-N3 adapter
+        run: node tests/pray-church-novena-direct-route.mjs
