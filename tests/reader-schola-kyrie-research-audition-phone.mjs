@@ -106,6 +106,13 @@ try{
        document.querySelector('[data-kyrie-position]')?.textContent??''),null,{timeout:10000});
      const start=await player.locator('[data-kyrie-position]').textContent();
      assert.match(start,/source note \d+\/40/);
+     // Exercise an actual phone tap on the Mass navigation arrow while
+     // the separate Schola score is open. Programmatic API navigation alone
+     // does not prove the floating player leaves the reader usable.
+     await page.locator('[data-reader-nav="next"]').click({timeout:7000});
+     assert.equal(await page.locator('#ao-r17-native-reader-preview')
+       .getAttribute('data-ao-last-nav-input'),'click:next',
+       'An open Kyrie player must not intercept the priest reader arrow');
      // The real production 65-card reader, not an illustrative split view.
      await page.evaluate(()=>{
        const api=window.__AO_PHONE_PREVIEW;
