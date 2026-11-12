@@ -117,8 +117,7 @@ export function createKyrieXviResearchAudition({root,
     <label>Sound <select data-kyrie-tone><option value="flute">Flute</option><option value="pure">Pure tone</option></select></label>
     <label>Pitch <input data-kyrie-pitch type="range" min="-12" max="12" value="0" step="1"><output data-kyrie-pitch-value>0</output></label>
     <label>Speed <input data-kyrie-speed type="range" min="0.5" max="1.6" value="1" step="0.1"><output data-kyrie-speed-value>1×</output></label>
-    <div class="ao-kyrie-small ao-kyrie-progress" aria-live="off" data-kyrie-position>Ready · nine invocations</div>
-    <p class="ao-kyrie-small">This audition uses its own sound clock. Reader navigation cannot advance or restart the chant.</p>`;
+    <div class="ao-kyrie-small ao-kyrie-progress" aria-live="off" data-kyrie-position>Ready · nine invocations</div>`;
   doc.body.append(panel);
   const score=offlineKyrialeResearchScore('KYRIE','MASS_16');
   const compiled=compileKyrieXviAudition(score?.gabc);
