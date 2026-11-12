@@ -174,10 +174,25 @@ assert.equal(send("Preparation for the Gospel",{form:"LOW",
  sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
  certifiedSourceFocus:true}).choreography,"STATIC_STAGE",
  "Priest arrival at Gospel book is not evidence for an earlier server Missal transfer");
-assert.equal(send("Communion of the Faithful",{form:"SOLEMN",
+const communionStation=send("Communion of the Faithful",{form:"SOLEMN",
  sourceSectionId:"AO.CARD.025",sourceCueId:"AO.SM.C0246",
- certifiedSourceFocus:true}).choreography,"STATIC_STAGE",
+ certifiedSourceFocus:true});
+assert.equal(communionStation.choreography,"STATIC_STAGE",
  "Distribution at the rail must not invent an earlier priest walk");
+assert.equal(communionStation.communionStation,"AT_RAIL_STATIC",
+ "C57 source card is an at-rail station, not a physical movement clock");
+assert.equal(send("Communion of the Faithful",{form:"LOW",
+ sourceSectionId:"AO.CARD.025",sourceCueId:"AO.SM.C0246",
+ certifiedSourceFocus:true}).communionStation,"AT_RAIL_STATIC",
+ "Low Mass C57 also remains a static rail scene");
+assert.equal(send("Communion of the Faithful",{form:"SOLEMN",
+ sourceSectionId:"AO.CARD.024",sourceCueId:"AO.SM.C0246",
+ certifiedSourceFocus:true}).communionStation,null,
+ "Wrong macro cannot attach source-specific Communion paten");
+assert.equal(send("Ablutions",{form:"SOLEMN",
+ sourceSectionId:"AO.CARD.026",sourceCueId:"AO.SM.C0247",
+ certifiedSourceFocus:true}).communionStation,null,
+ "Leaving Communion distribution must clear source-owned rail-paten stage");
 
 // Hiding the viewer for MISSAL must explicitly cancel original timers,
  // smoke/elevation FX and restore an action-free source stage.
