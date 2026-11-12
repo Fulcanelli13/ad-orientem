@@ -11,6 +11,7 @@ export const USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112=Object.freeze({
  gospel_crosses:crosses,
  breast_strike:breast,
  profound_bow:bow,
+ owner_profound_bow:bow,
  // The final approved source bank retains its original data and names;
  // these are explicit newer artwork aliases, not donor byte replacements.
  final_profound_bow:bow,
@@ -18,6 +19,7 @@ export const USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112=Object.freeze({
  "canon:faithful.gesture.gospel_crosses":crosses,
  "canon:faithful.gesture.strike_breast":breast,
  "canon:faithful.gesture.bow_profound":bow,
+ "canon:priest.action.profound_bow":bow,
  // The priest's breast strike already deliberately reused the approved
  // generic asset, unlike his separate priest-specific profound-bow art.
  "canon:priest.action.strike_breast":breast,
@@ -30,7 +32,8 @@ export const USER_SUPPLIED_MASS_GESTURE_SOURCE_CUES_20261112=Object.freeze({
   "AO.SM.C0222","AO.SM.C0223","AO.SM.C0224",
   "AO.SM.C0236","AO.SM.C0243","AO.SM.C0244","AO.SM.C0245"
  ]),
- profound_bow:Object.freeze(["AO.SM.C0021"]),
+ profound_bow:Object.freeze(["AO.SM.C0021","AO.SM.C0016","AO.SM.C0079",
+  "AO.SM.C0150","AO.SM.C0187"]),
 });
 // The last source is conditional: profound bow at Confiteor is shown
 // only when the resolved faithful gesture is actually PROFOUND_BOW,
