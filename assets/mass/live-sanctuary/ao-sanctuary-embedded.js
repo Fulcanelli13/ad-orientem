@@ -152,42 +152,13 @@
   // the owner's existing "sit" sprites looked like three standing clergy.
   // This visual alignment is illustrative, NOT a new ceremonial clock.
   const sungSedilia=new Set(["C08","C09","C12","C17","C18","C19"]);
-  // Donor's short seated leg was hidden behind the solid front of the
-  // sedilia. Keep the donor's fig/engine immutable, but correct the rendered
-  // seat-specific lower-body SVG: a horizontal alb-covered thigh, a 90° knee,
-  // and a vertical shin ending in the visible shoe. The original screen's
-  // standing-robe silhouette was not an acceptable seated figure.
-  const SEDILIA_VISIBLE_BENT_LEGS=
-    "M-12,-38 L8,-38 Q19,-38 29,-32 L34,-29 Q39,-27 39,-21 "+
-    "L40,-3 L27,-3 L25,-22 Q21,-25 13,-25 L-12,-24Z";
-  let sediliaLegObservers=[];
-  function drawVisibleSeatedLegs(a){
-    if(!a?.vis||a.pose!=="sit")return;
-    for(const layer of a.b?.el?.querySelectorAll?.(".ly")??[]){
-      const svg=layer.querySelector("svg");
-      if(!svg)continue;
-      for(const p of svg.querySelectorAll('path[d^="M-10,-37 L11,-37"]'))
-        p.setAttribute("d",SEDILIA_VISIBLE_BENT_LEGS);
-      for(const shoe of svg.querySelectorAll('ellipse[cx="15.4"][cy="-1.3"]'))
-        shoe.setAttribute("cx","34.4");
-    }
-  }
-  function watchVisibleSeatedLegs(a){
-    if(sediliaLegObservers.some(x=>x.actor===a))return;
-    const observer=new MutationObserver(()=>drawVisibleSeatedLegs(a));
-    observer.observe(a.b.el,{childList:true,subtree:true});
-    sediliaLegObservers.push({actor:a,observer});
-    // The original actor sprite is redrawn on the next M3 animation frame.
-    requestAnimationFrame(()=>drawVisibleSeatedLegs(a));
-    drawVisibleSeatedLegs(a);
-  }
+  // The attempted white bent-leg graft was rejected by the owner.
+  // No fabricated path, moved shoe, synthetic trousers or animation
+  // observer is permitted until a coherent full-character asset passes
+  // actual rendered-image review in all source-owned seated scenes.
   function clearSediliaPlacement(){
-    for(const {actor,observer} of sediliaLegObservers){
-      observer.disconnect();
-      actor.b?.el?.classList?.remove("ao-sedilia-seated");
-    }
-    sediliaLegObservers=[];
-    // No height override: donor actorTick owns true floor contact.
+    // Source M3 owns the geometry and redraws. This clears only our
+    // transient staging; no SVG anatomy has been changed.
   }
   function stageSedilia(card,form){
     if(!form||form.form!=="sung"||!sungSedilia.has(card?.id)){
@@ -203,29 +174,21 @@
       // Do NOT force all sacred ministers to sit: in the Credo the
       // deacon may be at the altar preparing the corporal (original C18).
       // Only actors actually seated in the source scene receive headwear.
-      if(a.vis!==true||a.pose!=="sit"){
-        a.b?.el?.classList?.remove("ao-sedilia-seated");
-        continue;
-      }
+      if(a.vis!==true||a.pose!=="sit")continue;
       a.path=null;a.turn=null;
-      // The donor has a genuine bent-knee SIDE-view 'sit' sprite,
-      // but its front view depicts an upright torso over a skirt.
-      // Face the actual seated figures toward the altar so the donor
-      // renders its seated legs without replacing the original SVG art.
-      // C18 deacon continues the source-owned corporal duty at the altar.
+      // Original seated side sprite is an unapproved visual placeholder,
+      // not a convincing body with independently modeled legs and cloth.
+      // Face remains source-staged while new character art is prepared.
+      // C18 deacon continues his separate corporal duty at the altar.
       a.face=0;
       // The solid sedilia spans x=3.86..4.36, with the aisle/front
       // at x<3.86. At x=4.04 the wooden front panel HID THE LEGS;
       // moving the actor upwards by .52 merely made him float and was
       // immediately overwritten by donor actorTick. Instead place
       // the seated, side-view FIGURE at the front lip of the seat.
-      // Feet now extend over the front panel and remain at the true
-      // floor height; the donor's bent thigh/knee/calf SVG stays visible.
-      // Keep the original longitudinal seat (z) per individual minister:
-      // distinct P/D/S figures must never be stacked at one place.
+      // Keep source z for each minister; no floating height, shoe shift,
+      // improvised trouser outlines or claim of visual acceptance.
       a.x=3.71;
-      a.b.el.classList.add("ao-sedilia-seated");
-      watchVisibleSeatedLegs(a);
     }
     // One existing server at the sanctuary side: not kneeling in front
     // of a seated priest, and no longer obscuring the celebrant's sprite.
@@ -239,7 +202,7 @@
         acolyte.x=2.36;acolyte.z=1.8;acolyte.face=90;
       }
     }
-    return "ORIGINAL_SEDILIA_SEATED";
+    return "DONOR_SEDILIA_REVIEW_HOLD";
   }
 
   // 1960 Rubrics 518(b)/523; O'Connell (1962) sung Gloria and Solemn Credo.
