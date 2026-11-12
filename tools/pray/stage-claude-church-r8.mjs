@@ -42,7 +42,9 @@ export async function stageClaudeChurchR8(source,dest,{overwrite=false}={}){
   if(!original.includes(term))throw Error("Unsupported Church source: missing "+term);
  }
  if(original.includes(marker))throw Error("Source was already staged; use the original R8");
- const anchor="\nboot();";
+ // The owner's R8 uses a final boot() call. Allow harmless indentation in
+ // synthetic fixtures while still inserting immediately before that call.
+ const anchor="boot();";
  const pos=original.lastIndexOf(anchor);
  if(pos<0)throw Error("Original Church boot() anchor not found");
  const modified=original.slice(0,pos)+bridge+original.slice(pos);
