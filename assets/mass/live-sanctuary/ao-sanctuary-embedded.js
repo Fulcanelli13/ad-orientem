@@ -106,6 +106,7 @@
   }
   function presentAsperges(message){
     clearSediliaGesture();
+    hideSharedGospelBook();
     if(message.scholaOnly===true)return ack(false,"CHOIR_EVENT_NOT_MASS_CUE");
     const form=forms[String(message.form??"").toUpperCase()];
     if(!form||form.form!=="sung")return ack(false,"ASPERGES_SUNG_FORM_REQUIRED");
@@ -305,10 +306,49 @@
     }
     return true;
   }
+
+  // Ritus XIII.2 / MR62.SOL.B02.065: two acolytes jointly support ONE
+  // Gospel book in Solemn Requiem. This supplemental source-static
+  // billboard leaves the 65-scene original M3 artwork untouched.
+  let sharedGospelBook=null;
+  function hideSharedGospelBook(){
+    if(sharedGospelBook?.bb)sharedGospelBook.bb.show=false;
+  }
+  function showSharedGospelBook(){
+    const eng=M3.eng;
+    if(!eng?.w||!Array.isArray(eng.bbs))return false;
+    if(sharedGospelBook?.engine!==eng||!sharedGospelBook.bb?.el?.isConnected){
+      const el=document.createElement("div");
+      el.className="bb ao-sanctuary-shared-gospel-book";
+      el.style.width=(.68*46*2.6).toFixed(1)+"px";
+      el.style.height=(.46*46*2.6).toFixed(1)+"px";
+      el.setAttribute("aria-hidden","true");
+      el.innerHTML='<svg viewBox="-36 -24 72 48" width="100%" height="100%" '+
+        'overflow="visible" xmlns="http://www.w3.org/2000/svg">'+
+        '<path d="M-29,-14 Q-14,-18 0,-10 Q14,-18 29,-14 L30,12 Q15,9 0,17 '+
+        'Q-15,9 -30,12Z" fill="#72232e" stroke="#c7a35d" stroke-width="1.7"/>'+
+        '<path d="M-27,-12 Q-14,-14 -1,-7 L-1,13 Q-15,6 -27,9Z" fill="#f1e9d8"/>'+
+        '<path d="M1,-7 Q14,-14 27,-12 L27,9 Q15,6 1,13Z" fill="#f1e9d8"/>'+
+        '<path d="M0,-9 V15" fill="none" stroke="#bba57a" stroke-width="1.4"/>'+
+        '<path d="M-24,-7 Q-13,-10 -4,-4 M-24,-2 Q-13,-5 -4,1 '+
+        'M5,-4 Q14,-10 24,-7 M5,1 Q14,-5 24,-2" fill="none" '+
+        'stroke="#b4a48e" stroke-width=".75"/>'+
+        '<ellipse cx="-27" cy="11" rx="4.1" ry="2.9" fill="#ead0ad"/>'+
+        '<ellipse cx="27" cy="11" rx="4.1" ry="2.9" fill="#ead0ad"/>'+
+        '</svg>';
+      eng.w.appendChild(el);
+      const bb={el,x:-2.85,z:2.5,h:1.21,w:.68,ht:.46,show:true,op:1};
+      eng.bbs.push(bb);
+      sharedGospelBook={engine:eng,bb};
+    }
+    sharedGospelBook.bb.show=true;
+    return true;
+  }
   function stageSolemnGospel(card,requiem,form,sectionId){
-    if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return;
+    hideSharedGospelBook();
+    if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return false;
     const actors=M3.actors?.();
-    if(!actors)return;
+    if(!actors)return false;
     // Ritus VI.5, source-checked research MR62.SOL.B02.008:
     // During the ordinary Solemn Gospel the SUBDEACON holds the book
     // between candlebearers; the DEACON proclaims. Claude's original
@@ -316,14 +356,11 @@
     // existing prop; the original actor geometry and camera remain.
     if(actors.D)actors.D.prop=null;
     if(actors.S)actors.S.prop=requiem?null:"book";
-    if(!requiem)return;
+    if(!requiem)return false;
     // Ritus XIII.2, source-checked MR62.SOL.B02.064/.065:
     // At a Solemn Requiem NO thurifer/candles, but TWO acolytes remain
-    // and support the Gospel book. The previous adapter incorrectly
-    // hid those acolytes entirely. Keep both original figures visible,
-    // remove their torches, and show ONE book prop as an approximate
-    // visual proxy for the jointly supported book. Final shared-book
-    // pose/coordinates remain for the O'Connell choreography audit.
+    // and support the Gospel book. Preserve both unlit acolytes with
+    // a single adapter-owned shared book, NOT a book in A1's hands.
     const thurifer=actors.T;
     if(thurifer){
       thurifer.path=null;thurifer.turn=null;thurifer.prop=null;
@@ -334,8 +371,9 @@
       if(!acolyte)continue;
       acolyte.path=null;acolyte.turn=null;acolyte.vis=true;
       acolyte.pose="stand";
-      acolyte.prop=id==="A1"?"book":null;
+      acolyte.prop=null;
     }
+    return showSharedGospelBook();
   }
   // Ritus servandus VI.4, registry MR62.SOL.B02.001:
   // The SUBDEACON bears the Epistolarium at the Epistle side and
@@ -512,6 +550,7 @@
     clearCommunionPaten();
     clearSediliaPlacement();
     clearSediliaGesture();
+    hideSharedGospelBook();
     aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
@@ -629,7 +668,7 @@
     const seatedGesture=stageSediliaGesture(obs,form,card,sourceSectionId,requiem);
     const requiemGospelPreparation=stageRequiemGospelPreparation(
       card,requiem,form,sourceSectionId);
-    stageSolemnGospel(card,requiem,form,sourceSectionId);
+    const sharedGospelBookVisible=stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
       card,form,sourceSectionId
     });
@@ -646,7 +685,7 @@
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
       sediliaStage,seatedGesture,requiemGospelPreparation,
-      communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
+      sharedGospelBookVisible,communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
@@ -654,7 +693,7 @@
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
       communionStation,sediliaStage,seatedGesture,
-      requiemGospelPreparation,
+      requiemGospelPreparation,sharedGospelBookVisible,
       communionReturnTriggered:beginReturn,
       canonicalCommunionEventId:validCommunionEvent,
       elevationIncenseActor:elevationActor});
@@ -672,7 +711,11 @@
     getVisualFx:()=>Object.freeze({
       elevationStage:Boolean(M3.eng?.vp?.classList?.contains?.("elev")),
       elevationGlowVisible:Boolean((M3.eng?.bbs??[]).some(b=>
-        b?.el?.classList?.contains?.("glow")&&b.show))
+        b?.el?.classList?.contains?.("glow")&&b.show)),
+      sharedBookVisible:Boolean(sharedGospelBook?.engine===M3.eng&&
+        sharedGospelBook?.bb?.show),
+      sharedBookCount:(M3.eng?.bbs??[]).filter(b=>
+        b.el?.classList?.contains("ao-sanctuary-shared-gospel-book")&&b.show).length
     })
   });
   if(window.parent!==window)
