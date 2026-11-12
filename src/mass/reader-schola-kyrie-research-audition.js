@@ -83,6 +83,13 @@ const STYLES=`
 .ao-kyrie-audition label{display:flex;gap:9px;align-items:center;justify-content:space-between;margin:7px 0}
 .ao-kyrie-audition label input{flex:1;min-width:0}
 .ao-kyrie-audition .ao-kyrie-progress{font-variant-numeric:tabular-nums}
+.ao-kyrie-audition .ao-kyrie-head-actions{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.ao-kyrie-audition[data-minimized="true"]{width:min(315px,calc(100vw - 28px));max-height:150px}
+.ao-kyrie-audition[data-minimized="true"] .ao-kyrie-staff,
+.ao-kyrie-audition[data-minimized="true"] .ao-kyrie-small,
+.ao-kyrie-audition[data-minimized="true"] label{display:none!important}
+.ao-kyrie-audition[data-minimized="true"] .ao-kyrie-controls{margin:6px 0 0}
+.ao-kyrie-audition[data-minimized="true"] h3{font-size:16px}
 `;
 
 export function createKyrieXviResearchAudition({root,
@@ -103,7 +110,7 @@ export function createKyrieXviResearchAudition({root,
   const panel=doc.createElement('section');
   panel.className='ao-kyrie-audition';panel.setAttribute('popover','manual');panel.hidden=true;
   panel.setAttribute('aria-label','Kyrie XVI provisional research melody preview');
-  panel.innerHTML=`<div class="ao-kyrie-head"><h3>Kyrie XVI · melody</h3><button type="button" data-kyrie-action="close" aria-label="Close melody preview">×</button></div>
+  panel.innerHTML=`<div class="ao-kyrie-head"><h3>Kyrie XVI · melody</h3><div class="ao-kyrie-head-actions"><button type="button" data-kyrie-action="minimize" aria-label="Minimise melody preview" aria-pressed="false">−</button><button type="button" data-kyrie-action="close" aria-label="Close melody preview">×</button></div></div>
     <p class="ao-kyrie-small">Research transcription · not an approved performance score · melody only</p>
     <div class="ao-kyrie-staff" data-kyrie-staff role="img" aria-label="Kyrie XVI Gregorian neumes"></div>
     <div class="ao-kyrie-controls"><button type="button" data-kyrie-action="play">▶ Play</button><button type="button" data-kyrie-action="stop">■ Stop</button></div>
@@ -119,6 +126,7 @@ export function createKyrieXviResearchAudition({root,
   const staff=panel.querySelector('[data-kyrie-staff]');
   const position=panel.querySelector('[data-kyrie-position]');
   const playButton=panel.querySelector('[data-kyrie-action="play"]');
+  const minimizeButton=panel.querySelector('[data-kyrie-action="minimize"]');
   const pitchNode=panel.querySelector('[data-kyrie-pitch]');
   const speedNode=panel.querySelector('[data-kyrie-speed]');
   const toneNode=panel.querySelector('[data-kyrie-tone]');
@@ -192,6 +200,14 @@ export function createKyrieXviResearchAudition({root,
     playing=true;playButton.textContent='Ⅱ Pause';advance();
   }
   function stop(){silence();index=0;paint()}
+  function setMinimized(value){
+    const minimal=Boolean(value);
+    panel.dataset.minimized=String(minimal);
+    minimizeButton.textContent=minimal?'□':'−';
+    minimizeButton.setAttribute('aria-label',
+      minimal?'Expand Gregorian notation':'Minimise Gregorian notation');
+    minimizeButton.setAttribute('aria-pressed',String(minimal));
+  }
   function close(){
     stop();
     if(panel.matches?.(':popover-open'))panel.hidePopover();
@@ -203,6 +219,7 @@ export function createKyrieXviResearchAudition({root,
     // collapse the configuration sheet so the Mass text remains visible.
     const musicPlan=root.querySelector('[data-schola-local-panel]');
     if(musicPlan?.open)musicPlan.open=false;
+    setMinimized(false);
     panel.hidden=false;
     // Manual popover enters the browser top layer without making the Mass
     // reader inert. A modal dialog would break independent priest navigation.
@@ -225,6 +242,7 @@ export function createKyrieXviResearchAudition({root,
   const panelClick=event=>{
     const action=event.target.closest('[data-kyrie-action]')?.dataset.kyrieAction;
     if(action==='close')close();
+    if(action==='minimize')setMinimized(panel.dataset.minimized!=='true');
     if(action==='play')play();
     if(action==='stop')stop();
   };
