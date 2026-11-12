@@ -5,7 +5,7 @@
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
   "source_ledger_blob_sha": "5189d4eb2dc964e105bc51798dc794fb03880cfa",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance. Thirteen section-specific source-quality improvements were made across five guides (Heiloo, Cornillon, Święta Lipka, Brezje, Orvieto), without assuming that every general/custodian homepage was demonstrably false. Twelve additional source pairs were adjudicated after directly reviewing the exact draft sentences and their original institutional links. In each, the originally cited source was the better match; alternative research URLs remain supplementary and no visitor citation was changed.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -20,16 +20,17 @@
     "verified_citation_errors": 7,
     "independently_certified_paragraphs": 0,
     "owner_approved_guides": 0,
-    "direct_url_spot_checks": 32,
+    "direct_url_spot_checks": 44,
     "confirmed_citation_scope_defects": 7,
-    "remaining_without_direct_url_spot_check": 53,
+    "remaining_without_direct_url_spot_check": 41,
     "resolved_citation_scope_defects": 7,
     "current_differing_urls": 65,
     "unrepaired_confirmed_scope_defects": 0,
-    "remaining_affected_guides": 36,
+    "remaining_affected_guides": 27,
     "source_equivalent_no_change": 12,
-    "remaining_active_triage": 53,
-    "source_upgrades_without_proven_claim_error": 13
+    "remaining_active_triage": 41,
+    "source_upgrades_without_proven_claim_error": 13,
+    "original_citation_preferred_no_change": 12
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -394,10 +395,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Regensburg Diocese calls Bettbrunn Bavaria's oldest Host pilgrimage; medieval host lost in 1329 fire while Salvator image survives; Preith parish records walking pilgrimage since 1578.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Preith parish pilgrimage page directly documents the weekend following Ascension, two-day annual walk and tradition since 1578; Regensburg overview is useful context but less precise for the guide's route claim.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "96:identity",
@@ -411,10 +419,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Attleboro La Salette missionary sanctuary distinguishes US site and French 1846 devotional tradition; worship information is operator-specific.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Attleboro shrine's La Salette Story directly names the 19 September 1846 French reported events and reconciliation message; the general home page does not improve support for this paragraph.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "98:identity",
@@ -722,10 +737,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Notre-Dame des Victoires custodian traces Desgenettes' 1836 Immaculate Heart confraternity and confirms independently arranged present pilgrim visits.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Notre-Dame des Victoires pilgrimage page specifically describes group visits, prayer, retreats and planning; historical alternate is not a better source for visiting arrangements.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "109:identity",
@@ -896,10 +918,17 @@
       "evidence_scope": "DIOCESAN_ORIGINAL_RELIC_STORY",
       "research_evidence_note": "Lanciano-Ortona diocesan source recounts the local veneration and archived examination of Saint Thomas relics; a separate current diocesan page confirms basilica and procession.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Lanciano-Ortona diocesan 2026 library report directly documents the local St Thomas relic tradition and historical dossier (including 1884 scientific recognition); second diocesan news item supplements current veneration but does not invalidate this history source.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "128:identity",
@@ -913,10 +942,17 @@
       "evidence_scope": "DIOCESAN_THOMAS_RELIQUARY",
       "research_evidence_note": "Lanciano-Ortona diocesan pages identify Ortona co-cathedral and St Thomas reliquary in its liturgical context.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Lanciano-Ortona diocesan 2026 library report names the Basilica of Saint Thomas and the local custody/reliquary tradition; other diocesan festival news is contextual, not a mandatory replacement.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "131:history",
@@ -1559,10 +1595,17 @@
       "evidence_scope": "INSTITUTIONAL_OR_EXACT_SITE_CORE_CLAIMS_FIRST_PASS_RESEARCH_ONLY",
       "research_evidence_note": "Ghana Catholic Bishops' Conference's dated diocesan directory identifies archdiocese, patron St Peter and cathedral administration; GCatholic names exact St Peter's Cathedral Basilica and its Kumasi jurisdiction. The bishops' directory is not current visiting-hours evidence.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original GCatholic exact St Peter's Cathedral Basilica page independently identifies the same Kumasi cathedral, Roman rite, metropolitan archdiocese, St Peter patron and 2004 minor-basilica title. General Ghana bishops diocesan directory adds context but not an obligatory citation replacement.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "202:pilgrimage",
@@ -1593,10 +1636,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Pope Francis's 14 Jan 2015 Marian address at Madhu explicitly names Tamil and Sinhalese faithful, war suffering and statue displaced then returned; older Catholic news records separate protection appeals.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Fides 15 April 2008 report by the Pontifical Mission Societies directly documents bishops' appeals to protect the Madhu shrine and displaced Marian image during the conflict. Pope Francis's 2015 address is complementary rather than a replacement for that wartime claim.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "208:history",
@@ -1627,10 +1677,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "John Paul II dedicated Yamoussoukro Notre-Dame de la Paix on 10 September 1990; Vatican homily identifies Houphouët-Boigny's patronage and separate charitable foundation.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original institutional basilica page directly dates the first stone to 2 February 1986, construction end to September 1989, names Houphouët-Boigny and architect Pierre Fakhoury. The 1990 papal homily is complementary but less exact for construction chronology.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "209:pilgrimage",
@@ -1644,10 +1701,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "John Paul II dedicated Yamoussoukro Notre-Dame de la Paix on 10 September 1990; Vatican homily identifies Houphouët-Boigny's patronage and separate charitable foundation.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original institutional basilica page describes Catholic worship, Marian pilgrimage and liturgical activity at Yamoussoukro; 1990 papal homily cannot establish present-day operations or replace it.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "211:pilgrimage",
@@ -1661,10 +1725,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Lebanese Maronite Missionaries' Our Lady of Lebanon custodian history dates Harissa sanctuary inauguration May 1908 and grants administration to Maronite missionaries, current Marian ministry distinct.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Our Lady of Lebanon Sanctuary About Us page explicitly calls Harissa an International Pilgrimage Site, describes Maronite Patriarchate/custodian mission and visitor pastoral activities. Alternative historical page is complementary.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "213:identity",
@@ -1678,10 +1749,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Assumptionist Saint Peter Gallicantu custodian site distinguishes modern church, ancient remains, crypt and Passion/Peter denial tradition; current tours separate from historical claim.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Assumptionist Saint Peter in Gallicantu Church and Crypt page directly describes neo-Byzantine building, mosaics and crypt; alternative history page does not better substantiate those specific visitor features.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "213:pilgrimage",
@@ -1695,10 +1773,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Assumptionist Saint Peter Gallicantu custodian site distinguishes modern church, ancient remains, crypt and Passion/Peter denial tradition; current tours separate from historical claim.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "ORIGINAL_CITATION_CORROBORATED_NO_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "original_citation_review": {
+        "checked_on": "2026-11-12",
+        "findings": "Original Assumptionist Saint Peter in Gallicantu Prepare Your Visit page directly enumerates church, crypt, archaeological sites and panoramic viewpoint; alternative historical page is less specific for visiting arrangements.",
+        "decision": "KEEP_EXISTING_PARAGRAPH_CITATION",
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "218:history",
