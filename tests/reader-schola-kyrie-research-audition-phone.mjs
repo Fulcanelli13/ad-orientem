@@ -78,11 +78,10 @@ try{
      // Requiem cannot offer an ordinary Kyrie XVI audition.
      // Set the source choice without attempting to click hidden controls.
      // This tests a persisted choice without misrepresenting the visible UI.
-     await page.evaluate(setting=>{window.__AO_TEST_SETTING_ID=setting;},settingId);
-     await picker.evaluate(node=>{
-       node.value=window.__AO_TEST_SETTING_ID;
+     await picker.evaluate((node,setting)=>{
+       node.value=setting;
        node.dispatchEvent(new Event('change',{bubbles:true}));
-     });
+     },settingId);
      await page.waitForTimeout(150);
      assert.equal(await trigger.isVisible(),false,
        'No ordinary research-audio launcher in Missal, Low or Requiem');
