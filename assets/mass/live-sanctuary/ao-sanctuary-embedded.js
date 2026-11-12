@@ -233,7 +233,10 @@
     if(requiem){
       // Illustrative Epistle-side position (x positive in original M3).
       // 1962 XIII.2 requires the location, but not these coordinates.
-      actor.x=1.5;actor.z=1.35;actor.face=0;
+      // The original dalmatic back-view sprite omits hand-held props.
+      // Oblique facing allows Claude's EXISTING thurible side sprite to
+      // remain visible; it is a visual compromise, not a rubrical angle.
+      actor.x=1.5;actor.z=1.35;actor.face=60;
     }else{
       // Original altar's kneeling thurifer, without replacing the priest.
       actor.x=.85;actor.z=2.05;actor.face=0;
