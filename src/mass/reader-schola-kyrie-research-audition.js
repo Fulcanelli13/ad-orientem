@@ -13,6 +13,11 @@ export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='L
     SUNG.has(String(form??'').toUpperCase()) &&
     settingId==='MASS_16' && !isRequiem;
 }
+export function kyrieResearchAuditionEligible({form,settingId,isRequiem=false,mode='LIVE'}={}){
+  return String(mode??'').toUpperCase()==='LIVE' &&
+    SUNG.has(String(form??'').toUpperCase()) &&
+    (settingId==='MASS_16'||settingId==='MASS_18')&&!isRequiem;
+}
 // The source identity, counts and repeat plan remain specifically guarded;
 // the melodic parser and timing model are shared by future research scores.
 const kyrieSourceFingerprint=text=>{
@@ -32,6 +37,19 @@ export function compileKyrieXviAudition(gabc){
       return null;
     return compiled;
   }catch{return null;} // source/notation changed: do not guess.
+}
+
+// Separate exact-source guard: no automatic promotion of Kyrie XVIII.
+export function compileKyrieXviiiAudition(gabc){
+  try{
+    if(typeof gabc!=='string'||kyrieSourceFingerprint(gabc)!=='db6e8276')return null;
+    const compiled=compileGabcMelody(gabc,{phraseSequence:REPEATS});
+    if(compiled.sourceNoteCount!==44||compiled.sourceGroupCount!==27||
+       compiled.phraseCount!==4||compiled.performance.length!==90||
+       compiled.phrases.map(x=>x.reduce((n,g)=>n+g.notes.length,0)).join(',')!=='10,8,10,16'||
+       !gabc.includes('<i>iij.</i>')||!gabc.includes('<i>ij.</i>'))return null;
+    return compiled;
+  }catch{return null;}
 }
 
 const STYLES=`
@@ -89,10 +107,17 @@ export function createKyrieXviResearchAudition({root,
     <label>Speed <input data-kyrie-speed type="range" min="0.5" max="1.6" value="1" step="0.1"><output data-kyrie-speed-value>1×</output></label>
     <div class="ao-kyrie-small ao-kyrie-progress" aria-live="off" data-kyrie-position>Ready · nine invocations</div>`;
   doc.body.append(panel);
-  const score=offlineKyrialeResearchScore('KYRIE','MASS_16');
-  const compiled=compileKyrieXviAudition(score?.gabc);
-  if(!compiled)throw new Error('Kyrie XVI source changed; audition withheld');
-  const demoTiming=scheduleGabcMelody(compiled);
+  const sourceXvi=offlineKyrialeResearchScore('KYRIE','MASS_16');
+  const scoreXvi=compileKyrieXviAudition(sourceXvi?.gabc);
+  if(!scoreXvi)throw new Error('Kyrie XVI source changed; audition withheld');
+  const sourceXviii=offlineKyrialeResearchScore('KYRIE','MASS_18');
+  const scoreXviii=compileKyrieXviiiAudition(sourceXviii?.gabc);
+  const sources=new Map([
+    ['MASS_16',{score:sourceXvi,compiled:scoreXvi,title:'Kyrie XVI'}],
+    ...(scoreXviii?[['MASS_18',{score:sourceXviii,compiled:scoreXviii,title:'Kyrie XVIII'}]]:[])
+  ]);
+  let setting='MASS_16',score=sourceXvi,compiled=scoreXvi;
+  let demoTiming=scheduleGabcMelody(compiled);
   const staff=panel.querySelector('[data-kyrie-staff]');
   const position=panel.querySelector('[data-kyrie-position]');
   const playButton=panel.querySelector('[data-kyrie-action="play"]');
@@ -100,7 +125,7 @@ export function createKyrieXviResearchAudition({root,
   const pitchNode=panel.querySelector('[data-kyrie-pitch]');
   const speedNode=panel.querySelector('[data-kyrie-speed]');
   const toneNode=panel.querySelector('[data-kyrie-tone]');
-  const noteheadFollower=createExsurgeNoteheadFollower({staff,compiled});
+  let noteheadFollower=createExsurgeNoteheadFollower({staff,compiled});
   let engraver=null,lyricTargets=[],audio=null,index=0,playing=false,timer=0;
   let voices=[],destroyed=false,sourceRendered=false;
   let timeoutId=0;
@@ -118,9 +143,9 @@ export function createKyrieXviResearchAudition({root,
   function silence(){playing=false;clearTimer();releaseVoices();playButton.textContent='▶ Play';}
   function paint(){
     const note=compiled.performance[index];
-    position.textContent=note?`Invocation ${note.invocation}/9 · source note ${note.sourceNoteOrdinal}/40`: 'Complete';
-    // Source-ordinal 1..40 targets Exsurge's real use#note-N glyph,
-    // including 81 distinct performance events that revisit those glyphs.
+    position.textContent=note?`Invocation ${note.invocation}/${compiled.invocations} · source note ${note.sourceNoteOrdinal}/${compiled.sourceNoteCount}`: 'Complete';
+    // A source ordinal targets a real Exsurge use#note-N glyph;
+    // explicit repetitions revisit identical written noteheads.
     staff.dataset.sourceNoteOrdinal=note?String(note.sourceNoteOrdinal):'complete';
     staff.dataset.performanceNoteOrdinal=note?String(index+1):'complete';
     const aligned=noteheadFollower.paint(note?.sourceNoteOrdinal??0);
@@ -189,6 +214,25 @@ export function createKyrieXviResearchAudition({root,
     if(panel.matches?.(':popover-open'))panel.hidePopover();
     panel.hidden=true;
   }
+  function switchScore(nextSetting){
+    const selected=sources.get(nextSetting);
+    if(!selected)return false;
+    if(setting===nextSetting)return true;
+    close();
+    engraver?.destroy?.();engraver=null;
+    noteheadFollower.destroy();
+    staff.replaceChildren();lyricTargets=[];sourceRendered=false;
+    setting=nextSetting;score=selected.score;compiled=selected.compiled;
+    demoTiming=scheduleGabcMelody(compiled);
+    noteheadFollower=createExsurgeNoteheadFollower({staff,compiled});
+    panel.querySelector('h3').textContent=selected.title+' · melody';
+    panel.setAttribute('aria-label',selected.title+' provisional research melody preview');
+    staff.setAttribute('aria-label',selected.title+' Gregorian neumes');
+    trigger.textContent='♫ HEAR '+selected.title.toUpperCase()+' · MELODY PREVIEW';
+    staff.scrollTop=0;staff.scrollLeft=0;
+    paint();
+    return true;
+  }
   async function open(){
     if(trigger.hidden)return;
     // Once an explicitly chosen chant opens in its own nonmodal player,
@@ -256,7 +300,8 @@ export function createKyrieXviResearchAudition({root,
   function sync(){
     if(destroyed)return false;
     const {form,settingId,isRequiem,mode}=getContext();
-    const eligible=kyrieXviAuditionEligible({form,settingId,isRequiem,mode});
+    const eligible=kyrieResearchAuditionEligible({form,settingId,isRequiem,mode})&&sources.has(settingId);
+    if(eligible&&setting!==settingId)switchScore(settingId);
     const anchor=root.querySelector('[data-schola-original-score="KYRIE"]');
     if(anchor&&trigger.parentElement!==anchor.parentElement)anchor.insertAdjacentElement('afterend',trigger);
     trigger.hidden=!eligible;
