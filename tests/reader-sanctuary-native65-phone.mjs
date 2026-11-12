@@ -178,34 +178,20 @@ try{
         M3.actors().P.b.el.classList.contains("ao-sedilia-uncovered")&&
         Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
     },null,{timeout:12000});
-    await frame.waitForFunction(()=>{
-      const actors=window.M3?.actors?.();
-      return ["P","D","S"].every(id=>{
-        const a=actors?.[id];
-        return a?.pose==="sit"&&a?.x===3.71&&
-          a?.b?.el?.querySelector('path[d^="M-12,-38"]')&&
-          a?.b?.el?.querySelector('ellipse[cx="34.4"][cy="-1.3"]');
-      });
-    },null,{timeout:12000});
-    const seatedAnatomy=await frame.evaluate(()=>["P","D","S"].map(id=>{
+    const seatedAudit=await frame.evaluate(()=>["P","D","S"].map(id=>{
       const a=M3.actors()[id];
-      const leg=a.b.el.querySelector('path[d^="M-12,-38"]');
-      const shoe=a.b.el.querySelector('ellipse[cx="34.4"][cy="-1.3"]');
-      return {id,pose:a.pose,x:a.x,z:a.z,footOnFloor:a.b.h<.35,
-        thighKneeCalfSvgPresent:Boolean(leg),
-        shoeVisible: Boolean(shoe),
-        legPath:leg?.getAttribute("d")??null};
+      return {id,pose:a?.pose,x:a?.x,z:a?.z,h:a?.b?.h,
+        fakeThigh:Boolean(a?.b?.el?.querySelector('path[d^="M-12,-38"]')),
+        fakeShoe:Boolean(a?.b?.el?.querySelector('ellipse[cx="34.4"]'))};
     }));
-    assert.equal(new Set(seatedAnatomy.map(x=>x.z)).size,3,
-      "Priest, deacon and subdeacon must occupy distinct seats");
-    for(const a of seatedAnatomy){
-      assert.equal(a.footOnFloor,true,a.id+" feet cannot hover");
-      assert.equal(a.thighKneeCalfSvgPresent,true,
-        a.id+" needs the revised horizontal thigh and bent calf SVG");
-      assert.equal(a.shoeVisible,true,
-        a.id+" must have a matching shoe at the end of its shin");
-      assert.match(a.legPath??"",/L34,-29 Q39,-27 39,-21/,
-        a.id+" knee must extend visibly beyond the seat front");
+    assert.equal(new Set(seatedAudit.map(a=>a.z)).size,3,
+      "P/D/S must retain separate source-owned seats");
+    for(const a of seatedAudit){
+      assert.equal(a.pose,"sit",a.id+" original scene must remain seated");
+      assert.equal(a.x,3.71);
+      assert.ok(a.h<.35,a.id+" may not float over the sedilia");
+      assert.equal(a.fakeThigh,false,"Owner-rejected synthetic white legs must stay absent");
+      assert.equal(a.fakeShoe,false,"Owner-rejected detached shoes must stay absent");
     }
     await frame.evaluate(()=>M3.snap()); // settle the original sedilia camera
     const sediliaCamera=await frame.evaluate(()=>({...M3.eng.cam,T:[...M3.eng.cam.T]}));
@@ -959,7 +945,7 @@ try{
       "Seated figure must sit at the bench FRONT LIP; x=4.04 hides all legs");
     assert.ok(acolyte.priestSeatHeight<.35,
       "Feet stay on the original floor: never float the actor .52m upward");
-    assert.equal(acolyte.stage,"ORIGINAL_SEDILIA_SEATED");
+    assert.equal(acolyte.stage,"DONOR_SEDILIA_REVIEW_HOLD");
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
