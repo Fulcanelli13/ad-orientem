@@ -49,6 +49,12 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
    '<h3>'+esc(stepTitle(current,loc))+'</h3>'+context+
    '<div class="aoTenebPrayer" lang="'+(face==="latin"?"la":loc)+'">'+nl(face==="latin"?current.latin:current[loc])+'</div></article>';
  }
+ const move=steps.length&&current?
+  '<nav class="aoTenebSourceSteps" aria-label="'+esc(L("Office passage navigation","Navigation des passages de l’Office"))+'">'+
+  '<button type="button" data-p435930-tenebrae-move="-1"'+(index<=0?' disabled':'')+' aria-label="'+esc(L("Previous passage","Passage précédent"))+'">‹ '+esc(L("Previous","Précédent"))+'</button>'+
+  '<span role="status" aria-live="off">'+esc(String(index+1))+' / '+esc(String(steps.length))+'</span>'+
+  '<button type="button" data-p435930-tenebrae-move="1"'+(index>=steps.length-1?' disabled':'')+' aria-label="'+esc(L("Next passage","Passage suivant"))+'">'+esc(L("Next","Suivant"))+' ›</button>'+
+  '</nav>':'';
  const edition=L(
   "Matins may, for good reason, be anticipated after 2 PM on the previous day. Lauds belongs to the morning (1960 rubrics §§144–145). The earlier fifteen-candle ceremony is not imposed here.",
   "Pour une juste raison, les Matines peuvent être anticipées après 14 h la veille. Les Laudes appartiennent au matin (rubriques de 1960, §§144–145). L’ancien cérémonial des quinze cierges n’est pas imposé ici."
@@ -72,6 +78,6 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
   '<div class="aoTenebHours" role="group" aria-label="'+esc(L("Select canonical hour","Choisir l’heure canoniale"))+'">'+hours+'</div>'+
   '<div class="aoTenebMode" role="group" aria-label="'+esc(L("Reading mode","Mode de lecture"))+'">'+modeButtons+'</div>'+
   (guided?'<p class="aoTenebDayContext">'+esc(guide.day)+'</p>':'')+renderTenebraeCeremony({ceremony,step:current,french})+jumpMarkup+
-  material+
+  material+move+
   '<details class="aoTenebSource"><summary>'+esc(L("Liturgical edition and source","Édition liturgique et sources"))+'</summary><p>'+esc(edition)+'</p><p>'+esc(witness)+'</p><p>'+esc(guide.sourceWarning)+'</p>'+revisionNotice+'<p>© 2026 Divinum Officium · MIT · <a href="https://github.com/DivinumOfficium/divinum-officium" target="_blank" rel="noopener noreferrer">Source</a></p></details></main>';
 }
