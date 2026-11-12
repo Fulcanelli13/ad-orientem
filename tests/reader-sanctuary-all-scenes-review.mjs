@@ -142,9 +142,28 @@ try{
       "Static scene retains a moving priest: "+c.id+" "+form.id);
     if(c.id==="C57")assert.equal(cameraShot,"rail",
       "Static C57 screenshots must use the owner's rail camera");
-    if(c.id==="C08"&&form.protocol!=="LOW")
+    if(c.id==="C08"&&form.protocol!=="LOW"){
       assert.equal(cameraShot,"sedilia",
-        "Gloria seated stages must be photographed with owner's sedilia camera");
+        "Gloria seated stages must use owner's sedilia camera");
+      assert.equal(result.sediliaStage,"ORIGINAL_SEDILIA_SEATED");
+      assert.equal(actors.priest.pose,"sit");
+      assert.equal(actors.priest.x,4.04,
+        "Celebrant must sit on the existing original bench, not in front");
+      if(form.protocol==="SOLEMN"){
+        assert.equal(actors.deacon.x,4.04);
+        assert.equal(actors.subdeacon.x,4.04);
+      }else{
+        assert.equal(actors.server.pose,"stand");
+        assert.equal(actors.server.x,2.36,
+          "Server must stand outside celebrant's seated silhouette");
+      }
+    }
+    if(c.id==="C24"&&form.protocol==="LOW"){
+      assert.equal(result.visualCard,"C23");
+      assert.equal(result.lowIncenseOmitted,true);
+      assert.equal(actors.priest.z,.4,
+        "No-incense Low Mass is a still Offertory stage AT the altar");
+    }
     const need=holds[c.id]??[];
     imageName="images/"+form.id+"/"+c.id+".png";
     // A pair of paint frames lets the original M3 actor keyframe settle,
@@ -160,6 +179,9 @@ try{
     section:c.section,sourceSectionId:section,sourceMacro:c.macro,
     originalStation:form.protocol==="LOW"?c.station?.low:c.station?.sung,
     originalCameraShot:cameraShot,
+    renderedOwnerScene:result?.visualCard??null,
+    sediliaStage:result?.sediliaStage??null,
+    lowIncenseOmitted:result?.lowIncenseOmitted??false,
     capture:omitted?"OMITTED":excluded?"INACTIVE_INCENSE":"STILL",
     evidence:"PROTOTYPE_STATIC_NOT_CEREMONIAL_CERTIFICATION",
     visualReview:issues.length?"REVIEW_REQUIRED":"AWAITING_OWNER_VISUAL_REVIEW",
