@@ -4,6 +4,7 @@ import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {createOfflineChantEngraver} from './reader-chant-engraver.js';
 import {scholaGabcSyllables,mapScholaSvgLyrics} from './reader-schola-notation-follow.js';
 import {compileGabcMelody,scheduleGabcMelody} from './reader-schola-gabc-melody.js';
+import {createExsurgeNoteheadFollower} from './reader-schola-exsurge-notehead-follow.js';
 
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
@@ -44,6 +45,7 @@ const STYLES=`
 .ao-kyrie-audition .ao-kyrie-staff{max-height:110px;overflow:auto;border-radius:6px;background:#f8f7ef;color:#1b201d;padding:7px}
 .ao-kyrie-audition .ao-kyrie-staff svg{width:100%;height:auto;max-width:100%}
 .ao-kyrie-audition .ao-kyrie-staff svg text[data-kyrie-preview-current=true]{fill:#a35f24!important;stroke:#a35f24;stroke-width:.28px}
+.ao-kyrie-audition .ao-kyrie-staff svg use.note[data-schola-notehead-active="true"]{fill:#bd6b21!important;stroke:#713612!important;stroke-width:.65px!important;paint-order:stroke fill}
 .ao-kyrie-audition .ao-kyrie-controls{display:flex;gap:7px;align-items:center;justify-content:space-between;margin:9px 0}
 .ao-kyrie-audition button,.ao-kyrie-audition select{font:inherit;color:#efe9d9;background:#273730;border:1px solid #67745f;border-radius:7px;padding:8px;min-height:36px;cursor:pointer}
 .ao-kyrie-audition button:focus-visible,.ao-kyrie-audition :is(input,select):focus-visible{outline:2px solid #e3c584}
@@ -98,6 +100,7 @@ export function createKyrieXviResearchAudition({root,
   const pitchNode=panel.querySelector('[data-kyrie-pitch]');
   const speedNode=panel.querySelector('[data-kyrie-speed]');
   const toneNode=panel.querySelector('[data-kyrie-tone]');
+  const noteheadFollower=createExsurgeNoteheadFollower({staff,compiled});
   let engraver=null,lyricTargets=[],audio=null,index=0,playing=false,timer=0;
   let voices=[],destroyed=false,sourceRendered=false;
   let timeoutId=0;
@@ -116,14 +119,15 @@ export function createKyrieXviResearchAudition({root,
   function paint(){
     const note=compiled.performance[index];
     position.textContent=note?`Invocation ${note.invocation}/9 · source note ${note.sourceNoteOrdinal}/40`: 'Complete';
-    // Stable exact source-note cursor; rendered lyric emphasis remains
-    // at syllable level until physical notehead geometry is independently mapped.
+    // Source-ordinal 1..40 targets Exsurge's real use#note-N glyph,
+    // including 81 distinct performance events that revisit those glyphs.
     staff.dataset.sourceNoteOrdinal=note?String(note.sourceNoteOrdinal):'complete';
     staff.dataset.performanceNoteOrdinal=note?String(index+1):'complete';
+    const aligned=noteheadFollower.paint(note?.sourceNoteOrdinal??0);
     for(let i=0;i<lyricTargets.length;i++){
       const active=Boolean(note&&note.groupIndex===i);
       lyricTargets[i].dataset.kyriePreviewCurrent=String(active);
-      if(active){const r=lyricTargets[i].getBoundingClientRect(),v=staff.getBoundingClientRect();
+      if(active&&!aligned){const r=lyricTargets[i].getBoundingClientRect(),v=staff.getBoundingClientRect();
         if(r.top<v.top||r.bottom>v.bottom)staff.scrollTop+=r.top-v.top-v.height/3;
       }
     }
@@ -199,8 +203,15 @@ export function createKyrieXviResearchAudition({root,
     if(!sourceRendered){
       sourceRendered=true;
       try{
-        engraver=engraverFactory({viewport:staff,document:doc});
+        engraver=engraverFactory({viewport:staff,document:doc,
+          onRendered:()=>{
+            lyricTargets=mapScholaSvgLyrics(staff.querySelector('svg'),
+              scholaGabcSyllables(score.gabc));
+            paint();
+          }
+        });
         if(await engraver.engrave(score.gabc)){
+          engraver.observe?.();
           const parts=scholaGabcSyllables(score.gabc);
           lyricTargets=mapScholaSvgLyrics(staff.querySelector('svg'),parts);
           // Text highlight is a syllable guide, not a claim of editorial
@@ -255,7 +266,7 @@ export function createKyrieXviResearchAudition({root,
   function destroy(){
     if(destroyed)return;destroyed=true;silence();
     if(panel.matches?.(':popover-open'))panel.hidePopover();
-    engraver?.destroy?.();audio?.close?.();
+    engraver?.destroy?.();noteheadFollower.destroy();audio?.close?.();
     root.removeEventListener('click',rootClick);
     root.removeEventListener('change',rootChange,true);
     panel.removeEventListener('click',panelClick);
@@ -266,6 +277,8 @@ export function createKyrieXviResearchAudition({root,
   return Object.freeze({sync,stop,destroy,getState:()=>Object.freeze({
     eligible:!trigger.hidden,open:!panel.hidden,playing,index,
     total:compiled.performance.length,sourceApproved:false,
-    audioOwnedBySchola:false
+    audioOwnedBySchola:false,
+    noteheadAligned:noteheadFollower.getState().mapped,
+    noteheadCount:noteheadFollower.getState().glyphCount
   })});
 }
