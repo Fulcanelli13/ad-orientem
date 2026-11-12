@@ -1,0 +1,125 @@
+{
+  "schema": "ao-schola-m48-exsurge-semantic-complex-gabc-research-v1",
+  "date": "2026-11-12",
+  "scope": "RESEARCH_ONLY",
+  "engine": "assets/vendor/exsurge/exsurge.min.js",
+  "source": "Verbatim existing GregoBase GABC research registry and named 1961 folios",
+  "warnings": [
+    "These are source-transcription/renderer-derived counts, not independently certified 1961 printed pitch and neume counts.",
+    "All ninefold schedules are explicit editorial performance plans, not inferred live choir programmes.",
+    "No new melody automatically appears in the Mass reader, and no source is promoted into the approved Schola list.",
+    "Audio pitch is a conventional transposable MIDI audition reference, not historical absolute tuning.",
+    "Duration weighting remains demonstrative, not certified Solesmes singing rhythm."
+  ],
+  "phraseSequence": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3
+  ],
+  "researchSources": [
+    {
+      "setting": "MASS_01",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-1143",
+      "sourceFingerprint": "1d935709",
+      "sourceNoteCount": 79,
+      "phraseNoteCounts": [
+        15,
+        21,
+        20,
+        23
+      ],
+      "performanceNotes": 171,
+      "review": "TRANSLITERATION_NOT_APPROVED"
+    },
+    {
+      "setting": "MASS_08",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-1184",
+      "sourceFingerprint": "0fe08a50",
+      "sourceNoteCount": 102,
+      "phraseNoteCounts": [
+        25,
+        23,
+        23,
+        31
+      ],
+      "performanceNotes": 221,
+      "review": "ADVANCED_NOTATION_RESEARCH_ONLY"
+    },
+    {
+      "setting": "MASS_11",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-2982",
+      "sourceFingerprint": "20149774",
+      "sourceNoteCount": 82,
+      "phraseNoteCounts": [
+        18,
+        21,
+        18,
+        25
+      ],
+      "performanceNotes": 178,
+      "review": "TRANSLITERATION_NOT_APPROVED"
+    },
+    {
+      "setting": "MASS_16",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-545",
+      "sourceFingerprint": "acef0d62",
+      "sourceNoteCount": 40,
+      "phraseNoteCounts": [
+        9,
+        7,
+        9,
+        15
+      ],
+      "performanceNotes": 81,
+      "review": "EXISTING_OPT_IN_RESEARCH_PREVIEW_ONLY"
+    },
+    {
+      "setting": "MASS_17",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-272",
+      "sourceFingerprint": "eebb7a65",
+      "sourceNoteCount": 107,
+      "phraseNoteCounts": [
+        22,
+        19,
+        18,
+        48
+      ],
+      "performanceNotes": 207,
+      "review": "ADVANCED_NOTATION_RESEARCH_ONLY"
+    },
+    {
+      "setting": "MASS_18",
+      "movement": "KYRIE",
+      "scoreId": "GREGOBASE-2522",
+      "sourceFingerprint": "db6e8276",
+      "sourceNoteCount": 44,
+      "phraseNoteCounts": [
+        10,
+        8,
+        10,
+        16
+      ],
+      "performanceNotes": 90,
+      "review": "TRANSLITERATION_NOT_APPROVED"
+    }
+  ],
+  "publication": {
+    "approvedScoresAdded": 0,
+    "automaticChantSelection": false,
+    "newUiControls": false,
+    "sourceGovernanceUnchanged": true,
+    "noPaidAudio": true,
+    "githubPagesOnly": true
+  }
+}
