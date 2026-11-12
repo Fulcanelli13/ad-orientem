@@ -7,7 +7,7 @@ import {readFileSync} from 'node:fs';
 import {offlineKyrialeResearchScore} from '../src/mass/reader-kyriale-research-gabc.js';
 import {compileGabcMelody,scheduleGabcMelody,UnsupportedGabcMelodyError} from '../src/mass/reader-schola-gabc-melody.js';
 import {compileExsurgeGabcResearchMelody,gabcResearchFingerprint} from '../src/mass/reader-schola-exsurge-gabc-melody.js';
-import {kyrieXviAuditionEligible} from '../src/mass/reader-schola-kyrie-research-audition.js';
+import {kyrieXviAuditionEligible,kyrieResearchAuditionEligible,compileKyrieXviiiAudition} from '../src/mass/reader-schola-kyrie-research-audition.js';
 const evidence=JSON.parse(readFileSync(new URL(
   '../data/research/mass-music-m49-kyrie-xviii-1961-source-review.v1.json',
   import.meta.url),'utf8'));
@@ -28,10 +28,13 @@ assert.equal(evidence.observedPrint.twoPrintedSystems,true);
 assert.equal(evidence.observedPrint.fullPhysicalNoteheadByNoteheadManualCountCertified,false);
 assert.equal(evidence.observedPrint.exactOriginalPixelLevelRhythmicSignAttachmentCertified,false);
 assert.equal(evidence.observedPrint.exactPitchContourFrom1961ScanIndependentlyAudited,false);
-assert.equal(evidence.performance.livePlayerEnabled,false);
+assert.equal(evidence.performance.livePlayerEnabled,true);
+assert.equal(evidence.performance.explicitOptInResearchPreview,true);
+assert.equal(evidence.performance.sourceApproved,false);
+assert.equal(evidence.performance.audibleOnlyAfterUserAction,true);
 assert.equal(evidence.performance.audioApproved,false);
 assert.equal(evidence.performance.automaticAssignment,false);
-assert.ok(evidence.status.includes('NOT_EDITORIALLY_APPROVED'));
+assert.ok(evidence.status.includes('CERTIFICATION_PENDING'));
 
 assert.equal(gabcResearchFingerprint(source.gabc),evidence.sourceGabcFingerprintUtf16Fnv1a32);
 assert.match(source.gabc,/\(c3\)/);
@@ -71,7 +74,12 @@ assert.equal(scheduled.certifiedGregorianTiming,false);
 assert.equal(scheduled.independentlyCalibratedAgainstPerformance,false);
 assert.equal(scheduled.events.filter(e=>e.gapAfterMs>0).length,8);
 assert.equal(kyrieXviAuditionEligible({form:'SOLEMN',mode:'LIVE',settingId:'MASS_18'}),false);
+assert.equal(kyrieResearchAuditionEligible({form:'SOLEMN',mode:'LIVE',settingId:'MASS_18'}),true);
+assert.equal(kyrieResearchAuditionEligible({form:'SOLEMN',mode:'MISSAL',settingId:'MASS_18'}),false);
+assert.equal(kyrieResearchAuditionEligible({form:'LOW',mode:'LIVE',settingId:'MASS_18'}),false);
+assert.equal(compileKyrieXviiiAudition(source.gabc)?.performance.length,90);
 assert.equal(kyrieXviAuditionEligible({form:'SOLEMN',mode:'LIVE',settingId:'MASS_18',isRequiem:true}),false);
+assert.equal(kyrieResearchAuditionEligible({form:'SOLEMN',mode:'LIVE',settingId:'MASS_18',isRequiem:true}),false);
 assert.equal(kyrieXviAuditionEligible({form:'SOLEMN',mode:'LIVE',settingId:'MASS_16',isRequiem:true}),false);
 const mutated=source.gabc.replace('(hhg)','(hig)');
 assert.notEqual(mutated,source.gabc);
@@ -79,6 +87,22 @@ assert.throws(()=>compileExsurgeGabcResearchMelody(mutated,{
  exsurge,scoreId:source.scoreId,expectedFingerprint:evidence.sourceGabcFingerprintUtf16Fnv1a32,
  expectedPhraseNoteCounts:[10,8,10,16],phraseSequence:evidence.performance.plan
 }),e=>e instanceof UnsupportedGabcMelodyError&&e.code==='SOURCE_FINGERPRINT_MISMATCH');
+const noteLedger=JSON.parse(readFileSync(new URL(
+ '../data/research/mass-music-m49-kyrie-xviii-note-review-ledger.v1.json',
+ import.meta.url),'utf8'));
+assert.equal(noteLedger.noteCount,44);
+assert.equal(noteLedger.records.length,44);
+assert.deepEqual(noteLedger.records.map(x=>x.sourceOrdinal),
+ Array.from({length:44},(_,i)=>i+1));
+assert.ok(noteLedger.records.every(x=>
+ x.printedNoteheadConfirmedIndividually===false&&
+ x.printedStaffPositionConfirmedIndividually===false&&
+ x.printedRhythmicSignConfirmedIndividually===false));
+assert.deepEqual(noteLedger.records.map(x=>x.midiPreview),strict.sourceNotes.map(x=>x.midi));
+assert.deepEqual(noteLedger.records.filter(x=>x.modelPunctumMora).map(x=>x.sourceOrdinal),
+ [10,18,28,44]);
+assert.deepEqual(noteLedger.records.filter(x=>x.modelHorizontalEpisema).map(x=>x.sourceOrdinal),
+ [8,26]);
 const renderedNotes=advanced.sourceNotes;
 assert.deepEqual(renderedNotes.map(n=>n.sourceNoteOrdinal),Array.from({length:44},(_,i)=>i+1));
 assert.ok(renderedNotes.every((n,i)=>i===0||n.sourceIndex>renderedNotes[i-1].sourceIndex));
@@ -88,6 +112,6 @@ console.log('M49_KYRIE_XVIII',JSON.stringify({
  rendererNeumes:advanced.sourceGroupCount,performedNotes:advanced.performance.length,
  mora:evidence.transcriptionAndExsurge.sourceNoteOrdinalsOfPunctumMora,
  episemata:evidence.transcriptionAndExsurge.sourceNoteOrdinalsOfHorizontalEpisema,
- printedInkCertified:false,enabledInLIVE:false
+ printedInkCertified:false,explicitResearchAudition:true,approvedScore:false
 }));
 console.log('PASS M49: 1961 original-folio provenance, 44 transcription notes, 27 lyric groups versus 31 neumes, 90-event plan and no unsanctioned score approval');
