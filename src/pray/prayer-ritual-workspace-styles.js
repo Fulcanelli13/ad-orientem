@@ -129,6 +129,12 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
   max-height:min(49dvh,440px);min-height:125px;height:auto;
   padding-bottom:38px
 }
+/* Every examination question must stay fully legible. Active-paragraph
+   highlighting cannot dim the substance of a private examination. */
+#aoPray435930 .aoPrayerRitualWorkspace .aoDevoCardScroll .aoP435930ConfQuestions li,
+#aoPray435930 .aoPrayerRitualWorkspace .aoDevoCardScroll .aoP435930ConfOneCard>p{
+  opacity:1!important;
+}
 #aoPray435930 .aoPrayerRitualViews button:focus-visible,
 #aoPray435930 .aoPrayerRitualDivider:focus-visible,
 #aoPray435930 .aoPrayerRitualText:focus-visible{outline:2px solid #e7c994;outline-offset:-2px}
