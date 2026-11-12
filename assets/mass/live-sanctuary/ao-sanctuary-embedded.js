@@ -471,8 +471,8 @@
     const lowIncenseOmitted=id==="C24"&&form.form==="low"&&
       sourceSectionId==="AO.CARD.010";
     const visualCard=lowIncenseOmitted?byId.get("C23"):card;
-    if(last?.key!==nextKey||exiting||missalFocusExit||
-       epistleFocusExit||returnRewind){
+    if(last?.key!==nextKey||last?.visualCardId!==visualCard.id||
+       exiting||missalFocusExit||epistleFocusExit||returnRewind){
       clearElevationMinisterIncense();
       clearCommunionPaten();
       clearSediliaPlacement();
@@ -511,7 +511,7 @@
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
-      sediliaStage,lowIncenseOmitted,
+      sediliaStage,lowIncenseOmitted,visualCardId:visualCard.id,
       communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
