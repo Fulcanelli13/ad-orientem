@@ -23,7 +23,7 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
  }
  /* A real licensed photograph is more important than a large generic frame.
     The short two-column peek keeps the map visible beneath the sheet. */
- .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb){
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img){
    display:grid;
    grid-template-columns:minmax(112px,43%) minmax(0,1fr);
    column-gap:12px;row-gap:6px;
@@ -31,7 +31,7 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
    overflow-y:auto;overflow-x:hidden;
    padding:9px 13px calc(13px + env(safe-area-inset-bottom));
  }
- .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb{
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback){
    grid-column:1;grid-row:2/span 3;
    display:block;float:none;width:100%;max-width:100%;
    margin:0!important;padding:0;
@@ -39,12 +39,12 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
    overflow:hidden;background:#0a141e;
    align-self:start;
  }
- .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb img{
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback) img{
    display:block;width:100%;height:clamp(132px,21dvh,195px)!important;
    object-fit:contain!important;object-position:center;
    background:#07111b;
  }
- .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb figcaption{
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback) figcaption{
    display:block!important;max-height:3.2em;overflow:hidden;
    padding:5px 7px;background:#101b23;color:#c2b49a;
    font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
@@ -75,7 +75,7 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
  }
 }
 @media(max-width:359px){
- .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb){
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img){
    grid-template-columns:minmax(112px,42%) minmax(0,1fr);
    column-gap:9px;padding-inline:9px;
  }
@@ -104,7 +104,7 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
  text-decoration:underline;text-underline-offset:2px;
 }
 @media(min-width:800px){
- .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback) img{
    object-fit:contain!important;background:#08121a;
  }
 }
