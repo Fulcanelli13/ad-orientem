@@ -106,11 +106,21 @@ try{
  // The historical candle companion is opt-in and its image occupies the
  // scene pane only after explicitly enabling local observational mode.
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1);
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchCinema[data-ao-cinema-kind="tenebrae"][data-ao-cinema-phase="office"]').count(),1,
+  "The canonical Office begins with animated church geometry but no historical candle ceremony");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').count(),15,
+  "Fifteen dormant 3-D candle locations are modeled independently of the canonical Office");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').first().evaluate(el=>getComputedStyle(el).display),"none",
+  "Candles must not be visible until the local ceremonial companion is enabled");
  await page.screenshot({path:resolve(visualProof,"tenebrae-office-390.png"),animations:"disabled"});
  await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="enable"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae"]').count(),1);
  const candles=page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-candle-index]');
  assert.equal(await candles.count(),15,"Historically triangular hearse must contain fifteen visual candles");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchCinema .aoChurchBillboard').count(),15,
+  "The historical candle rite must also be depicted in 3-D, not solely in an SVG-like 2-D figure");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').first().evaluate(el=>getComputedStyle(el).display),"block",
+  "Enabling an observed local ceremonial must reveal the physically modeled candles");
  assert.equal(await page.locator('#aoPray435930 .aoTenebCeremony .aoPrayerCeremonialScene').count(),0,
   "The optional source owner keeps controls but the scene has exactly one visual owner");
  assert.equal(await candles.nth(14).evaluate(el=>getComputedStyle(el).getPropertyValue("--ao-candle-x").trim()),"50%");

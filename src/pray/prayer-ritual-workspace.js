@@ -8,6 +8,7 @@
 import {prayerCeremonialSceneState,renderPrayerCeremonialScene} from "./prayer-ceremonial-stage.v1.js";
 import "./prayer-ritual-workspace-styles.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
+import {mountPrayerChurchCinema} from "./prayer-church-cinema.v1.js";
 
 export const PRAYER_RITUAL_WORKSPACE_VERSION="prayer-ritual-workspace-v1";
 export const RITUAL_VIEW_MODES=Object.freeze(["scene","both","text"]);
@@ -203,7 +204,12 @@ export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATI
     setMode(nextRitualMode(mode,e.key==="ArrowRight"?1:-1));
   },true);
   renderRatio();
+  // Donor perspective camera is a *visual projection* on top of the original
+  // source-owned Office or Confession reader. No physical/sacramental act is
+  // inferred by a card change; optional Tenebrae candles follow ceremony only.
+  const phase=kind==="confession"?(figure.dataset.aoScenePhase||"prepare"):"office";
+  const cinema=mountPrayerChurchCinema({visual,kind,phase,ceremony,french});
   return Object.freeze({
-    workspace,visual,body,divider,get mode(){return mode},get ratio(){return ratio},setMode
+    workspace,visual,body,divider,cinema,get mode(){return mode},get ratio(){return ratio},setMode
   });
 }

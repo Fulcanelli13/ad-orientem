@@ -51,6 +51,13 @@ try{
   "Changing language must not expose a sensitive text-entry control");
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
  const visual=page.locator(sel+" .aoPrayerRitualWorkspace .aoPrayerRitualVisual");
+ await page.waitForFunction(()=>Number(document.querySelector(
+  "#aoPray435930 .aoChurchCinema[data-ao-cinema-kind='confession']")?.dataset.aoCinemaFrames)>2,
+  null,{timeout:10000});
+ assert.ok(await visual.locator(".aoChurchCinemaWorld .aoChurchFace").count()>150,
+  "Confession animation must render a physically modeled church, not only the Murillo painting");
+ assert.equal(await visual.locator(".aoChurchCinema").getAttribute("data-ao-cinema-source"),
+  "claude-interactive-church-css3d-donor");
  assert.equal(await visual.locator('[data-ao-ritual-art-source="released-murillo-nga"] img').count(),1,
   "Approved Murillo should be the actual full-stage Confession scene, not a duplicate below it");
  assert.equal(await visual.locator(".aoPrayerSceneDoor").evaluate(el=>getComputedStyle(el).display),"none",
