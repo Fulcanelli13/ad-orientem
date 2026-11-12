@@ -19,6 +19,36 @@ assert.equal(sanctuaryCueProjection({
  prepared:{session:{resolvedMass:{actualCelebration:{type:"REQUIEM"}}}}
 }).requiem,true,"Canonical Requiem selection must reach the preview solemn gate");
 
+// Canonical source *event*, not C0246 paragraph or Schola, may stage
+// distribution/return. The objective event controller is the sole supplier.
+const c57={sectionId:"AO.LIVECURATED.AO.CARD.025.1",
+ sourceSectionId:"AO.CARD.025",title:"Communion of the Faithful"};
+const expected={nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-320"};
+assert.equal(sanctuaryCueProjection({card:c57,state:expected,form:"SOLEMN"})
+ .canonicalCommunionEventId,"MC-COM-320");
+assert.equal(sanctuaryCueProjection({card:c57,state:{
+ nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-300"
+},form:"LOW"}).canonicalCommunionEventId,"MC-COM-300");
+assert.equal(sanctuaryCueProjection({card:c57,state:{
+ nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-310"
+},form:"SOLEMN"}).canonicalCommunionEventId,"MC-COM-310");
+assert.equal(sanctuaryCueProjection({card:c57,state:{
+ nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-305"
+},form:"SOLEMN"}).canonicalCommunionEventId,null,
+ "Independent Schola Communion antiphon is NOT a priest event");
+assert.equal(sanctuaryCueProjection({card:c57,state:{
+ nativeCueId:"AO.SM.C0246"
+},form:"SOLEMN"}).canonicalCommunionEventId,null,
+ "Communion text focus alone cannot synthesize return");
+assert.equal(sanctuaryCueProjection({card:c57,state:expected,
+ form:"MISSA_CANTATA_SIMPLE"}).canonicalCommunionEventId,null,
+ "No blanket Solemn-to-Sung event transfer without certification");
+assert.equal(sanctuaryCueProjection({card,
+ state:expected,form:"SOLEMN"}).canonicalCommunionEventId,null,
+ "A non-Communion source card cannot replay the return event");
+assert.equal(sanctuaryCueProjection({card:c57,state:expected,form:"MISSAL"}),null,
+ "Changing to MISSAL must not send canonical return cinematics");
+
 assert.equal(sanctuaryCueProjection({card,state,form:"SOLEMN",mode:"MISSAL"}),null);
 assert.equal(sanctuaryCueProjection({card,state,form:"UNVERIFIED",mode:"LIVE"}),null);
 assert.equal(sanctuaryCueProjection({card:{...card,stateOnly:true},state,
