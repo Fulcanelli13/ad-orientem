@@ -193,6 +193,26 @@
       acolyte.prop=id==="A1"?"book":null;
     }
   }
+  // Ritus servandus VI.5, source registry MR62.SOL.B02.004:
+  // before the Solemn Gospel the SUBDEACON transfers the Missal to the
+  // Gospel side. The old held C13 note concerned the unobserved *earlier*
+  // server walk in sung Mass; it must not suppress this distinct Solemn
+  // minister action. The actual route/departure is not source-clocked.
+  // Only the already certified native C0081 focus shows a static
+  // completed-transfer scene. No animation, no server duplication.
+  function stageSolemnMissalAfterTransfer({card,form,sourceSectionId,cue,validCue}){
+    const active=Boolean(card?.id==="C13"&&form.solemn&&validCue&&
+      sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
+    if(!active)return false;
+    const subdeacon=M3.actors?.()?.S;
+    if(!subdeacon)return false;
+    subdeacon.path=null;subdeacon.turn=null;
+    subdeacon.vis=true;subdeacon.pose="stand";subdeacon.prop=null;
+    // Original renderer uses x<0 for Gospel side. The Missal furniture
+    // already stands there: do not draw a duplicate book in S's hands.
+    subdeacon.x=-1.45;subdeacon.z=.95;subdeacon.face=90;
+    return true;
+  }
   // The original C36/C38 priest-elevation cinematic is retained.
   // The source-checked 1962 minister records distinguish the incense
   // actor by rite: VIII.8 thurifer in ordinary Solemn Mass
@@ -296,6 +316,9 @@
     const requiem=message.requiem===true;
     const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc+
       "|"+(requiem?"REQUIEM":"ORDINARY");
+    const missalTransferFocus=Boolean(id==="C13"&&form.solemn&&validCue&&
+      sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
+    const missalFocusExit=Boolean(last?.solemnMissalTransfer&&!missalTransferFocus);
     if(last?.card==="P1"){
       showObservedSprinkle(false);
       aspergesSprinklingSeen=false;
@@ -317,7 +340,7 @@
     // 16-second animation as soon as C0122 is focused. Elevations remain
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
-    if(last?.key!==nextKey||exiting){
+    if(last?.key!==nextKey||exiting||missalFocusExit){
       clearElevationMinisterIncense();
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
@@ -335,14 +358,18 @@
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
+    const solemnMissalTransfer=stageSolemnMissalAfterTransfer({
+      card,form,sourceSectionId,cue,validCue
+    });
     const elevationActor=stageSolemnElevation({
       card,form,requiem,sourceSectionId,cue,validCue
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
-      elevationActor,elevationCue:elevationActor?cue:null,
+      solemnMissalTransfer,elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
+      solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
       elevationIncenseActor:elevationActor});
   }
   window.addEventListener("message",event=>{
