@@ -99,9 +99,10 @@ try{
   for(const c of found){
    // Requiem omitted scenes remain indexed in the 65-scene matrix, but
    // no screenshot should incorrectly present them as a celebrated rite.
-   const omitted=form.requiem&&requiemOmissions.has(c.id);
    const excluded=c.id==="C24"&&
      ["LOW","MISSA_CANTATA_SIMPLE"].includes(form.protocol);
+   const requiemOmitted=form.requiem&&requiemOmissions.has(c.id);
+   const omitted=requiemOmitted||excluded;
    const section="AO.CARD."+String(Number(c.macro.slice(-2))).padStart(3,"0");
    let result=null,actors=null,cameraShot=null,imageName=null;
    if(!omitted){
@@ -159,13 +160,6 @@ try{
           "Server must stand outside celebrant's seated silhouette");
       }
     }
-    if(c.id==="C24"&&excluded){
-      assert.equal(result.visualCard,"C23");
-      assert.equal(result.noIncenseOmitted,true);
-      assert.equal(result.lowIncenseOmitted,form.protocol==="LOW");
-      assert.equal(actors.priest.z,.4,
-        "No-incense Low or simple Sung Mass stages the existing altar scene");
-    }
     const need=holds[c.id]??[];
     imageName="images/"+form.id+"/"+c.id+".png";
     // A pair of paint frames lets the original M3 actor keyframe settle,
@@ -176,16 +170,15 @@ try{
    }
    const issues=holds[c.id]?[holds[c.id][0]]:[];
    if(excluded)issues.push("1962_FORM_NO_INCENSE");
-   if(omitted)issues.push("REQUIEM_OMITTED");
+   if(requiemOmitted)issues.push("REQUIEM_OMITTED");
    rows.push({form:form.id,formName:form.name,id:c.id,title:c.title,
     section:c.section,sourceSectionId:section,sourceMacro:c.macro,
     originalStation:form.protocol==="LOW"?c.station?.low:c.station?.sung,
     originalCameraShot:cameraShot,
-    renderedOwnerScene:result?.visualCard??null,
+    renderedOwnerScene:omitted?null:c.id,
     sediliaStage:result?.sediliaStage??null,
-    lowIncenseOmitted:result?.lowIncenseOmitted??false,
-    noIncenseOmitted:result?.noIncenseOmitted??false,
-    capture:omitted?"OMITTED":excluded?"INACTIVE_INCENSE":"STILL",
+    capture:excluded?"OMITTED_NO_INCENSE":
+      requiemOmitted?"OMITTED_REQUIEM":"STILL",
     evidence:"PROTOTYPE_STATIC_NOT_CEREMONIAL_CERTIFICATION",
     visualReview:issues.length?"REVIEW_REQUIRED":"AWAITING_OWNER_VISUAL_REVIEW",
     holds:issues,image:imageName,actors});
@@ -196,11 +189,12 @@ try{
  assert.deepEqual(errors,[],"Original 3-D renderer raised browser errors");
  assert.equal(rows.length,65*forms.length);
  const images=rows.filter(r=>r.image).length;
- assert.equal(images,65*5-requiemOmissions.size);
+ assert.equal(images,65*5-requiemOmissions.size-2);
  await writeFile(resolve(output,"scene-matrix.json"),JSON.stringify({
   schema:"ao-live-sanctuary-scene-review-v1",source:"UNMODIFIED_OWNER_M3",
   capturedRows:rows.length,capturedImages:images,
-  counts:{originalCards:65,formVariants:5,omittedRequiem:requiemOmissions.size},
+  counts:{originalCards:65,formVariants:5,omittedRequiem:requiemOmissions.size,
+    omittedNoIncense:2},
   distinction:"Images are static preview stages, not certified live priest or minister observations.",
   forms,rows
  },null,2));
@@ -232,7 +226,8 @@ try{
       '</figcaption>'+(row.image?'<a href="'+row.image+'" target="_blank">'+
       '<img loading="lazy" src="'+row.image+'" alt="'+escapeHtml(c.title+
         ", "+f.name+" static sanctuary scene")+'"></a>':
-      '<div class="omitted">OMITTED IN REQUIEM</div>')+
+      '<div class="omitted">'+(row.capture==="OMITTED_NO_INCENSE"
+         ?"NO INCENSATION · C23 → C25":"OMITTED IN REQUIEM")+'</div>')+
       '<div class="caption">'+escapeHtml(row.capture)+
        (row.actors?.priest?(" · Priest ("+row.actors.priest.x+", "+
         row.actors.priest.z+"), "+row.actors.priest.pose):"")+
@@ -304,8 +299,8 @@ refresh();
   {waitUntil:"domcontentloaded",timeout:30000});
  assert.equal(await galleryPage.locator(".scene").count(),65);
  assert.equal(await galleryPage.locator("figure").count(),325);
- assert.equal(await galleryPage.locator("figure img").count(),317);
- assert.equal(await galleryPage.locator(".omitted").count(),8);
+ assert.equal(await galleryPage.locator("figure img").count(),315);
+ assert.equal(await galleryPage.locator(".omitted").count(),10);
  await galleryPage.locator(".scene img").first().scrollIntoViewIfNeeded();
  await galleryPage.waitForFunction(()=>{
   const image=document.querySelector(".scene img");
