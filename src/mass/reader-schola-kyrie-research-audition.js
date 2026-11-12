@@ -14,8 +14,15 @@ export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='L
 }
 // The source identity, counts and repeat plan remain specifically guarded;
 // the melodic parser and timing model are shared by future research scores.
+const kyrieSourceFingerprint=text=>{
+  let h=0x811c9dc5;
+  for(let i=0;i<text.length;i++)h=Math.imul(h^text.charCodeAt(i),0x01000193);
+  return(h>>>0).toString(16).padStart(8,'0');
+};
 export function compileKyrieXviAudition(gabc){
   try{
+    // Fail closed even on a same-length editorial/source mutation.
+    if(typeof gabc!=='string'||kyrieSourceFingerprint(gabc)!=='acef0d62')return null;
     const compiled=compileGabcMelody(gabc,{phraseSequence:REPEATS});
     if(compiled.sourceNoteCount!==40||compiled.sourceGroupCount!==27||
       compiled.phraseCount!==4||compiled.performance.length!==81||
