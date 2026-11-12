@@ -193,6 +193,25 @@
       acolyte.prop=id==="A1"?"book":null;
     }
   }
+  // Ritus servandus VI.4, registry MR62.SOL.B02.001:
+  // The SUBDEACON bears the Epistolarium at the Epistle side and
+  // sings the lesson. Claude's C11 figure is there already but lacks
+  // the book. Give it the original hand-held book prop only on the
+  // native C0075/C0076 source focus. The actual walk and the later
+  // post-Epistle genuflection/blessing are NOT inferred from scroll.
+  function stageSolemnEpistle({card,form,sourceSectionId,cue,validCue}){
+    const active=Boolean(card?.id==="C11"&&form.solemn&&validCue&&
+      sourceSectionId==="AO.CARD.005"&&
+      (cue==="AO.SM.C0075"||cue==="AO.SM.C0076"));
+    if(!active)return false;
+    const subdeacon=M3.actors?.()?.S;
+    if(!subdeacon)return false;
+    subdeacon.path=null;subdeacon.turn=null;
+    subdeacon.vis=true;subdeacon.pose="stand";subdeacon.prop="book";
+    // The owner's original C11 already places S at the Epistle side.
+    // Preserve its original station, camera, and facing.
+    return true;
+  }
   // Ritus servandus VI.5, source registry MR62.SOL.B02.004:
   // before the Solemn Gospel the SUBDEACON transfers the Missal to the
   // Gospel side. The old held C13 note concerned the unobserved *earlier*
@@ -319,6 +338,10 @@
     const missalTransferFocus=Boolean(id==="C13"&&form.solemn&&validCue&&
       sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
     const missalFocusExit=Boolean(last?.solemnMissalTransfer&&!missalTransferFocus);
+    const epistleFocus=Boolean(id==="C11"&&form.solemn&&validCue&&
+      sourceSectionId==="AO.CARD.005"&&
+      (cue==="AO.SM.C0075"||cue==="AO.SM.C0076"));
+    const epistleFocusExit=Boolean(last?.solemnEpistle&&!epistleFocus);
     if(last?.card==="P1"){
       showObservedSprinkle(false);
       aspergesSprinklingSeen=false;
@@ -340,7 +363,7 @@
     // 16-second animation as soon as C0122 is focused. Elevations remain
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
-    if(last?.key!==nextKey||exiting||missalFocusExit){
+    if(last?.key!==nextKey||exiting||missalFocusExit||epistleFocusExit){
       clearElevationMinisterIncense();
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
@@ -358,6 +381,9 @@
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
+    const solemnEpistle=stageSolemnEpistle({
+      card,form,sourceSectionId,cue,validCue
+    });
     const solemnMissalTransfer=stageSolemnMissalAfterTransfer({
       card,form,sourceSectionId,cue,validCue
     });
@@ -365,10 +391,12 @@
       card,form,requiem,sourceSectionId,cue,validCue
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
-      solemnMissalTransfer,elevationActor,elevationCue:elevationActor?cue:null,
+      solemnEpistle,solemnMissalTransfer,
+      elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
+      solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
       elevationIncenseActor:elevationActor});
   }
