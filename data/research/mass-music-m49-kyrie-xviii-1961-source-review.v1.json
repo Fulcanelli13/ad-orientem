@@ -162,15 +162,20 @@
     "tempoModel": "ILLUSTRATIVE_NOT_AUTHORITATIVE",
     "certifiedRhythm": false,
     "audioApproved": false,
-    "livePlayerEnabled": false,
-    "automaticAssignment": false
+    "livePlayerEnabled": true,
+    "automaticAssignment": false,
+    "explicitOptInResearchPreview": true,
+    "sourceApproved": false,
+    "audibleOnlyAfterUserAction": true,
+    "requiredReaderContext": "LIVE Sung or Solemn, explicitly selected MASS_18, non-Requiem",
+    "otherSettingsDisabledUnlessSeparatelySourceReviewed": true
   },
   "editorialNextGates": [
     "Re-examine original 1961 folio 57* at sufficient native scan resolution to count 44 separate physical noteheads independently of transcription and rendering.",
     "Independently compare note-by-note staff position, inflections, punctum mora, horizontal episema, virga/inclinata and lyric underlay against the facsimile. Record each discrepancy with source coordinates.",
     "Evaluate Kyrie XVIII repetition wording and performance plan with an experienced Gregorian editor; the GABC note schedule is not authentic timing certification.",
     "Keep Requiem Kyrie material and any Kyrie XVIII alternate setting separate; do not assign this to Requiem automatically.",
-    "Only then review whether a second opt-in research audition is appropriate; no promotion to approved Schola score merely because the parser passes."
+    "The second explicitly selected Kyrie XVIII melody is a provisional research-only audition; source-note ink validation remains mandatory before any approved Schola promotion."
   ],
-  "status": "PARTIAL_SOURCE_AND_STRUCTURE_REVIEW__NOT_EDITORIALLY_APPROVED"
+  "status": "PROVISIONAL_USER_INITIATED_AUDITION__1961_INK_LEVEL_EDITORIAL_CERTIFICATION_PENDING"
 }
