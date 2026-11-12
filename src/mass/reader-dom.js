@@ -29,6 +29,8 @@ import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js"
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
+import {createKyrieXviResearchAudition} from "./reader-schola-kyrie-research-audition.js";
+import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -2961,6 +2963,7 @@ export function createReaderDomAdapter({
   let scholaScoreDialog=null,scholaScoreEngraver=null,scholaScoreReturnFocus=null,scholaScoreRequest=0;
   let scholaDockEngraver=null,scholaDockScoreIdentity=null,scholaDockScoreRequest=0;
   let scholaDockFollower=null;
+  let kyrieResearchAudition=null;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3019,12 +3022,16 @@ export function createReaderDomAdapter({
     };
     mode=requested;
     applyChrome();
+    // Source-selected research audio is available only in LIVE. Close it
+    // synchronously before rebuilding the presentation on mode changes.
+    kyrieResearchAudition?.sync();
     try{
       onPresentationModeChange?.(mode,prepared);
       root.querySelector?.(".aoMassModeError")?.remove?.();
     }catch(error){
       mode=previous;
       applyChrome();
+      kyrieResearchAudition?.sync();
       const panel=root.querySelector?.('[data-role="mass-preferences"]');
       const doc=panel?.ownerDocument;
       panel?.querySelector?.(".aoMassModeError")?.remove?.();
@@ -3449,6 +3456,24 @@ export function createReaderDomAdapter({
     // Do not interpret a saved parish programme as a performance log.
     const selectedPlan=typeof scholaLocalProgramme==="function"
       ? scholaLocalProgramme():scholaLocalProgramme;
+    if(!kyrieResearchAudition && root.ownerDocument?.head && root.ownerDocument?.body){
+      // Research audition is never a published/approved Schola score.
+      try{
+        kyrieResearchAudition=createKyrieXviResearchAudition({root,
+          getContext:()=>{
+            const plan=typeof scholaLocalProgramme==="function"
+              ? scholaLocalProgramme():scholaLocalProgramme;
+            return {
+              form:prepared?.session?.resolvedMass?.form,
+              mode,
+              settingId:plan?.ordinarySelections?.KYRIE,
+              isRequiem:isExplicitRequiemMass(prepared),
+            };
+          }
+        });
+      }catch{ /* Nonbrowser harnesses fail closed; no Mass state changes. */ }
+    }
+    kyrieResearchAudition?.sync();
     const planRoot=root.querySelector("[data-schola-local-panel]");
     if(planRoot && selectedPlan){
       const dismissalPicker=planRoot.querySelector("[data-schola-dismissal-choice]");
@@ -4703,6 +4728,7 @@ export function createReaderDomAdapter({
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
     // A new Mass session replaces the entire DOM: stop any previous approved
     // score clock first, so no old Schola syllable keeps moving offscreen.
+    kyrieResearchAudition?.stop();
     clearScholaDockNotation();
     // The root survives innerHTML replacement; old delegated handlers do too unless removed.
     unbind();
@@ -5742,6 +5768,8 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    kyrieResearchAudition?.destroy();
+    kyrieResearchAudition=null;
     clearScholaDockNotation();
     closeScholaScoreDialog();
     scholaSourceScores.clear();
