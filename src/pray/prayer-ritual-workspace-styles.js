@@ -72,6 +72,11 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
 #aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="after"] .aoPrayerRitualSceneArt img{
   transform:none;filter:brightness(.99) saturate(.95)
 }
+/* Text mode retains a compact control band; do not reduce the artwork and
+   its source credit to an illegible thumbnail. Show them in Scene/Together. */
+#aoPray435930 .aoPrayerRitualWorkspace[data-ao-prayer-workspace="confession"][data-ao-ritual-mode="text"] .aoPrayerRitualSceneArt{
+  visibility:hidden
+}
 #aoPray435930 .aoPrayerRitualWorkspace[data-ao-ritual-mode="text"] .aoPrayerCeremonialCandleRail{
   transform:scale(.52);transform-origin:50% 100%
 }

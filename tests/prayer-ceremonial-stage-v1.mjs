@@ -23,6 +23,8 @@ test("Tenebrae artwork requires explicit optional historical ceremonial enable",
   assert.equal(scene.autoAdvancement,false);
   assert.equal(scene.customaryOnly,true);
   const html=render(scene);
+  assert.equal((html.match(/class="aoPrayerCeremonialCandle[^"]*" data-ao-candle-index=/g)||[]).length,15,
+   "All fifteen candles must expose valid DOM data attributes, not malformed class strings");
   assert.equal((html.match(/--ao-candle-x:/g)||[]).length,15,
    "Each candle needs an explicit position on the triangular historical hearse");
   assert.match(html,/--ao-candle-x:50%;--ao-candle-rise:54\.0%/,

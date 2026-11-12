@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const visualProof=resolve(root,"artifacts/tenebrae-phone-visual");
+await mkdir(visualProof,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".woff2":"font/woff2",".jpg":"image/jpeg",".webp":"image/webp"};
 const requests=[];
 const server=http.createServer(async(req,res)=>{
@@ -104,6 +106,7 @@ try{
  // The historical candle companion is opt-in and its image occupies the
  // scene pane only after explicitly enabling local observational mode.
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1);
+ await page.screenshot({path:resolve(visualProof,"tenebrae-office-390.png"),animations:"disabled"});
  await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="enable"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae"]').count(),1);
  const candles=page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-candle-index]');
@@ -111,6 +114,7 @@ try{
  assert.equal(await page.locator('#aoPray435930 .aoTenebCeremony .aoPrayerCeremonialScene').count(),0,
   "The optional source owner keeps controls but the scene has exactly one visual owner");
  assert.equal(await candles.nth(14).evaluate(el=>getComputedStyle(el).getPropertyValue("--ao-candle-x").trim()),"50%");
+ await page.screenshot({path:resolve(visualProof,"tenebrae-optional-15-candles-390.png"),animations:"disabled"});
  await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="disable"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1,
   "Closing optional ceremony must return to the neutral canonical Office scene");
@@ -119,6 +123,15 @@ try{
   return el?el.scrollWidth-el.clientWidth:null
  });
  assert.ok(overflow!==null&&overflow<4,"Tenebrae horizontal mobile overflow: "+overflow);
+ await page.setViewportSize({width:320,height:568});
+ const compact=await page.evaluate(()=>{
+   const root=document.querySelector("#aoPray435930 .aoTenebBody");
+   return {document:document.documentElement.scrollWidth-innerWidth,
+     reading:root?.scrollWidth-root?.clientWidth};
+ });
+ assert.ok(compact.document<=1&&compact.reading<=16,
+   "Tenebrae 320px compact overflow: "+JSON.stringify(compact));
+ await page.screenshot({path:resolve(visualProof,"tenebrae-office-320.png"),animations:"disabled"});
  assert.deepEqual(external.filter(url=>/Quad6-[456]|Psalm(?:50|68|231)/i.test(url)),[],
    "Tenebrae text/psalter must never request upstream URLs at runtime");
  assert.ok(requests.some(r=>r.endsWith("/psalms-01.json")),"Offline Psalter not loaded");

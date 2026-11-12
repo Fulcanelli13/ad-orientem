@@ -206,6 +206,8 @@ try{
  assert.ok(compact.overflow<=1,"Confession overflows 320x568: "+JSON.stringify(compact));
  assert.ok(compact.hasFocus,"Confession loses active paragraph on 320x568");
  assert.ok(compact.scrollClient>0,"Confession reading region collapsed on 320x568");
+ assert.equal(await page.locator(sel+" .aoPrayerRitualWorkspace[data-ao-ritual-mode='text'] .aoPrayerRitualSceneArt").evaluate(el=>getComputedStyle(el).visibility),"hidden",
+   "320px Text view should not squeeze the painting and source credit into an illegible thumbnail");
  await page.screenshot({path:resolve(captures,"after-confession-320x568.png"),animations:"disabled"});
  // Restart clears session-local path; never save, mark, type or check off sins.
  await open();

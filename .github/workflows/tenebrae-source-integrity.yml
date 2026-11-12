@@ -46,5 +46,13 @@ jobs:
         run: node tests/reader-tenebrae-1960.mjs
       - name: Install browser dependencies
         run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
-      - name: Verify Tenebrae full route on 390px phone
+      - name: Verify Tenebrae six Offices, 390px ceremony and 320px compact view
         run: node tests/tenebrae-phone-e2e.mjs
+      - name: Preserve Tenebrae 320/390px mobile visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tenebrae-phone-visual-320-390
+          path: artifacts/tenebrae-phone-visual/
+          if-no-files-found: warn
+          retention-days: 14

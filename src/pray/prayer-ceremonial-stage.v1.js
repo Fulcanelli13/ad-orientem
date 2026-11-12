@@ -87,7 +87,7 @@ export function renderPrayerCeremonialScene(scene,{french=false}={}){
       const name=(french?"Cierge ":"Candle ")+(i+1)+" · "+
         (lit?(french?"allumé":"lit"):(french?"éteint ou caché":"extinguished or concealed"));
       return '<span class="aoPrayerCeremonialCandle'+(last?" is-final":"")+
-        (lit?" is-lit":" is-dark")+(last&&scene.hidden&&!scene.returned?" is-concealed":"")+' data-ao-candle-index="'+i+
+        (lit?" is-lit":" is-dark")+(last&&scene.hidden&&!scene.returned?" is-concealed":"")+'" data-ao-candle-index="'+i+
         '" style="--ao-candle-x:'+x+'%;--ao-candle-rise:'+rise.toFixed(1)+'%" role="img" aria-label="'+name+'"><i class="aoPrayerCeremonialFlame" aria-hidden="true"></i>'+
         '<i class="aoPrayerCeremonialWick" aria-hidden="true"></i></span>';
     }).join("");
