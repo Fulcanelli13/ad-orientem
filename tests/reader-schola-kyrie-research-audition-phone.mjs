@@ -237,5 +237,5 @@ try{
    console.error('FAIL Kyrie audition phone case',JSON.stringify(failure));
   }finally{await context.close();}
  }
- assert.deepEqual(failures,[],'All sixteen real-reader Schola research audition cases must pass');
+ assert.deepEqual(failures,[],'All fifteen real-reader Schola research audition cases must pass');
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
