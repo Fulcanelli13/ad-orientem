@@ -323,6 +323,14 @@ try{
   assert.equal(switched.mode,"MISSAL");
   assert.equal(switched.hidden,true,"Missal must hide animated sanctuary");
   assert.equal(switched.active,false,"Missal must restore original reader geometry");
+  // The old iframe remains mounted. Hiding it without a source CLEAR
+  // would leave the previous Host/Chalice/Incense keyframes running.
+  await frame.waitForFunction(()=>{
+    const api=window.AO_SANCTUARY_EMBED_TEST;
+    const fx=api?.getVisualFx?.();
+    return api?.getState?.()?.card===undefined&&
+      fx?.elevationStage===false&&fx?.elevationGlowVisible===false;
+  },null,{timeout:12000});
   const restored=await page.evaluate(()=>{
     const api=window.__AO_PHONE_PREVIEW;
     api.setPresentationMode("LIVE");
