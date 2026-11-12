@@ -1,0 +1,359 @@
+{
+  "schema": "AO_WEISER_P1_WAVE02_EDITORIAL_CARDS_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "status": "DRAFT_ONLY_SOURCE_CORROBORATED_NOT_APP_PUBLISHED",
+  "input_reconciliation": "data/customs/research/weiser-p1-wave02-full-reconciliation.v1.json",
+  "totals": {
+    "bilingual_cards": 7,
+    "source_mapped_observations": 11,
+    "other_source_topics_held": 3,
+    "published_cards": 0
+  },
+  "cards": [
+    {
+      "id": "W58-CARD-B2-POSADAS",
+      "source_topic_id": "W58B2-POSADAS",
+      "source_observation_ids": [
+        "WEI58-05-011"
+      ],
+      "title_en": "Las Posadas: welcoming the Holy Family",
+      "title_fr": "Las Posadas : accueillir la Sainte Famille",
+      "occasion": "Advent, traditionally beginning 16 December",
+      "documented_geography": "Mexico and other Latin American Catholic communities; some US parishes",
+      "proposed_existing_app_owner": "Calendar / Customs Atlas",
+      "description_en": "In Las Posadas, neighbours or parish groups remember Mary and Joseph seeking lodging before the Nativity. The community moves between homes or stations, singing, until a household symbolically offers welcome.",
+      "description_fr": "Pendant les posadas, des familles ou des groupes paroissiaux rappellent la recherche d'un abri par Marie et Joseph avant Noël. Le groupe passe de maison en maison, souvent en chantant, jusqu'à l'accueil symbolique dans un foyer.",
+      "meaning_en": "Christ's coming invites Christians to hospitality and charity toward those looking for shelter.",
+      "meaning_fr": "La venue du Christ appelle les chrétiens à l'hospitalité et à la charité envers ceux qui cherchent refuge.",
+      "observe_en": "Where celebrated, join an announced parish gathering; otherwise read Luke's infancy narrative and offer a concrete act of hospitality.",
+      "observe_fr": "Là où la coutume est célébrée, participer à une rencontre paroissiale annoncée ; autrement, lire le récit de l'enfance de Jésus et poser un acte concret d'hospitalité.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-05-011",
+          "chapter": 5,
+          "printed_page": 58,
+          "title": "Las Posadas processions"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "US Conference of Catholic Bishops",
+        "url": "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16",
+        "verified_bounded_claim": "Independent episcopal catechetical account of 16 December procession / Mary and Joseph seeking lodging in Latin American Catholic communities; never universal celebration or Mass rite"
+      },
+      "guardrails": [
+        "Optional Advent community devotion, not an extra 1962 Mass ceremony or universally fixed parish timetable.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-OPLATEK",
+      "source_topic_id": "W58B2-OPLATEK",
+      "source_observation_ids": [
+        "WEI58-06-009",
+        "WEI58-09-007"
+      ],
+      "title_en": "Sharing opłatek on Christmas Eve",
+      "title_fr": "Le partage de l’opłatek à la veille de Noël",
+      "occasion": "Christmas Eve; Polish Catholic family custom",
+      "documented_geography": "Poland and Polish-heritage Catholic households abroad",
+      "proposed_existing_app_owner": "Customs Atlas / Calendar",
+      "description_en": "Before Christmas Eve dinner, family members share a thin unleavened opłatek wafer while offering one another good wishes and reconciliation. It is ordinary blessed-or-unblessed festive bread, not Holy Communion.",
+      "description_fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine hostie de pain non consacré appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas la sainte communion.",
+      "meaning_en": "A tangible act of family peace and mutual charity as the household prepares to celebrate the Nativity.",
+      "meaning_fr": "Un geste concret de paix familiale et de charité mutuelle avant la célébration de la Nativité.",
+      "observe_en": "If this is part of your family tradition, share opłatek with a simple blessing of thanks and personal good wishes; where a priest offers a blessing of the wafers, keep that ministerial act distinct.",
+      "observe_fr": "Si cette tradition appartient à votre famille, partager l'opłatek dans la reconnaissance et adresser des vœux personnels ; si un prêtre bénit le pain, distinguer cet acte sacerdotal du partage familial.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-06-009",
+          "chapter": 6,
+          "printed_page": 74,
+          "title": "Opłatki shared with kiss and Christmas greeting"
+        },
+        {
+          "weiser_id": "WEI58-09-007",
+          "chapter": 9,
+          "printed_page": 118,
+          "title": "Slavic opłatki priest-blessed wafer at Christmas Eve dinner"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "St John Vianney Catholic Church / Diocese of Burlington",
+        "url": "https://stjohnvianney.vermontcatholic.org/oplatki",
+        "verified_bounded_claim": "Parish describes family sharing Christmas wafer and separate blessing by priest; not the Eucharist; traditions differ across Polish homes"
+      },
+      "guardrails": [
+        "Do not confuse opłatek with consecrated Eucharistic hosts or assume a required 1962 blessing formula.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-STERN",
+      "source_topic_id": "W58B2-STERN",
+      "source_observation_ids": [
+        "WEI58-12-013"
+      ],
+      "title_en": "Epiphany star singers",
+      "title_fr": "Les chanteurs de l’Épiphanie",
+      "occasion": "Christmas–Epiphany season, particularly near 6 January",
+      "documented_geography": "Germany: Catholic parish-organised Sternsinger charity campaigns",
+      "proposed_existing_app_owner": "Customs Atlas / Saints / Calendar",
+      "description_en": "Children dressed as the Magi visit homes around Epiphany, bringing a Christian blessing, singing and gathering support for children in need. In Germany the practice is organised through Catholic parishes and the Sternsinger campaign.",
+      "description_fr": "Autour de l'Épiphanie, des enfants costumés en mages rendent visite aux familles, chantent et portent un message de bénédiction tout en recueillant une aide pour les enfants dans le besoin. En Allemagne, l'action est organisée par les paroisses catholiques.",
+      "meaning_en": "The Magi's homage becomes a lesson in mission, charity and bringing Christ's light into homes.",
+      "meaning_fr": "L'hommage des mages devient une leçon de mission, de charité et de présence de la lumière du Christ dans les foyers.",
+      "observe_en": "Join only a local parish's organised visit, welcome the singers when announced, or pray for children who are in need.",
+      "observe_fr": "Participer uniquement à une action paroissiale organisée, accueillir les chanteurs annoncés ou prier pour les enfants défavorisés.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-12-013",
+          "chapter": 12,
+          "printed_page": 151,
+          "title": "German/Austrian Sternsingen star house carols"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "Kindermissionswerk Die Sternsinger",
+        "url": "https://www.kindermissionswerk.org/en/ueber-uns/the-carol-singers-campaign",
+        "verified_bounded_claim": "Catholic children's solidarity visits around Epiphany in Germany with seasonal C+M+B markings and alms; not a universal priestly ceremony"
+      },
+      "guardrails": [
+        "German regional parish activity, not an automatic home visit, guaranteed blessing or new Roman Ritual ceremony.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-EPIPHCAKE",
+      "source_topic_id": "W58B2-EPIPHCAKE",
+      "source_observation_ids": [
+        "WEI58-12-017",
+        "WEI58-12-018"
+      ],
+      "title_en": "The Epiphany cake and the poor person's portion",
+      "title_fr": "La galette des Rois et la part du pauvre",
+      "occasion": "6 January in the 1962 Roman calendar; family dates vary",
+      "documented_geography": "Documented French household custom; regional cakes differ",
+      "proposed_existing_app_owner": "Calendar / Customs Atlas",
+      "description_en": "French families may share a King Cake or galette with a hidden bean and a symbolic paper crown. Some historical forms set aside an extra portion for a poor neighbour or unexpected guest.",
+      "description_fr": "À l'Épiphanie, on partage en France une galette ou un gâteau des Rois contenant une fève, souvent accompagnée d'une couronne. Certaines formes de la coutume prévoient une part supplémentaire pour une personne pauvre ou un invité inattendu.",
+      "meaning_en": "The feast of the Magi can connect domestic joy with generosity to others.",
+      "meaning_fr": "La fête des mages unit la joie familiale à la générosité envers autrui.",
+      "observe_en": "Share a family cake and, if appropriate, include an act of hospitality or a portion offered to someone in need.",
+      "observe_fr": "Partager une galette en famille et, si cela convient, pratiquer un geste d'hospitalité ou offrir une part à une personne dans le besoin.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-12-017",
+          "chapter": 12,
+          "printed_page": 152,
+          "title": "French Galette des Rois with bean or coin"
+        },
+        {
+          "weiser_id": "WEI58-12-018",
+          "chapter": 12,
+          "printed_page": 153,
+          "title": "French Epiphany cake share reserved for poor"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "Église catholique en France / French Bishops' Conference",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/",
+        "verified_bounded_claim": "French episcopal site describes the family cake, bean and optional additional portion for poor/stranger; not proof of WEI58-12-019 educational donation"
+      },
+      "guardrails": [
+        "Optional French household custom. Historical claim about school tuition donations is separately unverified and excluded from this draft.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-THURS7",
+      "source_topic_id": "W58B2-THURS7",
+      "source_observation_ids": [
+        "WEI58-15-015"
+      ],
+      "title_en": "Visiting churches on Holy Thursday",
+      "title_fr": "Visiter les églises le Jeudi saint",
+      "occasion": "Holy Thursday after the evening liturgy, where access permits",
+      "documented_geography": "Catholic pilgrimage custom with regionally variable number of churches",
+      "proposed_existing_app_owner": "Calendar / Explore / Adoration",
+      "description_en": "After the Mass of the Lord's Supper, some faithful visit several churches to pray before the Blessed Sacrament at an altar of repose. Seven is a common traditional number but is not mandatory.",
+      "description_fr": "Après la messe de la Cène du Seigneur, certains fidèles visitent plusieurs églises pour prier devant le Saint-Sacrement au reposoir. Le nombre de sept est traditionnel dans certains lieux, sans constituer une obligation.",
+      "meaning_en": "A voluntary way to keep watch with Christ before His Passion.",
+      "meaning_fr": "Une manière libre de veiller avec le Christ à la veille de sa Passion.",
+      "observe_en": "Visit one or more churches actually open for prayer, or simply remain in adoration at your own parish's repository.",
+      "observe_fr": "Visiter une ou plusieurs églises réellement ouvertes pour la prière, ou demeurer en adoration au reposoir de sa propre paroisse.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-15-015",
+          "chapter": 15,
+          "printed_page": 194,
+          "title": "Visiting seven repositories or churches"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "Chicago Catholic (Archdiocese of Chicago newspaper)",
+        "url": "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition",
+        "verified_bounded_claim": "Diocesan-paper account of optional seven-church visits after Mass of Lord's Supper; visits can number fewer or more; each church must actually be accessible"
+      },
+      "guardrails": [
+        "No prescribed seven-stop route, parish-hours claim or invented ceremony. Do not attach to the 48-card Mass reader.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-SWIE",
+      "source_topic_id": "W58B2-SWIE",
+      "source_observation_ids": [
+        "WEI58-15-036",
+        "WEI58-17-022",
+        "WEI58-17-018"
+      ],
+      "title_en": "Święconka and the Easter table",
+      "title_fr": "La święconka et la table pascale",
+      "occasion": "Holy Saturday blessing; Easter family breakfast",
+      "documented_geography": "Documented Polish Roman Catholic custom",
+      "proposed_existing_app_owner": "Existing Holy Saturday / Calendar and Customs Atlas; coordinate PR #1512",
+      "description_en": "Polish Catholics traditionally bring baskets of Easter foods for a priestly blessing on Holy Saturday. After the Easter Vigil, families share the blessed food at Easter breakfast, often including a blessed egg.",
+      "description_fr": "En Pologne, de nombreuses familles catholiques apportent le Samedi saint des paniers d'aliments pour recevoir une bénédiction sacerdotale. Au repas pascal, elles partagent les aliments bénits, notamment un œuf.",
+      "meaning_en": "The family table celebrates the Resurrection while remaining secondary to the Church's Easter liturgy.",
+      "meaning_fr": "Le repas familial manifeste la joie de la Résurrection sans remplacer la liturgie pascale de l'Église.",
+      "observe_en": "Where available, ask a priest to bless prepared foods; share them at a family meal after attending the Easter liturgy.",
+      "observe_fr": "Là où la bénédiction est proposée, présenter les aliments au prêtre ; les partager ensuite en famille après avoir participé à la liturgie pascale.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-15-036",
+          "chapter": 15,
+          "printed_page": 208,
+          "title": "Slavic Easter food basket blessing"
+        },
+        {
+          "weiser_id": "WEI58-17-022",
+          "chapter": 17,
+          "printed_page": 238,
+          "title": "Polish święconka family Easter food table"
+        },
+        {
+          "weiser_id": "WEI58-17-018",
+          "chapter": 17,
+          "printed_page": 236,
+          "title": "Easter breakfast family sharing one blessed egg"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "Polish Bishops' Conference",
+        "url": "https://episkopat.pl/doc/180184.bishop-adam-balabuch-on-polish-easter-traditions",
+        "verified_bounded_claim": "Official episcopal description of Holy Saturday food blessing, Easter breakfast and sharing blessed eggs; it cannot replace Eucharistic observance; current witness not itself a 1962 Rituale proof"
+      },
+      "guardrails": [
+        "Priestly blessing is not performed by the app; no duplicate Holy Saturday card. This modern Polish episcopal testimony is not itself certification of a particular 1962 Rituale text.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    },
+    {
+      "id": "W58-CARD-B2-FLOWER",
+      "source_topic_id": "W58B2-FLOWER",
+      "source_observation_ids": [
+        "WEI58-21-009"
+      ],
+      "title_en": "Flower carpets for Corpus Christi",
+      "title_fr": "Tapis de fleurs pour la Fête-Dieu",
+      "occasion": "Corpus Christi, depending on announced local procession",
+      "documented_geography": "Documented Polish local Corpus Christi heritage, including Spycimierz",
+      "proposed_existing_app_owner": "Customs Atlas / Corpus Christi Calendar context",
+      "description_en": "In some Catholic communities, families decorate the route of the Corpus Christi procession with flowers laid into patterned carpets. A documented Polish form has been recognised as intangible cultural heritage.",
+      "description_fr": "Dans certaines communautés catholiques, on couvre le passage de la procession de la Fête-Dieu de fleurs disposées en tapis décoratifs. Une tradition locale polonaise est reconnue comme patrimoine culturel immatériel.",
+      "meaning_en": "The care given to the procession route expresses public reverence for Christ in the Blessed Sacrament.",
+      "meaning_fr": "L'ornementation du parcours de la procession exprime publiquement la révérence envers le Christ présent au Saint-Sacrement.",
+      "observe_en": "If your parish organises a procession, help with appropriate flowers or street decorations when invited; otherwise attend or pray during the feast.",
+      "observe_fr": "Si votre paroisse organise une procession, aider à préparer les fleurs ou les décorations avec son accord ; autrement, assister à la fête ou prier.",
+      "source_locator": [
+        {
+          "weiser_id": "WEI58-21-009",
+          "chapter": 21,
+          "printed_page": 262,
+          "title": "Floral carpets spread along Corpus Christi streets"
+        }
+      ],
+      "independent_witness": {
+        "issuer": "UNESCO intangible cultural heritage",
+        "url": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743",
+        "verified_bounded_claim": "UNESCO identifies the flower-carpet practice for Corpus Christi processions as intangible heritage, in a specific locality/tradition; does not establish a universal rite or floral-wreath blessing"
+      },
+      "guardrails": [
+        "Optional local decoration; not a priestly flower-wreath blessing, automatic procession path or universal liturgical rubric.",
+        "NOT_UNIVERSAL",
+        "NOT_CURRENT_1962_RUBRIC_CERTIFICATION",
+        "NO_AUTOMATIC_CALENDAR_MASS_RITE",
+        "WEISER_PROSE_NOT_COPIED"
+      ],
+      "editorial_state": "SOURCE_CORROBORATED_BILINGUAL_DRAFT_REQUIRES_EDITORIAL_RELEASE_CHECK",
+      "publication_state": "NOT_PUBLISHED",
+      "copyright": "Original paraphrase, not copied text"
+    }
+  ],
+  "other_bounded_source_topics_to_hold": [
+    {
+      "source_topic_id": "W58B2-GUIGNOL",
+      "observation_ids": [
+        "WEI58-07-007"
+      ],
+      "decision": "VERIFIED_HISTORICAL_CLAIM_ONLY",
+      "reason": "Historically published direct account of French Canadian end-of-year song and collection for the poor; author's asserted prehistoric origin is speculative and NOT verified",
+      "release": "HOLD"
+    },
+    {
+      "source_topic_id": "W58B2-CHALK",
+      "observation_ids": [
+        "WEI58-12-009"
+      ],
+      "decision": "VERIFIED_MODERN_HOUSEHOLD_PRACTICE_ONLY",
+      "reason": "Current Catholic domestic blessing example, C+M+B; do not conflate home lay prayer with priest's Rituale Romanum house blessing and blessed Epiphany water",
+      "release": "HOLD"
+    },
+    {
+      "source_topic_id": "W58B2-BARBARA",
+      "observation_ids": [
+        "WEI58-08-019"
+      ],
+      "decision": "SECONDARY_SUPPORT_EDITORIAL_ONLY",
+      "reason": "Traditional Catholic editorial documentation of St Barbara branches; independent official parish/ethnographic confirmation still desirable; do not include divination or bloom-as-prophecy",
+      "release": "HOLD"
+    }
+  ]
+}

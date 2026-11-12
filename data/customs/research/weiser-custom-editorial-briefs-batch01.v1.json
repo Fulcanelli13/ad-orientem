@@ -1,0 +1,753 @@
+{
+  "schema": "AO_WEISER_EDITORIAL_CUSTOM_BRIEFS_BATCH01",
+  "version": "1.1.0",
+  "date": "2026-10-20",
+  "state": "DRAFT_ONLY_NO_APP_PUBLICATION",
+  "input_corroboration": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+  "policy": [
+    "Build one short card per verified custom, not one per book observation or regional variant.",
+    "Retain original historical wording only as a source locator; all display text is independently drafted.",
+    "Regional practice and ministerial ritual are clearly delimited; no unpublished legal or 1962 ceremonial claims.",
+    "Calendar, Saints, Pray and existing Customs Atlas own the displayed surfaces; no parallel mini prayerbook.",
+    "Only independent source support allows a finished editorial draft; an app release still requires review and tests.",
+    "Each corroborated draft carries English and French description, meaning and voluntary observation copy; French titles alone are insufficient for release."
+  ],
+  "stats": {
+    "editorial_drafts": 12,
+    "source_corroborated_ids": 12,
+    "other_selected_with_unclosed_gates": 18,
+    "app_publications": 0
+  },
+  "ready_for_editorial_review": [
+    {
+      "draft_id": "WEISER-CARD-23-006",
+      "source_observation_id": "WEI58-23-006",
+      "en_title": "A village's patronal feast",
+      "fr_title": "La fête patronale d’un village",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Feast of the local patron saint; exact day belongs to the parish",
+      "description_en": "In some French Catholic communities the patronal feast brings the faithful together for Mass and public celebration. Processions and village gatherings may accompany it, but the form and date belong to the local church.",
+      "spiritual_significance_en": "A community honours its heavenly patron through the worship of God and shared Christian life.",
+      "practical_observance_en": "Consult the actual parish programme, attend the Mass if possible, and join any announced procession or gathering.",
+      "geography_and_period": "Documented French local example (Chantelle), not universal",
+      "present_in_app_under": "Customs Atlas / Saints",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 23,
+          "printed_page": 280,
+          "title": "French fête patronale with Mass and village celebrations"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Église catholique en France — Abbaye de Chantelle",
+            "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/",
+            "contribution": "Contemporary account of patronal celebrations and village procession with relics"
+          },
+          {
+            "issuer": "Église catholique en France — Assumption 2008",
+            "url": "https://eglise.catholique.fr/espace-presse/communiques-de-presse/368107-le-15-aout-fete-de-lassomption/",
+            "contribution": "Examples of feast-day Masses, local pilgrimages and processions"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Match real patron saint and selected 1962 calendar before deep-linking a day",
+        "Exact patron and 1962 proper must be selected locally, not derived from civil festival."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines communautés catholiques françaises, la fête patronale rassemble les fidèles autour de la messe et de réjouissances communes. Une procession ou une fête du village peut l'accompagner, selon les usages locaux.",
+      "spiritual_significance_fr": "La communauté honore son patron céleste par le culte rendu à Dieu et par la vie chrétienne partagée.",
+      "practical_observance_fr": "Consulter le programme de la paroisse, assister à la messe si possible et participer uniquement aux célébrations effectivement annoncées."
+    },
+    {
+      "draft_id": "WEISER-CARD-23-008",
+      "source_observation_id": "WEI58-23-008",
+      "en_title": "Celebrate your baptismal patron",
+      "fr_title": "Fêter son saint patron de baptême",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Feast of a personally identified baptismal patron",
+      "description_en": "The name day honours the saint chosen as one's baptismal patron. Catholic household guides describe prayer, recalling the saint's life, Mass where possible, and a modest family celebration.",
+      "spiritual_significance_en": "Baptism introduces a person to Christian life and the patron's example offers a personal model of holiness.",
+      "practical_observance_en": "Choose the actual patron deliberately; on that saint's traditional feast, pray, read a short biography and mark the day together.",
+      "geography_and_period": "Attested Catholic household practice; date and culture vary",
+      "present_in_app_under": "Saints / Customs Atlas",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 23,
+          "printed_page": 280,
+          "title": "Personal baptismal patron name-day observance"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "EWTN — The Catholic Family Handbook",
+            "url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+            "contribution": "Separately authored Catholic family source on Mass, saints' lives, and household meals"
+          },
+          {
+            "issuer": "EWTN — My Nameday, Come for Dessert (1962)",
+            "url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465",
+            "contribution": "Independent traditional Catholic nameday guide with household celebration examples"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Require selected patron and accurate 1962 feast; never infer patron solely from first name",
+        "Map named saint explicitly; support multiple patrons and traditional feast/date variations; opt-in only."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "La fête du saint patron de baptême est une occasion de prière et de réunion familiale. Les anciens manuels catholiques proposent de rappeler la vie du saint, d'assister à la messe si possible et de marquer modestement la journée.",
+      "spiritual_significance_fr": "Le saint patron offre un exemple personnel de sainteté lié à la vie baptismale.",
+      "practical_observance_fr": "Identifier son véritable patron puis, au jour de sa fête traditionnelle, prier, lire une courte biographie et partager un moment en famille."
+    },
+    {
+      "draft_id": "WEISER-CARD-24-005",
+      "source_observation_id": "WEI58-24-005",
+      "en_title": "The Assumption procession",
+      "fr_title": "La procession de l’Assomption",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "15 August, where a procession is actually celebrated",
+      "description_en": "For the Assumption, some French parishes honour Our Lady in a public procession, sometimes carrying her image through the streets. These are local celebrations, not a rite automatically attached to every Mass.",
+      "spiritual_significance_en": "The faithful publicly honour Mary's Assumption and turn to her intercession.",
+      "practical_observance_en": "Attend Mass and join a Marian procession only if your local parish has announced one.",
+      "geography_and_period": "Documented French Marian practice; availability locality-specific",
+      "present_in_app_under": "Customs Atlas / Calendar",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 24,
+          "printed_page": 289,
+          "title": "French Assumption statue carried through towns"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Notre-Dame de Paris — Assomption celebrations",
+            "url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/",
+            "contribution": "Cathedral account of Assumption Marian processions including statue"
+          },
+          {
+            "issuer": "Diocese 64 — 15 août 2025",
+            "url": "https://diocese64.org/15-aout-assomption-de-la-vierge-marie/",
+            "contribution": "Multiple enumerated local Assumption processions in the diocese"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "No automatic procession flag or duplicate Assumption card; coordinate with PR #1512",
+        "Regional context only; the parish must actually announce a procession."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "À l'Assomption, certaines paroisses françaises organisent une procession en l'honneur de Notre-Dame, parfois en portant son image dans les rues. Il s'agit d'une célébration locale, non d'un rite automatiquement ajouté à chaque messe.",
+      "spiritual_significance_fr": "Les fidèles honorent publiquement l'Assomption de Marie et demandent son intercession.",
+      "practical_observance_fr": "Assister à la messe puis à une procession mariale uniquement si la paroisse en a annoncé une."
+    },
+    {
+      "draft_id": "WEISER-CARD-24-014",
+      "source_observation_id": "WEI58-24-014",
+      "en_title": "Blessing of fishing boats on the Assumption",
+      "fr_title": "Bénédiction des bateaux à l’Assomption",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "15 August in specific maritime communities",
+      "description_en": "In certain French coastal celebrations of the Assumption, a procession and a priestly blessing of fishing boats form part of the local feast. Yport provides a contemporary documented example.",
+      "spiritual_significance_en": "Seafaring families bring their work, risks and gratitude before God and ask for His blessing.",
+      "practical_observance_en": "Attend a publicly announced maritime celebration where offered; the blessing itself belongs to the priest, not the app.",
+      "geography_and_period": "Yport / Diocese of Le Havre witness; not a French-wide or universal obligation",
+      "present_in_app_under": "Customs Atlas / regional context",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 24,
+          "printed_page": 291,
+          "title": "Blessing fishing boats and sea on Assumption"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Diocese of Le Havre — Assumption Masses, 15 August 2025",
+            "url": "https://www.lehavre.catholique.fr/horaires-des-messes-de-lassomption-15-aout-2025/",
+            "contribution": "Parish schedule identifies Yport procession and blessing of boats"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Verify specific local event and ritual source before any ceremony instructions; no synthetic coastal map pins",
+        "Optional ministerial blessing; specific rite edition remains unverified; no generalized coast map pins."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines localités maritimes françaises, l'Assomption comprend une procession et une bénédiction sacerdotale des bateaux de pêche. Yport fournit un exemple contemporain documenté.",
+      "spiritual_significance_fr": "Les familles de marins confient à Dieu leur travail, ses risques et leurs actions de grâce.",
+      "practical_observance_fr": "Participer à une célébration locale réellement annoncée ; la bénédiction appartient au prêtre et n'est pas donnée par l'application."
+    },
+    {
+      "draft_id": "WEISER-CARD-26-019",
+      "source_observation_id": "WEI58-26-019",
+      "en_title": "Wypominki: remembering the dead by name",
+      "fr_title": "Wypominki : nommer les défunts dans la prière",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "November and local parish memorial services",
+      "description_en": "In the Polish custom of Wypominki, families entrust the names of deceased loved ones to parish prayer. The names may be read at designated services, whose arrangements differ by parish.",
+      "spiritual_significance_en": "Praying for the faithful departed is an act of charity and a profession of hope in the resurrection.",
+      "practical_observance_en": "Ask a participating local parish how intentions are received, or privately pray for deceased relatives using existing prayers for the dead.",
+      "geography_and_period": "Polish parish practice, documented in 2025",
+      "present_in_app_under": "Existing DEAD-003 / Calendar",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 26,
+          "printed_page": 312,
+          "title": "Polish Wypominki lists of departed names read at parish"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Parafia Matki Bożej Ostrobramskiej — Wypominki 2025",
+            "url": "https://parafiaboernerowo.pl/wypominki-2025/",
+            "contribution": "2025 November prayers for named deceased, including rosary and Mass intention practice"
+          },
+          {
+            "issuer": "Parafia Bartąg — Wypominki Parafialne 2025",
+            "url": "https://parafiabartag.pl/wypominki-parafialne-2025/",
+            "contribution": "Names submitted and read in prayer at parish celebrations"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "No collecting or publishing people's names in Ad Orientem; never create a competing All Souls entry",
+        "Maintain confidential family submission practices; connect to DEAD-003; not a prescribed 1962 rite."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "En Pologne, les wypominki permettent aux familles de confier les noms de leurs défunts à la prière paroissiale. Ces noms peuvent être lus lors d'offices particuliers, selon les usages du lieu.",
+      "spiritual_significance_fr": "Prier pour les défunts est un acte de charité fondé sur l'espérance de la résurrection.",
+      "practical_observance_fr": "Se renseigner auprès d'une paroisse qui reçoit ces intentions, ou prier chez soi pour ses défunts à l'aide des prières déjà disponibles."
+    },
+    {
+      "draft_id": "WEISER-CARD-27-019",
+      "source_observation_id": "WEI58-27-019",
+      "en_title": "St Joseph's table for the poor",
+      "fr_title": "La table de saint Joseph pour les pauvres",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Around 19 March, in communities keeping this custom",
+      "description_en": "The Sicilian-rooted St Joseph's table brings food, hospitality and aid to people in need into the celebration of his feast. Catholic parishes continue to organise charitable versions of the custom.",
+      "spiritual_significance_en": "St Joseph's quiet care for the Holy Family inspires practical generosity to neighbours.",
+      "practical_observance_en": "Pray in honour of St Joseph and share food or offer ordinary help to someone in need; follow a parish celebration where one exists.",
+      "geography_and_period": "Sicilian-rooted tradition with specific modern US diocesan witnesses",
+      "present_in_app_under": "SJOS-001 / Calendar / Saints",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 27,
+          "printed_page": 324,
+          "title": "St Joseph table statue portions subsequently given to poor"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Diocese of Baton Rouge — St Joseph Altar 2026",
+            "url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+            "contribution": "March 19 2026 cathedral celebration and donated surplus food"
+          },
+          {
+            "issuer": "Our Lady of the Assumption Catholic Church — St Joseph Table 2026",
+            "url": "https://www.olachurch.org/post/st-joseph-s-table-and-food-drive",
+            "contribution": "2026 parish food drive associated with St Joseph table"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Do not claim that a named pastry, miracle account or priestly blessing is universally part of this custom",
+        "Do not generalize distinct fritelli pastry from this record; treat famine miracle as legend."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "D'origine sicilienne, la table de saint Joseph associe le partage de nourriture, l'hospitalité et l'aide aux personnes démunies. Certaines paroisses catholiques en organisent encore une forme charitable.",
+      "spiritual_significance_fr": "Le soin discret de saint Joseph pour la Sainte Famille inspire une générosité concrète envers le prochain.",
+      "practical_observance_fr": "Prier saint Joseph puis partager des aliments ou rendre un service à une personne dans le besoin, librement et selon ses moyens."
+    },
+    {
+      "draft_id": "WEISER-CARD-27-023",
+      "source_observation_id": "WEI58-27-023",
+      "en_title": "St Anthony's Bread",
+      "fr_title": "Le Pain des pauvres de saint Antoine",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Especially 13 June; voluntary charity throughout the year",
+      "description_en": "St Anthony's Bread is a charitable tradition supporting the poor in the saint's honour. A Franciscan historical account connects a French form of this work with Louise Bouffier in Toulon in 1890.",
+      "spiritual_significance_en": "Devotion to a saint bears fruit in the corporal works of mercy, rather than the expectation of favours in exchange for offerings.",
+      "practical_observance_en": "On St Anthony's feast, say a prayer and perform a small voluntary act of charity without treating a gift as a transaction.",
+      "geography_and_period": "Franciscan charitable practice with a documented French history",
+      "present_in_app_under": "SANT-001 / Saints / Calendar",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 27,
+          "printed_page": 326,
+          "title": "Saint Anthony's Bread alms project from Toulon"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Ermitage St Antoine — Pain des pauvres",
+            "url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/",
+            "contribution": "Franciscan institutional explanation of 1890 Toulon episode and purpose of alms"
+          },
+          {
+            "issuer": "Ermitage St Antoine — Saint Antoine de Padoue",
+            "url": "https://st-antoine.org/fr/a-propos/saint-antoine-de-padoue/",
+            "contribution": "Independent page on the same institutional site; additional narrative, not independent issuer"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "No donations feature, promised favours or unqualified miracle story",
+        "Charity rather than guaranteed intercession or favors in exchange for donations; no payment workflow."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Le Pain des pauvres de saint Antoine est une œuvre de charité accomplie en l'honneur du saint. Une histoire franciscaine de cette tradition française la rattache à Louise Bouffier, à Toulon, en 1890.",
+      "spiritual_significance_fr": "La dévotion au saint doit porter des fruits de miséricorde, sans attente de faveur en échange d'une offrande.",
+      "practical_observance_fr": "Le jour de la fête de saint Antoine, prier et accomplir librement un petit acte de charité sans le traiter comme une transaction."
+    },
+    {
+      "draft_id": "WEISER-CARD-28-011",
+      "source_observation_id": "WEI58-28-011",
+      "en_title": "St Christopher's blessing for travellers",
+      "fr_title": "La bénédiction des voyageurs de saint Christophe",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Near 25 July, on the date announced locally",
+      "description_en": "Some parishes celebrate St Christopher by inviting travellers and drivers to receive a priestly blessing, sometimes with their vehicles. The celebration is a local custom rather than a universal service.",
+      "spiritual_significance_en": "Christians commend their journeys to God's providence and recall the duty to travel with care for others.",
+      "practical_observance_en": "Consult a parish's actual announcement; if it offers the blessing, attend and receive it reverently.",
+      "geography_and_period": "Documented specific French parish celebrations in 2026",
+      "present_in_app_under": "SCHR-001 / Saints / Calendar",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 28,
+          "printed_page": 336,
+          "title": "Vehicle blessings on St Christopher feast day"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Diocese of Laval — Saint-Christophe du Luat, 19 July 2026",
+            "url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/",
+            "contribution": "Parish Mass and post-Mass blessing of drivers and cars scheduled"
+          },
+          {
+            "issuer": "Diocese of Angoulême — Saint-Christophe 2026",
+            "url": "https://charente.catholique.fr/est-charente/agenda/venez-feter-saint-christophe-2026/",
+            "contribution": "Parish celebration and blessing of vehicles/travellers July 26"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "No promise of safety, lay blessing substitute, or invented availability",
+        "Actual date varies with parish schedule; no promised protection; ministerial blessing not self-performed."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "À l'occasion de saint Christophe, certaines paroisses proposent une bénédiction sacerdotale aux voyageurs, conducteurs et parfois à leurs véhicules. Cette coutume demeure locale et non universelle.",
+      "spiritual_significance_fr": "Les chrétiens confient leurs déplacements à la Providence et se rappellent le devoir de prudence envers autrui.",
+      "practical_observance_fr": "Vérifier l'annonce de sa paroisse et, si la bénédiction y est proposée, y assister avec respect."
+    },
+    {
+      "draft_id": "WEISER-CARD-28-020",
+      "source_observation_id": "WEI58-28-020",
+      "en_title": "St Nicholas visits children",
+      "fr_title": "Saint Nicolas visite les enfants",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Around 6 December in parts of Alsace and Lorraine",
+      "description_en": "Regional families remember St Nicholas with a visitor dressed as a bishop, modest treats and accounts of his generosity. Elements of the celebration belong to local folklore and should not be confused with what is known of the historical bishop.",
+      "spiritual_significance_en": "The day can introduce children to Christian kindness and the duty to share.",
+      "practical_observance_en": "Tell the saint's story, pray briefly and share a small treat or act of generosity, without frightening children.",
+      "geography_and_period": "Documented Alsatian and Lorraine regional culture",
+      "present_in_app_under": "SNIC-001 / Saints / Calendar",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 28,
+          "printed_page": 340,
+          "title": "St Nicholas eve bishop-costumed visitor to children"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Diocese of Metz — Hagondange St Nicholas visit, Dec 2025",
+            "url": "https://metz.catholique.fr/actualites/actualites-paroisses/469066-hagondange-visite-de-saint-nicolas/",
+            "contribution": "Parish children's visit/teaching in December 2025"
+          },
+          {
+            "issuer": "Diocese of Strasbourg — Local St Nicholas traditions",
+            "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+            "contribution": "Explains gifts and customs in Alsace and Lorraine"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Label regional folklore clearly; no threatening helpers, required gifts or invented historical certainty",
+        "Avoid fear/punishment customs in recommendations, no factual endorsement of miracle folklore."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines régions d'Alsace et de Lorraine, saint Nicolas est représenté par un visiteur vêtu en évêque ; des friandises et des récits de sa générosité accompagnent la fête. Certains détails relèvent du folklore local.",
+      "spiritual_significance_fr": "Cette fête peut initier les enfants à la charité chrétienne et au partage.",
+      "practical_observance_fr": "Raconter sobrement la vie du saint, prier et partager une petite attention ou un acte de générosité, sans faire peur aux enfants."
+    },
+    {
+      "draft_id": "WEISER-CARD-27-012",
+      "source_observation_id": "WEI58-27-012",
+      "en_title": "The traditional St Patrick ribbon cross",
+      "fr_title": "La croix de rubans de saint Patrick",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "17 March, historical Irish household and children's custom",
+      "description_en": "Irish folklore collections preserve the practice of making or wearing a small decorative St Patrick's cross, sometimes of ribbon and card, especially among children. It is a historical custom rather than a universal Catholic observance.",
+      "spiritual_significance_en": "The cross can serve as a visible reminder of Christian faith and the national saint's witness.",
+      "practical_observance_en": "As a voluntary historical craft, make a modest decorative cross and use the occasion to learn about St Patrick.",
+      "geography_and_period": "Historically attested Ireland; current continuity varies",
+      "present_in_app_under": "Customs Atlas / St Patrick profile",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 27,
+          "printed_page": 323,
+          "title": "Traditional ribbon crosses on girls' dresses for Patrick"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "National Museum of Ireland — St Patrick Folklife Collection",
+            "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/St-Patrick",
+            "contribution": "Museum explanation of Irish ribbon crosses and gendered variants"
+          },
+          {
+            "issuer": "National Folklore Collection UCD — Schools' Collection",
+            "url": "https://www.duchas.ie/en/cbes/4644827/4613040/4651174",
+            "contribution": "Recorded Irish historical oral testimony of ribbons and St Patrick crosses"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Acknowledge variation of forms and decline of custom; not an approved devotional sacramental",
+        "March 17 date from 1962 calendar; household craft is not prescribed worship",
+        "Flag historical period, not universal current usage."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Les collections folkloriques irlandaises conservent le souvenir de petites croix de saint Patrick en ruban ou en carton, autrefois portées notamment par les enfants. Cette coutume historique n'est pas une pratique catholique universelle.",
+      "spiritual_significance_fr": "Une croix décorative peut rappeler la foi chrétienne et le témoignage du saint national.",
+      "practical_observance_fr": "À titre d'activité historique libre, confectionner une petite croix décorative puis découvrir un épisode de la vie de saint Patrick."
+    },
+    {
+      "draft_id": "WEISER-CARD-27-026",
+      "source_observation_id": "WEI58-27-026",
+      "en_title": "Ask St Anthony's intercession for lost things",
+      "fr_title": "Prier saint Antoine pour les objets perdus",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "Anytime; especially linked to 13 June saint profile",
+      "description_en": "A longstanding Catholic devotion turns to St Anthony of Padua when something has been lost. Franciscan sources document this association, while popular stories explaining its origin should not automatically be presented as established history.",
+      "spiritual_significance_en": "Requesting a saint's intercession is an occasion for prayer and trust in God, not a guarantee of recovering an object.",
+      "practical_observance_en": "Offer a simple personal prayer asking St Anthony's intercession and continue a sensible search; use any existing sourced prayer rather than inventing a ritual.",
+      "geography_and_period": "Broadly known Franciscan/Catholic devotion; historic origin story uncertain",
+      "present_in_app_under": "Existing Pray / Saints profile (enrichment)",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 27,
+          "printed_page": 327,
+          "title": "Invocation of St Anthony for lost things"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Franciscan Province of St Anthony of Padua — Cher Saint Antoine",
+            "url": "https://chersaintantoine.org/fr/content/aide-moi-trouver",
+            "contribution": "Official Franciscan devotional prayer and explanatory introduction"
+          },
+          {
+            "issuer": "Ermitage St Antoine — Saint Antoine de Padoue",
+            "url": "https://st-antoine.org/fr/a-propos/saint-antoine-de-padoue/",
+            "contribution": "Franciscan explanation of custom; manuscript recovery narrated cautiously"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Deduplicate existing devotional prayer and novena owners; do not present miracle claims as facts",
+        "Reconcile with existing Novena/Pray owners before adding",
+        "Do not assert guaranteed recovery or the historical psalter incident as fact."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Une dévotion catholique ancienne consiste à demander l'intercession de saint Antoine de Padoue lorsqu'un objet est perdu. Des sources franciscaines attestent cet usage, mais les récits populaires sur son origine ne constituent pas tous des faits historiques établis.",
+      "spiritual_significance_fr": "Demander l'intercession d'un saint est un acte de prière et de confiance, non une garantie de retrouver l'objet.",
+      "practical_observance_fr": "Dire une courte prière personnelle à saint Antoine et poursuivre ses recherches avec bon sens, sans inventer de rituel."
+    },
+    {
+      "draft_id": "WEISER-CARD-26-022",
+      "source_observation_id": "WEI58-26-022",
+      "en_title": "Soul breads and almsgiving for the departed",
+      "fr_title": "Pains des âmes et charité pour les défunts",
+      "category": "TRADITIONAL_CATHOLIC_CUSTOM_CONTEXT",
+      "occasion": "All Souls season; Polish historical local examples",
+      "description_en": "Polish ethnographic records preserve examples of bread or baked food being given to poorer neighbours in connection with remembrance of the departed. This is a historically attested form of charity, not an obligation on 2 November.",
+      "spiritual_significance_en": "Prayer for the dead and generosity toward the living meet in concrete works of mercy.",
+      "practical_observance_en": "Pray for the faithful departed and, if appropriate, share food or assist someone in need as an optional charitable gesture.",
+      "geography_and_period": "Historical surveyed Polish communities; not independently established for France",
+      "present_in_app_under": "DEAD-003 related / Customs Atlas historical context",
+      "source_provenance": {
+        "weiser": {
+          "work": "WEISER-HANDBOOK-1958",
+          "chapter": 26,
+          "printed_page": 313,
+          "title": "All Souls soul bread distributed to poor or children"
+        },
+        "independent_witnesses": [
+          {
+            "issuer": "Cyfrowe Archiwum Polskiego Atlasu Etnograficznego — map 43",
+            "url": "https://pae.us.edu.pl/index.php/items/show/4913",
+            "contribution": "Published field-survey map specifically documenting All Souls bread alms to poor people, 1969–1977"
+          }
+        ]
+      },
+      "editorial_guardrails": [
+        "Do not prescribe a special recipe, claim current prevalence, or infer a French parallel",
+        "French variants remain separately unverified",
+        "No inference that practice is common today or spiritually effective as payment."
+      ],
+      "date_ownership": "CALENDAR_RESOLVER_ONLY",
+      "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Des archives ethnographiques polonaises attestent que l'on distribuait du pain ou des pâtisseries aux personnes pauvres à l'occasion de la commémoration des défunts. Il s'agit d'une coutume historique locale, non d'une obligation au 2 novembre.",
+      "spiritual_significance_fr": "La prière pour les morts et la générosité envers les vivants se rejoignent dans les œuvres de miséricorde.",
+      "practical_observance_fr": "Prier pour les âmes des défunts et, si cela convient, partager des aliments ou aider une personne dans le besoin."
+    }
+  ],
+  "source_gate_backlog": [
+    {
+      "weiser_id": "WEI58-24-008",
+      "title": "Assumption blessing of gathered herbs",
+      "existing_owner_candidate": [
+        "BLSS-002"
+      ],
+      "triage": "ENRICH",
+      "pending_checks": [
+        "PR_1512_RESOLUTION",
+        "1962_RITUAL_SOURCE"
+      ],
+      "disposition": "LINK_PENDING_PR",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-24-013",
+      "title": "French Alpine pasture and livestock blessing",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "FRENCH_ALPINE_DIRECT_ATTESTATION",
+        "MINISTER_RITE_WITNESS"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-25-008",
+      "title": "Candlemas candle kept in home and sickroom",
+      "existing_owner_candidate": [
+        "DOM-011"
+      ],
+      "triage": "COVERED",
+      "pending_checks": [
+        "BILINGUAL_COPY_REVIEW"
+      ],
+      "disposition": "ENRICH_EXISTING",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-25-012",
+      "title": "Taking down Christmas crib on Candlemas",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "HISTORICAL_FEAST_CONTEXT"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-25-025",
+      "title": "Our Lady of Grape Harvest family festive meal",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "DIRECT_FRENCH_GRAPE_SOURCE",
+        "ROMAN_RITUAL_GRAIN_FRUIT_BLESSING"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-25-024",
+      "title": "French vineyard grapes brought for priestly blessing",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "FRENCH_HARVEST_LOCALITY"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-26-010",
+      "title": "Cleaning and decorating graves before November",
+      "existing_owner_candidate": [
+        "DEAD-001"
+      ],
+      "triage": "ENRICH",
+      "pending_checks": [
+        "GEOGRAPHY_NOTE"
+      ],
+      "disposition": "ENRICH_EXISTING",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-26-013",
+      "title": "Family prayer with saved Candlemas candle at All Souls",
+      "existing_owner_candidate": [
+        "DOM-011",
+        "DEAD-003"
+      ],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "HOUSEHOLD_PRACTICE_ATTESTATION"
+      ],
+      "disposition": "LINK_AND_ENRICH",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "title": "Breton all-night prayer bells and farmhouse visits",
+      "existing_owner_candidate": [
+        "BELL-004",
+        "DEAD-003"
+      ],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "BRETON_LOCAL_ATTESTATION",
+        "CHECK_BELL_OWNERSHIP"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-26-020",
+      "title": "Eight days of family Soul Nights after All Souls",
+      "existing_owner_candidate": [
+        "DEAD-003"
+      ],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "NO_LITURGICAL_OCTAVE_CLAIM"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-26-029",
+      "title": "Brittany graveside milk pouring accompanying holy water",
+      "existing_owner_candidate": [],
+      "triage": "HISTORY_ONLY",
+      "pending_checks": [
+        "BRETON_SUPERSTITION_SCREEN"
+      ],
+      "disposition": "DO_NOT_PUBLISH_AS_INSTRUCTION",
+      "editorial_state": "LOCKED_NO_PUBLICATION"
+    },
+    {
+      "weiser_id": "WEI58-27-003",
+      "title": "St Blaise crossed-candle throat blessing",
+      "existing_owner_candidate": [
+        "BLSS-001"
+      ],
+      "triage": "COVERED",
+      "pending_checks": [
+        "RITUAL_CONFORMITY"
+      ],
+      "disposition": "ENRICH_EXISTING",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-27-018",
+      "title": "St Joseph small breads fritelli shared at feast",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "ITALIAN_PARISH_HISTORICAL_SOURCE"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-27-031",
+      "title": "Brittany fishermen St John sea fires and crew prayers",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "BRETON_FISHERMEN_DIRECT_SOURCE",
+        "SAFETY_AND_CONTEXT"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-28-004",
+      "title": "Priestly grain blessing on feast of Peter and Paul",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "HUNGARY_BLESSING_RITUAL_AND_LOCAL_SOURCE"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-28-006",
+      "title": "Special bread blessing for Peter and Paul",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "HUNGARIAN_PARISH_SOURCE"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-28-025",
+      "title": "Lucy bride white-dressed breakfast tray and candle wreath",
+      "existing_owner_candidate": [],
+      "triage": "CANDIDATE",
+      "pending_checks": [
+        "SWEDISH_CATHOLIC_PRACTICE_VS_POST_REFORMATION"
+      ],
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "editorial_state": "NO_FINISHED_USER_CARD_UNTIL_SOURCE_GATE"
+    },
+    {
+      "weiser_id": "WEI58-23-021",
+      "title": "Pseudo-relics and amulet treatment condemned",
+      "existing_owner_candidate": [],
+      "triage": "EXCLUDE",
+      "pending_checks": [
+        "RELIC_AUTHENTICITY_GUARDRAIL"
+      ],
+      "disposition": "DO_NOT_PUBLISH_AS_INSTRUCTION",
+      "editorial_state": "LOCKED_NO_PUBLICATION"
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "schema": "AO_WEISER_P1_WAVE04_EVIDENCE_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "state": "SOURCE_SCREENED_RESEARCH_ONLY",
+  "sources_of_truth": [
+    "data/customs/research/weiser-handbook-inventory.v0.json",
+    "data/customs/research/weiser-p1-wave02-full-reconciliation.v1.json",
+    "data/customs/research/weiser-p1-wave03-source-corroboration.v1.json"
+  ],
+  "principles": [
+    "Web source claim is bounded; its publication date, locality and type of observance are retained.",
+    "Modern diocesan guidance never retroactively authenticates a particular 1962 Rituale formula.",
+    "Historical customs do not create new Holy Day obligations, universal feast ranks, priestly blessings, or implicit procession flags.",
+    "No source-only claims are published to the existing Calendar, LIVE Mass, Pray, Saints or Customs Atlas.",
+    "No extended quotation from Weiser or third-party books."
+  ],
+  "totals": {
+    "previously_screened_p1": 31,
+    "newly_screened_p1": 26,
+    "new_bounded_observations": 15,
+    "new_partial_observations": 11,
+    "bounded_topics": 11,
+    "partial_topics": 10,
+    "cumulative_p1_screened": 57,
+    "remaining_without_any_source_topic": 87,
+    "app_publications": 0
+  },
+  "witnesses": [
+    {
+      "witness_id": "W58B4-EMBER_TRIPLE",
+      "observation_ids": [
+        "WEI58-03-002",
+        "WEI58-03-003",
+        "WEI58-03-004"
+      ],
+      "title": "Historical Ember-day priestly intentions, harvest thanksgiving and alms",
+      "independent_source": {
+        "issuer": "Catholic Culture, September 2026 overview",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519"
+      },
+      "claim_supported_and_limitations": "The source specifically identifies seasonal Ember prayer, fasting, almsgiving, thanksgiving for crops, and petitions for clergy. These are historical 1962-linked meanings, not a current globally binding fast.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "ENRICH_CALENDAR_NOT_NEW_CUSTOM",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-EMBER_SOULS",
+      "observation_ids": [
+        "WEI58-03-005"
+      ],
+      "title": "Ember-day prayers for the dead",
+      "independent_source": {
+        "issuer": "Catholic Culture, September 2026 overview",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519"
+      },
+      "claim_supported_and_limitations": "The source covers seasonal penitence and gratitude but does not substantiate a dedicated Ember prayer custom specifically for deceased souls.",
+      "classification": "PARTIAL_SPECIFIC_DEVOTION_UNVERIFIED",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-ROGATION_WALK",
+      "observation_ids": [
+        "WEI58-04-003"
+      ],
+      "title": "Family Rogation prayer walks for crops",
+      "independent_source": {
+        "issuer": "Mary Reed Newland via Catholic Culture, family liturgical custom",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234"
+      },
+      "claim_supported_and_limitations": "An independent Catholic family custom guide explicitly proposes a family walk asking for God's blessing on gardens and fields. A family prayer is distinct from a priest's processional blessing.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "HOME_OPTIONAL_NO_PRIEST_RITE",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-SHROVE_FOOD",
+      "observation_ids": [
+        "WEI58-13-017"
+      ],
+      "title": "Shrove Tuesday pancake custom",
+      "independent_source": {
+        "issuer": "Archdiocese of St Louis excerpt on Catholic Culture",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/calendar/day.cfm?date=2026-02-17"
+      },
+      "claim_supported_and_limitations": "Pancakes prepared in England/Ireland to use eggs, milk and fat before older penitential food restrictions; not a present legal Lenten requirement.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "REGIONAL_HOUSEHOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-GOOD_FRIDAY_FOOD",
+      "observation_ids": [
+        "WEI58-15-030"
+      ],
+      "title": "Good Friday private silence and reduced food",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety and the Liturgy, Good Friday",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "Good Friday recollection and penitence are supported but the precise household custom of minimal food alongside silence is not independently documented; modern fasting laws need separate jurisdiction/age handling.",
+      "classification": "PARTIAL_GENERAL_SPIRITUAL_CONTEXT",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-CORPUS_KNEEL",
+      "observation_ids": [
+        "WEI58-21-006"
+      ],
+      "title": "Eucharistic adoration during Corpus Christi processions",
+      "independent_source": {
+        "issuer": "Benedict XVI, Corpus Christi homily 22 May 2008",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080522_corpus-domini.html"
+      },
+      "claim_supported_and_limitations": "Public kneeling/adoration accompanying procession confirmed; particular action 'outside one's own home' is not individually verified and must not be asserted.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "CALENDAR_CONTEXT_NO_HOUSEHOLD_RUBRIC",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-CORPUS_STATIONS",
+      "observation_ids": [
+        "WEI58-21-010"
+      ],
+      "title": "Corpus Christi Eucharistic stations and blessing",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety and the Liturgy, nos. 162–163",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "The directory acknowledges stops at decorated altars on Eucharistic procession routes and solemn benediction at the conclusion; number/form of stations varies locally and is not 1962 rubric-certified by this witness.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "EXISTING_SPECIAL_DAYS_OWNER",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-HARVEST_POLISH",
+      "observation_ids": [
+        "WEI58-22-006"
+      ],
+      "title": "Blessed harvest wreaths and bread at Polish dożynki",
+      "independent_source": {
+        "issuer": "Polish Bishops' Conference, 30 August 2015",
+        "url": "https://episkopat.pl/News/przewodniczacy/201"
+      },
+      "claim_supported_and_limitations": "Polish episcopal account explicitly reports archbishop blessing harvest wreaths and bread during diocesan/provincial harvest celebration; source confirms a regional ministerial practice, not universal Roman calendar date.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "LOCAL_MINISTERIAL",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-CANDLEMAS_CRIB",
+      "observation_ids": [
+        "WEI58-25-012"
+      ],
+      "title": "Crèche display until 2 February Candlemas",
+      "independent_source": {
+        "issuer": "Diocese of Paris, La Chandeleur fête de la lumière (2014)",
+        "url": "https://dioceseparis.fr/la-chandeleur-fete-de-la-lumiere.html"
+      },
+      "claim_supported_and_limitations": "Diocese explicitly distinguishes the end of liturgical Christmas from the domestic tradition of keeping a Nativity crib until Candlemas; not a universal removal requirement.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "HOUSEHOLD_SEASONAL",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-SOULS_DECOR",
+      "observation_ids": [
+        "WEI58-26-010",
+        "WEI58-26-011"
+      ],
+      "title": "Cleaning graves and placing flowers or lights",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety; Polish Bishops' Conference 31 Oct 2025",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "Cemetery visits with tending graves, flowers and lamps acknowledged, while Polish bishops confirm local November family candle traditions; no mandatory grave visit or superstitious implications.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "ENRICH_DEAD001_AND_DEAD003",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-SOULS_BEANS",
+      "observation_ids": [
+        "WEI58-26-024"
+      ],
+      "title": "Beans, peas and lentils as All Souls gifts to the poor",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety, prayer and alms for dead",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "General almsgiving for the deceased supported, but specific beans/peas/lentils as a named regional food custom not verified.",
+      "classification": "PARTIAL_SPECIFIC_FOOD_UNVERIFIED",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-JOHN_FIRES",
+      "observation_ids": [
+        "WEI58-27-030",
+        "WEI58-27-035"
+      ],
+      "title": "St John Baptist bonfires and community prayers",
+      "independent_source": {
+        "issuer": "Diocese of Bayonne, Lescar and Oloron, Saint-Jean parish celebration 2026",
+        "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+      },
+      "claim_supported_and_limitations": "A parish event near 24 June includes Mass, community bonfire, shared meal, songs and prayers; confirms one local celebration, not a church-mandated ceremony or all Breton sea-fire variants.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "SAINTS_AND_REGIONAL_CUSTOMS",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-ANTHONY_TUESDAYS",
+      "observation_ids": [
+        "WEI58-27-027"
+      ],
+      "title": "Tuesday novenas and devotions to St Anthony",
+      "independent_source": {
+        "issuer": "Franciscan Media, St Anthony of Padua traditions",
+        "url": "https://www.franciscanmedia.org/franciscan-tradition-and-resources/st-anthony-of-padua-finder-teacher-matchmaker-guide/"
+      },
+      "claim_supported_and_limitations": "Franciscan account reports nine or thirteen Tuesday or Sunday devotional cycles at churches and shrines; stories of promised miracles/old indulgences not treated as current guarantees.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "REUSE_PRAY_AND_SAINTS",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-STANNE_MEDIEVAL",
+      "observation_ids": [
+        "WEI58-28-015"
+      ],
+      "title": "Medieval French pilgrimage to St Anne",
+      "independent_source": {
+        "issuer": "Sanctuaire Sainte-Anne-d'Auray, Grand Pardon 2026",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon"
+      },
+      "claim_supported_and_limitations": "Living Breton Grand Pardon and French devotion documented; does not demonstrate Weiser's specific medieval chronology or extent in France.",
+      "classification": "PARTIAL_PERIOD_HISTORICITY",
+      "owner_handling": "HOLD_WITH_PILGRIMAGE_CROSS_LINK",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-PATRON_PARISH",
+      "observation_ids": [
+        "WEI58-23-005"
+      ],
+      "title": "Parish patronal feasts and local processions",
+      "independent_source": {
+        "issuer": "Sanctuaire Sainte-Anne-d'Auray, Grand Pardon 2026",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon"
+      },
+      "claim_supported_and_limitations": "Specific Saint Anne patronal observance with pilgrimage, Mass, local procession and reconciliation; contributes a local example to existing PATR-001, no generalized parish patron calendar.",
+      "classification": "BOUNDED_INDEPENDENT",
+      "owner_handling": "ENRICH_PATR001_NOT_NEW",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-PALM_CEMETERY",
+      "observation_ids": [
+        "WEI58-15-005"
+      ],
+      "title": "Blessed palm at graves or procession through cemetery",
+      "independent_source": {
+        "issuer": "Diocese of Paris, Catechetical Lent/Easter family resource",
+        "url": "https://dioceseparis.fr/annee-c-le-puzzle-des-cendres-a.html"
+      },
+      "claim_supported_and_limitations": "Blessed branches placed on graves are documented, but cemetery visitation specifically during the Palm Sunday liturgical procession is not verified.",
+      "classification": "PARTIAL_PROCESSIONAL_CONTEXT_UNVERIFIED",
+      "owner_handling": "ENRICH_DOM013_ONLY_IF_DISTINCT",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-FORTY_HOURS_CARNIVAL",
+      "observation_ids": [
+        "WEI58-13-020"
+      ],
+      "title": "Forty Hours adoration before Lent",
+      "independent_source": {
+        "issuer": "Diocese of Paris, Forty Hours for the Lord (2018)",
+        "url": "https://dioceseparis.fr/40-heures-pour-le-seigneur.html"
+      },
+      "claim_supported_and_limitations": "Contemporary forty-hour exposition/adoration in Lent documented; historical pre-Lenten carnival timing not established by this source.",
+      "classification": "PARTIAL_HISTORIC_SEASON",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-SOULS_PRIEST_GRAVES",
+      "observation_ids": [
+        "WEI58-26-008"
+      ],
+      "title": "Priestly blessing of graves on All Souls",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "Community cemetery prayer and visits supported; specific priestly formula for blessing graves is not documented in this witness.",
+      "classification": "PARTIAL_MINISTERIAL_RITE",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-CORPUS_FLOWER_WREATH",
+      "observation_ids": [
+        "WEI58-21-018",
+        "WEI58-21-019"
+      ],
+      "title": "Corpus Christi flower wreaths on flags and a priest's wreath blessing",
+      "independent_source": {
+        "issuer": "Holy See, Directory on Popular Piety, Corpus Christi procession",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      "claim_supported_and_limitations": "Flowers and procession route decorations are documented, but woven wreaths on banners and a separate priestly wreath blessing have not been independently established.",
+      "classification": "PARTIAL_SPECIFIC_OBJECT_OR_RITUAL",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-PATR_STANNE",
+      "observation_ids": [
+        "WEI58-28-018"
+      ],
+      "title": "St Anne feast as name day for Anne",
+      "independent_source": {
+        "issuer": "Sanctuaire Sainte-Anne-d'Auray, Grand Pardon 2026",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon"
+      },
+      "claim_supported_and_limitations": "July 26 celebration documented; does not demonstrate baptismal name-day customs for Annes in all French households (already general NDAY-001).",
+      "classification": "PARTIAL_DISTINCT_NAME_DAY",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B4-ST_JOHN_SEA",
+      "observation_ids": [
+        "WEI58-27-031"
+      ],
+      "title": "Breton fishermen St John sea fires",
+      "independent_source": {
+        "issuer": "Diocese 64, Oloron bonfire",
+        "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+      },
+      "claim_supported_and_limitations": "Pyrenean Catholic bonfire documented, but no independent Breton fishing-boat or maritime rite evidence.",
+      "classification": "PARTIAL_WRONG_GEOGRAPHY",
+      "owner_handling": "HOLD",
+      "release": "RESEARCH_ONLY_NOT_PUBLISHED"
+    }
+  ]
+}

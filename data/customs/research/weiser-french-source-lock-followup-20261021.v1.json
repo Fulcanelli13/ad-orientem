@@ -1,0 +1,178 @@
+{
+  "schema": "AO_WEISER_FRENCH_SOURCE_LOCK_FOLLOWUP_V1",
+  "as_of": "2026-10-21",
+  "status": "RESEARCH_ONLY_EXACT_CLAIMS_REMAIN_HELD",
+  "scope": "Four existing French source-lock observations; no fresh Weiser extraction.",
+  "outcome": {
+    "reviewed_observations": 4,
+    "fully_verified_exact_observations": 0,
+    "bounded_contextual_findings": 2,
+    "maritime_bibliographic_leads": 1,
+    "app_publications": 0
+  },
+  "records": [
+    {
+      "weiser_id": "WEI58-25-024",
+      "chapter": 25,
+      "printed_page": 305,
+      "title": "French vineyard grapes brought for priestly blessing",
+      "disposition": "PARTIAL_CONTEXT_HOLD_EXACT_GRAPE_BLESSING",
+      "owners": {
+        "related": [
+          "DEV-006"
+        ],
+        "proposed": "Explore/Learn regional pilgrimage context only",
+        "new_canonical_id": null
+      },
+      "calendar": "8 September, Nativity of the Blessed Virgin Mary in the 1962 calendar; no automatic blessing or procession.",
+      "supported": [
+        "A local 8 September Marian pilgrimage at Notre-Dame-des-Raisins on Mont Brouilly.",
+        "The parish source names the feast as the Nativity and advertises a procession."
+      ],
+      "not_established": [
+        "Grapes actually brought for blessing on that date.",
+        "The blessing's ritual edition, formula, ministerial permissions or historic local use."
+      ],
+      "sources": [
+        {
+          "issuer": "Paroisse Sainte-Marie-des-Vignes, Mosaïque no.134, été 2023",
+          "url": "https://saintaugustinenbeaujolais.fr/wp-content/uploads/2023/06/09640_Paroisses_en_Beaujolais_134_Juin_2023_BAT_ok.pdf",
+          "locator": "Printed p.14, La chapelle de Brouilly; PDF p.14",
+          "access": "DIRECT_READ",
+          "claim": "Names the chapel and distinguishes 8 September Nativity procession from 15 August shared meal.",
+          "limit": "No grape blessing is described. A separate schedule table mislabels September 8 as Immaculate Conception; use the correctly labelled prose, not the erroneous table."
+        },
+        {
+          "issuer": "Terre des Brouilly local destination site",
+          "url": "https://terredesbrouilly.com/joyau-touristique/",
+          "locator": "Le pèlerinage (8 septembre)",
+          "access": "DIRECT_READ",
+          "claim": "Reports the annual winegrowers' pilgrimage as dating from 1857.",
+          "limit": "Local historical account; does not establish a priestly grape blessing or guarantee crop protection."
+        }
+      ],
+      "brief_en": "Mont Brouilly supplies a named French Marian pilgrimage context for 8 September. It does not yet verify the precise grape-blessing custom. A contextual note could link to the existing pilgrimage owner, while the ministerial claim stays held.",
+      "brief_fr": "Le mont Brouilly fournit un contexte français nommé de pèlerinage marial au 8 septembre. Il ne confirme pas encore la coutume précise de bénédiction des raisins. Une notice contextuelle pourrait relever du propriétaire existant des pèlerinages ; l'affirmation ministérielle reste en attente.",
+      "release": "NO_FINISHED_CUSTOM_CARD_FOR_EXACT_HELD_CLAIM",
+      "next_gate": "Find a dated parish, diocesan or historical ritual witness explicitly naming grapes and their blessing on September 8."
+    },
+    {
+      "weiser_id": "WEI58-25-025",
+      "chapter": 25,
+      "printed_page": 305,
+      "title": "Our Lady of Grape Harvest family festive meal",
+      "disposition": "HOLD_DATE_AND_DOMESTIC_FORM",
+      "owners": {
+        "related": [
+          "DEV-006"
+        ],
+        "proposed": "Learn historical harvest context",
+        "new_canonical_id": null
+      },
+      "calendar": "Claim concerns 8 September; evidence for another feast must not be reassigned to it.",
+      "supported": [
+        "The same Brouilly parish resource describes a shared packed meal after the 11am Assumption Mass on 15 August."
+      ],
+      "not_established": [
+        "An 8 September family grape-harvest feast.",
+        "An equivalent historical domestic meal elsewhere in French vineyards."
+      ],
+      "sources": [
+        {
+          "issuer": "Paroisse Sainte-Marie-des-Vignes, Mosaïque no.134, été 2023",
+          "url": "https://saintaugustinenbeaujolais.fr/wp-content/uploads/2023/06/09640_Paroisses_en_Beaujolais_134_Juin_2023_BAT_ok.pdf",
+          "locator": "Printed p.14, distinct entries for 15 August and 8 September",
+          "access": "DIRECT_READ",
+          "claim": "A shared meal is explicitly attached to August 15; September 8 has Masses and a procession.",
+          "limit": "Different feast and communal form; cannot corroborate September 8 household feast."
+        }
+      ],
+      "brief_en": "A Beaujolais parish meal is documented for the Assumption, rather than the Nativity of Mary. The historical family grape-harvest meal remains unverified; no contemporary instruction is drafted from this near match.",
+      "brief_fr": "Un repas paroissial du Beaujolais est attesté pour l'Assomption, et non pour la Nativité de Marie. Le repas familial historique des vendanges reste non vérifié ; ce rapprochement ne justifie aucune consigne contemporaine.",
+      "release": "NO_FINISHED_CUSTOM_CARD",
+      "next_gate": "Locate a source explicitly joining September 8, French vineyard households and a festive harvest meal."
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "chapter": 26,
+      "printed_page": 311,
+      "title": "Breton all-night prayer bells and farmhouse visits",
+      "disposition": "PARTIAL_HISTORICAL_HOUSE_VISIT_WITNESS_BELLS_HELD",
+      "owners": {
+        "related": [
+          "DEAD-003",
+          "BELL-004"
+        ],
+        "proposed": "DEAD-003 historical regional note; BELL-004 only if exact bell practice is sourced",
+        "new_canonical_id": null
+      },
+      "calendar": "Historical night of November 1–2; All Saints and the Commemoration of the Faithful Departed retain distinct liturgical identities.",
+      "supported": [
+        "Le Braz's 1893 collection describes singers visiting homes during the night of Toussaint to sing a complaint for souls."
+      ],
+      "not_established": [
+        "The combined exact sequence of all-night bell ringing and farmhouse visits.",
+        "A currently practised Catholic parish custom or approved supernatural beliefs."
+      ],
+      "sources": [
+        {
+          "issuer": "Anatole Le Braz, La Légende de la mort en Basse-Bretagne (1893)",
+          "url": "https://fr.wikisource.org/wiki/La_L%C3%A9gende_de_la_mort_en_Basse-Bretagne/L%E2%80%99anaon",
+          "locator": "Chapter VI, L'Anaon, section LIV, after the complainte des âmes; 1893 table of contents locates complaint at p.284",
+          "access": "DIRECT_READ_TRANSCRIPTION",
+          "claim": "Historical folkloric testimony of house-to-house singing on Toussaint night.",
+          "limit": "Collection combines observed or reported custom with legends of returning dead; no all-night bell schedule is established. Verify scan pagination before a page-exact scholarly citation."
+        }
+      ],
+      "brief_en": "A nineteenth-century Breton collection preserves nocturnal house-to-house songs asking remembrance of the dead. This supports a historical regional note under Holy Souls; it does not verify the claimed all-night bell sequence or authorize reenactment.",
+      "brief_fr": "Un recueil breton du XIXe siècle conserve des chants nocturnes de maison en maison invitant au souvenir des défunts. Il étaye une note régionale historique sur les âmes des défunts, sans confirmer la séquence alléguée de cloches toute la nuit ni justifier une reconstitution.",
+      "release": "HISTORICAL_CONTEXT_ONLY_NO_PRACTICAL_CUSTOM_CARD",
+      "next_gate": "Find a local dated primary account explicitly identifying bell ringing, timing and the relation to household visits; exclude ghost narratives as doctrine."
+    },
+    {
+      "weiser_id": "WEI58-27-031",
+      "chapter": 27,
+      "printed_page": 330,
+      "title": "Brittany fishermen St John sea fires and crew prayers",
+      "disposition": "MARITIME_FIRE_LEAD_PRAYER_CLAIM_HELD",
+      "owners": {
+        "related": [
+          "CANDIDATE-STJOHN-BONFIRE"
+        ],
+        "proposed": "Historical maritime facet only; no canonical owner allocation",
+        "new_canonical_id": null
+      },
+      "calendar": "24 June is named in the lead; do not silently substitute the more usual land-based eve, June 23.",
+      "supported": [],
+      "not_established": [
+        "Directly verified edition and source passage for Breton fishing crews' shipboard fire.",
+        "Crew prayer associated with that fire.",
+        "Present observance or appropriateness as a contemporary practice."
+      ],
+      "sources": [
+        {
+          "issuer": "Paul-Yves Sébillot, Le Folklore de la Bretagne, digitised copy at IDBE",
+          "url": "https://bibliotheque.idbe.bzh/data/cle_332-1/Le_Folklore_de_la_Bretagne.pdf",
+          "locator": "Search-index extract, printed pp.112–113, Le culte du feu : les brasiers de la Saint-Jean",
+          "access": "SEARCH_INDEX_ONLY_FULL_PDF_OPEN_FAILED",
+          "claim": "An indexed passage describes Breton fishermen in Iceland marking June 24 with a shipboard fire.",
+          "limit": "Bibliographic lead only: verify title-page edition, scanned page and underlying source. The indexed passage does not independently establish crew prayer."
+        }
+      ],
+      "brief_en": "A digitised folklore-book search result gives a precise lead for Breton fishermen in Iceland and a June 24 shipboard celebration. Full-page and edition verification are still required, and the prayer component remains unproved. Retain as a historical lead only.",
+      "brief_fr": "Le résultat de recherche d'un livre folklorique numérisé fournit une piste précise sur des pêcheurs bretons en Islande et une célébration à bord le 24 juin. La page et l'édition doivent encore être vérifiées ; la prière de l'équipage reste non prouvée. Conserver uniquement comme piste historique.",
+      "release": "NO_USER_PRACTICE_CARD_NO_FIRE_INSTRUCTIONS",
+      "next_gate": "Inspect the digitised page and trace its source, then find independent testimony of crew prayer if any; no present-day reenactment guidance."
+    }
+  ],
+  "protected_decisions": [
+    "WEI58-26-029 graveside milk pouring remains HISTORY_ONLY / DO_NOT_PUBLISH_AS_INSTRUCTION.",
+    "Ordinary inland French parish fires do not validate Breton shipboard customs.",
+    "General fruit/seed blessings, Polish September seed blessings and harvest proverbs do not prove the exact French grape custom."
+  ],
+  "next_queue": [
+    "Verify the maritime PDF edition and original source when directly accessible.",
+    "Seek dated Breton parish/ethnographic testimony for all-night bells.",
+    "Continue exact source-lock review with Alpine pasture/livestock blessing and All Souls household Candlemas-candle claims."
+  ]
+}

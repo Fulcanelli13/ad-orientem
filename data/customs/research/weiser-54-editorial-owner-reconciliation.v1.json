@@ -1,0 +1,1018 @@
+{
+  "schema": "AO_WEISER_54_DRAFTS_CANONICAL_OWNER_RECONCILIATION_V1",
+  "as_of": "2026-10-21",
+  "state": "RESEARCH_ONLY_EDITORIAL_CONSOLIDATION_PENDING_RELEASE",
+  "inputs": [
+    "data/customs/research/weiser-custom-editorial-briefs-batch01.v1.json",
+    "data/customs/research/weiser-p1-final-integration-ledger.v1.json"
+  ],
+  "live_sot": "data/customs/customs-atlas-seed.v1.json",
+  "parallel_PRs": [
+    {
+      "number": 1512,
+      "branch": "customs/feast-blessings-batch-20261020",
+      "expected_new_ids": [
+        "BLSS-002",
+        "BLSS-003",
+        "BLSS-004"
+      ]
+    },
+    {
+      "number": 1516,
+      "branch": "customs/weiser-selective-release-20261020",
+      "expected_new_ids": [
+        "NDAY-001",
+        "PATR-001",
+        "MARI-001",
+        "SJOS-001",
+        "SANT-001",
+        "SCHR-001",
+        "SNIC-001"
+      ]
+    }
+  ],
+  "rules": [
+    "Do not mint new customs simply because multiple source observations describe variants.",
+    "The following candidate names are provisional stable placeholders; allocate production IDs only in the coordinated release branch.",
+    "P0 is priority for the next candidate integration batch, not permission to publish.",
+    "Existing / PR-staged owner means preserve current SOT or PR identity, not assume a still-open PR already landed.",
+    "Modern witness cannot establish exact 1962 ritual rights, obligation or law.",
+    "No new LIVE reader card, Calendar rank, duplicate Saints or Pray text, map pins or payment/contact."
+  ],
+  "audit": {
+    "editorial_drafts": 54,
+    "prior_selected_batch_drafts": 12,
+    "p1_wave02_06_drafts": 42,
+    "by_decision": {
+      "ENRICH_EXISTING": 14,
+      "REGIONAL_REFERENCE_ONLY": 12,
+      "NEW_CANONICAL_CANDIDATE": 15,
+      "OWNER_CONTENT_ONLY": 9,
+      "VARIANT_OF_NEW_CANDIDATE": 2,
+      "SOURCE_OR_RITUAL_HOLD": 2
+    },
+    "new_distinct_canonical_candidates": 15,
+    "variants_under_same_provisional_candidate": 2,
+    "P0_new_canonical_candidates": 6,
+    "P1_new_canonical_candidates": 5,
+    "P2_new_canonical_candidates": 4,
+    "current_main_customs": 17,
+    "pr1512_distinct_additions": 3,
+    "pr1516_distinct_additions": 7,
+    "combined_customs_before_extra_weiser": 27,
+    "combined_attestations_before_extra_weiser": 86,
+    "combined_sources_before_extra_weiser": 96,
+    "combined_sot07_extensions_before_extra_weiser": 11,
+    "app_publications_from_research": 0
+  },
+  "source_to_target": [
+    {
+      "id": "WEISER-CARD-23-006",
+      "title": "A village's patronal feast",
+      "weiser_ids": [
+        "WEI58-23-006"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "PATR-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516; retain one patronal custom.",
+      "type": "PARISH_PATRONAL",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-23-008",
+      "title": "Celebrate your baptismal patron",
+      "weiser_ids": [
+        "WEI58-23-008"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "NDAY-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516; baptismal patron name day is one identity.",
+      "type": "PERSONAL_PATRONAL",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-24-005",
+      "title": "The Assumption procession",
+      "weiser_ids": [
+        "WEI58-24-005"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "MARI-001",
+      "release_priority": "BASELINE",
+      "reason": "Assumption procession already staged in PR #1516; separate from priestly herb blessing.",
+      "type": "PROCESSION",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-24-014",
+      "title": "Blessing of fishing boats on the Assumption",
+      "weiser_ids": [
+        "WEI58-24-014"
+      ],
+      "wave": "01",
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "MARI-001",
+      "release_priority": "P2",
+      "reason": "Regional fishing-boat blessing not the same practice as procession; keep contextual link until precise local rite verified.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-26-019",
+      "title": "Wypominki: remembering the dead by name",
+      "weiser_ids": [
+        "WEI58-26-019"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "DEAD-003",
+      "release_priority": "BASELINE",
+      "reason": "Polish Wypominki is an attested distinct regional form, already added as evidence in PR #1516.",
+      "type": "REMEMBRANCE",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-27-019",
+      "title": "St Joseph's table for the poor",
+      "weiser_ids": [
+        "WEI58-27-019"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "SJOS-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516: St Joseph charitable table.",
+      "type": "SAINTS_CHARITY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-27-023",
+      "title": "St Anthony's Bread",
+      "weiser_ids": [
+        "WEI58-27-023"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "SANT-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516: St Anthony Bread.",
+      "type": "SAINTS_CHARITY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-28-011",
+      "title": "St Christopher's blessing for travellers",
+      "weiser_ids": [
+        "WEI58-28-011"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "SCHR-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516: St Christopher's blessing.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-28-020",
+      "title": "St Nicholas visits children",
+      "weiser_ids": [
+        "WEI58-28-020"
+      ],
+      "wave": "01",
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "SNIC-001",
+      "release_priority": "BASELINE",
+      "reason": "Already staged in PR #1516: local St Nicholas visits.",
+      "type": "SAINTS_HOUSEHOLD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-27-012",
+      "title": "The traditional St Patrick ribbon cross",
+      "weiser_ids": [
+        "WEI58-27-012"
+      ],
+      "wave": "01",
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-STPATRICK-RIBBON",
+      "release_priority": "P2",
+      "reason": "Historical Irish household ribbon-cross craft is distinct from St Patrick's feast or Lorica.",
+      "type": "SAINTS_HOUSEHOLD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-27-026",
+      "title": "Ask St Anthony's intercession for lost things",
+      "weiser_ids": [
+        "WEI58-27-026"
+      ],
+      "wave": "01",
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Saints:St Anthony / Pray",
+      "release_priority": "P1",
+      "reason": "Use existing saint profile and sourced lost-object intercession; no separate canon custom or prayer duplication.",
+      "type": "SAINTS_PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "WEISER-CARD-26-022",
+      "title": "Soul breads and almsgiving for the departed",
+      "weiser_ids": [
+        "WEI58-26-022"
+      ],
+      "wave": "01",
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "DEAD-003",
+      "release_priority": "P2",
+      "reason": "Historical Polish almsgiving bread for departed does not warrant a universal All Souls instruction.",
+      "type": "REGIONAL_CHARITY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-POSADAS",
+      "title": "Las Posadas: welcoming the Holy Family",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-05-011"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-LAS-POSADAS",
+      "release_priority": "P0",
+      "reason": "Documented Mexican/Latin American household-parish pilgrimage; seasonal optional custom, not a Roman Mass rite.",
+      "type": "COMMUNITY_ADVENT",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-OPLATEK",
+      "title": "Sharing opłatek on Christmas Eve",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-06-009",
+        "WEI58-09-007"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-OPLATEK",
+      "release_priority": "P0",
+      "reason": "Distinct Polish Christmas Eve household wafer-sharing custom; never Eucharistic Communion.",
+      "type": "HOUSEHOLD_CHRISTMAS",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-STERN",
+      "title": "Epiphany star singers",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-12-013"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-STERN-SINGERS",
+      "release_priority": "P1",
+      "reason": "Documented German Catholic Epiphany charity and home visits; independent of priestly home blessings.",
+      "type": "CHARITY_EPIPHANY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-EPIPHCAKE",
+      "title": "The Epiphany cake and the poor person's portion",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-12-017",
+        "WEI58-12-018"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-GALETTE-ROIS",
+      "release_priority": "P1",
+      "reason": "French family Epiphany cake and optional share for poor; do not include unsupported education payment.",
+      "type": "HOUSEHOLD_EPIPHANY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-THURS7",
+      "title": "Visiting churches on Holy Thursday",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-15-015"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-SEVEN-CHURCH-VISIT",
+      "release_priority": "P0",
+      "reason": "Holy Thursday voluntary visits distinct from liturgical rites; only verified open churches, no assumed seven stops.",
+      "type": "PILGRIMAGE_PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-SWIE",
+      "title": "Święconka and the Easter table",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-15-036",
+        "WEI58-17-018",
+        "WEI58-17-022"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "BLSS-004",
+      "release_priority": "BASELINE",
+      "reason": "Holy Saturday Easter-food priestly blessing already staged in PR #1512. Polish table is a regional household facet.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-CARD-B2-FLOWER",
+      "title": "Flower carpets for Corpus Christi",
+      "wave": "02",
+      "weiser_ids": [
+        "WEI58-21-009"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-CORPUS-ROUTE-DECOR",
+      "release_priority": "P1",
+      "reason": "One umbrella for locally documented Corpus Christi route decorations; different regional forms remain distinct facets.",
+      "type": "PUBLIC_DEVOTION_DECOR",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-ADVENT-WREATH",
+      "title": "The family Advent wreath",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-05-002"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-ADVENT-WREATH",
+      "release_priority": "P0",
+      "reason": "Widely adopted domestic Christian Advent prayer custom; disclose historical adoption, no Mass rubric.",
+      "type": "HOUSEHOLD_ADVENT",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-NATIVITY-PRAYER",
+      "title": "Praying together at the Christmas crib",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-06-007"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Calendar:Christmas / Pray",
+      "release_priority": "P1",
+      "reason": "Existing Christmas/crib prayer surface; no second practice merely because families pray at crèche.",
+      "type": "HOUSEHOLD_PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-IRISH-CANDLE",
+      "title": "The Irish Christmas candle",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-08-004",
+        "WEI58-08-008"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "release_priority": "P2",
+      "reason": "Distinct historical Irish Christmas window candle; bound to local folklore, no magical claims.",
+      "type": "HOUSEHOLD_CHRISTMAS",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-EPIPHANY-PROCLAMATION",
+      "title": "Proclaiming the date of Easter at Epiphany",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-12-005"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Calendar:Epiphany / Learn",
+      "release_priority": "P1",
+      "reason": "Historical public announcement of Easter enriches existing Calendar; no new date resolver.",
+      "type": "LITURGICAL_HISTORY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-PALMS-AT-HOME",
+      "title": "Keeping and shaping blessed Palm Sunday branches",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-15-006",
+        "WEI58-15-007"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "DOM-013",
+      "release_priority": "BASELINE",
+      "reason": "Retained blessed palms and optional home crosses under existing Palm Sunday branches custom.",
+      "type": "SACRAMENTAL_HOME",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-POPAYAN-HOLYWEEK",
+      "title": "The Holy Week processions of Popayán",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-15-025"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Explore:Popayán / Learn",
+      "release_priority": "P2",
+      "reason": "UNESCO-local Colombian historical processions; not a global liturgical instruction.",
+      "type": "CULTURAL_HISTORY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-ANDALUSIAN-PENITENTS",
+      "title": "Penitents and confraternities in Spanish Holy Week",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-15-028"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:Holy Week regional customs",
+      "release_priority": "P2",
+      "reason": "Regional Andalusian confraternity practice, not a globally replicated Mass ceremony.",
+      "type": "CULTURAL_HISTORY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-EASTER-EGGS",
+      "title": "Easter eggs as a sign of new life",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-17-010"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-EASTER-EGG-CRAFT",
+      "release_priority": "P2",
+      "reason": "Voluntary family Easter egg traditions distinct from ministerial Easter food blessing.",
+      "type": "HOUSEHOLD_EASTER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-VENI-CREATOR",
+      "title": "Singing Veni Creator at Pentecost",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-19-009"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Pray:Holy Spirit / Calendar:Pentecost",
+      "release_priority": "P1",
+      "reason": "Existing authentic hymn and Pentecost spiritual guidance; no new music module.",
+      "type": "PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B3-CORPUS-WINDOWS",
+      "title": "Decorating for the Corpus Christi procession",
+      "wave": "03",
+      "weiser_ids": [
+        "WEI58-21-007"
+      ],
+      "decision": "VARIANT_OF_NEW_CANDIDATE",
+      "canonical_target": "CANDIDATE-CORPUS-ROUTE-DECOR",
+      "release_priority": "P1",
+      "reason": "Window adornment is a related distinct local facet of Corpus Christi route decoration, not identical flower carpets.",
+      "type": "PUBLIC_DEVOTION_DECOR",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-EMBER",
+      "title": "Ember Days: gratitude, vocations and charity",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-03-002",
+        "WEI58-03-003",
+        "WEI58-03-004"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Calendar:Ember Days / Learn",
+      "release_priority": "P1",
+      "reason": "Enrich seasonal intentions without inventing modern fasting obligations.",
+      "type": "LITURGICAL_CONTEXT",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-ROGATION",
+      "title": "A family Rogation prayer walk",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-04-003"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-ROGATION-FAMILY-WALK",
+      "release_priority": "P0",
+      "reason": "Family prayer walk distinct from a priest's Rogation procession, voluntary.",
+      "type": "HOUSEHOLD_ROGATION",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-SHROVE",
+      "title": "Shrove Tuesday and the traditional pancake",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-13-017"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Calendar:Shrove Tuesday / Customs history",
+      "release_priority": "P2",
+      "reason": "Historical pancake practice useful for regional context; low priority vs core customs.",
+      "type": "REGIONAL_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-CORPUS",
+      "title": "Adoration along the Corpus Christi procession",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-21-006",
+        "WEI58-21-010"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Special Days:Corpus Christi / Calendar",
+      "release_priority": "P1",
+      "reason": "Actual Eucharistic procession is independently selected by ceremony flags; do not create duplicate action.",
+      "type": "EUCHARISTIC_PROCESSION",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-HARVEST",
+      "title": "Polish dożynki: the blessed harvest wreath",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-22-006"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:Polish harvest / Customs history",
+      "release_priority": "P2",
+      "reason": "Local dożynki harvest wreath and priest blessing is not a universal feast-day rite.",
+      "type": "REGIONAL_AGRICULTURE",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-CANDLEMAS",
+      "title": "Keeping the Nativity crib until Candlemas",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-25-012"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Calendar:Candlemas / Learn:Nativity crib",
+      "release_priority": "P1",
+      "reason": "Crib display until Candlemas is distinct from DOM-011 blessed candles; add optional contextual notice, no new custom ID.",
+      "type": "HOUSEHOLD_CANDLEMAS",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-ALLSOULS",
+      "title": "Caring for graves at All Souls",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-26-010",
+        "WEI58-26-011"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "DEAD-001",
+      "release_priority": "BASELINE",
+      "reason": "Cemetery visit, grave tending and candles enrich existing DEAD-001; prayers remain DEAD-003.",
+      "type": "CEMETERY_PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-JOHN",
+      "title": "St John Baptist's bonfire and community prayer",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-27-030",
+        "WEI58-27-035"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-STJOHN-BONFIRE",
+      "release_priority": "P2",
+      "reason": "Source-scoped local St John Baptist fires; safety and geography must remain explicit.",
+      "type": "COMMUNITY_SAINTS",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-ANTHONY",
+      "title": "Tuesdays dedicated to St Anthony of Padua",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-27-027"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Pray:St Anthony / Saints",
+      "release_priority": "P1",
+      "reason": "No parallel novena module; existing prayer library handles 9/13 Tuesdays if source verified.",
+      "type": "SAINTS_PRAYER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B4-PATRON",
+      "title": "A French patronal pardon at Sainte-Anne-d'Auray",
+      "wave": "04",
+      "weiser_ids": [
+        "WEI58-23-005"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "PATR-001",
+      "release_priority": "BASELINE",
+      "reason": "Sainte-Anne-d'Auray Grand Pardon links existing patronal celebration and DEV-007 pilgrimages.",
+      "type": "PATRONAL_PILGRIMAGE",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-MANGER_STRAW",
+      "title": "The Advent manger of good deeds",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-05-005"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-ADVENT-MANGER-STRAW",
+      "release_priority": "P0",
+      "reason": "Household custom offers traditional charity practice without scores or gamification.",
+      "type": "HOUSEHOLD_ADVENT",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-STEPHEN_CHARITY",
+      "title": "Charity on St Stephen's Day",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-08-025"
+      ],
+      "decision": "OWNER_CONTENT_ONLY",
+      "canonical_target": "Saints:St Stephen / Calendar",
+      "release_priority": "P1",
+      "reason": "Optional saint-inspired charity and Acts reading should be short feast guidance, not a new universal obligation.",
+      "type": "SAINTS_CHARITY",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-KUTIA",
+      "title": "Kutia at a Ukrainian Christmas Eve table",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-09-002"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:Ukrainian Christmas household culture",
+      "release_priority": "P2",
+      "reason": "Well-attested but Eastern regional culinary practice; no new Latin Mass customs entry.",
+      "type": "REGIONAL_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-LENTEN_VEIL",
+      "title": "The Lenten hunger cloth in church",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-14-009"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:Lenten visual traditions",
+      "release_priority": "P2",
+      "reason": "Hunger cloth history must not be conflated with obligatory 1962 Passiontide veiling.",
+      "type": "HISTORICAL_DECOR",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-MOTHERING",
+      "title": "Mothering Sunday and the simnel cake",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-14-012",
+        "WEI58-14-013"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:British Lent customs",
+      "release_priority": "P2",
+      "reason": "Historically British mother-church and cake practices, not universal Laetare feast legislation.",
+      "type": "REGIONAL_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-HOT_CROSS",
+      "title": "The Good Friday hot cross bun",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-15-032"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Learn:Good Friday food history",
+      "release_priority": "P2",
+      "reason": "Historical cross-bun heritage; superstitious protection folklore excluded.",
+      "type": "REGIONAL_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-EMMAUS",
+      "title": "An Easter Monday Emmaus walk",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-16-028"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-EMMAUS-WALK",
+      "release_priority": "P1",
+      "reason": "Optional Easter Monday German/Austrian prayer walk based on Luke 24.",
+      "type": "EASTER_WALK",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-PYSANKY",
+      "title": "Decorated Easter eggs of Poland and Ukraine",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-17-014"
+      ],
+      "decision": "VARIANT_OF_NEW_CANDIDATE",
+      "canonical_target": "CANDIDATE-EASTER-EGG-CRAFT",
+      "release_priority": "P2",
+      "reason": "Polish and Ukrainian decorated-egg variants; distinct artistry not a second rite.",
+      "type": "HOUSEHOLD_EASTER",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-ASSUMPTION_HERBS",
+      "title": "Herb bouquets blessed on the Assumption",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-24-008",
+        "WEI58-24-009"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "BLSS-002",
+      "release_priority": "BASELINE",
+      "reason": "Assumption herb bouquets already staged in PR #1512; keep date context unified with MARI-001 procession.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B5-ST_LUCIA",
+      "title": "St Lucia's light and breakfast tradition",
+      "wave": "05",
+      "weiser_ids": [
+        "WEI58-28-025"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Saints:St Lucy / Learn",
+      "release_priority": "P2",
+      "reason": "Swedish cultural celebration is not a universal 1962 Catholic liturgical custom.",
+      "type": "CULTURAL_SAINTS",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B6-EPIPHANY_WATER",
+      "title": "Epiphany water and the priestly blessing",
+      "wave": "06",
+      "weiser_ids": [
+        "WEI58-12-007",
+        "WEI58-12-008"
+      ],
+      "decision": "SOURCE_OR_RITUAL_HOLD",
+      "canonical_target": "PENDING-BLSS-EPIPHANY-WATER",
+      "release_priority": "GATED",
+      "reason": "Need exact 1962 edition and faculties/ministerial usage; historical Weller 1964 translation insufficient.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B6-MARY_GARDEN",
+      "title": "A little garden dedicated to Our Lady",
+      "wave": "06",
+      "weiser_ids": [
+        "WEI58-13-011"
+      ],
+      "decision": "NEW_CANONICAL_CANDIDATE",
+      "canonical_target": "CANDIDATE-MARY-GARDEN",
+      "release_priority": "P1",
+      "reason": "Distinct traditional domestic Marian flower/herb garden, may connect to DEV-001 May devotion.",
+      "type": "HOUSEHOLD_MARIAN",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B6-PASKA",
+      "title": "Paska: a cross-marked Easter bread",
+      "wave": "06",
+      "weiser_ids": [
+        "WEI58-17-023"
+      ],
+      "decision": "ENRICH_EXISTING",
+      "canonical_target": "BLSS-004",
+      "release_priority": "BASELINE",
+      "reason": "Easter paska is a regional bread/food facet, not a second priestly Easter food blessing.",
+      "type": "REGIONAL_EASTER_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B6-MARY_NATIVITY_SEEDS",
+      "title": "Blessing seeds on the Nativity of Our Lady",
+      "wave": "06",
+      "weiser_ids": [
+        "WEI58-25-023"
+      ],
+      "decision": "SOURCE_OR_RITUAL_HOLD",
+      "canonical_target": "PENDING-MARIAN-SEED-BLESSING",
+      "release_priority": "GATED",
+      "reason": "Modern Polish inventory does not establish specific historical 1962 Latin blessing permissions.",
+      "type": "PRIESTLY_BLESSING",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    },
+    {
+      "id": "W58-P1-B6-ST_JOSEPH_FRITTERS",
+      "title": "St Joseph's Day fritters",
+      "wave": "06",
+      "weiser_ids": [
+        "WEI58-27-018"
+      ],
+      "decision": "REGIONAL_REFERENCE_ONLY",
+      "canonical_target": "Saints:St Joseph / Learn",
+      "release_priority": "P2",
+      "reason": "Regional Italian festival foods already subordinate to saint profile, not a new canonical rite.",
+      "type": "REGIONAL_FOOD",
+      "source_status": "INDEPENDENT_BOUND_SOURCE_WITH_EDITORIAL_LIMITS",
+      "automatic_publication": false
+    }
+  ],
+  "provisional_new_custom_groups": [
+    {
+      "candidate_id": "CANDIDATE-STPATRICK-RIBBON",
+      "editorial_ids": [
+        "WEISER-CARD-27-012"
+      ],
+      "priority": "P2",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-LAS-POSADAS",
+      "editorial_ids": [
+        "W58-CARD-B2-POSADAS"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-OPLATEK",
+      "editorial_ids": [
+        "W58-CARD-B2-OPLATEK"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-STERN-SINGERS",
+      "editorial_ids": [
+        "W58-CARD-B2-STERN"
+      ],
+      "priority": "P1",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-GALETTE-ROIS",
+      "editorial_ids": [
+        "W58-CARD-B2-EPIPHCAKE"
+      ],
+      "priority": "P1",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-SEVEN-CHURCH-VISIT",
+      "editorial_ids": [
+        "W58-CARD-B2-THURS7"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-CORPUS-ROUTE-DECOR",
+      "editorial_ids": [
+        "W58-CARD-B2-FLOWER",
+        "W58-P1-B3-CORPUS-WINDOWS"
+      ],
+      "priority": "P1",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-ADVENT-WREATH",
+      "editorial_ids": [
+        "W58-P1-B3-ADVENT-WREATH"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "editorial_ids": [
+        "W58-P1-B3-IRISH-CANDLE"
+      ],
+      "priority": "P2",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "editorial_ids": [
+        "W58-P1-B3-EASTER-EGGS",
+        "W58-P1-B5-PYSANKY"
+      ],
+      "priority": "P2",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-ROGATION-FAMILY-WALK",
+      "editorial_ids": [
+        "W58-P1-B4-ROGATION"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-STJOHN-BONFIRE",
+      "editorial_ids": [
+        "W58-P1-B4-JOHN"
+      ],
+      "priority": "P2",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-ADVENT-MANGER-STRAW",
+      "editorial_ids": [
+        "W58-P1-B5-MANGER_STRAW"
+      ],
+      "priority": "P0",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-EMMAUS-WALK",
+      "editorial_ids": [
+        "W58-P1-B5-EMMAUS"
+      ],
+      "priority": "P1",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    },
+    {
+      "candidate_id": "CANDIDATE-MARY-GARDEN",
+      "editorial_ids": [
+        "W58-P1-B6-MARY_GARDEN"
+      ],
+      "priority": "P1",
+      "publication_state": "NOT_STAGED_FOR_APP"
+    }
+  ]
+}
