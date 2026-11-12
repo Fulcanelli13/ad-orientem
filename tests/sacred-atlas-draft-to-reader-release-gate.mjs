@@ -26,19 +26,20 @@ assert.equal(citationTriage.source_ledger_path,
   "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
   p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
-assert.equal(citationDifferences.length,78,"Exact-revision differing URLs after seven citation repairs");
+assert.equal(citationDifferences.length,65,"Exact-revision differing URLs after source upgrades");
 assert.equal(citationTriage.entries.length,85,"Keep all 85 original differences for provenance");
 const citationLedgerByKey=new Map(claimResearchLedger.paragraphs.map(p=>[p.draft_order+":"+p.section_id,p]));
 const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
 assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,7);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE").length,12);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,66);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,53);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,13);
 for(const classified of citationTriage.entries){
   const p=citationLedgerByKey.get(classified.key);
   assert.ok(p,"Orphan citation triage entry");
   assert.equal(classified.place_id,p.place_id,"Citation triage points to wrong shrine");
-  if(classified.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY"){
+  if(classified.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY"||classified.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY"){
     assert.equal(p.source_url,classified.repair.new_guide_source_url,
       "Previously defective citation has not been replaced");
     assert.equal(p.source_id,classified.repair.new_guide_source_id,
@@ -62,9 +63,19 @@ for(const classified of citationTriage.entries){
   assert.equal(classified.french_second_editor_approved,false);
   assert.equal(classified.owner_authorized,false);
 }
-assert.equal(citationTriage.summary.current_differing_urls,78);
-assert.equal(citationTriage.summary.remaining_active_triage,66);
+assert.equal(citationTriage.summary.current_differing_urls,65);
+assert.equal(citationTriage.summary.remaining_active_triage,53);
+assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,13);
 assert.equal(citationTriage.summary.source_equivalent_no_change,12);
+for(const [order,sourceId] of [[77,"AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"],
+  [106,"AO-ED-CORNILLON-SANCTUARY-20261112"],
+  [185,"AO-ED-SWIETA-LIPKA-HISTORY-20261112"],
+  [188,"AO-ED-BREZJE-SANCTUARY-20261112"],
+  [198,"AO-ED-ORVIETO-CORPORAL-CHAPEL-20261112"]]){
+  const g=wave2.find(x=>x.draft_order===order);
+  assert.ok(g.research_source_ids.includes(sourceId),"Specific institutional source omitted");
+  assert.ok(g.sections.some(s=>s.paragraphs[0].source_id===sourceId),"Section missing improved citation");
+}
 const lisieuxGuide=wave1.find(g=>g.draft_order===39);
 const lisieuxParagraph=lisieuxGuide.sections.find(s=>s.id==="carmel").paragraphs[0];
 assert.match(lisieuxParagraph.en,/26 March 1923/);
