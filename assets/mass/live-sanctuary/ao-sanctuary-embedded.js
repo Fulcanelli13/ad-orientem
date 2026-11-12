@@ -161,6 +161,20 @@
     // Final second-acolyte choreography remains on ceremonial hold.
     acolyte.x=3.14;acolyte.z=1.75;acolyte.face=90;
   }
+  function stageSolemnRequiemGospel(card,requiem,form){
+    if(card?.id!=="C14"||!form.solemn||requiem!==true)return;
+    // The source-checked Ritus VI.5 minister records MR62.SOL.B02.007
+    // (thurifer/two acolyte candles in procession) and .008 (subdeacon
+    // holding book between acolytes) explicitly exclude Requiem. Never
+    // show the ordinary Gospel procession's candles/thurible at Requiem.
+    // Other sacred-minister station geometry is not source-certified.
+    const actors=M3.actors?.();
+    for(const id of ["T","A1","A2"]){
+      const actor=actors?.[id];
+      if(!actor)continue;
+      actor.path=null;actor.turn=null;actor.prop=null;actor.vis=false;
+    }
+  }
   function quietInactiveElevation(card){
     if(card?.id!=="C36"&&card?.id!=="C38")return;
     // Claude's ORIGINAL static scene leaves its elevation glow lit.
@@ -209,7 +223,9 @@
       return ack(false,"UNVERIFIED_SOURCE_SECTION");
     const cue=String(message.sourceCueId??"");
     const validCue=/^AO\.SM\.C\d{4}$/.test(cue)&&message.certifiedSourceFocus===true;
-    const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc;
+    const requiem=message.requiem===true;
+    const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc+
+      "|"+(requiem?"REQUIEM":"ORDINARY");
     if(last?.card==="P1"){
       showObservedSprinkle(false);
       aspergesSprinklingSeen=false;
@@ -239,10 +255,16 @@
     const play=Boolean(binding?.card===id&&
       binding.section===sourceSectionId&&
       (!binding.forms||binding.forms.includes(String(message.form).toUpperCase()))&&
+      // Ritus XIII.2: Requiem Offertory incenses ONLY celebrant afterward.
+      // Claude's 16-second ordinary C24 routine also incenses other
+      // ministers. Keep the source state visible, but do not run the
+      // formally inaccurate ordinary sequence for a Requiem.
+      !(requiem&&id==="C24")&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
-    last={key:nextKey,card:id,cue,sourceSectionId,
+    stageSolemnRequiemGospel(card,requiem,form);
+    last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE"});
