@@ -292,10 +292,13 @@ assert.equal(asp("ASP-R03",["ASP-040"],{form:"LOW"}).code,
  "ASPERGES_SUNG_FORM_REQUIRED");
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 
-assert.ok(bridge.includes("stageSungSediliaAcolyte(card)"));
-assert.ok(bridge.includes("singerSedilia=new Set("));
-assert.equal(html.includes("stageSungSediliaAcolyte"),false,
-  "Acolyte correction is an adapter, never a mutation of Claude's original visuals");
+assert.ok(bridge.includes("stageSedilia(card,form)"));
+assert.ok(bridge.includes("sungSedilia=new Set("));
+assert.ok(bridge.includes("clearSediliaPlacement()"));
+assert.ok(bridge.includes("a.x=4.04;a.b.h=a._aoSeatBaseline+.52;"));
+assert.ok(bridge.includes("acolyte.x=2.36;acolyte.z=1.8;"));
+assert.equal(html.includes("stageSedilia(card,form)"),false,
+ "Original 3D church and camera may not be modified to fix seated sprites");
 assert.equal(st.form,"low");
 assert.ok(rebuilds>=2,"All forms reuse the original renderer's mount path");
 assert.equal(send("At the Foot of the Altar · Introibo",{form:"LOW"}).card,"C01");
