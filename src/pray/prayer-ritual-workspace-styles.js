@@ -70,6 +70,19 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
 #aoPray435930 .aoPrayerRitualText>*{min-width:0;max-width:100%}
 #aoPray435930 .aoPrayerRitualText .aoTenebStageNav{top:0;z-index:7}
 #aoPray435930 .aoPrayerRitualText .aoTenebReading{border:0;padding:clamp(10px,2vw,24px);background:transparent}
+#aoPray435930 .aoPrayerRitualText .aoTenebSourceSteps{
+  display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;gap:6px;padding:14px 2px 2px;color:#c3ac87;
+  font:500 .78rem system-ui,sans-serif
+}
+#aoPray435930 .aoPrayerRitualText .aoTenebSourceSteps button{
+  min-height:44px;min-width:0;border:1px solid rgba(218,194,152,.32);
+  border-radius:8px;padding:8px 10px;background:rgba(215,181,120,.08);
+  color:#e8d6b4;font:inherit;text-align:center
+}
+#aoPray435930 .aoPrayerRitualText .aoTenebSourceSteps button:disabled{
+  opacity:.3;cursor:default
+}
 #aoPray435930 .aoPrayerRitualText .aoTenebCeremony{
   margin:8px 0!important;border-color:rgba(208,183,141,.22)!important;
   padding:12px!important
