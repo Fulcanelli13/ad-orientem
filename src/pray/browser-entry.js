@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import { installLazyPrayRegistry } from "./lazy-module-registry.js";
 import { openChurchNovenaRoute as openChurchNovenaThroughN3 } from "./church-novena-route.v1.js";
+import { createChurchHost,churchPilotEnabled } from "./church-host.v1.js";
 
 
 
@@ -104,6 +105,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   // One-use, in-memory Back receipt owned by this Prayer entry; not a
   // persisted session or a second navigation state machine.
   let backReceipt=null;
+  const churchHost=createChurchHost(win);
   function snapshotScroll(){
     const m=root(win)?.querySelector(".aoP435930Mount");
     if(!m)return null;
@@ -147,6 +149,12 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   async function open({restoreReturn=false}={}){
     const receipt=restoreReturn?backReceipt:null;
     backReceipt=null; // Explicit Prayer entry always starts fresh.
+    if(churchPilotEnabled(win)){
+      // Opt-in R10 pilot: no visual changes to ordinary production Prayer.
+      // Missing staged owner assets fall back to the existing reader.
+      const pilotOpened=await churchHost.open({resume:restoreReturn===true});
+      if(pilotOpened){stamp(win);return true}
+    }
     try{await ensurePrayReader({win});}catch(error){
       try{win?.console?.error?.("Prayer reader load failed",error);}catch{}
       return false;
@@ -182,6 +190,13 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   }
 
   function close({preserveForBack=false}={}){
+    if(churchHost.active()){
+      // Ensure the underlying N3 reader cannot remain visible after Home.
+      try{donor(win)?.close?.({silent:true})}catch{}
+      churchHost.close();
+      backReceipt=null;
+      return true;
+    }
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
     // The Rosary is the separate canonical PrayerBook sheet; Prayer's mount
@@ -225,7 +240,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
       donorAvailable:typeof donor(win)?.open==="function",
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
       visibleOwner:node?.dataset?.aoPrayOwner??null,
-      open:Boolean(node?.classList?.contains?.("open")||
+      open:Boolean(churchHost.active()||node?.classList?.contains?.("open")||
         win?.document?.querySelector?.('#aoPrayerBookRoot.open[data-ao-rosary-active-root="true"]')),
       returnAvailable:Boolean(backReceipt),
       donorState,
@@ -237,9 +252,17 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   // Optional Church integration: the Church owns location and return camera,
   // while the one canonical N3 reader owns text/day/stage/language/calendar.
   async function openChurchNovenaRoute(route,options={}){
-    return openChurchNovenaThroughN3(route,{
-      ...options,win,ensureReader:()=>ensurePrayReader({win})
+    const inChurch=churchHost.active();
+    const originalReturn=options.returnToChurch;
+    const result=await openChurchNovenaThroughN3(route,{
+      ...options,win,ensureReader:()=>ensurePrayReader({win}),
+      returnToChurch:receipt=>{
+        if(inChurch)churchHost.resume();
+        return typeof originalReturn==="function"?originalReturn(receipt):true;
+      }
     });
+    if(result?.ok===true&&inChurch)churchHost.suspend();
+    return result;
   }
   return Object.freeze({version:VERSION,open,close,status,openChurchNovenaRoute});
 }
