@@ -30,7 +30,8 @@ test("only released exact photograph URLs are eligible",()=>{
 test("A3 renders actual source words in same-space Latin-to-vernacular swap",()=>{
  const h=renderClaudePaintingA3({id:"foundations_guardian_angel",record,photo,language:"fr",esc});
  assert.match(h,/data-ao-claude-painting-a3/);
- assert.match(h,/class="bg"/);
+ assert.match(h,/<img class="bg" src="\/assets\/prayer\/released\/joseph-whole-original\.jpg"/);
+ assert.match(h,/class="ambient"/);
  assert.match(h,/class="sh"/);
  assert.match(h,/Sancte Joseph, ora pro nobis/);
  assert.match(h,/Saint Joseph, priez pour nous/);
@@ -53,7 +54,12 @@ test("A3 keeps Claude choir's source rows and fixed foot response intact",()=>{
  assert.doesNotMatch(h,/data-ao-a3-swap/);
 });
 test("the A3 port retains full bleed painting, low text gradient and reduced motion",()=>{
- assert.match(CLAUDE_PAINTING_A3_CSS,/background-size:cover/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.ambient\{[^}]*background-size:cover/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*object-fit:contain/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.view \.bg\{[^}]*object-position:center/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/max-width:359px/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/clamp\(250px,48dvh,340px\)/);
+ assert.doesNotMatch(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*background-size:cover/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/animation:aoClaudeA3Kb 32s/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/rgba\(4,6,9,\.88\) 64%/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/prefers-reduced-motion/);
