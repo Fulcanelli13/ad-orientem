@@ -99,6 +99,88 @@ try{
   const frame=page.frames().find(x=>x.url().includes(
    "/assets/mass/live-sanctuary/index.html"));
   assert.ok(frame,"Original Claude scene iframe was not loaded");
+  // Source-backed sung-word sedilia gesture beginnings/ends, not choir timers.
+  if(form==="SOLEMN"&&width===390){
+    const cases=[
+      ["SED-GLORIA-ADORAMUS","Gloria · Praise and Supplication","AO.CARD.003"],
+      ["SED-GLORIA-GRATIAS","Gloria · Praise and Supplication","AO.CARD.003"],
+      ["SED-GLORIA-IESU-FIRST","Gloria · Praise and Supplication","AO.CARD.003"],
+      ["SED-GLORIA-SUSCIPE","Gloria · Praise and Supplication","AO.CARD.003"],
+      ["SED-GLORIA-IESU-SECOND","Gloria · Doxology","AO.CARD.003"],
+      ["SED-CREDO-IESUM","Credo · The Father and the Son","AO.CARD.009"],
+      ["SED-CREDO-INCARNATUS","Credo · Incarnation, Passion and Resurrection","AO.CARD.009"],
+      ["SED-CREDO-SIMUL","Credo · The Holy Spirit, Church and Life Eternal","AO.CARD.009"]
+    ];
+    const audit=await frame.evaluate(rows=>{
+      const send=(id,title,section,phase,extra={})=>
+        window.AO_SANCTUARY_EMBED_TEST.present({
+          type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+          cardTitle:title,sourceSectionId:section,requiem:extra.requiem??false,
+          incarnatusKneelException:extra.exception??false,
+          seatedReverenceObservation:{eventId:id,phase,observed:true,
+            owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION"}
+        });
+      const badEnd=send(...rows[0],"END");
+      const badSource=send(rows[0][0],rows[0][1],"AO.CARD.009","BEGIN");
+      const badRequiem=send(...rows[0],"BEGIN",{requiem:true});
+      const badException=send(...rows[6],"BEGIN",{exception:true});
+      const passed=[];
+      for(const [id,title,section] of rows){
+        const start=send(id,title,section,"BEGIN");
+        const covered=["P","D","S"].map(x=>M3.actors()[x].b.el
+          .classList.contains("ao-sedilia-uncovered"));
+        const end=send(id,title,section,"END");
+        passed.push({id,start:start.seatedGesture,
+          covered,end:end.seatedGesture,
+          reset:["P","D","S"].every(x=>!M3.actors()[x].b.el
+            .classList.contains("ao-sedilia-uncovered"))});
+      }
+      return {badEnd:badEnd.code,badSource:badSource.code,
+        badRequiem:badRequiem.code,badException:badException.code,passed};
+    },cases);
+    assert.equal(audit.badEnd,"SEDILIA_END_WITHOUT_BEGIN");
+    assert.equal(audit.badSource,"UNVERIFIED_SEDILIA_REVERENCE");
+    assert.equal(audit.badRequiem,"UNVERIFIED_SEDILIA_REVERENCE");
+    assert.equal(audit.badException,"EXCEPTIONAL_INCARNATUS_KNEEL_HELD");
+    assert.equal(audit.passed.length,8);
+    for(const row of audit.passed){
+      assert.equal(row.start?.eventId,row.id);
+      assert.deepEqual(row.covered,[true,true,true]);
+      assert.equal(row.end?.phase,"END");
+      assert.equal(row.reset,true);
+    }
+    const c=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const card=api.model.cards.find(x=>x.title==="Gloria · Praise and Supplication");
+      if(!card)return null;
+      api.showSequence(card.sequence);
+      return {source:card.sourceSectionId};
+    });
+    assert.equal(c?.source,"AO.CARD.003");
+    const input={eventId:"SED-GLORIA-ADORAMUS",phase:"BEGIN",observed:true};
+    const rejected=await page.evaluate(x=>window.__AO_PHONE_PREVIEW
+      .observeSediliaReverence({...x,observed:false}),input);
+    assert.equal(rejected.accepted,false);
+    const accepted=await page.evaluate(x=>window.__AO_PHONE_PREVIEW
+      .observeSediliaReverence(x),input);
+    assert.equal(accepted.accepted,true);
+    await frame.waitForFunction(()=>{
+      const s=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return s?.card==="C08"&&s?.seatedGesture?.phase==="BEGIN"&&
+        M3.actors().P.b.el.classList.contains("ao-sedilia-uncovered")&&
+        Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
+    },null,{timeout:12000});
+    const done=await page.evaluate(x=>window.__AO_PHONE_PREVIEW
+      .observeSediliaReverence({...x,phase:"END"}),input);
+    assert.equal(done.accepted,true);
+    await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+      ?.getState?.()?.seatedGesture?.phase==="END",null,{timeout:12000});
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
+    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW
+      .getObservedSediliaReverence()),null);
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("LIVE"));
+  }
+
   // Source-checked Solemn Requiem exceptions: visual only, not a new
   // Mass resolver or an inferred celebrant/Schola clock.
   if(form==="SOLEMN"&&width===390){
