@@ -32,8 +32,8 @@ assert.equal(ledger.held.length,5);
 assert.deepEqual(new Set(ledger.approved.map(x=>x.cl2_anchor)),new Set(["RG-0B11C840F55E","RG-18825D70FD67"]));
 assert.deepEqual(new Set(ledger.held.map(x=>x.cl2_anchor)),
  new Set(["RG-7C7DC29FFFAB","RG-10BAB9521232","RG-ABBC659D0388","RG-15198DD7A6FE","RG-AAFBFCE94AA0"]));
-assert.equal(new Set(media.items.map(x=>x.venue_id)).size,25);
-assert.equal(new Set(media.items.map(x=>x.asset_path)).size,25);
+assert.equal(new Set(media.items.map(x=>x.venue_id)).size,media.items.length,"All approved venue_id values must remain unique after explicit P112 additions");
+assert.equal(new Set(media.items.map(x=>x.asset_path)).size,media.items.length,"All approved asset_path values must remain unique after explicit P112 additions");
 assert.equal(physical.records.length,2580);
 assert.ok(DIRECTORY_CARD_STYLE.includes("object-fit:contain;object-position:center"),"Cover must not crop church architecture");
 const source=new Map(physical.records.map(r=>[r[0],r]));
