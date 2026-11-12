@@ -1,0 +1,21 @@
+name: FSSP public marker endpoint study (no import)
+on:
+  push:
+    branches: [research/fssp-live-directory-loader-diagnostic-20261112]
+    paths:
+      - .github/workflows/fssp-public-marker-endpoint-research.yml
+      - tools/directory/probe-fssp-public-marker-endpoint.mjs
+permissions:
+  contents: read
+jobs:
+  public-source-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test public source canonical URL and documented WP Go Maps REST route
+        run: node tools/directory/probe-fssp-public-marker-endpoint.mjs
