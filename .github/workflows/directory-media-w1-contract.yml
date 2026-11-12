@@ -7,6 +7,8 @@ on:
       - "src/find/directory-card.js"
       - "tools/directory/discover-open-place-media.py"
       - "tests/directory-media-card-contract.mjs"
+      - "tests/directory-tlm-seven-photo-holds-resolution.mjs"
+      - "data/directory/research/tlm-7-held-photo-resolution-20261112.v1.json"
       - "tests/directory-photo-discovery-test.py"
       - ".github/workflows/directory-media-w1-contract.yml"
   workflow_dispatch:
@@ -31,6 +33,7 @@ jobs:
           node --check src/find/browser-entry.js
           python -m py_compile tools/directory/discover-open-place-media.py
           node tests/directory-media-card-contract.mjs
+          node tests/directory-tlm-seven-photo-holds-resolution.mjs
           node tests/preliminary-world-mass-map-r49.mjs
           python tests/directory-photo-discovery-test.py -v
       - name: Wikimedia Commons live smoke (research only, nonblocking)

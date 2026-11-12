@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const a=load("data/directory/research/tlm-7-held-photo-resolution-20261112.v1.json");
+const ledger=load("data/directory/research/tlm-21-source-verified-photo-release-20261112.v1.json");
+const stage=load("data/directory/research/tlm-28-release-candidates-20261112.v1.json");
+const registry=load("data/directory/approved-venue-media.v1.json");
+const map=load("data/directory/preliminary-map-r49.v1.json");
+assert.equal(a.schema,"AO_TLM_SEVEN_HELD_PHOTOS_RESOLUTION_V1");
+assert.equal(a.status,"RESEARCH_ONLY_SEVEN_HELD_NO_PUBLICATION_CHANGE");
+assert.equal(a.records.length,7);
+const original=new Map(stage.entries.map(x=>[x.cl2_anchor,x]));
+const held=new Set(ledger.held.map(x=>x.cl2_anchor));
+const approved=new Set(registry.items.map(x=>x.venue_id));
+const seen=new Set();
+for(const rec of a.records){
+ assert.ok(held.has(rec.cl2_anchor),"Not an existing photo hold: "+rec.cl2_anchor);
+ assert.ok(!seen.has(rec.cl2_anchor),"Duplicate hold");seen.add(rec.cl2_anchor);
+ assert.equal(rec.venue_id,original.get(rec.cl2_anchor)?.venue_id,"Exact venue mismatch");
+ assert.ok(!approved.has(rec.venue_id),"A held venue was prematurely published");
+ assert.match(rec.candidate_source_url,/^https:\/\//);
+ assert.ok(rec.existing_source_url&&rec.editorial_assessment&&rec.next_evidence);
+ for(const flag of ["publication_approved","rights_verified","subject_verified","crop_reviewed"])
+  assert.equal(rec[flag],false,"Research record has premature publication flag");
+}
+assert.equal(seen.size,held.size);
+assert.equal(a.records.filter(x=>x.decision==="ALTERNATE_IDENTIFIED_BINARY_PENDING").length,2);
+assert.equal(a.records.filter(x=>x.decision==="HOLD_EXACT_CHAPEL_VENUE_ANCHOR").length,1);
+const park=a.records.find(x=>x.cl2_anchor==="RG-7C7DC29FFFAB");
+assert.equal(park.venue_id,"AO-AMER-R28-US-31-17");
+const pin=map.records.find(x=>x[0]===park.venue_id);
+assert.equal(pin[6],40.682044);assert.equal(pin[7],-111.537095);
+assert.equal(pin[10],"source_marker_unassessed");
+assert.equal(registry.items.length,23,"21-plus-2 covers must remain unchanged");
+assert.equal(a.summary.production_cover_changes,0);
+assert.equal(a.summary.coordinate_changes,0);
+console.log("PASS 7 withheld exact venue photographs: two cleaner-source leads, historic Park City chapel/site identity hold, zero premature publication");
