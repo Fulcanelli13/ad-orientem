@@ -1,0 +1,61 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B35",
+  "asOf": "2026-11-13",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B34",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B35-01",
+      "kind": "CLASS_II_PENDANT_PHYSICAL_IDENTITY",
+      "subject": "14 September Exaltation of the Holy Cross",
+      "object": "Sebastiano Ricci, The Exaltation of the True Cross, NGA 1939.1.72",
+      "relatedObject": "Sebastiano Ricci, A Miracle of Saint Francis of Paola, NGA 1939.1.71",
+      "sources": [
+        "https://www.nga.gov/artworks/213-exaltation-true-cross",
+        "https://www.nga.gov/artworks/212-miracle-saint-francis-paola"
+      ],
+      "findingEn": "NGA identifies 1939.1.71 as the physical pendant to 1939.1.72. Both were painted in 1733, are tall narrow canvases, and share the Stroganov–Contini Bonacossi–Kress provenance. The pendant depicts a miracle of Saint Francis of Paola, not the Exaltation or Finding of the Cross. Treat as distinct physical artworks and do not count the pendant as feast coverage. The 1939.1.72 historical Finding-of-the-Cross title ambiguity remains unresolved.",
+      "findingFr": "La NGA identifie le tableau 1939.1.71, Miracle de saint François de Paule, comme pendant physique de l'Exaltation de la Vraie Croix (1939.1.72). Les deux toiles étroites, datées de 1733, partagent une provenance Stroganov–Contini Bonacossi–Kress. Le pendant représente un autre sujet : il ne constitue pas une seconde image de l'Exaltation. L'ambiguïté ancienne entre Découverte et Exaltation pour 1939.1.72 reste ouverte.",
+      "rights": "NGA object pages mark media public domain; no image bytes acquired",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B35-02",
+      "kind": "CLASS_II_ALTARPIECE_ICONOGRAPHY_SOURCE_BOUNDARY",
+      "subject": "8 September Nativity of the Blessed Virgin",
+      "object": "Andrea di Bartolo, Nativity of the Virgin, NGA 1939.1.42",
+      "relatedObjects": [
+        "NGA 1939.1.41 Presentation of the Virgin",
+        "NGA 1939.1.43 Joachim and Anna Giving Food to the Poor and Offerings to the Temple"
+      ],
+      "sources": [
+        "https://www.nga.gov/artworks/183-nativity-virgin",
+        "https://www.nga.gov/artworks/182-presentation-virgin-temple",
+        "https://www.nga.gov/artworks/184-joachim-and-anna-giving-food-poor-and-offerings-temple"
+      ],
+      "findingEn": "NGA identifies both companion panels by accession and subject. The Presentation (1939.1.41) is a distinct episode rooted in Marian apocryphal tradition, not a second Nativity; the Joachim and Anna charity panel (1939.1.43) depicts their charitable acts before Mary's birth. These are potential separate Marian narrative subjects, but neither is a substitute for the exact Nativity panel. The reconstructed vertical stacking and missing central subject remain hypotheses.",
+      "findingFr": "La NGA identifie les deux panneaux compagnons : Présentation de la Vierge au Temple (1939.1.41) et Joachim et Anne distribuant des aumônes et des offrandes au Temple (1939.1.43). Ils représentent des épisodes distincts, non des doublons de la Nativité (1939.1.42). Le récit de la Présentation relève de la tradition apocryphe mariale; l'agencement vertical supposé et le sujet central perdu ne sont pas établis.",
+      "rights": "NGA object-specific public-domain media statements; originals not acquired",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Approved Class I: find institutionally cleared exact reproductions for Strozzi NT 108873, Benson Salvator Mundi, Carracci Angel Frees Souls, Gaulli Louvre INV 20298; retain holds until exact photo rights proven",
+    "Acquire actual NGA 1939.1.42 and 1939.1.72 and Städel 830 originals; calculate hashes and mobile crop QA; retry network access",
+    "Find exact Lateran dedication imagery, avoiding related Constantine scenes"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
