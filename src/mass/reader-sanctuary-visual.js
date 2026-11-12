@@ -1,4 +1,5 @@
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
+import {SEDILIA_REVERENCE_EVENTS} from "./reader-sedilia-reverence.js";
 // Source-linked visual receiver for the owner-supplied 65-scene sanctuary.
 // NO new Mass timer, rubric owner, priest observation, chant selection, or
 // reconstruction of the original 3D artwork is introduced here.
@@ -74,8 +75,18 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
    ["LOW","SOLEMN"].includes(form)&&
    ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(eventId)
    ?eventId:null;
+ const sed=state?.observedSediliaReverence;
+ const spec=SEDILIA_REVERENCE_EVENTS[sed?.eventId];
+ const verifiedSed=Boolean(spec&&sed?.observed===true&&
+   sed?.owner==="EXPLICIT_SEDILIA_GESTURE_OBSERVATION"&&
+   sed.nativeCardId===card.sectionId&&
+   sed.sourceSectionId===sourceSectionId&&spec.section===sourceSectionId&&
+   spec.card===card.title&&["BEGIN","END"].includes(sed.phase)&&
+   !isExplicitRequiemMass(prepared));
  return Object.freeze({
   type:SANCTUARY_PROTOCOL,version:1,form,
+  seatedReverenceObservation:verifiedSed?sed:null,
+  incarnatusKneelException:state?.incarnatusKneelException===true,
   sourceSectionId,
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
