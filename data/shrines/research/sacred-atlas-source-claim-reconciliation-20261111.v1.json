@@ -224,6 +224,36 @@
       "old_url": "https://www.diocese-bourges.org/actualites/2852-nihil-obstat-a-la-devotion-mariale-au-sanctuaire-de-pellevoisin/",
       "new_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
       "reason": "Verified exact institutional source replacing prior official/non-authoritative or inaccessible source"
+    },
+    {
+      "key": "2|121|history",
+      "old_url": "https://www.cbcj.catholic.jp/2016/09/01/13352/",
+      "new_url": "https://www.seitaihoshikai.com/us/index.html",
+      "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
+    },
+    {
+      "key": "2|125|pilgrimage",
+      "old_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+      "new_url": "https://www.basilicasanmarco.it/en/liturgical-services/",
+      "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
+    },
+    {
+      "key": "2|218|history",
+      "old_url": "https://www.miracoloeucaristico.eu/",
+      "new_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/",
+      "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
+    },
+    {
+      "key": "2|218|identity",
+      "old_url": "https://www.miracoloeucaristico.eu/",
+      "new_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
+    },
+    {
+      "key": "2|218|pilgrimage",
+      "old_url": "https://www.miracoloeucaristico.eu/",
+      "new_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "reason": "Citation-scope repair after exact institutional/custodian source comparison; research only, no independent EN/FR certification"
     }
   ],
   "paragraphs": [
@@ -8203,30 +8233,30 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-16c4d29b",
+      "guide_revision": "fnv1a32-4cc088d2",
       "draft_order": 121,
       "wave": 2,
       "section_id": "history",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.cbcj.catholic.jp/2016/09/01/13352/",
-      "source_id": "AO-ED-AKITA-CBCJ-20261111",
+      "source_url": "https://www.seitaihoshikai.com/us/index.html",
+      "source_id": "AO-ED-AKITA-CUSTODIAN-20261112",
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
       "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Bishops' Conference article states seven years of reported weeping starting in 1975, and Akita convent's own Japanese history dates the reports precisely 4 January 1975–15 September 1981. Earlier EN/FR draft and research-source metadata incorrectly ended in 1982; both corrected. Reports are attributed, not independently validated supernatural events.",
+      "research_evidence_note": "The convent's English site directly dates reported tears from 4 January 1975 to 15 September 1981 and attributes them to its own community account. The older 2016 bishops' item on congregations did not substantiate the claimed seven-year chronology.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
       "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
-      "evidence_checked_url": "https://www.seitaihoshikai.com/",
+      "evidence_checked_url": "https://www.seitaihoshikai.com/us/index.html",
       "evidence_scope": "PRIMARY_BISHOPS_CONFERENCE_PLUS_EXACT_CUSTODIAN_CORE_CLAIM_FIRST_PASS",
       "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-16c4d29b",
+      "guide_revision": "fnv1a32-4cc088d2",
       "draft_order": 121,
       "wave": 2,
       "section_id": "identity",
@@ -8249,7 +8279,7 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-16c4d29b",
+      "guide_revision": "fnv1a32-4cc088d2",
       "draft_order": 121,
       "wave": 2,
       "section_id": "pilgrimage",
@@ -8478,7 +8508,7 @@
     },
     {
       "place_id": "place:IT:basilica-san-marco-venezia",
-      "guide_revision": "fnv1a32-dc757f1e",
+      "guide_revision": "fnv1a32-125408f1",
       "draft_order": 125,
       "wave": 2,
       "section_id": "history",
@@ -8501,7 +8531,7 @@
     },
     {
       "place_id": "place:IT:basilica-san-marco-venezia",
-      "guide_revision": "fnv1a32-dc757f1e",
+      "guide_revision": "fnv1a32-125408f1",
       "draft_order": 125,
       "wave": 2,
       "section_id": "identity",
@@ -8526,20 +8556,20 @@
     },
     {
       "place_id": "place:IT:basilica-san-marco-venezia",
-      "guide_revision": "fnv1a32-dc757f1e",
+      "guide_revision": "fnv1a32-125408f1",
       "draft_order": 125,
       "wave": 2,
       "section_id": "pilgrimage",
       "priority": "STANDARD_EDITORIAL_REVIEW",
-      "source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
-      "source_id": "SHR-IT-basilica-san-marco-venezia",
+      "source_url": "https://www.basilicasanmarco.it/en/liturgical-services/",
+      "source_id": "AO-ED-SAN-MARCO-LITURGY-20261112",
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Saint Mark basilica official entrance and Mass pages distinguish Porta dei Fiori entrance for prayer from ticketed tourist entrance and liturgical closures.",
+      "research_evidence_note": "Official Basilica di San Marco Mass and Prayer page distinguishes free worship entry through north-side Porta dei Fiori from tourist entry and publishes current liturgical arrangements.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -14700,19 +14730,19 @@
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
-      "guide_revision": "fnv1a32-8cfc6692",
+      "guide_revision": "fnv1a32-1b843043",
       "draft_order": 218,
       "wave": 2,
       "section_id": "history",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.miracoloeucaristico.eu/",
-      "source_id": "SG-R72-SITE-SG-INV-0054",
+      "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/",
+      "source_id": "AO-ED-LANCIANO-BEWEB-HISTORY-20261112",
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
       "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Italian bishops' BeWeB thematic essay identifies Lanciano San Francesco sanctuary, its conventual Franciscan custody and Eucharistic miracle tradition; current named custodian homepage is under construction.",
+      "research_evidence_note": "Italian Bishops' Conference BeWeB thematic overview identifies the Church of San Francesco at Lanciano as the shrine associated with a traditional Eucharistic miracle narrative and international pilgrimage; historically reported tradition is not independently proven by the page.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -14723,19 +14753,19 @@
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
-      "guide_revision": "fnv1a32-8cfc6692",
+      "guide_revision": "fnv1a32-1b843043",
       "draft_order": 218,
       "wave": 2,
       "section_id": "identity",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.miracoloeucaristico.eu/",
-      "source_id": "SG-R72-SITE-SG-INV-0054",
+      "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
       "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Italian bishops' BeWeB documentation identifies physical objects and relic custody at San Francesco, distinct from independent authentication of miraculous ancient origin.",
+      "research_evidence_note": "Italian Bishops' Conference BeWeB site-specific heritage account documents the Church of San Francesco and custody of venerated objects without independently verifying supernatural origins.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -14746,20 +14776,20 @@
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
-      "guide_revision": "fnv1a32-8cfc6692",
+      "guide_revision": "fnv1a32-1b843043",
       "draft_order": 218,
       "wave": 2,
       "section_id": "pilgrimage",
       "priority": "STANDARD_EDITORIAL_REVIEW",
-      "source_url": "https://www.miracoloeucaristico.eu/",
-      "source_id": "SG-R72-SITE-SG-INV-0054",
+      "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Italian Episcopal Conference BeWeB heritage record identifies San Francesco church at Lanciano as international Catholic pilgrimage destination, with Franciscan custody and the cult's venerated objects; 1962 Mass and present visiting times not inferred.",
+      "research_evidence_note": "Italian Bishops' Conference BeWeB site-specific account documents San Francesco pilgrimage context; it does not establish current Mass timetable, public viewing times or 1962-rite availability.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
