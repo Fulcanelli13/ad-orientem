@@ -495,6 +495,41 @@ try{
     assert.equal(returnAudit.againPath,null);
     assert.equal(returnAudit.requiemAgain,false);
   }
+  // Check the original owner's M3 actor tick actually animates
+  // the canonically triggered RETURN, not merely stores a route array.
+  // This is a preview illustration, not a clock or observed priest event.
+  if(form==="SOLEMN"&&width===390){
+    const started=await frame.evaluate(()=>{
+      const api=window.AO_SANCTUARY_EMBED_TEST;
+      const result=api.present({
+        type:"AO_SANCTUARY_CUE_V1",version:1,
+        form:"SOLEMN",cardTitle:"Communion of the Faithful",
+        sourceSectionId:"AO.CARD.025",sourceCueId:"AO.SM.C0246",
+        certifiedSourceFocus:true,
+        canonicalCommunionEventId:"MC-COM-320",scholaOnly:false
+      });
+      const p=M3.actors().P;
+      return {triggered:result.communionReturnTriggered,x:p.x,z:p.z,
+        path:Boolean(p.path)};
+    });
+    assert.equal(started.triggered,true);
+    assert.equal(started.path,true);
+    await page.waitForTimeout(450);
+    const moving=await frame.evaluate(()=>{
+      const p=M3.actors().P;
+      return {x:p.x,z:p.z,path:Boolean(p.path),
+        walking:p.b.el.classList.contains("walking")};
+    });
+    assert.ok(moving.x>started.x+.1,
+      "Owner M3 must really advance the priest toward the altar: "+
+      JSON.stringify({started,moving}));
+    assert.equal(moving.path,true);
+    assert.equal(moving.walking,true,
+      "Returning priest must use original M3 walking sprite");
+    await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.clear());
+    assert.equal(await frame.evaluate(()=>M3.actors().P.path),null,
+      "LIVE→MISSAL clear must halt the physically advancing actor");
+  }
   const model=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
    if(api?.model?.totalCards!==65)throw Error("Canonical 65 LIVE cards missing");
