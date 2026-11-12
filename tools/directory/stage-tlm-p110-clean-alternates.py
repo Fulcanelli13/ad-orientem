@@ -65,7 +65,10 @@ def acquire(entry,site_ids,previously_approved,linked_ids):
     metadata=info.get("extmetadata") or {}
     source_lic=clean((metadata.get("LicenseShortName") or {}).get("value"))
     author=clean((metadata.get("Artist") or {}).get("value"))
-    if norm(entry["license"]) not in norm(source_lic):
+    # Commons returns "CC0" for the 1.0 waiver; other CC grants retain their version.
+    source_license_matches = (norm(source_lic)=="cc0" if entry["license"]=="CC0-1.0"
+                              else norm(entry["license"])==norm(source_lic))
+    if not source_license_matches:
         raise ValueError("source licence mismatch: "+source_lic)
     if norm(entry["expected_creator"]) not in norm(author):
         raise ValueError("source creator mismatch: "+author)
