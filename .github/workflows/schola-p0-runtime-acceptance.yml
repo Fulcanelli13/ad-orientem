@@ -51,6 +51,11 @@ jobs:
           node tests/reader-schola-windows.mjs
           node tests/reader-schola-source-itinerary.mjs
 
+      - name: A2 — Source-verified GABC melodic event and timing regression
+        run: |
+          node tests/reader-schola-kyrie-research-audition.mjs
+          node tests/reader-schola-gabc-melody.mjs
+
       - name: B — Independent observation, organ permissions and local programme
         run: |
           node tests/reader-schola-performance-ledger.mjs
