@@ -6,7 +6,7 @@
   "use strict";
   if (new URLSearchParams(location.search).get("aoSanctuary")!=="1") return;
   const PROTOCOL="AO_SANCTUARY_CUE_V1",READY="AO_SANCTUARY_READY_V1",
-    ACK="AO_SANCTUARY_ACK_V1";
+    CLEAR="AO_SANCTUARY_CLEAR_V1",ACK="AO_SANCTUARY_ACK_V1";
   const clean=value=>String(value??"").normalize("NFD")
     .replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").trim().toLowerCase();
   const alias=Object.freeze({
@@ -51,7 +51,8 @@
     // sequence is illustrative and does not report observed priest timing.
     // No incense at Low or simple Missa Cantata.
     "AO.SM.C0121":{card:"C24",section:"AO.CARD.010",
-      forms:["MISSA_CANTATA_INCENSE","SOLEMN"]},
+      forms:["MISSA_CANTATA_INCENSE","SOLEMN"],
+      continuation:["AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"]},
     "AO.SM.C0174":{card:"C36",section:"AO.CARD.015"},
     "AO.SM.C0181":{card:"C38",section:"AO.CARD.016"}
     // Do NOT attach C13 transfer to C0081: source specifies the priest
@@ -99,6 +100,18 @@
         billboard.show=false;
   }
   const ack=(ok,code,extra={})=>({type:ACK,ok,code,...extra});
+  function clear(){
+    // The iframe remains mounted when switching to MISSAL: merely hiding
+    // the viewport does not cancel the owner's original timed keyframes.
+    // A valid clear restores the last card's still frame, removes elevation
+    // lighting and disarms the action for a later LIVE re-entry.
+    if(last?.card){
+      const current=byId.get(last.card);
+      if(current){M3.show(current,false);quietInactiveElevation(current)}
+    }
+    last=null;
+    return ack(true,"SOURCE_VISUAL_CLEARED");
+  }
   function present(message){
     if(message?.type!==PROTOCOL||message.version!==1)
       return ack(false,"INVALID_PROTOCOL");
@@ -128,9 +141,14 @@
     // leaves the reading focus. Otherwise scrolling backwards to an
     // elevation would fail to re-arm it, and stale gesture/lighting FX
     // would survive after the corresponding rubric disappeared.
-    const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&
-      (cue!==last.playedCue||!validCue||
-        sourceSectionId!==last.sourceSectionId));
+    const continuing=Boolean(last?.key===nextKey&&last?.playedCue&&
+      validCue&&sourceSectionId===last.sourceSectionId&&
+      (cue===last.playedCue||cues[last.playedCue]?.continuation?.includes(cue)));
+    // The original C24 sequence spans the offering, cross/altar and
+    // subsequent minister incensation (C0121-C0124). Do not truncate its
+    // 16-second animation as soon as C0122 is focused. Elevations remain
+    // single-cue actions: C0174/C0181 exit resets their glow immediately.
+    const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
     if(last?.key!==nextKey||exiting){
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
@@ -149,12 +167,13 @@
   }
   window.addEventListener("message",event=>{
     if(event.source!==window.parent||event.origin!==location.origin)return;
-    if(event.data?.type!==PROTOCOL)return;
-    const result=present(event.data);
+    if(event.data?.type!==PROTOCOL&&event.data?.type!==CLEAR)return;
+    const result=event.data.type===CLEAR&&event.data.version===1
+      ?clear():present(event.data);
     event.source.postMessage(result,event.origin);
   });
   window.AO_SANCTUARY_EMBED_TEST=Object.freeze({
-    present,originalCardCount:originals.length,
+    present,clear,originalCardCount:originals.length,
     getState:()=>Object.freeze({...last,form:st.form,solemn:st.solemn,inc:st.inc}),
     getVisualFx:()=>Object.freeze({
       elevationStage:Boolean(M3.eng?.vp?.classList?.contains?.("elev")),
