@@ -6,6 +6,10 @@ import {compileExsurgeGabcResearchMelody} from './reader-schola-exsurge-gabc-mel
 import {scholaGabcSyllables,mapScholaSvgLyrics} from './reader-schola-notation-follow.js';
 import {compileGabcMelody,scheduleGabcMelody} from './reader-schola-gabc-melody.js';
 import {createExsurgeNoteheadFollower} from './reader-schola-exsurge-notehead-follow.js';
+import {
+  ORDINARY_M54_RESEARCH_SOURCES,compileOrdinaryM54ResearchMelody,
+  eligibleOrdinaryM54ResearchSource
+} from './reader-schola-ordinary-research-melody.js';
 
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
@@ -123,6 +127,18 @@ export function createKyrieXviResearchAudition({root,
   const trigger=doc.createElement('button');trigger.type='button';
   trigger.className='ao-kyrie-audition-launch';
   trigger.dataset.kyrieResearchAuditionOpen='';
+  trigger.dataset.ordinaryPreviewMovement='KYRIE';
+  const triggers=new Map([['KYRIE',trigger]]);
+  for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
+    const extra=doc.createElement('button');
+    extra.type='button';
+    extra.className='ao-kyrie-audition-launch';
+    extra.dataset.kyrieResearchAuditionOpen='';
+    extra.dataset.ordinaryPreviewMovement=spec.movement;
+    extra.textContent='♫ HEAR '+spec.title.toUpperCase()+' · MELODY PREVIEW';
+    extra.hidden=true;
+    triggers.set(spec.movement,extra);
+  }
   trigger.textContent='♫ HEAR KYRIE XVI · MELODY PREVIEW';
   trigger.hidden=true;
   const panel=doc.createElement('section');
@@ -143,10 +159,30 @@ export function createKyrieXviResearchAudition({root,
   const sourceXviii=offlineKyrialeResearchScore('KYRIE','MASS_18');
   const scoreXviii=compileKyrieXviiiAudition(sourceXviii?.gabc);
   const sources=new Map([
-    ['MASS_16',{score:sourceXvi,compiled:scoreXvi,title:'Kyrie XVI'}],
-    ...(scoreXviii?[['MASS_18',{score:sourceXviii,compiled:scoreXviii,title:'Kyrie XVIII'}]]:[])
+    ['MASS_16',{score:sourceXvi,compiled:scoreXvi,title:'Kyrie XVI',movement:'KYRIE'}],
+    ...(scoreXviii?[['MASS_18',{score:sourceXviii,compiled:scoreXviii,title:'Kyrie XVIII',movement:'KYRIE'}]]:[])
   ]);
-  let setting='MASS_16',score=sourceXvi,compiled=scoreXvi;
+  let setting='MASS_16',activeMovement='KYRIE',score=sourceXvi,compiled=scoreXvi;
+  const ordinaryKey=(movement,settingId)=>movement+':'+settingId;
+  let ordinaryPending=null,ordinaryLoadAttempted=false;
+  function prepareOrdinaryResearch(){
+    if(ordinaryPending||ordinaryLoadAttempted||destroyed)return;
+    ordinaryLoadAttempted=true;
+    ordinaryPending=loadOfflineExsurge(doc).then(exsurge=>{
+      if(destroyed)return;
+      for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
+        const prepared=compileOrdinaryM54ResearchMelody({
+          movement:spec.movement,settingId:spec.settingId,exsurge
+        });
+        if(!prepared)continue; // Bad/changed source can never offer audio.
+        const src=offlineKyrialeResearchScore(spec.movement,spec.settingId);
+        sources.set(ordinaryKey(spec.movement,spec.settingId),{
+          score:src,compiled:prepared.melody,title:spec.title,movement:spec.movement
+        });
+      }
+    }).catch(()=>{/* No offline Exsurge: withhold preview. */})
+      .finally(()=>{ordinaryPending=null;if(!destroyed)sync();});
+  }
   // Load the pinned offline Exsurge semantics only after a user selects one
   // of the four additional research settings. Other Mass forms never preload.
   let advancedPending=null,advancedLoadAttempted=false;
@@ -161,7 +197,7 @@ export function createKyrieXviResearchAudition({root,
           settingId:spec.settingId,score:src,exsurge
         });
         if(prepared)sources.set(spec.settingId,{
-          score:src,compiled:prepared,title:spec.title
+          score:src,compiled:prepared,title:spec.title,movement:'KYRIE'
         });
       }
     }).catch(()=>{ /* Missing offline Exsurge: withhold preview. */ })
@@ -193,7 +229,8 @@ export function createKyrieXviResearchAudition({root,
   function silence(){playing=false;clearTimer();releaseVoices();playButton.textContent='▶ Play';}
   function paint(){
     const note=compiled.performance[index];
-    position.textContent=note?`Invocation ${note.invocation}/${compiled.invocations} · source note ${note.sourceNoteOrdinal}/${compiled.sourceNoteCount}`: 'Complete';
+    const segment=activeMovement==='KYRIE'?'Invocation':'Section';
+    position.textContent=note?`${segment} ${note.invocation}/${compiled.invocations} · source note ${note.sourceNoteOrdinal}/${compiled.sourceNoteCount}`: 'Complete';
     // A source ordinal targets a real Exsurge use#note-N glyph;
     // explicit repetitions revisit identical written noteheads.
     staff.dataset.sourceNoteOrdinal=note?String(note.sourceNoteOrdinal):'complete';
@@ -272,19 +309,23 @@ export function createKyrieXviResearchAudition({root,
     engraver?.destroy?.();engraver=null;
     noteheadFollower.destroy();
     staff.replaceChildren();lyricTargets=[];sourceRendered=false;
-    setting=nextSetting;score=selected.score;compiled=selected.compiled;
+    setting=nextSetting;activeMovement=selected.movement??'KYRIE';score=selected.score;compiled=selected.compiled;
     demoTiming=scheduleGabcMelody(compiled);
     noteheadFollower=createExsurgeNoteheadFollower({staff,compiled});
     panel.querySelector('h3').textContent=selected.title+' · melody';
     panel.setAttribute('aria-label',selected.title+' provisional research melody preview');
     staff.setAttribute('aria-label',selected.title+' Gregorian neumes');
-    trigger.textContent='♫ HEAR '+selected.title.toUpperCase()+' · MELODY PREVIEW';
+    const selectedTrigger=triggers.get(activeMovement);
+    if(selectedTrigger)selectedTrigger.textContent=
+      '♫ HEAR '+selected.title.toUpperCase()+' · MELODY PREVIEW';
     staff.scrollTop=0;staff.scrollLeft=0;
     paint();
     return true;
   }
-  async function open(){
-    if(trigger.hidden)return;
+  async function open(requestedTrigger=trigger){
+    if(requestedTrigger.hidden)return;
+    const requestedKey=requestedTrigger.dataset.researchScoreKey;
+    if(!requestedKey||!sources.has(requestedKey)||!switchScore(requestedKey))return;
     // Once an explicitly chosen chant opens in its own nonmodal player,
     // collapse the configuration sheet so the Mass text remains visible.
     const musicPlan=root.querySelector('[data-schola-local-panel]');
@@ -324,16 +365,18 @@ export function createKyrieXviResearchAudition({root,
     if(action==='stop')stop();
   };
   const rootClick=event=>{
-    if(event.target.closest('[data-kyrie-research-audition-open]'))void open();
+    const requested=event.target.closest('[data-kyrie-research-audition-open]');
+    if(requested&&triggers.get(requested.dataset.ordinaryPreviewMovement)===requested)
+      void open(requested);
   };
   const rootChange=event=>{
     if(event.target.matches(
-      '[data-schola-kyriale-choice="KYRIE"], [data-schola-ordinary-setting="KYRIE"], '+
-      '[data-ordinary-reference-chooser="KYRIE"] select'
+      '[data-schola-kyriale-choice], [data-schola-ordinary-setting], '+
+      '[data-ordinary-reference-chooser] select'
     )){
-      // Hide synchronously before a persisted personal programme re-renders;
-      // no provisional melody may remain selectable during that transition.
-      trigger.hidden=true;
+      // A changed setting invalidates an open melody synchronously before
+      // the saved programme refresh. Never keep an old source sounding.
+      for(const button of triggers.values())button.hidden=true;
       close();
     }
   };
@@ -349,17 +392,56 @@ export function createKyrieXviResearchAudition({root,
   root.addEventListener('change',rootChange,true);
   function sync(){
     if(destroyed)return false;
-    const {form,settingId,isRequiem,mode}=getContext();
-    const permitted=kyrieResearchAuditionEligible({form,settingId,isRequiem,mode});
-    if(permitted&&ADVANCED_SETTINGS.has(settingId)&&!sources.has(settingId))
+    const {form,settingId,isRequiem,mode,ordinarySelections={}}=getContext();
+    const chosenKyrie=settingId??ordinarySelections?.KYRIE;
+    const permitted=kyrieResearchAuditionEligible({
+      form,settingId:chosenKyrie,isRequiem,mode
+    });
+    if(permitted&&ADVANCED_SETTINGS.has(chosenKyrie)&&!sources.has(chosenKyrie))
       prepareAdvancedResearch();
-    const eligible=permitted&&sources.has(settingId);
-    if(eligible&&setting!==settingId)switchScore(settingId);
-    const anchor=root.querySelector('[data-schola-original-score="KYRIE"]');
-    if(anchor&&trigger.parentElement!==anchor.parentElement)anchor.insertAdjacentElement('afterend',trigger);
+    const eligible=permitted&&sources.has(chosenKyrie);
+    const kyrieAnchor=root.querySelector('[data-schola-original-score="KYRIE"]');
+    if(kyrieAnchor&&trigger.parentElement!==kyrieAnchor.parentElement)
+      kyrieAnchor.insertAdjacentElement('afterend',trigger);
+    trigger.dataset.researchScoreKey=chosenKyrie??'';
     trigger.hidden=!eligible;
-    if(!eligible)close();
-    return eligible;
+    if(eligible){
+      const selected=sources.get(chosenKyrie);
+      trigger.textContent='♫ HEAR '+selected.title.toUpperCase()+' · MELODY PREVIEW';
+      // Keep the original Kyrie flow, without interrupting a separate
+      // Ordinary movement that the user explicitly opened.
+      if(panel.hidden&&activeMovement==='KYRIE'&&setting!==chosenKyrie)
+        switchScore(chosenKyrie);
+    }
+    let visible=eligible;
+    for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
+      const chosen=ordinarySelections?.[spec.movement];
+      const key=ordinaryKey(spec.movement,chosen);
+      const allowed=eligibleOrdinaryM54ResearchSource({
+        movement:spec.movement,settingId:chosen,form,mode,isRequiem
+      });
+      if(allowed&&!sources.has(key))prepareOrdinaryResearch();
+      const button=triggers.get(spec.movement);
+      const anchor=root.querySelector(
+        '[data-schola-original-score="'+spec.movement+'"]');
+      if(anchor&&button.parentElement!==anchor.parentElement)
+        anchor.insertAdjacentElement('afterend',button);
+      const show=allowed&&sources.has(key);
+      button.dataset.researchScoreKey=show?key:'';
+      button.hidden=!show;
+      visible ||= show;
+    }
+    // Persisted programmes may be changed while the player is open:
+    // if the source no longer exactly matches, release the sound immediately.
+    if(!panel.hidden){
+      const chosen=activeMovement==='KYRIE'?chosenKyrie:
+        ordinarySelections?.[activeMovement];
+      const key=activeMovement==='KYRIE'?chosen:
+        ordinaryKey(activeMovement,chosen);
+      const button=triggers.get(activeMovement);
+      if(setting!==key||button?.hidden)close();
+    }
+    return visible;
   }
   function destroy(){
     if(destroyed)return;destroyed=true;silence();
@@ -370,13 +452,16 @@ export function createKyrieXviResearchAudition({root,
     panel.removeEventListener('click',panelClick);
     panel.removeEventListener('input',settingsChanged);
     panel.removeEventListener('change',settingsChanged);
-    trigger.remove();panel.remove();style.remove();
+    for(const button of triggers.values())button.remove();
+    panel.remove();style.remove();
   }
   return Object.freeze({sync,stop,destroy,getState:()=>Object.freeze({
     eligible:!trigger.hidden,open:!panel.hidden,playing,index,
     total:compiled.performance.length,sourceApproved:false,
     audioOwnedBySchola:false,
     noteheadAligned:noteheadFollower.getState().mapped,
-    noteheadCount:noteheadFollower.getState().glyphCount
+    noteheadCount:noteheadFollower.getState().glyphCount,
+    activeMovement,activeScoreKey:setting,
+    visiblePreviewMovements:[...triggers].filter(([,b])=>!b.hidden).map(([m])=>m)
   })});
 }
