@@ -57,7 +57,7 @@ for(const entry of released){
   assert.equal(physicalByAnchor.get(entry.cl2_anchor)[1][0],entry.venue_id,"primary source ID");
   assert.equal(placeLinked.has(entry.venue_id),false,"do not override Place cover");
   assert.equal(img.asset_path,raw.approved_asset_path);
-  assert.equal(img.source_url,raw.source_url);
+  assert.equal(img.source_url,raw.source_url.replaceAll("'", "%27"),"source URL must be HTML-attribute-safe");
   assert.equal(img.source_sha1,raw.source_sha1);
   assert.equal(img.derivative_sha256,raw.derivative_sha256);
   assert.equal(img.credit,raw.credit);
