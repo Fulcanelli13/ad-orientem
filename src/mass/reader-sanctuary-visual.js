@@ -108,6 +108,7 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
  let ready=false,destroyed=false,pending=null,previous=null,drag=null;
  const send=p=>{if(!ready||!frame.contentWindow||!p)return false;
   frame.contentWindow.postMessage(p,win.location.origin);return true};
+ const clear=()=>send({type:"AO_SANCTUARY_CLEAR_V1",version:1});
  const receive=e=>{
   if(destroyed||e.origin!==win.location.origin||e.source!==frame.contentWindow)return;
   if(e.data?.type==="AO_SANCTUARY_READY_V1"&&e.data?.version===1&&
@@ -155,6 +156,7 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
   if(!p){
     // A LIVE→MISSAL switch, omitted source-only card or unsupported rite
     // cannot leave a stale visual action covering the canonical reader.
+    clear();
     region.hidden=true;shell.classList.remove("ao-sanctuary-preview");
     pending=null;previous=null;
     return false;
@@ -165,7 +167,7 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
   previous=k;pending=p;send(p);return true;
  };
  const destroy=()=>{
-  if(destroyed)return;destroyed=true;
+  if(destroyed)return;clear();destroyed=true;
   win.removeEventListener("message",receive);
   win.removeEventListener?.("resize",syncGripOrientation);
   grip.removeEventListener("pointerdown",down);
