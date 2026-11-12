@@ -324,6 +324,80 @@ try{
       .contains("ao-source-elevation-incense"));
     assert.equal(exited,false,"MISSAL clear must remove Requiem incense swing");
   }
+  // C57 is a static distribution station. The owner animation also
+  // contains a 12-second priest approach: source C0246 DOES NOT own that
+  // earlier route. Test the existing M3 priest at the rail and (solemn)
+  // deacon's preview-only Communion paten without a moving actor path.
+  const communion=await frame.evaluate(form=>{
+    const api=window.AO_SANCTUARY_EMBED_TEST;
+    const send=(title,section,cue="AO.SM.C0246",requiem=false)=>api.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,
+      form,cardTitle:title,sourceSectionId:section,sourceCueId:cue,
+      certifiedSourceFocus:true,requiem,scholaOnly:false
+    });
+    const count=()=>M3.actors()?.D?.b?.el?.querySelectorAll(
+      ".ao-sanctuary-communion-paten")?.length??0;
+    const before=send("Ecce Agnus Dei · Preparation of the Faithful",
+      "AO.CARD.024","AO.SM.C0245");
+    const beforeCount=count();
+    const distribution=send("Communion of the Faithful","AO.CARD.025");
+    const priest=M3.actors().P;
+    const deacon=M3.actors()?.D;
+    const shown={x:priest.x,z:priest.z,path:priest.path,
+      deaconVisible:deacon?.vis===true,
+      deaconPath:deacon?.path??null,count:count(),
+      card:api.getState()?.card,playedCue:api.getState()?.playedCue};
+    const repeat=send("Communion of the Faithful","AO.CARD.025");
+    const repeatCount=count();
+    const otherCue=send("Communion of the Faithful",
+      "AO.CARD.025","AO.SM.C0245");
+    const otherCueCount=count();
+    const wrongSource=send("Communion of the Faithful","AO.CARD.024");
+    const wrongCount=count();
+    const requiem=send("Communion of the Faithful",
+      "AO.CARD.025","AO.SM.C0246",true);
+    const requiemCount=count();
+    const after=send("Ablutions","AO.CARD.026","AO.SM.C0247");
+    const afterCount=count();
+    const clear=api.clear();
+    return {form,before:before.communionStation,beforeCount,
+      station:distribution.communionStation,
+      choreography:distribution.choreography,shown,
+      repeat:repeat.communionStation,repeatCount,
+      otherCue:otherCue.communionStation,otherCueCount,
+      wrongSource:wrongSource.communionStation,wrongCount,
+      requiem:requiem.communionStation,requiemCount,
+      after:after.communionStation,afterCount,
+      clear:clear.code};
+  },form);
+  assert.equal(communion.before,null);
+  assert.equal(communion.beforeCount,0);
+  assert.equal(communion.station,"AT_RAIL_STATIC");
+  assert.equal(communion.choreography,"STATIC_STAGE",
+    "C0246 is distribution, never an earlier priest route trigger");
+  assert.equal(communion.shown.card,"C57");
+  assert.equal(communion.shown.z,4.36);
+  assert.equal(communion.shown.path,null,
+    "C57 must not create an unsourced priest approach path");
+  assert.equal(communion.shown.deaconPath,null);
+  assert.equal(communion.shown.playedCue,null);
+  assert.equal(communion.repeat,"AT_RAIL_STATIC");
+  assert.equal(communion.otherCue,"AT_RAIL_STATIC",
+    "Static C57 scene depends on the source card, not false timed cues");
+  assert.equal(communion.wrongSource,null);
+  assert.equal(communion.wrongCount,0,
+    "Wrong source macro must not retain deacon paten");
+  assert.equal(communion.requiem,"AT_RAIL_STATIC");
+  assert.equal(communion.after,null);
+  assert.equal(communion.afterCount,0);
+  assert.equal(communion.clear,"SOURCE_VISUAL_CLEARED");
+  const solemnPaten=form==="SOLEMN"?1:0;
+  assert.equal(communion.shown.count,solemnPaten);
+  assert.equal(communion.repeatCount,solemnPaten,
+    "Repeated C57 focus must not add multiple patens");
+  assert.equal(communion.otherCueCount,solemnPaten);
+  assert.equal(communion.requiemCount,solemnPaten,
+    "Requiem still has the Solemn deacon assisting at Communion");
   const model=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
    if(api?.model?.totalCards!==65)throw Error("Canonical 65 LIVE cards missing");
