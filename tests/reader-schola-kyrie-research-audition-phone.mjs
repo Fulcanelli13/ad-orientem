@@ -184,6 +184,26 @@ try{
      // intentionally collapsed when the separate melody player opened.
      // Reopening it must not mutate the independent sound clock.
      await plan.evaluate(node=>{node.open=true;});
+     // Switching the exact selected setting in the same mounted reader
+     // must destroy the old SVG mapping and sound and load a new one.
+     if(settingId==='MASS_18'){
+       await picker.selectOption('MASS_16');
+       await trigger.waitFor({state:'visible',timeout:15000});
+       await trigger.click();
+       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
+         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:25000});
+       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),40);
+       assert.match(await player.locator('h3').textContent(),/Kyrie XVI/);
+       await plan.evaluate(node=>{node.open=true;});
+       await picker.selectOption('MASS_18');
+       await trigger.waitFor({state:'visible',timeout:15000});
+       await trigger.click();
+       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
+         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:25000});
+       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),44);
+       assert.match(await player.locator('h3').textContent(),/Kyrie XVIII/);
+       await plan.evaluate(node=>{node.open=true;});
+     }
      // Changing to a custom or unsupported Kyrie must immediately hide/stop the audition.
      await picker.selectOption('CUSTOM');
      await player.waitFor({state:'hidden',timeout:15000});
