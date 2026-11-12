@@ -33,7 +33,8 @@ const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
 assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,7);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE").length,12);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,53);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,41);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE").length,12);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,13);
 for(const classified of citationTriage.entries){
   const p=citationLedgerByKey.get(classified.key);
@@ -48,6 +49,11 @@ for(const classified of citationTriage.entries){
       "Repaired citation does not point to its checked evidence");
     assert.equal(classified.repair.full_english_french_certification,false);
     assert.equal(classified.repair.owner_approval,false);
+  }else if(classified.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE"){
+    assert.equal(p.source_url,classified.source_url);
+    assert.equal(p.evidence_checked_url,classified.evidence_checked_url);
+    assert.equal(classified.original_citation_review.full_claim_certified,false);
+    assert.equal(classified.original_citation_review.owner_authorized,false);
   }else if(classified.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE"){
     assert.equal(classified.source_url,p.source_url,"Equivalent-source triage stale");
     assert.equal(classified.evidence_checked_url,p.evidence_checked_url,"Equivalent-source evidence stale");
@@ -64,7 +70,8 @@ for(const classified of citationTriage.entries){
   assert.equal(classified.owner_authorized,false);
 }
 assert.equal(citationTriage.summary.current_differing_urls,65);
-assert.equal(citationTriage.summary.remaining_active_triage,53);
+assert.equal(citationTriage.summary.remaining_active_triage,41);
+assert.equal(citationTriage.summary.original_citation_preferred_no_change,12);
 assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,13);
 assert.equal(citationTriage.summary.source_equivalent_no_change,12);
 for(const [order,sourceId] of [[77,"AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"],
