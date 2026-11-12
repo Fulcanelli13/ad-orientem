@@ -19,6 +19,30 @@ const canonicalSources=read("data/shrines/source-registry.v1.json").sources;
 const researchSupplement=read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json");
 const dateReconciliation=read("data/shrines/research/sacred-atlas-source-date-reconciliation-20261111.v1.json");
 const claimResearchLedger=read("data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
+
+const citationTriage=read("data/shrines/research/sacred-atlas-citation-difference-triage-20261112.v1.json");
+assert.equal(citationTriage.state,"RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED");
+assert.equal(citationTriage.source_ledger_path,
+  "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
+const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
+  p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
+assert.equal(citationDifferences.length,85,"Current exact-revision citation difference count");
+assert.equal(citationTriage.entries.length,citationDifferences.length,
+  "Every differing citation must be classified before editorial certification");
+const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
+assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
+for(const p of citationDifferences){
+  const classified=classifiedByKey.get(p.draft_order+":"+p.section_id);
+  assert.ok(classified,"Missing citation-difference classification");
+  assert.equal(classified.place_id,p.place_id,"Citation triage points to wrong shrine");
+  assert.equal(classified.source_url,p.source_url,"Citation triage stale relative to draft");
+  assert.equal(classified.evidence_checked_url,p.evidence_checked_url,"Citation triage stale relative to first-pass research");
+  assert.equal(classified.decision_status,"PROVISIONAL_RESEARCH_ONLY");
+  assert.equal(classified.full_claim_certified,false);
+  assert.equal(classified.french_second_editor_approved,false);
+  assert.equal(classified.owner_authorized,false);
+}
+
 assert.equal(claimResearchLedger.state,"RESEARCH_ONLY_NO_EDITOR_APPROVAL_NO_RELEASE");
 assert.equal(claimResearchLedger.paragraphs.length,672);
 assert.ok(wave2.find(g=>g.draft_order===97).sections.every(sec=>!sec.paragraphs.some(p=>p.source_url.includes("svata-hora.cz"))),"Svatá Hora draft must not cite the domain now redirecting to commercial accommodation");
