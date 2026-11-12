@@ -137,7 +137,14 @@ try{
  await swipe(5,-140);
  assert.equal((await state()).index,0,"Vertical gesture changed the sacramental section");
  await swipe(-160,5);
- assert.equal((await state()).index,1,"Horizontal gesture did not move exactly one card");
+ const workspace=page.locator(sel+" .aoPrayerRitualWorkspace");
+ assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"text",
+  "Horizontal gesture must switch the presentation view");
+ assert.equal((await state()).index,0,
+  "Horizontal gesture must not advance an examination card");
+ await page.locator(timeline+" [data-ao-devo-chapter='1']").tap();
+ assert.equal((await state()).index,1,
+  "Explicit source timeline still advances a prayer card");
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  st=await state();assert.equal(st.id,"ready");assert.equal(st.final,"true");
  assert.ok(st.nav&&st.nav!=="none","Final examination card must allow explicit transition");
