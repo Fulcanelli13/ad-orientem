@@ -1,0 +1,56 @@
+name: TLM Atlas V1 final acceptance
+on:
+  pull_request:
+    paths:
+      - "data/directory/**"
+      - "src/find/**"
+      - "tests/tlm-*.mjs"
+      - "tests/directory-tlm-p112-three-exact-covers-two-holds.mjs"
+      - ".github/workflows/tlm-atlas-v1-final-acceptance.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/directory/**"
+      - "src/find/**"
+      - "tests/tlm-*.mjs"
+      - "tests/directory-tlm-p112-three-exact-covers-two-holds.mjs"
+      - ".github/workflows/tlm-atlas-v1-final-acceptance.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-census-and-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Freeze the V1 census, 28 displayed exact church photos, 41 visual group policies and explicit holds
+        run: node tests/tlm-v1-closeout.mjs
+      - name: Existing source safety and photography regressions
+        run: |
+          node tests/tlm-cl2-site-category-census.mjs
+          node tests/tlm-cl2-exact-venue-category-witnesses.mjs
+          node tests/tlm-cl2-remaining-affiliation-holds.mjs
+          node tests/tlm-cl27-institutional-rite-missal.mjs
+          node tests/tlm-cl27-residual-ministry-holds.mjs
+          node tests/tlm-classified-visual-lanes.mjs
+          node tests/directory-media-card-contract.mjs
+          node tests/directory-tlm-p112-three-exact-covers-two-holds.mjs
+          node tests/tlm-illustrative-locality-r28.mjs
+          node tests/tlm-unpinned-card-access.mjs
+      - name: Build curated GitHub Pages artifact; exclude research ledgers
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/approved-venue-media.v1.json
+          test -f dist/web-preview/src/find/directory-card.js
+          test ! -f dist/web-preview/data/directory/research/cl2-remaining-affiliation-holds-20261111.v1.json
+          test ! -f dist/web-preview/data/directory/research/cl27-6-residual-ministry-role-holds-20261110.v1.json
+      - name: Install browser acceptance prerequisites
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Real EN/FR 320px, 390px and desktop map / filters / church profile acceptance
+        run: node tests/explore-tlm-church-card-visual.mjs
