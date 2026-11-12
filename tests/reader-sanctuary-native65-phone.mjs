@@ -178,6 +178,8 @@ try{
         M3.actors().P.b.el.classList.contains("ao-sedilia-uncovered")&&
         Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
     },null,{timeout:12000});
+    await frame.evaluate(()=>M3.snap()); // settle the original sedilia camera
+    await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C08-Solemn-observed-biretta-off.png")
     });
@@ -186,6 +188,8 @@ try{
     assert.equal(done.accepted,true);
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState?.()?.seatedGesture?.phase==="END",null,{timeout:12000});
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(400);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C08-Solemn-observed-biretta-replaced.png")
     });
@@ -205,6 +209,8 @@ try{
     });
     assert.equal(credo.seatedGesture?.phase,"BEGIN");
     assert.deepEqual(credo.seatedGesture?.actors,["P","S"]);
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C18-Solemn-observed-Incarnatus.png")
     });
@@ -354,6 +360,8 @@ try{
       sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
       certifiedSourceFocus:true,requiem:false
     }));
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C13-Solemn-C0081-completed-transfer.png")
     });
@@ -363,8 +371,38 @@ try{
       sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
       certifiedSourceFocus:true,requiem:true
     }));
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
       path:resolve(shots,"C13-Requiem-C0081-no-incense-or-candles.png")
+    });
+    const gospel="Proclamation of the Holy Gospel";
+    const presentGospel=(requiem)=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:gospel,sourceSectionId:"AO.CARD.007",
+      sourceCueId:"AO.SM.C0084",certifiedSourceFocus:true,requiem
+    });
+    const ordinaryGospel=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Proclamation of the Holy Gospel",sourceSectionId:"AO.CARD.007",
+      sourceCueId:"AO.SM.C0084",certifiedSourceFocus:true,requiem:false
+    }));
+    assert.equal(ordinaryGospel.sharedGospelBookVisible,false);
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(180);
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C14-Solemn-subdeacon-Gospel-book.png")
+    });
+    const requiemGospel=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Proclamation of the Holy Gospel",sourceSectionId:"AO.CARD.007",
+      sourceCueId:"AO.SM.C0084",certifiedSourceFocus:true,requiem:true
+    }));
+    assert.equal(requiemGospel.sharedGospelBookVisible,true);
+    await frame.evaluate(()=>M3.snap());
+    await frame.waitForTimeout(180);
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C14-Requiem-shared-Gospel-book.png")
     });
     const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
       requiemExit,ordinaryChalice,epistleSource,missalTransfer,
