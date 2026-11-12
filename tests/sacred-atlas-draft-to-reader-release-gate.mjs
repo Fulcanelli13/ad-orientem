@@ -234,17 +234,23 @@ const hard=["CANONICAL_ID_MISMATCH","NOT_RESEARCH_DRAFT","BROKEN_CANONICAL_SOURC
   "MISSING_BILINGUAL_PARAGRAPH","EXPECTED_THREE_SECTIONS","MISSING_SECTION_TITLE"];
 // Institutional dated-source checks are research notes, not editor sign-off.
 const directYearResearch=claimResearchLedger.paragraphs.filter(p=>p.direct_year_evidence_research_only);
-assert.equal(directYearResearch.length,8);
-assert.equal(claimResearchLedger.paragraphs.filter(p=>p.claim_flags?.includes("YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY")).length,38);
-assert.deepEqual(directYearResearch.map(p=>p.draft_order).sort((a,b)=>a-b),[57,60,63,66,72,74,201,204]);
+assert.equal(directYearResearch.length,33);
+assert.equal(claimResearchLedger.paragraphs.filter(p=>p.claim_flags?.includes("YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY")).length,13);
+assert.deepEqual(directYearResearch.map(p=>p.draft_order+":"+p.section_id).sort(),[
+"57:history","60:identity","62:pilgrimage","63:identity","66:history","72:identity","74:history",
+"80:history","82:history","83:history","85:history","85:identity","89:history","96:history",
+"114:history","115:history","115:identity","141:identity","164:history","176:identity",
+"176:pilgrimage","178:identity","184:identity","187:identity","187:pilgrimage",
+"190:history","193:identity","194:identity","201:history","204:identity","212:pilgrimage",
+"217:identity","222:identity"].sort());
 for(const p of directYearResearch){
  assert.equal(p.direct_year_evidence_research_only.source_url,p.source_url);
  assert.equal(p.direct_year_evidence_research_only.fully_certified,false);
  assert.equal(p.direct_year_evidence_research_only.second_editor_approved,false);
  assert.equal(p.direct_year_evidence_research_only.owner_authorized,false);
 }
-assert.equal(citationTriage.summary.direct_institutional_year_spot_checks,8);
-assert.equal(citationTriage.summary.year_source_summary_flags_remaining,38);
+assert.equal(citationTriage.summary.direct_institutional_year_spot_checks,33);
+assert.equal(citationTriage.summary.year_source_summary_flags_remaining,13);
 
 const diagnoses=drafts.map(g=>inspectSacredGuideEvidence(g,byPlace.get(g.place_id),sources));
 for(const d of diagnoses){
