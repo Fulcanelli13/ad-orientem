@@ -136,8 +136,7 @@ const readme=[
  "The public approved-only bank remains separate. All files here are GitHub Actions artifacts only.",
  "No Vercel, Pages publication, public image release, or master Place mutation occurs.",
  ""
-].join("
-");
+].join("\n");
 await writeFile(resolve(dest,"README.md"),readme,"utf8");
 console.log("PASS Sacred Atlas independent-editor packet: 224 guides, 672 bilingual pairs, "+
  targeted+" targeted and "+standard+" standard rows; all reviewer fields blank.");
