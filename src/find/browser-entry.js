@@ -1342,11 +1342,12 @@ export function createFindOwner(win=globalThis){
       if(entry!=="discover"&&entry!=="sacred")return;
       event.preventDefault?.();
       state.atlasEntry=entry;
-      // Desktop screen 7 retains its full-height left result rail in both
-      // entrances. On phones Discover peeks and Sacred Places expands.
+      // Both mobile entrances begin with an unobstructed map and an explicit
+      // 76px discovery peek. Desktop retains its independently scrollable rail.
+      // Keep the rail's data and aria state synchronized before repainting.
       const rail=getRoot(win)?.querySelector?.("[data-mapcn-discover-rail]");
       if(rail){
-        const expanded=entry==="sacred"||Number(win?.innerWidth||0)>=900;
+        const expanded=Number(win?.innerWidth||0)>=900;
         rail.dataset.discoverExpanded=String(expanded);
         rail.querySelector?.("[data-mapcn-discover-toggle]")
           ?.setAttribute?.("aria-expanded",String(expanded));
