@@ -165,7 +165,13 @@
     const seated=form.solemn?["P","D","S"]:["P"];
     for(const id of seated){
       const a=actors[id];
-      if(!a||a.vis!==true||a.pose!=="sit")continue;
+      if(!a)continue;
+      // The original Solemn sedilia state sometimes leaves D standing.
+      // These source-owned cards explicitly seat the celebrant and sacred
+      // ministers; normalize the actual live actor before drawing the cap.
+      // This is a static posture, never a newly inferred movement clock.
+      if(form.solemn){a.vis=true;a.pose="sit"}
+      if(a.vis!==true||a.pose!=="sit")continue;
       a.path=null;a.turn=null;
       // Existing M3 figure remains sitting, now actually over the
       // original wooden seat; lower robe/feet sit above its surface.
