@@ -41,7 +41,20 @@ for(const rec of meta.entries){
  const mat=byLabel.get(site[5]),w=byWitness.get(id);
  assert.equal(w?.category||mat?.[1],"DIOCESAN_OR_PARISH_CONTEXT");
  assert.equal(w?.visual_lane||mat?.[4],"DIOCESAN_PHOTO");
- assert.ok(!existing.has(venue)&&!linked.has(venue),"An existing image or Place link would conflict");
+ // The stage snapshot remains immutable even when a separate approved release is published.
+ assert.ok(!linked.has(venue),"An existing Place link would conflict");
+ const promoted=approved.items.filter(x=>x.venue_id===venue);
+ assert.ok(promoted.length<=1,"Multiple approved covers for "+venue);
+ const released=promoted[0];
+ if(released){
+  assert.equal(released.asset_path,rec.approved_asset_path,"Promoted cover path must be exact");
+  assert.equal(released.source_url,rec.source_url,"Promoted source must match the archival witness");
+  assert.equal(released.source_sha1,rec.source_sha1,"Promoted source hash must match archival record");
+  assert.equal(released.credit,rec.credit,"Promoted photographer mismatch");
+  assert.equal(released.license,rec.license,"Promoted licence mismatch");
+  assert.equal(released.status,"APPROVED");
+  assert.equal(eligibleVenueImage(released,venue),true,"Promoted record must pass release gate");
+ }
  assert.equal(rec.status,"STAGED_NOT_APPROVED");
  for(const k of ["publication_approved","rights_verified","subject_verified","crop_reviewed"])
   assert.equal(rec[k],false,"Research was prematurely promoted: "+id+"."+k);
@@ -50,8 +63,8 @@ for(const rec of meta.entries){
  assert.match(rec.approved_asset_path,/^assets\/approved\/directory-media\/[A-Z0-9-]+\.webp$/);
  assert.ok(!approvedPaths.has(rec.approved_asset_path),"Competing approved asset path");
  approvedPaths.add(rec.approved_asset_path);
- assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),false,
-  "A staged research photo must not pre-empt the approved Directory media lane");
+ assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),Boolean(released),
+  "Approved asset must exist if and only if exact approved venue record exists");
  const bytes=readFileSync(new URL("../"+relative,import.meta.url));
  assert.equal(bytes.toString("ascii",0,4),"RIFF");
  assert.equal(bytes.toString("ascii",8,12),"WEBP");
@@ -70,8 +83,9 @@ for(const rec of meta.entries){
  const item=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:venue}],{
   approved:[],gallery:[],venueApproved:approved.items,directoryPlaceLinks:geo.directoryPlaceLinks
  })[0];
- assert.equal(item.cover_media,undefined,"Staged photo leaked into approved Directory card "+id);
+ assert.equal(item.cover_media?.asset_path,released?.asset_path,
+  "Only an explicitly approved exact venue photo may populate the Directory card "+id);
 }
 assert.equal(totalBytes,6523548,"Unexpected 28-photo asset-byte census");
 assert.equal(meta.summary.publication_approved,0);
-console.log("PASS 28/28 exact CL2 venue staged photos: bytes, Git blobs, CC rights metadata, bilingual credit fields and safe no-publication gates");
+console.log("PASS 28/28 preserved CL2 staging witnesses, independent approved-release paths, exact-venue links, CC metadata, binary hashes and safe publication gates");

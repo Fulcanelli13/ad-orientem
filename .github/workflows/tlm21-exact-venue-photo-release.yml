@@ -1,0 +1,34 @@
+name: TLM 21 exact-source diocesan church photos release contract
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - data/directory/approved-venue-media.v1.json
+      - data/directory/research/tlm-21-source-verified-photo-release-20261112.v1.json
+      - assets/approved/directory-media/**
+      - tests/directory-tlm21-source-verified-photos.mjs
+      - .github/workflows/tlm21-exact-venue-photo-release.yml
+  push:
+    branches: [main]
+    paths:
+      - data/directory/approved-venue-media.v1.json
+      - data/directory/research/tlm-21-source-verified-photo-release-20261112.v1.json
+      - assets/approved/directory-media/**
+      - tests/directory-tlm21-source-verified-photos.mjs
+      - .github/workflows/tlm21-exact-venue-photo-release.yml
+permissions:
+  contents: read
+jobs:
+  exact-site-source-rights-bilingual-binary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Check 21 exact source IDs, actual WebP hashes, rights, holds and bilingual card rendering
+        run: node tests/directory-tlm21-source-verified-photos.mjs
+      - name: Keep old approved Wave A assets intact
+        run: node tests/directory-media-card-contract.mjs
