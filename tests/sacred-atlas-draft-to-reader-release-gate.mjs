@@ -239,6 +239,20 @@ for(const d of diagnoses){
   assert.equal(d.evidence_alignment_verified,false);
   assert.equal(d.publication_ready,false);
 }
+
+// Source-checked public-visitor prose enrichments; no second-editor or owner approvals.
+const jacobins=wave2.find(g=>g.draft_order===137);
+const heraklion=wave2.find(g=>g.draft_order===143);
+assert.ok(jacobins&&heraklion);
+assert.match(jacobins.sections.find(x=>x.id==="history").paragraphs[0].en,/1230/);
+assert.match(jacobins.sections.find(x=>x.id==="identity").paragraphs[0].fr,/28 mètres/);
+assert.match(jacobins.sections.find(x=>x.id==="pilgrimage").paragraphs[0].en,/horse|stables/);
+assert.match(heraklion.sections.find(x=>x.id==="history").paragraphs[0].en,/1856[\s\S]*1925/);
+assert.match(heraklion.sections.find(x=>x.id==="identity").paragraphs[0].fr,/orthodoxe/);
+assert.match(heraklion.sections.find(x=>x.id==="pilgrimage").paragraphs[0].en,/not mistake it for a present-day Catholic Mass venue/);
+assert.equal(jacobins.publication_authorized,false);
+assert.equal(heraklion.publication_authorized,false);
+
 const geographicOnly=diagnoses.filter(x=>x.issues.includes("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE"));
 const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITED_TO_SITE_IDENTITY"));
 
