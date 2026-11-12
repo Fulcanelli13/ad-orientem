@@ -10,6 +10,8 @@ const index=read("data/directory/generated/cl2-physical-site-index.v1.json");
 const matrix=read("data/directory/cl2-source-site-category-matrix-20261111.v1.json");
 const witnesses=read("data/directory/cl2-exact-venue-category-witnesses-20261111.v1.json");
 const approved=read("data/directory/approved-venue-media.v1.json");
+const p110=read("data/directory/research/tlm-p110-two-clean-cover-release-20261112.v1.json");
+const alternateByVenue=new Map(p110.approved.map(x=>[x.venue_id,x]));
 const geo=read("data/geography/seed-registry.v1.json");
 const licenseUrls={
  "CC-BY-3.0":"https://creativecommons.org/licenses/by/3.0/",
@@ -47,11 +49,22 @@ for(const rec of meta.entries){
  assert.ok(promoted.length<=1,"Multiple approved covers for "+venue);
  const released=promoted[0];
  if(released){
-  assert.equal(released.asset_path,rec.approved_asset_path,"Promoted cover path must be exact");
-  assert.equal(decodeURIComponent(released.source_url),decodeURIComponent(rec.source_url),"Promoted source must match the archival witness even when an apostrophe is URL-encoded");
-  assert.equal(released.source_sha1,rec.source_sha1,"Promoted source hash must match archival record");
-  assert.equal(released.credit,rec.credit,"Promoted photographer mismatch");
-  assert.equal(released.license,rec.license,"Promoted licence mismatch");
+  const alt=alternateByVenue.get(venue);
+  if(alt){
+   assert.equal(alt.cl2_anchor,id,"Explicit P110 replacement must use the same CL2 site");
+   assert.equal(released.asset_path,alt.asset_path,"Approved alternative must use exact source-verified path");
+   assert.equal(decodeURIComponent(released.source_url),decodeURIComponent(alt.source_url),"Alternate must use exact new Commons source");
+   assert.equal(released.source_sha1,alt.original_sha1,"Alternate original SHA-1 must match P110 GitHub verification");
+   assert.equal(released.derivative_sha256,alt.derivative_sha256,"Alternate derivative must match P110 GitHub verification");
+   assert.equal(released.credit,alt.credit,"Alternate photographer must match source creator");
+   assert.equal(released.license,alt.license,"Alternate licence must match P110 source");
+  }else{
+   assert.equal(released.asset_path,rec.approved_asset_path,"Original promoted cover path must stay exact");
+   assert.equal(decodeURIComponent(released.source_url),decodeURIComponent(rec.source_url),"Original source must match archival witness");
+   assert.equal(released.source_sha1,rec.source_sha1,"Original source hash must match archival witness");
+   assert.equal(released.credit,rec.credit,"Original photographer mismatch");
+   assert.equal(released.license,rec.license,"Original licence mismatch");
+  }
   assert.equal(released.status,"APPROVED");
   assert.equal(eligibleVenueImage(released,venue),true,"Promoted record must pass release gate");
  }
@@ -63,7 +76,7 @@ for(const rec of meta.entries){
  assert.match(rec.approved_asset_path,/^assets\/approved\/directory-media\/[A-Z0-9-]+\.webp$/);
  assert.ok(!approvedPaths.has(rec.approved_asset_path),"Competing approved asset path");
  approvedPaths.add(rec.approved_asset_path);
- assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),Boolean(released),
+ assert.equal(existsSync(new URL("../"+rec.approved_asset_path,import.meta.url)),Boolean(released&&!alternateByVenue.has(venue)),
   "Approved asset must exist if and only if exact approved venue record exists");
  const bytes=readFileSync(new URL("../"+relative,import.meta.url));
  assert.equal(bytes.toString("ascii",0,4),"RIFF");

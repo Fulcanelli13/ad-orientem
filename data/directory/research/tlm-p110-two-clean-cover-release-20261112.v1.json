@@ -1,0 +1,128 @@
+{
+  "schema": "AO_TLM_P110_TWO_SOURCE_VERIFIED_CLEAN_DIOCESAN_COVERS_RELEASE_V1",
+  "as_of": "2026-11-12",
+  "source_research_pr": 2893,
+  "source_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/43214425049",
+  "source_research_head": "637540deeef2925d5af88ac8d74715f872f27eaf",
+  "baseline": {
+    "previous_direct_venue_covers": 23,
+    "previous_new_source_approved": 21,
+    "recovered_photos": 28,
+    "previously_held": 7,
+    "exact_site_count": 2580
+  },
+  "proposed": {
+    "new_clean_alternate_covers": 2,
+    "direct_venue_covers_after": 25,
+    "remaining_held": 5,
+    "new_map_pins": 0,
+    "new_site_records": 0,
+    "new_mass_schedules": 0,
+    "prior_approved_covers_replaced": 0
+  },
+  "approved": [
+    {
+      "cl2_anchor": "RG-0B11C840F55E",
+      "venue_id": "AO-B34-L-GB-52D1803A1F95",
+      "asset_path": "assets/approved/directory-media/GB-RG-0B11C840F55E-alternate.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Whitecliff_Mill_Street,_Blandford_Forum_(September_2025)_(4).jpg",
+      "original_sha1": "d7c7524559edea69e0f3b0b54f2d83e5fde87f3a",
+      "derivative_sha256": "d3b5d01120dcf464bab21c52f591de948de742ee6f2eeef92aa152e44b922693",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Hassocks5489",
+      "width": 1600,
+      "height": 1224,
+      "original_dimensions": [
+        3400,
+        2600
+      ],
+      "original_bytes": 3209643,
+      "research_staged_asset_path": "assets/staged/directory-photo-p110-20261112/RG-0B11C840F55E-alternate.webp",
+      "visual_note": "Exact September 2025 Commons photograph (4) shows the church clearly without the prominent white car in archival photograph (1); full frame usable at simulated 320/390px.",
+      "alt_en": "Red-brick Catholic church of Our Lady of Lourdes and St Cecilia in Blandford Forum, showing its steep gables, pointed windows and arched entrance from the street.",
+      "alt_fr": "Église catholique Notre-Dame-de-Lourdes-et-Sainte-Cécile à Blandford Forum, en brique rouge, avec pignons, fenêtres en arc brisé et entrée cintrée, vue depuis la rue.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching or composite.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche des couleurs ni photomontage.",
+      "git_blob_sha": "3efcf5679abcc0e981931c7915a23f76dae3beb1"
+    },
+    {
+      "cl2_anchor": "RG-18825D70FD67",
+      "venue_id": "V19:DIO-GB-BIRM-OXFORD-SGA",
+      "asset_path": "assets/approved/directory-media/GB-RG-18825D70FD67-alternate.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saints_Gregory_and_Augustine_-_geograph.org.uk_-_3011889.jpg",
+      "original_sha1": "f50081ff6b84435da91be8b7cd8c1d90f1e1e5dd",
+      "derivative_sha256": "3c92b5c0e1024f059353a7e0c42c340d995deb1b13316e6f37072f944eeef140",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "credit": "Des Blenkinsopp",
+      "width": 1600,
+      "height": 1136,
+      "original_dimensions": [
+        1600,
+        1136
+      ],
+      "original_bytes": 371390,
+      "research_staged_asset_path": "assets/staged/directory-photo-p110-20261112/RG-18825D70FD67-alternate.webp",
+      "visual_note": "Frontal white gable, Catholic church inscription and doorway are legible; a road and trees remain but do not obscure identity at simulated 320/390px.",
+      "alt_en": "White-gabled Catholic church of Saints Gregory and Augustine in Oxford, seen frontally beyond the road, with its entrance and church name visible among greenery.",
+      "alt_fr": "Façade blanche à pignon de l’église catholique Saints-Grégoire-et-Augustin à Oxford, vue de face au-delà de la route, avec entrée et nom de l’église visibles parmi la verdure.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching or composite.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche des couleurs ni photomontage.",
+      "git_blob_sha": "2fff9afda8742844ba52bcab3ac92e89040c298a"
+    }
+  ],
+  "held": [
+    {
+      "cl2_anchor": "RG-7C7DC29FFFAB",
+      "venue_id": "AO-AMER-R28-US-31-17",
+      "decision": "HOLD_EXACT_CHAPEL_VENUE_ANCHOR",
+      "reason": "Parish confirms its Traditional Latin Mass is at the historic Old Town Chapel, 121 Park Avenue, while the source ID is broadly named St Mary Park City with source_marker_unassessed map pin 40.682044,-111.537095. The Commons photograph is the Old Chapel (camera 40.639991,-111.494950), not main church at 1505 White Pine Canyon Road. Map marker and chapel photograph are not exact-site reconciled.",
+      "next_evidence": "Keep held. Reconcile distinct historic chapel as an exact physical site using the Excel Location Master/CL2 approval workflow; do not silently move the pin or use photo for parish-wide image.",
+      "publication_approved": false
+    },
+    {
+      "cl2_anchor": "RG-10BAB9521232",
+      "venue_id": "AO-B34-L-GB-D7DA8CC0BE16",
+      "decision": "HOLD_ALTERNATE_COMPOSITION_CHECK",
+      "reason": "Large asphalt foreground and sun flare; church identifiable. Commons exact church category also has two older Geograph views, not yet shown superior.",
+      "next_evidence": "Compare alternate exact-source originals, check composition and licences; preserve existing staged image.",
+      "publication_approved": false
+    },
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "venue_id": "AO-B34-L-GB-FDC98808D553",
+      "decision": "HOLD_ALTERNATE_COMPOSITION_CHECK",
+      "reason": "Road occupies lower foreground; ancillary buildings obscure Catholic church identity. Nearby St Edward church images belong to a DIFFERENT church.",
+      "next_evidence": "Seek stronger exact Catholic church photograph; never substitute a nearby Anglican church.",
+      "publication_approved": false
+    },
+    {
+      "cl2_anchor": "RG-15198DD7A6FE",
+      "venue_id": "AO-B35-L-GB-D1A88E153706",
+      "decision": "HOLD_ALTERNATE_COMPOSITION_CHECK",
+      "reason": "Vintage foreground vehicle and people dominate oblique street scene; church visible behind. Three smaller exact-site Geograph alternatives need comparative review.",
+      "next_evidence": "Compare actual alternate pixels and original licences; never erase people or vehicles synthetically.",
+      "publication_approved": false
+    },
+    {
+      "cl2_anchor": "RG-AAFBFCE94AA0",
+      "venue_id": "AO-B35-L-GB-089C7ED97E0F",
+      "decision": "HOLD_FINAL_FULL_FRAME_MOBILE_REVIEW",
+      "reason": "Existing side-angled exterior clearly shows architectural detail, but needs final mobile card assessment. Eight other Commons files include church exteriors, interiors and details.",
+      "next_evidence": "Inspect native 320/390px framing and compare exact-building exterior candidates; do not bulk-promote from thumbnail alone.",
+      "publication_approved": false
+    }
+  ],
+  "safeguards": {
+    "no_park_city_chapel_promotion": true,
+    "no_reuse_of_original_car_or_distant_weak_covers": true,
+    "no_estimated_new_locations": true,
+    "no_affiliation_changes": true,
+    "no_missal_or_mass_times_changes": true,
+    "existing_place_media_precedence": true,
+    "old_research_ledger_preserved": true
+  },
+  "visual_review": "Compared exact P110 no-crop WebP contact sheet at simulated 320 and 390px. Blandford clear unobstructed building; Oxford clear frontal church inscription with street scene still visible. Actual app runtime/browser acceptance required by CI.",
+  "contact_sheet_source": "https://github.com/Fulcanelli13/ad-orientem/blob/research/tlm-p110-clean-commons-alternates-20261112/assets/staged/directory-photo-p110-20261112/p110-mobile-contact.jpg"
+}
