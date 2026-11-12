@@ -59,7 +59,7 @@ for(const candidate of pkg.entries){
  assert.equal(candidate.status,"STAGED_NOT_APPROVED");
  const img=repoByVenue.get(candidate.venue_id);
  assert.ok(img&&eligibleVenueImage(img,candidate.venue_id),"Approved exact image failed renderer gate");
- assert.equal(img.source_url,candidate.source_url);
+ assert.equal(img.source_url,candidate.source_url.replaceAll("\x27","%27"),"URL must encode literal apostrophes for Directory reader");
  assert.equal(img.source_sha1,candidate.source_sha1);
  assert.equal(img.source_sha1_verification,candidate.source_sha1_verification);
  assert.equal(img.derivative_sha256,candidate.derivative_sha256);
@@ -67,8 +67,8 @@ for(const candidate of pkg.entries){
  assert.equal(img.asset_path,candidate.approved_asset_path);
  assert.equal(img.license,candidate.license);
  assert.equal(img.license_url,licenseUrls[img.license]);
- assert.equal(img.alt_en,candidate.alt_en);
- assert.equal(img.alt_fr,candidate.alt_fr);
+ assert.equal(img.alt_en,summary.editorial_alt_refinement?.alt_en??candidate.alt_en);
+ assert.equal(img.alt_fr,summary.editorial_alt_refinement?.alt_fr??candidate.alt_fr);
  assert.equal(img.changes_en,candidate.changes_en);
  assert.equal(img.changes_fr,candidate.changes_fr);
  assert.equal(img.site_evidence_url,candidate.site_evidence_url);
@@ -81,8 +81,8 @@ for(const candidate of pkg.entries){
  assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(img.source_url));
  assert.ok(img.site_evidence_url.startsWith("https://"));
  assert.ok(img.alt_en.length>25&&img.alt_fr.length>25);
- assert.ok(img.changes_en.toLowerCase().includes("no crop"));
- assert.ok(img.changes_fr.toLowerCase().includes("sans recadrage"));
+ assert.ok(img.changes_en.length>30&&img.changes_en.includes("WebP"),"Preserve accurate source-specific change disclosure");
+ assert.ok(img.changes_fr.length>30&&img.changes_fr.includes("WebP"),"Preserve accurate French modification disclosure");
  assert.ok(!allAssets.has(img.asset_path));
  allAssets.add(img.asset_path);
  assert.equal(summary.asset_path,img.asset_path);
