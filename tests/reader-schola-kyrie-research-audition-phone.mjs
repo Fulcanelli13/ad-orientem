@@ -86,6 +86,8 @@ try{
      await picker.selectOption('MASS_16');
      await trigger.waitFor({state:'visible',timeout:20000});
      await trigger.click();
+     assert.equal(await plan.evaluate(node=>node.open),false,
+       'Opening the melody must collapse the Music Plan to reveal the Mass reader');
      const player=page.locator('section.ao-kyrie-audition');
      await player.waitFor({state:'visible',timeout:20000});
      await player.locator('[data-kyrie-staff] svg').waitFor({timeout:35000});
