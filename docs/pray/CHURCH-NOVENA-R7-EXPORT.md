@@ -48,3 +48,22 @@ Only the lectern opens the complete Tabula. Individual family doors open their o
 This PR only introduces source export and regression QA. The Church UI itself is not modified, and no new production route is declared complete until the runtime/reader return journey has been exercised in the real app shell, including English/French source distinctions, the nine stage transitions, 320px/390px, screen-reader accessibility and Back-to-gallery behaviour.
 
 **Deployment policy:** GitHub Actions + GitHub Pages only; nothing in this PR deploys the application.
+
+## R8 — Church direct-route bridge
+
+The review branch now includes `src/pray/church-novena-ids.v1.js` (the light route allowlist) and `src/pray/church-novena-route.v1.js` (the actual **lazy production reader bridge**). The source exporter imports the same allowlist, so IDs cannot drift independently.
+
+The established production Prayer app exposes:
+
+```js
+await window.AO_PRAY_APP_V1.openChurchNovenaRoute("novena:st_joseph", {
+  returnContext: {gallery: "joseph", camera: "existing Church camera receipt"},
+  returnToChurch: ({context}) => restoreChurchGallery(context)
+});
+```
+
+This is a host-integration interface. The callback restores the Church's *own* gallery and camera when the novena reader's Back action closes it. The N3 reader still owns all nine days, language, textual source and calendar. Unknown routes fail closed; invalid day parameters cannot override Calendar Intelligence. There is no new prayer-writing engine and no duplicate source corpus.
+
+The R8 compatibility HTML in the **standalone** Church review package prefers this production entry when the host provides it, but cannot itself bundle the 18 other production readers. The standalone St Joseph text continues to be available as its existing offline exception.
+
+Run `node tests/pray-church-novena-direct-route.mjs` for all nineteen route IDs, lazy reader invocation, unknown-route rejection and one-time Church return. The GitHub Actions workflow runs both this bridge regression and the read-only source snapshot parity check. These contracts are necessary but **not substitutes** for full 19-reader UI regression with the hosted Church shell.
