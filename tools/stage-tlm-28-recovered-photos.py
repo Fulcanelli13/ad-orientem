@@ -19,6 +19,21 @@ def stage(package):
         assert manifest["schema"] == "AO_TLM_28_VERIFIED_WEBP_TRANSFER_AND_APPROVAL_GATES_V1"
         records = manifest["entries"]
         assert len(records) == len({x["venue_id"] for x in records}) == 28
+        # V2 package integrity: the contact sheet must enumerate the exact
+        # review set, never the explicitly held Lewiston address conflict.
+        assert "RG-A1C02A9EC71D" not in {x["cl2_anchor"] for x in records}
+        if "contact_index.json" in archive.namelist():
+            contact = json.loads(archive.read("contact_index.json"))
+            assert contact["schema"] == "AO_TLM_28_CONTACT_SHEET_INTEGRITY_V2"
+            assert contact["count"] == 28
+            assert len(contact["entries"]) == 28
+            by_anchor = {x["cl2_anchor"]: x for x in records}
+            assert len(by_anchor) == 28
+            for row in contact["entries"]:
+                original = by_anchor[row["cl2_anchor"]]
+                assert row["venue_id"] == original["venue_id"]
+                assert row["asset_path"] == original["package_asset_path"]
+                assert row["sha256"] == original["derivative_sha256"]
         assert len({x["cl2_anchor"] for x in records}) == 28
         assert not any(x["publication_approved"] or x["status"] == "APPROVED" for x in records)
         idx = json.loads((ROOT / "data/directory/generated/cl2-physical-site-index.v1.json").read_text())
