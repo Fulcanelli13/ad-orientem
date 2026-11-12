@@ -126,16 +126,49 @@ try{
       const offertory="Offertory · Incensation";
       const held=send(offertory,"AO.CARD.010","AO.SM.C0121",true);
       const normal=send(offertory,"AO.CARD.010","AO.SM.C0121",false);
+      // Native C0174/C0181 only: the ordinary thurifer, rather than the
+      // Requiem subdeacon, must bear the source-focused thurible.
+      const elevation=(id)=>({
+        visible:M3.actors()?.[id]?.vis===true,
+        prop:M3.actors()?.[id]?.prop??null,
+        pose:M3.actors()?.[id]?.pose??null,
+        x:M3.actors()?.[id]?.x??null,
+        z:M3.actors()?.[id]?.z??null,
+        swings:Boolean(M3.actors()?.[id]?.b?.el?.classList?.contains(
+          "ao-source-elevation-incense"))
+      });
+      const host="Words of Consecration and Elevation · Host";
+      const chalice="Words of Consecration and Elevation · Chalice";
+      const hOrd=send(host,"AO.CARD.015","AO.SM.C0174",false);
+      const ordinaryElevation={thurifer:elevation("T"),subdeacon:elevation("S"),
+        actor:hOrd.elevationIncenseActor};
+      send(host,"AO.CARD.015","AO.SM.C0175",false);
+      const ordinaryExit={thurifer:elevation("T"),subdeacon:elevation("S")};
+      const hReq=send(host,"AO.CARD.015","AO.SM.C0174",true);
+      const requiemHost={thurifer:elevation("T"),subdeacon:elevation("S"),
+        actor:hReq.elevationIncenseActor};
+      const cReq=send(chalice,"AO.CARD.016","AO.SM.C0181",true);
+      const requiemChalice={thurifer:elevation("T"),subdeacon:elevation("S"),
+        actor:cReq.elevationIncenseActor};
+      send(chalice,"AO.CARD.016","AO.SM.C0182",true);
+      const requiemExit={thurifer:elevation("T"),subdeacon:elevation("S")};
+      const cOrd=send(chalice,"AO.CARD.016","AO.SM.C0181",false);
+      const ordinaryChalice={thurifer:elevation("T"),subdeacon:elevation("S"),
+        actor:cOrd.elevationIncenseActor};
       return {ordinary,requiem,restored,
         requiemIncense:held.choreography,
-        ordinaryIncense:normal.choreography};
+        ordinaryIncense:normal.choreography,
+        ordinaryElevation,ordinaryExit,requiemHost,
+        requiemChalice,requiemExit,ordinaryChalice};
     });
     const ordinaryMinisters={
       D:{visible:true,prop:null},S:{visible:true,prop:"book"},
       T:{visible:true,prop:"thurible"},
       A1:{visible:true,prop:"torch"},A2:{visible:true,prop:"torch"}
     };
-    assert.deepEqual(conditional,{
+    const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
+      requiemExit,ordinaryChalice,...gospelAndOffertory}=conditional;
+    assert.deepEqual(gospelAndOffertory,{
       ordinary:ordinaryMinisters,
       requiem:{
         D:{visible:true,prop:null},S:{visible:true,prop:null},
@@ -148,6 +181,41 @@ try{
     },"The subdeacon holds the ordinary Gospel book; in a Solemn Requiem "+
       "the two unlit acolytes remain to support the book without thurifer "+
       "or the inaccurate ordinary Offertory incense choreography");
+    for(const [name,snap] of [
+      ["Host ordinary",ordinaryElevation],["Chalice ordinary",ordinaryChalice]
+    ]){
+      assert.equal(snap.actor,"T",name+" must assign incense to thurifer");
+      assert.equal(snap.thurifer.visible,true);
+      assert.equal(snap.thurifer.prop,"thurible");
+      assert.equal(snap.thurifer.pose,"kneel");
+      assert.equal(snap.thurifer.swings,true);
+      assert.equal(snap.subdeacon.swings,false,
+        name+" cannot animate the subdeacon as the thurifer");
+    }
+    for(const [name,snap] of [
+      ["Host Requiem",requiemHost],["Chalice Requiem",requiemChalice]
+    ]){
+      assert.equal(snap.actor,"S",
+        name+" must assign elevation incense to subdeacon");
+      assert.equal(snap.subdeacon.visible,true);
+      assert.equal(snap.subdeacon.pose,"kneel");
+      assert.equal(snap.subdeacon.prop,"thurible");
+      assert.ok(snap.subdeacon.x>0&&snap.subdeacon.z<2.1,
+        name+" subdeacon should be on illustrative Epistle side");
+      assert.equal(snap.subdeacon.swings,true);
+      assert.equal(snap.thurifer.swings,false);
+      assert.equal(snap.thurifer.visible,false,
+        name+" must not show ordinary thurifer");
+    }
+    for(const [name,snap] of [
+      ["Ordinary Host exit",ordinaryExit],
+      ["Requiem Chalice exit",requiemExit]
+    ]){
+      assert.equal(snap.thurifer.swings,false,
+        name+" leaked the source-focused thurible effect");
+      assert.equal(snap.subdeacon.swings,false,
+        name+" leaked the source-focused thurible effect");
+    }
     await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.clear());
   }
   const model=await page.evaluate(()=>{
