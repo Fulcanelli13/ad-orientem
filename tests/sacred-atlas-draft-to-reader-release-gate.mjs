@@ -267,6 +267,14 @@ const malicious={...poondiOfficial,research_source_ids:[borrowedSource.id],
     paragraphs:sec.paragraphs.map(p=>({...p,source_id:borrowedSource.id,source_url:borrowedSource.url}))}))};
 assert.ok(inspectSacredGuideEvidence(malicious,byPlace.get(malicious.place_id),sources).issues
   .includes("BROKEN_CANONICAL_SOURCE_LINK"),"Another Place cannot lend its historical citation");
+// Prevent internal Explore pin/database wording from leaking into the
+// public-facing shrine account. A custodian's actual historical map is allowed.
+const internalMapJargon=/\b(?:map pin|map marker|representative map point|duplicate Place|interchangeable (?:database )?record|generic map label|misplaced pin|fixed annual data)\b|(?:épingle cartographique|épingle indicative|point déplacé|lieu en double|données interchangeables)/i;
+const internalJargonLeaks=drafts.flatMap(g=>g.sections.flatMap(s=>s.paragraphs
+  .filter(p=>internalMapJargon.test(p.en+" "+p.fr))
+  .map(()=>g.place_id+":"+s.id)));
+assert.deepEqual(internalJargonLeaks,[],"Internal map/database instructions leaked into visitor-facing copy");
+
 const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
 assert.equal(editorialProse.length,0,"Wave-2 visitor copy still contains internal Atlas/guide/profile instructions");
 const wave1Editorial=wave1.filter(g=>inspectSacredGuideEvidence(g,byPlace.get(g.place_id),sources)
