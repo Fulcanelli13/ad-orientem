@@ -1,0 +1,38 @@
+name: TLM 28 recovered church photo visual identity and exact-site staging gate
+on:
+  push:
+    branches: [research/tlm-28-commons-source-transport-20261112]
+    paths:
+      - tests/directory-tlm-28-remote-staging-identity.py
+      - data/directory/research/tlm-28-owner-archive-visual-fingerprints-20261112.v1.json
+  pull_request:
+    branches: [main]
+    paths:
+      - assets/staged/directory-commons-rebuilt-20261112/**
+      - tests/directory-tlm-28-remote-staging-identity.py
+      - data/directory/research/tlm-28-*.v1.json
+      - .github/workflows/tlm-28-source-visual-identity.yml
+permissions:
+  contents: read
+jobs:
+  source-visual-staging:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Compare all 28 archive-reviewed compositions with staged source derivatives
+        run: python tests/directory-tlm-28-remote-staging-identity.py
+      - name: Confirm this research proposal changes no public approved images or data
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin main:refs/remotes/origin/main
+          git diff --exit-code origin/main...HEAD -- \
+            assets/approved/ data/directory/approved-venue-media.v1.json \
+            data/geography/approved-place-media.v1.json \
+            data/geography/seed-registry.v1.json
