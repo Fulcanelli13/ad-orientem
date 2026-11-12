@@ -1,0 +1,809 @@
+{
+  "schema": "AO_EXPLORE_BIBLE_PLACES_COMPACT_SCOPE_V1",
+  "as_of": "2026-10-10",
+  "decision": "SMALL_EXPLORER_FEATURE_NOT_STANDALONE_BIBLICAL_ATLAS_APP",
+  "navigation": "Explore > Bible Places (single collection/tile), with existing map/list interface and optional brief filters",
+  "pilot_entry_count": 40,
+  "groups": {
+    "Old Testament": 15,
+    "Deuterocanonical": 4,
+    "Life of Christ": 13,
+    "Apostolic Church": 8
+  },
+  "mobile_ui": "One screen: searchable list with optional existing map; each entry shows place, 1–2 sentence event summary, broad historical period (or 'date uncertain'), 1–3 principal figures, 1–2 Scripture references and a Read in Scripture action. Show location pin only with defensible geolocation.",
+  "interaction_reuse": [
+    "Use current Explore map/list components and shared Places; no replacement map framework",
+    "Open native Scripture reader passage with return navigation; no second Bible reader",
+    "Reuse canonical Scripture Book IDs and app translations; do not ship extra Scripture content",
+    "Use existing site/images only if fully licensed and verified; no new art requirement"
+  ],
+  "not_in_v1": [
+    "Complete gazetteer of all 1,342 ancient identities",
+    "Browse all 3,232 persons or automatically draw biblical people timelines",
+    "Multi-layer historical geopolitical maps",
+    "GPS traces of biblical journeys",
+    "Full 73-book toponym completion as launch prerequisite",
+    "Every verse where a place appears",
+    "Separate standalone app or independent toolbar navigation",
+    "Distinct site pins for every literary scene or nested sanctuary feature",
+    "Bulk packing of 1,342 ancient + 1,596 modern + 3,232 people in front-end runtime"
+  ],
+  "data_policy": "Keep large upstream data pinned in repository for matching/updates and candidate provenance only; generate a small, reviewed runtime data slice for selected entries. Do not ship research vendor snapshots to users by default.",
+  "editorial_policy": "This is a selection of 40 indicative examples from the quarantined 90-case research pilot, not 40 ready-to-publish certified entries. Crossmatch to pinned upstream and review passage and location evidence before shipping. Catholic Deuterocanon represented from the start.",
+  "release_gates": [
+    "At most 40 starter entries in the feature; addition beyond this requires demonstrated user need",
+    "1–2 validated in-app Scripture passage links per displayed site; no external Wikipedia reading dependency",
+    "Verify at least one defensible original source for historical location, claim and date when asserted",
+    "Treat approximate biblical/ancient dates as uncertain; no made-up exact years",
+    "App native route/back/scroll state works at 390px; no duplicative Scripture reader",
+    "No false pins for Eden, disputed locations, symbolic events or non-independently geocoded sanctuary subfeatures",
+    "No production Place IDs invented in this research file"
+  ],
+  "entries": [
+    {
+      "group": "Old Testament",
+      "priority_order": 1,
+      "source_example_id": "BA-CORE-001",
+      "display_name": "Eden",
+      "summary_candidate": "The garden is associated with humanity's beginnings and the rivers of the Genesis narrative.",
+      "passage_candidates": [
+        "Genesis 2:8-14"
+      ],
+      "figures_candidate": [
+        "Adam",
+        "Eve"
+      ],
+      "broad_era": "PRIMEVAL",
+      "location_confidence": "UNKNOWN_NO_POINT",
+      "geographic_pin_status": "NO_PIN_UNTIL_VALIDATED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 2,
+      "source_example_id": "BA-CORE-004",
+      "display_name": "Ur of the Chaldees",
+      "summary_candidate": "Abraham's family departs Ur toward Haran and Canaan.",
+      "passage_candidates": [
+        "Genesis 11:28",
+        "Genesis 11:31"
+      ],
+      "figures_candidate": [
+        "Abraham",
+        "Terah"
+      ],
+      "broad_era": "PATRIARCHS",
+      "location_confidence": "SCHOLARLY_PROPOSED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 3,
+      "source_example_id": "BA-CORE-005",
+      "display_name": "Haran",
+      "summary_candidate": "Abraham departs from Haran in response to the divine call.",
+      "passage_candidates": [
+        "Genesis 11:31-32",
+        "Genesis 12:4"
+      ],
+      "figures_candidate": [
+        "Abraham",
+        "Sarah",
+        "Lot"
+      ],
+      "broad_era": "PATRIARCHS",
+      "location_confidence": "LIKELY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 4,
+      "source_example_id": "BA-CORE-008",
+      "display_name": "Hebron / Mamre",
+      "summary_candidate": "The visitors meet Abraham near Mamre; Sarah is buried in the region of Hebron.",
+      "passage_candidates": [
+        "Genesis 18:1-2",
+        "Genesis 23:19"
+      ],
+      "figures_candidate": [
+        "Abraham",
+        "Sarah"
+      ],
+      "broad_era": "PATRIARCHS",
+      "location_confidence": "LIKELY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 5,
+      "source_example_id": "BA-CORE-013",
+      "display_name": "Egypt",
+      "summary_candidate": "Joseph is taken into Egypt and the Israelites later suffer enslavement there.",
+      "passage_candidates": [
+        "Genesis 37:28",
+        "Exodus 1:8-14"
+      ],
+      "figures_candidate": [
+        "Joseph",
+        "Moses"
+      ],
+      "broad_era": "PATRIARCHS_EXODUS",
+      "location_confidence": "KNOWN_REGION_NOT_SITE",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 6,
+      "source_example_id": "BA-CORE-020",
+      "display_name": "Mount Sinai / Horeb",
+      "summary_candidate": "The giving of the Law and Elijah's later encounter with God are linked to Sinai or Horeb.",
+      "passage_candidates": [
+        "Exodus 19:1-20",
+        "1 Kings 19:8-13"
+      ],
+      "figures_candidate": [
+        "Moses",
+        "Elijah"
+      ],
+      "broad_era": "EXODUS",
+      "location_confidence": "COMPETING_TRADITIONAL_SITES",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 7,
+      "source_example_id": "BA-CORE-023",
+      "display_name": "Mount Nebo",
+      "summary_candidate": "Moses sees the Promised Land; his burial place remains unknown.",
+      "passage_candidates": [
+        "Deuteronomy 34:1-6"
+      ],
+      "figures_candidate": [
+        "Moses"
+      ],
+      "broad_era": "WILDERNESS",
+      "location_confidence": "TRADITIONAL_MEMORIAL_NOT_GRAVE",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 8,
+      "source_example_id": "BA-CORE-024",
+      "display_name": "Jordan River",
+      "summary_candidate": "Joshua's crossing and Christ's Baptism belong to different places and periods along the river.",
+      "passage_candidates": [
+        "Joshua 3:14-17",
+        "Mark 1:9-11"
+      ],
+      "figures_candidate": [
+        "Joshua",
+        "Jesus",
+        "John the Baptist"
+      ],
+      "broad_era": "CONQUEST_TO_GOSPELS",
+      "location_confidence": "RIVER_NO_SINGLE_POINT",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 9,
+      "source_example_id": "BA-CORE-025",
+      "display_name": "Jericho",
+      "summary_candidate": "Jericho's walls fall in Joshua; Christ later meets Zacchaeus in Jericho.",
+      "passage_candidates": [
+        "Joshua 6:1-20",
+        "Luke 19:1-10"
+      ],
+      "figures_candidate": [
+        "Joshua",
+        "Zacchaeus",
+        "Jesus"
+      ],
+      "broad_era": "CONQUEST_TO_GOSPELS",
+      "location_confidence": "ANCIENT_MODERN_DISTINCTION",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 10,
+      "source_example_id": "BA-CORE-028",
+      "display_name": "Shiloh",
+      "summary_candidate": "The tabernacle is set up and Hannah prays for a son at the sanctuary.",
+      "passage_candidates": [
+        "Joshua 18:1",
+        "1 Samuel 1:3-20"
+      ],
+      "figures_candidate": [
+        "Hannah",
+        "Eli",
+        "Samuel"
+      ],
+      "broad_era": "JUDGES",
+      "location_confidence": "LIKELY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 11,
+      "source_example_id": "BA-CORE-029",
+      "display_name": "Bethlehem",
+      "summary_candidate": "Ruth's story and the birth of Christ are both associated with Bethlehem.",
+      "passage_candidates": [
+        "Ruth 1:1-2",
+        "Luke 2:4-7"
+      ],
+      "figures_candidate": [
+        "Ruth",
+        "Boaz",
+        "David",
+        "Jesus",
+        "Mary"
+      ],
+      "broad_era": "JUDGES_TO_GOSPELS",
+      "location_confidence": "KNOWN_MODERN_CITY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 12,
+      "source_example_id": "BA-CORE-035",
+      "display_name": "Jerusalem / Zion",
+      "summary_candidate": "David takes Jerusalem; later the city becomes central to Christ's Passion.",
+      "passage_candidates": [
+        "2 Samuel 5:6-10",
+        "Luke 19:28-44"
+      ],
+      "figures_candidate": [
+        "David",
+        "Solomon",
+        "Jesus"
+      ],
+      "broad_era": "MONARCHY_TO_GOSPELS",
+      "location_confidence": "KNOWN_CITY_MULTIPLE_EVENT_SITES",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 13,
+      "source_example_id": "BA-CORE-037",
+      "display_name": "Mount Carmel",
+      "summary_candidate": "Elijah confronts the prophets of Baal on Carmel.",
+      "passage_candidates": [
+        "1 Kings 18:19-39"
+      ],
+      "figures_candidate": [
+        "Elijah"
+      ],
+      "broad_era": "PROPHETS",
+      "location_confidence": "REGION_KNOWN_ALTAR_LOCATION_UNKNOWN",
+      "geographic_pin_status": "NO_PIN_UNTIL_VALIDATED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 14,
+      "source_example_id": "BA-CORE-043",
+      "display_name": "Babylon",
+      "summary_candidate": "Judah's deportations and Daniel's early court setting are associated with Babylon.",
+      "passage_candidates": [
+        "2 Kings 25:1-12",
+        "Daniel 1:1-6"
+      ],
+      "figures_candidate": [
+        "Nebuchadnezzar",
+        "Daniel"
+      ],
+      "broad_era": "EXILE",
+      "location_confidence": "ARCHAEOLOGICALLY_ATTESTED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Old Testament",
+      "priority_order": 15,
+      "source_example_id": "BA-CORE-046",
+      "display_name": "Nineveh",
+      "summary_candidate": "Jonah preaches repentance there; Tobit also lives in Nineveh in exile.",
+      "passage_candidates": [
+        "Jonah 3:1-10",
+        "Tobit 1:10"
+      ],
+      "figures_candidate": [
+        "Jonah",
+        "Tobit"
+      ],
+      "broad_era": "ASSYRIA_DEUTEROCANON",
+      "location_confidence": "ARCHAEOLOGICALLY_ATTESTED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Deuterocanonical",
+      "priority_order": 1,
+      "source_example_id": "BA-CORE-047",
+      "display_name": "Ecbatana",
+      "summary_candidate": "Sarah lives in Ecbatana and Tobias later journeys there.",
+      "passage_candidates": [
+        "Tobit 3:7"
+      ],
+      "figures_candidate": [
+        "Sarah daughter of Raguel",
+        "Tobias"
+      ],
+      "broad_era": "DEUTEROCANON",
+      "location_confidence": "LIKELY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Deuterocanonical",
+      "priority_order": 2,
+      "source_example_id": "BA-CORE-049",
+      "display_name": "Bethulia",
+      "summary_candidate": "Judith's home town resists Holofernes' siege.",
+      "passage_candidates": [
+        "Judith 7:1-7"
+      ],
+      "figures_candidate": [
+        "Judith",
+        "Ozias"
+      ],
+      "broad_era": "DEUTEROCANON",
+      "location_confidence": "UNKNOWN_NO_CONFIDENT_SITE",
+      "geographic_pin_status": "NO_PIN_UNTIL_VALIDATED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Deuterocanonical",
+      "priority_order": 3,
+      "source_example_id": "BA-CORE-050",
+      "display_name": "Modiin / Modein",
+      "summary_candidate": "Mattathias and his family come from Modein at the start of the revolt.",
+      "passage_candidates": [
+        "1 Maccabees 2:1-5"
+      ],
+      "figures_candidate": [
+        "Mattathias",
+        "Judas Maccabeus"
+      ],
+      "broad_era": "MACCABEES",
+      "location_confidence": "PROPOSED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Deuterocanonical",
+      "priority_order": 4,
+      "source_example_id": "BA-CORE-051",
+      "display_name": "Emmaus of the Maccabees",
+      "summary_candidate": "Judas' forces defeat the expedition encamped near Emmaus.",
+      "passage_candidates": [
+        "1 Maccabees 3:40",
+        "1 Maccabees 4:3-15"
+      ],
+      "figures_candidate": [
+        "Judas Maccabeus"
+      ],
+      "broad_era": "MACCABEES",
+      "location_confidence": "ANCIENT_SITE_DISTINCT_FROM_NT_IDENTIFICATION",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 1,
+      "source_example_id": "BA-CORE-054",
+      "display_name": "Nazareth",
+      "summary_candidate": "The Annunciation and Christ's synagogue reading take place in Nazareth.",
+      "passage_candidates": [
+        "Luke 1:26-38",
+        "Luke 4:16-30"
+      ],
+      "figures_candidate": [
+        "Mary",
+        "Jesus",
+        "Gabriel"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "KNOWN_CITY_TRADITIONAL_SUBSITES",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 2,
+      "source_example_id": "BA-CORE-055",
+      "display_name": "Ein Karem / hill country of Judah",
+      "summary_candidate": "Mary visits Elizabeth and John the Baptist is born in the Judean hill country; the exact village is traditional.",
+      "passage_candidates": [
+        "Luke 1:39-45",
+        "Luke 1:57-66"
+      ],
+      "figures_candidate": [
+        "Mary",
+        "Elizabeth",
+        "Zechariah",
+        "John the Baptist"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "TRADITIONAL_LOCATION_SCRIPTURE_UNNAMED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 3,
+      "source_example_id": "BA-CORE-056",
+      "display_name": "Sea of Galilee / Lake Gennesaret",
+      "summary_candidate": "Christ calls fishermen and directs the miraculous catch near the lake.",
+      "passage_candidates": [
+        "Mark 1:16-20",
+        "Luke 5:1-11"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Peter",
+        "Andrew",
+        "James",
+        "John"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "WATER_BODY_GEOMETRY_NOT_POINT",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 4,
+      "source_example_id": "BA-CORE-057",
+      "display_name": "Capernaum",
+      "summary_candidate": "Christ teaches, heals and works from his Galilean ministry base.",
+      "passage_candidates": [
+        "Mark 1:21-28",
+        "Matthew 9:1-8"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Peter"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "ARCHAEOLOGICAL_TOWN_AND_CHURCH_DISTINCT",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 5,
+      "source_example_id": "BA-CORE-060",
+      "display_name": "Cana of Galilee",
+      "summary_candidate": "Christ turns water into wine at a wedding; modern identification remains disputed.",
+      "passage_candidates": [
+        "John 2:1-11"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Mary",
+        "Disciples"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "COMPETING_MODERN_IDENTIFICATIONS",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 6,
+      "source_example_id": "BA-CORE-053",
+      "display_name": "Bethany",
+      "summary_candidate": "Christ raises Lazarus; the traditional tomb and Franciscan church are related but distinct features.",
+      "passage_candidates": [
+        "John 11:1-44"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Martha",
+        "Mary",
+        "Lazarus"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "KNOWN_VILLAGE_TRADITIONAL_TOMB",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 7,
+      "source_example_id": "BA-CORE-041",
+      "display_name": "Mount Tabor",
+      "summary_candidate": "Barak assembles at Tabor; a later Christian tradition places the Transfiguration there.",
+      "passage_candidates": [
+        "Judges 4:6-15",
+        "Matthew 17:1-8"
+      ],
+      "figures_candidate": [
+        "Deborah",
+        "Barak",
+        "Jesus",
+        "Peter",
+        "James"
+      ],
+      "broad_era": "JUDGES_TO_GOSPELS",
+      "location_confidence": "EVENT_LOCATION_TRADITION_NOT_SCRIPTURALLY_NAMED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 8,
+      "source_example_id": "BA-CORE-064",
+      "display_name": "Samaria / Sychar and Jacob's Well",
+      "summary_candidate": "Jesus speaks with the Samaritan woman at Jacob's well.",
+      "passage_candidates": [
+        "John 4:4-26"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Samaritan woman"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "TRADITIONAL_WELL_WITH_SITE_CUSTODY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 9,
+      "source_example_id": "BA-CORE-068",
+      "display_name": "Gethsemane",
+      "summary_candidate": "Christ prays before his arrest in a garden called Gethsemane.",
+      "passage_candidates": [
+        "Matthew 26:36-46"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Peter",
+        "James",
+        "John"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "TRADITIONAL_GARDEN_COMPLEX",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 10,
+      "source_example_id": "BA-CORE-069",
+      "display_name": "Golgotha / Calvary",
+      "summary_candidate": "The Crucifixion takes place at Golgotha, incorporated into the Holy Sepulchre complex.",
+      "passage_candidates": [
+        "John 19:17-30"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Mary",
+        "John"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "HOLY_SEPULCHRE_SUBSITE",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 11,
+      "source_example_id": "BA-CORE-070",
+      "display_name": "Tomb of Christ",
+      "summary_candidate": "Christ is buried and the empty tomb is discovered after the Resurrection.",
+      "passage_candidates": [
+        "John 19:38-42",
+        "John 20:1-18"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Mary Magdalene",
+        "Joseph of Arimathea"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "HOLY_SEPULCHRE_SUBSITE",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 12,
+      "source_example_id": "BA-CORE-071",
+      "display_name": "Emmaus of Luke",
+      "summary_candidate": "The risen Christ joins two disciples on the way to Emmaus.",
+      "passage_candidates": [
+        "Luke 24:13-35"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Cleopas"
+      ],
+      "broad_era": "GOSPELS",
+      "location_confidence": "COMPETING_MODERN_IDENTIFICATIONS",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Life of Christ",
+      "priority_order": 13,
+      "source_example_id": "BA-CORE-072",
+      "display_name": "Cenacle / Upper Room",
+      "summary_candidate": "The Last Supper occurs in an upper room; Pentecost is associated in tradition with the Jerusalem community.",
+      "passage_candidates": [
+        "Luke 22:7-20",
+        "Acts 2:1-4"
+      ],
+      "figures_candidate": [
+        "Jesus",
+        "Apostles",
+        "Mary"
+      ],
+      "broad_era": "GOSPELS_ACTS",
+      "location_confidence": "UPPER_ROOM_BUILDING_TRADITION_NOT_CERTAIN",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 1,
+      "source_example_id": "BA-CORE-073",
+      "display_name": "Damascus",
+      "summary_candidate": "Saul encounters Christ on the road and is baptized in Damascus.",
+      "passage_candidates": [
+        "Acts 9:1-22"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Ananias"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "KNOWN_CITY_ROAD_EVENT_NOT_POINT",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 2,
+      "source_example_id": "BA-CORE-074",
+      "display_name": "Antioch in Syria",
+      "summary_candidate": "The disciples first receive the name Christians here and missionaries depart from the church.",
+      "passage_candidates": [
+        "Acts 11:19-26",
+        "Acts 13:1-3"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Barnabas",
+        "Peter"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "KNOWN_ANCIENT_CITY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 3,
+      "source_example_id": "BA-CORE-078",
+      "display_name": "Philippi",
+      "summary_candidate": "Lydia is baptized and Paul and Silas are imprisoned at Philippi.",
+      "passage_candidates": [
+        "Acts 16:11-40"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Silas",
+        "Lydia"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "ARCHAEOLOGICALLY_ATTESTED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 4,
+      "source_example_id": "BA-CORE-081",
+      "display_name": "Athens / Areopagus",
+      "summary_candidate": "Paul proclaims the unknown God before Athenians at the Areopagus.",
+      "passage_candidates": [
+        "Acts 17:16-34"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Dionysius",
+        "Damaris"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "KNOWN_CITY_HILL_SUBSITE",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 5,
+      "source_example_id": "BA-CORE-082",
+      "display_name": "Corinth",
+      "summary_candidate": "Paul works and teaches in Corinth; the Gallio hearing anchors the chronology.",
+      "passage_candidates": [
+        "Acts 18:1-18"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Aquila",
+        "Priscilla"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "ARCHAEOLOGICALLY_ATTESTED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 6,
+      "source_example_id": "BA-CORE-083",
+      "display_name": "Ephesus",
+      "summary_candidate": "Paul teaches at Ephesus and a riot arises around Artemis worship.",
+      "passage_candidates": [
+        "Acts 19:1-41"
+      ],
+      "figures_candidate": [
+        "Paul",
+        "Disciples"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "ARCHAEOLOGICALLY_ATTESTED",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 7,
+      "source_example_id": "BA-CORE-088",
+      "display_name": "Rome",
+      "summary_candidate": "Paul arrives under custody and preaches in Rome.",
+      "passage_candidates": [
+        "Acts 28:16-31"
+      ],
+      "figures_candidate": [
+        "Paul"
+      ],
+      "broad_era": "APOSTOLIC",
+      "location_confidence": "KNOWN_CITY",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    },
+    {
+      "group": "Apostolic Church",
+      "priority_order": 8,
+      "source_example_id": "BA-CORE-089",
+      "display_name": "Patmos",
+      "summary_candidate": "John describes receiving his revelation while on Patmos.",
+      "passage_candidates": [
+        "Revelation 1:9"
+      ],
+      "figures_candidate": [
+        "John the Apostle"
+      ],
+      "broad_era": "APOCALYPTIC",
+      "location_confidence": "KNOWN_ISLAND_SPECIFIC_CAVE_TRADITION",
+      "geographic_pin_status": "SOURCE_CROSSWALK_REQUIRED",
+      "editorial_status": "PILOT_CONTENT_PENDING_SOURCE_AND_EDITION_CHECK"
+    }
+  ]
+}
