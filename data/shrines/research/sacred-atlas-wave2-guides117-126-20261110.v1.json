@@ -279,10 +279,10 @@
           "title_fr": "Un récit marial à Akita",
           "paragraphs": [
             {
-              "en": "The chapel of the Handmaids of the Holy Eucharist at Akita is a Japanese Catholic place of prayer associated with reports concerning a wooden statue of the Virgin Mary. The Catholic Bishops' Conference of Japan describes seven years of reported tears beginning in 1975 and the arrival of visitors for prayer. The convent itself dates the reported weeping from 4 January 1975 to 15 September 1981. These remain reported events within the community's history.",
-              "fr": "La chapelle des Servantes de la Sainte Eucharistie à Akita est un lieu catholique japonais de prière associé à des récits concernant une statue de bois de la Vierge Marie. La Conférence des évêques catholiques du Japon rapporte des larmes présumées pendant sept ans à partir de 1975 ainsi que l’arrivée de visiteurs venus prier. La communauté situe ces événements rapportés du 4 janvier 1975 au 15 septembre 1981. Ils demeurent des témoignages inscrits dans l’histoire de la communauté.",
-              "source_id": "AO-ED-AKITA-CBCJ-20261111",
-              "source_url": "https://www.cbcj.catholic.jp/2016/09/01/13352/"
+              "en": "The chapel of the Handmaids of the Holy Eucharist at Akita is a Japanese Catholic place of prayer associated with reports concerning a wooden statue of the Virgin Mary. According to the convent's own account, tears were reported from the statue on occasions between 4 January 1975 and 15 September 1981. Those occurrences are presented as the community's testimony, not as independently established supernatural events.",
+              "fr": "La chapelle des Servantes de la Sainte Eucharistie à Akita est un lieu de prière catholique japonais lié à des récits concernant une statue de bois de la Vierge Marie. Selon le récit de la communauté, des larmes auraient été observées sur la statue à plusieurs reprises entre le 4 janvier 1975 et le 15 septembre 1981. Ces événements sont rapportés comme des témoignages de la communauté, et non comme des phénomènes surnaturels établis de manière indépendante.",
+              "source_id": "AO-ED-AKITA-CUSTODIAN-20261112",
+              "source_url": "https://www.seitaihoshikai.com/us/index.html"
             }
           ]
         },
@@ -318,7 +318,6 @@
       ],
       "saint_name_associations": [],
       "bibliography_urls": [
-        "https://www.cbcj.catholic.jp/2016/09/01/13352/",
         "https://www.seitaihoshikai.com/us/index.html",
         "https://www.catholic-niigata.net/archives/9340"
       ],
@@ -326,7 +325,6 @@
       "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
       "publication_authorized": false,
       "research_source_ids": [
-        "AO-ED-AKITA-CBCJ-20261111",
         "AO-ED-AKITA-CUSTODIAN-20261112",
         "AO-ED-AKITA-NIIGATA-DIOCESE-20261112"
       ]
@@ -572,10 +570,10 @@
           "title_fr": "Pèlerinage et culte vivant",
           "paragraphs": [
             {
-              "en": "Saint Mark’s is both a celebrated Venetian monument and a functioning Catholic basilica, so tourist entrance and prayer are not always governed by identical arrangements. The tradition of the Evangelist’s relics explains its pilgrimage character without implying that every architectural detail has the same religious status. The basilica’s current visitor guidance should govern access and ceremonies.",
-              "fr": "Saint-Marc est à la fois un monument célèbre de Venise et une basilique catholique en activité ; les modalités d’entrée des touristes et celles de la prière ne sont donc pas nécessairement identiques. La tradition des reliques de l’évangéliste explique son caractère pèlerin sans donner le même statut religieux à chaque détail architectural. Les informations actuelles de la basilique doivent régir les accès et les célébrations.",
-              "source_id": "SHR-IT-basilica-san-marco-venezia",
-              "source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/"
+              "en": "Saint Mark's is both a historic Venetian monument and a functioning Catholic basilica. For prayer and Mass, its official guidance directs worshippers to the Porta dei Fiori entrance on the north side, separately from ticketed sightseeing access. The basilica's current liturgical and visitor information should be checked before a visit; veneration of Saint Mark's traditional tomb does not imply public access beneath the high altar.",
+              "fr": "Saint-Marc est à la fois un monument historique de Venise et une basilique catholique en activité. Pour la prière et la messe, ses indications officielles orientent les fidèles vers la Porta dei Fiori, du côté nord, distincte de l'entrée touristique avec billet. Il convient de consulter les renseignements liturgiques et pratiques actuels avant la visite ; la vénération du tombeau traditionnel de saint Marc n'implique pas un accès public sous le maître-autel.",
+              "source_id": "AO-ED-SAN-MARCO-LITURGY-20261112",
+              "source_url": "https://www.basilicasanmarco.it/en/liturgical-services/"
             }
           ]
         }
@@ -587,11 +585,15 @@
         "Saint Mark the Evangelist"
       ],
       "bibliography_urls": [
-        "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/"
+        "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+        "https://www.basilicasanmarco.it/en/liturgical-services/"
       ],
       "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
       "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-SAN-MARCO-LITURGY-20261112"
+      ]
     },
     {
       "place_id": "place:IT:basilica-san-domenico-bologna",
