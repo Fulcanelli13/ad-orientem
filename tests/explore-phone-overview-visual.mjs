@@ -115,6 +115,14 @@ try{
     assert.equal(opened.aria,"true",language+" "+width+"px expanded results rail not accessible");
     assert.ok(opened.height>closed.height+90&&opened.height<=Math.min(height*.48,420)+3,
       language+" "+width+"px expanded rail geometry wrong: "+JSON.stringify(opened));
+    // The first two worldwide Place photographs have priority because they
+    // are visible in the initial photographic rail. A blank image is not an
+    // acceptable screenshot, nor is a missing approved cover silently okay.
+    await page.waitForFunction(()=>{
+      const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+      const images=[...(rail?.querySelectorAll('.aoMapcnEditorialCard img')||[])].slice(0,2);
+      return images.length===2&&images.every(img=>img.complete&&img.naturalWidth>0);
+    },null,{timeout:20000});
     await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-expanded-real.png"),animations:"disabled"});
     results.push({language,width,...metrics,file:name,railClosed:closed.height,railExpanded:opened.height,
       sacredScreenshots:[language+"-"+width+"-sacred-closed-real.png",language+"-"+width+"-sacred-expanded-real.png"]});
