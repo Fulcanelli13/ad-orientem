@@ -134,6 +134,10 @@ try{
        /Invocation 1\/9/);
      await page.screenshot({path:resolve(shots,mode.toLowerCase()+'-'+form.toLowerCase()+'-'+width+'.png'),
        animations:'disabled'});
+     // Reopen the local programme to change the source choice. It was
+     // intentionally collapsed when the separate melody player opened.
+     // Reopening it must not mutate the independent sound clock.
+     await plan.evaluate(node=>{node.open=true;});
      // Changing to a custom or unsupported Kyrie must immediately hide/stop the audition.
      await picker.selectOption('CUSTOM');
      await player.waitFor({state:'hidden',timeout:15000});
