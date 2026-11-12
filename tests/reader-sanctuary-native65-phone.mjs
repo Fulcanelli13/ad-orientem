@@ -110,9 +110,9 @@ try{
         sourceCueId:cue,certifiedSourceFocus:true,requiem,
         scholaOnly:false
       });
-      // Ritus VI.4: the subdeacon chants from the Epistolarium, not
-      // the deacon. The source C0075/C0076 gives him only the static
-      // existing book prop, never the procession or blessing timeline.
+      // Ritus VI.4: the native card owns the Epistle scene even though
+      // its curated text has NO focusable C0075 donor paragraph. Book
+      // assignment is static for this whole source card, never a clock.
       const epistle="Epistle / Lesson";
       const epiBefore=send(epistle,"AO.CARD.005","AO.SM.C0074",false);
       const epiStart=send(epistle,"AO.CARD.005","AO.SM.C0075",false);
@@ -123,7 +123,8 @@ try{
           played:window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue};
       })();
       const epiDuring=send(epistle,"AO.CARD.005","AO.SM.C0076",true);
-      const epiEnding=send(epistle,"AO.CARD.005","AO.SM.C0077",true);
+      const epiEnding=send("Gradual · Alleluia / Tract / Sequence",
+        "AO.CARD.006","AO.SM.C0077",true);
       const epiAfter=M3.actors()?.S?.prop??null;
       // Ritus VI.5: the SUBDEACON transfers the Missal, while the
       // deacon prepares the distinct Gospel book. C0081 shows only the
@@ -210,8 +211,8 @@ try{
     const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
       requiemExit,ordinaryChalice,epistleSource,missalTransfer,
       ...gospelAndOffertory}=conditional;
-    assert.equal(epistleSource.before,null,
-      "Epistle prelude is not the source-backed book-bearing stage");
+    assert.equal(epistleSource.before,"SUBDEACON_EPISTOLARIUM_STATIC",
+      "The Epistle picture uses the source-owned card, not a missing C0075 clock");
     assert.equal(epistleSource.start,"SUBDEACON_EPISTOLARIUM_STATIC");
     assert.equal(epistleSource.holding.visible,true);
     assert.equal(epistleSource.holding.prop,"book");
@@ -224,7 +225,7 @@ try{
     assert.equal(epistleSource.during,"SUBDEACON_EPISTOLARIUM_STATIC",
       "Book remains with the subdeacon for the Requiem Epistle");
     assert.equal(epistleSource.end,null,
-      "Leaving the Epistle source must release the original prop");
+      "Leaving the Epistle source CARD must release the original prop");
     assert.equal(epistleSource.after,null);
     assert.equal(missalTransfer.prepareBefore,null,
       "A preparatory text before C0081 must not simulate the transfer");
@@ -449,14 +450,20 @@ try{
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
   }
-  // Verify C11 is also reached via the native source-owned paragraph,
-  // not merely via a direct iframe probe in the preceding test.
+  // C11 has no native C0075 paragraph focus in the curated 65-card
+  // model: verify real card navigation and source macro instead. This
+  // MUST NOT forge a new cue, passage, movement or Schola timing.
   if(form==="SOLEMN"&&width===390){
-    const epistle=await focusNativeSourceCue(page,"AO.SM.C0075");
-    assert.equal(epistle.found,true,
-      "C11 must own the native source for the subdeacon's Epistolarium: "+
-      JSON.stringify(epistle));
-    assert.equal(epistle.sourceSectionId,"AO.CARD.005");
+    const epistle=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const card=api.model.cards.find(c=>
+        c.sourceSectionId==="AO.CARD.005" && /Epistle/.test(c.title));
+      if(!card)return null;
+      api.showSequence(card.sequence);
+      return {sequence:card.sequence,source:card.sourceSectionId};
+    });
+    assert.ok(epistle&&epistle.source==="AO.CARD.005",
+      "C11 must exist as the actual curated native Epistle card");
     await frame.waitForFunction(()=>
       window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnEpistle===true,
       null,{timeout:12000});
@@ -470,6 +477,13 @@ try{
     assert.equal(atEpistle.pose,"stand");
     assert.equal(atEpistle.prop,"book");
     assert.equal(atEpistle.path,null);
+    await page.evaluate(sequence=>
+      window.__AO_PHONE_PREVIEW.showSequence(sequence+1),epistle.sequence);
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.solemnEpistle!==true,
+      null,{timeout:12000});
+    assert.equal(await frame.evaluate(()=>M3.actors().S?.prop??null),null,
+      "Leaving native C11 must release the Epistolarium prop");
   }
   // The regular source focus owner, not a test-only direct bridge call,
   // must project C0081 to the static subdeacon-at-Gospel-side scene.
