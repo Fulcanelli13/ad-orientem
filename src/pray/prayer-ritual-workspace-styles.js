@@ -36,6 +36,18 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
   object-position:center 33%;filter:brightness(.86) saturate(.88);
   transform:scale(1.02);transition:filter 1.1s ease,transform 5s ease
 }
+/* The inherited caption is normally visually hidden; the released image's
+   authenticated source link must remain visible for keyboard navigation. */
+#aoPray435930 .aoPrayerCeremonialScene--painted .aoPrayerRitualSceneArt figcaption{
+  position:absolute;z-index:3;bottom:8px;left:10px;right:10px;
+  width:auto;height:auto;margin:0;padding:3px 7px;clip:auto;
+  white-space:normal;overflow:visible;border:0;
+  background:rgba(8,9,10,.66);color:#e6d9c5;border-radius:4px;
+  font:400 .68rem/1.3 "EB Garamond",Georgia,serif;max-width:max-content
+}
+#aoPray435930 .aoPrayerRitualSceneArt figcaption a{
+  color:#f2debb;text-decoration:underline;text-underline-offset:2px
+}
 #aoPray435930 .aoPrayerCeremonialScene--painted .aoPrayerSceneVault{
   position:absolute;inset:0;width:100%;height:100%;max-width:none;
   overflow:hidden;z-index:1;pointer-events:none;

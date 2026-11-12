@@ -25,6 +25,7 @@ export const PRAYER_CEREMONIAL_SCENE_CSS=String.raw`
 #aoPray435930 .aoPrayerCeremonialCandle{position:relative;display:block;width:clamp(6px,1.3vw,12px);height:clamp(45px,9vw,82px);border-radius:2px 2px 1px 1px;background:linear-gradient(90deg,#a99477,#ddcbab 50%,#83705a);box-shadow:0 0 6px #030608;transition:opacity .65s ease}
 #aoPray435930 .aoPrayerCeremonialCandle.is-final{height:clamp(58px,11vw,98px)}
 #aoPray435930 .aoPrayerCeremonialCandle.is-dark{opacity:.28}
+#aoPray435930 .aoPrayerCeremonialCandle.is-concealed{opacity:0;visibility:hidden}
 #aoPray435930 .aoPrayerCeremonialWick{position:absolute;left:50%;bottom:100%;width:1px;height:5px;background:#4b3a29}
 #aoPray435930 .aoPrayerCeremonialFlame{position:absolute;left:50%;bottom:calc(100% + 4px);width:10px;height:19px;transform:translateX(-50%);border-radius:70% 20% 70% 45%;background:radial-gradient(ellipse at 50% 70%,#fff1c2 0%,#ffbd5a 50%,#af582b 90%);filter:drop-shadow(0 0 11px #d79b4f);animation:aoPrayerFlame 1.8s ease-in-out infinite alternate;transform-origin:50% 100%}
 #aoPray435930 .aoPrayerCeremonialCandle.is-dark .aoPrayerCeremonialFlame{opacity:0;animation:none}

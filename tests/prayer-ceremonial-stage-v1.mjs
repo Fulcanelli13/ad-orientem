@@ -29,9 +29,13 @@ test("Tenebrae last candle may be concealed and returned only from witnessed sta
   const concealed=project({kind:"tenebrae",ceremony:{enabled:true,extinguished:14,hidden:true}});
   assert.equal(concealed.phase,"concealed");
   assert.equal((render(concealed).match(/is-dark/g)||[]).length,15);
+  assert.equal((render(concealed).match(/is-concealed/g)||[]).length,1,
+   "The last observed concealed candle must disappear rather than merely dim");
   const noise=project({kind:"tenebrae",ceremony:{enabled:true,extinguished:14,hidden:true,strepitus:true}});
   assert.equal(noise.phase,"strepitus");
   const returned=project({kind:"tenebrae",ceremony:{enabled:true,extinguished:14,hidden:true,strepitus:true,returned:true}});
   assert.equal(returned.phase,"returned");
   assert.equal((render(returned).match(/is-dark/g)||[]).length,14);
+  assert.equal((render(returned).match(/is-concealed/g)||[]).length,0,
+   "The candle becomes visible again only when its observed return is marked");
 });
