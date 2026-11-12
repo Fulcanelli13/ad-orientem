@@ -604,6 +604,45 @@ try{
   assert.deepEqual(await frame.evaluate(()=>
     window.AO_SANCTUARY_EMBED_TEST.getState()),original,
     "Schola-only cue must not even select a different sanctuary scene");
+  if(form==="LOW"&&width===320){
+    // The C24 native reader card still exists in LOW, but incensation
+    // does NOT. The 3-D priest may not jump from altar to FOOT simply
+    // because the original C24 was sung-only.
+    const lowCard=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const hits=api.model.cards.filter(c=>
+        /incensation omitted|offertory.*incens/i.test(c.title??"")&&
+        c.sourceSectionId==="AO.CARD.010");
+      if(hits.length!==1)return {matches:hits.map(c=>c.title)};
+      api.showSequence(hits[0].sequence);
+      return {matches:1,sequence:hits[0].sequence,title:hits[0].title};
+    });
+    assert.equal(lowCard.matches,1,
+      "The Low Mass incensation omission must map to one native source card");
+    await frame.waitForFunction(()=>{
+      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return a?.card==="C24"&&a?.lowIncenseOmitted===true;
+    },null,{timeout:12000});
+    const stage=await frame.evaluate(()=>{
+      const a=window.AO_SANCTUARY_EMBED_TEST.getState(),p=M3.actors().P;
+      return {card:a.card,visual:a.visualCardId,pose:p.pose,x:p.x,z:p.z,
+        path:p.path,shot:M3.shot(),playedCue:a.playedCue};
+    });
+    assert.equal(stage.card,"C24");
+    assert.equal(stage.visual,"C23");
+    assert.equal(stage.path,null);
+    assert.equal(stage.playedCue,null);
+    assert.equal(stage.z,.4,
+      "Low Mass no-incense priest must remain at the ALTAR, not foot");
+    assert.equal(stage.shot,"server",
+      "Low C24 omission uses original preceding altar-side Offertory shot");
+    await page.evaluate(sequence=>
+      window.__AO_PHONE_PREVIEW.showSequence(sequence+1),lowCard.sequence);
+    await frame.waitForFunction(()=>{
+      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return a?.card==="C25"&&a?.lowIncenseOmitted===false;
+    },null,{timeout:12000});
+  }
   if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
     await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
@@ -615,14 +654,22 @@ try{
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C08",null,{timeout:12000});
     const acolyte=await frame.evaluate(()=>{
-      const a=M3.actors().M;
-      return {visible:a?.vis,pose:a?.pose,x:a?.x,z:a?.z};
+      const a=M3.actors().M,p=M3.actors().P;
+      return {visible:a?.vis,pose:a?.pose,x:a?.x,z:a?.z,
+        priestPose:p?.pose,priestX:p?.x,priestZ:p?.z,
+        priestSeatHeight:p?.b?.h,
+        stage:window.AO_SANCTUARY_EMBED_TEST.getState()?.sediliaStage};
     });
     assert.equal(acolyte.visible,true);
     assert.equal(acolyte.pose,"stand",
       "Sung Mass acolyte must not kneel while the celebrant sits");
-    assert.ok(acolyte.x>2.9&&acolyte.z>1,
-      "Acolyte must be beside sedilia, not kneeling at the altar");
+    assert.ok(acolyte.x>2.1&&acolyte.x<2.7&&acolyte.z>1.5,
+      "Existing server must STAND away from the celebrant's seated silhouette");
+    assert.equal(acolyte.priestPose,"sit");
+    assert.equal(acolyte.priestX,4.04,
+      "The original seated celebrant sprite must align with the actual bench");
+    assert.ok(acolyte.priestSeatHeight>.4);
+    assert.equal(acolyte.stage,"ORIGINAL_SEDILIA_SEATED");
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState()?.card==="C05",null,{timeout:12000});
