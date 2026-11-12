@@ -83,16 +83,17 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "type": "CITATION_DOES_NOT_PROVE_CLAIM",
-      "finding": "The cited Japanese Bishops' Conference 2016 article discusses native religious congregations and bibliographically mentions a book on Akita's weeping statue; it does not substantiate the guide's asserted 1975–1982 tears chronology or Bishop Ito's letter. Keep both paragraphs source-only pending appropriate direct evidence.",
+      "type": "AKITA_CBCJ_SOURCE_SCOPE_DEFECT_REPAIRED",
+      "finding": "The originally cited CBCJ article addressed a religious congregation, not the stated tears chronology. The Akita guide history and citation now attribute the 4 January 1975–15 September 1981 reported interval to the official Seitai Hoshikai convent page. The occurrence is presented as testimony; no independent supernatural authentication is inferred.",
       "sources": [
-        "https://www.cbcj.catholic.jp/2016/09/01/13352/"
+        "https://www.cbcj.catholic.jp/2016/09/01/13352/",
+        "https://www.seitaihoshikai.com/us/index.html"
       ]
     },
     {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
-      "type": "OFFICIAL_SITE_UNDER_CONSTRUCTION_SUPPLEMENT_WITH_BEWEB",
-      "finding": "The guide's named Franciscan shrine homepage now gives only contact and photos; Italian bishops' BeWeB detailed history supplies substantive custody and location evidence in the research record. Replace weak citations before certified publication.",
+      "type": "ORIGINAL_SOURCE_SCOPE_DEFECT_REPAIRED_BEWEB_FETCH_LIMITED",
+      "finding": "The original Franciscan sanctuary homepage currently provides contact information and a construction notice, not substantive history. The three Lanciano draft citations were replaced with Italian bishops' BeWeB thematic and church-specific pages, whose search-indexed descriptions support traditional history and object custody. Direct BeWeB fetch returned 403 to the inspection client; independent EN/FR sentence certification remains pending.",
       "sources": [
         "https://www.miracoloeucaristico.eu/",
         "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/"
@@ -116,11 +117,11 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "type": "TWO_PARAGRAPHS_RETAINED_PENDING_DIRECT_ECCLESIAL_EVIDENCE",
-      "finding": "History and identity sections are the final two high-risk citation-scope holds; the cited Japanese Bishops Conference 2016 article is not a source for the precise weeping chronology, and the Bishop Ito 1984 English letter is hosted on a third-party transcription site. Neither fact nor recognition authority should be inferred by source association alone; obtain primary diocese/Holy See documentation or rewrite with explicit source limits before any editor certification.",
+      "type": "AKITA_FORMER_HOLDS_RESEARCH_RESOLVED_EDITORIAL_UNCERTIFIED",
+      "finding": "Earlier historical and identity holds have been addressed at first-pass source level: the convent supplies reported-tears dates, while the Diocese of Niigata's 2026 incumbent bishop quotes Bishop Ito's 1984 local-decree provisions and says Rome had issued no judgment. The original signed 1984 document was not inspected; neither editorial approval nor universal supernatural authentication is asserted.",
       "sources": [
-        "https://www.cbcj.catholic.jp/2016/09/01/13352/",
-        "https://www.1260.org/Mary/Apparitions_Akita/Akita_Ito_Letter_of_approval_en.htm"
+        "https://www.seitaihoshikai.com/us/index.html",
+        "https://www.catholic-niigata.net/archives/9340"
       ]
     },
     {
