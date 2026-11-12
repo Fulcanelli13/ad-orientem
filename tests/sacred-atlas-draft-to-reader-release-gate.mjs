@@ -232,6 +232,20 @@ assert.equal(buildReviewedSacredGuideCorpus(drafts,seed.shrines,sources,[],publi
  "No approval: no content enters the published-Place folio format");
 const hard=["CANONICAL_ID_MISMATCH","NOT_RESEARCH_DRAFT","BROKEN_CANONICAL_SOURCE_LINK",
   "MISSING_BILINGUAL_PARAGRAPH","EXPECTED_THREE_SECTIONS","MISSING_SECTION_TITLE"];
+// Institutional dated-source checks are research notes, not editor sign-off.
+const directYearResearch=claimResearchLedger.paragraphs.filter(p=>p.direct_year_evidence_research_only);
+assert.equal(directYearResearch.length,8);
+assert.equal(claimResearchLedger.paragraphs.filter(p=>p.claim_flags?.includes("YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY")).length,38);
+assert.deepEqual(directYearResearch.map(p=>p.draft_order).sort((a,b)=>a-b),[57,60,63,66,72,74,201,204]);
+for(const p of directYearResearch){
+ assert.equal(p.direct_year_evidence_research_only.source_url,p.source_url);
+ assert.equal(p.direct_year_evidence_research_only.fully_certified,false);
+ assert.equal(p.direct_year_evidence_research_only.second_editor_approved,false);
+ assert.equal(p.direct_year_evidence_research_only.owner_authorized,false);
+}
+assert.equal(citationTriage.summary.direct_institutional_year_spot_checks,8);
+assert.equal(citationTriage.summary.year_source_summary_flags_remaining,38);
+
 const diagnoses=drafts.map(g=>inspectSacredGuideEvidence(g,byPlace.get(g.place_id),sources));
 for(const d of diagnoses){
   const bad=d.issues.filter(x=>hard.includes(x));

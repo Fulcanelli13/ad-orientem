@@ -91,8 +91,9 @@ for(const guide of guides){
     digit_years_en:digitYears(p.en),digit_years_fr:digitYears(p.fr),
     qa_leads:copyLeads(p.en,p.fr,claim),
    triage_disposition:difference?.decision_status||"NO_CITATION_DIFFERENCE",
-   source_url_directly_reviewed:difference?.direct_url_spot_check?.target_page_inspected===true?
-      "PARTIAL_SPOT_CHECK":"NOT_ASSERTED",
+   source_url_directly_reviewed:claim.direct_year_evidence_research_only?.checked_on?
+      "DIRECT_YEAR_SOURCE_SPOT_CHECK_RESEARCH_ONLY":
+      difference?.direct_url_spot_check?.target_page_inspected===true?"PARTIAL_SPOT_CHECK":"NOT_ASSERTED",
    historical_source_to_claim_verified:"",
    english_copy_approved:"",french_copy_approved:"",
    ecclesial_identity_approved:"",
@@ -135,6 +136,8 @@ const manifest={
  counts:{guides:guides.length,paragraph_pairs:rows.length,targeted,standard,
   citation_cases:triage.entries.length,source_access_holds:triage.summary.access_hold_paragraphs,
    qa_lead_rows:issues.length,qa_lead_counts:qaCounts,
+   direct_institutional_year_spot_checks:research.paragraphs.filter(p=>p.direct_year_evidence_research_only).length,
+   remaining_year_source_summary_flags:research.paragraphs.filter(p=>p.claim_flags?.includes("YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY")).length,
   existing_editorial_reviews:decisions.reviews.length,
   owner_batch_authorized:decisions.owner_batch_authorization?.authorized===true,
   currently_published_from_reviewed_bank:approvedBank.guides.length},
