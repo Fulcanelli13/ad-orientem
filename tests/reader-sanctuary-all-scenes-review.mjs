@@ -256,6 +256,32 @@ flag.addEventListener("click",()=>{flag.setAttribute("aria-pressed",
 refresh();
 </script></body></html>`;
  await writeFile(resolve(output,"index.html"),gallery);
+ // Audit the generated OFFLINE review UI itself. Before release the gallery
+ // must actually contain all 65 cards, every form comparison, clickable
+ // stills and working search/filter controls; a successfully written ZIP is
+ // not evidence that its index page renders.
+ const galleryPage=await browser.newPage({viewport:{width:1250,height:820}});
+ await galleryPage.goto("http://127.0.0.1:"+server.address().port+
+  "/artifacts/sanctuary-review/index.html",
+  {waitUntil:"domcontentloaded",timeout:30000});
+ assert.equal(await galleryPage.locator(".scene").count(),65);
+ assert.equal(await galleryPage.locator("figure").count(),325);
+ assert.equal(await galleryPage.locator("figure img").count(),317);
+ assert.equal(await galleryPage.locator(".omitted").count(),8);
+ await galleryPage.locator(".scene img").first().scrollIntoViewIfNeeded();
+ await galleryPage.waitForFunction(()=>{
+  const image=document.querySelector(".scene img");
+  return image?.complete&&image.naturalWidth>0;
+ },null,{timeout:15000});
+ await galleryPage.selectOption("#form","requiem");
+ assert.equal(await galleryPage.locator("figure:not(.hidden)").count(),65,
+  "Requiem filter must show one valid/omitted comparison for every scene");
+ await galleryPage.fill("#search","Communion of the Faithful");
+ assert.equal(await galleryPage.locator(".scene:not(.hidden)").count(),1);
+ await galleryPage.locator("#holds").click();
+ assert.equal(await galleryPage.locator(".scene:not(.hidden)").count(),1,
+  "The Communion scene must stay visible in the flagged-scenes filter");
+ await galleryPage.close();
  const readme=[
   "AD ORIENTEM — LIVE SANCTUARY — 65-SCENE ACCEPTANCE REVIEW",
   "",
