@@ -520,8 +520,8 @@ try{
       return {x:p.x,z:p.z,path:Boolean(p.path),
         walking:p.b.el.classList.contains("walking")};
     });
-    assert.ok(moving.x>started.x+.1,
-      "Owner M3 must really advance the priest toward the altar: "+
+    assert.ok(moving.z<started.z-.1,
+      "Owner M3 must advance the priest's DEPTH from rail to altar: "+
       JSON.stringify({started,moving}));
     assert.equal(moving.path,true);
     assert.equal(moving.walking,true,
