@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 453,
+    "newInstitutionalCoreChecks": 499,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 546,
-    "onlyCitationScope": 126,
+    "currentUniqueCoreResearchChecks": 592,
+    "onlyCitationScope": 80,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 80
+    "newCoreResearchChecksSinceLastPass": 46
   },
   "source_quality_findings": [
     {
@@ -562,13 +562,16 @@
       "claim_flags": [
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Gargano National Park itinerary describes walk to Monte Sant'Angelo shrine as pilgrimage and landscape, without fixed rites or visitor access.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.parcogargano.it/itinerario/pellegrinaggio-al-santuario-di-san-michele-arcangelo/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:san-michele-gargano",
@@ -879,13 +882,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Annecy Visitandine nuns document order founded 6 June 1610 by Francis de Sales and Jane de Chantal, and both saints' relics in later basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://visitationannecy.org/la-basilique-dannecy/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-visitation-annecy",
@@ -923,13 +929,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Annecy Visitandine nuns document order founded 6 June 1610 by Francis de Sales and Jane de Chantal, and both saints' relics in later basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://visitationannecy.org/la-basilique-dannecy/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:espace-bernadette-nevers",
@@ -1191,13 +1200,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Capuchin Padre Pio sanctuary documents historical places of saint's life and individual shrines in San Giovanni Rotondo; no automatic 1962 missal inference.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:LB:monastery-saint-maron-annaya",
@@ -1363,13 +1375,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Laurent sur Sèvre Montfort basilica custodians distinguish 1888 crypt works, 1889 foundation stone, 1949 nave and 1963 consecration, from prior church.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-montfort-saint-laurent",
@@ -1453,13 +1468,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint-Denis municipality documents Sugar's abbey building campaigns, royal necropolis and seminal 1140-44 Gothic ambulatory distinct from late royal burials.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.saintdenis.fr/basilique-cathedrale",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
@@ -1734,13 +1752,16 @@
       "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Neapolitan Redemptorists' Pagani basilica official history identifies Alphonsus foundation, traditional tomb, 1990 papal visit and museum/rooms available by prior booking.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:sant-alfonso-pagani",
@@ -1755,13 +1776,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Neapolitan Redemptorists' Pagani basilica official history identifies Alphonsus foundation, traditional tomb, 1990 papal visit and museum/rooms available by prior booking.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:sant-alfonso-pagani",
@@ -1775,13 +1799,16 @@
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Neapolitan Redemptorists' Pagani basilica official history identifies Alphonsus foundation, traditional tomb, 1990 papal visit and museum/rooms available by prior booking.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:montecassino-abbey",
@@ -1793,13 +1820,16 @@
       "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montecassino abbey itself identifies Benedict and Scholastica traditions and a living monastic basilica rather than a standalone museum.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:montecassino-abbey",
@@ -2016,13 +2046,16 @@
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Joseph Bessillon sanctuary and nearby Notre Dame de Graces at Cotignac are related but separate named sites, each with devotional context.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.saintjosephcotignac.com/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:saint-joseph-bessillon",
@@ -2102,13 +2135,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Płock Divine Mercy custodian describes sister Faustina memory and present sanctuary prayer and pilgrim welcome as separate from 1931 account.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://faustynaplock.pl/historia-sanktuarium/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BR:pateo-do-collegio-sao-paulo",
@@ -2122,13 +2158,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Jesuit Pateo do Collegio history documents São Paulo 1554 foundation memory, Anchieta mission and later reconstruction of church inaugurated 1979, with Claudio Pastro intervention 2009.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BR:pateo-do-collegio-sao-paulo",
@@ -2140,13 +2179,16 @@
       "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Jesuit Pateo do Collegio history documents São Paulo 1554 foundation memory, Anchieta mission and later reconstruction of church inaugurated 1979, with Claudio Pastro intervention 2009.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BR:pateo-do-collegio-sao-paulo",
@@ -2160,13 +2202,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Jesuit Pateo do Collegio history documents São Paulo 1554 foundation memory, Anchieta mission and later reconstruction of church inaugurated 1979, with Claudio Pastro intervention 2009.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ES:carmel-alba-tormes",
@@ -2180,13 +2225,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Alba Discalced Carmelite convent identifies Teresa's foundation 25 Jan 1571, 1582 death, body/heart/left arm as traditional relics and CARMUS museum opened 2014.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ES:carmel-alba-tormes",
@@ -2198,13 +2246,16 @@
       "source_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Alba Discalced Carmelite convent identifies Teresa's foundation 25 Jan 1571, 1582 death, body/heart/left arm as traditional relics and CARMUS museum opened 2014.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ES:carmel-alba-tormes",
@@ -2220,13 +2271,16 @@
         "GEOGRAPHY_ROUTE_PRECISION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Alba Discalced Carmelite convent identifies Teresa's foundation 25 Jan 1571, 1582 death, body/heart/left arm as traditional relics and CARMUS museum opened 2014.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ES:santiago-compostela-cathedral",
@@ -2323,13 +2377,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Santander Diocese Santo Toribio records True Cross wooden fragment as custody tradition, older documentary references but not independent dating to Crucifixion.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:ES:santo-toribio-liebana",
@@ -2432,13 +2489,16 @@
       "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "France Culture ministry Palissy IM54007978 details Saint Nicolas de Port arm reliquary from 1892-94, earlier vessels, named art components and image of pilgrimage.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-nicolas-de-port",
@@ -2476,13 +2536,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "France Culture ministry Palissy IM54007978 details Saint Nicolas de Port arm reliquary from 1892-94, earlier vessels, named art components and image of pilgrimage.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-quentin-aisne",
@@ -2494,13 +2557,16 @@
       "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "French Ministry Culture Palissy IM02004664 documents Saint Quentin devotional reliquary since medieval period and explicit 2008 dating of hand to 15th-16th century excluding martyr attribution.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-quentin-aisne",
@@ -2538,13 +2604,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "French Ministry Culture Palissy IM02004664 documents Saint Quentin devotional reliquary since medieval period and explicit 2008 dating of hand to 15th-16th century excluding martyr attribution.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-sernin-toulouse",
@@ -2556,13 +2625,16 @@
       "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Sernin basilica's own crypts tour identifies saint's local tomb and Toulouse pilgrimage heritage, but cannot scientifically prove martyr's physical identity.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-sernin-toulouse",
@@ -2600,13 +2672,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Sernin basilica's own crypts tour identifies saint's local tomb and Toulouse pilgrimage heritage, but cannot scientifically prove martyr's physical identity.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
@@ -2736,13 +2811,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lisieux Carmel official contact page is valid current authority for access to public chapel and distinguishes enclosed religious community from visitor areas.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://carmeldelisieux.fr/contact/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:cathedrale-saint-etienne-sens",
@@ -2777,13 +2855,16 @@
       "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Sens museum's official cathedral treasury exhibits liturgical vestments and textiles in addition to reliquaries; access is distinct from cathedral worship.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:cathedrale-saint-etienne-sens",
@@ -3101,13 +3182,16 @@
       "source_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Padua basilica official Chapel of Relics labels separate Anthony tongue by Giuliano da Firenze (1436), chin reliquary c. 1350, vocal apparatus modern vessel and John Paul II reliquary.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:basilica-sant-antonio-padova",
@@ -3144,13 +3228,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cascia Saint Rita sanctuary documents twentieth-century basilica built to accommodate growing pilgrimages and façade sculptures and floral symbols depicting saint's life.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://santaritadacascia.org/santuario/basilica/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:basilica-santa-rita-cascia",
@@ -3189,13 +3276,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cascia Saint Rita sanctuary documents twentieth-century basilica built to accommodate growing pilgrimages and façade sculptures and floral symbols depicting saint's life.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://santaritadacascia.org/santuario/basilica/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:san-geremia-santa-lucia-venezia",
@@ -3207,13 +3297,16 @@
       "source_url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Venice Patriarchate documents San Geremia as diocesan Saint Lucy sanctuary and December 2024 temporary translation of saint-attributed relics to Syracuse and other Sicilian dioceses.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:san-geremia-santa-lucia-venezia",
@@ -3227,13 +3320,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Venice Patriarchate documents San Geremia as diocesan Saint Lucy sanctuary and December 2024 temporary translation of saint-attributed relics to Syracuse and other Sicilian dioceses.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:san-geremia-santa-lucia-venezia",
@@ -3289,13 +3385,16 @@
       "source_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Milan Sant'Ambrogio basilica official map confirms Carolingian golden altar by Angilbert II over Ambrose and martyrs' tomb, Romanesque and restored architectural phases.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:sant-ambrogio-milano",
@@ -3310,13 +3409,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Milan Sant'Ambrogio basilica official map confirms Carolingian golden altar by Angilbert II over Ambrose and martyrs' tomb, Romanesque and restored architectural phases.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
@@ -3328,13 +3430,16 @@
       "source_url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santacroceroma.it/it/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
@@ -3346,13 +3451,16 @@
       "source_url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santacroceroma.it/it/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
@@ -3368,13 +3476,16 @@
         "GEOGRAPHY_ROUTE_PRECISION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santacroceroma.it/it/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:LU:basilica-st-willibrord-echternach",
@@ -3386,13 +3497,16 @@
       "source_url": "https://basilika.lu/en/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Echternach basilica official history documents Willibrord crypt, 11th-century frescoes, Anton Stevens 1604-05 pilgrim-dancing triptych and recurring Pentecost Tuesday custom.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilika.lu/en/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:LU:basilica-st-willibrord-echternach",
@@ -3407,13 +3521,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Echternach basilica official history documents Willibrord crypt, 11th-century frescoes, Anton Stevens 1604-05 pilgrim-dancing triptych and recurring Pentecost Tuesday custom.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilika.lu/en/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:LU:basilica-st-willibrord-echternach",
@@ -3428,13 +3545,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Echternach basilica official history documents Willibrord crypt, 11th-century frescoes, Anton Stevens 1604-05 pilgrim-dancing triptych and recurring Pentecost Tuesday custom.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilika.lu/en/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PE:convento-santo-domingo-lima",
@@ -3446,13 +3566,16 @@
       "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lima Santo Domingo Dominican convent official basilica record identifies Altar of Peruvian Saints Rose, Martin, John Macías and separate Rosary Marian altar/reliquary.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.conventosantodomingo.com.pe/basilica/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PE:convento-santo-domingo-lima",
@@ -3464,13 +3587,16 @@
       "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lima Santo Domingo Dominican convent official basilica record identifies Altar of Peruvian Saints Rose, Martin, John Macías and separate Rosary Marian altar/reliquary.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.conventosantodomingo.com.pe/basilica/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PE:convento-santo-domingo-lima",
@@ -3482,13 +3608,16 @@
       "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Lima Santo Domingo Dominican convent official basilica record identifies Altar of Peruvian Saints Rose, Martin, John Macías and separate Rosary Marian altar/reliquary.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.conventosantodomingo.com.pe/basilica/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:gniezno-cathedral-adalbert",
@@ -3562,13 +3691,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Krakow Wawel Cathedral's institutional history distinguishes Saint Stanislaus shrine and the seventeenth-century silver reliquary/canopy from medieval cult.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:wawel-cathedral-stanislaus",
@@ -3582,13 +3714,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Krakow Wawel Cathedral's institutional history distinguishes Saint Stanislaus shrine and the seventeenth-century silver reliquary/canopy from medieval cult.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:wawel-cathedral-stanislaus",
@@ -3689,13 +3824,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Philadelphia Cathedral dedicated 2009 Drexel shrine with family-donated altar and later reinterment of saint in August 2018; biographical details tied to city and religious ministry.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://cathedralphila.org/drexel/about/history/",
+      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
