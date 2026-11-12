@@ -161,18 +161,36 @@
     // Final second-acolyte choreography remains on ceremonial hold.
     acolyte.x=3.14;acolyte.z=1.75;acolyte.face=90;
   }
-  function stageSolemnRequiemGospel(card,requiem,form){
-    if(card?.id!=="C14"||!form.solemn||requiem!==true)return;
-    // The source-checked Ritus VI.5 minister records MR62.SOL.B02.007
-    // (thurifer/two acolyte candles in procession) and .008 (subdeacon
-    // holding book between acolytes) explicitly exclude Requiem. Never
-    // show the ordinary Gospel procession's candles/thurible at Requiem.
-    // Other sacred-minister station geometry is not source-certified.
+  function stageSolemnGospel(card,requiem,form,sectionId){
+    if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return;
     const actors=M3.actors?.();
-    for(const id of ["T","A1","A2"]){
-      const actor=actors?.[id];
-      if(!actor)continue;
-      actor.path=null;actor.turn=null;actor.prop=null;actor.vis=false;
+    if(!actors)return;
+    // Ritus VI.5, source-checked research MR62.SOL.B02.008:
+    // During the ordinary Solemn Gospel the SUBDEACON holds the book
+    // between candlebearers; the DEACON proclaims. Claude's original
+    // C14 assigns the book to the deacon instead. Transfer only the
+    // existing prop; the original actor geometry and camera remain.
+    if(actors.D)actors.D.prop=null;
+    if(actors.S)actors.S.prop=requiem?null:"book";
+    if(!requiem)return;
+    // Ritus XIII.2, source-checked MR62.SOL.B02.064/.065:
+    // At a Solemn Requiem NO thurifer/candles, but TWO acolytes remain
+    // and support the Gospel book. The previous adapter incorrectly
+    // hid those acolytes entirely. Keep both original figures visible,
+    // remove their torches, and show ONE book prop as an approximate
+    // visual proxy for the jointly supported book. Final shared-book
+    // pose/coordinates remain for the O'Connell choreography audit.
+    const thurifer=actors.T;
+    if(thurifer){
+      thurifer.path=null;thurifer.turn=null;thurifer.prop=null;
+      thurifer.vis=false;
+    }
+    for(const id of ["A1","A2"]){
+      const acolyte=actors[id];
+      if(!acolyte)continue;
+      acolyte.path=null;acolyte.turn=null;acolyte.vis=true;
+      acolyte.pose="stand";
+      acolyte.prop=id==="A1"?"book":null;
     }
   }
   function quietInactiveElevation(card){
@@ -263,7 +281,7 @@
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
-    stageSolemnRequiemGospel(card,requiem,form);
+    stageSolemnGospel(card,requiem,form,sourceSectionId);
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
