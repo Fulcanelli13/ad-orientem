@@ -37,5 +37,30 @@ try{
   result.external_host_hold=host;
  }
 }catch(e){result.source_error=String(e).slice(0,250);}
+
+try {
+ const url="https://www.fssp.org/wp-json/wpgmza/v1/markers";
+ const response=await fetch(url,{headers:{"Accept":"application/json","User-Agent":"AdOrientemFSSPMarkerSchemaResearch/1.0"},signal:AbortSignal.timeout(28000)});
+ const entries=await response.json();
+ if (!response.ok || !Array.isArray(entries)) throw Error("Invalid marker response");
+ const mapCounts={};
+ for (const e of entries) mapCounts[String(e.map_id??"unknown")]=(mapCounts[String(e.map_id??"unknown")]||0)+1;
+ const first=entries.slice(0,4).map(e=>({
+   id:e.id,map_id:e.map_id,title:String(e.title??"").slice(0,150),
+   address:String(e.address??"").slice(0,180),
+   description:String(e.description??"").slice(0,420),
+   link:String(e.link??"").slice(0,180),
+   lat_present:Boolean(e.lat),lng_present:Boolean(e.lng),
+   category:e.category,approved:e.approved,type:e.type
+ }));
+ console.log("FSSP_MARKER_SCHEMA_EXAMPLES",JSON.stringify({
+   status:response.status,count:entries.length,mapCounts,
+   title_nonempty:entries.filter(e=>String(e.title??"").trim()).length,
+   address_nonempty:entries.filter(e=>String(e.address??"").trim()).length,
+   description_nonempty:entries.filter(e=>String(e.description??"").trim()).length,
+   distinct_id_count:new Set(entries.map(e=>String(e.id))).size,examples:first
+ },null,2));
+} catch(error){console.log("FSSP_MARKER_SCHEMA_PROBE_ERROR",String(error).slice(0,250));}
+
 result.publication_approved=false;
 console.log("FSSP_RESEARCH_SOURCE_ORIGIN_AND_OFFICIAL_MARKER_ENDPOINTS",JSON.stringify(result,null,2));
