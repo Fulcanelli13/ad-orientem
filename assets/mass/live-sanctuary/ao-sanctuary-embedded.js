@@ -302,12 +302,33 @@
     deacon?.b?.el?.querySelector?.(".ao-sanctuary-communion-paten")
       ?.remove?.();
   }
-  function stageCommunionAtRail({card,form,sourceSectionId}){
+  function stageCommunionAtRail({
+    card,form,sourceSectionId,returnActive=false,beginReturn=false
+  }){
     const active=card?.id==="C57"&&sourceSectionId==="AO.CARD.025";
     if(!active){clearCommunionPaten();return null}
-    // The original M3.show(card,false) already positions the PRIEST
-    // AT the rail, with the ministers and faithful, without animating
-    // any earlier approach. C0246 names distribution, not the route.
+    // The original M3.show(card,false) positions the PRIEST AT the
+    // rail; C0246 is a distribution text, not a priest departure clock.
+    // Source-only MC-COM-300/310 is also AT the rail, with no route.
+    if(beginReturn&&["low","sung"].includes(form.form)){
+      // Canonical SILENT-ACTION MC-COM-320, E64, tier A:
+      // "Distribution concludes / priest returns." 1962 Ritus X.7
+      // agrees he returns to the altar AFTER the faithful communicate.
+      // The existing M3 engine advances a path without modifying owner
+      // HTML, camera, keyframes, Schola or priest/minister event clock.
+      // Foot/CENTER are existing owner prototype stations. The exact
+      // lateral path and speed are illustrative, not observed timings.
+      const priest=M3.actors?.()?.P;
+      if(priest){
+        priest.path={pts:[[0,4.36],[0,2.05],[0,.4]],
+          i:0,face:0,then:()=>{priest.pose="stand";priest.prop=null}};
+        priest.speed=.9;priest.turn=null;
+      }
+    }
+    if(returnActive){
+      clearCommunionPaten();
+      return "PRIEST_RETURN_SOURCE_EVENT";
+    }
     if(form.solemn){
       const deacon=M3.actors?.()?.D;
       const el=deacon?.vis===true?deacon.b?.el:null;
@@ -373,6 +394,22 @@
     const requiem=message.requiem===true;
     const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc+
       "|"+(requiem?"REQUIEM":"ORDINARY");
+    const nativeCommunionEvent=String(message.canonicalCommunionEventId??"");
+    const validCommunionEvent=id==="C57"&&
+      sourceSectionId==="AO.CARD.025"&&
+      ["LOW","SOLEMN"].includes(String(message.form??"").toUpperCase())&&
+      ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(nativeCommunionEvent)
+        ?nativeCommunionEvent:null;
+    const beginReturn=validCommunionEvent==="MC-COM-320"&&
+      last?.communionReturnActive!==true;
+    const returnRewind=last?.communionReturnActive===true&&
+      (!validCommunionEvent?
+        id!=="C57"||sourceSectionId!=="AO.CARD.025":
+        validCommunionEvent!=="MC-COM-320");
+    const communionReturnActive=Boolean(
+      beginReturn||(last?.communionReturnActive===true&&!returnRewind&&
+        id==="C57"&&sourceSectionId==="AO.CARD.025")
+    );
     const missalTransferFocus=Boolean(id==="C13"&&form.solemn&&validCue&&
       sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
     const missalFocusExit=Boolean(last?.solemnMissalTransfer&&!missalTransferFocus);
@@ -400,7 +437,8 @@
     // 16-second animation as soon as C0122 is focused. Elevations remain
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
-    if(last?.key!==nextKey||exiting||missalFocusExit||epistleFocusExit){
+    if(last?.key!==nextKey||exiting||missalFocusExit||
+       epistleFocusExit||returnRewind){
       clearElevationMinisterIncense();
       clearCommunionPaten();
       M3.show(card,false); // Original engine cancels pending action keyframes.
@@ -428,16 +466,23 @@
     const elevationActor=stageSolemnElevation({
       card,form,requiem,sourceSectionId,cue,validCue
     });
-    const communionStation=stageCommunionAtRail({card,form,sourceSectionId});
+    const communionStation=stageCommunionAtRail({
+      card,form,sourceSectionId,returnActive:communionReturnActive,
+      beginReturn
+    });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
+      communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
-      communionStation,elevationIncenseActor:elevationActor});
+      communionStation,
+      communionReturnTriggered:beginReturn,
+      canonicalCommunionEventId:validCommunionEvent,
+      elevationIncenseActor:elevationActor});
   }
   window.addEventListener("message",event=>{
     if(event.source!==window.parent||event.origin!==location.origin)return;
