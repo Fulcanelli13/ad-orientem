@@ -61,19 +61,29 @@ try{
    if(mode==='LIVE'&&!requiem)assert.equal(ready.total,65);
    const plan=page.locator('[data-schola-local-panel]');
    await plan.waitFor({state:'attached',timeout:20000});
-   if(form!=='LOW'&&!requiem)await plan.locator('summary').first().click();
+   const exposed=mode==='LIVE'&&form!=='LOW'&&!requiem;
+   if(exposed)await plan.locator('summary').first().click();
    const picker=page.locator('[data-schola-kyriale-choice="KYRIE"]');
    await picker.waitFor({state:'attached',timeout:20000});
    const trigger=page.locator('[data-kyrie-research-audition-open]');
    await trigger.waitFor({state:'attached',timeout:20000});
    assert.equal(await trigger.isVisible(),false,
      'Never show an unselected Kyrie research audition');
-   await picker.selectOption('MASS_16');
-   if(form==='LOW'||requiem){
+   if(!exposed){
+     // Missal omits the LIVE Schola dock; Low Mass has no Schola;
+     // Requiem cannot offer an ordinary Kyrie XVI audition.
+     // Set the source choice without attempting to click hidden controls.
+     // This tests a persisted choice without misrepresenting the visible UI.
+     await picker.evaluate(node=>{
+       node.value='MASS_16';
+       node.dispatchEvent(new Event('change',{bubbles:true}));
+     });
+     await page.waitForTimeout(150);
      assert.equal(await trigger.isVisible(),false,
-       'Low Mass/Requiem must never show the ordinary research audition');
-     assert.equal(await page.locator('.ao-kyrie-audition:not([hidden])').count(),0);
+       'No ordinary research-audio launcher in Missal, Low or Requiem');
+     assert.equal(await page.locator('section.ao-kyrie-audition').isVisible(),false);
    }else{
+     await picker.selectOption('MASS_16');
      await trigger.waitFor({state:'visible',timeout:20000});
      await trigger.click();
      const player=page.locator('section.ao-kyrie-audition');
