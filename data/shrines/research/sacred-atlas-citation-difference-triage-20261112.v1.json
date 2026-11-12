@@ -5,7 +5,7 @@
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
   "source_ledger_blob_sha": "9d7f8a6b8c6651cc1880510a8b5bee7ccc7869b8",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -19,7 +19,10 @@
     },
     "verified_citation_errors": 0,
     "independently_certified_paragraphs": 0,
-    "owner_approved_guides": 0
+    "owner_approved_guides": 0,
+    "direct_url_spot_checks": 7,
+    "confirmed_citation_scope_defects": 5,
+    "remaining_without_direct_url_spot_check": 78
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -89,7 +92,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": false,
+        "original_fetch_limitation": "Original page returned 403 to inspection client",
+        "findings": "Carmel archival page directly dates transfer of Thérèse's remains from Lisieux cemetery to Carmel to 26 March 1923. Original carmeldelisieux.fr visit page returned 403 to this inspection client; not proof inaccessible to normal visitors.",
+        "confirmed_draft_citation_scope_defect": false,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "47:venice",
@@ -531,7 +543,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "María Esperanza association reproduces Bishop Pío Bello Ricardo's 27 April 1991 letter, explicitly delimiting official sanction to his 21 November 1987 pastoral instruction; the association's broad English apparition description should not be substituted for this qualification. Letter reproduced by association, not inspected in diocesan original.",
+        "confirmed_draft_citation_scope_defect": false,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "104:pilgrimage",
@@ -718,7 +739,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "Seitai Hoshikai convent page directly dates reports of weeping 4 January 1975 through 15 September 1981. Original CBCJ 2016 source is an excerpt from the 2015 Japanese Catholic Information Handbook on congregations; inspected text does not explicitly support the guide's attribution that CBCJ describes seven years of tears. Visitor copy needs correction of attribution and citation.",
+        "confirmed_draft_citation_scope_defect": true,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "125:pilgrimage",
@@ -735,7 +765,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "San Marco's official Mass and Prayer page specifies Porta dei Fiori north-side entrance for prayer and Mass, distinct from ticketed tourism. The guide's original ciborium-columns page concerns sculpture/relic altar and does not document prayer entry, service access or visiting rules.",
+        "confirmed_draft_citation_scope_defect": true,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "128:history",
@@ -1415,7 +1454,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "Franciscan sanctuary homepage currently displays 'sito è in costruzione' with contact details, not historical narrative. Italian Bishops' Conference BeWeB thematic page documents Lanciano San Francesco's Eucharistic miracle tradition and pilgrimage history; retain attributed-tradition language.",
+        "confirmed_draft_citation_scope_defect": true,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "218:identity",
@@ -1432,7 +1480,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "Sanctuary homepage currently under construction; Italian Bishops' Conference BeWeB site-specific church page describes location and custodianship of venerated objects. The institutional description is not independent proof of a miraculous transformation.",
+        "confirmed_draft_citation_scope_defect": true,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "218:pilgrimage",
@@ -1449,7 +1506,16 @@
       "decision_status": "PROVISIONAL_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "direct_url_spot_check": {
+        "checked_on": "2026-11-12",
+        "target_page_inspected": true,
+        "original_source_inspected": true,
+        "original_fetch_limitation": null,
+        "findings": "Sanctuary homepage currently under construction; Italian Bishops' Conference BeWeB records Lanciano as a pilgrimage destination but does not establish a present Mass timetable, access hours or 1962 liturgy. Guide should not suggest that dated material establishes present schedules.",
+        "confirmed_draft_citation_scope_defect": true,
+        "full_english_french_claim_certified": false
+      }
     },
     {
       "key": "222:identity",
