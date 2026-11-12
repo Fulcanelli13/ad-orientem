@@ -80,8 +80,9 @@ assert.equal(shrineSeed.shrines.length-written.size,68);
 
 const titus = guides.find(g => g.place_id === "place:GR:saint-titus-heraklion");
 assert.ok(titus,"Titus historical church must have distinct treatment");
-assert.match(titus.sections.flatMap(x => x.paragraphs.map(p => p.en)).join(" "), /\bis presently an Orthodox church\b/i);
-assert.match(titus.sections.flatMap(x => x.paragraphs.map(p => p.fr)).join(" "), /\best actuellement une église orthodoxe\b/i);
+assert.match(titus.sections.find(x=>x.id==="identity").paragraphs[0].en,/now a functioning Orthodox church/i);
+assert.match(titus.sections.find(x=>x.id==="identity").paragraphs[0].fr,/une église orthodoxe en activité/i);
+assert.match(titus.sections.find(x=>x.id==="pilgrimage").paragraphs[0].en,/not mistake it for a present-day Catholic Mass venue/i);
 const sensitive = [
  "place:IT:duomo-torino-sindone",
  "place:DE:trierer-dom-heiliger-rock",
