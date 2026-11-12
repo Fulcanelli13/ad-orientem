@@ -3,7 +3,7 @@
   "as_of": "2026-11-12",
   "state": "RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED",
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
-  "source_ledger_blob_sha": "9d7f8a6b8c6651cc1880510a8b5bee7ccc7869b8",
+  "source_ledger_blob_sha": "619afd8a6d8f1c3aede5649a65e03678f47b714b",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
   "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded.",
   "summary": {
@@ -25,7 +25,8 @@
     "remaining_without_direct_url_spot_check": 78,
     "resolved_citation_scope_defects": 5,
     "current_differing_urls": 80,
-    "unrepaired_confirmed_scope_defects": 0
+    "unrepaired_confirmed_scope_defects": 0,
+    "remaining_affected_guides": 46
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
