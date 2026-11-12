@@ -26,7 +26,7 @@ try{
   await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
   await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open());
   await page.waitForFunction(()=>typeof globalThis.AO_NOVENAS_V3?.open==="function",null,{timeout:40000});
-  assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open({novenaId:"holy_ghost",returnContext:null})),"holy_ghost");
+  assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open({novenaId:"holy_ghost",returnContext:null})),true);
   const sel="#aoPray435930.open .aoN1DetailFolio",rose=page.locator(sel+" [data-n1-rose-window]");
   assert.equal(await rose.count(),1);
   assert.equal(await rose.locator("[data-n1-rose-day]").count(),9);
