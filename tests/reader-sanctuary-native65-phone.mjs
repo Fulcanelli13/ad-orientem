@@ -178,6 +178,28 @@ try{
         M3.actors().P.b.el.classList.contains("ao-sedilia-uncovered")&&
         Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
     },null,{timeout:12000});
+    await frame.waitForFunction(()=>{
+      const actors=window.M3?.actors?.();
+      return ["P","D","S"].every(id=>{
+        const a=actors?.[id];
+        return a?.pose==="sit"&&a?.x===3.71&&
+          a?.b?.el?.querySelector('path[d^="M-10,-37"]');
+      });
+    },null,{timeout:12000});
+    const seatedAnatomy=await frame.evaluate(()=>["P","D","S"].map(id=>{
+      const a=M3.actors()[id];
+      const leg=a.b.el.querySelector('path[d^="M-10,-37"]');
+      return {id,pose:a.pose,x:a.x,z:a.z,footOnFloor:a.b.h<.35,
+        thighKneeCalfSvgPresent:Boolean(leg),
+        legPath:leg?.getAttribute("d")??null};
+    }));
+    assert.equal(new Set(seatedAnatomy.map(x=>x.z)).size,3,
+      "Priest, deacon and subdeacon must occupy distinct seats");
+    for(const a of seatedAnatomy){
+      assert.equal(a.footOnFloor,true,a.id+" feet cannot hover");
+      assert.equal(a.thighKneeCalfSvgPresent,true,
+        a.id+" must use a real seated knee-and-calf sprite, not a standing skirt");
+    }
     await frame.evaluate(()=>M3.snap()); // settle the original sedilia camera
     const sediliaCamera=await frame.evaluate(()=>({...M3.eng.cam,T:[...M3.eng.cam.T]}));
     await frame.waitForTimeout(180);
@@ -926,9 +948,10 @@ try{
     assert.ok(acolyte.x>2.1&&acolyte.x<2.7&&acolyte.z>1.5,
       "Existing server must STAND away from the celebrant's seated silhouette");
     assert.equal(acolyte.priestPose,"sit");
-    assert.equal(acolyte.priestX,4.04,
-      "The original seated celebrant sprite must align with the actual bench");
-    assert.ok(acolyte.priestSeatHeight>.4);
+    assert.equal(acolyte.priestX,3.71,
+      "Seated figure must sit at the bench FRONT LIP; x=4.04 hides all legs");
+    assert.ok(acolyte.priestSeatHeight<.35,
+      "Feet stay on the original floor: never float the actor .52m upward");
     assert.equal(acolyte.stage,"ORIGINAL_SEDILIA_SEATED");
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
