@@ -1,0 +1,110 @@
+{
+  "schema": "ao-schola-m46-kyrie-xvi-note-timing-research-v1",
+  "date": "2026-11-12",
+  "scoreId": "GREGOBASE-545",
+  "selection": "KYRIE/MASS_16",
+  "provenance": {
+    "sourceGabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=545",
+    "officialHistoricPrintWitness": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "printEdition": "Graduale Romanum Solesmes 1961",
+    "folio": "54*",
+    "pageInPdf1Based": 56,
+    "otherPrintWitnesses": [
+      "The Liber Usualis Solesmes 1961 p. 59",
+      "Chants of the Church Solesmes 1956 p. 40"
+    ],
+    "automatedOriginalSourceParity": "GREG0BASE_545_GABC_STRING_MATCH_RECHECKED_20261112",
+    "sourceFingerprintUtf16Fnv1a32": "acef0d62"
+  },
+  "printWitness": {
+    "pdfSha256": "119b084b5c0689fc3e87541143731f6526c404a018bc97d18e8c98a7635ce2bd",
+    "sourceFile": "data/research/mass-music-m43-kyrie-xvi-original-printed-noteheads.v1.json",
+    "printGroupsIndependentlyCounted": 27,
+    "printNoteheadsIndependentlyCounted": 40,
+    "printSignFamilyOccurrencesObserved": 11,
+    "physicalPrintNoteheadsEditorCertified": false,
+    "exactPitchAndMoraPrintedInkTraceCertified": false
+  },
+  "scoreTopology": {
+    "sourceGroups": 27,
+    "sourceNotes": 40,
+    "sourcePhrases": 4,
+    "phraseSourceNoteCounts": [
+      9,
+      7,
+      9,
+      15
+    ],
+    "explicitPerformancePhraseIndicesZeroBased": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    "soundedNoteEvents": 81,
+    "completeInvocations": 9,
+    "sourceFinalSixPitchLetters": [
+      "i",
+      "g",
+      "h",
+      "G",
+      "F",
+      "E"
+    ],
+    "noteIndexConvention": "sourceNoteOrdinal 1-based; groupIndex and verseIndex 0-based",
+    "printedScoreRepeatedInPlaybackOnly": true,
+    "noExtraMassCards": true
+  },
+  "expectedSourceRhythmicSignPositions": {
+    "horizontalEpisema": [
+      7,
+      14,
+      23
+    ],
+    "mora": [
+      9,
+      16,
+      25,
+      40
+    ],
+    "virga": [
+      37
+    ],
+    "inclined": [
+      38,
+      39,
+      40
+    ]
+  },
+  "rhythmPolicy": {
+    "certified": false,
+    "method": "illustrative equally weighted notes; relative sign multipliers and between-invocation gaps",
+    "exampleReferenceNoteMs": 300,
+    "exampleHorizontalEpisemaFactor": 1.3333333333333333,
+    "exampleMoraFactor": 1.7666666666666666,
+    "exampleDoubleMoraFactor": 2.2,
+    "exampleBetweenInvocationGapMs": 280,
+    "unitsAreEditorialPreviewNotHistoricalPerformance": true,
+    "effectiveTempoIsUserAdjustable": true,
+    "userControllablePitchAndSpeedIndependently": true,
+    "GregorianChantDoesNotAssignFixedMsPerGabcNote": true
+  },
+  "releaseBoundary": {
+    "onlySelectedExplicitKyrieXvi": true,
+    "actualAudioEngineRemainsProceduralFluteOrPureTone": true,
+    "scoreApproved": false,
+    "fullNoteheadHighlightParityApproved": false,
+    "exact1961MicroglyphMetricParityApproved": false,
+    "requiresHumanEditorForFinalPrintedSignsAndTiming": true,
+    "noAutomatedChantSettingSelection": true,
+    "noSungKyrieForRequiemOrLowMass": true,
+    "sourceCatalogueAndCanonical65Untouched": true,
+    "noPaidAudioAssets": true
+  },
+  "nextAction": "Independent notehead-to-SVG geometry map and editorial rhythm profile; add other GABC scores only through explicit plans and separate score-specific review."
+}
