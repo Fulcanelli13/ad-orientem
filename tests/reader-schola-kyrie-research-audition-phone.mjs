@@ -35,12 +35,16 @@ try{
  const base='http://127.0.0.1:'+server.address().port+
    '/tests/fixtures/reader-phone-harness.html';
  const failures=[];
- for(const [width,mode,form,requiem] of [
-   [320,'LIVE','MISSA_CANTATA_INCENSE',false],
-   [390,'LIVE','SOLEMN',false],
-   [390,'MISSAL','MISSA_CANTATA_SIMPLE',false],
-   [390,'LIVE','LOW',false],
-   [390,'LIVE','SOLEMN',true]
+ for(const [width,mode,form,requiem,settingId] of [
+   [320,'LIVE','MISSA_CANTATA_INCENSE',false,'MASS_16'],
+   [390,'LIVE','SOLEMN',false,'MASS_16'],
+   [390,'LIVE','SOLEMN',false,'MASS_18'],
+   [390,'MISSAL','MISSA_CANTATA_SIMPLE',false,'MASS_16'],
+   [390,'MISSAL','MISSA_CANTATA_SIMPLE',false,'MASS_18'],
+   [390,'LIVE','LOW',false,'MASS_16'],
+   [390,'LIVE','LOW',false,'MASS_18'],
+   [390,'LIVE','SOLEMN',true,'MASS_16'],
+   [390,'LIVE','SOLEMN',true,'MASS_18']
  ]){
   const context=await browser.newContext({viewport:{width,height:844},
     hasTouch:true,isMobile:true,serviceWorkers:'block'});
@@ -74,16 +78,16 @@ try{
      // Requiem cannot offer an ordinary Kyrie XVI audition.
      // Set the source choice without attempting to click hidden controls.
      // This tests a persisted choice without misrepresenting the visible UI.
-     await picker.evaluate(node=>{
-       node.value='MASS_16';
+     await picker.evaluate((node,setting)=>{
+       node.value=setting;
        node.dispatchEvent(new Event('change',{bubbles:true}));
-     });
+     },settingId);
      await page.waitForTimeout(150);
      assert.equal(await trigger.isVisible(),false,
        'No ordinary research-audio launcher in Missal, Low or Requiem');
      assert.equal(await page.locator('section.ao-kyrie-audition').isVisible(),false);
    }else{
-     await picker.selectOption('MASS_16');
+     await picker.selectOption(settingId);
      await trigger.waitFor({state:'visible',timeout:20000});
      await trigger.click();
      assert.equal(await plan.evaluate(node=>node.open),false,
@@ -94,8 +98,11 @@ try{
      // Exsurge, not the lyric text, owns 40 exact geometric notehead nodes.
      await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
        ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:20000});
-     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),40,
-       'Kyrie XVI must map the actual 40 Exsurge glyphs');
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),
+       settingId==='MASS_18'?44:40,
+       'The selected source must map its exact Exsurge notehead count');
+     assert.match(await player.locator('h3').textContent(),
+       new RegExp(settingId==='MASS_18'?'Kyrie XVIII':'Kyrie XVI'));
      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
        .count(),1,'Exactly one printed notehead may be active');
      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
@@ -116,7 +123,7 @@ try{
      await page.waitForFunction(()=>/Invocation 1\/9 · source note/.test(
        document.querySelector('[data-kyrie-position]')?.textContent??''),null,{timeout:10000});
      const start=await player.locator('[data-kyrie-position]').textContent();
-     assert.match(start,/source note \d+\/40/);
+     assert.match(start,new RegExp('source note \\d+/'+(settingId==='MASS_18'?44:40)));
      await page.waitForFunction(()=>Number(document.querySelector('[data-kyrie-staff]')
        ?.dataset.performanceNoteOrdinal)>=3,null,{timeout:8500});
      const nowAlignment=await page.evaluate(()=>{
@@ -155,7 +162,7 @@ try{
      await page.waitForTimeout(1100);
      const progressed=await player.locator('[data-kyrie-position]').textContent();
      assert.notEqual(progressed,start,'Priest card navigation paused the independent melody');
-     await page.screenshot({path:resolve(shots,mode.toLowerCase()+'-'+form.toLowerCase()+'-'+width+'.png'),
+     await page.screenshot({path:resolve(shots,mode.toLowerCase()+'-'+form.toLowerCase()+'-'+settingId.toLowerCase()+'-'+width+'.png'),
        animations:'disabled'});
      await minimise.click();
      assert.equal(await player.getAttribute('data-minimized'),'false');
@@ -177,6 +184,26 @@ try{
      // intentionally collapsed when the separate melody player opened.
      // Reopening it must not mutate the independent sound clock.
      await plan.evaluate(node=>{node.open=true;});
+     // Switching the exact selected setting in the same mounted reader
+     // must destroy the old SVG mapping and sound and load a new one.
+     if(settingId==='MASS_18'){
+       await picker.selectOption('MASS_16');
+       await trigger.waitFor({state:'visible',timeout:15000});
+       await trigger.click();
+       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
+         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:25000});
+       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),40);
+       assert.match(await player.locator('h3').textContent(),/Kyrie XVI/);
+       await plan.evaluate(node=>{node.open=true;});
+       await picker.selectOption('MASS_18');
+       await trigger.waitFor({state:'visible',timeout:15000});
+       await trigger.click();
+       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
+         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:25000});
+       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),44);
+       assert.match(await player.locator('h3').textContent(),/Kyrie XVIII/);
+       await plan.evaluate(node=>{node.open=true;});
+     }
      // Changing to a custom or unsupported Kyrie must immediately hide/stop the audition.
      await picker.selectOption('CUSTOM');
      await player.waitFor({state:'hidden',timeout:15000});
@@ -190,12 +217,12 @@ try{
      'The Kyrie research preview caused horizontal page overflow');
    assert.deepEqual(errors,[],'Real reader browser errors');
    console.log('PASS Kyrie audition in actual reader',
-     JSON.stringify({width,mode,form,requiem,cardCount:ready.total}));
+     JSON.stringify({width,mode,form,requiem,settingId,cardCount:ready.total}));
   }catch(error){
-   const failure={width,mode,form,requiem,error:String(error?.stack??error)};
+   const failure={width,mode,form,requiem,settingId,error:String(error?.stack??error)};
    failures.push(failure);
    console.error('FAIL Kyrie audition phone case',JSON.stringify(failure));
   }finally{await context.close();}
  }
- assert.deepEqual(failures,[],'All five real-reader Schola research audition cases must pass');
+ assert.deepEqual(failures,[],'All nine real-reader Schola research audition cases must pass');
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}

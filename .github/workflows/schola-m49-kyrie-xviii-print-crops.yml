@@ -1,0 +1,37 @@
+name: Schola M49 Kyrie XVIII original 1961 printed evidence (research only)
+on:
+  pull_request:
+    paths:
+      - "tools/schola/m49-kyrie-xviii-original-facsimile.py"
+      - ".github/workflows/schola-m49-kyrie-xviii-print-crops.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: schola-m49-original-print-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  original-source-crops:
+    name: Capture Kyrie XVIII original 1961 folio 57* (ephemeral)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned PDF/image evidence dependencies
+        run: python -m pip install --disable-pip-version-check "PyMuPDF==1.26.6" "Pillow==11.3.0"
+      - name: Verify PDF SHA256 and render original 1961 folio 57* at 420 dpi
+        run: python tools/schola/m49-kyrie-xviii-original-facsimile.py --output artifacts/schola-m49-original-1961
+      - name: Upload original printed evidence for editorial inspection only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-xviii-1961-original-printed-crops
+          path: artifacts/schola-m49-original-1961/
+          if-no-files-found: error
+          retention-days: 7
