@@ -216,7 +216,35 @@ try{
       assert.equal(snap.subdeacon.swings,false,
         name+" leaked the source-focused thurible effect");
     }
+    // Verify the actual sprite, not only its JS prop. Claude's dalmatic
+    // rear sprite omits held objects; the adapter uses its existing oblique
+    // side sprite so the thurible and three-cycle swing are visibly drawn.
+    await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Words of Consecration and Elevation · Host",
+      sourceSectionId:"AO.CARD.015",sourceCueId:"AO.SM.C0174",
+      certifiedSourceFocus:true,requiem:true,scholaOnly:false
+    }));
+    await frame.waitForFunction(()=>Boolean(M3.actors()?.S?.b?.el
+      ?.querySelector(".thur")),null,{timeout:12000});
+    const sprite=await frame.evaluate(()=>{
+      const thurible=M3.actors().S.b.el.querySelector(".thur");
+      return {exists:Boolean(thurible),
+        animation:getComputedStyle(thurible).animationName,
+        delay:getComputedStyle(thurible).animationDelay,
+        actorClass:M3.actors().S.b.el.classList.contains(
+          "ao-source-elevation-incense")};
+    });
+    assert.equal(sprite.exists,true,"Requiem subdeacon thurible was not rendered");
+    assert.equal(sprite.animation,"swing2",
+      "Requiem must use Claude's original thurible swing artwork");
+    assert.equal(sprite.delay,"2.5s",
+      "Only the original prototype's elevation reveal owns swing delay");
+    assert.equal(sprite.actorClass,true);
     await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.clear());
+    const exited=await frame.evaluate(()=>M3.actors().S.b.el.classList
+      .contains("ao-source-elevation-incense"));
+    assert.equal(exited,false,"MISSAL clear must remove Requiem incense swing");
   }
   const model=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
