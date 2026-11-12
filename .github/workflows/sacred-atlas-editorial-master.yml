@@ -17,6 +17,7 @@ on:
       - 'tools/geography/audit-sacred-atlas-editorial.mjs'
       - 'tests/sacred-atlas-editorial-master-530-contract.mjs'
       - 'tests/sacred-atlas-approved-guide-mobile-dry-run.mjs'
+      - 'scripts/export-sacred-atlas-editorial-review-pack.mjs'
       - '.github/workflows/sacred-atlas-editorial-master.yml'
   workflow_dispatch:
 
@@ -75,3 +76,23 @@ jobs:
           name: sacred-atlas-approved-only-synthetic-320-390
           path: artifacts/sacred-atlas-approved-guide-dry-run
           if-no-files-found: ignore
+
+  consolidated-editorial-review-pack:
+    name: exact-revision 672 EN/FR editorial review export
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assemble all research paragraph pairs for independent editor
+        env:
+          AO_REVIEW_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: node scripts/export-sacred-atlas-editorial-review-pack.mjs
+      - name: Upload internal-only 224-guide bilingual editorial packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-672-en-fr-editorial-review-pack
+          path: artifacts/sacred-atlas-editorial-review
+          if-no-files-found: error
