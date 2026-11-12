@@ -756,6 +756,66 @@ try{
       "Real Communion distribution may not trigger the earlier approach");
     assert.equal(actual.deaconVisible,true);
     assert.equal(actual.patenCount,1);
+    // End-to-end: the ACTUAL native 65-card LIVE reader (not a direct
+    // iframe message) owns the explicit MC-COM-320 human observation.
+    // A source card, Schola turn or incomplete witness must never infer it.
+    const observedInput={eventId:"MC-COM-320",actor:"PRIEST",
+      action:"RETURN_TO_ALTAR",observed:true};
+    const beforeWitness=await page.evaluate(input=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      return {partial:api.observeCommunionReturn({...input,observed:false}),
+        choir:api.observeCommunionReturn({...input,eventId:"MC-COM-305"}),
+        wrongActor:api.observeCommunionReturn({...input,actor:"SCHOLA"}),
+        state:api.getObservedCommunionReturn()};
+    },observedInput);
+    for(const key of ["partial","choir","wrongActor"])
+      assert.equal(beforeWitness[key].accepted,false,
+        key+" must not create a priest-return observation");
+    assert.equal(beforeWitness.state,null);
+    assert.equal(await frame.evaluate(()=>M3.actors().P.path),null);
+    const observed=await page.evaluate(input=>
+      window.__AO_PHONE_PREVIEW.observeCommunionReturn(input),observedInput);
+    assert.equal(observed.accepted,true,
+      "Observed Tier-A E64 priest return must be accepted on actual C57");
+    assert.equal(observed.duplicate,false);
+    await frame.waitForFunction(()=>{
+      const state=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return state?.card==="C57"&&state?.communionReturnActive===true&&
+        M3.actors()?.P?.path!=null;
+    },null,{timeout:12000});
+    const repeat=await page.evaluate(input=>
+      window.__AO_PHONE_PREVIEW.observeCommunionReturn(input),observedInput);
+    assert.equal(repeat.duplicate,true,
+      "Repeated human observation must not restart priest return");
+    const cancelled=await page.evaluate(()=>
+      window.__AO_PHONE_PREVIEW.clearObservedCommunionReturn());
+    assert.equal(cancelled.cleared,true);
+    await frame.waitForFunction(()=>{
+      const state=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return state?.card==="C57"&&state?.communionReturnActive===false&&
+        M3.actors()?.P?.path==null;
+    },null,{timeout:12000});
+    assert.equal(await frame.evaluate(()=>M3.actors().P.z),4.36,
+      "Explicit cancellation must restore the original rail still frame");
+    const observedAgain=await page.evaluate(input=>
+      window.__AO_PHONE_PREVIEW.observeCommunionReturn(input),observedInput);
+    assert.equal(observedAgain.accepted,true);
+    assert.equal(observedAgain.duplicate,false);
+    await frame.waitForFunction(()=>Boolean(M3.actors()?.P?.path),
+      null,{timeout:12000});
+    await page.evaluate(()=>
+      window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
+    assert.equal(await page.evaluate(()=>
+      window.__AO_PHONE_PREVIEW.getObservedCommunionReturn()),null,
+      "LIVE→MISSAL must invalidate a previously witnessed return");
+    await page.evaluate(()=>
+      window.__AO_PHONE_PREVIEW.setPresentationMode("LIVE"));
+    await frame.waitForFunction(()=>{
+      const state=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return state?.card==="C57"&&state?.communionReturnActive!==true;
+    },null,{timeout:12000});
+    assert.equal(await frame.evaluate(()=>M3.actors().P.path),null,
+      "MISSAL→LIVE must not replay a previous observed return");
     await page.evaluate(sequence=>
       window.__AO_PHONE_PREVIEW.showSequence(sequence+1),railCard.sequence);
     await frame.waitForFunction(()=>
@@ -764,6 +824,10 @@ try{
     assert.equal(await frame.evaluate(()=>M3.actors().D?.b?.el
       ?.querySelectorAll(".ao-sanctuary-communion-paten")?.length??0),0,
       "Native C57→C58 exit must remove the Communion paten");
+    const outside=await page.evaluate(input=>
+      window.__AO_PHONE_PREVIEW.observeCommunionReturn(input),observedInput);
+    assert.equal(outside.accepted,false,
+      "Changing to C58 must forbid a stale priest return observation");
   }
   // Real native reader scroll, not a direct test-only present() call:
   // the original Offertory incense sequence spans four 1962 priest cues.
