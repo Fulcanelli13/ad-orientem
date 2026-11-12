@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {sanctuaryCueProjection,SANCTUARY_PROTOCOL,
+import {sanctuaryCueProjection,sanctuaryAspergesProjection,SANCTUARY_PROTOCOL,
  createReaderSanctuaryPreview} from "../src/mass/reader-sanctuary-visual.js";
+import {createAspergesReaderController} from "../src/mass/reader-asperges.js";
 const card={sectionId:"AO.LIVECURATED.AO.CARD.003.2",
  sourceSectionId:"AO.CARD.003",title:"Gloria · Praise and Supplication"};
 const state={nativeCueId:"AO.SM.C0055",schola:{trackId:"GLORIA"}};
@@ -18,6 +19,55 @@ assert.equal(sanctuaryCueProjection({card:{...card,stateOnly:true},state,
  form:"LOW",mode:"LIVE"}),null);
 assert.equal(sanctuaryCueProjection({card,state:{nativeCueId:"SCHOLA:OFFERTORY"},
  form:"MISSA_CANTATA_SIMPLE",mode:"LIVE"}).sourceCueId,null);
+// Native R20, not a fabricated Cnn Mass card or a Schola text clock,
+ // supplies all five Asperges stage identities and the personal gesture.
+const extension=JSON.parse(readFileSync(new URL(
+ "../data/mass/special-days-extension.v1.3.json",import.meta.url),"utf8"));
+const aspergesPayload=JSON.parse(readFileSync(new URL(
+ "../data/presentation/reader-asperges.v1.json",import.meta.url),"utf8"));
+const asperges=createAspergesReaderController({
+ graph:extension.graphs.ASP,payload:aspergesPayload
+});
+const aspBase={form:"SOLEMN",mode:"LIVE"};
+let asp=sanctuaryAspergesProjection({
+ aspergesState:asperges.project(),...aspBase
+});
+assert.equal(asp.sourceRiteId,"ASPERGES");
+assert.equal(asp.riteStageId,"ASP-R01");
+assert.deepEqual(asp.sourceRecordIds,["ASP-010"]);
+assert.equal(asp.observedSprinkled,false);
+asperges.goTo("ASP-R02");
+asp=sanctuaryCueProjection({aspergesState:asperges.project(),...aspBase});
+assert.equal(asp.riteStageId,"ASP-R02");
+assert.deepEqual(asp.sourceRecordIds,["ASP-020","ASP-030"]);
+assert.equal(asp.observedSprinkled,false,
+ "The chant and preparatory kneeling must not masquerade as physical sprinkling");
+asperges.goTo("ASP-R03");
+asp=sanctuaryAspergesProjection({aspergesState:asperges.project(),...aspBase});
+assert.equal(asp.observedSprinkled,false,
+ "Simply visiting recipient stage must not create an observed sprinkle");
+asperges.setActuallySprinkled(true);
+asp=sanctuaryAspergesProjection({aspergesState:asperges.project(),...aspBase});
+assert.equal(asp.observedSprinkled,true,
+ "The user's explicit actually-sprinkled event may show the water illustration");
+assert.equal(sanctuaryAspergesProjection({
+ aspergesState:asperges.project(),mode:"MISSAL",form:"SOLEMN"}),null);
+assert.equal(sanctuaryAspergesProjection({
+ aspergesState:asperges.project(),mode:"LIVE",form:"LOW"}),null);
+assert.equal(sanctuaryAspergesProjection({
+ aspergesState:{...asperges.project(),card:{
+  ...asperges.project().card,sourceRecordIds:["ASP-030"]}},...aspBase}),null,
+ "Never accept a mismatched rite stage or Schola-only source record");
+asperges.goTo("ASP-R04");
+asp=sanctuaryAspergesProjection({aspergesState:asperges.project(),...aspBase});
+assert.equal(asp.riteStageId,"ASP-R04");
+assert.equal(asp.observedSprinkled,false,
+ "No observed water gesture during return versicles");
+asperges.goTo("ASP-R05");
+asp=sanctuaryAspergesProjection({aspergesState:asperges.project(),...aspBase});
+assert.equal(asp.riteStageId,"ASP-R05");
+assert.deepEqual(asp.sourceRecordIds,["ASP-060"]);
+
 assert.equal(createReaderSanctuaryPreview({enabled:false}).active,false);
 console.log("PASS: LIVE sanctuary receives exact native card and cue only, no Schola or Missal source");
 
