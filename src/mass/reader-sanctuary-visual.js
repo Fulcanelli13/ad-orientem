@@ -4,7 +4,42 @@
 export const SANCTUARY_PROTOCOL="AO_SANCTUARY_CUE_V1";
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const NOOP=Object.freeze({active:false,project:()=>false,destroy:()=>{}});
-export function sanctuaryCueProjection({card,state,form,mode="LIVE"}={}){
+const ASPERGES_STAGE_RECORDS=Object.freeze({
+ "ASP-R01":["ASP-010"],"ASP-R02":["ASP-020","ASP-030"],
+ "ASP-R03":["ASP-040"],"ASP-R04":["ASP-050"],"ASP-R05":["ASP-060"]
+});
+const SAME=(a,b)=>Array.isArray(a)&&a.length===b.length&&
+ a.every((value,i)=>value===b[i]);
+// The native R20 rite owns all five stage IDs and source records. This is
+// only a stage-specific illustration; ASP-030 (chant) is not a physical
+// priest-motion clock, and ASP-040 is a personal observed response, not a
+// license to start an inferred nave procession.
+export function sanctuaryAspergesProjection({aspergesState,form,mode="LIVE"}={}){
+ if(String(mode).toUpperCase()!=="LIVE"||
+    !["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(form)||
+    aspergesState?.schema!=="ao-r20-asperges-reader-state-v1"||
+    aspergesState?.supported!==true)return null;
+ const id=String(aspergesState.card?.id??"");
+ const ids=ASPERGES_STAGE_RECORDS[id];
+ if(!ids||!SAME(aspergesState.card?.sourceRecordIds,ids)||
+   !["ORDINARY","PASCHAL"].includes(aspergesState.formulaState?.formula))
+   return null;
+ const sprinkled=id==="ASP-R03"&&
+   aspergesState.personalTriggerActive===true&&
+   aspergesState.faithfulGesture==="MAKE_FULL_SIGN_OF_CROSS";
+ return Object.freeze({
+  type:SANCTUARY_PROTOCOL,version:1,form,
+  sourceRiteId:"ASPERGES",riteStageId:id,
+  sourceRecordIds:Object.freeze([...ids]),
+  // Only the existing explicit R20 user observation can produce droplets.
+  // NEVER infer it from the Schola's Asperges/Vidi aquam chant.
+  observedSprinkled:sprinkled,
+  scholaOnly:false,
+ });
+}
+
+export function sanctuaryCueProjection({card,state,aspergesState=null,form,mode="LIVE"}={}){
+ if(aspergesState)return sanctuaryAspergesProjection({aspergesState,form,mode});
  if(String(mode).toUpperCase()!=="LIVE"||!FORMS.has(form)||
     !card?.sectionId||!String(card.title??"").trim()||
     card.stateOnly===true)return null;
