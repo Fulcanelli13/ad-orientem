@@ -1,13 +1,43 @@
 // Explicitly opened, zero-cost melody audition of a PROVISIONAL research source.
 // Never promotes the score into the Schola dock, observes a choir, or moves a Mass cue.
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
-import {createOfflineChantEngraver} from './reader-chant-engraver.js';
+import {createOfflineChantEngraver,loadOfflineExsurge} from './reader-chant-engraver.js';
+import {compileExsurgeGabcResearchMelody} from './reader-schola-exsurge-gabc-melody.js';
 import {scholaGabcSyllables,mapScholaSvgLyrics} from './reader-schola-notation-follow.js';
 import {compileGabcMelody,scheduleGabcMelody} from './reader-schola-gabc-melody.js';
 import {createExsurgeNoteheadFollower} from './reader-schola-exsurge-notehead-follow.js';
 
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
+// These four transcriptions were source-pinned and proven to render in M48.
+// Their ninefold melody schedules remain PROVISIONAL RESEARCH, not chant approval.
+export const ADDITIONAL_KYRIE_RESEARCH_SOURCES=Object.freeze([
+  Object.freeze({settingId:'MASS_01',title:'Kyrie I',scoreId:'GREGOBASE-1143',
+    fingerprint:'1d935709',phraseNoteCounts:Object.freeze([15,21,20,23]),sourceNotes:79,performanceNotes:171}),
+  Object.freeze({settingId:'MASS_08',title:'Kyrie VIII',scoreId:'GREGOBASE-1184',
+    fingerprint:'0fe08a50',phraseNoteCounts:Object.freeze([25,23,23,31]),sourceNotes:102,performanceNotes:221}),
+  Object.freeze({settingId:'MASS_11',title:'Kyrie XI',scoreId:'GREGOBASE-2982',
+    fingerprint:'20149774',phraseNoteCounts:Object.freeze([18,21,18,25]),sourceNotes:82,performanceNotes:178}),
+  Object.freeze({settingId:'MASS_17',title:'Kyrie XVII',scoreId:'GREGOBASE-272',
+    fingerprint:'eebb7a65',phraseNoteCounts:Object.freeze([22,19,18,48]),sourceNotes:107,performanceNotes:207})
+]);
+const ADVANCED_SETTINGS=new Set(ADDITIONAL_KYRIE_RESEARCH_SOURCES.map(s=>s.settingId));
+const RESEARCH_SETTINGS=new Set(['MASS_16','MASS_18',...ADVANCED_SETTINGS]);
+// Never infer a Mass's Ordinary from the calendar or chant catalogue.
+export function compileAdditionalKyrieResearchAudition({settingId,score,exsurge}={}){
+  const spec=ADDITIONAL_KYRIE_RESEARCH_SOURCES.find(s=>s.settingId===settingId);
+  if(!spec||!score||score.scoreApproved!==false||score.scoreId!==spec.scoreId)return null;
+  try{
+    const result=compileExsurgeGabcResearchMelody(score.gabc,{
+      exsurge,scoreId:spec.scoreId,expectedFingerprint:spec.fingerprint,
+      expectedPhraseNoteCounts:[...spec.phraseNoteCounts],phraseSequence:[...REPEATS]
+    });
+    if(result.sourceNoteCount!==spec.sourceNotes||
+       result.performance.length!==spec.performanceNotes||
+       result.invocations!==9)return null;
+    return result;
+  }catch{return null;} // Fail closed on unsupported/mutated notation.
+}
 export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='LIVE'}={}){
   return String(mode??'').toUpperCase()==='LIVE' &&
     SUNG.has(String(form??'').toUpperCase()) &&
@@ -16,7 +46,7 @@ export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='L
 export function kyrieResearchAuditionEligible({form,settingId,isRequiem=false,mode='LIVE'}={}){
   return String(mode??'').toUpperCase()==='LIVE' &&
     SUNG.has(String(form??'').toUpperCase()) &&
-    (settingId==='MASS_16'||settingId==='MASS_18')&&!isRequiem;
+    RESEARCH_SETTINGS.has(settingId)&&!isRequiem;
 }
 // The source identity, counts and repeat plan remain specifically guarded;
 // the melodic parser and timing model are shared by future research scores.
@@ -117,6 +147,26 @@ export function createKyrieXviResearchAudition({root,
     ...(scoreXviii?[['MASS_18',{score:sourceXviii,compiled:scoreXviii,title:'Kyrie XVIII'}]]:[])
   ]);
   let setting='MASS_16',score=sourceXvi,compiled=scoreXvi;
+  // Load the pinned offline Exsurge semantics only after a user selects one
+  // of the four additional research settings. Other Mass forms never preload.
+  let advancedPending=null,advancedLoadAttempted=false;
+  function prepareAdvancedResearch(){
+    if(advancedPending||advancedLoadAttempted||destroyed)return;
+    advancedLoadAttempted=true;
+    advancedPending=loadOfflineExsurge(doc).then(exsurge=>{
+      if(destroyed)return;
+      for(const spec of ADDITIONAL_KYRIE_RESEARCH_SOURCES){
+        const src=offlineKyrialeResearchScore('KYRIE',spec.settingId);
+        const prepared=compileAdditionalKyrieResearchAudition({
+          settingId:spec.settingId,score:src,exsurge
+        });
+        if(prepared)sources.set(spec.settingId,{
+          score:src,compiled:prepared,title:spec.title
+        });
+      }
+    }).catch(()=>{ /* Missing offline Exsurge: withhold preview. */ })
+      .finally(()=>{advancedPending=null;if(!destroyed)sync();});
+  }
   let demoTiming=scheduleGabcMelody(compiled);
   const staff=panel.querySelector('[data-kyrie-staff]');
   const position=panel.querySelector('[data-kyrie-position]');
@@ -300,7 +350,10 @@ export function createKyrieXviResearchAudition({root,
   function sync(){
     if(destroyed)return false;
     const {form,settingId,isRequiem,mode}=getContext();
-    const eligible=kyrieResearchAuditionEligible({form,settingId,isRequiem,mode})&&sources.has(settingId);
+    const permitted=kyrieResearchAuditionEligible({form,settingId,isRequiem,mode});
+    if(permitted&&ADVANCED_SETTINGS.has(settingId)&&!sources.has(settingId))
+      prepareAdvancedResearch();
+    const eligible=permitted&&sources.has(settingId);
     if(eligible&&setting!==settingId)switchScore(settingId);
     const anchor=root.querySelector('[data-schola-original-score="KYRIE"]');
     if(anchor&&trigger.parentElement!==anchor.parentElement)anchor.insertAdjacentElement('afterend',trigger);
