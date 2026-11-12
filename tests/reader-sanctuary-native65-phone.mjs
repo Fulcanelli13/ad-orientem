@@ -183,14 +183,17 @@ try{
       return ["P","D","S"].every(id=>{
         const a=actors?.[id];
         return a?.pose==="sit"&&a?.x===3.71&&
-          a?.b?.el?.querySelector('path[d^="M-10,-37"]');
+          a?.b?.el?.querySelector('path[d^="M-12,-38"]')&&
+          a?.b?.el?.querySelector('ellipse[cx="34.4"][cy="-1.3"]');
       });
     },null,{timeout:12000});
     const seatedAnatomy=await frame.evaluate(()=>["P","D","S"].map(id=>{
       const a=M3.actors()[id];
-      const leg=a.b.el.querySelector('path[d^="M-10,-37"]');
+      const leg=a.b.el.querySelector('path[d^="M-12,-38"]');
+      const shoe=a.b.el.querySelector('ellipse[cx="34.4"][cy="-1.3"]');
       return {id,pose:a.pose,x:a.x,z:a.z,footOnFloor:a.b.h<.35,
         thighKneeCalfSvgPresent:Boolean(leg),
+        shoeVisible: Boolean(shoe),
         legPath:leg?.getAttribute("d")??null};
     }));
     assert.equal(new Set(seatedAnatomy.map(x=>x.z)).size,3,
@@ -198,7 +201,11 @@ try{
     for(const a of seatedAnatomy){
       assert.equal(a.footOnFloor,true,a.id+" feet cannot hover");
       assert.equal(a.thighKneeCalfSvgPresent,true,
-        a.id+" must use a real seated knee-and-calf sprite, not a standing skirt");
+        a.id+" needs the revised horizontal thigh and bent calf SVG");
+      assert.equal(a.shoeVisible,true,
+        a.id+" must have a matching shoe at the end of its shin");
+      assert.match(a.legPath??"",/L34,-29 Q39,-27 39,-21/,
+        a.id+" knee must extend visibly beyond the seat front");
     }
     await frame.evaluate(()=>M3.snap()); // settle the original sedilia camera
     const sediliaCamera=await frame.evaluate(()=>({...M3.eng.cam,T:[...M3.eng.cam.T]}));
