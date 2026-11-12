@@ -49,7 +49,8 @@ for(const item of inventory.assets){
 }
 for(const k of ["canon:faithful.gesture.gospel_crosses",
  "canon:faithful.gesture.strike_breast",
- "canon:faithful.gesture.bow_profound","canon:priest.action.strike_breast"]){
+ "canon:faithful.gesture.bow_profound","canon:priest.action.strike_breast",
+ "canon:priest.action.profound_bow"]){
  assert.equal(active[k],selected[k],"Runtime canonical icon must use owner-selected art");
  assert.notEqual(CANONICAL_ICON_ASSETS[k],active[k],
   "Frozen canonical donor art must remain separate from newer selected art");
@@ -73,6 +74,21 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE",
   form+" kneeling is not a profound bow");
  assert.equal(faithful("AO.SM.C0021","HEAD_BOW","STAND"),null,
   form+" ordinary head bow must not use the profound-bow icon");
+ assert.equal(finalCurated65IconKeys({cueId:"AO.SM.C0021",form,
+  posture:{value:"STAND"},gesture:{cueId:"AO.SM.C0021",
+   owner:"GESTURE_MATRIX_SOT",action:"Profound bow / remain kneeling according profile"}})
+  .gestureIconKey,"profound_bow",
+  "Exact source gesture resolved for standing faithful should use selected artwork");
+ for(const cueId of ["AO.SM.C0016","AO.SM.C0079","AO.SM.C0150","AO.SM.C0187"]){
+  const label=cueId==="AO.SM.C0079"?"PROFOUND BOW":"BOWS PROFOUNDLY";
+  const state={cueId,form,priestAction:{cueId,label,owner:"GESTURE_MATRIX_SOT"}};
+  assert.equal(finalCurated65IconKeys(state).priestActionIconKey,
+   "owner_profound_bow","Actual priest profound bow should use new artwork");
+  assert.notEqual(finalCurated65IconKeys({...state,priestAction:{...state.priestAction,
+    label:"BOWS HEAD"}}).priestActionIconKey,"owner_profound_bow",
+   "No profound bow from a different rubric action");
+ }
+
  assert.equal(finalCurated65IconKeys({cueId:"AO.SM.C0021",form}).gestureIconKey,
   null,"Never manufacture a Confiteor bow without a sourced gesture");
 }
@@ -82,6 +98,7 @@ function awaitFinalMap(){return Object.fromEntries(
   "AO.SM.C0243","AO.SM.C0244","AO.SM.C0245"].map(c=>[c,true]))}
 // Special rites reuse SAME resolved icon keys, not an independent bank.
 // Source rubrics remain the sole authority for displaying an action.
+assert.equal(active.owner_profound_bow,selected.profound_bow);
 for(const key of ["gospel_crosses","breast_strike","profound_bow"]){
  assert.ok(active[key].includes("mass-user-gesture-20261112"));
 }
