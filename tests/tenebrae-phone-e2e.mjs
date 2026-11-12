@@ -49,8 +49,11 @@ try{
    assert.equal(await progress.count(),1,"One shared Tenebrae progress track");
    assert.equal(await progress.getAttribute("aria-valuenow"),"1");
    assert.equal(await progress.getAttribute("aria-valuemax"),hour==="MATINS"?"32":"10");
-   assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),0,
-      "No redundant Previous/Next buttons");
+   assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),2,
+     "Office needs explicit Previous/Next once horizontal gestures select the presentation view");
+   const workspace=page.locator('#aoPray435930 .aoPrayerRitualWorkspace[data-ao-prayer-workspace="tenebrae"]');
+   await workspace.locator('[data-ao-ritual-view="both"]').click();
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"both");
    const reading=page.locator('#aoPray435930 .aoTenebReading');
    const swipe=async(dx,dy)=>{
     await page.locator('#aoPray435930 .aoTenebReading').evaluate((el,{dx,dy})=>{
@@ -63,18 +66,22 @@ try{
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
     "Vertical scroll must never advance the Office card");
    await swipe(-160,8);
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"text",
+    "Horizontal swipe must change the mode instead of advancing the Office");
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   await page.locator('#aoPray435930 [data-p435930-tenebrae-move="1"]').click();
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
-    "Horizontal swipe must advance exactly one source-owned step");
-   assert.equal(await progress.getAttribute("aria-valuenow"),"2",
-    "Tenebrae progress did not follow stage change");
+    "Explicit Next must advance source-owned Office text");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"2");
    await page.locator('#aoPray435930 .aoTenebReading').focus();
    await page.keyboard.press("ArrowLeft");
-   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
-    "Keyboard left must return one step");
-   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
-   await page.keyboard.press("ArrowRight");
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"both");
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
-    "Keyboard right must advance one step");
+    "Left arrow must not silently change the Office stage");
+   await page.locator('#aoPray435930 [data-p435930-tenebrae-move="-1"]').click();
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
+    "Explicit Previous must return to prior source-owned passage");
   }
  }
  await page.locator('#aoPray435930 [data-p435930-tenebrae-hour="MATINS"]').click();
