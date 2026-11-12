@@ -2107,6 +2107,12 @@ export async function mountNativeReaderPreview({
       handoff:projected.state.handoff??null,
       formulaState:projected.state.formulaState,
     });
+    // The original P1 scene is outside the 65 Mass cards. Only native
+    // R20 rite-state ownership can display it, and no chant/scroll cue
+    // automatically starts the historic nave walk.
+    sanctuaryVisual?.project({aspergesState:projected.state,
+      form:prepared?.session?.resolvedMass?.form,
+      mode:readerModel?.presentationMode});
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
     return projected.state;
