@@ -2,6 +2,25 @@
 // Place identity, not a decorative crop. Appended after existing style layers.
 // No new visual owner, Place data, photo approval or navigation state.
 export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
+/* Legible first-action typography: this is a search input, not a painting
+   caption. Maintain the deliberately restrained dark palette. */
+.aoHeritageSurface .aoHeritageTools .aoFindSearch input{
+ font:500 16px/1.25 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:0!important;font-style:normal!important;
+ color:#f3ebdf!important;
+}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch input::placeholder{
+ color:#d6c7af!important;opacity:1!important;font-style:normal!important;
+}
+/* Sacred Atlas browsing is not coloured by the liturgical day's Mass
+   vestment. One accessible gold primary action anchors the Place card. */
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreviewActions button:first-child{
+ background:#d0b783!important;color:#0a1520!important;
+ border-color:#d0b783!important;font-weight:700!important;
+}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreviewActions button:first-child:focus-visible{
+ outline:2px solid #f5e6bf;outline-offset:2px;
+}
 /* The former Sacred Places "closed" discover drawer consumed 43dvh.
    Its aria-expanded=false and data-discover-expanded=false state must
    genuinely leave the map visible; expanded remains an explicit action. */
