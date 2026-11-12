@@ -73,9 +73,9 @@ const exactVenuePhoto={...image,place_id:undefined,venue_id:venue.source_id,
 for(const v of [society,held,unresolved]){
  const exact={...v,cover_media:exactVenuePhoto};
  assert.equal(eligibleRenderedDirectoryImage(exactVenuePhoto,exact),true);
- assert.match(renderDirectoryVenueCard(exact,"en"),/GB-source-exact\\.webp/);
- assert.match(renderDirectoryVenueCard(exact,"fr"),/GB-source-exact\\.webp/);
- assert.match(renderTlmChurchProfile(exact,"fr"),/GB-source-exact\\.webp/);
+ assert.match(renderDirectoryVenueCard(exact,"en"),/GB-source-exact\.webp/);
+ assert.match(renderDirectoryVenueCard(exact,"fr"),/GB-source-exact\.webp/);
+ assert.match(renderTlmChurchProfile(exact,"fr"),/GB-source-exact\.webp/);
 }
 assert.equal(eligibleRenderedDirectoryImage({...exactVenuePhoto,venue_id:"wrong-site"},society),false);
 assert.equal(eligibleRenderedDirectoryImage({...exactVenuePhoto,status:"CANDIDATE"},society),false);
