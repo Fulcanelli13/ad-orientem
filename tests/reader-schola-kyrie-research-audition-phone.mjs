@@ -108,6 +108,11 @@ try{
        document.querySelector('[data-kyrie-position]')?.textContent??''),null,{timeout:10000});
      const start=await player.locator('[data-kyrie-position]').textContent();
      assert.match(start,/source note \d+\/40/);
+     const minimise=player.locator('[data-kyrie-action="minimize"]');
+     await minimise.click();
+     assert.equal(await player.getAttribute('data-minimized'),'true');
+     assert.equal(await player.locator('[data-kyrie-staff]').isVisible(),false,
+       'Compact player must uncover Mass text without stopping the melody');
      // Exercise an actual phone tap on the Mass navigation arrow while
      // the separate Schola score is open. Programmatic API navigation alone
      // does not prove the floating player leaves the reader usable.
@@ -129,11 +134,14 @@ try{
      await page.waitForTimeout(1100);
      const progressed=await player.locator('[data-kyrie-position]').textContent();
      assert.notEqual(progressed,start,'Priest card navigation paused the independent melody');
+     await page.screenshot({path:resolve(shots,mode.toLowerCase()+'-'+form.toLowerCase()+'-'+width+'.png'),
+       animations:'disabled'});
+     await minimise.click();
+     assert.equal(await player.getAttribute('data-minimized'),'false');
+     assert.equal(await player.locator('[data-kyrie-staff]').isVisible(),true);
      await player.locator('[data-kyrie-action="stop"]').click();
      assert.match(await player.locator('[data-kyrie-position]').textContent(),
        /Invocation 1\/9/);
-     await page.screenshot({path:resolve(shots,mode.toLowerCase()+'-'+form.toLowerCase()+'-'+width+'.png'),
-       animations:'disabled'});
      // Reopen the local programme to change the source choice. It was
      // intentionally collapsed when the separate melody player opened.
      // Reopening it must not mutate the independent sound clock.
