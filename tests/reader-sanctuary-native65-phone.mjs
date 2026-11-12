@@ -178,11 +178,36 @@ try{
         M3.actors().P.b.el.classList.contains("ao-sedilia-uncovered")&&
         Boolean(M3.actors().P.b.el.querySelector(".ao-sedilia-cap"));
     },null,{timeout:12000});
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C08-Solemn-observed-biretta-off.png")
+    });
     const done=await page.evaluate(x=>window.__AO_PHONE_PREVIEW
       .observeSediliaReverence({...x,phase:"END"}),input);
     assert.equal(done.accepted,true);
     await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
       ?.getState?.()?.seatedGesture?.phase==="END",null,{timeout:12000});
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C08-Solemn-observed-biretta-replaced.png")
+    });
+    // The Credo exception must preserve the separate corporal duty:
+    // the celebrant and subdeacon can bow while the deacon remains
+    // at the altar instead of falsely receiving a seated biretta.
+    const credo=await frame.evaluate(()=>{
+      return window.AO_SANCTUARY_EMBED_TEST.present({
+        type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+        cardTitle:"Credo · Incarnation, Passion and Resurrection",
+        sourceSectionId:"AO.CARD.009",requiem:false,
+        seatedReverenceObservation:{
+          eventId:"SED-CREDO-INCARNATUS",phase:"BEGIN",observed:true,
+          owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION"
+        }
+      });
+    });
+    assert.equal(credo.seatedGesture?.phase,"BEGIN");
+    assert.deepEqual(credo.seatedGesture?.actors,["P","S"]);
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C18-Solemn-observed-Incarnatus.png")
+    });
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
     assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW
       .getObservedSediliaReverence()),null);
@@ -310,6 +335,27 @@ try{
       T:{visible:true,prop:"thurible"},
       A1:{visible:true,prop:"torch"},A2:{visible:true,prop:"torch"}
     };
+    // Focused review stills supplement the full 315-image gallery:
+    // C13 must be captured in the source-focused C0081 state, not
+    // mistaken for the gallery's unfocused static preparation image.
+    await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Preparation for the Gospel",
+      sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
+      certifiedSourceFocus:true,requiem:false
+    }));
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C13-Solemn-C0081-completed-transfer.png")
+    });
+    await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Preparation for the Gospel",
+      sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
+      certifiedSourceFocus:true,requiem:true
+    }));
+    await frame.locator("#pgPlan").screenshot({
+      path:resolve(shots,"C13-Requiem-C0081-no-incense-or-candles.png")
+    });
     const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
       requiemExit,ordinaryChalice,epistleSource,missalTransfer,
       ...gospelAndOffertory}=conditional;
