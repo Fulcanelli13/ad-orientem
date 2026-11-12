@@ -87,6 +87,8 @@ import {certifiedPublicStationCue,stationPhaseOfFocusedParagraph,STATIONS_PUBLIC
 import {resolveDevotionalActionScene,createDevotionalActionCinematic} from "./devotional-action-cinematics.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
+import "./prayer-ceremonial-stage-styles.js";
+import {prayerCeremonialSceneState,renderPrayerCeremonialScene} from "./prayer-ceremonial-stage.v1.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import {freshTenebraeCeremony,tenebraeCeremonialAction} from "./tenebrae-ceremonial.v1.js";
@@ -2061,7 +2063,7 @@ function renderConfession(){
    esc(choice==='cards'?L('By section','Par section'):L('Read continuously','Lire sans interruption'))+'</button>').join('')+'</nav>':'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const stageEyebrow=`<small class="aoP435930ConfProgressLabel">${CONF.stage+1} ${esc(L('OF','SUR'))} ${stages.length} · ${esc(stages[CONF.stage])}</small>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${optionalHistorical}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${renderPrayerCeremonialScene(prayerCeremonialSceneState({kind:"confession",stage:CONF.stage,cardId:cardSequence?.[cardIndex]?.id}),{french:isFr()})}${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${optionalHistorical}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
