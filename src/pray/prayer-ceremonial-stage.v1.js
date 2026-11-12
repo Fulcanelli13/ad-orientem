@@ -79,11 +79,16 @@ export function renderPrayerCeremonialScene(scene,{french=false}={}){
     const candles=Array.from({length:scene.candleCount},(_,i)=>{
       const last=i===14;
       const lit=last?(!scene.hidden||scene.returned):i>=scene.extinguished;
+      // Seven candles per sloping arm and one at the apex. An illustrative
+      // historical hearse; positions are NOT assertions about local sequence.
+      const level=last?7:(i<7?i:13-i);
+      const x=last?50:(i<7?14+i*5:56+(i-7)*5);
+      const rise=last?54:(8+level*5.7);
       const name=(french?"Cierge ":"Candle ")+(i+1)+" · "+
         (lit?(french?"allumé":"lit"):(french?"éteint ou caché":"extinguished or concealed"));
       return '<span class="aoPrayerCeremonialCandle'+(last?" is-final":"")+
         (lit?" is-lit":" is-dark")+(last&&scene.hidden&&!scene.returned?" is-concealed":"")+' data-ao-candle-index="'+i+
-        '" role="img" aria-label="'+name+'"><i class="aoPrayerCeremonialFlame" aria-hidden="true"></i>'+
+        '" style="--ao-candle-x:'+x+'%;--ao-candle-rise:'+rise.toFixed(1)+'%" role="img" aria-label="'+name+'"><i class="aoPrayerCeremonialFlame" aria-hidden="true"></i>'+
         '<i class="aoPrayerCeremonialWick" aria-hidden="true"></i></span>';
     }).join("");
     const caption=french?"Cérémonial local facultatif · événements constatés":

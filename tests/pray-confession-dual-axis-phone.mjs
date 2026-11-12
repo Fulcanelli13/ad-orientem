@@ -50,6 +50,15 @@ try{
  assert.equal(await page.locator(sel+" input").count(),0,
   "Changing language must not expose a sensitive text-entry control");
  assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
+ const visual=page.locator(sel+" .aoPrayerRitualWorkspace .aoPrayerRitualVisual");
+ assert.equal(await visual.locator('[data-ao-ritual-art-source="released-murillo-nga"] img').count(),1,
+  "Approved Murillo should be the actual full-stage Confession scene, not a duplicate below it");
+ assert.equal(await visual.locator(".aoPrayerSceneDoor").evaluate(el=>getComputedStyle(el).display),"none",
+  "Painted Confession scene must not expose schematic confessional graphics");
+ assert.ok(await visual.locator(".aoPrayerRitualSceneArt figcaption a[href]").count()===1,
+  "Released painting needs its original attribution link");
+ assert.ok(await visual.locator(".aoPrayerRitualSceneArt img").evaluate(img=>img.complete&&img.naturalWidth>0),
+  "Released original artwork did not load in the scene");
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
  await locale.click();
  assert.equal((await locale.innerText()).trim(),"EN");

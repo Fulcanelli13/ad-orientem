@@ -21,9 +21,28 @@ export const PRAYER_CEREMONIAL_SCENE_CSS=String.raw`
 #aoPray435930 .aoPrayerCeremonialScene--confession[data-ao-scene-phase="after"] .aoPrayerSceneLight{opacity:.9}
 #aoPray435930 .aoPrayerSceneTenebraeVault{position:relative;min-height:170px;height:clamp(170px,30vw,240px);display:flex;align-items:flex-end;justify-content:center;padding:28px 12px 12px;background:radial-gradient(ellipse at 50% 90%,rgba(201,149,68,.08),transparent 70%);transition:background .7s ease}
 #aoPray435930 .aoPrayerSceneTenebraeArch{position:absolute;top:10%;left:21%;width:58%;height:84%;border:10px solid rgba(172,144,98,.10);border-radius:48% 48% 0 0}
-#aoPray435930 .aoPrayerCeremonialCandleRail{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;gap:clamp(3px,1.2vw,10px);height:120px;max-width:100%}
-#aoPray435930 .aoPrayerCeremonialCandle{position:relative;display:block;width:clamp(6px,1.3vw,12px);height:clamp(45px,9vw,82px);border-radius:2px 2px 1px 1px;background:linear-gradient(90deg,#a99477,#ddcbab 50%,#83705a);box-shadow:0 0 6px #030608;transition:opacity .65s ease}
-#aoPray435930 .aoPrayerCeremonialCandle.is-final{height:clamp(58px,11vw,98px)}
+#aoPray435930 .aoPrayerCeremonialCandleRail{
+ position:relative;z-index:2;display:block;
+ width:min(94%,440px);height:min(205px,100%);max-width:100%;
+}
+#aoPray435930 .aoPrayerCeremonialCandleRail::before{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(90deg,#3b2d1f,#aa8851 42%,#c0a06e 51%,#655037 83%,#2b231d);
+ clip-path:polygon(13% 92%,13% 89%,49% 33%,51% 33%,87% 89%,87% 92%,50% 40%);
+ opacity:.63;pointer-events:none
+}
+#aoPray435930 .aoPrayerCeremonialCandleRail::after{
+ content:"";position:absolute;left:49.3%;top:37%;bottom:2%;width:1.4%;
+ background:linear-gradient(#806342,#4b3b2a);opacity:.52;pointer-events:none
+}
+#aoPray435930 .aoPrayerCeremonialCandle{
+ position:absolute;left:var(--ao-candle-x,50%);bottom:var(--ao-candle-rise,8%);
+ transform:translateX(-50%);display:block;width:clamp(6px,1.3vw,12px);
+ height:clamp(30px,6.7vw,54px);border-radius:2px 2px 1px 1px;
+ background:linear-gradient(90deg,#a99477,#ddcbab 50%,#83705a);
+ box-shadow:0 0 6px #030608;transition:opacity .65s ease
+}
+#aoPray435930 .aoPrayerCeremonialCandle.is-final{height:clamp(42px,8vw,68px)}
 #aoPray435930 .aoPrayerCeremonialCandle.is-dark{opacity:.28}
 #aoPray435930 .aoPrayerCeremonialCandle.is-concealed{opacity:0;visibility:hidden}
 #aoPray435930 .aoPrayerCeremonialWick{position:absolute;left:50%;bottom:100%;width:1px;height:5px;background:#4b3a29}

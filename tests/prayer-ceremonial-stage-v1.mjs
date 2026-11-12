@@ -22,6 +22,11 @@ test("Tenebrae artwork requires explicit optional historical ceremonial enable",
   assert.equal(scene.extinguished,8);
   assert.equal(scene.autoAdvancement,false);
   assert.equal(scene.customaryOnly,true);
+  const html=render(scene);
+  assert.equal((html.match(/--ao-candle-x:/g)||[]).length,15,
+   "Each candle needs an explicit position on the triangular historical hearse");
+  assert.match(html,/--ao-candle-x:50%;--ao-candle-rise:54\.0%/,
+   "The final candle must be at the triangle apex");
   assert.equal((render(scene).match(/data-ao-candle-index=/g)||[]).length,15);
   assert.equal((render(scene).match(/is-dark/g)||[]).length,8);
 });

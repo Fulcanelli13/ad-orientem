@@ -101,6 +101,17 @@ try{
  assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N3.P1");
  await page.locator('#aoPray435930 [data-p435930-tenebrae-jump="0"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N1.P1");
+ // The historical candle companion is opt-in and its image occupies the
+ // scene pane only after explicitly enabling local observational mode.
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1);
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="enable"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae"]').count(),1);
+ const candles=page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-candle-index]');
+ assert.equal(await candles.count(),15,"Historically triangular hearse must contain fifteen visual candles");
+ assert.equal(await candles.nth(14).evaluate(el=>getComputedStyle(el).getPropertyValue("--ao-candle-x").trim()),"50%");
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="disable"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1,
+  "Closing optional ceremony must return to the neutral canonical Office scene");
  const overflow=await page.evaluate(()=>{
   const el=document.querySelector("#aoPray435930 .aoTenebBody");
   return el?el.scrollWidth-el.clientWidth:null

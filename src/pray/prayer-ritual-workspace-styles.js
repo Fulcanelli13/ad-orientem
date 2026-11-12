@@ -150,6 +150,15 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
 #aoPray435930 .aoPrayerRitualViews button:focus-visible,
 #aoPray435930 .aoPrayerRitualDivider:focus-visible,
 #aoPray435930 .aoPrayerRitualText:focus-visible{outline:2px solid #e7c994;outline-offset:-2px}
+/* The source-owned four-stage Confession rail stays above all painted scenes.
+   Its earlier transparent 10px gap exposed scene tabs through the header. */
+#aoPray435930 .aoP435930ConfNavShell{
+  z-index:200;background:#0a0b11!important;isolation:isolate;
+  box-shadow:0 10px 16px rgba(5,6,10,.76);
+}
+@media(max-width:560px){
+ #aoPray435930 .aoP435930ConfNavShell{top:68px!important}
+}
 @media(max-width:480px){
   #aoPray435930 .aoPrayerRitualWorkspace{margin-inline:0;height:clamp(295px,calc(100dvh - 154px),720px)}
   #aoPray435930 .aoPrayerRitualViews{top:5px;right:6px}
