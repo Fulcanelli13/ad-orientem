@@ -67,3 +67,29 @@ This is a host-integration interface. The callback restores the Church's *own* g
 The R8 compatibility HTML in the **standalone** Church review package prefers this production entry when the host provides it, but cannot itself bundle the 18 other production readers. The standalone St Joseph text continues to be available as its existing offline exception.
 
 Run `node tests/pray-church-novena-direct-route.mjs` for all nineteen route IDs, lazy reader invocation, unknown-route rejection and one-time Church return. The GitHub Actions workflow runs both this bridge regression and the read-only source snapshot parity check. These contracts are necessary but **not substitutes** for full 19-reader UI regression with the hosted Church shell.
+
+## R9 — Actual served-app browser acceptance
+
+The second workflow job, `integrated-reader-phone`, runs
+`tests/pray-church-novena-integrated-phone.mjs` in Chromium against the
+repository's **real HTTP-served `index.html` and production N3 reader**.
+
+At **320px and 390px**, in **English and French**, it checks all 19
+`AO_PRAY_APP_V1.openChurchNovenaRoute("novena:<id>")` entries. It follows
+the genuine reader's Day 1/Day 9 controls and Back control and checks that a
+single once-only Church return callback receives the original gallery and
+camera receipt. Unknown IDs must fail without loading the reader. Failures
+and phone screenshots are preserved as workflow artifacts. This is **76 real
+reader-entry journeys**, separate from the source corpus's existing exhaustive
+171-day/684-stage validation.
+
+**Precise limitation:** the production GitHub repository does not yet contain
+the standalone Claude 3D Church as a hosted module. The test injects a
+representative Church return callback to verify the live reader/bridge contract;
+it does not claim to walk through or visually validate that separate 3D
+prototype, restore its actual renderer, or certify a public GitHub Pages release.
+A true 3D Church end-to-end browser gate remains necessary after the Church
+is incorporated into the hosted application.
+
+The test does not alter the source texts, the approved gallery art, the
+church geometry, the original reader state machine or the release pipeline.
