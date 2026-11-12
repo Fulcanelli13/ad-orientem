@@ -7,8 +7,10 @@ import {scholaGabcSyllables,mapScholaSvgLyrics} from './reader-schola-notation-f
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
 const DIATONIC=Object.freeze({c:0,d:2,e:4,f:5,g:7,h:9,i:11,j:12,k:14,l:16,m:17});
-export function kyrieXviAuditionEligible({form,settingId,isRequiem=false}={}){
-  return SUNG.has(String(form??'').toUpperCase()) && settingId==='MASS_16' && !isRequiem;
+export function kyrieXviAuditionEligible({form,settingId,isRequiem=false,mode='LIVE'}={}){
+  return String(mode??'').toUpperCase()==='LIVE' &&
+    SUNG.has(String(form??'').toUpperCase()) &&
+    settingId==='MASS_16' && !isRequiem;
 }
 // Parse the existing four GABC invocation lines; this is *not* a general GABC
 // parser. Bail out if the source changes rather than guessing repetitions.
@@ -248,8 +250,8 @@ export function createKyrieXviResearchAudition({root,
   root.addEventListener('change',rootChange,true);
   function sync(){
     if(destroyed)return false;
-    const {form,settingId,isRequiem}=getContext();
-    const eligible=kyrieXviAuditionEligible({form,settingId,isRequiem});
+    const {form,settingId,isRequiem,mode}=getContext();
+    const eligible=kyrieXviAuditionEligible({form,settingId,isRequiem,mode});
     const anchor=root.querySelector('[data-schola-original-score="KYRIE"]');
     if(anchor&&trigger.parentElement!==anchor.parentElement)anchor.insertAdjacentElement('afterend',trigger);
     trigger.hidden=!eligible;
