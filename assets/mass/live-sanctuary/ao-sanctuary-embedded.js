@@ -124,6 +124,7 @@
       rebuild();
     }
     if(last?.key!==key){
+      clearCommunionPaten();
       M3.show(card,false); // no timed, unsourced original aisle walk
       showObservedSprinkle(false);
       if(stage==="ASP-R03"||stage==="ASP-R04"){
@@ -282,6 +283,43 @@
     if(fresh)actor.b?.el?.classList?.add?.("ao-source-elevation-incense");
     return actorId;
   }
+  // C57 is already a scene AT the rail, not an instruction for Claude's
+  // original 12-second approach/distribution route to begin. The certified
+  // Solemn form-state SMIN-014 says the DEACON assists with the Communion
+  // paten. The original D actor has no paten sprite: give its existing
+  // billboard a small STATIC adapter-only plate while the real
+  // AO.CARD.025 Communion source card is displayed. This represents the
+  // distribution station, never an observed minister's hand movement.
+  css.textContent += [
+    ".ao-sanctuary-communion-paten{position:absolute;left:55%;top:38%;",
+    "width:19px;height:7px;border:1px solid #d4b578;",
+    "border-radius:50%;background:radial-gradient(ellipse at center,",
+    "#f6eccf 0%,#d7b679 42%,#765327 100%);",
+    "box-shadow:0 1px 3px #291906a6;pointer-events:none;z-index:5}"
+  ].join("");
+  function clearCommunionPaten(){
+    const deacon=M3.actors?.()?.D;
+    deacon?.b?.el?.querySelector?.(".ao-sanctuary-communion-paten")
+      ?.remove?.();
+  }
+  function stageCommunionAtRail({card,form,sourceSectionId}){
+    const active=card?.id==="C57"&&sourceSectionId==="AO.CARD.025";
+    if(!active){clearCommunionPaten();return null}
+    // The original M3.show(card,false) already positions the PRIEST
+    // AT the rail, with the ministers and faithful, without animating
+    // any earlier approach. C0246 names distribution, not the route.
+    if(form.solemn){
+      const deacon=M3.actors?.()?.D;
+      const el=deacon?.vis===true?deacon.b?.el:null;
+      if(el&&!el.querySelector?.(".ao-sanctuary-communion-paten")){
+        const paten=document.createElement("span");
+        paten.className="ao-sanctuary-communion-paten";
+        paten.setAttribute("aria-hidden","true");
+        el.appendChild(paten);
+      }
+    }else clearCommunionPaten();
+    return "AT_RAIL_STATIC";
+  }
   function quietInactiveElevation(card){
     if(card?.id!=="C36"&&card?.id!=="C38")return;
     // Claude's ORIGINAL static scene leaves its elevation glow lit.
@@ -307,6 +345,7 @@
     }
     showObservedSprinkle(false);
     clearElevationMinisterIncense();
+    clearCommunionPaten();
     aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
@@ -363,6 +402,7 @@
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
     if(last?.key!==nextKey||exiting||missalFocusExit||epistleFocusExit){
       clearElevationMinisterIncense();
+      clearCommunionPaten();
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
     }
@@ -388,15 +428,16 @@
     const elevationActor=stageSolemnElevation({
       card,form,requiem,sourceSectionId,cue,validCue
     });
+    const communionStation=stageCommunionAtRail({card,form,sourceSectionId});
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
-      solemnEpistle,solemnMissalTransfer,
+      solemnEpistle,solemnMissalTransfer,communionStation,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
-      elevationIncenseActor:elevationActor});
+      communionStation,elevationIncenseActor:elevationActor});
   }
   window.addEventListener("message",event=>{
     if(event.source!==window.parent||event.origin!==location.origin)return;
