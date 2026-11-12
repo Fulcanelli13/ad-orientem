@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {offlineKyrialeResearchScore} from '../src/mass/reader-kyriale-research-gabc.js';
-import {compileKyrieXviAudition,kyrieXviAuditionEligible} from '../src/mass/reader-schola-kyrie-research-audition.js';
+import {compileKyrieXviAudition,compileKyrieXviiiAudition,kyrieXviAuditionEligible,kyrieResearchAuditionEligible} from '../src/mass/reader-schola-kyrie-research-audition.js';
 const score=offlineKyrialeResearchScore('KYRIE','MASS_16');
 assert.equal(score?.scoreId,'GREGOBASE-545');
 const compiled=compileKyrieXviAudition(score.gabc);
@@ -29,9 +29,34 @@ assert.equal(kyrieXviAuditionEligible({
 assert.equal(kyrieXviAuditionEligible({
  form:'SOLEMN',settingId:'MASS_16',mode:'LIVE'
 }),true);
+// A second, separately named research preview is allowed only after an
+// explicitly selected Kyrie XVIII and only when its exact GABC is unchanged.
+const scoreXVIII=offlineKyrialeResearchScore('KYRIE','MASS_18');
+assert.equal(scoreXVIII?.scoreId,'GREGOBASE-2522');
+assert.equal(scoreXVIII.scoreApproved,false);
+const compiledXVIII=compileKyrieXviiiAudition(scoreXVIII.gabc);
+assert.ok(compiledXVIII,'Kyrie XVIII source changed: audition must fail closed');
+assert.equal(compiledXVIII.sourceNoteCount,44);
+assert.equal(compiledXVIII.sourceGroupCount,27);
+assert.equal(compiledXVIII.phraseCount,4);
+assert.equal(compiledXVIII.invocations,9);
+assert.equal(compiledXVIII.performance.length,90);
+assert.deepEqual(compiledXVIII.performance.filter(n=>n.phraseEnd).map(n=>n.sourceNoteOrdinal),
+ [10,10,10,18,18,18,28,28,44]);
+assert.equal(compileKyrieXviiiAudition(scoreXVIII.gabc.replace('(hhg)','(hig)')),null);
+assert.equal(compileKyrieXviiiAudition('not GABC'),null);
+for(const form of ['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']){
+ assert.equal(kyrieResearchAuditionEligible({form,settingId:'MASS_18'}),true);
+ assert.equal(kyrieResearchAuditionEligible({form,settingId:'MASS_16'}),true);
+ assert.equal(kyrieResearchAuditionEligible({form,settingId:'MASS_18',mode:'MISSAL'}),false);
+ assert.equal(kyrieResearchAuditionEligible({form,settingId:'MASS_18',isRequiem:true}),false);
+ assert.equal(kyrieResearchAuditionEligible({form,settingId:'CUSTOM'}),false);
+}
+assert.equal(kyrieResearchAuditionEligible({form:'LOW',settingId:'MASS_18'}),false);
+assert.equal(kyrieXviAuditionEligible({form:'SOLEMN',settingId:'MASS_18'}),false);
 const dom=readFileSync(new URL('../src/mass/reader-dom.js',import.meta.url),'utf8');
 assert.ok(dom.includes('createKyrieXviResearchAudition'), 'Research audition not connected to existing reader adapter');
 assert.ok(dom.includes('kyrieResearchAudition?.sync()'), 'Schola selection changes must refresh preview gate');
 assert.ok(dom.includes('kyrieResearchAudition?.stop()'), 'New Mass session must stop prior audio');
 assert.ok(dom.includes('kyrieResearchAudition?.destroy()'), 'Reader teardown must release audio and DOM');
-console.log('PASS Kyrie XVI: 40 printed notes, 27 source groups, 81 sounded notes, ninefold repetitions, fail-closed form and source selection');
+console.log('PASS Kyrie research: XVI 40/81 and XVIII 44/90 source notes/events, exact-source gating, ninefold repeat and no automatic Schola approval');
