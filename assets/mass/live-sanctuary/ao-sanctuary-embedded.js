@@ -153,8 +153,8 @@
   // This visual alignment is illustrative, NOT a new ceremonial clock.
   const sungSedilia=new Set(["C08","C09","C12","C17","C18","C19"]);
   function clearSediliaPlacement(){
-    for(const id of ["P","D","S"])
-      if(M3.actors?.()?.[id])delete M3.actors()[id]._aoSeatBaseline;
+    // No persistent leg-height override: donor actorTick owns floor height.
+    // Restaging the source scene resets position via the original M3 model.
   }
   function stageSedilia(card,form){
     if(!form||form.form!=="sung"||!sungSedilia.has(card?.id)){
@@ -178,12 +178,16 @@
       // renders its seated legs without replacing the original SVG art.
       // C18 deacon continues the source-owned corporal duty at the altar.
       a.face=0;
-      // Existing M3 figure remains sitting, now actually over the
-      // original wooden seat; lower robe/feet sit above its surface.
-      // When the original scene was just re-staged, its normal floor
-      // height is restored; never stack offsets on repeated focus.
-      if(a._aoSeatBaseline==null)a._aoSeatBaseline=a.b.h;
-      a.x=4.04;a.b.h=a._aoSeatBaseline+.52;
+      // The solid sedilia spans x=3.86..4.36, with the aisle/front
+      // at x<3.86. At x=4.04 the wooden front panel HID THE LEGS;
+      // moving the actor upwards by .52 merely made him float and was
+      // immediately overwritten by donor actorTick. Instead place
+      // the seated, side-view FIGURE at the front lip of the seat.
+      // Feet now extend over the front panel and remain at the true
+      // floor height; the donor's bent thigh/knee/calf SVG stays visible.
+      // Keep the original longitudinal seat (z) per individual minister:
+      // distinct P/D/S figures must never be stacked at one place.
+      a.x=3.71;
     }
     // One existing server at the sanctuary side: not kneeling in front
     // of a seated priest, and no longer obscuring the celebrant's sprite.
