@@ -1,0 +1,150 @@
+{
+  "schema": "ao-schola-m53-six-kyrie-research-auditions-v1",
+  "reviewedOn": "2026-11-12",
+  "scope": "VISIBLE_ONLY_AFTER_EXPLICIT_USER_SETTING_IN_LIVE_SUNG_OR_SOLEMN_NON_REQUIEM",
+  "status": "ALL_SIX_PROVISIONAL_NOT_APPROVED",
+  "existingPreviewSettings": [
+    "MASS_16",
+    "MASS_18"
+  ],
+  "newPreviewSettings": [
+    "MASS_01",
+    "MASS_08",
+    "MASS_11",
+    "MASS_17"
+  ],
+  "sourceEvidence": "data/research/mass-music-m48-complex-gabc-exsurge-source-pitches.v1.json",
+  "sourceCatalogue": "src/mass/reader-kyriale-research-gabc.js",
+  "entries": [
+    {
+      "settingId": "MASS_01",
+      "name": "Kyrie I",
+      "scoreId": "GREGOBASE-1143",
+      "fingerprint": "1d935709",
+      "sourceNotes": 79,
+      "performedNotes": 171,
+      "sourceNoteCountsByPhrase": [
+        15,
+        21,
+        20,
+        23
+      ]
+    },
+    {
+      "settingId": "MASS_08",
+      "name": "Kyrie VIII",
+      "scoreId": "GREGOBASE-1184",
+      "fingerprint": "0fe08a50",
+      "sourceNotes": 102,
+      "performedNotes": 221,
+      "sourceNoteCountsByPhrase": [
+        25,
+        23,
+        23,
+        31
+      ]
+    },
+    {
+      "settingId": "MASS_11",
+      "name": "Kyrie XI",
+      "scoreId": "GREGOBASE-2982",
+      "fingerprint": "20149774",
+      "sourceNotes": 82,
+      "performedNotes": 178,
+      "sourceNoteCountsByPhrase": [
+        18,
+        21,
+        18,
+        25
+      ]
+    },
+    {
+      "settingId": "MASS_16",
+      "name": "Kyrie XVI",
+      "scoreId": "GREGOBASE-545",
+      "fingerprint": "acef0d62",
+      "sourceNotes": 40,
+      "performedNotes": 81,
+      "sourceNoteCountsByPhrase": [
+        9,
+        7,
+        9,
+        15
+      ]
+    },
+    {
+      "settingId": "MASS_17",
+      "name": "Kyrie XVII",
+      "scoreId": "GREGOBASE-272",
+      "fingerprint": "eebb7a65",
+      "sourceNotes": 107,
+      "performedNotes": 207,
+      "sourceNoteCountsByPhrase": [
+        22,
+        19,
+        18,
+        48
+      ]
+    },
+    {
+      "settingId": "MASS_18",
+      "name": "Kyrie XVIII A",
+      "scoreId": "GREGOBASE-2522",
+      "fingerprint": "db6e8276",
+      "sourceNotes": 44,
+      "performedNotes": 90,
+      "sourceNoteCountsByPhrase": [
+        10,
+        8,
+        10,
+        16
+      ]
+    }
+  ],
+  "allow": {
+    "forms": [
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ],
+    "mode": "LIVE",
+    "requiresExplicitKyrieChoice": true,
+    "requiresUserClickToStartSound": true,
+    "usesVendoredExsurge": true,
+    "soundChoices": [
+      "flute",
+      "pure"
+    ],
+    "pitchModifier": true,
+    "speedModifier": true,
+    "sourceNoteCursor": true
+  },
+  "exclude": {
+    "forms": [
+      "LOW"
+    ],
+    "modes": [
+      "MISSAL"
+    ],
+    "requiem": true,
+    "custom": true,
+    "unselectedChant": true,
+    "automaticMassAssignment": true,
+    "approvedScholaDock": true,
+    "canonicalLiturgicalTimingClaim": true,
+    "choirObservations": true,
+    "paidAudio": false
+  },
+  "timing": "ILLUSTRATIVE_PROCEDURAL_NOT_CERTIFIED_GREGORIAN_RHYTHM",
+  "approval": {
+    "anyPromoted": false,
+    "sourceNoteInkAndNeumeIndependentlyCertified": false,
+    "historicalAbsolutePitchCertified": false,
+    "performanceApproved": false
+  },
+  "publication": {
+    "host": "GitHub Pages via GitHub Actions only",
+    "usesThirdPartyWebServices": false,
+    "originalFacsimileImagesBundled": false
+  }
+}

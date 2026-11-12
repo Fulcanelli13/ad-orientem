@@ -39,12 +39,18 @@ try{
    [320,'LIVE','MISSA_CANTATA_INCENSE',false,'MASS_16'],
    [390,'LIVE','SOLEMN',false,'MASS_16'],
    [390,'LIVE','SOLEMN',false,'MASS_18'],
+   [390,'LIVE','SOLEMN',false,'MASS_01'],
+   [390,'LIVE','SOLEMN',false,'MASS_08'],
+   [390,'LIVE','SOLEMN',false,'MASS_11'],
+   [390,'LIVE','SOLEMN',false,'MASS_17'],
    [390,'MISSAL','MISSA_CANTATA_SIMPLE',false,'MASS_16'],
    [390,'MISSAL','MISSA_CANTATA_SIMPLE',false,'MASS_18'],
    [390,'LIVE','LOW',false,'MASS_16'],
    [390,'LIVE','LOW',false,'MASS_18'],
+   [390,'LIVE','LOW',false,'MASS_08'],
    [390,'LIVE','SOLEMN',true,'MASS_16'],
-   [390,'LIVE','SOLEMN',true,'MASS_18']
+   [390,'LIVE','SOLEMN',true,'MASS_18'],
+   [390,'LIVE','SOLEMN',true,'MASS_17']
  ]){
   const context=await browser.newContext({viewport:{width,height:844},
     hasTouch:true,isMobile:true,serviceWorkers:'block'});
@@ -73,6 +79,13 @@ try{
    await trigger.waitFor({state:'attached',timeout:20000});
    assert.equal(await trigger.isVisible(),false,
      'Never show an unselected Kyrie research audition');
+   const sourceNoteCounts={
+     MASS_01:79,MASS_08:102,MASS_11:82,MASS_16:40,MASS_17:107,MASS_18:44
+   };
+   const sourceTitles={
+     MASS_01:'Kyrie I',MASS_08:'Kyrie VIII',MASS_11:'Kyrie XI',
+     MASS_16:'Kyrie XVI',MASS_17:'Kyrie XVII',MASS_18:'Kyrie XVIII'
+   };
    if(!exposed){
      // Missal omits the LIVE Schola dock; Low Mass has no Schola;
      // Requiem cannot offer an ordinary Kyrie XVI audition.
@@ -99,10 +112,10 @@ try{
      await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
        ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:20000});
      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),
-       settingId==='MASS_18'?44:40,
+       sourceNoteCounts[settingId],
        'The selected source must map its exact Exsurge notehead count');
      assert.match(await player.locator('h3').textContent(),
-       new RegExp(settingId==='MASS_18'?'Kyrie XVIII':'Kyrie XVI'));
+       new RegExp(sourceTitles[settingId]));
      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
        .count(),1,'Exactly one printed notehead may be active');
      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
@@ -123,7 +136,7 @@ try{
      await page.waitForFunction(()=>/Invocation 1\/9 · source note/.test(
        document.querySelector('[data-kyrie-position]')?.textContent??''),null,{timeout:10000});
      const start=await player.locator('[data-kyrie-position]').textContent();
-     assert.match(start,new RegExp('source note \\d+/'+(settingId==='MASS_18'?44:40)));
+     assert.match(start,new RegExp('source note \\d+/'+sourceNoteCounts[settingId]));
      await page.waitForFunction(()=>Number(document.querySelector('[data-kyrie-staff]')
        ?.dataset.performanceNoteOrdinal)>=3,null,{timeout:8500});
      const nowAlignment=await page.evaluate(()=>{
@@ -224,5 +237,5 @@ try{
    console.error('FAIL Kyrie audition phone case',JSON.stringify(failure));
   }finally{await context.close();}
  }
- assert.deepEqual(failures,[],'All nine real-reader Schola research audition cases must pass');
+ assert.deepEqual(failures,[],'All fifteen real-reader Schola research audition cases must pass');
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
