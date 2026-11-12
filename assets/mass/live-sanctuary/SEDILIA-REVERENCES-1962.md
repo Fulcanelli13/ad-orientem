@@ -44,3 +44,11 @@ Release requires exact-source actor/pose assertions, enter/exit/reset browser te
 - C13 Requiem Gospel preparation suppresses thurifer and acolyte candle props already **before** C14; preserves the two unlit acolytes and resets to normal on ordinary Mass selection.
 - Browser acceptance now requests focused screenshots: C08 biretta off/on, C18 Incarnatus with distinct deacon duty, C13 regular/Requiem exact C0081.
 - All corrections are review-only until latest-head CI and human visual approval.
+
+## 12 November seated anatomy rejection and correction
+
+**Owner rejection:** the previous C08 / C09 / C12 visual rendered clergy like upright figures behind a solid wooden box. Calling their legs visible because the source SVG contained a `sit` pose was wrong: the bench's front face occluded the knee and shin, and the original short skirt looked like a standing robe.
+
+**Corrected in draft PR:** actor placement moves from inside the solid sedilia at `x=4.04` to its front lip at `x=3.71` (solid bench begins at `x=3.86`), while preserving each minister's separate longitudinal `z` position. The erroneous `+.52m` actor-height offset was removed because it made figures float and the donor's own actorTick reset it. Each original side-view seated actor receives a **runtime-only** SVG refinement: horizontal thigh, bent knee, vertical shin, and correctly aligned shoe. The adapter applies this after every native actor redraw; source `index.html` remains byte-identical. The correction was tested by rendering the original 65-scene sanctuary locally, comparing side-by-side at the same camera and C08 state. This evidence demonstrates the visible anatomy but does not certify every production scenario.
+
+**Browser regression acceptance:** verify actual lower-body SVG knee geometry, shoe alignment, seated P/D/S occupying three distinct original stations, and feet remaining on the actual floor; do not rely only on a `pose==="sit"` flag. Screenshots must show the entire legs with the bench behind, not an angled close-up of three torsos. Retain owner visual approval and latest-head CI as release holds.
