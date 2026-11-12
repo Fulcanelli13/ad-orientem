@@ -3022,12 +3022,16 @@ export function createReaderDomAdapter({
     };
     mode=requested;
     applyChrome();
+    // Source-selected research audio is available only in LIVE. Close it
+    // synchronously before rebuilding the presentation on mode changes.
+    kyrieResearchAudition?.sync();
     try{
       onPresentationModeChange?.(mode,prepared);
       root.querySelector?.(".aoMassModeError")?.remove?.();
     }catch(error){
       mode=previous;
       applyChrome();
+      kyrieResearchAudition?.sync();
       const panel=root.querySelector?.('[data-role="mass-preferences"]');
       const doc=panel?.ownerDocument;
       panel?.querySelector?.(".aoMassModeError")?.remove?.();
@@ -3461,6 +3465,7 @@ export function createReaderDomAdapter({
               ? scholaLocalProgramme():scholaLocalProgramme;
             return {
               form:prepared?.session?.resolvedMass?.form,
+              mode,
               settingId:plan?.ordinarySelections?.KYRIE,
               isRequiem:isExplicitRequiemMass(prepared),
             };
