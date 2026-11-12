@@ -123,6 +123,14 @@ try{
       const images=[...(rail?.querySelectorAll('.aoMapcnEditorialCard img')||[])].slice(0,2);
       return images.length===2&&images.every(img=>img.complete&&img.naturalWidth>0);
     },null,{timeout:20000});
+    // naturalWidth becomes non-zero before decode and composition finish.
+    // Wait for the two above-the-fold approved images to actually decode,
+    // then allow two paint frames. The previous test accepted an empty card.
+    await page.evaluate(async()=>{
+      const images=[...document.querySelectorAll('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnEditorialCard img')].slice(0,2);
+      await Promise.all(images.map(img=>img.decode()));
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    });
     await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-expanded-real.png"),animations:"disabled"});
     results.push({language,width,...metrics,file:name,railClosed:closed.height,railExpanded:opened.height,
       sacredScreenshots:[language+"-"+width+"-sacred-closed-real.png",language+"-"+width+"-sacred-expanded-real.png"]});
