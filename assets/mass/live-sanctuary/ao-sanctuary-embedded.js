@@ -400,15 +400,20 @@
       ["LOW","SOLEMN"].includes(String(message.form??"").toUpperCase())&&
       ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(nativeCommunionEvent)
         ?nativeCommunionEvent:null;
-    const beginReturn=validCommunionEvent==="MC-COM-320"&&
+    const observedReturnCancelled=message.communionReturnCancelled===true&&
+      id==="C57"&&sourceSectionId==="AO.CARD.025";
+    const beginReturn=!observedReturnCancelled&&
+      validCommunionEvent==="MC-COM-320"&&
       (last?.communionReturnActive!==true||last?.key!==nextKey);
     const returnRewind=last?.communionReturnActive===true&&
-      (!validCommunionEvent?
-        id!=="C57"||sourceSectionId!=="AO.CARD.025":
-        validCommunionEvent!=="MC-COM-320");
+      (observedReturnCancelled||
+        (!validCommunionEvent?
+          id!=="C57"||sourceSectionId!=="AO.CARD.025":
+          validCommunionEvent!=="MC-COM-320"));
     const communionReturnActive=Boolean(
-      beginReturn||(last?.communionReturnActive===true&&!returnRewind&&
-        id==="C57"&&sourceSectionId==="AO.CARD.025")
+      !observedReturnCancelled&&
+      (beginReturn||(last?.communionReturnActive===true&&!returnRewind&&
+        id==="C57"&&sourceSectionId==="AO.CARD.025"))
     );
     const missalTransferFocus=Boolean(id==="C13"&&form.solemn&&validCue&&
       sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
