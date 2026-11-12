@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const atlasScreenshots=resolve(root,"artifacts/sacred-atlas-r1");
+await mkdir(atlasScreenshots,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
 ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
 ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
@@ -87,6 +89,30 @@ try{
       nodes.map(b=>b.getBoundingClientRect().height));
     assert.ok(sacredChips.length>=4&&sacredChips.every(h=>h>=44),
       width+"px Sacred Places category chip too small");
+    if(width<=430){
+      const rail=page.locator('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+      await rail.waitFor({state:"visible",timeout:15000});
+      const before=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+        state:el.dataset.discoverExpanded,
+        aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+      assert.equal(before.state,"false",width+"px Sacred Places drawer must begin collapsed");
+      assert.equal(before.aria,"false",width+"px collapsed rail must be accessible");
+      assert.ok(before.height>=72&&before.height<=100,
+        width+"px collapsed Sacred Places rail still occupies map: "+JSON.stringify(before));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-closed.png"),animations:"disabled"});
+      await rail.locator('[data-mapcn-discover-toggle]').tap();
+      await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="true");
+      const expanded=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+        aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+      assert.equal(expanded.aria,"true",width+"px expanded rail must announce itself");
+      assert.ok(expanded.height>before.height+90,
+        width+"px expanded Places rail did not open visibly: "+JSON.stringify(expanded));
+      assert.ok(expanded.height<=Math.min(height*.48,420)+3,
+        width+"px expanded Places rail covers too much of the map");
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-expanded.png"),animations:"disabled"});
+      await rail.locator('[data-mapcn-discover-toggle]').tap();
+      await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail')?.dataset.discoverExpanded==="false");
+    }
     await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="discover"]').tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="discover");
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
@@ -150,6 +176,24 @@ try{
     await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
     await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
+    if(width<=430){
+      const photo=page.locator('.aoHeritageCardLayer .aoHeritagePlaceThumb img').first();
+      await photo.waitFor({state:"visible",timeout:15000});
+      await page.waitForFunction(()=>{
+        const img=document.querySelector('.aoHeritageCardLayer .aoHeritagePlaceThumb img');
+        return img?.complete&&img.naturalWidth>0;
+      },null,{timeout:15000});
+      const previewPhoto=await photo.evaluate(img=>{
+        const figure=img.closest('figure'),credit=figure?.querySelector('figcaption');
+        return {fit:getComputedStyle(img).objectFit,loaded:img.naturalWidth>0,
+          creditVisible:credit&&getComputedStyle(credit).display!=="none"&&credit.getBoundingClientRect().height>8,
+          credit:credit?.innerText||""};
+      });
+      assert.equal(previewPhoto.fit,"contain",width+"px approved photo was cropped");
+      assert.ok(previewPhoto.loaded&&previewPhoto.creditVisible&&previewPhoto.credit.trim().length>4,
+        width+"px preview lost its photograph attribution: "+JSON.stringify(previewPhoto));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-preview.png"),animations:"disabled"});
+    }
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
       width+"px selecting a Place recreated the map");
     assert.equal(await page.evaluate(()=>window.__EXPLORE_FIRST_CANVAS__===document.querySelector('.aoLayoutMapCanvas')),true,
@@ -171,6 +215,22 @@ try{
     assert.ok(card.overflow<=1,width+"px card overflows viewport");
     await page.locator('.aoHeritageCardLayer .aoHeritageSheetHandle').tap();
     await page.locator('.aoExplorePlaceSheet').waitFor({state:"visible"});
+    if(width<=430){
+      const img=page.locator('.aoExplorePlaceSheet>.aoExplorePlaceMedia img').first();
+      await img.waitFor({state:"visible",timeout:15000});
+      const photo=await img.evaluate(el=>{
+        const figure=el.closest('figure'),credit=figure?.querySelector('figcaption');
+        const image=el.getBoundingClientRect(),caption=credit?.getBoundingClientRect();
+        return {fit:getComputedStyle(el).objectFit,photoLoaded:el.complete&&el.naturalWidth>0,
+          creditBelow:caption&&caption.top>=image.bottom-2,
+          creditVisible:credit&&getComputedStyle(credit).display!=="none"&&caption.height>=8,
+          creditSourceLinks:credit?.querySelectorAll('a[href^="https://"]').length||0};
+      });
+      assert.equal(photo.fit,"contain",width+"px full Place artwork cropped");
+      assert.ok(photo.photoLoaded&&photo.creditBelow&&photo.creditVisible&&photo.creditSourceLinks>=2,
+        width+"px full Place must show source and rights below the image: "+JSON.stringify(photo));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-profile.png"),animations:"disabled"});
+    }
     await page.locator('[data-explore-collapse-place]').tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
     await page.locator('.aoHeritageWorldReset').tap();
