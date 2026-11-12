@@ -45,7 +45,10 @@ export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATI
   }
   // Do not reparent the scene into the text panel when its original position
   // was the Confession main's first direct child.
-  take=take.filter(node=>node!==scene);
+  // Original released Confession art is promoted into the visual region;
+  // never move it back into the scrolling text in the reparenting pass.
+  take=take.filter(node=>node!==scene&&
+    !(kind==="confession"&&node.matches?.(".aoPrayerConfessionCover")));
   const anchor=take[0]??null;
   const workspace=doc.createElement("section");
   workspace.className="aoPrayerRitualWorkspace";
