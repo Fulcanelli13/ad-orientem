@@ -414,8 +414,8 @@
             {
               "en": "The Basilica of Saint-Denys at Argenteuil preserves a garment venerated as the Holy Tunic and traditionally associated with Christ’s Passion. The basilica’s religious importance is linked to this inherited attribution and its history of veneration. The existence and custodianship of the textile should be clearly distinguished from independent authentication of the garment’s connection to Jesus.",
               "fr": "La basilique Saint-Denys d’Argenteuil conserve un vêtement vénéré comme la Sainte Tunique, traditionnellement associé à la Passion du Christ. L’importance religieuse du lieu tient à cette attribution héritée et à l’histoire de sa vénération. Il convient de distinguer clairement l’existence et la garde du textile de toute authentification indépendante de son lien avec Jésus.",
-              "source_id": "SHR-FR-ARGENTEUIL-TUNIQUE",
-              "source_url": "https://saintetunique.com/contact/"
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
             }
           ]
         },
@@ -440,8 +440,8 @@
             {
               "en": "The physical destination is the Basilica of Saint-Denys in Argenteuil, which has its own church identity apart from the relic’s debated historical attribution. Pilgrimage and relic veneration can be explained together without conflating this building with the Basilica of Saint-Denis north of Paris. Site names and images therefore need especially careful matching.",
               "fr": "La destination physique est la basilique Saint-Denys d’Argenteuil, dont l’identité ecclésiale existe indépendamment de l’attribution historique débattue de la relique. Pèlerinage et vénération peuvent être expliqués ensemble sans confondre cet édifice avec la basilique Saint-Denis au nord de Paris. Les noms des sites et leurs images demandent donc une correspondance particulièrement soignée.",
-              "source_id": "SHR-FR-ARGENTEUIL-TUNIQUE",
-              "source_url": "https://saintetunique.com/contact/"
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
             }
           ]
         }
@@ -453,7 +453,6 @@
         "Saint Denis of Paris"
       ],
       "bibliography_urls": [
-        "https://saintetunique.com/contact/",
         "https://saintetunique.com/foire-aux-questions/"
       ],
       "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
@@ -482,8 +481,8 @@
             {
               "en": "Cologne Cathedral is closely associated with the Shrine of the Three Kings, the monumental reliquary traditionally said to contain relics of the Magi. This tradition gives the cathedral a specific pilgrimage identity beyond its role as a diocesan church.",
               "fr": "La cathédrale de Cologne est étroitement liée à la châsse des trois Rois, monumental reliquaire traditionnellement réputé contenir les reliques des Mages. Cette tradition donne à la cathédrale une identité particulière de pèlerinage au-delà de sa fonction diocésaine.",
-              "source_id": "SHR-DE-kolner-dom-three-kings",
-              "source_url": "https://www.colognecathedral.de/shrine-of-three-kings.html"
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
             }
           ]
         },
@@ -495,8 +494,8 @@
             {
               "en": "The reliquary belongs to the history of the cathedral’s worship and artistic heritage, yet it is a distinct object within the larger sacred building. The fame of the relic tradition contributed to Cologne’s identity as a destination for pilgrims.",
               "fr": "Le reliquaire appartient à l’histoire du culte et du patrimoine artistique de la cathédrale, mais il constitue un objet distinct au sein de l’édifice. La célébrité de la tradition des reliques a contribué à faire de Cologne une destination de pèlerinage.",
-              "source_id": "SHR-DE-kolner-dom-three-kings",
-              "source_url": "https://www.colognecathedral.de/shrine-of-three-kings.html"
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
             }
           ]
         },
@@ -508,8 +507,8 @@
             {
               "en": "Pilgrims may seek the shrine within Cologne Cathedral, which has its own liturgy and rules for visiting. The Shrine of the Three Kings is a place of veneration inside the cathedral itself, not a separate church. Access to the reliquary and present worship arrangements should be checked with the cathedral rather than promised on the basis of a historical description.",
               "fr": "Les pèlerins peuvent se rendre auprès de la châsse dans la cathédrale de Cologne, dotée de sa propre liturgie et de règles de visite. La châsse des Rois mages est un lieu de vénération à l’intérieur même de la cathédrale, et non une église distincte. L’accès au reliquaire et les dispositions actuelles du culte doivent être vérifiés auprès de la cathédrale plutôt que garantis sur la base d’un récit historique.",
-              "source_id": "SHR-DE-kolner-dom-three-kings",
-              "source_url": "https://www.colognecathedral.de/shrine-of-three-kings.html"
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
             }
           ]
         }
@@ -521,11 +520,14 @@
         "The Three Magi"
       ],
       "bibliography_urls": [
-        "https://www.colognecathedral.de/shrine-of-three-kings.html"
+        "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
       ],
       "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
       "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112"
+      ]
     },
     {
       "place_id": "place:IT:basilica-san-marco-venezia",
