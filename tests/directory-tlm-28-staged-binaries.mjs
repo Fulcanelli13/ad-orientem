@@ -48,7 +48,7 @@ for(const rec of meta.entries){
  const released=promoted[0];
  if(released){
   assert.equal(released.asset_path,rec.approved_asset_path,"Promoted cover path must be exact");
-  assert.equal(released.source_url,rec.source_url,"Promoted source must match the archival witness");
+  assert.equal(decodeURIComponent(released.source_url),decodeURIComponent(rec.source_url),"Promoted source must match the archival witness even when an apostrophe is URL-encoded");
   assert.equal(released.source_sha1,rec.source_sha1,"Promoted source hash must match archival record");
   assert.equal(released.credit,rec.credit,"Promoted photographer mismatch");
   assert.equal(released.license,rec.license,"Promoted licence mismatch");
