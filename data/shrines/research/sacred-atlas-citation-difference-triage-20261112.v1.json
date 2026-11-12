@@ -3,9 +3,9 @@
   "as_of": "2026-11-12",
   "state": "RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED",
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
-  "source_ledger_blob_sha": "619afd8a6d8f1c3aede5649a65e03678f47b714b",
+  "source_ledger_blob_sha": "5cde5fbd91049a5b707caedddf10dbe6ccd64093",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded. Two additional previously unresolved high-priority claim-source citations repaired: Lisieux Carmelite archival transfer, and Betania 1991 episcopal clarification. Twelve host/path/language pairs were independently checked as equivalent source pages, not errors, and kept in historical provenance.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -17,16 +17,18 @@
       "URL_DRIFT_OR_ACCESS_RECHECK": 6,
       "COMPLEMENTARY_SOURCE_NOT_AUTOMATIC_REPLACEMENT": 15
     },
-    "verified_citation_errors": 5,
+    "verified_citation_errors": 7,
     "independently_certified_paragraphs": 0,
     "owner_approved_guides": 0,
-    "direct_url_spot_checks": 7,
-    "confirmed_citation_scope_defects": 5,
-    "remaining_without_direct_url_spot_check": 78,
-    "resolved_citation_scope_defects": 5,
-    "current_differing_urls": 80,
+    "direct_url_spot_checks": 9,
+    "confirmed_citation_scope_defects": 7,
+    "remaining_without_direct_url_spot_check": 66,
+    "resolved_citation_scope_defects": 7,
+    "current_differing_urls": 78,
     "unrepaired_confirmed_scope_defects": 0,
-    "remaining_affected_guides": 46
+    "remaining_affected_guides": 41,
+    "source_equivalent_no_change": 12,
+    "remaining_active_triage": 66
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -93,7 +95,7 @@
       "evidence_scope": "CARMEL_CUSTODIAN_BURIAL_AND_TRANSLATION",
       "research_evidence_note": "Carmel archives record Thérèse's original burial in Lisieux cemetery and transfer of remains to Carmel on 26 March 1923; custodian lists reliquary chapel separately from Basilica.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -105,6 +107,16 @@
         "findings": "Carmel archival page directly dates transfer of Thérèse's remains from Lisieux cemetery to Carmel to 26 March 1923. Original carmeldelisieux.fr visit page returned 403 to this inspection client; not proof inaccessible to normal visitors.",
         "confirmed_draft_citation_scope_defect": false,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://carmeldelisieux.fr/lieux-a-visiter/",
+        "original_source_id": null,
+        "new_guide_source_url": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/la-beatification-et-la-canonisation/retour-de-therese-au-carmel/",
+        "new_guide_source_id": null,
+        "verification_basis": "Carmel Lisieux archives directly date St Thérèse's translation from the municipal cemetery to Carmel on 26 March 1923; archive page fetch returned 403 but indexed institutional content and related archived letters corroborate date. Does not describe access arrangements.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -238,10 +250,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Baltimore shrine's custodian explicitly states Archbishop Lori entrusted the site to FSSP in 2017 and offers Traditional Latin Mass.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Exact same National Shrine of Saint Alphonsus site verified on www and apex host; both returned identical site content on 12 Nov 2026.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "80:pilgrimage",
@@ -255,10 +274,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Baltimore shrine's custodian explicitly states Archbishop Lori entrusted the site to FSSP in 2017 and offers Traditional Latin Mass.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Exact same National Shrine of Saint Alphonsus site verified on www and apex host; both returned identical site content on 12 Nov 2026.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "82:pilgrimage",
@@ -425,10 +451,17 @@
       "evidence_scope": "OFFICIAL_INSTITUTIONAL_STANDARD_CORE_CLAIMS_DATE_SCOPED",
       "research_evidence_note": "Fiskdale St Anne–St Patrick parish documents chapel spaces, ongoing shrine and annual July 18–26 St Anne novena begun 1887, with procession, Rosary and Mass.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "St Anne Fiskdale's identical novena path on www and apex domain resolves to the same parish novena article; direct pages inspected.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "100:pilgrimage",
@@ -544,7 +577,7 @@
       "evidence_scope": "BISHOP_1991_LETTER_SCOPE_OF_1987_DECISION",
       "research_evidence_note": "The association reproduces Bishop Pío Bello Ricardo's signed 27 April 1991 letter explicitly restricting episcopally sanctioned Betania content to his 21 November 1987 pastoral instruction; local recognition should not be extended to every message.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -556,6 +589,16 @@
         "findings": "María Esperanza association reproduces Bishop Pío Bello Ricardo's 27 April 1991 letter, explicitly delimiting official sanction to his 21 November 1987 pastoral instruction; the association's broad English apparition description should not be substituted for this qualification. Letter reproduced by association, not inspected in diocesan original.",
         "confirmed_draft_citation_scope_defect": false,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/",
+        "original_source_id": null,
+        "new_guide_source_url": "https://www.mariaesperanza.org/comunicacion-escrita-de-monsenor-pio-bello-ricardo/",
+        "new_guide_source_id": "AO-ED-BETANIA-1991-BISHOP-LETTER-20261112",
+        "verification_basis": "Association reproduces dated 1991 episcopal correspondence specifying that sanction covers only claims in the 21 November 1987 pastoral instruction; diocesan original not inspected. Distinguishes local recognition from indiscriminate approval of later messages.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -931,10 +974,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "UNESCO World Heritage Centre documents Varallo first Sacro Monte around 1480 as European New Jerusalem, with serial chapels representing Holy Land Gospel scenes, not actual Jerusalem geography.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "UNESCO World Heritage Centre dossier 1068; trailing slash is optional and both URLs show the same Sacri Monti of Piedmont and Lombardy page.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "154:identity",
@@ -948,10 +998,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "UNESCO World Heritage Centre documents Varallo first Sacro Monte around 1480 as European New Jerusalem, with serial chapels representing Holy Land Gospel scenes, not actual Jerusalem geography.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "UNESCO World Heritage Centre dossier 1068; trailing slash is optional and both URLs show the same Sacri Monti of Piedmont and Lombardy page.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "154:pilgrimage",
@@ -965,10 +1022,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "UNESCO World Heritage Centre documents Varallo first Sacro Monte around 1480 as European New Jerusalem, with serial chapels representing Holy Land Gospel scenes, not actual Jerusalem geography.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "UNESCO World Heritage Centre dossier 1068; trailing slash is optional and both URLs show the same Sacri Monti of Piedmont and Lombardy page.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "156:history",
@@ -982,10 +1046,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Ta' Pinu official history distinguishes early older chapel from present larger church built 1920 and opened 1932; one Marian complex on Gozo with changeable visitor programme.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Ta' Pinu shrine's Historical Glance page is the same on www and non-www host, confirmed by direct inspection.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "156:identity",
@@ -999,10 +1070,17 @@
       "evidence_scope": "CUSTODIAN_APPARITION_TRADITION",
       "research_evidence_note": "Ta' Pinu custodian history explicitly dates Karmela Grima's reported summons to 22 June 1883, preserved as local devotional testimony.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Ta' Pinu shrine's Historical Glance page is the same on www and non-www host, confirmed by direct inspection.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "156:pilgrimage",
@@ -1016,10 +1094,17 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Ta' Pinu official history distinguishes early older chapel from present larger church built 1920 and opened 1932; one Marian complex on Gozo with changeable visitor programme.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Ta' Pinu shrine's Historical Glance page is the same on www and non-www host, confirmed by direct inspection.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "159:history",
@@ -1135,10 +1220,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Higüey Basilica-Cathedral official site explicitly identifies its dual canonical functions, Altagracia Marian image and live pilgrim programming.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Higüey's official sanctuary homepage is available in Spanish or via ?lang=en in English; the underlying site is the same bilingual shrine, not two independent evidentiary authorities.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "186:identity",
@@ -1152,10 +1244,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Higüey Basilica-Cathedral official site explicitly identifies its dual canonical functions, Altagracia Marian image and live pilgrim programming.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Higüey's official sanctuary homepage is available in Spanish or via ?lang=en in English; the underlying site is the same bilingual shrine, not two independent evidentiary authorities.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "186:pilgrimage",
@@ -1169,10 +1268,17 @@
       "evidence_scope": "CUSTODIAN_DIOCESAN_HOLY_SEE_OR_CIVIC_CORE_CLAIM_RESEARCH_ONLY",
       "research_evidence_note": "Higüey Basilica-Cathedral official site explicitly identifies its dual canonical functions, Altagracia Marian image and live pilgrim programming.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "SOURCE_EQUIVALENT_NO_CITATION_CHANGE",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
-      "owner_authorized": false
+      "owner_authorized": false,
+      "source_equivalence": {
+        "finding": "Higüey's official sanctuary homepage is available in Spanish or via ?lang=en in English; the underlying site is the same bilingual shrine, not two independent evidentiary authorities.",
+        "checked_on": "2026-11-12",
+        "url_pair_checked": true,
+        "full_claim_certified": false,
+        "owner_authorized": false
+      }
     },
     {
       "key": "188:history",
