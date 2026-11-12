@@ -193,6 +193,41 @@ assert.equal(send("Ablutions",{form:"SOLEMN",
  sourceSectionId:"AO.CARD.026",sourceCueId:"AO.SM.C0247",
  certifiedSourceFocus:true}).communionStation,null,
  "Leaving Communion distribution must clear source-owned rail-paten stage");
+const returnEvent={form:"SOLEMN",sourceSectionId:"AO.CARD.025",
+ sourceCueId:"AO.SM.C0246",certifiedSourceFocus:true};
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-300"}).communionReturnTriggered,false,
+ "Distribution begins does not mean the priest starts returning");
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-305"})
+ .communionReturnTriggered,false,
+ "Independent Communion antiphon Schola cannot impersonate priest return");
+const returning=send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-320"});
+assert.equal(returning.choreography,"STATIC_STAGE",
+ "Canonical non-text return is NOT original 12-second communion approach");
+assert.equal(returning.communionStation,"PRIEST_RETURN_SOURCE_EVENT");
+assert.equal(returning.communionReturnTriggered,true);
+assert.equal(returning.canonicalCommunionEventId,"MC-COM-320");
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-320"})
+ .communionReturnTriggered,false,"Repeated return event cannot replay path");
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-310"})
+ .communionStation,"AT_RAIL_STATIC",
+ "Rewind to distribution must reset the return stage");
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,canonicalCommunionEventId:"MC-COM-320"})
+ .communionReturnTriggered,true,
+ "Re-entering real MC-COM-320 after distribution may re-arm source return");
+assert.equal(send("Ablutions",{form:"SOLEMN",
+ sourceSectionId:"AO.CARD.026",sourceCueId:"AO.SM.C0247"})
+ .communionStation,null,
+ "After Communion return, Ablutions must reset the source stage");
+assert.equal(send("Communion of the Faithful",{
+ ...returnEvent,form:"MISSA_CANTATA_SIMPLE",
+ canonicalCommunionEventId:"MC-COM-320"}).communionReturnTriggered,false,
+ "Sung Mass must not inherit an uncertified objective event");
 
 // Hiding the viewer for MISSAL must explicitly cancel original timers,
  // smoke/elevation FX and restore an action-free source stage.
