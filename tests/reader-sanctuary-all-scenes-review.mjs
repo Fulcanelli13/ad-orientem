@@ -147,13 +147,14 @@ try{
     if(c.id==="C08"&&form.protocol!=="LOW"){
       assert.equal(cameraShot,"sedilia",
         "Gloria seated stages must use owner's sedilia camera");
-      assert.equal(result.sediliaStage,"ORIGINAL_SEDILIA_SEATED");
+      assert.equal(result.sediliaStage,"DONOR_SEDILIA_REVIEW_HOLD",
+        "The owner rejected the grafted legs; this is NOT approved art");
       assert.equal(actors.priest.pose,"sit");
-      assert.equal(actors.priest.x,4.04,
-        "Celebrant must sit on the existing original bench, not in front");
+      assert.equal(actors.priest.x,3.71,
+        "Current donor placeholder is at front lip; final model is held");
       if(form.protocol==="SOLEMN"){
-        assert.equal(actors.deacon.x,4.04);
-        assert.equal(actors.subdeacon.x,4.04);
+        assert.equal(actors.deacon.x,3.71);
+        assert.equal(actors.subdeacon.x,3.71);
       }else{
         assert.equal(actors.server.pose,"stand");
         assert.equal(actors.server.x,2.36,
