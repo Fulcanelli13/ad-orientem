@@ -55,6 +55,7 @@ jobs:
         run: |
           node tests/reader-schola-kyrie-research-audition.mjs
           node tests/reader-schola-gabc-melody.mjs
+          node tests/reader-schola-exsurge-notehead-follow.mjs
 
       - name: B — Independent observation, organ permissions and local programme
         run: |
