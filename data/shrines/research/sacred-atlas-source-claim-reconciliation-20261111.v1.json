@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 578,
+    "newInstitutionalCoreChecks": 579,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 671,
-    "onlyCitationScope": 1,
+    "currentUniqueCoreResearchChecks": 672,
+    "onlyCitationScope": 0,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 24
+    "newCoreResearchChecksSinceLastPass": 25
   },
   "source_quality_findings": [
     {
@@ -8203,7 +8203,7 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-4132eeda",
+      "guide_revision": "fnv1a32-16c4d29b",
       "draft_order": 121,
       "wave": 2,
       "section_id": "history",
@@ -8226,27 +8226,30 @@
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-4132eeda",
+      "guide_revision": "fnv1a32-16c4d29b",
       "draft_order": 121,
       "wave": 2,
       "section_id": "identity",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.1260.org/Mary/Apparitions_Akita/Akita_Ito_Letter_of_approval_en.htm",
-      "source_id": "SHR-PIL-JP-our-lady-akita-convent",
+      "source_url": "https://www.catholic-niigata.net/archives/9340",
+      "source_id": "AO-ED-AKITA-NIIGATA-DIOCESE-20261112",
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official Catholic Diocese of Niigata, Bishop Narui's 2026 Marian Day address, quotes Bishop Ito 22 Apr 1984 pastoral letter and explicitly explains the limited diocesan permission and absence of Holy See judgment. This is direct contemporary diocesan corroboration, not physical inspection of original signed 1984 letter; supernaturality remains undecided in source.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.catholic-niigata.net/archives/9340",
+      "evidence_scope": "DIOCESAN_ORDINARY_DIRECT_2026_QUOTATION_OF_1984_LOCAL_DECISION_RESEARCH_ONLY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:JP:our-lady-akita-convent",
-      "guide_revision": "fnv1a32-4132eeda",
+      "guide_revision": "fnv1a32-16c4d29b",
       "draft_order": 121,
       "wave": 2,
       "section_id": "pilgrimage",
