@@ -66,8 +66,16 @@ export function eligibleVenueImage(img,venueId){
     String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
 }
 export function eligibleRenderedDirectoryImage(img,item){
-  return Boolean(item?.kind==="TLM_VENUE"&&directoryVenueVisualPolicy(item).photoAllowed&&
-    (eligibleDirectoryImage(img,item.place_id)||eligibleVenueImage(img,item.source_id)));
+  // An independently approved photograph of THIS precise Directory venue
+  // remains valid even when the venue's operator/category is unresolved or
+  // institutionally named. A photograph identifies a building, not its
+  // current ministry, Missal, ownership or Mass schedule.
+  // Canonical Place photos still require the diocesan photo lane: nearby or
+  // institutionally affiliated churches may not borrow a Place cover.
+  return Boolean(item?.kind==="TLM_VENUE"&&(
+    eligibleVenueImage(img,item.source_id)||
+    (directoryVenueVisualPolicy(item).photoAllowed&&eligibleDirectoryImage(img,item.place_id))
+  ));
 }
 
 // TLM uses a lightweight map loader. These four small, existing registries
