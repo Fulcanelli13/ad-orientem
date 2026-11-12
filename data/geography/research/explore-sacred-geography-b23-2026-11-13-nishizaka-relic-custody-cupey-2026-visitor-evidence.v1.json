@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "batch": "B23",
+  "date": "2026-11-13",
+  "scope": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "main_places": 530,
+    "geo_areas": 146,
+    "directory_place_links": 26,
+    "prior_batch": "B22",
+    "r70_queue_last_confirmed": 750,
+    "philippines_checkpoint_347": "HISTORICAL"
+  },
+  "records": [
+    {
+      "record_id": "SG-B23-NISHIZAKA-RELIC-CUSTODY-CONFLICT",
+      "kind": "EXISTING_DOSSIER_EVIDENCE_RECONCILIATION",
+      "status": "VERIFIED_PILGRIMAGE_COMPLEX_RELIC_BUILDING_HELD",
+      "name": "Twenty-Six Martyrs Nishizaka complex, Nagasaki, Japan",
+      "summary_en": "Nishizaka Hill is the 5 February 1597 martyrdom site of the Twenty-Six Martyrs of Japan. The Nagasaki municipal official tourism page independently confirms Pius XII's 1950 pilgrimage designation and the 1962 memorial. Japan Tourism Agency describes relics including bones of Paul Miki, James Kisai and John of Goto in the museum, while Nagasaki's English visitor guide places the same saints' bones in St Philip's Church. The location of particular relics is therefore unresolved; do not assign a relic to a specific building. The memorial, museum and St Philip's Church remain distinct site features. The city's Japanese-language tourism page provides additional first-party visitor corroboration.",
+      "summary_fr": "La colline de Nishizaka est le lieu du martyre des Vingt-Six Martyrs du Japon, le 5 février 1597. Le site touristique officiel de Nagasaki confirme sa désignation comme lieu de pèlerinage par Pie XII en 1950 et le monument de 1962. L'Agence japonaise du tourisme situe au musée des reliques comprenant des ossements des saints Paul Miki, Jacques Kisai et Jean de Gotō, tandis que le guide touristique de Nagasaki les situe dans l'église Saint-Philippe. Le bâtiment conservant ces reliques reste donc à confirmer. Le monument, le musée et l'église doivent être distingués.",
+      "sources": [
+        {
+          "url": "https://www.at-nagasaki.jp/spot/113",
+          "supports": "Nagasaki municipal Japanese-language first-party martyrdom, pilgrimage designation, 1962 monument and visitor evidence"
+        },
+        {
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html",
+          "supports": "Japan Tourism Agency museum and relic statement"
+        },
+        {
+          "url": "https://www.nagasakicity.com/spots/detail/208/back-1",
+          "supports": "English Nagasaki guide contradictory church relic statement and free monument/church access; older published visitor details"
+        }
+      ],
+      "holds": [
+        "Direct Jesuit museum or church custodian inventory required for precise relic custody",
+        "Do not assume museum and church share the same visitor entrance",
+        "Visitor hours and fees in older guide require contemporary confirmation"
+      ]
+    },
+    {
+      "record_id": "SG-B23-CUPEY-2026-PATRONAL-VISITOR-EVIDENCE",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_ACTIVE_NATIONAL_SHRINE_BUILDING_COMPLETION_HELD",
+      "name": "National Shrine of Our Lady Mother of Divine Providence, Cupey, Puerto Rico",
+      "summary_en": "A Catholic report dated 27 October 2026 announces patronal celebrations at the Cupey national shrine on 19 November 2026 and a Marian Jubilee closing celebration on 5 December 2026. This is evidence of current public devotional activity, not evidence that a permanent shrine church building has been completed. Keep the Cupey national shrine distinct from the similarly named church on Calle Santa Águeda and the Marian hermitage associated with Santa Teresa de Jesús Jornet parish. The reported events were future at publication and are not recorded as having occurred.",
+      "summary_fr": "Un reportage catholique du 27 octobre 2026 annonce au sanctuaire national de Cupey la fête patronale du 19 novembre et la clôture du jubilé marial du 5 décembre 2026. Il atteste l'organisation d'activités de dévotion, mais non l'achèvement de l'église permanente. Ne pas confondre le sanctuaire national avec l'église homonyme de la rue Santa Águeda ni avec l'ermitage marial de la paroisse Sainte-Thérèse de Jésus Jornet. Les célébrations annoncées ne doivent pas être présentées comme déjà accomplies.",
+      "sources": [
+        {
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/",
+          "supports": "27 October 2026 Catholic reporting of forthcoming 19 November and 5 December observances"
+        },
+        {
+          "url": "https://gcatholic.org/churches/centralamerica/4934",
+          "supports": "secondary directory identity national shrine"
+        },
+        {
+          "url": "https://gcatholic.org/churches/caribbean/15892",
+          "supports": "secondary directory separate Providence church"
+        },
+        {
+          "url": "https://gcatholic.org/churches/caribbean/15968",
+          "supports": "secondary directory separate parish and hermitage"
+        }
+      ],
+      "holds": [
+        "First-party archdiocesan documentary evidence of completed permanent shrine church",
+        "No inferred exact coordinates or entrance",
+        "No assertion that future announced celebrations occurred"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Nishizaka direct custodian relic inventory",
+    "Cupey first-party permanent shrine building completion",
+    "Trà Kiệu independently evidenced entrances",
+    "Aitara original national-shrine decree",
+    "Kolser direct diocesan archival confirmation",
+    "Dili and Tianjin identity holds"
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "restrictions": [
+    "No canonical Place IDs changed",
+    "No production changes, merge, publication or deployment",
+    "No contact or expenditure"
+  ]
+}
