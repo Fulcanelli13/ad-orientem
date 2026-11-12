@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 94,
+    "newInstitutionalCoreChecks": 123,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 187,
-    "onlyCitationScope": 485,
+    "currentUniqueCoreResearchChecks": 216,
+    "onlyCitationScope": 456,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 20
+    "newCoreResearchChecksSinceLastPass": 29
   },
   "source_quality_findings": [
     {
@@ -524,13 +524,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official Port-Louis diocesan Spiritan directory identifies the Centre Père Laval at Sainte-Croix and pilgrimage to Laval's tomb.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp",
+      "evidence_scope": "DIOCESAN_CUSTODIAN_AND_TOMB",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:MU:pere-laval-sainte-croix",
@@ -837,13 +840,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint-Gildard sanctuary confirms the 1856 motherhouse and Bernadette's 1866 arrival for religious formation, clearly separate from Lourdes.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/",
+      "evidence_scope": "SANCTUARY_BERNADETTE_MONASTIC_HISTORY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:espace-bernadette-nevers",
@@ -919,13 +925,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vatican basilica history explicitly gives five-nave enlargement in 384–395 and the fire of 15 July 1823 followed by reconstruction.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/storia.htm",
+      "evidence_scope": "VATICAN_BASILICA_ARCHITECTURAL_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:saint-paul-outside-walls-rome",
@@ -1470,13 +1479,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vercelli cathedral museum documents discovery of Eusebius-attributed remains on 18 February 1581 and translation in 1628, as reliquary history.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+      "evidence_scope": "CATHEDRAL_MUSEUM_RELIQUARY_PROVENANCE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:duomo-sant-eusebio-vercelli",
@@ -1689,13 +1701,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montecassino abbey describes the tomb behind the high altar and separately lists tours, museum, library and liturgical visits; no 1962 Missal assumption.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+      "evidence_scope": "ABBEY_TOMB_AND_VISIT_TOPOGRAPHY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:auriesville-martyrs",
@@ -1814,13 +1829,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Joseph's Oratory describes the heart relic of Brother André distinct from its founder's tomb and gives its devotional meaning.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+      "evidence_scope": "SANCTUARY_RELIC_DISTINCTION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:saint-joseph-bessillon",
@@ -2342,13 +2360,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "French culture inventory gives 1925 reliquary donation and its north choir location; 2008 examination independently excludes the purported hand from the martyr's period.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "evidence_scope": "STATE_HERITAGE_RELIQUARY_AND_DATING",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-saint-quentin-aisne",
@@ -2444,13 +2465,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fréjus–Toulon diocese identifies the head reliquary and named sarcophagi in the basilica crypt, representing the Provençal relic tradition rather than archaeological proof.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+      "evidence_scope": "DIOCESAN_DEVOTIONAL_PROVENANCE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
@@ -2487,13 +2511,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Diocesan archive posted the 1904 tomb-opening record on 22 July 2026; this attests documentation of the devotion, not biblical identification of remains.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://archives.frejustoulon.fr/2026/07/22/ouverture-du-tombeau-de-sainte-marie-madeleine-1904/",
+      "evidence_scope": "DIOCESAN_ARCHIVAL_1904_DOCUMENT",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:carmel-lisieux",
@@ -2568,13 +2595,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Sens municipal museum describes historic cathedral treasury, liturgical objects and devotional textiles; no assertion all are authenticated corporeal relics.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+      "evidence_scope": "CIVIC_MUSEUM_TREASURY_SCOPE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:cathedrale-saint-etienne-sens",
@@ -2683,7 +2713,7 @@
     },
     {
       "place_id": "place:HU:st-stephen-basilica-budapest",
-      "guide_revision": "fnv1a32-82219beb",
+      "guide_revision": "fnv1a32-af523644",
       "draft_order": 42,
       "wave": 1,
       "section_id": "king",
@@ -2693,17 +2723,20 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Budapest basilica's own Holy Right account documents Saint Stephen's royal burial traditions and later custody as an institutional relic history.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+      "evidence_scope": "BASILICA_RELIQUARY_TRADITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:HU:st-stephen-basilica-budapest",
-      "guide_revision": "fnv1a32-82219beb",
+      "guide_revision": "fnv1a32-af523644",
       "draft_order": 42,
       "wave": 1,
       "section_id": "reliquary",
@@ -2714,17 +2747,20 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Budapest basilica dates Lippert outer reliquary to 1862, return to 19 August 1945, basilica custody to 1950 and the present glass case to 1987 (not the draft's former 2018).",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+      "evidence_scope": "BASILICA_EXACT_RELIC_DISPLAY_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:HU:st-stephen-basilica-budapest",
-      "guide_revision": "fnv1a32-82219beb",
+      "guide_revision": "fnv1a32-af523644",
       "draft_order": 42,
       "wave": 1,
       "section_id": "feast",
@@ -2968,13 +3004,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cascia sanctuary dates the urn to 1930 and transfer of Rita-attributed body to it on 18 May 1947; enumerates four cardinal virtues.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://santaritadacascia.org/santuario/basilica/",
+      "evidence_scope": "SANCTUARY_RELIQUARY_CUSTODY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:IT:basilica-santa-rita-cascia",
@@ -3510,13 +3549,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Philadelphia Cathedral Basilica gives 2009 shrine dedication, 2 August 2018 translation from Bensalem and 18 November 2018 tomb installation.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://cathedralphila.org/drexel/about/history/",
+      "evidence_scope": "CATHEDRAL_SAINT_TRANSFER",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
@@ -4925,13 +4967,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Roermond diocese published 3 October 2026 walk from Winthagen via Schin op Geul and Houthem to Maastricht; event-specific, not a permanent route.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bisdom-roermond.nl/Pelgrims-voettocht%20Sterre%20der%20Zee",
+      "evidence_scope": "DIOCESAN_2026_PILGRIMAGE_ROUTE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:NL:maastricht-sterre-der-zee",
@@ -5023,13 +5068,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Saint Alphonsus official shrine account describes three-year construction and 14 March 1845 dedication to the Immaculate Conception and Saint Alphonsus.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://stalphonsusbalt.org/",
+      "evidence_scope": "CUSTODIAN_1845_CHURCH_DEDICATION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:st-alphonsus-baltimore",
@@ -5081,13 +5129,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Philadelphia custodian confirms its real Basilica Shrine of the Miraculous Medal and Vincentian association, separate from Paris origin events.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://miraculousmedal.org/visit-us/",
+      "evidence_scope": "SANCTUARY_LOCAL_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:miraculous-medal-philadelphia",
@@ -5123,13 +5174,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Basilica Shrine officially describes on-site pilgrimages, retreats, schedule and support for visitor groups.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://miraculousmedal.org/visit-us/",
+      "evidence_scope": "SANCTUARY_PILGRIMAGE_SERVICE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:czestochowa-doylestown",
@@ -5144,13 +5198,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Pauline US Province states 1955 foundation of its Doylestown Marian shrine, explicitly distinct from Jasna Góra in Poland.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://osppe.us/american-czestochowa/",
+      "evidence_scope": "RELIGIOUS_ORDER_FOUNDING_AND_LOCATION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:czestochowa-doylestown",
@@ -5207,13 +5264,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Emmitsburg shrine's own homepage calls it the oldest US Lourdes replica, built seventeen years after Lourdes's 1858 reported events.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.nsgrotto.org/",
+      "evidence_scope": "SHRINE_LOCAL_REPLICA_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:lourdes-grotto-emmitsburg",
@@ -5322,13 +5382,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Bordeaux diocesan history explicitly gives 1519 traditional statue discovery, 1722 chapel, 8 January 1986 fire and 25 March 1987 inauguration.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+      "evidence_scope": "DIOCESAN_MARITIME_DEVOTION_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:notre-dame-des-marins-arcachon",
@@ -5343,13 +5406,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Bordeaux diocese identifies separate events: 1870 crowning of the Marian image and 1953 raising of the church to minor basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+      "evidence_scope": "DIOCESAN_ECCLESIASTICAL_STATUS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:notre-dame-des-marins-arcachon",
@@ -5445,13 +5511,16 @@
       "claim_flags": [
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Montligeon shrine's own pages emphasize prayer for the dead and its Marian intercessory mission rather than an apparition claim.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://montligeon.org/le-sanctuaire-notre-dame-de-montligeon/",
+      "evidence_scope": "SANCTUARY_MISSION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:FR:montligeon",
@@ -5559,13 +5628,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Amberg shrine history expressly records the Jesuit Hell's advice and Marian procession of 3 September 1634 during the 1633–34 plague.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+      "evidence_scope": "CUSTODIAN_1634_PLAGUE_PROCESSION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:mariahilf-amberg",
@@ -5693,13 +5765,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Archdiocese of Cologne PDF lists St Apollinaris at Frielingsdorf and annual octave around 23 July; source text inspected, PDF screenshot retrieval timed out.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+      "evidence_scope": "ARCHDIOCESAN_PILGRIMAGE_CALENDAR_PDF",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:st-apollinaris-frielingsdorf",
@@ -5812,13 +5887,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Maria Vesperbild sanctuary currently lists Fatima pilgrim devotions on the 13th of each month, with Mass, Rosary and Benediction.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://maria-vesperbild.de/",
+      "evidence_scope": "SANCTUARY_RECURRING_DEVOTIONS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:maria-vesperbild",
@@ -5967,13 +6045,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Attleboro La Salette shrine's own historical account states official opening on 8 December 1953, distinct from the French apparition.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.lasaletteattleboroshrine.org/the-la-salette-story",
+      "evidence_scope": "CUSTODIAN_US_FOUNDATION_DATE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:US:la-salette-attleboro",
@@ -6098,13 +6179,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Stará Boleslav pilgrimage-site homepage explicitly characterizes the place as Saint Wenceslas's martyrdom site and names the basilica.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.staraboleslav.com/",
+      "evidence_scope": "SANCTUARY_MARTYR_SITE_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CZ:stara-boleslav-st-wenceslas",
@@ -6273,13 +6357,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Warmia archdiocese recounts 1877 reported apparitions at Gietrzwałd and the diocesan ecclesial recognition decree of 1977.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/",
+      "evidence_scope": "ARCHDIOCESAN_APPARITION_AND_RECOGNITION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PL:gietrzwald-basilica",
