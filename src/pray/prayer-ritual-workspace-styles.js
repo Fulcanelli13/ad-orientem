@@ -22,6 +22,43 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
   box-sizing:border-box;width:100%;height:100%;min-height:0;max-width:none
 }
 #aoPray435930 .aoPrayerRitualWorkspace .aoPrayerSceneTenebraeVault{align-items:flex-end;padding-bottom:12px}
+/* An already approved Murillo painting replaces schematic confessional
+   shapes. It stays legible at all 3 user-controlled scene/text proportions. */
+#aoPray435930 .aoPrayerRitualWorkspace .aoPrayerCeremonialScene--painted{
+  background:#11100d;isolation:isolate;
+}
+#aoPray435930 .aoPrayerRitualSceneArt{
+  display:block;position:absolute;inset:0;margin:0;min-width:0;min-height:0;
+  width:100%;height:100%;z-index:0;overflow:hidden;border:0;border-radius:0
+}
+#aoPray435930 .aoPrayerRitualSceneArt img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  object-position:center 33%;filter:brightness(.86) saturate(.88);
+  transform:scale(1.02);transition:filter 1.1s ease,transform 5s ease
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted .aoPrayerSceneVault{
+  position:absolute;inset:0;width:100%;height:100%;max-width:none;
+  overflow:hidden;z-index:1;pointer-events:none;
+  background:linear-gradient(0deg,rgba(9,8,7,.46),transparent 45%),
+             linear-gradient(90deg,rgba(8,8,7,.20),transparent 24%,transparent 76%,rgba(8,8,7,.20))
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted .aoPrayerSceneVault>*:not(.aoPrayerSceneLight){
+  display:none
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted .aoPrayerSceneLight{
+  inset:0;width:100%;height:100%;transform:none;
+  background:radial-gradient(ellipse at 52% 48%,rgba(221,181,110,.10),transparent 67%);
+  opacity:.55
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="examine"] .aoPrayerRitualSceneArt img{
+  transform:scale(1.065);filter:brightness(.76) saturate(.79)
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="approach"] .aoPrayerRitualSceneArt img{
+  transform:scale(1.105);filter:brightness(.66) saturate(.75)
+}
+#aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="after"] .aoPrayerRitualSceneArt img{
+  transform:scale(1.00);filter:brightness(.99) saturate(.95)
+}
 #aoPray435930 .aoPrayerRitualWorkspace[data-ao-ritual-mode="text"] .aoPrayerCeremonialCandleRail{
   transform:scale(.52);transform-origin:50% 100%
 }
