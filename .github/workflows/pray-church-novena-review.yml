@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - 'tools/pray/export-church-novena-review.mjs'
+      - 'src/pray/church-novena-ids.v1.js'
+      - 'src/pray/church-novena-route.v1.js'
+      - 'src/pray/browser-entry.js'
+      - 'tests/pray-church-novena-direct-route.mjs'
       - 'tests/pray-church-novena-review-export.mjs'
       - 'src/pray/novena-corpus*.js'
       - 'src/pray/icksp-*-novena.v1.js'
@@ -25,6 +29,8 @@ jobs:
           node-version: '22'
       - name: Test exact novena corpus and export
         run: node tests/pray-church-novena-review-export.mjs
+      - name: Verify 19 Church reader hand-offs and Back restoration
+        run: node tests/pray-church-novena-direct-route.mjs
       - name: Build review-only source snapshot
         run: node tools/pray/export-church-novena-review.mjs --output "$RUNNER_TEMP/church-novenas-r7.json"
       - name: Make review snapshot available without publishing it to Pages
