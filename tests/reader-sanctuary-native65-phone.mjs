@@ -606,68 +606,73 @@ try{
     "Schola-only cue must not even select a different sanctuary scene");
   if((form==="LOW"&&width===320)||
      (form==="MISSA_CANTATA_SIMPLE"&&width===390)){
-    // Both LOW and simple SUNG have a source-certified C24 state-only
-    // no-incense placeholder. It is not a priest action. Stage only
-    // the original adjacent altar still and keep the native card ID.
-    const lowCard=await page.evaluate(()=>{
+    // The canonical 65-card source keeps an indexed no-incense C24
+    // stateOnly marker for audit, but the actual LIVE navigation
+    // SKIPS it. Never show a blank omitted prayer or fake C24 movement.
+    // The visitor goes C23 -> C25, with no priest trip to the foot.
+    const noIncense=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const hits=api.model.cards.filter(c=>
-        /incensation omitted|offertory.*incens/i.test(c.title??"")&&
-        c.sourceSectionId==="AO.CARD.010");
-      if(hits.length!==1)return {matches:hits.map(c=>c.title)};
-      api.showSequence(hits[0].sequence);
-      return {matches:1,sequence:hits[0].sequence,title:hits[0].title,
-        stateOnly:hits[0].stateOnly,sectionId:hits[0].sectionId,
-        sourceSectionId:hits[0].sourceSectionId,
-        selected:api.getCurrentCard()?.title};
+      const pre=api.model.cards.find(c=>
+        c.sourceSectionId==="AO.CARD.010"&&
+        c.title==="Offertory · Humility and Invocation");
+      const skip=api.model.cards.find(c=>
+        c.sourceSectionId==="AO.CARD.010"&&
+        c.title==="Incensation omitted for this Mass");
+      const post=api.model.cards.find(c=>
+        c.sourceSectionId==="AO.CARD.010"&&
+        c.title==="Offertory · Lavabo and Offering to the Trinity");
+      if(!pre||!skip||!post)return {
+        missing:[!pre&&"C23",!skip&&"C24",!post&&"C25"].filter(Boolean)};
+      api.showSequence(pre.sequence);
+      return {pre:pre.sequence,skip:skip.sequence,post:post.sequence,
+        skipId:skip.sectionId,skipStateOnly:skip.stateOnly,
+        skipReason:skip.omittedByRite,skipTextCount:skip.paragraphs.length};
     });
-    assert.equal(lowCard.matches,1,
-      "No-incense C24 omission must map to one native source card");
-    assert.equal(lowCard.stateOnly,true,
-      "The canonical omitted block has no prayer, never an observed action");
-    assert.equal(lowCard.title,"Incensation omitted for this Mass");
-    assert.equal(lowCard.sectionId,"AO.LIVECURATED.AO.CARD.010.5");
-    await frame.waitForFunction(()=>{
-      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
-      return a?.card==="C24"&&a?.noIncenseOmitted===true;
-    },null,{timeout:12000});
-    const actualState=await frame.evaluate(()=>
-      window.AO_SANCTUARY_EMBED_TEST?.getState?.());
-    const parentState=await page.evaluate(()=>{
+    assert.equal(noIncense.missing,undefined,
+      "Native source did not retain C23 / no-incense C24 / C25: "+
+      JSON.stringify(noIncense));
+    assert.equal(noIncense.skipId,"AO.LIVECURATED.AO.CARD.010.5");
+    assert.equal(noIncense.skipStateOnly,true);
+    assert.equal(noIncense.skipReason,"1962_FORM_NO_INCENSE");
+    assert.equal(noIncense.skipTextCount,0);
+    assert.equal(noIncense.skip,noIncense.pre+1);
+    assert.equal(noIncense.post,noIncense.skip+1);
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.card==="C23",
+      null,{timeout:12000});
+    const beforeSkip=await frame.evaluate(()=>{
+      const p=M3.actors().P,st=window.AO_SANCTUARY_EMBED_TEST.getState();
+      return {card:st.card,shot:M3.shot(),z:p.z,priestPath:p.path};
+    });
+    assert.equal(beforeSkip.card,"C23");
+    assert.equal(beforeSkip.z,.4,
+      "No-incense Mass must remain at the altar during offering");
+    assert.equal(beforeSkip.priestPath,null);
+    const skipped=await page.evaluate(sequence=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const region=document.querySelector(".ao-sanctuary-window");
-      return {card:api.getCurrentCard()?.title,
-        source:api.getCurrentCard()?.sourceSectionId,
-        stateOnly:api.getCurrentCard()?.stateOnly,
-        previewHidden:region?.hidden,
-        activeCue:api.getActiveCue?.()};
-    });
-    assert.equal(parentState.previewHidden,false,
-      "Exactly certified omitted-incense state-only card may show a still stage");
-    assert.ok(actualState?.card==="C24"&&actualState?.noIncenseOmitted===true,
-      "No-incense C24 source-to-visual handoff failed: "+
-      JSON.stringify({lowCard,parentState,actualState}));
-    assert.equal(actualState.lowIncenseOmitted,form==="LOW",
-      "Low-only classification must not spill into Sung");
-    const stage=await frame.evaluate(()=>{
+      const response=api.showSequence(sequence);
+      const c=api.getCurrentCard();
+      return {response:response??null,card:c?.title,
+        sectionId:c?.sectionId};
+    },noIncense.skip);
+    assert.equal(skipped.response,null,
+      "1962_FORM_NO_INCENSE is a hidden state-only marker, not a LIVE screen");
+    assert.equal(skipped.sectionId,"AO.LIVECURATED.AO.CARD.010.4",
+      "Attempting omitted card must leave the prior visible C23 selected");
+    const afterSkip=await frame.evaluate(()=>{
       const a=window.AO_SANCTUARY_EMBED_TEST.getState(),p=M3.actors().P;
-      return {card:a.card,visual:a.visualCardId,pose:p.pose,x:p.x,z:p.z,
-        path:p.path,shot:M3.shot(),playedCue:a.playedCue};
+      return {card:a.card,z:p.z,priestPath:p.path,
+        playedCue:a.playedCue};
     });
-    assert.equal(stage.card,"C24");
-    assert.equal(stage.visual,"C23");
-    assert.equal(stage.path,null);
-    assert.equal(stage.playedCue,null);
-    assert.equal(stage.z,.4,
-      "No-incense priest must remain at the ALTAR, not foot");
-    assert.equal(stage.shot,"server",
-      "No-incense C24 uses original preceding altar-side Offertory shot");
+    assert.equal(afterSkip.card,"C23",
+      "No projected C24 scene or altar-to-foot false movement");
+    assert.equal(afterSkip.z,.4);
+    assert.equal(afterSkip.priestPath,null);
     await page.evaluate(sequence=>
-      window.__AO_PHONE_PREVIEW.showSequence(sequence+1),lowCard.sequence);
-    await frame.waitForFunction(()=>{
-      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
-      return a?.card==="C25"&&a?.noIncenseOmitted===false;
-    },null,{timeout:12000});
+      window.__AO_PHONE_PREVIEW.showSequence(sequence),noIncense.post);
+    await frame.waitForFunction(()=>
+      window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.card==="C25",
+      null,{timeout:12000});
   }
   if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
     await page.evaluate(()=>{
