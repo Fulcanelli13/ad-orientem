@@ -1274,7 +1274,8 @@ try{
   });
   assert.deepEqual(chaliceRearm,{
     enter:"SOURCE_TRIGGERED",exit:"STATIC_STAGE",replay:"SOURCE_TRIGGERED",
-    dormant:{elevationStage:false,elevationGlowVisible:false}
+    dormant:{elevationStage:false,elevationGlowVisible:false,
+      sharedBookVisible:false,sharedBookCount:0}
   },"Chalice elevation enter/exit/replay must remain source-owned");
   const switched=await page.evaluate(()=>{
     const api=window.__AO_PHONE_PREVIEW;
