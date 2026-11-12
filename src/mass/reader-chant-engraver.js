@@ -36,7 +36,7 @@ export function engraverWidth(viewport){
 // Each instance is bound to a single panel; callers may hold two independent
 // instances for inline and expanded score. Stale renders may never overwrite
 // the selected chant during quick option/viewport changes.
-export function createOfflineChantEngraver({viewport,document=viewport?.ownerDocument}={}){
+export function createOfflineChantEngraver({viewport,document=viewport?.ownerDocument,onRendered=null}={}){
   if(!viewport?.replaceChildren || !document?.createElement)
     throw new TypeError("Offline chant viewport and document required");
   let requestId=0,activeGabc=null,score=null,context=null,library=null;
@@ -50,6 +50,9 @@ export function createOfflineChantEngraver({viewport,document=viewport?.ownerDoc
     svg.style.height="auto";
     svg.style.display="block";
     viewport.replaceChildren(svg);
+    // Optional, local-only notification after the SVG was replaced. Allows
+    // notehead cursors to bind to fresh glyphs after a responsive reflow.
+    if(typeof onRendered==='function')onRendered(svg);
   }
   function layout(width,request){
     return new Promise((resolve,reject)=>{
