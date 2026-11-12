@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - name: Install existing project dependencies
-        run: npm ci --ignore-scripts --no-audit --no-fund
+        run: npm install --no-audit --no-fund
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
       - name: Inspect public FSSP source without modifying live directory data
