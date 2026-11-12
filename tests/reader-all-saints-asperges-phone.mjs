@@ -65,14 +65,14 @@ try{
     assert.equal(opening.modelCards,mode==="LIVE"?65:opening.modelCards);
     assert.ok(opening.sourceCards===39||opening.sourceCards===30);
 
-    const sanctuaryFrame=mode==="LIVE"
-      ?page.frames().find(f=>f.url().includes(
-        "/assets/mass/live-sanctuary/index.html")):null;
+    let sanctuaryFrame=null;
     if(mode==="LIVE"){
       await page.waitForFunction(()=>{
         const iframe=document.querySelector(".ao-sanctuary-window iframe");
         return iframe?.contentWindow?.AO_SANCTUARY_EMBED_TEST?.getState?.()?.card==="P1";
       },null,{timeout:25000});
+      sanctuaryFrame=page.frames().find(f=>f.url().includes(
+        "/assets/mass/live-sanctuary/index.html"));
       assert.ok(sanctuaryFrame,"Native R20 Sunday rite must stage original P1 scene in LIVE");
     }else{
       assert.equal(page.frames().some(f=>f.url().includes(
