@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {fileURLToPath} from "node:url";
 import {resolveHostIconAssets} from "../src/mass/browser-entry.js";
+import {isDonorPngWrapper} from "../src/mass/reader-dom.js";
 import {R17_FROZEN_ACTIVE_ICON_ASSETS} from "../src/mass/reader-icon-bank.js";
 import {CANONICAL_ICON_ASSETS} from "../src/mass/reader-canonical-icons.js";
 import {getCanonicalAsset,resolveCanonicalAssetUrl,AO_ASSET_BANK_CONTRACT,
@@ -56,6 +57,16 @@ for(const k of ["canon:faithful.gesture.gospel_crosses",
   "Frozen canonical donor art must remain separate from newer selected art");
 }
 assert.equal(active.final_profound_bow,selected.profound_bow);
+// A later vector inherits a legacy gesture key but MUST NOT enter the
+// PNG-unwrapper path; otherwise the image disappears on the real rail.
+for(const key of ["breast_strike","profound_bow","gospel_crosses"]){
+ assert.equal(isDonorPngWrapper(key,active[key]),false,
+  "User-selected transparent SVG must use direct CSS mask: "+key);
+}
+assert.equal(isDonorPngWrapper("breast_strike",R17_FROZEN_ACTIVE_ICON_ASSETS.breast_strike),
+ true,"Original v1.80 donor wrapper still needs PNG alpha unwrapping");
+assert.equal(isDonorPngWrapper("breast_strike"),true,
+ "Legacy no-source donor audits remain valid");
 for(const form of ["LOW","MISSA_CANTATA_SIMPLE",
  "MISSA_CANTATA_INCENSE","SOLEMN"]){
  const faithful=(cue,type,posture=null)=>finalCurated65IconKeys({
