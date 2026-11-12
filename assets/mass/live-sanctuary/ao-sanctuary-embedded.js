@@ -193,6 +193,50 @@
       acolyte.prop=id==="A1"?"book":null;
     }
   }
+  // The original C36/C38 priest-elevation cinematic is retained.
+  // The source-checked 1962 minister records distinguish the incense
+  // actor by rite: VIII.8 thurifer in ordinary Solemn Mass
+  // (MR62.SOL.B02.045/.046), XIII.2 subdeacon in Solemn Requiem
+  // (MR62.SOL.B02.047/.048). The research records are PREVIEW evidence,
+  // not a source for an observed minister clock or certified coordinates.
+  css.textContent += [
+    ".ao-sanctuary-iframe .bb.ao-source-elevation-incense .thur{",
+    "animation:swing2 .7s ease-in-out 3!important}"
+  ].join("");
+  function clearElevationMinisterIncense(){
+    for(const id of ["T","S"])
+      M3.actors?.()?.[id]?.b?.el?.classList?.remove?.("ao-source-elevation-incense");
+  }
+  function stageSolemnElevation({card,form,requiem,sourceSectionId,cue,validCue}){
+    const originalSource=card?.id==="C36"
+      ?{cue:"AO.SM.C0174",section:"AO.CARD.015"}
+      :card?.id==="C38"
+        ?{cue:"AO.SM.C0181",section:"AO.CARD.016"}:null;
+    const active=Boolean(form.solemn&&validCue&&originalSource&&
+      cue===originalSource.cue&&sourceSectionId===originalSource.section);
+    const actorId=active?(requiem?"S":"T"):null;
+    if(!actorId){
+      clearElevationMinisterIncense();
+      return null;
+    }
+    const actor=M3.actors?.()?.[actorId];
+    if(!actor){clearElevationMinisterIncense();return null}
+    const fresh=last?.elevationActor!==actorId||last?.elevationCue!==cue||
+      last?.key?.endsWith(requiem?"|ORDINARY":"|REQUIEM");
+    if(fresh)clearElevationMinisterIncense();
+    actor.path=null;actor.turn=null;
+    actor.vis=true;actor.pose="kneel";actor.prop="thurible";
+    if(requiem){
+      // Illustrative Epistle-side position (x positive in original M3).
+      // 1962 XIII.2 requires the location, but not these coordinates.
+      actor.x=1.5;actor.z=1.35;actor.face=0;
+    }else{
+      // Original altar's kneeling thurifer, without replacing the priest.
+      actor.x=.85;actor.z=2.05;actor.face=0;
+    }
+    if(fresh)actor.b?.el?.classList?.add?.("ao-source-elevation-incense");
+    return actorId;
+  }
   function quietInactiveElevation(card){
     if(card?.id!=="C36"&&card?.id!=="C38")return;
     // Claude's ORIGINAL static scene leaves its elevation glow lit.
@@ -217,6 +261,7 @@
       if(current){M3.show(current,false);quietInactiveElevation(current)}
     }
     showObservedSprinkle(false);
+    clearElevationMinisterIncense();
     aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
@@ -266,6 +311,7 @@
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
     if(last?.key!==nextKey||exiting){
+      clearElevationMinisterIncense();
       M3.show(card,false); // Original engine cancels pending action keyframes.
       quietInactiveElevation(card);
     }
@@ -282,10 +328,15 @@
     if(play)M3.show(card,true);
     stageSungSediliaAcolyte(card);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
+    const elevationActor=stageSolemnElevation({
+      card,form,requiem,sourceSectionId,cue,validCue
+    });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
+      elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
-      choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE"});
+      choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
+      elevationIncenseActor:elevationActor});
   }
   window.addEventListener("message",event=>{
     if(event.source!==window.parent||event.origin!==location.origin)return;
