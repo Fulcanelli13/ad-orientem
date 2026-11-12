@@ -7,16 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 554,
+    "newInstitutionalCoreChecks": 564,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 647,
-    "onlyCitationScope": 25,
+    "currentUniqueCoreResearchChecks": 657,
+    "onlyCitationScope": 15,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
     "ownerAuthorizations": 0,
     "newDirectoryCoreChecks": 1,
-    "newCoreResearchChecksSinceLastPass": 55
+    "newCoreResearchChecksSinceLastPass": 10
   },
   "source_quality_findings": [
     {
@@ -121,6 +121,40 @@
       "sources": [
         "https://www.cbcj.catholic.jp/2016/09/01/13352/",
         "https://www.1260.org/Mary/Apparitions_Akita/Akita_Ito_Letter_of_approval_en.htm"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "type": "OFFICIAL_CUSTODIAN_PDF_SCREENSHOT_UNAVAILABLE",
+      "finding": "Official custodian Basilica Santa Chiara pdf search-index records the saint's crypt and relic custody, but visual PDF screenshot fetch returned 502. Keep three standard pairs at citation-scope stage until screenshot or HTML institutional text can be directly inspected.",
+      "sources": [
+        "https://www.assisisantachiara.it/guida-semplice-della-basilica/welcome-to-the-basilica-of-saint-clare-in-assisi/la-basilica/?print=pdf"
+      ]
+    },
+    {
+      "place_id": "place:NI:cuapa-national-shrine",
+      "type": "SECONDARY_MARIAN_FATHERS_SOURCE_NOT_LOCAL_DIOCESAN_DECREE",
+      "finding": "Marian Fathers article recounts 1980 reports and attributes 1982 approval to Bishop Bosco Vivas; it is not a direct Nicaraguan sanctuary record or bishop decree establishing national shrine status and present pilgrimage arrangements. All three standard paragraphs remain at scope-only until suitably qualified local evidence.",
+      "sources": [
+        "https://thedivinemercy.org/articles/who-was-our-lady-cuapa"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "type": "SECONDARY_DATE_AND_CURRENT_PASTORAL_PROGRAMME_HOLD",
+      "finding": "CBCP-associated shrine registry verifies May 31, 2010 national shrine recognition at Makati, but the draft's 23 November 1951 parish foundation date and current programme still depend on less-direct directory/blog; history and pilgrimage paragraphs remain at citation scope.",
+      "sources": [
+        "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "https://www.parishph.com/2022/01/national-shrine-of-our-lady-of-guadalupe.html"
+      ]
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "type": "CURRENT_ECCLESIASTICAL_AND_MINOR_BASILICA_DECREE_HOLD",
+      "finding": "Ghana Bishops Conference page confirms Kumasi metropolitan see and Saint Peter patronage, but is stale and does not independently certify all site-specific and June 2004 basilica details in the two unresearched sections. Keep directory-only claims on evidence hold.",
+      "sources": [
+        "https://www.cbcgha.org/dioceses-detailed/kumasi-archdiocese/",
+        "https://gcatholic.org/churches/africa/1462"
       ]
     }
   ],
@@ -3888,7 +3922,7 @@
     },
     {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
-      "guide_revision": "fnv1a32-cfca333a",
+      "guide_revision": "fnv1a32-5fe68852",
       "draft_order": 56,
       "wave": 1,
       "section_id": "identity",
@@ -3896,17 +3930,20 @@
       "source_url": "https://bvmartyrshrine.com/",
       "source_id": null,
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The Winnipeg shrine's own site identifies a Byzantine Catholic Martyr shrine inside St Joseph's Ukrainian Catholic Church, with Blessed Vasyl's relics and parish memorial.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bvmartyrshrine.com/",
+      "evidence_scope": "CUSTODIAN_UKRAINIAN_CATHOLIC_CHURCH_AND_SHRINE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
-      "guide_revision": "fnv1a32-cfca333a",
+      "guide_revision": "fnv1a32-5fe68852",
       "draft_order": 56,
       "wave": 1,
       "section_id": "chapel",
@@ -3916,17 +3953,20 @@
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Custodian identifies shrine chapel, relic-veneration space and separate museum in the same St Joseph's parish complex.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bvmartyrshrine.com/",
+      "evidence_scope": "CUSTODIAN_CHAPEL_MUSEUM_AND_RELICS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
-      "guide_revision": "fnv1a32-cfca333a",
+      "guide_revision": "fnv1a32-5fe68852",
       "draft_order": 56,
       "wave": 1,
       "section_id": "liturgy",
@@ -3937,13 +3977,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The Winnipeg shrine explicitly publishes Divine Liturgies and prayers for Ukraine in Ukrainian Catholic setting, with current times and separate group bookings; these are not Roman Missal 1962 rites.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bvmartyrshrine.com/",
+      "evidence_scope": "CUSTODIAN_EASTERN_CATHOLIC_LITURGICAL_CONTEXT",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:DE:kevelaer-gnadenkapelle",
@@ -7015,13 +7058,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Betania devotee association documents claimed Marian experiences from 1976 and public testimony in 1984; reports treated as reported experiences, not independent physical verification.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.mariaesperanza.org/apariciones-en-finca-betania/",
+      "evidence_scope": "BETANIA_REPORTED_TESTIMONY_CHRONOLOGY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:VE:finca-betania",
@@ -7033,13 +7079,16 @@
       "source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/",
       "source_id": "SHR-BETANIA-ASSOCIATION",
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "The association reproduces Bishop Pío Bello Ricardo's signed 27 April 1991 letter explicitly restricting episcopally sanctioned Betania content to his 21 November 1987 pastoral instruction; local recognition should not be extended to every message.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.mariaesperanza.org/comunicacion-escrita-de-monsenor-pio-bello-ricardo/",
+      "evidence_scope": "BISHOP_1991_LETTER_SCOPE_OF_1987_DECISION",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:VE:finca-betania",
@@ -7053,13 +7102,16 @@
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Betania foundation identifies exact Finca Betania as shrine near Cúa and distinguishes the pilgrimage site from variable present services and access; no perpetual schedule inferred.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.mariaesperanza.org/apariciones-en-finca-betania/",
+      "evidence_scope": "BETANIA_CUSTODIAN_SITE_PILGRIMAGE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:AR:san-nicolas-virgen-rosario",
@@ -12811,13 +12863,16 @@
       "source_url": "https://igrejadefatima.com.br/contato/",
       "source_id": "SG-R75-SITE-SG-INV-0482",
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fortaleza parish and sanctuary operator explicitly identifies actual Brazilian Our Lady of Fatima church and ongoing Eucharistic and Marian worship, not original Portuguese apparition site.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://igrejadefatima.com.br/",
+      "evidence_scope": "FORTALEZA_PARISH_CUSTODIAN_IDENTITY",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BR:fortaleza-fatima-sanctuary",
@@ -12829,13 +12884,16 @@
       "source_url": "https://igrejadefatima.com.br/contato/",
       "source_id": "SG-R75-SITE-SG-INV-0482",
       "claim_flags": [],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fortaleza official parish/sanctuary contact confirms one Marian church at Av. Treze de Maio, 200 with archdiocesan parish and pilgrimage identity.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://igrejadefatima.com.br/contato/",
+      "evidence_scope": "FORTALEZA_PARISH_AND_SANCTUARY_ONE_SITE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:BR:fortaleza-fatima-sanctuary",
@@ -13822,13 +13880,16 @@
       "claim_flags": [
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Catholic Bishops' Conference of the Philippines Association of Catholic Shrines and Pilgrimages lists National Shrine and Parish of Our Lady of Guadalupe, Makati with exact declaration date 31 May 2010, distinguished from Guadalupe Viejo.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+      "evidence_scope": "CBCP_SHRINE_ASSOCIATION_MAKATI_NATIONAL_STATUS",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
@@ -14651,13 +14712,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Italian Episcopal Conference BeWeB heritage record identifies San Francesco church at Lanciano as international Catholic pilgrimage destination, with Franciscan custody and the cult's venerated objects; 1962 Mass and present visiting times not inferred.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+      "evidence_scope": "ITALIAN_BISHOPS_CONFERENCE_LANCIANO_PILGRIMAGE",
+      "research_checked_on": "2026-11-12"
     },
     {
       "place_id": "place:PT:santarem-santissimo-milagre",
