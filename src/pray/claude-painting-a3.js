@@ -64,7 +64,7 @@ export function renderClaudePaintingA3({id,record,photo,language="en",uiLanguage
  return '<main class="aoP435930Body aoP435930LibraryReader aoClaudePaintingA3Host" data-ao-library-card="single" data-ao-claude-a3-view="'+esc(id)+'">'+
   '<section class="aoDevoCard aoClaudePaintingA3Card" data-ao-devo-card="'+esc(id)+'">'+
   '<div class="aoClaudePaintingA3 A3" data-ao-claude-painting-a3>'+
-  '<div class="bg" aria-hidden="true" style="background-image:url('+esc(url)+')"></div>'+
+  '<div class="ambient" aria-hidden="true" style="background-image:url('+esc(url)+')"></div><img class="bg" src="'+esc(url)+'" alt="'+esc(credit)+'" draggable="false" decoding="async">'+
   '<div class="sh" aria-hidden="true"></div>'+
   '<button type="button" class="aoA3ViewToggle" data-ao-a3-view aria-pressed="false" aria-label="See the painting alone" title="See the painting">◐</button>'+
   '<div class="ct"><span class="eyb">'+esc(String(latinTitle).toUpperCase())+'</span>'+
