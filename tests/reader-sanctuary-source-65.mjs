@@ -169,9 +169,22 @@ const lowReenter=send(off,{...incense,form:"LOW",
 assert.equal(lowReenter.visualCard,"C23");
 assert.deepEqual(presented.at(-1),["C23",false],
  "Re-entry restores no-incense altar stage without any smoke");
-assert.equal(send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
- sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+const noIncenseSung=send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
+ sourceCueId:"AO.SM.C0121"});
+assert.equal(noIncenseSung.choreography,"STATIC_STAGE",
  "Simple sung Mass without incense may never trigger incensation");
+assert.equal(noIncenseSung.visualCard,"C23");
+assert.equal(noIncenseSung.noIncenseOmitted,true);
+assert.equal(noIncenseSung.lowIncenseOmitted,false,
+ "Low-only status must not be asserted for simple Sung Mass");
+const omittedStateOnly=send("Incensation omitted for this Mass",{
+ form:"MISSA_CANTATA_SIMPLE",sourceSectionId:"AO.CARD.010",
+ sourceCueId:null,certifiedSourceFocus:false,noIncenseOmission:true});
+assert.equal(omittedStateOnly.card,"C24",
+ "State-only source placeholder must keep canonical 65-card identity");
+assert.equal(omittedStateOnly.visualCard,"C23",
+ "The explicit Sung omission is a still altar scene, never C24 smoke");
+assert.equal(omittedStateOnly.choreography,"STATIC_STAGE");
 assert.equal(send(off,{...incense,form:"SOLEMN",
  sourceCueId:"AO.SM.C0121"}).choreography,"SOURCE_TRIGGERED");
 assert.equal(send(off,{...incense,form:"SOLEMN",requiem:true,
