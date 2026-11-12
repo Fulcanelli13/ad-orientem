@@ -468,18 +468,19 @@
     // 16-second animation as soon as C0122 is focused. Elevations remain
     // single-cue actions: C0174/C0181 exit resets their glow immediately.
     const exiting=Boolean(last?.key===nextKey&&last?.playedCue&&!continuing);
-    const lowIncenseOmitted=id==="C24"&&form.form==="low"&&
+    const noIncenseOmitted=id==="C24"&&!form.inc&&!form.solemn&&
       sourceSectionId==="AO.CARD.010";
-    const visualCard=lowIncenseOmitted?byId.get("C23"):card;
+    const lowIncenseOmitted=noIncenseOmitted&&form.form==="low";
+    const visualCard=noIncenseOmitted?byId.get("C23"):card;
     if(last?.key!==nextKey||last?.visualCardId!==visualCard.id||
        exiting||missalFocusExit||epistleFocusExit||returnRewind){
       clearElevationMinisterIncense();
       clearCommunionPaten();
       clearSediliaPlacement();
-      // Low Mass has NO C24 incensation. Its canonical reader card stays
-      // C24, but the owner renderer holds the immediately preceding
-      // C23 offering-at-altar stage instead of the original C24 "foot"
-      // position, which would be false for Low Mass.
+      // Low and simple Sung Mass have NO C24 incensation.
+      // Their certified native state-only omission card stays C24,
+      // but the owner renderer holds the immediately preceding C23
+      // offering-at-altar stage. Never animate the sung-only C24 route.
       M3.show(visualCard,false); // Original engine cancels action keyframes.
       quietInactiveElevation(card);
     }
@@ -511,7 +512,8 @@
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
-      sediliaStage,lowIncenseOmitted,visualCardId:visualCard.id,
+      sediliaStage,lowIncenseOmitted,noIncenseOmitted,
+      visualCardId:visualCard.id,
       communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
@@ -521,7 +523,7 @@
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
       communionStation,sediliaStage,
       visualCard:visualCard.id,
-      lowIncenseOmitted,
+      lowIncenseOmitted,noIncenseOmitted,
       communionReturnTriggered:beginReturn,
       canonicalCommunionEventId:validCommunionEvent,
       elevationIncenseActor:elevationActor});
