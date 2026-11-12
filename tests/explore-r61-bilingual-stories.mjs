@@ -10,7 +10,8 @@ const shrines=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const source=read("data/shrines/source-registry.v1.json");
 const sourceDrifts=[
  read("data/shrines/research/holywell-source-url-drift-20261016.v1.json"),
- read("data/shrines/research/svata-hora-source-url-drift-20261112.v1.json")
+ read("data/shrines/research/svata-hora-source-url-drift-20261112.v1.json"),
+ read("data/shrines/research/frielingsdorf-2026-source-url-drift-20261112.v1.json")
 ];
 const approvedDrift=new Map(sourceDrifts.flatMap(d=>d.records.map(x=>[x.source_id,{...x,current_official_domain:d.current_official_domain,affected_place_id:d.affected_place_id}])));
 const geography=read("data/geography/seed-registry.v1.json");
