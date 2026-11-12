@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_TLM_VENUE_MEDIA_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "items": [
     {
       "venue_id": "SSPXMAP:OPE-002280",
@@ -530,6 +530,52 @@
       "reviewed_at": "2026-11-12",
       "review_method": "Original Commons SHA-1 and current rights/author checked; exact first-party/source-matched CL2 church; full-frame composition crosschecked against owner's archive using 64-bit perceptual fingerprint (max distance 2/64). No individual owner hand-selection claimed.",
       "status": "APPROVED"
+    },
+    {
+      "venue_id": "AO-B34-L-GB-52D1803A1F95",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-0B11C840F55E-alternate.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Whitecliff_Mill_Street,_Blandford_Forum_(September_2025)_(4).jpg",
+      "source_sha1": "d7c7524559edea69e0f3b0b54f2d83e5fde87f3a",
+      "derivative_sha256": "d3b5d01120dcf464bab21c52f591de948de742ee6f2eeef92aa152e44b922693",
+      "credit": "Hassocks5489",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1600,
+      "height": 1224,
+      "orientation": "landscape",
+      "alt_en": "Red-brick Catholic church of Our Lady of Lourdes and St Cecilia in Blandford Forum, showing its steep gables, pointed windows and arched entrance from the street.",
+      "alt_fr": "Église catholique Notre-Dame-de-Lourdes-et-Sainte-Cécile à Blandford Forum, en brique rouge, avec pignons, fenêtres en arc brisé et entrée cintrée, vue depuis la rue.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching or composite.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche des couleurs ni photomontage.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "Original Wikimedia Commons bytes and metadata were fetched in GitHub Actions P110 and the SHA-1, creator and licence checked; full-frame WebP SHA-256 pinned; exact diocesan CL2 source venue checked; 320/390px simulated photo composition personally inspected, clear church identity. Browser release acceptance remains a CI gate; no owner-handpicked claim."
+    },
+    {
+      "venue_id": "V19:DIO-GB-BIRM-OXFORD-SGA",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/directory-media/GB-RG-18825D70FD67-alternate.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saints_Gregory_and_Augustine_-_geograph.org.uk_-_3011889.jpg",
+      "source_sha1": "f50081ff6b84435da91be8b7cd8c1d90f1e1e5dd",
+      "derivative_sha256": "3c92b5c0e1024f059353a7e0c42c340d995deb1b13316e6f37072f944eeef140",
+      "credit": "Des Blenkinsopp",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1600,
+      "height": 1136,
+      "orientation": "landscape",
+      "alt_en": "White-gabled Catholic church of Saints Gregory and Augustine in Oxford, seen frontally beyond the road, with its entrance and church name visible among greenery.",
+      "alt_fr": "Façade blanche à pignon de l’église catholique Saints-Grégoire-et-Augustin à Oxford, vue de face au-delà de la route, avec entrée et nom de l’église visibles parmi la verdure.",
+      "changes_en": "Wikimedia Commons original, EXIF orientation normalised, resized without cropping to a maximum of 1600 pixels and encoded as WebP; no colour retouching or composite.",
+      "changes_fr": "Original Wikimedia Commons, orientation EXIF normalisée, redimensionnement sans recadrage à 1 600 pixels au maximum et conversion en WebP ; aucune retouche des couleurs ni photomontage.",
+      "reviewed_at": "2026-11-12",
+      "review_method": "Original Wikimedia Commons bytes and metadata were fetched in GitHub Actions P110 and the SHA-1, creator and licence checked; full-frame WebP SHA-256 pinned; exact diocesan CL2 source venue checked; 320/390px simulated photo composition personally inspected, clear church identity. Browser release acceptance remains a CI gate; no owner-handpicked claim."
     }
   ],
   "editorial_policy": {
@@ -538,7 +584,7 @@
     "publication": "Only APPROVED media with existing local asset hash may be shown; do not infer from similar church name, city, institution or provisional pin",
     "priority": "Existing canonical Place cover first; approved exact venue cover only when Place photo unavailable",
     "new_mappings": "A media image is attached to an existing 2,582-directory venue source ID; no new Place or geocoding is implied",
-    "status": "WAVE_A_PLUS_21_EXACT_DIOCESAN_EXTERIORS_20261112",
-    "safety": "No institution-owned/emblem venue receives generic diocesan photos; seven weak/identity candidates held, Lewiston address conflict excluded."
+    "status": "WAVE_A_PLUS_23_EXACT_DIOCESAN_EXTERIORS_20261112",
+    "safety": "P110 adds two source-verified, visually inspected alternate church exteriors, 25 direct-venue approved photos total, five historic weak/identity holds. No pins or existing Place covers changed. Lewiston excluded."
   }
 }
