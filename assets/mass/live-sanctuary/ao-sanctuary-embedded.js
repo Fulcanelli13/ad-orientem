@@ -67,7 +67,82 @@
     MISSA_CANTATA_INCENSE:{form:"sung",solemn:false,inc:true},
     SOLEMN:{form:"sung",solemn:true,inc:true}
   });
-  let last=null;
+  let last=null,aspergesSprinklingSeen=false;
+  // Exact stage identity from the existing R20 five-card Asperges reader.
+  // P1 lies OUTSIDE the Mass's 65 cards; never insert it in the Mass sequence.
+  const aspergesRecords=Object.freeze({
+    "ASP-R01":["ASP-010"],"ASP-R02":["ASP-020","ASP-030"],
+    "ASP-R03":["ASP-040"],"ASP-R04":["ASP-050"],"ASP-R05":["ASP-060"]
+  });
+  const recordsEqual=(a,b)=>Array.isArray(a)&&a.length===b.length&&
+    a.every((x,i)=>x===b[i]);
+  // Source-owned decoration of the unmodified original priest figure.
+  // A brief water gesture is shown only if the faithful explicitly reports
+  // actual sprinkling. It is not inferred from Asperges/Vidi aquam music.
+  css.textContent += [
+    ".ao-sanctuary-asp-water{position:absolute;left:53%;top:25%;",
+    "width:50px;height:48px;pointer-events:none;z-index:6}",
+    ".ao-sanctuary-asp-water i{position:absolute;left:2px;top:20px;",
+    "width:4px;height:7px;border-radius:60% 60% 65% 65%;",
+    "background:rgba(164,220,245,.92);transform:rotate(38deg);",
+    "animation:ao-asp-water 1.45s ease-out both}",
+    ".ao-sanctuary-asp-water i:nth-child(2){animation-delay:.11s;top:15px}",
+    ".ao-sanctuary-asp-water i:nth-child(3){animation-delay:.22s;top:24px}",
+    "@keyframes ao-asp-water{0%{opacity:0;transform:translate(0,0) scale(.5)}",
+    "18%{opacity:1}100%{opacity:0;transform:translate(43px,24px) scale(.8)}}"
+  ].join("");
+  function showObservedSprinkle(activate){
+    const priest=M3.actors?.()?.P;
+    const el=priest?.b?.el;
+    const existing=el?.querySelector?.(".ao-sanctuary-asp-water");
+    if(!activate){existing?.remove?.();return Boolean(existing)}
+    if(!el||existing||!document?.createElement)return false;
+    const spray=document.createElement("span");
+    spray.className="ao-sanctuary-asp-water";
+    spray.setAttribute("aria-hidden","true");
+    for(let i=0;i<3;i++)spray.appendChild(document.createElement("i"));
+    el.appendChild(spray);
+    return true;
+  }
+  function presentAsperges(message){
+    if(message.scholaOnly===true)return ack(false,"CHOIR_EVENT_NOT_MASS_CUE");
+    const form=forms[String(message.form??"").toUpperCase()];
+    if(!form||form.form!=="sung")return ack(false,"ASPERGES_SUNG_FORM_REQUIRED");
+    const stage=String(message.riteStageId??"");
+    const required=aspergesRecords[stage];
+    if(!required||!recordsEqual(message.sourceRecordIds,required))
+      return ack(false,"ASPERGES_NATIVE_STAGE_SOURCE_REQUIRED");
+    const observed=message.observedSprinkled===true;
+    if(observed&&stage!=="ASP-R03")
+      return ack(false,"PERSONAL_SPRINKLING_STAGE_REQUIRED");
+    const card=byId.get("P1");
+    if(!card)return ack(false,"ORIGINAL_ASPERGES_MISSING");
+    const key="P1|"+stage+"|"+form.form+"|"+form.solemn+"|"+form.inc;
+    if(st.form!==form.form||Boolean(st.solemn)!==form.solemn||
+       Boolean(st.inc)!==form.inc){
+      st.form=form.form;st.solemn=form.solemn;st.inc=form.inc;
+      rebuild();
+    }
+    if(last?.key!==key){
+      M3.show(card,false); // no timed, unsourced original aisle walk
+      showObservedSprinkle(false);
+      if(stage==="ASP-R03"||stage==="ASP-R04"){
+        const priest=M3.actors?.()?.P;
+        if(priest)priest.pose="stand";
+      }
+    }
+    const newObservation=observed&&!aspergesSprinklingSeen;
+    if(newObservation){
+      aspergesSprinklingSeen=true;
+      showObservedSprinkle(true);
+    }
+    last={key,card:"P1",riteStageId:stage,aspergesObserved:observed,
+      cue:null,sourceSectionId:null,playedCue:null};
+    return ack(true,"PRESENTED",{card:"P1",riteStageId:stage,
+      choreography:"STATIC_STAGE",sprinkling:newObservation?
+        "EXPLICIT_PERSONAL_OBSERVATION":"NONE"});
+  }
+
   // Fortescue, Ceremonies of the Roman Rite Described, ch. XIII §1:
   // at a sung Mass while the celebrant sits, his acolytes STAND at
   // either side of the sedilia. Claude's one-server visual left the
@@ -109,6 +184,8 @@
       const current=byId.get(last.card);
       if(current){M3.show(current,false);quietInactiveElevation(current)}
     }
+    showObservedSprinkle(false);
+    aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
   }
@@ -117,6 +194,7 @@
       return ack(false,"INVALID_PROTOCOL");
     if(message.scholaOnly===true)
       return ack(false,"CHOIR_EVENT_NOT_MASS_CUE");
+    if(message.sourceRiteId==="ASPERGES")return presentAsperges(message);
     const form=forms[String(message.form??"").toUpperCase()];
     if(!form)return ack(false,"INVALID_MASS_FORM");
     const title=clean(message.cardTitle);
@@ -132,6 +210,10 @@
     const cue=String(message.sourceCueId??"");
     const validCue=/^AO\.SM\.C\d{4}$/.test(cue)&&message.certifiedSourceFocus===true;
     const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc;
+    if(last?.card==="P1"){
+      showObservedSprinkle(false);
+      aspergesSprinklingSeen=false;
+    }
     if(st.form!==form.form||Boolean(st.solemn)!==form.solemn||
        Boolean(st.inc)!==form.inc){
       st.form=form.form;st.solemn=form.solemn;st.inc=form.inc;
@@ -173,7 +255,7 @@
     event.source.postMessage(result,event.origin);
   });
   window.AO_SANCTUARY_EMBED_TEST=Object.freeze({
-    present,clear,originalCardCount:originals.length,
+    present,presentAsperges,clear,originalCardCount:originals.length,
     getState:()=>Object.freeze({...last,form:st.form,solemn:st.solemn,inc:st.inc}),
     getVisualFx:()=>Object.freeze({
       elevationStage:Boolean(M3.eng?.vp?.classList?.contains?.("elev")),
