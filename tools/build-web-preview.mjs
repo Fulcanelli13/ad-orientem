@@ -22,6 +22,9 @@ const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.
 // A future approval needs a separate PR that explicitly changes these holds.
 const excludedResearchPaths=[
  "assets/staged",
+ // Claude's Prayer Church is a review-only staged original until 3D/reader
+ // end-to-end acceptance and art rights checks explicitly clear publication.
+ "assets/pray-church",
  "data/artwork/sacred-art-category-match-989-267.v1.json",
  "data/artwork/research-priority-16-source-audit-20261109.v1.json",
  // Keep the 26 MB exact museum-source photograph in Git research only.
