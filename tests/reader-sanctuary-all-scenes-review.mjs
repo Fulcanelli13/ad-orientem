@@ -102,9 +102,9 @@ try{
    const omitted=form.requiem&&requiemOmissions.has(c.id);
    const excluded=c.id==="C24"&&form.protocol==="LOW";
    const section="AO.CARD."+String(Number(c.macro.slice(-2))).padStart(3,"0");
-   let result=null,actors=null,imageName=null;
+   let result=null,actors=null,cameraShot=null,imageName=null;
    if(!omitted){
-    ({result,actors}=await page.evaluate(payload=>{
+    ({result,actors,cameraShot}=await page.evaluate(payload=>{
       const r=window.AO_SANCTUARY_EMBED_TEST.present({
         type:"AO_SANCTUARY_CUE_V1",version:1,
         form:payload.protocol,requiem:payload.requiem,
@@ -112,6 +112,13 @@ try{
         sourceSectionId:payload.section,
         sourceCueId:null,certifiedSourceFocus:false,scholaOnly:false
       });
+      // This is a STATIC comparison atlas, not a film of transitions.
+      // The original M3 camera interpolates from the previous card; an
+      // immediate screenshot otherwise shows the previous camera (notably
+      // C57 Communion rail appears cropped behind the C56 altar view).
+      // Use M3's EXISTING snap to the owner-chosen shot; never modify
+      // owner camera logic, keyframes or source cue timings.
+      M3.snap();
       const A=M3.actors();
       const state=id=>{
         const a=A?.[id];
@@ -121,7 +128,7 @@ try{
           face:Number(a.face.toFixed(1)),
           pose:a.pose??null,prop:a.prop??null,moving:Boolean(a.path)};
       };
-      return {result:r,actors:{priest:state("P"),server:state("M"),
+      return {result:r,cameraShot:M3.shot(),actors:{priest:state("P"),server:state("M"),
         deacon:state("D"),subdeacon:state("S"),
         thurifer:state("T"),acolyte1:state("A1"),
         acolyte2:state("A2")}};
@@ -133,6 +140,11 @@ try{
       "Static visual audit must not start a synthetic priest motion");
     assert.equal(actors.priest?.moving,false,
       "Static scene retains a moving priest: "+c.id+" "+form.id);
+    if(c.id==="C57")assert.equal(cameraShot,"rail",
+      "Static C57 screenshots must use the owner's rail camera");
+    if(c.id==="C08"&&form.protocol!=="LOW")
+      assert.equal(cameraShot,"sedilia",
+        "Gloria seated stages must be photographed with owner's sedilia camera");
     const need=holds[c.id]??[];
     imageName="images/"+form.id+"/"+c.id+".png";
     // A pair of paint frames lets the original M3 actor keyframe settle,
@@ -147,6 +159,7 @@ try{
    rows.push({form:form.id,formName:form.name,id:c.id,title:c.title,
     section:c.section,sourceSectionId:section,sourceMacro:c.macro,
     originalStation:form.protocol==="LOW"?c.station?.low:c.station?.sung,
+    originalCameraShot:cameraShot,
     capture:omitted?"OMITTED":excluded?"INACTIVE_INCENSE":"STILL",
     evidence:"PROTOTYPE_STATIC_NOT_CEREMONIAL_CERTIFICATION",
     visualReview:issues.length?"REVIEW_REQUIRED":"AWAITING_OWNER_VISUAL_REVIEW",
