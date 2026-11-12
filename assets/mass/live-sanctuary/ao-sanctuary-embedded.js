@@ -105,6 +105,7 @@
     return true;
   }
   function presentAsperges(message){
+    clearSediliaGesture();
     if(message.scholaOnly===true)return ack(false,"CHOIR_EVENT_NOT_MASS_CUE");
     const form=forms[String(message.form??"").toUpperCase()];
     if(!form||form.form!=="sung")return ack(false,"ASPERGES_SUNG_FORM_REQUIRED");
@@ -187,6 +188,81 @@
     }
     return "ORIGINAL_SEDILIA_SEATED";
   }
+
+  // 1960 Rubrics 518(b)/523; O'Connell (1962) sung Gloria and Solemn Credo.
+  // Two observed edges per phrase: uncover/bow, then straighten/replace.
+  // Never derive the sung word from the priest's recitation or Schola clock.
+  const sediliaEvents=Object.freeze({
+    "SED-GLORIA-ADORAMUS":["C08","AO.CARD.003"],
+    "SED-GLORIA-GRATIAS":["C08","AO.CARD.003"],
+    "SED-GLORIA-IESU-FIRST":["C08","AO.CARD.003"],
+    "SED-GLORIA-SUSCIPE":["C08","AO.CARD.003"],
+    "SED-GLORIA-IESU-SECOND":["C09","AO.CARD.003"],
+    "SED-CREDO-IESUM":["C17","AO.CARD.009"],
+    "SED-CREDO-INCARNATUS":["C18","AO.CARD.009"],
+    "SED-CREDO-SIMUL":["C19","AO.CARD.009"]
+  });
+  let sediliaObserved=null,sediliaObservers=[];
+  css.textContent += [
+    ".ao-sedilia-head{transform-box:fill-box;transform-origin:50% 80%;transition:transform .28s ease}",
+    ".ao-sedilia-cap{transition:transform .34s ease}",
+    ".ao-sedilia-uncovered .ao-sedilia-head{transform:rotate(14deg);transition-delay:.16s}",
+    ".ao-sedilia-uncovered .ao-sedilia-cap{transform:translate(15px,38px) rotate(12deg)}",
+    "@media(prefers-reduced-motion:reduce){.ao-sedilia-head,.ao-sedilia-cap{transition:none!important}}"
+  ].join("");
+  function wrapSediliaCap(a){
+    if(a?.pose!=="sit")return;
+    for(const layer of a.b?.el?.querySelectorAll?.(".ly")??[]){
+      const svg=layer.querySelector("svg");
+      if(!svg||svg.querySelector(".ao-sedilia-cap"))continue;
+      const cap=[...svg.querySelectorAll('path[fill="#141418"]')].slice(-2);
+      if(cap.length!==2||cap[0].parentNode!==cap[1].parentNode)continue;
+      const p=cap[0].parentNode, seam=[...p.children].find(el=>
+        el.tagName.toLowerCase()==="path"&&el.getAttribute("stroke")==="#2c2c33");
+      if(!seam)continue;
+      let node=cap[0].previousElementSibling;const head=[];
+      for(let i=0,n=p===svg?3:2;i<n&&node;i++){head.unshift(node);node=node.previousElementSibling}
+      if(head.length!==(p===svg?3:2))continue;
+      const ns="http://www.w3.org/2000/svg",h=document.createElementNS(ns,"g"),
+        b=document.createElementNS(ns,"g");
+      h.classList.add("ao-sedilia-head");b.classList.add("ao-sedilia-cap");
+      p.insertBefore(h,head[0]);head.forEach(x=>h.appendChild(x));
+      p.insertBefore(b,cap[0]);cap.forEach(x=>b.appendChild(x));b.appendChild(seam);
+    }
+  }
+  function clearSediliaGesture(){
+    sediliaObservers.forEach(x=>x.disconnect());sediliaObservers=[];
+    for(const id of ["P","D","S"])
+      M3.actors?.()?.[id]?.b?.el?.classList?.remove("ao-sedilia-uncovered");
+    sediliaObserved=null;
+  }
+  function stageSediliaGesture(o,form){
+    if(o){
+      if(o.phase==="BEGIN"&&sediliaObserved?.eventId!==o.eventId)clearSediliaGesture();
+      sediliaObserved={eventId:o.eventId,phase:o.phase};
+    }
+    const active=sediliaObserved?.phase==="BEGIN",ids=form.solemn?["P","D","S"]:["P"];
+    if(active&&!sediliaObservers.length){
+      for(const id of ids){
+        const a=M3.actors?.()?.[id];if(!a)continue;
+        const watcher=new MutationObserver(()=>{
+          if(sediliaObserved?.phase==="BEGIN")wrapSediliaCap(a)
+        });
+        watcher.observe(a.b.el,{childList:true,subtree:true});
+        sediliaObservers.push(watcher);
+      }
+    }
+    for(const id of ["P","D","S"]){
+      const a=M3.actors?.()?.[id];if(!a)continue;
+      if(active&&ids.includes(id))wrapSediliaCap(a);
+      a.b.el.classList.toggle("ao-sedilia-uncovered",
+        Boolean(active&&ids.includes(id)&&a.pose==="sit"));
+    }
+    if(!active){sediliaObservers.forEach(x=>x.disconnect());sediliaObservers=[]}
+    return sediliaObserved?{...sediliaObserved,actors:active?ids:[],
+      movement:active?"BIRETTA_TO_KNEE_AND_HEAD_BOW":"HEAD_RISE_AND_BIRETTA_REPLACE"}:null;
+  }
+
   function stageSolemnGospel(card,requiem,form,sectionId){
     if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return;
     const actors=M3.actors?.();
@@ -393,6 +469,7 @@
     clearElevationMinisterIncense();
     clearCommunionPaten();
     clearSediliaPlacement();
+    clearSediliaGesture();
     aspergesSprinklingSeen=false;
     last=null;
     return ack(true,"SOURCE_VISUAL_CLEARED");
@@ -420,6 +497,20 @@
     const requiem=message.requiem===true;
     const nextKey=id+"|"+form.form+"|"+form.solemn+"|"+form.inc+
       "|"+(requiem?"REQUIEM":"ORDINARY");
+    const obs=message.seatedReverenceObservation;
+    if(obs!=null){
+      const spec=sediliaEvents[obs.eventId];
+      if(!spec||obs.observed!==true||
+         obs.owner!=="EXPLICIT_SEDILIA_GESTURE_OBSERVATION"||
+         !["BEGIN","END"].includes(obs.phase)||form.form!=="sung"||
+         requiem||spec[0]!==id||spec[1]!==sourceSectionId)
+        return ack(false,"UNVERIFIED_SEDILIA_REVERENCE");
+      if(obs.phase==="END"&&sediliaObserved?.eventId!==obs.eventId)
+        return ack(false,"SEDILIA_END_WITHOUT_BEGIN");
+      if(obs.eventId==="SED-CREDO-INCARNATUS"&&
+         message.incarnatusKneelException===true)
+        return ack(false,"EXCEPTIONAL_INCARNATUS_KNEEL_HELD");
+    }
     const nativeCommunionEvent=String(message.canonicalCommunionEventId??"");
     const validCommunionEvent=id==="C57"&&
       sourceSectionId==="AO.CARD.025"&&
@@ -471,6 +562,7 @@
     // The native reader itself suppresses state-only omitted rite
     // screens in its visible sequence (C23 -> C25). Do not manufacture
     // a C24 display, a false offering or an extra card in the iframe.
+    if(last?.key!==nextKey)clearSediliaGesture();
     if(last?.key!==nextKey||exiting||missalFocusExit||
        epistleFocusExit||returnRewind){
       clearElevationMinisterIncense();
@@ -491,6 +583,7 @@
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     const sediliaStage=stageSedilia(card,form);
+    const seatedGesture=stageSediliaGesture(obs,form);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
       card,form,sourceSectionId
@@ -507,7 +600,7 @@
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
-      sediliaStage,
+      sediliaStage,seatedGesture,
       communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
@@ -515,7 +608,7 @@
       choreography:play?"SOURCE_TRIGGERED":"STATIC_STAGE",
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
-      communionStation,sediliaStage,
+      communionStation,sediliaStage,seatedGesture,
       communionReturnTriggered:beginReturn,
       canonicalCommunionEventId:validCommunionEvent,
       elevationIncenseActor:elevationActor});
