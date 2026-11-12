@@ -2985,7 +2985,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
-    sanctuaryVisual?.project({card:visibleCard,state,
+    sanctuaryVisual?.project({card:visibleCard,state,prepared,
       form:prepared?.session?.resolvedMass?.form,mode:readerModel?.presentationMode});
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
