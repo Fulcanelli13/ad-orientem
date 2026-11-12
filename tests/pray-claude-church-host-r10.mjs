@@ -82,10 +82,13 @@ try{
  await writeFile(join(source,"assets/ao.css"),"@font-face{font-family:'R8';src:url(assets/fonts/private.woff2)} body{font-family:Georgia,serif}");
  await writeFile(join(source,"assets/ao-embed.js"),"window.AO={};");
  await writeFile(join(source,"assets/img/example.webp"),"FAKE_IMAGE_FOR_CONTRACT_ONLY");
+ await writeFile(join(source,"assets/img/unreferenced.webp"),"UNREVIEWED_ART_DO_NOT_STAGE");
  await writeFile(join(source,"assets/fonts/private.woff2"),"NOT_EXPORTABLE");
  await writeFile(join(source,"assets/icons/example.svg"),"<svg/>");
  const staged=await stageClaudeChurchR8(source,target);
  assert.equal(staged.manifest.sourceArtworkCount,1);
+ assert.deepEqual(await readdir(join(target,"assets/img")),["example.webp"],
+  "Do not stage unrelated art from the source archive");
  assert.equal(staged.manifest.fontsCopied,false);
  const newHtml=await readFile(join(target,"prayers.html"),"utf8");
  assert.ok(newHtml.includes("AO_CHURCH_HOST_R10_PAUSE_BRIDGE"));
