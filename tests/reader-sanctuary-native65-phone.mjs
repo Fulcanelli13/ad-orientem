@@ -110,6 +110,21 @@ try{
         sourceCueId:cue,certifiedSourceFocus:true,requiem,
         scholaOnly:false
       });
+      // Ritus VI.4: the subdeacon chants from the Epistolarium, not
+      // the deacon. The source C0075/C0076 gives him only the static
+      // existing book prop, never the procession or blessing timeline.
+      const epistle="Epistle / Lesson";
+      const epiBefore=send(epistle,"AO.CARD.005","AO.SM.C0074",false);
+      const epiStart=send(epistle,"AO.CARD.005","AO.SM.C0075",false);
+      const epiHolding=(()=>{
+        const a=M3.actors()?.S;
+        return {visible:a?.vis===true,prop:a?.prop??null,
+          x:a?.x,pose:a?.pose,path:a?.path??null,
+          played:window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue};
+      })();
+      const epiDuring=send(epistle,"AO.CARD.005","AO.SM.C0076",true);
+      const epiEnding=send(epistle,"AO.CARD.005","AO.SM.C0077",true);
+      const epiAfter=M3.actors()?.S?.prop??null;
       // Ritus VI.5: the SUBDEACON transfers the Missal, while the
       // deacon prepares the distinct Gospel book. C0081 shows only the
       // static completed-transfer stage, never an unsourced server walk.
@@ -174,6 +189,10 @@ try{
       const ordinaryChalice={thurifer:elevation("T"),subdeacon:elevation("S"),
         actor:cOrd.elevationIncenseActor};
       return {ordinary,requiem,restored,
+        epistleSource:{before:epiBefore.solemnEpistle,
+          start:epiStart.solemnEpistle,holding:epiHolding,
+          during:epiDuring.solemnEpistle,end:epiEnding.solemnEpistle,
+          after:epiAfter},
         missalTransfer:{prepareBefore:prepareBefore.solemnMissalTransfer,
           transfer:transfer.solemnMissalTransfer,nearMissal,
           leaveTransfer:leaveTransfer.solemnMissalTransfer,
@@ -189,7 +208,24 @@ try{
       A1:{visible:true,prop:"torch"},A2:{visible:true,prop:"torch"}
     };
     const {ordinaryElevation,ordinaryExit,requiemHost,requiemChalice,
-      requiemExit,ordinaryChalice,missalTransfer,...gospelAndOffertory}=conditional;
+      requiemExit,ordinaryChalice,epistleSource,missalTransfer,
+      ...gospelAndOffertory}=conditional;
+    assert.equal(epistleSource.before,null,
+      "Epistle prelude is not the source-backed book-bearing stage");
+    assert.equal(epistleSource.start,"SUBDEACON_EPISTOLARIUM_STATIC");
+    assert.equal(epistleSource.holding.visible,true);
+    assert.equal(epistleSource.holding.prop,"book");
+    assert.ok(epistleSource.holding.x>0,
+      "Source-owned subdeacon Epistle must stay at the Epistle side");
+    assert.equal(epistleSource.holding.pose,"stand");
+    assert.equal(epistleSource.holding.path,null);
+    assert.equal(epistleSource.holding.played,null,
+      "The source cue must not trigger a timed Epistle procession");
+    assert.equal(epistleSource.during,"SUBDEACON_EPISTOLARIUM_STATIC",
+      "Book remains with the subdeacon for the Requiem Epistle");
+    assert.equal(epistleSource.end,null,
+      "Leaving the Epistle source must release the original prop");
+    assert.equal(epistleSource.after,null);
     assert.equal(missalTransfer.prepareBefore,null,
       "A preparatory text before C0081 must not simulate the transfer");
     assert.equal(missalTransfer.transfer,"COMPLETED_TRANSFER_STATIC",
