@@ -284,7 +284,12 @@ assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.ok(bridge.includes("stageSedilia(card,form)"));
 assert.ok(bridge.includes("sungSedilia=new Set("));
 assert.ok(bridge.includes("clearSediliaPlacement()"));
-assert.ok(bridge.includes("a.x=4.04;a.b.h=a._aoSeatBaseline+.52;"));
+assert.ok(bridge.includes("a.x=3.71;"));
+assert.ok(bridge.includes("DONOR_SEDILIA_REVIEW_HOLD"),
+ "Unapproved sedilia art may not be characterized as complete");
+assert.ok(!bridge.includes("SEDILIA_VISIBLE_BENT_LEGS") &&
+  !bridge.includes('shoe.setAttribute("cx","34.4")'),
+ "Owner-rejected white trousers, floating legs and moved shoe must not return");
 assert.ok(bridge.includes("acolyte.x=2.36;acolyte.z=1.8;"));
 assert.equal(html.includes("stageSedilia(card,form)"),false,
  "Original 3D church and camera may not be modified to fix seated sprites");
