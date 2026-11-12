@@ -67,11 +67,19 @@ export async function stageClaudeChurchR8(source,dest,{overwrite=false}={}){
  // typography and system serif faces are acceptable for this review pilot.
  css=css.replace(/@font-face\s*\{[^}]*\}/g,"");
  await writeFile(join(target,"assets/ao.css"),css,"utf8");
- for(const dir of ["img","icons"]){
-  const sourceDir=join(src,"assets",dir);
-  try{await stat(sourceDir)}catch{if(dir==="icons")continue;throw Error("Missing required "+dir)}
-  await cp(sourceDir,join(target,"assets",dir),{recursive:true});
+ // Copy ONLY the artworks actually referenced by this exact original R8
+ // Prayer Church, not all research/archive paintings found beside it.
+ await mkdir(join(target,"assets/img"),{recursive:true});
+ for(const path of images){
+  const destination=join(target,path);
+  await mkdir(dirname(destination),{recursive:true});
+  await cp(join(src,path),destination);
  }
+ // The R8 icon helper selects icons dynamically; retain the source icon bank,
+ // but never copy its optional font directory.
+ const sourceIcons=join(src,"assets/icons");
+ try{await stat(sourceIcons);await cp(sourceIcons,join(target,"assets/icons"),{recursive:true})}
+ catch(error){if(error?.code!=="ENOENT")throw error}
  try{await cp(join(src,"assets/ao-brand-emblem.png"),join(target,"assets/ao-brand-emblem.png"))}
  catch{} // optional identity asset; the Church may use the app shell's emblem.
  const manifest={
