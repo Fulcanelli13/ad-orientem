@@ -29,6 +29,13 @@ export function prayerCeremonialSceneState({kind=null,stage=0,cardId=null,ceremo
       storesPrivateAnswers:false
     });
   }
+  if(kind==="tenebrae-office"){
+    // The canonical Office has no prescribed fifteen-candle choreography.
+    // Render only a stationary, non-ceremonial sanctuary without candle claims.
+    const hour=stage==="LAUDS"?"LAUDS":"MATINS";
+    return Object.freeze({kind,phase:hour.toLowerCase(),decorative:true,
+      observedNow:false,performedRite:false,candleCount:0,autoAdvancement:false});
+  }
   if(kind==="tenebrae"){
     if(ceremony?.enabled!==true)return null;
     const extinguished=finiteInt(ceremony.extinguished,0,14);
@@ -57,6 +64,15 @@ export function renderPrayerCeremonialScene(scene,{french=false}={}){
       '<span class="aoPrayerSceneGrille"></span><span class="aoPrayerSceneKneeler"></span>'+
       '<span class="aoPrayerSceneFloor"></span><span class="aoPrayerSceneLight"></span></div>'+
       '<figcaption>'+label+'</figcaption></figure>';
+  }
+  if(scene.kind==="tenebrae-office"){
+    const label=french?"Office des Ténèbres · illustration du sanctuaire":"Tenebrae Office · sanctuary illustration";
+    return '<figure class="aoPrayerCeremonialScene aoPrayerCeremonialScene--office" '+
+      'data-ao-scene-kind="tenebrae-office" data-ao-scene-phase="'+scene.phase+'" '+
+      'data-ao-scene-claim="visual-only" aria-label="'+label+'">'+
+      '<div class="aoPrayerSceneTenebraeVault" aria-hidden="true">'+
+      '<span class="aoPrayerSceneTenebraeArch"></span><span class="aoPrayerSceneOfficeCross"></span>'+
+      '<span class="aoPrayerSceneOfficeGlow"></span></div><figcaption>'+label+'</figcaption></figure>';
   }
   if(scene.kind==="tenebrae"){
     const phase=scene.phase;
