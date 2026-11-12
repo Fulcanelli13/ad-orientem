@@ -166,11 +166,9 @@
     for(const id of seated){
       const a=actors[id];
       if(!a)continue;
-      // The original Solemn sedilia state sometimes leaves D standing.
-      // These source-owned cards explicitly seat the celebrant and sacred
-      // ministers; normalize the actual live actor before drawing the cap.
-      // This is a static posture, never a newly inferred movement clock.
-      if(form.solemn){a.vis=true;a.pose="sit"}
+      // Do NOT force all sacred ministers to sit: in the Credo the
+      // deacon may be at the altar preparing the corporal (original C18).
+      // Only actors actually seated in the source scene receive headwear.
       if(a.vis!==true||a.pose!=="sit")continue;
       a.path=null;a.turn=null;
       // Existing M3 figure remains sitting, now actually over the
@@ -251,7 +249,16 @@
       if(o.phase==="BEGIN"&&sediliaObserved?.eventId!==o.eventId)clearSediliaGesture();
       sediliaObserved={eventId:o.eventId,phase:o.phase};
     }
-    const active=sediliaObserved?.phase==="BEGIN",ids=form.solemn?["P","D","S"]:["P"];
+    const spec=sediliaEvents[sediliaObserved?.eventId];
+    // The deacon serves at the altar during sung Incarnatus (C18);
+    // never dress a standing sacred minister in an imagined seated gesture.
+    const candidates=form.solemn?["P","D","S"]:["P"];
+    const ids=candidates.filter(id=>{
+      const actor=M3.actors?.()?.[id];
+      return actor?.vis===true&&actor.pose==="sit"&&
+        !(card.id==="C18"&&id==="D");
+    });
+    const active=sediliaObserved?.phase==="BEGIN";
     if(active&&!sediliaObservers.length){
       for(const id of ids){
         const a=M3.actors?.()?.[id];if(!a)continue;
@@ -273,6 +280,25 @@
       movement:active?"BIRETTA_TO_KNEE_AND_HEAD_BOW":"HEAD_RISE_AND_BIRETTA_REPLACE"}:null;
   }
 
+  function stageRequiemGospelPreparation(card,requiem,form,sectionId){
+    if(card?.id!=="C13"||!form.solemn||!requiem||
+       sectionId!=="AO.CARD.007")return false;
+    // Ritus servandus XIII.2: no incense or candles at the
+    // Solemn Requiem Gospel, including its preparation. The acolytes
+    // remain present but carry neither lit candles nor torches.
+    const actors=M3.actors?.();
+    if(!actors)return false;
+    if(actors.T){
+      actors.T.path=null;actors.T.turn=null;actors.T.prop=null;
+      actors.T.vis=false;
+    }
+    for(const id of ["A1","A2"]){
+      const a=actors[id];
+      if(!a)continue;
+      a.path=null;a.turn=null;a.vis=true;a.pose="stand";a.prop=null;
+    }
+    return true;
+  }
   function stageSolemnGospel(card,requiem,form,sectionId){
     if(card?.id!=="C14"||!form.solemn||sectionId!=="AO.CARD.007")return;
     const actors=M3.actors?.();
@@ -595,6 +621,8 @@
     if(message.sediliaReverenceCancelled===true)clearSediliaGesture();
     const sediliaStage=stageSedilia(card,form);
     const seatedGesture=stageSediliaGesture(obs,form,card,sourceSectionId,requiem);
+    const requiemGospelPreparation=stageRequiemGospelPreparation(
+      card,requiem,form,sourceSectionId);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
       card,form,sourceSectionId
@@ -611,7 +639,7 @@
     });
     last={key:nextKey,card:id,cue,sourceSectionId,requiem,
       solemnEpistle,solemnMissalTransfer,communionStation,
-      sediliaStage,seatedGesture,
+      sediliaStage,seatedGesture,requiemGospelPreparation,
       communionReturnActive,canonicalCommunionEventId:validCommunionEvent,
       elevationActor,elevationCue:elevationActor?cue:null,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
@@ -620,6 +648,7 @@
       solemnEpistle:solemnEpistle?"SUBDEACON_EPISTOLARIUM_STATIC":null,
       solemnMissalTransfer:solemnMissalTransfer?"COMPLETED_TRANSFER_STATIC":null,
       communionStation,sediliaStage,seatedGesture,
+      requiemGospelPreparation,
       communionReturnTriggered:beginReturn,
       canonicalCommunionEventId:validCommunionEvent,
       elevationIncenseActor:elevationActor});
