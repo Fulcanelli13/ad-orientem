@@ -292,10 +292,18 @@ export function finalCurated65IconKeys(state={}){
  const approvedRubricKey=rubricAction&&actionCue===currentCue&&sourceAction===rubricAction.action
    ?rubricAction.key:null;
  const posture=token(state.posture?.value??state.posture?.label);
+ // C0021 permits a profound bow OR continued kneeling by faithful profile.
+ // Newly provided art is displayed only for an explicit source-owned bow,
+ // never merely because the Confiteor card is visible or the choir sings.
+ const observedFaithfulProfoundBow=currentCue==="AO.SM.C0021"&&
+   gestureCue===currentCue&&
+   ["PROFOUND_BOW","BOW_PROFOUND"].includes(token(state.gesture?.type??state.gesture?.value))&&
+   posture!=="KNEEL"&&posture!=="GENUFLECT"
+     ?"profound_bow":null;
  const facesPeople=facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN";
  return Object.freeze({
   postureIconKey:POSTURES[posture]??null,
-  gestureIconKey:state.gesture?FINAL_65_CUE_ICON_KEYS.faithfulGesture[gestureCue]??null:null,
+  gestureIconKey:state.gesture?(observedFaithfulProfoundBow??FINAL_65_CUE_ICON_KEYS.faithfulGesture[gestureCue]??null):null,
   responseIconKey:state.response?"final_response":null,
   priestVoiceIconKey:priestVoiceKey,
   scholaIconKey:state.schola?"final_schola":null,
