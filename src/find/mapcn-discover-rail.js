@@ -105,7 +105,7 @@ export function renderMapcnDiscoverRail(vm){
    html+='<button type="button" class="aoMapcnEditorialCard" data-explore-open-place="'+esc(p.place_id)+'" aria-current="'+String(vm.selectedPlace?.place_id===p.place_id)+'">';
    // First two licensed cards are above the fold when the phone rail opens.
    // Leave the remainder lazy so this does not download the whole gallery.
-   html+='<img loading="'+(index<2?"eager":"lazy")+'" decoding="async" data-photo-orientation="'+esc(media.orientation||"landscape")+'" src="'+esc(media.asset_path)+'" alt="'+esc(alt||p.name)+'">';
+   html+='<img loading="'+(index<2?"eager":"lazy")+'" decoding="'+(index<2?"sync":"async")+'" data-photo-orientation="'+esc(media.orientation||"landscape")+'" src="'+esc(media.asset_path)+'" alt="'+esc(alt||p.name)+'">';
    html+='<span class="aoMapcnEditorialLabel"><strong>'+esc(p.name)+'</strong><small>'+esc(location)+'</small></span></button>';
   }
   html+='</div></section>';
