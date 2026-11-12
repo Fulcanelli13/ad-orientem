@@ -155,6 +155,16 @@ assert.equal(send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
  "Simple sung Mass without incense may never trigger incensation");
 assert.equal(send(off,{...incense,form:"SOLEMN",
  sourceCueId:"AO.SM.C0121"}).choreography,"SOURCE_TRIGGERED");
+assert.equal(send(off,{...incense,form:"SOLEMN",requiem:true,
+ sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+ "Ritus XIII.2 allows offerings/altar incense at Requiem, but the original"+
+ " routine mistakenly incenses ministers and people; do not play it");
+assert.equal(send("Proclamation of the Holy Gospel",{
+ form:"SOLEMN",sourceSectionId:"AO.CARD.007",
+ requiem:true,sourceCueId:"AO.SM.C0084",
+ certifiedSourceFocus:true}).card,"C14",
+ "The Solemn Requiem Gospel retains its source scene, without ordinary"+
+ " thurifer or acolyte-candle procession");
 assert.equal(send(off,{...incense,sourceSectionId:"AO.CARD.009",
  sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
  "Wrong source section may not animate incense");
