@@ -226,7 +226,15 @@ export function createKyrieXviResearchAudition({root,
     if(event.target.closest('[data-kyrie-research-audition-open]'))void open();
   };
   const rootChange=event=>{
-    if(event.target.matches('[data-schola-kyriale-choice="KYRIE"], [data-schola-ordinary-setting="KYRIE"]'))close();
+    if(event.target.matches(
+      '[data-schola-kyriale-choice="KYRIE"], [data-schola-ordinary-setting="KYRIE"], '+
+      '[data-ordinary-reference-chooser="KYRIE"] select'
+    )){
+      // Hide synchronously before a persisted personal programme re-renders;
+      // no provisional melody may remain selectable during that transition.
+      trigger.hidden=true;
+      close();
+    }
   };
   const settingsChanged=event=>{
     if(event.target===pitchNode){panel.querySelector('[data-kyrie-pitch-value]').textContent=String(pitchNode.value);}
