@@ -89,6 +89,42 @@ assert.equal(sanctuaryCueProjection({card,state,form:"SOLEMN",mode:"MISSAL"}),nu
 assert.equal(sanctuaryCueProjection({card,state,form:"UNVERIFIED",mode:"LIVE"}),null);
 assert.equal(sanctuaryCueProjection({card:{...card,stateOnly:true},state,
  form:"LOW",mode:"LIVE"}),null);
+const omittedIncense=Object.freeze({
+ sectionId:"AO.LIVECURATED.AO.CARD.010.5",
+ sourceSectionId:"AO.CARD.010",
+ title:"Incensation omitted for this Mass",
+ stateOnly:true,omittedByRite:"1962_FORM_NO_INCENSE",paragraphs:[],
+ blocks:[{blockId:"AO.SM.B036",omittedByRite:"1962_FORM_NO_INCENSE"}]
+});
+for(const allowed of ["LOW","MISSA_CANTATA_SIMPLE"]){
+ const still=sanctuaryCueProjection({card:omittedIncense,form:allowed,
+   mode:"LIVE",state:{nativeCueId:"AO.SM.C0121"}});
+ assert.equal(still?.noIncenseOmission,true);
+ assert.equal(still?.cardTitle,"Incensation omitted for this Mass");
+ assert.equal(still?.sourceSectionId,"AO.CARD.010");
+ assert.equal(still?.sourceCueId,null);
+ assert.equal(still?.certifiedSourceFocus,false,
+   "Omitted C24 may show only a still, never an incense action");
+ assert.equal(still?.canonicalCommunionEventId,null);
+}
+for(const altered of [
+ {...omittedIncense,title:"Requiem · No final blessing"},
+ {...omittedIncense,sectionId:"AO.LIVECURATED.AO.CARD.011.1"},
+ {...omittedIncense,sourceSectionId:"AO.CARD.009"},
+ {...omittedIncense,omittedByRite:"RITUS_XIII_1_REQUIEM"},
+ {...omittedIncense,paragraphs:[{text:"fabricated"}]},
+ {...omittedIncense,blocks:[{blockId:"AO.SM.B035"}]}
+]){
+ assert.equal(sanctuaryCueProjection({card:altered,form:"LOW",
+  mode:"LIVE"}),null,
+  "All unverified state-only cards must remain suppressed");
+}
+for(const forbidden of ["SOLEMN","MISSA_CANTATA_INCENSE"]){
+ assert.equal(sanctuaryCueProjection({card:omittedIncense,form:forbidden,
+   mode:"LIVE"}),null,"Active incense forms cannot use an omitted C24 placeholder");
+}
+assert.equal(sanctuaryCueProjection({card:omittedIncense,form:"LOW",
+ mode:"MISSAL"}),null,"Missal never projects state-only chapel movement");
 assert.equal(sanctuaryCueProjection({card,state:{nativeCueId:"SCHOLA:OFFERTORY"},
  form:"MISSA_CANTATA_SIMPLE",mode:"LIVE"}).sourceCueId,null);
 // Native R20, not a fabricated Cnn Mass card or a Schola text clock,
