@@ -129,8 +129,11 @@ try{
         const start=send(id,title,section,"BEGIN");
         const covered=["P","D","S"].map(x=>M3.actors()[x].b.el
           .classList.contains("ao-sedilia-uncovered"));
+        const poses=Object.fromEntries(["P","D","S"].map(x=>[x,{
+          pose:M3.actors()[x].pose,visible:M3.actors()[x].vis
+        }]));
         const end=send(id,title,section,"END");
-        passed.push({id,start:start.seatedGesture,
+        passed.push({id,start:start.seatedGesture,poses,
           covered,end:end.seatedGesture,
           reset:["P","D","S"].every(x=>!M3.actors()[x].b.el
             .classList.contains("ao-sedilia-uncovered"))});
@@ -145,7 +148,12 @@ try{
     assert.equal(audit.passed.length,8);
     for(const row of audit.passed){
       assert.equal(row.start?.eventId,row.id);
-      assert.deepEqual(row.covered,[true,true,true]);
+      assert.deepEqual(row.covered,
+        row.id==="SED-CREDO-INCARNATUS"?[true,false,true]:[true,true,true],
+        row.id+" source poses="+JSON.stringify(row.poses));
+      if(row.id==="SED-CREDO-INCARNATUS")
+        assert.notEqual(row.poses.D.pose,"sit",
+          "The C18 deacon goes to the altar for the burse and corporal");
       assert.equal(row.end?.phase,"END");
       assert.equal(row.reset,true);
     }
@@ -226,6 +234,15 @@ try{
         return {x:a?.x,z:a?.z,prop:a?.prop,path:a?.path??null};
       })();
       const requiemTransfer=send(prep,"AO.CARD.007","AO.SM.C0081",true);
+      const requiemPrep=Object.fromEntries(["T","A1","A2"].map(id=>{
+        const a=M3.actors()?.[id];
+        return [id,{visible:a?.vis===true,prop:a?.prop??null}];
+      }));
+      const ordinaryPrepReturn=send(prep,"AO.CARD.007","AO.SM.C0081",false);
+      const ordinaryPrep=Object.fromEntries(["T","A1","A2"].map(id=>{
+        const a=M3.actors()?.[id];
+        return [id,{visible:a?.vis===true,prop:a?.prop??null}];
+      }));
       const gospel="Proclamation of the Holy Gospel";
       send(gospel,"AO.CARD.007","AO.SM.C0084",false);
       const ministers=()=>Object.fromEntries(
@@ -279,7 +296,10 @@ try{
         missalTransfer:{prepareBefore:prepareBefore.solemnMissalTransfer,
           transfer:transfer.solemnMissalTransfer,nearMissal,
           leaveTransfer:leaveTransfer.solemnMissalTransfer,
-          returned,requiemTransfer:requiemTransfer.solemnMissalTransfer},
+          returned,requiemTransfer:requiemTransfer.solemnMissalTransfer,
+          requiemPrepFlag:requiemTransfer.requiemGospelPreparation,
+          requiemPrep,ordinaryPrep,
+          ordinaryPrepFlag:ordinaryPrepReturn.requiemGospelPreparation},
         requiemIncense:held.choreography,
         ordinaryIncense:normal.choreography,
         ordinaryElevation,ordinaryExit,requiemHost,
@@ -326,6 +346,18 @@ try{
     assert.ok(missalTransfer.returned.x>=-.1,
       "Leaving C0081 must reset the subdeacon's static position");
     assert.equal(missalTransfer.returned.path,null);
+    assert.equal(missalTransfer.requiemPrepFlag,true);
+    assert.deepEqual(missalTransfer.requiemPrep,{
+      T:{visible:false,prop:null},
+      A1:{visible:true,prop:null},
+      A2:{visible:true,prop:null}
+    },"Requiem C13 must omit incense/candles but keep acolytes");
+    assert.equal(missalTransfer.ordinaryPrepFlag,false);
+    assert.deepEqual(missalTransfer.ordinaryPrep,{
+      T:{visible:true,prop:"thurible"},
+      A1:{visible:true,prop:"torch"},
+      A2:{visible:true,prop:"torch"}
+    },"Ordinary Gospel preparation must restore original props");
     assert.equal(missalTransfer.requiemTransfer,"COMPLETED_TRANSFER_STATIC",
       "Requiem omits certain rites but not the subdeacon's Missal transfer");
     assert.deepEqual(gospelAndOffertory,{
