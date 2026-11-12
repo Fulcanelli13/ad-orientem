@@ -61,7 +61,7 @@ assert.equal(apiFssp[0].title,"Maternal Heart of Mary Parish");
 assert.equal(apiFssp[0].countryCode,"AU");
 assert.equal(apiFssp[0].upstreamMarkerId,"5993");
 assert.equal(apiFssp[0].diocese,"Sydney");
-assert.match(apiFssp[0].massRaw,/10\\.30/);
+assert.match(apiFssp[0].massRaw,/10\.30/);
 assert.equal(apiFssp[0].officialGeo,undefined,
  "Unapproved FSSP source coordinates must not be promoted into the raw importer");
 assert.equal(buildFsspDataset(apiFssp).venues[0].upstream.marker_id,"5993");
