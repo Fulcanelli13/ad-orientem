@@ -125,8 +125,12 @@ assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/figcaption\{/,
 const frenchPeek=compactHeritagePlaceSheet({...vm,language:"fr",selectedPlace:profile});
 assert.match(frenchPeek,/Église/,"French alternate text must come from the released media");
 const textOnlyPeek=compactHeritagePlaceSheet({...vm,selectedPlace:{...profile,media:null}});
-assert.doesNotMatch(textOnlyPeek,/aoHeritagePlaceThumb/,
- "Text-only canonical Place must not receive an unrelated photograph");
+assert.match(textOnlyPeek,/aoSacredPlaceSymbolFallback/,
+ "A Place without an approved photo keeps its honest category-symbol fallback");
+assert.doesNotMatch(textOnlyPeek,/<img(?:\\s|>)/,
+ "A source-honest category symbol must not become a fake photographic image");
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/:has\\(\\.aoHeritagePlaceThumb img\\)/,
+ "The larger photographic preview layout must exclude text-only symbolic Places");
 assert.match(textOnlyPeek,/Documented One/,
  "A missing photo must not remove the valid Place profile");
 
