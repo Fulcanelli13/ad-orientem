@@ -147,9 +147,28 @@ assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0122"}).choreography,
  "STATIC_STAGE","Re-entering a continuation must not invent a new incensation start");
 assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
  "SOURCE_TRIGGERED","Re-entering actual C0121 must re-arm original incensation");
-assert.equal(send(off,{...incense,form:"LOW",
- sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+const lowIncense=send(off,{...incense,form:"LOW",
+ sourceCueId:"AO.SM.C0121"});
+assert.equal(lowIncense.choreography,"STATIC_STAGE",
  "Low Mass may never trigger incensation");
+assert.equal(lowIncense.lowIncenseOmitted,true);
+assert.equal(lowIncense.visualCard,"C23");
+assert.equal(lowIncense.card,"C24",
+ "Native 65-card source identity must remain C24");
+assert.deepEqual(presented.at(-1),["C23",false],
+ "Low Mass must stage the adjacent offering-at-altar, not C24 foot pose");
+const wrongLowSource=send(off,{...incense,form:"LOW",
+ sourceSectionId:"AO.CARD.009",sourceCueId:"AO.SM.C0121"});
+assert.equal(wrongLowSource.lowIncenseOmitted,false,
+ "Low substitution belongs only to exact AO.CARD.010 source");
+assert.equal(wrongLowSource.visualCard,"C24");
+assert.deepEqual(presented.at(-1),["C24",false],
+ "Source ownership change must reset the previous static illustration");
+const lowReenter=send(off,{...incense,form:"LOW",
+ sourceCueId:"AO.SM.C0121"});
+assert.equal(lowReenter.visualCard,"C23");
+assert.deepEqual(presented.at(-1),["C23",false],
+ "Re-entry restores no-incense altar stage without any smoke");
 assert.equal(send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
  sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
  "Simple sung Mass without incense may never trigger incensation");
