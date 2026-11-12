@@ -75,7 +75,7 @@ try{
    if(exposed)await plan.locator('summary').first().click();
    const picker=page.locator('[data-schola-kyriale-choice="KYRIE"]');
    await picker.waitFor({state:'attached',timeout:20000});
-   const trigger=page.locator('[data-kyrie-research-audition-open]');
+   const trigger=page.locator('[data-kyrie-research-audition-open][data-ordinary-preview-movement="KYRIE"]');
    await trigger.waitFor({state:'attached',timeout:20000});
    assert.equal(await trigger.isVisible(),false,
      'Never show an unselected Kyrie research audition');

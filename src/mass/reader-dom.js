@@ -3467,6 +3467,7 @@ export function createReaderDomAdapter({
               form:prepared?.session?.resolvedMass?.form,
               mode,
               settingId:plan?.ordinarySelections?.KYRIE,
+              ordinarySelections:plan?.ordinarySelections??{},
               isRequiem:isExplicitRequiemMass(prepared),
             };
           }
