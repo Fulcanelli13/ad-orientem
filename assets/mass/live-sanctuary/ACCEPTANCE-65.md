@@ -30,7 +30,7 @@ The GitHub Actions workflow `LIVE Sanctuary source and choreography acceptance` 
 | Priority | Scope | Applied in staging adapter | Status |
 | --- | --- | --- | --- |
 | P0 | C08/C09/C12/C17–C19 sedilia | Existing celebrant/deacon/subdeacon `sit` sprites moved over original bench, not standing in front; existing Sung server stands clear of priest; heights are non-accumulating | **Implemented; re-capture and owner visual approval still required** |
-| P0 | C24 Low incensation omission | Native `AO.CARD.010` / C24 remains present, but 3D view uses existing C23 altar-side still; no smoke, no bell, no ceremonial motion | **Implemented; browser and visual regression required** |
+| P0 | C24 Low and simple Sung incensation omission | Exact `stateOnly` canonical `AO.CARD.010` / `B036` 1962 omission is allowed one **silent** 3D projection to original C23 altar-side still, with no cue, smoke, bell or ceremonial motion; all other state-only cards stay suppressed | **Implemented; browser and visual regression required** |
 | P0 | C11 Solemn Epistolarium | Source-card static subdeacon book, no invented journey | Hold movement pending departure/route evidence |
 | P0 | C13 Missal transfer | C0081 completed arrival static only | Hold route and exact handoff |
 | P0 | C14 Solemn/Requiem Gospel | Ordinary book reassigned to subdeacon; Requiem omits thurifer and candles, retains two acolytes; positions approximate | Pending ceremonial visual review |
