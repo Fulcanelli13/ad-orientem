@@ -97,6 +97,9 @@ jobs:
       - name: I — Kyrie XVI opt-in research melody in real 65-card phone reader
         run: node tests/reader-schola-kyrie-research-audition-phone.mjs
 
+      - name: J — Unified Gloria Credo Sanctus Agnus melody in actual 65-card phone
+        run: node tests/reader-schola-ordinary-audition-phone.mjs
+
       - name: Preserve minimal existing Schola phone screenshots
         if: always()
         uses: actions/upload-artifact@v4
