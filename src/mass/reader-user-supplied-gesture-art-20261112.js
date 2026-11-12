@@ -3,10 +3,9 @@
  // contour-preserving SVGs (source SHA-256 retained in the asset manifest).
  // This layer alters artwork only. All gesture, priest/faithful, form and
  // special-rite source ownership remains in R17 and the exact cue registries.
-const BASE="../../assets/extensions/mass-user-gesture-20261112/";
-const crosses=new URL(BASE+"gospel_crosses.svg",import.meta.url).href;
-const breast=new URL(BASE+"breast_strike.svg",import.meta.url).href;
-const bow=new URL(BASE+"profound_bow.svg",import.meta.url).href;
+const crosses=new URL("../../assets/extensions/mass-user-gesture-20261112/gospel_crosses.svg",import.meta.url).href;
+const breast=new URL("../../assets/extensions/mass-user-gesture-20261112/breast_strike.svg",import.meta.url).href;
+const bow=new URL("../../assets/extensions/mass-user-gesture-20261112/profound_bow.svg",import.meta.url).href;
 export const USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112=Object.freeze({
  // Existing 65-card cue-bank keys (C0084/C0269; Confiteor and Domine).
  gospel_crosses:crosses,
