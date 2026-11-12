@@ -16,6 +16,12 @@ assert.equal(m.provenance.originalPdfSha256,'119b084b5c0689fc3e87541143731f6526c
 assert.equal(m.provenance.originalFacsimileImagesNotAddedToPublicAssets,true);
 assert.equal(m.provenance.nativeScanResolutionIndependentlyConfirmed,false);
 assert.equal(m.notePositions.length,44);
+const christeFinal=m.notePositions.find(n=>n.ordinal===18);
+assert.deepEqual(christeFinal.approximateInkCenterPx,[1504,143]);
+assert.equal(christeFinal.m52Correction.priorX,1533);
+assert.equal(christeFinal.m52Correction.correctedX,1504);
+assert.equal(christeFinal.m52Correction.certifiesMusicalSource,false);
+assert.match(christeFinal.m52Correction.finding,/punctum mora dot/);
 assert.equal(m.observedStructure.total,44);
 assert.deepEqual(m.observedStructure.writtenNotesByPhrase,[10,8,10,16]);
 assert.deepEqual(m.observedStructure.printedRepeatLabels,['iij.','iij.','ij.',null]);
