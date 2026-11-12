@@ -25,16 +25,17 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
 /* An already approved Murillo painting replaces schematic confessional
    shapes. It stays legible at all 3 user-controlled scene/text proportions. */
 #aoPray435930 .aoPrayerRitualWorkspace .aoPrayerCeremonialScene--painted{
-  background:#11100d;isolation:isolate;
+  background:radial-gradient(ellipse at 50% 42%,#2f211a 0%,#120f0d 73%);isolation:isolate;
 }
 #aoPray435930 .aoPrayerRitualSceneArt{
   display:block;position:absolute;inset:0;margin:0;min-width:0;min-height:0;
-  width:100%;height:100%;z-index:0;overflow:hidden;border:0;border-radius:0
+  width:100%;height:100%;z-index:0;overflow:hidden;border:0;border-radius:0;
+  background:radial-gradient(ellipse at center,#271b14,#100e0d 72%)
 }
 #aoPray435930 .aoPrayerRitualSceneArt img{
-  display:block;width:100%;height:100%;object-fit:cover;
-  object-position:center 33%;filter:brightness(.86) saturate(.88);
-  transform:scale(1.02);transition:filter 1.1s ease,transform 5s ease
+  display:block;width:100%;height:100%;object-fit:contain;
+  object-position:center center;filter:brightness(.92) saturate(.88);
+  transform:none;transition:filter 1.1s ease
 }
 /* The inherited caption is normally visually hidden; the released image's
    authenticated source link must remain visible for keyboard navigation. */
@@ -63,13 +64,13 @@ export const PRAYER_RITUAL_WORKSPACE_CSS=String.raw`
   opacity:.55
 }
 #aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="examine"] .aoPrayerRitualSceneArt img{
-  transform:scale(1.065);filter:brightness(.76) saturate(.79)
+  transform:none;filter:brightness(.82) saturate(.79)
 }
 #aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="approach"] .aoPrayerRitualSceneArt img{
-  transform:scale(1.105);filter:brightness(.66) saturate(.75)
+  transform:none;filter:brightness(.72) saturate(.75)
 }
 #aoPray435930 .aoPrayerCeremonialScene--painted[data-ao-scene-phase="after"] .aoPrayerRitualSceneArt img{
-  transform:scale(1.00);filter:brightness(.99) saturate(.95)
+  transform:none;filter:brightness(.99) saturate(.95)
 }
 #aoPray435930 .aoPrayerRitualWorkspace[data-ao-ritual-mode="text"] .aoPrayerCeremonialCandleRail{
   transform:scale(.52);transform-origin:50% 100%

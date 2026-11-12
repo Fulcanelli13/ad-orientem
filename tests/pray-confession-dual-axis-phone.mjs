@@ -59,6 +59,8 @@ try{
   "Released painting needs its original attribution link");
  assert.ok(await visual.locator(".aoPrayerRitualSceneArt img").evaluate(img=>img.complete&&img.naturalWidth>0),
   "Released original artwork did not load in the scene");
+ assert.equal(await visual.locator(".aoPrayerRitualSceneArt img").evaluate(img=>getComputedStyle(img).objectFit),"contain",
+  "Preserve complete historical painting composition at the 390px Confession scene");
  await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
  await locale.click();
  assert.equal((await locale.innerText()).trim(),"EN");

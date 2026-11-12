@@ -4216,7 +4216,10 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   if(reader)m.querySelector('.aoP435930ConfessionReader')?.setAttribute('data-ao-confession-dual-axis','true');
  });
  if(view==='confession'||view==='tenebrae')queueMicrotask(()=>{
-  installPrayerRitualWorkspace({mount:m,kind:view,french:isFr(),hour:TEN.hour});
+  installPrayerRitualWorkspace({
+    mount:m,kind:view,french:isFr(),hour:TEN.hour,
+    ceremony:view==="tenebrae"?TEN.ceremony:null
+  });
  });
  if(view==='adoration'&&['visit','holy','four','night'].includes(ADOR.mode))queueMicrotask(()=>{
   const mode=ADOR.mode;

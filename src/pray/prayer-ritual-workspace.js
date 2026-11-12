@@ -26,13 +26,16 @@ export function nextRitualMode(mode,direction){
 const layouts=new Map();
 const L=(f,en,fr)=>f?fr:en;
 
-export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATINS"}={}){
+export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATINS",ceremony=null}={}){
   if(!["confession","tenebrae"].includes(kind))return null;
   const root=mount?.querySelector(kind==="confession"?
     ".aoP435930ConfessionReader:not([data-ao-confession-private-reader])":".aoTenebBody");
   const doc=root?.ownerDocument;
   if(!doc||root.dataset.aoRitualWorkspaceReady==="true")return null;
-  const scene=root.querySelector(".aoPrayerCeremonialScene");
+  // The historical optional Tenebrae visual is a projection of the supplied
+  // ceremony model, never an arbitrary nested figure moved from source text.
+  const sourceScene=root.querySelector(".aoPrayerCeremonialScene");
+  const scene=kind==="confession"?sourceScene:null;
   const children=[...root.children];
   let take=children;
   if(kind==="tenebrae"){
@@ -73,11 +76,20 @@ export function installPrayerRitualWorkspace({mount,kind,french=false,hour="MATI
   body.tabIndex=0;
   const figure=scene??(()=>{
     const f=doc.createElement("div");
-    f.innerHTML=renderPrayerCeremonialScene(prayerCeremonialSceneState({
-      kind:"tenebrae-office",stage:hour
-    }),{french});
+    const visualState=kind==="tenebrae"?
+      prayerCeremonialSceneState({
+        kind:ceremony?.enabled===true?"tenebrae":"tenebrae-office",
+        stage:hour,ceremony
+      }):
+      prayerCeremonialSceneState({
+        kind:"confession",stage:Number(root.dataset.aoConfessionSection??0)
+      });
+    f.innerHTML=renderPrayerCeremonialScene(visualState,{french});
     return f.firstElementChild;
   })();
+  // Remove only the redundant visual from the optional source-owned aside.
+  // Keep the real Office passages, explanatory material, and user controls.
+  if(kind==="tenebrae"&&sourceScene)sourceScene.remove();
   if(!figure)return null;
   visual.append(figure);
   if(kind==="confession"){

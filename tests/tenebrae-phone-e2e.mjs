@@ -108,6 +108,8 @@ try{
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae"]').count(),1);
  const candles=page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-candle-index]');
  assert.equal(await candles.count(),15,"Historically triangular hearse must contain fifteen visual candles");
+ assert.equal(await page.locator('#aoPray435930 .aoTenebCeremony .aoPrayerCeremonialScene').count(),0,
+  "The optional source owner keeps controls but the scene has exactly one visual owner");
  assert.equal(await candles.nth(14).evaluate(el=>getComputedStyle(el).getPropertyValue("--ao-candle-x").trim()),"50%");
  await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="disable"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1,
