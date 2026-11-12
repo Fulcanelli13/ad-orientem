@@ -66,7 +66,7 @@ assert.equal(apiFssp[0].officialGeo,undefined,
  "Unapproved FSSP source coordinates must not be promoted into the raw importer");
 assert.equal(buildFsspDataset(apiFssp).venues[0].upstream.marker_id,"5993");
 assert.throws(()=>parseFsspOfficialMarkers({records:[officialFsspMarker]}),/schema drift/);
-assert.throws(()=>parseFsspOfficialMarkers([officialFssp,{...officialFssp}]),/duplicate source marker ID/);
+assert.throws(()=>parseFsspOfficialMarkers([officialFsspMarker,{...officialFsspMarker}]),/duplicate source marker ID/);
 assert.throws(()=>parseFsspOfficialMarkers([{...officialFsspMarker,id:"5994",address:"Unknown place"}]),/unknown country/);
 assert.deepEqual(parseFsspOfficialMarkers([{...officialFsspMarker,map_id:"2"}]),[],
  "Other WordPress maps must not enter the FSSP worldwide corpus");
