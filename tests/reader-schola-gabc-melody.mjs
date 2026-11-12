@@ -66,6 +66,28 @@ assert.equal(resolveGabcStaffPitch('g','c4').midi,67);
 assert.equal(resolveGabcStaffPitch('h','c3').midi,72);
 assert.equal(resolveGabcStaffPitch('h','f3').midi,65);
 assert.equal(resolveGabcStaffPitch('g','f3').midi,64);
+// Two further real 1961 source-indexed Kyries exercise the same reusable
+// engine, but do NOT confer printed-note certification or permit automatic
+// replay. Each performance plan must be deliberately supplied.
+for(const [setting,id,sourceCount,performanceCount,clef] of [
+ ['MASS_11','GREGOBASE-2982',82,178,'c4'],
+ ['MASS_18','GREGOBASE-2522',44,90,'c3']
+]){
+ const source=offlineKyrialeResearchScore('KYRIE',setting);
+ assert.equal(source?.scoreId,id);
+ assert.equal(source.scoreApproved,false);
+ const parsed=compileGabcMelody(source.gabc,{phraseSequence:plan});
+ assert.equal(parsed.sourceNoteCount,sourceCount);
+ assert.equal(parsed.sourceGroupCount,27);
+ assert.equal(parsed.phraseCount,4);
+ assert.equal(parsed.performance.length,performanceCount);
+ assert.ok(parsed.sourceNotes.every(n=>n.clef===clef));
+ assert.equal(parsed.policy.canonicalScholaScoreApproved,false);
+}
+const kyrieVIII=offlineKyrialeResearchScore('KYRIE','MASS_08');
+assert.equal(kyrieVIII?.scoreId,'GREGOBASE-1184');
+assert.throws(()=>compileGabcMelody(kyrieVIII.gabc,{phraseSequence:plan}),
+ UnsupportedGabcMelodyError,'Advanced unsupported notation must not be guessed');
 const simpleC3='name:C3 test;\n%%\n(c3) Ky(h)ri(g_)e(i.) (::)';
 const simple=compileGabcMelody(simpleC3,{phraseSequence:[0,0]});
 assert.deepEqual(simple.sourceNotes.map(n=>n.midi),[72,71,74]);
