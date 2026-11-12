@@ -26,22 +26,45 @@ assert.equal(citationTriage.source_ledger_path,
   "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
   p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
-assert.equal(citationDifferences.length,85,"Current exact-revision citation difference count");
-assert.equal(citationTriage.entries.length,citationDifferences.length,
-  "Every differing citation must be classified before editorial certification");
+assert.equal(citationDifferences.length,80,"Exact-revision unresolved citation differences after five repairs");
+assert.equal(citationTriage.entries.length,85,"Keep all 85 original differences for provenance");
+const citationLedgerByKey=new Map(claimResearchLedger.paragraphs.map(p=>[p.draft_order+":"+p.section_id,p]));
 const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
 assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
-for(const p of citationDifferences){
-  const classified=classifiedByKey.get(p.draft_order+":"+p.section_id);
-  assert.ok(classified,"Missing citation-difference classification");
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,5);
+for(const classified of citationTriage.entries){
+  const p=citationLedgerByKey.get(classified.key);
+  assert.ok(p,"Orphan citation triage entry");
   assert.equal(classified.place_id,p.place_id,"Citation triage points to wrong shrine");
-  assert.equal(classified.source_url,p.source_url,"Citation triage stale relative to draft");
-  assert.equal(classified.evidence_checked_url,p.evidence_checked_url,"Citation triage stale relative to first-pass research");
-  assert.equal(classified.decision_status,"PROVISIONAL_RESEARCH_ONLY");
+  if(classified.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY"){
+    assert.equal(p.source_url,classified.repair.new_guide_source_url,
+      "Previously defective citation has not been replaced");
+    assert.equal(p.source_id,classified.repair.new_guide_source_id,
+      "Repaired citation lacks its exact source ID");
+    assert.equal(p.source_url,p.evidence_checked_url,
+      "Repaired citation does not point to its checked evidence");
+    assert.equal(classified.repair.full_english_french_certification,false);
+    assert.equal(classified.repair.owner_approval,false);
+  }else{
+    assert.equal(classified.decision_status,"PROVISIONAL_RESEARCH_ONLY");
+    assert.equal(classified.source_url,p.source_url,"Triage stale relative to draft");
+    assert.equal(classified.evidence_checked_url,p.evidence_checked_url,
+      "Triage stale relative to first-pass research");
+  }
   assert.equal(classified.full_claim_certified,false);
   assert.equal(classified.french_second_editor_approved,false);
   assert.equal(classified.owner_authorized,false);
 }
+assert.equal(citationTriage.summary.current_differing_urls,80);
+const akitaHistory=wave2.find(g=>g.draft_order===121).sections.find(s=>s.id==="history").paragraphs[0];
+assert.equal(akitaHistory.source_url,"https://www.seitaihoshikai.com/us/index.html");
+assert.doesNotMatch(akitaHistory.en,/Bishops' Conference of Japan describes seven years/);
+assert.match(akitaHistory.en,/4 January 1975.*15 September 1981/);
+const marcoPilgrimage=wave2.find(g=>g.draft_order===125).sections.find(s=>s.id==="pilgrimage").paragraphs[0];
+assert.equal(marcoPilgrimage.source_url,"https://www.basilicasanmarco.it/en/liturgical-services/");
+assert.match(marcoPilgrimage.en,/Porta dei Fiori/);
+for(const section of wave2.find(g=>g.draft_order===218).sections)
+  assert.match(section.paragraphs[0].source_url,/^https:\/\/beweb\.chiesacattolica\.it\//);
 
 assert.equal(claimResearchLedger.state,"RESEARCH_ONLY_NO_EDITOR_APPROVAL_NO_RELEASE");
 assert.equal(claimResearchLedger.paragraphs.length,672);
