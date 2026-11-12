@@ -26,15 +26,15 @@ assert.equal(citationTriage.source_ledger_path,
   "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 const citationDifferences=claimResearchLedger.paragraphs.filter(p=>
   p.evidence_checked_url&&p.source_url!==p.evidence_checked_url);
-assert.equal(citationDifferences.length,51,"51 raw citation URL differences remain by design");
+assert.equal(citationDifferences.length,50,"50 raw citation URL differences remain by design");
 assert.equal(citationTriage.entries.length,85,"Keep all 85 original differences for provenance");
 const citationLedgerByKey=new Map(claimResearchLedger.paragraphs.map(p=>[p.draft_order+":"+p.section_id,p]));
 const classifiedByKey=new Map(citationTriage.entries.map(p=>[p.key,p]));
 assert.equal(classifiedByKey.size,citationTriage.entries.length,"Duplicate citation triage key");
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,11);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="CITATION_REPAIRED_RESEARCH_ONLY").length,12);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_EQUIVALENT_NO_CITATION_CHANGE").length,12);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="PROVISIONAL_RESEARCH_ONLY").length,0);
-assert.equal(citationTriage.entries.filter(p=>p.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION").length,6);
+assert.equal(citationTriage.entries.filter(p=>p.decision_status==="EVIDENCE_ACCESS_HOLD_NO_PUBLICATION").length,5);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="ORIGINAL_CITATION_CORROBORATED_NO_CHANGE").length,33);
 assert.equal(citationTriage.entries.filter(p=>p.decision_status==="SOURCE_UPGRADED_RESEARCH_ONLY").length,23);
 for(const classified of citationTriage.entries){
@@ -76,9 +76,16 @@ for(const classified of citationTriage.entries){
   assert.equal(classified.french_second_editor_approved,false);
   assert.equal(classified.owner_authorized,false);
 }
-assert.equal(citationTriage.summary.current_differing_urls,51);
+assert.equal(citationTriage.summary.current_differing_urls,50);
 assert.equal(citationTriage.summary.remaining_active_triage,0);
-assert.equal(citationTriage.summary.access_hold_paragraphs,6);
+assert.equal(citationTriage.summary.access_hold_paragraphs,5);
+assert.equal(citationTriage.summary.access_hold_guides,3);
+const f2026=wave2.find(g=>g.draft_order===91).sections.find(s=>s.id==="pilgrimage").paragraphs[0];
+assert.equal(f2026.source_url,"https://www.katholisch-in-lindlar.de/news/index.html");
+assert.match(f2026.en,/18–25 July 2026/);
+const santa2026=wave1.find(g=>g.draft_order===49).sections.find(s=>s.id==="closure").paragraphs[0];
+assert.match(santa2026.en,/23 October 2026/);
+assert.equal(santa2026.source_url,"https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/");
 assert.equal(citationTriage.summary.original_citation_preferred_no_change,33);
 assert.equal(citationTriage.summary.source_upgrades_without_proven_claim_error,23);
 assert.equal(citationTriage.summary.source_equivalent_no_change,12);

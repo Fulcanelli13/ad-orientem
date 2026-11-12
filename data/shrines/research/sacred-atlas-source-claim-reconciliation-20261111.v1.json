@@ -429,6 +429,18 @@
       "old_url": "https://www.catholicdiocesebelize.org/en/parishes",
       "new_url": "https://www.catholicdiocesebelize.org/en/news/holy-doors-of-holy-redeemer-cathedral-opened",
       "reason": "CITATION_REPAIRED_RESEARCH_ONLY: Belize diocese 13 January 2025 report lists Our Lady of Guadalupe Co-Cathedral as a Jubilee 2025 Sacred Site and Holy Door"
+    },
+    {
+      "key": "1|49|closure",
+      "old_url": "https://www.santacroceroma.it/it/",
+      "new_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/",
+      "reason": "DATED_OFFICIAL_NOTICE_SUPERSEDES_APRIL_CLOSURE: Rome Diocese 19 October 2026 announced Chapel of Relics reopening on 23 October 2026; research-only wording update, not claim certification"
+    },
+    {
+      "key": "2|91|pilgrimage",
+      "old_url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+      "new_url": "https://www.katholisch-in-lindlar.de/news/index.html",
+      "reason": "CITATION_REPAIRED_RESEARCH_ONLY: Lindlar parish 2026 index corroborates Frielingsdorf 18–25 July octave; original detailed article unavailable"
     }
   ],
   "paragraphs": [
@@ -3664,7 +3676,7 @@
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
-      "guide_revision": "fnv1a32-4c5a3ec2",
+      "guide_revision": "fnv1a32-31978df8",
       "draft_order": 49,
       "wave": 1,
       "section_id": "origin",
@@ -3674,7 +3686,7 @@
       "claim_flags": [],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
+      "research_evidence_note": "Basilica's relic provenance/inscription claims remain attributed traditions awaiting direct full source access. Diocese of Rome 19 October 2026 separately confirms the Passion-relic collection and a reopening notice for 23 October 2026.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -3685,7 +3697,7 @@
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
-      "guide_revision": "fnv1a32-4c5a3ec2",
+      "guide_revision": "fnv1a32-31978df8",
       "draft_order": 49,
       "wave": 1,
       "section_id": "titulus",
@@ -3695,7 +3707,7 @@
       "claim_flags": [],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
+      "research_evidence_note": "Basilica's relic provenance/inscription claims remain attributed traditions awaiting direct full source access. Diocese of Rome 19 October 2026 separately confirms the Passion-relic collection and a reopening notice for 23 October 2026.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -3706,12 +3718,12 @@
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
-      "guide_revision": "fnv1a32-4c5a3ec2",
+      "guide_revision": "fnv1a32-31978df8",
       "draft_order": 49,
       "wave": 1,
       "section_id": "closure",
       "priority": "STANDARD_EDITORIAL_REVIEW",
-      "source_url": "https://www.santacroceroma.it/it/",
+      "source_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/",
       "source_id": null,
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY",
@@ -3720,13 +3732,13 @@
       ],
       "source_claim_research_stage": "STANDARD_CORE_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Santa Croce in Gerusalemme basilica distinguishes historic Crucifixion relic tradition and Titulus; dated 16 April 2026 chapel closure for urgent renovation overrides undated general access.",
+      "research_evidence_note": "Diocese of Rome notice published 19 October 2026 schedules the reopening of the Chapel of Relics for 23 October 2026 after April emergency restoration; it supersedes the older closure notice but does not verify live access.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
       "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
-      "evidence_checked_url": "https://www.santacroceroma.it/it/",
-      "evidence_scope": "OFFICIAL_CUSTODIAN_CIVIC_HERITAGE_CORE_CLAIM_FIRST_PASS",
+      "evidence_checked_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/",
+      "evidence_scope": "ROME_DIOCESE_19_OCT_2026_REOPENING_ANNOUNCEMENT",
       "research_checked_on": "2026-11-12"
     },
     {
@@ -6379,7 +6391,7 @@
     },
     {
       "place_id": "place:DE:st-apollinaris-frielingsdorf",
-      "guide_revision": "fnv1a32-bd33cd7a",
+      "guide_revision": "fnv1a32-561d03e5",
       "draft_order": 91,
       "wave": 2,
       "section_id": "history",
@@ -6400,7 +6412,7 @@
     },
     {
       "place_id": "place:DE:st-apollinaris-frielingsdorf",
-      "guide_revision": "fnv1a32-bd33cd7a",
+      "guide_revision": "fnv1a32-561d03e5",
       "draft_order": 91,
       "wave": 2,
       "section_id": "identity",
@@ -6424,12 +6436,12 @@
     },
     {
       "place_id": "place:DE:st-apollinaris-frielingsdorf",
-      "guide_revision": "fnv1a32-bd33cd7a",
+      "guide_revision": "fnv1a32-561d03e5",
       "draft_order": 91,
       "wave": 2,
       "section_id": "pilgrimage",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+      "source_url": "https://www.katholisch-in-lindlar.de/news/index.html",
       "source_id": "SHR-ST-APOLLINARIS-FRIELINGSDORF",
       "claim_flags": [
         "PROGRAMME_ACCESS_OR_LITURGY",
@@ -6439,13 +6451,13 @@
       ],
       "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261112",
       "independently_checked_core_claims": true,
-      "research_evidence_note": "Lindlar parish's accessible news index dates 2026 St Apollinaris octave at Frielingsdorf to 18–25 July; original detailed article cannot be fetched. This establishes a year-specific programme, not perpetual access or route.",
+      "research_evidence_note": "Parish's accessible news index announces the Frielingsdorf octave for 18–25 July 2026. The old detailed article returned 404; the index does not certify daily ceremony times or future years.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
       "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
       "evidence_checked_url": "https://www.katholisch-in-lindlar.de/news/index.html",
-      "evidence_scope": "PARISH_2026_OCTAVE_INDEX",
+      "evidence_scope": "PARISH_DATED_18_25_JULY_2026_OCTAVE_INDEX",
       "research_checked_on": "2026-11-12"
     },
     {
