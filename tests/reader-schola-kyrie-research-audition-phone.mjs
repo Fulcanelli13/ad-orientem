@@ -91,6 +91,15 @@ try{
      const player=page.locator('section.ao-kyrie-audition');
      await player.waitFor({state:'visible',timeout:20000});
      await player.locator('[data-kyrie-staff] svg').waitFor({timeout:35000});
+     // Exsurge, not the lyric text, owns 40 exact geometric notehead nodes.
+     await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
+       ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:20000});
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),40,
+       'Kyrie XVI must map the actual 40 Exsurge glyphs');
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
+       .count(),1,'Exactly one printed notehead may be active');
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
+       .getAttribute('id'),'note-1');
      assert.deepEqual(await player.locator('[data-kyrie-tone] option').allTextContents(),
        ['Flute','Pure tone'],'Bells or unapproved sound choices entered the player');
      assert.equal(await player.locator('[data-kyrie-pitch]').inputValue(),'0');
@@ -108,6 +117,12 @@ try{
        document.querySelector('[data-kyrie-position]')?.textContent??''),null,{timeout:10000});
      const start=await player.locator('[data-kyrie-position]').textContent();
      assert.match(start,/source note \d+\/40/);
+     await page.waitForFunction(()=>Number(document.querySelector('[data-kyrie-staff]')
+       ?.dataset.performanceNoteOrdinal)>=3,null,{timeout:8500});
+     const sourceNow=await player.locator('[data-kyrie-staff]').getAttribute('data-source-note-ordinal');
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
+       .getAttribute('id'),'note-'+sourceNow,
+       'The highlighted physical notehead must be exactly the source note currently sounding');
      const minimise=player.locator('[data-kyrie-action="minimize"]');
      await minimise.click();
      assert.equal(await player.getAttribute('data-minimized'),'true');
@@ -139,6 +154,10 @@ try{
      await minimise.click();
      assert.equal(await player.getAttribute('data-minimized'),'false');
      assert.equal(await player.locator('[data-kyrie-staff]').isVisible(),true);
+     const sourceAfter=await player.locator('[data-kyrie-staff]').getAttribute('data-source-note-ordinal');
+     assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
+       .getAttribute('id'),'note-'+sourceAfter,
+       'Expanding the score restores the correct individual notehead without losing playback');
      await player.locator('[data-kyrie-action="stop"]').click();
      assert.match(await player.locator('[data-kyrie-position]').textContent(),
        /Invocation 1\/9/);
