@@ -604,10 +604,11 @@ try{
   assert.deepEqual(await frame.evaluate(()=>
     window.AO_SANCTUARY_EMBED_TEST.getState()),original,
     "Schola-only cue must not even select a different sanctuary scene");
-  if(form==="LOW"&&width===320){
-    // The C24 native reader card still exists in LOW, but incensation
-    // does NOT. The 3-D priest may not jump from altar to FOOT simply
-    // because the original C24 was sung-only.
+  if((form==="LOW"&&width===320)||
+     (form==="MISSA_CANTATA_SIMPLE"&&width===390)){
+    // Both LOW and simple SUNG have a source-certified C24 state-only
+    // no-incense placeholder. It is not a priest action. Stage only
+    // the original adjacent altar still and keep the native card ID.
     const lowCard=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
       const hits=api.model.cards.filter(c=>
@@ -621,8 +622,15 @@ try{
         selected:api.getCurrentCard()?.title};
     });
     assert.equal(lowCard.matches,1,
-      "The Low Mass incensation omission must map to one native source card");
-    await page.waitForTimeout(600);
+      "No-incense C24 omission must map to one native source card");
+    assert.equal(lowCard.stateOnly,true,
+      "The canonical omitted block has no prayer, never an observed action");
+    assert.equal(lowCard.title,"Incensation omitted for this Mass");
+    assert.equal(lowCard.sectionId,"AO.LIVECURATED.AO.CARD.010.5");
+    await frame.waitForFunction(()=>{
+      const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+      return a?.card==="C24"&&a?.noIncenseOmitted===true;
+    },null,{timeout:12000});
     const actualState=await frame.evaluate(()=>
       window.AO_SANCTUARY_EMBED_TEST?.getState?.());
     const parentState=await page.evaluate(()=>{
@@ -634,9 +642,13 @@ try{
         previewHidden:region?.hidden,
         activeCue:api.getActiveCue?.()};
     });
-    assert.ok(actualState?.card==="C24"&&actualState?.lowIncenseOmitted===true,
-      "Low C24 source-to-visual handoff failed: "+
+    assert.equal(parentState.previewHidden,false,
+      "Exactly certified omitted-incense state-only card may show a still stage");
+    assert.ok(actualState?.card==="C24"&&actualState?.noIncenseOmitted===true,
+      "No-incense C24 source-to-visual handoff failed: "+
       JSON.stringify({lowCard,parentState,actualState}));
+    assert.equal(actualState.lowIncenseOmitted,form==="LOW",
+      "Low-only classification must not spill into Sung");
     const stage=await frame.evaluate(()=>{
       const a=window.AO_SANCTUARY_EMBED_TEST.getState(),p=M3.actors().P;
       return {card:a.card,visual:a.visualCardId,pose:p.pose,x:p.x,z:p.z,
@@ -647,14 +659,14 @@ try{
     assert.equal(stage.path,null);
     assert.equal(stage.playedCue,null);
     assert.equal(stage.z,.4,
-      "Low Mass no-incense priest must remain at the ALTAR, not foot");
+      "No-incense priest must remain at the ALTAR, not foot");
     assert.equal(stage.shot,"server",
-      "Low C24 omission uses original preceding altar-side Offertory shot");
+      "No-incense C24 uses original preceding altar-side Offertory shot");
     await page.evaluate(sequence=>
       window.__AO_PHONE_PREVIEW.showSequence(sequence+1),lowCard.sequence);
     await frame.waitForFunction(()=>{
       const a=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
-      return a?.card==="C25"&&a?.lowIncenseOmitted===false;
+      return a?.card==="C25"&&a?.noIncenseOmitted===false;
     },null,{timeout:12000});
   }
   if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
