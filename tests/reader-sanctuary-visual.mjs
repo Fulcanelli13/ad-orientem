@@ -13,6 +13,12 @@ assert.equal(p.sourceCueId,"AO.SM.C0055");
 assert.equal(p.sourceSectionId,"AO.CARD.003");
 assert.equal(p.scholaOnly,false);
 assert.equal(p.certifiedSourceFocus,true);
+assert.equal(p.requiem,false);
+assert.equal(sanctuaryCueProjection({
+ card,state,form:"SOLEMN",mode:"LIVE",
+ prepared:{session:{resolvedMass:{actualCelebration:{type:"REQUIEM"}}}}
+}).requiem,true,"Canonical Requiem selection must reach the preview solemn gate");
+
 assert.equal(sanctuaryCueProjection({card,state,form:"SOLEMN",mode:"MISSAL"}),null);
 assert.equal(sanctuaryCueProjection({card,state,form:"UNVERIFIED",mode:"LIVE"}),null);
 assert.equal(sanctuaryCueProjection({card:{...card,stateOnly:true},state,
