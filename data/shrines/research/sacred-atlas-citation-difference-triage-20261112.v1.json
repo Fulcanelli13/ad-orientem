@@ -5,7 +5,7 @@
   "source_ledger_path": "data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json",
   "source_ledger_blob_sha": "9d7f8a6b8c6651cc1880510a8b5bee7ccc7869b8",
   "purpose": "Triage 85 differing URLs as distinct from 85 proven citation faults; preserve provenance and avoid source substitutions that change the claim scope.",
-  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose.",
+  "methodology": "Provisional desk classification against exact-revision paragraph ledger and its research notes, without independently reopening all URLs. Classification may be revised after source-level comparison and EN/FR claim certification. Seven high-priority target URLs and accessible original pages then received direct source-scope spot-checks. These spot-checks confirmed five citation-scope defects; they do not certify the full EN/FR prose. Five citation-scope defects have been repaired using custodian or bishops' heritage pages; 85 original discrepancies remain documented, 80 still differ in current draft. BeWeB pages were indexed but direct fetches returned 403 to inspection client; this limitation is recorded.",
   "summary": {
     "total": 85,
     "affected_guides": 49,
@@ -17,12 +17,15 @@
       "URL_DRIFT_OR_ACCESS_RECHECK": 6,
       "COMPLEMENTARY_SOURCE_NOT_AUTOMATIC_REPLACEMENT": 15
     },
-    "verified_citation_errors": 0,
+    "verified_citation_errors": 5,
     "independently_certified_paragraphs": 0,
     "owner_approved_guides": 0,
     "direct_url_spot_checks": 7,
     "confirmed_citation_scope_defects": 5,
-    "remaining_without_direct_url_spot_check": 78
+    "remaining_without_direct_url_spot_check": 78,
+    "resolved_citation_scope_defects": 5,
+    "current_differing_urls": 80,
+    "unrepaired_confirmed_scope_defects": 0
   },
   "publication_policy": "No automatic guide citation rewrites, publication, PR merge, or fabricated approvals. All 224 drafts remain held until independent claim/EN/FR approval, mobile-image QA, and one exact-revision owner authorization.",
   "entries": [
@@ -736,7 +739,7 @@
       "evidence_scope": "PRIMARY_BISHOPS_CONFERENCE_PLUS_EXACT_CUSTODIAN_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Bishops' Conference article states seven years of reported weeping starting in 1975, and Akita convent's own Japanese history dates the reports precisely 4 January 1975–15 September 1981. Earlier EN/FR draft and research-source metadata incorrectly ended in 1982; both corrected. Reports are attributed, not independently validated supernatural events.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -748,6 +751,16 @@
         "findings": "Seitai Hoshikai convent page directly dates reports of weeping 4 January 1975 through 15 September 1981. Original CBCJ 2016 source is an excerpt from the 2015 Japanese Catholic Information Handbook on congregations; inspected text does not explicitly support the guide's attribution that CBCJ describes seven years of tears. Visitor copy needs correction of attribution and citation.",
         "confirmed_draft_citation_scope_defect": true,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.cbcj.catholic.jp/2016/09/01/13352/",
+        "original_source_id": "AO-ED-AKITA-CBCJ-20261111",
+        "new_guide_source_url": "https://www.seitaihoshikai.com/us/index.html",
+        "new_guide_source_id": "AO-ED-AKITA-CUSTODIAN-20261112",
+        "verification_basis": "The convent's English site directly dates reported tears from 4 January 1975 to 15 September 1981 and attributes them to its own community account. The older 2016 bishops' item on congregations did not substantiate the claimed seven-year chronology.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -762,7 +775,7 @@
       "evidence_scope": "EXACT_PLACE_CUSTODIAN_AND_INSTITUTIONAL_CORE_CLAIM_FIRST_PASS",
       "research_evidence_note": "Saint Mark basilica official entrance and Mass pages distinguish Porta dei Fiori entrance for prayer from ticketed tourist entrance and liturgical closures.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -774,6 +787,16 @@
         "findings": "San Marco's official Mass and Prayer page specifies Porta dei Fiori north-side entrance for prayer and Mass, distinct from ticketed tourism. The guide's original ciborium-columns page concerns sculpture/relic altar and does not document prayer entry, service access or visiting rules.",
         "confirmed_draft_citation_scope_defect": true,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+        "original_source_id": "SHR-IT-basilica-san-marco-venezia",
+        "new_guide_source_url": "https://www.basilicasanmarco.it/en/liturgical-services/",
+        "new_guide_source_id": "AO-ED-SAN-MARCO-LITURGY-20261112",
+        "verification_basis": "Official Basilica di San Marco Mass and Prayer page distinguishes free worship entry through north-side Porta dei Fiori from tourist entry and publishes current liturgical arrangements.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -1451,7 +1474,7 @@
       "evidence_scope": "ITALIAN_BISHOPS_CHURCH_HERITAGE",
       "research_evidence_note": "Italian bishops' BeWeB thematic essay identifies Lanciano San Francesco sanctuary, its conventual Franciscan custody and Eucharistic miracle tradition; current named custodian homepage is under construction.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -1463,6 +1486,16 @@
         "findings": "Franciscan sanctuary homepage currently displays 'sito è in costruzione' with contact details, not historical narrative. Italian Bishops' Conference BeWeB thematic page documents Lanciano San Francesco's Eucharistic miracle tradition and pilgrimage history; retain attributed-tradition language.",
         "confirmed_draft_citation_scope_defect": true,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.miracoloeucaristico.eu/",
+        "original_source_id": "SG-R72-SITE-SG-INV-0054",
+        "new_guide_source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/",
+        "new_guide_source_id": "AO-ED-LANCIANO-BEWEB-HISTORY-20261112",
+        "verification_basis": "Italian Bishops' Conference BeWeB thematic overview identifies the Church of San Francesco at Lanciano as the shrine associated with a traditional Eucharistic miracle narrative and international pilgrimage; historically reported tradition is not independently proven by the page.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -1477,7 +1510,7 @@
       "evidence_scope": "ITALIAN_BISHOPS_OBJECT_CUSTODY",
       "research_evidence_note": "Italian bishops' BeWeB documentation identifies physical objects and relic custody at San Francesco, distinct from independent authentication of miraculous ancient origin.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -1489,6 +1522,16 @@
         "findings": "Sanctuary homepage currently under construction; Italian Bishops' Conference BeWeB site-specific church page describes location and custodianship of venerated objects. The institutional description is not independent proof of a miraculous transformation.",
         "confirmed_draft_citation_scope_defect": true,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.miracoloeucaristico.eu/",
+        "original_source_id": "SG-R72-SITE-SG-INV-0054",
+        "new_guide_source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+        "new_guide_source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
+        "verification_basis": "Italian Bishops' Conference BeWeB site-specific heritage account documents the Church of San Francesco and custody of venerated objects without independently verifying supernatural origins.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
@@ -1503,7 +1546,7 @@
       "evidence_scope": "ITALIAN_BISHOPS_CONFERENCE_LANCIANO_PILGRIMAGE",
       "research_evidence_note": "Italian Episcopal Conference BeWeB heritage record identifies San Francesco church at Lanciano as international Catholic pilgrimage destination, with Franciscan custody and the cult's venerated objects; 1962 Mass and present visiting times not inferred.",
       "classification_basis": "Existing first-pass source-to-core-claim research ledger; URLs not independently re-fetched in this classification",
-      "decision_status": "PROVISIONAL_RESEARCH_ONLY",
+      "decision_status": "CITATION_REPAIRED_RESEARCH_ONLY",
       "full_claim_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
@@ -1515,6 +1558,16 @@
         "findings": "Sanctuary homepage currently under construction; Italian Bishops' Conference BeWeB records Lanciano as a pilgrimage destination but does not establish a present Mass timetable, access hours or 1962 liturgy. Guide should not suggest that dated material establishes present schedules.",
         "confirmed_draft_citation_scope_defect": true,
         "full_english_french_claim_certified": false
+      },
+      "repair": {
+        "original_source_url": "https://www.miracoloeucaristico.eu/",
+        "original_source_id": "SG-R72-SITE-SG-INV-0054",
+        "new_guide_source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/",
+        "new_guide_source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
+        "verification_basis": "Italian Bishops' Conference BeWeB site-specific account documents San Francesco pilgrimage context; it does not establish current Mass timetable, public viewing times or 1962-rite availability.",
+        "full_english_french_certification": false,
+        "owner_approval": false,
+        "repair_date": "2026-11-12"
       }
     },
     {
