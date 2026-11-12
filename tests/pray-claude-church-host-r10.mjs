@@ -14,7 +14,7 @@ function fakeBrowser(){
  const win={
    location:{href:"https://example.org/ad-orientem/index.html?aoChurchPilot=1",
     origin:"https://example.org"},
-   document:{body,createElement(tag){
+   document:{body,documentElement:{lang:"fr-FR",dataset:{lc:"m"}},createElement(tag){
      assert.equal(tag,"iframe");
      return {
       style:{},events:{},contentWindow:{postMessage(x,y){messages.push({x,y})}},
@@ -39,13 +39,19 @@ const f=fakeBrowser(),host=createChurchHost(f.win);
 assert.equal(await host.open(),true);
 assert.equal(host.active(),true);
 assert.equal(f.win.document.body.style.overflow,"hidden");
-assert.ok(f.headCalls[0].url.endsWith("/ad-orientem/assets/pray-church/prayers.html"));
+assert.ok(f.headCalls[0].url.includes("/ad-orientem/assets/pray-church/prayers.html?lang=fr"),
+ "Church first paint must use the app's French language");
+assert.ok(f.messages.some(message=>message.x?.type==="settings"&&message.x.lang==="fr"&&
+ message.x.lc==="m"),"Church did not receive French settings on load");
 assert.equal(f.headCalls[0].opts.method,"HEAD");
 assert.equal(host.suspend(),true);assert.equal(host.paused(),true);
 assert.equal(f.frame().style.visibility,"hidden");
 assert.deepEqual(f.messages.at(-1).x,{aoChurchHost:1,type:"suspend"});
 assert.equal(host.resume(),true);assert.equal(host.paused(),false);
 assert.equal(f.frame().style.visibility,"visible");
+f.win.document.documentElement.lang="en";
+assert.equal(host.resume(),true);
+assert.equal(f.messages.at(-1).x.lang,"en","Resume did not propagate changed language");
 const onMessage=f.listeners.get("message");
 assert.equal(typeof onMessage,"function");
 onMessage({source:{},origin:"https://example.org",data:{ao:1,type:"go",route:"today"}});
