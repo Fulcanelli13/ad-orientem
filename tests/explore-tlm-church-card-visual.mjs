@@ -305,29 +305,41 @@ try{
    await preview.waitFor({state:"visible"});
    assert.equal(await page.locator(".aoTlmChurchProfile").count(),0,"Back must restore preview");
 
-   // Real approved image retention test: classified SSPX Groombridge
-   // uses its source-matched society emblem. The approved exact-venue photo
-   // remains in the media registry but must not override the hero.
+   // An exact-source approved photograph proves which church is pictured, not
+   // its present operator or the individual Mass's Missal or ecclesial position.
+   // Verify this released Groombridge photograph in all three visual surfaces.
    await preview.locator("[data-find-close-detail]").click();
    await page.locator(".aoExploreQuickPreview").waitFor({state:"detached"});
    await page.locator("#ao-find-modular-root [data-find-query]").fill("Groombridge");
    const groombridge=page.locator('.aoTlmVenueCard[data-explore-item="tlm:r49:SSPXMAP:OPE-002280"]');
    await groombridge.waitFor({state:"visible",timeout:15000});
-   const venueCardPhoto=groombridge.locator('.aoTlmVenueVisual > img');
-   assert.equal(await venueCardPhoto.count(),0,
-     "An SSPX site should use its institutional emblem instead of an approved photo");
-   assert.equal(await groombridge.locator('.aoTlmVenueVisual [data-visual-kind="emblem"]').count(),1,
-     "Groombridge must display its SSPX emblem in the compact card");
+   const exactImage="assets/approved/directory-media/GB-groombridge-st-pius-v.webp";
+   const venueCardPhoto=groombridge.locator('.aoTlmVenueVisual[data-visual-kind="photo"] > img');
+   assert.equal(await venueCardPhoto.count(),1,
+     "Exact-source approved photograph must be visible on the church card");
+   assert.equal(await venueCardPhoto.getAttribute("src"),exactImage);
+   assert.equal(await groombridge.locator('.aoTlmVenueVisual [data-visual-kind="emblem"]').count(),0,
+     "The society emblem must not replace an independently verified church photo");
    await groombridge.click();
    const venuePreview=page.locator(".aoExploreQuickPreview");
    await venuePreview.waitFor({state:"visible"});
+   assert.equal(await venuePreview.locator(".aoTlmPreviewPhoto").getAttribute("src"),exactImage);
+   assert.equal(await venuePreview.locator(".aoTlmPreviewPhotoCredit").count(),1,
+     "Photographer and license credits must remain discoverable in preview");
    await venuePreview.locator("[data-explore-expand-detail]").click();
    const venueExpanded=page.locator(".aoTlmChurchProfile");
    await venueExpanded.waitFor({state:"visible"});
-   assert.equal(await venueExpanded.locator('.aoTlmProfileHero img[src$="GB-groombridge-st-pius-v.webp"]').count(),0,
-     "Full church profile must not override a source-backed institute hero with a photo");
-   assert.equal(await venueExpanded.locator('.aoTlmProfileMedia [data-visual-kind="emblem"]').count(),1,
-     "The same institute emblem must appear in the full profile");
+   assert.equal(await venueExpanded.locator(".aoTlmProfileHero img").getAttribute("src"),exactImage,
+     "Full profile must use the same exact-site approved photograph");
+   const photoCredits=venueExpanded.locator(".aoTlmProfileCredits");
+   assert.equal(await photoCredits.count(),1);
+   await photoCredits.locator("summary").click();
+   assert.ok((await photoCredits.innerText()).includes("The Voice of Hassocks"),
+     "Full profile must preserve actual photographer credit");
+   assert.ok((await photoCredits.locator('a[href*="commons.wikimedia.org"]').count())>0,
+     "Full profile must link to the original licensed photograph");
+   assert.ok((await venueExpanded.locator(".aoTlmProfileAffiliation").innerText()).includes("SSPX"),
+     "Verified building image does not remove source-reported ministry identity");
    assert.match(await venueExpanded.innerText(),/Station Road, Groombridge TN3 9QX/i,
      "The physical-site address should not disappear from expanded details");
    assert.equal(await venueExpanded.locator(".aoTlmProfileEssentials .aoTlmProfileDatum").count(),3);

@@ -65,6 +65,21 @@ for(const v of [society,religious,host,held,unresolved]){
  assert.doesNotMatch(html,/GB-verified\.webp/);
  assert.match(html,/aoTlmVenueIdentity--preview/);
 }
+// Source-exact Directory covers are building evidence, not operator evidence.
+ // They must display even for an SSPX house or an unresolved source category;
+ // unrelated Place photographs above remain blocked for those same records.
+const exactVenuePhoto={...image,place_id:undefined,venue_id:venue.source_id,
+ asset_path:"assets/approved/directory-media/GB-source-exact.webp"};
+for(const v of [society,held,unresolved]){
+ const exact={...v,cover_media:exactVenuePhoto};
+ assert.equal(eligibleRenderedDirectoryImage(exactVenuePhoto,exact),true);
+ assert.match(renderDirectoryVenueCard(exact,"en"),/GB-source-exact\.webp/);
+ assert.match(renderDirectoryVenueCard(exact,"fr"),/GB-source-exact\.webp/);
+ assert.match(renderTlmChurchProfile(exact,"fr"),/GB-source-exact\.webp/);
+}
+assert.equal(eligibleRenderedDirectoryImage({...exactVenuePhoto,venue_id:"wrong-site"},society),false);
+assert.equal(eligibleRenderedDirectoryImage({...exactVenuePhoto,status:"CANDIDATE"},society),false);
+
 assert.match(renderDirectoryVenueCard(society),/data-visual-kind="emblem"/);
 assert.match(renderDirectoryVenueCard(society),/FSSP_emblem/);
 assert.equal(directoryVenueMapGroup(society),"FSSP");
