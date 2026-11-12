@@ -582,6 +582,7 @@
       !(requiem&&id==="C24")&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
+    if(message.sediliaReverenceCancelled===true)clearSediliaGesture();
     const sediliaStage=stageSedilia(card,form);
     const seatedGesture=stageSediliaGesture(obs,form);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
