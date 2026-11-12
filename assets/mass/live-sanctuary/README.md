@@ -10,9 +10,9 @@ The canonical native LIVE reader owns the 1962 prayers, cues, dynamic rubrics, i
 | --- | --- | --- | --- |
 | AO.SM.C0174 / AO.CARD.015 | C36, Host elevation | Low, simple Sung, incense Sung, Solemn | Active certified Host elevation source cue |
 | AO.SM.C0181 / AO.CARD.016 | C38, Chalice elevation | Low, simple Sung, incense Sung, Solemn | Active certified Chalice elevation source cue |
-| AO.SM.C0121 / AO.CARD.010 | C24, Offertory incensation | Incense Sung, Solemn | Begins with incensation of offerings, NOT C0120 incense blessing or the independent Schola Offertory |
+| AO.SM.C0121–C0124 / AO.CARD.010 | C24, Offertory incensation | Incense Sung, Solemn | Starts **only** at C0121 (offerings), continues without restarting through C0122–C0124 (cross/altar and minister incensation); never starts from C0120 incense blessing or the independent Schola Offertory |
 
-On exit, the source-bound animation is cancelled and can replay on re-entry. These are preview-only illustrative source-focus bindings. Green technical tests are not a certification of the complete choreography.
+Elevations cancel immediately on leaving their *single* active cue, extinguishing their glow. The C24 incense choreography instead remains active through its sourced C0121–C0124 sequence (the original motion lasts approximately 16 seconds), and cancels when the reader exits that sequence. Continuation cues do not start or restart it. Returning to the initial C0121 after leaving can replay it. LIVE→MISSAL now sends an explicit cancel to the still-mounted iframe: pending actor keyframes, smoke and elevation effects must not survive the mode change. These are preview-only illustrative source-focus bindings. Green technical tests are not a certification of the complete choreography.
 
 ## Deliberate source holds
 
