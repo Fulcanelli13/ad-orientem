@@ -17,7 +17,8 @@ assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.pr
 assert.deepEqual([g.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(g.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,26],
+ "P107's two independently verified exact links extend the live ledger; historical releases remain unchanged");
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
 assert.equal(g.geoAreas.length,146);

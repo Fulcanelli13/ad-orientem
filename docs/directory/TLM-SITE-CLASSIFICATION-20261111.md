@@ -217,3 +217,37 @@ and never overwrites them.
 
 No changes to the Excel master, CL2 anchors, map positions, public Mass
 schedules, approved media or GitHub-only deployment.
+
+
+## Fifth consolidated first-party category release — 42 sites
+
+An additional **42** records were attached via exact physical CL2
+anchors and independent church, diocesan, chapel or institute sources.
+The first-party witness manifest now contains **164** entries:
+**129 diocesan**, **16 religious-house**, **18 mixed/host** and
+**one priestly-society** venue-context witnesses.
+
+These 42 cases include **31 LMS discovery rows**, **eight LMD rows**,
+**two previously labelled Other** and **one Unknown**. The newly added
+venue classifications are **36 diocesan** plus **six mixed/host**.
+They preserve each original source association label and use separate
+context hints for any ministry, never converting a listed celebrant
+into a building owner.
+
+**Cumulative effective coverage:** 2,325 / 2,580 positive
+source-scope categories = **90.12%**. **255 held** =
+181 unresolved source labels + 74 directory-only group associations.
+The 1,335 exact source-ministry joins, 2,583 published church cards
+and physical site registry are unchanged.
+
+This pass specifically guards important non-parish contexts:
+Plymouth Christ the King university chapel; Sydney JPII Student
+Centre; Brisbane Oratory's hosted St John Fisher Chapel; Québec's
+Notre-Dame-du-Cap shrine; the Rome Pontifical Athenaeum chapel;
+Klein Sion retreat centre. Ordinary parish buildings retain the
+diocesan visual lane even where a named community assists in ministry.
+
+Two additional existing approved church photos are cross-linked by
+the separate **P107** canonical release ledger: Westminster Cathedral
+and Maria Vesperbild. These do not create new Place records, pins,
+photo rights decisions, liturgical editions, or Mass times.

@@ -1,5 +1,6 @@
 // Exact-identity, approved-media-only Traditional Mass venue cards.
 import { massInstitutionEmblem } from "./institution-emblems.js";
+import {directoryVenueVisualPolicy} from "./tlm-venue-visual-policy.js";
 import { institutionalRiteMissal } from "./tlm-institutional-rite-missal.js";
 import {tlmApproximateMapLabel,tlmApproximateMapSource} from "./tlm-approximate-map-disclosure.js";
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -65,7 +66,7 @@ export function eligibleVenueImage(img,venueId){
     String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
 }
 export function eligibleRenderedDirectoryImage(img,item){
-  return Boolean(item?.kind==="TLM_VENUE"&&
+  return Boolean(item?.kind==="TLM_VENUE"&&directoryVenueVisualPolicy(item).photoAllowed&&
     (eligibleDirectoryImage(img,item.place_id)||eligibleVenueImage(img,item.source_id)));
 }
 
@@ -164,13 +165,18 @@ const namedSourceMark=(value)=>{
 };
 export function renderDirectoryIdentityFallback(item,language="en",variant="card"){
   const group=String(item?.community_id??"").toUpperCase();
-  const emblem=massInstitutionEmblem(group);
+  const policy=directoryVenueVisualPolicy(item);
+  const emblem=policy.emblem;
   const sourceLabel=String(item?.eyebrow??"").trim();
   const sourceIsNamed=Boolean(sourceLabel)&&!(/^(other|unknown|unclassified(?:\s*\(.*\))?|affiliation unverified|friendly community\s*[-—]\s*unclassified)$/i.test(sourceLabel));
-  const useNamed=Boolean(!emblem&&sourceIsNamed&&group!=="DIOCESAN"&&group!=="DIOCESAN_UNSPECIFIED");
+  const useNamed=Boolean(!emblem&&policy.allowNamed&&sourceIsNamed&&group!=="DIOCESAN"&&group!=="DIOCESAN_UNSPECIFIED");
   const label=useNamed?sourceLabel:
     emblem?.label||(group==="DIOCESAN"||group==="DIOCESAN_UNSPECIFIED"
     ?L(language,"Diocesan church","Église diocésaine")
+    :policy.lane==="DIOCESAN_PHOTO"?L(language,"Diocesan church","Église diocésaine")
+    :policy.category==="MIXED_OR_HOST_RELATIONSHIP"?L(language,"Shared / hosted venue","Lieu partagé / accueilli")
+    :policy.category==="DIRECTORY_GROUP_ONLY"?L(language,"Directory-listed venue","Lieu inscrit au répertoire")
+    :policy.category==="RELIGIOUS_HOUSE"?L(language,"Religious house","Maison religieuse")
     :L(language,"Church / chapel","Église / chapelle"));
   const mode=["card","preview","detail"].includes(variant)?variant:"card";
   const mark=useNamed?(Object.hasOwn(SOURCE_NAMED_MONOGRAMS,group)
@@ -190,11 +196,12 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
 export function renderDirectoryVenueCard(item,language="en"){
   const inherited=institutionalRiteMissal(item);
   const ministry=inherited?.length===1?inherited[0]:null;
+  const policy=directoryVenueVisualPolicy(item);
   const img=item?.cover_media;
   const photo=Boolean(img&&eligibleRenderedDirectoryImage(img,item));
   // A large fallback emblem does not need a duplicate small badge.
   // Holy See arms are not an identity for an individual diocesan church.
-  const emblem=photo&&String(item?.community_id??"").toUpperCase()!=="DIOCESAN"
+  const emblem=photo&&policy.lane==="LEGACY"&&String(item?.community_id??"").toUpperCase()!=="DIOCESAN"
     ?massInstitutionEmblem(item?.community_id):null;
 
   const status=String(item?.status??"");
@@ -229,7 +236,7 @@ export function renderDirectoryVenueCard(item,language="en"){
 // Full venue galleries consume only already-approved, exact-place photos.
 // A source's media_role is optional; never infer interior/exterior from a title.
 export function renderDirectoryGallery(item,language="en"){
-  if(item?.kind!=="TLM_VENUE"||!item.place_id)return "";
+  if(item?.kind!=="TLM_VENUE"||!item.place_id||!directoryVenueVisualPolicy(item).photoAllowed)return "";
   const seen=new Set([item?.cover_media?.asset_path].filter(Boolean));
   const photos=A(item.gallery_media).filter(img=>{
     if(!eligibleDirectoryImage(img,item.place_id)||seen.has(img.asset_path))return false;

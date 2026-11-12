@@ -1,6 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderDirectoryVenueCard,eligibleDirectoryImage,eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
+import {directoryVenueVisualPolicy} from "./tlm-venue-visual-policy.js";
 import {renderTlmChurchProfile} from "./tlm-church-profile.js";
 import {renderTlmMapResultRail} from "./tlm-map-result-rail.js";
 import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
@@ -447,7 +448,7 @@ function compactExploreItemSheet(vm){
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
   if(isMass&&eligibleRenderedDirectoryImage(item.cover_media,item)){
     const m=item.cover_media;
-    const emblem=massInstitutionEmblem(item.community_id);
+    const emblem=directoryVenueVisualPolicy(item).lane==="LEGACY"?massInstitutionEmblem(item.community_id):null;
     html+='<div class="aoTlmPreviewPhotographic">'+
       '<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'+
       (emblem?'<span class="aoTlmPreviewEmblem" aria-label="'+esc(L(lang,"Institute emblem","Emblème de l’institut"))+'"><img data-tlm-emblem-image src="'+esc(emblem.image)+'" alt="" loading="lazy" decoding="async"></span>':'')+

@@ -29,7 +29,8 @@ assert.equal(p104.schema,"AO_SACRED_PLACES_P104_SEVEN_P97_EXACT_DIRECTORY_CHURCH
 assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:257,geo_areas:146,directory_links:15});
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
 assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,26],
+ "P107's two independently verified exact links extend the live ledger; historical releases remain unchanged");
 assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
