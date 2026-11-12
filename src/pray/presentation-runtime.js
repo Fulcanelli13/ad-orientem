@@ -790,7 +790,8 @@ function paintingA3Prayer(id,p){
   choirBar:choir?claudeChoirFixedBar():"",
   inline:choir&&CLAUDE_CHOIR_PREF.inline,
   sourceMarkup:sourceLine(p),
-  sequence:CLAUDE_A3_ESSENTIAL_SEQUENCE});
+  sequence:CLAUDE_A3_ESSENTIAL_SEQUENCE.filter(key=>
+   !!P(key)&&resolvePrayerEditorialArtwork("COV-"+key).state==="PUBLISHED_EXACT_PHOTO")});
 }
 function prayerBlock(id,opts={}){
  const p=opts.record||P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
