@@ -22,7 +22,7 @@
 
 Each registered occurrence is an **independent event**, each with `BEGIN` and `END` boundary, not one blanket Gloria/Credo animation. The prototype's static seated actors are covered initially; the existing biretta artwork moves toward the right knee, and the head inclines only at a witnessed BEGIN. On END the head straightens and the biretta returns. The original actor sprites, camera, keyframes, 65 scene identities and icon bank are not rewritten. Prototype motion speed is illustrative, not a certification of how long the choir sings.
 
-**Actor form rules:** Missa Cantata (simple/incense): P only, while the existing server remains standing. Solemn: P, D and S individually (the deacon and subdeacon follow the applicable headwear and reverence norms). Low Mass: no sedilia choir-chant sequence. Solemn Requiem: no Gloria/Credo; reject all these events.
+**Actor form rules:** Missa Cantata (simple/incense): P only, while the existing server remains standing. Solemn: the celebrant and whichever sacred ministers are actually seated in the source-owned scene. **In C18, the deacon is at the altar with the burse/corporal, not seated**; the sung *Incarnatus* seated-head bow therefore concerns P and S in that staged picture. The deacon's distinct altar duty needs its own correct choreography rather than a fictional sitting-bow. Low Mass: no sedilia choir-chant sequence. Solemn Requiem: no Gloria/Credo; reject all these events.
 
 **Special exception:** At the sung Incarnatus on the three Christmas Masses and the Mass of the Annunciation, even if initially seated the ministers **kneel**, rather than merely performing the usual seated head-bow. Proper-based selection, including transferred Annunciation, must use the native `resolveIncarnatusSungAction` and must not infer from calendar date alone. The ordinary seated-bow animation **fails closed** for this condition; accurate standing/kneeling choreography remains a P0 acceptance hold.
 
@@ -33,6 +33,14 @@ Each registered occurrence is an **independent event**, each with `BEGIN` and `E
 1. At sedilia during Kyrie, sequence, Epistle/readings and, where applicable, homily: evaluate Holy Name of Jesus, Blessed Virgin, saint of Mass, specific sung and spoken formulas, any prescribed uncovering/touching the biretta, and individual actors. These are **conditional proper- and source-text-dependent events**, not merely eight fixed Ordinary events.
 2. Every seated arrival/departure: receiving/putting on biretta, removal prior to rising, handover to M.C./deacon, correct seating and side positioning. No automatic timing from Cnn card entry.
 3. Across **all 65 scenes and special rites**, record each priest/sacred-minister head inclination, profound bow, genuflection, knee bend, biretta off/on and any exception as distinct source-bound actions (not all actions involve headwear). Existing Live icon cues and gestural rail remain authoritative; the sedilia visual is a consumer, not a competing rubric owner.
-4. O'Connell placement audit and user review: the current static seated clergy remain aesthetically unconvincing; headwear animation alone does not close C08's seated-sprite P0. Verify actual PNG screenshots (C08/C09/C12/C17–C19, Sung and Solemn) and C11–C14 minister correction package together.
+4. O'Connell placement audit and user review: C08–C09/C12/C17–C19 now stage the original donor's side-facing bent-knee seated SVG, not the front-facing upright illusion. The updated actor facing is illustrative and **still requires screenshot acceptance**, including proper knee-to-seat contact and no silhouettes overlapping. C18 is explicitly different because the deacon performs the burse/corporal duty. Verify source-focused C13 C0081 ordinary/Requiem stills, and C11–C14 as one consolidated correction batch.
 
 Release requires exact-source actor/pose assertions, enter/exit/reset browser tests including modal transitions and Christmas/Annunciation rejection, latest-head technical gates **and owner visual acceptance**. Draft and unmerged; GitHub Actions + GitHub Pages only; never deploy to Vercel.
+
+## 12 November follow-up — completed corrections on draft branch
+
+- Do not force all P/D/S to sit: only seated native actors receive biretta transitions; C18 deacon stays at his altar duty.
+- Side-view seated sprites use the unchanged original M3 SVG's bent knees instead of the misleading front-facing upright figure.
+- C13 Requiem Gospel preparation suppresses thurifer and acolyte candle props already **before** C14; preserves the two unlit acolytes and resets to normal on ordinary Mass selection.
+- Browser acceptance now requests focused screenshots: C08 biretta off/on, C18 Incarnatus with distinct deacon duty, C13 regular/Requiem exact C0081.
+- All corrections are review-only until latest-head CI and human visual approval.
