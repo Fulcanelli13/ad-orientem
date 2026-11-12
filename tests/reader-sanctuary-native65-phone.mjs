@@ -277,10 +277,12 @@ try{
         })
       );
       const ordinary=ministers();
-      send(gospel,"AO.CARD.007","AO.SM.C0084",true);
+      const reqGospel=send(gospel,"AO.CARD.007","AO.SM.C0084",true);
       const requiem=ministers();
-      send(gospel,"AO.CARD.007","AO.SM.C0084",false);
+      const reqBook=api.getVisualFx();
+      const ordGospelAgain=send(gospel,"AO.CARD.007","AO.SM.C0084",false);
       const restored=ministers();
+      const ordinaryBook=api.getVisualFx();
       const offertory="Offertory · Incensation";
       const held=send(offertory,"AO.CARD.010","AO.SM.C0121",true);
       const normal=send(offertory,"AO.CARD.010","AO.SM.C0121",false);
@@ -314,6 +316,14 @@ try{
       const ordinaryChalice={thurifer:elevation("T"),subdeacon:elevation("S"),
         actor:cOrd.elevationIncenseActor};
       return {ordinary,requiem,restored,
+        sharedBookState:{
+          requiemFlag:reqGospel.sharedGospelBookVisible,
+          requiemVisible:reqBook.sharedBookVisible,
+          requiemCount:reqBook.sharedBookCount,
+          ordinaryFlag:ordGospelAgain.sharedGospelBookVisible,
+          ordinaryVisible:ordinaryBook.sharedBookVisible,
+          ordinaryCount:ordinaryBook.sharedBookCount
+        },
         epistleSource:{before:epiBefore.solemnEpistle,
           start:epiStart.solemnEpistle,holding:epiHolding,
           during:epiDuring.solemnEpistle,end:epiEnding.solemnEpistle,
@@ -411,9 +421,13 @@ try{
       requiem:{
         D:{visible:true,prop:null},S:{visible:true,prop:null},
         T:{visible:false,prop:null},
-        A1:{visible:true,prop:"book"},A2:{visible:true,prop:null}
+        A1:{visible:true,prop:null},A2:{visible:true,prop:null}
       },
       restored:ordinaryMinisters,
+      sharedBookState:{
+        requiemFlag:true,requiemVisible:true,requiemCount:1,
+        ordinaryFlag:false,ordinaryVisible:false,ordinaryCount:0
+      },
       requiemIncense:"STATIC_STAGE",
       ordinaryIncense:"SOURCE_TRIGGERED"
     },"The subdeacon holds the ordinary Gospel book; in a Solemn Requiem "+
