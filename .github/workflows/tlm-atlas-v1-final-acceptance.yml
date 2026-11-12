@@ -50,7 +50,7 @@ jobs:
           test ! -f dist/web-preview/data/directory/research/cl27-6-residual-ministry-role-holds-20261110.v1.json
       - name: Install browser acceptance prerequisites
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Real EN/FR 320px, 390px and desktop map / filters / church profile acceptance
         run: node tests/explore-tlm-church-card-visual.mjs
