@@ -104,6 +104,42 @@ asp=sanctuaryAspergesProjection({aspergesState:asperges.project(),...aspBase});
 assert.equal(asp.riteStageId,"ASP-R05");
 assert.deepEqual(asp.sourceRecordIds,["ASP-060"]);
 
+// The canonical E63/E64 event graph must not silently reinterpret text
+// or Schola as an independently observed *departure* from the altar.
+// Ritus X.6 establishes an after-third-repetition rubric, but the
+// canonical MC graph does not expose that boundary as a physical event.
+const communionGraph=JSON.parse(readFileSync(new URL(
+ "../data/mass/mc-events-05.v1.json",import.meta.url),"utf8"));
+const byCommunionId=new Map(communionGraph.events.map(e=>[e.id,e]));
+assert.deepEqual(["MC-COM-280","MC-COM-300","MC-COM-305",
+ "MC-COM-310","MC-COM-320"].map(id=>byCommunionId.get(id)?.title),[
+ "Domine non sum dignus ×3",
+ "Distribution begins",
+ "Schola begins Communion antiphon",
+ "Holy Communion is being distributed",
+ "Distribution concludes / priest returns"
+]);
+for(const id of ["MC-COM-300","MC-COM-310","MC-COM-320"]){
+ const row=byCommunionId.get(id);
+ assert.equal(row?.actor,"PRIEST");
+ assert.deepEqual(row.sourceMomentRefs,["E64"]);
+ assert.equal(row.evidenceTier,"A");
+ assert.equal(row.forms.LOW,"CERTIFIED");
+ assert.equal(row.forms.SOLEMN,"CERTIFIED");
+}
+assert.equal(byCommunionId.get("MC-COM-305")?.actor,"SCHOLA");
+assert.equal(byCommunionId.get("MC-COM-280")?.actor,"PRIEST");
+assert.deepEqual(byCommunionId.get("MC-COM-280")?.sourceMomentRefs,["E63"]);
+assert.equal(byCommunionId.get("MC-COM-295"),undefined,
+ "No canonical departure event exists between triple response and distribution");
+assert.equal(sanctuaryCueProjection({card:c57,form:"SOLEMN",state:{
+ nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-280"
+}}).canonicalCommunionEventId,null,
+ "The triple response must not be mistaken for observed departure");
+assert.equal(sanctuaryCueProjection({card:c57,form:"SOLEMN",state:{
+ nativeCueId:"AO.SM.C0246",nativeEventId:"MC-COM-305"
+}}).canonicalCommunionEventId,null,
+ "The Schola Communion antiphon cannot move the priest");
 assert.equal(createReaderSanctuaryPreview({enabled:false}).active,false);
 console.log("PASS: LIVE sanctuary receives exact native card and cue only, no Schola or Missal source");
 
