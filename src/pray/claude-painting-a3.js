@@ -33,12 +33,12 @@ function renderSwap(record,language,esc){
  if(!primary)return "";
  if(!vern||!latin)return '<div class="aoA3PlainText" lang="'+esc(latin?"la":vern)+'">'+faceText(primary,esc)+'</div>';
  return '<div class="sw" data-ao-a3-swap role="button" tabindex="0" aria-label="'+esc("Switch between Latin and translation")+'" aria-pressed="false">'+
-  '<div class="st"><div class="a" lang="la">'+faceText(latin,esc)+'</div>'+
-  '<div class="b" lang="'+esc(vern)+'">'+faceText(record[vern],esc)+'</div></div>'+
+  '<div class="st"><div class="a" lang="la" aria-hidden="false">'+faceText(latin,esc)+'</div>'+
+  '<div class="b" aria-hidden="true" lang="'+esc(vern)+'">'+faceText(record[vern],esc)+'</div></div>'+
   '<div class="hint"><span class="ha">TAP · '+esc(vern==="fr"?"FRANÇAIS":"ENGLISH")+'</span>'+
   '<span class="hb">TAP · LATINE</span></div></div>';
 }
-export function renderClaudePaintingA3({id,record,photo,language="en",kind="prayer",esc,
+export function renderClaudePaintingA3({id,record,photo,language="en",uiLanguage=language,kind="prayer",esc,
   choirRows="",choirBar="",inline=false,sourceMarkup="",sequence=CLAUDE_A3_ESSENTIAL_SEQUENCE}={}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  if(!eligibleClaudePaintingA3({record,photo,id,kind}))return "";
@@ -51,6 +51,11 @@ export function renderClaudePaintingA3({id,record,photo,language="en",kind="pray
  const rail='<div class="rail" aria-label="Prayer position">'+nav.map((key,i)=>
    '<button type="button" data-ao-a3-open="'+esc(key)+'" class="'+(i===active?"on":"")+
    '" aria-current="'+(i===active?"true":"false")+'" aria-label="'+esc("Prayer "+(i+1))+'"></button>').join("")+'</div>';
+ const missingUi=(uiLanguage==="en"||uiLanguage==="fr")&&!record[uiLanguage];
+ const languageNote=missingUi?
+  '<p class="aoA3LanguageNote" lang="'+esc(uiLanguage)+'">'+
+   esc(uiLanguage==="fr"?"Texte français indisponible dans cette source ; seule la langue conservée est affichée.":"English text is not available in this source; the available source language is shown.")+
+  '</p>':"";
  const body=kind==="litany"?
   '<article class="aoP435930Prayer aoChoirPrayer aoClaudeChoirPrayer" data-ao-choir-prayer="'+esc(id)+'" data-ao-choir-kind="litany">'+
   '<div class="aoP435930Text aoChoirFaces"><div class="aoP435930SemanticFace aoChoirFace aoClaudeChoirScroll" data-ao-pray-semantic="1" lang="'+esc(language)+'">'+choirRows+'</div></div>'+
@@ -65,7 +70,7 @@ export function renderClaudePaintingA3({id,record,photo,language="en",kind="pray
   '<div class="ct"><span class="eyb">'+esc(String(latinTitle).toUpperCase())+'</span>'+
   '<h2>'+esc(title)+'</h2><div class="tx aoDevoCardScroll" role="region" aria-label="'+esc(title)+'">'+body+'</div>'+
   '<div class="cr">'+esc(credit)+'</div>'+
-  (sourceMarkup?'<details class="aoA3Source"><summary>ⓘ Source</summary>'+sourceMarkup+'</details>':"")+
+  languageNote+(sourceMarkup?'<details class="aoA3Source"><summary>ⓘ Source</summary>'+sourceMarkup+'</details>':"")+
   '</div>'+rail+'</div></section></main>';
 }
 export function installClaudePaintingA3(mount,{navigate}={}){
@@ -89,6 +94,9 @@ export function installClaudePaintingA3(mount,{navigate}={}){
   if(swap){
    const active=swap.classList.toggle("v");
    swap.setAttribute("aria-pressed",String(active));
+   const a=swap.querySelector(".st .a"),b=swap.querySelector(".st .b");
+   a?.setAttribute("aria-hidden",String(active));
+   b?.setAttribute("aria-hidden",String(!active));
    return true;
   }
   const target=event.target.closest?.("[data-ao-a3-open]");
