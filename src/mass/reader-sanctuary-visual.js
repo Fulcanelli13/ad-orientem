@@ -53,8 +53,24 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
  // from C0246 text, the separate Schola MC-COM-305 or card scrolling.
  // The current reader projects event IDs only from objective runtime
  // ownership; unavailable events remain null rather than synthesized.
- const eventId=String(state?.nativeEventId??"");
- const communionEventId=sourceSectionId==="AO.CARD.025"&&
+ const observed=state?.observedCommunionReturn;
+ const verifiedObservedReturn=sourceSectionId==="AO.CARD.025"&&
+   ["LOW","SOLEMN"].includes(form)&&
+   card.sectionId==="AO.LIVECURATED.AO.CARD.025.1"&&
+   observed?.eventId==="MC-COM-320"&&
+   observed?.nativeCardId===card.sectionId&&
+   observed?.sourceSectionId===sourceSectionId&&
+   observed?.actor==="PRIEST"&&observed?.observed===true&&
+   observed?.action==="RETURN_TO_ALTAR"&&
+   observed?.owner==="EXPLICIT_PRIEST_COMMUNION_OBSERVATION";
+ // The explicit cancellation overrides a possibly stale legacy pointer.
+ // It is not a source event and must never be routed as a Schola action.
+ const communionReturnCancelled=sourceSectionId==="AO.CARD.025"&&
+   ["LOW","SOLEMN"].includes(form)&&state?.communionReturnCancelled===true;
+ const eventId=verifiedObservedReturn?"MC-COM-320":
+   String(state?.nativeEventId??"");
+ const communionEventId=!communionReturnCancelled&&
+   sourceSectionId==="AO.CARD.025"&&
    ["LOW","SOLEMN"].includes(form)&&
    ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(eventId)
    ?eventId:null;
@@ -64,6 +80,7 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
   canonicalCommunionEventId:communionEventId,
+  communionReturnCancelled,
   // Solemn Requiem has specific ceremonial omissions at Gospel/Offertory.
   // The established resolved-Mass predicate, never a date/title guess, owns this.
   requiem:prepared?isExplicitRequiemMass(prepared):false,
