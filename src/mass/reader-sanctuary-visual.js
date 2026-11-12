@@ -46,11 +46,24 @@ export function sanctuaryCueProjection({card,state,aspergesState=null,prepared=n
     card.stateOnly===true)return null;
  const candidate=String(state?.nativeCueId??"");
  const sourceCueId=/^AO\.SM\.C\d{4}$/.test(candidate)?candidate:null;
+ const sourceSectionId=String(card.sourceSectionId??card.sectionId);
+ // The canonical MC event graph has distinct physical states for faithful
+ // Communion: MC-COM-300 distribution begins, -310 continues, and -320
+ // priest returns (all tier A, source moment E64). This is NEVER inferred
+ // from C0246 text, the separate Schola MC-COM-305 or card scrolling.
+ // The current reader projects event IDs only from objective runtime
+ // ownership; unavailable events remain null rather than synthesized.
+ const eventId=String(state?.nativeEventId??"");
+ const communionEventId=sourceSectionId==="AO.CARD.025"&&
+   ["LOW","SOLEMN"].includes(form)&&
+   ["MC-COM-300","MC-COM-310","MC-COM-320"].includes(eventId)
+   ?eventId:null;
  return Object.freeze({
   type:SANCTUARY_PROTOCOL,version:1,form,
-  sourceSectionId:String(card.sourceSectionId??card.sectionId),
+  sourceSectionId,
   cardTitle:String(card.title).trim(),
   sourceCueId,certifiedSourceFocus:Boolean(sourceCueId),
+  canonicalCommunionEventId:communionEventId,
   // Solemn Requiem has specific ceremonial omissions at Gospel/Offertory.
   // The established resolved-Mass predicate, never a date/title guess, owns this.
   requiem:prepared?isExplicitRequiemMass(prepared):false,
