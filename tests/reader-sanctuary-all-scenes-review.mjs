@@ -141,7 +141,7 @@ try{
       ()=>requestAnimationFrame(done))));
     await page.screenshot({path:resolve(output,imageName),animations:"disabled"});
    }
-   const issues=[...(holds[c.id]??[])];
+   const issues=holds[c.id]?[holds[c.id][0]]:[];
    if(excluded)issues.push("LOW_NO_INCENSE");
    if(omitted)issues.push("REQUIEM_OMITTED");
    rows.push({form:form.id,formName:form.name,id:c.id,title:c.title,
@@ -177,21 +177,16 @@ try{
   r.actors?.deacon?.pose,r.actors?.subdeacon?.pose,r.image
  ].map(csvCell).join(","))].join("\n");
  await writeFile(resolve(output,"scene-matrix.csv"),csv+"\n");
- const statuses={};
- for(const c of cards){
-  const issues=holds[c.id]??[];
-  if(issues.length)statuses[c.id]=issues.map(x=>({code:x[0],note:x[1]}));
- }
  const htmlCards=cards.map(c=>{
-   const issue=holds[c.id]??[];
+   const issue=holds[c.id]??null;
    return '<article class="scene" data-id="'+c.id+
     '" data-search="'+escapeHtml((c.id+" "+c.title+" "+c.macro+
-     " "+issue.map(x=>x.join(" ")).join(" ")).toLowerCase())+'">'+
+     " "+(issue?issue.join(" "):"")).toLowerCase())+'">'+
     '<header><div><span class="mono">'+c.id+'</span><h2>'+escapeHtml(c.title)+
     '</h2><small>'+escapeHtml(c.macro)+" · "+escapeHtml(c.cue)+
-    '</small></div><span class="status '+(issue.length?"held":"pending")+'">'+
-    (issue.length?"SOURCE/POSE HOLD":"REVIEW STILL")+'</span></header>'+
-    (issue.length?'<p class="issue">'+issue.map(x=>escapeHtml(x[1])).join("; ")+
+    '</small></div><span class="status '+(issue?"held":"pending")+'">'+
+    (issue?"SOURCE/POSE HOLD":"REVIEW STILL")+'</span></header>'+
+    (issue?'<p class="issue">'+escapeHtml(issue[1])+
     '</p>':'')+
     '<div class="compare">'+forms.map(f=>{
      const row=rows.find(r=>r.id===c.id&&r.form===f.id);
