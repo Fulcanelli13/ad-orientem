@@ -130,7 +130,9 @@ for(const photo of media.items){
   const html=renderDirectoryVenueCard(exactItem,lang);
   assert.ok(html.includes('data-visual-kind="photo"'));
   assert.ok(html.includes('src="'+photo.asset_path+'"'));
-  assert.ok(html.includes(lang==="fr"?photo.alt_fr:photo.alt_en));
+  const alt=String(lang==="fr"?photo.alt_fr:photo.alt_en).replace(/[&<>"']/g,
+   ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch]));
+  assert.ok(html.includes('alt="'+alt+'"'));
  }
  assert.equal(eligibleRenderedDirectoryImage(photo,{...exactItem,source_id:"unrelated-venue"}),false);
 }
