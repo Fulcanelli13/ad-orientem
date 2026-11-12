@@ -14,8 +14,8 @@
     "high_priority_paragraphs": 152,
     "distinct_places": 168,
     "source_types": {
-      "canonical": 364,
-      "research": 140
+      "canonical": 353,
+      "research": 151
     },
     "flag_counts": {
       "HISTORICAL_YEAR_OR_DATED_EVENT": 100,
@@ -1951,7 +1951,7 @@
       "shrine_id": "shrine:DE:mariahilf-amberg",
       "name": "Wallfahrtskirche Maria Hilf Amberg",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides87-96-20261110.v1.json",
-      "revision": "fnv1a32-79dc3ff3",
+      "revision": "fnv1a32-cad14715",
       "publication_authorized": false,
       "sections": [
         {
@@ -1975,10 +1975,10 @@
         {
           "section_id": "identity",
           "paragraph_index": 0,
-          "source_id": "SHR-MARIAHILF-AMBERG",
-          "source_url": "https://www.mariahilfberg-amberg.de/index.html",
+          "source_id": "AO-ED-CITATION-89-IDENTITY-20261112",
+          "source_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Canonical pilgrimage-church identity, current opening and Mariahilfberg address",
+          "source_metadata_excerpt": "Mariahilfberg church's official history describes local Marian image and 1634 hill procession",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [],
@@ -2591,7 +2591,7 @@
       "shrine_id": "shrine:US:st-anne-fiskdale",
       "name": "St. Anne Shrine",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides97-106-20261110.v1.json",
-      "revision": "fnv1a32-3d8e87a3",
+      "revision": "fnv1a32-9747dd32",
       "publication_authorized": false,
       "sections": [
         {
@@ -2627,10 +2627,10 @@
         {
           "section_id": "pilgrimage",
           "paragraph_index": 0,
-          "source_id": "SHR-ST-ANNE-FISKDALE",
-          "source_url": "https://www.stannestpatrickparish.com/st-annes-shrine",
+          "source_id": "AO-ED-CITATION-100-PILGRIMAGE-20261112",
+          "source_url": "https://stannestpatrickparish.com/novena-to-st-anne",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Canonical shrine identity, current devotional spaces, daily Rosary and 16 Church Street address",
+          "source_metadata_excerpt": "Fiskdale parish describes 18–26 July novena with procession Rosary and Mass",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -2648,7 +2648,7 @@
       "shrine_id": "shrine:PL:gietrzwald",
       "name": "Sanctuary of Our Lady of Gietrzwałd",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides97-106-20261110.v1.json",
-      "revision": "fnv1a32-7d3fb5e6",
+      "revision": "fnv1a32-c4b0594d",
       "publication_authorized": false,
       "sections": [
         {
@@ -2687,10 +2687,10 @@
         {
           "section_id": "pilgrimage",
           "paragraph_index": 0,
-          "source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
-          "source_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/",
+          "source_id": "AO-ED-CITATION-101-PILGRIMAGE-20261112",
+          "source_url": "https://www.archwarmia.pl/aktualnosci/gietrzwald-czeka-na-pielgrzymow-2/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "1877 Marian apparition shrine; annual Marian pilgrimage focused on the Nativity of Mary and locally observed 8 September ceremonies.",
+          "source_metadata_excerpt": "Warmia Archdiocese confirms 2026 main gathering on 13 September distinct from Nativity feast on 8 September",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -2709,7 +2709,7 @@
       "shrine_id": "shrine:LT:siluva",
       "name": "Our Lady of Šiluva — Apparition Chapel",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides97-106-20261110.v1.json",
-      "revision": "fnv1a32-6382fa24",
+      "revision": "fnv1a32-bccd9dd4",
       "publication_authorized": false,
       "sections": [
         {
@@ -2745,10 +2745,10 @@
         {
           "section_id": "pilgrimage",
           "paragraph_index": 0,
-          "source_id": "SHR-SILUVA-OFFICIAL",
-          "source_url": "https://siluva.lt/apie-sventove/",
+          "source_id": "AO-ED-CITATION-102-PILGRIMAGE-20261112",
+          "source_url": "https://siluva.lt/silines-2026-jubilieju-metais-siluva-kviecia-ne-tik-prisiminti-bet-ir-kurti-baznycios-ateiti/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Lithuanian Catholic sanctuary and annual Šilinės pilgrimage; individual programme days vary from year to year.",
+          "source_metadata_excerpt": "Šiluva shrine's 31 August 2026 notice gives 2026 celebrations from 5 to 15 September",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -3336,16 +3336,16 @@
       "shrine_id": "shrine:20261009:FR:notre-dame-la-salette-fallavaux",
       "name": "Sanctuaire Notre-Dame de La Salette",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides107-116-20261110.v1.json",
-      "revision": "fnv1a32-9b7f7d5e",
+      "revision": "fnv1a32-7965ccc2",
       "publication_authorized": false,
       "sections": [
         {
           "section_id": "history",
           "paragraph_index": 0,
-          "source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
-          "source_url": "https://lasalette.cef.fr/",
+          "source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+          "source_url": "https://www.lasalette.cef.fr/lhistoire/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Documented identity and visit/pilgrimage to this Catholic shrine or basilica and its named dedication.",
+          "source_metadata_excerpt": "La Salette sanctuary custodian's history of 19 September 1846 and the two shepherd children",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -3360,10 +3360,10 @@
         {
           "section_id": "identity",
           "paragraph_index": 0,
-          "source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
-          "source_url": "https://lasalette.cef.fr/",
+          "source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+          "source_url": "https://www.lasalette.cef.fr/lhistoire/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Documented identity and visit/pilgrimage to this Catholic shrine or basilica and its named dedication.",
+          "source_metadata_excerpt": "La Salette shrine's own history describes conversion message and local ecclesiastical reception",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -4402,16 +4402,16 @@
       "shrine_id": "shrine:IT:san-bartolomeo-isola",
       "name": "Basilica San Bartolomeo all'Isola, Rome",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides127-136-20261110.v1.json",
-      "revision": "fnv1a32-984043f6",
+      "revision": "fnv1a32-ca624bb6",
       "publication_authorized": false,
       "sections": [
         {
           "section_id": "history",
           "paragraph_index": 0,
-          "source_id": "SHR-IT-san-bartolomeo-isola",
-          "source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+          "source_id": "AO-ED-CITATION-131-HISTORY-20261112",
+          "source_url": "https://www.turismoroma.it/en/node/695",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Source supports the named destination and reported relic veneration of Saint Bartholomew the Apostle; does not independently authenticate identities.",
+          "source_metadata_excerpt": "Rome municipal heritage site gives San Bartolomeo apostolic dedication and attributed relic tradition",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -6034,7 +6034,7 @@
       "shrine_id": "shrine:AR:basilica-of-our-lady-of-lujan",
       "name": "Basilica of Our Lady of Luján",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides157-166-20261110.v1.json",
-      "revision": "fnv1a32-7cf8f5ec",
+      "revision": "fnv1a32-63e20079",
       "publication_authorized": false,
       "sections": [
         {
@@ -6068,10 +6068,10 @@
         {
           "section_id": "pilgrimage",
           "paragraph_index": 0,
-          "source_id": "SG-PROFILE-20261010-06",
-          "source_url": "https://santuariodelujan.org.ar/",
+          "source_id": "AO-ED-CITATION-159-PILGRIMAGE-20261112",
+          "source_url": "https://santuariodelujan.org.ar/peregrinaciones/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Confirms Luján basilica, Marian image, official sanctuary and pilgrimage worship",
+          "source_metadata_excerpt": "Luján sanctuary lists distinct annual youth Gaucho and Bolivian pilgrimages",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -7874,16 +7874,16 @@
       "shrine_id": "shrine:BR:fortaleza-fatima-sanctuary",
       "name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides189-200-20261110.v1.json",
-      "revision": "fnv1a32-ca44ff77",
+      "revision": "fnv1a32-2e5d6c50",
       "publication_authorized": false,
       "sections": [
         {
           "section_id": "history",
           "paragraph_index": 0,
-          "source_id": "SG-R75-SITE-SG-INV-0482",
-          "source_url": "https://igrejadefatima.com.br/contato/",
+          "source_id": "AO-ED-CITATION-191-HISTORY-20261112",
+          "source_url": "https://igrejadefatima.com.br/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Original institutional source confirming the church or sanctuary and its devotion; not a supernatural approval.",
+          "source_metadata_excerpt": "Fortaleza Nossa Senhora de Fátima parish-sanctuary operator homepage identifies local Brazilian ministry",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [],
@@ -7988,16 +7988,16 @@
       "shrine_id": "shrine:UY:montevideo-gruta-lourdes-national-shrine",
       "name": "Santuario Nacional Gruta de Lourdes, Montevideo",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides189-200-20261110.v1.json",
-      "revision": "fnv1a32-1e0ea6d3",
+      "revision": "fnv1a32-0ec4efc1",
       "publication_authorized": false,
       "sections": [
         {
           "section_id": "history",
           "paragraph_index": 0,
-          "source_id": "SG-R75-SITE-SG-INV-0532",
-          "source_url": "https://iglesiacatolica.org.uy/virgen-de-lourdes-montevideo/",
+          "source_id": "AO-ED-CITATION-193-HISTORY-20261112",
+          "source_url": "https://grutadelourdes.org/sobre-nosotros/",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Original institutional source confirming the church or sanctuary and its devotion; not a supernatural approval.",
+          "source_metadata_excerpt": "Montevideo Gruta de Lourdes custodian's about/history page identifies shrine and historical local origins",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
@@ -9671,7 +9671,7 @@
       "shrine_id": "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral",
       "name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
       "source_file": "data/shrines/research/sacred-atlas-wave2-guides213-224-20261110.v1.json",
-      "revision": "fnv1a32-a3d214b1",
+      "revision": "fnv1a32-970633a1",
       "publication_authorized": false,
       "sections": [
         {
@@ -9693,10 +9693,10 @@
         {
           "section_id": "identity",
           "paragraph_index": 0,
-          "source_id": "SG-R77-SITE-SG-INV-0449",
-          "source_url": "https://www.catholicdiocesebelize.org/en/parishes",
+          "source_id": "AO-ED-CITATION-222-IDENTITY-20261112",
+          "source_url": "https://www.catholicdiocesebelize.org/en/news/holy-doors-of-holy-redeemer-cathedral-opened",
           "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
-          "source_metadata_excerpt": "Documents the actual physical Catholic site and its designation; shrine juridical status not inferred from the research title.",
+          "source_metadata_excerpt": "Belize diocese 13 January 2025 report lists Our Lady of Guadalupe Co-Cathedral as a Jubilee 2025 Sacred Site and Holy Door",
           "first_pass_checked": false,
           "automated_citation_link_pass": true,
           "claim_flags": [
