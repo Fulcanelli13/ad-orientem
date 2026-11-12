@@ -9,6 +9,7 @@ on:
       - "tests/reader-sanctuary-native65-phone.mjs"
       - "tests/reader-all-saints-asperges-phone.mjs"
       - "tests/reader-sanctuary-original-motion.mjs"
+      - "tests/reader-sanctuary-all-scenes-review.mjs"
       - ".github/workflows/live-sanctuary-source.yml"
   workflow_dispatch: {}
 permissions:
@@ -30,6 +31,7 @@ jobs:
           node --check assets/mass/live-sanctuary/ao-sanctuary-embedded.js
           node --check tests/reader-sanctuary-native65-phone.mjs
           node --check tests/reader-sanctuary-original-motion.mjs
+          node --check tests/reader-sanctuary-all-scenes-review.mjs
       - name: Protect original artwork, exact source cues, rubrics and cinematics
         run: |
           node tests/reader-sanctuary-source-65.mjs
@@ -48,6 +50,21 @@ jobs:
         run: node tests/reader-cinematic-scenes-phone.mjs
       - name: Watch original full-motion routines without certifying choreography
         run: node tests/reader-sanctuary-original-motion.mjs
+      - name: Build complete 65-scene five-form visual acceptance package
+        run: |
+          node tests/reader-sanctuary-all-scenes-review.mjs
+          mkdir -p artifacts/sanctuary-review/original-interactive
+          cp -R assets/mass/live-sanctuary/. artifacts/sanctuary-review/original-interactive/
+          mkdir -p artifacts/sanctuary-review/native-motion-samples
+          cp artifacts/sanctuary-live/*.png artifacts/sanctuary-review/native-motion-samples/ || true
+      - name: Upload review gallery, actor matrix and original interactive sanctuary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanctuary-65-scene-five-form-review
+          path: artifacts/sanctuary-review/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Capture source visual screenshots
         if: always()
         uses: actions/upload-artifact@v4
