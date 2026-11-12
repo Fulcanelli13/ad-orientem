@@ -55,7 +55,7 @@ const officialFsspMarker={
   description:"<b>Diocese:</b> Sydney<br><b>Masses:</b> Sun. 10.30 a.m. (Sung)",
   link:"https://www.maternalheart.org",lat:"-33.8",lng:"151.15"
 };
-const apiFssp=parseFsspOfficialMarkers([officialFssp]);
+const apiFssp=parseFsspOfficialMarkers([officialFsspMarker]);
 assert.equal(apiFssp.length,1);
 assert.equal(apiFssp[0].title,"Maternal Heart of Mary Parish");
 assert.equal(apiFssp[0].countryCode,"AU");
@@ -65,10 +65,10 @@ assert.match(apiFssp[0].massRaw,/10\.30/);
 assert.equal(apiFssp[0].officialGeo,undefined,
  "Unapproved FSSP source coordinates must not be promoted into the raw importer");
 assert.equal(buildFsspDataset(apiFssp).venues[0].upstream.marker_id,"5993");
-assert.throws(()=>parseFsspOfficialMarkers({records:[officialFssp]}),/schema drift/);
+assert.throws(()=>parseFsspOfficialMarkers({records:[officialFsspMarker]}),/schema drift/);
 assert.throws(()=>parseFsspOfficialMarkers([officialFssp,{...officialFssp}]),/duplicate source marker ID/);
-assert.throws(()=>parseFsspOfficialMarkers([{...officialFssp,id:"5994",address:"Unknown place"}]),/unknown country/);
-assert.deepEqual(parseFsspOfficialMarkers([{...officialFssp,map_id:"2"}]),[],
+assert.throws(()=>parseFsspOfficialMarkers([{...officialFsspMarker,id:"5994",address:"Unknown place"}]),/unknown country/);
+assert.deepEqual(parseFsspOfficialMarkers([{...officialFsspMarker,map_id:"2"}]),[],
  "Other WordPress maps must not enter the FSSP worldwide corpus");
 
 
