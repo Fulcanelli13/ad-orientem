@@ -195,14 +195,13 @@
   }
   // Ritus servandus VI.4, registry MR62.SOL.B02.001:
   // The SUBDEACON bears the Epistolarium at the Epistle side and
-  // sings the lesson. Claude's C11 figure is there already but lacks
-  // the book. Give it the original hand-held book prop only on the
-  // native C0075/C0076 source focus. The actual walk and the later
-  // post-Epistle genuflection/blessing are NOT inferred from scroll.
-  function stageSolemnEpistle({card,form,sourceSectionId,cue,validCue}){
-    const active=Boolean(card?.id==="C11"&&form.solemn&&validCue&&
-      sourceSectionId==="AO.CARD.005"&&
-      (cue==="AO.SM.C0075"||cue==="AO.SM.C0076"));
+  // sings the lesson. The 65-card native Epistle source section exists,
+  // but its C0075 *paragraph focus* does NOT exist in the curated model.
+  // Do not pretend the cue is focusable: this is a STATIC C11 scene,
+  // owned by the real AO.CARD.005 source card, not a timed minister event.
+  function stageSolemnEpistle({card,form,sourceSectionId}){
+    const active=Boolean(card?.id==="C11"&&form.solemn&&
+      sourceSectionId==="AO.CARD.005");
     if(!active)return false;
     const subdeacon=M3.actors?.()?.S;
     if(!subdeacon)return false;
@@ -338,9 +337,8 @@
     const missalTransferFocus=Boolean(id==="C13"&&form.solemn&&validCue&&
       sourceSectionId==="AO.CARD.007"&&cue==="AO.SM.C0081");
     const missalFocusExit=Boolean(last?.solemnMissalTransfer&&!missalTransferFocus);
-    const epistleFocus=Boolean(id==="C11"&&form.solemn&&validCue&&
-      sourceSectionId==="AO.CARD.005"&&
-      (cue==="AO.SM.C0075"||cue==="AO.SM.C0076"));
+    const epistleFocus=Boolean(id==="C11"&&form.solemn&&
+      sourceSectionId==="AO.CARD.005");
     const epistleFocusExit=Boolean(last?.solemnEpistle&&!epistleFocus);
     if(last?.card==="P1"){
       showObservedSprinkle(false);
@@ -382,7 +380,7 @@
     stageSungSediliaAcolyte(card);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
-      card,form,sourceSectionId,cue,validCue
+      card,form,sourceSectionId
     });
     const solemnMissalTransfer=stageSolemnMissalAfterTransfer({
       card,form,sourceSectionId,cue,validCue
