@@ -50,3 +50,23 @@ Before publication, perform an actual served-app browser test with staged origin
 **This PR is not a release and contains no R8 painting files or font bundles.** Pages exclusion is intentional. Do not merge or deploy until gates are green and the original source has been reviewed in the production shell. Deployment policy remains **GitHub Actions + GitHub Pages only**, never Vercel.
 
 The staged browser test above **fails loudly if the original R8 files are absent**. It is not part of default CI because the owner-supplied image bundle is not committed or licensed for public publication. It exercises the original Places menu, Votive Candles entry, a real N3 St Joseph novena, Back-to-original-gallery and west-door Home exit at 320/390px and EN/FR. Successful execution is a prerequisite to lifting the publication hold; it is not assumed from the green host unit test.
+
+## R11 — owner R8 source inspection and independent browser audit (12 Nov 2026)
+
+The actual owner-supplied `Ad_Orientem_R8_Church_Novena_Integration.zip` was inspected outside GitHub. The exact `Ad_Orientem/prayers.html` source SHA-256 is:
+
+`1fc0f989f9156acc09295365dd149064d857bcb69dfeb5337242093bb10511f4`
+
+The original source references **55 distinct painting assets**; all 55 are present in its source package. It defines `churchShow`, `churchHide`, `openLectern`, `aoRestoreNovenaOrigin`, `walkable` and the terminal `boot();` anchor, as expected by the staging tool. This is the same R8 scene, not a substitute renderer.
+
+A **locally isolated Chromium test** inlined those original art assets (without copying font files), applied the host pause/resume listener, and exercised the original Church DOM in **320px EN, 320px FR, 390px EN, 390px FR**. Each case passed with **zero JavaScript page errors** for:
+
+- The 12 original Places actions and the correct language labels.
+- Places → Votive Candles → `novena:st_joseph`.
+- The original Church's outbound route and its exact selected-gallery return receipt.
+- The lectern → original illustrated Tabula → Church journey.
+- The west-door exit producing the Home message and removing the Church frame.
+
+**Boundary:** this isolated Church test used a test parent instead of `AO_NOVENAS_V3`. It is not a full GitHub-hosted app run or a real-N3 reader test. The latter is covered separately by the green R9 real-reader job (19 programmes × 320/390 × EN/FR = 76 production-reader journeys). Their conjunction is strong contract evidence but does **not** certify end-to-end hosted 3D integration. Do not remove the release hold or merge on the basis of this audit alone.
+
+The R11 host fix now adds the parent language to the original R8 URL for a correct **first paint** and sends the original `AO.on({type:"settings"})` protocol on load and resume. The dedicated R10 contract test covers these rules.
