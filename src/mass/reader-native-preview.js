@@ -1445,6 +1445,11 @@ export async function mountNativeReaderPreview({
       .map(unit=>[unit.cue_id,unit.clock])
   );
   let observedCuratedPriestEvent=null;
+  // The native C57 source card can accept an actual human observation of
+  // MC-COM-320 (priest returns to altar). This is a separate source lane:
+  // no reader scroll, Schola event or legacy MC pointer may invent it.
+  let observedCommunionReturn=null;
+  let communionReturnCancelled=false;
   const priestEventIndex=new Map(ready.events.map(e=>[e.id,e]));
   let scheduled=false;
   let initialCardRender=true;
@@ -2012,6 +2017,13 @@ export async function mountNativeReaderPreview({
           cueId:activeCueId,matrixAction,priestAction,
         }),
       nativeEventId:eventState?.canonicalEventId??null,
+      observedCommunionReturn:observedCommunionReturn&&
+        (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025"&&
+        current?.sectionId===observedCommunionReturn.nativeCardId&&
+        String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ?observedCommunionReturn:null,
+      communionReturnCancelled:communionReturnCancelled&&
+        (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025",
       independentlyObservedPriestEvent:observedPriest?.eventId??null,
       sourceOnlyPriestCue:observedPriest?.cueId??null,
       nativeCueId:activeCueId,
@@ -2838,6 +2850,10 @@ export async function mountNativeReaderPreview({
     syncRiteChoice(null,null);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
+    if(changed){
+      observedCommunionReturn=null;
+      communionReturnCancelled=false;
+    }
     // Explicit priest-side state persists between Gloria/Credo subcards but
     // must not leak into an unrelated source Mass section.
     if(previous && (previous.sourceSectionId??previous.sectionId)!==
@@ -3031,6 +3047,10 @@ export async function mountNativeReaderPreview({
   }
 
   function switchPresentationMode(nextMode){
+    // Mode changes never mean the celebrant returned from Communion.
+    // A former observed return must not replay on LIVE re-entry.
+    observedCommunionReturn=null;
+    communionReturnCancelled=true;
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
@@ -3370,6 +3390,8 @@ export async function mountNativeReaderPreview({
     sanctuaryVisual?.destroy?.();sanctuaryVisual=null;
     priestEntranceState.reset();
     chaliceObservationState.close();
+    observedCommunionReturn=null;
+    communionReturnCancelled=false;
     observedPriestEvent=null;
     canonManualUI?.destroy();
     canonManualUI=null;
@@ -3650,6 +3672,59 @@ export async function mountNativeReaderPreview({
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
+    // Explicit, independently observed priest-return boundary. This does
+    // not observe automatically or expose a new UI button. An authorized
+    // human observer may report the REAL, source-certified E64 event while
+    // the native C57 LIVE source card is active; ordinary card movement,
+    // the triple Domine non sum dignus and MC-COM-305 Schola cannot call it.
+    observeCommunionReturn:observation=>{
+      const form=ready.prepared?.session?.resolvedMass?.form;
+      const event=priestEventIndex.get("MC-COM-320");
+      const actualCard=current?.sourceSectionId==="AO.CARD.025"&&
+        current?.sectionId==="AO.LIVECURATED.AO.CARD.025.1";
+      const valid=ready.curatedEligible===true&&actualCard&&
+        readerModel?.presentationMode==="LIVE"&&
+        ["LOW","SOLEMN"].includes(form)&&
+        ![inAsperges,inPalm,inAsh,inCandlemas,inRogations,
+          inRequiemAbsolution,inCorpusChristi,inHolyThursdayPost,
+          inGenericProcession,inLifecycle].some(Boolean)&&
+        observation?.observed===true&&
+        observation?.eventId==="MC-COM-320"&&
+        observation?.actor==="PRIEST"&&
+        observation?.action==="RETURN_TO_ALTAR"&&
+        event?.id==="MC-COM-320"&&event?.actor==="PRIEST"&&
+        event?.phase==="COMMUNION_OF_FAITHFUL"&&
+        event?.evidenceTier==="A"&&
+        event?.sourceMomentRefs?.includes("E64")&&
+        event?.forms?.[form]==="CERTIFIED"&&
+        (!ready.objectiveRuntime.supported||
+          ready.objectiveRuntime.allows("MC-COM-320"));
+      if(!valid)return Object.freeze({
+        accepted:false,reason:"UNOBSERVED_OR_UNCERTIFIED_COMMUNION_RETURN"
+      });
+      if(observedCommunionReturn)return Object.freeze({
+        accepted:true,duplicate:true,eventId:"MC-COM-320"
+      });
+      observedCommunionReturn=Object.freeze({
+        eventId:"MC-COM-320",nativeCardId:current.sectionId,
+        sourceSectionId:"AO.CARD.025",actor:"PRIEST",
+        observed:true,action:"RETURN_TO_ALTAR",
+        owner:"EXPLICIT_PRIEST_COMMUNION_OBSERVATION"
+      });
+      communionReturnCancelled=false;
+      queue();
+      return Object.freeze({accepted:true,duplicate:false,eventId:"MC-COM-320"});
+    },
+    getObservedCommunionReturn:()=>observedCommunionReturn,
+    clearObservedCommunionReturn:()=>{
+      const had=Boolean(observedCommunionReturn);
+      observedCommunionReturn=null;
+      // An explicit manual cancellation is not a transient missing event:
+      // the source bridge must stop walking and restore the static rail.
+      communionReturnCancelled=true;
+      queue();
+      return Object.freeze({cleared:had});
+    },
     // Priest-mode adapter. A caller must independently observe a canonical
     // MC event; swiping a card or changing Schola lyrics never calls this.
     // Invalid/unmatched form, source section or conditional sedilia events
