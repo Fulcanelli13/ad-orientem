@@ -1,0 +1,72 @@
+{
+  "schema": "AO_TLM_V1_RELEASE_CLOSEOUT_V1",
+  "as_of": "2026-11-12",
+  "publication_standard": "ALL_EXISTING_VENUES_FINDABLE_VISUALIZED_AND_TRUTHFULLY_SOURCE_CLASSIFIED_NOT_ALL_TIMETABLES_INDEPENDENTLY_VERIFIED",
+  "state": "FINAL_ACCEPTANCE_CANDIDATE",
+  "source_of_truth": {
+    "physical_index": "data/directory/generated/cl2-physical-site-index.v1.json",
+    "source_category": "data/directory/cl2-source-site-category-matrix-20261111.v1.json",
+    "exact_category_witnesses": "data/directory/cl2-exact-venue-category-witnesses-20261111.v1.json",
+    "category_holds": "data/directory/research/cl2-remaining-affiliation-holds-20261111.v1.json",
+    "ministry": "data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json",
+    "ministry_holds": "data/directory/research/cl27-6-residual-ministry-role-holds-20261110.v1.json",
+    "photo_registry": "data/directory/approved-venue-media.v1.json",
+    "photo_holds": "data/directory/research/tlm-p112-three-photo-cover-release-20261112.v1.json",
+    "institution_emblems": "src/find/institution-emblems.js",
+    "emblem_crosswalk": "data/directory/research/tlm-emblem-release-crosswalk-r06.v1.json"
+  },
+  "census": {
+    "public_directory_cards": 2583,
+    "canonical_physical_sites": 2580,
+    "mapped_public_records": 2569,
+    "list_only_public_records": 14,
+    "categorized_with_positive_source_or_first_party_witness": 2325,
+    "explicit_category_holds": 255,
+    "source_scoped_institute_ministry_links": 1418,
+    "sites_with_source_scoped_ministry_links": 1335,
+    "unresolved_ministry_role_holds": 6,
+    "crosswalk_anchor_disagreements": 3,
+    "visual_lane_counts": {
+      "DIOCESAN_PHOTO": 762,
+      "EMBLEM_OR_NEUTRAL": 1506,
+      "NEUTRAL": 312
+    },
+    "approved_exact_venue_photos": 28,
+    "exact_photo_held": 2,
+    "institution_group_dispositions": 41,
+    "institution_image_mappings_research_licensed": 13,
+    "institution_text_fallbacks": 17,
+    "institution_neutral_family_fallbacks": 9,
+    "institution_named_or_neutral_fallbacks": 2,
+    "institution_final_user_image_approvals": 0
+  },
+  "issue_disposition": {
+    "categories": "NO_BULK_PROMOTION; 255 exact immutable CL2 anchors retain neutral visuals until first-party evidence supports category/role",
+    "rites": "INSTITUTE_BOOKS_APPLY_AT_EXACT_SOURCE_MINISTRY_SCOPE; six unresolved roles and three source-ID conflicts stay UNKNOWN",
+    "photos": "28 exact-source VERIFIED venue images show independently of category; ordinary Place imagery remains controlled by photo lanes",
+    "branding": "41 source groups have defined emblem/text/neutral policies; all externally sourced insignia remain separate from commercial rights clearance",
+    "historical_or_duplicate": "14 list-only entries stay discoverable without false GPS or duplicate active pins",
+    "mass_schedule": "Current celebration, ecclesial status and Una Cum are not asserted from a source category or image"
+  },
+  "held_photo_venues": [
+    {
+      "cl2_anchor": "RG-7C7DC29FFFAB",
+      "name": "Old Town Chapel / Park City",
+      "reason": "IDENTITY_WITH_CURRENT_PARISH_UNRESOLVED"
+    },
+    {
+      "cl2_anchor": "RG-ABBC659D0388",
+      "name": "Stow-on-the-Wold",
+      "reason": "NO_ACCEPTABLE_EXACT_CHURCH_EXTERIOR"
+    }
+  ],
+  "release_requirements": [
+    "All 2583 public cards and 2580 CL2 sites retain unique identities and truthful source data",
+    "The 255 affiliation and 6+3 ministry holds remain exact and cannot be inferred away",
+    "Every CL2 site renders bilingual photo, emblem, named identity or neutral visual",
+    "All 28 approved exact-venue photographs render regardless of uncertain site category without borrowing an unrelated Place image",
+    "The 41 logo-group dispositions and pending commercial insignia reviews are visible in the evidence ledger",
+    "Map counts, mobile card/preview/profile, attribution and GitHub Pages build pass",
+    "No new unsupported Mass, Una Cum, rite, legal ownership or GPS claims"
+  ]
+}
