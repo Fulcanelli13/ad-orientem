@@ -81,7 +81,8 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
 import {with1962RitusXIVParagraphRubrics} from "./1962-all-souls-consecutive-rites.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
-import { withRequiemXIII3MissalNotes } from "./reader-requiem-conditions.js";
+import { withRequiemXIII3MissalNotes, isExplicitRequiemMass } from "./reader-requiem-conditions.js";
+import {checkSediliaObservation} from "./reader-sedilia-reverence.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
@@ -1450,6 +1451,7 @@ export async function mountNativeReaderPreview({
   // no reader scroll, Schola event or legacy MC pointer may invent it.
   let observedCommunionReturn=null;
   let communionReturnCancelled=false;
+  let observedSediliaReverence=null;
   const priestEventIndex=new Map(ready.events.map(e=>[e.id,e]));
   let scheduled=false;
   let initialCardRender=true;
@@ -2017,6 +2019,10 @@ export async function mountNativeReaderPreview({
           cueId:activeCueId,matrixAction,priestAction,
         }),
       nativeEventId:eventState?.canonicalEventId??null,
+      observedSediliaReverence:observedSediliaReverence&&
+        current?.sectionId===observedSediliaReverence.nativeCardId&&
+        readerModel?.presentationMode==="LIVE"?observedSediliaReverence:null,
+      incarnatusKneelException:resolveIncarnatusSungAction(resolvedMass)==="KNEEL",
       observedCommunionReturn:observedCommunionReturn&&
         (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025"&&
         current?.sectionId===observedCommunionReturn.nativeCardId&&
@@ -2854,6 +2860,7 @@ export async function mountNativeReaderPreview({
       observedCommunionReturn=null;
       communionReturnCancelled=false;
     }
+    if(previous?.sectionId!==card.sectionId)observedSediliaReverence=null;
     // Explicit priest-side state persists between Gloria/Credo subcards but
     // must not leak into an unrelated source Mass section.
     if(previous && (previous.sourceSectionId??previous.sectionId)!==
@@ -3051,6 +3058,7 @@ export async function mountNativeReaderPreview({
     // A former observed return must not replay on LIVE re-entry.
     observedCommunionReturn=null;
     communionReturnCancelled=true;
+    observedSediliaReverence=null;
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
@@ -3393,6 +3401,7 @@ export async function mountNativeReaderPreview({
     observedCommunionReturn=null;
     communionReturnCancelled=false;
     observedPriestEvent=null;
+    observedSediliaReverence=null;
     canonManualUI?.destroy();
     canonManualUI=null;
     clearCanonObservation();
@@ -3723,6 +3732,40 @@ export async function mountNativeReaderPreview({
       // the source bridge must stop walking and restore the static rail.
       communionReturnCancelled=true;
       queue();
+      return Object.freeze({cleared:had});
+    },
+    // Source-registered sung words require independent observation, never
+    // priest recitation, scroll or an inferred choir performance timestamp.
+    observeSediliaReverence:observation=>{
+      const mass=ready.prepared?.session?.resolvedMass;
+      const special=[inAsperges,inPalm,inAsh,inCandlemas,inRogations,
+        inRequiemAbsolution,inCorpusChristi,inHolyThursdayPost,
+        inGenericProcession,inLifecycle].some(Boolean);
+      const outcome=checkSediliaObservation({
+        observation,card:ready.curatedEligible&&!special?current:null,
+        form:mass?.form,mode:readerModel?.presentationMode,
+        rite:isExplicitRequiemMass(ready.prepared)?"REQUIEM":null,
+        exceptionalIncarnatus:resolveIncarnatusSungAction(mass)==="KNEEL"
+      });
+      if(!outcome.accepted)return outcome;
+      if(observation.phase==="END"&&
+        (observedSediliaReverence?.eventId!==observation.eventId||
+         observedSediliaReverence?.phase!=="BEGIN"))
+        return Object.freeze({accepted:false,reason:"END_WITHOUT_BEGIN"});
+      const duplicate=observedSediliaReverence?.eventId===observation.eventId&&
+        observedSediliaReverence?.phase===observation.phase;
+      if(duplicate)return Object.freeze({...outcome,duplicate:true});
+      observedSediliaReverence=Object.freeze({
+        eventId:observation.eventId,phase:observation.phase,observed:true,
+        owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION",
+        nativeCardId:current.sectionId,sourceSectionId:current.sourceSectionId
+      });
+      queue();return Object.freeze({...outcome,duplicate:false});
+    },
+    getObservedSediliaReverence:()=>observedSediliaReverence,
+    clearObservedSediliaReverence:()=>{
+      const had=Boolean(observedSediliaReverence);
+      observedSediliaReverence=null;queue();
       return Object.freeze({cleared:had});
     },
     // Priest-mode adapter. A caller must independently observe a canonical
