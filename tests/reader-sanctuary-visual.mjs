@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {sanctuaryCueProjection,sanctuaryAspergesProjection,SANCTUARY_PROTOCOL,
  createReaderSanctuaryPreview} from "../src/mass/reader-sanctuary-visual.js";
 import {createAspergesReaderController} from "../src/mass/reader-asperges.js";
+import {checkSediliaObservation,SEDILIA_REVERENCE_EVENTS} from "../src/mass/reader-sedilia-reverence.js";
 const card={sectionId:"AO.LIVECURATED.AO.CARD.003.2",
  sourceSectionId:"AO.CARD.003",title:"Gloria · Praise and Supplication"};
 const state={nativeCueId:"AO.SM.C0055",schola:{trackId:"GLORIA"}};
@@ -18,6 +19,55 @@ assert.equal(sanctuaryCueProjection({
  card,state,form:"SOLEMN",mode:"LIVE",
  prepared:{session:{resolvedMass:{actualCelebration:{type:"REQUIEM"}}}}
 }).requiem,true,"Canonical Requiem selection must reach the preview solemn gate");
+
+// The eight unique sung-word reverences each require a witnessed BEGIN/END.
+assert.equal(Object.keys(SEDILIA_REVERENCE_EVENTS).length,8);
+for(const [eventId,spec] of Object.entries(SEDILIA_REVERENCE_EVENTS)){
+ const canonical={title:spec.card,sourceSectionId:spec.section};
+ const observation={eventId,phase:"BEGIN",observed:true};
+ const good=checkSediliaObservation({observation,card:canonical,
+   form:"SOLEMN",mode:"LIVE"});
+ assert.equal(good.accepted,true,eventId);
+ assert.deepEqual(good.actors,["P","D","S"]);
+ assert.ok(good.sequence.includes("PLACE_BIRETTA_ON_RIGHT_KNEE"));
+ assert.equal(checkSediliaObservation({
+   observation:{...observation,phase:"END"},card:canonical,
+   form:"MISSA_CANTATA_SIMPLE",mode:"LIVE"
+ }).accepted,true);
+ for(const bad of [
+   {card:{...canonical,title:"Unrelated text"},form:"SOLEMN",mode:"LIVE"},
+   {card:canonical,form:"LOW",mode:"LIVE"},
+   {card:canonical,form:"SOLEMN",mode:"MISSAL"},
+   {card:canonical,form:"SOLEMN",mode:"LIVE",rite:"REQUIEM"}
+ ])assert.equal(checkSediliaObservation({observation,...bad}).accepted,
+   false,eventId+" invalid form/source/rite");
+ assert.equal(checkSediliaObservation({
+   observation:{...observation,observed:false},card:canonical,
+   form:"SOLEMN",mode:"LIVE"
+ }).accepted,false);
+ const forwarded={
+   eventId,phase:"BEGIN",observed:true,
+   owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION",
+   nativeCardId:"AO.LIVECURATED."+spec.section+".2",
+   sourceSectionId:spec.section
+ };
+ const projection=sanctuaryCueProjection({card:{
+   ...canonical,sectionId:forwarded.nativeCardId
+ },form:"SOLEMN",state:{observedSediliaReverence:forwarded}});
+ assert.equal(projection.seatedReverenceObservation?.eventId,eventId);
+ assert.equal(sanctuaryCueProjection({card:{
+   ...canonical,sectionId:forwarded.nativeCardId
+ },form:"SOLEMN",state:{observedSediliaReverence:{
+   ...forwarded,owner:"CHOIR_TIMER"
+ }}}).seatedReverenceObservation,null,
+   "Never infer priest movement from the independent Schola");
+}
+const inc=SEDILIA_REVERENCE_EVENTS["SED-CREDO-INCARNATUS"];
+assert.equal(checkSediliaObservation({observation:{
+ eventId:"SED-CREDO-INCARNATUS",phase:"BEGIN",observed:true
+},card:{title:inc.card,sourceSectionId:inc.section},form:"SOLEMN",
+ mode:"LIVE",exceptionalIncarnatus:true}).reason,
+ "INCARNATUS_EXCEPTION_REQUIRES_KNEEL");
 
 // Canonical source *event*, not C0246 paragraph or Schola, may stage
 // distribution/return. The objective event controller is the sole supplier.
