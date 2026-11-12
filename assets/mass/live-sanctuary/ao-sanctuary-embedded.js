@@ -171,6 +171,12 @@
       // Only actors actually seated in the source scene receive headwear.
       if(a.vis!==true||a.pose!=="sit")continue;
       a.path=null;a.turn=null;
+      // The donor has a genuine bent-knee SIDE-view 'sit' sprite,
+      // but its front view depicts an upright torso over a skirt.
+      // Face the actual seated figures toward the altar so the donor
+      // renders its seated legs without replacing the original SVG art.
+      // C18 deacon continues the source-owned corporal duty at the altar.
+      a.face=0;
       // Existing M3 figure remains sitting, now actually over the
       // original wooden seat; lower robe/feet sit above its surface.
       // When the original scene was just re-staged, its normal floor
