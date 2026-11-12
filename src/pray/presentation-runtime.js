@@ -784,7 +784,7 @@ function paintingA3Prayer(id,p){
  if(!primary)return "";
  const language=choir&&CLAUDE_CHOIR_PREF.language&&p[CLAUDE_CHOIR_PREF.language]
    ?CLAUDE_CHOIR_PREF.language:primary;
- return renderClaudePaintingA3({id,record:p,photo:art.photo,language,
+ return renderClaudePaintingA3({id,record:p,photo:art.photo,language,uiLanguage:lang(),
   kind:choir?"litany":"prayer",esc,
   choirRows:choir?claudeChoirRows(id,language,p[language],{esc,inline:CLAUDE_CHOIR_PREF.inline}):"",
   choirBar:choir?claudeChoirFixedBar():"",
