@@ -377,11 +377,6 @@ try{
       path:resolve(shots,"C13-Requiem-C0081-no-incense-or-candles.png")
     });
     const gospel="Proclamation of the Holy Gospel";
-    const presentGospel=(requiem)=>window.AO_SANCTUARY_EMBED_TEST.present({
-      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
-      cardTitle:gospel,sourceSectionId:"AO.CARD.007",
-      sourceCueId:"AO.SM.C0084",certifiedSourceFocus:true,requiem
-    });
     const ordinaryGospel=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
       type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
       cardTitle:"Proclamation of the Holy Gospel",sourceSectionId:"AO.CARD.007",
@@ -399,6 +394,19 @@ try{
       sourceCueId:"AO.SM.C0084",certifiedSourceFocus:true,requiem:true
     }));
     assert.equal(requiemGospel.sharedGospelBookVisible,true);
+    const bookBefore=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.getVisualFx());
+    assert.equal(bookBefore.sharedBookCount,1,"Requiem Gospel must own exactly one opened book");
+    // Repeated native focus, including choir/reader reproject, must NOT
+    // allocate another book or flip the book between acolytes.
+    const repeat=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
+      cardTitle:"Proclamation of the Holy Gospel",
+      sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0084",
+      certifiedSourceFocus:true,requiem:true
+    }));
+    assert.equal(repeat.sharedGospelBookVisible,true);
+    assert.equal(await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST
+      .getVisualFx().sharedBookCount),1,"Repeated C14 focus must not duplicate the book");
     await frame.evaluate(()=>M3.snap());
     await frame.waitForTimeout(180);
     await frame.locator("#pgPlan").screenshot({
