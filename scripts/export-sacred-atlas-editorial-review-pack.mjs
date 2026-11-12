@@ -33,6 +33,23 @@ const byPre=new Map([...pre1.guides,...pre2.guides].map(x=>[x.place_id,x]));
 const byResearch=new Map(research.paragraphs.map(x=>[x.place_id+"|"+x.section_id,x]));
 const byTriage=new Map(triage.entries.map(x=>[x.key,x]));
 const bySource=new Map([...canonical.sources,...supplement.sources].map(x=>[x.id,x]));
+// Mechanical editorial review leads only. Never convert these into approvals.
+const digitYears=t=>[...String(t||"").matchAll(/\b(?:1[0-9]{3}|20[0-9]{2})s?\b/g)]
+ .map(x=>x[0].replace(/s$/,"")).sort().join("|");
+const copyLeads=(en,fr,claim)=>{
+ const flags=[];
+ if(digitYears(en)!==digitYears(fr))flags.push("CHECK_DIGIT_YEAR_PARITY");
+ if(/\b(?:should|must|does not|cannot|not automatically|not necessarily|need(?:s)? current|require(?:s)? current)\b/i.test(en)||
+    /\b(?:doit|devrait|ne signifie pas|ne prouve pas|doivent être confirm|sans présumer)\b/i.test(fr))
+   flags.push("READER_FACING_EDITORIAL_CAVEAT_CANDIDATE");
+ if(/\b(?:open today|today's|currently offers|every Sunday|at \d{1,2}(?::\d{2})?\s*(?:am|pm))\b/i.test(en))
+   flags.push("TIME_SENSITIVE_PRACTICAL_CLAIM_CANDIDATE");
+ if(/\b(?:presently an Orthodox church|now a functioning Orthodox church|Orthodox liturgy)\b/i.test(en))
+   flags.push("VERIFY_NON_CATHOLIC_WORSHIP_CLASSIFICATION");
+ if((claim.claim_flags||[]).includes("YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"))
+   flags.push("CHECK_YEAR_AGAINST_FULL_SOURCE_TEXT");
+ return flags.join("; ");
+};
 const rows=[],seen=new Set();
 for(const guide of guides){
  const pre=byPre.get(guide.place_id);
@@ -71,6 +88,8 @@ for(const guide of guides){
    research_stage:claim.source_claim_research_stage||"",
    research_note:claim.research_evidence_note||"",
    risk_flags:(claim.claim_flags||[]).join("; "),
+    digit_years_en:digitYears(p.en),digit_years_fr:digitYears(p.fr),
+    qa_leads:copyLeads(p.en,p.fr,claim),
    triage_disposition:difference?.decision_status||"NO_CITATION_DIFFERENCE",
    source_url_directly_reviewed:difference?.direct_url_spot_check?.target_page_inspected===true?
       "PARTIAL_SPOT_CHECK":"NOT_ASSERTED",
@@ -100,12 +119,22 @@ const csv="\uFEFF"+headers.map(cell).join(",")+"\r\n"+
 const dest=resolve("artifacts/sacred-atlas-editorial-review");
 await mkdir(dest,{recursive:true});
 await writeFile(resolve(dest,"sacred-atlas-672-paragraphs-en-fr.csv"),csv,"utf8");
+const issues=ordered.filter(row=>row.qa_leads.length);
+const leadColumns=["draft_order","place_id","place_name","section_id","priority","qa_leads",
+ "digit_years_en","digit_years_fr","risk_flags","exact_guide_revision","source_url"];
+const leadCsv="\uFEFF"+leadColumns.map(cell).join(",")+"\r\n"+
+ issues.map(row=>leadColumns.map(k=>cell(row[k])).join(",")).join("\r\n")+"\r\n";
+await writeFile(resolve(dest,"sacred-atlas-editorial-qa-leads.csv"),leadCsv,"utf8");
+const qaCounts={};
+for(const row of issues)for(const flag of row.qa_leads.split("; "))
+ qaCounts[flag]=(qaCounts[flag]||0)+1;
 const manifest={
  schema:"AO_SACRED_ATLAS_EDITORIAL_REVIEW_EXPORT_V1",
  generated_from:"RESEARCH_ONLY_EXACT_REVISION_CORPUS",
  exact_pr_head:process.env.AO_REVIEW_HEAD_SHA||"UNKNOWN_LOCAL_REHEARSAL",
  counts:{guides:guides.length,paragraph_pairs:rows.length,targeted,standard,
   citation_cases:triage.entries.length,source_access_holds:triage.summary.access_hold_paragraphs,
+   qa_lead_rows:issues.length,qa_lead_counts:qaCounts,
   existing_editorial_reviews:decisions.reviews.length,
   owner_batch_authorized:decisions.owner_batch_authorization?.authorized===true,
   currently_published_from_reviewed_bank:approvedBank.guides.length},
@@ -119,6 +148,10 @@ const readme=[
  "",
  "This CSV contains **all 672 EN/FR paragraph pairs** in **224 unpublished guides**.",
  "It is sorted with targeted source reviews first; the original draft order is preserved in the `draft_order` column.",
+ "",
+ "The companion QA leads CSV flags possibly excessive disclaimers, date discrepancies,",
+ "time-sensitive notices and non-Catholic liturgical contexts for human assessment.",
+ "These are mechanical review leads, not confirmed historical errors.",
  "",
  "Each row contains the actual bilingual paragraph, both section titles, source URL,",
  "claimed research evidence, risk flags, exact guide revision, and blank human decision fields.",
@@ -139,4 +172,4 @@ const readme=[
 ].join("\n");
 await writeFile(resolve(dest,"README.md"),readme,"utf8");
 console.log("PASS Sacred Atlas independent-editor packet: 224 guides, 672 bilingual pairs, "+
- targeted+" targeted and "+standard+" standard rows; all reviewer fields blank.");
+ targeted+" targeted and "+standard+" standard rows; "+issues.length+" QA leads; all reviewer fields blank.");
