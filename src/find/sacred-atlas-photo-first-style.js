@@ -1,7 +1,7 @@
 // Atlas R1: map remains a usable surface; photography is an exact approved
 // Place identity, not a decorative crop. Appended after existing style layers.
 // No new visual owner, Place data, photo approval or navigation state.
-export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw\`
+export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw`
 /* The former Sacred Places "closed" discover drawer consumed 43dvh.
    Its aria-expanded=false and data-discover-expanded=false state must
    genuinely leave the map visible; expanded remains an explicit action. */
@@ -108,4 +108,4 @@ export const SACRED_ATLAS_PHOTO_FIRST_STYLE = String.raw\`
    object-fit:contain!important;background:#08121a;
  }
 }
-\`;
+`;
