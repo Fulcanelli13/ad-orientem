@@ -68,7 +68,7 @@ assert.equal(resolveGabcStaffPitch('h','f3').midi,65);
 assert.equal(resolveGabcStaffPitch('g','f3').midi,64);
 const simpleC3='name:C3 test;\n%%\n(c3) Ky(h)ri(g_)e(i.) (::)';
 const simple=compileGabcMelody(simpleC3,{phraseSequence:[0,0]});
-assert.deepEqual(simple.sourceNotes.map(n=>n.midi),[72,69,74]);
+assert.deepEqual(simple.sourceNotes.map(n=>n.midi),[72,71,74]);
 assert.deepEqual(simple.performance.map(n=>n.sourceNoteOrdinal),[1,2,3,1,2,3]);
 assert.deepEqual(simple.performance.filter(n=>n.horizontalEpisema).map(n=>n.sourceNoteOrdinal),[2,2]);
 assert.equal(scheduleGabcMelody(simple,{unitMs:200,phraseGapMs:120}).events[3].startMs,
