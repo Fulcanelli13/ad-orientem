@@ -88,6 +88,7 @@ def main():
         with Image.open(image_path) as im:
             if im.size != (crop["width"], crop["height"]):
                 raise ValueError(f"Unexpected pixel geometry for staff {staff}")
+            source_gray = im.convert("L")
         notes = [n for n in mapped["notePositions"] if n["staffSystem"] == staff]
         expected_count = 18 if staff == 1 else 26
         if len(notes) != expected_count:
@@ -111,13 +112,25 @@ def main():
             if row["staffPosition"] != n["observedStaffPosition"]:
                 raise ValueError("M50 visual hypothesis and GABC note differ")
             x, y = n["approximateInkCenterPx"]
-            if not 0 <= x < crop["width"] or not 0 <= y < crop["height"]:
-                raise ValueError("Mapped position outside original crop")
+            if not 6 <= x < crop["width"]-6 or not 6 <= y < crop["height"]-6:
+                raise ValueError("Mapped position outside original crop or 13x13 ink proof area")
+            # Test the ACTUAL source bitmap, not just the model's own staff-position
+            # arithmetic. The previous marker for ordinal 18 landed on a mora dot;
+            # its 13x13 dark-ink ratio was only ~0.25, versus 1.00 on the notehead.
+            pixels = [source_gray.getpixel((xx, yy))
+                      for xx in range(x-6, x+7) for yy in range(y-6, y+7)]
+            dark_fraction = sum(pixel < 110 for pixel in pixels) / 169.0
+            if dark_fraction < 0.50:
+                raise ValueError(
+                    f"Source notehead #{n['ordinal']} center is not filled ink: "
+                    f"{dark_fraction:.3f} of its 13x13 source pixels are dark")
             index.append({
                 "ordinal": n["ordinal"], "staffSystem": staff,
                 "phrase": n["phrase"],
                 "sourceCrop": crop["filename"],
                 "hypothesisInkPosition": [x, y],
+                "sourceBitmap13x13DarkFraction": round(dark_fraction, 3),
+                "pixelCenterCheck": "SOURCE_BITMAP_INK_PRESENT_NOT_INDEPENDENT_PITCH_CERTIFICATION",
                 "hypothesisPitchLetter": row["sourcePitchLetter"],
                 "hypothesisStaffDegree": row["staffPosition"],
                 "hypothesisNeume": row["renderedNeume"],
@@ -141,6 +154,12 @@ def main():
         "originalPdfSha256": mapped["provenance"]["originalPdfSha256"],
         "sourceFingerprint": ledger["sourceFingerprint"],
         "scoreApproved": False,
+        "sourceBitmapPixelCheck": {
+            "rule": "13x13 center ROI, 110/255 grayscale ink threshold, at least 50% dark",
+            "noteheadsWithInk": len(index),
+            "independentStaffOrNeumeCertification": False,
+            "reviewNote": "This confirms local dark ink, not whether the image contains exactly the claimed neume or pitch."
+        },
         "authenticRhythmicTimingCertified": False,
         "neumeMicropographyCertified": False,
         "printedSourceScansInPublicApp": False,
