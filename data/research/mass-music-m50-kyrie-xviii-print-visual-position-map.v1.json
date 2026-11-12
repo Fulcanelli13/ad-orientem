@@ -35,7 +35,8 @@
         155
       ]
     },
-    "originalFacsimileImagesNotAddedToPublicAssets": true
+    "originalFacsimileImagesNotAddedToPublicAssets": true,
+    "m52VisualCorrection": "Ordinal 18 visual marker corrected from punctum mora dot (x1533) to filled notehead (x1504); 420-dpi rendering still does not certify native scan fidelity."
   },
   "method": "Visual alignment of each visibly engraved square/diamond head to four-line staff using original 420-dpi folio crops; x/y are approximate crop positions, not image-derived machine centroids. Source-ledger parity is tested independently. No OCR was used.",
   "observedStructure": {
@@ -278,12 +279,24 @@
       "phrase": 2,
       "staffSystem": 1,
       "approximateInkCenterPx": [
-        1533,
+        1504,
         143
       ],
       "observedStaffPosition": 4,
       "visualNoteheadShape": "square_or_attached_neume",
-      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT"
+      "confidence": "PROVISIONAL_VISUAL_ALIGNMENT",
+      "m52Correction": {
+        "reviewedOn": "2026-11-12",
+        "priorX": 1533,
+        "correctedX": 1504,
+        "punctumMoraDotCenterApproxPx": [
+          1528,
+          139
+        ],
+        "finding": "M50 marker was centred on the punctum mora dot to the right of the Christe notehead, not on the filled notehead itself. GABC pitch and repeat counts remain unchanged.",
+        "evidence": "Primary 1961 crop kyrie-xviii-first-printed-staff.png, original PDF SHA-256 pinned in provenance.",
+        "certifiesMusicalSource": false
+      }
     },
     {
       "ordinal": 19,

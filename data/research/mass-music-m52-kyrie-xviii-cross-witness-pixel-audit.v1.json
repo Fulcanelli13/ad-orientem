@@ -1,0 +1,113 @@
+{
+  "schema": "ao-schola-m52-kyrie-xviii-multi-witness-coordinate-adjudication-v1",
+  "reviewDate": "2026-11-12",
+  "status": "CORRECTED_RESEARCH_ANNOTATION_WITH_MUSICAL_CERTIFICATION_HOLD",
+  "scope": "Kyrie XVIII A (Deus Genitor alme), not Kyrie XVIII B or Requiem; no playback/approval change",
+  "sources": [
+    {
+      "role": "PRIMARY_PRINT",
+      "witness": "Graduale Romanum, Solesmes, 1961, 57*",
+      "locator": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "pdfPage1Based": 59,
+      "pdfSha256": "119b084b5c0689fc3e87541143731f6526c404a018bc97d18e8c98a7635ce2bd",
+      "evidence": "M49 source capture, 420 dpi; first staff crop verified by SHA-256"
+    },
+    {
+      "role": "SECONDARY_PRINTED_EDITION",
+      "witness": "The Liber Usualis, Solesmes, 1961, p.62",
+      "locator": "https://gregobase.selapa.net/sources/3/173.png",
+      "evidence": "Distinct published printed layout confirms four Kyrie/Christe sections and closing note/dot distinction; not a separately certified critical edition"
+    },
+    {
+      "role": "SUPPORTING_PRINTED_EDITION",
+      "witness": "Chants of the Church, Solesmes, 1956, p.44",
+      "locator": "https://gregobase.selapa.net/sources/5/59.png",
+      "evidence": "Third printed page supports sequence and final figure; lower reproduction quality prevents independent audit of every micrographic mark"
+    },
+    {
+      "role": "TRANSCRIPTION_NOT_INDEPENDENT_PRINT_WITNESS",
+      "witness": "GregoBase score 2522 (Andrew Hinkley), transcribed GABC",
+      "locator": "https://gregobase.selapa.net/download.php?format=gabc&id=2522",
+      "evidence": "GABC source for pitch/parser comparison, not proof that original score is correctly transcribed"
+    }
+  ],
+  "observedStructuralAgreement": {
+    "fourPrintedPhrases": true,
+    "writtenNotesByPhrase": [
+      10,
+      8,
+      10,
+      16
+    ],
+    "sameThreePlusThreePlusTwoPlusOneRepeatPattern": true,
+    "closeToSameSolesmesEditorialTradition": true,
+    "fullyIndependentCriticalEditions": false
+  },
+  "resolved": {
+    "sourceOrdinal": 18,
+    "phrase": 2,
+    "syllable": "son.",
+    "description": "The M50 red marker fell on the punctum mora dot immediately to the right of the final Christe notehead, not on the notehead.",
+    "crop": "kyrie-xviii-first-printed-staff.png",
+    "oldMarkerCenter": [
+      1533,
+      143
+    ],
+    "correctedNoteheadCenter": [
+      1504,
+      143
+    ],
+    "dotCenterApprox": [
+      1528,
+      139
+    ],
+    "oldDarkInkFraction13x13": 0.249,
+    "newDarkInkFraction13x13": 1,
+    "inkTestDarkThresholdGray": 110,
+    "inkTestWindowPx": 13,
+    "inkTestMinFraction": 0.5,
+    "pitchChange": false,
+    "gabcChange": false,
+    "playbackTimingChange": false,
+    "notationChange": false,
+    "evidenceClass": "DIRECT_SOURCE_PIXEL_ANCHOR_CORRECTION",
+    "editorialConfidence": "HIGH_FOR_PIXEL_LOCATION_NOT_PITCH_CERTIFICATION"
+  },
+  "otherSourceBitmapAnchors": {
+    "all44CentersNowAboveMinimumInkThreshold": true,
+    "minimum13x13DarkFractionAfterCorrection": 0.538,
+    "sourceImageScaleNotGuaranteedEqualToNativeScanResolution": true,
+    "inkPresenceAloneDoesNotProveDistinctNoteheadOrCorrectPitch": true
+  },
+  "independentMusicalAdjudicationStillRequired": {
+    "perNoteStaffDegreeAndPitchFromOriginalInk": true,
+    "neumeLigaturesAndFinalPhraseDiamonds": true,
+    "punctaMoraAndHorizontalEpisemataAttachment": true,
+    "comparativeCriticalSourceReview": true,
+    "performanceTimingAndExpression": true
+  },
+  "existingProvisionalSigns": {
+    "moraSourceOrdinals": [
+      10,
+      18,
+      28,
+      44
+    ],
+    "horizontalEpisemaSourceOrdinals": [
+      8,
+      26
+    ],
+    "finalCompoundTwoDiamondsHypothesis": [
+      40,
+      41
+    ]
+  },
+  "publicationPolicy": {
+    "sourceApproved": false,
+    "automaticallySelected": false,
+    "requiemEligible": false,
+    "sourceImagesPubliclyBundled": false,
+    "websiteBehaviorChanged": false
+  },
+  "note": "This corrects a visible editorial overlay error using source pixels, but three Solesmes-based editions and dark-ink occupancy are not an independent expert certification of the authentic melody."
+}
