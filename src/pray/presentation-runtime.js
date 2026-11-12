@@ -31,6 +31,8 @@ import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./cl
 import {renderEssentialFlowReader,essentialFlowReaderEnabled} from "./essential-flow-reader.js";
 import "./essential-flow-reader-styles.js";
 import "./claude-holy-card-styles.js";
+import "./claude-painting-a3-styles.js";
+import {claudePaintingA3Enabled,renderClaudePaintingA3,installClaudePaintingA3,CLAUDE_A3_ESSENTIAL_SEQUENCE} from "./claude-painting-a3.js";
 import "./essential-holy-card-styles.js";
 import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats,choirLitanyLineParts} from "./choir-source-beats.js";
 import "./choir-family-styles.js";
@@ -145,6 +147,7 @@ let homeNavigationError=false,homeNavigationPending=false;
 const STORE_KEY='ao.pray.v435930';
 const ROOT_ID='aoPray435930';
 const PRAYER_READER_PILOT_ENABLED=readerPilotEnabled(window);
+const CLAUDE_A3_PAINTING_PILOT_ENABLED=claudePaintingA3Enabled(window);
 const CHAPLET_F07_PILOT_ENABLED=chapletF07PilotEnabled(window);
 const CHAPLET_F07_VARIANTS_ENABLED=chapletF07VariantsEnabled(window);
 let PILOT_LORETO_GROUP=false;
@@ -766,6 +769,28 @@ function releasedPrayerCardArt(id){
 function releasedPrayerCardArtUrl(id){
  const photo=releasedPrayerCardArt(id);
  return photo?.image?"/"+photo.image:"";
+}
+/* Claude's ORIGINAL A3 painting grammar, only where the exact artwork has
+ * passed the editorial release guard. Source text remains canonical-data.
+ * A3 takes precedence over the older R2 pilot only under its explicit flag.
+ */
+function paintingA3Prayer(id,p){
+ if(!CLAUDE_A3_PAINTING_PILOT_ENABLED||!p)return "";
+ const choir=CHOIR_SOURCE_IDS.includes(id)&&choirKind(id)==="litany";
+ if(!choir&&!CLAUDE_A3_ESSENTIAL_SEQUENCE.includes(id))return "";
+ const art=resolvePrayerEditorialArtwork("COV-"+id);
+ if(art.state!=="PUBLISHED_EXACT_PHOTO"||!art.photo?.image)return "";
+ const primary=p[lang()]?lang():p.en?"en":p.fr?"fr":p.la?"la":null;
+ if(!primary)return "";
+ const language=choir&&CLAUDE_CHOIR_PREF.language&&p[CLAUDE_CHOIR_PREF.language]
+   ?CLAUDE_CHOIR_PREF.language:primary;
+ return renderClaudePaintingA3({id,record:p,photo:art.photo,language,
+  kind:choir?"litany":"prayer",esc,
+  choirRows:choir?claudeChoirRows(id,language,p[language],{esc,inline:CLAUDE_CHOIR_PREF.inline}):"",
+  choirBar:choir?claudeChoirFixedBar():"",
+  inline:choir&&CLAUDE_CHOIR_PREF.inline,
+  sourceMarkup:sourceLine(p),
+  sequence:CLAUDE_A3_ESSENTIAL_SEQUENCE});
 }
 function prayerBlock(id,opts={}){
  const p=opts.record||P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
@@ -2673,6 +2698,8 @@ function renderLibrary(){
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
+  const painting=paintingA3Prayer(LIB.open,p);
+  if(painting)return head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))+painting;
   if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open)){
    const selected=LIB.language&&p[LIB.language]?LIB.language:(p[lang()]?lang():(['en','la','fr'].find(k=>p[k])||'en'));
    return renderPilotLoreto({record:p,id:LIB.open,language:selected,group:PILOT_LORETO_GROUP,head,L,esc,sourceLine,libraryContextMarkup});
@@ -2951,6 +2978,8 @@ function renderFSMeditation(){
  return `${head(L('First Saturday meditation','Méditation du premier samedi'),L('Fifteen minutes with one or more Rosary mysteries · distinct from the five decades','Quinze minutes avec un ou plusieurs mystères du Rosaire · distinctes des cinq dizaines'))}<main class="aoP435930Body"><section class="aoP435930MeditationIntro"><small>${esc(L('CHOOSE A MYSTERY','CHOISISSEZ UN MYSTÈRE'))}</small><h2>${esc(mystery)}</h2><p>${esc(L('You may remain with this mystery for the whole period or deliberately move to another mystery. Do not turn this into another decade of vocal prayer.','Vous pouvez demeurer avec ce mystère pendant toute la période ou passer délibérément à un autre mystère. Ne transformez pas cela en une nouvelle dizaine de prière vocale.'))}</p></section>${mysterySetButtons()}${mysteryButtons()}<section class="aoP435930MeditationFlow"><div>${guideNow(L('Place the mystery before you','Placez le mystère devant vous'),L('Recall the Gospel event simply. Who is present? What is happening? Do not rush to applications yet.','Rappelez simplement l’événement évangélique. Qui est présent ? Que se passe-t-il ? Ne vous hâtez pas encore vers les applications.'))}</div><div>${guideNow(L('Stay with Our Lady’s place in the mystery','Demeurez avec la place de Notre-Dame dans le mystère'),L('Consider what Mary receives, does, suffers, offers, or witnesses here. Remain with what belongs to this mystery rather than inventing a separate scene.','Considérez ce que Marie reçoit, fait, souffre, offre ou contemple ici. Demeurez avec ce qui appartient à ce mystère plutôt que d’inventer une scène distincte.'))}</div><div>${guideNow(L('Turn the mystery toward your own life','Tournez le mystère vers votre propre vie'),L('Ask what grace, conversion, imitation, patience, faith, charity, or fidelity this mystery calls for in you today.','Demandez quelle grâce, conversion, imitation, patience, foi, charité ou fidélité ce mystère appelle en vous aujourd’hui.'))}</div><div>${guideNow(L('Speak briefly, then remain silent','Parlez brièvement, puis demeurez en silence'),L('Speak to God or Our Lady in your own words, then stop adding words and remain with the mystery. Return gently when distracted.','Parlez à Dieu ou à Notre-Dame avec vos propres mots, puis cessez d’ajouter des paroles et demeurez avec le mystère. Revenez-y doucement en cas de distraction.'))}</div></section>${ADOR.timerEnd?timerMarkup():`<div class="aoP435930Timer aoP435930MeditationTimer"><b>${esc(L('15-minute timer aid','Minuteur de 15 minutes'))}</b><span>${esc(L('Start it when you are ready to begin the actual meditation. It never marks the act complete automatically.','Démarrez-le lorsque vous êtes prêt à commencer la méditation proprement dite. Il ne valide jamais automatiquement l’acte.'))}</span><button type="button" data-p435930-timer="15">15 min</button></div>`}<div class="aoP435930MeditationActions"><button class="aoP435930Primary" data-p435930-fs-meditation-complete>${esc(L('I completed fifteen minutes · return','J’ai accompli quinze minutes · retour'))}</button><button class="aoP435930Secondary" data-p435930-fs-meditation-return>${esc(L('Return without marking complete','Retour sans marquer comme accompli'))}</button></div></main>`
 }
 function renderPrayerOnly(id){const p=P(id);
+ const painting=paintingA3Prayer(id,p);
+ if(painting)return head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))+painting;
  // Use the reconciled 267-slot master instead of reusing one generic Souls
  // photograph for prayers whose approved covers depict a DIFFERENT painting.
  const editorialCover=ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)?"":prayerEditorialArtworkMarkup('COV-'+id,{className:'aoPrayerEditorialCardCover'});
@@ -3947,6 +3976,9 @@ function toggleClaudeHolyCard(lace){
 function installLibraryParagraphFocus(m,id){
  const card=m.querySelector(".aoP435930LibraryReader .aoDevoCard");
  if(!card||!id)return;
+ // Claude A3 single-prayer reads as one text unit; litany lines keep the
+ // existing source-owned choir focus / response synchronizer below.
+ if(card.querySelector("[data-ao-claude-painting-a3]")&&!card.querySelector(".aoClaudeChoirPrayer"))return;
  // The existing Prayer coherence engine already recognises proper prose,
  // versicles, responses and stanza breaks. Reuse its semantic output instead
  // of reparsing the prayer and erasing V./R. ownership.
@@ -4053,6 +4085,15 @@ function reconcileF07ApprovedMenus(m){
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='littleCrown')html=renderLittleCrown();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;reconcileF07ApprovedMenus(m);
+ const paintingActive=CLAUDE_A3_PAINTING_PILOT_ENABLED&&!!m.querySelector("[data-ao-claude-painting-a3]");
+ shell().classList.toggle("aoPaintingA3Active",paintingActive);
+ if(paintingActive)installClaudePaintingA3(m,{navigate:id=>{
+   if(!CLAUDE_A3_ESSENTIAL_SEQUENCE.includes(id)||!P(id))return;
+   if(view==="library")LIB.open=id;
+   else if(view==="prayerOnly")prayerId=id;
+   else return;
+   render();
+ }});
  // The painting mosaic has one physical two-stage activation owner. Bind it
  // at the tile capture boundary so an expanded caption or nested artwork
  // cannot consume the second tap before the existing Prayer route dispatcher.
