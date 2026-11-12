@@ -242,7 +242,11 @@
       M3.actors?.()?.[id]?.b?.el?.classList?.remove("ao-sedilia-uncovered");
     sediliaObserved=null;
   }
-  function stageSediliaGesture(o,form){
+  function stageSediliaGesture(o,form,card,section,requiem){
+    const selected=sediliaEvents[sediliaObserved?.eventId];
+    if(sediliaObserved&&(!selected||selected[0]!==card.id||
+       selected[1]!==section||form.form!=="sung"||requiem))
+      clearSediliaGesture();
     if(o){
       if(o.phase==="BEGIN"&&sediliaObserved?.eventId!==o.eventId)clearSediliaGesture();
       sediliaObserved={eventId:o.eventId,phase:o.phase};
@@ -590,7 +594,7 @@
     if(play)M3.show(card,true);
     if(message.sediliaReverenceCancelled===true)clearSediliaGesture();
     const sediliaStage=stageSedilia(card,form);
-    const seatedGesture=stageSediliaGesture(obs,form);
+    const seatedGesture=stageSediliaGesture(obs,form,card,sourceSectionId,requiem);
     stageSolemnGospel(card,requiem,form,sourceSectionId);
     const solemnEpistle=stageSolemnEpistle({
       card,form,sourceSectionId
