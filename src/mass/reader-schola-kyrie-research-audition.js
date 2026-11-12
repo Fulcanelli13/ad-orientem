@@ -66,7 +66,7 @@ export function compileKyrieXviAudition(gabc){
 const STYLES=`
 .ao-kyrie-audition-launch{display:block;width:100%;margin:7px 0;padding:11px 8px;border:1px solid #bba574;border-radius:8px;background:#27342d;color:#f7eccb;font:600 12px system-ui;cursor:pointer}
 .ao-kyrie-audition-launch[hidden]{display:none!important}
-.ao-kyrie-audition{box-sizing:border-box;position:fixed;bottom:18px;right:14px;width:min(430px,calc(100vw - 28px));max-height:min(84dvh,650px);overflow-y:auto;z-index:1100;background:#13201d;border:1px solid #8e7a4a;border-radius:14px;color:#efe9d9;padding:12px;box-shadow:0 18px 50px #0009;font:12px/1.4 system-ui}
+ .ao-kyrie-audition{box-sizing:border-box;position:fixed;inset:auto 14px 18px auto;margin:0;width:min(430px,calc(100vw - 28px));max-height:min(84dvh,650px);overflow-y:auto;z-index:1100;background:#13201d;border:1px solid #8e7a4a;border-radius:14px;color:#efe9d9;padding:12px;box-shadow:0 18px 50px #0009;font:12px/1.4 system-ui}
 .ao-kyrie-audition[hidden]{display:none!important}
 .ao-kyrie-audition h3{margin:0;font:19px Georgia,serif;color:#f0dcaa}
 .ao-kyrie-audition .ao-kyrie-head{display:flex;justify-content:space-between;gap:9px;align-items:center}
@@ -99,7 +99,7 @@ export function createKyrieXviResearchAudition({root,
   trigger.textContent='♫ HEAR KYRIE XVI · MELODY PREVIEW';
   trigger.hidden=true;
   const panel=doc.createElement('section');
-  panel.className='ao-kyrie-audition';panel.hidden=true;
+  panel.className='ao-kyrie-audition';panel.setAttribute('popover','manual');panel.hidden=true;
   panel.setAttribute('aria-label','Kyrie XVI provisional research melody preview');
   panel.innerHTML=`<div class="ao-kyrie-head"><h3>Kyrie XVI · melody</h3><button type="button" data-kyrie-action="close" aria-label="Close melody preview">×</button></div>
     <p class="ao-kyrie-small">Research transcription · not an approved performance score · melody only</p>
@@ -190,10 +190,17 @@ export function createKyrieXviResearchAudition({root,
     playing=true;playButton.textContent='Ⅱ Pause';advance();
   }
   function stop(){silence();index=0;paint()}
-  function close(){stop();panel.hidden=true}
+  function close(){
+    stop();
+    if(panel.matches?.(':popover-open'))panel.hidePopover();
+    panel.hidden=true;
+  }
   async function open(){
     if(trigger.hidden)return;
     panel.hidden=false;
+    // Manual popover enters the browser top layer without making the Mass
+    // reader inert. A modal dialog would break independent priest navigation.
+    if(panel.showPopover && !panel.matches(':popover-open'))panel.showPopover();
     if(!sourceRendered){
       sourceRendered=true;
       try{
@@ -243,6 +250,7 @@ export function createKyrieXviResearchAudition({root,
   }
   function destroy(){
     if(destroyed)return;destroyed=true;silence();
+    if(panel.matches?.(':popover-open'))panel.hidePopover();
     engraver?.destroy?.();audio?.close?.();
     root.removeEventListener('click',rootClick);
     root.removeEventListener('change',rootChange,true);
