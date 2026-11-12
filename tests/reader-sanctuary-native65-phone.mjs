@@ -520,8 +520,14 @@ try{
       return {x:p.x,z:p.z,path:Boolean(p.path),
         walking:p.b.el.classList.contains("walking")};
     });
-    assert.ok(moving.z<started.z-.1,
-      "Owner M3 must advance the priest's DEPTH from rail to altar: "+
+    // The owner's C57 station is at x=-2.3, z=4.36, the last
+    // communicant's side of the rail. The source-triggered return
+    // first moves laterally to the centre at x=0, then down the aisle
+    // towards the altar. Assert actual movement on the FIRST leg,
+    // not premature depth movement while still at the rail.
+    assert.ok(moving.x>started.x+.1 &&
+      Math.abs(moving.z-started.z)<.1,
+      "Original M3 must begin returning along the centre-rail first leg: "+
       JSON.stringify({started,moving}));
     assert.equal(moving.path,true);
     assert.equal(moving.walking,true,
