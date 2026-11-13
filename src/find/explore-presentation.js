@@ -882,10 +882,9 @@ export function renderExploreToString(vm){
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   if(vm.lens==="tlm"&&vm.view==="map"){
-    html+='<nav class="aoAtlasMassTabs" aria-label="'+esc(L(vm.language,"Sacred Atlas entrances","Accès à l’Atlas sacré"))+'">'
-      +'<button type="button" data-atlas-mass-return="discover">'+esc(L(vm.language,"Discover","Découvrir"))+'</button>'
-      +'<button type="button" data-atlas-mass-return="sacred">'+esc(L(vm.language,"Sacred places","Lieux sacrés"))+'</button>'
-      +'<button type="button" aria-current="page" class="active">'+esc(L(vm.language,"Latin Mass","Messe latine"))+'</button>'
+    html+='<nav class="aoAtlasMassTabs" aria-label="'+esc(L(vm.language,"Explore atlases","Atlas à explorer"))+'">'
+      +'<button type="button" aria-current="page" class="active">'+esc(L(vm.language,"TLM Atlas","Atlas TLM"))+'</button>'
+      +'<button type="button" data-atlas-mass-return="sacred">'+esc(L(vm.language,"Sacred Atlas","Atlas sacré"))+'</button>'
       +'</nav>';
   }
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';

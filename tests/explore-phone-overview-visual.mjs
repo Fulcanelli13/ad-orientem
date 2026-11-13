@@ -94,7 +94,51 @@ try{
     assert.deepEqual(errors,[],"Browser errors: "+errors.slice(0,3).join("; "));
     const name=language+"-"+width+"-explore.png";
     await page.screenshot({path:resolve(output,name),animations:"disabled"});
-    results.push({language,width,...metrics,file:name});
+    // The two-collection selector replaces the older Discover / Sacred /
+    // Latin Mass trio. Actual tiles/markers are used rather than a map stub.
+    const atlasTabLabels=await page.locator(".aoAtlasPrimaryTabs > button").allTextContents();
+    assert.equal(atlasTabLabels.length,2,language+" "+width+"px Atlas navigation is not binary");
+    assert.ok(atlasTabLabels.some(t=>/TLM/.test(t))&&
+      atlasTabLabels.some(t=>/Sacred Atlas|Atlas sacré/.test(t)),
+      "Atlas labels do not match the two collections: "+atlasTabLabels.join(" | "));
+    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]').click();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred",null,{timeout:15000});
+    const rail=page.locator('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+    await rail.waitFor({state:"visible",timeout:15000});
+    const closed=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+      expanded:el.dataset.discoverExpanded,
+      aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+    assert.equal(closed.expanded,"false",language+" "+width+"px Sacred Places should open map-first");
+    assert.equal(closed.aria,"false",language+" "+width+"px rail aria does not match its state");
+    assert.ok(closed.height>=72&&closed.height<=100,
+      language+" "+width+"px closed rail covers the real map: "+JSON.stringify(closed));
+    await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-closed-real.png"),animations:"disabled"});
+    await rail.locator('[data-mapcn-discover-toggle]').click();
+    await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="true"&&rail.getBoundingClientRect().height>=170;},null,{timeout:15000});
+    const opened=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+      aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+    assert.equal(opened.aria,"true",language+" "+width+"px expanded results rail not accessible");
+    assert.ok(opened.height>closed.height+90&&opened.height<=Math.min(height*.48,420)+3,
+      language+" "+width+"px expanded rail geometry wrong: "+JSON.stringify(opened));
+    // The first two worldwide Place photographs have priority because they
+    // are visible in the initial photographic rail. A blank image is not an
+    // acceptable screenshot, nor is a missing approved cover silently okay.
+    await page.waitForFunction(()=>{
+      const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+      const images=[...(rail?.querySelectorAll('.aoMapcnEditorialCard img')||[])].slice(0,2);
+      return images.length===2&&images.every(img=>img.complete&&img.naturalWidth>0);
+    },null,{timeout:20000});
+    // naturalWidth becomes non-zero before decode and composition finish.
+    // Wait for the two above-the-fold approved images to actually decode,
+    // then allow two paint frames. The previous test accepted an empty card.
+    await page.evaluate(async()=>{
+      const images=[...document.querySelectorAll('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnEditorialCard img')].slice(0,2);
+      await Promise.all(images.map(img=>img.decode()));
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    });
+    await page.screenshot({path:resolve(output,language+"-"+width+"-sacred-expanded-real.png"),animations:"disabled"});
+    results.push({language,width,...metrics,file:name,railClosed:closed.height,railExpanded:opened.height,
+      sacredScreenshots:[language+"-"+width+"-sacred-closed-real.png",language+"-"+width+"-sacred-expanded-real.png"]});
     console.log("PASS Explore actual map "+name+"; attribution and hint separate");
   }finally{await ctx.close();}
  }

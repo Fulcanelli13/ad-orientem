@@ -58,7 +58,11 @@ const heritage=renderHeritageToString({
 },{placeSheet:()=>"",detailSheet:()=>""});
 assert.match(heritage,/aoHeritageMassShortcut/);
 assert.equal((heritage.match(/data-find-filter-value="tlm"/g)||[]).length,1,"One primary Mass map entry only");
-assert.ok(heritage.indexOf("Find a traditional Mass")>=0);
+assert.match(heritage,/TLM Atlas/,"The same single TLM entry must remain accessible under its new Atlas label");
+assert.match(heritage,/Sacred Atlas/,"The Sacred Atlas must remain the other primary collection");
+assert.match(heritage,/data-atlas-entry-tab="sacred"/);
+assert.equal((heritage.match(/class="aoAtlasPrimaryTabs"/g)||[]).length,1,
+  "The R49 source-backed Mass entry must not spawn a second map selector");
 const invalid=structuredClone(raw);invalid.records[1][0]=invalid.records[0][0];
 assert.throws(()=>validateR49Snapshot(invalid),/duplicate/);
 console.log("PASS R49 historical baseline: 1,879 provisional source-backed pins, 1,022 Rome-classified, 732 SSPX-family (including 3 explicitly named sisters), 125 unknown; full CL2 worldwide integration separately gated");

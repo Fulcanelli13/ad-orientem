@@ -99,11 +99,13 @@ export function renderMapcnDiscoverRail(vm){
   html+='<section class="aoMapcnEditorialStrip" aria-label="'+L(vm.language,"Featured documented places worldwide","Lieux documentés à découvrir dans le monde")+'">';
   html+='<div class="aoMapcnEditorialHeading"><span>'+L(vm.language,"IN FOCUS · WORLDWIDE","À DÉCOUVRIR · MONDE")+'</span><small>'+L(vm.language,"Curated, source-backed places","Lieux sélectionnés et sourcés")+'</small></div>';
   html+='<div class="aoMapcnEditorialCarousel">';
-  for(const p of featured){
+  for(const [index,p] of featured.entries()){
    const media=p.media,alt=vm.language==="fr"?(media.alt_fr||media.alt_en):(media.alt_en||media.alt_fr);
    const location=[p?.address?.city,p?.address?.country].filter(Boolean).join(" · ");
    html+='<button type="button" class="aoMapcnEditorialCard" data-explore-open-place="'+esc(p.place_id)+'" aria-current="'+String(vm.selectedPlace?.place_id===p.place_id)+'">';
-   html+='<img loading="lazy" decoding="async" data-photo-orientation="'+esc(media.orientation||"landscape")+'" src="'+esc(media.asset_path)+'" alt="'+esc(alt||p.name)+'">';
+   // First two licensed cards are above the fold when the phone rail opens.
+   // Leave the remainder lazy so this does not download the whole gallery.
+   html+='<img loading="'+(index<2?"eager":"lazy")+'" decoding="'+(index<2?"sync":"async")+'" data-photo-orientation="'+esc(media.orientation||"landscape")+'" src="'+esc(media.asset_path)+'" alt="'+esc(alt||p.name)+'">';
    html+='<span class="aoMapcnEditorialLabel"><strong>'+esc(p.name)+'</strong><small>'+esc(location)+'</small></span></button>';
   }
   html+='</div></section>';

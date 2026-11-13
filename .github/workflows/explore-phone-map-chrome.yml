@@ -50,5 +50,6 @@ jobs:
           path: |
             artifacts/explore-phone-overview/
             artifacts/explore-tlm-church-card/
+            artifacts/sacred-atlas-r1/
           if-no-files-found: warn
           retention-days: 30

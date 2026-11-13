@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const atlasScreenshots=resolve(root,"artifacts/sacred-atlas-r1");
+await mkdir(atlasScreenshots,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
 ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
 ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
@@ -78,8 +80,12 @@ try{
     assert.ok(initial.map?.height>=200,width+"px map too short: "+JSON.stringify(initial));
     assert.ok(initial.world?.height>=44&&initial.world.width>=44,width+"px world control too small");
     assert.ok(initial.world.bottom<initial.map.bottom,width+"px world button outside map");
-    // The approved Discover screen has only three entrance tabs.
-    // Source-backed category chips belong to the Sacred Places entrance.
+    // One worldwide map, exactly two atlas destinations. Discover overview
+    // remains a Sacred Atlas subview in Layers, not a third top-level tab.
+    const atlasTabs=await page.locator(".aoAtlasPrimaryTabs > button").allTextContents();
+    assert.equal(atlasTabs.length,2,width+"px expected two atlas tabs");
+    assert.ok(atlasTabs.some(t=>/TLM/.test(t))&&atlasTabs.some(t=>/Sacred Atlas|Atlas sacré/.test(t)),
+      width+"px atlas tabs are not TLM / Sacred: "+atlasTabs.join(" | "));
     const tab=page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]');
     await tab.tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
@@ -87,7 +93,32 @@ try{
       nodes.map(b=>b.getBoundingClientRect().height));
     assert.ok(sacredChips.length>=4&&sacredChips.every(h=>h>=44),
       width+"px Sacred Places category chip too small");
-    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="discover"]').tap();
+    if(width<=430){
+      const rail=page.locator('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
+      await rail.waitFor({state:"visible",timeout:15000});
+      const before=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+        state:el.dataset.discoverExpanded,
+        aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+      assert.equal(before.state,"false",width+"px Sacred Places drawer must begin collapsed");
+      assert.equal(before.aria,"false",width+"px collapsed rail must be accessible");
+      assert.ok(before.height>=72&&before.height<=100,
+        width+"px collapsed Sacred Places rail still occupies map: "+JSON.stringify(before));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-closed.png"),animations:"disabled"});
+      await rail.locator('[data-mapcn-discover-toggle]').tap();
+      await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="true"&&rail.getBoundingClientRect().height>=170;},null,{timeout:10000});
+      const expanded=await rail.evaluate(el=>({height:el.getBoundingClientRect().height,
+        aria:el.querySelector('[data-mapcn-discover-toggle]')?.getAttribute("aria-expanded")}));
+      assert.equal(expanded.aria,"true",width+"px expanded rail must announce itself");
+      assert.ok(expanded.height>before.height+90,
+        width+"px expanded Places rail did not open visibly: "+JSON.stringify(expanded));
+      assert.ok(expanded.height<=Math.min(height*.48,420)+3,
+        width+"px expanded Places rail covers too much of the map");
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-sacred-expanded.png"),animations:"disabled"});
+      await rail.locator('[data-mapcn-discover-toggle]').tap();
+      await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="false"&&rail.getBoundingClientRect().height<=100;},null,{timeout:10000});
+    }
+    await page.locator(".aoHeritageMore > summary").tap();
+    await page.locator('.aoHeritageSecondary [data-atlas-entry-tab="discover"]').tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="discover");
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
@@ -150,6 +181,77 @@ try{
     await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
     await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
+    if(width<=430){
+      const photo=page.locator('.aoHeritageCardLayer .aoHeritagePlaceThumb img').first();
+      await photo.waitFor({state:"visible",timeout:15000});
+      await page.waitForFunction(()=>{
+        const img=document.querySelector('.aoHeritageCardLayer .aoHeritagePlaceThumb img');
+        return img?.complete&&img.naturalWidth>0;
+      },null,{timeout:15000});
+      const previewPhoto=await photo.evaluate(img=>{
+        const figure=img.closest('figure'),credit=figure?.querySelector('figcaption');
+        return {fit:getComputedStyle(img).objectFit,loaded:img.naturalWidth>0,
+          creditVisible:credit&&getComputedStyle(credit).display!=="none"&&credit.getBoundingClientRect().height>8,
+          credit:credit?.innerText||""};
+      });
+      assert.equal(previewPhoto.fit,"contain",width+"px approved photo was cropped");
+      assert.ok(previewPhoto.loaded&&previewPhoto.creditVisible&&previewPhoto.credit.trim().length>4,
+        width+"px preview lost its photograph attribution: "+JSON.stringify(previewPhoto));
+      // Computed 'display: block' was not enough: QA screenshots showed the
+      // photo and name flex-shrunk completely away at 320px while the actions
+      // remained visible. Test the actual on-screen intersections.
+      const visual=await page.evaluate(()=>{
+        const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
+        const scroller=sheet?.querySelector(".aoHeritagePreviewScroll");
+        const title=sheet?.querySelector(".aoHeritageCardTitle");
+        const image=sheet?.querySelector(".aoHeritagePlaceThumb img");
+        const caption=sheet?.querySelector(".aoHeritagePlaceThumb figcaption");
+        const r=sheet?.getBoundingClientRect(),sr=scroller?.getBoundingClientRect(),
+              t=title?.getBoundingClientRect(),i=image?.getBoundingClientRect(),
+              c=caption?.getBoundingClientRect();
+        const intersection=(a,b)=>a&&b?
+          Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)):0;
+        return {scrollTop:scroller?.scrollTop,titleVisible:intersection(t,r),
+          titleHeight:t?.height,imageVisible:intersection(i,r),imageHeight:i?.height,
+          imageWithinScroller:intersection(i,sr),
+          captionWithinScroller:intersection(c,sr),captionHeight:c?.height,
+          captionBelow:c&&i?c.top>=i.bottom-2:false,
+          titleText:title?.textContent?.trim()};
+      });
+      assert.ok(visual.titleHeight>=22&&visual.titleVisible>=Math.min(24,visual.titleHeight*.7),
+        width+"px card title is hidden by sheet overflow: "+JSON.stringify(visual));
+      assert.ok(visual.imageHeight>=100&&visual.imageVisible>=65,
+        width+"px approved photo collapsed or is outside card: "+JSON.stringify(visual));
+      assert.ok(visual.captionBelow,
+        width+"px credit overlaps the approved photograph: "+JSON.stringify(visual));
+      assert.ok(visual.imageWithinScroller>=visual.imageHeight-2,
+        width+"px approved photograph is initially cut off by the action dock: "+JSON.stringify(visual));
+      assert.ok(visual.captionHeight>=8&&visual.captionWithinScroller>=Math.min(8,visual.captionHeight*.6),
+        width+"px approved photo rights credit is below the first-view fold: "+JSON.stringify(visual));
+      // A 320px card used to keep Discover below the scroll fold. Its primary
+      // action now belongs to a bounded sticky dock, and must be hit-testable
+      // without the user having to scroll inside the map preview.
+      const action=await page.evaluate(()=>{
+        const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
+        const button=sheet?.querySelector("[data-explore-expand-place]");
+        const dock=button?.closest(".aoHeritagePreviewActions");
+        const scroller=sheet?.querySelector(".aoHeritagePreviewScroll");
+        const r=sheet?.getBoundingClientRect(), b=button?.getBoundingClientRect(),
+              d=dock?.getBoundingClientRect(), content=scroller?.getBoundingClientRect();
+        const pointX=b?(b.left+b.right)/2:0,pointY=b?(b.top+b.bottom)/2:0;
+        const target=document.elementFromPoint(pointX,pointY);
+        return {scrollTop:scroller?.scrollTop,
+          visible:b&&r?Math.max(0,Math.min(b.bottom,r.bottom)-Math.max(b.top,r.top)):0,
+          dockHeight:d?.height,
+          dockSeparate:scroller&&!scroller.contains(dock),
+          noMediaOverlap:content&&d?d.top>=content.bottom-2:false,
+          clickable:target===button||Boolean(button?.contains(target))};
+      });
+      assert.ok(action.scrollTop===0&&action.dockSeparate&&action.noMediaOverlap&&
+        action.dockHeight<=72&&action.visible>=40&&action.clickable,
+        width+"px Discover is inaccessible or overlaps the photograph: "+JSON.stringify(action));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-preview.png"),animations:"disabled"});
+    }
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
       width+"px selecting a Place recreated the map");
     assert.equal(await page.evaluate(()=>window.__EXPLORE_FIRST_CANVAS__===document.querySelector('.aoLayoutMapCanvas')),true,
@@ -159,18 +261,39 @@ try{
       const world=document.querySelector('.aoHeritageWorldReset');
       const r=el.getBoundingClientRect(),w=world.getBoundingClientRect();
       const at=document.elementFromPoint(w.left+w.width/2,w.top+w.height/2);
+      const cls=at?.getAttribute?.("class")||at?.className||"";
       return {height:r.height,modal:el.getAttribute("aria-modal"),
         worldAccessible:at===world||world.contains(at),
+        worldRect:{x:w.left,y:w.top,right:w.right,bottom:w.bottom},
+        previewRect:{y:r.top,bottom:r.bottom},
+        elementAtWorld:{tag:at?.tagName||"",className:String(cls).slice(0,160)},
         actionHeights:[...el.querySelectorAll('button,a')].map(e=>e.getBoundingClientRect().height),
         overflow:document.documentElement.scrollWidth-innerWidth};
     });
     assert.equal(card.modal,"false",width+"px map still blocked by modal card");
-    assert.ok(card.worldAccessible,width+"px floating card intercepts map controls");
+    assert.ok(card.worldAccessible,
+      width+"px floating card intercepts map controls: "+JSON.stringify(card));
     assert.ok(card.height<height*.60,width+"px card covers too much map");
     assert.ok(card.actionHeights.every(h=>h>=44),width+"px undersized card action");
     assert.ok(card.overflow<=1,width+"px card overflows viewport");
     await page.locator('.aoHeritageCardLayer .aoHeritageSheetHandle').tap();
     await page.locator('.aoExplorePlaceSheet').waitFor({state:"visible"});
+    if(width<=430){
+      const img=page.locator('.aoExplorePlaceSheet>.aoExplorePlaceMedia img').first();
+      await img.waitFor({state:"visible",timeout:15000});
+      const photo=await img.evaluate(el=>{
+        const figure=el.closest('figure'),credit=figure?.querySelector('figcaption');
+        const image=el.getBoundingClientRect(),caption=credit?.getBoundingClientRect();
+        return {fit:getComputedStyle(el).objectFit,photoLoaded:el.complete&&el.naturalWidth>0,
+          creditBelow:caption&&caption.top>=image.bottom-2,
+          creditVisible:credit&&getComputedStyle(credit).display!=="none"&&caption.height>=8,
+          creditSourceLinks:credit?.querySelectorAll('a[href^="https://"]').length||0};
+      });
+      assert.equal(photo.fit,"contain",width+"px full Place artwork cropped");
+      assert.ok(photo.photoLoaded&&photo.creditBelow&&photo.creditVisible&&photo.creditSourceLinks>=2,
+        width+"px full Place must show source and rights below the image: "+JSON.stringify(photo));
+      await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-profile.png"),animations:"disabled"});
+    }
     await page.locator('[data-explore-collapse-place]').tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
     await page.locator('.aoHeritageWorldReset').tap();
@@ -189,6 +312,19 @@ try{
     snapshots.push({screen:width+"x"+height,locale,mapHeight:Math.round(initial.map.height),
       searchWidth:Math.round(initial.searchWidth),cardHeight:Math.round(card.height),
       mapInteractive:card.worldAccessible,overflow:initial.overflow});
+    // Switching collections is a real lens change; the active map may remount,
+    // but the app shell and selectors must remain coherent, with no stale rail.
+    await page.locator('.aoAtlasPrimaryTabs [data-find-filter="lens"][data-find-filter-value="tlm"]').tap();
+    await page.waitForFunction(()=>Boolean(document.querySelector('.aoExploreSurface[data-atlas-mass="true"]')),
+      null,{timeout:20000});
+    const massTabs=await page.locator(".aoAtlasMassTabs > button").allTextContents();
+    assert.equal(massTabs.length,2,width+"px TLM view has extra Atlas tabs");
+    assert.ok(massTabs.some(t=>/TLM/.test(t))&&massTabs.some(t=>/Sacred Atlas|Atlas sacré/.test(t)));
+    await page.locator('.aoAtlasMassTabs [data-atlas-mass-return="sacred"]').tap();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred",
+      null,{timeout:20000});
+    assert.equal(await page.locator(".aoAtlasPrimaryTabs > button").count(),2);
+    assert.deepEqual(errors,[],width+"px Atlas switch errors: "+errors.slice(0,3).join(" | "));
     await context.close();
   }
   console.log("PASS Explore multi-width layout, category relevance and world reset "+JSON.stringify(snapshots));

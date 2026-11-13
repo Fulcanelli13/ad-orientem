@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {discoverCenterDistanceKm,discoverItemsWithinMapBounds,renderMapcnDiscoverRail} from "../src/find/mapcn-discover-rail.js";
-import {renderHeritageToString} from "../src/find/heritage-presentation.js";
+import {renderHeritageToString,compactHeritagePlaceSheet} from "../src/find/heritage-presentation.js";
+import {SACRED_ATLAS_PHOTO_FIRST_STYLE} from "../src/find/sacred-atlas-photo-first-style.js";
 
 const places=[
  {item_id:"shrine:one",place_id:"place:FR:one",title:"Documented One",subtitle:"France",
@@ -102,4 +103,35 @@ assert.match(runtime,/data-mapcn-discover-toggle/);
 assert.match(css,/data-discover-expanded="false"/);
 assert.match(css,/@media\(max-width:799px\)/);
 assert.match(css,/prefers-reduced-motion:reduce/);
+// R1 visual invariant: a collapsed Sacred Places rail cannot still hide 43dvh
+// of the map. The expanded state remains accessible on a real button action.
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,
+ /data-atlas-entry="sacred"\]\s+\.aoMapcnDiscoverRail\[data-discover-expanded="false"\]/);
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/76px \+ env\(safe-area-inset-bottom\)/);
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,
+ /data-atlas-entry="sacred"\]\s+\.aoMapcnDiscoverRail\[data-discover-expanded="true"\]/);
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/height:min\(48dvh,420px\)!important/);
+assert.match(runtime,/EXPLORE_PROTOTYPE_DESKTOP_STYLE\+SACRED_ATLAS_PHOTO_FIRST_STYLE\+EXPLORE_APP_DESIGN_STYLE;/,
+ "Photo-first CSS must run after older prototype overrides and before the app-theme bridge");
+const placePeek=compactHeritagePlaceSheet({...vm,selectedPlace:profile});
+assert.match(placePeek,/aoHeritagePlaceThumb/);
+assert.match(placePeek,/\/approved-place\.jpg/);
+assert.match(placePeek,/Church exterior/);
+assert.match(placePeek,/Owner · CC0/,"Original photo attribution cannot be removed");
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/object-fit:contain!important/,
+ "Approved exact-site photos must not be cropped to fit cards");
+assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/figcaption\{/,
+ "A photographer attribution must remain visible in compact cards");
+const frenchPeek=compactHeritagePlaceSheet({...vm,language:"fr",selectedPlace:profile});
+assert.match(frenchPeek,/Église/,"French alternate text must come from the released media");
+const textOnlyPeek=compactHeritagePlaceSheet({...vm,selectedPlace:{...profile,media:null}});
+assert.match(textOnlyPeek,/aoSacredPlaceSymbolFallback/,
+ "A Place without an approved photo keeps its honest category-symbol fallback");
+assert.doesNotMatch(textOnlyPeek,/<img[ >]/,
+ "A source-honest category symbol must not become a fake photographic image");
+assert.ok(SACRED_ATLAS_PHOTO_FIRST_STYLE.includes(":has(.aoHeritagePlaceThumb img)"),
+ "The larger photographic preview layout must exclude text-only symbolic Places");
+assert.match(textOnlyPeek,/Documented One/,
+ "A missing photo must not remove the valid Place profile");
+
 console.log("Explore map-first v2 contracts passed.");
