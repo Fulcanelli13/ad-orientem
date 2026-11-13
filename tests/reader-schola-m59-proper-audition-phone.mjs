@@ -78,8 +78,7 @@ try{
    await player.waitFor({state:'visible',timeout:20000});
    await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
      ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:85000});
-   assert.match(await player.locator('h3').textContent(),
-    new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+   assert.equal(await player.locator('h3').textContent(),title+' · melody');
    assert.equal(await player.locator(
     '[data-kyrie-staff] svg use.note[id^="note-"]').count(),notes,
     'Actual Exsurge SVG notehead count changed');
@@ -122,7 +121,9 @@ try{
    nodes=>nodes.map(n=>[n.dataset.scholaKyrialeChoice,n.value])),ordinaryBefore,
    'Research listening must never alter any saved Ordinary setting');
   await trigger.click();await player.waitFor({state:'visible'});
-  await picker.selectOption('');
+  await picker.evaluate(node=>{
+   node.value='';node.dispatchEvent(new Event('change',{bubbles:true}));
+  });
   assert.equal(await trigger.isVisible(),false,
    'Removing study choice must hide its launcher immediately');
   assert.equal(await player.isVisible(),false,
@@ -149,7 +150,10 @@ try{
     document.documentElement.dataset.harnessReady),null,{timeout:60000});
    const picker=page.locator('[data-schola-proper-research-select]');
    await picker.waitFor({state:'attached',timeout:25000});
-   await picker.selectOption('ADVENT1_INTROIT');
+   await picker.evaluate(node=>{
+    node.value='ADVENT1_INTROIT';
+    node.dispatchEvent(new Event('change',{bubbles:true}));
+   });
    await page.waitForTimeout(300);
    assert.equal(await page.locator(triggerSelector).isVisible(),false,
     'Low, Missal and Requiem may never expose research Proper audio');
