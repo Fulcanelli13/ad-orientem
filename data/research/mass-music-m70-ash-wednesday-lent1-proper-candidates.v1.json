@@ -1,7 +1,7 @@
 {
   "schema": "ao-schola-m70-ash-wednesday-lent1-gr1961-source-audit-v1",
   "date": "2026-11-13",
-  "stage": "SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE",
+  "stage": "DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_RITE_AND_ASH_AUDIO_HOLDS_NO_PLAYER_CHANGE",
   "liturgicalFrame": "1962 Missale Romanum, 1961 Graduale Romanum, Feria IV Cinerum and Dominica I in Quadragesima",
   "archive": "data/mass/chant-corpus/gr1961-proper-index.json",
   "editionId": 2,
@@ -58,8 +58,11 @@
     "duplicateArchiveIdsWithinBatch": 0,
     "duplicateIdsInExisting90MelodyPlayer": 0,
     "existingProperSelectionsBeforeAudit": 74,
-    "sourceDigitalNoteheads": null,
-    "sourceDigitalNoteheadsCertifiedForResearch": false
+    "sourceDigitalNoteheads": 3083,
+    "sourceDigitalNoteheadsCertifiedForResearch": true,
+    "unmodifiedCompilerCompatibleSources": 9,
+    "compilerBlockedValidGabcFusionSources": 1,
+    "ashRiteAudioSourcesInProperArchive": 0
   },
   "ashRiteChants": [
     {
@@ -161,14 +164,20 @@
       "rendererFingerprint": "f7af823f",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 216,
+      "phraseNoteCounts": [
+        163,
+        37,
+        6,
+        10
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "HOLD_VALID_AT_FUSION_MISSING_EXSURGE_SOURCE_NOTE"
     },
     {
       "selectionId": "ASH_WEDNESDAY_GRADUAL",
@@ -188,14 +197,18 @@
       "rendererFingerprint": "5b4b4bba",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 2,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 326,
+      "phraseNoteCounts": [
+        177,
+        149
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "ASH_WEDNESDAY_TRACT",
@@ -215,14 +228,19 @@
       "rendererFingerprint": "8d36ff14",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 3,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 377,
+      "phraseNoteCounts": [
+        115,
+        124,
+        138
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "ASH_WEDNESDAY_OFFERTORY",
@@ -242,14 +260,17 @@
       "rendererFingerprint": "7481334d",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 164,
+      "phraseNoteCounts": [
+        164
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "ASH_WEDNESDAY_COMMUNION",
@@ -269,14 +290,17 @@
       "rendererFingerprint": "5ed997e6",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 74,
+      "phraseNoteCounts": [
+        74
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "LENT1_INTROIT",
@@ -296,14 +320,20 @@
       "rendererFingerprint": "8a4d94d9",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 163,
+      "phraseNoteCounts": [
+        106,
+        40,
+        7,
+        10
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "LENT1_GRADUAL",
@@ -323,14 +353,18 @@
       "rendererFingerprint": "edbf6ebe",
       "bivirgaMatches": 2,
       "sourceDoubleBarTokens": 2,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 251,
+      "phraseNoteCounts": [
+        135,
+        116
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "LENT1_TRACT",
@@ -350,14 +384,29 @@
       "rendererFingerprint": "db97b6c6",
       "bivirgaMatches": 2,
       "sourceDoubleBarTokens": 13,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 1333,
+      "phraseNoteCounts": [
+        89,
+        112,
+        93,
+        68,
+        81,
+        133,
+        148,
+        69,
+        84,
+        123,
+        88,
+        86,
+        159
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "LENT1_OFFERTORY",
@@ -377,14 +426,17 @@
       "rendererFingerprint": "256747d4",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 95,
+      "phraseNoteCounts": [
+        95
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     },
     {
       "selectionId": "LENT1_COMMUNION",
@@ -404,14 +456,17 @@
       "rendererFingerprint": "5720b5ec",
       "bivirgaMatches": 1,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 84,
+      "phraseNoteCounts": [
+        84
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
       "automatedMassAssignment": false,
-      "reusedFromSelectionId": null
+      "reusedFromSelectionId": null,
+      "audioCompilerCompatibility": "PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY"
     }
   ],
   "researchExceptions": [
@@ -450,6 +505,12 @@
       "role": "PRINT_REVIEW",
       "issue": "The complete printed 1961 PDF is too large for available screenshot renderer; source/incipit and archived GABC identity do not constitute independent neume or syllabic-underlay certification.",
       "mustNotSubstitute": true
+    },
+    {
+      "massId": "ASH_WEDNESDAY",
+      "role": "INTROIT_GABC_AUDIO_COMPATIBILITY",
+      "issue": "Exact original GREGOBASE-533 contains the valid Gregorio GABC fusion neume et(f@h!gh~). Exsurge renders all 216 source notes and pitch/shape parity, including source token @h! at note ordinal 97. Current shared audio event mapper rejects token @h! as MISSING_EXSURGE_SOURCE_NOTE. Hold any playback until separately tested, source-faithful handling; do not delete @ from the original score.",
+      "mustNotSubstitute": true
     }
   ],
   "restrictions": {
@@ -473,7 +534,32 @@
     "githubActionsAndPagesOnly": true,
     "noVercel": true,
     "noArchiveMutation": true,
-    "noTransferToSeparateProductionRepo": true
+    "noTransferToSeparateProductionRepo": true,
+    "noAshIntroitFusionAudioUntilSourceFaithfulAdapter": true
   },
-  "plannedNextStage": "M71: lock exact digital Exsurge noteheads/phrase maps and editorially examine the ash-rite source gaps before adding optional manual research preview to existing player. No production migration."
+  "plannedNextStage": "M71: lock exact digital Exsurge noteheads/phrase maps and editorially examine the ash-rite source gaps before adding optional manual research preview to existing player. No production migration.",
+  "exsurgeEvidence": {
+    "workflowRunId": 43491275405,
+    "workflowJobId": 132112788418,
+    "verifiedAtUTC": "2026-11-13T19:21:13Z",
+    "result": "PASS M70 EXSURGE",
+    "original1961SourceDigitalNoteheads": 3083,
+    "exactArchiveSha256AndFNVParity": true,
+    "exactOriginalVersusBivirgaExpandedPitchShapeParity": true,
+    "allTenExactPhraseArraysLocked": true,
+    "tractSlots": 2,
+    "alleluiaSlots": 0,
+    "lent1QuiHabitatPhraseCount": 13,
+    "lent1QuiHabitatNoteheads": 1333,
+    "ashWednesdayOriginalFusionToken": "@h!",
+    "ashWednesdayFusionSourceScoreId": "GREGOBASE-533",
+    "ashWednesdayFusionSourceNoteIndexZeroBased": 96,
+    "ashWednesdayFusionPreservedWithoutReplacement": true,
+    "ashWednesdayIntroitAudioCompilerStatus": "HOLD_MISSING_EXSURGE_SOURCE_NOTE",
+    "unmodifiedAudioCompilerCompatibleSources": 9,
+    "printedNeumesComparedVisually": false,
+    "syllabicUnderlayCertified": false,
+    "GregorianRhythmCertified": false,
+    "playerChanges": false
+  }
 }
