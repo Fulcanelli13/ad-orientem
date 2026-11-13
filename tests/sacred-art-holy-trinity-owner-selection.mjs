@@ -8,7 +8,7 @@ import {
 import { SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 as selected } from "../src/art/sacred-art-holy-trinity-owner-selected.v1.js";
 
 assert.equal(selected.length, 6, "Exactly six owner-selected Holy Trinity works");
-assert.equal(SACRED_ART_CURATED_WORKS_V1.length, 31, "Preserve 25 original curated works plus six selections");
+assert.equal(SACRED_ART_CURATED_WORKS_V1.length, 30, "Preserve 24 eligible historic curated works plus six selections");
 assert.deepEqual(selected.map(w => w.ownerSelectionNumber), [1, 2, 3, 4, 8, 9]);
 const ids = new Set(selected.map(w => w.id));
 assert.equal(ids.size, 6, "Selection IDs must be unique");
