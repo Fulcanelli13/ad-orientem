@@ -59,7 +59,12 @@ const base=renderHeritageToString({language:"en",items:[],filters:{heritageCateg
 assert.match(base,/aoHeritageMassShortcut/);
 assert.match(base,/aoHeritageMore/);
 assert.doesNotMatch(base,/aoExploreMainDestinations/);
-assert.match(base,/Find a traditional Mass/);
+assert.match(base,/data-find-filter-value="tlm"/);
+assert.match(base,/TLM Atlas/);
+assert.match(base,/Sacred Atlas/);
+assert.match(base,/Discover overview/);
+assert.equal((base.match(/data-atlas-entry-tab="sacred"/g)||[]).length,1,
+ "Sacred Atlas must not have duplicate navigational targets");
 assert.match(base,/data-heritage-category="shrines"/);
 assert.doesNotMatch(base,/data-find-filter-value="traditions"/,"Explore must not display the retired Customs Atlas destination");
 assert.match(base,/data-find-filter-value="pilgrimages"/,"Places and pilgrimages remain available");
