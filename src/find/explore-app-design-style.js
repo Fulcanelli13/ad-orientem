@@ -579,4 +579,22 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   }
 }
 
+
+
+/* QA6c: when a Place preview occupies the bottom of a phone map, expose
+   World View above its top edge. Do not place a clickable map control under
+   the preview or on top of the source-credited photograph. This is map-only
+   positioning; the canonical World View action and MapLibre instance remain. */
+@media(max-width:799px) {
+  #ao-find-modular-root .aoHeritageSurface:has(.aoHeritageCardLayer .aoHeritagePreview)
+  .aoHeritageWorldReset {
+    position:fixed!important;
+    top:auto!important;
+    bottom:calc(min(54dvh,440px) + 12px)!important;
+    left:12px!important;
+    right:auto!important;
+    z-index:40!important;
+  }
+}
+
 `;
