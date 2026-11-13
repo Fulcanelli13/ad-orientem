@@ -86,11 +86,11 @@ for(const spec of registry.scores){
  assert.equal(record.sha256,spec.gabcSha256);
  assert.equal(sha(record.gabc),spec.gabcSha256);
  assert.equal(record.gabc.length,spec.rawGabcLength);
- assert.equal((record.gabc.match(/\\(::\\)/g)||[]).length,spec.sourceGabcSections);
+ assert.equal((record.gabc.match(/\(::\)/g)||[]).length,spec.sourceGabcSections);
  assert.equal((record.gabc.match(/[a-m]vv/g)||[]).length,spec.sourceBivirgaMatches);
  assert.equal(gabcResearchFingerprint(record.gabc),spec.sourceFingerprint);
  const adapted=record.gabc.replace(/([a-m])vv/g,(_,n)=>n+'v/'+n+'v');
- const render='name:'+spec.incipit+';\\noffice-part:'+spec.officePart+';\\n%%\\n'+adapted;
+ const render='name:'+spec.incipit+';\noffice-part:'+spec.officePart+';\n%%\n'+adapted;
  assert.equal(gabcResearchFingerprint(render),spec.rendererFingerprint);
  assert.equal(spec.sourceNoteheads,null);
  assert.equal(spec.phraseNoteCounts,null);
