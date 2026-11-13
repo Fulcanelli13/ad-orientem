@@ -111,8 +111,8 @@ assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/76px \+ env\(safe-area-inset-bottom
 assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,
  /data-atlas-entry="sacred"\]\s+\.aoMapcnDiscoverRail\[data-discover-expanded="true"\]/);
 assert.match(SACRED_ATLAS_PHOTO_FIRST_STYLE,/height:min\(48dvh,420px\)!important/);
-assert.match(runtime,/EXPLORE_PROTOTYPE_DESKTOP_STYLE\+SACRED_ATLAS_PHOTO_FIRST_STYLE;/,
- "Photo-first CSS must run after older prototype overrides, not be silently superseded");
+assert.match(runtime,/EXPLORE_PROTOTYPE_DESKTOP_STYLE\+SACRED_ATLAS_PHOTO_FIRST_STYLE\+EXPLORE_APP_DESIGN_STYLE;/,
+ "Photo-first CSS must run after older prototype overrides and before the app-theme bridge");
 const placePeek=compactHeritagePlaceSheet({...vm,selectedPlace:profile});
 assert.match(placePeek,/aoHeritagePlaceThumb/);
 assert.match(placePeek,/\/approved-place\.jpg/);
