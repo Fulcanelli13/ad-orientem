@@ -119,6 +119,25 @@ try{
    await page.emulateMedia({reducedMotion:"no-preference"});
    reports.push({width,id,...initial});
   }
+  // Litany A3 routes retain the source-owned Choir synchronizer and fixed response bar.
+  for(const id of ["adoration_litany_blessed_sacrament","devotion_litany_st_joseph"]){
+   if(resolvePrayerEditorialArtwork("COV-"+id).state!=="PUBLISHED_EXACT_PHOTO")continue;
+   assert.equal(await page.evaluate(()=>window.AO_PRAY_V435930.open("pray.library")),true);
+   await page.locator('#aoPray435930.open [data-p435930-lib-open="'+id+'"]').first().click();
+   const choir=page.locator("#aoPray435930.open [data-ao-claude-painting-a3]");
+   await choir.waitFor({state:"visible",timeout:15000});
+   assert.equal(await choir.getAttribute("data-ao-a3-kind"),"litany",id+" lost Choir kind");
+   assert.ok(await choir.locator(".aoChoirBeat").count()>5,id+" lost source-owned response beats");
+   assert.equal(await choir.locator(".aoClaudeChoirResponse").count(),1,id+" lost Choir response footer");
+   assert.equal(await choir.locator('[data-ao-a3-mode="focus"]').count(),0,id+" got inappropriate standalone contemplation");
+   const foot=await choir.locator(".aoClaudeChoirResponse").evaluate(el=>{
+    const box=el.getBoundingClientRect(),root=el.closest(".aoClaudePaintingA3").getBoundingClientRect();
+    return {visible:box.height>20&&box.width>0,atFoot:Math.abs(root.bottom-box.bottom)<12};
+   });
+   assert.ok(foot.visible&&foot.atFoot,id+" footer detached from painting: "+JSON.stringify(foot));
+   await page.screenshot({path:resolve(out,width+"-"+id+"-choir.png"),fullPage:false});
+   reports.push({width,id,kind:"litany",choirFoot:foot});
+  }
   assert.deepEqual(errors,[],"Browser errors at "+width+": "+JSON.stringify(errors));
   await context.close();
  }
