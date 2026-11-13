@@ -52,9 +52,14 @@ assert.deepEqual(registry.counts,{
  newArchiveIdentities:15,duplicateGregoBaseIdsWithinBatch:0,
  duplicateIdsInExisting75MelodyPlayer:0,existingProperSelectionsBeforeAudit:59,
  sourceDigitalNoteheads:3404,sourceDigitalNoteheadsCertifiedForResearch:true});
-assert.equal(PROPER_RESEARCH_SOURCES.length,59);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
-const existing=new Set(PROPER_RESEARCH_SOURCES.map(x=>x.scoreId));
+assert.equal(PROPER_RESEARCH_SOURCES.length,74);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,74);
+// Preserve M68's research-time baseline and ensure M69 only adds its own 15.
+const prior=PROPER_RESEARCH_SOURCES.filter(x=>
+ !['SEPTUAGESIMA_','SEXAGESIMA_','QUINQUAGESIMA_']
+  .some(prefix=>x.selectionId.startsWith(prefix)));
+assert.equal(prior.length,59);
+const existing=new Set(prior.map(x=>x.scoreId));
 const cache=new Map(),seenIds=new Set(),seenSelection=new Set();
 const archive=path=>{if(!cache.has(path))cache.set(path,read(path));return cache.get(path)};
 assert.equal(registry.scores.length,15);
