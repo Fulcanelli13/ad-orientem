@@ -7,7 +7,9 @@ const LINES=[
 '#aoPray435930.aoPaintingA3Active{background:#030507!important;backdrop-filter:none!important;padding:0!important}',
 '#aoPray435930.aoPaintingA3Active .aoP435930Sheet{position:fixed!important;inset:0!important;width:100%!important;max-width:none!important;height:100dvh!important;max-height:none!important;border:0!important;border-radius:0!important;background:#030507!important;box-shadow:none!important;overflow:hidden!important}',
 '#aoPray435930.aoPaintingA3Active .aoP435930Mount{position:relative!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#030507!important}',
-'#aoPray435930.aoPaintingA3Active .aoP435930Head{position:absolute!important;z-index:30!important;top:0!important;left:0!important;right:0!important;background:transparent!important;box-shadow:none!important;border:0!important;color:#eee9df!important}',
+'#aoPray435930.aoPaintingA3Active .aoP435930Head{position:absolute!important;z-index:30!important;top:0!important;left:0!important;right:0!important;background:transparent!important;box-shadow:none!important;border:0!important;color:#eee9df!important;pointer-events:none!important}',
+// Transparent chrome must not cover Claude's top mode switch; real header controls remain actionable.
+'#aoPray435930.aoPaintingA3Active .aoP435930Head button,#aoPray435930.aoPaintingA3Active .aoP435930Head a{pointer-events:auto!important}',
 '#aoPray435930.aoPaintingA3Active .aoP435930Head h1,#aoPray435930.aoPaintingA3Active .aoP435930Head p{display:none!important}',
 '#aoPray435930 .aoClaudePaintingA3Host{position:absolute!important;inset:0!important;margin:0!important;padding:0!important;display:block!important;max-width:none!important;overflow:hidden!important;background:transparent!important}',
 '#aoPray435930 .aoClaudePaintingA3Card{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;border-radius:0!important;background:#030507!important;box-shadow:none!important}',
