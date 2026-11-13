@@ -36,17 +36,17 @@ const movementCases=[
  ['CREDO','CREDO_03','Credo III',414,19],
  ['SANCTUS_BENEDICTUS','MASS_08','Sanctus VIII',143,1],
  ['AGNUS_DEI','MASS_08','Agnus Dei VIII',106,3],
- // M56 expanded 1961 source-gated pilot. Exact Exsurge source-note counts
- // are emitted during acceptance, then pinned after the CI ledger pass.
- ['GLORIA','MASS_11','Gloria XI',null,18],
- ['GLORIA','MASS_01','Gloria I',null,18],
- ['SANCTUS_BENEDICTUS','MASS_11','Sanctus XI',null,1],
- ['SANCTUS_BENEDICTUS','MASS_01','Sanctus I',null,1],
- ['SANCTUS_BENEDICTUS','MASS_18','Sanctus XVIII',null,1],
- ['AGNUS_DEI','MASS_11','Agnus Dei XI',null,3],
- ['AGNUS_DEI','MASS_01','Agnus Dei I',null,3],
- ['AGNUS_DEI','MASS_17','Agnus Dei XVII',null,3],
- ['AGNUS_DEI','MASS_18','Agnus Dei XVIII',null,3]
+ // M56 expanded 1961 source-gated pilot. Exact counts were checked against
+ // the pinned Exsurge source-order ledger before acceptance.
+ ['GLORIA','MASS_11','Gloria XI',287,18],
+ ['GLORIA','MASS_01','Gloria I',316,18],
+ ['SANCTUS_BENEDICTUS','MASS_11','Sanctus XI',133,1],
+ ['SANCTUS_BENEDICTUS','MASS_01','Sanctus I',106,1],
+ ['SANCTUS_BENEDICTUS','MASS_18','Sanctus XVIII',60,1],
+ ['AGNUS_DEI','MASS_11','Agnus Dei XI',103,3],
+ ['AGNUS_DEI','MASS_01','Agnus Dei I',117,3],
+ ['AGNUS_DEI','MASS_17','Agnus Dei XVII',90,3],
+ ['AGNUS_DEI','MASS_18','Agnus Dei XVIII',60,3]
 ];
 const selector=movement=>
   '[data-kyrie-research-audition-open][data-ordinary-preview-movement="'+movement+'"]';
