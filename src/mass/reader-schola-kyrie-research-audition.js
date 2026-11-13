@@ -11,7 +11,7 @@ import {
   eligibleOrdinaryM54ResearchSource
 } from './reader-schola-ordinary-research-melody.js';
 import {
-  PROPER_M59_RESEARCH_SOURCES,compileProperM59ResearchMelody,
+  PROPER_RESEARCH_SOURCES,compileProperM59ResearchMelody,
   eligibleProperM59ResearchSource
 } from './reader-schola-proper-research-melody.js';
 
@@ -218,7 +218,7 @@ export function createKyrieXviResearchAudition({root,
   function prepareProperResearch(selectionId){
     const key='PROPER:'+selectionId;
     if(destroyed||sources.has(key)||properAttempted.has(key))return;
-    if(!PROPER_M59_RESEARCH_SOURCES.some(spec=>spec.selectionId===selectionId))
+    if(!PROPER_RESEARCH_SOURCES.some(spec=>spec.selectionId===selectionId))
       return;
     properAttempted.add(key);
     // The existing vendored Exsurge promise is shared with the Ordinary:
@@ -424,6 +424,32 @@ export function createKyrieXviResearchAudition({root,
       void open(requested);
   };
   const rootChange=event=>{
+    if(event.target.matches('[data-schola-proper-research-sunday]')){
+      const week=event.target.value;
+      const sourcePicker=root.querySelector('[data-schola-proper-research-select]');
+      if(sourcePicker){
+        const blank=doc.createElement('option');
+        blank.value='';
+        blank.textContent='No chant selected · nothing plays automatically';
+        sourcePicker.replaceChildren(blank);
+        const names=Object.freeze({
+          INTROIT:'Introit',GRADUAL:'Gradual',ALLELUIA:'Alleluia',
+          OFFERTORY:'Offertory',COMMUNION:'Communion'
+        });
+        for(const spec of PROPER_RESEARCH_SOURCES){
+          if(!spec.selectionId.startsWith(week+'_'))continue;
+          const option=doc.createElement('option');
+          option.value=spec.selectionId;
+          option.textContent=names[spec.role]+' · '+spec.title;
+          sourcePicker.append(option);
+        }
+      }
+      // The Sunday chooser is a study selector, never a calendar command.
+      properTrigger.hidden=true;
+      properTrigger.dataset.researchScoreKey='';
+      close();sync();
+      return;
+    }
     if(event.target.matches('[data-schola-proper-research-select]')){
       // A research-only change never alters the saved liturgical programme.
       properTrigger.hidden=true;
@@ -497,10 +523,13 @@ export function createKyrieXviResearchAudition({root,
     }
     const selectedProper=root.querySelector(
       '[data-schola-proper-research-select]')?.value??'';
+    const chosenResearchWeek=root.querySelector(
+      '[data-schola-proper-research-sunday]')?.value??'ADVENT1';
     const properKey='PROPER:'+selectedProper;
-    const properAllowed=eligibleProperM59ResearchSource({
-      form,mode,isRequiem,selectionId:selectedProper
-    });
+    const properAllowed=selectedProper.startsWith(chosenResearchWeek+'_')&&
+      eligibleProperM59ResearchSource({
+        form,mode,isRequiem,selectionId:selectedProper
+      });
     if(properAllowed&&!sources.has(properKey))
       prepareProperResearch(selectedProper);
     const properAnchor=root.querySelector('[data-schola-proper-research]');
