@@ -1,0 +1,65 @@
+{
+  "schema": "ao-schola-m57-sanctus-xvii-canonical-bivirga-adapter-v1",
+  "reviewDate": "2026-11-13",
+  "status": "SOURCE_EQUIVALENT_RESEARCH_PREVIEW_TESTING",
+  "historicalSource": {
+    "name": "Sanctus XVII with Benedictus",
+    "scoreId": "GREGOBASE-871",
+    "settingId": "MASS_17",
+    "canonicalGabcPath": "src/mass/reader-kyriale-research-batch3.js",
+    "gabcHashFn": "FNV-1a UTF-16 exact source",
+    "gabcHash": "e73e09be",
+    "sourcePage": "Graduale Romanum (Solesmes, 1961) folio 56*, printed page",
+    "originalPdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf#page=58",
+    "gregobase": "https://gregobase.selapa.net/chant.php?id=871",
+    "gregorianumVariant": "https://www.gregorianum.org/wiki/Missa_XVII_%28in_dominicis_Adventus_et_Quadragesimae%29"
+  },
+  "notationAuthority": {
+    "url": "https://gregorio-project.github.io/gabc/details.html",
+    "rule": "Gregorio specification: pcvv denotes a bivirga (two virgae on the same note pitch); repeated notes can be expanded explicitly, preserving pitch and figure.",
+    "sourceShortPattern": "gxfg!hvvGE",
+    "rendererEquivalentPattern": "gxfg!hv/hvGE",
+    "occurrences": 2
+  },
+  "renderer": {
+    "vendor": "Exsurge pinned local assets/vendor/exsurge/exsurge.min.js",
+    "defect": "Original source uses h vv twice; Exsurge reports the second bivirga note with sourceGabc v, which cannot be mapped to an alphabetic pitch source letter.",
+    "problemSourceIndex": [
+      333,
+      523
+    ],
+    "notesInCanonicalNotationList": 120,
+    "notesInExplicitEquivalentList": 120,
+    "originalUnmappableRecords": 2,
+    "expandedUnmappableRecords": 0,
+    "researchRendererGabcFingerprint": "1847d82e",
+    "sourceRecordChanged": false,
+    "pitchShapeMoraEpisemaParity": "ASSERTED_BY_M57_PROBE_AND_REQUIRED_CI",
+    "sourceNoteIds": 120,
+    "allowedChange": "Only the playback-and-engraving research copy uses the explicit equivalent notation; the historical catalogue and printed-score reference retain the archival GABC verbatim."
+  },
+  "prohibited": [
+    "Change Gregorian setting IDs",
+    "claim authentic absolute pitch or rhythm",
+    "publish modified GABC as a new historical transcription",
+    "automatic assignment to Mass",
+    "play before explicit user click",
+    "expose in Low/Missal/Requiem",
+    "split Sanctus and Benedictus reader cards",
+    "paid music services"
+  ],
+  "review": {
+    "musicalNoteHeadsFullyComparedAgainstPrint": false,
+    "visualNotationAndSourcePitchDigitallyCompatible": true,
+    "churchMusicExpertEndorsed": false,
+    "gregorianRhythmCertified": false,
+    "approvedForOfficialScholaProgram": false
+  },
+  "releaseGates": [
+    "Schola P0 20-Ordinary source-gated melodic semantic compiler",
+    "390px 65-card phone SVG cursor with Sanctus XVII 120 noteheads",
+    "R17 65-card native convergence",
+    "required main gate",
+    "GitHub Pages public-site and offline verification"
+  ]
+}
