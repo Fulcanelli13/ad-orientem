@@ -119,7 +119,7 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_094.jpg",
     "rightsEvidence": "https://www.nationalgallery.org.uk/terms-of-use",
     "rights": "INDEPENDENT_REPRODUCTION_RIGHTS_REVIEW_REQUIRED",
-    "quality": "INDEPENDENT_2024_PLUS_PIXEL_COPY_NEEDS_VISUAL_REVIEW",
+    "quality": "INDEPENDENT_COPY_NEEDS_VISUAL_REVIEW",
     "notes": "National Gallery collection reproductions have restrictive terms. Do not treat the independent Yorck Commons copy as an institutional CC0 grant."
   },
   {
