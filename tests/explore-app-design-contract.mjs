@@ -33,4 +33,30 @@ assert.match(EXPLORE_APP_DESIGN_STYLE,/figcaption/);
 assert.doesNotMatch(EXPLORE_APP_DESIGN_STYLE,/\bnextMass\s*\(/);
 assert.doesNotMatch(EXPLORE_APP_DESIGN_STYLE,/\bconst\s+(?:VENUES|PLACES|TOWNS)\s*=/);
 
-console.log("Explore app-design bridge: source-owned, scoped, and import-wired.");
+
+// The latest app-design donor has TWO atlas destinations, not a three-tab
+// Discover/Sacred/Latin-Mass header or a parallel full-screen app shell.
+const sacredSource=readFileSync("src/find/heritage-presentation.js","utf8");
+const massSource=readFileSync("src/find/explore-presentation.js","utf8");
+const sacredStart=sacredSource.indexOf('html+=\'<nav class="aoAtlasPrimaryTabs"');
+const sacredEnd=sacredSource.indexOf("html+='</nav>';",sacredStart);
+assert.ok(sacredStart>=0&&sacredEnd>sacredStart,"Sacred Atlas navigation missing");
+const sacredTabs=sacredSource.slice(sacredStart,sacredEnd);
+assert.equal((sacredTabs.match(/<button type="button"/g)||[]).length,2,
+  "Sacred Atlas has more than two global tabs");
+assert.match(sacredTabs,/data-find-filter-value="tlm"/);
+assert.match(sacredTabs,/data-atlas-entry-tab="sacred"/);
+assert.doesNotMatch(sacredTabs,/data-atlas-entry-tab="discover"/);
+assert.match(sacredSource,/data-atlas-entry-tab="discover".*Discover overview/);
+const massStart=massSource.indexOf('html+=\'<nav class="aoAtlasMassTabs"');
+const massEnd=massSource.indexOf("+'</nav>';",massStart);
+assert.ok(massStart>=0&&massEnd>massStart,"TLM Atlas navigation missing");
+const massTabs=massSource.slice(massStart,massEnd);
+assert.equal((massTabs.match(/<button type="button"/g)||[]).length,2,
+  "TLM Atlas has more than two global tabs");
+assert.match(massTabs,/data-atlas-mass-return="sacred"/);
+assert.match(massTabs,/aria-current="page"/);
+assert.doesNotMatch(massTabs,/data-atlas-mass-return="discover"/);
+assert.match(EXPLORE_APP_DESIGN_STYLE,/QA3: Exactly two atlas collections/);
+
+console.log("Explore app-design bridge: source-owned, styled, and two-atlas navigation wired.");
