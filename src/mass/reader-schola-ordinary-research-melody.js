@@ -1,5 +1,5 @@
 // M54 — one source-locked, zero-cost procedural-melody preparation path
-// for the four non-Kyrie Ordinary movement families and 14 research scores. This module does not
+// for the four non-Kyrie Ordinary movement families and 13 playable research scores. This module does not
 // create audio, UI, an approved score, a Schola event or a liturgical cue.
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {
@@ -22,7 +22,7 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'AGNUS_DEI',settingId:'MASS_08',scoreId:'GREGOBASE-2760',
     title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',gabcSegments:3,
     sourceFolio:'Graduale Romanum (1961) p. 31*'}),
-  // M56: ten additional already-curated CC0 GABC witnesses. Their source
+  // M56: nine compatible additional CC0 GABC witnesses. Their source
   // fingerprints are of the exact unchanged archived text, NOT a claim that
   // every historical printed neume or Gregorian duration is certified.
   freeze({movement:'GLORIA',settingId:'MASS_11',scoreId:'GREGOBASE-303',
@@ -37,9 +37,6 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_01',scoreId:'GREGOBASE-300',
     title:'Sanctus I · Benedictus',sourceFingerprint:'c1849a80',gabcSegments:1,
     sourceFolio:'Graduale Romanum (1961) p. 6*'}),
-  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',scoreId:'GREGOBASE-871',
-    title:'Sanctus XVII · Benedictus',sourceFingerprint:'e73e09be',gabcSegments:1,
-    sourceFolio:'Graduale Romanum (1961) p. 56*'}),
   freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_18',scoreId:'GREGOBASE-298',
     title:'Sanctus XVIII · Benedictus',sourceFingerprint:'a4e11282',gabcSegments:1,
     sourceFolio:'Graduale Romanum (1961) p. 58*'}),
@@ -55,6 +52,21 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'AGNUS_DEI',settingId:'MASS_18',scoreId:'GREGOBASE-2412',
     title:'Agnus Dei XVIII',sourceFingerprint:'17425e51',gabcSegments:3,
     sourceFolio:'Graduale Romanum (1961) p. 58*'})
+]);
+// A 20th archived GABC remains visible as reference notation, but is
+// deliberately ineligible for melody until source-to-Exsurge notehead parity
+// is established. The actual source contains two 'v'-only Exsurge note
+// records (source indexes 333 and 523) that cannot be assigned authentic
+// GABC pitch letters. Do not infer their pitch from adjacent glyphs.
+export const ORDINARY_M56_HELD_SOURCES=freeze([
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',
+    scoreId:'GREGOBASE-871',title:'Sanctus XVII · Benedictus',
+    sourceFingerprint:'e73e09be',
+    status:'HELD_EXSURGE_SOURCE_NOTE_PARITY',
+    sourceNoteRecords:120,exsurgeScoreNotes:135,
+    offendingSourceIndexes:freeze([333,523]),
+    offendingSourceGabc:'v',
+    approved:false,melodyAvailable:false})
 ]);
 const bySelection=new Map(ORDINARY_M54_RESEARCH_SOURCES.map(
   spec=>[spec.movement+':'+spec.settingId,spec]));
