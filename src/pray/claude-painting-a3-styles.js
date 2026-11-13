@@ -41,7 +41,7 @@ const LINES=[
 /* Claude A3 swaps translation IN THE SAME SPACE. */
 '#aoPray435930 .aoClaudePaintingA3 .sw{cursor:pointer;-webkit-tap-highlight-color:transparent;outline-offset:5px}',
 '#aoPray435930 .aoClaudePaintingA3 .sw .st{display:grid}',
-'#aoPray435930 .aoClaudePaintingA3 .sw .st>*{grid-area:1/1;transition:opacity .6s var(--ease),filter .6s var(--ease),transform .6s var(--ease);white-space:pre-line}',
+'#aoPray435930 .aoClaudePaintingA3 .sw .st>*{grid-area:1/1;align-self:start;transition:opacity .6s var(--ease),filter .6s var(--ease),transform .6s var(--ease);white-space:pre-line}',
 '#aoPray435930 .aoClaudePaintingA3 .sw .b{opacity:0;filter:blur(7px);transform:translateY(5px);pointer-events:none}',
 '#aoPray435930 .aoClaudePaintingA3 .sw.v .a{opacity:0;filter:blur(7px);transform:translateY(-5px);pointer-events:none}',
 '#aoPray435930 .aoClaudePaintingA3 .sw.v .b{opacity:1;filter:none;transform:none;pointer-events:auto}',
