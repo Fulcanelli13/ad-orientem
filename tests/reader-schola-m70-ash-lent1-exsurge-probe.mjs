@@ -27,7 +27,7 @@ const signature=n=>({
 const cache=new Map();
 const archive=p=>{if(!cache.has(p))cache.set(p,read(p));return cache.get(p)};
 const rows=[];let total=0;
-const unsupported=[];
+let verifiedFusionNoteheads=0;
 assert.equal(source.scores.length,10);
 assert.equal(source.stage,'SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE');
 for(const spec of source.scores){
@@ -51,9 +51,27 @@ for(const spec of source.scores){
   .map(({n,i})=>({noteIndex:i,sourceGabc:n.sourceGabc??null,
    staffPosition:n.staffPosition,pitchStep:n.pitch?.step,pitchOctave:n.pitch?.octave,
    shape:n.shape}));
- if(suspect.length){
-  unsupported.push({selectionId:spec.selectionId,suspect});
-  console.log('M70 SOURCE NOTE ANOMALY',JSON.stringify({selectionId:spec.selectionId,suspect}));
+ // GABC @ is the documented neume-fusion marker, not an alien pitch.
+ // The original Ash Wednesday Introit contains exactly the authentic
+ // (f@h!gh~) neume. Vendored Exsurge reports its fused h as '@h!':
+ // verify this exact SHA-pinned source/token/pitch rather than silently
+ // discarding a source note or broadly allowing unsupported source tokens.
+ if(spec.selectionId==='ASH_WEDNESDAY_INTROIT'){
+  assert.equal(suspect.length,1,'Exactly one known original GABC fusion token');
+  assert.equal(suspect[0].noteIndex,96);
+  assert.equal(suspect[0].sourceGabc,'@h!');
+  assert.equal(suspect[0].staffPosition,5);
+  assert.equal(suspect[0].shape,0);
+  assert.ok(raw.includes('et(f@h!gh~)'), 'Exact archived GABC fusion is required');
+  verifiedFusionNoteheads++;
+  console.log('M70 ORIGINAL GABC FUSION',JSON.stringify({
+   selectionId:spec.selectionId,token:suspect[0].sourceGabc,
+   noteIndex:suspect[0].noteIndex,sourcePhrase:'et(f@h!gh~)',
+   originalAndRendererPitchShapeParity:true
+  }));
+ }else{
+  assert.equal(suspect.length,0,
+   'Unexpected source note spelling in '+spec.selectionId+': '+JSON.stringify(suspect));
  }
  let count=0;const phrases=[];
  for(const notation of expanded.notations){
@@ -82,8 +100,7 @@ for(const spec of source.scores){
  console.log('M70 EXSURGE SOURCE',JSON.stringify(record));
 }
 assert.equal(rows.length,10);
-assert.equal(unsupported.length,0,
- 'M70 unknown source-note spellings need explicit review; see SOURCE NOTE ANOMALY logs');
+assert.equal(verifiedFusionNoteheads,1,'One and only one archival fusion source note is present');
 assert.deepEqual(rows.filter(x=>x.role==='TRACT').map(x=>x.selectionId),
  ['ASH_WEDNESDAY_TRACT','LENT1_TRACT']);
 assert.equal(rows.find(x=>x.selectionId==='LENT1_TRACT').phraseNoteCounts.length,13);
