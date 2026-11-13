@@ -30,7 +30,7 @@ const expected={
   ['COMMUNION','co',677,'84','Manducaverunt']]
 };
 assert.equal(registry.schema,'ao-schola-m68-prelent-three-sundays-gr1961-archive-audit-v1');
-assert.equal(registry.stage,'SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE');
+assert.equal(registry.stage,'DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_HOLD_NO_PLAYER_CHANGE');
 assert.equal(registry.archive,'data/mass/chant-corpus/gr1961-proper-index.json');
 assert.equal(registry.editionId,2);
 assert.equal(registry.editionId,index.sourceEditionId);
@@ -51,7 +51,7 @@ assert.deepEqual(registry.counts,{
  days:3,slots:15,introit:3,gradual:3,tract:3,offertory:3,communion:3,alleluia:0,
  newArchiveIdentities:15,duplicateGregoBaseIdsWithinBatch:0,
  duplicateIdsInExisting75MelodyPlayer:0,existingProperSelectionsBeforeAudit:59,
- sourceDigitalNoteheads:null,sourceDigitalNoteheadsCertifiedForResearch:false});
+ sourceDigitalNoteheads:3404,sourceDigitalNoteheadsCertifiedForResearch:true});
 assert.equal(PROPER_RESEARCH_SOURCES.length,59);
 assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
 const existing=new Set(PROPER_RESEARCH_SOURCES.map(x=>x.scoreId));
@@ -77,9 +77,11 @@ for(const score of registry.scores){
  assert.ok(!seenSelection.has(score.selectionId),'No repeated selections');
  seenIds.add(id);seenSelection.add(score.selectionId);
  assert.equal(existing.has(score.scoreId),false,'No redundant existing Proper score');
- assert.equal(score.sourceNoteheads,null);
- assert.equal(score.phraseNoteCounts,null);
- assert.equal(score.exsurgeParityVerified,false);
+ assert.ok(Number.isInteger(score.sourceNoteheads)&&score.sourceNoteheads>0);
+ assert.ok(Array.isArray(score.phraseNoteCounts)&&score.phraseNoteCounts.every(n=>Number.isInteger(n)&&n>0));
+ assert.equal(score.phraseNoteCounts.reduce((n,x)=>n+x,0),score.sourceNoteheads);
+ assert.equal(score.phraseNoteCounts.length,score.sourceDoubleBarTokens);
+ assert.equal(score.exsurgeParityVerified,true);
  assert.equal(score.researchApproved,false);
  assert.equal(score.printedNeumesApproved,false);
  assert.equal(score.gregorianRhythmCertified,false);
@@ -107,7 +109,16 @@ for(const score of registry.scores){
 }
 assert.equal(seenIds.size,15);
 assert.equal(seenSelection.size,15);
-assert.equal(registry.researchExceptions.length,3);
+assert.equal(registry.researchExceptions.length,4);
+assert.equal(registry.scores.reduce((n,s)=>n+s.sourceNoteheads,0),3404);
+assert.equal(registry.exsurgeEvidence.workflowRunId,43471766717);
+assert.equal(registry.exsurgeEvidence.original1961SourceDigitalNoteheads,3404);
+assert.equal(registry.exsurgeEvidence.all15PhraseCountsLocked,true);
+assert.equal(registry.exsurgeEvidence.tractSlots,3);
+assert.equal(registry.exsurgeEvidence.alleluiaSlots,0);
+assert.equal(registry.exsurgeEvidence.original1961PrintedNeumesComparedVisually,false);
+assert.equal(registry.exsurgeEvidence.GregorianRhythmCertified,false);
+assert.equal(registry.exsurgeEvidence.playerChanges,false);
 assert.equal(registry.researchExceptions[0].role,'COMMUNION');
 assert.equal(registry.researchExceptions[1].role,'TRACT');
 for(const p of registry.researchExceptions)assert.equal(p.mustNotSubstitute,true);
