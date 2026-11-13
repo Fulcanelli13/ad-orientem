@@ -425,4 +425,52 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   min-height:44px;
 }
 
+
+
+/* QA4 screenshot acceptance: a flex preview must not shrink its photograph,
+   title or source credit to zero when the phone sheet has a max-height.
+   Name first makes the relevant identity immediately readable at 320px;
+   the approved photo remains full-frame and credited immediately beneath. */
+@media(max-width:799px) {
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img) {
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overflow-anchor:none;
+    scroll-behavior:auto;
+    overscroll-behavior:contain;
+    align-content:start;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img) > * {
+    flex:0 0 auto!important;
+    min-width:0;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritageSheetHandle {
+    order:-4!important;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritageCardHeading {
+    order:-3!important;
+    padding-right:0;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritageCardTitle {
+    order:-2!important;
+    display:block;
+    -webkit-line-clamp:unset;
+    overflow-wrap:anywhere;
+    white-space:normal;
+    line-height:1.08;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback) {
+    order:-1!important;
+    flex:0 0 auto!important;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb img {
+    flex:none;
+    object-fit:contain!important;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb figcaption {
+    max-height:none!important;
+    overflow-wrap:anywhere;
+  }
+}
+
 `;
