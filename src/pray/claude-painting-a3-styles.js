@@ -108,6 +108,7 @@ const LINES=[
 /* Keep the original 320–390px text widths, but give the veil room to scroll. */
 '@media(max-width:600px){#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .ct{max-height:calc(100dvh - 132px)}#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .tx{max-height:51dvh}#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .ct{left:22px;right:22px;bottom:clamp(54px,11dvh,110px)}#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes{gap:9px;top:max(61px,env(safe-area-inset-top))}}',
 '@media(prefers-reduced-motion:reduce){#aoPray435930 .aoClaudePaintingA3 .aoA3FocusVerse{animation:none!important}#aoPray435930 .aoClaudePaintingA3 .veil{transition:none!important}}',
+'html[data-reduced-motion="true"] #aoPray435930 .aoClaudePaintingA3 .bg{animation:none!important;transform:none!important}',
 '@media(prefers-reduced-motion:reduce){#aoPray435930 .aoClaudePaintingA3 .bg{animation:none!important;transform:none!important}#aoPray435930 .aoClaudePaintingA3 .sw .st>*,#aoPray435930 .aoClaudePaintingA3 .ct,#aoPray435930 .aoClaudePaintingA3 .sh{transition:none!important}}'
 ];
 export const CLAUDE_PAINTING_A3_CSS=LINES.join("\n");
