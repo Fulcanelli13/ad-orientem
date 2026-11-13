@@ -1,0 +1,66 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B36",
+  "asOf": "2026-11-14",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B35",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B36-01",
+      "kind": "OPEN_IMAGE_RIGHTS_PRECISION",
+      "subject": "Class II NGA Nativity of Virgin 1939.1.42 and Exaltation of Cross 1939.1.72",
+      "sources": [
+        "https://www.nga.gov/artworks/free-images-and-open-access",
+        "https://www.nga.gov/artworks/183-nativity-virgin",
+        "https://www.nga.gov/artworks/213-exaltation-true-cross"
+      ],
+      "findingEn": "NGA explicitly permits free commercial and noncommercial use of Open Access images. Its CC0 statement about the downloadable factual collection dataset is distinct from the object-image licence statement; cite object-specific public-domain media notices plus Open Access policy, not dataset CC0 alone. NGA notes it conveys only its own rights and gives no warranties about third-party claims. Previously documented object-specific rights remain eligible; no new image was acquired.",
+      "findingFr": "La NGA autorise l'utilisation gratuite, commerciale ou non, des images en libre accès. La licence CC0 des données descriptives est distincte du statut des reproductions photographiques : citer l'avis propre à chaque œuvre et la politique d'accès libre, non la seule licence des données. La NGA ne garantit pas l'absence de prétentions de tiers.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B36-02",
+      "kind": "IMAGE_ACQUISITION_RETRY_BLOCK",
+      "subject": "Andrea di Bartolo NGA 1939.1.42",
+      "sources": [
+        "https://www.nga.gov/artworks/183-nativity-virgin",
+        "https://api.nga.gov/iiif/789d7bcb-9bb2-4fdc-b049-1c9e8ebcce51/full/full/0/default.jpg"
+      ],
+      "findingEn": "A direct HTTPS retrieval of the B03-listed IIIF original was retried on 14 November 2026; api.nga.gov DNS resolution failed before HTTP. No image bytes, dimensions, SHA-256 or crop QA were obtained. This is an environment network failure, not evidence that the institution removed the image.",
+      "findingFr": "Une nouvelle tentative de récupération IIIF le 14 novembre 2026 a échoué à la résolution DNS d'api.nga.gov, avant toute réponse HTTP. Aucun fichier, dimensions, empreinte SHA-256 ni contrôle de cadrage mobile n'a été obtenu.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B36-03",
+      "kind": "CLASS_II_PARENT_CHILD_CATALOGUE_PRECISION",
+      "subject": "Saints Simon and Jude, Städel 830",
+      "sources": [
+        "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+        "https://sammlung.staedelmuseum.de/en/work/two-altarpiece-wings-with-the-martyrdom-of-the-apostles"
+      ],
+      "findingEn": "Städel's current catalogue (updated 14 July 2026) confirms part 10 of 12, inventory 830, acquired 1830, public-domain image, and explicitly links to the parent two-wing apostolic martyrdom ensemble. The parent catalogue lists the twelve distinct scenes; do not create a second physical artwork for the ensemble or treat the other panels as Simon/Jude coverage.",
+      "findingFr": "La notice du Städel, mise à jour le 14 juillet 2026, confirme le panneau no 10 sur 12, inventaire 830, acquis en 1830, image du domaine public, et son rattachement aux deux volets du cycle des martyrs apostoliques. L'ensemble ne constitue pas un second exemplaire du panneau.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Resolve exact photographic rights of approved Class I Strozzi NT 108873, Benson Salvator Mundi, Carracci Souls in Purgatory and Gaulli Louvre INV 20298, without relying on general public-domain assumptions",
+    "Acquire NGA 1939.1.42 and 1939.1.72 and Städel 830 image bytes in a network-capable environment, record SHA-256/pixels and mobile QA",
+    "Seek strict Lateran dedication depiction, not Constantine or Dominic related imagery"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

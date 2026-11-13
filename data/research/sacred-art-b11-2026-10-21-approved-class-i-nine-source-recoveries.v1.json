@@ -1,0 +1,541 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B11_V1",
+  "batchId": "AO-ART-2026-10-21-B11",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Nine unresolved targets from the pre-existing approved Class I source-recovery queue; additive object, reproduction and rights evidence. This is not a catalogue or decision replacement.",
+  "upstream": {
+    "previous": "data/research/sacred-art-b10-2026-10-21-newfields-van-dyck-open-access-policy.v1.json",
+    "selectionQueue": "data/research/sacred-art-p0-class-i-31-source-and-class-ii-11-triage-20261020.v1.json",
+    "intake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "freeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "catalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates"
+  },
+  "decisionPreservation": {
+    "rules": "All ratings, rejections, locked selections, blocked artists and Prado exclusion preserved; no new score or publication approval.",
+    "dedupe": "Targeted exact-title checks against the 281 candidate snapshot and 451 intake found only The Lance Thrust as a canonical ID match. Remaining rows originate in the existing approved date overlay, retain null catalogue ID, and are not new editorial candidates. Historical ratings outside the snapshots are not inferred.",
+    "crosswalkGate": "Object identities are verified independently; each selected reproduction still needs visual proof that it depicts the approved physical original. No source URL is written into the frozen overlay."
+  },
+  "records": [
+    {
+      "recordId": "B11-01",
+      "dates": [
+        "2026-04-04"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "James Tissot",
+        "title": "God Creating the World",
+        "date": "ca. 1898–1902",
+        "institution": "The Morgan Library & Museum, Morgan Family Collection",
+        "objectReference": "1976.22:1",
+        "medium": "opaque watercolor on board",
+        "dimensions": "201 × 135 mm",
+        "objectUrl": "https://www.themorgan.org/drawings/item/110083"
+      },
+      "subject": "Exact Genesis creation subject; represents the opening of Genesis, not all four Easter Vigil prophecies.",
+      "identity": "Official indexed Morgan record verifies the physical watercolor. Its title/artist match the approved Holy Saturday label; selected-file visual match remains pending.",
+      "image": {
+        "route": "https://www.themorgan.org/drawings/item/110083",
+        "pixels": null,
+        "access": "Object page returns 403 to direct research-browser access; indexed institutional metadata exposes a Download label. No bytes acquired."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Morgan website downloads are restricted to personal, educational or noncommercial use and must remain unaltered. High-resolution publication uses require the institution's paid process. Not suitable for unrestricted app reuse under this route.",
+        "evidence": [
+          "https://www.themorgan.org/terms-and-conditions",
+          "https://www.themorgan.org/research/imaging-and-rights"
+        ],
+        "alternative": "Seek an independently digitized historical edition that can be matched to this composition; no qualifying alternate located. Do not substitute a scan of another Tissot Genesis scene."
+      },
+      "mobile": "Portrait; full image only pending visual QA.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "RESTRICTIONS_VERIFIED; REUSE_BLOCKED"
+      },
+      "status": "OBJECT_VERIFIED; MORGAN_PHOTO_REUSE_BLOCKED"
+    },
+    {
+      "recordId": "B11-02",
+      "dates": [
+        "2026-04-04"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "John Martin",
+        "title": "The Destruction of Pharaoh's Host",
+        "date": "1836",
+        "institution": "J. Paul Getty Museum",
+        "objectReference": "2018.45; web object 103QTX",
+        "medium": "watercolor and oil paint with brown ink and scraping out on paper",
+        "dimensions": "58.4 × 85.7 cm",
+        "objectUrl": "https://www.getty.edu/art/collection/object/103QTX",
+        "primaryIdentityEvidence": "https://www.getty.edu/news/getty-presents-finding-an-audience-nineteenth-century-drawings/"
+      },
+      "subject": "Exact Exodus 14 destruction of Pharaoh's army. Getty's institutional narrative identifies Exodus 14:26–31.",
+      "identity": "Physical Getty work verified. The date-selection overlay names title and artist without a specific image; match to the approved reproduction remains pending. Do not confuse this finished watercolor with Martin's separate mezzotint.",
+      "image": {
+        "route": "https://commons.wikimedia.org/wiki/File:The_Destruction_of_Pharaoh%27s_Host,_by_John_Martin_(Getty_103QTX).jpg",
+        "pixels": [
+          11093,
+          7627
+        ],
+        "size": "21.98 MB",
+        "dimensionEvidence": "Commons original-file listing, not local byte verification",
+        "provenance": "Commons cites Getty object 103QTX, labels the reproduction CC0, and embeds Getty accession 2018.45 in image metadata.",
+        "qualityHold": "Getty describes an underlying drawing and material changes. These are properties of the authentic work, not evidence of digital corruption."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "CC0 explicitly recorded for this Getty-derived file. Getty's current policy confirms CC0 for its Open Content reproductions, including commercial reuse.",
+        "evidence": [
+          "https://www.getty.edu/projects/open-content-program/",
+          "https://www.getty.edu/projects/open-content-program/faqs/"
+        ],
+        "credit": "The J. Paul Getty Museum, Los Angeles, 2018.45",
+        "limitation": "The current Getty object page needs JavaScript; file-to-object crosswalk uses institutional exhibition caption plus source metadata."
+      },
+      "mobile": "Landscape ratio 1.454. Keep Moses and the wide sea composition intact; no portrait crop approved.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "CC0_EVIDENCE_VERIFIED; SELECTED_FILE_MATCH_AND_ACQUISITION_PENDING"
+      },
+      "status": "OBJECT_AND_HIGH_RES_ROUTE_VERIFIED; CC0_SOURCE_EVIDENCE; NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B11-03",
+      "dates": [
+        "2026-12-06"
+      ],
+      "priority": 2,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "Michael Lucas Leopold Willmann",
+        "title": "The Family of Jesus Christ",
+        "date": "1677–1679",
+        "institution": "National Museum in Wrocław",
+        "objectReference": "MNWr VIII-2328",
+        "medium": "oil on oak panel; bozzetto",
+        "dimensions": "119 × 73 cm",
+        "objectUrl": "https://muzeumcyfrowe.mnwr.pl/en/exhibit/p/mnwr_viii-2328"
+      },
+      "subject": "Related genealogy/Root of Jesse theme; not a literal portrait of Jesse or a Gospel narrative for Advent II.",
+      "identity": "Official record adds the previously missing inventory number to the existing W60 institutional lead.",
+      "image": {
+        "route": "https://muzeumcyfrowe.mnwr.pl/en/exhibit/the-family-of-jesus-christ",
+        "alternative": "https://commons.wikimedia.org/wiki/File:Michael_L._Willmann_-_Rodzina_Chrystusa.jpg",
+        "pixels": [
+          618,
+          1000
+        ],
+        "dimensionEvidence": "Commons file listing only",
+        "originalHighResPixels": null
+      },
+      "rights": {
+        "painting": "Museum marks object PUBLIC DOMAIN.",
+        "photo": "Museum separately claims image copyright; collection guidelines limit protected photographs to private, educational and research purposes. Commons applies PD-Art but its EXIF credits/copyrights Arkadiusz Podstawka. Do not treat the painting's PD label as clearing this photograph.",
+        "evidence": [
+          "https://muzeumcyfrowe.mnwr.pl/en/guidelines-for-using-the-digital-collections"
+        ],
+        "alternative": "An independently licensed full-resolution photograph remains needed."
+      },
+      "mobile": "Tall grouping; 618 × 1000 fallback is low resolution. No crop inspection.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "OBJECT_PD; PHOTOGRAPH_RESTRICTED; COMMONS_JURISDICTION_CONDITIONAL"
+      },
+      "status": "ACCESSION_CROSSWALK_REPAIRED; PHOTO_RIGHTS_HOLD"
+    },
+    {
+      "recordId": "B11-04",
+      "dates": [
+        "2026-06-12",
+        "2026-07-01"
+      ],
+      "priority": 1,
+      "existingArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "painting": {
+        "artist": "Anthony van Dyck",
+        "title": "Christ on the Cross, 'Le coup de lance' (The Lance Thrust)",
+        "date": "1620",
+        "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+        "objectReference": "297",
+        "medium": "oil on panel",
+        "dimensions": "429.6 × 310 cm",
+        "objectUrl": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0"
+      },
+      "subject": "Exact lance-thrust/Crucifixion narrative; existing devotional associations with Sacred Heart and Precious Blood are preserved. This does not create a literal Exaltation event claim.",
+      "identity": "Official object confirms Van Dyck, resolving title/attribution ambiguity. KMSKA's curatorial article explains the older Rubens attribution. The 1631 print inventory 10302 is a separate object and must not replace panel 297.",
+      "identityEvidence": "https://www.kmska.be/en/le-coup-de-lance-by-rubens",
+      "image": {
+        "route": "https://iiif.kmska.be/c/iiif/2/public%40301.tif/full/full/0/default.tif",
+        "manifest": "https://iiif.kmska.be/iiif/3/301/manifest.json",
+        "photographer": "Hugo Maertens (official viewer metadata)",
+        "pixels": null,
+        "technicalBlocker": "Research browser rejected the exact TIF endpoint with HTTP 400 Unsupported content-type: image/tiff; manifest was inaccessible. Record once; no retry."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Object page provides free TIF download. Linked museum disclaimer explicitly permits unrestricted use of photographs of public-domain artworks; professional-use assistance is optional, not a required clearance step under the disclaimer.",
+        "evidence": [
+          "https://kmska.be/en/disclaimer"
+        ],
+        "credit": "Royal Museum of Fine Arts Antwerp – Flemish Community Collection; retain photographer credit if supplied."
+      },
+      "mobile": "Tall altarpiece; preserve cross, flank figures and panel perimeter; pixel inspection pending.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "OFFICIAL_UNRESTRICTED_PHOTO_POLICY_VERIFIED"
+      },
+      "status": "EXISTING_ID_RETAINED; OFFICIAL_PANEL_IDENTITY_AND_FREE_REUSE_ROUTE_FOUND; TECHNICAL_ACQUISITION_PENDING"
+    },
+    {
+      "recordId": "B11-05",
+      "dates": [
+        "2026-05-30"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "John Bridges (active 1818–1854)",
+        "title": "Jesus Restoring to Health Peter's Wife's Mother",
+        "date": "1833",
+        "institution": "Birmingham Museum of Art, Alabama",
+        "objectReference": "1978.29",
+        "medium": "oil on canvas",
+        "dimensions": "121.9 × 173.2 cm",
+        "objectUrl": "https://www.artsbma.org/collection/jesus-restoring-to-health-peters-wifes-mother/"
+      },
+      "subject": "Exact healing of Peter's mother-in-law; museum cites Mark 1:30–31. Calendar relation remains the existing Gospel-episode association.",
+      "identity": "Current institutional record transcribes John Bridges / Roma 1833. Commons says 1839; prefer 1833 in this research supplement and retain the discrepancy for file/inscription comparison. The active dates 1818–1854 should not be asserted as birth/death years.",
+      "image": {
+        "route": "https://commons.wikimedia.org/wiki/File:Christ_Healing_the_Mother_of_Simon_Peter%E2%80%99s_Wife_by_John_Bridges.jpg",
+        "pixels": [
+          1200,
+          851
+        ],
+        "size": "467 KB",
+        "dimensionEvidence": "Commons original-file metadata",
+        "resolution": "Reference fallback; higher-resolution original still needed."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Commons file carries PD-Art/PDM, with jurisdiction caveat. BMA Open Content policy text was located on other object pages, but the exact painting's download eligibility was not exposed in the parsed object page. Do not infer object-specific clearance from general policy.",
+        "evidence": [
+          "https://www.artsbma.org/collection/jesus-restoring-to-health-peters-wifes-mother/"
+        ],
+        "alternative": "Prefer exact BMA Open Content original if eligibility is subsequently demonstrated."
+      },
+      "mobile": "Wide, many-figure interior; full frame preferred. Image ratio 1.410 versus canvas 1.421 warrants perimeter comparison, not automatic rejection.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "COMMONS_PD_ART_CONDITIONAL; BMA_OPEN_CONTENT_ELIGIBILITY_PENDING"
+      },
+      "status": "OFFICIAL_DATE_DISCREPANCY_RECORDED; EXACT_OBJECT_VERIFIED; HIGH_RES_AND_RIGHTS_PENDING"
+    },
+    {
+      "recordId": "B11-06",
+      "dates": [
+        "2026-04-05"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "William Adolphe Bouguereau",
+        "title": "The Holy Women at the Tomb",
+        "date": "1890",
+        "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+        "objectReference": "1580",
+        "medium": "oil on canvas",
+        "dimensions": "259 × 161 cm",
+        "objectUrl": "https://www.kmska.be/en/masterpiece/the-holy-women-at-the-tomb"
+      },
+      "subject": "Exact Mark 16:1–8 empty-tomb scene, as identified by KMSKA; approved Easter Sunday label preserved.",
+      "identity": "Official record verifies title, artist, accession and signed date. Do not rely on a low-resolution Commons version categorised as private collection.",
+      "image": {
+        "preferredMuseumOriginFile": "https://commons.wikimedia.org/wiki/File:William_Adolphe_Bouguereau_-_De_heilige_vrouwen_bij_het_graf_-_1580_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff",
+        "officialTifRoute": "https://iiif.kmska.be/c/iiif/2/public@2137.tif/full/full/0/default.tif",
+        "pixels": [
+          4352,
+          6965
+        ],
+        "sizeBytes": 56294276,
+        "container": "6-page TIFF; full-resolution page choice and any pyramid/subimage structure require inspection after acquisition",
+        "dimensionEvidence": "Commons original-file listing",
+        "sourceReportedSha1": "18dcf2b09b352ca3e6590b4352876313db436899",
+        "hashCaveat": "Third-party source checksum only; not a locally computed hash or proof of acquired bytes.",
+        "alternate": "2276 × 3687 JPEG from Herman du Toit/BYU has a different reproduction history and PD-Art basis; prefer the museum-origin TIFF."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Commons explicitly labels this digital TIFF reproduction CC0 and gives the exact KMSKA original endpoint; KMSKA's object download and disclaimer corroborate unrestricted reuse of PD artwork photographs.",
+        "evidence": [
+          "https://kmska.be/en/disclaimer"
+        ],
+        "credit": "Royal Museum of Fine Arts Antwerp – Flemish Community Collection"
+      },
+      "mobile": "Portrait, full narrative grouping. TIFF ratio 0.625 versus canvas 0.622 is close but does not verify crop integrity.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "MUSEUM_ORIGIN_CC0_AND_OFFICIAL_OPEN_REUSE_POLICY_VERIFIED"
+      },
+      "status": "EXACT_OBJECT; MUSEUM_ORIGIN_HIGH_RES_CC0_ROUTE; FILE_QA_PENDING"
+    },
+    {
+      "recordId": "B11-07",
+      "dates": [
+        "2026-05-25"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "Henry Ossawa Tanner",
+        "title": "Nicodemus",
+        "date": "1899",
+        "institution": "Pennsylvania Academy of the Fine Arts (PAFA)",
+        "objectReference": "1900.1",
+        "medium": "oil on canvas",
+        "dimensions": "85.56625 × 100.33 cm",
+        "objectUrl": "https://www.pafa.org/museum/collection/item/nicodemus"
+      },
+      "subject": "Related John 3 context: nocturnal teaching of Nicodemus, not a literal illustration of every verse of the Pentecost Monday Gospel.",
+      "identity": "Official PAFA record verifies painting and accession. Keep distinct from a separate study and digitally adjusted online reproductions.",
+      "image": {
+        "preferredOfficialRoute": "https://www.pafa.org/sites/default/files/artworkpics/1900_1_l.jpg",
+        "pixels": null,
+        "knownFallback": "https://commons.wikimedia.org/wiki/File:Nicodemus_Visiting_Jesus,_Henry_Ossawa_Tanner.jpg",
+        "fallbackPixels": [
+          720,
+          621
+        ],
+        "metadataWarning": "Embedded historical EXIF says 7200 × 6090, but actual Commons file is 720 × 621. Do not report the EXIF value as acquired or available original resolution.",
+        "alterations": "Other Commons adjusted variants describe subjective brightness/color changes; retain as separate reproductions and do not substitute for the PAFA original."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Official PAFA object field states No known copyright restrictions and offers Download. This is explicit institutional rights-status evidence, but not an identified CC0 licence or unequivocal worldwide commercial grant; retain conditional status.",
+        "evidence": [
+          "https://www.pafa.org/museum/collection/item/nicodemus"
+        ]
+      },
+      "mobile": "Near-square horizontal composition; dim light makes source fidelity important. No color/crop QA performed.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "INSTITUTIONAL_NO_KNOWN_RESTRICTIONS; COMMERCIAL_SCOPE_CONDITIONAL"
+      },
+      "status": "OBJECT_AND_OFFICIAL_IMAGE_ROUTE_VERIFIED; PHOTO_RIGHTS_SCOPE_AND_PIXELS_PENDING"
+    },
+    {
+      "recordId": "B11-08",
+      "dates": [
+        "2026-03-31"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "Michelangelo Merisi da Caravaggio",
+        "title": "The Taking of Christ",
+        "date": "1602",
+        "institution": "National Gallery of Ireland, indefinite loan from Jesuit Community, Leeson Street, Dublin",
+        "objectReference": "L.14702; online object 2882",
+        "medium": "oil on canvas",
+        "dimensions": "135.5 × 169.5 cm in online collection; 133.5 × 169.5 cm in NGI highlights page",
+        "objectUrl": "https://onlinecollection.nationalgallery.ie/objects/2882/the-taking-of-christ"
+      },
+      "subject": "Exact arrest and kiss of Judas episode; existing Passion-narrative excerpt association preserved.",
+      "identity": "Official Dublin object identified. Odessa and Ruffo versions are different physical objects and must not be substituted. Two official NGI pages disagree on height; retain both values until resolved.",
+      "image": {
+        "route": "https://commons.wikimedia.org/wiki/File:The_Taking_of_Christ-Caravaggio_(c.1602).jpg",
+        "pixels": [
+          9893,
+          7666
+        ],
+        "size": "9.94 MB",
+        "source": "Self-scanned, per file page; original publication/scan provenance not specified.",
+        "dimensionEvidence": "Commons original-file listing",
+        "cropHold": "Image ratio 1.291 differs from official canvas ratios 1.251 or 1.270. Check boundaries, framing and distortion; do not infer uncropped identity from resolution."
+      },
+      "rights": {
+        "painting": "public domain",
+        "photo": "Official NGI highlight photographs claim NGI copyright; no exact CC licence verified. Independent Commons scan carries PD-Art/PDM with jurisdiction caveat; underlying scan source and global reuse remain conditional.",
+        "evidence": [
+          "https://www.nationalgallery.ie/art-and-artists/highlights-collection/taking-christ-michelangelo-merisi-da-caravaggio"
+        ]
+      },
+      "mobile": "Tight horizontal figure group. Full image and left fleeing figure essential; no center-crop approval.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": true,
+        "rightsStatus": "COMMONS_PD_ART_CONDITIONAL; OFFICIAL_PHOTO_CC_NOT_VERIFIED"
+      },
+      "status": "DUBLIN_OBJECT_VERIFIED; HIGH_RES_SCAN_ROUTE; SOURCE_PROVENANCE_AND_RIGHTS_HOLD"
+    },
+    {
+      "recordId": "B11-09",
+      "dates": [
+        "2026-06-24"
+      ],
+      "priority": 1,
+      "existingArtworkId": null,
+      "painting": {
+        "artist": "Andrea Sacchi",
+        "title": "The Birth of Saint John the Baptist",
+        "objectReference": null,
+        "objectUrl": null
+      },
+      "subject": "Approved title-level identity preserved.",
+      "identity": "No eligible non-Prado exact physical original established. Search results surfaced an excluded Prado work and mirror; neither was opened or pursued. Do not replace the locked selection with a different birth scene.",
+      "image": {
+        "route": null,
+        "pixels": null
+      },
+      "rights": {
+        "photo": "Not assessed; no eligible source identified.",
+        "alternative": "Continue only a distinct non-Prado physical work matching the locked composition, if documented; otherwise retain blocked state."
+      },
+      "mobile": "Not assessed.",
+      "state": {
+        "candidateDiscovered": "existing approved label",
+        "sourceAcquired": false,
+        "editorialApproval": "pre-existing approval preserved; physical-photo crosswalk still requires selected-image comparison",
+        "productionCertified": false,
+        "newRating": null,
+        "identityVerified": false,
+        "rightsStatus": "EXCLUDED_SOURCE; NO_ELIGIBLE_REPRODUCTION"
+      },
+      "status": "IDENTITY_AND_SOURCE_BLOCKED; APPROVAL_PRESERVED"
+    }
+  ],
+  "totals": {
+    "targets": 9,
+    "officialPhysicalObjectsVerifiedOrReconfirmed": 8,
+    "blockedIdentityTargets": 1,
+    "existingCanonicalIDsPreserved": 1,
+    "newCanonicalIDs": 0,
+    "imageRouteTargetCases": 8,
+    "rightsFindingsIncludingRestrictions": 8,
+    "openReuseEvidenceTargetCases": 3,
+    "sourceMetadataDimensionsAvailable": 5,
+    "sourceAcquired": 0,
+    "localHashesComputed": 0,
+    "pixelIntegrityChecks": 0,
+    "mobileVisualCropChecks": 0,
+    "userDecisionsChanged": 0,
+    "strictCoverageChanges": 0,
+    "productionCertified": 0
+  },
+  "progress": {
+    "before": {
+      "identityReviewEvents": 33,
+      "imageRouteTargetEvents": 30,
+      "rightsFindingEvents": 29,
+      "acquiredFiles": 0
+    },
+    "after": {
+      "identityReviewEvents": 41,
+      "imageRouteTargetEvents": 38,
+      "rightsFindingEvents": 37,
+      "acquiredFiles": 0
+    },
+    "metricQualification": "Carried-forward B01–B10 counters include repeated confirmations of the same paintings and policy-only findings. These are activity counters, not unique new paintings, globally cleared photos, acquisitions or coverage. B11 adds 8 verified/reconfirmed object targets, 8 route target cases and 8 rights findings (including restrictions).",
+    "unchangedBaseline": {
+      "allSourceCatalogue": 451,
+      "candidateSnapshot": 281,
+      "approvedIDs": 107,
+      "lockedIDs": 90,
+      "rejectedIDs": 68,
+      "historicalFiveRecordKeys": 109,
+      "sourceQueue": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "certifiedMasters": 0
+    }
+  },
+  "queues": {
+    "openSourceEvidenceReadyForAcquisition": [
+      "B11-02 Getty Martin 2018.45 CC0, 11093 × 7627",
+      "B11-04 KMSKA Van Dyck 297 official unrestricted photo route, TIF pixels unknown",
+      "B11-06 KMSKA Bouguereau 1580 museum-origin CC0 TIFF, 4352 × 6965; inspect container/pages"
+    ],
+    "approvedSelectionsReadyForFinalCertification": [],
+    "technicalAcquisitionPending": [
+      "Prior environment image-transfer blocker remains; no shell/node retry.",
+      "KMSKA TIF discovery returned Unsupported content-type: image/tiff; record once and do not retry through the same browser.",
+      "Morgan object direct page HTTP 403; indexed official identity still readable."
+    ],
+    "rightsBlockedOrConditional": [
+      "Tissot: Morgan reproduction restricted; independent historical scan needed.",
+      "Willmann: photo copyright claimed by museum; Commons PD-Art insufficient for global clearance.",
+      "Bridges: exact BMA Open Content eligibility and high-resolution source not confirmed.",
+      "Tanner: no-known-restrictions field; photo licence scope and true file dimensions unresolved.",
+      "Caravaggio: self-scan provenance, global reuse, height discrepancy and boundaries unresolved.",
+      "Sacchi: no eligible non-Prado object/source."
+    ],
+    "remainingPriorityRanked": [
+      {
+        "rank": 1,
+        "target": "Acquire open images only in an environment whose authorised capabilities support byte transfers; begin B11-02 and B11-06, retain provenance/licence, local SHA-256, dimensions, color profile and full-image QA. Never certify automatically."
+      },
+      {
+        "rank": 2,
+        "target": "Remaining approved Class I identities: Tintoretto Circumcision Jan 1; Rubens/Van Dyck Anointing at Bethany Mar 30; Caravaggio Supper at Emmaus Apr 6 (multiple originals require locked-photo match); Van Dyck Appearance Apr 7; Rembrandt Mary Magdalen Apr 9; Burnand Running Apr 11."
+      },
+      {
+        "rank": 3,
+        "target": "Continue approved Class I Strozzi Interrogated Baptist Dec 13, Gaulli Preaching Baptist Dec 20, Carracci Purgatory Nov 2 and John Martin Great Day Nov 29."
+      },
+      {
+        "rank": 4,
+        "target": "Then resume exact major Class II and Doctor gaps already recorded in B01–B10; keep catalogue and historical decision crosswalk mandatory."
+      }
+    ]
+  },
+  "nextCheckpoint": "AO-ART-2026-10-21-B12 — read B11 and latest W60 state, continue rank-1 acquisition only with supported authorised transfer capability; otherwise immediately proceed to rank-2 approved Class I identity/source targets. Save a consolidated result and updated queue; no individual-approval pauses."
+}

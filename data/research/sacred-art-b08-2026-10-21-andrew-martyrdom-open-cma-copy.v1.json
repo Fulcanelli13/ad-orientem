@@ -1,0 +1,137 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B08_V1",
+  "batchId": "AO-ART-2026-10-21-B08",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive research on an uncovered exact Saint Andrew martyrdom painting with object-specific open reuse terms. Does not create a catalogue entry or change calendar, ratings, approvals, or production state.",
+  "upstream": {
+    "b07": "data/research/sacred-art-b07-2026-10-21-holy-name-of-jesus-source.v1.json",
+    "candidateCatalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates",
+    "decisionFreeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "rules": {
+    "preserveExistingUserDecisions": true,
+    "noPradoOrMirrors": true,
+    "noNewCanonicalArtworkID": true,
+    "noRatingOrApprovalInferenceFromMissingRecords": true,
+    "noRawImageAcquisitionRetry": true,
+    "noProductionCertification": true
+  },
+  "record": {
+    "recordId": "B08-01",
+    "category": "Major Class II / exact Apostle feast subject — Saint Andrew",
+    "existingArtworkId": null,
+    "calendarRelation": {
+      "occasion": "Saint Andrew, Apostle",
+      "date": "2026-11-30",
+      "rankInExistingSeed": "OBSERVED_PRINCIPAL",
+      "source": "data/calendar/sacred-art-class-ii-iii-occasions-20261013.v1.json on platform/885-sacred-art-candidates",
+      "coverageEffect": "No observed-day assignment or strict coverage change made."
+    },
+    "canonicalCatalogueMatch": "No match for Cleveland Museum of Art accession 1916.784 in the 281-entry PR #887 candidate snapshot or frozen W64 reviewed physical records consulted. Because some historical ratings remain outside those snapshots, keep this candidate editorially unassigned and do not treat the missing record as permission to replace an older choice.",
+    "painting": {
+      "artist": "Anonymous Venetian painter (copy after Guido Reni)",
+      "title": "Martyrdom of Saint Andrew",
+      "date": "17th century",
+      "institution": "Cleveland Museum of Art",
+      "objectNumber": "1916.784",
+      "medium": "oil on canvas",
+      "dimensions": "40.7 × 34.6 cm unframed; 55.3 × 47 × 7.7 cm framed",
+      "officialObjectUrl": "https://www.clevelandart.org/art/1916.784",
+      "identityEvidence": "CMA's object record names it as a 17th-century Venetian copy after Guido Reni, and distinguishes it from Reni's 1608 San Gregorio al Celio fresco. The primary object description states that this copy uses a Latin cross, while Reni's fresco uses an X-shaped cross; the difference supports a distinct physical painting identity."
+    },
+    "attributionDiscrepancy": "A duplicated structured card on the same CMA page labels the work 'by Guido Reni', while the primary object details and curatorial description identify an anonymous 17th-century Venetian copy after Reni. This record follows the primary curatorial attribution and flags the conflicting card for future review.",
+    "subjectRelation": {
+      "assessment": "Exact subject: Saint Andrew's martyrdom and adoration of the cross.",
+      "qualification": "CMA describes the composition as a copy after Reni's Roman fresco and notes differences including the Latin cross and a less precise bent figure. It is a research alternative, not a replacement for the already approved Caravaggio painting cma-148758."
+    },
+    "image": {
+      "sourceUrl": "https://www.clevelandart.org/art/1916.784",
+      "sourceType": "Official CMA object page, which provides the reproduction/download route.",
+      "originalPixels": null,
+      "sourceAcquired": false,
+      "acquisitionNote": "No image bytes downloaded in this batch. Prior environment-level raw-image transfer restriction remains recorded; do not repeat the blocked operation.",
+      "imageIntegrity": "Not checked; no local file or hash.",
+      "mobileCrop": "Not visually inspected. Physical canvas ratio is 40.7/34.6 = 1.176; preserve full scene and avoid tight center cropping pending image-byte review."
+    },
+    "rights": {
+      "painting": "Underlying 17th-century work is public domain.",
+      "photographicReuse": "CMA's object page states: 'You can copy, modify, and distribute this work, all without asking permission.' This is explicit object-level permission for the reproduction route; the page links the museum's Open Access initiative.",
+      "evidenceUrl": "https://www.clevelandart.org/art/1916.784",
+      "reuseStatus": "Explicit free reuse permission verified on the object record. Preserve CMA credit and any image-specific attribution supplied with the downloaded file.",
+      "commercialScope": "The cited object-page statement permits copying, modification, and distribution without permission; its exact commercial wording was not separately transcribed in this pass."
+    },
+    "decisionState": {
+      "candidateDiscovered": true,
+      "physicalIdentityVerified": true,
+      "sourceRouteFound": true,
+      "sourceAcquired": false,
+      "rightsEvidenceVerified": true,
+      "editorialApproved": false,
+      "rating": "None assigned or changed.",
+      "productionCertified": false
+    },
+    "status": "EXACT_SUBJECT; CMA_PHYSICAL_OBJECT_AND_PRIMARY_ATTRIBUTION_VERIFIED; OBJECT_SPECIFIC_FREE_REUSE_PERMISSION_FOUND; IMAGE_BYTES_NOT_ACQUIRED; CANDIDATE_ONLY"
+  },
+  "totals": {
+    "batchTargets": 1,
+    "newPhysicalPaintingIdentitiesVerified": 1,
+    "existingArtworkIDsReused": 0,
+    "newCanonicalArtworkIDs": 0,
+    "sourceRoutesIdentified": 1,
+    "explicitObjectSpecificReusePolicyFindings": 1,
+    "imageDimensionsVerified": 0,
+    "rawImageFilesAcquired": 0,
+    "sha256Recorded": 0,
+    "imageIntegrityChecks": 0,
+    "mobileCropInspections": 0,
+    "editorialApprovalsChanged": 0,
+    "ratingsChanged": 0,
+    "productionMastersCertified": 0,
+    "strictCalendarCoverageChanges": 0
+  },
+  "progress": {
+    "baseline": {
+      "calendarCatalogue": 451,
+      "pr887CatalogueSnapshot": 281,
+      "approvedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicW64FivePhysicalIDs": 109,
+      "sourceIdentityMasterLeads": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "certifiedProductionMasters": 0
+    },
+    "afterB08": {
+      "catalogueAndDecisionCounts": "unchanged",
+      "cumulativeB01toB08": {
+        "verifiedOrReconfirmedPhysicalIdentityTargets": 31,
+        "sourceRoutes": 28,
+        "sourceRightsFindings": 27,
+        "rawImageFilesAcquired": 0,
+        "newCanonicalArtworkIDs": 0,
+        "ratingsOrApprovalsChanged": 0,
+        "certifiedProductionMasters": 0
+      },
+      "classIDateAssociations": "53/53 unchanged",
+      "classIStrict": "18/53 unchanged",
+      "majorClassIIStrict": "13/24 unchanged",
+      "otherClassIIStrict": "6/52 unchanged"
+    }
+  },
+  "queue": {
+    "nextPriority": [
+      "Continue with an unresolved exact Class I approved source gap or uncovered major Class II subject after excluding all recorded B01–B08 routes.",
+      "Prioritize permitted image-file acquisition only where environment policy allows; current raw-image transfer restriction has blocked all acquisitions and should be logged once without repeat attempts.",
+      "Keep Doctor gaps in the queue: Loano Cyril of Alexandria has verified identity but no image route; Braga remains a provisional photo lead; Cyril of Jerusalem remains unresolved.",
+      "Before any candidate can receive editorial consideration, reconcile it against the complete historical ratings because the available frozen snapshots are not exhaustive."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B09 — continue the highest-priority unresolved approved Class I image-source or major Class II subject route on W60; save findings additively and continue past the batch save point."
+  }
+}

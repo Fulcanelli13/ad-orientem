@@ -1,0 +1,67 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B30",
+  "asOf": "2026-11-08",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B29",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B30-01",
+      "kind": "CLASS_II_ICONOGRAPHIC_TITLE_CAUTION",
+      "existingResearchRecord": "B03-02",
+      "object": "Sebastiano Ricci, The Exaltation of the True Cross",
+      "accession": "NGA 1939.1.72",
+      "objectUrl": "https://www.nga.gov/artworks/213-exaltation-true-cross",
+      "rights": "NGA object-specific public domain, download exposed",
+      "findingEn": "The NGA historical exhibition/bibliography lists this physical painting under 'Saint Helen Finding the True Cross' (1938), 'The Finding of the True Cross' (1941, 1959, 1975), although the current title is 'The Exaltation of the True Cross'. Thus the B03 'exact title' evidence does not independently establish the precise Exaltation liturgical event; retain as cross-centered subject with iconographic classification pending human review.",
+      "findingFr": "Les anciennes notices de la NGA désignent ce même tableau comme « Sainte Hélène retrouvant la Vraie Croix » (1938) ou « Découverte de la Vraie Croix » (1941, 1959, 1975), malgré le titre actuel « Exaltation de la Vraie Croix ». Le titre actuel ne suffit donc pas à prouver l'iconographie précise de la fête du 14 septembre. Maintenir en recherche.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B30-02",
+      "kind": "PHYSICAL_PARENT_CHILD_DEDUPE",
+      "existingResearchRecord": "B03-04",
+      "object": "Stefan Lochner, Martyrdom of Ss Simon and Judas",
+      "inventory": "Städel 830",
+      "objectUrl": "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+      "parentUrl": "https://sammlung.staedelmuseum.de/en/work/two-altarpiece-wings-with-the-martyrdom-of-the-apostles",
+      "rights": "Picture Copyright: Public Domain",
+      "findingEn": "Städel explicitly identifies inventory 830 as part 10 of 12 of the two altarpiece wings with the Martyrdom of the Apostles. Keep physical panel and parent cycle linked, not as two distinct paintings. The museum explicitly identifies Simon the Zealot and Jude Thaddeus. No pixels downloaded in this pass.",
+      "findingFr": "Le Städel identifie l'inventaire 830 comme dixième scène d'un ensemble de douze appartenant aux volets du retable des martyrs des apôtres. Relier la scène à son ensemble, sans créer deux tableaux distincts. Simon le Zélote et Jude Thaddée sont explicitement identifiés.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B30-03",
+      "kind": "SECONDARY_NONPAINTING_LEAD",
+      "object": "Jacques Callot, The Birth of the Virgin",
+      "objectUrl": "https://www.nga.gov/artworks/5313-birth-virgin",
+      "rights": "NGA object-specific public domain",
+      "findingEn": "NGA confirms a distinct exact-subject drawing dated c.1633/1634, a supplemental open-image fallback for September 8, not a replacement for B03's Andrea di Bartolo painting or an approved hero.",
+      "findingFr": "La NGA confirme un dessin distinct de Jacques Callot (vers 1633–1634) représentant la Nativité de la Vierge. Piste secondaire libre, non substitutive au tableau d'Andrea di Bartolo.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Approved Class I Benson, Strozzi, Gaulli, Carracci: obtain exact-source image and verify reuse separately",
+    "B03 NGA 1939.1.42 and 1939.1.72: acquire originals, dimensions, hashes, 390px crop QA",
+    "Städel 830 and 2054: acquire official images and assess mobile legibility",
+    "Resolve Ricci finding-versus-exaltation iconographic classification before strict feast coverage",
+    "Preserve three B27 ZIPs in durable storage and verify destination hashes",
+    "Lateran dedication: seek genuinely exact painting with separately licensed image"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "productionChanges": 0,
+  "certifiedMasters": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "AO_SACRED_ART_CERTIFIED_PRODUCTION_MEDIA_V1",
+  "asOf": "2026-10-17",
+  "mediaReleaseCount": 0,
+  "media": [],
+  "releasePolicy": "Zero artworks may be published until exact original, local file/SHA, both rights layers, crop, phone QA and an actual resolved Proper match are all certified. Research ratings do not release reproduction files. Museo del Prado associated reproductions are excluded even from Commons/mirrors; nonPradoSourceVerified is required for future media certification.",
+  "sourceExclusions": {
+    "prado": {
+      "status": "HOLD_PRADO_SOURCE_POLICY",
+      "noMuseumSource": true,
+      "noCommonsOrMirror": true,
+      "retainEditorialArtworkRecords": true
+    }
+  }
+}

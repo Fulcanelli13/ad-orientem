@@ -1,0 +1,298 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B19_V1",
+  "batchId": "AO-ART-2026-10-28-B19",
+  "asOf": "2026-10-28",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive research only. Existing user approvals/ratings/IDs remain unchanged. No Prado/Fra Angelico/El Greco source acquisition, no payment, no rights-holder contact, no publication, merge or deployment.",
+  "reconciliation": {
+    "latestPriorRecord": "data/research/sacred-art-b18-2026-10-27-november-class-i-master-exception.v1.json",
+    "earlier": "B03 and B04/B11/B14/B16/B17 reviewed for overlap; current branch one commit ahead of B17 when checked, adding B18.",
+    "sourceBranch": "platform/885-sacred-art-candidates",
+    "sourceCatalogue": "data/calendar/sacred-art-candidates.v1.json",
+    "catalogueCount": 281,
+    "intake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "intakeCount": 451,
+    "overlap": "CMA Murillo cma-135659 and Cavallino cma-143644 already present with verified museum CC0 and earlier acquired-and-hashed originals; not new acquisitions. Met Caracciolo Calling of Matthew met-712946 already in intake, so not counted as a new painting. NGA Cantarini 1972.44.1, Vasari 2012.79.1 and 2012.79.2, and CMA Trevisani 1974.108 have no exact-object matches in 281 source catalogue or 451 intake. These are research leads, not a global dedupe against every external thread."
+  },
+  "records": [
+    {
+      "researchId": "B19-01",
+      "priority": "USER-APPROVED CLASS I 8 DEC; EXISTING ORIGINAL RECOVERY",
+      "subject": "Murillo, The Immaculate Conception, Cleveland Museum of Art",
+      "existingCandidateId": "cma-135659",
+      "date": "2026-12-08",
+      "object": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Immaculate Conception",
+        "dated": "c. 1680",
+        "accession": "1959.189",
+        "medium": "oil on canvas",
+        "unframedCm": [
+          220.5,
+          127.5
+        ],
+        "official": "https://www.clevelandart.org/art/1959.189"
+      },
+      "rights": {
+        "objectPage": "https://www.clevelandart.org/art/1959.189",
+        "policy": "https://www.clevelandart.org/open-access",
+        "status": "MUSEUM_EXPLICIT_CC0"
+      },
+      "earlierAcquisition": {
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11666577879,
+        "originalPath": "originals/cma-135659.jpg",
+        "reportedPixels": [
+          1951,
+          3400
+        ],
+        "sha256Recorded": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+        "artifactExpiryVerified": "2026-11-09T10:32:31Z",
+        "artifactLiveAtCheck": true
+      },
+      "status": "SOURCE_RIGHTS_AND_PREVIOUS_ACQUISITION_VERIFIED_FROM_REPO; ORIGINAL_NOT_REDOWNLOADED_THIS_PASS; PERMANENT_ARCHIVE_NOT_VERIFIED; CROP_QA_PENDING",
+      "decision": "Preserve date-specific user approval; existing catalogue artistic flag predates later approval. Do not infer final pristine hero certification."
+    },
+    {
+      "researchId": "B19-02",
+      "priority": "USER-APPROVED CLASS I 25 DEC; EXISTING ORIGINAL RECOVERY",
+      "subject": "Cavallino, Adoration of the Shepherds, Cleveland Museum of Art",
+      "existingCandidateId": "cma-143644",
+      "date": "2026-12-25",
+      "object": {
+        "artist": "Bernardo Cavallino",
+        "title": "Adoration of the Shepherds",
+        "dated": "c. 1650",
+        "accession": "1968.100",
+        "medium": "oil on canvas",
+        "unframedCm": [
+          126.8,
+          148.3
+        ],
+        "official": "https://www.clevelandart.org/art/1968.100"
+      },
+      "rights": {
+        "objectPage": "https://www.clevelandart.org/art/1968.100",
+        "policy": "https://www.clevelandart.org/open-access",
+        "status": "MUSEUM_EXPLICIT_CC0"
+      },
+      "earlierAcquisition": {
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11667353162,
+        "originalPath": "originals/cma-143644.jpg",
+        "reportedPixels": [
+          3400,
+          2905
+        ],
+        "sha256Recorded": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+        "artifactExpiryVerified": "2026-11-09T10:33:24Z",
+        "artifactLiveAtCheck": true
+      },
+      "status": "SOURCE_RIGHTS_AND_PREVIOUS_ACQUISITION_VERIFIED_FROM_REPO; ORIGINAL_NOT_REDOWNLOADED_THIS_PASS; PERMANENT_ARCHIVE_NOT_VERIFIED; CROP_QA_PENDING",
+      "decision": "Preserve user 25 Dec selection. Landscape original requires deliberate full-composition mobile crop review, not automatic portrait center crop."
+    },
+    {
+      "researchId": "B19-03",
+      "priority": "USER-APPROVED CLASS I 29 SEP; EXACT ORIGINAL FREE PHOTO ROUTE CONDITIONAL",
+      "subject": "Guido Reni, Saint Michael Defeating Satan, Capuchin church Rome",
+      "date": "2026-09-29",
+      "object": {
+        "artist": "Guido Reni",
+        "title": "San Michele Arcangelo sconfigge Satana",
+        "dated": "c. 1635–1636",
+        "location": "Santa Maria della Concezione dei Cappuccini, Rome",
+        "medium": "oil on silk reported in historical sources; authoritative museum technical sheet not obtained",
+        "custodian": "https://www.museoecriptacappuccini.it/il-convento-e-la-chiesa/",
+        "municipal": "https://www.turismoroma.it/it/luoghi/chiesa-di-santa-maria-della-concezione"
+      },
+      "imageRoute": {
+        "file": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_02.JPG",
+        "photographer": "Sailko",
+        "license": "CC BY-SA 3.0 (independent own-work photo)",
+        "reportedPixels": [
+          2112,
+          2816
+        ],
+        "reportedSizeBytes": 1570300,
+        "commonsSha1": "6308c5dddda505dad1d14419b4a9d716ed01c985",
+        "capture": "2011-12-18, Canon PowerShot G12, 1/13s, ISO1600; potential blur/noise must be checked on original pixels"
+      },
+      "rightsQualification": "Photographer CC BY-SA obligations (credit, link, changes, share alike) apply; Italian cultural-heritage reuse conditions not independently cleared. Do not equate photographer license with every other jurisdiction's permissions. A separate Commons file labelled 'After Guido Reni' is a copy, not the approved original.",
+      "status": "EXACT_LOCATION_AND_PHOTOGRAPHER_LICENSE_FOUND; CULTURAL_HERITAGE_RIGHTS_AND_PIXEL_QA_HELD",
+      "sourceFileAcquiredThisPass": false,
+      "localHashVerifiedThisPass": false,
+      "actualCropQA": false
+    },
+    {
+      "researchId": "B19-04",
+      "priority": "CLASS II 21 SEP; NEW DISTINCT BAROQUE OIL LEAD",
+      "subject": "Saint Matthew and the Angel — Simone Cantarini",
+      "date": "2026-09-21",
+      "object": {
+        "artist": "Simone Cantarini",
+        "title": "Saint Matthew and the Angel",
+        "dated": "c. 1645–1648",
+        "institution": "National Gallery of Art, Washington",
+        "accession": "1972.44.1",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          116.8,
+          90.8
+        ],
+        "official": "https://www.nga.gov/artworks/53376-saint-matthew-and-angel",
+        "attribution": "Museum current Cantarini; Christie 1959 historically listed as Guercino, not interchangeable."
+      },
+      "image": {
+        "route": "https://api.nga.gov/iiif/811c5eae-cf56-43a0-978b-faa1c59e0c08/full/full/0/default.jpg",
+        "rights": "Object-specific media public domain; NGA Open Access CC0",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null
+      },
+      "iconography": "Matthew with book, angel holding pen and inkwell. Exact evangelist subject, not literal Calling of Matthew. Distinct from approved Valentin de Boulogne and Caravaggio Saint Matthew works and already-known Met Caracciolo 712946.",
+      "status": "NEW_EXACT_OBJECT_RESEARCH_LEAD; IMAGE_NOT_DOWNLOADED_OR_HASHED; NO_HUMAN_APPROVAL",
+      "sourceFileAcquiredThisPass": false,
+      "actualCropQA": false
+    },
+    {
+      "researchId": "B19-05",
+      "priority": "CLASS II 18 OCT; NEW DISTINCT CATHOLIC-COMMISSION OIL LEAD",
+      "subject": "Saint Luke — Giorgio Vasari",
+      "date": "2026-10-18",
+      "object": {
+        "artist": "Giorgio Vasari",
+        "title": "Saint Luke",
+        "dated": "1570–1571",
+        "institution": "National Gallery of Art, Washington",
+        "accession": "2012.79.2",
+        "medium": "oil on panel",
+        "sizeCm": [
+          177.8,
+          99.1
+        ],
+        "official": "https://www.nga.gov/artworks/159064-saint-luke",
+        "provenance": "Commissioned by Pope Pius V for the Vatican Torre Pio Chapel of Saint Michael in 1569; dismantled after 1750. Companion of NGA 2012.79.1 Saint Mark."
+      },
+      "image": {
+        "route": "https://api.nga.gov/iiif/bc8c4a91-1ba7-4ba7-9f5c-a530dc132cab/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain media and CC0 policy",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null,
+        "preliminaryVisual": "Web-rendered image appears frame-free and strongly portrait; not native pixel inspection."
+      },
+      "iconography": "Evangelist drawing with winged ox. Distinct from the NGA Vasari Saint Mark panel; no production placement inferred.",
+      "status": "NEW_EXACT_OBJECT_RESEARCH_LEAD; IMAGE_NOT_DOWNLOADED_OR_HASHED; NO_CROP_QA",
+      "sourceFileAcquiredThisPass": false,
+      "actualCropQA": false
+    },
+    {
+      "researchId": "B19-06",
+      "priority": "CLASS II 25 APR; NEW DISTINCT CATHOLIC-COMMISSION OIL LEAD",
+      "subject": "Saint Mark — Giorgio Vasari",
+      "date": "2026-04-25",
+      "object": {
+        "artist": "Giorgio Vasari",
+        "title": "Saint Mark",
+        "dated": "1570–1571",
+        "institution": "National Gallery of Art, Washington",
+        "accession": "2012.79.1",
+        "medium": "oil on panel",
+        "sizeCm": [
+          177.8,
+          99.1
+        ],
+        "official": "https://www.nga.gov/artworks/159063-saint-mark",
+        "provenance": "Same 1569 Pope Pius V Vatican Torre Pio chapel commission as Saint Luke 2012.79.2; separate physical panel."
+      },
+      "image": {
+        "route": "https://api.nga.gov/iiif/6f1221c0-89e0-4351-ab9d-643a0d4eb497/full/full/0/default.jpg",
+        "rights": "NGA object-specific public domain media and CC0 policy",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null,
+        "preliminaryVisual": "Web-rendered image appears frame-free portrait composition; native pixel QA not performed."
+      },
+      "iconography": "Mark reading/writing with winged lion. Exact saint, not a literal scene of his feast's appointed Gospel.",
+      "status": "NEW_EXACT_OBJECT_RESEARCH_LEAD; IMAGE_NOT_DOWNLOADED_OR_HASHED; NO_CROP_QA",
+      "sourceFileAcquiredThisPass": false,
+      "actualCropQA": false
+    },
+    {
+      "researchId": "B19-07",
+      "priority": "CLASS II 26 JUL; RELATED-SAINT BAROQUE OIL LEAD",
+      "subject": "Trevisani, Holy Family with Saints Anne, Joachim, and John the Baptist",
+      "date": "2026-07-26",
+      "object": {
+        "artist": "Francesco Trevisani",
+        "title": "Presentation Sketch for The Holy Family with Saints Anne, Joachim, and John the Baptist",
+        "dated": "c. 1729",
+        "institution": "Cleveland Museum of Art",
+        "accession": "1974.108",
+        "medium": "oil on canvas",
+        "unframedCm": [
+          158,
+          106.7
+        ],
+        "official": "https://www.clevelandart.org/art/1974.108",
+        "note": "Preparatory sketch for a Roman altarpiece, not the finished altarpiece; Saint Anne is present but this is a multi-saint family composition."
+      },
+      "image": {
+        "route": "CMA object page Download; exact image endpoint not independently retrieved",
+        "rights": "Object page explicitly free to copy, modify, distribute; CMA CC0 Open Access",
+        "policy": "https://www.clevelandart.org/open-access",
+        "pixels": null
+      },
+      "status": "NEW_RELATED_SUBJECT_RESEARCH_LEAD_NOT_STRICT_FEAST_COVERAGE; FILE_NOT_ACQUIRED; NO_QA",
+      "sourceFileAcquiredThisPass": false,
+      "actualCropQA": false
+    },
+    {
+      "researchId": "B19-08",
+      "priority": "URGENT ZERO-EURO ARCHIVE PRESERVATION INVENTORY",
+      "subject": "Three already acquired originals in still-live expiring workflow artifacts",
+      "artifacts": [
+        {
+          "artwork": "Murillo Immaculate",
+          "artifactId": 11666577879,
+          "expiresAt": "2026-11-09T10:32:31Z"
+        },
+        {
+          "artwork": "Cavallino Adoration",
+          "artifactId": 11667353162,
+          "expiresAt": "2026-11-09T10:33:24Z"
+        },
+        {
+          "artwork": "Caracciolo Calling of Matthew (already known, not a new lead)",
+          "artifactId": 11664124885,
+          "expiresAt": "2026-11-09T08:43:46Z"
+        }
+      ],
+      "source": "GitHub workflow artifact listing checked 2026-10-28; all three returned expired=false.",
+      "coordination": "Existing rescue/sacred-art-zero-euro-20261024 workflow owns preservation; this pass did not duplicate transfer or assert originals are not already durable elsewhere. Verify rescue manifest and checksum readback before expiration.",
+      "status": "AT_RISK_ACTION_ARTIFACTS_LIVE_AT_CHECK; DURABLE_BACKUP_NOT_VERIFIED_IN_THIS_PASS"
+    }
+  ],
+  "totals": {
+    "researchRecords": 8,
+    "newDistinctPhysicalArtworkLeads": 4,
+    "existingApprovedClassIImageRoutesReconciled": 3,
+    "additionalKnownArtworkArtifactRisk": 1,
+    "previouslyAcquiredAndHashedOriginalsConfirmedFromRepository": 2,
+    "originalFilesDownloadedThisPass": 0,
+    "newLocalHashesThisPass": 0,
+    "fullResolutionCropQaThisPass": 0,
+    "productionMastersCertified": 0,
+    "newCanonicalIds": 0,
+    "userRatingsChanged": 0,
+    "published": 0
+  },
+  "limitations": "Research branch/source catalogue and official museum pages checked. Container cannot resolve public image host DNS; browser image display is not native-file acquisition or crop QA. Prior stored SHA256 values were read from catalogue, not recomputed this pass. CMA acquired originals still live in expiring Actions ZIPs; no permanent preservation was verified here. Object-level CC0 does not override local heritage requirements for an Italian church painting.",
+  "nextQueue": [
+    "Before 9 Nov 2026, verify durable zero-cost rescue and rehash of CMA Murillo 1959.189, Cavallino 1968.100, and already acquired Caracciolo 712946; coordinate existing rescue branch, no duplicate archive workflow.",
+    "Acquire original museum CC0 image bytes for NGA Cantarini 1972.44.1, Vasari Luke 2012.79.2, Vasari Mark 2012.79.1 and CMA Trevisani 1974.108; calculate local SHA256, verify no frame, focus, colour and 390px crops before human aesthetic review.",
+    "Class I Guido Reni Saint Michael: compare exact user-approved preview with Capuchin original and Sailko 2112x2816 image; inspect ISO1600 low-light noise, frame and Italian heritage reuse conditions; do not substitute an after-Reni copy.",
+    "Continue B18 All Souls Carracci physical-object/size-orientation conflict and higher-definition image route; no upscaling of 866x1200 source.",
+    "Continue Class I Benson and KMSKA Van Dyck rights holds, Champaigne Petite Cene frame-free original, approved Presentation and Augustine exact-preview matching, and missing Class II subjects not already covered.",
+    "Keep all Prado/Fra Angelico/El Greco exclusions and existing historical approvals/rejections; research only."
+  ],
+  "publicationGate": "RESEARCH_ONLY; NOT HUMAN CERTIFIED; no asset released, no ratings changed, no merge or deployment; €0."
+}

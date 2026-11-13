@@ -1,0 +1,340 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B17_V1",
+  "batchId": "AO-ART-2026-10-27-B17",
+  "asOf": "2026-10-27",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive research-only physical artwork identity, object-specific image rights and source-photo suitability. No canonical IDs, approvals, ratings, frozen decisions, publication, merge, deploy, paid licensing, contact, Prado or Fra Angelico acquisitions.",
+  "reconciliation": {
+    "latestCommitted": "data/research/sacred-art-b16-2026-10-26-class-ii-stephen-nativity-and-class-i-rights.v1.json",
+    "earlier": "B03, B14, B15 inspected for overlap; B01–B11 file names and research baseline checked; B16 is latest B-series record on target branch at start.",
+    "sourceBranch": "platform/885-sacred-art-candidates",
+    "sourceCatalogue": "data/calendar/sacred-art-candidates.v1.json",
+    "sourceCatalogueCount": 281,
+    "intake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "intakeCount": 451,
+    "frozen": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "overlap": "Source catalogue does not include the exact LACMA Saint Augustine, NGA Titian Patmos, NGA Boeckhorst Martin or NGA Paolo Fei Presentation of Virgin object identities. Intake includes approved Champaigne Saint Augustine and Presentation of Jesus, historic five-star Van Dyck Saint Martin, and separate Champaigne Petite Cene as UNREVIEWED at 20 Oct. This research does not overwrite later user preference for Champaigne Petite Cene or approved historical ratings.",
+    "publicationGate": "RESEARCH_ONLY; none is a certified production master"
+  },
+  "records": [
+    {
+      "researchId": "B17-01",
+      "priority": "USER-PREFERRED LITURGICAL ART; SOURCE-ROUTE INVESTIGATION",
+      "subject": "Philippe de Champaigne, La Petite Cène (user-preferred over Ugolino Last Supper)",
+      "kind": "EXACT_PHYSICAL_OBJECT_AND_PHOTO_ROUTE_SPLIT",
+      "object": {
+        "institution": "Musée du Louvre",
+        "inventory": "INV 1125 / MR 614",
+        "title": "La Cène, dite La Petite Cène",
+        "artist": "Philippe de Champaigne",
+        "date": "1651–1652",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          80,
+          149
+        ],
+        "official": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+        "nationalCatalogue": "https://pop.culture.gouv.fr/notice/joconde/000PE000368"
+      },
+      "distinguishFrom": {
+        "title": "La Grande Cène",
+        "inventory": "INV 1124 / MR 613",
+        "official": "https://collections.louvre.fr/en/ark:/53355/cl010060521",
+        "note": "Different physical painting; not an alias. Louvre states INV1124 is c.1662."
+      },
+      "routes": [
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+          "photographer": "Tangopaso",
+          "rights": "Photographer's own public-domain dedication",
+          "reportedPixels": [
+            2816,
+            2112
+          ],
+          "imageInspection": "Page image visually inspected: large gilded frame and gallery wall visible. UNSUITABLE AS-IS under no-frame rule; colour cast/perspective and frame-removal QA outstanding."
+        },
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+          "rights": "Commons PD-Art/PDM based on public-domain painting, uploaded from unspecified Google image; NOT independent photographer licence",
+          "reportedPixels": [
+            1112,
+            591
+          ],
+          "imageInspection": "Frame-free image visually inspected at web source; 1112px width and unspecified original image provenance. Lower-quality conditional route."
+        }
+      ],
+      "rightsQualification": "Louvre POP Joconde identifies RMN photograph by Hervé Lewandowski with usage subject to authorization; do not transfer that institutional photo's rights to the independent Tangopaso image. Source rights and any applicable cultural heritage conditions require independent review.",
+      "userDecision": "Preserve user preference; do not replace with Grande Cène or Ugolino, do not change old rating IDs.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-02",
+      "priority": "APPROVED PRESENTATION OF JESUS IMAGE ROUTE",
+      "subject": "Philippe de Champaigne, Presentation of Jesus in Temple, Brussels",
+      "kind": "DISTINCT_BRUSSELS_OBJECT_CC0_AND_CC_BY_SA_PHOTOGRAPHS",
+      "object": {
+        "institution": "Royal Museums of Fine Arts of Belgium",
+        "inventory": "25",
+        "date": "c.1648",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          257,
+          197
+        ],
+        "official": "https://fine-arts-museum.be/fr/la-collection/philippe-de-champaigne-la-presentation-au-temple",
+        "institutionalFetch": "Official URL linked by Commons but direct web fetch timed out; museum accession corroborated by file's institutional citation."
+      },
+      "routes": [
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:The_Presentation_of_Jesus_Christ_at_the_Temple_by_Philippe_de_Champaigne_(Brussels).jpg",
+          "photographer": "Karmakolle",
+          "license": "CC0 1.0 photographer own work",
+          "reportedPixels": [
+            3631,
+            4853
+          ],
+          "imageInspection": "Web-viewed original has conspicuous gold frame; must not ship as-is; cropped derivative may be possible subject to real pixel QA."
+        },
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne-Pr%C3%A9sentation_au_temple.jpg",
+          "photographer": "Rvalette",
+          "license": "CC BY-SA 4.0 photographer own work",
+          "reportedPixels": [
+            2994,
+            3906
+          ],
+          "imageInspection": "Web-viewed image is frame-free and full composition; share-alike and attribution/changes obligations remain."
+        }
+      ],
+      "dedupe": "Distinct from Dijon CA104 (1628), Ponce 63.0400 (c.1648 modello) and NGA/Met Presentation works. User-selected preview cannot yet be matched to one original.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-03",
+      "priority": "APPROVED PRESENTATION OF JESUS IDENTITY GUARD",
+      "subject": "Philippe de Champaigne, La Présentation au Temple, Dijon",
+      "kind": "DISTINCT_MONUMENTAL_ORIGINAL_ATTRIBUTED_PHOTO",
+      "object": {
+        "institution": "Musée des Beaux-Arts de Dijon",
+        "inventory": "CA 104",
+        "date": "1628",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          392,
+          325
+        ],
+        "official": "https://musees.dijon.fr/artworks/la-presentation-au-temple/",
+        "history": "Commissioned for the Carmelite church of Faubourg Saint-Jacques, Paris; not Brussels painting."
+      },
+      "route": {
+        "file": "https://commons.wikimedia.org/wiki/File:La_Pr%C3%A9sentation_de_J%C3%A9sus_au_Temple_-_Philippe_de_Champaigne.jpg",
+        "photographer": "Yelkrokoyade",
+        "license": "CC BY-SA 4.0 own work",
+        "reportedPixels": [
+          2452,
+          2959
+        ]
+      },
+      "rightsQualification": "Museum's own photograph © Musée des Beaux-Arts de Dijon / François Jay is not automatically licensed by independent photographer's CC BY-SA file.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-04",
+      "priority": "APPROVED PRESENTATION OF JESUS DEDUPE",
+      "subject": "Philippe de Champaigne, Presentation of Christ in Temple, Ponce",
+      "kind": "DISTINCT_PREPARATORY_MODELLO_RIGHTS_HELD",
+      "object": {
+        "institution": "Museo de Arte de Ponce",
+        "inventory": "63.0400",
+        "date": "c.1648",
+        "medium": "oil on canvas",
+        "official": "https://emuseum.museoarteponce.org/objects/3663/presentation-of-christ-in-the-temple",
+        "identity": "Museum explicitly calls it preparatory oil sketch for Paris Saint-Honoré altarpiece; not the Brussels or Dijon object."
+      },
+      "route": {
+        "file": null,
+        "license": "NO_OBJECT_SPECIFIC_OPEN_IMAGE_GRANT VERIFIED",
+        "note": "Institutional page's copyright and image rights not cleared; do not use or infer free reuse."
+      },
+      "status": "RESEARCH_ONLY_RIGHTS_HOLD",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-05",
+      "priority": "APPROVED SAINT AUGUSTINE SOURCE ROUTE",
+      "subject": "Philippe de Champaigne, Saint Augustine",
+      "kind": "EXACT_INSTITUTIONAL_OBJECT_FRAME_FREE_PHOTO_CONDITIONAL",
+      "object": {
+        "institution": "Los Angeles County Museum of Art",
+        "inventory": "M.88.177",
+        "date": "c.1645",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          78.74,
+          62.23
+        ],
+        "official": "https://collections.lacma.org/object/61062",
+        "identity": "Museum traces to artist's posthumous inventory; depicts Augustine with flaming heart and VERITAS."
+      },
+      "route": {
+        "file": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_Saint_Augustine_-_LACMA_-_without_frame.jpg",
+        "photographer": "Remi Mathis",
+        "reportedPixels": [
+          1485,
+          1917
+        ],
+        "license": "Commons PD-Art/PDM assessment of independently taken faithful reproduction; no explicit independent CC0 licence established.",
+        "note": "Commons route explicitly frame-free; LACMA's separate official photo is credited © Museum Associates/LACMA, not cleared by Commons designation."
+      },
+      "dedupe": "Do not conflate with private-collection Saint Augustin photo bearing Thomas Hennocque copyright EXIF, nor La Conversion de saint Augustin at Port-Royal. Match approved user preview before declaring exact approved source.",
+      "status": "RESEARCH_ONLY_JURISDICTION_RIGHTS_HOLD",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-06",
+      "priority": "MISSING CLASS II SUBJECT 27 DEC",
+      "subject": "Saint John Apostle and Evangelist, 27 December: Titian Saint John on Patmos",
+      "kind": "NEW_DISTINCT_EXACT_SAINT_OIL_NGA_OPEN_ACCESS",
+      "object": {
+        "institution": "National Gallery of Art, Washington",
+        "inventory": "1957.14.6",
+        "title": "Saint John the Evangelist on Patmos",
+        "artist": "Titian",
+        "date": "c.1553–1555",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          237.6,
+          263
+        ],
+        "official": "https://www.nga.gov/artworks/43725-saint-john-evangelist-patmos",
+        "history": "Originally painted for the ceiling of the Scuola di San Giovanni Evangelista, Venice."
+      },
+      "image": {
+        "route": "Object-page download",
+        "rights": "NGA object-specific media public domain; NGA Open Access allows commercial and noncommercial use",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null
+      },
+      "iconography": "Authentic Evangelist with eagle and book; Patmos/Revelation episode, NOT literal Last Supper or the feast's Gospel scene. Ceiling foreshortening requires mobile inspection.",
+      "dedupe": "Not found in 281 candidate catalogue or 451 intake by exact artist/title/object identity; research lead only, no 27 Dec coverage promotion.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-07",
+      "priority": "SECONDARY 21 NOV SUBJECT NOT CLASS II",
+      "subject": "Presentation of Blessed Virgin Mary, 21 November: Paolo di Giovanni Fei",
+      "kind": "NEW_DISTINCT_EXACT_SUBJECT_NGA_OPEN_ACCESS",
+      "object": {
+        "institution": "National Gallery of Art, Washington",
+        "inventory": "1961.9.4",
+        "title": "The Presentation of the Virgin in the Temple",
+        "artist": "Paolo di Giovanni Fei",
+        "date": "1398–1399",
+        "medium": "tempera on wood transferred to hardboard",
+        "sizeCm": [
+          146.1,
+          140.3
+        ],
+        "official": "https://www.nga.gov/artworks/46103-presentation-virgin-temple",
+        "history": "Commissioned for San Pietro chapel in Siena Cathedral; exact traditional Marian subject."
+      },
+      "image": {
+        "route": "NGA object-page download",
+        "rights": "Object-specific media public domain; NGA Open Access permits commercial and noncommercial use",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null
+      },
+      "qualification": "21 November is not treated as Class II without separate calendar proof; this is lower-priority Marian contextual research, not a major Class II gap closure. Painted architectural frames are part of original composition; avoid added physical picture frames.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B17-08",
+      "priority": "SECONDARY PHYSICAL DEDUPE / HISTORIC FIVE",
+      "subject": "Saint Martin of Tours: Jan Boeckhorst, Saint Martin Dividing His Cloak",
+      "kind": "NEW_DISTINCT_EXACT_SAINT_NGA_OPEN_ACCESS_WITH_REATTRIBUTION_WARNING",
+      "object": {
+        "institution": "National Gallery of Art, Washington",
+        "inventory": "1970.17.107",
+        "title": "Saint Martin Dividing His Cloak",
+        "artist": "Jan Boeckhorst",
+        "date": "c.1640–1645",
+        "medium": "oil on panel",
+        "sizeCm": [
+          34.5,
+          24.2
+        ],
+        "official": "https://www.nga.gov/artworks/52251-saint-martin-dividing-his-cloak",
+        "identity": "NGA explains historical Van Dyck attribution was rejected on panel maker's mark and technique; current artist is Boeckhorst."
+      },
+      "image": {
+        "route": "NGA object-page download",
+        "rights": "NGA public-domain object image, commercial/noncommercial Open Access",
+        "policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "pixels": null
+      },
+      "dedupe": "Intake ART-nthony-van-yck-aint-artin-ividing-is-loak points to different Van Dyck composition (WGA), historic five preserved; do not merge physical identities based only on title or old attribution. 11 November is secondary, not asserted Class II.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "actualCropQA": false,
+      "productionMasterCertified": false
+    }
+  ],
+  "totals": {
+    "researchRecords": 8,
+    "distinctPhysicalObjectsDocumented": 8,
+    "additionalDistinctComparisonObjects": 2,
+    "sourcePhotoRoutesExamined": 9,
+    "newObjectSpecificNGAOpenAccessRoutes": 3,
+    "independentCc0PhotographRoutes": 1,
+    "independentCcBySaPhotographRoutes": 2,
+    "independentPublicDomainDedicationPhotographRoutes": 1,
+    "conditionalPdArtPhotoRoutes": 2,
+    "webVisualSourceChecks": 4,
+    "originalImageFilesDownloaded": 0,
+    "localSha256Computed": 0,
+    "pixelCropQaCompleted": 0,
+    "mastersCertified": 0,
+    "canonicalIdsCreated": 0,
+    "ratingsChanged": 0,
+    "published": 0
+  },
+  "limitations": "External image download via container failed; no original bytes stored or locally hashed. Commons-reported dimensions and SHA-1 not verified against bytes. Web image views allow a preliminary frame/no-frame judgment but not 390px QA. Museum photo copyright is distinct from underlying old-master painting and independently licensed photographs. Brussels official site timed out; institutional accession from linked Commons documentation requires museum readback before release.",
+  "nextQueue": [
+    "URGENT coordinate with existing zero-euro archive rescue: preserve Met Rosary 437216, Met Navez 438462, NGA St Lawrence 106362 Actions ZIPs before their previously recorded 9 Nov 2026 expiry; this pass did not recheck availability or transfer binaries.",
+    "Compare approved Champaigne Presentation of Jesus preview with three separate physical objects (Brussels 25, Dijon CA104, Ponce 63.0400); favor verified frame-free source only if identity matches, enforce CC BY-SA terms when used.",
+    "Obtain full-resolution rights-clear, frame-free Champaigne Petite Cene INV1125 photograph. Tangopaso PD dedication photo has frame; 1112px Google-source frame-free copy has provenance/resolution problems. Never substitute Grande Cene INV1124.",
+    "Match approved Saint Augustine preview to LACMA M.88.177; avoid RMN/LACMA restricted institutional photo and private-collection EXIF copyright trap.",
+    "Class II 27 Dec Titian NGA 1957.14.6: acquire open object image, hash and inspect foreshortened composition for 390px hero; no automatic selection.",
+    "Class II remaining uncovered feast list: derive from current 1962 calendar and candidate associations before further searches; avoid researching Class III as Class II.",
+    "Retain Benson Christ the King and KMSKA Van Dyck rights holds, Cyril of Jerusalem identity hold, Prado and Fra Angelico exclusions; no re-auditing completed B01–B16."
+  ],
+  "publicationGate": "RESEARCH_ONLY; no new image masters, no human approval, no publication, merge, deploy or paid operation."
+}

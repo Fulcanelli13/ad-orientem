@@ -1,0 +1,276 @@
+name: Sacred Art W66-W68 coverage, site media and selector
+
+on:
+  pull_request:
+    branches: [main, research/w59-sanctoral-legacy-art-20261015]
+    paths:
+      - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
+      - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
+      - ".github/workflows/sacred-visual-w66-coverage.yml"
+      - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
+      - "tools/calendar/acquire-sacred-art-bulk.mjs"
+      - "tests/sacred-art-bulk-acquisition.mjs"
+      - "data/research/sacred-art-open-source-recovery-76-20261020.v1.json"
+      - "tests/sacred-art-open-source-recovery-76.mjs"
+      - "tools/calendar/discover-sacred-art-76-open-sources.mjs"
+      - "tools/calendar/merge-sacred-art-76-discovery.mjs"
+      - "tools/calendar/screen-sacred-art-discovery-candidates.mjs"
+      - "tools/calendar/build-sacred-art-discovery-gallery.mjs"
+      - "tools/calendar/verify-sacred-art-117-commons-metadata.mjs"
+      - "tools/calendar/build-sacred-art-34-batch-shortlist.mjs"
+      - "tools/calendar/reconcile-sacred-art-34-object-evidence.mjs"
+      - "tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs"
+      - "tools/calendar/reconcile-sacred-art-29-institution-checks.mjs"
+      - "tests/sacred-art-29-institutional-crosswalk.mjs"
+      - "data/research/sacred-art-29-institution-crosscheck-20261020.v1.json"
+      - "data/research/sacred-art-29-photograph-identity-exceptions-20261021.v1.json"
+      - "tests/sacred-art-photo-exclusions-29.mjs"
+      - "tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs"
+      - "tests/sacred-art-34-object-evidence.mjs"
+      - "tests/sacred-art-117-commons-metadata.mjs"
+      - "tools/calendar/build-sacred-art-volume-control.mjs"
+      - "tests/sacred-art-76-commons-discovery.mjs"
+      - "tools/calendar/audit-staged-sacred-art-media.mjs"
+      - "tests/sacred-art-integrated-source-qa.mjs"
+      - "tools/calendar/triage-sacred-art-release-qa.mjs"
+      - "tools/calendar/prepare-sacred-art-visual-release-queue.mjs"
+      - "tests/sacred-art-visual-release-queue.mjs"
+      - "tools/calendar/acquire-sacred-art-nga.mjs"
+      - "tests/sacred-art-nga-open-access.mjs"
+      - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
+      - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
+      - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
+      - "tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs"
+      - "data/research/sacred-art-class-i-53-release-intake-20261017.v1.json"
+      - "data/research/sacred-art-class-i-53-unrejected-research-leads-20261017.v1.json"
+      - "data/calendar/sacred-art-certified-media.v1.json"
+      - "src/calendar/sacred-art-release-selector.js"
+      - "src/calendar/sacred-art-selected-proper-bridge.js"
+      - "tests/sacred-art-calendar-selected-proper-bridge.mjs"
+      - "tests/sacred-art-class-i-53-release-gates.mjs"
+      - "data/research/sacred-art-first-five-master-acquisition-20261017.v1.json"
+      - "tools/calendar/acquire-sacred-art-first-five.mjs"
+      - "tests/sacred-art-first-five-open-master-intake.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-demand-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check counts, non-promotion and no-permission policy
+        run: |
+          node tests/sacred-visual-w66-visual-demand-preaudit.mjs
+          node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
+          node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
+          node tests/sacred-art-class-i-53-release-gates.mjs
+          node tests/sacred-art-calendar-selected-proper-bridge.mjs
+          node tests/sacred-art-first-five-open-master-intake.mjs
+          node tests/sacred-art-bulk-acquisition.mjs
+          node tests/sacred-art-open-source-recovery-76.mjs
+          node tests/sacred-art-76-commons-discovery.mjs
+          node tests/sacred-art-integrated-source-qa.mjs
+      - name: Verify and build the single 451-work volume board (five packets of up to 100)
+        run: |
+          node --check tools/calendar/build-sacred-art-volume-control.mjs
+          node tools/calendar/build-sacred-art-volume-control.mjs
+      - name: Archive 451-work bulk source/curation board
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-451-five-volume-work-packets
+          path: artifacts/sacred-art-volume-control/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Stage exact Open Access Met master (never publish automatically)
+        continue-on-error: true
+        run: node tools/calendar/acquire-sacred-art-first-five.mjs
+      - name: Archive first-five acquired pixels, provenance and phone review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-met-438724-technical-master-qa
+          path: artifacts/sacred-art-first-five/
+          retention-days: 30
+          if-no-files-found: warn
+      # Source pixels and provenance are retained as download-only CI artifacts.
+      # No Actions bot push: image bytes may enter a review branch only through
+      # an independently checked human-approved commit after crop, rights and QA.
+
+  sacred-art-bulk-source-shards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      # Five concurrent 50-work source shards; throughput without overloading museum/Commons APIs.
+      max-parallel: 5
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Hold uncertified artwork and acquire exact-source approved originals
+        run: node tools/calendar/acquire-sacred-art-bulk.mjs ${{ matrix.shard }}
+      - name: Archive exact-image source files and QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-source-batch-${{ matrix.shard }}
+          path: artifacts/sacred-art-bulk/batch-*/
+          retention-days: 14
+          if-no-files-found: warn
+
+  official-nga-image-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate selected NGA object identities, explicit image access, and source restrictions
+        run: node tests/sacred-art-nga-open-access.mjs
+      - name: Acquire NGA six-work official Open Access subset (no promotion)
+        run: node tools/calendar/acquire-sacred-art-nga.mjs
+      - name: Preserve NGA source bytes, hashes, and QA gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-nga-6-sources-for-qa
+          path: artifacts/sacred-art-nga-official/
+          retention-days: 14
+          if-no-files-found: warn
+
+  approved-source-discovery-76:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    strategy:
+      fail-fast: false
+      # Both 50/26-work metadata research shards run concurrently; rate-limit retries remain enabled.
+      max-parallel: 2
+      matrix:
+        shard: [0,1]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify Commons licence, no-Prado and human identity restrictions
+        run: node tests/sacred-art-76-commons-discovery.mjs
+      - name: Discover Commons metadata for approved, still-unsourced artworks (no image downloads)
+        run: node tools/calendar/discover-sacred-art-76-open-sources.mjs ${{ matrix.shard }}
+      - name: Archive candidate evidence and internet-enabled review gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-76-open-source-discovery-${{ matrix.shard }}
+          path: artifacts/sacred-art-76-discovery/shard-${{ matrix.shard }}/
+          retention-days: 21
+          if-no-files-found: warn
+
+
+
+  # One machine-readable and visual exception queue for all 76 source leads:
+  # source candidates only, never a release decision.
+  integrated-source-discovery-76:
+    needs: [approved-source-discovery-76]
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve both 50/26-work research shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sacred-art-76-open-source-discovery-*
+          path: artifacts/qa-discovery-76
+      - name: Merge 76 original-source candidates into one exception review
+        run: |
+          node --check tools/calendar/merge-sacred-art-76-discovery.mjs
+          node tools/calendar/merge-sacred-art-76-discovery.mjs
+          node --check tools/calendar/screen-sacred-art-discovery-candidates.mjs
+          node tools/calendar/screen-sacred-art-discovery-candidates.mjs
+          node --check tools/calendar/build-sacred-art-discovery-gallery.mjs
+          node tools/calendar/build-sacred-art-discovery-gallery.mjs
+          node --check tools/calendar/verify-sacred-art-117-commons-metadata.mjs
+          node tests/sacred-art-117-commons-metadata.mjs
+          node tools/calendar/verify-sacred-art-117-commons-metadata.mjs
+          node --check tools/calendar/build-sacred-art-34-batch-shortlist.mjs
+          node tools/calendar/build-sacred-art-34-batch-shortlist.mjs
+          node tests/sacred-art-34-object-evidence.mjs
+          node --check tools/calendar/reconcile-sacred-art-34-object-evidence.mjs
+          node tools/calendar/reconcile-sacred-art-34-object-evidence.mjs
+          node --check tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs
+          node tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs
+          node tests/sacred-art-photo-exclusions-29.mjs
+          node tests/sacred-art-29-institutional-crosswalk.mjs
+          node --check tools/calendar/reconcile-sacred-art-29-institution-checks.mjs
+          node tools/calendar/reconcile-sacred-art-29-institution-checks.mjs
+          node --check tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs
+          node tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs
+      - name: Archive full 76-work ranked review with provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-76-consolidated-source-review
+          path: artifacts/qa-discovery-merged/
+          retention-days: 30
+          if-no-files-found: warn
+
+  integrated-source-photo-qa:
+    needs: [sacred-art-bulk-source-shards, official-nga-image-intake]
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve source images from all ten current-run shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sacred-art-source-batch-*
+          merge-multiple: true
+          path: artifacts/qa-merged-bulk
+      - name: Retrieve six primary NGA OA source images
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-nga-6-sources-for-qa
+          path: artifacts/qa-nga
+      - name: Verify actual SHA-256, dimensions, identity gates, duplicate bytes and low-resolution sources
+        run: |
+          node tests/sacred-art-integrated-source-qa.mjs
+          node tools/calendar/audit-staged-sacred-art-media.mjs
+          node tools/calendar/triage-sacred-art-release-qa.mjs
+          node tests/sacred-art-visual-release-queue.mjs
+          node tools/calendar/prepare-sacred-art-visual-release-queue.mjs
+      - name: Preserve unified reproducible manifest (no automatic publication)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-integrated-current-technical-qa
+          path: artifacts/qa-integrated/
+          retention-days: 30
+      - name: Archive priority-ranked source-to-release hold ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-release-priority-qa
+          path: artifacts/qa-release-triage/
+          retention-days: 30
+          if-no-files-found: warn

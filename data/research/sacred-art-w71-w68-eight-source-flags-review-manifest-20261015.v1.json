@@ -1,0 +1,281 @@
+{
+  "schema": "AO_SACRED_ART_W71_EIGHT_ORIGINAL_SOURCE_FLAG_DIAGNOSTIC_V1",
+  "asOf": "2026-10-15",
+  "batchId": "AO-SACRED-ART-W71-SOURCE-ISSUES-R1-20261015",
+  "objectives": [
+    "Clarify user's original eight image/source flags without rerating artworks.",
+    "Capture exact reviewed Commons file and file load result in user's browser; never infer original versus photograph identity.",
+    "Preserve and display user numeric ratings read-only; no new aesthetic score, suitability or approvals."
+  ],
+  "sourceAuthority": {
+    "w68Path": "data/calendar/sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json",
+    "w68GitBlobSHA": "a88220b38a3d90a3cdeb9552ea93b9bf9f853537",
+    "w70Path": "data/calendar/sacred-art-w70-six-more-source-flags-exact-file-evidence-20261015.v1.json",
+    "w70GitBlobSHA": "05f23de860167edd969f0413f67d6db804d14967",
+    "w67OriginalGalleryManifestPath": "data/research/sacred-art-w67-saints-r1-unrated-gallery-manifest-20261015.v1.json",
+    "w67GitBlobSHA": "066d8c108d4805e907646f561372f92c257b84fa",
+    "effectiveRejectedPath": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+    "effectiveRejectedGitBlobSHA": "33f5fb680164469d96e9c2e2369ea6ab5286e842",
+    "coordinationCheckpoint": "https://github.com/Fulcanelli13/ad-orientem/issues/342#issuecomment-6195362639"
+  },
+  "counts": {
+    "sourceFlaggedWorks": 8,
+    "fourRated": 5,
+    "threeRated": 3,
+    "ratingsToChange": 0,
+    "rejectedWorksPresented": 0,
+    "productionArtworkCleared": 0
+  },
+  "rules": [
+    "The technical-review responses here supplement sourceIssue flags; original flags remain until evidence and user instructions support clearing.",
+    "Never present this as a replacement 0–5 rating gallery or mark the full historic review complete when fit is unknown.",
+    "No new physical original objects are created by this diagnostic, only keyed exact-ID evidence references.",
+    "File source, original painting, derivative, photograph and attribution must remain separate.",
+    "No requests for licenses or contact with rights holders, no paid image licenses.",
+    "No Fra Angelico/El Greco and no rejected artworks, none included.",
+    "No calendar/Bible runtime or parallel coverage data edits."
+  ],
+  "cards": [
+    {
+      "candidateId": "C32:domenicomorellilamaddalenaaipiedidigesujpg",
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "title": "Domenico Morelli - La Maddalena ai piedi di Gesù.jpg",
+      "artistAsReviewed": "Domenico Morelli",
+      "originalRating": 4,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg?width=960",
+      "originalPhysicalObjectID": "C32:domenicomorellilamaddalenaaipiedidigesujpg",
+      "knownDepiction": "Mary Magdalene at Christ's feet; narrative scene, not generic Magdalene portrait.",
+      "knownSourceFindings": "Commons file 2197 × 2807 px, recorded SHA-1 fa8c93d3ee3a328db5ee5ddc6f11333263b3b433 (declared, not independently hashed).",
+      "knownOriginal": "Signed Domenico Morelli oil, La Maddalena ai piedi di Gesù, 40.5 × 33 cm; photographed auction lot Galleria Pananti 176-1 lot 182 (14 Feb 2025). Institutional accession and current custody unverified.",
+      "originalAccession": null,
+      "knownImageLicence": "Commons PD-Art/Public Domain Mark declaration; specific reproduction use still held.",
+      "licenceURL": null,
+      "artIdentityQualification": "Domenico Morelli",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg"
+      ]
+    },
+    {
+      "candidateId": "C32:federicobaroccimartiriodisantacaterinadalessandria161002jpg",
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "title": "Federico barocci, martirio di santa caterina d'alessandria, 1610, 02.jpg",
+      "artistAsReviewed": "Federico Barocci",
+      "originalRating": 4,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg?width=960",
+      "originalPhysicalObjectID": "C32:federicobaroccimartiriodisantacaterinadalessandria161002jpg",
+      "knownDepiction": "Martyrdom of Saint Catherine of Alexandria; narrative scene rather than single-person portrait.",
+      "knownSourceFindings": "Sailko photograph, 2928 × 4264 px, SHA-1 0481a02e3f0c19f9cf00857228facb47b9ce7924 (declared, not independently hashed).",
+      "knownOriginal": "Federico Barocci, Martyrdom of Saint Catherine of Alexandria (c. 1610), Basilica di Santa Margherita at Cortona; in-situ altar context.",
+      "originalAccession": null,
+      "knownImageLicence": "Commons CC BY-SA 4.0 claimed; photo licence/crop adaptation still held.",
+      "licenceURL": null,
+      "artIdentityQualification": "Federico Barocci",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg"
+      ]
+    },
+    {
+      "candidateId": "C32:bernardinomeiattrsangiovannibattistadavantiaerode01jpg",
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "title": "Bernardino mei (attr.), san giovanni battista davanti a erode, 01.jpg",
+      "artistAsReviewed": "attributed to Bernardino Mei",
+      "originalRating": 3,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Bernardino_mei_(attr.)%2C_san_giovanni_battista_davanti_a_erode%2C_01.jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bernardino_mei_(attr.)%2C_san_giovanni_battista_davanti_a_erode%2C_01.jpg?width=960",
+      "originalPhysicalObjectID": "C32:bernardinomeiattrsangiovannibattistadavantiaerode01jpg",
+      "knownDepiction": "Saint John the Baptist before Herod",
+      "knownSourceFindings": "Own photograph by Sailko, 21 August 2017. Commons file is 3008x4312 px, 6.61 MB, declared SHA-1 f5a12cde867966c68c8bd42e1fa8b50e5d32ef6f. The file labels the work 'attr.' even though an artist infobox names Mei unqualified.",
+      "knownOriginal": "San Giovannino della Staffa, Siena (file's listed location; independent accession not established)",
+      "originalAccession": null,
+      "knownImageLicence": "CC BY 3.0",
+      "licenceURL": "https://creativecommons.org/licenses/by/3.0/",
+      "artIdentityQualification": "attributed to Bernardino Mei",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Bernardino_mei_(attr.),_san_giovanni_battista_davanti_a_erode,_01.jpg"
+      ]
+    },
+    {
+      "candidateId": "C32:michaelwillmanopusmagnum2019p06matyrdomofstlawrence1663jpg",
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "title": "Michael Willman Opus Magnum 2019 P06 Matyrdom of St. Lawrence (1663).jpg",
+      "artistAsReviewed": "Michael Willmann",
+      "originalRating": 3,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg?width=960",
+      "originalPhysicalObjectID": "C32:michaelwillmanopusmagnum2019p06matyrdomofstlawrence1663jpg",
+      "knownDepiction": "Martyrdom of Saint Lawrence",
+      "knownSourceFindings": "Own photo by Fallaner, 29 December 2019. Commons 3435x4073 px, 1.69 MB, declared SHA-1 e7a69413707744c0cd55ce9bbef0187e1ff840da. Distinct from P14 St Matthew and P59 St Benedict originals despite common exhibition photographer.",
+      "knownOriginal": "Church of Saint Lawrence, Warsaw-Wola; formerly Cistercian Abbey church, Lubiąż",
+      "originalAccession": null,
+      "knownImageLicence": "CC BY-SA 4.0",
+      "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "artIdentityQualification": "Michael Willmann (Commons spells Willman)",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg"
+      ]
+    },
+    {
+      "candidateId": "C34:cathedralesaintetiennedetoulousesaintfrancoisdesalesremetlar",
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "title": "Cathédrale Saint-Étienne de Toulouse – Saint François de Sales remet la règle à sainte Jeanne de Chantal - By Bertrand François (1756-1805) PM31001527.jpg",
+      "artistAsReviewed": "Artist to verify",
+      "originalRating": 4,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg?width=960",
+      "originalPhysicalObjectID": "C34:cathedralesaintetiennedetoulousesaintfrancoisdesalesremetlar",
+      "knownDepiction": "Saint Francis de Sales handing a rule/book to the kneeling Saint Jane Frances de Chantal",
+      "knownSourceFindings": "The primary official French POP object notice lists 'attribué à Bertrand François' and labels work dated turn 18th/19th century; apparent inscription 18?? is incomplete. Artist unconditionally credited in Commons filename must be QUALIFIED. Official notice describes vertical arched oil canvas, around 200cm width including frame; photo dated 13 Apr 2016 by Didier Descouens (Archaeodontosaurus). Commons 3861x5569 px 15.34 MB, declared SHA-1 acc7fb2505495e3330446243995fb89d97def2a3.",
+      "knownOriginal": "Toulouse Cathedral, St Roch chapel, official Palissy PM31001527; artwork owned by French State",
+      "originalAccession": "PM31001527",
+      "knownImageLicence": "CC BY-SA 4.0",
+      "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "artIdentityQualification": "Bertrand François (unqualified on Commons) versus official POP: attributed to Bertrand François, not certain",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://pop.culture.gouv.fr/notice/palissy/PM31001527",
+        "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg"
+      ]
+    },
+    {
+      "candidateId": "C34:corradogiacquintosaintjanefrancesofchantalandsaintfrancisofs",
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "title": "Corrado Giacquinto - Saint Jane Frances of Chantal and Saint Francis of Sales in adoration of the Heart of Jesus - Santa Bárbara, Madrid.jpg",
+      "artistAsReviewed": "Artist to verify",
+      "originalRating": 4,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg?width=960",
+      "originalPhysicalObjectID": "C34:corradogiacquintosaintjanefrancesofchantalandsaintfrancisofs",
+      "knownDepiction": "Saint Jane Frances de Chantal and Saint Francis de Sales together adoring the Heart of Jesus",
+      "knownSourceFindings": "Commons object shows two saints together, not portrait for either alone. Own photo Marsupium 1 Sep 2021 at Santa Bárbara, Madrid; 3024x4032px 2.16MB. Commons separately marks original public domain and photograph CC0. Declared SHA-1 2c612c8702f62d71e8697e5ccbb4f868a7aca735.",
+      "knownOriginal": "Church of Santa Bárbara / Salesas Reales convent church, Madrid",
+      "originalAccession": null,
+      "knownImageLicence": "CC0 1.0 (photograph); public-domain original per Commons",
+      "licenceURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "artIdentityQualification": "Corrado Giaquinto (per Commons painting record)",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara,_Madrid.jpg"
+      ]
+    },
+    {
+      "candidateId": "C34:michaelwillmanopusmagnum2019p14matyrdomofstmatthew1700jpg",
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "title": "Michael Willman Opus Magnum 2019 P14 Matyrdom of St. Matthew (1700).jpg",
+      "artistAsReviewed": "Artist to verify",
+      "originalRating": 4,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg?width=960",
+      "originalPhysicalObjectID": "C34:michaelwillmanopusmagnum2019p14matyrdomofstmatthew1700jpg",
+      "knownDepiction": "Martyrdom of Saint Matthew",
+      "knownSourceFindings": "Own photo by Fallaner, taken 29 Dec 2019 at Willmann Opus magnum exhibition; Commons 3264x3864px 1.34MB. Exact camera/photo distinct from P06 Lawrence and P59 Benedict; artist spelling as recorded on Commons.",
+      "knownOriginal": "All Saints Church, Warsaw-Grzybowo; formerly Cistercian Abbey church Lubiąż",
+      "originalAccession": null,
+      "knownImageLicence": "CC BY-SA 4.0",
+      "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "artIdentityQualification": "Michael Willmann (Commons spells Willman)",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg"
+      ]
+    },
+    {
+      "candidateId": "C34:michaelwillmanopusmagnum2019p59deathofstbenedictca1682jpg",
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "title": "Michael Willman Opus Magnum 2019 P59 Death of St. Benedict (ca 1682).jpg",
+      "artistAsReviewed": "Artist to verify",
+      "originalRating": 3,
+      "originalSuitability": null,
+      "originalSourceIssueFlag": true,
+      "otherOriginalImageFlags": {
+        "wrongImage": false,
+        "poorCrop": false,
+        "sourceIssue": true
+      },
+      "reviewedImageSourceURL": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg",
+      "reviewedImagePreviewURL": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg?width=960",
+      "originalPhysicalObjectID": "C34:michaelwillmanopusmagnum2019p59deathofstbenedictca1682jpg",
+      "knownDepiction": "Death of Saint Benedict",
+      "knownSourceFindings": "Own photo by Fallaner, taken 29 Dec 2019, Commons 3024x4476px 1.23MB; own in-situ/historical original location details, not an artwork acquisition master. Distinct from P06 Lawrence and P14 Matthew.",
+      "knownOriginal": "Nunnery of Benedictine Nuns of Perpetual Adoration of Blessed Sacrament, Warsaw New Town; formerly church of Lubiąż Abbey, St Benedict chapel altarpiece",
+      "originalAccession": null,
+      "knownImageLicence": "CC BY-SA 4.0",
+      "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "artIdentityQualification": "Michael Willmann (Commons spells Willman)",
+      "technicalStatus": "SOURCE_FLAG_STILL_OPEN_PHOTO_ORIGINAL_PIXEL_EQUIVALENCE_UNVERIFIED",
+      "currentPublicationApproved": false,
+      "sourceLinkEvidence": [
+        "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg"
+      ]
+    }
+  ]
+}

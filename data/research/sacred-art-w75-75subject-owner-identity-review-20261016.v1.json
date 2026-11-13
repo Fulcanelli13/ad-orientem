@@ -1,0 +1,2358 @@
+{
+  "schema": "AO_SACRED_ART_W75_LEGACY_ART_SUBJECT_TO_CALENDAR_IDENTITY_REVIEW_V1",
+  "asOf": "2026-10-16",
+  "status": "PROVISIONAL_CROSS_OWNER_EDITORIAL_REVIEW_ONLY_NOT_CERTIFIED_IDENTITY_BRIDGE",
+  "purpose": "Make all 75 legacy artwork subjects simultaneously reviewable by sovereign Saints/Calendar identity owners, with actual source key leads and exact evidence levels. Do not claim artwork-calendar coverage.",
+  "sourceSnapshot": {
+    "w74Path": "data/research/sacred-art-w74-amended-calendar-provisional-visual-requirements-20261015.v1.json",
+    "w74GitBlobSHA": "690121956a5894a374d513e559191010059e2570",
+    "originRefs": [
+      {
+        "path": "data/saints/historical-v4333-311-components.recovered.v1.json",
+        "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+        "gitBlobSHA": "c06c4294e07666c81b045a65e61317c851156715"
+      },
+      {
+        "path": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+        "branch": "calendar/1224-living-sanctoral-pilot",
+        "gitBlobSHA": "469deba7512592fe832a3918560ea7ae36043bc9"
+      },
+      {
+        "path": "data/calendar/doctors-of-church-roster.review.v1.json",
+        "branch": "calendar/1224-living-sanctoral-pilot",
+        "gitBlobSHA": "3e3689e8b691a801c24d3552b8d905e520420ccd"
+      },
+      {
+        "path": "data/calendar/living-sanctoral-modern-observances.review.v1.json",
+        "branch": "calendar/1224-living-sanctoral-pilot",
+        "gitBlobSHA": "b0189b822512a4ac5968ff3b76def87ffd47553e"
+      },
+      {
+        "path": "data/research/sacred-art-w72-saints-large-comparison-manifest-20261015.v1.json",
+        "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+        "gitBlobSHA": "f192d00accb8320975af12359bb0f8cea7b84af2"
+      },
+      {
+        "path": "data/calendar/sacred-art-w73-w72-large-saints-review-user-decisions-20261015.v1.json",
+        "branch": "platform/885-sacred-art-candidates",
+        "gitBlobSHA": "b811ebd1ec5fe3f176bdb1aa702a9e5da3efd03d"
+      }
+    ]
+  },
+  "policy": [
+    "All normalized name links and specific named-review leads are candidates, not canonical identity equivalences.",
+    "Do not merge Saints identities, group/martyr units, Doctors declarations, later canonization records, date ranks, or artwork subjects from string similarity.",
+    "Calendar #1226 owns 1962 observance precedence and supplementary inclusion; Saints #1227 owns historical/person/group identity adjudication; original Sacred Art #887 owns ratings, physical originals and release.",
+    "Existing 600 source IDs and 75 art subject IDs are separate universes pending owner-certified joins; do not publish any coverage percentage.",
+    "No new paintings, no scores imported/changed, no old rejected candidates reinstated, no excluded painters, no contact or paid licences, no production publication.",
+    "Final certified mapping must supply the authoritative source ID, original calendar/source evidence and owner signoff; null until then."
+  ],
+  "counts": {
+    "legacySubjects": 75,
+    "exactNameCandidateSubjects": 53,
+    "exactNameCandidateEdges": 65,
+    "noExactNameCandidateSubjects": 22,
+    "certifiedJoinsThisPass": 0,
+    "legacyHumanFiveStarSubjects": 71,
+    "subjectsWithAtLeastTwoDirectPreviews": 43,
+    "previewSlotsRequiredToReachTwo": 42,
+    "newPaintingFilesOrRatingsChanged": 0,
+    "scopeRequirementSourceKeysNotUniqueSaints": 600
+  },
+  "priorityArtworkAestheticGaps": [
+    {
+      "artSubjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "currentComparisonPreviews": 0,
+      "missingSlots": 2,
+      "candidateSourceIDs": [
+        "saint.mark"
+      ],
+      "status": "NO_HUMAN_FIVE_STAR_PROOF_NOT_NO_SAINT"
+    },
+    {
+      "artSubjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "currentComparisonPreviews": 0,
+      "missingSlots": 2,
+      "candidateSourceIDs": [
+        "saint.cyril-alexandria",
+        "saint.cyril-of-alexandria"
+      ],
+      "status": "NO_HUMAN_FIVE_STAR_PROOF_NOT_NO_SAINT"
+    },
+    {
+      "artSubjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "currentComparisonPreviews": 0,
+      "missingSlots": 2,
+      "candidateSourceIDs": [
+        "saint.cyril-jerusalem",
+        "saint.cyril-of-jerusalem"
+      ],
+      "status": "NO_HUMAN_FIVE_STAR_PROOF_NOT_NO_SAINT"
+    },
+    {
+      "artSubjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "currentComparisonPreviews": 0,
+      "missingSlots": 2,
+      "candidateSourceIDs": [
+        "saint.hilary-poitiers",
+        "saint.hilary"
+      ],
+      "status": "NO_HUMAN_FIVE_STAR_PROOF_NOT_NO_SAINT"
+    }
+  ],
+  "subjects": [
+    {
+      "legacyArtworkSubjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 4,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W05-027",
+        "met-441971",
+        "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 2,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.andrew",
+          "sourceDisplayNames": [
+            "St. Andrew"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-30"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 4,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.james-the-greater",
+          "sourceDisplayNames": [
+            "St. James the Greater"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "07-25"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "prado-rubens-p001647"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 9,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W01-001",
+        "W38-006"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.bartholomew",
+          "sourceDisplayNames": [
+            "St. Bartholomew"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-24"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 2,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W07-014"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C34:saintmatthewbyvalentindeboulognejpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.matthew",
+          "sourceDisplayNames": [
+            "St. Matthew"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "09-21"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "prado-rubens-p001651"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "prado-rubens-p001655"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.matthias",
+          "sourceDisplayNames": [
+            "St. Matthias"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "02-24"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "W05-012"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "subjectCategory": "Apostles",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "subjectCategory": "Evangelists",
+      "humanFiveStarExists": false,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.mark",
+          "sourceDisplayNames": [
+            "St. Mark"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-25"
+          ],
+          "evidence": "SPECIFIC_NAME_AND_ROLE_EDITORIAL_REVIEW_LEAD_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "NAMED_EDITORIAL_REVIEW_LEADS_ONLY",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "subjectCategory": "Evangelists",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+        "C34:luketheevangelistbyjanjanszdestommejpg",
+        "C34:franciscodezurbaran046jpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.luke-the",
+          "sourceDisplayNames": [
+            "St. Luke the Evangelist"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "10-18"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W02-017",
+        "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+        "C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.ambrose",
+          "sourceDisplayNames": [
+            "St. Ambrose"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "12-07"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W07-007"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.jerome",
+          "sourceDisplayNames": [
+            "St. Jerome",
+            "Jerome"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "09-30"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.gregory-great",
+          "sourceDisplayNames": [
+            "Gregory the Great"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.gregory-the-great",
+          "sourceDisplayNames": [
+            "St. Gregory the Great"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "03-12"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 4,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.thomas-aquinas",
+          "sourceDisplayNames": [
+            "Thomas Aquinas"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "03-07"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.bonaventure",
+          "sourceDisplayNames": [
+            "St. Bonaventure",
+            "Bonaventure"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "07-14"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "prado-ribalta-p002804"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.bernard-clairvaux",
+          "sourceDisplayNames": [
+            "Bernard of Clairvaux"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.bernard-of-clairvaux",
+          "sourceDisplayNames": [
+            "St. Bernard of Clairvaux"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-20"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:pompeobatoniestasidisantateresa1743circajpg",
+        "C32:francescounterpergersantateresadavilatiff"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.teresa-avila",
+          "sourceDisplayNames": [
+            "Teresa of Ávila"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR",
+            "SUPPLEMENTARY_OBSERVANCE"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "10-15"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:bernardinomeisantacaterinadasiena1641jpg",
+        "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.catherine-of-siena",
+          "sourceDisplayNames": [
+            "St. Catherine of Siena"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-30"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.catherine-siena",
+          "sourceDisplayNames": [
+            "Catherine of Siena"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "celine-1894-john-cross"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.john-cross",
+          "sourceDisplayNames": [
+            "John of the Cross"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.john-of-the-cross",
+          "sourceDisplayNames": [
+            "St. John of the Cross"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-24"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "italy-0900119548",
+        "G28-003"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.alphonsus-liguori",
+          "sourceDisplayNames": [
+            "St. Alphonsus Liguori",
+            "Alphonsus Liguori"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-02"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 6,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "G17-006",
+        "paris-pm75001042-halle-sales",
+        "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.francis-de-sales",
+          "sourceDisplayNames": [
+            "St. Francis de Sales"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "01-29"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.francis-sales",
+          "sourceDisplayNames": [
+            "Francis de Sales"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
+        "C32:rubensathanasiusjpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.athanasius",
+          "sourceDisplayNames": [
+            "St. Athanasius",
+            "Athanasius"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "05-02"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.basil-great",
+          "sourceDisplayNames": [
+            "Basil the Great"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.basil-the-great",
+          "sourceDisplayNames": [
+            "St. Basil the Great"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "06-14"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G30-004"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.gregory-nazianzen",
+          "sourceDisplayNames": [
+            "Gregory Nazianzen"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G17-003"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.john-chrysostom",
+          "sourceDisplayNames": [
+            "St. John Chrysostom",
+            "John Chrysostom"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "01-27"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "ART-artolom-steban-urillo-aint-sidore-of-eville"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.isidore-of-seville",
+          "sourceDisplayNames": [
+            "St. Isidore of Seville"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-04"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.isidore-seville",
+          "sourceDisplayNames": [
+            "Isidore of Seville"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 2,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "G32-001"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.bede-the-venerable",
+          "sourceDisplayNames": [
+            "St. Bede the Venerable"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "05-27"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.bede-venerable",
+          "sourceDisplayNames": [
+            "Bede the Venerable"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "louvre-crespi-inv259"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.anselm",
+          "sourceDisplayNames": [
+            "St. Anselm"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-21"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G30-007"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.peter-damian",
+          "sourceDisplayNames": [
+            "Peter Damian"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C34:albertusmagnusparishofguayaquiljpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.albert-great",
+          "sourceDisplayNames": [
+            "Albert the Great"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.albert-the-great",
+          "sourceDisplayNames": [
+            "St. Albert the Great"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-15"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G30-010"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.robert-bellarmine",
+          "sourceDisplayNames": [
+            "St. Robert Bellarmine",
+            "Robert Bellarmine"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "05-13"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G31-001"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.peter-canisius",
+          "sourceDisplayNames": [
+            "St. Peter Canisius",
+            "Peter Canisius"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-27"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G20-004"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.lawrence-brindisi",
+          "sourceDisplayNames": [
+            "Lawrence of Brindisi"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": false,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.cyril-alexandria",
+          "sourceDisplayNames": [
+            "Cyril of Alexandria"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.cyril-of-alexandria",
+          "sourceDisplayNames": [
+            "St. Cyril of Alexandria"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "02-09"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": false,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.cyril-jerusalem",
+          "sourceDisplayNames": [
+            "Cyril of Jerusalem"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.cyril-of-jerusalem",
+          "sourceDisplayNames": [
+            "St. Cyril of Jerusalem"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "03-18"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G32-002"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "subjectCategory": "Doctors of the Church",
+      "humanFiveStarExists": false,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.hilary-poitiers",
+          "sourceDisplayNames": [
+            "Hilary of Poitiers"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.hilary",
+          "sourceDisplayNames": [
+            "St. Hilary"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "01-14"
+          ],
+          "evidence": "SPECIFIC_NAME_AND_ROLE_EDITORIAL_REVIEW_LEAD_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W04-009",
+        "C32:guidoreni042jpg"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 2,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "G26-005"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 10,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W08-009"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "carmel-lisieux-1925-therese-aux-roses"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.therese-lisieux",
+          "sourceDisplayNames": [
+            "Thérèse of Lisieux"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT",
+            "DOCTOR",
+            "SUPPLEMENTARY_OBSERVANCE"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "10-03"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 9,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "cma-150955",
+        "W38-009",
+        "sdma-48-3-pittoni-anthony"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.anthony-of-padua",
+          "sourceDisplayNames": [
+            "St. Anthony of Padua"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "06-13"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        },
+        {
+          "sourceId": "saint.anthony-padua",
+          "sourceDisplayNames": [
+            "Anthony of Padua"
+          ],
+          "sourceRoles": [
+            "DOCTOR"
+          ],
+          "representation": "PERSON_OR_COLLECTIVE_UNVERIFIED",
+          "historical1962Dates": [],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "MULTIPLE_EXACT_NAME_CANDIDATES",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 7,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+        "C35:jeannedarcenprisonbylouiscrignier1824jpg"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 6,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.louis-ix",
+          "sourceDisplayNames": [
+            "St. Louis IX"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-25"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 0,
+      "additionalPreviewsRequiredForTwo": 2,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.patrick",
+          "sourceDisplayNames": [
+            "St. Patrick"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "03-17"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 4,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "ART-uan-de-uanes-artyrdom-of-aint-tephen"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.stephen",
+          "sourceDisplayNames": [
+            "St. Stephen"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "12-26"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 2,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.lawrence",
+          "sourceDisplayNames": [
+            "St. Lawrence"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-10"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "ART-nthony-van-yck-aint-rancis-in-cstasy"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.francis-of-assisi",
+          "sourceDisplayNames": [
+            "St. Francis of Assisi"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "10-04"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C34:ambrosiusbensonsantodomingodeguzmanmuseodelpradomadridjpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.dominic",
+          "sourceDisplayNames": [
+            "St. Dominic"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "08-04"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 11,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "cma-150955",
+        "W39-014",
+        "W44-005",
+        "W44-006"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.benedict",
+          "sourceDisplayNames": [
+            "St. Benedict"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "03-21"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 11,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W14-006"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.francis-xavier",
+          "sourceDisplayNames": [
+            "St. Francis Xavier"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "12-03"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 7,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W14-004"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.ignatius-loyola",
+          "sourceDisplayNames": [
+            "Ignatius of Loyola"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "07-31"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "podesti-margaret-mary-source"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.margaret-mary-alacoque",
+          "sourceDisplayNames": [
+            "St. Margaret Mary Alacoque"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "10-17"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "france-PM01002671-vianney"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 4,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:eliseuviscontirecompensadesaosebastiaojpg"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 6,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:stnicholasofbaripresentstherovellistudentstomadonnaandchildb"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.nicholas",
+          "sourceDisplayNames": [
+            "St. Nicholas"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "12-06"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 7,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "cma-150955",
+        "G17-010"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.lucy",
+          "sourceDisplayNames": [
+            "St. Lucy"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "12-13"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "cma-150955",
+        "C35:saintagnesbycesaredandinijpg",
+        "W42-NEW-002"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.agnes",
+          "sourceDisplayNames": [
+            "St. Agnes"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "01-21",
+            "01-28"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 6,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:cavalierarpinosantaceciliajpg",
+        "C32:hippolytefourniersaintcecilejpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.cecilia",
+          "sourceDisplayNames": [
+            "St. Cecilia"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-22"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.catherine-of-alexandria",
+          "sourceDisplayNames": [
+            "St. Catherine of Alexandria"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-25"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C32:gustavevanaisemagdaleneinchriststombjpg",
+        "W40-011",
+        "W40-012"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.mary-magdalene",
+          "sourceDisplayNames": [
+            "St. Mary Magdalene"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "07-22"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 5,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C35:saintegenevieve1821byelisabethvigeelebrunjpg"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "G17-009"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 6,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "W38-019"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.vincent-de-paul",
+          "sourceDisplayNames": [
+            "St. Vincent de Paul"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "07-19"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 11,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "ART-nthony-van-yck-aint-artin-ividing-is-loak"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.martin-tours",
+          "sourceDisplayNames": [
+            "Martin of Tours"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "11-11"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 3,
+      "additionalPreviewsRequiredForTwo": 0,
+      "fiveStarArtworkSourceIds": [
+        "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo"
+      ],
+      "proposedCanonicalLinks": [],
+      "candidateSummary": "NO_EXACT_DISPLAY_LABEL_MATCH",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    },
+    {
+      "legacyArtworkSubjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "subjectCategory": "Other Saints",
+      "humanFiveStarExists": true,
+      "availableDirectComparisonPreviews": 1,
+      "additionalPreviewsRequiredForTwo": 1,
+      "fiveStarArtworkSourceIds": [
+        "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola"
+      ],
+      "proposedCanonicalLinks": [
+        {
+          "sourceId": "saint.francis-of-paola",
+          "sourceDisplayNames": [
+            "St. Francis of Paola"
+          ],
+          "sourceRoles": [
+            "1962_COMPONENT"
+          ],
+          "representation": "PERSON",
+          "historical1962Dates": [
+            "04-02"
+          ],
+          "evidence": "NORMALIZED_W74_SOURCE_DISPLAY_LABEL_ONLY",
+          "status": "CANDIDATE_NOT_CERTIFIED"
+        }
+      ],
+      "candidateSummary": "ONE_EXACT_NAME_CANDIDATE",
+      "certifiedCanonicalSourceId": null,
+      "certifiedStatus": "UNJOINED_REQUIRES_SAINTS_AND_CALENDAR_OWNER_EVIDENCE",
+      "artworkReleaseStatus": "NOT_APPROVED_BY_THIS_RECONCILIATION"
+    }
+  ],
+  "nextOwnerHandoff": {
+    "saintsOwner": "For each of 75 SNT-* art subjects, provide exact historical identity/person/group ID equivalence(s) supported by historical source and date. Review source aliases and explicit nonlinks. Do not rename source keys in place.",
+    "calendarOwner": "Return which certified Saints IDs have valid actual 1962 day/commemoration (or reviewed supplementary observation) and source evidence, preserving observed precedence.",
+    "sacredArtOwner": "After certified ID handoff, use W72/W73 protected ratings and approved physical object/photograph evidence to compile one large multi-option gallery of genuinely uncovered subject requirements; prioritize photo recovery for 42 missing preview slots.",
+    "releaseGate": "No Home/Calendar/Atlas/Map rendering or imagery changes until owner certifications and media provenance/rights/phone review."
+  }
+}

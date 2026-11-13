@@ -1,0 +1,77 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B29",
+  "asOf": "2026-11-07",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B28",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "records": [
+    {
+      "researchId": "B29-01",
+      "kind": "ACQUIRED_ORIGINAL_VISUAL_MOBILE_QA",
+      "existingCandidateId": "cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "objectUrl": "https://www.clevelandart.org/art/1976.2",
+      "rightsUrl": "https://www.clevelandart.org/open-access",
+      "sourceArchive": "11667353162:originals/cma-148758.jpg",
+      "sha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "pixels": [
+        2563,
+        3400
+      ],
+      "qaViewport": [
+        390,
+        510
+      ],
+      "summaryEn": "Original JPEG extracted and visually inspected side by side as full-fit and centered 390x510 cover. Vertical composition is naturally compatible: central crucified saint and surrounding figures remain visible in centered cover, with only small side losses. The image is dark but subject is legible. Technical QA performed on working copy only; no durable asset backup, final production QA or certification.",
+      "summaryFr": "JPEG original extrait et examiné en vue entière et recadrage centré 390×510. La composition verticale conserve le saint crucifié et les figures principales ; pertes latérales mineures. Image sombre mais lisible. Contrôle effectué uniquement sur copie de travail, sans archivage pérenne ni certification.",
+      "acquired": true,
+      "visualQa": "RESEARCH_PASS",
+      "mobileCropQa": "RESEARCH_PASS_CENTERED_390x510",
+      "certified": false
+    },
+    {
+      "researchId": "B29-02",
+      "kind": "ACQUIRED_ORIGINAL_VISUAL_MOBILE_QA",
+      "existingCandidateId": "met-437738",
+      "title": "The Beheading of Saint John the Baptist",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "sourceArchive": "11667353162:originals/met-437738.jpg",
+      "sha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "pixels": [
+        3882,
+        3836
+      ],
+      "qaViewport": [
+        390,
+        510
+      ],
+      "summaryEn": "Original JPEG extracted and visually inspected. Full-fit retains architecture, executioner and head, kneeling woman and witnesses. Centered 390x510 cover cuts right-edge figures and some left architecture; full-fit or tailored crop is preferable. No approved placement change, no certified crop.",
+      "summaryFr": "JPEG original extrait et examiné. L'ajustement intégral préserve l'architecture, le bourreau, la tête, la femme agenouillée et les témoins. Le recadrage centré 390×510 coupe des personnages à droite et une partie de l'architecture à gauche ; privilégier la vue entière ou un cadrage spécifique.",
+      "acquired": true,
+      "visualQa": "RESEARCH_PASS",
+      "mobileCropQa": "CENTER_COVER_NOT_RECOMMENDED",
+      "certified": false
+    },
+    {
+      "researchId": "B29-03",
+      "kind": "SOURCE_REGISTRY_RECONCILIATION",
+      "sourcePath": "data/calendar/sacred-art-candidates.v1.json",
+      "sourceBlobSha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+      "summaryEn": "Source branch retains research-only candidate schema and explicitly rejects claims that object page/CC0 alone proves image QA or production approval. No new IDs or ratings added.",
+      "summaryFr": "La branche source conserve un registre de candidats de recherche et précise que CC0 ou une notice d'objet ne prouvent ni la qualité photographique ni l'approbation pour publication."
+    }
+  ],
+  "nextQueue": [
+    "Create durable project backup for three ZIPs and verify complete hashes in destination",
+    "Evaluate approved Benson/Strozzi/Gaulli/Carracci exact-image source rights and original files",
+    "Acquire and QA previously verified NGA/Städel Class II image routes from B03 without duplicating identities",
+    "Preserve full-fit versus center-cover recommendations in eventual editorial image crop review"
+  ],
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

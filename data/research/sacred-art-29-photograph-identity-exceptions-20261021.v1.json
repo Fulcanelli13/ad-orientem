@@ -1,0 +1,138 @@
+{
+  "schema": "AO_SACRED_ART_29_PHOTOGRAPH_IDENTITY_EXCEPTIONS_V1",
+  "asOf": "2026-10-21",
+  "scope": {
+    "historicalSourceShortlistWorks": 29,
+    "knownIncorrectPhotos": 5,
+    "alternativeSourceCandidates": 4,
+    "newInstitutionalOriginals": 1,
+    "productionPhotosCertified": 0
+  },
+  "policy": {
+    "neverReopenApprovedArtworkRating": true,
+    "quarantinePhotoNotPainting": true,
+    "noPradoOrPradoMirrors": true,
+    "neverUseMuseumPhotographyWithoutIndependentPermissionEvidence": true,
+    "noImageLicenceInferredFromCommonsPDArt": true,
+    "doNotUseAnyAlternativeAutomatically": true,
+    "requireExactArtworkAndIndependentRightsAndCropReview": true,
+    "maintainPartialDiscoveryAvailabilitySeparately": true
+  },
+  "quarantinedPhotoFiles": [
+    {
+      "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "title": "The Guardian Angel",
+      "artist": "Pietro da Cortona",
+      "candidateFilePage": "https://commons.wikimedia.org/wiki/File:Guardian_Angel_Cathedral.jpg",
+      "quarantineReason": "ARCHITECTURE_PHOTO_WRONG_SUBJECT",
+      "expectedPhysicalObject": null,
+      "authoritativeObjectPage": null,
+      "alternativeResearchCandidate": null,
+      "evidenceNotes": "CC0 photograph is exterior of Guardian Angel Cathedral in Las Vegas (2018), not Pietro da Cortona's approved painting. No corrected painting photo identified.",
+      "definitiveSourcePhotoExclusion": true,
+      "approvedArtworkDecisionUnchanged": true,
+      "correctedFileIsNotProductionRelease": true
+    },
+    {
+      "artworkId": "ART-ietro-da-ortona-aint-ecilia",
+      "title": "Saint Cecilia",
+      "artist": "Pietro da Cortona",
+      "candidateFilePage": "https://commons.wikimedia.org/wiki/File:Saint_Cecilia_Giving_Alms_to_the_Poor%2C_by_Pietro_da_Cortona_(Getty_107S0Z).jpg",
+      "quarantineReason": "DIFFERENT_PAINTING_SAME_ARTIST_AND_SAINT",
+      "expectedPhysicalObject": "NG5284",
+      "authoritativeObjectPage": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+      "alternativeResearchCandidate": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Pietro_da_Cortona_Saint_Cecilia_NG5284.jpg",
+        "width": 4543,
+        "height": 6000,
+        "sourceCollection": "National Gallery London",
+        "researchStatus": "EXACT_INVENTORY_CANDIDATE_PHOTO_RIGHTS_PENDING"
+      },
+      "evidenceNotes": "Getty Saint Cecilia Giving Alms drawing/alternate composition is not the National Gallery 1620–25 oil with palm, organ and harp.",
+      "definitiveSourcePhotoExclusion": true,
+      "approvedArtworkDecisionUnchanged": true,
+      "correctedFileIsNotProductionRelease": true
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "title": "Miracle of Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "candidateFilePage": "https://commons.wikimedia.org/wiki/File:The_Miracle_of_the_Loaves_and_Fishes_MET_DT5476.jpg",
+      "quarantineReason": "WRONG_ARTIST_AND_OBJECT",
+      "expectedPhysicalObject": "NGI.72",
+      "authoritativeObjectPage": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "alternativeResearchCandidate": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+        "width": 1285,
+        "height": 683,
+        "sourceCollection": "National Gallery of Ireland",
+        "researchStatus": "EXACT_INVENTORY_CANDIDATE_LOW_RESOLUTION"
+      },
+      "evidenceNotes": "Metropolitan Museum 13.75 belongs to Tintoretto, not Giovanni Lanfranco. WGA replacement is a low resolution copy of NGI.72.",
+      "definitiveSourcePhotoExclusion": true,
+      "approvedArtworkDecisionUnchanged": true,
+      "correctedFileIsNotProductionRelease": true
+    },
+    {
+      "artworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "title": "Saint Paul Preaching at Ephesus",
+      "artist": "Eustache Le Sueur",
+      "candidateFilePage": "https://commons.wikimedia.org/wiki/File:PK-P-126.388.jpg",
+      "quarantineReason": "PRINT_NOT_OIL_PAINTING",
+      "expectedPhysicalObject": "INV 8020",
+      "authoritativeObjectPage": "https://collections.louvre.fr/en/ark:/53355/cl010061650",
+      "alternativeResearchCandidate": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_-_The_Preaching_of_St_Paul_at_Ephesus_-_WGA12613.jpg",
+        "width": 1000,
+        "height": 1186,
+        "sourceCollection": "Musée du Louvre",
+        "researchStatus": "LOUVRE_FULL_SIZE_VERSION_LOW_RESOLUTION_MUST_CHECK_USER_VERSION"
+      },
+      "evidenceNotes": "Original research source is a later print after the painting. Louvre INV8020 finished painting and National Gallery NG6299 modello are separate physical originals; do not auto-select version.",
+      "definitiveSourcePhotoExclusion": true,
+      "approvedArtworkDecisionUnchanged": true,
+      "correctedFileIsNotProductionRelease": true
+    },
+    {
+      "artworkId": "W02-015",
+      "title": "Saint Francis in Meditation (1639)",
+      "artist": "Francisco de Zurbarán",
+      "candidateFilePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_053.jpg",
+      "quarantineReason": "OTHER_VERSION_SAME_ARTIST_TITLE",
+      "expectedPhysicalObject": "NG5655",
+      "authoritativeObjectPage": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+      "alternativeResearchCandidate": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+        "width": 1237,
+        "height": 1484,
+        "sourceCollection": "National Gallery London",
+        "researchStatus": "SIGNED_1639_VERSION_CANDIDATE_LOW_RESOLUTION"
+      },
+      "evidenceNotes": "Commons 053 depicts NG230 (earlier distinct version), not NG5655 signed and dated 1639. Replacement Commons 009 identifies NG5655.",
+      "definitiveSourcePhotoExclusion": true,
+      "approvedArtworkDecisionUnchanged": true,
+      "correctedFileIsNotProductionRelease": true
+    }
+  ],
+  "newlyResolvedPhysicalObjects": [
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "artist": "Anthony van Dyck",
+      "museum": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "accession": "297",
+      "date": "1620",
+      "officialObjectURL": "https://kmska.be/nl/meesterwerk/christus-aan-het-kruis-de-lanssteek-0",
+      "currentResearchCandidateFilePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "identityEvidence": "COMMONS_FILE_AND_KMSKA_OFFICIAL_OBJECT_DESCRIBE_SAME_ALTARPIECE",
+      "otherVersionsExclude": [
+        "oil sketch",
+        "preparatory drawing",
+        "engraving after painting"
+      ],
+      "editionOrArtworkPhotoChosenByCurator": false,
+      "independentPhotoRightsCertified": false,
+      "productionEligible": false
+    }
+  ]
+}

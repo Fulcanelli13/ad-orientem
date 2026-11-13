@@ -1,0 +1,80 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B27",
+  "asOf": "2026-11-05",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B26",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "records": [
+    {
+      "researchId": "B27-01",
+      "kind": "ARCHIVE_RECOVERY",
+      "artifactId": 11664124885,
+      "source": "GitHub Actions artifact",
+      "localFile": "github-actions-artifact-11664124885.zip",
+      "bytesDownloaded": true,
+      "zipIntegrityTest": "PASS",
+      "sha256": "2d7c12e0d31ba36cea68b5316747b8b3a90d6e8e0d8c513f838a2beaec40ead7",
+      "summaryEn": "Caracciolo source archive downloaded to temporary task storage; ZIP CRC integrity passed. Hash recorded. Not yet copied to a durable project archive.",
+      "summaryFr": "Archive source Caracciolo téléchargée dans le stockage temporaire ; contrôle CRC ZIP réussi et SHA-256 enregistré. Pas encore archivée durablement."
+    },
+    {
+      "researchId": "B27-02",
+      "kind": "ARCHIVE_RECOVERY",
+      "artifactId": 11666577879,
+      "localFile": "github-actions-artifact-11666577879.zip",
+      "bytesDownloaded": true,
+      "zipIntegrityTest": "PASS",
+      "sha256": "6585c692cc17d76b647174ff872911ddc950df023ee9d8d2d0e3eb797dc39fa2",
+      "summaryEn": "Murillo source ZIP downloaded and integrity tested, hash recorded; durable project preservation outstanding.",
+      "summaryFr": "ZIP source Murillo téléchargé, contrôlé et haché ; archivage durable du projet restant à faire."
+    },
+    {
+      "researchId": "B27-03",
+      "kind": "ARCHIVE_RECOVERY",
+      "artifactId": 11667353162,
+      "localFile": "github-actions-artifact-11667353162.zip",
+      "bytesDownloaded": true,
+      "zipIntegrityTest": "PASS",
+      "sha256": "5d7c9adc7496d4e851e34146afe6e2bed8185f5f1109bd60ca7174401b2e627e",
+      "summaryEn": "Cavallino source ZIP downloaded and integrity tested, hash recorded; durable project preservation outstanding.",
+      "summaryFr": "ZIP source Cavallino téléchargé, contrôlé et haché ; archivage durable du projet restant à faire."
+    },
+    {
+      "researchId": "B27-04",
+      "kind": "CLASS_II_SOURCE_PRIORITY_RECONCILIATION",
+      "existingCandidateId": "cma-148758",
+      "objectUrl": "https://www.clevelandart.org/art/1976.2",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "summaryEn": "The exact dark Baroque oil is already the approved candidate for 30 November; B08 explicitly identifies its existing ID. Do not replace it with the later Callot/della Bella drawings or the anonymous copy. CMA offers an open-access reproduction. Existing approval unchanged.",
+      "summaryFr": "L'huile baroque sombre du Caravage est déjà le candidat approuvé pour le 30 novembre (identifiant existant cma-148758). Ne pas la remplacer par des dessins ou une copie. Image en accès libre au CMA ; approbation inchangée.",
+      "imageAcquired": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://www.clevelandart.org/art/1976.2",
+        "https://www.clevelandart.org/open-access"
+      ]
+    },
+    {
+      "researchId": "B27-05",
+      "kind": "CLASS_II_EXISTING_ALTERNATIVE",
+      "objectUrl": "https://www.clevelandart.org/art/1916.784",
+      "summaryEn": "B08 already documents this anonymous Venetian oil after Guido Reni; not a new candidate. The museum's primary attribution is copy after Reni, despite a conflicting secondary display label. Keep the existing approved Caravaggio priority.",
+      "summaryFr": "B08 documente déjà cette huile vénitienne anonyme d'après Guido Reni ; aucune nouvelle découverte. Conserver l'attribution prudente et la priorité au Caravage approuvé.",
+      "masterCertified": false
+    }
+  ],
+  "nextQueue": [
+    "Copy three recovered ZIPs to durable approved archival storage and independently verify SHA-256 there before 9 November expiry",
+    "Review recovered ZIP contents and match individual original artwork bytes against source manifests",
+    "Resolve Benson, Strozzi, Gaulli, Carracci approved Class I exact-image holds",
+    "Acquire native Caravaggio/Duck images and test 390px crops; preserve all approvals",
+    "Continue missing Class II physical works after accession-level deduplication"
+  ],
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "rightsHolderContacts": 0,
+  "paidExtras": 0
+}

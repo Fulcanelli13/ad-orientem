@@ -1,0 +1,152 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B26",
+  "asOf": "2026-11-04",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B25 2026-11-03",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "policy": {
+    "preserveExistingSelections": true,
+    "excludePrado": true,
+    "excludeFraAngelico": true,
+    "excludeElGreco": true,
+    "noCanonicalChanges": true,
+    "noPublication": true,
+    "noMerge": true,
+    "noDeployment": true,
+    "noPaidExtras": true
+  },
+  "records": [
+    {
+      "researchId": "B26-01",
+      "kind": "EXISTING_B25_IMAGE_ROUTE_RESOLUTION",
+      "artist": "Jacob Duck",
+      "title": "Salome with the Head of Saint John the Baptist",
+      "accession": "Cleveland Museum of Art 1975.79",
+      "subject": "29 August — Decollation of St John",
+      "objectUrl": "https://www.clevelandart.org/art/1975.79",
+      "exactImageUrl": "https://commons.wikimedia.org/wiki/File:Clevelandart_1975.79.jpg",
+      "rights": "CMA-origin CC0 file on Wikimedia Commons",
+      "reportedPixels": "2621 x 3400",
+      "reportedFileSize": "5.36 MB",
+      "summaryEn": "The exact museum-origin, frame-free 2621 x 3400 image has a durable Commons file page and CC0 designation. The scene is the aftermath, not the execution. File metadata inspected on the host page, but original bytes were not acquired or QA-tested.",
+      "summaryFr": "La reproduction exacte du musée, sans cadre, 2621 × 3400 pixels, est conservée sur Commons sous CC0. La scène représente l'après-décollation, non l'exécution. Métadonnées contrôlées, mais fichier original non téléchargé ni testé.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://commons.wikimedia.org/wiki/File:Clevelandart_1975.79.jpg",
+        "https://www.clevelandart.org/print/art/1975.79",
+        "https://www.clevelandart.org/open-access"
+      ]
+    },
+    {
+      "researchId": "B26-02",
+      "kind": "NEW_DISTINCT_CLASS_II_PRINT_LEAD",
+      "artist": "Rembrandt van Rijn",
+      "title": "The Beheading of John the Baptist",
+      "accession": "Metropolitan Museum 66.521.70",
+      "subject": "29 August — Decollation of St John",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/391628",
+      "rights": "Met Public Domain / Open Access",
+      "summaryEn": "A print (etching and drypoint), not an oil painting; the title directly depicts the martyrdom. Secondary liturgical illustration only, not a Baroque oil hero. Accession-level duplicate check against full candidate arrays remains pending.",
+      "summaryFr": "Estampe à l'eau-forte et pointe sèche, et non peinture à l'huile. Sujet de la décollation, à réserver comme illustration secondaire. Vérification exhaustive des doublons encore requise.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/391628"
+      ]
+    },
+    {
+      "researchId": "B26-03",
+      "kind": "CLASS_II_SECONDARY_DRAWING_LEAD",
+      "artist": "Jacques Callot",
+      "title": "The Martyrdom of Saint Andrew",
+      "accession": "National Gallery of Art object 51971",
+      "subject": "30 November — St Andrew",
+      "objectUrl": "https://www.nga.gov/artworks/51971-martyrdom-saint-andrew",
+      "rights": "NGA Public Domain image",
+      "summaryEn": "c. 1634–1635 drawing of St Andrew's martyrdom. Exact saint and narrative, but not an oil painting; secondary supporting image only. Exact NGA accession number and duplicate status still to verify.",
+      "summaryFr": "Dessin vers 1634–1635 du martyre de saint André. Sujet exact mais technique graphique, à réserver comme image secondaire. Numéro d'inventaire et dédoublonnage à confirmer.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://www.nga.gov/artworks/51971-martyrdom-saint-andrew"
+      ]
+    },
+    {
+      "researchId": "B26-04",
+      "kind": "CLASS_II_SECONDARY_DRAWING_LEAD",
+      "artist": "Stefano della Bella",
+      "title": "The Martyrdom of Saint Andrew",
+      "accession": "National Gallery of Art 1952.8.545",
+      "subject": "30 November — St Andrew",
+      "objectUrl": "https://www.nga.gov/artworks/42281-martyrdom-saint-andrew",
+      "rights": "NGA Public Domain image",
+      "summaryEn": "Small pen-and-ink drawing, 12.8 x 18.6 cm. Relevant martyrdom scene; unsuitable as an unqualified full-screen hero, but a possible secondary reference.",
+      "summaryFr": "Petit dessin à la plume et à l'encre, 12,8 × 18,6 cm. Scène du martyre pertinente, mais non appropriée comme héros plein écran sans réserve.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://www.nga.gov/artworks/42281-martyrdom-saint-andrew"
+      ]
+    },
+    {
+      "researchId": "B26-05",
+      "kind": "EXISTING_CANDIDATE_RECONFIRMATION",
+      "artist": "Spanish (Catalan) Painter",
+      "title": "The Beheading of Saint John the Baptist",
+      "accession": "Met 32.100.127",
+      "existingCandidateId": "met-437738",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "summaryEn": "Institutional public-domain object confirmed. Retain existing candidate ID and do not count as new.",
+      "summaryFr": "Objet du Met sous domaine public confirmé. Conserver l'identifiant existant, sans compter de découverte.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/437738"
+      ]
+    },
+    {
+      "researchId": "B26-06",
+      "kind": "ARCHIVE_PRESERVATION_HOLD",
+      "artifactIds": [
+        11664124885,
+        11666577879,
+        11667353162
+      ],
+      "reportedExpiryUtc": [
+        "2026-11-09T08:43:00Z",
+        "2026-11-09T10:32:00Z",
+        "2026-11-09T10:33:00Z"
+      ],
+      "summaryEn": "B25 identifies three source ZIP archives not included in the durable preservation index. No durable downloaded ZIP or SHA-256-matched copy was produced in this pass. Urgent preservation remains open.",
+      "summaryFr": "Trois archives ZIP signalées par B25 restent hors de l'inventaire durable. Aucun ZIP conservé ni contrôle SHA-256 effectué dans cette passe. Sauvegarde urgente toujours en attente.",
+      "imageAcquired": false,
+      "masterCertified": false,
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/actions"
+      ]
+    }
+  ],
+  "nextQueue": [
+    "Before 9 November: preserve three original source ZIPs with durable hashes and verify inventory",
+    "Download exact CMA-origin Duck CC0 image and run native-size, edge, and 390px crop QA",
+    "Investigate approved Class I Benson/Strozzi/Gaulli/Carracci exact-image rights and resolution holds",
+    "Check full accession deduplication for Rembrandt and Andrew drawings; seek dark Baroque oil alternatives",
+    "Continue missing Class II exact feast scenes without replacing approved choices"
+  ],
+  "productionChanges": 0,
+  "certifiedMasters": 0
+}
