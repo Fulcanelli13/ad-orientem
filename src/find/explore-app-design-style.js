@@ -440,10 +440,8 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
     overscroll-behavior:contain;
     align-content:start;
   }
-  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img) > * {
-    flex:0 0 auto!important;
-    min-width:0;
-  }
+  /* Preview children are inside .aoHeritagePreviewScroll in QA6b.
+     Never apply flex:0 0 auto to that scroller: it hides the action dock. */
   #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritageSheetHandle {
     order:-4!important;
   }
