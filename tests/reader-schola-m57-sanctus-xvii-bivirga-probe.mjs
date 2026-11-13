@@ -41,9 +41,31 @@ function inspect(gabc,label){
  counts,sourceCount:source.length,renderedCount:rendered.length,
  nonSourcePitch:missing.map(n=>({sourceGabc:n.sourceGabc,index:n.sourceIndex})),nonString:multi.length,
  vPositions:vPositions.slice(0,50),compiled,error,tail:subtotal}));
+ return {
+  sourceCount:source.length,renderedCount:rendered.length,
+  missing:missing.length,compiled,
+  pitchShapeSequence:source.map(n=>({
+    staffPosition:n.staffPosition,step:n.pitch?.step,octave:n.pitch?.octave,
+    shape:n.shape,mora:n.morae?.length??0,episema:n.episemata?.length??0
+  }))
+ };
 }
 assert.equal((s.gabc.match(/gxfg!hvvGE/g)||[]).length,2);
-inspect(s.gabc,'ARCHIVED');
-inspect(s.gabc.replaceAll('gxfg!hvvGE','gxfg!hv/hvGE'),'BIVIRGA_EXPLICIT_VIRGA_SLASH');
-inspect(s.gabc.replaceAll('gxfg!hvvGE','gxfg!hv!hvGE'),'BIVIRGA_EXPLICIT_VIRGA_ZERO');
-inspect(s.gabc.replaceAll('gxfg!hvvGE','gxfg!hhGE'),'BIVIRGA_TWO_PITCHES_SIMPLE');
+const archived=inspect(s.gabc,'ARCHIVED');
+const expanded=inspect(s.gabc.replaceAll('gxfg!hvvGE','gxfg!hv/hvGE'),
+  'BIVIRGA_EXPLICIT_VIRGA_SLASH');
+assert.equal(archived.sourceCount,120);
+assert.equal(expanded.sourceCount,120);
+assert.equal(archived.renderedCount,120);
+assert.equal(expanded.renderedCount,120);
+assert.equal(archived.missing,2);
+assert.equal(expanded.missing,0);
+assert.ok(expanded.compiled,'Only explicit GABC pitch-labelled bivirgae may be compiled');
+assert.equal(expanded.compiled.notes,120);
+// All notes, including both repeated-pitch virgae, retain exact relative
+// pitch, notehead shape, mora and episema under the source-equivalent expansion.
+assert.deepEqual(expanded.pitchShapeSequence,archived.pitchShapeSequence,
+  'Bivirga normalization must preserve every printed-pitch/neume sign event');
+assert.equal(gabcResearchFingerprint(s.gabc),'e73e09be',
+  'Never rewrite canonical score to normalize the player');
+console.log('PASS M57: two precise canonical bivirgae expanded for Exsurge, no pitch/shape/rhythm-sign changes');
