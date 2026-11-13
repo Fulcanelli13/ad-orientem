@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "batch": "B24",
+  "date": "2026-11-14",
+  "scope": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "main_places": 530,
+    "geo_areas": 146,
+    "directory_place_links": 26,
+    "previous_batch": "B23",
+    "philippines_checkpoint_347": "HISTORICAL",
+    "r70_queue_last_confirmed": 750
+  },
+  "records": [
+    {
+      "record_id": "SG-B24-TRA-KIEU-2025-OFFICIAL-PROGRAM",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_DIOCESAN_PROGRAM_ENTRANCES_HELD",
+      "name": "Trà Kiệu Marian pilgrimage complex, Diocese of Đà Nẵng, Vietnam",
+      "summary_en": "The diocese's original 30–31 May 2025 pilgrimage programme names distinct worship and confession locations: Mountain Church / Marian platform for morning Eucharistic adoration, the principal platform and the area before the Mother of Gratitude shrine for confession, and the parish church as a further confession venue. Its 30 May evening programme directs a Eucharistic procession from the Marian shrine to the main platform and then to the Marian hilltop platform. These are event-specific ceremonial movements, not verified public walking routes or entrance coordinates. The published schedule is historical, not a current timetable.",
+      "summary_fr": "Le programme diocésain original des 30–31 mai 2025 distingue l'église de la Montagne et son sanctuaire marial pour l'adoration, l'esplanade principale et le secteur du monument de reconnaissance à Marie pour les confessions, ainsi que l'église paroissiale. Le programme du soir du 30 mai mentionne une procession eucharistique vers l'esplanade puis vers le sanctuaire de la colline. Ces déplacements liturgiques ne constituent ni un itinéraire piéton public vérifié ni des coordonnées d'entrée. Les horaires de 2025 sont historiques.",
+      "sources": [
+        {
+          "url": "https://giaophandanang.org/wp-content/uploads/2025/05/CHUONG-TRINH-DAI-HOI-HANH-HUONG-DUC-ME-TRA-KIEU-30-31.5.2025.pdf",
+          "supports": "Original diocesan pilgrimage schedule, named venues and processional order"
+        },
+        {
+          "url": "https://giaophandanang.org/dai-hoi-hanh-huong-duc-me-tra-kieu-nam-2025/",
+          "supports": "Diocesan retrospective account corroborating separate worship and confession venues"
+        }
+      ],
+      "holds": [
+        "No verified exact building entrances or accessible paths",
+        "Do not convert ceremonial processions into routing lines",
+        "Do not present May 2025 event times as current visiting hours"
+      ]
+    },
+    {
+      "record_id": "SG-B24-AITARA-2023-ACCESS-AND-IDENTITY",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_HISTORICAL_ACCESS_WARNING_FORMAL_DECREE_HELD",
+      "name": "Our Lady of Aitara pilgrimage chapel, Soibada, Timor-Leste",
+      "summary_en": "A 11 May 2023 interview with the Soibada administrative post head, published by Timor-Leste's national news agency, calls the site the National Sanctuary of Aitara and explicitly asks for road, water and electricity improvements, reporting that the access road from the new Soibada bridge to town was poor and could become impassable in rain. This is a dated historical access concern, not proof of current road conditions. A 2017 national pilgrimage report separately establishes the procession from Soibada parish church to the hilltop Aitara chapel. A formal ecclesiastical national-shrine decree remains unlocated.",
+      "summary_fr": "Un entretien du 11 mai 2023 avec l'administrateur de Soibada, publié par l'agence nationale TATOLI, désigne le site comme sanctuaire national d'Aitara et demande des améliorations de la route, de l'eau et de l'électricité. Il signale que la route depuis le nouveau pont de Soibada vers le bourg était dégradée et parfois impraticable sous la pluie. Ce témoignage daté ne prouve pas l'état actuel des accès. Le pèlerinage national de 2017 reliait l'église paroissiale à la chapelle sur la colline. Le décret canonique du titre national reste introuvable.",
+      "sources": [
+        {
+          "url": "https://tatoli.tl/2023/05/11/administrador-rekomenda-governu-dezenvolve-turizmu-relijiozu-iha-soibada/",
+          "supports": "11 May 2023 administrative testimony on pilgrimage tourism and historical access constraints"
+        },
+        {
+          "url": "https://tatoli.tl/2017/10/15/membru-governu-partisipa-iha-pregrinasaun-nasional/",
+          "supports": "2017 national pilgrimage and parish-chapel distinction"
+        },
+        {
+          "url": "https://tatoli.tl/2025/10/16/dom-virgilio-kardeal-inaugura-gruta-nain-feto-aitara/",
+          "supports": "Separate 2025 Aitara-named grotto in Hera, not the Soibada chapel"
+        }
+      ],
+      "holds": [
+        "Road condition needs contemporary first-party confirmation before visitor advice",
+        "Formal national-shrine ecclesiastical decree not located",
+        "No inferred coordinates or walking routes",
+        "Do not confuse Hera grotto with Soibada pilgrimage chapel"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Trà Kiệu independently verified entrances and contemporary access",
+    "Aitara formal canonical shrine decree and updated Soibada road condition",
+    "Nishizaka relic custodian inventory",
+    "Cupey permanent shrine church completion first-party evidence",
+    "Kolser diocesan archival confirmation",
+    "Dili and Tianjin identity holds"
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "restrictions": [
+    "No canonical Place IDs changed",
+    "No production, UI, merge or deployment changes",
+    "No contacts, paid services or expenses"
+  ]
+}
