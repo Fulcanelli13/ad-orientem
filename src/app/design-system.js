@@ -216,6 +216,7 @@ const CSS=`\n
 #aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="vr"] .aoAngelusDialogueLine>.ao-liturgical-speaker{
   font-family:var(--ao-font-body)!important;
   font-size:17px!important;
+  font-weight:500!important;
   line-height:1.6!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="hail"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
@@ -227,7 +228,7 @@ const CSS=`\n
 }
 /* The prototype uses Cinzel for prayer movement titles, not for the
  * source verses or long prose. Keep geometry owned by the Folio donor. */
-#aoPray435930 .aoP435930AngelusReader .aoDevoCardTitle{
+#aoPray435930 .aoP435930AngelusReader.aoFolioReader .aoDevoCardHead .aoDevoCardTitle{
   font-family:var(--ao-font-ceremonial)!important;
   font-weight:600!important;
 }
