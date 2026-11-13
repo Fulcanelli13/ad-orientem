@@ -63,13 +63,23 @@ try{
    });
    await page.goto(base+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForSelector("#ao-app-design-system",{state:"attached",timeout:45000});
+   // The boot splash fades for 620ms after becoming non-interactive.
+   // A pointer-events:none gate captures both screens at mid-fade, falsely
+   // making Home's date, heading, branding and CTA appear to overlap.
    await page.waitForFunction(()=>{
     const home=document.querySelector(".homeScreen");
-    const boot=document.getElementById("ao-cinema-boot");
-    const ready=!boot||boot.hidden||getComputedStyle(boot).display==="none"||
-      getComputedStyle(boot).pointerEvents==="none";
-    return Boolean(home?.getClientRects().length)&&ready;
-   },null,{timeout:35000});
+    const inactive=id=>{
+      const el=document.getElementById(id);
+      if(!el||el.hidden)return true;
+      const css=getComputedStyle(el);
+      return css.display==="none"||
+        (css.visibility==="hidden"&&Number(css.opacity)<=.01);
+    };
+    return Boolean(home?.getClientRects().length)&&
+      inactive("ao-cinema-boot")&&
+      inactive("ao-cinema-transition")&&
+      inactive("ao-cinema-loader");
+   },null,{timeout:45000});
    const result=await page.evaluate(async()=>{
     const samples=[
      ['600 18px "Cinzel"',"SALVE REGINA"],
@@ -153,7 +163,7 @@ try{
    await page.screenshot({path:output+"/integrated-home-"+width+".png",fullPage:false});
 
    await writeFile(output+"/font-matrix-"+width+".json",
-    JSON.stringify({width,result,geometry,fontResponses:[...loadedFonts],failedFonts},null,2)+"\n");
+    JSON.stringify({width,result,geometry,bootFullyHidden:true,fontResponses:[...loadedFonts],failedFonts},null,2)+"\n");
    console.log("PASS exact Claude local font faces and integrated Home at "+width+"px");
   }finally{await page.close();}
  }
