@@ -214,9 +214,9 @@ try{
           captionBelow:c&&i?c.top>=i.bottom-2:false,
           titleText:title?.textContent?.trim()};
       });
-      assert.ok(visual.titleVisible>=Math.min(24,visual.titleHeight*.7),
+      assert.ok(visual.titleHeight>=30&&visual.titleVisible>=Math.min(24,visual.titleHeight*.7),
         width+"px card title is hidden by sheet overflow: "+JSON.stringify(visual));
-      assert.ok(visual.imageVisible>=65,
+      assert.ok(visual.imageHeight>=100&&visual.imageVisible>=65,
         width+"px approved photo collapsed or is outside card: "+JSON.stringify(visual));
       assert.ok(visual.captionBelow,
         width+"px credit overlaps the approved photograph: "+JSON.stringify(visual));
