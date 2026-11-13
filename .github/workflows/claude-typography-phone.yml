@@ -1,0 +1,44 @@
+name: Claude typography — phone parity preflight
+
+on:
+  pull_request:
+    paths:
+      - 'assets/fonts/claude-v9/**'
+      - 'src/app/design-system.js'
+      - 'src/pray/devotional-cinematic-styles.js'
+      - 'tests/claude-typography-phone.mjs'
+      - '.github/workflows/claude-typography-phone.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ao-claude-typography-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-font-parity:
+    name: Exact WOFF + 320/390 integrated Home
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Confirm source-owned font hashes and CSS roles
+        run: node tests/claude-prototype-typography.mjs
+      - name: Capture actual integrated Home at 320px and 390px without Google Fonts
+        run: node tests/claude-typography-phone.mjs
+      - name: Attach phone screenshots and font matrix for owner review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-typography-source-matrix
+          path: artifacts/claude-typography-acceptance/
+          if-no-files-found: warn

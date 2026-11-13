@@ -1,10 +1,28 @@
 export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
 const STYLE_ID="ao-app-design-system";
 
-const CSS=`
+const CSS=`\n
+/* Byte-identical variable WOFF files from the approved Home V9 prototype.
+ * Declared after the immutable HTML loader, so downloaded Google Fonts
+ * are not required by installed GitHub Pages clients. */
+@font-face{font-family:"Cinzel";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cinzel-variable.woff") format("woff")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-variable.woff") format("woff")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-italic-variable.woff") format("woff")}
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-variable.woff") format("woff")}
+@font-face{font-family:"EB Garamond";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-italic-variable.woff") format("woff")}
+/* Home V9's special numberforms: Cormorant letters, EB numerals.
+ * Keep this alias opt-in; other prayer prototypes use standard Cormorant. */
+@font-face{font-family:"AO Home V9 Cormorant";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-variable.woff") format("woff");unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-variable.woff") format("woff");unicode-range:U+0030-0039}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-italic-variable.woff") format("woff");unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-italic-variable.woff") format("woff");unicode-range:U+0030-0039}
 :root{
-  --ao-font-display:var(--font-liturgical,"EB Garamond",Georgia,serif);
-  --ao-font-brand:var(--font-display,"Cinzel",Georgia,serif);
+  /* Claude's approved type families: ceremonial / display / reading.
+   * These are semantic roles, not interchangeable headings. */
+  --ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif);
+  --ao-font-display:var(--font-cormorant,"Cormorant Garamond","EB Garamond",Georgia,serif);
+  --ao-font-brand:var(--ao-font-ceremonial);
+  --ao-font-home-v9-display:"AO Home V9 Cormorant","Cormorant Garamond","EB Garamond",Georgia,serif;
   --ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif);
   --ao-font-liturgical:var(--font-liturgical,var(--font-body,Georgia,"Times New Roman",serif));
   --ao-font-ui:var(--font-liturgical,"EB Garamond",Georgia,serif);
@@ -36,6 +54,8 @@ const CSS=`
   --ao-type-ui:16px;
   --ao-type-body:18px;
   --ao-type-prayer:clamp(20px,5.65vw,24px);
+  --ao-type-angelus-verse:clamp(19px,5.4vw,21px);
+  --ao-type-caption-match:9.5px;
   --ao-type-prose:18px;
   --ao-type-action-primary:17px;
   --ao-type-action-secondary:16px;
@@ -69,7 +89,8 @@ const CSS=`
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
-.homeScreen h1,.homeScreen h2,.homeScreen h3,
+/* H7 is a verbatim Claude donor with its own EB heading face and metrics. */
+.homeScreen:not(.aoH7Screens) h1,.homeScreen:not(.aoH7Screens) h2,.homeScreen:not(.aoH7Screens) h3,
 #ao-calendar-modular-root h1,#ao-calendar-modular-root h2,#ao-calendar-modular-root h3,#ao-calendar-modular-root h4,
 #ao-learn-modular-root h1,#ao-learn-modular-root h2,#ao-learn-modular-root h3,
 #ao-settings-modular-root h1,#ao-settings-modular-root h2,#ao-settings-modular-root h3,
@@ -81,7 +102,7 @@ const CSS=`
 }
 
 #ao-global-ribbon{
-  font-family:var(--ao-font-display);
+  font-family:var(--ao-font-ceremonial);
   z-index:var(--ao-z-global-nav)!important;
 }
 #ao-global-ribbon .aoGlobalRibbonBtn{
@@ -178,6 +199,56 @@ const CSS=`
   font-size:var(--ao-type-prayer)!important;
   line-height:1.62;
 }
+/*
+ * The approved Angelus / Regina Cæli prototype distinguishes:
+ *   source V/R dialogue: 21px Cormorant 500/1.36 at 390px;
+ *   complete Hail Mary/Collect: EB Garamond 400/1.52;
+ *   liturgical ℣/℟ glyphs: EB Garamond 17px.
+ * This specificity intentionally outranks the Folio donor's generic 1em
+ * speaker rule without affecting Rosary, Stations, or the Mass reader.
+ */
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="vr"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
+  font-family:var(--ao-font-display)!important;
+  font-size:var(--ao-type-angelus-verse)!important;
+  font-weight:500!important;
+  line-height:1.36!important;
+}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="vr"] .aoAngelusDialogueLine>.ao-liturgical-speaker{
+  font-family:var(--ao-font-body)!important;
+  font-size:17px!important;
+  font-weight:500!important;
+  line-height:1.6!important;
+}
+/* The same EB reading metrics apply in individual mode, where complete
+ * prayers are a plain source text node without the grouped dialogue spans. */
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="hail"]>button,
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="collect"]>button,
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="prayer"]>button{
+  font-family:var(--ao-font-body)!important;
+  font-size:clamp(17px,4.75vw,18.5px)!important;
+  font-weight:400!important;
+  line-height:1.52!important;
+  letter-spacing:0!important;
+}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="hail"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="collect"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
+  font-family:var(--ao-font-body)!important;
+  font-size:clamp(17px,4.75vw,18.5px)!important;
+  font-weight:400!important;
+  line-height:1.52!important;
+}
+/* The prototype uses Cinzel for prayer movement titles, not for the
+ * source verses or long prose. Keep geometry owned by the Folio donor. */
+#aoPray435930 .aoP435930AngelusReader.aoFolioReader .aoDevoCardHead .aoDevoCardTitle{
+  font-family:var(--ao-font-ceremonial)!important;
+  font-weight:600!important;
+}
+#aoPray435930 .aoP435930VR>small{
+  font-family:var(--ao-font-ceremonial)!important;
+  font-size:var(--ao-type-caption-match)!important;
+  font-weight:600!important;
+  letter-spacing:2.2px;
+}
 /* Consistent Formation prose without overriding its title or citation UI. */
 #ao-learn-modular-root .aoCSEAnswer,
 #ao-learn-modular-root .aoCSEDebateStep p,
@@ -213,7 +284,7 @@ const CSS=`
 /*
  * Approved app-wide A2 hybrid action grammar:
  * primary actions use EB Garamond small caps; secondary actions stay quiet.
- * Ordinary display roles use EB Garamond. Cinzel remains the brand font.
+ * Display text uses Cormorant Garamond, with Cinzel reserved for ceremony and branding.
  * No font-variant or text-transform rule is applied to liturgical text.
  */
 :where(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,
@@ -259,6 +330,17 @@ const CSS=`
 .aoBrandWordmark{
   font-family:var(--ao-font-brand)!important;
 }
+
+/* Explicit semantic roles keep independent Claude presentations intact.
+ * No blanket resizing is applied to Mass, Rosary, or the original donor views. */
+.aoTypeCeremonial{font-family:var(--ao-font-ceremonial)!important}
+.aoTypeDisplay{font-family:var(--ao-font-display)!important}
+.aoTypeHomeV9Display{font-family:var(--ao-font-home-v9-display)!important}
+.aoTypeReading{font-family:var(--ao-font-body)!important}
+#aoPray435930 .aoP435930Head h1{
+  font-family:var(--ao-font-ceremonial)!important;
+}
+
 
 @media(max-width:560px){
   :root{
