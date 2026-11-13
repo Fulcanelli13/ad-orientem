@@ -48,6 +48,11 @@ assert.equal(m65.scores.length,10);
 assert.equal(PROPER_RESEARCH_SOURCES.length,50);
 assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
 assert.equal(registry.scores.length,10);
+assert.equal(registry.textualVariantHolds.length,1);
+assert.equal(registry.textualVariantHolds[0].selectionId,'HOLY_FAMILY_INTROIT');
+assert.ok(registry.textualVariantHolds[0].requiresEditorialResolutionBeforePlayerPromotion);
+assert.match(registry.textualVariantHolds[0].original1961GradualeTextOpening,/^Exsultet /);
+assert.match(registry.textualVariantHolds[0].printed1962MissaleTextOpening,/^Exsultat /);
 for(const key of [
  'noAutomaticallyPublishedMelodies','noPlayerChangesThisStage','noAutomatedMassAssignment',
  'noAutoPlay','retain65CardMassReader','noLowMass','noMissalMode','noRequiem',
@@ -91,7 +96,7 @@ for(const spec of registry.scores){
  assert.equal(record.sha256,spec.gabcSha256);
  assert.equal(sha(record.gabc),spec.gabcSha256);
  assert.equal(record.gabc.length,spec.rawGabcLength);
- assert.equal((record.gabc.match(/\(::\)/g)||[]).length,spec.sourceGabcSections);
+ assert.equal((record.gabc.match(/\([^)]*::[^)]*\)/g)||[]).length,spec.sourceGabcSections);
  assert.equal((record.gabc.match(/[a-m]vv/g)||[]).length,spec.sourceBivirgaMatches);
  assert.equal(gabcResearchFingerprint(record.gabc),spec.sourceFingerprint);
  const adapted=record.gabc.replace(/([a-m])vv/g,(_,n)=>n+'v/'+n+'v');
