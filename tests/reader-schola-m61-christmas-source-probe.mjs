@@ -88,3 +88,36 @@ console.log('M61_CHRISTMAS_PROBE_SUMMARY',JSON.stringify({
 assert.equal(results.length,19);
 assert.deepEqual(holds,[],'Do not release candidate audio with source-note holds');
 console.log('PASS M61 Christmas GABC source compiler parity, 19 provisional research candidates');
+
+
+// Separately staged Dawn Communion: from live GregoBase, NOT from the 2024 archive.
+const restored=load('data/research/mass-music-m61-dawn-communion-gregobase-1125-recovery.v1.json');
+assert.equal(restored.scoreId,'GREGOBASE-1125');
+assert.equal(restored.stage,'SEPARATE_SOURCE_CANDIDATE_NOT_ARCHIVE_REWRITE');
+assert.equal(sha(restored.sourceGabc),restored.sourceGabcSha256);
+const restoredPrefix='name:'+restored.incipit+';\noffice-part:co;\n%%\n';
+const restoredOriginal=make(restoredPrefix+restored.sourceGabc);
+const restoredNotes=noteheads(restoredOriginal);
+let restoredCounts=[],restoredTail=0;
+for(const item of restoredOriginal.notations){
+ if(item.constructor?.name==='DoubleBar'){restoredCounts.push(restoredTail);restoredTail=0;}
+ else restoredTail+=item.notes?.length??0;
+}
+const restoredUnknown=restoredNotes.filter(n=>!/^[a-mA-M]/.test(n.sourceGabc??''));
+console.log('M61_DAWN_COMMUNION_RECOVERY_PROBE',JSON.stringify({
+ scoreId:restored.scoreId,sourceUrl:restored.sourcePage,
+ sourceSha256:sha(restored.sourceGabc),
+ noteheads:restoredNotes.length,phrases:restoredCounts,
+ unknown:restoredUnknown.map(x=>({source:x.sourceGabc,index:x.sourceIndex})),
+ archivedExceptionStillPreserved:true
+}));
+assert.equal(restoredTail,0);
+assert.equal(restoredUnknown.length,0);
+const restoredMelody=compileExsurgeGabcResearchMelody(restoredPrefix+restored.sourceGabc,{
+ exsurge,scoreId:restored.scoreId,
+ expectedFingerprint:gabcResearchFingerprint(restoredPrefix+restored.sourceGabc),
+ expectedPhraseNoteCounts:restoredCounts,
+ phraseSequence:restoredCounts.map((_,i)=>i)
+});
+assert.equal(restoredMelody.sourceNoteCount,restoredNotes.length);
+console.log('PASS M61 separate Dawn Communion candidate compiles; still not print/music-approved or playable');
