@@ -1,12 +1,28 @@
 export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
 const STYLE_ID="ao-app-design-system";
 
-const CSS=`\n/* Claude Cormorant display face, loaded by the typography owner, not the\n * immutable generated startup HTML. */\n@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");\n:root{
+const CSS=`\n
+/* Byte-identical variable WOFF files from the approved Home V9 prototype.
+ * Declared after the immutable HTML loader, so downloaded Google Fonts
+ * are not required by installed GitHub Pages clients. */
+@font-face{font-family:"Cinzel";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cinzel-variable.woff") format("woff")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-variable.woff") format("woff")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-italic-variable.woff") format("woff")}
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-variable.woff") format("woff")}
+@font-face{font-family:"EB Garamond";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-italic-variable.woff") format("woff")}
+/* Home V9's special numberforms: Cormorant letters, EB numerals.
+ * Keep this alias opt-in; other prayer prototypes use standard Cormorant. */
+@font-face{font-family:"AO Home V9 Cormorant";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-variable.woff") format("woff");unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:normal;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-variable.woff") format("woff");unicode-range:U+0030-0039}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/cormorant-italic-variable.woff") format("woff");unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:"AO Home V9 Cormorant";font-style:italic;font-weight:400 800;font-display:swap;src:url("./assets/fonts/claude-v9/eb-garamond-italic-variable.woff") format("woff");unicode-range:U+0030-0039}
+:root{
   /* Claude's approved type families: ceremonial / display / reading.
    * These are semantic roles, not interchangeable headings. */
   --ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif);
   --ao-font-display:var(--font-cormorant,"Cormorant Garamond","EB Garamond",Georgia,serif);
   --ao-font-brand:var(--ao-font-ceremonial);
+  --ao-font-home-v9-display:"AO Home V9 Cormorant","Cormorant Garamond","EB Garamond",Georgia,serif;
   --ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif);
   --ao-font-liturgical:var(--font-liturgical,var(--font-body,Georgia,"Times New Roman",serif));
   --ao-font-ui:var(--font-liturgical,"EB Garamond",Georgia,serif);
@@ -291,6 +307,7 @@ const CSS=`\n/* Claude Cormorant display face, loaded by the typography owner, n
  * No blanket resizing is applied to Mass, Rosary, or the original donor views. */
 .aoTypeCeremonial{font-family:var(--ao-font-ceremonial)!important}
 .aoTypeDisplay{font-family:var(--ao-font-display)!important}
+.aoTypeHomeV9Display{font-family:var(--ao-font-home-v9-display)!important}
 .aoTypeReading{font-family:var(--ao-font-body)!important}
 #aoPray435930 .aoP435930Head h1{
   font-family:var(--ao-font-ceremonial)!important;
