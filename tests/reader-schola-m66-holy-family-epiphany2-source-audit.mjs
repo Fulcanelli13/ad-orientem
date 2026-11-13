@@ -45,8 +45,8 @@ assert.deepEqual(registry.counts,{
  uniqueArchivalScoreIdsInThisAudit:10,missingArchiveTranscriptions:0,
  sourceDigitalNoteheadsAllSlots:1711,sourceDigitalNoteheadsCertifiedForResearch:true});
 assert.equal(m65.scores.length,10);
-assert.equal(PROPER_RESEARCH_SOURCES.length,59);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
+assert.equal(PROPER_RESEARCH_SOURCES.length,74);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,74);
 assert.equal(registry.scores.length,10);
 assert.equal(registry.textualVariantHolds.length,1);
 assert.equal(registry.textualVariantHolds[0].selectionId,'HOLY_FAMILY_INTROIT');
