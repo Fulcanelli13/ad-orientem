@@ -129,15 +129,19 @@ export function createKyrieXviResearchAudition({root,
   trigger.dataset.kyrieResearchAuditionOpen='';
   trigger.dataset.ordinaryPreviewMovement='KYRIE';
   const triggers=new Map([['KYRIE',trigger]]);
-  for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
+  // A movement has one launcher even when several exact GABCs are indexed.
+  // Earlier code created one abandoned button per score and overwrote its
+  // movement-keyed Map entry. Do not duplicate controls across settings.
+  const ordinaryMovements=new Set(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement));
+  for(const movement of ordinaryMovements){
     const extra=doc.createElement('button');
     extra.type='button';
     extra.className='ao-kyrie-audition-launch';
     extra.dataset.kyrieResearchAuditionOpen='';
-    extra.dataset.ordinaryPreviewMovement=spec.movement;
-    extra.textContent='♫ HEAR '+spec.title.toUpperCase()+' · MELODY PREVIEW';
+    extra.dataset.ordinaryPreviewMovement=movement;
+    extra.textContent='♫ MELODY PREVIEW';
     extra.hidden=true;
-    triggers.set(spec.movement,extra);
+    triggers.set(movement,extra);
   }
   trigger.textContent='♫ HEAR KYRIE XVI · MELODY PREVIEW';
   trigger.hidden=true;
@@ -164,24 +168,31 @@ export function createKyrieXviResearchAudition({root,
   ]);
   let setting='MASS_16',activeMovement='KYRIE',score=sourceXvi,compiled=scoreXvi;
   const ordinaryKey=(movement,settingId)=>movement+':'+settingId;
-  let ordinaryPending=null,ordinaryLoadAttempted=false;
-  function prepareOrdinaryResearch(){
-    if(ordinaryPending||ordinaryLoadAttempted||destroyed)return;
-    ordinaryLoadAttempted=true;
-    ordinaryPending=loadOfflineExsurge(doc).then(exsurge=>{
-      if(destroyed)return;
-      for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
-        const prepared=compileOrdinaryM54ResearchMelody({
-          movement:spec.movement,settingId:spec.settingId,exsurge
-        });
-        if(!prepared)continue; // Bad/changed source can never offer audio.
-        const src=offlineKyrialeResearchScore(spec.movement,spec.settingId);
-        sources.set(ordinaryKey(spec.movement,spec.settingId),{
-          score:src,compiled:prepared.melody,title:spec.title,movement:spec.movement
-        });
-      }
-    }).catch(()=>{/* No offline Exsurge: withhold preview. */})
-      .finally(()=>{ordinaryPending=null;if(!destroyed)sync();});
+  let ordinaryExsurgePromise=null;
+  const ordinaryAttempted=new Set();
+  function prepareOrdinaryResearch(movement,settingId){
+    const key=ordinaryKey(movement,settingId);
+    if(destroyed||sources.has(key)||ordinaryAttempted.has(key))return;
+    const spec=ORDINARY_M54_RESEARCH_SOURCES.find(x=>
+      x.movement===movement&&x.settingId===settingId);
+    if(!spec)return;
+    // Compile only the actual user-chosen score. Attempt each source once
+    // per reader instance; an invalid GABC must fail closed without a
+    // microtask retry loop or a 14-score first-open performance penalty.
+    ordinaryAttempted.add(key);
+    ordinaryExsurgePromise??=loadOfflineExsurge(doc).catch(()=>null);
+    void ordinaryExsurgePromise.then(exsurge=>{
+      if(destroyed||!exsurge)return;
+      const prepared=compileOrdinaryM54ResearchMelody({
+        movement,settingId,exsurge
+      });
+      if(!prepared)return;
+      const src=offlineKyrialeResearchScore(movement,settingId);
+      sources.set(key,{
+        score:src,compiled:prepared.melody,title:spec.title,movement
+      });
+    }).catch(()=>{/* Unsupported source: withheld. */})
+      .finally(()=>{if(!destroyed)sync();});
   }
   // Load the pinned offline Exsurge semantics only after a user selects one
   // of the four additional research settings. Other Mass forms never preload.
@@ -414,21 +425,23 @@ export function createKyrieXviResearchAudition({root,
         switchScore(chosenKyrie);
     }
     let visible=eligible;
-    for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
-      const chosen=ordinarySelections?.[spec.movement];
-      const key=ordinaryKey(spec.movement,chosen);
+    for(const [movement,button] of triggers){
+      if(movement==='KYRIE')continue;
+      const chosen=ordinarySelections?.[movement];
+      const key=ordinaryKey(movement,chosen);
       const allowed=eligibleOrdinaryM54ResearchSource({
-        movement:spec.movement,settingId:chosen,form,mode,isRequiem
+        movement,settingId:chosen,form,mode,isRequiem
       });
-      if(allowed&&!sources.has(key))prepareOrdinaryResearch();
-      const button=triggers.get(spec.movement);
+      if(allowed&&!sources.has(key))prepareOrdinaryResearch(movement,chosen);
       const anchor=root.querySelector(
-        '[data-schola-original-score="'+spec.movement+'"]');
+        '[data-schola-original-score="'+movement+'"]');
       if(anchor&&button.parentElement!==anchor.parentElement)
         anchor.insertAdjacentElement('afterend',button);
       const show=allowed&&sources.has(key);
       button.dataset.researchScoreKey=show?key:'';
       button.hidden=!show;
+      if(show)button.textContent='♫ HEAR '+
+        sources.get(key).title.toUpperCase()+' · MELODY PREVIEW';
       visible ||= show;
     }
     // Persisted programmes may be changed while the player is open:
