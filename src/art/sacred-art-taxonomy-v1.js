@@ -1,10 +1,12 @@
+import { SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 } from "./sacred-art-holy-trinity-owner-selected.v1.js";
 /**
- * Sacred Art taxonomy Wave 1 — 25 *already identified* works.
+ * Sacred Art taxonomy: original 25 identified works plus explicit owner-approved additions.
  *
  * This is an iconographic/placement index, not a source-photo promotion.
- * The 16 exact released photo module IDs are distinguished from nine pending
- * works already linked to 41 Prayer slots. The 989 research title tags are
- * imported separately, with all unreviewed classifications kept provisional.
+ * The 16 exact released module photos and nine previously pending works remain
+ * distinct from the six owner-selected Holy Trinity paintings added 2026-11-13.
+ * The frozen 989 research groups remain separate and unchanged; Durer is linked
+ * to his existing HERO::khm:GG-838 group. Owner approval never releases bytes.
  */
 export const SACRED_ART_CATEGORIES_V1=Object.freeze({
   INCARNATION:{en:"Incarnation & Childhood",fr:"Incarnation et enfance"},
@@ -59,7 +61,8 @@ export const SACRED_ART_CURATED_WORKS_V1=Object.freeze([
   entry("artwork-pending:06",null,"Saint Thomas Aquinas","Carlo Crivelli","Saint Thomas Aquinas, Dominican Doctor of the Church",["SAINTS","EUCHARIST"],["Saint Thomas Aquinas"],[],{existingPrayerSlots:["COV-benediction_o_salutaris","COV-benediction_tantum_ergo","STG-pray.benediction-02","STG-pray.litany_saints-05"]},"Eucharistic connection is theological/liturgical, not a depicted biblical scene"),
   entry("artwork-pending:07",null,"Adoration of the Mystic Lamb","Hubert and Jan van Eyck","Apocalyptic worship of the Lamb, symbolic depiction",["EUCHARIST","LAST_THINGS","SAINTS"],["Lamb of God","Angels","Saints and worshippers"],["Apocalypse 5:6-14","Apocalypse 7:9-17"],{existingPrayerSlots:["STG-pray.benediction-04","COV-pray.litany_saints","STG-pray.litany_saints-06"]},"Symbolic theological scene, not a literal painting of a single Gospel episode"),
   entry("artwork-pending:08",null,"Archangel Michael Defeating Satan","Guido Reni","Saint Michael's victory over Satan",["ANGELS","LAST_THINGS"],["Saint Michael the Archangel","Satan"],["Apocalypse 12:7-9"],{existingPrayerSlots:["COV-novena.st_michael","COV-mass_devotion_leonine","COV-devotion_prayer_st_michael"]},"Rome original; do not substitute Stockholm's copy"),
-  entry("artwork-pending:09",null,"Miracle of Loaves and Fishes","Giovanni Lanfranco","Miracle of the multiplication of loaves and fishes",["MINISTRY","EUCHARIST"],["Jesus Christ","Apostles","Crowd"],["John 6:1-14"],{existingPrayerSlots:["COV-foundations_our_father","COV-foundations_grace_before_meals","COV-foundations_grace_after_meals"]},"NGI.72; Eucharistic association is theological typology")
+  entry("artwork-pending:09",null,"Miracle of Loaves and Fishes","Giovanni Lanfranco","Miracle of the multiplication of loaves and fishes",["MINISTRY","EUCHARIST"],["Jesus Christ","Apostles","Crowd"],["John 6:1-14"],{existingPrayerSlots:["COV-foundations_our_father","COV-foundations_grace_before_meals","COV-foundations_grace_after_meals"]},"NGI.72; Eucharistic association is theological typology"),
+  ...SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1
 ]);
 const byId=new Map(SACRED_ART_CURATED_WORKS_V1.map(w=>[w.id,w]));
 export function sacredArtWorkById(id){return byId.get(id)??null;}
