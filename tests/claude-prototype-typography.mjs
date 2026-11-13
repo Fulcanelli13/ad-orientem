@@ -60,7 +60,7 @@ assert.match(css,/\.ao-liturgical-speaker\s*\{[\s\S]*?font-family:inherit!import
 assert.match(css,/#aoPray435930 \.aoFolioReader \.aoDevoCardScroll \[data-ao-angelus-unit="vr"\] \.aoAngelusDialogueLine>\.ao-liturgical-speaker\s*\{[\s\S]*?font-size:17px!important/);
 assert.match(css,/#aoPray435930 \.aoFolioReader \.aoDevoCardScroll \[data-ao-angelus-unit="hail"\] \.aoAngelusDialogueLine>span:not\(\.ao-liturgical-speaker\)/);
 assert.ok(css.includes("font-size:clamp(17px,4.75vw,18.5px)!important"));
-assert.match(css,/#aoPray435930 \.aoP435930AngelusReader \.aoDevoCardTitle\s*\{[\s\S]*?font-family:var\(--ao-font-ceremonial\)!important/);
+assert.match(css,/#aoPray435930 \.aoP435930AngelusReader\.aoFolioReader \.aoDevoCardHead \.aoDevoCardTitle\s*\{[\s\S]*?font-family:var\(--ao-font-ceremonial\)!important/);
 
 // 390px source-size fidelity; at narrow 320px the text stays at least 19px.
 for(const [width,expected] of [[390,21],[320,19]]){
