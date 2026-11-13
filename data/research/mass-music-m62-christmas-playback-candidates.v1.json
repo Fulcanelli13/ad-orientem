@@ -1,0 +1,466 @@
+{
+  "schema": "ao-schola-m62-christmas-proper-preview-candidates-v1",
+  "status": "EXSURGE_SOURCE_PARITY_PINNED_RESEARCH_ONLY",
+  "source": "Graduale Romanum 1961 archival GABC; CC0 research transcription",
+  "selection": "MANUAL_ONLY",
+  "publicPreviewCandidateCount": 19,
+  "totalPinnedDigitalNoteheads": 3185,
+  "allowedResearchContext": "LIVE_SUNG_OR_SOLEMN_ONLY",
+  "roles": [
+    "INTROIT",
+    "GRADUAL",
+    "ALLELUIA",
+    "OFFERTORY",
+    "COMMUNION"
+  ],
+  "masses": [
+    {
+      "id": "VIGIL",
+      "label": "Vigil of Christmas",
+      "date": "2026-12-24",
+      "vigilAlleluia": "ONLY_IF_SUNDAY"
+    },
+    {
+      "id": "MIDNIGHT",
+      "label": "Christmas — Mass at Midnight",
+      "date": "2026-12-25"
+    },
+    {
+      "id": "DAWN",
+      "label": "Christmas — Mass at Dawn",
+      "date": "2026-12-25"
+    },
+    {
+      "id": "DAY",
+      "label": "Christmas — Mass during the Day",
+      "date": "2026-12-25"
+    }
+  ],
+  "scores": [
+    {
+      "selectionId": "CHRISTMAS_VIGIL_INTROIT",
+      "week": "CHRISTMAS_VIGIL",
+      "role": "INTROIT",
+      "title": "Hodie scietis",
+      "scoreId": "GREGOBASE-150",
+      "officePart": "in",
+      "printed1961Page": "24",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=150",
+      "sha256": "428c0fff2ea1e902338b3a5a1874ea7e8df5cdd228cdf293cb42fb16749f5796",
+      "sourceFingerprint": "8413d955",
+      "rendererFingerprint": "1f4062b4",
+      "sourceNotes": 113,
+      "phraseNoteCounts": [
+        62,
+        36,
+        8,
+        7
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 565
+    },
+    {
+      "selectionId": "CHRISTMAS_VIGIL_GRADUAL",
+      "week": "CHRISTMAS_VIGIL",
+      "role": "GRADUAL",
+      "title": "Hodie scietis",
+      "scoreId": "GREGOBASE-202",
+      "officePart": "gr",
+      "printed1961Page": "24",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=202",
+      "sha256": "a353e32e988c191fe9193ccceb8219b49007e0f26ce967a91856a032bb149401",
+      "sourceFingerprint": "c31be4d5",
+      "rendererFingerprint": "f9a434e6",
+      "sourceNotes": 350,
+      "phraseNoteCounts": [
+        149,
+        201
+      ],
+      "bivirgaCount": 2,
+      "scoreApproved": false,
+      "sourceGabcLength": 1065
+    },
+    {
+      "selectionId": "CHRISTMAS_VIGIL_ALLELUIA",
+      "week": "CHRISTMAS_VIGIL",
+      "role": "ALLELUIA",
+      "title": "Crastina die",
+      "scoreId": "GREGOBASE-167",
+      "officePart": "al",
+      "printed1961Page": "25",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=167",
+      "sha256": "b46c6fefd78dca92728225f0bb13cda5c8b19a98b7a2305f44c9e9c39236a4a8",
+      "sourceFingerprint": "add87151",
+      "rendererFingerprint": "74206bc4",
+      "sourceNotes": 134,
+      "phraseNoteCounts": [
+        38,
+        96
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 416
+    },
+    {
+      "selectionId": "CHRISTMAS_VIGIL_OFFERTORY",
+      "week": "CHRISTMAS_VIGIL",
+      "role": "OFFERTORY",
+      "title": "Tollite portas",
+      "scoreId": "GREGOBASE-171",
+      "officePart": "of",
+      "printed1961Page": "26",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=171",
+      "sha256": "078643c035bfeeb06bb3ba1a18f8ea6dea4a6076e30f6c6e70f76782e3f87ad4",
+      "sourceFingerprint": "aeed6eb9",
+      "rendererFingerprint": "cce47309",
+      "sourceNotes": 131,
+      "phraseNoteCounts": [
+        131
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 394
+    },
+    {
+      "selectionId": "CHRISTMAS_VIGIL_COMMUNION",
+      "week": "CHRISTMAS_VIGIL",
+      "role": "COMMUNION",
+      "title": "Revelabitur",
+      "scoreId": "GREGOBASE-367",
+      "officePart": "co",
+      "printed1961Page": "26",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=367",
+      "sha256": "4624bbe10a9c96ef93e2052269e833ba36fa4ad1af41d326a32e60d1ae64f14d",
+      "sourceFingerprint": "83e7a79d",
+      "rendererFingerprint": "36917edc",
+      "sourceNotes": 75,
+      "phraseNoteCounts": [
+        75
+      ],
+      "bivirgaCount": 1,
+      "scoreApproved": false,
+      "sourceGabcLength": 290
+    },
+    {
+      "selectionId": "CHRISTMAS_MIDNIGHT_INTROIT",
+      "week": "CHRISTMAS_MIDNIGHT",
+      "role": "INTROIT",
+      "title": "Dominus dixit",
+      "scoreId": "GREGOBASE-1175",
+      "officePart": "in",
+      "printed1961Page": "27",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1175",
+      "sha256": "eb9fb17377f36729792d5c76010dae8a11a5b4008ae96504f5716a23329f945a",
+      "sourceFingerprint": "e7a835ce",
+      "rendererFingerprint": "70903a5d",
+      "sourceNotes": 105,
+      "phraseNoteCounts": [
+        56,
+        32,
+        7,
+        10
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 449
+    },
+    {
+      "selectionId": "CHRISTMAS_MIDNIGHT_GRADUAL",
+      "week": "CHRISTMAS_MIDNIGHT",
+      "role": "GRADUAL",
+      "title": "Tecum principium",
+      "scoreId": "GREGOBASE-518",
+      "officePart": "gr",
+      "printed1961Page": "28",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=518",
+      "sha256": "a24e9223cb75aa4c216001184ed88e3ac2905383d2f3aa3db1850c6c68338fd1",
+      "sourceFingerprint": "427686a7",
+      "rendererFingerprint": "9854bf0e",
+      "sourceNotes": 391,
+      "phraseNoteCounts": [
+        195,
+        196
+      ],
+      "bivirgaCount": 3,
+      "scoreApproved": false,
+      "sourceGabcLength": 1123
+    },
+    {
+      "selectionId": "CHRISTMAS_MIDNIGHT_ALLELUIA",
+      "week": "CHRISTMAS_MIDNIGHT",
+      "role": "ALLELUIA",
+      "title": "Dominus dixit",
+      "scoreId": "GREGOBASE-890",
+      "officePart": "al",
+      "printed1961Page": "29",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=890",
+      "sha256": "27bfbc74c363cba22d9c360593e4ad41315c452882824d9c70e581642ce96aef",
+      "sourceFingerprint": "d4640506",
+      "rendererFingerprint": "d91170fa",
+      "sourceNotes": 182,
+      "phraseNoteCounts": [
+        37,
+        145
+      ],
+      "bivirgaCount": 2,
+      "scoreApproved": false,
+      "sourceGabcLength": 533
+    },
+    {
+      "selectionId": "CHRISTMAS_MIDNIGHT_OFFERTORY",
+      "week": "CHRISTMAS_MIDNIGHT",
+      "role": "OFFERTORY",
+      "title": "Laetentur caeli",
+      "scoreId": "GREGOBASE-811",
+      "officePart": "of",
+      "printed1961Page": "29",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=811",
+      "sha256": "a07bf1f08590c57a4dbd2ecdb2c64ce044744fd6950d6ba23622f2fdd10b048a",
+      "sourceFingerprint": "783caf58",
+      "rendererFingerprint": "cc21538a",
+      "sourceNotes": 104,
+      "phraseNoteCounts": [
+        104
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 307
+    },
+    {
+      "selectionId": "CHRISTMAS_MIDNIGHT_COMMUNION",
+      "week": "CHRISTMAS_MIDNIGHT",
+      "role": "COMMUNION",
+      "title": "In splendoribus",
+      "scoreId": "GREGOBASE-117",
+      "officePart": "co",
+      "printed1961Page": "30",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=117",
+      "sha256": "01c71f26bf3cc87bc8b7aaeb4fe4bd10fb685ecb88877a82af20eb11d7101ebc",
+      "sourceFingerprint": "cef81499",
+      "rendererFingerprint": "5e18b60d",
+      "sourceNotes": 49,
+      "phraseNoteCounts": [
+        49
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 242
+    },
+    {
+      "selectionId": "CHRISTMAS_DAWN_INTROIT",
+      "week": "CHRISTMAS_DAWN",
+      "role": "INTROIT",
+      "title": "Lux fulgebit",
+      "scoreId": "GREGOBASE-917",
+      "officePart": "in",
+      "printed1961Page": "30",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=917",
+      "sha256": "6bda87ee02ad78f9bbbc14be7c7c2065cc860d6df0b15da58099c03456fbe282",
+      "sourceFingerprint": "556e836e",
+      "rendererFingerprint": "add1978c",
+      "sourceNotes": 187,
+      "phraseNoteCounts": [
+        124,
+        41,
+        7,
+        15
+      ],
+      "bivirgaCount": 1,
+      "scoreApproved": false,
+      "sourceGabcLength": 803
+    },
+    {
+      "selectionId": "CHRISTMAS_DAWN_GRADUAL",
+      "week": "CHRISTMAS_DAWN",
+      "role": "GRADUAL",
+      "title": "Benedictus qui venit",
+      "scoreId": "GREGOBASE-217",
+      "officePart": "gr",
+      "printed1961Page": "31",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=217",
+      "sha256": "f7c1e3cb381f125f123a1aae5cc069beb5166146842c35d4e925478a04f463e6",
+      "sourceFingerprint": "b378ebf8",
+      "rendererFingerprint": "ba600eb3",
+      "sourceNotes": 239,
+      "phraseNoteCounts": [
+        107,
+        132
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 649
+    },
+    {
+      "selectionId": "CHRISTMAS_DAWN_ALLELUIA",
+      "week": "CHRISTMAS_DAWN",
+      "role": "ALLELUIA",
+      "title": "Dominus regnavit decorem",
+      "scoreId": "GREGOBASE-714",
+      "officePart": "al",
+      "printed1961Page": "31",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=714",
+      "sha256": "ae9dc169929b403005df06fa43edef28d674e882b82a2711f9ef05501069502d",
+      "sourceFingerprint": "d1f25a6b",
+      "rendererFingerprint": "845057f5",
+      "sourceNotes": 170,
+      "phraseNoteCounts": [
+        40,
+        130
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 519
+    },
+    {
+      "selectionId": "CHRISTMAS_DAWN_OFFERTORY",
+      "week": "CHRISTMAS_DAWN",
+      "role": "OFFERTORY",
+      "title": "Deus enim",
+      "scoreId": "GREGOBASE-979",
+      "officePart": "of",
+      "printed1961Page": "32",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=979",
+      "sha256": "497af324e5e3f739940eb90d78abb17753707f40b7f265a6221aeb8e4914c55e",
+      "sourceFingerprint": "03adff8e",
+      "rendererFingerprint": "d2010164",
+      "sourceNotes": 131,
+      "phraseNoteCounts": [
+        131
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 443
+    },
+    {
+      "selectionId": "CHRISTMAS_DAY_INTROIT",
+      "week": "CHRISTMAS_DAY",
+      "role": "INTROIT",
+      "title": "Puer natus est",
+      "scoreId": "GREGOBASE-72",
+      "officePart": "in",
+      "printed1961Page": "33",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=72",
+      "sha256": "f451e1b10246a0af121aa696b94d318daef40192fb64472a4b961e3feeaf7c8e",
+      "sourceFingerprint": "7a49811b",
+      "rendererFingerprint": "dfbb1bdc",
+      "sourceNotes": 159,
+      "phraseNoteCounts": [
+        107,
+        33,
+        8,
+        11
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 649
+    },
+    {
+      "selectionId": "CHRISTMAS_DAY_GRADUAL",
+      "week": "CHRISTMAS_DAY",
+      "role": "GRADUAL",
+      "title": "Viderunt omnes",
+      "scoreId": "GREGOBASE-1163",
+      "officePart": "gr",
+      "printed1961Page": "33",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1163",
+      "sha256": "d8b84063f51fcff7b2c3430081dba296e5e6bb2753d614b36da6bc087855c370",
+      "sourceFingerprint": "a3efa108",
+      "rendererFingerprint": "bbfe8251",
+      "sourceNotes": 263,
+      "phraseNoteCounts": [
+        114,
+        149
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 773
+    },
+    {
+      "selectionId": "CHRISTMAS_DAY_ALLELUIA",
+      "week": "CHRISTMAS_DAY",
+      "role": "ALLELUIA",
+      "title": "Dies sanctificatus",
+      "scoreId": "GREGOBASE-324",
+      "officePart": "al",
+      "printed1961Page": "34",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=324",
+      "sha256": "91679395eccd922de6e2ab7634441ab7f1afd305b149ba4197fbd589618c9cc0",
+      "sourceFingerprint": "28130244",
+      "rendererFingerprint": "6b7e5c0c",
+      "sourceNotes": 173,
+      "phraseNoteCounts": [
+        29,
+        144
+      ],
+      "bivirgaCount": 2,
+      "scoreApproved": false,
+      "sourceGabcLength": 596
+    },
+    {
+      "selectionId": "CHRISTMAS_DAY_OFFERTORY",
+      "week": "CHRISTMAS_DAY",
+      "role": "OFFERTORY",
+      "title": "Tui sunt caeli",
+      "scoreId": "GREGOBASE-1274",
+      "officePart": "of",
+      "printed1961Page": "35",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1274",
+      "sha256": "eacc9bcd79db2c3bf91f5d33da46c81ec23ecd373aea7859e3f41b93be99e653",
+      "sourceFingerprint": "b182f227",
+      "rendererFingerprint": "7af1cb09",
+      "sourceNotes": 174,
+      "phraseNoteCounts": [
+        174
+      ],
+      "bivirgaCount": 0,
+      "scoreApproved": false,
+      "sourceGabcLength": 527
+    },
+    {
+      "selectionId": "CHRISTMAS_DAY_COMMUNION",
+      "week": "CHRISTMAS_DAY",
+      "role": "COMMUNION",
+      "title": "Viderunt omnes",
+      "scoreId": "GREGOBASE-1139",
+      "officePart": "co",
+      "printed1961Page": "35",
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1139",
+      "sha256": "36c314de474861615c2cbac27f92dbcd8a1ebd01535137a9d58aaf96180afce7",
+      "sourceFingerprint": "2e387a10",
+      "rendererFingerprint": "1d515e23",
+      "sourceNotes": 55,
+      "phraseNoteCounts": [
+        55
+      ],
+      "bivirgaCount": 1,
+      "scoreApproved": false,
+      "sourceGabcLength": 209
+    }
+  ],
+  "holds": [
+    {
+      "selectionId": "CHRISTMAS_DAWN_COMMUNION",
+      "scoreId": "GREGOBASE-1125",
+      "status": "RECOVERED_SOURCE_EDITORIAL_HOLD_NO_PUBLIC_PREVIEW",
+      "sourcePath": "data/research/mass-music-m61-dawn-communion-gregobase-1125-recovery.v1.json",
+      "digitalNoteheads": 72,
+      "reason": "The transcription was excluded from the 2024 archive, later recovered separately; printed edition transcription review must precede research-player eligibility."
+    }
+  ],
+  "restrictions": {
+    "noAutomaticMassAssignment": true,
+    "noAutoplay": true,
+    "oneExistingPlayer": true,
+    "sourceModified": false,
+    "noApprovedMusicClaim": true,
+    "noPrintedNoteheadCertification": true,
+    "noRhythmCertification": true,
+    "noLowMass": true,
+    "noMissal": true,
+    "noRequiem": true,
+    "noPaidServices": true,
+    "githubPagesOnly": true,
+    "vigilAlleluia": "SUNDAY_VIGIL_ONLY_NOT_2026"
+  }
+}
