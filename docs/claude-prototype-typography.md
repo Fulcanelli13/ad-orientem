@@ -54,3 +54,23 @@ without visual approval.
   !important font sweep. Review any nonmatching scoped CSS individually.
 - Run `npm run test:design-system` and the required main gate. Do not merge
   or deploy until approved. GitHub Actions/Pages only, never Vercel.
+
+## Exact bundled fonts and offline integrity
+
+The font assets in `assets/fonts/claude-v9/` are byte-identical copies of
+the five unique variable WOFF payloads embedded in the owner's Home V9 HTML.
+The duplicate Cormorant numberface declarations in Home V9 reference the
+same EB Garamond normal/italic bytes; no extra font is required. Three SIL
+Open Font License notices from the corresponding upstream Google Fonts
+families accompany the assets. The Home V9 numeral substitution is
+available as the *opt-in* `--ao-font-home-v9-display` token, without imposing
+it on the Angelus or other prototypes.
+
+The application design-system registers local `@font-face` declarations, and
+the transactional service worker includes all five WOFF paths in each
+offline bootstrap. Existing external font links remain in the certified
+startup HTML for compatibility, but cached offline screens no longer need
+those links to fetch font glyphs.
+
+This addresses font-byte parity and offline *packaging*. Browser screenshots
+and installed offline-restart tests remain separate acceptance gates.
