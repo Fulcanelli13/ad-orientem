@@ -85,14 +85,29 @@ for(const spec of source.scores){
   'GABC source phrase count including clef changes must be exact');
  assert.equal(phrases.reduce((a,b)=>a+b,0),y.length);
  assert.equal(gabcResearchFingerprint(header+normalized),spec.rendererFingerprint);
- const compiled=compileExsurgeGabcResearchMelody(header+normalized,{
+ const compile=()=>compileExsurgeGabcResearchMelody(header+normalized,{
   exsurge,scoreId:spec.scoreId,expectedFingerprint:spec.rendererFingerprint,
   expectedPhraseNoteCounts:phrases,phraseSequence:phrases.map((_,i)=>i)
  });
- assert.ok(compiled);
- assert.equal(compiled.sourceNoteCount,y.length);
- assert.equal(compiled.performance.length,y.length);
- assert.equal(compiled.phraseCount,phrases.length);
+ if(spec.selectionId==='ASH_WEDNESDAY_INTROIT'){
+  // The original fusion @h! is valid GABC and retained byte-for-byte.
+  // The existing audio event-mapper only accepts sourceGabc beginning
+  // with a pitch letter: MISSING_EXSURGE_SOURCE_NOTE is a REAL hold.
+  // Deliberately do not strip '@' or silently claim a playable score.
+  assert.throws(compile,e=>e?.code==='MISSING_EXSURGE_SOURCE_NOTE',
+   'The known, legitimate GABC fusion must fail closed in the current player');
+  console.log('M70 SOURCE AUDIO HOLD',JSON.stringify({
+   selectionId:spec.selectionId,sourceGabc:'@h!',
+   reason:'MISSING_EXSURGE_SOURCE_NOTE',noAutomaticRewrite:true,
+   originalPitchAndShapeRetained:true
+  }));
+ }else{
+  const compiled=compile();
+  assert.ok(compiled,'Other nine sources must be compilable without adaptation');
+  assert.equal(compiled.sourceNoteCount,y.length);
+  assert.equal(compiled.performance.length,y.length);
+  assert.equal(compiled.phraseCount,phrases.length);
+ }
  assert.ok(y.length>=30,'Unexpectedly short Mass Proper source');
  const record={selectionId:spec.selectionId,scoreId:spec.scoreId,role:spec.role,
   noteheads:y.length,phraseNoteCounts:phrases,bivirgaCount:spec.bivirgaMatches};
@@ -109,5 +124,6 @@ assert.notEqual(rows.find(x=>x.selectionId==='LENT1_OFFERTORY').scoreId,
 assert.ok(total>1500,'Ten complete archived Mass scores cannot collapse to a stub');
 console.log('PASS M70 EXSURGE:',JSON.stringify({
  researchOnly:true,playerUnchanged:true,ashRiteAudioWithheld:true,
+ ashIntroitFusionAudioHeld:true,
  sourceCount:rows.length,tractCount:2,totalDigitalNoteheads:total,rows
 }));
