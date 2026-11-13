@@ -1,0 +1,440 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B13_V1",
+  "research_date": "2026-11-03",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "historical_philippines_checkpoint": "347 Places; 20 verified, 4 provisional, 1 held and 1 Quiapo enrichment; historical only",
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_place_count": 530,
+    "previous_b12_main_count": 530,
+    "delta_since_b12": 0,
+    "research_branch_prewrite_head": "42e45ed4fcd53de562c74a1d677578d1c415bdda",
+    "r70_queue_path": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "r70_queue_count": 750,
+    "deduplication": "Compared all 530 main Place records, R70's 750 candidates, the 750-site curated crosswalk, and research records B03–B12. No Hatillo, Cabo Rojo or Juana Díaz Schoenstatt physical site matched a canonical Place or research dossier. R70's separate Guayaquil Schoenstatt candidate SG-INV-0519 is not a Puerto Rican site. Songol, Zobué, Nishizaka and Rabban Hormizd are enrichments of earlier dossiers, not new places.",
+    "new_canonical_ids_created": 0
+  },
+  "counts": {
+    "research_records": 7,
+    "new_distinct_verified_research_sites": 3,
+    "existing_site_enrichments": 4,
+    "new_provisional_sites": 0,
+    "new_held_sites": 0,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "research_id_policy": "SG-B13-* are additive ledger record identifiers only; not canonical Place IDs. Existing SG-INV-* IDs retained without substitution.",
+  "records": [
+    {
+      "record_id": "SG-B13-PR-SCHOENSTATT-HATILLO",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "PR",
+      "name": "Santuario Magnificat, Hatillo",
+      "status": "NEW_DISTINCT_CUSTODIAL_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Servants of the Holy Eucharist and of the Blessed Virgin Mary confirm that they care for the public Schoenstatt Magnificat shrine at Hatillo, dedicated on 2 February 1984. They distinguish it from Magnificat Patris, a second shrine inside their private contemplative enclosure. The Schoenstatt movement documents a public pilgrimage on 7 September 2026. A 2023 account places the adjacent Our Lady of Guadalupe parish and the burial remains of founder Father Aníbal Reyes Belén near the shrine; neither the parish church nor the private shrine is the public Magnificat Place.",
+      "summary_fr": "Les Serviteurs de la Sainte Eucharistie et de la Bienheureuse Vierge Marie confirment qu'ils desservent le sanctuaire public Magnificat de Schoenstatt à Hatillo, dédié le 2 février 1984. Ils le distinguent de Magnificat Patris, autre sanctuaire situé dans leur clôture contemplative privée. Le mouvement de Schoenstatt atteste un pèlerinage le 7 septembre 2026. Un récit de 2023 mentionne la paroisse voisine Notre-Dame-de-Guadalupe et la sépulture du fondateur, le père Aníbal Reyes Belén ; ni cette paroisse ni le sanctuaire privé ne doivent être confondus avec Magnificat.",
+      "institution": "Servants of the Holy Eucharist and of the Blessed Virgin Mary; Schoenstatt movement",
+      "location": "Hatillo, Puerto Rico; public shrine on monastery grounds; precise current public entrance unverified",
+      "history": "Magnificat dedicated 2 February 1984 (custodian); separate private Magnificat Patris inside enclosure",
+      "saints": "No bodily relic of a canonized saint verified; Father Aníbal Reyes Belén is the community founder, not represented as a canonized saint",
+      "relics": "Founder burial remains mentioned by movement; not a certified saint relic or reliquary",
+      "feast": "7 September 2026 three-shrine pilgrimage; 18 October Schoenstatt covenant anniversary is movement-wide, not an independently assigned local liturgical feast",
+      "devotions": "Mother Thrice Admirable, Eucharistic adoration, Covenant of Love, Marian Rosary",
+      "visitor": "Public Magnificat explicitly confirmed by custodian; 2026 pilgrim visit verified. Routine current hours and entrance not certified.",
+      "evidence": [
+        {
+          "url": "https://semv.org/our-life-and-charism/schoenstatt/",
+          "issuer": "Servants of the Holy Eucharist and of the Blessed Virgin Mary",
+          "tier": "CUSTODIAL_PRIMARY",
+          "support": "Two Hatillo shrines, Magnificat public, dedication 1984, Magnificat Patris private"
+        },
+        {
+          "url": "https://www.schoenstatt.org/es/en-salida/peregrinaciones/2026/09/peregrinacion-de-amor-y-esperanza-a-santuarios-de-puerto-rico/",
+          "issuer": "Schoenstatt movement, 15 September 2026",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "7 September 2026 public pilgrimage to three distinct shrines"
+        },
+        {
+          "url": "https://www.schoenstatt.org/es/vida/2023/09/peregrinacion-a-los-tres-santuarios-de-schoenstatt-de-puerto-rico/",
+          "issuer": "Schoenstatt movement, 12 September 2023",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "Adjacent Guadalupe parish, founder remains and historical pilgrim use"
+        }
+      ],
+      "holds": [
+        "Do not map or recommend private Magnificat Patris as public shrine",
+        "Exact public gate and up-to-date opening/Mass hours not confirmed",
+        "Founder burial is not a certified saint relic; no canonical ID or coordinates assigned"
+      ]
+    },
+    {
+      "record_id": "SG-B13-PR-SCHOENSTATT-CABO-ROJO",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "PR",
+      "name": "Santuario de la Solidaridad, Cabo Rojo",
+      "status": "NEW_DISTINCT_CUSTODIAL_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Schoenstatt Sisters of Mary identify their Puerto Rico national movement centre and shrine at Cabo Rojo, where they receive pilgrims and run retreats. The movement reports pilgrimages on 7 September and a centenary gathering on 4 October 2026. Its published local contact page gives Carretera 100 km 5.3, Calle Padre José Kentenich, Cabo Rojo. 'National shrine' is preserved as the movement's designation; an episcopal decree conferring a canonical national-shrine title has not been examined.",
+      "summary_fr": "Les Sœurs de Marie de Schoenstatt situent à Cabo Rojo leur centre national du mouvement à Porto Rico et leur sanctuaire, où elles accueillent des pèlerins et organisent des retraites. Le mouvement rapporte un pèlerinage le 7 septembre et une célébration du centenaire le 4 octobre 2026. La page locale indique Carretera 100, km 5,3, Calle Padre José Kentenich, Cabo Rojo. L'expression « sanctuaire national » est conservée comme appellation du mouvement, sans présumer l'existence d'un décret canonique de reconnaissance nationale.",
+      "institution": "Schoenstatt Sisters of Mary / Schoenstatt Movement of Puerto Rico",
+      "location": "Carretera 100 km 5.3, Calle Padre José Kentenich, Cabo Rojo, Puerto Rico (movement contact address; no precise entrance geometry)",
+      "history": "Movement records 1973 shrine blessing in older institutional listings; signed diocesan designation not retrieved",
+      "saints": "Father Joseph Kentenich memorial documented; not a saint's authenticated tomb or relic",
+      "relics": "No authenticated bodily saint relic inventory",
+      "feast": "7 September 2026 pilgrimage and 4 October 2026 centenary gathering; not a fixed 1962 liturgical rank",
+      "devotions": "Mother Thrice Admirable, Rosary, Covenant of Love, pilgrimages and retreats",
+      "visitor": "Custodial site explicitly welcomes pilgrim groups; 2026 events documented; current routine opening hours not independently verified from custodian.",
+      "evidence": [
+        {
+          "url": "https://schoenstattsistersofmary.us/es/puerto-rico/",
+          "issuer": "Schoenstatt Sisters of Mary",
+          "tier": "CUSTODIAL_PRIMARY",
+          "support": "Cabo Rojo shrine and national movement centre, pilgrims, retreats and contact"
+        },
+        {
+          "url": "https://olga-irizarry-1y5b.squarespace.com/contacto",
+          "issuer": "Schoenstatt Puerto Rico movement contact page",
+          "tier": "MOVEMENT_CONTACT",
+          "support": "Carretera 100 km 5.3, Calle Padre José Kentenich"
+        },
+        {
+          "url": "https://www.schoenstatt.org/es/en-salida/peregrinaciones/2026/09/peregrinacion-de-amor-y-esperanza-a-santuarios-de-puerto-rico/",
+          "issuer": "Schoenstatt movement, 15 September 2026",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "7 September three-shrine pilgrimage"
+        },
+        {
+          "url": "https://www.schoenstatt.org/es/vida/2026/10/puerto-rico-conmemora-el-centenario-de-las-hermanas-de-maria-de-schoenstatt/",
+          "issuer": "Schoenstatt movement, 11 October 2026",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "4 October 2026 centenary pilgrimage to Cabo Rojo"
+        }
+      ],
+      "holds": [
+        "Original canonical national-shrine decree not retrieved; movement designation only",
+        "Routine current public hours and exact entrance not certified",
+        "No saint-relic claim or coordinates created"
+      ]
+    },
+    {
+      "record_id": "SG-B13-PR-SCHOENSTATT-JUANA-DIAZ",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "PR",
+      "name": "Santuario Cenáculo de la Inmaculada Madre del Redentor, Juana Díaz",
+      "status": "NEW_DISTINCT_MOVEMENT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "Schoenstatt's own reporting identifies the Cenacle of the Immaculate Mother of the Redeemer at Juana Díaz as the shrine of its Institute of Diocesan Priests and as a diocesan Schoenstatt family shrine in the Diocese of Ponce. A 2026 pilgrimage report documents visits on 7 September and another on 18 July, including Eucharistic adoration and Marian consecration. Older movement directory and shrine pages locate it in Barrio Jacaguas and cite 8 December 1988 as its foundation date; these are historical location details, not proof of today's public entrance or Mass timetable.",
+      "summary_fr": "Les publications de Schoenstatt identifient le Cénacle de l'Immaculée Mère du Rédempteur à Juana Díaz comme sanctuaire de l'Institut des prêtres diocésains de Schoenstatt et de la famille diocésaine de Schoenstatt du diocèse de Ponce. Des comptes rendus de 2026 attestent des pèlerinages les 18 juillet et 7 septembre, avec adoration eucharistique et consécration mariale. Les anciennes fiches du mouvement le situent au barrio Jacaguas et indiquent le 8 décembre 1988 comme date de fondation ; cela ne certifie ni l'entrée publique actuelle ni les horaires des messes.",
+      "institution": "Institute of Schoenstatt Diocesan Priests; Schoenstatt family, Diocese of Ponce",
+      "location": "Barrio Jacaguas, Juana Díaz; historic shrine page gives Carr. 14 Int. 574, Sector Olla Honda (current entrance unverified)",
+      "history": "Movement directory gives 8 December 1988 foundation date; no original diocesan erection decree retrieved",
+      "saints": "No named canonized saint relics evidenced",
+      "relics": "No verified bodily relics",
+      "feast": "7 September 2026 group pilgrimage; no fixed local liturgical feast established",
+      "devotions": "Mother Thrice Admirable, Eucharistic adoration and Benediction, Marian consecration, Covenant of Love",
+      "visitor": "2026 pilgrimage visits verified; historic shrine page gives address and old Mass schedule, not validated as current.",
+      "evidence": [
+        {
+          "url": "https://www.schoenstatt.org/es/vida/2023/09/peregrinacion-a-los-tres-santuarios-de-schoenstatt-de-puerto-rico/",
+          "issuer": "Schoenstatt movement, 12 September 2023",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "Diocesan Schoenstatt identity, Ponce diocese and Eucharistic devotion"
+        },
+        {
+          "url": "https://www.schoenstatt.org/es/en-salida/peregrinaciones/2026/09/peregrinacion-de-amor-y-esperanza-a-santuarios-de-puerto-rico/",
+          "issuer": "Schoenstatt movement, 15 September 2026",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "7 September 2026 visit"
+        },
+        {
+          "url": "https://www.schoenstatt.org/en/reaching-out/projects/2026/07/a-motorcyclists-testimony/",
+          "issuer": "Schoenstatt movement, July 2026",
+          "tier": "MOVEMENT_PRIMARY_REPORT",
+          "support": "18 July 2026 pilgrimage and Marian consecration"
+        },
+        {
+          "url": "https://schoenstatt.link/es/SL100432A/schoenstatt-shrine-juana-diaz",
+          "issuer": "Schoenstatt Link, historical entry last updated 2017",
+          "tier": "MOVEMENT_DIRECTORY_HISTORICAL",
+          "support": "Foundation date and Barrio Jacaguas location"
+        },
+        {
+          "url": "https://santuarioschoenstattjd.blogspot.com/p/contactanos.html",
+          "issuer": "Juana Díaz shrine's historical contact page",
+          "tier": "SHRINE_HISTORICAL",
+          "support": "Carr. 14 Int. 574, Sector Olla Honda; old schedule not current"
+        }
+      ],
+      "holds": [
+        "Current custodial entrance and opening/Mass timetable not independently verified",
+        "Original diocesan decree not retrieved",
+        "No canonical ID, coordinates or walking route"
+      ]
+    },
+    {
+      "record_id": "SG-B13-MZ-ZOBUE-PHYSICAL-HISTORY",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "MZ",
+      "name": "Sanctuary of the Immaculate Conception of Zobué — former Saint John de Brito Seminary",
+      "status": "EXISTING_B12_SITE_PHYSICAL_IDENTITY_SUBSTANTIALLY_ENRICHED",
+      "summary_en": "The Diocese of Tete explicitly locates the diocesan sanctuary in the restored former Saint John de Brito seminary at Zobué, rather than treating the separate hilltop Resurrection chapel as the sanctuary's main building. Construction of the seminary began in 1946, it opened in 1950, and the diocese began restoring it in 2019. An August 2021 account records the inauguration of the Fazenda da Esperança community in the former seminary; it is not itself proof of a formal shrine decree. By October 2021 the diocese described the former seminary as restored and housing the sanctuary. Separate diocesan reports document May, June and August 2026 pilgrimages, strengthening year-round institutional use.",
+      "summary_fr": "Le diocèse de Tete situe expressément le sanctuaire diocésain dans l'ancien séminaire Saint-Jean-de-Brito restauré à Zobué, et non dans la chapelle distincte de la Résurrection au sommet du Monte da Esperança. Les travaux du séminaire ont commencé en 1946 ; il a ouvert en 1950 et sa restauration diocésaine a débuté en 2019. Le compte rendu d'août 2021 concerne l'inauguration de la communauté Fazenda da Esperança, non la preuve d'un décret d'érection du sanctuaire. En octobre 2021, le diocèse décrivait le séminaire comme restauré et abritant le sanctuaire. Les pèlerinages de mai, juin et août 2026 attestent son usage actif.",
+      "institution": "Diocese of Tete; Canção Nova pastoral responsibility reported since 2021",
+      "location": "Former São João de Brito seminary, Zobué, Moatize district, Mozambique; Monte da Esperança chapel is distinct",
+      "history": "Seminary construction began 1946, inaugurated 1950; rehabilitation began 2019; Fazenda da Esperança inaugurated August 2021; sanctuary active by October 2021",
+      "saints": "Saint John de Brito is patron of former seminary, not the Marian sanctuary's titular dedication",
+      "relics": "No verified bodily relic inventory",
+      "feast": "Multiple documented 2026 pilgrimage events (May 16–17, June 13–14, August 15–16); not a fixed annual feast inferred",
+      "devotions": "Immaculate Conception, Marian Rosary, Stations of the Cross, Eucharistic adoration, Sacred Heart pilgrimage",
+      "visitor": "Diocesan group pilgrimage use documented across three months; current ordinary opening and public entrance remain held.",
+      "evidence": [
+        {
+          "url": "https://diocesetete.org/noticias/noticias-da-diocese/santuario-diocesano-e-fazenda-da-esperanca.html",
+          "issuer": "Diocese of Tete, 30 June 2021",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Former seminary identified as sanctuary headquarters"
+        },
+        {
+          "url": "https://diocesetete.org/noticias/noticias-da-diocese/inauguracao-da-fazenda-da-esperanca-de-sao-joao-de-brito-do-zobue-diocese-de-tete.html",
+          "issuer": "Diocese of Tete, 17 August 2021",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Seminary historical dates and Fazenda inauguration distinct from shrine decree"
+        },
+        {
+          "url": "https://www.diocesetete.org/noticias/noticias-da-diocese/todos-a-peregrinacao-diocesana-ao-santuario-do-zobue.html",
+          "issuer": "Diocese of Tete, 26 October 2021",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Restored seminary sanctuary location"
+        },
+        {
+          "url": "https://diocesetete.org/noticias/noticias-da-diocese/peregrinacao-do-movimento-legiao-de-maria-ao-santuario-diocesano-de-zobue.html",
+          "issuer": "Diocese of Tete, 26 May 2026",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "May pilgrimage and separate hilltop chapel"
+        },
+        {
+          "url": "https://www.diocesetete.org/noticias/noticias-da-diocese/peregrinacao-do-apostolado-de-oracao-ao-santuario-do-zobue.html",
+          "issuer": "Diocese of Tete, 22 June 2026",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "June pilgrimage"
+        },
+        {
+          "url": "https://www.diocesetete.org/noticias/noticias-da-diocese/realizacao-da-peregrinacao-diocesana-ao-santuario-do-zobue-tete.html",
+          "issuer": "Diocese of Tete, 6 September 2026",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "August pilgrimage and hill chapel"
+        }
+      ],
+      "holds": [
+        "Original signed shrine decree and current public opening schedule not retrieved",
+        "No exact public entrance or separate chapel pin inferred",
+        "Do not confuse 2021 Fazenda opening with canonical sanctuary erection"
+      ]
+    },
+    {
+      "record_id": "SG-B13-KR-SONGOL-MARTYR-IDENTITY",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "country": "KR",
+      "name": "Songol Martyrs Shrine, Yongin — missionary residence versus execution sites",
+      "status": "EXISTING_B11_PROVISIONAL_HISTORY_CLOSED;VISITOR_AND_RELIC_HOLDS_REMAIN",
+      "summary_en": "Suwon diocesan reports identify Songol as a Catholic refuge village where French missionaries learned Korean and stayed, with commemorations of the martyrs in 2013 and 2017. The Korean bishops' martyr biography independently confirms Saint Henry Dorie served at Songol but was executed at Saenamteo in Seoul on 7 March 1866. The bishops' martyr timeline links Father Aumaitre's relic history to the Galmaemot martyrs. Songol is therefore a memorial and missionary-residence shrine, not an authenticated execution site for Dorie. The diocesan address is 67 Dongcheon-ro 437beon-gil, Suji-gu, Yongin. The scheduled November–December 2026 travelling relic visit remains future, not completed.",
+      "summary_fr": "Des comptes rendus du diocèse de Suwon présentent Songol comme un village-refuge de catholiques où des missionnaires français ont séjourné et appris le coréen, avec des célébrations mémorielles en 2013 et 2017. La biographie publiée par les évêques coréens confirme que saint Henri Dorie a exercé son ministère à Songol, mais fut exécuté à Saenamteo, Séoul, le 7 mars 1866. La chronologie des martyrs relie les reliques du père Aumaitre aux martyrs de Galmaemot. Songol doit donc être décrit comme lieu de séjour et de mémoire, non comme lieu d'exécution de Dorie. Son adresse diocésaine est le 67 Dongcheon-ro 437beon-gil, Suji-gu, Yongin. La visite itinérante de reliques annoncée pour novembre-décembre 2026 n'a pas encore eu lieu.",
+      "institution": "Diocese of Suwon",
+      "location": "용인시 수지구 동천로 437번길 67 (동천동), Yongin, South Korea",
+      "history": "Historical Catholic refuge village and French missionary residence; memorial pilgrimages documented 2013 and 2017",
+      "saints": "Saint Henry Dorie; Father Aumaitre associated with Songol history; execution places elsewhere",
+      "relics": "No permanent Songol saint-relic inventory verified; do not transfer Dorie's Saenamteo or Aumaitre's Galmaemot relic custody",
+      "feast": "2013 and 2017 May 6 memorial pilgrimages documented; not evidence of a permanent feast rubric",
+      "devotions": "Martyrs' remembrance, Rosary, pilgrimage Mass",
+      "visitor": "Official diocesan address and public historical commemorations verified; current regular Mass schedule unverified.",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Official shrine address"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/64656?page=269",
+          "issuer": "Diocese of Suwon, 11 May 2013",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Refuge village, missionary residence and martyr memorial event"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/67294?page=229",
+          "issuer": "Diocese of Suwon, 12 May 2017",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "6 May 2017 pilgrimage and precise Songol street address"
+        },
+        {
+          "url": "https://cbck.or.kr/koreanmartyrs/103-Saints/83",
+          "issuer": "Catholic Bishops' Conference of Korea, martyrs commission",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Saint Henry Dorie served at Songol and died at Saenamteo, 7 March 1866"
+        },
+        {
+          "url": "https://cbck.or.kr/koreanmartyrs/103-Saints/Timeline/2",
+          "issuer": "Catholic Bishops' Conference of Korea, martyrs timeline",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Aumaitre among Galmaemot martyrs' relic history"
+        }
+      ],
+      "holds": [
+        "Routine current Mass and opening timetable absent",
+        "Permanent relic custody and original shrine designation decree not retrieved",
+        "Do not geocode Songol as Saenamteo or Galmaemot; 2026 future relic visit not marked completed"
+      ]
+    },
+    {
+      "record_id": "SG-B13-JP-NISHIZAKA-2026-CUSTODIAL-VISITOR",
+      "candidate_id": "SG-INV-0617",
+      "canonical_place_id": null,
+      "country": "JP",
+      "name": "Nishizaka Twenty-Six Martyrs Museum and St Philip Church — 2026 access",
+      "status": "EXISTING_B11_VISITOR_HOLD_CLOSED;RELIC_BUILDING_CUSTODY_HELD",
+      "summary_en": "The Twenty-Six Martyrs Museum's own current Japanese website explicitly says it is operating normally in 2026. It gives museum opening 09:00–17:00, closure only 31 December–2 January, and standard adult admission of ¥500. Across the street, St Philip Church holds Sunday Mass at 11:00 in Japanese and 13:00 in English. The official site identifies the memorial, museum and church as distinct structures of one Nishizaka precinct. It does not resolve the contradictory government-tourism statements about which building currently holds the three martyrs' bodily relics; that custody remains held.",
+      "summary_fr": "Le site officiel japonais du musée des Vingt-Six Martyrs indique une ouverture normale en 2026 : de 9 h à 17 h, fermeture du 31 décembre au 2 janvier et entrée adulte ordinaire à 500 yens. De l'autre côté de la rue, l'église Saint-Philippe annonce la messe dominicale à 11 h en japonais et à 13 h en anglais. Le site distingue le monument, le musée et l'église comme bâtiments d'un même ensemble de Nishizaka. Il ne tranche pas les déclarations touristiques contradictoires sur l'emplacement actuel des reliques corporelles de trois martyrs ; leur conservation demeure suspendue.",
+      "institution": "Twenty-Six Martyrs Museum, Jesuit-founded institution; adjacent St Philip Church",
+      "location": "Nishizaka-machi 7-8, Nagasaki, Japan (museum official address; church opposite across street)",
+      "history": "26 martyrs executed at Nishizaka on 5 February 1597; museum founded by Jesuits in 1962",
+      "saints": "Saint Paul Miki and 25 companions; separate museum and church",
+      "relics": "Museum-versus-church exact current custody of Paul Miki, James Kisai and John of Goto remains disputed in earlier official tourism sources; museum website not a contemporary inventory",
+      "feast": "Martyrs' historical death 5 February 1597; no 1962 liturgical rank inferred",
+      "devotions": "Martyr memorial, Sunday Catholic Mass at adjacent St Philip Church",
+      "visitor": "Official 2026 museum 09:00–17:00, closed 31 Dec–2 Jan; adult ¥500; Sunday church Mass Japanese 11:00, English 13:00; subject to change.",
+      "evidence": [
+        {
+          "url": "https://japan26martyrs.studio.site/",
+          "issuer": "Twenty-Six Martyrs Museum, official 2026 site",
+          "tier": "CUSTODIAL_PRIMARY",
+          "support": "2026 operating status, opening/closure/admission, church Sunday Mass and separate buildings"
+        },
+        {
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html",
+          "issuer": "Japan Tourism Agency",
+          "tier": "GOVERNMENT_HERITAGE_PRIMARY_CONFLICT",
+          "support": "Museum relic description, retained from B11"
+        },
+        {
+          "url": "https://nagasakicity.com/spots/detail/208/back-1",
+          "issuer": "Nagasaki tourism guide",
+          "tier": "LOCAL_TOURISM_PRIMARY_CONFLICT",
+          "support": "St Philip Church relic description, retained from B11"
+        }
+      ],
+      "holds": [
+        "Contemporary Jesuit inventory of exact reliquary custody remains unavailable",
+        "Do not conflate museum opening hours or paid admission with church access",
+        "Museum and church are distinct structures but one precinct; no synthetic walking geometry"
+      ]
+    },
+    {
+      "record_id": "SG-B13-IQ-RABBAN-ACCESS-CONFLICT",
+      "candidate_id": "SG-INV-0688",
+      "canonical_place_id": null,
+      "country": "IQ",
+      "name": "Rabban Hormizd Monastery — visitor timetable conflict and tomb crosswalk",
+      "status": "EXISTING_B10_VISITOR_HOLD_REFINED_NOT_CLOSED",
+      "summary_en": "An independent heritage survey physically documents the founder's tomb, the rock-cut monastic churches and the distinct lower monastery of Our Lady of the Seeds, completed in 1858. Current non-custodial travel sites contradict each other on opening times, ranging from 'always open' to 08:00–18:00 and split-day schedules. None is an authenticated 2026 Chaldean monastic access policy. The exceptional 2026 patriarchal liturgy remains verified in B10, but ordinary visitor hours, safety, keyholder arrangements and precise relic custody cannot be certified.",
+      "summary_fr": "Un inventaire patrimonial indépendant décrit physiquement le tombeau du fondateur, les églises rupestres et le monastère distinct de Notre-Dame-des-Semences, achevé en 1858. Les sites touristiques non custodiaux se contredisent sur les horaires, allant de « toujours ouvert » à 8 h–18 h ou à des plages fractionnées. Aucun ne constitue une règle d'accès monastique chaldéenne authentifiée pour 2026. La liturgie patriarcale exceptionnelle de 2026 reste attestée en B10, mais les horaires ordinaires, la sécurité, l'accès avec gardien et la conservation précise des reliques ne peuvent être certifiés.",
+      "institution": "Historic monastery in Chaldean Catholic usage; do not confuse with Our Lady of the Seeds",
+      "location": "Mountains above Alqosh, Nineveh, Iraq; no new coordinates assigned",
+      "history": "Founder tomb and historic rock-cut churches documented; lower Our Lady of the Seeds monastery built 1858",
+      "saints": "Rabban Hormizd, founder and locally venerated saint",
+      "relics": "Historic founder's tomb documented by heritage survey; exact modern processional relic custody still unverified",
+      "feast": "2026 local celebration and procession reported in B10; no new liturgical calendar inference",
+      "devotions": "Chaldean Divine Liturgy, tomb veneration and local feast",
+      "visitor": "Conflicting commercial schedules rejected as non-authoritative; no certified 2026 visitor access or safety advice.",
+      "evidence": [
+        {
+          "url": "https://www.mesopotamiaheritage.org/en/monuments/le-monastere-de-rabban-hormizd/",
+          "issuer": "Mesopotamia Heritage physical survey",
+          "tier": "HERITAGE_FIELD_SURVEY",
+          "support": "Historic tomb and physical distinction from Our Lady of the Seeds"
+        },
+        {
+          "url": "https://www.visitiraq.iq/copy-of-marr-mattai-monastry",
+          "issuer": "Visit Iraq tourism page",
+          "tier": "NON_CUSTODIAL_VISITOR_CLAIM",
+          "support": "Claims 08:00–18:00, unverified against monastic custodian"
+        },
+        {
+          "url": "https://traveltale.app/iraq/mosul/mosul-rabban-hormizd-monastery",
+          "issuer": "Travel Tale",
+          "tier": "NON_CUSTODIAL_VISITOR_CLAIM_CONFLICT",
+          "support": "Claims 24-hour opening, conflicting"
+        },
+        {
+          "url": "https://khoranat-alqosh.com/قداس-إلهي-تاريخي-في-دير-الربّان-هرمزد/",
+          "issuer": "Khoranat Alqosh, August 2026",
+          "tier": "LOCAL_CHALDEAN_CHURCH_REPORT",
+          "support": "B10 established exceptional patriarchal liturgy"
+        }
+      ],
+      "holds": [
+        "No authenticated Chaldean custodian opening or security clearance; conflicting tourist schedules not publishable",
+        "Exact processional relic custody remains held",
+        "Do not conflate historic mountain monastery with lower Our Lady of the Seeds"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": null,
+      "task": "Puerto Rico Schoenstatt: source-check current public entrances and Mass schedules for three newly verified sites; preserve private Hatillo Magnificat Patris as non-public; seek original diocesan recognition for Cabo Rojo/Juana Díaz titles without contacting custodians"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana: obtain diocesan national-shrine decree and current pilgrimage programme; do not transfer Talawila Saint Anne relic"
+    },
+    {
+      "candidate_id": "SG-INV-0682",
+      "task": "Aitara: original Baucau shrine decree and current access; apparition story remains local tradition"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey: confirm main building completion/consecration from archdiocese; distinguish cathedral historic image"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu: source-check current church and Bửu Châu hill public entrances; no route geometry"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Dili Fatima: site-specific Catholic institution and decree; do not substitute Balide, Suai or Manatuto"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Tianjin Lourdes: remain held without original Catholic custodian evidence; Wanghailou is Our Lady of Victory"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka: Jesuit inventory establishing exact current relic custody in museum versus St Philip Church"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd: authenticated monastic access/security and relic custody; reject conflicting commercial opening hours"
+    },
+    {
+      "candidate_id": null,
+      "task": "Zobué: original shrine decree and precise entrance; keep hilltop Resurrection chapel distinct"
+    },
+    {
+      "candidate_id": null,
+      "task": "Songol: current diocesan shrine Mass timetable and permanent relic inventory; preserve Saenamteo/Galmaemot execution-site distinctions"
+    }
+  ],
+  "restrictions": [
+    "Research only: no canonical registry changes, merge, publication, deployment, UI/code changes",
+    "No invented coordinates, walking routes, relic certificates, feast ranks, shrine decrees or canonical IDs",
+    "No contacting custodians, paid services or purchases"
+  ]
+}

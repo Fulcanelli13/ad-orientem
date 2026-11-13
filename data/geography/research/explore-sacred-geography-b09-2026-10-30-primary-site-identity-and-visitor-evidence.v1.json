@@ -1,0 +1,339 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B09_V1",
+  "research_date": "2026-10-30",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "d7942b8eea44f7c5c91d12efd1b88c3ccb043b4d",
+    "main_place_count": 529,
+    "previous_b08_main_count": 516,
+    "delta_since_b08": 13,
+    "previous_philippines_checkpoint": "347 places, 20 verified research, 4 provisional, 1 held, 1 Quiapo enrichment: historical only; not additive",
+    "previous_research_batch": "B08",
+    "r70_candidate_count": 750,
+    "note": "Research branch contains an older 229-place registry snapshot; main is the sole current registry count. Do not conflate branch and main or attribute 13 independent additions to B09."
+  },
+  "counts": {
+    "dossiers": 7,
+    "existing_canonical_crosswalks": 3,
+    "independent_unpromoted_site_dossiers": 4,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0415",
+      "name": "Sanctuaire Notre-Dame-de-Fatima, Saint-Hyacinthe",
+      "country": "CA",
+      "status": "HISTORICAL_PHYSICAL_SITE_VERIFIED;CURRENT_2026_ACCESS_PROVISIONAL",
+      "canonical_place_id": null,
+      "summary_en": "The R70 label 'Shrine of Our Lady of Fatima, Quebec' resolves to a documented Catholic sanctuary at 650 rue Girouard Ouest, Saint-Hyacinthe, Montérégie, Québec province—not an established shrine in Québec City. Québec's religious-heritage inventory records a 1947 building, designed by Sister Rose de Lima Desfossés, with Guido Nincheri stained glass. The local Catholic parish network announced a Mass and confessions at this precise sanctuary for 11 October 2023. This establishes a real historic shrine and documented liturgical use, but not a verified 2026 visiting schedule, current custodial status or a new canonical pin.",
+      "summary_fr": "La fiche R70 « sanctuaire Notre-Dame-de-Fatima, Québec » correspond à un sanctuaire catholique documenté au 650, rue Girouard Ouest, à Saint-Hyacinthe, en Montérégie, et non à un sanctuaire démontré dans la ville de Québec. L'inventaire du patrimoine religieux indique un édifice de 1947 conçu par sœur Rose de Lima Desfossés, avec des vitraux de Guido Nincheri. Le réseau paroissial local annonçait une messe et des confessions le 11 octobre 2023. L'identité historique et cet usage liturgique sont établis ; l'accès et la gestion en 2026 restent à confirmer.",
+      "evidence": [
+        {
+          "url": "https://www.patrimoine-religieux.qc.ca/lieux-de-culte/sanctuaire-notre-dame-de-fatima/",
+          "issuer": "Conseil du patrimoine religieux du Québec",
+          "tier": "HERITAGE_INVENTORY",
+          "support": "Physical address, construction, architect, Catholic affiliation and windows"
+        },
+        {
+          "url": "https://www.cathosth.ca/notre-dame-de-fatima",
+          "issuer": "Église catholique de Saint-Hyacinthe",
+          "tier": "LOCAL_CATHOLIC_PRIMARY",
+          "support": "2023 Mass/confession notice and sanctuary behind Presentation of Mary motherhouse"
+        },
+        {
+          "url": "https://www.lieuxdeculte.qc.ca/fiche.php?LIEU_CULTE_ID=49886&LieuPrecedent=184&LieuSuivant=186&NomLibre=&debut=175&lignes=25&nlieux=2755&type_requete=nom_libre",
+          "issuer": "Inventaire des lieux de culte du Québec",
+          "tier": "HERITAGE_INVENTORY",
+          "support": "Last condition update 1 November 2024"
+        }
+      ],
+      "feast": "Our Lady of Fátima devotion; no independently verified current local feast schedule",
+      "relics": "No authenticated relic claim",
+      "visitor": "Mass and confessions announced for 11 October 2023 only; do not extrapolate to 2026",
+      "holds": [
+        "Verify present sanctuary opening and custodian with current Catholic source",
+        "Do not assume Québec City from province label",
+        "No coordinates or canonical Place added"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0459",
+      "name": "Our Lady of Lourdes, Montes de Oca, San José",
+      "country": "CR",
+      "status": "EXISTING_CANONICAL_PARISH_CONFIRMED;SHRINE_TITLE_HELD",
+      "canonical_place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "summary_en": "The supposedly unmatched San José Lourdes shrine candidate corresponds to the already registered Jesuit-served Our Lady of Lourdes parish in Montes de Oca. The Archdiocese of San José's historical archive gives the rectorate decree of 7 September 1951 and parish decree of 25 January 1969, effective for inauguration on 11 February 1969. Central American Jesuits document a February 2025 novena and celebration of the Marian patronal day, and service by the Society of Jesus since 1953. Neither source supplies a formal shrine decree. Reuse the canonical parish ID and do not invent a second pin.",
+      "summary_fr": "Le prétendu sanctuaire Notre-Dame-de-Lourdes de San José correspond à la paroisse déjà inscrite de Montes de Oca, desservie par les jésuites. Les archives historiques de l'archidiocèse attestent le décret de rectorat du 7 septembre 1951 puis celui de la paroisse du 25 janvier 1969, inaugurée le 11 février suivant. Les jésuites d'Amérique centrale documentent une neuvaine et la fête patronale en février 2025, ainsi que leur présence depuis 1953. Aucun décret érigeant un sanctuaire distinct n'a été trouvé ; conserver l'identifiant paroissial existant.",
+      "evidence": [
+        {
+          "url": "https://www.inventario.ahabatcr.org/index.php/parroquia-nuestra-senora-de-lourdes-montes-de-oca-san-jose",
+          "issuer": "Archivo Histórico Arquidiocesano de San José",
+          "tier": "DIOCESAN_ARCHIVE_PRIMARY",
+          "support": "1951 rectorate and 1969 parish erection; snippet retrievable, full page timed out"
+        },
+        {
+          "url": "https://jesuitascam.org/nuestra-senora-de-lourdes-ruega-por-nosotros/",
+          "issuer": "Jesuitas en Centroamérica",
+          "tier": "CUSTODIAL_CATHOLIC_PRIMARY",
+          "support": "11 February 2025 feast and novena; Jesuit pastoral presence"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Existing place:CR:montes-oca-our-lady-lourdes-parish"
+        }
+      ],
+      "feast": "Our Lady of Lourdes, 11 February, celebrated locally in 2025",
+      "relics": "No authenticated relic claim",
+      "visitor": "Active parish/devotional programme documented in 2025; no 2026 visiting hours independently verified",
+      "holds": [
+        "Formal shrine title unverified; classify as parish",
+        "No duplicate canonical ID",
+        "Diocesan archive full-page fetch timed out; preserve indexed evidence"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "name": "Ermita de Guadalupe, Matagalpa",
+      "country": "NI",
+      "status": "EXISTING_CANONICAL_CHAPEL_RECONCILED;FORMAL_SHRINE_TITLE_HELD",
+      "canonical_place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "summary_en": "The R70 'Shrine of Our Lady of Guadalupe, Matagalpa' is best reconciled with the existing canonical Ermita de Guadalupe, a Catholic chapel in Matagalpa. Nicaragua's national tourism site explicitly locates the annual 12 December Guadalupe celebration at this ermita, where pilgrims fulfil vows in traditional clothing. A contemporaneous 15 December 2000 report describes Mass, Marian procession and festivities at the same chapel in Barrio Guanuca. These sources establish the devotion and physical chapel, but neither establishes a formally decreed diocesan or national shrine. Do not confuse it with the Guadalupe image on Cerro Apante or assume an independent new sanctuary.",
+      "summary_fr": "La fiche R70 « sanctuaire Notre-Dame-de-Guadalupe, Matagalpa » correspond vraisemblablement à l'Ermita de Guadalupe, chapelle catholique déjà inscrite au registre. Le portail national du tourisme du Nicaragua y situe la fête annuelle du 12 décembre, avec accomplissement de vœux et costumes traditionnels. Un reportage du 15 décembre 2000 décrit une messe et une procession à cette chapelle du quartier Guanuca. Ces sources attestent le culte et le lieu physique, non un décret de sanctuaire diocésain ou national. Ne pas confondre cette chapelle avec l'image mariale du Cerro Apante.",
+      "evidence": [
+        {
+          "url": "https://www.mapanicaragua.com/municipio-de-matagalpa/",
+          "issuer": "Mapa Nacional de Turismo, Nicaragua",
+          "tier": "GOVERNMENT_TOURISM",
+          "support": "12 December feast at Ermita de Guadalupe"
+        },
+        {
+          "url": "https://www.laprensani.com/2000/12/15/departamentales/751647-celebracin-guadalupana-en-matagalpa",
+          "issuer": "La Prensa Nicaragua",
+          "tier": "HISTORICAL_EVENT_REPORT",
+          "support": "2000 Mass and procession at Ermita, Barrio Guanuca"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Existing place:NI:ermita-guadalupe-matagalpa"
+        }
+      ],
+      "feast": "Our Lady of Guadalupe, 12 December; historical recurring celebration, 2026 schedule unverified",
+      "relics": "None verified",
+      "visitor": "Historic public pilgrimage and annual feast documented; current access not confirmed",
+      "holds": [
+        "No formal shrine decree recovered",
+        "Do not merge Cerro Apante with Ermita de Guadalupe",
+        "Do not duplicate canonical chapel"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "name": "National Catholic Shrine of Saint Peter Chanel, Russell",
+      "country": "NZ",
+      "status": "EXISTING_CANONICAL_SHRINE_PRIMARY_DIOCESAN_EVIDENCE;RELIC_QUALIFICATION",
+      "canonical_place_id": "place:NZ:st-peter-chanel-russell",
+      "summary_en": "The existing canonical Russell Place is the actual National Catholic Shrine of Saint Peter Chanel, not the unrelated St Peter Chanel parish at Clover Park. The Diocese of Auckland's 2025 pilgrimage booklet records the Russell shrine's establishment in 1960 and traces the saint's bodily remains through Russell, France and Futuna; the historical remains should not be presented as still bodily entombed in Russell. A separate diocesan pilgrimage sheet says the Russell shrine holds a relic, without identifying its precise class or authenticity paperwork. The diocesan current Mass directory lists Sunday Mass at the shrine at the Chapel/Beresford Streets corner. Retain the existing Place ID.",
+      "summary_fr": "Le lieu canonique de Russell est bien le sanctuaire catholique national de saint Pierre Chanel, à distinguer de la paroisse homonyme de Clover Park. Le livret diocésain du pèlerinage 2025 indique l'érection du sanctuaire en 1960 et retrace les déplacements des restes corporels du saint entre Russell, la France et Futuna : il serait erroné de présenter son corps comme toujours enseveli à Russell. Un autre document diocésain affirme qu'une relique est conservée au sanctuaire, sans en préciser la catégorie ni fournir l'authentique. L'annuaire diocésain des messes atteste la messe dominicale à l'angle des rues Chapel et Beresford. Conserver l'identifiant existant.",
+      "evidence": [
+        {
+          "url": "https://www.aucklandcatholic.org.nz/wp-content/uploads/2024/10/Nga-Tapuwae-Cover-2025-Copyright-adj-2.pdf",
+          "issuer": "Catholic Diocese of Auckland",
+          "tier": "DIOCESAN_PILGRIMAGE_PRIMARY",
+          "support": "1960 shrine, 1841 martyrdom, body transferred to Futuna"
+        },
+        {
+          "url": "https://www.aucklandcatholic.org.nz/wp-content/uploads/2025/01/NGA-TAPUWAE-Route-Overview-1.pdf",
+          "issuer": "Catholic Diocese of Auckland",
+          "tier": "DIOCESAN_PILGRIMAGE_PRIMARY",
+          "support": "Shrine at corner of Chapel/Beresford, explicitly holds a relic"
+        },
+        {
+          "url": "https://www.aucklandcatholic.org.nz/parish-mass-times/",
+          "issuer": "Catholic Diocese of Auckland",
+          "tier": "DIOCESAN_VISITOR_PRIMARY",
+          "support": "Mid-North parish schedule includes Russell shrine Sunday Mass"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Existing place:NZ:st-peter-chanel-russell"
+        }
+      ],
+      "feast": "Saint Peter Chanel, 28 April (New Zealand bishops' calendar)",
+      "relics": "Diocesan source affirms a relic at shrine; body elsewhere; exact class and current custody not independently authenticated",
+      "visitor": "Diocesan Mass directory lists Sunday Mass, subject to change; historic pilgrimage sheet warns site may be closed at times",
+      "holds": [
+        "Do not create another Place",
+        "Obtain custodian relic inventory before specific classification",
+        "Do not conflate Russell with Clover Park parish"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "name": "National Shrine of Our Lady Mother of Divine Providence, Cupey",
+      "country": "PR",
+      "status": "ACTIVE_PILGRIMAGE_2026_SOURCE_VERIFIED;MAIN_BUILDING_COMPLETION_PROVISIONAL",
+      "canonical_place_id": null,
+      "summary_en": "A Catholic Puerto Rican publication dated 27 October 2026 reports a letter that same day from Monsignor Leonardo Rodríguez Jimenes, the Cupey shrine's vicar, inviting island-wide pilgrimage for the patronal solemnity on 19 November and closure of the Marian Jubilee on 5 December. The report gives a 19 November 15:00 Mass and a 5 December 10:30 Mass, and practical advice for pilgrims, corroborating active liturgical use of the Cupey site in late 2026. It does not establish that the proposed principal sanctuary building has been completed. The original Marian image and chapel at San Juan Cathedral are a distinct physical feature; do not conflate them.",
+      "summary_fr": "Un média catholique portoricain publie le 27 octobre 2026 le contenu d'une lettre datée du même jour de Mgr Leonardo Rodríguez Jimenes, vicaire du sanctuaire de Cupey. Elle invite les fidèles au pèlerinage pour la solennité patronale du 19 novembre et à la clôture du jubilé marial le 5 décembre, avec messes annoncées respectivement à 15 h et à 10 h 30 et conseils d'accueil. L'activité liturgique du site est donc attestée pour la fin de 2026, mais l'achèvement de l'édifice principal projeté n'est pas démontré. L'image mariale historique de la cathédrale de San Juan demeure un lieu distinct.",
+      "evidence": [
+        {
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/",
+          "issuer": "El Visitante, Puerto Rico Catholic publication",
+          "tier": "CATHOLIC_REPORT_OF_PRIMARY_LETTER",
+          "support": "27 October 2026 vicariate announcement, Nov/Dec Masses, visitor logistics"
+        },
+        {
+          "url": "https://www.findglocal.com/PR/San-Juan/1302397079925007/Celebraciones-Lit%C3%BArgicas-Arquidi%C3%B3cesis-de-San-Juan-de-PR",
+          "issuer": "Archdiocesan liturgical announcements repost",
+          "tier": "SECONDARY_MIRROR",
+          "support": "10 October 2026 Rosary event and Mass at Cupey"
+        },
+        {
+          "url": "https://gcatholic.org/churches/centralamerica/4934",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_DIRECTORY",
+          "support": "Distinct Cupey national-shrine identity and address"
+        }
+      ],
+      "feast": "Our Lady Mother of Divine Providence, 19 November; 2026 solemnity programme announced",
+      "relics": "No verified bodily relics; historic Marian image at cathedral distinct",
+      "visitor": "Planned 19 November and 5 December 2026 pilgrimages; arrangements may change",
+      "holds": [
+        "Original archdiocesan letter not independently obtained",
+        "Completion of principal sanctuary building not established",
+        "Do not equate Cupey grounds with cathedral image chapel"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "name": "Nishizaka Twenty-Six Martyrs Memorial Precinct, Nagasaki",
+      "country": "JP",
+      "status": "PRIMARY_GOVERNMENT_PHYSICAL_FEATURES_VERIFIED;CHURCH_RELIC_CUSTODY_HELD",
+      "canonical_place_id": null,
+      "summary_en": "Japan Tourism Agency documents the 7-8 Nishizakamachi memorial as a Jesuit-managed complex of plaza, monument, museum and St Philip's Church, opened in 1962 for the centenary of the canonization of the Twenty-Six Martyrs executed here on 5 February 1597. The church and museum share architect Kenji Imai but are separate physical features of the same precinct. Nagasaki Prefecture's official tourism guide reports that bones of Saints Paul Miki, James Kisai and John Goto are kept in St Philip's Church, but this has not been cross-checked against a contemporary ecclesiastical reliquary inventory. Preserve the complex identity; do not multiply pins for every feature or conflate it with Ōura Cathedral.",
+      "summary_fr": "L'Agence japonaise du tourisme décrit le mémorial de Nishizaka, au 7-8 Nishizakamachi, comme un ensemble géré par les jésuites comprenant place, monument, musée et église Saint-Philippe, inauguré en 1962 pour le centenaire de la canonisation des vingt-six martyrs exécutés le 5 février 1597. L'église et le musée, conçus par Kenji Imai, sont des bâtiments distincts dans un même ensemble. Le portail touristique officiel de la préfecture de Nagasaki signale des ossements de saint Paul Miki, de saint Jacques Kisai et de saint Jean Goto dans l'église, mais l'inventaire ecclésiastique contemporain des reliques n'a pas été consulté. Ne pas multiplier les points ni confondre le mémorial avec la cathédrale d'Ōura.",
+      "evidence": [
+        {
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html",
+          "issuer": "Japan Tourism Agency",
+          "tier": "GOVERNMENT_HERITAGE_PRIMARY",
+          "support": "Exact 7-8 Nishizakamachi site, four components, 1597, 1962, Jesuit management"
+        },
+        {
+          "url": "https://nagasakicity.com/spots/detail/208/back-1",
+          "issuer": "Official Nagasaki tourism guide",
+          "tier": "PREFECTURAL_TOURISM_PRIMARY",
+          "support": "St Philip's Church, relic claim and visitor fees"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/geography/seed-registry.v1.json",
+          "issuer": "Ad Orientem",
+          "tier": "CANONICAL_REGISTRY",
+          "support": "Ōura Cathedral already exists as different place:JP:oura-cathedral-nagasaki"
+        }
+      ],
+      "feast": "Twenty-Six Martyrs of Japan, historical execution 5 February 1597; local liturgical observance to verify",
+      "relics": "Prefectural tourism reports bones of three martyrs at St Philip's Church; current church inventory not certified",
+      "visitor": "Government tourism confirms museum and church; 2017 published museum hours/prices are historical, not current certification",
+      "holds": [
+        "Obtain current Jesuit/museum church relic custody and visiting hours",
+        "Keep monument, museum and church as distinct features under precinct",
+        "Do not conflate Nishizaka with Ōura Cathedral"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "name": "Our Lady of Trà Kiệu Marian Centre and Bửu Châu Hill",
+      "country": "VN",
+      "status": "DIOCESAN_PHYSICAL_FEATURE_RECONCILIATION_VERIFIED;RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Đà Nẵng's current parish history and 2026 pilgrimage reports distinguish the Trà Kiệu parish church from the Marian hill shrine at Bửu Châu, where a chapel was erected in thanksgiving in 1898 and rebuilt in 1927. A 13 March 2026 diocesan pilgrimage prayed the Rosary at the Bửu Châu Marian monument before the Mass; a May 2026 congress used both the parish church and hill shrine for different liturgical moments. The diocese reports 13th-of-month pilgrimage Masses and October 2026 events. The 1885 Marian intervention is presented as local tradition, not independently adjudicated apparition approval. The precinct should be one researched pilgrimage identity with separately described features, not invented multiple coordinates.",
+      "summary_fr": "L'histoire paroissiale actuelle et les récits de pèlerinages 2026 du diocèse de Đà Nẵng distinguent l'église de Trà Kiệu du sanctuaire marial de la colline Bửu Châu, où une chapelle d'action de grâce fut érigée en 1898 puis reconstruite en 1927. Le 13 mars 2026, les pèlerins ont récité le Rosaire à la colline avant la messe ; le congrès de mai a utilisé l'église et la colline pour des célébrations distinctes. Le diocèse signale des pèlerinages mensuels le 13 et des activités en octobre 2026. L'intervention mariale de 1885 est rapportée comme tradition locale, sans présumer d'une approbation canonique des apparitions. Conserver un ensemble de pèlerinage avec ses éléments distincts, sans coordonnées inventées.",
+      "evidence": [
+        {
+          "url": "https://giaophandanang.org/category/tra-kieu/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_CUSTODIAL_PRIMARY",
+          "support": "Parish history, 1898 hill chapel, 1927 rebuilding, 2026 parish schedule and October activities"
+        },
+        {
+          "url": "https://giaophandanang.org/giao-phan-da-nang-hanh-huong-duc-me-tra-kieu-thang-3-2026/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_EVENT_PRIMARY",
+          "support": "13 March 2026 hill Rosary, Mass, monthly pilgrimage declaration"
+        },
+        {
+          "url": "https://giaophandanang.org/dai-hoi-duc-me-tra-kieu-2026/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_EVENT_PRIMARY",
+          "support": "May 2026 parish church and Bửu Châu liturgical use"
+        }
+      ],
+      "feast": "Local 1885 event commemorated 11 September 2026; major 2026 Marian pilgrimage 29–30 May; 13th monthly pilgrimages",
+      "relics": "No authenticated saint relics identified",
+      "visitor": "Diocesan site provides current parish Masses and 2026 pilgrimage programme; no independently verified public access rules for hill",
+      "holds": [
+        "No multiple coordinates or speculative path between church and hill",
+        "Do not imply apparition approval from diocesan commemorations",
+        "Check official physical entrance and visitor access before canonical promotion"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0415",
+      "task": "Find current 2026 Saint-Hyacinthe sanctuary custody and access; no Québec City inference"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Obtain original Cupey vicariate letter and documentary building completion; 2026 pilgrimage now evidenced"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Confirm St Philip church relic inventory from Jesuit custodian and current visiting hours"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Verify church/hill official entrances and custodial access without inventing a walking route"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana original ecclesiastical national-shrine decree and 2026 feast"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd contemporary Chaldean custodial access, keep mountain and plain separate"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Dili claimed Fatima shrine still held; search for diocesan decree; do not merge Suai/Balide/Manatuto"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Tianjin Lourdes primary Chinese diocesan identity still held; do not substitute other cities"
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "task": "Obtain Russell shrine relic inventory; do not confuse body transfer with current reliquary"
+    }
+  ],
+  "guards": [
+    "Research only, no canonical ID creation or changes",
+    "Preserve all published Place records and decisions",
+    "No invented coordinates, walking routes or opening hours",
+    "No inferred shrine title from parish dedication",
+    "No merging, deploying, publishing, rights-holder contact or fees"
+  ]
+}

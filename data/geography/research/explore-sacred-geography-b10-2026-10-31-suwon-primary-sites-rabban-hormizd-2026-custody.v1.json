@@ -1,0 +1,349 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B10_V1",
+  "research_date": "2026-10-31",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "abc23e63bd3a3d2bc3d51ad77c109c571437dc24",
+    "main_place_count": 530,
+    "previous_b09_main_count": 529,
+    "delta_since_b09": 1,
+    "delta_attribution": "Independent repository change; not attributed to B10",
+    "historical_philippines_checkpoint": "347 places, 20 verified research, 4 provisional, 1 held, 1 Quiapo enrichment — historical only",
+    "r70_candidate_count": 750,
+    "branch_registry_is_stale": true,
+    "prior_batch": "B09",
+    "prior_batches_checked": "B03–B09; new Korean shrine names absent from prior dossiers and main Place registry; R70 contains none of the five new Korean names"
+  },
+  "counts": {
+    "dossiers": 8,
+    "new_distinct_research_sites": 5,
+    "prior_dossier_enrichments": 2,
+    "prior_dossier_held_clarification": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "research_id_policy": "SG-B10-* identifiers are research-only and are not canonical Place IDs; existing SG-INV-* candidate IDs retained exactly",
+  "records": [
+    {
+      "record_id": "SG-B10-KR-EUNI",
+      "candidate_id": null,
+      "name": "Euni–Golbaemasil Shrine, Yongin",
+      "country": "KR",
+      "status": "NEW_DISTINCT_SITE_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon identifies Euni–Golbaemasil as a Catholic shrine in Yongin associated with Saint Andrew Kim Tae-gon’s baptism, selection for the seminary and later ministry. It documents the 2016 reconstruction at Euni of the historic Kim Ga-hang church using material salvaged after the Shanghai church's 2001 demolition. The diocese lists Masses and organized pilgrimages; the reconstructed church, Golbaemasil and Mirinae must not be mistaken for one physical building.",
+      "summary_fr": "Le diocèse de Suwon identifie le sanctuaire d'Euni–Golbaemasil, à Yongin, comme un lieu lié au baptême de saint André Kim Tae-gon, à son choix pour le séminaire et à son ministère ultérieur. Il documente la reconstruction, en 2016 à Euni, de l'église historique de Kim Ga-hang à partir de matériaux conservés après sa démolition à Shanghai en 2001. Le diocèse publie des messes et des pèlerinages ; l'église reconstruite, Golbaemasil et Mirinae ne doivent pas être confondus avec un seul bâtiment.",
+      "address_official": "용인시 처인구 양지면 은이로 182",
+      "feast": "Saint Andrew Kim Tae-gon; local feast schedule not independently verified",
+      "relics": "No authenticated relic inventory established",
+      "visitor": "Diocesan shrine page lists Sunday and Tuesday–Saturday Mass at 11:00, subject to change; organized pilgrimage seasons March–October",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/14",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Shrine address, Kim Tae-gon history, rebuilt church, Mass and pilgrimage schedules"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/109866",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "28 March 2026 inaugural pilgrimage to Mirinae and monthly programme"
+        }
+      ],
+      "holds": [
+        "Do not transfer reconstructed Shanghai church's original location to Yongin",
+        "No canonical Place ID or coordinate assigned",
+        "Do not synthesize walking route; diocesan sources describe varying course lengths"
+      ]
+    },
+    {
+      "record_id": "SG-B10-KR-CHEONJINAM",
+      "candidate_id": null,
+      "name": "Cheonjinam Shrine, Gwangju, Gyeonggi",
+      "country": "KR",
+      "status": "NEW_DISTINCT_SITE_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon maintains Cheonjinam as a memorial to the formative Korean Catholic lay study movement, with graves of early faith figures and a museum. Its institutional history links the 1779 scholarly gathering with Yi Byeok and other founders, while 2026 diocesan reporting documents the shrine's chapel, Stations of the Cross and pilgrimage use. These historical interpretations should be attributed to the diocese; the commemorated founders must not all be labelled canonized saints.",
+      "summary_fr": "Le diocèse de Suwon entretient Cheonjinam comme mémorial des premiers cercles d'étude de la foi catholique en Corée, avec des tombes de figures fondatrices et un musée. Son récit institutionnel relie la réunion savante de 1779 à Yi Byeok et à d'autres pionniers ; des articles diocésains de 2026 décrivent la chapelle, le chemin de croix et les pèlerinages. Ces interprétations historiques doivent être attribuées au diocèse ; les fondateurs commémorés ne sont pas tous des saints canonisés.",
+      "address_official": "경기도 광주시 퇴촌면 천진암로 1203",
+      "feast": "Commemoration of Korean Catholic founders; specific annual liturgical feast unverified",
+      "relics": "Diocesan shrine records transferred graves/remains of early Korean Catholic figures; exact individual ecclesiastical status must be kept distinct",
+      "visitor": "Active 2026 diocesan pilgrimage reporting; opening hours not certified",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/facility/390",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Historical identity, memorial graves, physical address"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/journal/jubo/view/1358",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "16 January 2026 chapel and Stations of the Cross description"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/111750",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "July 2026 youth pilgrimage at site"
+        }
+      ],
+      "holds": [
+        "Do not conflate the shrine with an extant Buddhist temple",
+        "Distinguish canonized, beatified and non-beatified founders",
+        "No new Place ID or coordinates"
+      ]
+    },
+    {
+      "record_id": "SG-B10-KR-ONONG",
+      "candidate_id": null,
+      "name": "Eonong (Onong) Martyrs Shrine, Icheon",
+      "country": "KR",
+      "status": "NEW_DISTINCT_SITE_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon identifies Eonong as a shrine commemorating seventeen Korean martyrs beatified in 2014, including the early envoys Paul Yun Yu-il, Saba Ji Hwang and Matthias Choe In-gil. It records a 1987 blessing and formal 2002 diocesan designation as a memorial shrine, and provides an active Mass schedule. The 2026 diocesan visit of World Youth Day symbols independently confirms ongoing liturgical use; it does not authenticate the location of every martyr's bodily remains.",
+      "summary_fr": "Le diocèse de Suwon présente Eonong comme un sanctuaire commémorant dix-sept martyrs coréens béatifiés en 2014, dont les premiers émissaires Paul Yun Yu-il, Saba Ji Hwang et Matthias Choe In-gil. Il atteste une bénédiction en 1987 et la désignation diocésaine de 2002 comme lieu de mémoire, ainsi qu'un programme de messes. La visite des symboles des JMJ en 2026 confirme l'usage liturgique actuel, sans établir l'emplacement des dépouilles de chacun des martyrs.",
+      "address_official": "경기도 이천시 모가면 어농로62번길 148",
+      "feast": "Martyrs of Korea; exact local shrine feast not independently verified",
+      "relics": "Commemoration of 17 beatified martyrs; no individual bodily relic custody independently established",
+      "visitor": "Diocesan page lists 11:00 Masses; check directly for updates",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/4",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "17 beatified martyrs, 1987 and 2002 shrine history, address and Masses"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/110140",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "11 April 2026 WYD symbols and liturgical event at shrine"
+        }
+      ],
+      "holds": [
+        "Do not confuse commemoration with certified relic custody",
+        "No canonical ID or coordinate created"
+      ]
+    },
+    {
+      "record_id": "SG-B10-KR-YODANGRI",
+      "candidate_id": null,
+      "name": "Yodangri Martyrs Shrine, Hwaseong",
+      "country": "KR",
+      "status": "NEW_DISTINCT_SITE_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon locates Yodangri shrine at 155 Yodang-gil, Hwaseong, and describes an early Catholic refuge and mission community associated with the persecutions of 1801, 1839 and 1866. Its account names Saint Joseph Jang Ju-gi and Blessed Thomas Jang among the figures connected to the site. The diocesan Mass timetable and April 2026 description of outdoor Stations of the Cross provide current visitor and devotional evidence; the precise date of the first community remains historically uncertain.",
+      "summary_fr": "Le diocèse de Suwon situe le sanctuaire de Yodangri au 155 Yodang-gil, à Hwaseong, et décrit une ancienne communauté catholique de refuge et de mission liée aux persécutions de 1801, 1839 et 1866. Il mentionne notamment saint Joseph Jang Ju-gi et le bienheureux Thomas Jang. L'horaire diocésain des messes et la présentation, en avril 2026, du chemin de croix extérieur confirment la pratique dévotionnelle ; la date exacte de la fondation de la communauté reste incertaine.",
+      "address_official": "경기도 화성시 양감면 요당길 155",
+      "feast": "Korean martyrs; specific shrine feast unverified",
+      "relics": "No authenticated physical relic inventory identified",
+      "visitor": "Diocesan site lists Sunday and Tuesday–Saturday Mass at 11:00; April 2026 article describes outdoor devotional grounds",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/3",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Address, martyrs, historical uncertainty, Mass timetable"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/journal/jubo/view/1417",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "29 April 2026 shrine outdoor Stations and church interior"
+        }
+      ],
+      "holds": [
+        "Do not present speculative early mission routes as mapped walking paths",
+        "No canonical ID or coordinates assigned"
+      ]
+    },
+    {
+      "record_id": "SG-B10-KR-DANNAE",
+      "candidate_id": null,
+      "name": "Dannae Holy Family Martyrs Shrine, Icheon",
+      "country": "KR",
+      "status": "NEW_DISTINCT_SITE_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Suwon identifies Dannae as a Holy Family pilgrimage shrine, consecrated in 1987, commemorating family martyrs of the 1866 persecution and five canonized martyrs connected with Icheon. Its detailed visitor account distinguishes the grave of Paul Jeong Eun from the symbolic cenotaph of Peter Jeong Yang-muk, whose remains were not recovered. The shrine publishes Masses and several on-site devotional courses, but these must not be turned into invented GIS paths.",
+      "summary_fr": "Le diocèse de Suwon présente Dannae comme un sanctuaire de pèlerinage dédié à la Sainte Famille, consacré en 1987, qui commémore des martyrs de familles persécutées en 1866 et cinq saints martyrs liés à Icheon. Il distingue explicitement la tombe de Paul Jeong Eun du cénotaphe symbolique de Pierre Jeong Yang-muk, dont le corps n'a pas été retrouvé. Le sanctuaire publie des horaires de messes et plusieurs parcours de dévotion, qui ne doivent pas être convertis en tracés cartographiques inventés.",
+      "address_official": "이천시 호법면 이섭대천로 155번길 38-13",
+      "feast": "Individual martyr commemorations listed by diocese (including 13 January); not automatically the 1962 universal calendar",
+      "relics": "Paul Jeong Eun grave; Peter Jeong Yang-muk symbolic cenotaph, not verified bodily remains",
+      "visitor": "Diocesan Mass schedule and on-site 300 m, 900 m, 2 km and 5.2 km devotional courses; no geospatial path geometry acquired",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/10",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "1987 dedication, five saints, graves vs cenotaph, visitor programme and distances"
+        }
+      ],
+      "holds": [
+        "Critical: do not label cenotaph as bodily relic/tomb containing remains",
+        "Do not invent coordinates or course geometry",
+        "No canonical Place ID created"
+      ]
+    },
+    {
+      "record_id": "SG-B10-KR-MIRINAE-2026",
+      "candidate_id": "SG-INV-0629",
+      "name": "Mirinae Shrine — 2026 diocesan tomb and pilgrimage evidence",
+      "country": "KR",
+      "status": "EXISTING_RESEARCH_DOSSIER_ENRICHED;RELIC_DETAIL_HOLD",
+      "canonical_place_id": null,
+      "summary_en": "New 2026 diocesan evidence identifies four graves in the Saint Andrew Kim Tae-gon memorial church, including those of Saint Andrew Kim, Bishop Ferréol and Father Mark Kang Do-yeong. The diocese also reports the 16 September 2026 180th-anniversary martyrdom Mass at Mirinae, attended by about one thousand pilgrims. This substantiates continuing shrine use and specific tomb features, but does not independently settle every relic-authentication claim or the previously reported 416/420 address discrepancy.",
+      "summary_fr": "De nouvelles sources diocésaines de 2026 identifient quatre tombes dans l'église commémorative de saint André Kim Tae-gon, dont celles du saint, de Mgr Ferréol et du père Marc Kang Do-yeong. Le diocèse relate aussi la messe du 16 septembre 2026, pour le 180e anniversaire de son martyre, avec environ mille pèlerins. L'usage actuel et certains tombeaux sont attestés, sans résoudre l'authenticité de chaque relique ni la divergence d'adresse 416/420 déjà signalée.",
+      "address_official": "안성시 양성면 미리내성지로 416 (current diocesan directory)",
+      "feast": "16 September 2026 commemorated as 180th martyrdom anniversary; do not infer universal-calendar rank",
+      "relics": "Specific memorial-church graves reported by diocesan publication; further custody inventory held",
+      "visitor": "Documented 16 September 2026 Mass and ongoing pilgrimage; detailed opening hours not certified",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/journal/jubo/view/1386",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "5 March 2026 identification of four graves"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/113150",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "16 September 2026 martyrdom anniversary Mass"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Current directory address 416"
+        }
+      ],
+      "holds": [
+        "Retain B07 research candidate SG-INV-0629; do not create second dossier identity",
+        "Resolve 416/420 address and relic authenticity only from custodian"
+      ]
+    },
+    {
+      "record_id": "SG-B10-IQ-RABBAN-2026",
+      "candidate_id": "SG-INV-0688",
+      "name": "Rabban Hormizd Mountain Monastery — 2026 Chaldean worship evidence",
+      "country": "IQ",
+      "status": "EXISTING_RESEARCH_DOSSIER_ENRICHED;VISITOR_ACCESS_HELD",
+      "canonical_place_id": null,
+      "summary_en": "A local Chaldean church publication reports that Patriarch Mar Paul III Nona celebrated the Divine Liturgy at the historic Rabban Hormizd monastery church on 27 August 2026, following decades without such a patriarchal celebration. It separately documents a 19 June pastoral visit to both the mountain monastery and Our Lady of the Seeds, confirming their distinct physical identities. A 3 September account describes Rabban Hormizd's feast, veneration at his tomb and procession with a relic, but the exact location and custody of that relic must not be inferred from the account alone. These events establish exceptional 2026 worship, not regular tourist access or safety.",
+      "summary_fr": "Une publication ecclésiale chaldéenne locale rapporte que le patriarche Mar Paul III Nona a célébré la divine liturgie dans l'église du monastère historique de Rabban Hormizd le 27 août 2026, après plusieurs décennies sans célébration patriarcale de ce type. Elle relate séparément sa visite, le 19 juin, au monastère de montagne et à Notre-Dame-des-Semences, deux sites distincts. Un article du 3 septembre décrit la fête du saint, la vénération à son tombeau et une procession avec une relique, sans permettre d'en certifier le lieu précis de conservation. Ces événements n'attestent ni l'ouverture touristique habituelle ni la sécurité de l'accès.",
+      "address_official": null,
+      "feast": "Rabban Hormizd feast celebrated in Alqosh on 3 September 2026 (local Chaldean observance)",
+      "relics": "Local church reporting describes tomb veneration and a relic procession; precise relic location and authentication held",
+      "visitor": "Exceptional 19 June and 27 August 2026 clergy visits/liturgy; no verified routine access; security and permissions unverified",
+      "evidence": [
+        {
+          "url": "https://khoranat-alqosh.com/قداس-إلهي-تاريخي-في-دير-الربّان-هرمزد/",
+          "issuer": "Khoranat Alqosh, local Chaldean church publication",
+          "tier": "LOCAL_CHALDEAN_CHURCH_REPORT",
+          "support": "28 August 2026 report of 27 August patriarchal Divine Liturgy"
+        },
+        {
+          "url": "https://khoranat-alqosh.com/ختام-مبارك-لزيارة-غبطة-البطريرك-نونا-إ/",
+          "issuer": "Khoranat Alqosh",
+          "tier": "LOCAL_CHALDEAN_CHURCH_REPORT",
+          "support": "19 June 2026 pastoral visit to both monasteries"
+        },
+        {
+          "url": "https://khoranat-alqosh.com/الاحتفال-بعيد-الربان-هرمزد-بقداس-احتف/",
+          "issuer": "Khoranat Alqosh",
+          "tier": "LOCAL_CHALDEAN_CHURCH_REPORT",
+          "support": "3 September 2026 feast, tomb veneration and relic procession"
+        }
+      ],
+      "holds": [
+        "Do not conflate mountain monastery with plain monastery of Our Lady of the Seeds",
+        "Feast article does not independently locate reliquary at mountain monastery",
+        "No visitor route, access or safety certification",
+        "Chaldean Catholic identity; do not label Latin rite"
+      ]
+    },
+    {
+      "record_id": "SG-B10-LK-ANNE-SITES",
+      "candidate_id": "SG-INV-0604",
+      "name": "Kattimahana Saint Anne — prevent conflation with Talawila 2026 relic",
+      "country": "LK",
+      "status": "EXISTING_RESEARCH_HOLD_CLARIFIED;KATTIMAHANA_DECREE_STILL_HELD",
+      "canonical_place_id": null,
+      "summary_en": "The March 2026 report of a first-class Saint Anne relic brought from Naples concerns Saint Anne's shrine at Talawila in the Diocese of Chilaw, not the distinct Kattimahana shrine associated in earlier research with the Diocese of Kurunegala. The new report must not be used as Kattimahana relic, feast or jurisdiction evidence. The Kattimahana ecclesiastical national-shrine decree and 2026 programme remain unresolved.",
+      "summary_fr": "Le récit de mars 2026 concernant une relique de première classe de sainte Anne apportée de Naples vise le sanctuaire de Talawila, dans le diocèse de Chilaw, et non le sanctuaire distinct de Kattimahana, associé dans les recherches précédentes au diocèse de Kurunegala. Ce document ne doit pas servir à attribuer à Kattimahana une relique, une fête ou une juridiction. Le décret ecclésiastique de sanctuaire national et le programme 2026 de Kattimahana restent à vérifier.",
+      "address_official": null,
+      "feast": "Talawila March 7–8 2026 event only; not transferable to Kattimahana",
+      "relics": "Talawila relic reported by Catholic media; none independently verified for Kattimahana",
+      "visitor": "No new Kattimahana access verification",
+      "evidence": [
+        {
+          "url": "https://www.rvasia.org/asian-news/sri-lanka-st-annes-shrine-celebrates-march-feast-enshrinement-first-class-relic",
+          "issuer": "Radio Veritas Asia",
+          "tier": "CATHOLIC_NEWS_SECONDARY",
+          "support": "11 March 2026 report explicitly names Talawila, not Kattimahana"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/research/major-sacred-sites-coverage-reconciliation-20261015/data/geography/research/explore-sacred-geography-b08-2026-10-29-priority-identity-relic-feast-crosswalk.v1.json",
+          "issuer": "Ad Orientem B08",
+          "tier": "PRIOR_RESEARCH",
+          "support": "Earlier Kattimahana jurisdiction research"
+        }
+      ],
+      "holds": [
+        "Do not assign Talawila relic to Kattimahana",
+        "Obtain Kattimahana ecclesiastical decree and local programme",
+        "Existing canonical Talawila ID place:LK:saint-anne-s-national-shrine-talawila remains unchanged"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey: original archdiocesan vicariate letter, building completion evidence; keep cathedral image chapel distinct"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka: contemporary Jesuit church relic inventory; official museum site renders no readable content, do not certify hours"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu: physical entrances and custodial access for church versus Bửu Châu hill"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana: ecclesiastical decree and 2026 local feast; Talawila relic is different site"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd: monastery access and relic custody, 2026 Chaldean worship now evidenced"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Dili Fatima claimed shrine: diocesan site-specific evidence; do not substitute Manatuto, Suai or Balide"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Tianjin Lourdes: primary Chinese Catholic institutional evidence or retain hold"
+    },
+    {
+      "candidate_id": null,
+      "task": "Review five new Suwon diocesan site dossiers for source-preserving canonical promotion only after editorial approval; no invented coordinates"
+    }
+  ],
+  "restrictions": {
+    "no_merge": true,
+    "no_deploy": true,
+    "no_ui_changes": true,
+    "no_contact": true,
+    "no_cost": true,
+    "no_canonical_ids_changed": true
+  }
+}

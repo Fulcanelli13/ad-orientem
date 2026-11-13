@@ -1,0 +1,58 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B17_V1",
+  "research_date": "2026-11-07",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_places_count_parsed": 530,
+    "r70_queue_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "r70_declared_candidates": 750,
+    "philippines_checkpoint": "historical: 347 places; 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment",
+    "new_canonical_ids": 0
+  },
+  "records": [
+    {
+      "record_id": "SG-B17-KOLSER-IMMACULATE-CONCEPTION-GROTTO",
+      "kind": "NEW_RESEARCH_CANDIDATE_NOT_CANONICAL",
+      "status": "PROVISIONAL_SECONDARY_CATHOLIC_REPORT_FIRST_PARTY_HOLD",
+      "name": "Marian Grotto of the Immaculate Conception, Kolser",
+      "location_text": "Kolser village, Kei Kecil Island, Maluku, Indonesia",
+      "summary_en": "The Marian grotto in Kolser village was blessed on 8 December 1926 and belongs to the pastoral territory of the Immaculate Heart of Mary Parish in Langgur, Diocese of Amboina. A Catholic news report dated 4 November 2026 documents continuing local prayer, a parish-backed centenary committee and preparations for a 8 December 2026 jubilee pilgrimage. The grotto is a distinct physical devotional site, not automatically the Langgur parish church. First-party diocesan corroboration, current access, precise location and any relic claims remain unverified.",
+      "summary_fr": "La grotte mariale de l'Immaculée Conception du village de Kolser, sur l'île de Kei Kecil, aurait été bénie le 8 décembre 1926. Elle relève du territoire pastoral de la paroisse du Cœur Immaculé de Marie de Langgur, dans le diocèse d'Amboina. Un reportage catholique du 4 novembre 2026 atteste la prière locale, un comité jubilaire soutenu par le diocèse et la préparation du centenaire du 8 décembre 2026. La grotte est un lieu de dévotion distinct de l'église paroissiale de Langgur. La confirmation diocésaine directe, les conditions d'accès, l'emplacement exact et toute éventuelle relique restent à vérifier.",
+      "devotion": "Immaculate Conception; local Marian prayer",
+      "feast": "8 December; centenary planned for 2026-12-08, not yet occurred",
+      "saints_relics": "No verified relic custody",
+      "source_urls": [
+        "https://www.ucanews.com/news/indonesias-century-old-marian-shrine-testifies-to-legacy-of-faith/116022"
+      ],
+      "deduplication": "No Kolser, Langgur, Kei Kecil, Sendang Sono or Kaliori matches found in 530-place main registry via text scan; R70 queue has no Kolser mention. Absence of text match is not a global identity clearance.",
+      "holds": [
+        "Seek Diocese of Amboina or Langgur parish first-party notice",
+        "Verify visitor access and physical location without fabricating coordinates",
+        "Confirm centenary actually occurred after 8 December",
+        "Do not classify as nationally designated shrine absent decree"
+      ]
+    }
+  ],
+  "counts": {
+    "new_provisional_research_candidates": 1,
+    "new_canonical_places": 0,
+    "coordinates": 0,
+    "routes": 0,
+    "certified": 0
+  },
+  "next_targets": [
+    "Kolser diocesan corroboration and physical-site disambiguation",
+    "Kattimahana diocesan jurisdiction and decree",
+    "Trà Kiệu building entrances",
+    "Cupey permanent church construction",
+    "Nishizaka relic custody",
+    "Aitara national-title decree",
+    "Dili and Tianjin identity holds"
+  ],
+  "policy": [
+    "No changes to canonical IDs or production",
+    "No merges, deployments, contacts or paid services"
+  ]
+}

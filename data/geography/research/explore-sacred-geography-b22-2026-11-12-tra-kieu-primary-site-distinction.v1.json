@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "batch": "B22",
+  "date": "2026-11-12",
+  "scope": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_places": 530,
+    "r70_queue_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "r70_candidates": 750,
+    "philippines_347_checkpoint": "HISTORICAL",
+    "prior_batch": "B21"
+  },
+  "records": [
+    {
+      "record_id": "SG-B22-TRA-KIEU-DIOCESAN-MULTI-SITE-IDENTITY",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_DIOCESAN_SITE_DISTINCTION_ENTRANCES_HELD",
+      "name": "Trà Kiệu Marian pilgrimage complex, Diocese of Đà Nẵng, Vietnam",
+      "summary_en": "Diocesan accounts of the 2019 pilgrimage explicitly distinguish the Trà Kiệu parish church, the hilltop Bửu Châu chapel, the pilgrimage square, and the Eucharistic procession between them. The Marian statue procession began at the parish church and continued to the main square at Bửu Châu; a separate Eucharistic procession ascended to the hilltop chapel. The diocese's 2025 report additionally distinguishes confession locations at the Mountain Church, Mother of Gratitude shrine and main church. This is a multi-site pilgrimage complex, not a single interchangeable entrance or building. The diocesan account confirms May 31 annual pilgrimage and the Marian devotion; the parish's 2023 history identifies the hilltop dedication to Our Lady Help of Christians on May 24 and its original 1898 chapel. No entrance coordinates or walking line are established by these sources.",
+      "summary_fr": "Les comptes rendus du diocèse de Đà Nẵng distinguent l'église paroissiale de Trà Kiệu, la chapelle au sommet de Bửu Châu et l'esplanade des pèlerinages. En 2019, la procession de la statue de la Vierge partit de l'église paroissiale vers l'esplanade de Bửu Châu, tandis qu'une procession eucharistique monta jusqu'à la chapelle. Le compte rendu diocésain de 2025 mentionne aussi des lieux de confession distincts, dont l'église de la Montagne, le sanctuaire de reconnaissance mariale et l'église principale. Le pèlerinage annuel est célébré le 31 mai; l'église de la Montagne est placée sous le vocable de Notre-Dame Auxiliatrice, fêtée le 24 mai. Les entrées exactes et les cheminements ne sont pas géoréférencés par ces sources.",
+      "sources": [
+        {
+          "url": "https://giaophandanang.org/dai-hoi-hanh-huong-duc-me-tra-kieu-giao-phan-da-nang-31-5-2019/",
+          "supports": "diocesan first-party processional locations and annual feast"
+        },
+        {
+          "url": "https://giaophandanang.org/dai-hoi-hanh-huong-duc-me-tra-kieu-nam-2025/",
+          "supports": "2025 diocesan evidence for distinct confession venues"
+        },
+        {
+          "url": "https://trakieu.net/mung-kinh-tuoc-hieu-duc-ba-phu-ho-cac-giao-huu-bon-mang-nha-tho-nui-24-5-2023/",
+          "supports": "parish history, hilltop dedication and physical identity"
+        },
+        {
+          "url": "https://giaophandanang.org/dai-hoi-duc-tra-kieu-nam-2016/",
+          "supports": "diocesan account distinguishing parish church and Bửu Châu hill"
+        }
+      ],
+      "holds": [
+        "Exact independently corroborated entrances for parish church and Bửu Châu hill chapel",
+        "Whether other devotional structures warrant separate canonical Places versus related features",
+        "No coordinates or inferred pedestrian route",
+        "Historical apparition accounts must be attributed to local Catholic tradition, not stated as independently proven"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Trà Kiệu exact entrance evidence from authoritative site plan, without inferred route",
+    "Nishizaka museum/church relic custody from direct Jesuit custodian publication",
+    "Cupey national shrine permanent church completion from archdiocese",
+    "Aitara formal shrine decree",
+    "Kolser diocesan archival record",
+    "Dili and Tianjin site identity holds"
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "restrictions": [
+    "No canonical ID changes",
+    "No merges, publication, deployment or paid services",
+    "No contacts"
+  ]
+}
