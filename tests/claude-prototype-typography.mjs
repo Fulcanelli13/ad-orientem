@@ -53,11 +53,14 @@ assert.match(css,/#aoPray435930 \.aoP435930Head h1\s*\{\s*font-family:var\(--ao-
 
 // Versicles may be Cormorant, but complete prayers must not inherit a global
 // display-font override. The shared liturgical speaker rule stays source-faithful.
-assert.match(css,/#aoPray435930 \[data-ao-angelus-recitation\] \.aoAngelusDialogueLine>span:not\(\.ao-liturgical-speaker\)/);
+assert.match(css,/#aoPray435930 \.aoFolioReader \.aoDevoCardScroll \[data-ao-angelus-unit="vr"\] \.aoAngelusDialogueLine>span:not\(\.ao-liturgical-speaker\)/);
 assert.match(css,/--ao-type-angelus-verse:clamp\(19px,5\.4vw,21px\)/);
 assert.match(css,/--ao-type-caption-match:9\.5px/);
 assert.match(css,/\.ao-liturgical-speaker\s*\{[\s\S]*?font-family:inherit!important/);
-assert.match(css,/#aoPray435930 \[data-ao-angelus-recitation\] \.aoAngelusDialogueLine>\.ao-liturgical-speaker\s*\{[\s\S]*?font-size:17px!important/);
+assert.match(css,/#aoPray435930 \.aoFolioReader \.aoDevoCardScroll \[data-ao-angelus-unit="vr"\] \.aoAngelusDialogueLine>\.ao-liturgical-speaker\s*\{[\s\S]*?font-size:17px!important/);
+assert.match(css,/#aoPray435930 \.aoFolioReader \.aoDevoCardScroll \[data-ao-angelus-unit="hail"\] \.aoAngelusDialogueLine>span:not\(\.ao-liturgical-speaker\)/);
+assert.ok(css.includes("font-size:clamp(17px,4.75vw,18.5px)!important"));
+assert.match(css,/#aoPray435930 \.aoP435930AngelusReader \.aoDevoCardTitle\s*\{[\s\S]*?font-family:var\(--ao-font-ceremonial\)!important/);
 
 // 390px source-size fidelity; at narrow 320px the text stays at least 19px.
 for(const [width,expected] of [[390,21],[320,19]]){
