@@ -74,6 +74,7 @@ jobs:
           node tests/reader-schola-m67-holy-family-epiphany2-proper-research-melody.mjs
           node tests/reader-schola-m68-prelent-source-audit.mjs
           node tests/reader-schola-m68-prelent-exsurge-probe.mjs
+          node tests/reader-schola-m69-prelent-proper-research-melody.mjs
           node tests/reader-schola-m60-advent-proper-research-melody.mjs
           node tests/reader-schola-kyrie-xviii-1961-source-review.mjs
           node tests/reader-schola-kyrie-xviii-1961-print-position-map.mjs
@@ -134,6 +135,9 @@ jobs:
 
       - name: P — Holy Family and Epiphany II nine Proper previews plus held Introit on 390px 65-card phone
         run: node tests/reader-schola-m67-holy-family-epiphany2-proper-audition-phone.mjs
+
+      - name: Q — Pre-Lent Septuagesima Sexagesima Quinquagesima fifteen Proper and three Tract previews on 390px phone
+        run: node tests/reader-schola-m69-prelent-proper-audition-phone.mjs
 
       - name: Preserve minimal existing Schola phone screenshots
         if: always()
