@@ -117,6 +117,10 @@ try{
    assert.equal(await painting.locator(".bg").evaluate(el=>getComputedStyle(el).animationName),"none",
     id+" reduced motion not respected");
    await page.emulateMedia({reducedMotion:"no-preference"});
+   await page.evaluate(()=>{document.documentElement.dataset.reducedMotion="true";});
+   assert.equal(await painting.locator(".bg").evaluate(el=>getComputedStyle(el).animationName),"none",
+    id+" app-level reduced motion not respected");
+   await page.evaluate(()=>{delete document.documentElement.dataset.reducedMotion;});
    reports.push({width,id,...initial});
   }
   // Litany A3 routes retain the source-owned Choir synchronizer and fixed response bar.
