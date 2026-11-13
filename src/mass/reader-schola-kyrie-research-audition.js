@@ -188,8 +188,15 @@ export function createKyrieXviResearchAudition({root,
       });
       if(!prepared)return;
       const src=offlineKyrialeResearchScore(movement,settingId);
+      // Keep the exact canonical source in the research record. Only the
+      // player/engraver receives the independently pinned, Gregorio-equivalent
+      // explicit bivirga spelling for Exsurge's notehead indexing.
+      const playerScore=prepared.rendererEquivalentExpansion
+        ?Object.freeze({...src,canonicalGabc:src.gabc,gabc:prepared.notationGabc,
+          provisionalRendererEquivalent:true})
+        :src;
       sources.set(key,{
-        score:src,compiled:prepared.melody,title:spec.title,movement
+        score:playerScore,compiled:prepared.melody,title:spec.title,movement
       });
     }).catch(()=>{/* Unsupported source: withheld. */})
       .finally(()=>{if(!destroyed)sync();});
