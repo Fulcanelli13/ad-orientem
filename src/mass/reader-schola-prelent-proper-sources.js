@@ -1,0 +1,360 @@
+// M69 — Fifteen manually selected pre-Lent original 1961 Gregorian Proper GABCs.
+// Septuagesima (24 Jan), Sexagesima (31 Jan), Quinquagesima (7 Feb 2027).
+// Tract replaces Alleluia. Provisional source listening ONLY — no calendar
+// assignment, no autoplay, no approved printed note/syllable or rhythm claim.
+// Shared vendored Exsurge source player, no second audio engine or network.
+// Original exact source hashes and digital notehead counts locked by M68.
+const freeze=Object.freeze;
+export const PROPER_M69_RESEARCH_SOURCES=freeze(
+[
+  {
+    "selectionId": "SEPTUAGESIMA_INTROIT",
+    "week": "SEPTUAGESIMA",
+    "role": "INTROIT",
+    "title": "Circumdederunt me",
+    "scoreId": "GREGOBASE-1168",
+    "officePart": "in",
+    "printed1961Page": "73",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1168",
+    "sha256": "90ea444cbca2e1a1569a82758b588e74258a72d8002c64995f23c4a8fd529a57",
+    "sourceFingerprint": "83542cb5",
+    "rendererFingerprint": "f41a3f75",
+    "sourceNotes": 183,
+    "phraseNoteCounts": [
+      131,
+      36,
+      5,
+      11
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c3) CIR(df~)CUM(f)DE(f)DÉ(f)RUNT(f_eef) me(d.) *(,) gé(fh)mi(f)tus(hh) mor(hi~)tis,(h.) (;) do(h)ló(hih)res(h_g) in(fe~)fér(fg~)ni(g.) (,) cir(gf~)cum(h_iH'//E)de(f!hgh)dé(fhee[ll:1]d)runt(d) me :(gxdf//egFD.1) (:) et(df) in(f) tri(fef)bu(f)la(f)ti(ef)ó(de'f)ne(f) me(fefd)a(d.) (;) in(d)vo(efe)cá(f!h'i)vi(hie'!f) Dó(fe)mi(h)num,(h_[oh:h]i_[oh:h]f.1_[oh:h]) (:) et(f) ex(hh)au(h)dí(hih)vit(h_g) (,) de(e) tem(fh~)plo(h) san(h)cto(gh) su(fheede)o(e[ll:1]d..) (;) vo(d!ewfefhhe'/f)cem(efe) me(de!fvED'e)am.(e[ll:1]d..) (::) <i>Ps.</i> Dí(d)li(f)gam(h) te(h) Dó(h)mi(h)ne,(h) for(h)ti(h)tú(h)do(i) me(i)a :(h.) *(:) Dó(f)mi(h)nus(h) fir(h)ma(h)mén(h)tum(h) me(h)um,(h) et(h) re(h)fú(h)gi(h)um(h) me(h)um,(h.) (,) et(h) li(h)be(h)rá(i)tor(g) me(h)us.(f.) (::) Gló(d)ri(f)a(h) Pa(h)tri.(h) (::) <eu>E(h) u(h) o(i) u(g) a(h) e.</eu>(fefvEDe.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEPTUAGESIMA_GRADUAL",
+    "week": "SEPTUAGESIMA",
+    "role": "GRADUAL",
+    "title": "Adjutor in opportunitatibus",
+    "scoreId": "GREGOBASE-222",
+    "officePart": "gr",
+    "printed1961Page": "74",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=222",
+    "sha256": "829e1725eaf16e11fe8dfefc59d270e67b0e5b6fc8bc9dff7b910381ee9e5983",
+    "sourceFingerprint": "ccb1d263",
+    "rendererFingerprint": "438f9f69",
+    "sourceNotes": 373,
+    "phraseNoteCounts": [
+      175,
+      198
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) AD(gj~)jú(jjg/hjH'Ghjh/ij)tor(j.) *(,) in(j) op(ij'k)por(kl~)tu(j_i)ni(jjjhk)tá(kjjh)ti(jhig)bus,(g.) (;) in(gd~) tri(ghg)bu(gd)la(g)ti(hj)ó(iijI'Gh'/jhhfg//jjhig)ne :(g.) (:) spe(jjk)rent(j) in(jjj) te,(hv.ghGE.) (;) qui(ef) no(e)vé(d!f'h)runt(h) te :(jhjGF'gffd.) (:) quó(dc)ni(g)am(hi~) non(ijjvH'Gh!jj//h!jjjh/i_[oh:h]g/hffe.) de(ef)re(e)lín(ef'h)quis(hg__) (,) quae(hggf)rén(hj~)tes(j_i) te,(jjjgivHGh.) (;) Dó(ef!gh/ijgh./fg/!ih'ivH'Gh)mi(f_/fef___)ne.(fefgfg.) (,) (gv//jjhghgge.) (::) <sp>V/</sp>. Quó(e[ll:1]d)ni(g)am(hi~) non(ij'k/ijij//h!jij/hiH'Gi.) (,) ([oll:1{1]il!mvKI.kl[oll:}]/JH.1jijHGjg/i_[uh:l]j//gh!jjjvH'GF'fd.) in(d) fi(d!f'h)nem(hg__) (,) ob(g_[oh:h]f)lí(f!h'j)vi(j_i)o(jjj_g) (,) e(g_[oh:h]f)rit(gffd) páu(f/gh~)pe(e!gfg)ris :(fe..) (:) pa(d)ti(e)én(g)ti(h)a(g) páu(h_j_i_3!jwk/lj~)pe(jjij)rum(ji..) (;) non(ij~) per(j)í(jj)bit(jij) in(hi) ae(gjh)tér(iv.g.h!iwjjhi g.h!iwjjhi)num :(g.) (:) ex(g)súr(jj)ge,(kjjg) Dó(jj)mi(jlk)ne,(kjjg.) (,) non(j) prae(j_i)vá(j_i)le(jjjh)at(hv.ghGE.) <clear>*(;) ho(fd/ffd/ef/gh/jjj_i)(,)(hjIH.giH'GhvF'Ef)mo.(d!ewf/gfg.) (,) (gv//jjhghgge.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEPTUAGESIMA_TRACT",
+    "week": "SEPTUAGESIMA",
+    "role": "TRACT",
+    "title": "De profundis",
+    "scoreId": "GREGOBASE-926",
+    "officePart": "tr",
+    "printed1961Page": "75",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=926",
+    "sha256": "b005e5fd3f6293c439188e6c93b02b4c8ec32d949154af02acf854c0b36ac14b",
+    "sourceFingerprint": "fd2ad926",
+    "rendererFingerprint": "63aec6ec",
+    "sourceNotes": 427,
+    "phraseNoteCounts": [
+      96,
+      119,
+      89,
+      123
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) DE(g) pro(g)fún(g/hih)dis(g/hhg.) (,) * cla(fg)má(gjjk)vi(h) ad(hg/hfg) te,(g.) (,) Dó(i_[uh:l]j)mi(hg)ne :(ggiH'Ghg/hg/hg/jjh/jggf.0) (:) Dó(g)mi(hfg)ne,(g/hji) ex(j)áu(j.h!iwj)di(jjjvIHivHGhg..) (;) vo(ixfh/ih/ig)cem(j.) me(jv.ijg.ixjjvH'GhiGF.)(,)(iyh./jh/ig)am.(g/hhg.) (::) \r\n<sp>V/</sp>. Fi(g!hwi'!jv)ant(ih~) au(jk~)res(g) tu(h_g/h!iw!jvIHijh)ae(hg..) (;) in(hggf~)ten(ghg~)dén(hv.g!jij)tes(hg) (,) (dg/jijvHG.ixi_[oh:h]hivGF.jvHG//hg/hg/hg/jjh/jggf.0) (:) in(f!h'j) o(igh)ra(gfg)ti(gh/jij)ó(j.h!iwj)nem(jjjvIHivHGhg..) (;) ser(ixfh/ih/ig~)vi(j.) tu(jv.ijg.ixjjvH'G/!hiGF.)(,)(iyh./jh/ig)i.(g/hhg.) (::) \r\n<sp>V/</sp>. Si(g) in(gd)i(g)qui(hj)tá(j)tes(jijh) (,) ob(jhhg)ser(gh~)vá(h.0/[-0.5]ijh)ve(gf)ris,(g_[uh:l]h) (,) Dó(h.0/[-0.5]ijh)mi(gf)ne :(g_0[uh:l]/hfg.) (,) (ixi_[oh:h]hivGF.g/hg/hg/hg/jjh/jggf.0) (:) Dó(g)mi(hfg)ne,(gh/ji) (,) quis(j) sus(h!iwji)ti(j)né(jv.ijg.ixjjvH'GhiGF.)(,)(iyh./jh/ig)bit?(g/hhg.) (::) \r\n<sp>V/</sp>. Qui(g)a(gd) a(g)pud(hi~) te(iij) (,) pro(gf)pi(g)ti(h!iwj)á(jk)ti(kijh)o(hjI'G) est,(gv.fh/ji/jkhhg/hg/jjh/jggf.0) (:) et(f) pro(hj)pter(igh) le(gfg)gem(gh/jij) tu(j.h!iwj)am(jjjvIHivHGhg..) (;) sus(g)tí(h_g/h!iwj)nu(ghG'F)i(f!h'j) te,(j.) (,) * Dó(jijHGg'g/hg/!gfg.)(,)(jjjkvJ'IH'hg)mi(g)ne.(ghGF.) (,) (h!iwjijjh/ihhg.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEPTUAGESIMA_OFFERTORY",
+    "week": "SEPTUAGESIMA",
+    "role": "OFFERTORY",
+    "title": "Bonum est confiteri",
+    "scoreId": "GREGOBASE-1194",
+    "officePart": "of",
+    "printed1961Page": "76",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1194",
+    "sha256": "14d3dcf26d982ec8b322da336a17f7778fe3e0edf861bddabefceb76f3ba0924",
+    "sourceFingerprint": "13384186",
+    "rendererFingerprint": "54bb6b6e",
+    "sourceNotes": 98,
+    "phraseNoteCounts": [
+      98
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) BO(ff)num(fhg) est(g_[oh:h]d) *(,) con(dg)fi(h)té(h!jjjvH'G)ri(g.f!gw!hvGF'g) Dó(g)mi(gh/jhi)no,(hg..) (:) et(fg) psál(gjj'1jj/kl)le(j_i)re(jjjhhg.) (,) nó(g!jjj)mi(jk_[hl:1]J'_[hl:1]IH'i)ni(h) tu(gh!jvIH'i)o,(ih..) (;) Al(f!h'j~)tís(j)si(j)me.(jijvHF'gwhghj/kjjh//jjh/jjvH'Gh_ihhg.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEPTUAGESIMA_COMMUNION",
+    "week": "SEPTUAGESIMA",
+    "role": "COMMUNION",
+    "title": "Illumina faciem",
+    "scoreId": "GREGOBASE-640",
+    "officePart": "co",
+    "printed1961Page": "76",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=640",
+    "sha256": "7b9846edfbaca89128f6cc2701aee3e74227ff07022981b81e3992643dda359a",
+    "sourceFingerprint": "f4255a30",
+    "rendererFingerprint": "16afdc8d",
+    "sourceNotes": 92,
+    "phraseNoteCounts": [
+      92
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) IL(df~)lú(fef)mi(dc)na(c.) (,) * fá(fg)ci(f)em(df~) tu(f)am(f.) (;) su(d)per(d) ser(d)vum(c) tu(dfE'D)um,(d.) (:) et(d) sal(fg)vum(gh) me(efd) fac(d.) (,) in(fh~) tu(h_g/jjh)a(h) mi(ixhih)se(g)ri(g_[oh:h]e)cór(gh~)di(fg!hvGF'g)a :(gf..) (:) Dó(ixhih)mi(g)ne,(ge) non(g) con(g)fún(fef)dar,(dfEC.) (;) quó(ffg)ni(f)am(f) in(fg)vo(efE'C)cá(de!fvED)vi(d_[oh:h]e_[oh:h]d_[oh:h]) te.(d.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEXAGESIMA_INTROIT",
+    "week": "SEXAGESIMA",
+    "role": "INTROIT",
+    "title": "Exsurge",
+    "scoreId": "GREGOBASE-529",
+    "officePart": "in",
+    "printed1961Page": "77",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=529",
+    "sha256": "4419cd9e957791e34a8bce0219cf908e7e379374b778e5df5c94a16894989686",
+    "sourceFingerprint": "6edc9690",
+    "rendererFingerprint": "b1d7267d",
+    "sourceNotes": 178,
+    "phraseNoteCounts": [
+      129,
+      33,
+      6,
+      10
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) EX(d)súr(dfe)ge,(dcd.) (,) * qua(ffg)re(f) ob(f)dór(fg~)mis(fe) Dó(gh)mi(h)ne?(h.) (;) ex(h)súr(hhggh~)ge,(f.) (,) et(fg~) ne(f) re(f)pél(fg~)las(f) in(gvF'Ef) fi(d_[oh:h]e_[oh:h]d_[oh:h])nem :(d.) (:) qua(df!gh)re(g) fá(gh)ci(f)em(df~) tu(f)am(fef) a(d)vér(cf~)tis,(f.) (;) ob(f)li(g)ví(hjh)sce(gh)ris(h.) (,) tri(h)bu(gf)la(gh)ti(gh)ó(fg'h)nem(gh) no(f_[oh:h]g_[oh:h]f_[oh:h])stram?(f.) (;) Ad(g)haé(ghg)sit(e) in(f) ter(fgf)ra(c.) ven(df)ter(ef~) no(d_[oh:h]e_[oh:h]d_[oh:h])ster :(d.) (:) ex(f)súr(gh~)ge,(h) Dó(h)mi(g)ne,(f.) (,) ád(h)ju(g)va(gh) nos,(f.) (;) et(df) lí(e!g'h)be(fe)ra(de!fvED'e) nos.(e[ll:1]d..) (::) <i>Ps.</i> De(f)us,(gh) áu(h)ri(h)bus(h) no(hj)stris(h) au(h)dí(h)vi(hg)mus :(gh..) *(:) pa(gf)tres(gh) no(h)stri(h) an(h)nun(h)ti(h)a(hjh)vé(g')runt(f) no(fff)bis.(d.) (::) Gló(f)ri(gh)a(h) Pa(h)tri.(h) (::) <eu>E(h) u(hjh) o(g') u(f) a(fff) e.</eu>(d.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEXAGESIMA_GRADUAL",
+    "week": "SEXAGESIMA",
+    "role": "GRADUAL",
+    "title": "Sciant gentes",
+    "scoreId": "GREGOBASE-1265",
+    "officePart": "gr",
+    "printed1961Page": "78",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1265",
+    "sha256": "addf67e79e14ae257e5d0b7da10119cb0b3a34c5d65630035e6445088ddf7863",
+    "sourceFingerprint": "a7eea21f",
+    "rendererFingerprint": "8f0b5109",
+    "sourceNotes": 299,
+    "phraseNoteCounts": [
+      146,
+      153
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) SCi(dfd)ant(d/ffd/fffhvGF) gen(gff'f)tes(d/ffdev'1//fgddc.) (;) * quó(d)ni(fdf)am(gfg) no(ixg_[oh:h]f/g/igh)men(h) ti(ixh.g!hwi)bi(h.) (;) De(ixg_[oh:h]f/g/igh)us :(hgi//hihiggf.0) (:) tu(f) so(hf/gh!jjh)lus(hghvGFg.) (,) Al(h!jij)tís(h_f)si(gf~)mus(f_g//d!f'g//fh!jvGF'fd/ff/ge'/fgd'/e[ll:1]ddc.) (:) su(c)per(d) o(fg/hg)mnem(h!jj/hjg) ter(fv.dge//f!gwh)ram.(ghffgFE.) (,) (h_jHG'hvF'D//ff/gffd.) (::) <sp>V/</sp>. De(hg)us(g) me(gh/jh/jggf)us,(f.) (;) po(hj)ne(j_i) il(jjj)los(hg__) (,) ut(gf~) ro(ixgv.fhg/hiGF.hf/gh!jj/k!mmmvKJ'jvH'G)(,)(jkjjh)tam,(hjh/jjjh..) (:) et(f) sic(f)ut(ghg~) stí(h_f/ghGF.)(,)(hV!ghfg./d!ewf//e!gwhg/h!jj)pu(hfg)lam(ghgff/ded.) (:) an(d!fffd~)te(ef) fá(ghghhghv.ixfh!ivGF'E//f!gwh!ivHG)ci(hg)em(g.) <clear>*(,) ven(ixhiGF'h!jjvH'G)ti.(hghF'Efg..) (,) (d!ewf!gv.fhGF'ED'ewfd.1) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEXAGESIMA_TRACT",
+    "week": "SEXAGESIMA",
+    "role": "TRACT",
+    "title": "Commovisti",
+    "scoreId": "GREGOBASE-1178",
+    "officePart": "tr",
+    "printed1961Page": "78",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1178",
+    "sha256": "d2073f92488be2861ff9fe1598abcc028a6bf094aff4c5a859c9717df9699b3c",
+    "sourceFingerprint": "531de13c",
+    "rendererFingerprint": "1e6af1ea",
+    "sourceNotes": 362,
+    "phraseNoteCounts": [
+      111,
+      104,
+      147
+    ],
+    "bivirgaCount": 1,
+    "sourceGabc": "(c4) COm(e)mo(e)ví(gh/j.h!iwj)sti(k_[hl:1]j//j'jjvH'GF.) (,) (gh!jjjvIGh_g/h!iw!jvIHivHGhg..) (;) * Dó(gjjk)mi(h)ne(hg/hf//h!jhj) ter(jvIH'iw!jvI'HG'h)ram,(hg..) (:) et(g) con(h_g/h!iwj)tur(g_[oh:h]f~)bá(g)sti(h) e(j./kjjg//j./kj/!j'jj/kjjh)(,)(ji/jjvI'G//hjhjvHF.1)(,)(gh!jvvI'G//hjHF'g)am.(g/hhg.) (::) \r\n<sp>V/</sp>. Sa(g!jj/kljj'jg)(,)(jj/kljj'jh//ijH'GF.g.h!iwjjk)na(j.) (;) con(ij'k~)tri(k_[hl:1]i)ti(kj)ó(j_kJ'//G)nes(g_[uh:l]h) (,) e(fh/ji/jkhhg/hg!jjhjvG~F~)jus,(gf..) (:) qui(ixfh/ih/ig)a(j.) mo(jjjvHG'h)ta(g) est.(dg'//jvHG.dg'//hjhhg.) (,) (jjjg/hhfgv.dg/hg/hg/hhg.) (::) \r\n<sp>V/</sp>. Ut(fg) fú(g!jj)gi(j)ant(jj/kljj'jg) (,) (jj/kljj'jh//ijH'GF.g.h!iwjjv) (;) a(jj) fá(jk'l)ci(j_h)e(h_g) ar(h!jj//jjj'jk~)cus,(gv.fh/ji/jkhhg/hg/jjh/jggf.0) (:) ut(fg!hj~) li(igh)be(gfgh!jij)rén(j.h!iwj)tur(jjjvIHivHGhg..) (;) e(g)lé(hg/jjghvG'F)cti(f!h'j) *() tu(j)i.(jijHGg'g/hggfg.) (,) (jjjkvJ'IH'hg/hjI'HG'ghf.1) (,) (h!iw!jvIH'ihhg.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEXAGESIMA_OFFERTORY",
+    "week": "SEXAGESIMA",
+    "role": "OFFERTORY",
+    "title": "Perfice gressus",
+    "scoreId": "GREGOBASE-265",
+    "officePart": "of",
+    "printed1961Page": "79",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=265",
+    "sha256": "7a17860689a18f2543382bd0b933e922fe1a1ec95024437c508babd732205f8a",
+    "sourceFingerprint": "bb8796ab",
+    "rendererFingerprint": "2eb79e35",
+    "sourceNotes": 174,
+    "phraseNoteCounts": [
+      174
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) PEr(c)fi(dfe)ce(f.) *() gres(ff//fff_d)sus(cd'f) me(f_e)os(egff) (,) in(dg~) sé(gv.f!h'j)mi(g_[oh:h]e)tis(gh) tu(fdgvFE)is,(e.) (;) ut(dg) non(gfg) mo(fe)ve(d!ff)án(fff)tur(d!ff) (,) ve(d)stí(fv.ffd)gi(f)a(fhG'Fghg) me(egff)a :(fe..) (:) in(f)clí(ixef/hig)na(ghffe) au(fffd~)rem(f) tu(gf)am,(f.) (;) et(fffd) ex(f)áu(gf~)di(fg) ver(g)ba(fgff) me(d!ffd)a :(d!ewf.) (:) mi(c)rí(cd/fef)fi(f)ca(f) mi(fgf)se(f)ri(ef)cór(gh)di(g)as(ef) tu(g.f!gwhgh)as,(hg..) (;) qui(f) sal(e.f!gwh)vos(ghF'E) fa(g)cis(fff_g) (,) spe(dc)rán(df~)tes(fffddc) in(df) te,(ef'g) Dó(e)mi(egff)ne.(fe..) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "SEXAGESIMA_COMMUNION",
+    "week": "SEXAGESIMA",
+    "role": "COMMUNION",
+    "title": "Introibo",
+    "scoreId": "GREGOBASE-554",
+    "officePart": "co",
+    "printed1961Page": "80",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=554",
+    "sha256": "705c90985c6273e847778a6154df560c4b320b85dee5938b39741c361077e21a",
+    "sourceFingerprint": "2760fad5",
+    "rendererFingerprint": "c2ccf4b2",
+    "sourceNotes": 70,
+    "phraseNoteCounts": [
+      70
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) IN(gj)tro(j)í(jhjvIG)bo(g.) <clear>*(,) ad(gh/ji) al(i)tá(ij'k)re(k_[hl:1]h) De(h_[hl:1]k_[hl:1]j_[hl:1])i,(ikjj/ghg.) (:) ad(g) De(g.h!iwj)um(j) qui(hi) lae(h_g)tí(h!iwj)fi(ghGF'g)cat(gf..) (;) ju(g)ven(hgh)tú(gh/i.h!iwj)tem(hih) me(gh!ivHG'h)am.(hg..) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "QUINQUAGESIMA_INTROIT",
+    "week": "QUINQUAGESIMA",
+    "role": "INTROIT",
+    "title": "Esto mihi",
+    "scoreId": "GREGOBASE-1381",
+    "officePart": "in",
+    "printed1961Page": "80",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1381",
+    "sha256": "44b9847ac1d87618a93d2a48046e3d34344bb8de8a42c85c9eeb0f869a16abf9",
+    "sourceFingerprint": "bc95084c",
+    "rendererFingerprint": "c8274f77",
+    "sourceNotes": 165,
+    "phraseNoteCounts": [
+      117,
+      33,
+      8,
+      7
+    ],
+    "bivirgaCount": 1,
+    "sourceGabc": "(c4) E(f)sto(df) mi(f)hi(d') *(,) in(d!ewf) De(fvvEC)um(ff) pro(gfg)te(hgh)ctó(f_[oh:h]g_[oh:h]f_[oh:h])rem,(f.) (;) et(f) in(f) lo(fg)cum(fe) re(d!ewf)fú(f)gi(fv_EC)i,(c.) (,) ut(ffe) sal(g)vum(g) me(ghf) fá(f)ci(f_[oh:h]g_[oh:h]f_[oh:h])as :(f.) (:) quó(f)ni(gh)am(h) fir(h)ma(h)mén(h)tum(g) me(ghG'F)um,(f.) (,) et(f) re(f)fú(fg)gi(g)um(gh) me(ff)um(f) es(fdec) tu :(c.) (:) et(c) pro(ff)pter(gh~) no(h)men(gf~) tu(ghg___)um(g.) (,) dux(hj) mi(jjj)hi(hjg) e(ghf___)ris,(f.) (;) et(ffe) e(d)nú(ge/g_[uh:l]h)tri(ff)es(f_[oh:h]g_[oh:h]f_[oh:h]) me.(f.) (::) <i>Ps.</i> In(fg) te(gf) Dó(gh)mi(h)ne(h) spe(h)rá(h)vi,(h.) non(h) con(h)fún(h)dar(g) in(ixi) ae(h)tér(g)num :(f.) *(:) in(f) ju(gh)stí(hj)ti(g)a(f) tu(f')a(g) lí(fd)be(f')ra(g) me.(f.) (::) Gló(fg)ri(gf)a(gh) Pa(h)tri.(h) (::) <eu>E(f') u(g) o(fd) u(f') a(g) e.</eu>(f.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "QUINQUAGESIMA_GRADUAL",
+    "week": "QUINQUAGESIMA",
+    "role": "GRADUAL",
+    "title": "Tu es Deus",
+    "scoreId": "GREGOBASE-850",
+    "officePart": "gr",
+    "printed1961Page": "81",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=850",
+    "sha256": "4c7ea051f524d546c514c7ddbe43b13595e10088078dcb4186b4db911fec49b9",
+    "sourceFingerprint": "579cdc47",
+    "rendererFingerprint": "11f72f2d",
+    "sourceNotes": 345,
+    "phraseNoteCounts": [
+      167,
+      178
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) T<sc>u</sc>(c_d!ffgvFE) es(e.) *(,) De(ixe.f!gwh_g)us,(giH'GfffdgvFE.) (;) qui(ef'g) fa(hv.gjh/ij)cis(i.) (,) mi(ij)ra(i)bí(ij/kj)li(jjjh)a(h_g/jij) (,) so(hjI'G)lus :(ixg_[uh:l]h//e.f!gw!higff/ded.) (:) no(ghg'k)tam(kjjhj) fe(g')cí(giihi)sti(g.) (,) in(g) gén(giihjjhi)ti(g_[uh:l]h)bus(ixe.f!gw!higff/ded.) (:) vir(gj//hi~)tú(iji___!jw!kvJ'IH)tem(hv.g!jj//jj//jjjggf) (,) tu(f.0h!iwj)am.(i_[oh:h]g//ivHGhhf/hh) (,) (g!jj//jj//jjjvH'GF'/[-0.5]{ix}E0f_h//ivGFghg/hgge.) (::) <sp>V/</sp>. Li(g)be(g)rá(gj)sti(j.) (,) in(j) brá(jkij)chi(ih)o(h!iwj) tu(j)o(ihjvIH) (,) (jj/ki'jvHG'jh'/ihhg.) (:) pó(ij//jjjvH'Gh!iwj_i)(,)(e!gh/jij/h!jj//jjjvH'Gh!iwj)pu(jjjvHG'h)lum(hv.giHG'hffe.) (;) tu(fd/ffd/ef/gh//j_[hl:1]k_[hl:1]j_[hl:1]//j'jjvHGjjjj_i)um,(i.) (:) fí(g)li(hj)os(j) Is(j)ra(j)el(i./jkh/jijHG.) (,) (ji/j_k//li/jkJ'IH.) (,) (k/li/jkJ'IH.jijHGjg/i_[uh:l]j gh!jjjvH'GF'fd.) <clear>*(;) et(g) Jo(hj)seph.(iij/hihghg.ef'gh_e//giHG'hffe.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "QUINQUAGESIMA_TRACT",
+    "week": "QUINQUAGESIMA",
+    "role": "TRACT",
+    "title": "Jubilate Domino",
+    "scoreId": "GREGOBASE-1299",
+    "officePart": "tr",
+    "printed1961Page": "82",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1299",
+    "sha256": "80d6b49ef91f10c9e366aed8d8cd46798c15a83580cdabb2731ad4840c79c3e4",
+    "sourceFingerprint": "0795ae48",
+    "rendererFingerprint": "57d9e1b1",
+    "sourceNotes": 337,
+    "phraseNoteCounts": [
+      90,
+      53,
+      50,
+      144
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) JU(g)bi(g)lá(g/hih)te(g/hhg.) () * Dó(gjjk)mi(h)no(gf/ghhg.) (;) o(ij)mnis(hji) ter(j)ra :(jjjkh/!hg/hg/jjh/jggf.0) (:) ser(g)ví(hfg)te(gh/ji) Dó(j)mi(h!iwj)no(ijhhg.) (;) in(ixfh/ih/ig~) lae(j)tí(jv.ijg.ixjjvH'G/!hiGF.)(,)(iyh./jh/ig)ti(fg)a.(g/hhg.) (::) \r\n<sp>V/</sp>. In(g)trá(g!hwi'!jv)te(j) in(j) con(j)spé(jji)ctu(g) e(h_g/h!iw!jvIHijh)jus,(hg..) (;) in(f) ex(f!h'j)sul(igh)ta(gfg)ti(gh/jij)ó(j.h!iwj)ne.(jjjvIHivHGhg..) (::) \r\n<sp>V/</sp>. Sci(f)tó(hj)te(igh) quod(gfghji) Dó(j)mi(h!iwj)nus(ijhhg.) (;) i(ixfh/ih/ig)pse(j) est(j.) De(jv.ijg.ixjjvH'GhiGF.)(,)(iyh./jh/ig)us.(g/hhg.) (::) \r\n<sp>V/</sp>. I(jjiji)pse(ig) fe(jv.iji)cit(ihh) nos,(g.) (;) et(hggf) non(ghgh) i(h!jij)psi(h_g) nos :(gfg.jv.hkJI.hjIH.giH'G) (,) (hg/hg/hg/jjh/jggf.0) (:) nos(f) au(hj)tem(igh) pó(gf/gh)pu(g)lus(gh/jij) e(j.h!iwj)jus,(jjjvIHivHGhg..) (;) et(gh) o(gh)ves(g) pá(h_g/h!iwj)scu(ghG'F)ae(f!h'j) () * e(j)jus.(jijHGg'g/hggfg.) (,) (jjjkvJ'IH'hg/hjI'HG'ghf.1) (,) (h!iw!jvIH'ihhg.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "QUINQUAGESIMA_OFFERTORY",
+    "week": "QUINQUAGESIMA",
+    "role": "OFFERTORY",
+    "title": "Benedictus es... in labiis",
+    "scoreId": "GREGOBASE-1317",
+    "officePart": "of",
+    "printed1961Page": "83",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1317",
+    "sha256": "7dd058054fe7ba2033a8a80a339dfc2f5920e83dbec95532233f6cde29badbc8",
+    "sourceFingerprint": "93b10cc0",
+    "rendererFingerprint": "c5a3a08b",
+    "sourceNotes": 207,
+    "phraseNoteCounts": [
+      207
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) BE(g_[oh:h])ne(g_[oh:h])dí(ikj)ctus(h!iwj) es(j_i) *() Dó(i)mi(ikjj)ne,(ji..) (;) do(j)ce(ji) me(ji) ju(h)sti(h/jji)fi(hg)ca(h)ti(g)ó(g!jjjhkvJI'j)nes(i_[oh:h]h) tu(gh!jvHF)as :(gf..) (:) be(g)ne(g)dí(ikj)ctus(h!iwj) es(j_i) Dó(i)mi(ikjj)ne,(ji..) (;) do(j)ce(ji) me(ji) ju(h)sti(h/jji)fi(hg)ca(h)ti(g)ó(g!jjjhkvJI'j)nes(i_[oh:h]h) (,) tu(gh!jj/klj/!j'jh!iwj_i)as :(jjjvIH'jhh/fgf.) (:) in(ef) lá(ef)bi(g)is(g_0[uh:l]h_[uh:l]i) me(hhgh)is(h!jj/khhg.) (;) pro(j)nun(j)ti(h!iwj)á(ijhhg)(,)(jjjhkvJI)vi(jjjvIH'jhh/fgf.) (:) ó(dg)mni(g)a(ji/jhjvIH') ju(g)dí(hjh___!iwj)ci(g)a(f_g) (,) o(g/jjg/jjj)ris(g!jjj) tu(ixhg/hiG'FghF'Ef_gF'E)i.(e.) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  },
+  {
+    "selectionId": "QUINQUAGESIMA_COMMUNION",
+    "week": "QUINQUAGESIMA",
+    "role": "COMMUNION",
+    "title": "Manducaverunt",
+    "scoreId": "GREGOBASE-677",
+    "officePart": "co",
+    "printed1961Page": "84",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=677",
+    "sha256": "a7ab233d5ec2b292f3f53286b7ef1a02a361425c6818952db2fb4f6d248f9ec1",
+    "sourceFingerprint": "1f435bfc",
+    "rendererFingerprint": "4f1f2918",
+    "sourceNotes": 94,
+    "phraseNoteCounts": [
+      94
+    ],
+    "bivirgaCount": 0,
+    "sourceGabc": "(c4) MAn(de)du(c)ca(d)vé(fg)runt,(hf/ghhg.) <clear>*(,) et(fh) sa(g)tu(fe)rá(fh)ti(g) sunt(gf~) ni(g)mis,(d.) (:) et(d) de(fe)si(f)dé(gh)ri(g)um(g) e(g)ó(gfg)rum(dec.) (,) át(fg)tu(f)lit(f) e(f)is(ixfghi.g!hw!ivHG') Dó(f)mi(fg!hvGF'g)nus :(gf..) (:) non(h) sunt(g) frau(gf~)dá(gg)ti(d.) (,) a(d!ewffvED'd) de(c)si(d)dé(fg)ri(g)o(ghfgvFE) su(d!ewfef)o.(e[ll:1]d..) (::)",
+    "scoreApproved": false,
+    "provisionalResearch": true,
+    "automaticMassAssignment": false
+  }
+].map(spec=>freeze({...spec,phraseNoteCounts:freeze([...spec.phraseNoteCounts])})));
