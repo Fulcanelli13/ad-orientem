@@ -232,8 +232,10 @@ try{
     angelus.versicle.speaker.weight===500,
     "Angelus source glyphs must be EB Garamond 500 at 17px: "+JSON.stringify(angelus));
    assert.ok(angelus.hail.words?.family.includes("EB Garamond")&&
-    Math.abs(angelus.hail.words.size-hailExpected)<.3,
-    "Complete Hail Mary must not inherit the V/R display face: "+JSON.stringify(angelus));
+    Math.abs(angelus.hail.words.size-hailExpected)<.3&&
+    Math.abs(angelus.hail.whole.size-hailExpected)<.3&&
+    Math.abs(angelus.hail.whole.lineHeight/hailExpected-1.52)<.02,
+    "Hail Mary in both group and individual modes must retain EB Garamond 18.5px/1.52 metrics: "+JSON.stringify(angelus));
    assert.ok(angelus.heading?.family.includes("Cinzel"),
     "Angelus ceremonial movement title must use Cinzel: "+JSON.stringify(angelus));
    assert.ok(angelus.overflow<=2,"Angelus phone horizontal overflow: "+JSON.stringify(angelus));
