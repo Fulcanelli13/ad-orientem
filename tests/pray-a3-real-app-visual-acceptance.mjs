@@ -39,7 +39,10 @@ try{
   page.on("pageerror",e=>errors.push(String(e.message)));
   await page.goto("http://127.0.0.1:4298/index.html?aoPrayerPaintingA3=1",
    {waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+  // Prayer is lazy-mounted: open its public app owner before waiting for the runtime.
+  await page.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
+  assert.equal(await page.evaluate(()=>window.AO_PRAY_APP_V1.open()),true);
+  await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",null,{timeout:25000});
   for(const id of ids){
    assert.equal(await page.evaluate(()=>window.AO_PRAY_V435930.open("pray.library")),true);
    const entry=page.locator('#aoPray435930.open [data-p435930-lib-open="'+id+'"]').first();
