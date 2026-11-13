@@ -149,9 +149,12 @@ try{
    'Research listening must never alter any saved Ordinary setting');
   await trigger.click();await player.waitFor({state:'visible'});
   await plan.evaluate(node=>{node.open=true;});
+  await weekPicker.selectOption('CHRISTMAS_DAY');
+  assert.equal(await picker.inputValue(),'','Changing Mass must invalidate previous audio');
+  assert.equal(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').count(),0);
   await weekPicker.selectOption('CHRISTMAS_DAWN');
   assert.equal(await picker.inputValue(),'',
-   'Changing Sunday must invalidate previously playing source');
+   'Switching back cannot select or resume the recovered chant automatically');
   assert.equal(await picker.locator('option').count(),6);
   assert.equal(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').getAttribute('disabled'),null);
   assert.equal(await trigger.isVisible(),false,
