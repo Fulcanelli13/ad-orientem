@@ -473,4 +473,60 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   }
 }
 
+
+
+/* QA6: keep the primary action in reach in the compact map preview.
+   The entire preview remains scrollable; the original credited painting or
+   photograph is never replaced, zoomed or cropped. Secondary actions remain
+   accessible in a horizontally scrollable row rather than taking over 320px. */
+@media(max-width:799px) {
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview:has(.aoHeritagePlaceThumb img) {
+    scroll-padding-bottom:72px;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview .aoHeritagePreviewActions {
+    position:sticky!important;
+    bottom:0!important;
+    z-index:6;
+    box-sizing:border-box;
+    order:20;
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    flex:0 0 auto!important;
+    align-items:stretch;
+    gap:8px;
+    width:100%;
+    min-width:0;
+    max-height:72px;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    margin-top:0!important;
+    padding:7px 2px 5px;
+    background:linear-gradient(180deg,rgba(8,13,20,.96),#080d14);
+    border-top:1px solid var(--explore-app-rule);
+    box-shadow:0 -8px 18px rgba(0,0,0,.46);
+    scrollbar-width:thin;
+    overscroll-behavior-x:contain;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview .aoHeritagePreviewActions > :is(button,a) {
+    min-height:44px;
+    max-height:54px;
+    min-width:0;
+    width:auto;
+    padding:9px 12px;
+    white-space:nowrap;
+    flex:0 0 auto;
+    justify-content:center;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview .aoHeritagePreviewActions > [data-explore-expand-place] {
+    flex:1 0 min(56%,166px);
+    min-width:132px;
+    font-weight:700;
+  }
+}
+
 `;
