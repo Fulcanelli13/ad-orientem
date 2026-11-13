@@ -50,6 +50,8 @@ try{
     continue;
    }
    await painting.waitFor({state:"visible",timeout:15000});
+   // Measure after the real browser finishes loading its display fonts.
+   await page.evaluate(async()=>{await document.fonts.ready;await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));});
    await page.waitForFunction(()=>document.querySelector("[data-ao-claude-painting-a3]")?.dataset?.aoA3ReadingLayout,null,{timeout:10000});
    const initial=await painting.evaluate(el=>{
     const bg=el.querySelector(".bg"),face=el.querySelector(".sw .st .a")||el.querySelector(".aoA3PlainText");
