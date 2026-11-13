@@ -540,8 +540,8 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
     gap:0!important;
     /* A definite flex height reserves 57px for the sibling action dock.
        max-height alone clips the flex content without shrinking its child. */
-    height:min(54dvh,440px)!important;
-    max-height:min(54dvh,440px)!important;
+    height:min(58dvh,520px)!important;
+    max-height:min(58dvh,520px)!important;
     box-sizing:border-box!important;
     min-height:0!important;
     overflow:hidden!important;
@@ -552,7 +552,7 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
     display:flex;
     flex-direction:column;
     align-items:stretch;
-    gap:7px;
+    gap:4px;
     flex:1 1 auto!important;
     min-height:0;
     min-width:0;
@@ -590,10 +590,22 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   .aoHeritageWorldReset {
     position:fixed!important;
     top:auto!important;
-    bottom:calc(min(54dvh,440px) + 12px)!important;
+    bottom:calc(min(58dvh,520px) + 12px)!important;
     left:12px!important;
     right:auto!important;
     z-index:40!important;
+  }
+}
+
+
+
+/* QA7 image/credit first-view acceptance on 320px phones. Shorter rendered
+   image still uses contain, showing the entire source photograph at once. */
+@media(max-width:360px) {
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview .aoHeritagePlaceThumb img {
+    height:120px!important;
+    object-fit:contain!important;
   }
 }
 
