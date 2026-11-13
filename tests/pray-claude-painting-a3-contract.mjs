@@ -59,7 +59,10 @@ test("the A3 port retains full bleed painting, low text gradient and reduced mot
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.sw \.st>\*\{[^}]*align-self:start/,"Latin and translation must measure their own heights");
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.view \.bg\{[^}]*object-position:center/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/max-width:359px/);
- assert.match(CLAUDE_PAINTING_A3_CSS,/clamp\(250px,48dvh,340px\)/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/@media\(max-width:600px\)\{#aoPray435930 \.aoClaudePaintingA3 \.bg\{top:0;bottom:0;height:100%/,"The painting must not shrink into a phone-only postcard");
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.aoP435930Head\{[^}]*pointer-events:none!important/,"Transparent header must not block mode taps");
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.aoP435930Head button,[^}]*pointer-events:auto!important/,"Back and Home remain actionable");
+ assert.match(CLAUDE_PAINTING_A3_CSS,/#ao-global-ribbon\{display:none!important/,"A3 must not show the unrelated global ribbon");
  assert.doesNotMatch(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*background-size:cover/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/animation:aoClaudeA3Kb 32s/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/@keyframes aoClaudeA3Kb\{from\{transform:translate3d\(0,0,0\) scale\(1\)\}to\{transform:translate3d\(-\.6%,-\.4%,0\) scale\(1\.035\)\}\}/);
