@@ -94,8 +94,13 @@ try{
     assert.deepEqual(errors,[],"Browser errors: "+errors.slice(0,3).join("; "));
     const name=language+"-"+width+"-explore.png";
     await page.screenshot({path:resolve(output,name),animations:"disabled"});
-    // Atlas R1, on actual MapLibre tiles and markers rather than the layout
-    // test's deterministic map stub: six EN/FR three-width visual pairs.
+    // The two-collection selector replaces the older Discover / Sacred /
+    // Latin Mass trio. Actual tiles/markers are used rather than a map stub.
+    const atlasTabLabels=await page.locator(".aoAtlasPrimaryTabs > button").allTextContents();
+    assert.equal(atlasTabLabels.length,2,language+" "+width+"px Atlas navigation is not binary");
+    assert.ok(atlasTabLabels.some(t=>/TLM/.test(t))&&
+      atlasTabLabels.some(t=>/Sacred Atlas|Atlas sacré/.test(t)),
+      "Atlas labels do not match the two collections: "+atlasTabLabels.join(" | "));
     await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]').click();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred",null,{timeout:15000});
     const rail=page.locator('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');
