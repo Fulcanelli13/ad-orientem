@@ -27,7 +27,7 @@ const expected={
   ['COMMUNION','co',1100,'99','Scapulis suis']]
 };
 assert.equal(registry.schema,'ao-schola-m70-ash-wednesday-lent1-gr1961-source-audit-v1');
-assert.equal(registry.stage,'SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE');
+assert.equal(registry.stage,'DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_RITE_AND_ASH_AUDIO_HOLDS_NO_PLAYER_CHANGE');
 assert.equal(registry.archive,'data/mass/chant-corpus/gr1961-proper-index.json');
 assert.equal(registry.editionId,2);
 assert.equal(registry.editionId,index.sourceEditionId);
@@ -49,7 +49,9 @@ assert.deepEqual(registry.counts,{
  introit:2,gradual:2,tract:2,offertory:2,communion:2,alleluia:0,
  newArchiveIdentities:10,duplicateArchiveIdsWithinBatch:0,
  duplicateIdsInExisting90MelodyPlayer:0,existingProperSelectionsBeforeAudit:74,
- sourceDigitalNoteheads:null,sourceDigitalNoteheadsCertifiedForResearch:false
+ sourceDigitalNoteheads:3083,sourceDigitalNoteheadsCertifiedForResearch:true,
+ unmodifiedCompilerCompatibleSources:9,compilerBlockedValidGabcFusionSources:1,
+ ashRiteAudioSourcesInProperArchive:0
 });
 assert.equal(PROPER_RESEARCH_SOURCES.length,74);
 assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(s=>s.selectionId)).size,74);
@@ -95,9 +97,14 @@ for(const spec of registry.scores){
  seen.add(id);
  assert.equal(existing.has(spec.scoreId),false,
   'No duplicate of existing 90 source melody identities');
- assert.equal(spec.sourceNoteheads,null);
- assert.equal(spec.phraseNoteCounts,null);
- assert.equal(spec.exsurgeParityVerified,false);
+ assert.ok(Number.isInteger(spec.sourceNoteheads)&&spec.sourceNoteheads>0);
+ assert.ok(Array.isArray(spec.phraseNoteCounts)&&spec.phraseNoteCounts.every(n=>Number.isInteger(n)&&n>0));
+ assert.equal(spec.phraseNoteCounts.length,spec.sourceDoubleBarTokens);
+ assert.equal(spec.phraseNoteCounts.reduce((n,x)=>n+x,0),spec.sourceNoteheads);
+ assert.equal(spec.exsurgeParityVerified,true);
+ assert.equal(spec.audioCompilerCompatibility,spec.selectionId==='ASH_WEDNESDAY_INTROIT'?
+ 'HOLD_VALID_AT_FUSION_MISSING_EXSURGE_SOURCE_NOTE':
+ 'PASSES_EXISTING_OFFLINE_SOURCE_COMPILER_RESEARCH_ONLY');
  assert.equal(spec.researchApproved,false);
  assert.equal(spec.printedNeumesApproved,false);
  assert.equal(spec.gregorianRhythmCertified,false);
@@ -134,7 +141,19 @@ const scapCo=registry.scores.find(s=>s.selectionId==='LENT1_COMMUNION');
 assert.equal(scapOf.incipit,scapCo.incipit);
 assert.notEqual(scapOf.scoreId,scapCo.scoreId,'Two independent Scapulis chant identities');
 assert.notEqual(scapOf.gabcSha256,scapCo.gabcSha256,'Distinct Offertory and Communion GABC');
-assert.equal(registry.researchExceptions.length,6);
+assert.equal(registry.researchExceptions.length,7);
+assert.equal(registry.scores.reduce((n,s)=>n+s.sourceNoteheads,0),3083);
+assert.equal(registry.scores.filter(s=>s.audioCompilerCompatibility.startsWith('HOLD')).length,1);
+assert.equal(registry.exsurgeEvidence.workflowRunId,43491275405);
+assert.equal(registry.exsurgeEvidence.original1961SourceDigitalNoteheads,3083);
+assert.equal(registry.exsurgeEvidence.allTenExactPhraseArraysLocked,true);
+assert.equal(registry.exsurgeEvidence.lent1QuiHabitatNoteheads,1333);
+assert.equal(registry.exsurgeEvidence.lent1QuiHabitatPhraseCount,13);
+assert.equal(registry.exsurgeEvidence.ashWednesdayOriginalFusionToken,'@h!');
+assert.equal(registry.exsurgeEvidence.ashWednesdayIntroitAudioCompilerStatus,'HOLD_MISSING_EXSURGE_SOURCE_NOTE');
+assert.equal(registry.exsurgeEvidence.printedNeumesComparedVisually,false);
+assert.equal(registry.exsurgeEvidence.syllabicUnderlayCertified,false);
+assert.equal(registry.exsurgeEvidence.playerChanges,false);
 for(const ex of registry.researchExceptions)assert.equal(ex.mustNotSubstitute,true);
 for(const field of [
  'noPlayerChanges','noNewGabcPublished','noAutomaticMassAssignment',
@@ -144,6 +163,7 @@ for(const field of [
  'retain65CardLIVE','noLowMassMelodyPreview','noMissalMelodyPreview',
  'noRequiemMelodyPreview','noPrintedNeumeCertification','noRhythmCertification',
  'noPaidServices','githubActionsAndPagesOnly','noVercel',
+ 'noAshIntroitFusionAudioUntilSourceFaithfulAdapter',
  'noArchiveMutation','noTransferToSeparateProductionRepo'
 ])assert.equal(registry.restrictions[field],true);
 console.log('PASS M70 SOURCE: 10 real archived Mass Propers, Lent I 13-section Tract, four distinct held ash rite chants, no 1962 calendar/player changes');
