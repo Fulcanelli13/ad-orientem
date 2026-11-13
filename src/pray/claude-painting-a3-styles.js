@@ -86,6 +86,7 @@ const LINES=[
 '#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes button{font:600 9px var(--cap);letter-spacing:1.1px;padding:8px 0 5px;border:0;border-bottom:1px solid transparent;background:none;color:rgba(238,233,223,.65);text-shadow:0 2px 9px #000;cursor:pointer}',
 '#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes button[aria-pressed=true]{color:var(--gold2);border-bottom-color:var(--gold2)}',
 '#aoPray435930 .aoClaudePaintingA3.view .aoA3ExperienceModes{opacity:0;pointer-events:none}',
+'#aoPray435930 .aoClaudePaintingA3.view .veil{opacity:0!important;pointer-events:none}',
 /* Contemplative text, using the source's large centered Verse treatment. */
 '#aoPray435930 .aoClaudePaintingA3 .aoA3FocusBody{display:none}',
 '#aoPray435930 .aoClaudePaintingA3 .aoA3FocusVerse[hidden]{display:none!important}',
