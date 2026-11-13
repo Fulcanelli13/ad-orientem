@@ -13,7 +13,12 @@ const LINES=[
 // The general Prayer header has four controls in a three-column grid. In A3,
 // preserve only Back/Home, never let Aa wrap into an opaque second row.
 '#aoPray435930.aoPaintingA3Active .aoP435930Head{display:flex!important;justify-content:space-between!important;align-items:center!important;height:60px!important;min-height:60px!important;max-height:60px!important;padding:8px 12px!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}',
-'#aoPray435930.aoPaintingA3Active .aoP435930Head>div,#aoPray435930.aoPaintingA3Active .aoP435930Head>button:not(.aoP435930Back):not(.aoP435930Home){display:none!important}',
+// Choir's Aa is an essential language/response selector, unlike redundant text switches.
+'#aoPray435930.aoPaintingA3Active .aoP435930Head>div,#aoPray435930.aoPaintingA3Active .aoP435930Head>button:not(.aoP435930Back):not(.aoP435930Home):not(.aoClaudeChoirAa){display:none!important}',
+'#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoClaudeChoirAa{display:grid!important;place-items:center!important;pointer-events:auto!important;z-index:1!important;order:1!important;font:italic 17px var(--serif)!important}',
+'#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoP435930Home{order:2!important}',
+'#aoPray435930.aoPaintingA3Active .aoClaudeChoirAaMenu:not([hidden]){position:absolute!important;z-index:45!important;top:60px!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(640px,calc(100% - 24px))!important;max-height:calc(100dvh - 86px)!important;overflow:auto!important;margin:0!important;background:rgba(11,16,23,.97)!important;color:#eee9df!important;box-shadow:0 18px 45px rgba(0,0,0,.52)!important}',
+
 '#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoP435930Back,#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoP435930Home{position:relative!important;pointer-events:auto!important;z-index:1!important}',
 'body.aoP435930Open:has(#aoPray435930.aoPaintingA3Active) #ao-global-ribbon{display:none!important}',
 
