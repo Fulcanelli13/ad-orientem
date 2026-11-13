@@ -39,7 +39,7 @@ const LINES=[
 
 '#aoPray435930 .aoClaudePaintingA3 h2{font:600 clamp(28px,5vw,34px)/1.02 var(--cap);margin:8px 0 16px;letter-spacing:.5px;text-shadow:0 2px 20px rgba(0,0,0,.6);color:#eee9df}',
 '#aoPray435930 .aoClaudePaintingA3 .eyb{font:600 10px var(--cap);letter-spacing:2.2px;color:var(--gold)}',
-'#aoPray435930 .aoClaudePaintingA3 .tx{font:500 23px/1.45 var(--corm);max-height:min(46dvh,480px);overflow-y:auto;scrollbar-width:none;color:#eee9df;background:none!important;box-shadow:none!important;padding:0!important;margin:0!important;white-space:pre-line}',
+'#aoPray435930 .aoClaudePaintingA3 .tx{font:500 23px/1.45 var(--corm);height:auto!important;min-height:0!important;display:block!important;gap:0!important;max-height:min(46dvh,480px);overflow-y:auto;scrollbar-width:none;color:#eee9df;background:none!important;box-shadow:none!important;padding:0!important;margin:0!important;white-space:pre-line}',
 '#aoPray435930 .aoClaudePaintingA3 .tx::-webkit-scrollbar{display:none}',
 '#aoPray435930 .aoClaudePaintingA3 .cr{font:italic 13.5px var(--serif);color:var(--mu2);margin-top:14px}',
 '#aoPray435930 .aoClaudePaintingA3 .hint .ha,#aoPray435930 .aoClaudePaintingA3 .hint .hb{color:var(--gold)}',
