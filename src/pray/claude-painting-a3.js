@@ -72,9 +72,7 @@ function syncFocusedPassage(root){
 }
 function updateA3Fit(root){
  if(!root||!root.isConnected)return;
- if(root.dataset.aoA3Kind==="litany"){
-   root.classList.add("aoA3FitVeil");root.classList.remove("aoA3FitCinematic");return;
- }
+ if(root.dataset.aoA3Kind==="litany")return; // keep source-owned Choir layout intact
  const useTranslation=!!root.querySelector(".sw.v");
  const face=root.querySelector(useTranslation?".sw .st .b":".sw .st .a")||
    root.querySelector(".aoA3PlainText");
@@ -137,7 +135,7 @@ export function renderClaudePaintingA3({id,record,photo,language="en",uiLanguage
 export function installClaudePaintingA3(mount,{navigate}={}){
  if(!mount)return false;
  let current=installed.get(mount);
- if(current){current.navigate=navigate;return true;}
+ if(current){current.navigate=navigate;current.scheduleFit?.();return true;}
  current={navigate,x:null,y:null,origin:null};
  installed.set(mount,current);
  const updateVisible=()=>{
@@ -148,6 +146,7 @@ export function installClaudePaintingA3(mount,{navigate}={}){
    if(typeof requestAnimationFrame==="function")requestAnimationFrame(updateVisible);
    else updateVisible();
  };
+ current.scheduleFit=scheduleFit;
  scheduleFit();
  if(typeof document!=="undefined"&&document.fonts?.ready)
    document.fonts.ready.then(scheduleFit).catch(()=>{});
