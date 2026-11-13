@@ -89,10 +89,10 @@ try{
       assert.match(await historic.textContent(),/Sunday Vigil only.*not 2026/);
     }
     if(nextWeek==='CHRISTMAS_DAWN'){
-      const held=picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]');
-      assert.notEqual(await held.getAttribute('disabled'),null,
-       'Dawn Communion hold must retain a native disabled option attribute');
-      assert.match(await held.textContent(),/source review hold.*no audio/);
+      const recovered=picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]');
+      assert.equal(await recovered.getAttribute('disabled'),null,
+       'M63 recovered score is a manual uncertified study option');
+      assert.match(await recovered.textContent(),/recovered source.*uncertified/);
     }
    }
    await picker.selectOption(id);
@@ -151,7 +151,7 @@ try{
   assert.equal(await picker.inputValue(),'',
    'Changing Sunday must invalidate previously playing source');
   assert.equal(await picker.locator('option').count(),6);
-  assert.notEqual(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').getAttribute('disabled'),null);
+  assert.equal(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').getAttribute('disabled'),null);
   assert.equal(await trigger.isVisible(),false,
    'Removing study choice must hide its launcher immediately');
   assert.equal(await player.isVisible(),false,
