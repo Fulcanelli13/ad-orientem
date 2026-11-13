@@ -65,9 +65,9 @@ assert.deepEqual(review.printWitnesses.map(x=>x.url),[
 ]);
 assert.equal(PROPER_M62_RESEARCH_SOURCES.length,19);
 assert.equal(PROPER_M62_RESEARCH_SOURCES.reduce((a,x)=>a+x.sourceNotes,0),3185);
-assert.equal(PROPER_RESEARCH_SOURCES.length,59);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
-assert.equal(PROPER_RESEARCH_SOURCES.reduce((a,x)=>a+x.sourceNotes,0),10036);
+assert.equal(PROPER_RESEARCH_SOURCES.length,74);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,74);
+assert.equal(PROPER_RESEARCH_SOURCES.reduce((a,x)=>a+x.sourceNotes,0),13440);
 assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.week==='CHRISTMAS_DAWN').length,5);
 const selected=properM59ResearchScore(spec.selectionId);
 assert.ok(selected);

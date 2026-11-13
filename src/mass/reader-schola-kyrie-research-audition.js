@@ -433,7 +433,7 @@ export function createKyrieXviResearchAudition({root,
         blank.textContent='No chant selected · nothing plays automatically';
         sourcePicker.replaceChildren(blank);
         const names=Object.freeze({
-          INTROIT:'Introit',GRADUAL:'Gradual',ALLELUIA:'Alleluia',
+          INTROIT:'Introit',GRADUAL:'Gradual',ALLELUIA:'Alleluia',TRACT:'Tract',
           OFFERTORY:'Offertory',COMMUNION:'Communion'
         });
         // M67: keep the first Holy Family source visible as a clearly
