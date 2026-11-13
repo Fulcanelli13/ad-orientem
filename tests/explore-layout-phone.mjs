@@ -80,8 +80,12 @@ try{
     assert.ok(initial.map?.height>=200,width+"px map too short: "+JSON.stringify(initial));
     assert.ok(initial.world?.height>=44&&initial.world.width>=44,width+"px world control too small");
     assert.ok(initial.world.bottom<initial.map.bottom,width+"px world button outside map");
-    // The approved Discover screen has only three entrance tabs.
-    // Source-backed category chips belong to the Sacred Places entrance.
+    // One worldwide map, exactly two atlas destinations. Discover overview
+    // remains a Sacred Atlas subview in Layers, not a third top-level tab.
+    const atlasTabs=await page.locator(".aoAtlasPrimaryTabs > button").allTextContents();
+    assert.equal(atlasTabs.length,2,width+"px expected two atlas tabs");
+    assert.ok(atlasTabs.some(t=>/TLM/.test(t))&&atlasTabs.some(t=>/Sacred Atlas|Atlas sacré/.test(t)),
+      width+"px atlas tabs are not TLM / Sacred: "+atlasTabs.join(" | "));
     const tab=page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="sacred"]');
     await tab.tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred");
@@ -113,7 +117,8 @@ try{
       await rail.locator('[data-mapcn-discover-toggle]').tap();
       await page.waitForFunction(()=>{const rail=document.querySelector('.aoHeritageSurface[data-atlas-entry="sacred"] .aoMapcnDiscoverRail');return rail?.dataset.discoverExpanded==="false"&&rail.getBoundingClientRect().height<=100;},null,{timeout:10000});
     }
-    await page.locator('.aoAtlasPrimaryTabs [data-atlas-entry-tab="discover"]').tap();
+    await page.locator(".aoHeritageMore > summary").tap();
+    await page.locator('.aoHeritageSecondary [data-atlas-entry-tab="discover"]').tap();
     await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="discover");
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
@@ -249,6 +254,19 @@ try{
     snapshots.push({screen:width+"x"+height,locale,mapHeight:Math.round(initial.map.height),
       searchWidth:Math.round(initial.searchWidth),cardHeight:Math.round(card.height),
       mapInteractive:card.worldAccessible,overflow:initial.overflow});
+    // Switching collections is a real lens change; the active map may remount,
+    // but the app shell and selectors must remain coherent, with no stale rail.
+    await page.locator('.aoAtlasPrimaryTabs [data-find-filter="lens"][data-find-filter-value="tlm"]').tap();
+    await page.waitForFunction(()=>Boolean(document.querySelector('.aoExploreSurface[data-atlas-mass="true"]')),
+      null,{timeout:20000});
+    const massTabs=await page.locator(".aoAtlasMassTabs > button").allTextContents();
+    assert.equal(massTabs.length,2,width+"px TLM view has extra Atlas tabs");
+    assert.ok(massTabs.some(t=>/TLM/.test(t))&&massTabs.some(t=>/Sacred Atlas|Atlas sacré/.test(t)));
+    await page.locator('.aoAtlasMassTabs [data-atlas-mass-return="sacred"]').tap();
+    await page.waitForFunction(()=>document.querySelector('.aoHeritageSurface')?.dataset.atlasEntry==="sacred",
+      null,{timeout:20000});
+    assert.equal(await page.locator(".aoAtlasPrimaryTabs > button").count(),2);
+    assert.deepEqual(errors,[],width+"px Atlas switch errors: "+errors.slice(0,3).join(" | "));
     await context.close();
   }
   console.log("PASS Explore multi-width layout, category relevance and world reset "+JSON.stringify(snapshots));
