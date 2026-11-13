@@ -200,21 +200,36 @@ const CSS=`\n
   line-height:1.62;
 }
 /*
- * Claude prototype parity for the Angelus versicle/response reader.
- * The parent attribute limits the 21px Cormorant treatment to recitation.
- * Hail Mary / Collect paragraphs remain EB Garamond; source words, cinematic
- * timings and the Caption Match section-title policy are unchanged.
+ * The approved Angelus / Regina Cæli prototype distinguishes:
+ *   source V/R dialogue: 21px Cormorant 500/1.36 at 390px;
+ *   complete Hail Mary/Collect: EB Garamond 400/1.52;
+ *   liturgical ℣/℟ glyphs: EB Garamond 17px.
+ * This specificity intentionally outranks the Folio donor's generic 1em
+ * speaker rule without affecting Rosary, Stations, or the Mass reader.
  */
-#aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="vr"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
   font-family:var(--ao-font-display)!important;
   font-size:var(--ao-type-angelus-verse)!important;
   font-weight:500!important;
   line-height:1.36!important;
 }
-#aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogueLine>.ao-liturgical-speaker{
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="vr"] .aoAngelusDialogueLine>.ao-liturgical-speaker{
   font-family:var(--ao-font-body)!important;
   font-size:17px!important;
   line-height:1.6!important;
+}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="hail"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
+#aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="collect"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
+  font-family:var(--ao-font-body)!important;
+  font-size:clamp(17px,4.75vw,18.5px)!important;
+  font-weight:400!important;
+  line-height:1.52!important;
+}
+/* The prototype uses Cinzel for prayer movement titles, not for the
+ * source verses or long prose. Keep geometry owned by the Folio donor. */
+#aoPray435930 .aoP435930AngelusReader .aoDevoCardTitle{
+  font-family:var(--ao-font-ceremonial)!important;
+  font-weight:600!important;
 }
 #aoPray435930 .aoP435930VR>small{
   font-family:var(--ao-font-ceremonial)!important;
