@@ -42,7 +42,6 @@ const movementCases=[
  ['GLORIA','MASS_01','Gloria I',null,18],
  ['SANCTUS_BENEDICTUS','MASS_11','Sanctus XI',null,1],
  ['SANCTUS_BENEDICTUS','MASS_01','Sanctus I',null,1],
- ['SANCTUS_BENEDICTUS','MASS_17','Sanctus XVII',null,1],
  ['SANCTUS_BENEDICTUS','MASS_18','Sanctus XVIII',null,1],
  ['AGNUS_DEI','MASS_11','Agnus Dei XI',null,3],
  ['AGNUS_DEI','MASS_01','Agnus Dei I',null,3],
@@ -132,6 +131,16 @@ try{
       console.log('PASS M56 LIVE ordinary',
         JSON.stringify({movement,settingId,notes:mappedNoteheads,sections}));
     }
+    // The 20th historical notation remains browseable, but its Exsurge
+    // encoding does not provide authentic note source GABC at two positions.
+    // It must never gain a playable preview by virtue of a saved selection.
+    const heldSanctus=page.locator('[data-schola-kyriale-choice="SANCTUS_BENEDICTUS"]');
+    await heldSanctus.selectOption('MASS_17');
+    await page.waitForTimeout(300);
+    assert.equal(await page.locator(selector('SANCTUS_BENEDICTUS')).isVisible(),false,
+      'Held Sanctus XVII cannot expose a guessed melody');
+    assert.equal(await player.isVisible(),false);
+    console.log('PASS M56 held score: Sanctus XVII source-index ambiguity withheld');
     // Change a selected movement while the last source's score is sounding:
     // any stale player must close and cease audio on an explicit new selection.
     const agnusPicker=page.locator('[data-schola-kyriale-choice="AGNUS_DEI"]');
