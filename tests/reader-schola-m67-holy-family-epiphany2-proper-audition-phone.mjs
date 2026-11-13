@@ -87,7 +87,8 @@ try{
     if(nextWeek==='HOLY_FAMILY'){
       const held=picker.locator('option[value="HOLY_FAMILY_INTROIT"]');
       assert.equal(await held.count(),1,'1961/1962 first-word hold must be visible');
-      assert.equal(await held.isDisabled(),true,'Hold cannot launch any research audio');
+      assert.equal(await held.getAttribute('disabled'),'','Hold must have native disabled attribute');
+      assert.equal(await held.evaluate(node=>node.disabled),true,'Held option cannot be selected');
       assert.match(await held.textContent(),/Exsultet \/ Exsultat.*hold/);
     }
     if(nextWeek==='CHRISTMAS_VIGIL'){
@@ -157,7 +158,7 @@ try{
   assert.equal(await picker.inputValue(),'',
    'Changing Mass must invalidate previously playing source');
   assert.equal(await picker.locator('option').count(),6);
-  assert.equal(await picker.locator('option[value="HOLY_FAMILY_INTROIT"]').isDisabled(),true,
+  assert.equal(await picker.locator('option[value="HOLY_FAMILY_INTROIT"]').evaluate(node=>node.disabled),true,
    'The Holy Family Introit is a non-playable editorial hold');
   assert.equal(await picker.locator('option[value="HOLY_FAMILY_GRADUAL"]').getAttribute('disabled'),null);
   assert.equal(await trigger.isVisible(),false,
