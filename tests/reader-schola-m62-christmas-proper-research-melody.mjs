@@ -26,7 +26,7 @@ assert.equal(pinned.totalPinnedDigitalNoteheads,3185);
 assert.equal(PROPER_M62_RESEARCH_SOURCES.length,19);
 assert.equal(PROPER_M59_RESEARCH_SOURCES.length,5);
 assert.equal(PROPER_RESEARCH_SOURCES.length,50);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,40);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
 assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.selectionId.startsWith('ADVENT')).length,20);
 assert.equal(pinned.holds.length,1);
 assert.equal(pinned.holds[0].selectionId,'CHRISTMAS_DAWN_COMMUNION');
