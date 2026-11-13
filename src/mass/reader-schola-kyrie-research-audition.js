@@ -10,6 +10,10 @@ import {
   ORDINARY_M54_RESEARCH_SOURCES,compileOrdinaryM54ResearchMelody,
   eligibleOrdinaryM54ResearchSource
 } from './reader-schola-ordinary-research-melody.js';
+import {
+  PROPER_M59_RESEARCH_SOURCES,compileProperM59ResearchMelody,
+  eligibleProperM59ResearchSource
+} from './reader-schola-proper-research-melody.js';
 
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 const REPEATS=Object.freeze([0,0,0,1,1,1,2,2,3]);
@@ -143,6 +147,15 @@ export function createKyrieXviResearchAudition({root,
     extra.hidden=true;
     triggers.set(movement,extra);
   }
+  // One research-only Proper launcher, NEVER one automatic button per card.
+  const properTrigger=doc.createElement('button');
+  properTrigger.type='button';
+  properTrigger.className='ao-kyrie-audition-launch';
+  properTrigger.dataset.kyrieResearchAuditionOpen='';
+  properTrigger.dataset.ordinaryPreviewMovement='PROPER';
+  properTrigger.textContent='♫ PROPER MELODY PREVIEW';
+  properTrigger.hidden=true;
+  triggers.set('PROPER',properTrigger);
   trigger.textContent='♫ HEAR KYRIE XVI · MELODY PREVIEW';
   trigger.hidden=true;
   const panel=doc.createElement('section');
@@ -199,6 +212,29 @@ export function createKyrieXviResearchAudition({root,
         score:playerScore,compiled:prepared.melody,title:spec.title,movement
       });
     }).catch(()=>{/* Unsupported source: withheld. */})
+      .finally(()=>{if(!destroyed)sync();});
+  }
+  const properAttempted=new Set();
+  function prepareProperResearch(selectionId){
+    const key='PROPER:'+selectionId;
+    if(destroyed||sources.has(key)||properAttempted.has(key))return;
+    if(!PROPER_M59_RESEARCH_SOURCES.some(spec=>spec.selectionId===selectionId))
+      return;
+    properAttempted.add(key);
+    // The existing vendored Exsurge promise is shared with the Ordinary:
+    // the research Proper cannot create a second player or network dependency.
+    ordinaryExsurgePromise??=loadOfflineExsurge(doc).catch(()=>null);
+    void ordinaryExsurgePromise.then(exsurge=>{
+      if(destroyed||!exsurge)return;
+      const result=compileProperM59ResearchMelody({selectionId,exsurge});
+      if(!result)return; // Exact source or source-note failure withholds audio.
+      sources.set(key,{
+        score:result.renderScore,compiled:result.melody,
+        title:result.source.role[0]+result.source.role.slice(1).toLowerCase()+
+          ' · '+result.source.title,
+        movement:'PROPER'
+      });
+    }).catch(()=>{/* Missing source/exsurge means no research preview. */})
       .finally(()=>{if(!destroyed)sync();});
   }
   // Load the pinned offline Exsurge semantics only after a user selects one
@@ -388,6 +424,14 @@ export function createKyrieXviResearchAudition({root,
       void open(requested);
   };
   const rootChange=event=>{
+    if(event.target.matches('[data-schola-proper-research-select]')){
+      // A research-only change never alters the saved liturgical programme.
+      properTrigger.hidden=true;
+      properTrigger.dataset.researchScoreKey='';
+      close();
+      sync();
+      return;
+    }
     if(event.target.matches(
       '[data-schola-kyriale-choice], [data-schola-ordinary-setting], '+
       '[data-ordinary-reference-chooser] select'
@@ -433,7 +477,7 @@ export function createKyrieXviResearchAudition({root,
     }
     let visible=eligible;
     for(const [movement,button] of triggers){
-      if(movement==='KYRIE')continue;
+      if(movement==='KYRIE'||movement==='PROPER')continue;
       const chosen=ordinarySelections?.[movement];
       const key=ordinaryKey(movement,chosen);
       const allowed=eligibleOrdinaryM54ResearchSource({
@@ -451,12 +495,32 @@ export function createKyrieXviResearchAudition({root,
         sources.get(key).title.toUpperCase()+' · MELODY PREVIEW';
       visible ||= show;
     }
+    const selectedProper=root.querySelector(
+      '[data-schola-proper-research-select]')?.value??'';
+    const properKey='PROPER:'+selectedProper;
+    const properAllowed=eligibleProperM59ResearchSource({
+      form,mode,isRequiem,selectionId:selectedProper
+    });
+    if(properAllowed&&!sources.has(properKey))
+      prepareProperResearch(selectedProper);
+    const properAnchor=root.querySelector('[data-schola-proper-research]');
+    if(properAnchor&&properTrigger.parentElement!==properAnchor.parentElement)
+      properAnchor.insertAdjacentElement('afterend',properTrigger);
+    const properVisible=Boolean(properAnchor&&properAllowed&&sources.has(properKey));
+    properTrigger.dataset.researchScoreKey=properVisible?properKey:'';
+    properTrigger.hidden=!properVisible;
+    if(properVisible)
+      properTrigger.textContent='♫ HEAR '+
+        sources.get(properKey).title.toUpperCase()+' · MELODY PREVIEW';
+    visible ||=properVisible;
     // Persisted programmes may be changed while the player is open:
     // if the source no longer exactly matches, release the sound immediately.
     if(!panel.hidden){
       const chosen=activeMovement==='KYRIE'?chosenKyrie:
+        activeMovement==='PROPER'?selectedProper:
         ordinarySelections?.[activeMovement];
       const key=activeMovement==='KYRIE'?chosen:
+        activeMovement==='PROPER'?properKey:
         ordinaryKey(activeMovement,chosen);
       const button=triggers.get(activeMovement);
       if(setting!==key||button?.hidden)close();

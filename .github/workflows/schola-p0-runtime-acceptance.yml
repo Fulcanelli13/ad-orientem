@@ -60,6 +60,7 @@ jobs:
           node tests/reader-schola-ordinary-research-melody.mjs
           node tests/reader-schola-m57-sanctus-xvii-bivirga-probe.mjs
           node tests/reader-schola-m58-advent1-proper-source-melody.mjs
+          node tests/reader-schola-m59-proper-research-melody.mjs
           node tests/reader-schola-kyrie-xviii-1961-source-review.mjs
           node tests/reader-schola-kyrie-xviii-1961-print-position-map.mjs
 
@@ -101,6 +102,9 @@ jobs:
 
       - name: J — Unified Gloria Credo Sanctus Agnus melody in actual 65-card phone
         run: node tests/reader-schola-ordinary-audition-phone.mjs
+
+      - name: K — Advent I five-Proper melody in actual 65-card LIVE phone
+        run: node tests/reader-schola-m59-proper-audition-phone.mjs
 
       - name: Preserve minimal existing Schola phone screenshots
         if: always()
