@@ -61,6 +61,8 @@ test("the A3 port retains full bleed painting, low text gradient and reduced mot
  assert.match(CLAUDE_PAINTING_A3_CSS,/clamp\(250px,48dvh,340px\)/);
  assert.doesNotMatch(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*background-size:cover/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/animation:aoClaudeA3Kb 32s/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/@keyframes aoClaudeA3Kb\{from\{transform:translate3d\(0,0,0\) scale\(1\)\}to\{transform:translate3d\(-\.6%,-\.4%,0\) scale\(1\.035\)\}\}/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.view \.bg\{[^}]*animation:none!important;transform:none!important/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/rgba\(4,6,9,\.70\) 81%/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/prefers-reduced-motion/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/aoClaudeChoirResponse/);

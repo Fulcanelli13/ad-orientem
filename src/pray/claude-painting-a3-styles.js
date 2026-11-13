@@ -19,14 +19,14 @@ const LINES=[
 '#aoPray435930 .aoClaudePaintingA3 .ambient{position:absolute;inset:-6%;background-position:center;background-size:cover;filter:blur(34px) brightness(.34) saturate(.85);transform:scale(1.06);z-index:0;pointer-events:none}',
 '#aoPray435930 .aoClaudePaintingA3 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:1;pointer-events:none;animation:aoClaudeA3Kb 32s ease-in-out infinite alternate;transition:inset .5s ease,opacity 1s}',
 
-'@keyframes aoClaudeA3Kb{from{opacity:1}to{opacity:.96}}',
+'@keyframes aoClaudeA3Kb{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-.6%,-.4%,0) scale(1.035)}}',
 '#aoPray435930 .aoClaudePaintingA3 .sh{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(4,6,9,.25) 0%,rgba(4,6,9,0) 24%,rgba(4,6,9,.02) 48%,rgba(4,6,9,.18) 59%,rgba(4,6,9,.70) 81%,#04060a 100%);transition:opacity .8s;pointer-events:none}',
 '#aoPray435930 .aoClaudePaintingA3 .ct{position:absolute;left:26px;right:54px;bottom:46px;z-index:3;max-width:760px;transition:opacity .7s,transform .7s var(--ease)}',
 '#aoPray435930 .aoClaudePaintingA3.view .ct,#aoPray435930 .aoClaudePaintingA3.view .sh{opacity:0;pointer-events:none}',
 '#aoPray435930 .aoClaudePaintingA3.view .ct{transform:translateY(20px)}',
 /* Painting-only shows the ENTIRE source artwork, including portraits and
    landscape compositions. Content overlays vanish but back/return remains. */
-'#aoPray435930 .aoClaudePaintingA3.view .bg{top:max(64px,env(safe-area-inset-top));bottom:max(20px,env(safe-area-inset-bottom));height:calc(100% - max(64px,env(safe-area-inset-top)) - max(20px,env(safe-area-inset-bottom)));object-position:center}',
+'#aoPray435930 .aoClaudePaintingA3.view .bg{top:max(64px,env(safe-area-inset-top));bottom:max(20px,env(safe-area-inset-bottom));height:calc(100% - max(64px,env(safe-area-inset-top)) - max(20px,env(safe-area-inset-bottom)));object-position:center;animation:none!important;transform:none!important}',
 
 '#aoPray435930 .aoClaudePaintingA3 h2{font:600 clamp(28px,5vw,34px)/1.02 var(--cap);margin:8px 0 16px;letter-spacing:.5px;text-shadow:0 2px 20px rgba(0,0,0,.6);color:#eee9df}',
 '#aoPray435930 .aoClaudePaintingA3 .eyb{font:600 10px var(--cap);letter-spacing:2.2px;color:var(--gold)}',
