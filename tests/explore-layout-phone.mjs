@@ -202,15 +202,19 @@ try{
       // remained visible. Test the actual on-screen intersections.
       const visual=await page.evaluate(()=>{
         const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
+        const scroller=sheet?.querySelector(".aoHeritagePreviewScroll");
         const title=sheet?.querySelector(".aoHeritageCardTitle");
         const image=sheet?.querySelector(".aoHeritagePlaceThumb img");
         const caption=sheet?.querySelector(".aoHeritagePlaceThumb figcaption");
-        const r=sheet?.getBoundingClientRect(),t=title?.getBoundingClientRect(),
-              i=image?.getBoundingClientRect(),c=caption?.getBoundingClientRect();
+        const r=sheet?.getBoundingClientRect(),sr=scroller?.getBoundingClientRect(),
+              t=title?.getBoundingClientRect(),i=image?.getBoundingClientRect(),
+              c=caption?.getBoundingClientRect();
         const intersection=(a,b)=>a&&b?
           Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)):0;
-        return {scrollTop:sheet?.scrollTop,titleVisible:intersection(t,r),
+        return {scrollTop:scroller?.scrollTop,titleVisible:intersection(t,r),
           titleHeight:t?.height,imageVisible:intersection(i,r),imageHeight:i?.height,
+          imageWithinScroller:intersection(i,sr),
+          captionWithinScroller:intersection(c,sr),captionHeight:c?.height,
           captionBelow:c&&i?c.top>=i.bottom-2:false,
           titleText:title?.textContent?.trim()};
       });
@@ -220,6 +224,10 @@ try{
         width+"px approved photo collapsed or is outside card: "+JSON.stringify(visual));
       assert.ok(visual.captionBelow,
         width+"px credit overlaps the approved photograph: "+JSON.stringify(visual));
+      assert.ok(visual.imageWithinScroller>=visual.imageHeight-2,
+        width+"px approved photograph is initially cut off by the action dock: "+JSON.stringify(visual));
+      assert.ok(visual.captionHeight>=8&&visual.captionWithinScroller>=Math.min(8,visual.captionHeight*.6),
+        width+"px approved photo rights credit is below the first-view fold: "+JSON.stringify(visual));
       // A 320px card used to keep Discover below the scroll fold. Its primary
       // action now belongs to a bounded sticky dock, and must be hit-testable
       // without the user having to scroll inside the map preview.
