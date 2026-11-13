@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {offlineKyrialeResearchScore} from '../src/mass/reader-kyriale-research-gabc.js';
+import {compileExsurgeGabcResearchMelody,gabcResearchFingerprint} from '../src/mass/reader-schola-exsurge-gabc-melody.js';
 import {compileOrdinaryM54ResearchMelody,eligibleOrdinaryM54ResearchSource,
   ORDINARY_M54_RESEARCH_SOURCES,ORDINARY_M54_POLICY} from
   '../src/mass/reader-schola-ordinary-research-melody.js';
@@ -31,6 +32,44 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const output=compileOrdinaryM54ResearchMelody({
    movement:spec.movement,settingId:spec.settingId,exsurge
  });
+ if(!output){
+   const diagnostic={
+     movement:spec.movement,settingId:spec.settingId,scoreId:spec.scoreId,
+     actualFingerprint:gabcResearchFingerprint(source.gabc),
+     expectedFingerprint:spec.sourceFingerprint,
+     sourceApproved:source.scoreApproved,
+     expectedGabcSegments:spec.gabcSegments
+   };
+   try{
+     const context=new exsurge.ChantContext();
+     const score=new exsurge.ChantScore(context,
+       exsurge.Gabc.createMappingsFromSource(context,source.gabc),true);
+     score.performLayout(context);
+     let current=0;const counts=[];
+     for(const notation of score.notations){
+       if(notation.constructor?.name==='DoubleBar'){
+         counts.push(current);current=0;
+       }else current+=(notation.notes?.length??0);
+     }
+     diagnostic.renderedCounts=counts;
+     diagnostic.trailingNotes=current;
+     diagnostic.totalRendered=score.notes.length;
+     try{
+       const result=compileExsurgeGabcResearchMelody(source.gabc,{
+         exsurge,scoreId:spec.scoreId,
+         expectedFingerprint:spec.sourceFingerprint,
+         expectedPhraseNoteCounts:counts,
+         phraseSequence:counts.map((_,i)=>i)
+       });
+       diagnostic.directCompiler={
+         notes:result.sourceNoteCount,
+         phrases:result.phraseCount,
+         performance:result.performance.length
+       };
+     }catch(error){diagnostic.directCompilerError=String(error?.message??error)}
+   }catch(error){diagnostic.parseError=String(error?.message??error)}
+   console.error('M56_SOURCE_REVIEW_HOLD',JSON.stringify(diagnostic));
+ }
  assert.ok(output,'M56 compiler rejected '+spec.movement+':'+spec.settingId+' '+spec.scoreId);
  assert.equal(output.sourceNotes,output.playedNotes,
    'Non-Kyrie movement must not inherit 3+3+2+1 Kyrie repetitions');
