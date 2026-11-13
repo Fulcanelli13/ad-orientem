@@ -13,13 +13,15 @@ const bundle=readFileSync(new URL(
 const sandbox={};sandbox.globalThis=sandbox;
 vm.runInNewContext(bundle,sandbox,{timeout:10000,filename:'pinned-exsurge.min.js'});
 const exsurge=sandbox.exsurge;
-assert.equal(ORDINARY_M54_RESEARCH_SOURCES.length,4);
-assert.equal(ORDINARY_M54_POLICY.availableInLivePlayer,false);
+assert.equal(ORDINARY_M54_RESEARCH_SOURCES.length,14);
+assert.equal(ORDINARY_M54_POLICY.availableInLivePlayer,true);
 assert.equal(ORDINARY_M54_POLICY.originalPrintedNoteheadsCertified,false);
 assert.equal(ORDINARY_M54_POLICY.independentGregorianRhythmCertified,false);
 assert.equal(ORDINARY_M54_POLICY.automaticAssignment,false);
 const movements=['GLORIA','CREDO','SANCTUS_BENEDICTUS','AGNUS_DEI'];
-assert.deepEqual(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement),movements);
+assert.deepEqual([...new Set(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement))],movements);
+const sourceKeys=ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement+':'+x.settingId);
+assert.equal(new Set(sourceKeys).size,14,'Every source-bound movement+setting must be unique');
 const results=[];
 for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const source=offlineKyrialeResearchScore(spec.movement,spec.settingId);
@@ -29,7 +31,7 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const output=compileOrdinaryM54ResearchMelody({
    movement:spec.movement,settingId:spec.settingId,exsurge
  });
- assert.ok(output,'M54 compiler rejected '+spec.movement+' original research source');
+ assert.ok(output,'M56 compiler rejected '+spec.movement+':'+spec.settingId+' '+spec.scoreId);
  assert.equal(output.sourceNotes,output.playedNotes,
    'Non-Kyrie movement must not inherit 3+3+2+1 Kyrie repetitions');
  assert.equal(output.melody.phraseCount,spec.gabcSegments);
@@ -83,4 +85,4 @@ assert.equal(compileOrdinaryM54ResearchMelody({
  movement:'GLORIA',settingId:'MASS_08',exsurge:null
 }),null);
 console.log('M54_ORDINARY_RESEARCH',JSON.stringify(results));
-console.log('PASS M54: four exact GABC sources, no Kyrie repetitions, no Gregorian timing or score approval');
+console.log('PASS M56: fourteen source-pinned non-Kyrie GABC melodies; original timing and score approval remain withheld');
