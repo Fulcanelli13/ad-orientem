@@ -185,6 +185,15 @@ try{
    await group.evaluate(el=>el.click());
    await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-angelus-recitation]")?.dataset.aoAngelusRecitation==="group",
     null,{timeout:15000});
+   // A successful group-mode click leaves the optional settings drawer open.
+   // Close it before screenshotting; otherwise we record controls obscuring
+   // the actual liturgical lines rather than the approved prayer composition.
+   const opt=page.locator("#aoPray435930 [data-ao-angelus-options]");
+   if(await opt.evaluate(el=>el.open)){
+    await page.locator("#aoPray435930 [data-p435930-angelus-settings]").click();
+    await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-angelus-options]")?.open===false,
+     null,{timeout:8000});
+   }
    const readAngelusMetrics=async()=>page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open");
     const current=root?.querySelector(".aoDevoCard:not([hidden])");
