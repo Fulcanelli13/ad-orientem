@@ -108,12 +108,52 @@ try{
    assert.ok(result.roles.ceremonial.includes("Cinzel"),JSON.stringify(result.roles));
    assert.ok(result.roles.display.includes("Cormorant Garamond"),JSON.stringify(result.roles));
    assert.ok(result.roles.reading.includes("EB Garamond"),JSON.stringify(result.roles));
+   assert.ok(result.roles.heading?.includes("EB Garamond"),
+    "H7 saint heading must retain Claude's original EB Garamond face: "+JSON.stringify(result.roles));
    assert.ok(result.geometry.homeFound,"Integrated Home did not render at "+width+"px");
    assert.ok(result.geometry.viewport===width,"Incorrect phone viewport: "+JSON.stringify(result.geometry));
+   const geometry=await page.evaluate(()=>{
+    const root=document.querySelector(".aoH7HomeView .hero");
+    if(!root)return {error:"H7 hero absent"};
+    const selectors=[
+     [".top",".top"],[".wm",".top .wm"],["date",".date"],
+     ["rank",".rb"],["saint","h1"],["formulary",".aoH4Formulary"],
+     ["markers",".mks"],["mass",".aoTodayV2Mass"],["massAction",".aoH7Enter"]
+    ];
+    const boxes=selectors.map(([name,selector])=>{
+     const element=root.querySelector(selector);
+     if(!element)return {name,missing:true};
+     const b=element.getBoundingClientRect(),s=getComputedStyle(element);
+     return {name,tag:element.tagName,text:element.innerText?.trim().slice(0,160),
+      rect:{x:b.x,y:b.y,w:b.width,h:b.height,right:b.right,bottom:b.bottom},
+      css:{font:s.font,fontFamily:s.fontFamily,lineHeight:s.lineHeight,position:s.position,
+       overflow:s.overflow,transform:s.transform,opacity:s.opacity,visibility:s.visibility}};
+    });
+    const pairs=[];
+    const independent=["date","rank","saint","formulary","markers","mass"];
+    for(let i=0;i<independent.length;i++)for(let j=i+1;j<independent.length;j++){
+     const x=boxes.find(b=>b.name===independent[i])?.rect;
+     const y=boxes.find(b=>b.name===independent[j])?.rect;
+     if(x&&y){
+      const overlap=Math.min(x.right,y.right)-Math.max(x.x,y.x);
+      const vertical=Math.min(x.bottom,y.bottom)-Math.max(x.y,y.y);
+      if(overlap>3&&vertical>3)pairs.push({a:independent[i],b:independent[j],overlap,vertical});
+     }
+    }
+    const markups=[...root.querySelectorAll("*")].filter(el=>
+      el.childElementCount===0&&/AD ORIENTEM|St\. Didacus/i.test(el.textContent||"")).map(el=>{
+       const r=el.getBoundingClientRect();
+       return {text:el.textContent.trim().slice(0,80),tag:el.tagName,
+        className:el.className?.baseVal||el.className,
+        y:r.y,bottom:r.bottom,position:getComputedStyle(el).position};
+      });
+    return {boxes,overlapPairs:pairs,markups,heroHeight:root.getBoundingClientRect().height};
+   });
+
    await page.screenshot({path:output+"/integrated-home-"+width+".png",fullPage:false});
 
    await writeFile(output+"/font-matrix-"+width+".json",
-    JSON.stringify({width,result,fontResponses:[...loadedFonts],failedFonts},null,2)+"\n");
+    JSON.stringify({width,result,geometry,fontResponses:[...loadedFonts],failedFonts},null,2)+"\n");
    console.log("PASS exact Claude local font faces and integrated Home at "+width+"px");
   }finally{await page.close();}
  }
