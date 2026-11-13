@@ -1,7 +1,7 @@
 {
   "schema": "ao-schola-m68-prelent-three-sundays-gr1961-archive-audit-v1",
   "date": "2026-11-13",
-  "stage": "SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE",
+  "stage": "DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_HOLD_NO_PLAYER_CHANGE",
   "liturgicalFrame": "1962 Missale Romanum, 1961 Graduale Romanum, Septuagesima-Sexagesima-Quinquagesima",
   "archive": "data/mass/chant-corpus/gr1961-proper-index.json",
   "editionId": 2,
@@ -72,8 +72,8 @@
     "duplicateGregoBaseIdsWithinBatch": 0,
     "duplicateIdsInExisting75MelodyPlayer": 0,
     "existingProperSelectionsBeforeAudit": 59,
-    "sourceDigitalNoteheads": null,
-    "sourceDigitalNoteheadsCertifiedForResearch": false
+    "sourceDigitalNoteheads": 3404,
+    "sourceDigitalNoteheadsCertifiedForResearch": true
   },
   "sources": [
     {
@@ -127,9 +127,14 @@
       "rendererFingerprint": "f41a3f75",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 183,
+      "phraseNoteCounts": [
+        131,
+        36,
+        5,
+        11
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -154,9 +159,12 @@
       "rendererFingerprint": "438f9f69",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 2,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 373,
+      "phraseNoteCounts": [
+        175,
+        198
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -181,9 +189,14 @@
       "rendererFingerprint": "63aec6ec",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 427,
+      "phraseNoteCounts": [
+        96,
+        119,
+        89,
+        123
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -208,9 +221,11 @@
       "rendererFingerprint": "54bb6b6e",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 98,
+      "phraseNoteCounts": [
+        98
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -235,9 +250,11 @@
       "rendererFingerprint": "16afdc8d",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 92,
+      "phraseNoteCounts": [
+        92
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -262,9 +279,14 @@
       "rendererFingerprint": "b1d7267d",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 178,
+      "phraseNoteCounts": [
+        129,
+        33,
+        6,
+        10
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -289,9 +311,12 @@
       "rendererFingerprint": "8f0b5109",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 2,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 299,
+      "phraseNoteCounts": [
+        146,
+        153
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -316,9 +341,13 @@
       "rendererFingerprint": "1e6af1ea",
       "bivirgaMatches": 1,
       "sourceDoubleBarTokens": 3,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 362,
+      "phraseNoteCounts": [
+        111,
+        104,
+        147
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -343,9 +372,11 @@
       "rendererFingerprint": "2eb79e35",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 174,
+      "phraseNoteCounts": [
+        174
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -370,9 +401,11 @@
       "rendererFingerprint": "c2ccf4b2",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 70,
+      "phraseNoteCounts": [
+        70
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -397,9 +430,14 @@
       "rendererFingerprint": "c8274f77",
       "bivirgaMatches": 1,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 165,
+      "phraseNoteCounts": [
+        117,
+        33,
+        8,
+        7
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -424,9 +462,12 @@
       "rendererFingerprint": "11f72f2d",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 2,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 345,
+      "phraseNoteCounts": [
+        167,
+        178
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -451,9 +492,14 @@
       "rendererFingerprint": "57d9e1b1",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 4,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 337,
+      "phraseNoteCounts": [
+        90,
+        53,
+        50,
+        144
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -478,9 +524,11 @@
       "rendererFingerprint": "c5a3a08b",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 207,
+      "phraseNoteCounts": [
+        207
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -505,9 +553,11 @@
       "rendererFingerprint": "4f1f2918",
       "bivirgaMatches": 0,
       "sourceDoubleBarTokens": 1,
-      "sourceNoteheads": null,
-      "phraseNoteCounts": null,
-      "exsurgeParityVerified": false,
+      "sourceNoteheads": 94,
+      "phraseNoteCounts": [
+        94
+      ],
+      "exsurgeParityVerified": true,
       "researchApproved": false,
       "printedNeumesApproved": false,
       "gregorianRhythmCertified": false,
@@ -533,6 +583,12 @@
       "role": "PRINT_VERIFICATION",
       "issue": "Original source full PDF exceeds screenshot renderer size. Archive/printed text crosswalk verified but graphic neume/underlay has not been certified; maintain research-only hold.",
       "mustNotSubstitute": true
+    },
+    {
+      "massId": "ALL",
+      "role": "NOTEHEAD_LOCK",
+      "issue": "The 3,404 digital noteheads and phrase counts are locked by the vendored Exsurge/GABC parser with original archive SHA-256 and FNV. This is not a graphic-page neume, text underlay, or historical rhythmic certification.",
+      "mustNotSubstitute": true
     }
   ],
   "restrictions": {
@@ -554,5 +610,21 @@
     "noArchiveMutation": true,
     "noTransferToSeparateProductionRepo": true
   },
-  "plannedNextStage": "M69: lock exact source digital noteheads and phrase counts, review print exceptions before enabling the same shared manual research player; avoid silently converting Tract to Alleluia."
+  "plannedNextStage": "M69: lock exact source digital noteheads and phrase counts, review print exceptions before enabling the same shared manual research player; avoid silently converting Tract to Alleluia.",
+  "exsurgeEvidence": {
+    "workflowRunId": 43471766717,
+    "workflowJobId": 132045202555,
+    "verifiedAtUTC": "2026-11-13T17:22:08Z",
+    "result": "PASS M68 EXSURGE",
+    "original1961SourceDigitalNoteheads": 3404,
+    "exactSourceSHA256AndFNVParity": true,
+    "exactDigitalPitchAndShapeParityAfterBivirgaExpansion": true,
+    "all15PhraseCountsLocked": true,
+    "tractSlots": 3,
+    "alleluiaSlots": 0,
+    "original1961PrintedNeumesComparedVisually": false,
+    "originalPrintedSyllabicUnderlayCertified": false,
+    "GregorianRhythmCertified": false,
+    "playerChanges": false
+  }
 }
