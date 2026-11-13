@@ -37,7 +37,10 @@
       "gabcSha256": "0f3ba0e9034d2bca4f82d4644fc6cb38782d9d4e9a157256eae07db14be63e87",
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=132",
       "canonicalArchivePath": "data/mass/chant-corpus/gr1961-proper-001.json",
-      "approved": false
+      "approved": false,
+      "expectedDigitalNoteheads": 171,
+      "expectedGabcSections": 4,
+      "vendoredExsurgeEquivalentBivirgaReplacements": []
     },
     {
       "role": "GRADUAL",
@@ -50,7 +53,19 @@
       "gabcSha256": "73eb1dc9b3ce179480b0f264bfc4736733215eee04947d1da2058445330edb41",
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1169",
       "canonicalArchivePath": "data/mass/chant-corpus/gr1961-proper-006.json",
-      "approved": false
+      "approved": false,
+      "expectedDigitalNoteheads": 188,
+      "expectedGabcSections": 2,
+      "vendoredExsurgeEquivalentBivirgaReplacements": [
+        {
+          "from": "jvvH",
+          "to": "jv/jvH"
+        },
+        {
+          "from": "hvvGF",
+          "to": "hv/hvGF"
+        }
+      ]
     },
     {
       "role": "ALLELUIA",
@@ -63,7 +78,19 @@
       "gabcSha256": "237505f794c96c2d5d0388f0f606b94881b6dc8e8f050f7e402914beab9b3337",
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1115",
       "canonicalArchivePath": "data/mass/chant-corpus/gr1961-proper-005.json",
-      "approved": false
+      "approved": false,
+      "expectedDigitalNoteheads": 183,
+      "expectedGabcSections": 2,
+      "vendoredExsurgeEquivalentBivirgaReplacements": [
+        {
+          "from": "ivvHF",
+          "to": "iv/ivHF"
+        },
+        {
+          "from": "hvvGE",
+          "to": "hv/hvGE"
+        }
+      ]
     },
     {
       "role": "OFFERTORY",
@@ -76,7 +103,10 @@
       "gabcSha256": "63af04c751dc1e9d691733cc42477d5bfa3e04f6c9c2937593f6de7e6b68dd65",
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=962",
       "canonicalArchivePath": "data/mass/chant-corpus/gr1961-proper-005.json",
-      "approved": false
+      "approved": false,
+      "expectedDigitalNoteheads": 152,
+      "expectedGabcSections": 1,
+      "vendoredExsurgeEquivalentBivirgaReplacements": []
     },
     {
       "role": "COMMUNION",
@@ -89,7 +119,10 @@
       "gabcSha256": "60cb56748adc371bfc376f4a5e75d1bafae87a112772a85cfb9b2c21223a1ed6",
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1036",
       "canonicalArchivePath": "data/mass/chant-corpus/gr1961-proper-005.json",
-      "approved": false
+      "approved": false,
+      "expectedDigitalNoteheads": 68,
+      "expectedGabcSections": 1,
+      "vendoredExsurgeEquivalentBivirgaReplacements": []
     }
   ],
   "sourceIntegrity": {
@@ -100,9 +133,10 @@
     "originalPrintNoteheadsCertified": false,
     "musicalRhythmCertified": false,
     "automaticAssign": false,
-    "licensedGabcSource": "GregoBase source transcriptions CC0"
+    "licensedGabcSource": "GregoBase source transcriptions CC0",
+    "rendererNotationEquivalenceRule": "For two GABC sources containing abbreviated bivirgae, replace only exact pitch-bearing pcvv tokens with two explicit same-pitch virgae on the research renderer copy, after verifying canonical archival SHA; require all source note pitch/shape/rhythm-sign events to match unchanged Exsurge source."
   },
-  "developmentStage": "RESEARCH_ENGINE_PROBE_NOT_LIVE_PLAYER",
+  "developmentStage": "SOURCE_LOCKED_FIVE_SCORE_COMPILER_PARITY_PROBE_NOT_LIVE_PLAYER",
   "runtimeRestrictions": {
     "existingOnePlayerOnly": true,
     "noAdditionalPaidServices": true,
