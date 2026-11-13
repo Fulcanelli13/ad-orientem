@@ -179,6 +179,19 @@ try{
    assert.equal(await foot.count(),1,id+" lost card-level fixed response footer");
    assert.equal(await choir.locator('[data-ao-a3-mode="focus"]').count(),0,
     id+" got inappropriate standalone contemplation");
+   // The opening Kyrie has no fabricated footer answer. Activate the first
+   // source-authored invocation with an actual response before checking its bar.
+   // Rows already carry their responses in source-owned data attributes.
+   // A single p row is itself the response owner, not a nested element.
+   const responsiveRow=choir.locator('.aoClaudeChoirBeat[data-ao-choir-answer]:not([data-ao-choir-answer=""])').first();
+   assert.ok(await responsiveRow.count(),id+" no attested response-bearing invocation");
+   const expectedAnswer=await responsiveRow.getAttribute("data-ao-choir-answer");
+   await responsiveRow.click({timeout:12000});
+   await page.waitForFunction(()=>{
+    const card=document.querySelector("#aoPray435930.open .aoClaudePaintingA3Card");
+    const bar=card?.querySelector(".aoClaudeChoirResponse");
+    return bar&&!bar.hidden&&Boolean(bar.querySelector(".aoClaudeChoirResponseText")?.textContent);
+   },null,{timeout:10000});
    const geo=await foot.evaluate(el=>{
     const box=el.getBoundingClientRect(),root=el.closest(".aoClaudePaintingA3Card").getBoundingClientRect();
     return {visible:box.height>20&&box.width>0&&!el.hidden,
@@ -186,6 +199,7 @@ try{
      answer:el.querySelector(".aoClaudeChoirResponseText")?.textContent||""};
    });
    assert.ok(geo.visible&&geo.atFoot,id+" footer detached from painting: "+JSON.stringify(geo));
+   assert.equal(geo.answer,expectedAnswer,id+" footer did not match the selected canonical response");
    reports.push({width,id,kind:"litany",sourceRowCount:detail.sourceRowCount,choirFoot:geo});
   }
   await page.evaluate(()=>window.AO_PRAY_V435930.close({silent:true}));
