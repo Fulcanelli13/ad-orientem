@@ -28,8 +28,9 @@ without visual approval.
 
 ## What this branch changes
 
-1. The published entry now requests exactly the families and weight tuples
-   used by the two network-font prayer prototypes.
+1. The certified HTML shell stays byte-identical; the shared design owner
+   imports Cormorant 400/500/600 plus italic 400/500 at runtime, while the
+   original shell loads Cinzel/EB. Home V9 additional faces await final review.
 2. Shared application variables distinguish `--ao-font-ceremonial`,
    `--ao-font-display` and `--ao-font-body`. General display headings stop
    being silently aliased to EB Garamond; branding/navigation remain Cinzel.
