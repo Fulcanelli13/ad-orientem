@@ -6,12 +6,10 @@ import {DEVOTIONAL_CINEMATIC_CSS} from "../src/pray/devotional-cinematic-styles.
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const index=read("index.html");
 
-// Prayer-prototype weights plus Home V9's additional 400/700 normal faces.
-// Home V9 embeds its own files, including EB Garamond numerals in Cormorant faces.
-assert.ok(index.includes(
- "family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500"+
- "&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
-),"the published app must load every prototype weight, including italic 500");
+// The generated shell must remain unmodified. Cormorant loads from the
+// design-system owner, while the startup document retains Cinzel and EB.
+assert.ok(index.includes("family=Cinzel:wght@500;600;700&family=EB+Garamond"));
+assert.ok(!index.includes("family=Cormorant+Garamond"));
 
 const elements=new Map();
 const document={
@@ -23,6 +21,8 @@ const document={
 const owner=installAppDesignSystem({document});
 assert.equal(owner.installed,true);
 const css=elements.get("ao-app-design-system").textContent;
+assert.ok(css.includes('@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap")'));
+assert.ok(css.indexOf("@import url(")<css.indexOf(":root{"));
 assert.ok(css.includes('--ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif)'));
 assert.ok(css.includes('--ao-font-display:var(--font-cormorant,"Cormorant Garamond","EB Garamond",Georgia,serif)'));
 assert.ok(css.includes('--ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif)'));
