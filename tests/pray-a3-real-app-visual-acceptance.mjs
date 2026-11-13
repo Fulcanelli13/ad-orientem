@@ -67,6 +67,26 @@ try{
      overflow:getComputedStyle(box).overflowY,
      imageTitle:bg.alt,clientWidth:el.clientWidth};
    });
+   const geometry=await painting.evaluate(el=>{
+    const measure=selector=>{
+     const target=selector==="self"?el:document.querySelector(selector);
+     if(!target)return null;
+     const r=target.getBoundingClientRect(),style=getComputedStyle(target);
+     return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,height:r.height,width:r.width,
+      overflowY:style.overflowY,display:style.display,pointerEvents:style.pointerEvents};
+    };
+    return {root:measure("self"),sheet:measure("#aoPray435930 .aoP435930Sheet"),
+     header:measure("#aoPray435930 .aoP435930Head"),
+     card:measure("#aoPray435930 .aoClaudePaintingA3Card"),
+     title:measure("#aoPray435930 .aoClaudePaintingA3 .ct"),
+     photo:measure("#aoPray435930 .aoClaudePaintingA3 .bg"),
+     text:measure("#aoPray435930 .aoClaudePaintingA3 .tx"),
+     mode:measure("#aoPray435930 .aoA3ExperienceModes"),
+     ribbon:measure("#ao-global-ribbon")};
+   });
+   console.log("A3_GEOMETRY "+width+" "+id+" "+JSON.stringify(geometry));
+   assert.ok(geometry.root.height>=height-2,id+" painting viewport is short: "+JSON.stringify(geometry));
+   assert.equal(geometry.ribbon?.display,"none",id+" unrelated global navigation still visible");
    assert.equal(initial.imageLoaded,true,id+" actual approved photograph failed to load");
    assert.equal(initial.imageFit,"contain",id+" image cropped");
    assert.match(initial.animation,/aoClaudeA3Kb/,id+" painting not animated");
@@ -76,7 +96,11 @@ try{
    const swap=painting.locator("[data-ao-a3-swap]");
    if(await swap.count()){
     await swap.click();
-    await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
+    await swap.evaluate(async el=>{
+     const transitions=[...el.querySelectorAll(".st>*")].flatMap(node=>node.getAnimations());
+     await Promise.all(transitions.map(animation=>animation.finished.catch(()=>{})));
+    });
+    await page.evaluate(()=>new Promise(done=>requestAnimationFrame(done)));
     assert.equal(await swap.getAttribute("aria-pressed"),"true",id+" language toggle inactive");
     const swapped=await painting.evaluate(el=>{
      const face=el.querySelector(".sw .st .b");
@@ -84,6 +108,8 @@ try{
       layout:el.dataset.aoA3ReadingLayout,ratio:(face?.scrollHeight||0)/(el.clientHeight||1)};
     });
     assert.ok(swapped.visible,id+" translation not exposed");
+    assert.ok(await painting.locator(".sw .st .b").evaluate(el=>Number(getComputedStyle(el).opacity))>.95,
+     id+" switched vernacular not visibly opaque");
     assert.equal(swapped.layout,swapped.ratio>0.40?"veil":"cinematic",id+" translation fit incorrect");
     await page.screenshot({path:resolve(out,width+"-"+id+"-translation.png"),fullPage:false});
    }
@@ -121,6 +147,8 @@ try{
    assert.equal(await painting.locator(".bg").evaluate(el=>getComputedStyle(el).animationName),"none",
     id+" app-level reduced motion not respected");
    await page.evaluate(()=>{delete document.documentElement.dataset.reducedMotion;});
+   await page.locator("#aoPray435930.open .aoP435930Back").click({timeout:8000});
+   assert.equal(await painting.count(),0,id+" Back did not exit the painting");
    reports.push({width,id,...initial});
   }
   // Litany A3 routes retain the source-owned Choir synchronizer and fixed response bar.
