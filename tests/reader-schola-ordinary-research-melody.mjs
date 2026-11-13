@@ -83,6 +83,7 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
    continue;
  }
  assert.ok(output,'M56 compiler rejected '+spec.movement+':'+spec.settingId+' '+spec.scoreId);
+ assert.equal(output.sourceNotes,spec.sourceNotes,'13 pinned GABC notehead count changed');
  assert.equal(output.sourceNotes,output.playedNotes,
    'Non-Kyrie movement must not inherit 3+3+2+1 Kyrie repetitions');
  assert.equal(output.melody.phraseCount,spec.gabcSegments);
