@@ -35,7 +35,18 @@ const movementCases=[
  ['GLORIA','MASS_08','Gloria VIII',250,18],
  ['CREDO','CREDO_03','Credo III',414,19],
  ['SANCTUS_BENEDICTUS','MASS_08','Sanctus VIII',143,1],
- ['AGNUS_DEI','MASS_08','Agnus Dei VIII',106,3]
+ ['AGNUS_DEI','MASS_08','Agnus Dei VIII',106,3],
+ // M56 expanded 1961 source-gated pilot. Exact counts were checked against
+ // the pinned Exsurge source-order ledger before acceptance.
+ ['GLORIA','MASS_11','Gloria XI',287,18],
+ ['GLORIA','MASS_01','Gloria I',316,18],
+ ['SANCTUS_BENEDICTUS','MASS_11','Sanctus XI',133,1],
+ ['SANCTUS_BENEDICTUS','MASS_01','Sanctus I',106,1],
+ ['SANCTUS_BENEDICTUS','MASS_18','Sanctus XVIII',60,1],
+ ['AGNUS_DEI','MASS_11','Agnus Dei XI',103,3],
+ ['AGNUS_DEI','MASS_01','Agnus Dei I',117,3],
+ ['AGNUS_DEI','MASS_17','Agnus Dei XVII',90,3],
+ ['AGNUS_DEI','MASS_18','Agnus Dei XVIII',60,3]
 ];
 const selector=movement=>
   '[data-kyrie-research-audition-open][data-ordinary-preview-movement="'+movement+'"]';
@@ -66,6 +77,7 @@ try{
       const picker=page.locator('[data-schola-kyriale-choice="'+movement+'"]');
       await picker.selectOption(settingId);
       const trigger=page.locator(selector(movement));
+      assert.equal(await trigger.count(),1,'One launcher per movement, never one per score');
       await trigger.waitFor({state:'visible',timeout:60000});
       assert.equal(await player.isVisible(),false,'Selection alone must not start audio');
       await trigger.click();
@@ -73,8 +85,11 @@ try{
       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:85000});
       assert.match(await player.locator('h3').textContent(),new RegExp(title));
-      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),
-        notes,'Exact original GABC notehead count must map to SVG');
+      const mappedNoteheads=await player.locator(
+        '[data-kyrie-staff] svg use.note[id^="note-"]').count();
+      if(Number.isInteger(notes))
+        assert.equal(mappedNoteheads,notes,'Pinned GABC notehead count must map to SVG');
+      else assert.ok(mappedNoteheads>20,'Source notes must produce a nonempty Exsurge SVG');
       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]').count(),1);
       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
         .getAttribute('id'),'note-1');
@@ -113,8 +128,19 @@ try{
       assert.equal(await player.isVisible(),false);
       // Reopen the same user-owned settings panel to choose the next movement.
       await plan.evaluate(node=>{node.open=true;});
-      console.log('PASS M55 LIVE ordinary',JSON.stringify({movement,notes,sections}));
+      console.log('PASS M56 LIVE ordinary',
+        JSON.stringify({movement,settingId,notes:mappedNoteheads,sections}));
     }
+    // The 20th historical notation remains browseable, but its Exsurge
+    // encoding does not provide authentic note source GABC at two positions.
+    // It must never gain a playable preview by virtue of a saved selection.
+    const heldSanctus=page.locator('[data-schola-kyriale-choice="SANCTUS_BENEDICTUS"]');
+    await heldSanctus.selectOption('MASS_17');
+    await page.waitForTimeout(300);
+    assert.equal(await page.locator(selector('SANCTUS_BENEDICTUS')).isVisible(),false,
+      'Held Sanctus XVII cannot expose a guessed melody');
+    assert.equal(await player.isVisible(),false);
+    console.log('PASS M56 held score: Sanctus XVII source-index ambiguity withheld');
     // Change a selected movement while the last source's score is sounding:
     // any stale player must close and cease audio on an explicit new selection.
     const agnusPicker=page.locator('[data-schola-kyriale-choice="AGNUS_DEI"]');

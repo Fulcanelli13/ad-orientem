@@ -1,5 +1,5 @@
 // M54 — one source-locked, zero-cost procedural-melody preparation path
-// for the four non-Kyrie Ordinary movement families. This module does not
+// for the four non-Kyrie Ordinary movement families and 13 playable research scores. This module does not
 // create audio, UI, an approved score, a Schola event or a liturgical cue.
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {
@@ -11,23 +11,68 @@ const freeze=Object.freeze;
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
 export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'GLORIA',settingId:'MASS_08',scoreId:'GREGOBASE-961',
-    title:'Gloria VIII',sourceFingerprint:'a5986d2a',gabcSegments:18,
+    title:'Gloria VIII',sourceFingerprint:'a5986d2a',gabcSegments:18,sourceNotes:250,
     sourceFolio:'Graduale Romanum (1961) p. 29*'}),
   freeze({movement:'CREDO',settingId:'CREDO_03',scoreId:'GREGOBASE-749',
-    title:'Credo III',sourceFingerprint:'78ccb2e5',gabcSegments:19,
+    title:'Credo III',sourceFingerprint:'78ccb2e5',gabcSegments:19,sourceNotes:414,
     sourceFolio:'Graduale Romanum (1961) p. 64*'}),
   freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_08',scoreId:'GREGOBASE-1384',
-    title:'Sanctus VIII · Benedictus',sourceFingerprint:'653ac9f9',gabcSegments:1,
+    title:'Sanctus VIII · Benedictus',sourceFingerprint:'653ac9f9',gabcSegments:1,sourceNotes:143,
     sourceFolio:'Graduale Romanum (1961) p. 30*'}),
   freeze({movement:'AGNUS_DEI',settingId:'MASS_08',scoreId:'GREGOBASE-2760',
-    title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',gabcSegments:3,
-    sourceFolio:'Graduale Romanum (1961) p. 31*'})
+    title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',gabcSegments:3,sourceNotes:106,
+    sourceFolio:'Graduale Romanum (1961) p. 31*'}),
+  // M56: nine compatible additional CC0 GABC witnesses. Their source
+  // fingerprints are of the exact unchanged archived text, NOT a claim that
+  // every historical printed neume or Gregorian duration is certified.
+  freeze({movement:'GLORIA',settingId:'MASS_11',scoreId:'GREGOBASE-303',
+    title:'Gloria XI',sourceFingerprint:'918bfef2',gabcSegments:18,sourceNotes:287,
+    sourceFolio:'Graduale Romanum (1961) p. 39*'}),
+  freeze({movement:'GLORIA',settingId:'MASS_01',scoreId:'GREGOBASE-2980',
+    title:'Gloria I',sourceFingerprint:'46e8cc3c',gabcSegments:18,sourceNotes:316,
+    sourceFolio:'Graduale Romanum (1961) p. 5*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_11',scoreId:'GREGOBASE-1106',
+    title:'Sanctus XI · Benedictus',sourceFingerprint:'fcb745c8',gabcSegments:1,sourceNotes:133,
+    sourceFolio:'Graduale Romanum (1961) p. 40*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_01',scoreId:'GREGOBASE-300',
+    title:'Sanctus I · Benedictus',sourceFingerprint:'c1849a80',gabcSegments:1,sourceNotes:106,
+    sourceFolio:'Graduale Romanum (1961) p. 6*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_18',scoreId:'GREGOBASE-298',
+    title:'Sanctus XVIII · Benedictus',sourceFingerprint:'a4e11282',gabcSegments:1,sourceNotes:60,
+    sourceFolio:'Graduale Romanum (1961) p. 58*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_11',scoreId:'GREGOBASE-1243',
+    title:'Agnus Dei XI',sourceFingerprint:'af979bfa',gabcSegments:3,sourceNotes:103,
+    sourceFolio:'Graduale Romanum (1961) p. 41*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_01',scoreId:'GREGOBASE-2977',
+    title:'Agnus Dei I',sourceFingerprint:'b2f6ce02',gabcSegments:3,sourceNotes:117,
+    sourceFolio:'Graduale Romanum (1961) p. 7*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_17',scoreId:'GREGOBASE-1137',
+    title:'Agnus Dei XVII',sourceFingerprint:'3de26a94',gabcSegments:3,sourceNotes:90,
+    sourceFolio:'Graduale Romanum (1961) p. 57*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_18',scoreId:'GREGOBASE-2412',
+    title:'Agnus Dei XVIII',sourceFingerprint:'17425e51',gabcSegments:3,sourceNotes:60,
+    sourceFolio:'Graduale Romanum (1961) p. 58*'})
+]);
+// A 20th archived GABC remains visible as reference notation, but is
+// deliberately ineligible for melody until source-to-Exsurge notehead parity
+// is established. The actual source contains two 'v'-only Exsurge note
+// records (source indexes 333 and 523) that cannot be assigned authentic
+// GABC pitch letters. Do not infer their pitch from adjacent glyphs.
+export const ORDINARY_M56_HELD_SOURCES=freeze([
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',
+    scoreId:'GREGOBASE-871',title:'Sanctus XVII · Benedictus',
+    sourceFingerprint:'e73e09be',
+    status:'HELD_EXSURGE_SOURCE_NOTE_PARITY',
+    sourceNoteRecords:120,exsurgeScoreNotes:135,
+    offendingSourceIndexes:freeze([333,523]),
+    offendingSourceGabc:'v',
+    approved:false,melodyAvailable:false})
 ]);
 const bySelection=new Map(ORDINARY_M54_RESEARCH_SOURCES.map(
   spec=>[spec.movement+':'+spec.settingId,spec]));
 export const ORDINARY_M54_POLICY=freeze({
   status:'PROVISIONAL_RESEARCH_ONLY',
-  availableInLivePlayer:false,
+  availableInLivePlayer:true,
   originalPrintedNoteheadsCertified:false,
   independentGregorianRhythmCertified:false,
   automaticAssignment:false,
@@ -95,6 +140,7 @@ export function compileOrdinaryM54ResearchMelody({
       expectedPhraseNoteCounts:counts,phraseSequence
     });
     if(melody.phraseCount!==spec.gabcSegments||
+       melody.sourceNoteCount!==spec.sourceNotes||
        melody.sourceNoteCount!==counts.reduce((a,b)=>a+b,0)||
        melody.performance.length!==melody.sourceNoteCount)
       return null;

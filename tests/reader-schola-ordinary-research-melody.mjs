@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {offlineKyrialeResearchScore} from '../src/mass/reader-kyriale-research-gabc.js';
+import {compileExsurgeGabcResearchMelody,gabcResearchFingerprint} from '../src/mass/reader-schola-exsurge-gabc-melody.js';
 import {compileOrdinaryM54ResearchMelody,eligibleOrdinaryM54ResearchSource,
-  ORDINARY_M54_RESEARCH_SOURCES,ORDINARY_M54_POLICY} from
+  ORDINARY_M54_RESEARCH_SOURCES,ORDINARY_M54_POLICY,ORDINARY_M56_HELD_SOURCES} from
   '../src/mass/reader-schola-ordinary-research-melody.js';
 
 const bundle=readFileSync(new URL(
@@ -13,14 +14,16 @@ const bundle=readFileSync(new URL(
 const sandbox={};sandbox.globalThis=sandbox;
 vm.runInNewContext(bundle,sandbox,{timeout:10000,filename:'pinned-exsurge.min.js'});
 const exsurge=sandbox.exsurge;
-assert.equal(ORDINARY_M54_RESEARCH_SOURCES.length,4);
-assert.equal(ORDINARY_M54_POLICY.availableInLivePlayer,false);
+assert.equal(ORDINARY_M54_RESEARCH_SOURCES.length,13);
+assert.equal(ORDINARY_M54_POLICY.availableInLivePlayer,true);
 assert.equal(ORDINARY_M54_POLICY.originalPrintedNoteheadsCertified,false);
 assert.equal(ORDINARY_M54_POLICY.independentGregorianRhythmCertified,false);
 assert.equal(ORDINARY_M54_POLICY.automaticAssignment,false);
 const movements=['GLORIA','CREDO','SANCTUS_BENEDICTUS','AGNUS_DEI'];
-assert.deepEqual(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement),movements);
-const results=[];
+assert.deepEqual([...new Set(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement))],movements);
+const sourceKeys=ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement+':'+x.settingId);
+assert.equal(new Set(sourceKeys).size,13,'Every source-bound movement+setting must be unique');
+const results=[],holds=[];
 for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const source=offlineKyrialeResearchScore(spec.movement,spec.settingId);
  assert.ok(source);
@@ -29,7 +32,58 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const output=compileOrdinaryM54ResearchMelody({
    movement:spec.movement,settingId:spec.settingId,exsurge
  });
- assert.ok(output,'M54 compiler rejected '+spec.movement+' original research source');
+ if(!output){
+   const diagnostic={
+     movement:spec.movement,settingId:spec.settingId,scoreId:spec.scoreId,
+     actualFingerprint:gabcResearchFingerprint(source.gabc),
+     expectedFingerprint:spec.sourceFingerprint,
+     sourceApproved:source.scoreApproved,
+     expectedGabcSegments:spec.gabcSegments
+   };
+   try{
+     const context=new exsurge.ChantContext();
+     const score=new exsurge.ChantScore(context,
+       exsurge.Gabc.createMappingsFromSource(context,source.gabc),true);
+     score.performLayout(context);
+     let current=0;const counts=[];
+     for(const notation of score.notations){
+       if(notation.constructor?.name==='DoubleBar'){
+         counts.push(current);current=0;
+       }else current+=(notation.notes?.length??0);
+     }
+     diagnostic.renderedCounts=counts;
+     diagnostic.trailingNotes=current;
+     diagnostic.totalRendered=score.notes.length;
+     const sourceOrder=score.notations.flatMap(n=>n.notes??[]);
+     diagnostic.missingRawNotes=sourceOrder.map((n,i)=>({
+       ordinal:i+1,sourceIndex:n.sourceIndex,
+       sourceGabc:String(n.sourceGabc??''),
+       notation:n.constructor?.name??'Unknown',
+       shape:n.shape??null,
+       staffPosition:n.staffPosition,
+       pitch:n.pitch?{step:n.pitch.step,octave:n.pitch.octave}:null
+     })).filter(n=>!/^[a-mA-M]/.test(n.sourceGabc)).slice(0,20);
+     diagnostic.sourceRenderCountDelta=score.notes.length-sourceOrder.length;
+     try{
+       const result=compileExsurgeGabcResearchMelody(source.gabc,{
+         exsurge,scoreId:spec.scoreId,
+         expectedFingerprint:spec.sourceFingerprint,
+         expectedPhraseNoteCounts:counts,
+         phraseSequence:counts.map((_,i)=>i)
+       });
+       diagnostic.directCompiler={
+         notes:result.sourceNoteCount,
+         phrases:result.phraseCount,
+         performance:result.performance.length
+       };
+     }catch(error){diagnostic.directCompilerError=String(error?.message??error)}
+   }catch(error){diagnostic.parseError=String(error?.message??error)}
+   console.error('M56_SOURCE_REVIEW_HOLD',JSON.stringify(diagnostic));
+   holds.push(spec.movement+':'+spec.settingId+' '+spec.scoreId);
+   continue;
+ }
+ assert.ok(output,'M56 compiler rejected '+spec.movement+':'+spec.settingId+' '+spec.scoreId);
+ assert.equal(output.sourceNotes,spec.sourceNotes,'13 pinned GABC notehead count changed');
  assert.equal(output.sourceNotes,output.playedNotes,
    'Non-Kyrie movement must not inherit 3+3+2+1 Kyrie repetitions');
  assert.equal(output.melody.phraseCount,spec.gabcSegments);
@@ -73,6 +127,21 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
    playedNotes:output.playedNotes
  });
 }
+assert.deepEqual(holds,[],'Unapproved 1961 source transcriptions must stay withheld on Exsurge parity failures');
+assert.equal(ORDINARY_M56_HELD_SOURCES.length,1);
+const held=ORDINARY_M56_HELD_SOURCES[0];
+assert.equal(held.scoreId,'GREGOBASE-871');
+assert.equal(held.status,'HELD_EXSURGE_SOURCE_NOTE_PARITY');
+assert.equal(held.approved,false);
+assert.equal(held.melodyAvailable,false);
+assert.equal(offlineKyrialeResearchScore(held.movement,held.settingId)?.scoreId,
+  held.scoreId,'The historical source remains browsable without research audio');
+assert.equal(eligibleOrdinaryM54ResearchSource({
+  form:'SOLEMN',movement:held.movement,settingId:held.settingId
+}),false,'Sanctus XVII must not offer an unverified audio launcher');
+assert.equal(compileOrdinaryM54ResearchMelody({
+  movement:held.movement,settingId:held.settingId,exsurge
+}),null,'Never infer a pitch for v-only Exsurge rendered source records');
 assert.equal(compileOrdinaryM54ResearchMelody({
  movement:'GLORIA',settingId:'MASS_18',exsurge
 }),null,'Cannot guess omitted seasonal Gloria');
@@ -83,4 +152,4 @@ assert.equal(compileOrdinaryM54ResearchMelody({
  movement:'GLORIA',settingId:'MASS_08',exsurge:null
 }),null);
 console.log('M54_ORDINARY_RESEARCH',JSON.stringify(results));
-console.log('PASS M54: four exact GABC sources, no Kyrie repetitions, no Gregorian timing or score approval');
+console.log('PASS M56: thirteen source-pinned non-Kyrie GABC melodies, one authentic notation hold; original timing and score approval remain withheld');

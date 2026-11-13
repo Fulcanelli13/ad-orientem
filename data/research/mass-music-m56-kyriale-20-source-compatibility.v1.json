@@ -1,0 +1,81 @@
+{
+  "schema": "ao-schola-m56-kyriale-20-source-compatibility-v1",
+  "date": "2026-11-13",
+  "archivedSourceCount": 20,
+  "pilotBaselineApprovedScores": 0,
+  "provisionalPlayableTarget": 19,
+  "excludedFromResearchPlayback": 1,
+  "newCandidateSourceIds": [
+    "GREGOBASE-303",
+    "GREGOBASE-2980",
+    "GREGOBASE-1106",
+    "GREGOBASE-300",
+    "GREGOBASE-298",
+    "GREGOBASE-1243",
+    "GREGOBASE-2977",
+    "GREGOBASE-1137",
+    "GREGOBASE-2412"
+  ],
+  "existingPlayablePilot": 10,
+  "newEligibleForSourceLockedValidation": 9,
+  "unmodifiedOriginalGabcLocations": [
+    "src/mass/reader-ordinary-scores-1961.js",
+    "src/mass/reader-kyriale-research-batch2.js",
+    "src/mass/reader-kyriale-research-batch3.js",
+    "src/mass/reader-kyriale-research-gabc.js"
+  ],
+  "heldSource": {
+    "name": "Sanctus XVII · Benedictus",
+    "settingId": "MASS_17",
+    "movement": "SANCTUS_BENEDICTUS",
+    "scoreId": "GREGOBASE-871",
+    "status": "HELD_EXSURGE_SOURCE_NOTE_PARITY",
+    "originalSourceFingerprint": "e73e09be",
+    "historicalBook": "Graduale Romanum (Solesmes, 1961), p. 56*",
+    "reason": "Pinned Exsurge rendered two note records whose sourceGabc is 'v' rather than a source pitch letter; strict M48 semantic adapter rejected MISSING_EXSURGE_SOURCE_NOTE. Distinct score.notes/notation.notes counts mean published note IDs cannot be certified from this renderer.",
+    "details": {
+      "offendingExsurgeSourceIndexes": [
+        333,
+        523
+      ],
+      "offendingRawSourceGabc": "v",
+      "notationsNoteRecords": 120,
+      "scoreNotes": 135
+    },
+    "mustNotDo": [
+      "infer pitch from adjacent glyph",
+      "silently remove source notes",
+      "modify historical GABC without printed-edition verification",
+      "show a playable launcher",
+      "claim Gregorian rhythm certified"
+    ],
+    "nextEvidence": "Inspect original 1961 folio and the M33 source transcription for 'gxfg!hvvGE' twice; adjudicate as a source/renderer reconciliation before enabling this setting."
+  },
+  "allowedContexts": [
+    "explicitly selected, non-Requiem LIVE Sung",
+    "explicitly selected, non-Requiem LIVE Solemn"
+  ],
+  "unavailableContexts": [
+    "Low",
+    "Missal",
+    "Requiem",
+    "unselected source",
+    "automatic liturgical assignment"
+  ],
+  "media": {
+    "sound": [
+      "procedural flute",
+      "pure oscillator"
+    ],
+    "bells": false,
+    "paidApi": false,
+    "remoteAudio": false
+  },
+  "production": {
+    "publicScoreApprovals": 0,
+    "autoplay": false,
+    "changes65CardReader": false,
+    "githubPagesOnly": true
+  },
+  "independentMusicologicalCertification": false
+}
