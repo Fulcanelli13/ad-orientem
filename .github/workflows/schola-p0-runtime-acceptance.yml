@@ -62,6 +62,7 @@ jobs:
           node tests/reader-schola-m58-advent1-proper-source-melody.mjs
           node tests/reader-schola-m59-proper-research-melody.mjs
           node tests/reader-schola-m60-advent-proper-source-probe.mjs
+          node tests/reader-schola-m60-advent-proper-research-melody.mjs
           node tests/reader-schola-kyrie-xviii-1961-source-review.mjs
           node tests/reader-schola-kyrie-xviii-1961-print-position-map.mjs
 
@@ -106,6 +107,9 @@ jobs:
 
       - name: K — Advent I five-Proper melody in actual 65-card LIVE phone
         run: node tests/reader-schola-m59-proper-audition-phone.mjs
+
+      - name: L — Advent II III IV fifteen-Proper research melody in 65-card LIVE phone
+        run: node tests/reader-schola-m60-advent-proper-audition-phone.mjs
 
       - name: Preserve minimal existing Schola phone screenshots
         if: always()
