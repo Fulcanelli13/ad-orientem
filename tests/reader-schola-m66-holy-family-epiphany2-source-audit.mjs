@@ -22,7 +22,7 @@ const expected={
  EPIPHANY2_COMMUNION:[230,'co','70','Dicit Dominus']
 };
 assert.equal(registry.schema,'ao-schola-m66-holy-family-epiphany2-1961-source-audit-v1');
-assert.equal(registry.stage,'ARCHIVE_SOURCE_IDENTITY_SCREEN_PENDING_EXSURGE_NOTE_COUNT_REPORT_NO_PLAYER_CHANGE');
+assert.equal(registry.stage,'DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_AND_TEXT_HOLD_NO_PLAYER_CHANGE');
 assert.equal(registry.editionId,index.sourceEditionId);
 assert.equal(registry.originalArchiveSnapshot,index.snapshotDate);
 assert.equal(index.screening.validStaged,1195);
@@ -43,7 +43,7 @@ assert.deepEqual(registry.programmeMasses.map(x=>x.expectedRoles),[
 assert.deepEqual(registry.counts,{
  liturgicalSlots:10,archivedIdentities:10,newToExisting66ScorePlayer:10,reusedFromExistingPlayer:0,
  uniqueArchivalScoreIdsInThisAudit:10,missingArchiveTranscriptions:0,
- sourceDigitalNoteheadsAllSlots:null,sourceDigitalNoteheadsCertifiedForResearch:false});
+ sourceDigitalNoteheadsAllSlots:1711,sourceDigitalNoteheadsCertifiedForResearch:true});
 assert.equal(m65.scores.length,10);
 assert.equal(PROPER_RESEARCH_SOURCES.length,50);
 assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
@@ -102,12 +102,21 @@ for(const spec of registry.scores){
  const adapted=record.gabc.replace(/([a-m])vv/g,(_,n)=>n+'v/'+n+'v');
  const render='name:'+spec.incipit+';\noffice-part:'+spec.officePart+';\n%%\n'+adapted;
  assert.equal(gabcResearchFingerprint(render),spec.rendererFingerprint);
- assert.equal(spec.sourceNoteheads,null);
- assert.equal(spec.phraseNoteCounts,null);
- assert.equal(spec.exsurgeGabcParityTested,false);
+ assert.ok(Number.isInteger(spec.sourceNoteheads)&&spec.sourceNoteheads>0);
+ assert.ok(Array.isArray(spec.phraseNoteCounts)&&spec.phraseNoteCounts.every(n=>Number.isInteger(n)&&n>0));
+ assert.equal(spec.phraseNoteCounts.reduce((a,b)=>a+b,0),spec.sourceNoteheads);
+ assert.equal(spec.phraseNoteCounts.length,spec.sourceGabcSections);
+ assert.equal(spec.exsurgeGabcParityTested,true);
 }
 assert.deepEqual([...seen].sort(),Object.keys(expected).sort());
 assert.equal(identity.size,10);
+assert.equal(registry.scores.reduce((a,s)=>a+s.sourceNoteheads,0),1711);
+assert.equal(registry.exsurgeEvidence.workflowRunId,43450082506);
+assert.equal(registry.exsurgeEvidence.digitalScoreNoteheads,1711);
+assert.equal(registry.exsurgeEvidence.printImageAndSyllableUnderlayEditorialApproval,false);
+assert.equal(registry.exsurgeEvidence.historicalGregorianRhythmCertification,false);
+assert.equal(registry.exsurgeEvidence.noPlayerChange,true);
+
 assert.equal(registry.sources.length,5);
 assert.ok(registry.sources.some(x=>x.kind==='1961_PRIMARY_PRINTED_PROPER'));
 assert.ok(registry.sources.some(x=>x.kind==='1962_CALENDAR_SEPTUAGESIMA'));
