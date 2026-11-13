@@ -28,7 +28,7 @@ function faceText(value,esc){
  return esc(String(value||"")).replace(/\r/g,"");
 }
 function renderSwap(record,language,esc){
- const vern=record[language]?language:record.en?"en":record.fr?"fr":null;
+ const vern=(language==="en"||language==="fr")&&record[language]?language:record.en?"en":record.fr?"fr":null;
  const latin=record.la||"";
  const primary=latin||record[vern]||"";
  if(!primary)return "";
@@ -40,7 +40,7 @@ function renderSwap(record,language,esc){
   '<span class="hb">TAP · LATINE</span></div></div>';
 }
 function focusPassages(id,record,language,esc){
- const vern=record[language]?language:record.en?"en":record.fr?"fr":null;
+ const vern=(language==="en"||language==="fr")&&record[language]?language:record.en?"en":record.fr?"fr":null;
  const latin=a3CuratedPassages(id,record.la,"la");
  const translated=vern?a3CuratedPassages(id,record[vern],vern):null;
  if(!latin||!translated)return null;
