@@ -3,8 +3,11 @@ const STYLE_ID="ao-app-design-system";
 
 const CSS=`
 :root{
-  --ao-font-display:var(--font-liturgical,"EB Garamond",Georgia,serif);
-  --ao-font-brand:var(--font-display,"Cinzel",Georgia,serif);
+  /* Claude's approved type families: ceremonial / display / reading.
+   * These are semantic roles, not interchangeable headings. */
+  --ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif);
+  --ao-font-display:var(--font-cormorant,"Cormorant Garamond","EB Garamond",Georgia,serif);
+  --ao-font-brand:var(--ao-font-ceremonial);
   --ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif);
   --ao-font-liturgical:var(--font-liturgical,var(--font-body,Georgia,"Times New Roman",serif));
   --ao-font-ui:var(--font-liturgical,"EB Garamond",Georgia,serif);
@@ -36,6 +39,8 @@ const CSS=`
   --ao-type-ui:16px;
   --ao-type-body:18px;
   --ao-type-prayer:clamp(20px,5.65vw,24px);
+  --ao-type-angelus-verse:clamp(19px,5.4vw,21px);
+  --ao-type-caption-match:9.5px;
   --ao-type-prose:18px;
   --ao-type-action-primary:17px;
   --ao-type-action-secondary:16px;
@@ -81,7 +86,7 @@ const CSS=`
 }
 
 #ao-global-ribbon{
-  font-family:var(--ao-font-display);
+  font-family:var(--ao-font-ceremonial);
   z-index:var(--ao-z-global-nav)!important;
 }
 #ao-global-ribbon .aoGlobalRibbonBtn{
@@ -178,6 +183,29 @@ const CSS=`
   font-size:var(--ao-type-prayer)!important;
   line-height:1.62;
 }
+/*
+ * Claude prototype parity for the Angelus versicle/response reader.
+ * The parent attribute limits the 21px Cormorant treatment to recitation.
+ * Hail Mary / Collect paragraphs remain EB Garamond; source words, cinematic
+ * timings and the Caption Match section-title policy are unchanged.
+ */
+#aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
+  font-family:var(--ao-font-display)!important;
+  font-size:var(--ao-type-angelus-verse)!important;
+  font-weight:500!important;
+  line-height:1.36!important;
+}
+#aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogueLine>.ao-liturgical-speaker{
+  font-family:var(--ao-font-body)!important;
+  font-size:17px!important;
+  line-height:1.6!important;
+}
+#aoPray435930 .aoP435930VR>small{
+  font-family:var(--ao-font-ceremonial)!important;
+  font-size:var(--ao-type-caption-match)!important;
+  font-weight:600!important;
+  letter-spacing:2.2px;
+}
 /* Consistent Formation prose without overriding its title or citation UI. */
 #ao-learn-modular-root .aoCSEAnswer,
 #ao-learn-modular-root .aoCSEDebateStep p,
@@ -213,7 +241,7 @@ const CSS=`
 /*
  * Approved app-wide A2 hybrid action grammar:
  * primary actions use EB Garamond small caps; secondary actions stay quiet.
- * Ordinary display roles use EB Garamond. Cinzel remains the brand font.
+ * Display text uses Cormorant Garamond, with Cinzel reserved for ceremony and branding.
  * No font-variant or text-transform rule is applied to liturgical text.
  */
 :where(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,
@@ -259,6 +287,16 @@ const CSS=`
 .aoBrandWordmark{
   font-family:var(--ao-font-brand)!important;
 }
+
+/* Explicit semantic roles keep independent Claude presentations intact.
+ * No blanket resizing is applied to Mass, Rosary, or the original donor views. */
+.aoTypeCeremonial{font-family:var(--ao-font-ceremonial)!important}
+.aoTypeDisplay{font-family:var(--ao-font-display)!important}
+.aoTypeReading{font-family:var(--ao-font-body)!important}
+#aoPray435930 .aoP435930Head h1{
+  font-family:var(--ao-font-ceremonial)!important;
+}
+
 
 @media(max-width:560px){
   :root{
