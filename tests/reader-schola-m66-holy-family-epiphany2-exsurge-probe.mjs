@@ -55,6 +55,11 @@ for(const spec of registry.scores){
  assert.equal(counts.length,spec.sourceGabcSections);
  assert.ok(counts.every(n=>n>0),'Every phrase must have at least one notehead');
  assert.equal(counts.reduce((sum,n)=>sum+n,0),b.length);
+ assert.equal(spec.sourceNoteheads,b.length,
+  'Original source noteheads changed from M66 locked, 1961 pinned archival source');
+ assert.deepEqual([...spec.phraseNoteCounts],counts,
+  'Phrase counts drift from M66 exact original notehead lock');
+ assert.equal(spec.exsurgeGabcParityTested,true);
  assert.equal(gabcResearchFingerprint(header+normalized),spec.rendererFingerprint);
  const compiled=compileExsurgeGabcResearchMelody(header+normalized,{
   exsurge,scoreId:spec.scoreId,
@@ -73,7 +78,9 @@ for(const spec of registry.scores){
 }
 assert.equal(results.length,10);
 assert.equal(results.filter(x=>x.reusedExisting).length,0);
-assert.ok(total>800,'Unexpectedly short full set of 10 Proper chants');
+assert.equal(total,1711,'M66 recorded source noteheads are locked');
+assert.equal(registry.counts.sourceDigitalNoteheadsAllSlots,total);
+assert.equal(registry.counts.sourceDigitalNoteheadsCertifiedForResearch,true);
 console.log('PASS M66 EXSURGE:',JSON.stringify({
  researchOnly:true,noPlayerChange:true,totalSourceDigitalNoteheads:total,
  sources:results.length,results
