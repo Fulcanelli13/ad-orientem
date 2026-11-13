@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {mkdir,readFile} from "node:fs/promises";
+import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -63,6 +63,13 @@ try{
    });
    await page.goto(base+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForSelector("#ao-app-design-system",{state:"attached",timeout:45000});
+   await page.waitForFunction(()=>{
+    const home=document.querySelector(".homeScreen");
+    const boot=document.getElementById("ao-cinema-boot");
+    const ready=!boot||boot.hidden||getComputedStyle(boot).display==="none"||
+      getComputedStyle(boot).pointerEvents==="none";
+    return Boolean(home?.getClientRects().length)&&ready;
+   },null,{timeout:35000});
    const result=await page.evaluate(async()=>{
     const samples=[
      ['600 18px "Cinzel"',"SALVE REGINA"],
@@ -104,8 +111,7 @@ try{
    assert.ok(result.geometry.homeFound,"Integrated Home did not render at "+width+"px");
    assert.ok(result.geometry.viewport===width,"Incorrect phone viewport: "+JSON.stringify(result.geometry));
    await page.screenshot({path:output+"/integrated-home-"+width+".png",fullPage:false});
-   await mkdir(output,{recursive:true});
-   const {writeFile}=await import("node:fs/promises");
+
    await writeFile(output+"/font-matrix-"+width+".json",
     JSON.stringify({width,result,fontResponses:[...loadedFonts],failedFonts},null,2)+"\n");
    console.log("PASS exact Claude local font faces and integrated Home at "+width+"px");
