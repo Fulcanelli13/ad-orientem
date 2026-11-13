@@ -443,6 +443,7 @@ export function createKyrieXviResearchAudition({root,
           held.value='HOLY_FAMILY_INTROIT';
           held.textContent='Introit · Exsultet / Exsultat · editorial text hold';
           held.disabled=true;
+          held.setAttribute('disabled','');
           sourcePicker.append(held);
         }
         for(const spec of PROPER_RESEARCH_SOURCES){
