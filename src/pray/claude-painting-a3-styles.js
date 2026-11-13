@@ -69,6 +69,44 @@ const LINES=[
 '@media(max-width:600px){#aoPray435930 .aoClaudePaintingA3 .bg{top:max(66px,env(safe-area-inset-top));bottom:clamp(210px,36dvh,340px);height:calc(100% - max(66px,env(safe-area-inset-top)) - clamp(210px,36dvh,340px));object-position:center 34%}#aoPray435930 .aoClaudePaintingA3 .ct{left:20px;right:56px;bottom:max(22px,env(safe-area-inset-bottom));max-width:none}#aoPray435930 .aoClaudePaintingA3 h2{font-size:clamp(23px,6.2vw,29px);line-height:1.06;margin:4px 0 10px}#aoPray435930 .aoClaudePaintingA3 .tx{font-size:clamp(19px,5.2vw,22px);line-height:1.36;max-height:min(28dvh,230px)}#aoPray435930 .aoClaudePaintingA3 .cr{margin-top:6px;font-size:12px}#aoPray435930 .aoClaudePaintingA3 .rail{right:2px}#aoPray435930 .aoClaudePaintingA3Card:has(.aoClaudeChoirPrayer) .ct{bottom:max(90px,calc(70px + env(safe-area-inset-bottom))) }#aoPray435930 .aoClaudePaintingA3Card:has(.aoClaudeChoirPrayer) .tx{max-height:min(24dvh,200px)}}',
 
 '@media(max-width:359px){#aoPray435930 .aoClaudePaintingA3 .ct{left:16px;right:54px}#aoPray435930 .aoClaudePaintingA3 .bg{bottom:clamp(250px,48dvh,340px);height:calc(100% - max(66px,env(safe-area-inset-top)) - clamp(250px,48dvh,340px))}#aoPray435930 .aoClaudePaintingA3 .tx{font-size:19px;max-height:27dvh}#aoPray435930 .aoClaudePaintingA3 .aoChoirBeat{font-size:19px!important}}',
+/* Contextual reading is a behaviour layer over Claude A3, not a new UI.
+   Short text: original cinematic; >40% of the viewport: source-style veil. */
+'#aoPray435930 .aoClaudePaintingA3 .veil{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;background:linear-gradient(180deg,transparent 22%,rgba(4,6,9,.24) 40%,rgba(4,6,9,.78) 67%,rgba(4,6,9,.94) 100%);transition:opacity .9s ease}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .veil{opacity:1}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .ct{display:flex;flex-direction:column;max-height:calc(100dvh - 160px)}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .tx{flex:0 1 auto;min-height:0;max-height:min(54dvh,500px);overflow-y:auto;overscroll-behavior:contain}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitCinematic.aoA3ModePray .tx{max-height:min(40dvh,390px)}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3VeilToggle{display:none}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .aoA3VeilToggle{display:block;align-self:flex-start;min-height:30px;min-width:30px;text-align:left;background:none;border:0;color:var(--gold2);font:17px var(--serif);margin:-5px 0 1px;cursor:pointer}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3VeilClosed.aoA3FitVeil .tx,#aoPray435930 .aoClaudePaintingA3.aoA3VeilClosed.aoA3FitVeil .cr,#aoPray435930 .aoClaudePaintingA3.aoA3VeilClosed.aoA3FitVeil .aoA3Source{display:none!important}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3VeilClosed.aoA3FitVeil .veil{opacity:0}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3VeilClosed .ct{bottom:46px}',
+/* Mode is a small text control anchored at top: no new cards and no glass. */
+'#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes{position:absolute;top:max(62px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:39;display:flex;align-items:center;gap:12px;white-space:nowrap}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes button{font:600 9px var(--cap);letter-spacing:1.1px;padding:8px 0 5px;border:0;border-bottom:1px solid transparent;background:none;color:rgba(238,233,223,.65);text-shadow:0 2px 9px #000;cursor:pointer}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes button[aria-pressed=true]{color:var(--gold2);border-bottom-color:var(--gold2)}',
+'#aoPray435930 .aoClaudePaintingA3.view .aoA3ExperienceModes{opacity:0;pointer-events:none}',
+/* Contemplative text, using the source's large centered Verse treatment. */
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusBody{display:none}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusVerse[hidden]{display:none!important}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .aoA3FocusBody{display:block;text-align:center}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .ct{bottom:clamp(45px,11dvh,125px);left:28px;right:28px;max-width:720px;text-align:center}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .eyb{display:none}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus h2{font-size:clamp(18px,5.3vw,23px);margin:0 0 20px;letter-spacing:1px}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .tx,#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .aoA3VeilToggle,#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .aoA3Source{display:none!important}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .veil{opacity:0!important}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .sh{background:linear-gradient(180deg,rgba(4,6,9,.22) 0%,transparent 24%,transparent 36%,rgba(4,6,9,.18) 50%,rgba(4,6,9,.43) 64%,rgba(4,6,9,.68) 80%,rgba(4,6,9,.84) 100%)}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusTranslate{font:600 9px var(--cap);letter-spacing:1.5px;color:var(--gold2);background:none;border:0;min-height:35px;padding:5px 10px;cursor:pointer}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusStage{display:flex;align-items:center;justify-content:center;width:100%;min-height:clamp(140px,22dvh,210px);padding:12px 2px;color:#eee9df;background:none;border:0;text-align:center;cursor:pointer}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusVerse{display:block;font:500 clamp(26px,7vw,32px)/1.32 var(--corm);text-shadow:0 2px 17px rgba(0,0,0,.96),0 0 4px rgba(0,0,0,.8);animation:aoA3VerseFade .8s var(--ease)}',
+'@keyframes aoA3VerseFade{from{opacity:0;filter:blur(5px);transform:translateY(8px)}to{opacity:1;filter:none;transform:none}}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusProgress{font:11px var(--cap);letter-spacing:2px;color:var(--gold2);margin:4px 0}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3FocusHint{font:600 9px var(--cap);letter-spacing:1.5px;color:var(--gold2);margin-top:8px}',
+'#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .cr{margin-top:14px}',
+'#aoPray435930 .aoClaudePaintingA3 .aoA3ViewToggle{backdrop-filter:none;background:#0b1017}',
+/* Keep the original 320–390px text widths, but give the veil room to scroll. */
+'@media(max-width:600px){#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .ct{max-height:calc(100dvh - 132px)}#aoPray435930 .aoClaudePaintingA3.aoA3FitVeil.aoA3ModePray .tx{max-height:51dvh}#aoPray435930 .aoClaudePaintingA3.aoA3ModeFocus .ct{left:22px;right:22px;bottom:clamp(54px,11dvh,110px)}#aoPray435930 .aoClaudePaintingA3 .aoA3ExperienceModes{gap:9px;top:max(61px,env(safe-area-inset-top))}}',
+'@media(prefers-reduced-motion:reduce){#aoPray435930 .aoClaudePaintingA3 .aoA3FocusVerse{animation:none!important}#aoPray435930 .aoClaudePaintingA3 .veil{transition:none!important}}',
 '@media(prefers-reduced-motion:reduce){#aoPray435930 .aoClaudePaintingA3 .bg{animation:none!important;transform:none!important}#aoPray435930 .aoClaudePaintingA3 .sw .st>*,#aoPray435930 .aoClaudePaintingA3 .ct,#aoPray435930 .aoClaudePaintingA3 .sh{transition:none!important}}'
 ];
 export const CLAUDE_PAINTING_A3_CSS=LINES.join("\n");
