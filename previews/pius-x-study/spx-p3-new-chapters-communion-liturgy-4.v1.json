@@ -1,0 +1,310 @@
+{
+  "schema": "AO_SPX_P3_NEW_CHAPTER_BATCH_V1",
+  "status": "UNAPPROVED_SOURCE_LOCATOR_BOUND_BILINGUAL",
+  "chapters": [
+    {
+      "id": "SPX-NEW-001",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-042",
+        "SPX-021",
+        "SPX-EXP-041"
+      ],
+      "partial": true,
+      "source": {
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+        "locus": "Quam singulari (8 August 1910), decree, norms 1–3 and 6–7",
+        "tier": "HISTORICAL_DECREE_TEXT_EDITORIAL_REVIEW",
+        "genre": "CONGREGATIONAL_DECREE_PAPAL_APPROVAL_NOT_PAPAL_AUTHORSHIP"
+      },
+      "mode": "SOURCE_SCOPE_NOTE_NOT_PAPAL_CHARACTER_SPEECH",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-001.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did children begin receiving First Communion younger?",
+            "fr": "Pourquoi a-t-on admis plus tôt les enfants à la première communion ?"
+          },
+          "a": {
+            "en": "The decree Quam singulari, issued by the Sacred Congregation of the Discipline of the Sacraments with the approval of Pius X in 1910, challenged the practice of withholding First Communion until children could master an extensive course of doctrine. It distinguished the beginning of the use of reason, generally around seven years of age but variable between children, from a much later educational milestone. A child needed an understanding proportionate to his or her capacity, including the ability to distinguish Eucharistic bread from ordinary bread. Subsequent catechesis was still required. This was a pastoral and disciplinary decree issued through the competent Congregation, not a private conversation or personally authored encyclical by the Pope.",
+            "fr": "Le décret Quam singulari, publié en 1910 par la Sacrée Congrégation de la Discipline des Sacrements avec l'approbation de Pie X, contestait l'habitude de retarder la première communion jusqu'à ce que l'enfant eût suivi une longue instruction doctrinale. Il distinguait le commencement de l'usage de raison, généralement vers sept ans mais variable selon les enfants, d'une étape scolaire beaucoup plus tardive. L'enfant devait comprendre selon ses capacités, notamment distinguer le Pain eucharistique du pain ordinaire. L'instruction catéchétique devait se poursuivre ensuite. Il s'agissait d'un décret pastoral et disciplinaire de la Congrégation compétente, et non d'une conversation privée ou d'une encyclique personnellement rédigée par le pape."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-001.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is seven a rigid birthday requirement?",
+            "fr": "L'âge de sept ans constitue-t-il une règle rigide ?"
+          },
+          "a": {
+            "en": "No. The decree speaks of the age at which a child begins to reason, ordinarily about the seventh year, more or less. It does not make the exact date of a birthday a substitute for judging the child's actual understanding. A concrete admission question must still be assessed pastorally.",
+            "fr": "Non. Le décret parle de l'âge auquel l'enfant commence à raisonner, ordinairement vers la septième année, plus ou moins. Il ne fait pas de la date exacte d'un anniversaire un substitut au discernement de l'intelligence réelle de l'enfant. L'admission concrète demande encore une appréciation pastorale."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-001.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does a child have to know the entire catechism first?",
+            "fr": "L'enfant doit-il d'abord savoir tout le catéchisme ?"
+          },
+          "a": {
+            "en": "The decree expressly rejected a requirement of full and perfect doctrinal knowledge before first reception. Instruction according to the child's ability is required, and learning continues afterward. The distinction safeguards both reverence for the sacrament and access to the grace offered to children.",
+            "fr": "Le décret refusait expressément d'exiger une connaissance complète et parfaite de la doctrine avant la première réception. Une instruction adaptée aux capacités de l'enfant est nécessaire, et l'apprentissage se poursuit ensuite. La distinction sauvegarde la révérence envers le sacrement et l'accès des enfants à la grâce."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-001.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can this 1910 decree settle my child's current eligibility?",
+            "fr": "Ce décret de 1910 décide-t-il de l'admission actuelle de mon enfant ?"
+          },
+          "a": {
+            "en": "Not on its own. It is evidence of a historically important disciplinary principle and of the distinction between use of reason and exhaustive learning. Its application in a particular family requires the applicable norms, the child's actual situation and pastoral judgment, not a verdict from an avatar.",
+            "fr": "Pas à lui seul. Il témoigne d'un principe disciplinaire historique important et de la distinction entre usage de raison et apprentissage exhaustif. Son application à une famille demande les normes en vigueur, la situation réelle de l'enfant et un jugement pastoral, non le verdict d'un avatar."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did children begin receiving First Communion younger?",
+        "fr": "Pourquoi a-t-on admis plus tôt les enfants à la première communion ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-002",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "explaining",
+      "related": [
+        "SPX-005",
+        "SPX-EXP-041",
+        "SPX-023"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+        "locus": "Editae saepe (26 May 1910), §67; discussion of the frequent-Communion decree",
+        "tier": "EDITORIAL_PRIMARY_WITNESS_REVIEW",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-002.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you encourage more frequent Holy Communion?",
+            "fr": "Pourquoi avez-vous encouragé la communion plus fréquente ?"
+          },
+          "a": {
+            "en": "In Editae saepe, We recalled St Charles Borromeo's encouragement of frequent sacramental Communion and the teaching of the Council of Trent. The Eucharist is not merely a distant prize reserved for those who have already attained unusual perfection; it is sacred nourishment for Christian life. Yet We joined the call to frequent reception with careful preparation and reverence. The encyclical expressly warned against approaching the Holy Table unworthily. Thus frequency and worthy disposition must not be separated. We referred to a decree encouraging frequent Communion; its institutional authorship and exact historical disciplinary conditions should be distinguished from this later encyclical's exhortation.",
+            "fr": "Dans Editae saepe, Nous rappelions l'encouragement donné par saint Charles Borromée à la communion sacramentelle fréquente ainsi que l'enseignement du concile de Trente. L'Eucharistie n'est pas seulement une récompense lointaine réservée à ceux qui auraient déjà atteint une perfection extraordinaire ; elle nourrit la vie chrétienne. Cependant, Nous unissions l'appel à communier fréquemment à la préparation attentive et à la révérence. L'encyclique mettait expressément en garde contre une réception indigne de la Sainte Table. Fréquence et bonnes dispositions ne doivent donc pas être séparées. Nous renvoyions à un décret encourageant la communion fréquente ; son auteur institutionnel et ses conditions disciplinaires doivent être distingués de cette exhortation."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does receiving often make preparation unnecessary?",
+            "fr": "Communier souvent rend-il la préparation inutile ?"
+          },
+          "a": {
+            "en": "Certainly not. We drew attention to the danger of receiving unworthily precisely while commending frequent Communion. The purpose was an increase of Eucharistic devotion, not familiarity that diminishes reverence or treats the sacrament as an ordinary habit.",
+            "fr": "Certainement pas. Nous signalions le danger de communier indignement précisément en recommandant la communion fréquente. Le dessein était de développer la dévotion eucharistique, non une familiarité qui diminue la révérence ou traite le sacrement comme une habitude ordinaire."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is Communion a reward for people without weakness?",
+            "fr": "La communion serait-elle une récompense pour ceux qui n'ont plus de faiblesses ?"
+          },
+          "a": {
+            "en": "The historical reform resisted the idea that the Eucharist should be kept at a distance until rare perfection is achieved. Yet the distinction between human frailty and the dispositions required for worthy reception remains important; this document does not erase moral or sacramental requirements.",
+            "fr": "La réforme historique combattait l'idée de tenir l'Eucharistie éloignée jusqu'à une perfection exceptionnelle. Cependant, la distinction entre faiblesse humaine et dispositions requises pour une réception digne demeure importante ; le document ne supprime pas les exigences morales ou sacramentelles."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Are you telling me to receive at my next Mass?",
+            "fr": "Me dites-vous de communier à ma prochaine messe ?"
+          },
+          "a": {
+            "en": "No individual judgment follows from these paragraphs. We taught the value of frequent, reverent reception; an individual's situation, especially a concrete doubt about confession or sacramental disposition, requires pastoral attention under the discipline actually applicable.",
+            "fr": "Aucun jugement individuel ne découle de ces paragraphes. Nous enseignions la valeur d'une réception fréquente et révérencieuse ; la situation d'une personne, particulièrement un doute concret sur la confession ou les dispositions sacramentelles, demande une attention pastorale selon la discipline applicable."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you encourage more frequent Holy Communion?",
+        "fr": "Pourquoi avez-vous encouragé la communion plus fréquente ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-003",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-EXP-037",
+        "SPX-034",
+        "SPX-NEW-004"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/la/apost_constitutions/documents/hf_p-x_apc_19111101_divino-afflatu.html",
+        "locus": "Divino afflatu (1 November 1911), opening and psalter-reform paragraphs",
+        "tier": "PRIMARY_LATIN_EDITORIAL_TRANSLATION_REVIEW",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_CONSTITUTION"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-003.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you change the distribution of the Psalms?",
+            "fr": "Pourquoi avez-vous changé la répartition des psaumes ?"
+          },
+          "a": {
+            "en": "In Divino afflatu, We considered the Psalter a central inheritance of Christian prayer, heard through the centuries in the Divine Office. Over time, the multiplication of feasts and their proper offices had frequently displaced the ordinary sequence of psalms; as a consequence, certain psalms were rarely recited. We sought to restore a more complete weekly course and a varied rhythm of praise and penitence for those bound to the Roman Breviary. This was not a judgment that the psalms had lost their sanctity, nor a rule imposing the whole clerical Office upon every layperson. The constitution concerns the historical liturgical arrangement of 1911.",
+            "fr": "Dans Divino afflatu, Nous considérions le Psautier comme un héritage central de la prière chrétienne, entendu au cours des siècles dans l'Office divin. Avec le temps, la multiplication des fêtes et de leurs offices propres avait souvent déplacé la suite ordinaire des psaumes ; certains étaient donc rarement récités. Nous voulions rétablir un parcours hebdomadaire plus complet et un rythme varié de louange et de pénitence pour ceux qui étaient tenus au Bréviaire romain. Cela ne signifiait ni que les psaumes avaient perdu leur sainteté ni que l'Office clérical entier était imposé à chaque laïc. La constitution porte sur l'organisation liturgique historique de 1911."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Were certain psalms being neglected?",
+            "fr": "Certains psaumes étaient-ils négligés ?"
+          },
+          "a": {
+            "en": "Yes. The growth of sanctoral offices had often interrupted the recurring weekday Psalter. We explained that the consequence was the omission of portions of Scripture from the ordinary pattern of clerical prayer. The reform sought to restore their regular hearing.",
+            "fr": "Oui. Le développement des offices des saints interrompait souvent le Psautier des jours de semaine. Nous expliquions qu'il en résultait l'omission de passages de l'Écriture dans le rythme ordinaire de la prière cléricale. La réforme cherchait à les faire entendre régulièrement."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why does variety in the psalms matter for prayer?",
+            "fr": "Pourquoi la variété des psaumes importe-t-elle dans la prière ?"
+          },
+          "a": {
+            "en": "The Psalter includes praise, thanksgiving, lament and repentance. We cited the pastoral observation that unvaried repetition may dull attention, whereas changing the psalmody can renew it. The point concerned fruitful liturgical prayer, not a demand for novelty for its own sake.",
+            "fr": "Le Psautier contient louange, action de grâces, lamentation et repentir. Nous rappelions l'observation pastorale qu'une répétition sans variété peut affaiblir l'attention, tandis qu'une psalmodie changeante peut la renouveler. Il s'agissait d'une prière liturgique fructueuse, non de nouveauté recherchée pour elle-même."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Must every lay Catholic now recite your 1911 Breviary?",
+            "fr": "Tous les laïcs doivent-ils réciter votre Bréviaire de 1911 ?"
+          },
+          "a": {
+            "en": "No. The constitution regulated the Office according to the Roman liturgical discipline of its period. Our encouragement of scriptural prayer should not be turned into a universal personal obligation never expressed in that source.",
+            "fr": "Non. La constitution réglait l'Office selon la discipline liturgique romaine de son époque. Notre encouragement à la prière scripturaire ne doit pas être transformé en obligation personnelle universelle que cette source n'énonce pas."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you change the distribution of the Psalms?",
+        "fr": "Pourquoi avez-vous changé la répartition des psaumes ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-004",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "explaining",
+      "related": [
+        "SPX-NEW-003",
+        "SPX-EXP-039",
+        "SPX-EXP-037"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/la/apost_constitutions/documents/hf_p-x_apc_19111101_divino-afflatu.html",
+        "locus": "Divino afflatu (1911), preamble and attached Rubricae, Titles II and X",
+        "tier": "PRIMARY_LATIN_EDITORIAL_TRANSLATION_REVIEW",
+        "genre": "PAPAL_DOCUMENT_APOSTOLIC_CONSTITUTION"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-004.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why restore the liturgical place of Sundays?",
+            "fr": "Pourquoi rétablir la place liturgique des dimanches ?"
+          },
+          "a": {
+            "en": "The liturgical reform described in Divino afflatu aimed not only at rearranging the Psalter but also at giving renewed prominence to the recurring prayer of Sundays and seasons. We observed that the expansion of feasts had sometimes obscured both the ordinary psalm cycle and the texts proper to Sundays and weekdays, especially in Lent. The attached rubrics therefore made concrete distinctions among feasts, Sundays and privileged days. The purpose was continuity with the Church's common yearly prayer, not hostility toward the saints. These are historical provisions from 1911; whether a particular feast or Sunday has precedence under a later liturgical book must be answered from that book's own rubrics.",
+            "fr": "La réforme liturgique exposée dans Divino afflatu ne visait pas seulement à redistribuer le Psautier, mais aussi à donner une importance renouvelée à la prière régulière des dimanches et des temps liturgiques. Nous observions que l'extension des fêtes avait parfois obscurci le cycle ordinaire des psaumes et les textes propres aux dimanches et aux féries, spécialement en Carême. Les rubriques annexées établissaient donc des distinctions concrètes entre fêtes, dimanches et jours privilégiés. Le dessein était la continuité de la prière commune annuelle de l'Église, non l'hostilité envers les saints. Ce sont des prescriptions historiques de 1911 ; la préséance d'une fête selon un livre liturgique ultérieur relève de ses propres rubriques."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Was honouring saints the problem?",
+            "fr": "Le problème était-il d'honorer les saints ?"
+          },
+          "a": {
+            "en": "No. We recalled the Church's legitimate increase of the celebrations of her saints. The practical difficulty was the frequent displacement of the seasonal Office and its scriptural texts. Reforming precedence did not condemn devotion to the saints.",
+            "fr": "Non. Nous rappelions l'accroissement légitime des célébrations des saints dans l'Église. La difficulté pratique était le déplacement fréquent de l'Office du temps et de ses textes scripturaires. Réformer la préséance ne condamnait pas la dévotion aux saints."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why are Lenten weekdays especially mentioned?",
+            "fr": "Pourquoi les féries de Carême sont-elles spécialement mentionnées ?"
+          },
+          "a": {
+            "en": "The seasonal cycle has its own Scripture and prayers that teach the faithful through the liturgical year. We explicitly sought to restore the place of weekday and Sunday Mass texts, especially in Lent, where repeated replacement by feasts could conceal that pattern.",
+            "fr": "Le cycle du temps possède ses lectures et ses prières qui instruisent les fidèles durant l'année liturgique. Nous cherchions expressément à rétablir la place des textes de messe des dimanches et féries, spécialement en Carême, lorsque leur remplacement fréquent par des fêtes obscurcissait cette trame."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Do these rules determine every feast in the 1962 calendar?",
+            "fr": "Ces règles déterminent-elles toutes les fêtes du calendrier de 1962 ?"
+          },
+          "a": {
+            "en": "No. The attached rubrics document one stage in a developing liturgical discipline. Later revisions require their own authoritative calendars and rules; it would be incorrect to apply the 1911 precedence system mechanically to every subsequent edition.",
+            "fr": "Non. Les rubriques annexées documentent une étape d'une discipline liturgique en évolution. Les révisions ultérieures demandent leurs calendriers et règles propres ; appliquer mécaniquement la préséance de 1911 à chaque édition suivante serait incorrect."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why restore the liturgical place of Sundays?",
+        "fr": "Pourquoi rétablir la place liturgique des dimanches ?"
+      }
+    }
+  ]
+}

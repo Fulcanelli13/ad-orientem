@@ -1,0 +1,63 @@
+{
+  "schema": "AO_SPX_B52_PRIMARY_SOURCE_CROSSWALK_V1",
+  "date": "2026-11-06",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "prior": "B51 verified on research branch; 21 October packet retained; B41 duplicates not recounted",
+  "finding": "CRITICAL: B51 English Pascendi §§44–56 refer to remedies; French §§44–56 are still analysis/criticism. French remedies begin §62. Do not copy English numbers into French.",
+  "records": [
+    {
+      "id": "SPX-EXP-016",
+      "en": "Pascendi §§6,9,29–33 (historical critique); retain B51 wording",
+      "fr": "Pascendi §§6,9,39–45 (historical method; verify exact subclaim against §§39–45)",
+      "decision": "SOURCE_LOCATOR_CORRECTION_ONLY"
+    },
+    {
+      "id": "SPX-EXP-033",
+      "en": "Pascendi §§6,29–33",
+      "fr": "Pascendi §§6,39–45",
+      "decision": "RETAIN_DISTINCT_INTENT"
+    },
+    {
+      "id": "SPX-EXP-019",
+      "en": "Pascendi §§44–56 (remedies)",
+      "fr": "Pascendi §§62–76 (remèdes); study §§63–65; professors §§66–67; publications §§68–71; committees §§73–76",
+      "decision": "BILINGUAL_CROSSWALK_CORRECTION"
+    },
+    {
+      "id": "SPX-EXP-023",
+      "en": "Pascendi §§44,48–56",
+      "fr": "Pascendi §§62,66–76",
+      "decision": "RETAIN_DISTINCT_INTENT"
+    },
+    {
+      "id": "SPX-EXP-026",
+      "en": "Il fermo proposito, addressed to Italian bishops, Catholic Action and episcopal oversight",
+      "fr": "Il fermo proposito, opening address 'Aux Evêques d’Italie'; passages beginning 'L’ensemble de toutes ces œuvres' and subsequent episcopal direction",
+      "decision": "FRENCH_TEXT_LOCATOR_REPAIRED_NO_UNVERIFIED_PARAGRAPH_EQUIVALENCE"
+    }
+  ],
+  "sourceUrls": [
+    "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+  ],
+  "classification": "All new descriptions are editorial paraphrase or source-locator metadata, not historical verbatim speech. Original Pius X and Chanoine personas unchanged.",
+  "chanoine": {
+    "originalEnglish": "BLOCKED_NO_RECONSTRUCTION",
+    "B39": "PRESERVED",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "nextQueue": [
+    "Human review and apply language-specific Pascendi crosswalk to B51 records",
+    "Check precise French loci for E supremi EXP-028 and Vehementer nos EXP-024",
+    "Consolidate B43–B52 without B41 duplicate count",
+    "Keep inaccessible Chanoine English witness blocked"
+  ],
+  "certified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SPX_B57_RESEARCH_ONLY_V1",
+  "date": "2026-11-12",
+  "status": "PROPOSED_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "continuity": {
+    "verified": "B56 fetched",
+    "baseline": "68 examined contexts, 65 improved families, 130 answer units, 64 complete packets awaiting human certification; not recounted",
+    "noDuplicateCredit": "EXP-027 distinct from EXP-026 governance"
+  },
+  "records": [
+    {
+      "existingFamily": "SPX-EXP-027",
+      "topic": "Practical participation of lay Catholics in Catholic Action",
+      "sourceEvidence": [
+        {
+          "english": "Il fermo proposito §§3,7–9",
+          "french": "French Vatican paragraphs beginning 'Immense est le champ', 'Et pour Nous arrêter', 'L’ensemble de toutes ces œuvres', 'Et ici, il faut remarquer'",
+          "point": "Lay activity includes truth, virtues, works of mercy, economic relief, just laws; form may adapt to circumstances without changing faith and morals."
+        },
+        {
+          "english": "§§11–12",
+          "french": "French paragraphs beginning 'Avant tout, il faut être profondément convaincu' and 'Il importe, en outre'",
+          "point": "Spiritual formation and grace precede apostolic effectiveness; practical works must address poor people's moral and material needs."
+        },
+        {
+          "english": "§§17,20,27",
+          "french": "French paragraphs beginning 'En outre, pour que l’action catholique', 'Tels sont, Vénérables Frères' and 'Voilà, Vénérables Frères'",
+          "point": "Use tested social/economic methods, permit varied associations, act rather than merely propose."
+        }
+      ],
+      "proposedEnglish": "We exhort lay Catholics to serve Christ through sound religious formation, works of mercy, and practical action for the moral and material welfare of their neighbours, especially working families and the poor. Let them employ just and lawful means suited to the needs of their time, without confusing changing methods with unchanging principles of faith and morals.",
+      "proposedFrench": "Nous exhortons les fidèles laïques à servir le Christ par une solide formation religieuse, les œuvres de miséricorde et une action concrète pour le bien moral et matériel du prochain, particulièrement des familles ouvrières et des plus démunis. Qu’ils emploient des moyens justes et légitimes adaptés aux besoins de leur temps, sans confondre la diversité des méthodes avec les principes immuables de la foi et de la morale.",
+      "classification": "EDITORIAL_PARAPHRASE_IN_HISTORICAL_PAPAL_VOICE_NOT_VERBATIM",
+      "editorialInference": "The distinction between changing methods and unchanging principles synthesizes §9; not a verbatim sentence.",
+      "gate": "READY_FOR_HUMAN_CERTIFICATION_ONLY",
+      "duplicateGuard": "Do not recategorize EXP-026 episcopal governance and reasonable organisational freedom as EXP-027."
+    }
+  ],
+  "sources": [
+    "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+  ],
+  "holds": {
+    "chanoineOriginalEnglish": "BLOCKED_NO_RECONSTRUCTION",
+    "B39": "UNCHANGED",
+    "CSE142": "UNCHANGED",
+    "CSE143": "UNCHANGED"
+  },
+  "nextQueue": [
+    "Deduplicated B43–B57 certification manifest; separate revisits from distinct families",
+    "Human textual review of EXP-027 bilingual proposal",
+    "Find new unresolved distinct families after inspecting source queue; avoid reworking EXP-026"
+  ],
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

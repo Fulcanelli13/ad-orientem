@@ -1,0 +1,74 @@
+{
+  "schema": "AO_SPX_B58_RESEARCH_ONLY_V1",
+  "date": "2026-11-13",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "latestVerified": "B57 2026-11-12",
+    "baseline": "21 Oct: 68 contexts examined, 65 improved families, 130 answer units, 64 complete packets, one Chanoine original English witness blocked; historical counts not recounted",
+    "scope": "B43-B57 queue triage; not a complete per-answer certification manifest"
+  },
+  "reviewGroups": [
+    {
+      "batches": "B43-B47",
+      "scope": "Confession, orders, matrimony source-fidelity and provenance",
+      "gate": "Human doctrinal/source/translation review; preserve original drafts and distinguish attribution-only repairs"
+    },
+    {
+      "batch": "B48",
+      "scope": "Creed Q19/Q39/Q41/Q61/Q70/Q104",
+      "gate": "Human review; Q18 full Creed approved text remains held; Q100 Nostra aetate §4 provenance remains to be checked"
+    },
+    {
+      "batch": "B49",
+      "scope": "EXP-031/032/037 substantive; EXP-038/046 provenance",
+      "gate": "Human review; EXP-048/SPX-032 alias is not a second distinct family"
+    },
+    {
+      "batches": "B50-B54",
+      "scope": "EXP-024 Vehementer nos, EXP-028 E supremi; EXP-016/033 and EXP-019/023 Pascendi overlap",
+      "gate": "Use latest B53/B54 source locators, retain distinct questions; no duplicate improvement credit"
+    },
+    {
+      "batches": "B55-B57",
+      "scope": "EXP-026 episcopal authority and organisational freedom, EXP-027 practical lay participation",
+      "gate": "Use latest B55-B57; Italian original Pius IX attribution correction in B56; no duplicate family credit"
+    }
+  ],
+  "newSourceCheck": {
+    "document": "Pius X, Il fermo proposito, 11 June 1905",
+    "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "sections": [
+      {
+        "locus": "§20",
+        "finding": "Catholic associations may have different forms and a certain freedom of organisation; do not flatten all lay works into one administrative model"
+      },
+      {
+        "locus": "§22",
+        "finding": "Direct spiritual/pastoral auxiliary works subordinated to ecclesiastical authority; temporal/economic/public works have reasonable freedom while remaining guided by faith and morals"
+      },
+      {
+        "locus": "§§24-26",
+        "finding": "Separate clergy-specific caution: priests must not neglect sacred ministry or become partisan; involvement in social associations requires mature deliberation and bishop's consent. This is not a blanket restriction on lay activity."
+      }
+    ],
+    "classification": "PRIMARY_SOURCE_PARAPHRASE_AND_EDITORIAL_SCOPE_GUARD_NOT_VERBATIM",
+    "decision": "Do not rewrite EXP-026 or EXP-027; record clergy-specific scope guard for review only; no new family asserted"
+  },
+  "holds": [
+    "Original English Chanoine witness inaccessible: no reconstructed English quotation",
+    "B39 unchanged",
+    "CSE142-CSE143 specialist holds unchanged",
+    "Printed 1905 catechism facsimile collation remains separate from online transcription"
+  ],
+  "nextQueue": [
+    "Build exhaustive ID-level B43-B57 manifest from proposal arrays and original drafts, checking duplicates and statuses",
+    "Human review B43-B57, especially B55-B57 and clergy/lay distinction",
+    "Locate genuinely unresolved distinct families in existing source queue; skip blocked witness",
+    "Preserve Q18 and Q100 provenance holds"
+  ],
+  "certified": false,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

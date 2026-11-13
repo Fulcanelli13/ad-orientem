@@ -1,0 +1,343 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B25_COMMUNION_THANKSGIVING_AND_DISCIPLINE_V1",
+  "asOf": "2026-10-22",
+  "ownerBranch": "prototype/pius-x-standalone-study-20261021",
+  "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+  "originalOwnerBlob": "e02e92f2f3d57d16e2f36ba28efa27daeecf613a",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "counts": {
+    "distinctFamilies": 7,
+    "answerUnits": 14,
+    "sourceQuestionsCovered": 8,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "SPX-1905-E-639",
+      "sourceQuestionId": "PX1905-Q639",
+      "originalQuestionItalian": "In che consiste il ringraziamento dopo la Comunione?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "After Communion, remain recollected to honour the Lord within you, renewing acts of faith, hope, charity, adoration, thanksgiving, offering and petition, especially for the graces needed by yourself and those for whom you should pray.",
+        "fr": "Après la Communion, demeurez recueilli pour honorer le Seigneur en vous, en renouvelant les actes de foi, d’espérance, de charité, d’adoration, d’action de grâces, d’offrande et de demande, surtout pour les grâces nécessaires à vous-même et à ceux pour qui vous devez prier."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "How should the rest of the day after Communion be spent?",
+          "fr": "Comment vivre le reste de la journée après la Communion ?"
+        },
+        "response": {
+          "en": "On the day of Communion, remain recollected as far as possible, practise works of piety and fulfil the duties of your state with greater diligence.",
+          "fr": "Le jour de la Communion, restez recueilli autant que possible, pratiquez des œuvres de piété et accomplissez avec plus de soin les devoirs de votre état."
+        }
+      },
+      "sourceRefs": [
+        "PX639",
+        "PX640"
+      ],
+      "sourcePrecisionDelta": "Existing opening compresses 'necessary graces for those for whom we are bound to pray' into 'others'; restore the specified obligation. Do not equate recollection with withdrawal from ordinary duties.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-640",
+      "sourceQuestionId": "PX1905-Q640",
+      "originalQuestionItalian": "Che cosa si deve fare nel giorno della Comunione?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "The Catechism recommends recollection as far as possible, works of piety and especially more diligent fulfilment of the duties proper to one's state in life.",
+        "fr": "Le Catéchisme recommande le recueillement autant que possible, des œuvres de piété et surtout un accomplissement plus diligent des devoirs de son état."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "How long does Christ's Eucharistic presence remain after Communion?",
+          "fr": "Combien de temps dure la présence eucharistique du Christ après la Communion ?"
+        },
+        "response": {
+          "en": "It distinguishes Christ's Real Presence, which remains while the sacramental species remain, from His presence by grace, which endures while sanctifying grace is not lost through mortal sin.",
+          "fr": "Il distingue la Présence réelle du Christ, qui demeure tant que subsistent les espèces sacramentelles, de sa présence par la grâce, qui dure tant que la grâce sanctifiante n’est pas perdue par le péché mortel."
+        }
+      },
+      "sourceRefs": [
+        "PX640",
+        "PX641"
+      ],
+      "sourcePrecisionDelta": "Avoid saying all activities must cease for the entire day. Q641 states two distinct modes of presence; no specific physiological digestion time is asserted.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-641",
+      "sourceQuestionId": "PX1905-Q641",
+      "originalQuestionItalian": "Dopo la santa Comunione quanto tempo resta in noi Gesù Cristo?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "According to the Catechism, Christ remains really present after Communion as long as the sacramental species remain; His presence through grace endures so long as mortal sin does not remove sanctifying grace.",
+        "fr": "Selon le Catéchisme, le Christ demeure réellement présent après la Communion tant que subsistent les espèces sacramentelles ; sa présence par la grâce dure tant que le péché mortel ne fait pas perdre la grâce sanctifiante."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "How does the 1905 Catechism describe the posture for receiving Communion?",
+          "fr": "Comment le Catéchisme de 1905 décrit-il l'attitude pour recevoir la Communion ?"
+        },
+        "response": {
+          "en": "In the historical Latin practice described here, the communicant kneels, modestly raises the head, directs the eyes toward the sacred host, opens the mouth sufficiently and extends the tongue slightly.",
+          "fr": "Dans la pratique latine historique ici décrite, le communiant s’agenouille, relève modérément la tête, dirige les yeux vers la sainte hostie, ouvre suffisamment la bouche et avance légèrement la langue."
+        }
+      },
+      "sourceRefs": [
+        "PX641",
+        "PX642"
+      ],
+      "sourcePrecisionDelta": "Existing Q642 mirror omits eyes directed toward the host; restore this historical detail. Q641's grace statement presupposes the ordinary worthily-received sacrament and is not a promise independent of disposition.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-642",
+      "sourceQuestionId": "PX1905-Q642",
+      "originalQuestionItalian": "Come bisogna presentarsi nell’atto di ricevere la santa Comunione?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "The historical catechism describes kneeling, the head moderately raised, modest eyes directed to the host, the mouth sufficiently open and the tongue slightly extended.",
+        "fr": "Le catéchisme historique décrit la position à genoux, la tête modérément relevée, les yeux pudiquement tournés vers l’hostie, la bouche suffisamment ouverte et la langue légèrement avancée."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Why did communicants use a Communion cloth or paten?",
+          "fr": "Pourquoi employait-on une nappe ou un plateau de Communion ?"
+        },
+        "response": {
+          "en": "The Communion cloth or small receiving board was to be held so that it could catch the sacred host if it fell.",
+          "fr": "La nappe ou la petite tablette de Communion devait être tenue de manière à recueillir la sainte hostie si elle venait à tomber."
+        }
+      },
+      "sourceRefs": [
+        "PX642",
+        "PX643"
+      ],
+      "sourcePrecisionDelta": "Preserve historical context; this passage is not a blanket claim about all valid present-day modes. Italian 'tavoletta' is a small board/tablet; do not silently replace it with an exclusively modern metal paten.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-643",
+      "sourceQuestionId": "PX1905-Q643",
+      "originalQuestionItalian": "Come bisogna tenere la tovaglia o la tavoletta della Comunione?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "The Catechism directs that the Communion cloth or receiving board be held to catch the sacred host if it should fall.",
+        "fr": "Le Catéchisme demande de tenir la nappe ou la tablette de Communion pour recueillir la sainte hostie si elle venait à tomber."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What does the historical Catechism advise after receiving the sacred host?",
+          "fr": "Que conseille le Catéchisme historique après la réception de l'hostie ?"
+        },
+        "response": {
+          "en": "It also instructs the communicant to swallow the host as promptly as possible and to refrain from spitting for a time, as part of its historical disciplinary guidance.",
+          "fr": "Il demande aussi d’avaler l’hostie aussi rapidement que possible et de s’abstenir de cracher pendant quelque temps, selon cette discipline historique."
+        }
+      },
+      "sourceRefs": [
+        "PX643",
+        "PX644"
+      ],
+      "sourcePrecisionDelta": "Do not invent precise number of minutes for 'per qualche tempo'; describe historical instruction rather than issuing a new universal modern rule.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-644",
+      "sourceQuestionId": "PX1905-Q644",
+      "originalQuestionItalian": "Quando si deve inghiottire la sacra particola?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "The historical Catechism says to swallow the sacred host as soon as possible and, for a time afterward, to avoid spitting.",
+        "fr": "Le Catéchisme historique demande d’avaler la sainte hostie dès que possible et, pendant quelque temps ensuite, de s’abstenir de cracher."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What did the Catechism say if the host adhered to the palate?",
+          "fr": "Que recommandait le Catéchisme si l'hostie restait collée au palais ?"
+        },
+        "response": {
+          "en": "If the host adheres to the palate, the text instructs that it be loosened with the tongue, never with the finger.",
+          "fr": "Si l’hostie adhère au palais, le texte demande de la détacher avec la langue, jamais avec le doigt."
+        }
+      },
+      "sourceRefs": [
+        "PX644",
+        "PX645"
+      ],
+      "sourcePrecisionDelta": "Do not convert historical precaution into a precise timing claim or a diagnosis. No additional ritual gesture is inferred.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-645",
+      "sourceQuestionId": "PX1905-Q645",
+      "originalQuestionItalian": "Se la sacra particola si attaccasse al palato, che cosa si dovrebbe fare?",
+      "originalOwnerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "sourceWitness": "MUSEO_SAN_PIO_X_ITALIAN_HTML_EDITORIAL_QUESTION_NUMBERING_NOT_ORIGINAL_PRINT_FACSIMILE",
+      "proposedOpening": {
+        "en": "If the host adheres to the palate, the Catechism instructs the communicant to loosen it with the tongue, not with the finger.",
+        "fr": "Si l’hostie adhère au palais, le Catéchisme demande de la détacher avec la langue, non avec le doigt."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "When did the 1905 Catechism say Catholics were obliged to receive Communion?",
+          "fr": "Quand le Catéchisme de 1905 disait-il que les catholiques devaient communier ?"
+        },
+        "response": {
+          "en": "The same historical text gives the Easter Communion precept as annual Communion in one's own parish and also mentions danger of death; the parish specification belongs to the period's discipline.",
+          "fr": "Le même texte historique présente le précepte de la Communion pascale comme une Communion annuelle dans sa propre paroisse et mentionne aussi le péril de mort ; la précision paroissiale relève de la discipline de l’époque."
+        }
+      },
+      "sourceRefs": [
+        "PX645",
+        "PX646"
+      ],
+      "sourcePrecisionDelta": "Q646's 'own parish' wording is a historical disciplinary statement, not an automatically applicable current universal requirement. Do not treat Q646 as authentic personal papal speech.",
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "sourceSentenceVerifiedAgainstItalianWebWitness": true,
+        "originalPrintFacsimileCollated": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "evidence": {
+    "PX639": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q639",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX640": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q640",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX641": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q641",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX642": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q642",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX643": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q643",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX644": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q644",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX645": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q645",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    },
+    "PX646": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Compendio della dottrina cristiana, Catechismo maggiore, Parte quarta, Capo IV, editorial Q646",
+      "language": "Italian",
+      "witness": "Museo San Pio X HTML transcription; not a facsimile of the original 1905 print",
+      "sourceRole": "QUESTION_AND_ANSWER_DIRECT_PRIMARY_TEXT_WITNESS"
+    }
+  },
+  "duplicatesAndContinuity": [
+    "PX640 is the E639 followup and E640 opening; retain both canonical family IDs but one source claim.",
+    "PX641, PX642, PX643, PX644 and PX645 likewise occur in neighbouring family followup/opening pairs; do not count each mirror as a new doctrinal discovery.",
+    "PX646 is a followup to E645 and is not counted as a new family.",
+    "B19 already verified PX636–637; do not re-count those families or duplicate their source work."
+  ],
+  "humanDecisions": [
+    "Verify original printed 1905 Italian witness and numbering before any sourceSentenceVerified claim becomes release-certified.",
+    "Check historical period practice versus present-day discipline and the precise EN/FR renderings of modesty, recollection and Communion cloth/tablet.",
+    "Approve historical voice only as source-tethered catechetical dialogue; never attribute this prose as authentic private papal conversation."
+  ],
+  "nextQueue": [
+    "Review SPX-1905-E-646–648, Easter Communion precept and age, against original print and later Quam singulari chronology.",
+    "Then continue to the next non-duplicated owner family, skipping previously completed B18–B19."
+  ],
+  "approvalsChanged": false
+}

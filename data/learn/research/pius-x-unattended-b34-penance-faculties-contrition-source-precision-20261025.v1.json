@@ -1,0 +1,289 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B34_PENANCE_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-25",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "baseline": "21 Oct 2026 consolidated packet",
+    "latest": "B32 SPX-1905-E-663–671; source batch11 already contains P672–681 in 2026-10-20 files",
+    "sourceOwnership": "P672–681 IDs already exist; DO NOT invent E672–681 or count these as new authored families",
+    "sourceFiles": [
+      "data/learn/research/pius-x-batch11-penance-a-20261020.v1.json",
+      "data/learn/research/pius-x-batch11-penance-b-20261020.v1.json"
+    ],
+    "policy": "No personal quotations fabricated. 1905 Italian catechism text is a documentary witness, not a personal papal conversation."
+  },
+  "sources": {
+    "PX1905": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q672–681",
+      "witness": "Museo San Pio X Italian online transcription; not collated with original 1905 print"
+    },
+    "CCC1452": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "1451–1456"
+    },
+    "CCC1448": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vi_the_sacrament_of_penance_and_reconciliation.index.html",
+      "loci": "1448–1449"
+    },
+    "CCC1461": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/viii_the_minister_of_this_sacrament.index.html",
+      "loci": "1461–1463"
+    },
+    "CIC1983": {
+      "en": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "fr": "https://www.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann965-986_fr.html",
+      "loci": "959–960, 965–969, 976"
+    },
+    "RP1984": {
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "loci": "31, satisfaction"
+    }
+  },
+  "proposals": [
+    {
+      "existingFamilyId": "SPX-1905-P-674",
+      "sourceQuestionId": "PX1905-Q674",
+      "proposedOpening": {
+        "en": "The Catechism calls the sacrament Confession because the penitent acknowledges sins to the priest; contrition and the confession of sins belong together in its ordinary celebration.",
+        "fr": "Le Catéchisme nomme ce sacrement Confession parce que le pénitent accuse ses péchés au prêtre ; la contrition et l'aveu des péchés appartiennent ensemble à sa célébration ordinaire."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Can perfect contrition obtain pardon before sacramental confession?",
+          "fr": "La contrition parfaite peut-elle obtenir le pardon avant la confession sacramentelle ?"
+        },
+        "answer": {
+          "en": "The later Catechism §1452 teaches that perfect contrition can obtain forgiveness of mortal sin when joined to the firm resolution to confess as soon as possible; this does not make confession optional.",
+          "fr": "Le Catéchisme ultérieur, au §1452, enseigne que la contrition parfaite peut obtenir le pardon du péché mortel si elle s'accompagne de la ferme résolution de se confesser dès que possible ; elle ne rend pas la confession facultative."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q674",
+        "CCC1452 §1452"
+      ],
+      "sourcePrecisionDelta": "Prevent an unqualified reading of 'not enough to detest sins' as excluding the exceptional doctrine of perfect contrition; later gloss is not Pius X speech.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_AND_LATER_SOURCES_NOT_PERSONAL_PAPAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-678",
+      "sourceQuestionId": "PX1905-Q678",
+      "proposedOpening": {
+        "en": "The 1905 Catechism identifies the essential words of priestly absolution, 'I absolve you from your sins.' It gives a doctrinal explanation, not the full ritual text for celebration.",
+        "fr": "Le Catéchisme de 1905 désigne les paroles essentielles de l'absolution sacerdotale : « Je vous absous de vos péchés ». Il donne une explication doctrinale, non le texte intégral du rite."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is this short quotation the entire absolution prayer in every rite?",
+          "fr": "Cette courte citation est-elle toute la prière d'absolution dans chaque rite ?"
+        },
+        "answer": {
+          "en": "No. The later Catechism §1449 gives the fuller Latin-Church formula; the 1905 question should not be presented as a complete liturgical script.",
+          "fr": "Non. Le Catéchisme ultérieur, au §1449, donne la formule plus développée de l'Église latine ; la question de 1905 ne doit pas être présentée comme un texte liturgique intégral."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q678",
+        "CCC1448 §1449"
+      ],
+      "sourcePrecisionDelta": "Clarify doctrinal form versus full ritual formula; preserve historical quotation as an excerpt.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_AND_LATER_SOURCES_NOT_PERSONAL_PAPAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-679",
+      "sourceQuestionId": "PX1905-Q679",
+      "proposedOpening": {
+        "en": "In its 1905 wording, the Catechism names a priest approved by the bishop as minister of Penance. The underlying requirement is that the priest exercise this ministry with the requisite ecclesiastical faculty.",
+        "fr": "Dans sa formulation de 1905, le Catéchisme nomme comme ministre de la Pénitence un prêtre approuvé par l'évêque. L'exigence sous-jacente est que le prêtre exerce ce ministère avec la faculté ecclésiastique requise."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Must every priest receive an individual approval from the local bishop today?",
+          "fr": "Tout prêtre doit-il aujourd'hui recevoir une approbation individuelle de l'évêque du lieu ?"
+        },
+        "answer": {
+          "en": "Not necessarily. Current canon law allows the faculty by law itself or by competent grant, and regulates its exercise; the 1905 formulation must not be presented as an exhaustive statement of current law.",
+          "fr": "Pas nécessairement. Le droit canonique actuel prévoit la faculté de plein droit ou par concession de l'autorité compétente et en règle l'exercice ; la formule de 1905 n'épuise pas le droit en vigueur."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q679",
+        "CIC1983 canons 966–969"
+      ],
+      "sourcePrecisionDelta": "Historical bishop-approval phrasing is not an exhaustive modern faculties rule.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_AND_LATER_SOURCES_NOT_PERSONAL_PAPAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-680",
+      "sourceQuestionId": "PX1905-Q680",
+      "proposedOpening": {
+        "en": "The Catechism distinguishes ordination from the jurisdiction required for valid sacramental absolution, using the legal language of its own time.",
+        "fr": "Le Catéchisme distingue l'ordination de la juridiction requise pour la validité de l'absolution sacramentelle, dans la langue juridique de son époque."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does a priest without the usual faculty have no power to absolve a dying person?",
+          "fr": "Un prêtre privé de la faculté habituelle ne peut-il jamais absoudre un mourant ?"
+        },
+        "answer": {
+          "en": "Current canon 976 expressly provides that any priest can validly and licitly absolve a person in danger of death, even without the ordinary faculty. This later legal rule is a clarification, not a quotation from Pius X.",
+          "fr": "Le canon 976 actuel prévoit expressément que tout prêtre peut absoudre validement et licitement une personne en danger de mort, même sans la faculté habituelle. Cette règle juridique ultérieure est une précision, non une citation de Pie X."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q680",
+        "CIC1983 canons 966, 976",
+        "CCC1461 §1463"
+      ],
+      "sourcePrecisionDelta": "Avoid absolute statement that episcopal grant is always necessary, and preserve danger-of-death exception.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_AND_LATER_SOURCES_NOT_PERSONAL_PAPAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-681",
+      "sourceQuestionId": "PX1905-Q681",
+      "proposedOpening": {
+        "en": "The Catechism enumerates the penitent's contrition, confession and satisfaction, together with the priest's absolution. These are distinct contributions to one sacramental action.",
+        "fr": "Le Catéchisme énumère la contrition, la confession et la satisfaction du pénitent, ainsi que l'absolution du prêtre. Ce sont des éléments distincts d'une seule action sacramentelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is the assigned penance a price paid to obtain forgiveness?",
+          "fr": "La pénitence imposée est-elle le prix à payer pour obtenir le pardon ?"
+        },
+        "answer": {
+          "en": "No. The later apostolic exhortation Reconciliatio et paenitentia §31 explains satisfaction as a response flowing from forgiveness through Christ, not a purchase of grace.",
+          "fr": "Non. L'exhortation apostolique ultérieure Reconciliatio et paenitentia, §31, présente la satisfaction comme une réponse découlant du pardon reçu par le Christ, non comme un achat de la grâce."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q681",
+        "CCC1448 §1448",
+        "RP1984 §31"
+      ],
+      "sourcePrecisionDelta": "Keep four-part enumeration while guarding against a transactional account of satisfaction.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_AND_LATER_SOURCES_NOT_PERSONAL_PAPAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "noChange": [
+    {
+      "existingFamilyId": "SPX-1905-P-672",
+      "sourceQuestionId": "PX1905-Q672",
+      "result": "EXISTING_20261020_BULK_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "sourceRefs": [
+        "PX1905 Q672"
+      ],
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-673",
+      "sourceQuestionId": "PX1905-Q673",
+      "result": "EXISTING_20261020_BULK_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "sourceRefs": [
+        "PX1905 Q673"
+      ],
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-675",
+      "sourceQuestionId": "PX1905-Q675",
+      "result": "EXISTING_20261020_BULK_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "sourceRefs": [
+        "PX1905 Q675"
+      ],
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-676",
+      "sourceQuestionId": "PX1905-Q676",
+      "result": "EXISTING_20261020_BULK_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "sourceRefs": [
+        "PX1905 Q676"
+      ],
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-677",
+      "sourceQuestionId": "PX1905-Q677",
+      "result": "EXISTING_20261020_BULK_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "sourceRefs": [
+        "PX1905 Q677"
+      ],
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    }
+  ],
+  "counts": {
+    "existingFamiliesExamined": 10,
+    "sourceBoundProposals": 5,
+    "bilingualProposedAnswerUnits": 10,
+    "unchangedSourceConsistent": 5,
+    "humanCertified": 0,
+    "newCanonicalFamilies": 0
+  },
+  "nextQueue": [
+    "P682–691: check against already authored batch11 drafts; source-first review only",
+    "1905 original printed catechism collation against Museo San Pio X transcription",
+    "Human review of P674/P678/P679/P680/P681 historical-law and later-document boundaries",
+    "Check for cross-branch E/P namespace overlap before any import"
+  ],
+  "approvalsChanged": false
+}

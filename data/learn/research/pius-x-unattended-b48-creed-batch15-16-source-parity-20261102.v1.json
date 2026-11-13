@@ -1,0 +1,191 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B48_CREED_SOURCE_PARITY_V1",
+  "asOf": "2026-11-02",
+  "status": "ADDITIVE_RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "baseline": "2026-10-21: 68 family contexts examined; 65 improved; 130 bilingual answer units; 64 complete packets awaiting human certification; one Chanoine original-English witness partly blocked",
+    "latestChecked": "B47 on 2026-11-01 (P847-855) is latest pius-x-unattended record in accessible branch directory; Chanoine B39 on 2026-10-28 read from research/chanoine-cse-source-dialogue-20261019",
+    "scope": "Existing batch15 Q12-61 (50 families) and batch16 Q62-111 (50 families); existing bilingual opening/followup drafts compared to online Italian question-and-answer text",
+    "originalDrafts": [
+      "data/learn/research/pius-x-batch15-creed-a-20261020.v1.json",
+      "data/learn/research/pius-x-batch15-creed-b-20261020.v1.json",
+      "data/learn/research/pius-x-batch15-creed-c-20261020.v1.json",
+      "data/learn/research/pius-x-batch15-creed-d-20261020.v1.json",
+      "data/learn/research/pius-x-batch15-creed-e-20261020.v1.json",
+      "data/learn/research/pius-x-batch16-creed-a-20261020.v1.json",
+      "data/learn/research/pius-x-batch16-creed-b-20261020.v1.json",
+      "data/learn/research/pius-x-batch16-creed-c-20261020.v1.json",
+      "data/learn/research/pius-x-batch16-creed-d-20261020.v1.json",
+      "data/learn/research/pius-x-batch16-creed-e-20261020.v1.json"
+    ],
+    "historicalAttribution": "Catechism adopted and prescribed by Pius X (14 June 1905), drawing on previously approved northern Italian bishops' text; these are NOT verbatim spoken answers of Pius X"
+  },
+  "coverage": {
+    "distinctExistingFamiliesChecked": 100,
+    "bilingualOpeningFollowupPairsChecked": 100,
+    "sourceFidelityBilingualOpeningCorrections": 6,
+    "questionSourceParityHolds": 1,
+    "attributionOnlyRefinements": 1,
+    "retainedWithoutNewChange": 92,
+    "newCanonicalIds": 0,
+    "humanCertifications": 0
+  },
+  "sources": [
+    {
+      "id": "PX1905_PRELIM",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "loci": "1905 original Italian preliminary Q12-14 and Pius X 14 June 1905 introductory letter; online transcription, not printed facsimile"
+    },
+    {
+      "id": "PX1905_CREED",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "loci": "1905 Italian Apostles' Creed Q15-111, specifically Q18,19,39,41,61,70,100,104; original answers read from online transcription, not print-collated"
+    },
+    {
+      "id": "NA1965",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "loci": "Nostra aetate §4, 28 October 1965; later magisterial source, not 1905 words"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SPX-1905-C-019",
+      "sourceQuestionId": "PX1905-Q19",
+      "kind": "OMITTED_EXPLICIT_CERTAINTY_COMPARISON",
+      "existingIssue": "Existing opening gives God's truthfulness but omits the original's explicit comparison: more certain than even seeing the articles with one's own eyes.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism says that to profess 'I believe' is to hold the twelve articles as wholly true, more firmly even than if one saw them with one's own eyes, because God can neither deceive nor be deceived and has revealed these truths to His Church. This is the historical catechism's comparison of the certainty of faith.",
+        "fr": "Selon le Catéchisme de 1905, dire « Je crois » signifie tenir les douze articles pour absolument vrais, plus fermement même que si on les voyait de ses propres yeux, parce que Dieu ne peut ni se tromper ni tromper et qu'Il a révélé ces vérités à son Église. Il s'agit de la comparaison employée par le Catéchisme historique pour exprimer la certitude de la foi."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE",
+      "sourceLocus": "1905 Italian catechism Q19",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-C-039",
+      "sourceQuestionId": "PX1905-Q39",
+      "kind": "OMITTED_PERMANENT_CONSEQUENCE",
+      "existingIssue": "Existing answer retains pride and rejection but omits permanent exclusion from heaven and condemnation to hell in the Italian answer.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism says that some angels, through pride, sought equality with God and independence from Him; for this sin they were excluded from heaven for ever and condemned to hell. This reports the catechism's teaching about the fallen angels, not a judgment about any particular human being.",
+        "fr": "Le Catéchisme de 1905 enseigne que certains anges, par orgueil, voulurent être égaux à Dieu et indépendants de Lui ; pour ce péché, ils furent exclus à jamais du ciel et condamnés à l'enfer. Il s'agit de son enseignement sur les anges déchus, non d'un jugement sur une personne humaine."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE",
+      "sourceLocus": "1905 Italian catechism Q39",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-C-041",
+      "sourceQuestionId": "PX1905-Q41",
+      "kind": "OMITTED_BODY_SOUL_SCOPE",
+      "existingIssue": "Draft describes temptation but suppresses original's possible harm to both soul and body; preserve safeguard against attributing particular illness or events to demonic causes.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism teaches that fallen spirits may harm people in soul and body only if God permits, especially by tempting them to sin. This general doctrine does not identify the cause of any particular illness, experience or event, which must not be diagnosed as demonic from this text.",
+        "fr": "Le Catéchisme de 1905 enseigne que les esprits déchus peuvent nuire à l'âme et au corps seulement si Dieu le permet, surtout en tentant au péché. Cet enseignement général ne permet pas d'attribuer à une cause démoniaque une maladie, une expérience ou un événement particulier."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE_PLUS_EDITORIAL_NON_DIAGNOSIS_SAFEGUARD",
+      "sourceLocus": "1905 Italian catechism Q41",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-C-061",
+      "sourceQuestionId": "PX1905-Q61",
+      "kind": "OMITTED_GRATUITY_AND_JUSTICE_CONSEQUENCE",
+      "existingIssue": "Current answer notes that gifts were gratuitous but omits original's statement that God could, without injustice, deprive Adam and posterity of them after disobedience.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism teaches that the original gifts were in no way owed to human nature: they were wholly gratuitous and supernatural. It adds that, after Adam's disobedience, God could without injustice deprive Adam and his descendants of those gifts. This concerns the gifts in the historical account, not the claim that descendants personally chose Adam's act.",
+        "fr": "Le Catéchisme de 1905 enseigne que les dons originels n'étaient nullement dus à la nature humaine : ils étaient entièrement gratuits et surnaturels. Il ajoute qu'après la désobéissance d'Adam, Dieu pouvait sans injustice en priver Adam et ses descendants. Il s'agit des dons dans cet exposé historique, non de l'affirmation que les descendants auraient personnellement choisi l'acte d'Adam."
+      },
+      "classification": "HISTORICAL_ITALIAN_PARAPHRASE",
+      "sourceLocus": "1905 Italian catechism Q61",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-C-070",
+      "sourceQuestionId": "PX1905-Q70",
+      "kind": "OMITTED_SCHOLASTIC_QUALIFIER",
+      "existingIssue": "Draft retains eternal begetting and Word but omits the 1905 source's specific 'per via d'intelletto' explanation.",
+      "proposedOpening": {
+        "en": "In the 1905 Catechism's theological terminology, the second divine Person is called the Son because He is begotten of the Father from all eternity 'by way of intellect'; hence He is also called the Father's eternal Word. This is an eternal relation, not a generation beginning in time.",
+        "fr": "Dans la terminologie théologique du Catéchisme de 1905, la deuxième Personne divine est appelée le Fils parce qu'Elle est engendrée du Père de toute éternité « par voie d'intelligence » ; c'est pourquoi Elle est aussi appelée le Verbe éternel du Père. Il s'agit d'une relation éternelle, non d'une génération commençant dans le temps."
+      },
+      "classification": "HISTORICAL_SCHOLASTIC_TERMINOLOGY_PARAPHRASE",
+      "sourceLocus": "1905 Italian catechism Q70",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-C-104",
+      "sourceQuestionId": "PX1905-Q104",
+      "kind": "OMITTED_LIMITING_QUALIFIER",
+      "existingIssue": "Existing wording can make the original's 'sotto un certo aspetto, infinita' sound like an unqualified claim that each sinful act is infinite.",
+      "proposedOpening": {
+        "en": "The 1905 Catechism explains that an angel alone could not make adequate satisfaction because the offence against God through sin is, 'in a certain respect', infinite; therefore satisfaction required a person whose merits have infinite worth. The qualification belongs to the historical theological formulation and should not be omitted.",
+        "fr": "Le Catéchisme de 1905 explique qu'un ange seul ne pouvait offrir une satisfaction suffisante, car l'offense faite à Dieu par le péché est, « sous un certain rapport », infinie ; la satisfaction exigeait donc une personne dont les mérites aient une valeur infinie. Cette restriction fait partie de la formulation théologique historique et ne doit pas être omise."
+      },
+      "classification": "HISTORICAL_THEOLOGICAL_QUALIFIER_PARAPHRASE",
+      "sourceLocus": "1905 Italian catechism Q104",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "questionSourceParityHold": [
+    {
+      "id": "SPX-1905-C-018",
+      "sourceQuestionId": "PX1905-Q18",
+      "kind": "RECITATION_VS_OUTLINE_PARITY",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "existingIssue": "Original Q18 asks to recite the twelve articles and prints all twelve; existing English/French visitor question asks only to outline them and the answer summarizes rather than recites. The summary is not false but is not a faithful substitute for a full Creed recitation.",
+      "proposedAction": {
+        "en": "Retain the existing outline as an optional summary, but add a separately reviewed complete twelve-article Apostles' Creed in English; check article boundaries and wording against the 1905 Italian witness and an approved English prayer text. Do not invent a translation or claim the current summary is the literal 1905 recitation.",
+        "fr": "Conserver le résumé actuel comme aperçu facultatif, mais ajouter le Symbole des Apôtres complet, en douze articles, dans une version française approuvée ; vérifier les divisions et le texte par rapport au témoin italien de 1905 et à une version française autorisée. Ne pas inventer une traduction ni présenter le résumé comme une récitation littérale de 1905."
+      },
+      "gate": "HOLD_FULL_LITURGICAL_TRANSLATION_WITNESS_AND_HUMAN_APPROVAL_NOT_CERTIFIED"
+    }
+  ],
+  "attributionOnly": [
+    {
+      "id": "SPX-1905-C-100",
+      "sourceQuestionId": "PX1905-Q100",
+      "kind": "LATER_ANTISEMITISM_SAFEGUARD_PROVENANCE",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "laterSourceUrl": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "laterLocus": "Nostra aetate §4",
+      "issue": "Existing answer correctly refuses collective guilt of Jewish people; explicitly cite the 1965 conciliar clarification as later editorial safeguard rather than making it sound like the 1905 catechism's own wording.",
+      "proposed": {
+        "en": "Retain the present safeguard. Attribute the rejection of collective or inherited blame to the later Nostra aetate §4 (1965), not to Q100 itself.",
+        "fr": "Conserver la mise en garde actuelle. Attribuer le rejet d'une culpabilité collective ou héréditaire à la déclaration ultérieure Nostra aetate, §4 (1965), et non à la question 100 elle-même."
+      },
+      "gate": "READY_FOR_HUMAN_ATTRIBUTION_AND_SAFEGUARD_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "chanoine": {
+    "latestRead": "research/chanoine/chanoine-unattended-b39-concluding-cse-moral-responsibility-and-natural-law-20261028.v1.json",
+    "newProposals": 0,
+    "reason": "B39 already proposes CSE144/CSE146/CSE147; CSE141/CSE145 retained; CSE142/CSE143 specialist held. Avoid duplicating the completed work.",
+    "originalEnglishHistoricalWitness": "STILL_BLOCKED_NO_RECONSTRUCTION",
+    "persona": "Distinct fictional Chanoine persona, never impersonated as historical Pius X or Lefebvre direct quotation"
+  },
+  "nextQueue": [
+    "Human translation/doctrinal certification of six bilingual Q19/39/41/61/70/104 repairs; do not overwrite existing drafts automatically",
+    "Locate independently approved complete English/French Apostles' Creed texts and reconcile 1905 twelve-article divisions for Q18; preserve summary as summary",
+    "Add precise 1965 Nostra aetate §4 provenance to Q100 anti-collective-guilt safeguard without changing historical attribution",
+    "Continue to already drafted batch17 or next genuinely unreviewed canonical families only after checking current research branch and exact ID ranges",
+    "Preserve B43-B47 human certification queue; exclude six redundant B41 proposals",
+    "Chanoine CSE142-143 clinical/safeguarding hold and inaccessible original English witness remain blocked; no speculative text",
+    "Printed 1905 answer collation remains necessary before verbatim-source certification"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "doctrinalApproved": false,
+    "personaVoiceApproved": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}

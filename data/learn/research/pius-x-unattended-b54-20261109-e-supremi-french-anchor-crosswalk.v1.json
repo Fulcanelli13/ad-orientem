@@ -1,0 +1,72 @@
+{
+  "schema": "AO_SPX_B54_PRIMARY_SOURCE_CROSSWALK_V1",
+  "date": "2026-11-09",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "continuity": {
+    "previous": "B53 verified on research branch",
+    "baseline": "68 examined contexts; 65 improved; 64 complete pending human certification (historical, not recounted)",
+    "distinctFamilies": [
+      "SPX-EXP-028"
+    ],
+    "newFamilies": 0
+  },
+  "records": [
+    {
+      "id": "SPX-EXP-028",
+      "topic": "Hope amid irreligion",
+      "decision": "CLOSE_FRENCH_ANCHOR_GAP_AND_BOUND_INTERPRETATION",
+      "crosswalk": [
+        {
+          "english": "E supremi §3",
+          "frenchAnchor": "Peut-on ignorer la maladie si profonde ... l'abandon et l'apostasie",
+          "claim": "contemporary apostasy diagnosis"
+        },
+        {
+          "english": "§4",
+          "frenchAnchor": "Nous déclarons que Notre but unique ... tout restaurer dans le Christ",
+          "claim": "pontifical programme"
+        },
+        {
+          "english": "§6",
+          "frenchAnchor": "Quelle sera l'issue de ce combat ... au Créateur reste toujours la victoire",
+          "claim": "divine victory"
+        },
+        {
+          "english": "§7",
+          "frenchAnchor": "Mais cette confiance ne nous dispense pas ... par une prière persévérante ... par la parole et par les oeuvres",
+          "claim": "prayer and public action"
+        },
+        {
+          "english": "§8",
+          "frenchAnchor": "Toutefois ... ce retour des nations ... n'adviendra que par Jésus-Christ",
+          "claim": "Christological foundation; not evidence of a timetable"
+        }
+      ],
+      "proposedEnglish": "We undertake to restore all things in Christ. God's victory is certain, yet this confidence does not dispense Us from persevering prayer or the public witness of word and deed. The restoration We seek is through Jesus Christ; We assign no date to its temporal accomplishment.",
+      "proposedFrench": "Nous entreprenons de tout restaurer dans le Christ. La victoire de Dieu est certaine, mais cette confiance ne Nous dispense ni de la prière persévérante ni du témoignage public de la parole et des œuvres. Le retour que Nous recherchons ne peut s'accomplir que par Jésus-Christ ; Nous n'en fixons aucune échéance temporelle.",
+      "provenance": "EDITORIAL_PARAPHRASE_IN_HISTORICAL_PAPAL_VOICE_NOT_VERBATIM",
+      "caution": "No fixed timetable is an editorial negative inference from the document, not a direct papal statement; keep separate from quotations. French edition is unnumbered; cite anchor phrases, not imported English numbers.",
+      "sources": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+      ],
+      "humanReview": "READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED"
+    }
+  ],
+  "holds": {
+    "chanoineOriginalEnglish": "BLOCKED_NO_FABRICATION",
+    "B39": "UNCHANGED",
+    "CSE142": "UNCHANGED",
+    "CSE143": "UNCHANGED"
+  },
+  "nextQueue": [
+    "Human-check B54 against B53 and accept/reject wording without duplicate family credit",
+    "Deduplicate B43–B54 against B41 duplicate contexts and extract distinct unresolved families",
+    "Review remaining exact bilingual anchors in other St Pius X documents",
+    "Skip inaccessible original English Chanoine witness"
+  ],
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
