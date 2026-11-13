@@ -126,7 +126,7 @@
       "sourceUrl": "https://gregobase.selapa.net/chant.php?id=260",
       "gabcSha256": "68c556e17ac379fd375087e16ffd574a549d4e3c105e38ddb871abf8766f1231",
       "rawGabcLength": 702,
-      "sourceGabcSections": 1,
+      "sourceGabcSections": 2,
       "sourceBivirgaMatches": 0,
       "sourceFingerprint": "7f89296c",
       "rendererFingerprint": "4bbda557",
@@ -351,7 +351,8 @@
     "Original 1961 archive has source-transcription authority only, NOT printed note-by-note approval or certified rhythm",
     "Holy Family Gradual title Unam petii... Beati is a single original archived GABC identity; not a full score review",
     "No reuse within existing optional Proper research player; other inline notation modules may already show some scores",
-    "The first post-Epiphany Sunday feast does not authorize the printed independent ferial In excelso throno GABC as the Holy Family Introit"
+    "The first post-Epiphany Sunday feast does not authorize the printed independent ferial In excelso throno GABC as the Holy Family Introit",
+    "Holy Family Gradual GREGOBASE-260 has the original embedded '(z0::c3)' double-bar-with-clef-change delimiter; source section counting must use Exsurge semantics, not just literal '(::)'."
   ],
   "restrictions": {
     "noAutomaticallyPublishedMelodies": true,
@@ -371,5 +372,16 @@
     "noPaidServices": true,
     "no1974Substitution": true
   },
-  "plannedNextStage": "M67: after source/notehead parity and printed score editorial checks, extend existing shared 66-melody study player with exact ten (provisional) manual source previews, no additional engine."
+  "plannedNextStage": "M67: after source/notehead parity and printed score editorial checks, extend existing shared 66-melody study player with exact ten (provisional) manual source previews, no additional engine.",
+  "textualVariantHolds": [
+    {
+      "selectionId": "HOLY_FAMILY_INTROIT",
+      "original1961GradualeTextOpening": "Exsultet gaudio pater Justi",
+      "printed1962MissaleTextOpening": "Exsultat gaudio pater Justi",
+      "issue": "The authentic 1961 chant score and 1962 Missal text differ at the first word. Do not silently rewrite original GABC or automatically substitute the printed Missal word.",
+      "requiresEditorialResolutionBeforePlayerPromotion": true,
+      "authority1961": "https://gregobase.selapa.net/chant.php?id=336",
+      "authority1962": "https://ordo.fsspx.org/en/day/2027-01-10?lang=en&mode=liturgical"
+    }
+  ]
 }
