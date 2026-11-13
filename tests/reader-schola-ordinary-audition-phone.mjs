@@ -35,7 +35,19 @@ const movementCases=[
  ['GLORIA','MASS_08','Gloria VIII',250,18],
  ['CREDO','CREDO_03','Credo III',414,19],
  ['SANCTUS_BENEDICTUS','MASS_08','Sanctus VIII',143,1],
- ['AGNUS_DEI','MASS_08','Agnus Dei VIII',106,3]
+ ['AGNUS_DEI','MASS_08','Agnus Dei VIII',106,3],
+ // M56 expanded 1961 source-gated pilot. Exact Exsurge source-note counts
+ // are emitted during acceptance, then pinned after the CI ledger pass.
+ ['GLORIA','MASS_11','Gloria XI',null,18],
+ ['GLORIA','MASS_01','Gloria I',null,18],
+ ['SANCTUS_BENEDICTUS','MASS_11','Sanctus XI',null,1],
+ ['SANCTUS_BENEDICTUS','MASS_01','Sanctus I',null,1],
+ ['SANCTUS_BENEDICTUS','MASS_17','Sanctus XVII',null,1],
+ ['SANCTUS_BENEDICTUS','MASS_18','Sanctus XVIII',null,1],
+ ['AGNUS_DEI','MASS_11','Agnus Dei XI',null,3],
+ ['AGNUS_DEI','MASS_01','Agnus Dei I',null,3],
+ ['AGNUS_DEI','MASS_17','Agnus Dei XVII',null,3],
+ ['AGNUS_DEI','MASS_18','Agnus Dei XVIII',null,3]
 ];
 const selector=movement=>
   '[data-kyrie-research-audition-open][data-ordinary-preview-movement="'+movement+'"]';
@@ -73,8 +85,11 @@ try{
       await page.waitForFunction(()=>document.querySelector('[data-kyrie-staff]')
         ?.dataset.scholaNoteheadsMapped==='true',null,{timeout:85000});
       assert.match(await player.locator('h3').textContent(),new RegExp(title));
-      assert.equal(await player.locator('[data-kyrie-staff] svg use.note[id^="note-"]').count(),
-        notes,'Exact original GABC notehead count must map to SVG');
+      const mappedNoteheads=await player.locator(
+        '[data-kyrie-staff] svg use.note[id^="note-"]').count();
+      if(Number.isInteger(notes))
+        assert.equal(mappedNoteheads,notes,'Pinned GABC notehead count must map to SVG');
+      else assert.ok(mappedNoteheads>20,'Source notes must produce a nonempty Exsurge SVG');
       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]').count(),1);
       assert.equal(await player.locator('[data-kyrie-staff] svg use.note[data-schola-notehead-active="true"]')
         .getAttribute('id'),'note-1');
@@ -113,7 +128,8 @@ try{
       assert.equal(await player.isVisible(),false);
       // Reopen the same user-owned settings panel to choose the next movement.
       await plan.evaluate(node=>{node.open=true;});
-      console.log('PASS M55 LIVE ordinary',JSON.stringify({movement,notes,sections}));
+      console.log('PASS M56 LIVE ordinary',
+        JSON.stringify({movement,settingId,notes:mappedNoteheads,sections}));
     }
     // Change a selected movement while the last source's score is sounding:
     // any stale player must close and cease audio on an explicit new selection.
