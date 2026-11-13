@@ -92,6 +92,9 @@ assert.equal(newNotes,1012);
 const ep=PROPER_M65_RESEARCH_SOURCES.filter(x=>x.week==='EPIPHANY');
 assert.notEqual(ep.find(x=>x.role==='ALLELUIA').scoreId,ep.find(x=>x.role==='COMMUNION').scoreId);
 assert.notEqual(ep.find(x=>x.role==='ALLELUIA').sourceGabc,ep.find(x=>x.role==='COMMUNION').sourceGabc);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.scoreId)).size,46,
- '50 liturgical source slots consist of 46 unique Proper research melodies');
+assert.equal(new Set(PROPER_M65_RESEARCH_SOURCES.map(x=>x.scoreId)).size,10,
+ 'M65 covers ten different archival identities, including four aliases of Christmas Day');
+const prior=PROPER_RESEARCH_SOURCES.filter(x=>!x.selectionId.startsWith('NATIVITY_OCTAVE_')&&!x.selectionId.startsWith('EPIPHANY_'));
+for(const fresh of PROPER_M65_RESEARCH_SOURCES.filter(x=>!x.reusedFromSelectionId))
+ assert.ok(prior.every(x=>x.scoreId!==fresh.scoreId),'A new M65 score must not already be in the existing player');
 console.log('PASS M65: 10 Jan Proper assignments, six new GABCs, four Christmas aliases; all fail-closed player gates');
