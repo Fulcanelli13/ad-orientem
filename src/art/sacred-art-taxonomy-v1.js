@@ -1,6 +1,6 @@
 import { SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 } from "./sacred-art-holy-trinity-owner-selected.v1.js";
 /**
- * Sacred Art taxonomy: original 25 identified works plus explicit owner-approved additions.
+ * Sacred Art taxonomy: 24 eligible items from original 25-work inventory (one rejected), plus six owner additions.
  *
  * This is an iconographic/placement index, not a source-photo promotion.
  * The 16 exact released module photos and nine previously pending works remain
