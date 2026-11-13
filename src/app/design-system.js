@@ -89,7 +89,8 @@ const CSS=`\n
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
-.homeScreen h1,.homeScreen h2,.homeScreen h3,
+/* H7 is a verbatim Claude donor with its own EB heading face and metrics. */
+.homeScreen:not(.aoH7Screens) h1,.homeScreen:not(.aoH7Screens) h2,.homeScreen:not(.aoH7Screens) h3,
 #ao-calendar-modular-root h1,#ao-calendar-modular-root h2,#ao-calendar-modular-root h3,#ao-calendar-modular-root h4,
 #ao-learn-modular-root h1,#ao-learn-modular-root h2,#ao-learn-modular-root h3,
 #ao-settings-modular-root h1,#ao-settings-modular-root h2,#ao-settings-modular-root h3,
