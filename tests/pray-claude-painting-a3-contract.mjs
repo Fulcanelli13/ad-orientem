@@ -59,6 +59,8 @@ test("the A3 port retains full bleed painting, low text gradient and reduced mot
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.ambient\{[^}]*background-size:cover/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*object-fit:contain/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.sw \.st>\*\{[^}]*align-self:start/,"Latin and translation must measure their own heights");
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.tx\{[^}]*height:auto!important;min-height:0!important;display:block!important/,
+  "Short cinematic prayers must not inherit the shared 55dvh scroll-box height");
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.view \.bg\{[^}]*object-position:center/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/max-width:359px/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/@media\(max-width:600px\)\{#aoPray435930 \.aoClaudePaintingA3 \.bg\{top:0;bottom:0;height:100%/,"The painting must not shrink into a phone-only postcard");
