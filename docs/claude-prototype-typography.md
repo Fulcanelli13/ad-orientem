@@ -13,7 +13,7 @@ The three owner-supplied reference files are:
 | Display | Cormorant Garamond 500/600 and italic 500 | Home hero and section display, moving verses, artwork text |
 | Reading | EB Garamond 400/500/600 and italic 400/500 | Long prayers, rubrics, translations, source credits |
 
-The reference uses three faces, not a blanket serif replacement. English,
+The installed family request adds Cinzel 400, Cormorant normal 400 and EB normal 700 to the prayer prototypes' tuple, because Home V9 also uses those weights. The reference uses three faces, not a blanket serif replacement. English,
 French and Latin diacritics must remain supported. Original 390px figures:
 Angelus versicle 21px/1.36 Cormorant; its prayer paragraph 18.5px/1.52 EB;
 ceremonial heading 29px/1.05 Cinzel; Caption Match 9.5px Cinzel with 2.2px
