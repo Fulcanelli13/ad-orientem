@@ -123,6 +123,8 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   // Keep the existing lens action and one canonical Mass shortcut.
 
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Atlas layers and other sections","Couches de l’Atlas et autres rubriques")+'">'+L(vm.language,"Layers","Couches")+'</summary><div><strong>'+L(vm.language,"Explore further","Pour approfondir")+'</strong><nav class="aoHeritageSecondary">';
+  html+='<button type="button" data-atlas-entry-tab="discover" aria-pressed="'+String(vm.filters?.atlasEntry!=="sacred")+'">'+L(vm.language,"Discover overview","Vue d’ensemble")+'</button>';
+  html+='<button type="button" data-atlas-entry-tab="sacred" aria-pressed="'+String(vm.filters?.atlasEntry==="sacred")+'">'+L(vm.language,"Sacred places","Lieux sacrés")+'</button>';
   html+='<button type="button" data-find-glossary>'+L(vm.language,"Terms and definitions","Termes et définitions")+'</button>';
   html+='<button type="button" data-bible-atlas-open>'+L(vm.language,"Biblical Atlas · map through time","Atlas biblique · carte et chronologie")+'</button>';
 
@@ -145,11 +147,11 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='</div></details></header>';
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div></div>';
-  const sacredEntry=vm.filters?.atlasEntry==="sacred";
-  html+='<nav class="aoAtlasPrimaryTabs" aria-label="'+L(vm.language,"Sacred Atlas entrances","Accès à l’Atlas sacré")+'">';
-  html+='<button type="button" data-atlas-entry-tab="discover" aria-pressed="'+String(!sacredEntry)+'" class="'+(!sacredEntry?"active":"")+'">'+L(vm.language,"Discover","Découvrir")+'</button>';
-  html+='<button type="button" data-atlas-entry-tab="sacred" aria-pressed="'+String(sacredEntry)+'" class="'+(sacredEntry?"active":"")+'">'+L(vm.language,"Sacred places","Lieux sacrés")+'</button>';
-  html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm" aria-label="'+L(vm.language,"Find a traditional Mass","Trouver une messe traditionnelle")+'">'+L(vm.language,"Latin Mass","Messe latine")+'</button>';
+  // Two atlas collections share the canonical map. "Discover" is a Sacred
+  // Atlas subview reachable from Layers, not a third global destination.
+  html+='<nav class="aoAtlasPrimaryTabs" aria-label="'+L(vm.language,"Explore atlases","Atlas à explorer")+'">';
+  html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm">'+L(vm.language,"TLM Atlas","Atlas TLM")+'</button>';
+  html+='<button type="button" data-atlas-entry-tab="sacred" aria-pressed="true" aria-current="page" class="active">'+L(vm.language,"Sacred Atlas","Atlas sacré")+'</button>';
   html+='</nav>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
   html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints" aria-label="'+esc(L(vm.language,"Open Map of Saints","Ouvrir la carte des saints"))+'">'+esc(L(vm.language,"Saints","Saints"))+"</button>";
