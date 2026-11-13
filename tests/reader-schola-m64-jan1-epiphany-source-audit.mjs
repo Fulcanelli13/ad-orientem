@@ -83,7 +83,7 @@ for(const spec of registry.scores){
  assert.equal(source.sha256,spec.gabcSha256);
  assert.equal(sha(source.gabc),spec.gabcSha256);
  assert.equal(source.gabc.length,spec.rawGabcLength);
- assert.equal((source.gabc.match(/\\(::\\)/g)||[]).length,spec.sourceGabcSections);
+ assert.equal((source.gabc.match(/\(::\)/g)||[]).length,spec.sourceGabcSections);
  assert.equal((source.gabc.match(/[a-m]vv/g)||[]).length,spec.sourceBivirgaMatches);
  assert.equal(spec.phraseNoteCounts.reduce((n,x)=>n+x,0),spec.sourceNoteheads);
  if(spec.reuseExistingChristmasDaySelectionId){
