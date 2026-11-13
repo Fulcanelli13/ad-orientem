@@ -73,6 +73,9 @@ function standaloneHtml(id,ui){
   head:()=>"",
   prayerReturnView:null,
   PRAYER_READER_PILOT_ENABLED:false,
+  // The extracted standalone reader runs without the opt-in A3 integration.
+  // Stub its new optional owner so source-language contracts test the default reader.
+  paintingA3Prayer:()=>"",
   pilotFocusButton:()=>"",
   esc:String,
   callout:(copy)=>'<aside class="aoP435930Callout rubric">'+copy+'</aside>',

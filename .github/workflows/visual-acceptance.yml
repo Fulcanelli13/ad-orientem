@@ -53,6 +53,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      # Draft A3 pilot: capture the real Prayer reader before unrelated suites.
+      - run: node tests/pray-a3-real-app-visual-acceptance.mjs
       # The opt-in purpose of this workflow is the live Explore map
       # screenshot review. Run it first so a bad mobile interaction fails
       # promptly without spending CI time on unrelated Mass captures.
@@ -74,6 +76,7 @@ jobs:
           name: app-visual-acceptance
           path: |
             artifacts/visual-acceptance
+            artifacts/a3-visual-acceptance
             artifacts/home-h11-acceptance
             artifacts/curated65-phone
             artifacts/live-mass-visual-focus
