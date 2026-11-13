@@ -197,6 +197,29 @@ try{
       assert.equal(previewPhoto.fit,"contain",width+"px approved photo was cropped");
       assert.ok(previewPhoto.loaded&&previewPhoto.creditVisible&&previewPhoto.credit.trim().length>4,
         width+"px preview lost its photograph attribution: "+JSON.stringify(previewPhoto));
+      // Computed 'display: block' was not enough: QA screenshots showed the
+      // photo and name flex-shrunk completely away at 320px while the actions
+      // remained visible. Test the actual on-screen intersections.
+      const visual=await page.evaluate(()=>{
+        const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
+        const title=sheet?.querySelector(".aoHeritageCardTitle");
+        const image=sheet?.querySelector(".aoHeritagePlaceThumb img");
+        const caption=sheet?.querySelector(".aoHeritagePlaceThumb figcaption");
+        const r=sheet?.getBoundingClientRect(),t=title?.getBoundingClientRect(),
+              i=image?.getBoundingClientRect(),c=caption?.getBoundingClientRect();
+        const intersection=(a,b)=>a&&b?
+          Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)):0;
+        return {scrollTop:sheet?.scrollTop,titleVisible:intersection(t,r),
+          titleHeight:t?.height,imageVisible:intersection(i,r),imageHeight:i?.height,
+          captionBelow:c&&i?c.top>=i.bottom-2:false,
+          titleText:title?.textContent?.trim()};
+      });
+      assert.ok(visual.titleVisible>=Math.min(24,visual.titleHeight*.7),
+        width+"px card title is hidden by sheet overflow: "+JSON.stringify(visual));
+      assert.ok(visual.imageVisible>=65,
+        width+"px approved photo collapsed or is outside card: "+JSON.stringify(visual));
+      assert.ok(visual.captionBelow,
+        width+"px credit overlaps the approved photograph: "+JSON.stringify(visual));
       await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-preview.png"),animations:"disabled"});
     }
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
