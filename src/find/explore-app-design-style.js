@@ -540,7 +540,12 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
     display:flex!important;
     flex-direction:column!important;
     gap:0!important;
+    /* A definite flex height reserves 57px for the sibling action dock.
+       max-height alone clips the flex content without shrinking its child. */
+    height:min(54dvh,440px)!important;
     max-height:min(54dvh,440px)!important;
+    box-sizing:border-box!important;
+    min-height:0!important;
     overflow:hidden!important;
     padding:8px 12px calc(8px + env(safe-area-inset-bottom))!important;
   }
