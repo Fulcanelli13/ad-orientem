@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ao-claude-typography-\${{ github.event.pull_request.number || github.ref }}
+  group: ao-claude-typography-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
