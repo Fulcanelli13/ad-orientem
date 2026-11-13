@@ -29,11 +29,11 @@ const archive=p=>{if(!cache.has(p))cache.set(p,read(p));return cache.get(p)};
 const rows=[];let total=0;
 let verifiedFusionNoteheads=0;
 assert.equal(source.scores.length,10);
-assert.equal(source.stage,'SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE');
+assert.equal(source.stage,'DIGITAL_EXSURGE_NOTEHEADS_LOCKED_PRINT_RITE_AND_ASH_AUDIO_HOLDS_NO_PLAYER_CHANGE');
 for(const spec of source.scores){
- assert.equal(spec.sourceNoteheads,null);
- assert.equal(spec.phraseNoteCounts,null);
- assert.equal(spec.exsurgeParityVerified,false);
+ assert.ok(Number.isInteger(spec.sourceNoteheads)&&spec.sourceNoteheads>0);
+ assert.ok(Array.isArray(spec.phraseNoteCounts));
+ assert.equal(spec.exsurgeParityVerified,true);
  const matches=archive(spec.sourceArchivePath).items.filter(x=>x.id===spec.scoreId);
  assert.equal(matches.length,1);
  const raw=matches[0].gabc;
@@ -84,6 +84,10 @@ for(const spec of source.scores){
  assert.equal(phrases.length,spec.sourceDoubleBarTokens,
   'GABC source phrase count including clef changes must be exact');
  assert.equal(phrases.reduce((a,b)=>a+b,0),y.length);
+ assert.equal(spec.sourceNoteheads,y.length,
+  'Original source digital notehead counts are pinned and must fail closed');
+ assert.deepEqual([...spec.phraseNoteCounts],phrases,
+  'Original double-bar phrase arrays are pinned and must fail closed');
  assert.equal(gabcResearchFingerprint(header+normalized),spec.rendererFingerprint);
  const compile=()=>compileExsurgeGabcResearchMelody(header+normalized,{
   exsurge,scoreId:spec.scoreId,expectedFingerprint:spec.rendererFingerprint,
@@ -121,7 +125,14 @@ assert.deepEqual(rows.filter(x=>x.role==='TRACT').map(x=>x.selectionId),
 assert.equal(rows.find(x=>x.selectionId==='LENT1_TRACT').phraseNoteCounts.length,13);
 assert.notEqual(rows.find(x=>x.selectionId==='LENT1_OFFERTORY').scoreId,
  rows.find(x=>x.selectionId==='LENT1_COMMUNION').scoreId);
-assert.ok(total>1500,'Ten complete archived Mass scores cannot collapse to a stub');
+assert.equal(total,3083,'M70 original digital notes locked at 3,083');
+assert.equal(source.counts.sourceDigitalNoteheads,total);
+assert.equal(source.counts.sourceDigitalNoteheadsCertifiedForResearch,true);
+assert.equal(source.exsurgeEvidence.lent1QuiHabitatNoteheads,1333);
+assert.equal(source.exsurgeEvidence.lent1QuiHabitatPhraseCount,13);
+assert.equal(source.exsurgeEvidence.ashWednesdayFusionSourceNoteIndexZeroBased,96);
+assert.equal(source.exsurgeEvidence.ashWednesdayFusionPreservedWithoutReplacement,true);
+assert.equal(source.exsurgeEvidence.ashWednesdayIntroitAudioCompilerStatus,'HOLD_MISSING_EXSURGE_SOURCE_NOTE');
 console.log('PASS M70 EXSURGE:',JSON.stringify({
  researchOnly:true,playerUnchanged:true,ashRiteAudioWithheld:true,
  ashIntroitFusionAudioHeld:true,
