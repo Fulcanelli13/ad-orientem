@@ -386,4 +386,43 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   }
 }
 
+
+
+/* QA3: Exactly two atlas collections in the global segmented selector.
+   Discover and source-backed filters remain secondary within Sacred Atlas. */
+#ao-find-modular-root .aoHeritageSurface .aoAtlasPrimaryTabs,
+#ao-find-modular-root .aoExploreSurface[data-atlas-mass=true] > .aoAtlasMassTabs {
+  box-sizing:border-box;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  width:min(292px,calc(100% - 24px));
+  max-width:calc(100% - 24px);
+  gap:3px;
+  padding:4px;
+  border-radius:15px;
+}
+#ao-find-modular-root .aoHeritageSurface .aoAtlasPrimaryTabs > button,
+#ao-find-modular-root .aoExploreSurface[data-atlas-mass=true] > .aoAtlasMassTabs > button {
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  min-height:44px;
+  padding:7px 8px;
+  border-radius:11px;
+  font:600 clamp(12px,3.6vw,15px)/1.2 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  white-space:normal;
+  text-align:center;
+  letter-spacing:.015em;
+}
+#ao-find-modular-root .aoHeritageSurface .aoAtlasPrimaryTabs > button.active,
+#ao-find-modular-root .aoExploreSurface[data-atlas-mass=true] > .aoAtlasMassTabs > button.active {
+  background:linear-gradient(180deg,rgba(219,187,132,.21),rgba(193,157,100,.1));
+  color:var(--explore-app-paper);
+  border-color:rgba(201,173,120,.38);
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageSecondary [data-atlas-entry-tab] {
+  font:500 15px/1.25 var(--ao-font-body,"EB Garamond",Georgia,serif);
+  min-height:44px;
+}
+
 `;
