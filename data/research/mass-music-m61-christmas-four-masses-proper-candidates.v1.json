@@ -416,9 +416,13 @@
       "role": "COMMUNION",
       "incipit": "Exsulta filia Sion",
       "gradualeRomanum1961Page": "32",
-      "reason": "No exact Communion GABC entry found among the 1,195 staged Graduale Romanum (1961) research sources",
+      "reason": "The 2024-01-05 staged 1,195-score corpus explicitly excluded GREGOBASE-1125 as lacking usable GABC. A later live GregoBase GABC is staged separately, pending byte/Exsurge/print review.",
       "status": "SOURCE_MISSING_NO_AUDIO",
-      "resolveBy": "Find a rights-eligible source-backed exact score; independently validate identity and original notation before an experimental player."
+      "resolveBy": "Validate the separate current-source recovery against archived exception, Exsurge noteheads and original print, then authorize a new pinned candidate without altering the 2024 research archive.",
+      "archiveExceptionId": 1125,
+      "archiveExceptionReason": "No usable structured GABC transcription",
+      "recoveryCandidatePath": "data/research/mass-music-m61-dawn-communion-gregobase-1125-recovery.v1.json",
+      "recoveryCandidateScoreId": "GREGOBASE-1125"
     }
   ],
   "restrictions": {
