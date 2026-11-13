@@ -65,6 +65,7 @@ jobs:
           node tests/reader-schola-m61-christmas-source-audit.mjs
           node tests/reader-schola-m61-christmas-source-probe.mjs
           node tests/reader-schola-m62-christmas-proper-research-melody.mjs
+          node tests/reader-schola-m63-dawn-communion-source-review.mjs
           node tests/reader-schola-m60-advent-proper-research-melody.mjs
           node tests/reader-schola-kyrie-xviii-1961-source-review.mjs
           node tests/reader-schola-kyrie-xviii-1961-print-position-map.mjs
@@ -114,8 +115,11 @@ jobs:
       - name: L — Advent II III IV fifteen-Proper research melody in 65-card LIVE phone
         run: node tests/reader-schola-m60-advent-proper-audition-phone.mjs
 
-      - name: M — Christmas Vigil, Midnight, Dawn and Day nineteen-Proper research phone previews
+      - name: M — Christmas Vigil, Midnight, Dawn and Day original nineteen-Proper research phone previews
         run: node tests/reader-schola-m62-christmas-proper-audition-phone.mjs
+
+      - name: N — Recovered Dawn Communion printed-witness research phone
+        run: node tests/reader-schola-m63-dawn-communion-research-phone.mjs
 
       - name: Preserve minimal existing Schola phone screenshots
         if: always()

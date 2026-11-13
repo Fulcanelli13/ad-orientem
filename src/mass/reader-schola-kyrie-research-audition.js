@@ -442,14 +442,10 @@ export function createKyrieXviResearchAudition({root,
           option.value=spec.selectionId;
           option.textContent=names[spec.role]+' · '+spec.title+
             (spec.selectionId==='CHRISTMAS_VIGIL_ALLELUIA'
-              ?' · Sunday Vigil only (not 2026)':'');
+              ?' · Sunday Vigil only (not 2026)':
+              spec.selectionId==='CHRISTMAS_DAWN_COMMUNION'
+              ?' · recovered source (uncertified)':'');
           sourcePicker.append(option);
-        }
-        if(week==='CHRISTMAS_DAWN'){
-          const hold=doc.createElement('option');
-          hold.value='CHRISTMAS_DAWN_COMMUNION';hold.disabled=true;
-          hold.textContent='Communion · Exsulta filia · source review hold (no audio)';
-          sourcePicker.append(hold);
         }
       }
       // The Mass chooser is a study selector, never a calendar command.

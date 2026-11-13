@@ -120,4 +120,4 @@ const restoredMelody=compileExsurgeGabcResearchMelody(restoredPrefix+restored.so
  phraseSequence:restoredCounts.map((_,i)=>i)
 });
 assert.equal(restoredMelody.sourceNoteCount,restoredNotes.length);
-console.log('PASS M61 separate Dawn Communion candidate compiles; still not print/music-approved or playable');
+console.log('PASS M61 historical Dawn recovery compiles; M63 governs later provisional manual playback, never music certification');

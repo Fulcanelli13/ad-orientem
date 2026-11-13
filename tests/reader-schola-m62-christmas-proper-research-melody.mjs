@@ -25,15 +25,17 @@ assert.equal(pinned.publicPreviewCandidateCount,19);
 assert.equal(pinned.totalPinnedDigitalNoteheads,3185);
 assert.equal(PROPER_M62_RESEARCH_SOURCES.length,19);
 assert.equal(PROPER_M59_RESEARCH_SOURCES.length,5);
-assert.equal(PROPER_RESEARCH_SOURCES.length,39);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,39);
+assert.equal(PROPER_RESEARCH_SOURCES.length,40);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,40);
 assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.selectionId.startsWith('ADVENT')).length,20);
 assert.equal(pinned.holds.length,1);
 assert.equal(pinned.holds[0].selectionId,'CHRISTMAS_DAWN_COMMUNION');
 assert.equal(pinned.holds[0].scoreId,'GREGOBASE-1125');
 assert.equal(pinned.holds[0].status,'RECOVERED_SOURCE_EDITORIAL_HOLD_NO_PUBLIC_PREVIEW');
-assert.equal(properM59ResearchScore('CHRISTMAS_DAWN_COMMUNION'),null);
-assert.equal(compileProperM59ResearchMelody({selectionId:'CHRISTMAS_DAWN_COMMUNION',exsurge}),null);
+// M62's historical hold stays recorded; M63 separately promotes it as
+// provisional manual research playback, without retroactively changing M62.
+assert.equal(properM59ResearchScore('CHRISTMAS_DAWN_COMMUNION')?.scoreApproved,false);
+assert.equal(compileProperM59ResearchMelody({selectionId:'CHRISTMAS_DAWN_COMMUNION',exsurge})?.certified,false);
 assert.equal(pinned.restrictions.noAutomaticMassAssignment,true);
 assert.equal(pinned.restrictions.oneExistingPlayer,true);
 assert.equal(pinned.restrictions.noPaidServices,true);
@@ -99,14 +101,14 @@ assert.deepEqual(Object.fromEntries(byMass),{
  CHRISTMAS_DAY:{scores:5,notes:824}
 });
 assert.equal(PROPER_M62_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),3185);
-assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),6739);
+assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),6811);
 assert.notEqual(properM59ResearchScore('CHRISTMAS_MIDNIGHT_INTROIT').scoreId,
  properM59ResearchScore('CHRISTMAS_MIDNIGHT_ALLELUIA').scoreId);
 assert.notEqual(properM59ResearchScore('CHRISTMAS_DAY_GRADUAL').scoreId,
  properM59ResearchScore('CHRISTMAS_DAY_COMMUNION').scoreId);
-for(const invalid of ['CHRISTMAS_DAWN_COMMUNION','CHRISTMAS_VIGIL_TRACT',
+for(const invalid of ['CHRISTMAS_DAWN_TRACT','CHRISTMAS_VIGIL_TRACT',
  'CHRISTMAS_WRONG','CHRISTMAS_DAY_WRONG','']){
  assert.equal(properM59ResearchScore(invalid),null);
  assert.equal(compileProperM59ResearchMelody({selectionId:invalid,exsurge}),null);
 }
-console.log('PASS M62: nineteen Christmas Proper research melodies, 3185 source-pinned noteheads; Dawn Communion remains held');
+console.log('PASS M62 historical 19 archival Christmas sources preserved; M63 recovered Dawn score separately provisional');

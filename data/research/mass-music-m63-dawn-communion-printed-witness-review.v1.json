@@ -1,0 +1,65 @@
+{
+  "schema": "ao-schola-m63-dawn-communion-printed-witness-review-v1",
+  "selectionId": "CHRISTMAS_DAWN_COMMUNION",
+  "scoreId": "GREGOBASE-1125",
+  "source": {
+    "snapshot": "2024-01-05",
+    "snapshotException": "No usable structured GABC transcription",
+    "historicIndex": "data/mass/chant-corpus/gr1961-proper-index.json",
+    "recovery": "data/research/mass-music-m61-dawn-communion-gregobase-1125-recovery.v1.json",
+    "laterGabcRevisions": "2024-01-14",
+    "hash": "0cd4782be4bc8a2d41e934c5863de2ad2392857f0df9c48d6bff5b23a0112ccc"
+  },
+  "printWitnesses": [
+    {
+      "edition": "Graduale Romanum 1961",
+      "page": 32,
+      "publisher": "Solesmes",
+      "url": "https://gregobase.selapa.net/sources/2/58.png",
+      "observed": "Christmas Dawn Communion, mode IV, complete antiphon and square notes"
+    },
+    {
+      "edition": "Liber Usualis 1961",
+      "page": 406,
+      "publisher": "Solesmes",
+      "url": "https://gregobase.selapa.net/sources/3/551.png",
+      "observed": "Same Christmas Dawn Communion, mode IV and complete chant"
+    },
+    {
+      "edition": "CMAA Exsulta filia Communion with psalm verses",
+      "year": 2006,
+      "url": "https://media.musicasacra.com/pdf/exsultafilia.pdf",
+      "observed": "Independent printed arrangement of antiphon in mode IV; added psalm verses excluded"
+    }
+  ],
+  "comparison": {
+    "liturgicalIdentity": "SUPPORTED_BY_TWO_1961_PRINTS",
+    "latinTextAndSyllabification": "VISUALLY_CONCORDANT_ACROSS_WITNESSES",
+    "mode": "IV_IN_1961_PRINTS_AND_CMAA_SCORE",
+    "overallNeumeContour": "NO_OBVIOUS_DISAGREEMENT_IN_VISUAL_REVIEW",
+    "sourceDigitalNoteheads": 72,
+    "sourceDigitalSections": [
+      72
+    ],
+    "sourceBivirgaMatches": 0,
+    "sourceToExsurgePitchShapeParity": "REQUIRED_BY_TESTS",
+    "everyPrintedNoteheadIndependentlyCollated": false,
+    "everyPrintedEpisemaOrMoraIndependentlyCollated": false,
+    "rhythmAndInterpretationCertified": false,
+    "limitations": "Printed witnesses establish identity, chant text and broad shape but are not a signed, exhaustive note-for-note editorial certification. Both 1961 scans are accessible through the same GregoBase host."
+  },
+  "decision": {
+    "status": "RESEARCH_LISTENING_ELIGIBLE_NOT_EDITORIALLY_CERTIFIED",
+    "manualOnly": true,
+    "usesExistingOnePlayer": true,
+    "allowedContext": "LIVE_SUNG_OR_SOLEMN",
+    "lowMissalRequiemExcluded": true,
+    "automaticLiturgicalAssignment": false,
+    "approvedPerformanceScore": false,
+    "canonical1962ProperChanged": false,
+    "archiveRewritten": false,
+    "printImagesBundled": false,
+    "additionalPsalmVersesBundled": false
+  },
+  "nextEditorialGate": "If proposing this as a certified score or automatically appointed Mass music, require independent full note-by-note pitch, rhythmic signs, manuscript/print and liturgical rubric collation; this M63 review does not confer that approval."
+}
