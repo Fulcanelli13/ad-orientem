@@ -170,6 +170,12 @@ try{
    await page.screenshot({path:resolve(out,width+"-"+id+"-choir.png"),fullPage:false});
    reports.push({width,id,kind:"litany",choirFoot:foot});
   }
+  await page.evaluate(()=>window.AO_PRAY_V435930.close({silent:true}));
+  const restoredRibbon=await page.evaluate(()=>{
+   const ribbon=document.querySelector("#ao-global-ribbon");
+   return ribbon?getComputedStyle(ribbon).display:null;
+  });
+  assert.ok(restoredRibbon!==null&&restoredRibbon!=="none","A3 exit must restore global navigation");
   assert.deepEqual(errors,[],"Browser errors at "+width+": "+JSON.stringify(errors));
   await context.close();
  }
