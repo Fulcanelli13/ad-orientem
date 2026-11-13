@@ -1,5 +1,5 @@
 // M54 — one source-locked, zero-cost procedural-melody preparation path
-// for the four non-Kyrie Ordinary movement families and 13 playable research scores. This module does not
+// for the four non-Kyrie Ordinary movement families and 14 opt-in research scores. This module does not
 // create audio, UI, an approved score, a Schola event or a liturgical cue.
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {
@@ -40,6 +40,11 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
   freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_18',scoreId:'GREGOBASE-298',
     title:'Sanctus XVIII · Benedictus',sourceFingerprint:'a4e11282',gabcSegments:1,sourceNotes:60,
     sourceFolio:'Graduale Romanum (1961) p. 58*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',scoreId:'GREGOBASE-871',
+    title:'Sanctus XVII · Benedictus',sourceFingerprint:'e73e09be',
+    rendererFingerprint:'1847d82e',gabcSegments:1,sourceNotes:120,
+    sourceFolio:'Graduale Romanum (1961) p. 56*',
+    adaptation:'GREGORIO_EQUIVALENT_BIVIRGA_EXPANSION'}),
   freeze({movement:'AGNUS_DEI',settingId:'MASS_11',scoreId:'GREGOBASE-1243',
     title:'Agnus Dei XI',sourceFingerprint:'af979bfa',gabcSegments:3,sourceNotes:103,
     sourceFolio:'Graduale Romanum (1961) p. 41*'}),
@@ -53,21 +58,32 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
     title:'Agnus Dei XVIII',sourceFingerprint:'17425e51',gabcSegments:3,sourceNotes:60,
     sourceFolio:'Graduale Romanum (1961) p. 58*'})
 ]);
-// A 20th archived GABC remains visible as reference notation, but is
-// deliberately ineligible for melody until source-to-Exsurge notehead parity
-// is established. The actual source contains two 'v'-only Exsurge note
-// records (source indexes 333 and 523) that cannot be assigned authentic
-// GABC pitch letters. Do not infer their pitch from adjacent glyphs.
-export const ORDINARY_M56_HELD_SOURCES=freeze([
-  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',
-    scoreId:'GREGOBASE-871',title:'Sanctus XVII · Benedictus',
-    sourceFingerprint:'e73e09be',
-    status:'HELD_EXSURGE_SOURCE_NOTE_PARITY',
-    sourceNoteRecords:120,exsurgeScoreNotes:135,
-    offendingSourceIndexes:freeze([333,523]),
-    offendingSourceGabc:'v',
-    approved:false,melodyAvailable:false})
-]);
+// M57: immutable historic M56 hold, now resolved for RESEARCH playback only.
+// The archived score still has its exact original e73e09be fingerprint.
+// Gregorio's explicit bivirga expansion is required by this Exsurge version;
+// two sourceGabc='v' pseudo-mappings caused the historic fail-closed hold.
+export const ORDINARY_M56_HELD_SOURCES=freeze([]);
+export const ORDINARY_M57_BIVIRGA_ADAPTER=freeze({
+  scoreId:'GREGOBASE-871',movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',
+  archivedFingerprint:'e73e09be',researchRenderFingerprint:'1847d82e',
+  sourceSequence:'gxfg!hvvGE',expandedSequence:'gxfg!hv/hvGE',
+  expectedOccurrences:2,sourceNoteheads:120,
+  status:'SOURCE_EQUIVALENT_RESEARCH_ADAPTER',
+  printedNeumeCertified:false,printedPitchCertified:false,
+  rhythmicTimingCertified:false,canonicalGabcModified:false,
+  notes:'Two explicit virgae at original GABC pitch h; canonical archive unchanged.'
+});
+function notationGabcForResearch(spec,canonicalGabc){
+  if(spec.scoreId!==ORDINARY_M57_BIVIRGA_ADAPTER.scoreId)
+    return canonicalGabc;
+  const a=ORDINARY_M57_BIVIRGA_ADAPTER;
+  if(typeof canonicalGabc!=='string'||
+     canonicalGabc.split(a.sourceSequence).length-1!==a.expectedOccurrences)
+    return null;
+  const adapted=canonicalGabc.replaceAll(a.sourceSequence,a.expandedSequence);
+  return gabcResearchFingerprint(adapted)===a.researchRenderFingerprint
+    ?adapted:null;
+}
 const bySelection=new Map(ORDINARY_M54_RESEARCH_SOURCES.map(
   spec=>[spec.movement+':'+spec.settingId,spec]));
 export const ORDINARY_M54_POLICY=freeze({
@@ -129,14 +145,17 @@ export function compileOrdinaryM54ResearchMelody({
      gabcResearchFingerprint(selected.gabc)!==spec.sourceFingerprint)
     return null;
   try{
-    const counts=printedSectionNoteCounts(selected.gabc,exsurge);
+    const notationGabc=notationGabcForResearch(spec,selected.gabc);
+    if(!notationGabc)return null;
+    const counts=printedSectionNoteCounts(notationGabc,exsurge);
     if(!Array.isArray(counts)||counts.length!==spec.gabcSegments||
        counts.some(n=>!Number.isInteger(n)||n<=0))return null;
     // A Gloria/Credo section delimiter is NOT a Kyrie repeat instruction.
     // We explicitly perform each source-written section exactly once.
     const phraseSequence=counts.map((_,i)=>i);
-    const melody=compileExsurgeGabcResearchMelody(selected.gabc,{
-      exsurge,scoreId:spec.scoreId,expectedFingerprint:spec.sourceFingerprint,
+    const melody=compileExsurgeGabcResearchMelody(notationGabc,{
+      exsurge,scoreId:spec.scoreId,
+      expectedFingerprint:spec.rendererFingerprint??spec.sourceFingerprint,
       expectedPhraseNoteCounts:counts,phraseSequence
     });
     if(melody.phraseCount!==spec.gabcSegments||
@@ -149,7 +168,10 @@ export function compileOrdinaryM54ResearchMelody({
        timing.certifiedGregorianTiming!==false)return null;
     return freeze({
       source:spec,movement:spec.movement,settingId:spec.settingId,
-      melody,timing,sourceNotes:melody.sourceNoteCount,
+      melody,timing,notationGabc,
+      canonicalSourceFingerprint:spec.sourceFingerprint,
+      rendererEquivalentExpansion:notationGabc!==selected.gabc,
+      sourceNotes:melody.sourceNoteCount,
       sourceSections:freeze([...counts]),playedNotes:melody.performance.length,
       certified:false,approved:false,
       explicitlySelectedResearchOnly:true
