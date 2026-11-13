@@ -41,7 +41,7 @@ for(const spec of registry.scores){
   JSON.parse(JSON.stringify(b.map(signature))),
   'Normalizing bv/virgae must not alter notehead pitches or shapes');
  const unknown=b.filter(x=>!/^[a-mA-M]/.test(x.sourceGabc??''));
- assert.deepEqual(unknown.map(x=>x.sourceGabc),[],'Cannot ship unknown Exsurge noteheads');
+ assert.equal(unknown.length,0,'Cannot ship unknown Exsurge noteheads');
  const counts=[];let tail=0;
  for(const n of compatible.notations){
   if(n.constructor?.name==='DoubleBar'){counts.push(tail);tail=0;}
