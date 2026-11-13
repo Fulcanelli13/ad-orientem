@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gabcResearchFingerprint} from '../src/mass/reader-schola-exsurge-gabc-melody.js';
+import {PROPER_RESEARCH_SOURCES} from '../src/mass/reader-schola-proper-research-melody.js';
 const load=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8'));
 const registry=load('data/research/mass-music-m66-holy-family-epiphany2-proper-candidates.v1.json');
 const index=load('data/mass/chant-corpus/gr1961-proper-index.json');
@@ -44,6 +45,8 @@ assert.deepEqual(registry.counts,{
  uniqueArchivalScoreIdsInThisAudit:10,missingArchiveTranscriptions:0,
  sourceDigitalNoteheadsAllSlots:null,sourceDigitalNoteheadsCertifiedForResearch:false});
 assert.equal(m65.scores.length,10);
+assert.equal(PROPER_RESEARCH_SOURCES.length,50);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
 assert.equal(registry.scores.length,10);
 for(const key of [
  'noAutomaticallyPublishedMelodies','noPlayerChangesThisStage','noAutomatedMassAssignment',
@@ -71,6 +74,8 @@ for(const spec of registry.scores){
  assert.ok(!seen.has(spec.selectionId));seen.add(spec.selectionId);
  assert.ok(!identity.has(spec.scoreId));identity.add(spec.scoreId);
  assert.ok(!m65.scores.some(x=>x.scoreId===spec.scoreId));
+ assert.ok(!PROPER_RESEARCH_SOURCES.some(x=>x.scoreId===spec.scoreId),
+  'M66 source must not duplicate the existing player');
  assert.equal(spec.sourceApproval,false);
  assert.equal(spec.printedNoteheadCertification,false);
  assert.equal(spec.autoAssign,false);
