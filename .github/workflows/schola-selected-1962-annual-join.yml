@@ -17,6 +17,13 @@ on:
       - 'scripts/schola/build-2026-selected-pregospel-queue.mjs'
       - 'tests/reader-schola-selected-pregospel-review.mjs'
       - 'src/mass/reader-schola-2026-release-worklist.js'
+      - 'scripts/schola/complete-1961-source-catalogue.mjs'
+      - 'scripts/schola/build-1961-complete-source-review.mjs'
+      - 'tools/mass/complete-1961-source-review-template.html'
+      - 'tests/reader-complete-1961-original-source-review.mjs'
+      - 'tests/reader-complete-1961-source-html-browser.mjs'
+      - 'data/mass/chant-corpus/gr1961-proper-*.json'
+      - 'data/mass/chant-corpus/gr1961-sequence-*.gabc'
       - 'scripts/schola/build-2026-score-publication-worklist.mjs'
       - 'tests/reader-schola-2026-release-worklist.mjs'
       - 'src/mass/1962-plural-martyr-french-source.js'
@@ -84,6 +91,7 @@ jobs:
           node tests/reader-schola-selected-pregospel-review.mjs
           node tests/1962-perpetua-felicity-english-named-source-regression.mjs
           node tests/reader-schola-2026-release-worklist.mjs
+          node tests/reader-complete-1961-original-source-review.mjs
           node tests/reader-schola-pre-gospel-source-boundary.mjs
           node tests/reader-inline-chant-bulk-91-source-queue.mjs
       - name: Reuse the SHA-authenticated full 1962 Latin source cache
@@ -123,6 +131,10 @@ jobs:
         run: node tests/schola-2026-pinned-review-queue-lock.mjs
       - name: Build consolidated 2026 worklist and 24 pre-Gospel print-review leads
         run: node scripts/schola/build-2026-score-publication-worklist.mjs
+      - name: Assemble all original 1961 Gregorian sources and actual 2026 matched research context
+        run: node scripts/schola/build-1961-complete-source-review.mjs
+      - name: Browser-verify real original GABC for Gloria, Credo and Introit on 390px
+        run: node tests/reader-complete-1961-source-html-browser.mjs
       - name: Reconcile closeout exceptions from existing annual evidence, with no acquisition or publication
         run: |
           node scripts/schola/reconcile-2026-completion-exceptions.mjs
@@ -145,7 +157,7 @@ jobs:
         run: |
           node scripts/schola/reconcile-2026-27-variant-source-candidates.mjs
           node tests/schola-2026-27-variant-owner-candidates.mjs
-      - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
+      - name: Upload original 60, 24 pre-Gospel and complete 1220-source study packets
         if: always()
         uses: actions/upload-artifact@v4
         with:
