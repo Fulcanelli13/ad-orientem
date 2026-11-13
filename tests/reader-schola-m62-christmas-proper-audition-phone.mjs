@@ -90,7 +90,8 @@ try{
     }
     if(nextWeek==='CHRISTMAS_DAWN'){
       const held=picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]');
-      assert.equal(await held.isDisabled(),true);
+      assert.notEqual(await held.getAttribute('disabled'),null,
+       'Dawn Communion hold must retain a native disabled option attribute');
       assert.match(await held.textContent(),/source review hold.*no audio/);
     }
    }
@@ -150,7 +151,7 @@ try{
   assert.equal(await picker.inputValue(),'',
    'Changing Sunday must invalidate previously playing source');
   assert.equal(await picker.locator('option').count(),6);
-  assert.equal(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').isDisabled(),true);
+  assert.notEqual(await picker.locator('option[value="CHRISTMAS_DAWN_COMMUNION"]').getAttribute('disabled'),null);
   assert.equal(await trigger.isVisible(),false,
    'Removing study choice must hide its launcher immediately');
   assert.equal(await player.isVisible(),false,
