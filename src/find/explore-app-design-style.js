@@ -529,4 +529,51 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   }
 }
 
+
+
+/* QA6b: the dock is a SIBLING of a separate content scroller, never an overlay
+   across the approved photograph or credit. This is the phone map-preview
+   composition, not a second modal or a new Atlas runtime. */
+@media(max-width:799px) {
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview:has(> .aoHeritagePreviewScroll) {
+    display:flex!important;
+    flex-direction:column!important;
+    gap:0!important;
+    max-height:min(54dvh,440px)!important;
+    overflow:hidden!important;
+    padding:8px 12px calc(8px + env(safe-area-inset-bottom))!important;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview > .aoHeritagePreviewScroll {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:7px;
+    flex:1 1 auto!important;
+    min-height:0;
+    min-width:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior:contain;
+    padding:0 2px 4px;
+    scrollbar-width:thin;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreviewScroll > * {
+    flex:0 0 auto!important;
+    min-width:0;
+  }
+  #ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer
+  .aoHeritagePreview > .aoHeritagePreviewActions {
+    position:relative!important;
+    bottom:auto!important;
+    order:20;
+    flex:0 0 auto!important;
+    margin-top:0!important;
+    border-top:1px solid var(--explore-app-rule);
+    box-shadow:0 -5px 16px rgba(0,0,0,.33);
+  }
+}
+
 `;
