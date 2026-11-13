@@ -219,6 +219,17 @@ const CSS=`\n
   font-weight:500!important;
   line-height:1.6!important;
 }
+/* The same EB reading metrics apply in individual mode, where complete
+ * prayers are a plain source text node without the grouped dialogue spans. */
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="hail"]>button,
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="collect"]>button,
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit[data-ao-angelus-unit="prayer"]>button{
+  font-family:var(--ao-font-body)!important;
+  font-size:clamp(17px,4.75vw,18.5px)!important;
+  font-weight:400!important;
+  line-height:1.52!important;
+  letter-spacing:0!important;
+}
 #aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="hail"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
 #aoPray435930 .aoFolioReader .aoDevoCardScroll [data-ao-angelus-unit="collect"] .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker){
   font-family:var(--ao-font-body)!important;
