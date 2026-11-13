@@ -27,6 +27,7 @@ const signature=n=>({
 const cache=new Map();
 const archive=p=>{if(!cache.has(p))cache.set(p,read(p));return cache.get(p)};
 const rows=[];let total=0;
+const unsupported=[];
 assert.equal(source.scores.length,10);
 assert.equal(source.stage,'SOURCE_IDENTITY_SCREEN_PRE_EXSURGE_NOTEHEAD_LOCK_NO_PLAYER_CHANGE');
 for(const spec of source.scores){
@@ -46,8 +47,14 @@ for(const spec of source.scores){
  assert.deepEqual(JSON.parse(JSON.stringify(x.map(signature))),
   JSON.parse(JSON.stringify(y.map(signature))),
   'Bivirga expansion must preserve original pitches, shapes, articulations');
- assert.equal(y.filter(n=>!/^[a-mA-M]/.test(n.sourceGabc??'')).length,0,
-  'An unknown annotation cannot masquerade as a note');
+ const suspect=y.map((n,i)=>({n,i})).filter(({n})=>!/^[a-mA-M]/.test(n.sourceGabc??''))
+  .map(({n,i})=>({noteIndex:i,sourceGabc:n.sourceGabc??null,
+   staffPosition:n.staffPosition,pitchStep:n.pitch?.step,pitchOctave:n.pitch?.octave,
+   shape:n.shape}));
+ if(suspect.length){
+  unsupported.push({selectionId:spec.selectionId,suspect});
+  console.log('M70 SOURCE NOTE ANOMALY',JSON.stringify({selectionId:spec.selectionId,suspect}));
+ }
  let count=0;const phrases=[];
  for(const notation of expanded.notations){
   if(notation.constructor?.name==='DoubleBar'){
@@ -75,6 +82,8 @@ for(const spec of source.scores){
  console.log('M70 EXSURGE SOURCE',JSON.stringify(record));
 }
 assert.equal(rows.length,10);
+assert.equal(unsupported.length,0,
+ 'M70 unknown source-note spellings need explicit review; see SOURCE NOTE ANOMALY logs');
 assert.deepEqual(rows.filter(x=>x.role==='TRACT').map(x=>x.selectionId),
  ['ASH_WEDNESDAY_TRACT','LENT1_TRACT']);
 assert.equal(rows.find(x=>x.selectionId==='LENT1_TRACT').phraseNoteCounts.length,13);
