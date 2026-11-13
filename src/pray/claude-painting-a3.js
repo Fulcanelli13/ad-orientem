@@ -68,7 +68,8 @@ function syncFocusedPassage(root){
  const hint=root.querySelector(".aoA3FocusHint");
  if(hint)hint.textContent=index===size-1?"END OF PRAYER":"TAP · CONTINUE";
  const button=root.querySelector("[data-ao-a3-focus-translate]");
- if(button)button.textContent=current==="la"?"ENGLISH / FRANÇAIS":"LATINE";
+ const vernLang=root.querySelector(".aoA3FocusVerse[data-a3-face=vern]")?.getAttribute("lang")||"en";
+ if(button)button.textContent=current==="la"?(vernLang==="fr"?"FRANÇAIS":"ENGLISH"):"LATINE";
 }
 function updateA3Fit(root){
  if(!root||!root.isConnected)return;
@@ -111,8 +112,8 @@ export function renderClaudePaintingA3({id,record,photo,language="en",uiLanguage
   '</p>':"";
  const focus=kind==="prayer"?focusPassages(id,record,language,esc):null;
  const modeBar=focus?'<div class="aoA3ExperienceModes" role="group" aria-label="Prayer presentation">'+
-  '<button type="button" data-ao-a3-mode="pray" aria-pressed="true">PRAY</button>'+
-  '<button type="button" data-ao-a3-mode="focus" aria-pressed="false">CONTEMPLATE</button></div>':"";
+  '<button type="button" data-ao-a3-mode="pray" aria-pressed="true">'+(uiLanguage==="fr"?"PRIER":"PRAY")+'</button>'+
+  '<button type="button" data-ao-a3-mode="focus" aria-pressed="false">'+(uiLanguage==="fr"?"MÉDITER":"CONTEMPLATE")+'</button></div>':"";
  const focusBody=focus?focus.html:"";
  const body=kind==="litany"?
   '<article class="aoP435930Prayer aoChoirPrayer aoClaudeChoirPrayer" data-ao-choir-prayer="'+esc(id)+'" data-ao-choir-kind="litany">'+
