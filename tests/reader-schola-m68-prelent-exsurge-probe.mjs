@@ -29,9 +29,10 @@ const archive=path=>{if(!archiveCache.has(path))archiveCache.set(path,read(path)
 const results=[];
 let sum=0;
 for(const spec of registry.scores){
- assert.equal(spec.sourceNoteheads,null,'Source-staging phase must not claim unmeasured notes');
- assert.equal(spec.phraseNoteCounts,null);
- assert.equal(spec.exsurgeParityVerified,false);
+ assert.ok(Number.isInteger(spec.sourceNoteheads)&&spec.sourceNoteheads>0,
+  'M68 source has a digitally-verified locked notehead count');
+ assert.ok(Array.isArray(spec.phraseNoteCounts));
+ assert.equal(spec.exsurgeParityVerified,true);
  const entries=archive(spec.sourceArchivePath).items.filter(x=>x.id===spec.scoreId);
  assert.equal(entries.length,1,'No missing/duplicate archive transcriptions');
  const original=entries[0].gabc;
@@ -59,6 +60,10 @@ for(const spec of registry.scores){
  assert.equal(phraseNoteCounts.length,spec.sourceDoubleBarTokens,
   'Original GABC double bars must match Exsurge section count (including clef changes)');
  assert.equal(phraseNoteCounts.reduce((a,b)=>a+b,0),rNotes.length);
+ assert.equal(spec.sourceNoteheads,rNotes.length,
+  'M68 exact GABC digital notehead counts must fail on drift');
+ assert.deepEqual([...spec.phraseNoteCounts],phraseNoteCounts,
+  'M68 original Exsurge phrase maps must fail on drift');
  assert.ok(rNotes.length>=15,'Unexpectedly short full Proper source');
  assert.equal(gabcResearchFingerprint(header+normalized),spec.rendererFingerprint);
  const compiled=compileExsurgeGabcResearchMelody(header+normalized,{
@@ -79,7 +84,9 @@ for(const spec of registry.scores){
 assert.equal(results.length,15);
 assert.deepEqual(results.filter(x=>x.role==='TRACT').map(x=>x.selectionId),
  ['SEPTUAGESIMA_TRACT','SEXAGESIMA_TRACT','QUINQUAGESIMA_TRACT']);
-assert.ok(sum>1000,'15 complete original sources must not collapse to a short stub');
+assert.equal(sum,3404,'M68 15 exact archived sources must retain 3,404 digital noteheads');
+assert.equal(registry.counts.sourceDigitalNoteheads,sum);
+assert.equal(registry.counts.sourceDigitalNoteheadsCertifiedForResearch,true);
 console.log('PASS M68 EXSURGE:',JSON.stringify({
  researchOnly:true,noPlayerChange:true,totalDigitalNoteheads:sum,
  sources:results.length,tracts:3,results
