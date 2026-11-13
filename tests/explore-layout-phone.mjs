@@ -227,19 +227,21 @@ try{
         const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
         const button=sheet?.querySelector("[data-explore-expand-place]");
         const dock=button?.closest(".aoHeritagePreviewActions");
+        const scroller=sheet?.querySelector(".aoHeritagePreviewScroll");
         const r=sheet?.getBoundingClientRect(), b=button?.getBoundingClientRect(),
-              d=dock?.getBoundingClientRect();
+              d=dock?.getBoundingClientRect(), content=scroller?.getBoundingClientRect();
         const pointX=b?(b.left+b.right)/2:0,pointY=b?(b.top+b.bottom)/2:0;
         const target=document.elementFromPoint(pointX,pointY);
-        return {scrollTop:sheet?.scrollTop,
+        return {scrollTop:scroller?.scrollTop,
           visible:b&&r?Math.max(0,Math.min(b.bottom,r.bottom)-Math.max(b.top,r.top)):0,
           dockHeight:d?.height,
-          dockPosition:dock?getComputedStyle(dock).position:null,
+          dockSeparate:scroller&&!scroller.contains(dock),
+          noMediaOverlap:content&&d?d.top>=content.bottom-2:false,
           clickable:target===button||Boolean(button?.contains(target))};
       });
-      assert.ok(action.scrollTop===0&&action.dockPosition==="sticky"&&
+      assert.ok(action.scrollTop===0&&action.dockSeparate&&action.noMediaOverlap&&
         action.dockHeight<=72&&action.visible>=40&&action.clickable,
-        width+"px Discover needs an initial-scroll gesture or is covered: "+JSON.stringify(action));
+        width+"px Discover is inaccessible or overlaps the photograph: "+JSON.stringify(action));
       await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-preview.png"),animations:"disabled"});
     }
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
