@@ -20,4 +20,17 @@ for(const forbidden of [
 assert.match(EXPLORE_APP_DESIGN_STYLE,/var\(--ao-font-display/);
 assert.match(EXPLORE_APP_DESIGN_STYLE,/var\(--ao-font-body/);
 assert.match(EXPLORE_APP_DESIGN_STYLE,/:focus-visible/);
+// QA2 covers actual production cards and detailed profiles, not only palette.
+for(const selector of [
+  ".aoTlmVenueCard", ".aoTlmVenueSchedule", ".aoHeritagePlaceThumb",
+  ".aoExplorePlaceChapters", ".aoExploreStoryChapter",
+  ".aoExploreStoryEvidence", ".aoTlmProfileWeeklySource",
+  ".aoTlmProfileSchedule",
+])assert.ok(EXPLORE_APP_DESIGN_STYLE.includes(selector),
+  "Missing canonical card/profile selector: "+selector);
+assert.match(EXPLORE_APP_DESIGN_STYLE,/object-fit:contain!important/);
+assert.match(EXPLORE_APP_DESIGN_STYLE,/figcaption/);
+assert.doesNotMatch(EXPLORE_APP_DESIGN_STYLE,/\bnextMass\s*\(/);
+assert.doesNotMatch(EXPLORE_APP_DESIGN_STYLE,/\bconst\s+(?:VENUES|PLACES|TOWNS)\s*=/);
+
 console.log("Explore app-design bridge: source-owned, scoped, and import-wired.");
