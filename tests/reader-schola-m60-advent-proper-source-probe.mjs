@@ -11,7 +11,7 @@ const read=u=>JSON.parse(readFileSync(new URL(u,import.meta.url),'utf8'));
 const registry=read('../data/research/mass-music-m60-advent2-4-fifteen-proper-candidates.v1.json');
 assert.equal(registry.scores.length,15);
 assert.equal(registry.restrictions.noAutomaticLiturgicalAssignment,true);
-assert.equal(registry.status,'AWAITING_PINNED_EXSURGE_NOTE_ORDER_AUDIT');
+assert.equal(registry.status,'SOURCE_PINNED_EXSURGE_PARITY_PASS_15');
 const sourceCache=new Map();
 const bundle=readFileSync(new URL('../assets/vendor/exsurge/exsurge.min.js',import.meta.url),'utf8');
 const sandbox={};sandbox.globalThis=sandbox;
@@ -88,6 +88,18 @@ for(const spec of registry.scores){
     normalized.notes.filter(n=>n instanceof exsurge.Note).length,
   phraseNoteCounts:counts,sourceTrailingNotes:subtotal,
   pitchShapeParity:sameNotes,bivirgas,sourceNoteHold:unknown,compiled,hold};
+ assert.equal(result.sourceNoteCount,spec.expectedDigitalNoteheads,
+  'The source-notehead count must be pinned to independent Exsurge evidence');
+ assert.deepEqual(result.phraseNoteCounts,spec.sourceNoteCountsBySection,
+  'Exact source-written section counts must not drift');
+ assert.equal(result.sourceFingerprint,spec.sourceFingerprint);
+ assert.equal(result.rendererFingerprint,spec.rendererFingerprint);
+ assert.equal(result.pitchShapeParity,true,
+  'Never expand a bivirga in a way that alters pitch, shape or rhythm marks');
+ assert.deepEqual(result.sourceNoteHold,[],
+  'Missing original source-pitch notehead prevents the preview');
+ assert.ok(result.compiled&&!result.hold);
+ assert.equal(result.compiled.sourceNotes,spec.expectedDigitalNoteheads);
  data.push(result);
  console.log('M60_PROPER_SOURCE_PROBE',JSON.stringify(result));
 }
@@ -95,6 +107,8 @@ assert.equal(data.length,15);
 assert.equal(new Set(data.map(x=>x.selectionId)).size,15);
 assert.equal(new Set(data.map(x=>x.scoreId)).size,15);
 assert.ok(data.every(x=>x.originalSha256.length===64&&x.sourceTrailingNotes===0));
+assert.equal(data.reduce((n,x)=>n+x.sourceNoteCount,0),2792);
+assert.equal(registry.digitalSourceNoteheadTotal,2792);
 console.log('M60_PROPER_PROBE_SUMMARY',JSON.stringify({
  totalSources:data.length,sourceNoteTotals:data.reduce((n,x)=>n+x.sourceNoteCount,0),
  compiled:data.filter(x=>x.compiled&&x.pitchShapeParity&&!x.sourceNoteHold.length)
