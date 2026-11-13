@@ -71,7 +71,7 @@ for(const record of registry.scores){
  assert.equal(source.sha256,record.gabcSha256);
  assert.equal(sha(source.gabc),record.gabcSha256,'archival GABC byte drift');
  assert.equal(source.gabc.length,record.rawGabcLength);
- assert.equal((source.gabc.match(/\\(::\\)/g)||[]).length,record.sourceGabcSections);
+ assert.equal((source.gabc.match(/\(::\)/g)||[]).length,record.sourceGabcSections);
  assert.equal((source.gabc.match(/[a-m]vv/g)||[]).length,record.sourceBivirgaMatches);
  if(record.mass==='VIGIL'&&record.role==='ALLELUIA')
    assert.equal(record.rubricalCondition,'ONLY_WHEN_VIGIL_FALLS_ON_SUNDAY');
@@ -88,7 +88,7 @@ const allCommunions=[
  ...['001','002','003','004','005','006'].flatMap(i=>
  findBatch('data/mass/chant-corpus/gr1961-proper-'+i+'.json')
   .items.filter(x=>x.officePart==='co'))];
-assert.equal(allCommunions.filter(x=>/exsult?a\\s+filia|exulta\\s+filia/i.test(x.incipit)).length,0,
+assert.equal(allCommunions.filter(x=>/exsult?a\s+filia|exulta\s+filia/i.test(x.incipit)).length,0,
  'Dawn Communion requires separate exact-source review; do not silently substitute');
 console.log('PASS M61 Christmas source identity:',registry.scores.length,
  'pinned candidate scores; one Dawn Communion hold; Vigil Alleluia Sunday-only; no player changed');
