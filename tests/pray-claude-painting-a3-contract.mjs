@@ -47,6 +47,8 @@ test("A3 keeps Claude choir's source rows and fixed foot response intact",()=>{
  const h=renderClaudePaintingA3({id:"litany_loreto_1962",record,photo,language:"la",
    kind:"litany",esc,choirRows,choirBar,sourceMarkup:"<a href=\"#source\">Source</a>"});
  assert.ok(h.includes(choirRows));
+ assert.match(h,/<div class="aoP435930Text aoChoirFaces" data-ao-pray-semantic="1">/,
+  "The outer Choir face must be protected from the shared semantic text flattener");
  assert.ok(h.includes(choirBar));
  assert.match(h,/data-ao-choir-kind="litany"/);
  assert.match(h,/aoDevoCardScroll/);
