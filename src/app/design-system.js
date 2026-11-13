@@ -1,8 +1,7 @@
 export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
 const STYLE_ID="ao-app-design-system";
 
-const CSS=`
-:root{
+const CSS=`\n/* Claude Cormorant display face, loaded by the typography owner, not the\n * immutable generated startup HTML. */\n@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");\n:root{
   /* Claude's approved type families: ceremonial / display / reading.
    * These are semantic roles, not interchangeable headings. */
   --ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif);
