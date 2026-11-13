@@ -42,6 +42,7 @@ export function compactHeritagePlaceSheet(vm){
   const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language,preferredCategory:preferred});
   const area=shortArea(p);
   let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview'+(p.editorial_feature?' aoHeritageEditorialPreview':'')+'" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
+  html+='<div class="aoHeritagePreviewScroll">';
   html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
   html+='<span class="aoHeritageCardKicker">'+(vm.journeyOpen?L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE")+' · ':(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':""))+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
@@ -56,6 +57,8 @@ export function compactHeritagePlaceSheet(vm){
   if(related.length)html+='<div class="aoHeritagePlaceTags" aria-label="'+L(vm.language,"Associated themes","Thèmes associés")+'">'+related.slice(0,3).map(key=>'<span data-category="'+key+'">'+esc(label(vm.language,key))+'</span>').join("")+'</div>';
   const feast=arr(p.calendar).find(entry=>/^\d{4}-\d{2}-\d{2}$/.test(entry?.date??""));
   if(feast)html+='<button type="button" class="aoHeritageFeastLink" data-explore-calendar-date="'+esc(feast.date)+'">'+esc(feast.title)+' <span>'+esc(feast.date_label??"")+' →</span></button>';
+  if(p.geo?.indicative_only||p.geo?.precision==="complex_anchor")html+='<p class="aoHeritagePrecision">'+L(vm.language,"Indicative site pin · not an entrance location","Repère de site indicatif · pas une entrée")+'</p>';
+  html+='</div>'; // Scrollable identity, approved media, source context and related references.
   html+='<div class="aoHeritagePreviewActions"><button type="button" data-explore-expand-place>'+L(vm.language,"Discover","Découvrir")+' <span aria-hidden="true">→</span></button>';
   const novena=arr(p.novenas).find(record=>record?.id);
   if(novena)html+='<button type="button" class="aoHeritagePrayAction" data-explore-open-novena="'+esc(novena.id)+'">'+L(vm.language,"Pray","Prier")+'</button>';
@@ -70,7 +73,7 @@ export function compactHeritagePlaceSheet(vm){
   }
   if(p.directions_url)html+='<a href="'+esc(p.directions_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Visit","Visiter")+'</a>';
   html+='</div>';
-  if(p.geo?.indicative_only||p.geo?.precision==="complex_anchor")html+='<p class="aoHeritagePrecision">'+L(vm.language,"Indicative site pin · not an entrance location","Repère de site indicatif · pas une entrée")+'</p>';
+
   return html+'</section></div>';
 }
 
