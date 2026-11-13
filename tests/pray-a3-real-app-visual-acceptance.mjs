@@ -56,6 +56,7 @@ try{
    // Measure after the real browser finishes loading its display fonts.
    await page.evaluate(async()=>{await document.fonts.ready;await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));});
    await page.waitForFunction(()=>document.querySelector("[data-ao-claude-painting-a3]")?.dataset?.aoA3ReadingLayout,null,{timeout:10000});
+   await page.waitForFunction(()=>document.querySelector("[data-ao-claude-painting-a3] .bg")?.complete===true,null,{timeout:12000});
    const initial=await painting.evaluate(el=>{
     const bg=el.querySelector(".bg"),face=el.querySelector(".sw .st .a")||el.querySelector(".aoA3PlainText");
     const box=el.querySelector(".tx");
@@ -75,6 +76,7 @@ try{
    const swap=painting.locator("[data-ao-a3-swap]");
    if(await swap.count()){
     await swap.click();
+    await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
     assert.equal(await swap.getAttribute("aria-pressed"),"true",id+" language toggle inactive");
     const swapped=await painting.evaluate(el=>{
      const face=el.querySelector(".sw .st .b");
