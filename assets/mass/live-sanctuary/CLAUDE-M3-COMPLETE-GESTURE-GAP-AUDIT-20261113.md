@@ -39,91 +39,91 @@ The original M3 implements six generic scene-driven sequences: `turnSeq` (priest
 
 ## A. Complete existing **83 priest gesture records** — source-cue worklist
 
-| Cue | Action in canonical reader | Trigger / words | Original M3 status |
-| --- | --- | --- | --- |
-| AO.SM.C0001 | SIGN_OF_CROSS — SIGNS HIMSELF | In nómine Patris | Missing: individual 3D action and certified timing |
-| AO.SM.C0010 | HEAD_OR_BODY_BOW — BOWS HEAD | Gloria Patri | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0016 | PROFOUND_BOW — BOWS PROFOUNDLY | Confiteor | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0017 | BREAST_STRIKE — STRIKES BREAST ×3 | mea culpa ×3 | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0026 | SIGN_OF_CROSS — SIGNS HIMSELF | Indulgéntiam | Missing: individual 3D action and certified timing |
-| AO.SM.C0038 | BODY_BOW — BOWS OVER THE ALTAR | Orámus te | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0039 | ALTAR_KISS — KISSES THE ALTAR | quorum relíquiæ hic sunt | Missing: individual 3D action and certified timing |
-| AO.SM.C0058 | HEAD_OR_BODY_BOW — BOWS HEAD | Gratias agimus tibi | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0061 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christe | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0064 | HEAD_OR_BODY_BOW — BOWS HEAD | suscipe deprecationem nostram | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0067 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christe | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0068 | SIGN_OF_CROSS — SIGNS HIMSELF | Cum Sancto Spiritu | Missing: individual 3D action and certified timing |
-| AO.SM.C0072 | HEAD_OR_BODY_BOW — BOWS HEAD | Oremus | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0079 | PROFOUND_BOW — PROFOUND BOW | Munda cor meum | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0084 | GOSPEL_BOOK_AND_BODY_CROSSES — SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST | Sequéntia sancti Evangélii | Missing: articulated forehead/lips/breast crosses |
-| AO.SM.C0090 | HEAD_BOW — BOWS HEAD | in unum Deum | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0093 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesum Christum | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0096 | GENUFLECT — GENUFLECTS | Et incarnátus est ... et homo factus est | Partial: generic pose; no distinct canonical cue event |
-| AO.SM.C0101 | HEAD_OR_BODY_BOW — BOWS HEAD | simul adoratur | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0104 | SIGN_OF_CROSS — SIGNS HIMSELF | Et vitam venturi saeculi | Missing: individual 3D action and certified timing |
-| AO.SM.C0111 | CROSS_WITH_PATEN — CROSSES WITH PATEN | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0115 | CROSS_WITH_CHALICE — CROSSES WITH CHALICE | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0116 | BODY_BOW — BOWS SLIGHTLY | In spíritu humilitátis | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0117 | RAISE_EYES_AND_HANDS — RAISES EYES AND HANDS | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0117 | JOIN_HANDS — JOINS HANDS | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0119 | BLESS_OFFERINGS — BLESSES OFFERINGS | et benedic | Missing: individual 3D action and certified timing |
-| AO.SM.C0126 | HEAD_OR_BODY_BOW — BOWS HEAD | Gloria Patri | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0128 | BODY_BOW — BOWS SLIGHTLY | Súscipe, sancta Trínitas | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0129 | ALTAR_KISS — KISSES THE ALTAR | before Oráte, fratres | Missing: individual 3D action and certified timing |
-| AO.SM.C0141 | HEAD_BOW — BOWS HEAD | Grátias agámus Dómino | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0145 | BODY_BOW — BOWS FOR SANCTUS | Sanctus, Sanctus, Sanctus | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0148 | SIGN_OF_CROSS — SIGNS HIMSELF | Benedíctus qui venit | Missing: individual 3D action and certified timing |
-| AO.SM.C0150 | PROFOUND_BOW — BOWS PROFOUNDLY | Te igitur | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0151 | ALTAR_KISS — KISSES THE ALTAR | uti accepta habeas et benedícas | Missing: individual 3D action and certified timing |
-| AO.SM.C0152 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | hæc dona · hæc múnera · hæc sancta sacrifícia | Missing: individual 3D action and certified timing |
-| AO.SM.C0155 | MEMENTO_HANDS — RAISES AND JOINS HANDS · BOWS HEAD | silent commemoration of the living | Missing: individual 3D action and certified timing |
-| AO.SM.C0158 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christi | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0161 | HANDS_OVER_OBLATIONS — HANDS OVER OBLATIONS | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0164 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | benedíctam · adscríptam · ratam | Missing: individual 3D action and certified timing |
-| AO.SM.C0165 | CROSS_OVER_HOST — MAKES CROSS OVER HOST | Corpus | Missing: individual 3D action and certified timing |
-| AO.SM.C0166 | CROSS_OVER_CHALICE — MAKES CROSS OVER CHALICE | Sanguis | Missing: individual 3D action and certified timing |
-| AO.SM.C0167 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christi | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0169 | RAISE_EYES — RAISES EYES | elevatis oculis | Missing: individual 3D action and certified timing |
-| AO.SM.C0170 | HEAD_OR_BODY_BOW — BOWS HEAD | tibi gratias agens | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0171 | CROSS_OVER_HOST — MAKES CROSS OVER HOST | benedíxit | Missing: individual 3D action and certified timing |
-| AO.SM.C0174 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
-| AO.SM.C0174 | ELEVATE_HOST — ELEVATES HOST | — | Partial: donor elevation choreography, incomplete internal steps |
-| AO.SM.C0174 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
-| AO.SM.C0176 | HEAD_OR_BODY_BOW — BOWS HEAD | tibi gratias agens | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0177 | CROSS_OVER_CHALICE — MAKES CROSS OVER CHALICE | benedíxit | Missing: individual 3D action and certified timing |
-| AO.SM.C0181 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
-| AO.SM.C0181 | ELEVATE_CHALICE — ELEVATES CHALICE | — | Partial: donor elevation choreography, incomplete internal steps |
-| AO.SM.C0181 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
-| AO.SM.C0184 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | hóstiam puram · hóstiam sanctam · hóstiam immaculátam | Missing: individual 3D action and certified timing |
-| AO.SM.C0185 | CROSS_HOST_AND_CHALICE — CROSSES HOST THEN CHALICE | Panem sanctum ... et Calicem | Missing: individual 3D action and certified timing |
-| AO.SM.C0187 | PROFOUND_BOW — BOWS PROFOUNDLY | Súpplices te rogámus | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0188 | ALTAR_KISS — KISSES THE ALTAR | ex hac altáris participatióne | Missing: individual 3D action and certified timing |
-| AO.SM.C0189 | CROSS_HOST_AND_CHALICE — CROSSES HOST THEN CHALICE | Corpus · Sanguinem | Missing: individual 3D action and certified timing |
-| AO.SM.C0190 | SIGN_OF_CROSS — SIGNS HIMSELF | omni benedictióne coelésti | Missing: individual 3D action and certified timing |
-| AO.SM.C0193 | MEMENTO_HANDS — RAISES AND JOINS HANDS · EYES ON THE SACRAMENT | silent commemoration of the dead | Missing: individual 3D action and certified timing |
-| AO.SM.C0196 | BREAST_STRIKE — STRIKES BREAST ONCE | Nobis quoque peccatóribus | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0200 | THREE_CROSSES — THREE CROSSES | sanctificas · vivificas · benedicis | Missing: individual 3D action and certified timing |
-| AO.SM.C0202 | THREE_CROSSES_WITH_HOST — THREE CROSSES WITH HOST OVER CHALICE | Per ipsum · et cum ipso · et in ipso | Missing: individual 3D action and certified timing |
-| AO.SM.C0203 | TWO_CROSSES_WITH_HOST — TWO CROSSES WITH HOST | Deo Patri omnipotenti · in unitate Spiritus Sancti | Missing: individual 3D action and certified timing |
-| AO.SM.C0204 | MINOR_ELEVATION — ELEVATES HOST AND CHALICE SLIGHTLY | omnis honor, et glória | Static/partial: held-object pose needs verified motion |
-| AO.SM.C0208 | HEAD_OR_BODY_BOW — BOWS HEAD | Oremus | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0213 | SIGN_WITH_PATEN — SIGNS HIMSELF WITH PATEN | da propítius pacem | Missing: individual 3D action and certified timing |
-| AO.SM.C0219 | THREE_CROSSES_WITH_PARTICLE — THREE CROSSES WITH PARTICLE | Pax Domini sit semper vobiscum | Missing: individual 3D action and certified timing |
-| AO.SM.C0222 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · miserére nobis | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0223 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · miserére nobis | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0224 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · dona nobis pacem | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0229 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 1 | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0230 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 2 | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0231 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 3 | Missing: independent counted hand-to-breast strikes |
-| AO.SM.C0232 | SIGN_WITH_HOST — SIGNS WITH HOST | Corpus Domini nostri Iesu Christi | Missing: individual 3D action and certified timing |
-| AO.SM.C0234 | SIGN_WITH_CHALICE — SIGNS WITH CHALICE | Sanguis Domini nostri Iesu Christi | Missing: individual 3D action and certified timing |
-| AO.SM.C0262 | ALTAR_KISS — KISSES ALTAR | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0263 | RAISE_EYES_AND_HANDS — RAISES EYES AND HANDS | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0263 | JOIN_HANDS — JOINS HANDS | — | Missing: individual 3D action and certified timing |
-| AO.SM.C0263 | HEAD_OR_BODY_BOW — BOWS HEAD TO CROSS | — | Partial: generic bow pose; phrase-specific action missing |
-| AO.SM.C0265 | BLESSING_CROSS — MAKES ONE SIGN OF THE CROSS OVER THE PEOPLE | Pater, et Fílius, et Spíritus Sanctus | Missing: individual 3D action and certified timing |
-| AO.SM.C0269 | GOSPEL_BOOK_AND_BODY_CROSSES — SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST | Initium sancti Evangélii | Missing: articulated forehead/lips/breast crosses |
-| AO.SM.C0273 | GENUFLECT — GENUFLECTS TOWARD THE GOSPEL | Et Verbum caro factum est | Partial: generic pose; no distinct canonical cue event |
+| Registry ID | Cue | Action in canonical reader | Trigger / words | Original M3 status |
+| --- | --- | --- | --- | --- |
+| GM.P.C0001.01 | AO.SM.C0001 | SIGN_OF_CROSS — SIGNS HIMSELF | In nómine Patris | Missing: individual 3D action and certified timing |
+| GM.P.C0010.01 | AO.SM.C0010 | HEAD_OR_BODY_BOW — BOWS HEAD | Gloria Patri | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0016.01 | AO.SM.C0016 | PROFOUND_BOW — BOWS PROFOUNDLY | Confiteor | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0017.01 | AO.SM.C0017 | BREAST_STRIKE — STRIKES BREAST ×3 | mea culpa ×3 | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0026.01 | AO.SM.C0026 | SIGN_OF_CROSS — SIGNS HIMSELF | Indulgéntiam | Missing: individual 3D action and certified timing |
+| GM.P.C0038.01 | AO.SM.C0038 | BODY_BOW — BOWS OVER THE ALTAR | Orámus te | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0039.01 | AO.SM.C0039 | ALTAR_KISS — KISSES THE ALTAR | quorum relíquiæ hic sunt | Missing: individual 3D action and certified timing |
+| GM.P.C0058.01 | AO.SM.C0058 | HEAD_OR_BODY_BOW — BOWS HEAD | Gratias agimus tibi | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0061.01 | AO.SM.C0061 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christe | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0064.01 | AO.SM.C0064 | HEAD_OR_BODY_BOW — BOWS HEAD | suscipe deprecationem nostram | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0067.01 | AO.SM.C0067 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christe | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0068.01 | AO.SM.C0068 | SIGN_OF_CROSS — SIGNS HIMSELF | Cum Sancto Spiritu | Missing: individual 3D action and certified timing |
+| GM.P.C0072.01 | AO.SM.C0072 | HEAD_OR_BODY_BOW — BOWS HEAD | Oremus | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0079.01 | AO.SM.C0079 | PROFOUND_BOW — PROFOUND BOW | Munda cor meum | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0084.01 | AO.SM.C0084 | GOSPEL_BOOK_AND_BODY_CROSSES — SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST | Sequéntia sancti Evangélii | Missing: articulated forehead/lips/breast crosses |
+| GM.P.C0090.01 | AO.SM.C0090 | HEAD_BOW — BOWS HEAD | in unum Deum | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0093.01 | AO.SM.C0093 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesum Christum | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0096.01 | AO.SM.C0096 | GENUFLECT — GENUFLECTS | Et incarnátus est ... et homo factus est | Partial: generic pose; no distinct canonical cue event |
+| GM.P.C0101.01 | AO.SM.C0101 | HEAD_OR_BODY_BOW — BOWS HEAD | simul adoratur | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0104.01 | AO.SM.C0104 | SIGN_OF_CROSS — SIGNS HIMSELF | Et vitam venturi saeculi | Missing: individual 3D action and certified timing |
+| GM.P.C0111.01 | AO.SM.C0111 | CROSS_WITH_PATEN — CROSSES WITH PATEN | — | Missing: individual 3D action and certified timing |
+| GM.P.C0115.01 | AO.SM.C0115 | CROSS_WITH_CHALICE — CROSSES WITH CHALICE | — | Missing: individual 3D action and certified timing |
+| GM.P.C0116.01 | AO.SM.C0116 | BODY_BOW — BOWS SLIGHTLY | In spíritu humilitátis | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0117.01 | AO.SM.C0117 | RAISE_EYES_AND_HANDS — RAISES EYES AND HANDS | — | Missing: individual 3D action and certified timing |
+| GM.P.C0117.02 | AO.SM.C0117 | JOIN_HANDS — JOINS HANDS | — | Missing: individual 3D action and certified timing |
+| GM.P.C0119.01 | AO.SM.C0119 | BLESS_OFFERINGS — BLESSES OFFERINGS | et benedic | Missing: individual 3D action and certified timing |
+| GM.P.C0126.01 | AO.SM.C0126 | HEAD_OR_BODY_BOW — BOWS HEAD | Gloria Patri | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0128.01 | AO.SM.C0128 | BODY_BOW — BOWS SLIGHTLY | Súscipe, sancta Trínitas | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0129.01 | AO.SM.C0129 | ALTAR_KISS — KISSES THE ALTAR | before Oráte, fratres | Missing: individual 3D action and certified timing |
+| GM.P.C0141.01 | AO.SM.C0141 | HEAD_BOW — BOWS HEAD | Grátias agámus Dómino | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0145.01 | AO.SM.C0145 | BODY_BOW — BOWS FOR SANCTUS | Sanctus, Sanctus, Sanctus | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0148.01 | AO.SM.C0148 | SIGN_OF_CROSS — SIGNS HIMSELF | Benedíctus qui venit | Missing: individual 3D action and certified timing |
+| GM.P.C0150.01 | AO.SM.C0150 | PROFOUND_BOW — BOWS PROFOUNDLY | Te igitur | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0151.01 | AO.SM.C0151 | ALTAR_KISS — KISSES THE ALTAR | uti accepta habeas et benedícas | Missing: individual 3D action and certified timing |
+| GM.P.C0152.01 | AO.SM.C0152 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | hæc dona · hæc múnera · hæc sancta sacrifícia | Missing: individual 3D action and certified timing |
+| GM.P.C0155.01 | AO.SM.C0155 | MEMENTO_HANDS — RAISES AND JOINS HANDS · BOWS HEAD | silent commemoration of the living | Missing: individual 3D action and certified timing |
+| GM.P.C0158.01 | AO.SM.C0158 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christi | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0161.01 | AO.SM.C0161 | HANDS_OVER_OBLATIONS — HANDS OVER OBLATIONS | — | Missing: individual 3D action and certified timing |
+| GM.P.C0164.01 | AO.SM.C0164 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | benedíctam · adscríptam · ratam | Missing: individual 3D action and certified timing |
+| GM.P.C0165.01 | AO.SM.C0165 | CROSS_OVER_HOST — MAKES CROSS OVER HOST | Corpus | Missing: individual 3D action and certified timing |
+| GM.P.C0166.01 | AO.SM.C0166 | CROSS_OVER_CHALICE — MAKES CROSS OVER CHALICE | Sanguis | Missing: individual 3D action and certified timing |
+| GM.P.C0167.01 | AO.SM.C0167 | HEAD_OR_BODY_BOW — BOWS HEAD | Iesu Christi | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0169.01 | AO.SM.C0169 | RAISE_EYES — RAISES EYES | elevatis oculis | Missing: individual 3D action and certified timing |
+| GM.P.C0170.01 | AO.SM.C0170 | HEAD_OR_BODY_BOW — BOWS HEAD | tibi gratias agens | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0171.01 | AO.SM.C0171 | CROSS_OVER_HOST — MAKES CROSS OVER HOST | benedíxit | Missing: individual 3D action and certified timing |
+| GM.P.C0174.01 | AO.SM.C0174 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
+| GM.P.C0174.02 | AO.SM.C0174 | ELEVATE_HOST — ELEVATES HOST | — | Partial: donor elevation choreography, incomplete internal steps |
+| GM.P.C0174.03 | AO.SM.C0174 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
+| GM.P.C0176.01 | AO.SM.C0176 | HEAD_OR_BODY_BOW — BOWS HEAD | tibi gratias agens | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0177.01 | AO.SM.C0177 | CROSS_OVER_CHALICE — MAKES CROSS OVER CHALICE | benedíxit | Missing: individual 3D action and certified timing |
+| GM.P.C0181.01 | AO.SM.C0181 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
+| GM.P.C0181.02 | AO.SM.C0181 | ELEVATE_CHALICE — ELEVATES CHALICE | — | Partial: donor elevation choreography, incomplete internal steps |
+| GM.P.C0181.03 | AO.SM.C0181 | GENUFLECT — GENUFLECTS | — | Partial: generic pose; no distinct canonical cue event |
+| GM.P.C0184.01 | AO.SM.C0184 | THREE_CROSSES — MAKES THREE CROSSES OVER HOST AND CHALICE | hóstiam puram · hóstiam sanctam · hóstiam immaculátam | Missing: individual 3D action and certified timing |
+| GM.P.C0185.01 | AO.SM.C0185 | CROSS_HOST_AND_CHALICE — CROSSES HOST THEN CHALICE | Panem sanctum ... et Calicem | Missing: individual 3D action and certified timing |
+| GM.P.C0187.01 | AO.SM.C0187 | PROFOUND_BOW — BOWS PROFOUNDLY | Súpplices te rogámus | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0188.01 | AO.SM.C0188 | ALTAR_KISS — KISSES THE ALTAR | ex hac altáris participatióne | Missing: individual 3D action and certified timing |
+| GM.P.C0189.01 | AO.SM.C0189 | CROSS_HOST_AND_CHALICE — CROSSES HOST THEN CHALICE | Corpus · Sanguinem | Missing: individual 3D action and certified timing |
+| GM.P.C0190.01 | AO.SM.C0190 | SIGN_OF_CROSS — SIGNS HIMSELF | omni benedictióne coelésti | Missing: individual 3D action and certified timing |
+| GM.P.C0193.01 | AO.SM.C0193 | MEMENTO_HANDS — RAISES AND JOINS HANDS · EYES ON THE SACRAMENT | silent commemoration of the dead | Missing: individual 3D action and certified timing |
+| GM.P.C0196.01 | AO.SM.C0196 | BREAST_STRIKE — STRIKES BREAST ONCE | Nobis quoque peccatóribus | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0200.01 | AO.SM.C0200 | THREE_CROSSES — THREE CROSSES | sanctificas · vivificas · benedicis | Missing: individual 3D action and certified timing |
+| GM.P.C0202.01 | AO.SM.C0202 | THREE_CROSSES_WITH_HOST — THREE CROSSES WITH HOST OVER CHALICE | Per ipsum · et cum ipso · et in ipso | Missing: individual 3D action and certified timing |
+| GM.P.C0203.01 | AO.SM.C0203 | TWO_CROSSES_WITH_HOST — TWO CROSSES WITH HOST | Deo Patri omnipotenti · in unitate Spiritus Sancti | Missing: individual 3D action and certified timing |
+| GM.P.C0204.01 | AO.SM.C0204 | MINOR_ELEVATION — ELEVATES HOST AND CHALICE SLIGHTLY | omnis honor, et glória | Static/partial: held-object pose needs verified motion |
+| GM.P.C0208.01 | AO.SM.C0208 | HEAD_OR_BODY_BOW — BOWS HEAD | Oremus | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0213.01 | AO.SM.C0213 | SIGN_WITH_PATEN — SIGNS HIMSELF WITH PATEN | da propítius pacem | Missing: individual 3D action and certified timing |
+| GM.P.C0219.01 | AO.SM.C0219 | THREE_CROSSES_WITH_PARTICLE — THREE CROSSES WITH PARTICLE | Pax Domini sit semper vobiscum | Missing: individual 3D action and certified timing |
+| GM.P.C0222.01 | AO.SM.C0222 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · miserére nobis | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0223.01 | AO.SM.C0223 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · miserére nobis | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0224.01 | AO.SM.C0224 | BREAST_STRIKE — STRIKES BREAST ONCE | Agnus Dei · dona nobis pacem | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0229.01 | AO.SM.C0229 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 1 | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0230.01 | AO.SM.C0230 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 2 | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0231.01 | AO.SM.C0231 | BREAST_STRIKE — STRIKES BREAST ONCE | Dómine, non sum dignus · 3 | Missing: independent counted hand-to-breast strikes |
+| GM.P.C0232.01 | AO.SM.C0232 | SIGN_WITH_HOST — SIGNS WITH HOST | Corpus Domini nostri Iesu Christi | Missing: individual 3D action and certified timing |
+| GM.P.C0234.01 | AO.SM.C0234 | SIGN_WITH_CHALICE — SIGNS WITH CHALICE | Sanguis Domini nostri Iesu Christi | Missing: individual 3D action and certified timing |
+| GM.P.C0262.01 | AO.SM.C0262 | ALTAR_KISS — KISSES ALTAR | — | Missing: individual 3D action and certified timing |
+| GM.P.C0263.01 | AO.SM.C0263 | RAISE_EYES_AND_HANDS — RAISES EYES AND HANDS | — | Missing: individual 3D action and certified timing |
+| GM.P.C0263.02 | AO.SM.C0263 | JOIN_HANDS — JOINS HANDS | — | Missing: individual 3D action and certified timing |
+| GM.P.C0263.03 | AO.SM.C0263 | HEAD_OR_BODY_BOW — BOWS HEAD TO CROSS | — | Partial: generic bow pose; phrase-specific action missing |
+| GM.P.C0265.01 | AO.SM.C0265 | BLESSING_CROSS — MAKES ONE SIGN OF THE CROSS OVER THE PEOPLE | Pater, et Fílius, et Spíritus Sanctus | Missing: individual 3D action and certified timing |
+| GM.P.C0269.01 | AO.SM.C0269 | GOSPEL_BOOK_AND_BODY_CROSSES — SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST | Initium sancti Evangélii | Missing: articulated forehead/lips/breast crosses |
+| GM.P.C0273.01 | AO.SM.C0273 | GENUFLECT — GENUFLECTS TOWARD THE GOSPEL | Et Verbum caro factum est | Partial: generic pose; no distinct canonical cue event |
 
 **Source-count note:** The 83 rows above are the current priest gesture matrix, including repeated counted actions at one source cue (e.g. the two genuflections of each Elevation). They are **not** 83 wholly missing visually unique figures; many exist as an undifferentiated pose.
 
@@ -257,67 +257,67 @@ The original M3 implements six generic scene-driven sequences: `turnSeq` (priest
 
 ## D. Complete existing **59 faithful gesture records** — must not be conflated with priest animation
 
-| Cue | Faithful gesture/action | Words / condition | Original M3 implementation |
-| --- | --- | --- | --- |
-| AO.SM.C0001 | SIGN_OF_CROSS — Sign of the Cross | In nómine Patris | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0014 | SIGN_OF_CROSS — Sign of the Cross | Adiutórium nostrum ✠ | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0021 | PROFOUND_BOW — Profound bow / remain kneeling according profile | During Confiteor | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0022 | BREAST_STRIKE — Strike breast ×3 | mea culpa ×3 | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0023 | HEAD_OR_BODY_BOW — Remain bowed / return after conclusion | After mea culpa | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0026 | SIGN_OF_CROSS — Sign of the Cross | Indulgéntiam ✠ | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0055 | HEAD_OR_BODY_BOW — Bow head | Adorámus te | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0056 | HEAD_OR_BODY_BOW — Customary bow may follow local practice; do not hard-code as universal. | Adorámus te | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0057 | HEAD_OR_BODY_BOW — Bow head | Adorámus te | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0058 | HEAD_OR_BODY_BOW — Bow head | Grátias ágimus tibi | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0059 | HEAD_OR_BODY_BOW — Bow head | Grátias ágimus tibi | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0060 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0061 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0062 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0063 | HEAD_OR_BODY_BOW — Bow head | súscipe deprecatiónem nostram | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0064 | HEAD_OR_BODY_BOW — Bow head | súscipe deprecatiónem nostram | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0066 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0067 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0068 | SIGN_OF_CROSS — Sign of the Cross | Cum Sancto Spíritu ✠ | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0069 | SIGN_OF_CROSS — Sign of the Cross | Cum Sancto Spíritu ✠ | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0084 | GOSPEL_SMALL_CROSSES — Forehead · lips · breast small crosses | At Gospel announcement | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0089 | HEAD_OR_BODY_BOW — Bow head | Credo in unum Deum | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0090 | HEAD_OR_BODY_BOW — Bow head | Credo in unum Deum | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0092 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0093 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0094 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0096 | GENUFLECT — Kneeling/genuflection here depends on sung/local calendar rule; Christmas and... | Et incarnatus est ... et homo factus est | Generic posture only; specific boundary missing |
-| AO.SM.C0097 | RISE — Rise / resume prior posture | after et homo factus est | Generic posture only; specific boundary missing |
-| AO.SM.C0100 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0101 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0102 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0104 | SIGN_OF_CROSS — Sign of the Cross | Et vitam ✠ ventúri sæculi | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0105 | SIGN_OF_CROSS — Sign of the Cross | Et vitam ✠ ventúri sæculi | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0141 | HEAD_OR_BODY_BOW — Bow head | Grátias agámus Dómino Deo nostro | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0142 | HEAD_OR_BODY_BOW — Bow head | Grátias agámus Dómino Deo nostro | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0145 | HEAD_OR_BODY_BOW — Bow head | Sanctus, Sanctus, Sanctus | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0148 | SIGN_OF_CROSS — Sign of the Cross | Benedíctus qui venit | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0173 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Sacred Host | The Host is actually elevated — At the actual elevation [Do not add an invent... | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0174 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Sacred Host | The Host is actually elevated — At the actual elevation [Do not add an invent... | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0179 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Chalice | The Chalice is actually elevated — At the actual elevation [Do not add an inv... | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0196 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0197 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0198 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0222 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0223 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0224 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0235 | HEAD_OR_BODY_BOW — Remain bowed / recollected | During optional second Confiteor | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0236 | BREAST_STRIKE — Strike breast ×3 | mea culpa ×3 | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0237 | HEAD_OR_BODY_BOW — Remain bowed / recollected | Conclusion of optional Confiteor | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0240 | SIGN_OF_CROSS — Sign of the Cross | Indulgéntiam ✠ | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0242 | REVERENT_ATTENTION — Reverent attention to the Host | Ecce Agnus Dei | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0243 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 1 | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0244 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 2 | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0245 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 3 | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0246 | HEAD_OR_BODY_BOW — Bow the head | Iesu — At the Holy Name [Only when the Name is in public/audible text; do not scan silent private prayers.] | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0265 | SIGN_OF_CROSS — Sign of the Cross | Pater, et Filius, ✠ et Spiritus Sanctus | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0269 | GOSPEL_SMALL_CROSSES — Forehead · lips · breast small crosses | Initium ✠ sancti Evangelii | Gesture/icon cue only; no matching individual limb action |
-| AO.SM.C0273 | GENUFLECT — Genuflect | ET VERBUM CARO FACTUM EST | Generic posture only; specific boundary missing |
-| AO.SM.C0274 | RISE — Rise | Et habitávit in nobis | Generic posture only; specific boundary missing |
+| Registry ID | Cue | Faithful gesture/action | Words / condition | Original M3 implementation |
+| --- | --- | --- | --- | --- |
+| GM.F.C0001.01 | AO.SM.C0001 | SIGN_OF_CROSS — Sign of the Cross | In nómine Patris | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0014.01 | AO.SM.C0014 | SIGN_OF_CROSS — Sign of the Cross | Adiutórium nostrum ✠ | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0021.01 | AO.SM.C0021 | PROFOUND_BOW — Profound bow / remain kneeling according profile | During Confiteor | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0022.01 | AO.SM.C0022 | BREAST_STRIKE — Strike breast ×3 | mea culpa ×3 | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0023.01 | AO.SM.C0023 | HEAD_OR_BODY_BOW — Remain bowed / return after conclusion | After mea culpa | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0026.01 | AO.SM.C0026 | SIGN_OF_CROSS — Sign of the Cross | Indulgéntiam ✠ | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0055.01 | AO.SM.C0055 | HEAD_OR_BODY_BOW — Bow head | Adorámus te | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0056.01 | AO.SM.C0056 | HEAD_OR_BODY_BOW — Customary bow may follow local practice; do not hard-code as universal. | Adorámus te | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0057.01 | AO.SM.C0057 | HEAD_OR_BODY_BOW — Bow head | Adorámus te | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0058.01 | AO.SM.C0058 | HEAD_OR_BODY_BOW — Bow head | Grátias ágimus tibi | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0059.01 | AO.SM.C0059 | HEAD_OR_BODY_BOW — Bow head | Grátias ágimus tibi | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0060.01 | AO.SM.C0060 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0061.01 | AO.SM.C0061 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0062.01 | AO.SM.C0062 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0063.01 | AO.SM.C0063 | HEAD_OR_BODY_BOW — Bow head | súscipe deprecatiónem nostram | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0064.01 | AO.SM.C0064 | HEAD_OR_BODY_BOW — Bow head | súscipe deprecatiónem nostram | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0066.01 | AO.SM.C0066 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0067.01 | AO.SM.C0067 | HEAD_OR_BODY_BOW — Bow head | Iesu Christe | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0068.01 | AO.SM.C0068 | SIGN_OF_CROSS — Sign of the Cross | Cum Sancto Spíritu ✠ | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0069.01 | AO.SM.C0069 | SIGN_OF_CROSS — Sign of the Cross | Cum Sancto Spíritu ✠ | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0084.01 | AO.SM.C0084 | GOSPEL_SMALL_CROSSES — Forehead · lips · breast small crosses | At Gospel announcement | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0089.01 | AO.SM.C0089 | HEAD_OR_BODY_BOW — Bow head | Credo in unum Deum | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0090.01 | AO.SM.C0090 | HEAD_OR_BODY_BOW — Bow head | Credo in unum Deum | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0092.01 | AO.SM.C0092 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0093.01 | AO.SM.C0093 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0094.01 | AO.SM.C0094 | HEAD_OR_BODY_BOW — Bow head | Iesum Christum / Holy Name | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0096.01 | AO.SM.C0096 | GENUFLECT — Kneeling/genuflection here depends on sung/local calendar rule; Christmas and... | Et incarnatus est ... et homo factus est | Generic posture only; specific boundary missing |
+| GM.F.C0097.01 | AO.SM.C0097 | RISE — Rise / resume prior posture | after et homo factus est | Generic posture only; specific boundary missing |
+| GM.F.C0100.01 | AO.SM.C0100 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0101.01 | AO.SM.C0101 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0102.01 | AO.SM.C0102 | HEAD_OR_BODY_BOW — Bow head | simul adorátur | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0104.01 | AO.SM.C0104 | SIGN_OF_CROSS — Sign of the Cross | Et vitam ✠ ventúri sæculi | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0105.01 | AO.SM.C0105 | SIGN_OF_CROSS — Sign of the Cross | Et vitam ✠ ventúri sæculi | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0141.01 | AO.SM.C0141 | HEAD_OR_BODY_BOW — Bow head | Grátias agámus Dómino Deo nostro | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0142.01 | AO.SM.C0142 | HEAD_OR_BODY_BOW — Bow head | Grátias agámus Dómino Deo nostro | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0145.01 | AO.SM.C0145 | HEAD_OR_BODY_BOW — Bow head | Sanctus, Sanctus, Sanctus | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0148.01 | AO.SM.C0148 | SIGN_OF_CROSS — Sign of the Cross | Benedíctus qui venit | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0173.01 | AO.SM.C0173 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Sacred Host | The Host is actually elevated — At the actual elevation [Do not add an invent... | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0174.01 | AO.SM.C0174 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Sacred Host | The Host is actually elevated — At the actual elevation [Do not add an invent... | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0179.01 | AO.SM.C0179 | HEAD_OR_BODY_BOW — Remain kneeling; bow reverently, then look up at the Chalice | The Chalice is actually elevated — At the actual elevation [Do not add an inv... | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0196.01 | AO.SM.C0196 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0197.01 | AO.SM.C0197 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0198.01 | AO.SM.C0198 | BREAST_STRIKE — Strike breast | Nobis quoque peccatóribus — At / as these words begin | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0222.01 | AO.SM.C0222 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0223.01 | AO.SM.C0223 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0224.01 | AO.SM.C0224 | BREAST_STRIKE — Strike breast once | Agnus Dei at each invocation | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0235.01 | AO.SM.C0235 | HEAD_OR_BODY_BOW — Remain bowed / recollected | During optional second Confiteor | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0236.01 | AO.SM.C0236 | BREAST_STRIKE — Strike breast ×3 | mea culpa ×3 | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0237.01 | AO.SM.C0237 | HEAD_OR_BODY_BOW — Remain bowed / recollected | Conclusion of optional Confiteor | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0240.01 | AO.SM.C0240 | SIGN_OF_CROSS — Sign of the Cross | Indulgéntiam ✠ | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0242.01 | AO.SM.C0242 | REVERENT_ATTENTION — Reverent attention to the Host | Ecce Agnus Dei | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0243.01 | AO.SM.C0243 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 1 | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0244.01 | AO.SM.C0244 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 2 | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0245.01 | AO.SM.C0245 | BREAST_STRIKE — Strike breast once | Domine non sum dignus — invocation 3 | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0246.01 | AO.SM.C0246 | HEAD_OR_BODY_BOW — Bow the head | Iesu — At the Holy Name [Only when the Name is in public/audible text; do not scan silent private prayers.] | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0265.01 | AO.SM.C0265 | SIGN_OF_CROSS — Sign of the Cross | Pater, et Filius, ✠ et Spiritus Sanctus | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0269.01 | AO.SM.C0269 | GOSPEL_SMALL_CROSSES — Forehead · lips · breast small crosses | Initium ✠ sancti Evangelii | Gesture/icon cue only; no matching individual limb action |
+| GM.F.C0273.01 | AO.SM.C0273 | GENUFLECT — Genuflect | ET VERBUM CARO FACTUM EST | Generic posture only; specific boundary missing |
+| GM.F.C0274.01 | AO.SM.C0274 | RISE — Rise | Et habitávit in nobis | Generic posture only; specific boundary missing |
 
 **Faithful note:** several source rows repeat the *same* sung phrase or strike over adjacent cues, because they describe posture/visual placement; they are not always distinct physical actions. Do not force one 3D motion for each duplicated text row.
 
