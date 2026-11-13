@@ -33,6 +33,7 @@ import "./essential-flow-reader-styles.js";
 import "./claude-holy-card-styles.js";
 import "./claude-painting-a3-styles.js";
 import {claudePaintingA3Enabled,renderClaudePaintingA3,installClaudePaintingA3,CLAUDE_A3_ESSENTIAL_SEQUENCE} from "./claude-painting-a3.js";
+import {A3_FOCUS_CUTS} from "./claude-painting-a3-experience.js";
 import "./essential-holy-card-styles.js";
 import {CHOIR_SOURCE_IDS,choirKind,choirSourceBeats,choirLitanyLineParts} from "./choir-source-beats.js";
 import "./choir-family-styles.js";
@@ -777,7 +778,7 @@ function releasedPrayerCardArtUrl(id){
 function paintingA3Prayer(id,p){
  if(!CLAUDE_A3_PAINTING_PILOT_ENABLED||!p)return "";
  const choir=CHOIR_SOURCE_IDS.includes(id)&&choirKind(id)==="litany";
- if(!choir&&!CLAUDE_A3_ESSENTIAL_SEQUENCE.includes(id))return "";
+ if(!choir&&!CLAUDE_A3_ESSENTIAL_SEQUENCE.includes(id)&&!Object.hasOwn(A3_FOCUS_CUTS,id))return "";
  const art=resolvePrayerEditorialArtwork("COV-"+id);
  if(art.state!=="PUBLISHED_EXACT_PHOTO"||!art.photo?.image)return "";
  const primary=p[lang()]?lang():p.en?"en":p.fr?"fr":p.la?"la":null;
