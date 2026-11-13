@@ -25,8 +25,8 @@ assert.equal(pinned.publicPreviewCandidateCount,19);
 assert.equal(pinned.totalPinnedDigitalNoteheads,3185);
 assert.equal(PROPER_M62_RESEARCH_SOURCES.length,19);
 assert.equal(PROPER_M59_RESEARCH_SOURCES.length,5);
-assert.equal(PROPER_RESEARCH_SOURCES.length,50);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
+assert.equal(PROPER_RESEARCH_SOURCES.length,59);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
 assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.selectionId.startsWith('ADVENT')).length,20);
 assert.equal(pinned.holds.length,1);
 assert.equal(pinned.holds[0].selectionId,'CHRISTMAS_DAWN_COMMUNION');
@@ -101,7 +101,7 @@ assert.deepEqual(Object.fromEntries(byMass),{
  CHRISTMAS_DAY:{scores:5,notes:824}
 });
 assert.equal(PROPER_M62_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),3185);
-assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),8474);
+assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),10036);
 assert.notEqual(properM59ResearchScore('CHRISTMAS_MIDNIGHT_INTROIT').scoreId,
  properM59ResearchScore('CHRISTMAS_MIDNIGHT_ALLELUIA').scoreId);
 assert.notEqual(properM59ResearchScore('CHRISTMAS_DAY_GRADUAL').scoreId,
