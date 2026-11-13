@@ -78,6 +78,7 @@ try{
       const picker=page.locator('[data-schola-kyriale-choice="'+movement+'"]');
       await picker.selectOption(settingId);
       const trigger=page.locator(selector(movement));
+      assert.equal(await trigger.count(),1,'One launcher per movement, never one per score');
       await trigger.waitFor({state:'visible',timeout:60000});
       assert.equal(await player.isVisible(),false,'Selection alone must not start audio');
       await trigger.click();
