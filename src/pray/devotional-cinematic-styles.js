@@ -8,10 +8,10 @@ body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicArtwork{displa
 body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicImageZone[data-ao-art-absent] {height:min(28dvh,180px);min-height:100px;background:radial-gradient(ellipse at center,rgba(199,174,109,.085),transparent 70%)}
 body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicImageZone[data-ao-art-failed] {background:#080c12}
 body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading{text-align:center;position:relative;z-index:2;padding:20px max(18px,6%) 28px;background:linear-gradient(to bottom,transparent,#080c12 20%);color:#ede8dd}
-body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading>small:first-child{font:600 10px/1.4 system-ui,sans-serif;letter-spacing:.18em;color:#a5a8ab}
-body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading h2{font:500 clamp(26px,7vw,43px)/1.14 Georgia,serif;margin:11px 0 8px;text-wrap:balance}
-body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading p{font:italic 15px/1.55 Georgia,serif;color:#c4bda9;margin:0}
-body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading .aoDevoCinematicCredit{display:block;font:400 10px/1.35 system-ui,sans-serif;color:#9a9ca0;margin-top:16px}
+body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading>small:first-child{font:600 10px/1.4 var(--ao-font-ceremonial,"Cinzel",Georgia,serif);letter-spacing:.18em;color:#a5a8ab}
+body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading h2{font:600 clamp(26px,7vw,34px)/1.05 var(--ao-font-ceremonial,"Cinzel",Georgia,serif);margin:11px 0 8px;text-wrap:balance}
+body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading p{font:italic 15px/1.55 var(--ao-font-body,"EB Garamond",Georgia,serif);color:#c4bda9;margin:0}
+body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading .aoDevoCinematicCredit{display:block;font:italic 13px/1.35 var(--ao-font-body,"EB Garamond",Georgia,serif);color:#9a9ca0;margin-top:16px}
 #aoPray435930 .aoDevoCard[data-ao-gesture-cinematic="profound-bow"] .aoDevoCardHead{animation:aoDevoGestureQuiet .78s ease-out both}
 /* Angelus v2: one tableau on entry; never reprise its artwork at every
    versicle. The user-rated museum painting is not panned or distorted. */
@@ -27,7 +27,7 @@ body.aoP435930Open > .aoDevoCinematicOpening .aoDevoCinematicSkip{
   z-index:3;min-width:76px;min-height:44px;padding:8px 14px;
   border:1px solid rgba(221,204,168,.28);border-radius:999px;
   background:rgba(8,12,18,.82);color:#e6dfd1;
-  font:600 12px/1.3 system-ui,sans-serif;pointer-events:auto;
+  font:600 12px/1.3 var(--ao-font-ceremonial,"Cinzel",Georgia,serif);pointer-events:auto;
 }
 body.aoP435930Open > .aoDevoCinematicOpening .aoDevoCinematicCredit{
   display:block;max-width:42ch;margin-inline:auto;
@@ -47,10 +47,10 @@ body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureInner{
   width:min(100%,520px);max-height:100%;gap:0;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureKicker{
-  font:650 10px/1.4 system-ui,sans-serif;letter-spacing:.2em;color:#c6b68f;
+  font:600 10px/1.4 var(--ao-font-ceremonial,"Cinzel",Georgia,serif);letter-spacing:.2em;color:#c6b68f;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureLatin{
-  font:400 clamp(25px,6.2vw,39px)/1.25 Georgia,serif;
+  font:500 clamp(25px,6.2vw,39px)/1.25 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
   margin:20px 0 0;max-width:19ch;text-wrap:balance;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureRule{
@@ -69,18 +69,18 @@ body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureIcon[data-ao-icon-una
   width:0;height:0;margin:0;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureInstruction{
-  font:500 clamp(25px,6.1vw,36px)/1.24 Georgia,serif;
+  font:500 clamp(25px,6.1vw,36px)/1.24 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
   margin:4px 0 12px;text-wrap:balance;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureResponse{
-  font:italic clamp(16px,4vw,20px)/1.55 Georgia,serif;
+  font:italic clamp(16px,4vw,20px)/1.55 var(--ao-font-body,"EB Garamond",Georgia,serif);
   margin:0 0 30px;color:#b9b5a8;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureContinue{
   min-height:50px;min-width:min(100%,240px);padding:12px 24px;
   border:1px solid rgba(228,212,171,.47);border-radius:10px;
   background:rgba(209,186,142,.10);color:#f6eddc;
-  font:600 14px/1.2 Georgia,serif;cursor:pointer;
+  font:600 14px/1.2 var(--ao-font-ceremonial,"Cinzel",Georgia,serif);cursor:pointer;
 }
 body.aoP435930Open > .aoDevoPostureCinematic .aoDevoPostureContinue:focus-visible{
   outline:2px solid #d2b883;outline-offset:4px;
