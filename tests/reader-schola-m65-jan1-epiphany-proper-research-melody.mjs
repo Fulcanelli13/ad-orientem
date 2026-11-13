@@ -19,13 +19,13 @@ vm.runInNewContext(readFileSync(new URL('../assets/vendor/exsurge/exsurge.min.js
 const exsurge=sandbox.exsurge;
 assert.ok(exsurge);
 assert.equal(PROPER_M65_RESEARCH_SOURCES.length,10);
-assert.equal(PROPER_RESEARCH_SOURCES.length,50);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
+assert.equal(PROPER_RESEARCH_SOURCES.length,59);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
 assert.equal(PROPER_M65_RESEARCH_SOURCES.filter(x=>x.week==='NATIVITY_OCTAVE').length,5);
 assert.equal(PROPER_M65_RESEARCH_SOURCES.filter(x=>x.week==='EPIPHANY').length,5);
 assert.deepEqual(PROPER_M65_RESEARCH_SOURCES.map(x=>x.selectionId),pinned.scores.map(x=>x.selectionId));
 assert.equal(PROPER_M65_RESEARCH_SOURCES.reduce((s,x)=>s+x.sourceNotes,0),1663);
-assert.equal(PROPER_RESEARCH_SOURCES.reduce((s,x)=>s+x.sourceNotes,0),8474);
+assert.equal(PROPER_RESEARCH_SOURCES.reduce((s,x)=>s+x.sourceNotes,0),10036);
 const christmas=new Map(PROPER_M62_RESEARCH_SOURCES.map(x=>[x.selectionId,x]));
 const archive=new Map();
 let reused=0,newScores=0,newNotes=0;

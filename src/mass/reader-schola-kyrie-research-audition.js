@@ -436,6 +436,16 @@ export function createKyrieXviResearchAudition({root,
           INTROIT:'Introit',GRADUAL:'Gradual',ALLELUIA:'Alleluia',
           OFFERTORY:'Offertory',COMMUNION:'Communion'
         });
+        // M67: keep the first Holy Family source visible as a clearly
+        // disabled textual witness, not an enabled audio option.
+        if(week==='HOLY_FAMILY'){
+          const held=doc.createElement('option');
+          held.value='HOLY_FAMILY_INTROIT';
+          held.textContent='Introit · Exsultet / Exsultat · editorial text hold';
+          held.disabled=true;
+          held.setAttribute('disabled','');
+          sourcePicker.append(held);
+        }
         for(const spec of PROPER_RESEARCH_SOURCES){
           if(!spec.selectionId.startsWith(week+'_'))continue;
           const option=doc.createElement('option');

@@ -45,8 +45,8 @@ assert.deepEqual(registry.counts,{
  uniqueArchivalScoreIdsInThisAudit:10,missingArchiveTranscriptions:0,
  sourceDigitalNoteheadsAllSlots:1711,sourceDigitalNoteheadsCertifiedForResearch:true});
 assert.equal(m65.scores.length,10);
-assert.equal(PROPER_RESEARCH_SOURCES.length,50);
-assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,50);
+assert.equal(PROPER_RESEARCH_SOURCES.length,59);
+assert.equal(new Set(PROPER_RESEARCH_SOURCES.map(x=>x.selectionId)).size,59);
 assert.equal(registry.scores.length,10);
 assert.equal(registry.textualVariantHolds.length,1);
 assert.equal(registry.textualVariantHolds[0].selectionId,'HOLY_FAMILY_INTROIT');
@@ -79,8 +79,13 @@ for(const spec of registry.scores){
  assert.ok(!seen.has(spec.selectionId));seen.add(spec.selectionId);
  assert.ok(!identity.has(spec.scoreId));identity.add(spec.scoreId);
  assert.ok(!m65.scores.some(x=>x.scoreId===spec.scoreId));
- assert.ok(!PROPER_RESEARCH_SOURCES.some(x=>x.scoreId===spec.scoreId),
-  'M66 source must not duplicate the existing player');
+ assert.ok(!PROPER_RESEARCH_SOURCES.filter(x=>
+    !x.selectionId.startsWith('HOLY_FAMILY_') &&
+    !x.selectionId.startsWith('EPIPHANY2_')).some(x=>x.scoreId===spec.scoreId),
+  'M66 source must not duplicate the PRE-M67 player');
+ const present=PROPER_RESEARCH_SOURCES.some(x=>x.selectionId===spec.selectionId);
+ assert.equal(present,spec.selectionId!=='HOLY_FAMILY_INTROIT',
+  'M67 must withhold only the unresolved Holy Family Introit; release all other nine');
  assert.equal(spec.sourceApproval,false);
  assert.equal(spec.printedNoteheadCertification,false);
  assert.equal(spec.autoAssign,false);
