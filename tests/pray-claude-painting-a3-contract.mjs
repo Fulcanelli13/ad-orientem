@@ -56,6 +56,7 @@ test("A3 keeps Claude choir's source rows and fixed foot response intact",()=>{
 test("the A3 port retains full bleed painting, low text gradient and reduced motion",()=>{
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.ambient\{[^}]*background-size:cover/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.bg\{[^}]*object-fit:contain/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.sw \.st>\*\{[^}]*align-self:start/,"Latin and translation must measure their own heights");
  assert.match(CLAUDE_PAINTING_A3_CSS,/\.view \.bg\{[^}]*object-position:center/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/max-width:359px/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/clamp\(250px,48dvh,340px\)/);
