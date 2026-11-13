@@ -112,4 +112,278 @@ export const EXPLORE_APP_DESIGN_STYLE = String.raw`
   }
   #ao-find-modular-root .aoExploreSurface .aoHeritageCardTitle {overflow-wrap:anywhere}
 }
+
+/* APP-DESIGN QA2: cards and folios; canonical content and image fit preserved.
+   The donor's large photo-first card becomes a source-credited, full-composition
+   illustration, not a cropped background or an uncredited decorative image. */
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview:has(.aoHeritagePlaceThumb img) {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:8px;
+  min-width:0;
+  border-radius:20px;
+  padding:12px 14px calc(15px + env(safe-area-inset-bottom))!important;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritageSheetHandle {
+  order:-3;flex:none;align-self:center;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb:not(.aoSacredPlaceSymbolFallback) {
+  order:-2;
+  grid-column:auto;grid-row:auto;
+  width:100%;max-width:100%;
+  margin:0!important;
+  border-radius:13px;
+  border:1px solid var(--explore-app-rule);
+  overflow:hidden;
+  background:#07111b;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb img {
+  display:block;width:100%;
+  height:clamp(142px,23dvh,218px)!important;
+  object-fit:contain!important;
+  object-position:center;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb figcaption {
+  position:static!important;
+  display:block!important;
+  padding:5px 8px 7px!important;
+  background:#080e15!important;
+  color:var(--explore-app-muted);
+  font:12px/1.25 var(--ao-font-body,"EB Garamond",Georgia,serif);
+  text-align:left;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLayer .aoHeritageCardHeading {
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  min-width:0;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardKicker,
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardLocation {
+  font:600 10px/1.25 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  letter-spacing:.09em;color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageCardTitle {
+  margin:2px 0 0;
+  font:500 clamp(25px,6.5vw,35px)/1.08 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  text-wrap:balance;overflow-wrap:anywhere;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritageSynopsis {
+  margin:1px 0 4px;
+  font:400 16px/1.42 var(--ao-font-body,"EB Garamond",Georgia,serif);
+  color:var(--explore-app-paper);
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritagePreviewActions {
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;min-width:0;
+}
+#ao-find-modular-root .aoHeritageSurface .aoHeritagePreviewActions > :is(button,a) {
+  flex:1 1 115px;min-width:0;min-height:44px;
+  white-space:normal;text-align:center;
+}
+/* TLM discovery: a photographed church is not a timetable occurrence. The
+   canonical card deliberately offers source-backed schedule status instead
+   of a computed "next Mass" that might omit feast-day exceptions. */
+#ao-find-modular-root .aoExploreSurface .aoFindList .aoTlmVenueCard {
+  grid-template-columns:clamp(104px,29%,148px) minmax(0,1fr);
+  border-radius:20px;
+  border-color:var(--explore-app-rule);
+  background:var(--explore-app-panel);
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  min-width:0;overflow:hidden;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueVisual {
+  background:radial-gradient(circle at 20% 10%,rgba(201,173,120,.14),transparent 65%),#101923;
+  min-width:0;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueVisual > img {
+  object-fit:contain!important;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueContent {
+  padding:14px 16px 13px;gap:7px;min-width:0;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueInstitution {
+  font:600 10px/1.35 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  letter-spacing:.09em;color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueTitle {
+  font:500 clamp(22px,3vw,28px)/1.07 var(--ao-font-display,"Cormorant Garamond",Georgia,serif)!important;
+  letter-spacing:-.012em;
+  color:var(--explore-app-paper);
+  overflow-wrap:anywhere;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueLocality,
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueSchedule {
+  font:400 15px/1.3 var(--ao-font-body,"EB Garamond",Georgia,serif);
+  color:var(--explore-app-muted);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueSchedule {
+  padding:7px 0 0;border-top:1px solid var(--explore-app-rule);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueSourceEdition {
+  font:600 10px/1.3 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  letter-spacing:.05em;color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmVenueFoot {
+  font:600 14px/1.2 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  color:var(--explore-app-gold);
+}
+/* The map's contextual results share the same typographic hierarchy. */
+#ao-find-modular-root .aoExploreSurface .aoTlmMapRailItem {
+  border-color:var(--explore-app-rule);
+  background:rgba(255,255,255,.025);
+  border-radius:14px;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmMapRailCopy strong {
+  font:500 21px/1.08 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  text-wrap:balance;
+}
+#ao-find-modular-root .aoExploreSurface .aoMapcnDiscoverItem strong {
+  font:500 21px/1.09 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+}
+#ao-find-modular-root .aoExploreSurface .aoMapcnDiscoverItem img {
+  object-fit:contain!important;
+}
+/* Liber Locorum: image-led reading, source/rights immediately below the
+   uncropped image, editorial heading, ruled facts, and indexable chapters. */
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > .aoExplorePlaceMedia {
+  background:#09131d;
+  border-radius:13px!important;
+  overflow:hidden;
+  margin:0 12px 10px!important;
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > .aoExplorePlaceMedia img {
+  display:block;width:100%;
+  height:clamp(200px,37dvh,370px)!important;
+  object-fit:contain!important;
+  object-position:center;
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > .aoExplorePlaceMedia figcaption {
+  position:static!important;
+  display:block!important;
+  padding:8px 12px!important;
+  text-align:center;
+  background:#080e15;
+  color:var(--explore-app-muted);
+  font:13px/1.4 var(--ao-font-body,"EB Garamond",Georgia,serif);
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > header {
+  text-align:center;padding:6px 18px 17px!important;
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > header h2 {
+  font:500 clamp(31px,8vw,44px)/1.02 var(--ao-font-display,"Cormorant Garamond",Georgia,serif)!important;
+  margin:8px 0 6px!important;
+  text-wrap:balance;
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceSheet > header p {
+  font:italic 18px/1.25 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceChapters {
+  display:flex;gap:18px;align-items:center;
+  overflow-x:auto;max-width:100%;
+  border-bottom:1px solid var(--explore-app-rule);
+  scrollbar-width:thin;
+  padding:2px 16px 0;
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceChapters button {
+  flex:none;min-height:44px;padding:7px 0;
+  border:0;border-bottom:2px solid transparent;
+  font:600 10px/1.2 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  text-transform:uppercase;letter-spacing:.13em;
+  color:var(--explore-app-muted);
+}
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceChapters button:focus-visible {
+  border-bottom-color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoAtlasPlaceGlanceRow,
+#ao-find-modular-root .aoExploreSurface .aoExplorePlaceRow {
+  border-bottom:1px solid var(--explore-app-rule);
+  padding-block:10px;
+  min-width:0;
+}
+#ao-find-modular-root .aoExploreSurface .aoExploreStoryChapter {
+  position:relative;margin:20px 15px 0;padding:18px 4px 14px;
+  border-top:1px solid var(--explore-app-rule);
+}
+#ao-find-modular-root .aoExploreSurface .aoExploreStoryChapter + .aoExploreStoryChapter:before {
+  content:"✣";position:absolute;top:-12px;left:calc(50% - 16px);
+  width:32px;text-align:center;background:var(--explore-app-night);
+  color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoExploreStoryChapter h3 {
+  font:500 28px/1.1 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  text-align:center;text-wrap:balance;
+  margin:0 0 14px;
+}
+#ao-find-modular-root .aoExploreSurface .aoExploreStoryChapter > p {
+  font:400 18px/1.55 var(--ao-font-body,"EB Garamond",Georgia,serif);
+  margin:0 0 9px;
+}
+#ao-find-modular-root .aoExploreSurface .aoExploreStoryEvidence a {
+  min-height:44px;display:inline-flex;align-items:center;
+  font:600 10px/1.25 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  letter-spacing:.06em;color:var(--explore-app-gold);
+}
+/* Church profile: calendar-style weekly row treatment but NO inferred next
+   event. Existing ministry, site and celebration distinctions remain visible. */
+#ao-find-modular-root .aoExploreSurface .aoTlmChurchProfile .aoTlmProfileSpotlight {
+  background:linear-gradient(180deg,rgba(201,173,120,.035),transparent);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileHeading {
+  text-align:center;padding:16px 18px 20px;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileHeading h2 {
+  font:500 clamp(30px,7.5vw,44px)/1.02 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  text-wrap:balance;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileLocation {
+  font:italic 18px/1.2 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  color:var(--explore-app-gold);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource {
+  margin:14px 0;padding:16px;
+  background:linear-gradient(180deg,rgba(201,173,120,.065),rgba(201,173,120,.01));
+  border:1px solid var(--explore-app-rule);
+  border-radius:18px;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource h4 {
+  font:500 23px/1.15 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+  color:var(--explore-app-paper);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource .aoTlmProfileSchedule {
+  display:flex;gap:12px;align-items:flex-start;
+  padding:11px 2px;border-bottom:1px solid var(--explore-app-rule);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource .aoTlmProfileSchedule:last-of-type {
+  border-bottom:0;
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource .aoTlmProfileSchedule small {
+  font:600 10px/1.4 var(--ao-font-ritual,"Cinzel",Georgia,serif);
+  color:var(--explore-app-muted);
+}
+#ao-find-modular-root .aoExploreSurface .aoTlmProfileWeeklySource .aoTlmProfileSchedule strong {
+  font:500 20px/1.18 var(--ao-font-display,"Cormorant Garamond",Georgia,serif);
+}
+@media(max-width:420px) {
+  #ao-find-modular-root .aoExploreSurface .aoFindList .aoTlmVenueCard {
+    grid-template-columns:92px minmax(0,1fr);min-width:0;
+  }
+  #ao-find-modular-root .aoExploreSurface .aoTlmVenueContent {
+    padding:11px 10px;gap:5px;
+  }
+  #ao-find-modular-root .aoExploreSurface .aoTlmVenueTitle {
+    font-size:clamp(21px,6vw,25px)!important;
+  }
+  #ao-find-modular-root .aoExploreSurface .aoTlmVenueInstitution {font-size:9px}
+}
+@media(max-width:360px) {
+  #ao-find-modular-root .aoExploreSurface .aoFindList .aoTlmVenueCard {
+    grid-template-columns:82px minmax(0,1fr);
+  }
+  #ao-find-modular-root .aoExploreSurface .aoTlmVenueVisual {min-height:154px}
+  #ao-find-modular-root .aoExploreSurface .aoTlmVenueTitle {font-size:21px!important}
+  #ao-find-modular-root .aoExploreSurface .aoHeritageCardLayer .aoHeritagePreview .aoHeritagePlaceThumb img {
+    height:156px!important;
+  }
+}
+
 `;
