@@ -202,7 +202,33 @@ try{
    });
    assert.ok(geo.visible&&geo.atFoot,id+" footer detached from painting: "+JSON.stringify(geo));
    assert.equal(geo.answer,expectedAnswer,id+" footer did not match the selected canonical response");
-   reports.push({width,id,kind:"litany",sourceRowCount:detail.sourceRowCount,choirFoot:geo});
+   // A3 retains Claude Choir's Aa panel, language selection and the original
+   // fixed/inline response mode. Its panel must overlay, not sit behind, art.
+   const aa=page.locator("#aoPray435930.open .aoP435930Head [data-p435930-choir-aa]");
+   assert.equal(await aa.count(),1,id+" lost the Choir language/options button");
+   await aa.click({timeout:8000});
+   const menu=page.locator("#aoPray435930.open [data-ao-claude-choir-menu]");
+   await menu.waitFor({state:"visible",timeout:8000});
+   const panel=await menu.evaluate(el=>{
+    const r=el.getBoundingClientRect(),style=getComputedStyle(el);
+    return {top:r.top,width:r.width,right:r.right,zIndex:Number(style.zIndex)};
+   });
+   assert.ok(panel.top>=58&&panel.right<=width+2&&panel.zIndex>30,
+    id+" Choir Aa menu is off-screen or behind the painting: "+JSON.stringify(panel));
+   await menu.locator('[data-p435930-choir-language="la"]').click({timeout:8000});
+   await choir.locator('.aoClaudeChoirScroll[lang="la"]').waitFor({state:"visible",timeout:8000});
+   assert.ok(await choir.locator(".aoClaudeChoirBeat").count()>5,id+" Latin language switch lost source invocations");
+   await page.screenshot({path:resolve(out,width+"-"+id+"-choir-latin.png"),fullPage:false});
+   await aa.click({timeout:8000});
+   await menu.locator('[data-p435930-choir-response="inline"]').click({timeout:8000});
+   assert.ok(await choir.locator(".aoClaudeChoirInlineResponse").count()>5,
+    id+" inline option did not restore canonical response pairs");
+   assert.equal(await foot.evaluate(el=>el.hidden),true,id+" fixed footer remained active in inline mode");
+   await aa.click({timeout:8000});
+   await menu.locator('[data-p435930-choir-response="bar"]').click({timeout:8000});
+   assert.equal(await choir.locator(".aoClaudeChoirInlineResponse").count(),0,
+    id+" inline response still shown after bar restored");
+   reports.push({width,id,kind:"litany",sourceRowCount:detail.sourceRowCount,choirFoot:geo,optionsVerified:true});
   }
   await page.evaluate(()=>window.AO_PRAY_V435930.close({silent:true}));
   const restoredRibbon=await page.evaluate(()=>{
