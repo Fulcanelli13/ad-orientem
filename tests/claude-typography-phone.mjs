@@ -219,8 +219,9 @@ try{
    assert.ok(Math.abs(angelus.versicle.words.size-verseExpected)<.3,
     "Angelus V/R prototype size mismatch: "+JSON.stringify(angelus));
    assert.ok(angelus.versicle.speaker?.family.includes("EB Garamond")&&
-    Math.abs(angelus.versicle.speaker.size-17)<.3,
-    "Angelus source glyphs must be EB Garamond 17px: "+JSON.stringify(angelus));
+    Math.abs(angelus.versicle.speaker.size-17)<.3&&
+    angelus.versicle.speaker.weight===500,
+    "Angelus source glyphs must be EB Garamond 500 at 17px: "+JSON.stringify(angelus));
    assert.ok(angelus.hail.words?.family.includes("EB Garamond")&&
     Math.abs(angelus.hail.words.size-hailExpected)<.3,
     "Complete Hail Mary must not inherit the V/R display face: "+JSON.stringify(angelus));
