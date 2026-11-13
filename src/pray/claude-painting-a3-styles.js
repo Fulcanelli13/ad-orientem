@@ -15,7 +15,7 @@ const LINES=[
 '#aoPray435930.aoPaintingA3Active .aoP435930Head{display:flex!important;justify-content:space-between!important;align-items:center!important;height:60px!important;min-height:60px!important;max-height:60px!important;padding:8px 12px!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}',
 '#aoPray435930.aoPaintingA3Active .aoP435930Head>div,#aoPray435930.aoPaintingA3Active .aoP435930Head>button:not(.aoP435930Back):not(.aoP435930Home){display:none!important}',
 '#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoP435930Back,#aoPray435930.aoPaintingA3Active .aoP435930Head>.aoP435930Home{position:relative!important;pointer-events:auto!important;z-index:1!important}',
-'body:has(#aoPray435930.aoPaintingA3Active) #ao-global-ribbon{display:none!important}',
+'body.aoP435930Open:has(#aoPray435930.aoPaintingA3Active) #ao-global-ribbon{display:none!important}',
 
 '#aoPray435930.aoPaintingA3Active .aoP435930Head h1,#aoPray435930.aoPaintingA3Active .aoP435930Head p{display:none!important}',
 '#aoPray435930 .aoClaudePaintingA3Host{position:absolute!important;inset:0!important;margin:0!important;padding:0!important;display:block!important;max-width:none!important;overflow:hidden!important;background:transparent!important}',
