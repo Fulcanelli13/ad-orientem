@@ -70,6 +70,13 @@ const liveClients=new Map();
 const OFFLINE_CRITICAL_LAZY_OWNER=new URL("src/pray/browser-entry.js",BASE).href;
 // The first-use Angelus cinematic is a local, approved work, not a network image.
 const OFFLINE_CRITICAL_ANGELUS_ART=new URL("assets/pray/angelus/tanner-annunciation-1898.webp",BASE).href;
+/* Five exact, licensed Home V9 typefaces must be part of each committed
+ * bootstrap: no reliance on a Google Fonts network response while offline. */
+const OFFLINE_CRITICAL_CLAUDE_FONTS=[
+ "cinzel-variable.woff","cormorant-variable.woff",
+ "cormorant-italic-variable.woff","eb-garamond-variable.woff",
+ "eb-garamond-italic-variable.woff"
+].map(name=>new URL("assets/fonts/claude-v9/"+name,BASE).href);
 // Include the two complete original private Litanies in each committed installed snapshot.
 const OFFLINE_CRITICAL_PRIVATE_LITANY=[
  new URL("data/pray/private-litany-of-saints-1883-en.v1.json",BASE).href,
@@ -189,7 +196,7 @@ async function stageSnapshot(){
   // A resource is charged against the hard item limit only once, even if
   // both the HTML and an ESM/CSS import refer to it. Keep queue identity
   // distinct from actual certified resources (which are still hashed).
-  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,...OFFLINE_CRITICAL_PRIVATE_LITANY,OFFLINE_CRITICAL_ROGATIONS_LATIN,OFFLINE_CRITICAL_EASTER_VIGIL_LITANIES])];
+  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,...OFFLINE_CRITICAL_CLAUDE_FONTS,...OFFLINE_CRITICAL_PRIVATE_LITANY,OFFLINE_CRITICAL_ROGATIONS_LATIN,OFFLINE_CRITICAL_EASTER_VIGIL_LITANIES])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
