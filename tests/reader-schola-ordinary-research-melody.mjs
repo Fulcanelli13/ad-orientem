@@ -23,7 +23,7 @@ const movements=['GLORIA','CREDO','SANCTUS_BENEDICTUS','AGNUS_DEI'];
 assert.deepEqual([...new Set(ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement))],movements);
 const sourceKeys=ORDINARY_M54_RESEARCH_SOURCES.map(x=>x.movement+':'+x.settingId);
 assert.equal(new Set(sourceKeys).size,14,'Every source-bound movement+setting must be unique');
-const results=[];
+const results=[],holds=[];
 for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
  const source=offlineKyrialeResearchScore(spec.movement,spec.settingId);
  assert.ok(source);
@@ -54,6 +54,16 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
      diagnostic.renderedCounts=counts;
      diagnostic.trailingNotes=current;
      diagnostic.totalRendered=score.notes.length;
+     const sourceOrder=score.notations.flatMap(n=>n.notes??[]);
+     diagnostic.missingRawNotes=sourceOrder.map((n,i)=>({
+       ordinal:i+1,sourceIndex:n.sourceIndex,
+       sourceGabc:String(n.sourceGabc??''),
+       notation:n.constructor?.name??'Unknown',
+       shape:n.shape??null,
+       staffPosition:n.staffPosition,
+       pitch:n.pitch?{step:n.pitch.step,octave:n.pitch.octave}:null
+     })).filter(n=>!/^[a-mA-M]/.test(n.sourceGabc)).slice(0,20);
+     diagnostic.sourceRenderCountDelta=score.notes.length-sourceOrder.length;
      try{
        const result=compileExsurgeGabcResearchMelody(source.gabc,{
          exsurge,scoreId:spec.scoreId,
@@ -69,6 +79,8 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
      }catch(error){diagnostic.directCompilerError=String(error?.message??error)}
    }catch(error){diagnostic.parseError=String(error?.message??error)}
    console.error('M56_SOURCE_REVIEW_HOLD',JSON.stringify(diagnostic));
+   holds.push(spec.movement+':'+spec.settingId+' '+spec.scoreId);
+   continue;
  }
  assert.ok(output,'M56 compiler rejected '+spec.movement+':'+spec.settingId+' '+spec.scoreId);
  assert.equal(output.sourceNotes,output.playedNotes,
@@ -114,6 +126,7 @@ for(const spec of ORDINARY_M54_RESEARCH_SOURCES){
    playedNotes:output.playedNotes
  });
 }
+assert.deepEqual(holds,[],'Unapproved 1961 source transcriptions must stay withheld on Exsurge parity failures');
 assert.equal(compileOrdinaryM54ResearchMelody({
  movement:'GLORIA',settingId:'MASS_18',exsurge
 }),null,'Cannot guess omitted seasonal Gloria');
