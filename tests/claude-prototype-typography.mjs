@@ -6,11 +6,11 @@ import {DEVOTIONAL_CINEMATIC_CSS} from "../src/pray/devotional-cinematic-styles.
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const index=read("index.html");
 
-// The two Claude prayer prototypes use this exact Google Fonts family/weight tuple.
+// Prayer-prototype weights plus Home V9's additional 400/700 normal faces.
 // Home V9 embeds its own files, including EB Garamond numerals in Cormorant faces.
 assert.ok(index.includes(
- "family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500"+
- "&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+ "family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500"+
+ "&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
 ),"the published app must load every prototype weight, including italic 500");
 
 const elements=new Map();
