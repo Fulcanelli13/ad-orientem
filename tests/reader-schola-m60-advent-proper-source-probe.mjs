@@ -96,7 +96,7 @@ for(const spec of registry.scores){
  assert.equal(result.rendererFingerprint,spec.rendererFingerprint);
  assert.equal(result.pitchShapeParity,true,
   'Never expand a bivirga in a way that alters pitch, shape or rhythm marks');
- assert.deepEqual(result.sourceNoteHold,[],
+ assert.equal(result.sourceNoteHold.length,0,
   'Missing original source-pitch notehead prevents the preview');
  assert.ok(result.compiled&&!result.hold);
  assert.equal(result.compiled.sourceNotes,spec.expectedDigitalNoteheads);
