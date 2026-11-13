@@ -65,3 +65,64 @@ test("the A3 port retains full bleed painting, low text gradient and reduced mot
  assert.match(CLAUDE_PAINTING_A3_CSS,/prefers-reduced-motion/);
  assert.match(CLAUDE_PAINTING_A3_CSS,/aoClaudeChoirResponse/);
 });
+
+import {PRAY_CANONICAL_DATA_V435930 as canon} from "../src/pray/canonical-data.js";
+import {
+ a3CuratedPassages,a3ReadingLayout,A3_FOCUS_CUTS,A3_FIT_RATIO
+} from "../src/pray/claude-painting-a3-experience.js";
+
+test("all curated focused passages preserve the exact published text in LA/EN/FR",()=>{
+ for(const id of Object.keys(A3_FOCUS_CUTS)){
+   const record=canon.prayers[id];
+   assert.ok(record,id+" must be in canonical corpus");
+   for(const lang of ["la","en","fr"]){
+     const original=record[lang];
+     const pieces=a3CuratedPassages(id,original,lang);
+     assert.ok(pieces?.length>1,id+" "+lang);
+     assert.equal(pieces.join(""),original,id+" "+lang+" no paraphrase or loss");
+     assert.equal(pieces.some(p=>!p.trim()),false);
+   }
+ }
+});
+test("contemplative splitting is disabled for uncurated prayers or changed witnesses",()=>{
+ assert.equal(a3CuratedPassages("unlisted","Some words. Another.","en"),null);
+ assert.equal(a3CuratedPassages("foundations_our_father","An alternate wording.","la"),null);
+ assert.equal(a3CuratedPassages("foundations_our_father",null,"la"),null);
+});
+test("40 percent text-fit decision uses real measured text height",()=>{
+ assert.equal(A3_FIT_RATIO,0.40);
+ assert.equal(a3ReadingLayout(240,600),"cinematic");
+ assert.equal(a3ReadingLayout(241,600),"veil");
+ assert.equal(a3ReadingLayout(0,600),"cinematic");
+ assert.equal(a3ReadingLayout(600,0),"cinematic");
+});
+test("standalone A3 surfaces provide the original painting and contextual mode controls",()=>{
+ const p=canon.prayers.foundations_our_father;
+ const h=renderClaudePaintingA3({id:p.id,record:p,photo,language:"fr",esc});
+ assert.match(h,/data-ao-a3-mode="pray"/);
+ assert.match(h,/data-ao-a3-mode="focus"/);
+ assert.match(h,/aoA3VeilToggle/);
+ assert.match(h,/data-ao-a3-focus-next/);
+ assert.match(h,/data-a3-face="la"/);
+ assert.match(h,/data-a3-face="vern"/);
+ assert.match(h,/data-ao-a3-focus-step="0"/);
+ assert.match(h,/<img class="bg"/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/aoA3FitVeil/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/aoA3ModeFocus/);
+ assert.match(CLAUDE_PAINTING_A3_CSS,/\.aoA3ModeFocus \.sh\{background:linear-gradient/);
+ assert.doesNotMatch(CLAUDE_PAINTING_A3_CSS,/\.gl\{/);
+});
+test("unverified focus text never triggers punctuation splitting or made-up verses",()=>{
+ const unknown={title:"Long Prayer",la:"A prayer with words; and more words.",en:"A prayer with words; and more words."};
+ const h=renderClaudePaintingA3({id:"other_prayer",record:unknown,photo,esc});
+ assert.doesNotMatch(h,/data-ao-a3-mode="focus"/);
+ assert.match(h,/A prayer with words/);
+});
+test("Choir remains a single continuous prayer with no contemplation replacement",()=>{
+ const h=renderClaudePaintingA3({id:"litany_loreto_1962",record,photo,kind:"litany",esc,
+    choirRows:'<p class="aoChoirBeat">Kyrie eleison.</p>',
+    choirBar:'<div class="aoClaudeChoirResponse"></div>'});
+ assert.doesNotMatch(h,/data-ao-a3-mode="focus"/);
+ assert.match(h,/aoClaudeChoirResponse/);
+ assert.match(h,/data-ao-a3-kind="litany"/);
+});
