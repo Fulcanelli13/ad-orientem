@@ -14,7 +14,7 @@ const index=read('../data/mass/chant-corpus/gr1961-proper-index.json');
 assert.equal(registry.schema,'ao-schola-m58-advent1-five-proper-research-source-pilot-v1');
 assert.equal(registry.calendarContext.date,'2026-11-29');
 assert.equal(registry.calendarContext.automaticMassSelection,false);
-assert.equal(registry.developmentStage,'RESEARCH_ENGINE_PROBE_NOT_LIVE_PLAYER');
+assert.equal(registry.developmentStage,'SOURCE_LOCKED_FIVE_SCORE_COMPILER_PARITY_PROBE_NOT_LIVE_PLAYER');
 assert.equal(index.sourceEditionId,2);
 assert.equal(index.status,'RESEARCH_ONLY_NOT_MASS_READER');
 assert.equal(index.screening.validStaged,1195);
@@ -51,12 +51,34 @@ for(const spec of registry.chantRoles){
  assert.equal(sha,spec.gabcSha256,'Original GABC bytes must remain source-authenticated');
  assert.equal(sha,source.sha256,'Research record cannot override the 1195-score archive SHA');
  assert.ok(/^\([cf][1-4]\)/.test(source.gabc.trim()));
- const wrapped='name:'+spec.incipit+';\noffice-part:'+spec.officePart+';\n%%\n'+source.gabc;
+ const prefix='name:'+spec.incipit+';\noffice-part:'+spec.officePart+';\n%%\n';
+ const wrapped=prefix+source.gabc;
  assert.ok(wrapped.includes('%%\n('));
+ const canonicalContext=new exsurge.ChantContext();
+ const canonical=new exsurge.ChantScore(canonicalContext,
+   exsurge.Gabc.createMappingsFromSource(canonicalContext,wrapped),true);
+ canonical.performLayout(canonicalContext);
+ let adaptedBody=source.gabc;
+ const adaptations=spec.vendoredExsurgeEquivalentBivirgaReplacements??[];
+ for(const adaptation of adaptations){
+   assert.equal(adaptedBody.split(adaptation.from).length-1,1,
+     'Never normalize an unknown or unexpectedly repeated GABC token');
+   adaptedBody=adaptedBody.replace(adaptation.from,adaptation.to);
+ }
+ const researchGabc=prefix+adaptedBody;
  const context=new exsurge.ChantContext();
  const parsed=new exsurge.ChantScore(context,
-   exsurge.Gabc.createMappingsFromSource(context,wrapped),true);
+   exsurge.Gabc.createMappingsFromSource(context,researchGabc),true);
  parsed.performLayout(context);
+ const pitchShape=n=>({
+   staffPosition:n.staffPosition,step:n.pitch?.step,octave:n.pitch?.octave,
+   shape:n.shape,mora:n.morae?.length??0,episema:n.episemata?.length??0
+ });
+ assert.deepEqual(parsed.notations.flatMap(n=>n.notes??[]).map(pitchShape),
+  canonical.notations.flatMap(n=>n.notes??[]).map(pitchShape),
+  'Research renderer cannot change any source pitch, notehead shape or sign');
+ assert.equal(createHash('sha256').update(source.gabc,'utf8').digest('hex'),sha,
+  'Archived GABC must remain unchanged by renderer normalization');
  const sourceNotes=parsed.notations.flatMap(n=>n.notes??[]);
  const counts=[];let phraseNotes=0;
  for(const notation of parsed.notations){
@@ -64,13 +86,15 @@ for(const spec of registry.chantRoles){
   else phraseNotes+=notation.notes?.length??0;
  }
  assert.equal(phraseNotes,0,'Only completed source phrases are eligible');
- assert.ok(sourceNotes.length>5,'Proper must contain real GABC noteheads');
+ assert.equal(counts.length,spec.expectedGabcSections);
+ assert.equal(sourceNotes.length,spec.expectedDigitalNoteheads,
+  'Exact original-renderer GABC notehead count changed');
  const unmapped=sourceNotes.filter(n=>!/^[a-mA-M]/.test(n.sourceGabc??''));
  let prepared=null,hold=null;
  try{
-  const melody=compileExsurgeGabcResearchMelody(wrapped,{
+  const melody=compileExsurgeGabcResearchMelody(researchGabc,{
    exsurge,scoreId:spec.scoreId,
-   expectedFingerprint:gabcResearchFingerprint(wrapped),
+   expectedFingerprint:gabcResearchFingerprint(researchGabc),
    expectedPhraseNoteCounts:counts,
    phraseSequence:counts.map((_,i)=>i)
   });
@@ -79,6 +103,8 @@ for(const spec of registry.chantRoles){
  }catch(error){hold=error.code??String(error?.message??error)}
  const record={
   role:spec.role,scoreId:spec.scoreId,page:spec.gradualeRomanum1961Page,
+  researchRendererEquivalentBivirgaExpansion:adaptations.length,
+  sourceGabcUnmodified:source.gabc===archived[0].gabc,
   sourceSha256:sha,sourceCount:sourceNotes.length,renderedNoteHeads:
     parsed.notes.filter(n=>n instanceof exsurge.Note).length,
   phraseCounts:counts,unmapped:unmapped.slice(0,8).map(x=>({
@@ -91,4 +117,8 @@ for(const spec of registry.chantRoles){
 assert.equal(results.length,5);
 assert.equal(new Set(results.map(x=>x.scoreId)).size,5);
 assert.ok(results.every(x=>x.sourceSha256.length===64));
-console.log('PASS M58: five 1961 Proper GABC source identities and no unapproved liturgical assignments');
+assert.deepEqual(results.map(x=>x.sourceCount),[171,188,183,152,68]);
+assert.ok(results.every(x=>x.hold===null&&x.researchPrepared?.notes===x.sourceCount),
+ 'Every Advent I source must have exact Exsurge pitch-mapped semantic events');
+assert.ok(results.every(x=>x.sourceGabcUnmodified===true));
+console.log('PASS M58: five 1961 Proper source-authenticated chants, exact 762 digital notehead events and two renderer-only bivirga expansions; no liturgical score approval');
