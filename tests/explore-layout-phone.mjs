@@ -253,13 +253,18 @@ try{
       const world=document.querySelector('.aoHeritageWorldReset');
       const r=el.getBoundingClientRect(),w=world.getBoundingClientRect();
       const at=document.elementFromPoint(w.left+w.width/2,w.top+w.height/2);
+      const cls=at?.getAttribute?.("class")||at?.className||"";
       return {height:r.height,modal:el.getAttribute("aria-modal"),
         worldAccessible:at===world||world.contains(at),
+        worldRect:{x:w.left,y:w.top,right:w.right,bottom:w.bottom},
+        previewRect:{y:r.top,bottom:r.bottom},
+        elementAtWorld:{tag:at?.tagName||"",className:String(cls).slice(0,160)},
         actionHeights:[...el.querySelectorAll('button,a')].map(e=>e.getBoundingClientRect().height),
         overflow:document.documentElement.scrollWidth-innerWidth};
     });
     assert.equal(card.modal,"false",width+"px map still blocked by modal card");
-    assert.ok(card.worldAccessible,width+"px floating card intercepts map controls");
+    assert.ok(card.worldAccessible,
+      width+"px floating card intercepts map controls: "+JSON.stringify(card));
     assert.ok(card.height<height*.60,width+"px card covers too much map");
     assert.ok(card.actionHeights.every(h=>h>=44),width+"px undersized card action");
     assert.ok(card.overflow<=1,width+"px card overflows viewport");
