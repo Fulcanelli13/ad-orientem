@@ -117,7 +117,7 @@ export function renderClaudePaintingA3({id,record,photo,language="en",uiLanguage
  const focusBody=focus?focus.html:"";
  const body=kind==="litany"?
   '<article class="aoP435930Prayer aoChoirPrayer aoClaudeChoirPrayer" data-ao-choir-prayer="'+esc(id)+'" data-ao-choir-kind="litany">'+
-  '<div class="aoP435930Text aoChoirFaces"><div class="aoP435930SemanticFace aoChoirFace aoClaudeChoirScroll" data-ao-pray-semantic="1" lang="'+esc(language)+'">'+choirRows+'</div></div>'+
+  '<div class="aoP435930Text aoChoirFaces" data-ao-pray-semantic="1"><div class="aoP435930SemanticFace aoChoirFace aoClaudeChoirScroll" data-ao-pray-semantic="1" lang="'+esc(language)+'">'+choirRows+'</div></div>'+
   choirBar+'</article>':
   renderSwap(record,language,esc);
  return '<main class="aoP435930Body aoP435930LibraryReader aoClaudePaintingA3Host" data-ao-library-card="single" data-ao-claude-a3-view="'+esc(id)+'">'+
