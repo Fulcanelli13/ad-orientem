@@ -1,5 +1,5 @@
 // M54 — one source-locked, zero-cost procedural-melody preparation path
-// for the four non-Kyrie Ordinary movement families. This module does not
+// for the four non-Kyrie Ordinary movement families and 14 research scores. This module does not
 // create audio, UI, an approved score, a Schola event or a liturgical cue.
 import {offlineKyrialeResearchScore} from './reader-kyriale-research-gabc.js';
 import {
@@ -21,13 +21,46 @@ export const ORDINARY_M54_RESEARCH_SOURCES=freeze([
     sourceFolio:'Graduale Romanum (1961) p. 30*'}),
   freeze({movement:'AGNUS_DEI',settingId:'MASS_08',scoreId:'GREGOBASE-2760',
     title:'Agnus Dei VIII',sourceFingerprint:'9aef08a5',gabcSegments:3,
-    sourceFolio:'Graduale Romanum (1961) p. 31*'})
+    sourceFolio:'Graduale Romanum (1961) p. 31*'}),
+  // M56: ten additional already-curated CC0 GABC witnesses. Their source
+  // fingerprints are of the exact unchanged archived text, NOT a claim that
+  // every historical printed neume or Gregorian duration is certified.
+  freeze({movement:'GLORIA',settingId:'MASS_11',scoreId:'GREGOBASE-303',
+    title:'Gloria XI',sourceFingerprint:'918bfef2',gabcSegments:18,
+    sourceFolio:'Graduale Romanum (1961) p. 39*'}),
+  freeze({movement:'GLORIA',settingId:'MASS_01',scoreId:'GREGOBASE-2980',
+    title:'Gloria I',sourceFingerprint:'46e8cc3c',gabcSegments:18,
+    sourceFolio:'Graduale Romanum (1961) p. 5*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_11',scoreId:'GREGOBASE-1106',
+    title:'Sanctus XI · Benedictus',sourceFingerprint:'fcb745c8',gabcSegments:1,
+    sourceFolio:'Graduale Romanum (1961) p. 40*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_01',scoreId:'GREGOBASE-300',
+    title:'Sanctus I · Benedictus',sourceFingerprint:'c1849a80',gabcSegments:1,
+    sourceFolio:'Graduale Romanum (1961) p. 6*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_17',scoreId:'GREGOBASE-871',
+    title:'Sanctus XVII · Benedictus',sourceFingerprint:'e73e09be',gabcSegments:1,
+    sourceFolio:'Graduale Romanum (1961) p. 56*'}),
+  freeze({movement:'SANCTUS_BENEDICTUS',settingId:'MASS_18',scoreId:'GREGOBASE-298',
+    title:'Sanctus XVIII · Benedictus',sourceFingerprint:'a4e11282',gabcSegments:1,
+    sourceFolio:'Graduale Romanum (1961) p. 58*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_11',scoreId:'GREGOBASE-1243',
+    title:'Agnus Dei XI',sourceFingerprint:'af979bfa',gabcSegments:3,
+    sourceFolio:'Graduale Romanum (1961) p. 41*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_01',scoreId:'GREGOBASE-2977',
+    title:'Agnus Dei I',sourceFingerprint:'b2f6ce02',gabcSegments:3,
+    sourceFolio:'Graduale Romanum (1961) p. 7*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_17',scoreId:'GREGOBASE-1137',
+    title:'Agnus Dei XVII',sourceFingerprint:'3de26a94',gabcSegments:3,
+    sourceFolio:'Graduale Romanum (1961) p. 57*'}),
+  freeze({movement:'AGNUS_DEI',settingId:'MASS_18',scoreId:'GREGOBASE-2412',
+    title:'Agnus Dei XVIII',sourceFingerprint:'17425e51',gabcSegments:3,
+    sourceFolio:'Graduale Romanum (1961) p. 58*'})
 ]);
 const bySelection=new Map(ORDINARY_M54_RESEARCH_SOURCES.map(
   spec=>[spec.movement+':'+spec.settingId,spec]));
 export const ORDINARY_M54_POLICY=freeze({
   status:'PROVISIONAL_RESEARCH_ONLY',
-  availableInLivePlayer:false,
+  availableInLivePlayer:true,
   originalPrintedNoteheadsCertified:false,
   independentGregorianRhythmCertified:false,
   automaticAssignment:false,
