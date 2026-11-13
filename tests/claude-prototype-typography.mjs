@@ -46,6 +46,8 @@ for(const file of Object.keys(fontHashes))assert.ok(worker.includes('"'+file+'"'
 assert.ok(css.includes('--ao-font-ceremonial:var(--font-display,"Cinzel",Georgia,serif)'));
 assert.ok(css.includes('--ao-font-display:var(--font-cormorant,"Cormorant Garamond","EB Garamond",Georgia,serif)'));
 assert.ok(css.includes('--ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif)'));
+assert.ok(css.includes(".homeScreen:not(.aoH7Screens) h1"),
+ "Claude H7 donor heading must not be overridden by global Cormorant display");
 assert.match(css,/#ao-global-ribbon\s*\{\s*font-family:var\(--ao-font-ceremonial\)/);
 assert.match(css,/#aoPray435930 \.aoP435930Head h1\s*\{\s*font-family:var\(--ao-font-ceremonial\)!important/);
 
