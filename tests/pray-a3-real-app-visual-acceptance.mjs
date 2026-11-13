@@ -86,6 +86,8 @@ try{
    });
    console.log("A3_GEOMETRY "+width+" "+id+" "+JSON.stringify(geometry));
    assert.ok(geometry.root.height>=height-2,id+" painting viewport is short: "+JSON.stringify(geometry));
+   if(initial.layout==="cinematic")assert.ok(geometry.text.height<=height*.34,
+    id+" short cinematic text inherited oversized devotional scroll box: "+JSON.stringify(geometry));
    assert.equal(geometry.ribbon?.display,"none",id+" unrelated global navigation still visible");
    assert.equal(initial.imageLoaded,true,id+" actual approved photograph failed to load");
    assert.equal(initial.imageFit,"contain",id+" image cropped");
