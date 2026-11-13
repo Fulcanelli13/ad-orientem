@@ -124,7 +124,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
 
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Atlas layers and other sections","Couches de l’Atlas et autres rubriques")+'">'+L(vm.language,"Layers","Couches")+'</summary><div><strong>'+L(vm.language,"Explore further","Pour approfondir")+'</strong><nav class="aoHeritageSecondary">';
   html+='<button type="button" data-atlas-entry-tab="discover" aria-pressed="'+String(vm.filters?.atlasEntry!=="sacred")+'">'+L(vm.language,"Discover overview","Vue d’ensemble")+'</button>';
-  html+='<button type="button" data-atlas-entry-tab="sacred" aria-pressed="'+String(vm.filters?.atlasEntry==="sacred")+'">'+L(vm.language,"Sacred places","Lieux sacrés")+'</button>';
+  // Returning from Discover uses the Sacred Atlas primary tab above; no duplicate selector in Layers.
   html+='<button type="button" data-find-glossary>'+L(vm.language,"Terms and definitions","Termes et définitions")+'</button>';
   html+='<button type="button" data-bible-atlas-open>'+L(vm.language,"Biblical Atlas · map through time","Atlas biblique · carte et chronologie")+'</button>';
 
