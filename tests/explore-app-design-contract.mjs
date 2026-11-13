@@ -48,6 +48,10 @@ assert.match(sacredTabs,/data-find-filter-value="tlm"/);
 assert.match(sacredTabs,/data-atlas-entry-tab="sacred"/);
 assert.doesNotMatch(sacredTabs,/data-atlas-entry-tab="discover"/);
 assert.match(sacredSource,/data-atlas-entry-tab="discover".*Discover overview/);
+assert.equal((sacredSource.match(/data-atlas-entry-tab="sacred"/g)||[]).length,1,
+  "The primary Sacred Atlas button must be the only Sacred Atlas target");
+assert.equal((sacredSource.match(/data-atlas-entry-tab="discover"/g)||[]).length,1,
+  "Discover must be reachable once, from Layers");
 const massStart=massSource.indexOf('html+=\'<nav class="aoAtlasMassTabs"');
 const massEnd=massSource.indexOf("+'</nav>';",massStart);
 assert.ok(massStart>=0&&massEnd>massStart,"TLM Atlas navigation missing");
