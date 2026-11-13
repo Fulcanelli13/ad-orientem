@@ -440,11 +440,19 @@ export function createKyrieXviResearchAudition({root,
           if(!spec.selectionId.startsWith(week+'_'))continue;
           const option=doc.createElement('option');
           option.value=spec.selectionId;
-          option.textContent=names[spec.role]+' · '+spec.title;
+          option.textContent=names[spec.role]+' · '+spec.title+
+            (spec.selectionId==='CHRISTMAS_VIGIL_ALLELUIA'
+              ?' · Sunday Vigil only (not 2026)':'');
           sourcePicker.append(option);
         }
+        if(week==='CHRISTMAS_DAWN'){
+          const hold=doc.createElement('option');
+          hold.value='CHRISTMAS_DAWN_COMMUNION';hold.disabled=true;
+          hold.textContent='Communion · Exsulta filia · source review hold (no audio)';
+          sourcePicker.append(hold);
+        }
       }
-      // The Sunday chooser is a study selector, never a calendar command.
+      // The Mass chooser is a study selector, never a calendar command.
       properTrigger.hidden=true;
       properTrigger.dataset.researchScoreKey='';
       close();sync();

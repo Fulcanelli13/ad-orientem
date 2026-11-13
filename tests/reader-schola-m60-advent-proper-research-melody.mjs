@@ -21,7 +21,8 @@ vm.runInNewContext(bundle,sandbox,{timeout:10000});
 const exsurge=sandbox.exsurge;
 assert.equal(PROPER_M59_RESEARCH_SOURCES.length,5);
 assert.equal(PROPER_M60_RESEARCH_SOURCES.length,15);
-assert.equal(PROPER_RESEARCH_SOURCES.length,20);
+assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.selectionId.startsWith('ADVENT')).length,20);
+assert.equal(PROPER_RESEARCH_SOURCES.length,39);
 assert.equal(registry.scores.length,15);
 assert.equal(registry.digitalSourceNoteheadTotal,2792);
 assert.equal(registry.restrictions.noAutomaticLiturgicalAssignment,true);
@@ -102,7 +103,9 @@ for(const spec of PROPER_M60_RESEARCH_SOURCES){
  }));
 }
 assert.equal(PROPER_M60_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),2792);
-assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),3554);
+assert.equal(PROPER_RESEARCH_SOURCES.filter(x=>x.selectionId.startsWith('ADVENT'))
+ .reduce((n,x)=>n+x.sourceNotes,0),3554);
+assert.equal(PROPER_RESEARCH_SOURCES.reduce((n,x)=>n+x.sourceNotes,0),6739);
 for(const invalid of ['ADVENT2_TRACT','ADVENT4_WRONG','','ADVENT5_INTROIT']){
  assert.equal(properM59ResearchScore(invalid),null);
  assert.equal(compileProperM59ResearchMelody({selectionId:invalid,exsurge}),null);
