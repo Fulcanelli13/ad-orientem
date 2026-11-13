@@ -7,6 +7,7 @@ import {compileExsurgeGabcResearchMelody,gabcResearchFingerprint}
   from './reader-schola-exsurge-gabc-melody.js';
 import {scheduleGabcMelody} from './reader-schola-gabc-melody.js';
 import {PROPER_M60_RESEARCH_SOURCES} from './reader-schola-advent2-4-proper-sources.js';
+import {PROPER_M62_RESEARCH_SOURCES} from './reader-schola-christmas-proper-sources.js';
 
 const freeze=Object.freeze;
 const SUNG=new Set(['MISSA_CANTATA_SIMPLE','MISSA_CANTATA_INCENSE','SOLEMN']);
@@ -144,10 +145,11 @@ export const PROPER_M59_POLICY=freeze({
   GregorianRhythmCertified:false,localProgrammeChanged:false,
   noRemoteAudio:true,noPaidServices:true
 });
-// Preserve the M59 five-source public contract while adding only the 15
-// separately pinned Advent II–IV witnesses, never the 1195-score archive.
+// Add source-pinned Christmas witnesses without bundling the 1195-source archive.
+// Dawn Communion 1125 remains a separate editorial hold, never eligible here.
 export const PROPER_RESEARCH_SOURCES=freeze([
-  ...PROPER_M59_RESEARCH_SOURCES,...PROPER_M60_RESEARCH_SOURCES
+  ...PROPER_M59_RESEARCH_SOURCES,...PROPER_M60_RESEARCH_SOURCES,
+  ...PROPER_M62_RESEARCH_SOURCES
 ]);
 const byId=new Map(PROPER_RESEARCH_SOURCES.map(spec=>[spec.selectionId,spec]));
 export function eligibleProperM59ResearchSource({
@@ -180,7 +182,7 @@ export function compileProperM59ResearchMelody({
    return null;
  let adapted=original.gabc;
  if(spec.week){
-   // M60 only: the exact archived SHA/FNV source guarantees the input;
+   // M60/M62: pinned archival SHA/FNV guarantees the canonical input;
    // expand only the two-virga same-pitch Gregorio abbreviation proven
    // parity-preserving in the full 15-score M60 Exsurge source probe.
    const bivirgaMatches=[...adapted.matchAll(/([a-m])vv/g)];
