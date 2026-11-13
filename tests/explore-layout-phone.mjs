@@ -220,6 +220,26 @@ try{
         width+"px approved photo collapsed or is outside card: "+JSON.stringify(visual));
       assert.ok(visual.captionBelow,
         width+"px credit overlaps the approved photograph: "+JSON.stringify(visual));
+      // A 320px card used to keep Discover below the scroll fold. Its primary
+      // action now belongs to a bounded sticky dock, and must be hit-testable
+      // without the user having to scroll inside the map preview.
+      const action=await page.evaluate(()=>{
+        const sheet=document.querySelector(".aoHeritageCardLayer .aoHeritagePreview");
+        const button=sheet?.querySelector("[data-explore-expand-place]");
+        const dock=button?.closest(".aoHeritagePreviewActions");
+        const r=sheet?.getBoundingClientRect(), b=button?.getBoundingClientRect(),
+              d=dock?.getBoundingClientRect();
+        const pointX=b?(b.left+b.right)/2:0,pointY=b?(b.top+b.bottom)/2:0;
+        const target=document.elementFromPoint(pointX,pointY);
+        return {scrollTop:sheet?.scrollTop,
+          visible:b&&r?Math.max(0,Math.min(b.bottom,r.bottom)-Math.max(b.top,r.top)):0,
+          dockHeight:d?.height,
+          dockPosition:dock?getComputedStyle(dock).position:null,
+          clickable:target===button||Boolean(button?.contains(target))};
+      });
+      assert.ok(action.scrollTop===0&&action.dockPosition==="sticky"&&
+        action.dockHeight<=72&&action.visible>=40&&action.clickable,
+        width+"px Discover needs an initial-scroll gesture or is covered: "+JSON.stringify(action));
       await page.screenshot({path:resolve(atlasScreenshots,width+"-lourdes-preview.png"),animations:"disabled"});
     }
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
