@@ -1,0 +1,3321 @@
+{
+  "schema": "AO_SACRED_ATLAS_B17_CONSERVATIVE_EXISTING_IMAGE_REASSIGNMENT_20261101_V1",
+  "date": "2026-11-01",
+  "basis": "Combined A100+B15+B16 native/previews and actual visual inspection of candidate source JPEGs; original cumulative 247 remains unchanged",
+  "stats": {
+    "canonical_targets": 247,
+    "downloaded_subject_coverage_before": 130,
+    "without_download_before": 117,
+    "downloaded_file_bytes_new": 0,
+    "additional_subjects_provisionally_reused": 2,
+    "provisional_subjects_with_candidate_image": 132,
+    "remaining_without_any_image_association": 115,
+    "mixed_places_with_both_existing_and_missing": 30,
+    "explicitly_blocked_different_subject_substitutions": 18,
+    "original_20_user_KEEP_unchanged": 20,
+    "publication_ready": 0
+  },
+  "rule": "SHARE_PHOTOGRAPH_IF_THE_SAME_PHYSICAL_OBJECT_OR_IDENTICAL_CHAPEL_IS_VISIBLE; NEVER_BROAD_SAME_PLACE_SUBSTITUTE",
+  "source_image_reassignment_candidates": [
+    {
+      "from": "subject:focus:nevers-bernadette-glass-shrine",
+      "to": "subject:relic:FR:bernadette-nevers",
+      "sha256": "1121cf6befbc9f28a81e9d1a5bdd6adb9a0ad58ae9f2ceedced7331501616dc9",
+      "source_file": "File:Saint Bernadette's incorrupt body.jpg",
+      "source_artifact": "A100 original downloaded research preview #003",
+      "role": "SAME_PHYSICAL_RELIC_GLASS_SHRINE",
+      "preview_review": "REPLACE_QUALITY",
+      "quality_hold": "Flower display partly obscures lower casket; archival preview rather than native original. Obtain better original or crop before hero use.",
+      "identity_evidence": "Both canonical subjects describe St Bernadette in the same Saint-Gildard shrine at Nevers; original Commons file title and actual decoded JPEG depict a single recumbent body in a reliquary.",
+      "allow_hero": false,
+      "source_user_keep_decision_not_transferred": true,
+      "original_binary_verified_in_user_archive": true,
+      "photo_composition_inspected": true,
+      "proposed_for_reassignment_only": true,
+      "new_user_editorial_approval": false,
+      "underlying_work_rights_approved": false,
+      "publication_allowed": false
+    },
+    {
+      "from": "subject:focus:rue-du-bac-marian-chapel",
+      "to": "subject:guide-stop:FR:rue-du-bac:altar",
+      "sha256": "c495ea58d51c4047e3bf284dc69f2e9b22b212550428725358f07f57b367a2e6",
+      "source_file": "File:Chapelle Notre-Dame de la Médaille Miraculeuse1.JPG",
+      "source_artifact": "B15 GitHub original archive chunk 01, queue #011",
+      "role": "SAME_PHYSICAL_CHAPEL_INTERIOR_SITE_CONTEXT",
+      "preview_review": "SITE_CONTEXT_ONLY",
+      "quality_hold": "Broad rear-of-chapel composition includes pews and visitors; not a closeup of a precise altar object; contextual use only.",
+      "identity_evidence": "Both canonical subject entries describe the Chapel of the Miraculous Medal at 140 rue du Bac; the decoded JPEG shows the recognisable nave/interior of that same chapel.",
+      "allow_hero": false,
+      "source_user_keep_decision_not_transferred": true,
+      "original_binary_verified_in_user_archive": true,
+      "photo_composition_inspected": true,
+      "proposed_for_reassignment_only": true,
+      "new_user_editorial_approval": false,
+      "underlying_work_rights_approved": false,
+      "publication_allowed": false
+    }
+  ],
+  "distinct_object_substitutions_quarantined": [
+    {
+      "from": "subject:focus:knock-original-gable",
+      "to": "subject:focus:knock-basilica-mosaic",
+      "reason": "Original apparition gable and modern basilica mosaic are different physical structures and artworks",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:knock-original-gable",
+      "to": "subject:guide-stop:IE:knock-shrine:parish",
+      "reason": "Apparition chapel encloses original gable; not a verified image of the separate parish-church stop",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:guide-stop:IT:loreto-santa-casa:basilica",
+      "to": "subject:round1-review:IT:loreto-santa-casa:8",
+      "reason": "Basilica exterior is not the venerated Madonna inside the Holy House",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:PT:francisco-fatima",
+      "to": "subject:relic:PT:lucia-fatima",
+      "reason": "Distinct individuals and tombs; same site does not establish photo match",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:CA:anne-beaupre-1960-forearm",
+      "to": "subject:relic:CA:anne-beaupre-1892-forearm",
+      "reason": "Different documented forearm fragments and reliquaries",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:CA:anne-beaupre-1960-forearm",
+      "to": "subject:relic:CA:anne-beaupre-finger",
+      "reason": "Forearm and finger relic are different physical objects",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:padua-st-anthony-tongue",
+      "to": "subject:focus:padua-st-anthony-jawbone",
+      "reason": "Tongue and jawbone reliquaries differ",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:padua-st-anthony-tongue",
+      "to": "subject:focus:padua-st-anthony-vocal",
+      "reason": "Tongue and 1981 vocal-apparatus reliquary differ",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:IT:santa-croce-true-cross",
+      "to": "subject:relic:IT:santa-croce-thomas-finger",
+      "reason": "True Cross and Apostle Thomas relic differ",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:IT:holy-stairs",
+      "to": "subject:relic:IT:sancta-sanctorum-ark",
+      "reason": "Scala Santa steps differ from Sancta Sanctorum treasury",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:rue-du-bac-catherine-shrine",
+      "to": "subject:relic:FR:catherine-laboure",
+      "reason": "Original #030 is stained glass, not body relic (B11 explicitly REJECT_WRONG); do not reassign",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:guide-stop:FR:rue-du-bac:vincentian",
+      "to": "subject:relic:FR:vincent-heart-rue-du-bac",
+      "reason": "Source photograph shows exterior statue of Vincent de Paul, not his heart reliquary",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:relic:IT:francis-assisi",
+      "to": "subject:relic:IT:francis-first-companions",
+      "reason": "Tomb of St Francis cannot be relabelled as his companions' tombs",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:lourdes-massabielle-grotto",
+      "to": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:procession",
+      "reason": "Grotto architecture is not evidence for the processional route and fountains",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:new-basilica",
+      "to": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:old-basilica",
+      "reason": "New and old basilicas are different buildings",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:guide-stop:IE:solas-bhride-kildare:parish",
+      "to": "subject:guide-stop:IE:solas-bhride-kildare:cathedral",
+      "reason": "Catholic parish and Church of Ireland cathedral are different buildings",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:round1-review:GB:walsingham-catholic-shrine:14",
+      "to": "subject:guide-stop:GB:walsingham-catholic-shrine:slipper",
+      "reason": "Devotional statue close-up does not depict the Slipper Chapel architecture",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    },
+    {
+      "from": "subject:focus:fatima-apparitions-chapel",
+      "to": "subject:relic:PT:lucia-fatima",
+      "reason": "Apparitions Chapel is not Sister Lucia's tomb",
+      "exclusion": "NEVER_AUTOMATICALLY_ASSIGN",
+      "may_be_used_as_generic_site_context": false
+    }
+  ],
+  "same_place_groups_with_missing_features": [
+    {
+      "place_id": "place:IE:knock-shrine",
+      "downloaded": [
+        "subject:focus:knock-original-gable",
+        "subject:guide-stop:IE:knock-shrine:chapel",
+        "subject:guide-stop:IE:knock-shrine:basilica"
+      ],
+      "no_download": [
+        "subject:focus:knock-lorenzo-ferri-marble",
+        "subject:focus:knock-basilica-mosaic",
+        "subject:guide-stop:IE:knock-shrine:parish",
+        "subject:guide-stop:IE:knock-shrine:museum"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "downloaded": [
+        "subject:focus:lourdes-massabielle-grotto",
+        "subject:focus:lourdes-fabisch-statue",
+        "subject:focus:lourdes-grotto-spring",
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:grotto",
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:basilicas"
+      ],
+      "no_download": [
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:procession"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "downloaded": [
+        "subject:focus:nevers-bernadette-glass-shrine"
+      ],
+      "no_download": [
+        "subject:focus:nevers-massabielle-replica",
+        "subject:relic:FR:bernadette-nevers"
+      ],
+      "candidate_cross_reassignment_ids": [
+        "subject:relic:FR:bernadette-nevers"
+      ],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "downloaded": [
+        "subject:focus:padua-st-anthony-tongue",
+        "subject:focus:padua-treasury-chapel",
+        "subject:relic:IT:anthony-padua-tongue",
+        "subject:relic:IT:true-cross-padua"
+      ],
+      "no_download": [
+        "subject:focus:padua-st-anthony-jawbone",
+        "subject:focus:padua-st-anthony-vocal",
+        "subject:relic:IT:anthony-padua-jawbone",
+        "subject:relic:IT:anthony-padua-voice",
+        "subject:relic:IT:anthony-padua-bones",
+        "subject:relic:IT:john-paul-ii-padua"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "downloaded": [
+        "subject:focus:fatima-apparition-statue-plinth",
+        "subject:focus:fatima-apparitions-chapel",
+        "subject:relic:PT:jacinta-fatima",
+        "subject:relic:PT:francisco-fatima",
+        "subject:guide-stop:PT:fatima-sanctuary:chapel",
+        "subject:guide-stop:PT:fatima-sanctuary:rosary-basilica",
+        "subject:guide-stop:PT:fatima-sanctuary:prayer-area"
+      ],
+      "no_download": [
+        "subject:relic:PT:lucia-fatima"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "downloaded": [
+        "subject:focus:guadalupe-tilma",
+        "subject:guide-stop:MX:basilica-guadalupe-mexico-city:new-basilica"
+      ],
+      "no_download": [
+        "subject:guide-stop:MX:basilica-guadalupe-mexico-city:old-basilica"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "downloaded": [
+        "subject:guide-stop:IT:loreto-santa-casa:holy-house",
+        "subject:guide-stop:IT:loreto-santa-casa:basilica"
+      ],
+      "no_download": [
+        "subject:round1-review:IT:loreto-santa-casa:8"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "downloaded": [
+        "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+        "subject:guide-stop:DE:altoetting-gnadenkapelle:chapel"
+      ],
+      "no_download": [
+        "subject:guide-stop:DE:altoetting-gnadenkapelle:tablets"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "downloaded": [
+        "subject:round1-review:FR:sanctuary-of-our-lady-of-rocamadour:11",
+        "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:virgin"
+      ],
+      "no_download": [
+        "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:stairs",
+        "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:relics"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "downloaded": [
+        "subject:round1-review:IE:st-peters-oliver-plunkett-drogheda:12",
+        "subject:relic:IE:oliver-plunkett-head-drogheda",
+        "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:church",
+        "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:shrine"
+      ],
+      "no_download": [
+        "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:memorial"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "downloaded": [
+        "subject:round1-review:GB:walsingham-catholic-shrine:14"
+      ],
+      "no_download": [
+        "subject:guide-stop:GB:walsingham-catholic-shrine:slipper",
+        "subject:guide-stop:GB:walsingham-catholic-shrine:holy-mile"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "downloaded": [
+        "subject:round1-review:FR:chartres-notre-dame:15",
+        "subject:relic:FR:chartres-voile-vierge",
+        "subject:guide-stop:FR:chartres-notre-dame:veil",
+        "subject:guide-stop:FR:chartres-notre-dame:pilier",
+        "subject:guide-stop:FR:chartres-notre-dame:labyrinth"
+      ],
+      "no_download": [
+        "subject:guide-stop:FR:chartres-notre-dame:crypt"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "downloaded": [
+        "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+        "subject:relic:CA:anne-beaupre-1960-forearm",
+        "subject:guide-stop:CA:sainte-anne-de-beaupre:basilica",
+        "subject:guide-stop:CA:sainte-anne-de-beaupre:scala-santa"
+      ],
+      "no_download": [
+        "subject:relic:CA:anne-beaupre-finger",
+        "subject:relic:CA:anne-beaupre-1892-forearm"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "downloaded": [
+        "subject:round1-review:FR:sanctuaire-sacre-coeur-paray:18",
+        "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:chapel",
+        "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:choir"
+      ],
+      "no_download": [
+        "subject:relic:FR:margaret-mary-paray",
+        "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:jubilee"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "downloaded": [
+        "subject:focus:rue-du-bac-catherine-shrine",
+        "subject:focus:rue-du-bac-marian-chapel",
+        "subject:guide-stop:FR:rue-du-bac:vincentian",
+        "subject:guide-stop:FR:rue-du-bac:entrance"
+      ],
+      "no_download": [
+        "subject:relic:FR:catherine-laboure",
+        "subject:relic:FR:louise-de-marillac",
+        "subject:relic:FR:vincent-heart-rue-du-bac",
+        "subject:guide-stop:FR:rue-du-bac:altar",
+        "subject:guide-stop:FR:rue-du-bac:catherine"
+      ],
+      "candidate_cross_reassignment_ids": [
+        "subject:guide-stop:FR:rue-du-bac:altar"
+      ],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "downloaded": [
+        "subject:guide-stop:FR:pontmain:parish"
+      ],
+      "no_download": [
+        "subject:focus:pontmain-apparition-column",
+        "subject:guide-stop:FR:pontmain:basilica",
+        "subject:guide-stop:FR:pontmain:column"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "downloaded": [
+        "subject:relic:IT:francis-assisi",
+        "subject:guide-stop:IT:basilica-san-francesco-assisi:crypt",
+        "subject:guide-stop:IT:basilica-san-francesco-assisi:lower",
+        "subject:guide-stop:IT:basilica-san-francesco-assisi:upper"
+      ],
+      "no_download": [
+        "subject:relic:IT:francis-first-companions"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "downloaded": [
+        "subject:relic:IT:santa-croce-true-cross",
+        "subject:relic:IT:santa-croce-holy-nail",
+        "subject:relic:IT:santa-croce-titulus-crucis",
+        "subject:relic:IT:santa-croce-crown-thorns"
+      ],
+      "no_download": [
+        "subject:relic:IT:santa-croce-thomas-finger",
+        "subject:relic:IT:santa-croce-good-thief",
+        "subject:relic:IT:santa-croce-holy-sepulchre",
+        "subject:relic:IT:santa-croce-nativity-grotto"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "downloaded": [
+        "subject:relic:FR:magdalene-head-saint-maximin"
+      ],
+      "no_download": [
+        "subject:relic:FR:maximin-sarcophagus"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "downloaded": [
+        "subject:relic:IT:paul-tomb"
+      ],
+      "no_download": [
+        "subject:relic:IT:paul-chains"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "downloaded": [
+        "subject:relic:IT:holy-crib-rome"
+      ],
+      "no_download": [
+        "subject:relic:IT:matthew-rome",
+        "subject:relic:IT:jerome-rome"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "downloaded": [
+        "subject:relic:IT:holy-stairs"
+      ],
+      "no_download": [
+        "subject:relic:IT:sancta-sanctorum-ark"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "downloaded": [
+        "subject:relic:ES:teresa-heart-alba"
+      ],
+      "no_download": [
+        "subject:relic:ES:teresa-body-alba",
+        "subject:relic:ES:teresa-arm-alba"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "downloaded": [
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:statue",
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:exvotos",
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:crypt"
+      ],
+      "no_download": [
+        "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:cloister"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "downloaded": [
+        "subject:guide-stop:IE:lough-derg-station-island:island"
+      ],
+      "no_download": [
+        "subject:guide-stop:IE:lough-derg-station-island:stations",
+        "subject:guide-stop:IE:lough-derg-station-island:historic"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "downloaded": [
+        "subject:guide-stop:IE:solas-bhride-kildare:parish"
+      ],
+      "no_download": [
+        "subject:guide-stop:IE:solas-bhride-kildare:centre",
+        "subject:guide-stop:IE:solas-bhride-kildare:wells",
+        "subject:guide-stop:IE:solas-bhride-kildare:cathedral"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "downloaded": [
+        "subject:guide-stop:UG:namugongo-martyrs:basilica"
+      ],
+      "no_download": [
+        "subject:guide-stop:UG:namugongo-martyrs:grounds"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:US:champion-shrine",
+      "downloaded": [
+        "subject:guide-stop:US:champion-shrine:apparition"
+      ],
+      "no_download": [
+        "subject:guide-stop:US:champion-shrine:rosary"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "downloaded": [
+        "subject:guide-stop:PL:kalwaria-zebrzydowska:basilica"
+      ],
+      "no_download": [
+        "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
+        "subject:guide-stop:PL:kalwaria-zebrzydowska:marian"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    },
+    {
+      "place_id": "place:CO:las-lajas-ipiales",
+      "downloaded": [
+        "subject:guide-stop:CO:las-lajas-ipiales:rock"
+      ],
+      "no_download": [
+        "subject:guide-stop:CO:las-lajas-ipiales:bridge"
+      ],
+      "candidate_cross_reassignment_ids": [],
+      "need_exact_object_checks": true
+    }
+  ],
+  "subject_image_association_coverage": [
+    {
+      "subject_id": "subject:focus:knock-original-gable",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:lourdes-massabielle-grotto",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:padua-st-anthony-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:fatima-apparition-statue-plinth",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:jasna-gora-black-madonna",
+      "place_id": "place:PL:jasna-gora",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:guadalupe-tilma",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:IT:loreto-santa-casa:8",
+      "place_id": "place:IT:loreto-santa-casa",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:mariazell-magna-mater-statue",
+      "place_id": "place:AT:mariazell-basilica",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:FR:sanctuary-of-our-lady-of-rocamadour:11",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:IE:st-peters-oliver-plunkett-drogheda:12",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:GB:walsingham-catholic-shrine:14",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:FR:chartres-notre-dame:15",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:BR:aparecida-national-shrine:16",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:FR:sanctuaire-sacre-coeur-paray:18",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:BE:banneux:19",
+      "place_id": "place:BE:banneux",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:round1-review:FR:notre-dame-la-salette-fallavaux:20",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": true,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:knock-lorenzo-ferri-marble",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:knock-basilica-mosaic",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:lourdes-fabisch-statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:lourdes-grotto-spring",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:nevers-massabielle-replica",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:padua-treasury-chapel",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:padua-st-anthony-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:padua-st-anthony-vocal",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:fatima-apparitions-chapel",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:rue-du-bac-catherine-shrine",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:rue-du-bac-marian-chapel",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:focus:pontmain-apparition-column",
+      "place_id": "place:FR:pontmain",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:catherine-laboure",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:vincent-de-paul",
+      "place_id": "place:FR:chapelle-saint-vincent-paris",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:therese-carmel",
+      "place_id": "place:FR:carmel-lisieux",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:curé-ars",
+      "place_id": "place:FR:basilique-ars",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:US:seton-emmitsburg",
+      "place_id": "place:US:seton-emmitsburg",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:US:neumann-philadelphia",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:crown-of-thorns-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:cross-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:holy-nail-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:louise-de-marillac",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:vincent-heart-rue-du-bac",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:francis-assisi",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:francis-first-companions",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:rita-cascia",
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:nicholas-bari",
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:padre-pio-rotondo",
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-true-cross",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-holy-nail",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-titulus-crucis",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-crown-thorns",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-thomas-finger",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-good-thief",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-holy-sepulchre",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-croce-nativity-grotto",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:martin-tours-tomb",
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:montfort-basilica",
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:marie-louise-trichet",
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:magdalene-head-saint-maximin",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:maximin-sarcophagus",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:benedict-fleury",
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:martin-parents-lisieux",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:VA:peter-tomb",
+      "place_id": "place:VA:saint-peter-vatican",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:paul-tomb",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:paul-chains",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:holy-crib-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:matthew-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:jerome-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:holy-stairs",
+      "place_id": "place:IT:scala-santa-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:sancta-sanctorum-ark",
+      "place_id": "place:IT:scala-santa-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:james-compostela",
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:lignum-crucis-liebana",
+      "place_id": "place:ES:santo-toribio-liebana",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:teresa-body-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:teresa-heart-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:teresa-arm-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CA:brother-andre-tomb-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CA:brother-andre-heart-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:basilique-saint-denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:basilique-saint-denys-argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:cathedrale-notre-dame-amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:saint-saturnin-toulouse",
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:phalange-saint-nicolas-port",
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:main-saint-quentin",
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:suaires-saints-sens",
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CH:abbaye-saint-maurice-agaune",
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:DE:kolner-dom-three-kings",
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:basilica-san-marco-venezia",
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:basilica-san-domenico-bologna",
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:amalfi-sant-andrea",
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:ortona-san-tommaso",
+      "place_id": "place:IT:ortona-san-tommaso",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:salerno-duomo",
+      "place_id": "place:IT:salerno-duomo",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:DE:trier-sankt-matthias",
+      "place_id": "place:DE:trier-sankt-matthias",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:san-bartolomeo-isola",
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:sant-ambrogio-milano",
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:san-pietro-ciel-doro",
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-giustina-padova",
+      "place_id": "place:IT:santa-giustina-padova",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:duomo-milano",
+      "place_id": "place:IT:duomo-milano",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:margaret-mary-paray",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:bernadette-nevers",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": "1121cf6befbc9f28a81e9d1a5bdd6adb9a0ad58ae9f2ceedced7331501616dc9",
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:anthony-padua-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:anthony-padua-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:anthony-padua-voice",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:anthony-padua-bones",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:john-paul-ii-padua",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:true-cross-padua",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IN:francis-xavier-goa",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CA:anne-beaupre-finger",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CA:anne-beaupre-1892-forearm",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:CA:anne-beaupre-1960-forearm",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PT:jacinta-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PT:francisco-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PT:lucia-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:chartres-voile-vierge",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-chiara-assisi",
+      "place_id": "place:IT:santa-chiara-assisi",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-maria-minerva-rome",
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:chiesa-gesu-rome",
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:couvent-jacobins-toulouse",
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:collegiale-sainte-marthe-tarascon",
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:basilique-visitation-annecy",
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:sant-agostino-campo-marzio",
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:maria-ausiliatrice-torino",
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:sant-alfonso-pagani",
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:cattedrale-sant-agata-catania",
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:duomo-sant-eusebio-vercelli",
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:convento-san-juan-cruz-segovia",
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:san-geremia-santa-lucia-venezia",
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:GR:saint-titus-heraklion",
+      "place_id": "place:GR:saint-titus-heraklion",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:US:cathedral-katharine-drexel-philadelphia",
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:SV:catedral-metropolitana-san-salvador",
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:LB:monastery-saint-maron-annaya",
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:sacra-famiglia-bakhita-schio",
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:US:carmel-mission-basilica-serra",
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PE:convento-santo-domingo-lima",
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:GB:westminster-abbey-st-edward",
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:LU:basilica-st-willibrord-echternach",
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PL:wawel-cathedral-stanislaus",
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:LT:vilnius-cathedral-st-casimir",
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:HU:st-stephen-basilica-budapest",
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:PL:gniezno-cathedral-adalbert",
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:abbey-san-colombano-bobbio",
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:BR:pateo-do-collegio-sao-paulo",
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:saint-hilaire-le-grand-poitiers",
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santa-maria-vallicella-rome",
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:duomo-torino-sindone",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:DE:trierer-dom-heiliger-rock",
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:cathedrale-saint-etienne-cahors",
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:ES:catedral-san-salvador-oviedo",
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:FR:abbatiale-sainte-trinite-fecamp",
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:santuario-volto-santo-manoppello",
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:montecassino-abbey",
+      "place_id": "place:IT:montecassino-abbey",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:MU:jacques-desire-laval-sainte-croix",
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IE:oliver-plunkett-head-drogheda",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:GB:john-southworth-westminster",
+      "place_id": "place:GB:westminster-cathedral",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IN:thomas-santhome-mylapore",
+      "place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:relic:IT:bartolo-longo-pompei",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:grotto",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:basilicas",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:procession",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:chapel",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:choir",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:jubilee",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:statue",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:chapel",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:pardon",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:basilica",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:carmel",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:buissonnets",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:veil",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:crypt",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:pilier",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:labyrinth",
+      "place_id": "place:FR:chartres-notre-dame",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:altar",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": "c495ea58d51c4047e3bf284dc69f2e9b22b212550428725358f07f57b367a2e6",
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:catherine",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:vincentian",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:entrance",
+      "place_id": "place:FR:rue-du-bac",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:exvotos",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:cloister",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:crypt",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:pontmain:basilica",
+      "place_id": "place:FR:pontmain",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:pontmain:parish",
+      "place_id": "place:FR:pontmain",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:pontmain:column",
+      "place_id": "place:FR:pontmain",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:virgin",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:stairs",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:relics",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:knock-shrine:chapel",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:knock-shrine:basilica",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:knock-shrine:parish",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:knock-shrine:museum",
+      "place_id": "place:IE:knock-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:island",
+      "place_id": "place:IE:lough-derg-station-island",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:stations",
+      "place_id": "place:IE:lough-derg-station-island",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:historic",
+      "place_id": "place:IE:lough-derg-station-island",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:base",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:ascent",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:summit",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:church",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:shrine",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:memorial",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:centre",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:wells",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:parish",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:cathedral",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:chapel",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:rosary-basilica",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:prayer-area",
+      "place_id": "place:PT:fatima-sanctuary",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:loreto-santa-casa:holy-house",
+      "place_id": "place:IT:loreto-santa-casa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:loreto-santa-casa:basilica",
+      "place_id": "place:IT:loreto-santa-casa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:DE:altoetting-gnadenkapelle:chapel",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:DE:altoetting-gnadenkapelle:tablets",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:jasna-gora:icon-chapel",
+      "place_id": "place:PL:jasna-gora",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:jasna-gora:basilica",
+      "place_id": "place:PL:jasna-gora",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:pompei-rosary-shrine:basilica",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:pompei-rosary-shrine:supplica",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:new-basilica",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:old-basilica",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:BR:aparecida-national-shrine:basilica",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:BR:aparecida-national-shrine:porto",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:CA:sainte-anne-de-beaupre:basilica",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:CA:sainte-anne-de-beaupre:scala-santa",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:UG:namugongo-martyrs:basilica",
+      "place_id": "place:UG:namugongo-martyrs",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:UG:namugongo-martyrs:grounds",
+      "place_id": "place:UG:namugongo-martyrs",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:crypt",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:lower",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:upper",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:church",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:relics",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:GB:walsingham-catholic-shrine:slipper",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:GB:walsingham-catholic-shrine:holy-mile",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:AT:mariazell-basilica:grace",
+      "place_id": "place:AT:mariazell-basilica",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:AT:mariazell-basilica:basilica",
+      "place_id": "place:AT:mariazell-basilica",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:US:champion-shrine:apparition",
+      "place_id": "place:US:champion-shrine",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:US:champion-shrine:rosary",
+      "place_id": "place:US:champion-shrine",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:basilica",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:marian",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:BE:banneux:chapel",
+      "place_id": "place:BE:banneux",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:BE:banneux:spring",
+      "place_id": "place:BE:banneux",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:CO:las-lajas-ipiales:bridge",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "originally_downloaded_image": false,
+      "now_provisionally_has_image": false,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:CO:las-lajas-ipiales:rock",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:HR:national-shrine-of-our-lady-of-marija-bistrica:statue",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:HR:national-shrine-of-our-lady-of-marija-bistrica:church",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:basilica",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    },
+    {
+      "subject_id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:tank",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "originally_downloaded_image": true,
+      "now_provisionally_has_image": true,
+      "new_reused_candidate_sha256": null,
+      "original_KEEP_protected": false,
+      "identity_finally_verified": false,
+      "photo_rights_fully_cleared": false,
+      "published": false
+    }
+  ],
+  "approved_publication_changes": [],
+  "future_source_recovery_priority": [
+    "Recover exact previously chosen Banneux Chapel photograph without replacing protected KEEP decision",
+    "Recover exact previously chosen Madonna in Loreto Holy House photograph without relying on basilica exterior or tiny distant image",
+    "Get higher quality unambiguous St Bernadette image with body visible, if suitable",
+    "Acquire separate St Catherine Labouré bodily shrine closeup; reject stained glass image",
+    "Acquire distinct Padua tongue, jawbone and vocal apparatus closeups, never reassign each to other",
+    "Review 81 historical unacquired photo search leads against 19 outstanding targets before any new broad search"
+  ]
+}

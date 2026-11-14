@@ -1,0 +1,44 @@
+name: Sacred Atlas B16 — exact source file originals (no generic matches)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - 'tools/sacred-atlas-b16-exact-file-acquirer.py'
+      - 'data/geography/research/sacred-atlas-b16-124-custodian-exact-file-acquisition-master-20261031.v1.json'
+      - '.github/workflows/sacred-atlas-b16-exact-file-acquisition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/sacred-atlas-b16-exact-file-acquirer.py --selftest
+  acquire:
+    needs: check
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [0, 1]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/sacred-atlas-b16-exact-file-acquirer.py --batch ${{ matrix.batch }} --out artifacts/atlas-b16
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-b16-exact-unapproved-batch-${{ matrix.batch }}
+          path: artifacts/atlas-b16/
+          retention-days: 7
+          if-no-files-found: warn

@@ -1,0 +1,4311 @@
+{
+  "schema": "AO_SACRED_ATLAS_247_CUMULATIVE_RECONCILIATION_20261101_V1",
+  "date": "2026-11-01",
+  "interpretation": "Physical downloaded image coverage across all available research batches; not individual batch deficits, not the larger 530-place catalogue.",
+  "summary": {
+    "targets": 247,
+    "subjects_with_downloaded_files": 130,
+    "subjects_without_downloaded_files": 117,
+    "downloaded_image_assignments": 139,
+    "original_100_preview_positions": 100,
+    "original_100_unique_preview_sha256": 94,
+    "B15_downloaded_originals": 23,
+    "B16_downloaded_photo_files": 16,
+    "B16_new_subjects": 7,
+    "B16_overlapping_B15_subjects": 3,
+    "preliminarily_matching_subjects": 44,
+    "protected_user_KEEP_total": 20,
+    "protected_KEEP_with_binary": 18,
+    "protected_KEEP_without_binary": 2,
+    "all_subjects_publication_ready": 0,
+    "unique_known_hashes_from_first100_and_B16": 110,
+    "unique_image_files_proven_by_all_archive_hashes": 133
+  },
+  "caveats": [
+    "The initial 100 archive consists of optimized JPEG research previews, not necessarily native Commons originals.",
+    "133 byte-distinct images validated across local original A100, B15 and B16 archives (94+23+16); B15 SHA256 are in B15 original manifest, not repeated in this compact repository ledger.",
+    "A 'preliminarily matching' subject may still have poor resolution, be a contextual site image, have copyright/underlying artwork uncertainty or lack final approval.",
+    "The 117 have no downloaded image in these audited archives; many have custodian reference URLs and 19 have historic search-lead lists (81 total), not all unresearched.",
+    "20 existing KEEP decisions remain protected; two (Loreto Madonna and Banneux chapel) currently have no matching downloaded file in audited archives.",
+    "Do not infer any release or transfer editorial KEEP to a different image. No photographs newly approved or published.",
+    "B16's 128 no-download was a count scoped to B16 138-target retry, not the cumulative missing count."
+  ],
+  "rows": [
+    {
+      "original_index": 1,
+      "subject_id": "subject:focus:knock-original-gable",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Apparition Chapel with original church gable",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "60a081580e11963a1678084ecae3dc3424993ff9790f0d3b31a9bf7d964c7e53",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 2,
+      "subject_id": "subject:focus:lourdes-massabielle-grotto",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Original Grotto of Massabielle",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "d713fd4c83f916c5d5a5214b8aa77ab4cdee6dde4089dc1a003b8156a9e526de",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 3,
+      "subject_id": "subject:focus:nevers-bernadette-glass-shrine",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "requested_subject": "Glass shrine of Saint Bernadette in the Saint-Gildard chapel",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "1121cf6befbc9f28a81e9d1a5bdd6adb9a0ad58ae9f2ceedced7331501616dc9",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 4,
+      "subject_id": "subject:focus:padua-st-anthony-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Saint Anthony's tongue reliquary",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "b9f59137832d9ac02e0eaa9b16a2b6639d7ccff4d4d83e358da77e0cdb8bfb1c",
+          "file": "File:La-lingua-di-sant-antonio.jpg",
+          "review": "MATCH_LOW_RES_GLASS_REFLECTION"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 5,
+      "subject_id": "subject:focus:fatima-apparition-statue-plinth",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Venerated Marian statue in the Chapel of the Apparitions",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RIGHTS_HOLD"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 6,
+      "subject_id": "subject:focus:jasna-gora-black-madonna",
+      "place_id": "place:PL:jasna-gora",
+      "requested_subject": "Original Black Madonna icon in its chapel",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b7e88cb4e7bbe211437b03e2c4cbab1de1465bef88e14b08d81256f70b21908e",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 7,
+      "subject_id": "subject:focus:guadalupe-tilma",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "requested_subject": "Original Guadalupan tilma in the New Basilica",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "874c4222130599b6662e16e9b474fe4bbe6d516eebb9efd63dd6902fec539b1d",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 8,
+      "subject_id": "subject:round1-review:IT:loreto-santa-casa:8",
+      "place_id": "place:IT:loreto-santa-casa",
+      "requested_subject": "Madonna inside the Holy House at Loreto",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 9,
+      "subject_id": "subject:round1-review:DE:altoetting-gnadenkapelle:9",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "requested_subject": "Black Madonna of the Chapel of Grace",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "287a66f3bad93bcf5d3f7a29e0b2b0027eece2d9a0af4202df46cd9b5d7bd540",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 10,
+      "subject_id": "subject:focus:mariazell-magna-mater-statue",
+      "place_id": "place:AT:mariazell-basilica",
+      "requested_subject": "Magna Mater Austriae on the Altar of Grace",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f2a7b2409805d6c4147c33c365a386123f0fd65d38800c11e3ffce64b10f9009",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 11,
+      "subject_id": "subject:round1-review:FR:sanctuary-of-our-lady-of-rocamadour:11",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "requested_subject": "Black Madonna of Rocamadour in the Notre-Dame chapel",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f415f806d7673336412f5b99b3c069c1aef4b95fdbff88c682f086a5504c5486",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 12,
+      "subject_id": "subject:round1-review:IE:st-peters-oliver-plunkett-drogheda:12",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "requested_subject": "Head of Saint Oliver Plunkett displayed in Saint Peter's",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 13,
+      "subject_id": "subject:round1-review:IN:basilica-bom-jesus-old-goa:13",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "requested_subject": "Silver casket/reliquary of Saint Francis Xavier",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "d3aadf3dace764a198d482d0015fc6573bf74f576972ce714d0f4381274157bc",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 14,
+      "subject_id": "subject:round1-review:GB:walsingham-catholic-shrine:14",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "requested_subject": "Statue of Our Lady in the Catholic Slipper Chapel",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "2c89662d24232f03bbf451d32393f7cfa09f6f385fb8521f120a89e154145df8",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 15,
+      "subject_id": "subject:round1-review:FR:chartres-notre-dame:15",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Notre-Dame du Pilier statue at Chartres Cathedral",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "0f716c158ddec3f71cfa18e170f219d4c3fd6e78aa604213c947af742899a5b1",
+          "file": "File:Chartres (28) Cathédrale Notre-Dame - Statue de N.D. du Pilier - 01.jpg",
+          "review": "MATCH_LOW_RES"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 16,
+      "subject_id": "subject:round1-review:BR:aparecida-national-shrine:16",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "requested_subject": "Original Our Lady of Aparecida statue in its niche",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_LOW_CONTRAST"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 17,
+      "subject_id": "subject:round1-review:CA:sainte-anne-de-beaupre:17",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Venerated statue of Saint Anne in the Basilica",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RIGHTS_HOLD"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 18,
+      "subject_id": "subject:round1-review:FR:sanctuaire-sacre-coeur-paray:18",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "requested_subject": "Apparitions Chapel associated with Saint Margaret Mary",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b64cd752d716040df6b91a494d34b90aa64ac57d32d221f3bfdbf24a5042197c",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 19,
+      "subject_id": "subject:round1-review:BE:banneux:19",
+      "place_id": "place:BE:banneux",
+      "requested_subject": "Chapel of the Virgin of the Poor at Banneux",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 20,
+      "subject_id": "subject:round1-review:FR:notre-dame-la-salette-fallavaux:20",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "requested_subject": "Apparition memorial statuary at La Salette",
+      "user_KEEP_preserved": true,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 21,
+      "subject_id": "subject:focus:knock-lorenzo-ferri-marble",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Lorenzo Ferri apparition statuary (1960)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 22,
+      "subject_id": "subject:focus:knock-basilica-mosaic",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Apparition mosaic in Knock Basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 23,
+      "subject_id": "subject:focus:lourdes-fabisch-statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Fabisch statue in the apparition niche (1864)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 24,
+      "subject_id": "subject:focus:lourdes-grotto-spring",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Spring at the Grotto of Massabielle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "156c01194a3af453096e2990c814bfe4054d104633edf4f27f846298d4ef9261",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 25,
+      "subject_id": "subject:focus:nevers-massabielle-replica",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "requested_subject": "Replica of the Lourdes Grotto at Nevers (1884)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 26,
+      "subject_id": "subject:focus:padua-treasury-chapel",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Treasury Chapel / Chapel of the Relics",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ec6a1995b59d47a414906b57417e6356c19902e192e8fa90599197b145e7ed31",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 27,
+      "subject_id": "subject:focus:padua-st-anthony-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "St Anthony's jawbone reliquary (1350)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 28,
+      "subject_id": "subject:focus:padua-st-anthony-vocal",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "St Anthony's vocal-apparatus reliquary (1981)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 29,
+      "subject_id": "subject:focus:fatima-apparitions-chapel",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Chapel of the Apparitions at Cova da Iria",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f255f43944e412c73b635c42d9aaf07ea8e1bfa9b9c7e055beb5a0ed1ea5df7c",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 30,
+      "subject_id": "subject:focus:rue-du-bac-catherine-shrine",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Saint Catherine Labouré's shrine in Rue du Bac chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "58e4e3a8e6d816d1565ea4f47fa90934074e5ab84628d137f92d71d9dd78a88c",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 31,
+      "subject_id": "subject:focus:rue-du-bac-marian-chapel",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Chapel of the Miraculous Medal, original apparition site",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "SITE_CONTEXT_ONLY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 32,
+      "subject_id": "subject:focus:pontmain-apparition-column",
+      "place_id": "place:FR:pontmain",
+      "requested_subject": "Apparition memorial column at Pontmain",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 33,
+      "subject_id": "subject:relic:FR:catherine-laboure",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "St Catherine Labouré, Rue du Bac",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 34,
+      "subject_id": "subject:relic:FR:vincent-de-paul",
+      "place_id": "place:FR:chapelle-saint-vincent-paris",
+      "requested_subject": "St Vincent de Paul's reliquary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 35,
+      "subject_id": "subject:relic:FR:therese-carmel",
+      "place_id": "place:FR:carmel-lisieux",
+      "requested_subject": "St Thérèse's reliquary at the Carmel of Lisieux",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 36,
+      "subject_id": "subject:relic:FR:curé-ars",
+      "place_id": "place:FR:basilique-ars",
+      "requested_subject": "St Jean-Marie Vianney's body at Ars",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 37,
+      "subject_id": "subject:relic:US:seton-emmitsburg",
+      "place_id": "place:US:seton-emmitsburg",
+      "requested_subject": "St Elizabeth Ann Seton — Basilica of Relics",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "cbef5068b3c5b5298a783b64165d6211d31f8c58f5f6253e969a3bbfb530088d",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 38,
+      "subject_id": "subject:relic:US:neumann-philadelphia",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "requested_subject": "St John Neumann — National Shrine",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "83fc93df923c8ed91889beee8852917ecddfe9a0e307e71b2185130b622fcc2e",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 39,
+      "subject_id": "subject:relic:FR:crown-of-thorns-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "requested_subject": "Crown of Thorns at Notre-Dame de Paris",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ce7918d31f84bb5a98063c0805f5902ba9d2199eaa6b655273574deb913625ee",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 40,
+      "subject_id": "subject:relic:FR:cross-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "requested_subject": "Relic of the True Cross at Notre-Dame",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ce7918d31f84bb5a98063c0805f5902ba9d2199eaa6b655273574deb913625ee",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 41,
+      "subject_id": "subject:relic:FR:holy-nail-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "requested_subject": "Holy Nail at Notre-Dame",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "0e65590591d057f12748b7269a669f82caa14e2dda29eede555ae789f2d79a37",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 42,
+      "subject_id": "subject:relic:FR:louise-de-marillac",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "St Louise de Marillac — Rue du Bac",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 43,
+      "subject_id": "subject:relic:FR:vincent-heart-rue-du-bac",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Heart of St Vincent de Paul — Rue du Bac",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 44,
+      "subject_id": "subject:relic:IT:francis-assisi",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Tomb of St Francis of Assisi",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "1975596b0c9043b1421703b3fe325808305f2ab3d6334f7305b5556dca1ea5a2",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 45,
+      "subject_id": "subject:relic:IT:francis-first-companions",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Early Franciscan companions at Assisi",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 46,
+      "subject_id": "subject:relic:IT:rita-cascia",
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "requested_subject": "Body of St Rita of Cascia",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ca3bee77059505e97b2b4efe831443f2d580f448c4a1488ad4ec168d5ffc1b6a",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 47,
+      "subject_id": "subject:relic:IT:nicholas-bari",
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "requested_subject": "Relics of St Nicholas at Bari",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f7aff1411eb687dbdef7671a506eaebf52510167d10f605ee90ac74c1bdfff65",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 48,
+      "subject_id": "subject:relic:IT:padre-pio-rotondo",
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "requested_subject": "St Pio of Pietrelcina — San Giovanni Rotondo",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "eb6b1f80b4706e292e47b1a7ec05a8a7d4bbe94625587763426018cc6417094d",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 49,
+      "subject_id": "subject:relic:IT:santa-croce-true-cross",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment of the True Cross",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "IDENTITY_UNCERTAIN_HOLD"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 50,
+      "subject_id": "subject:relic:IT:santa-croce-holy-nail",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Holy Nail",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b43973bee4a0241826c29e1bd474fd1e414f87ac1e9be31d5f37fa045f4ae3f0",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 51,
+      "subject_id": "subject:relic:IT:santa-croce-titulus-crucis",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Titulus Crucis",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "df6a1fc6283e20aadd103c5a1655ebe4671031a7dd300a76e1159bf9ccf83d24",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 52,
+      "subject_id": "subject:relic:IT:santa-croce-crown-thorns",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Two thorns associated with the Crown of Thorns",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 2,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_MEDIA_REJECT"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "05e27c0a561f80a78f40b6fe89afd9cea75f0b00f488983bdbf4f21f4601545e",
+          "file": "File:Entombment of Christ, whose chest is grasped by Joseph of Arimathea, with two kneeling and two standing female mourners at left and crown of thorns at bottom right MET DP832554.jpg",
+          "review": "REJECT_ENGRAVING_NOT_THORNS"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 53,
+      "subject_id": "subject:relic:IT:santa-croce-thomas-finger",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Finger bone of St Thomas the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 54,
+      "subject_id": "subject:relic:IT:santa-croce-good-thief",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment of the cross of the Good Thief",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 55,
+      "subject_id": "subject:relic:IT:santa-croce-holy-sepulchre",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment associated with the Holy Sepulchre",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 56,
+      "subject_id": "subject:relic:IT:santa-croce-nativity-grotto",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "requested_subject": "Fragment associated with the Nativity Grotto",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 57,
+      "subject_id": "subject:relic:FR:martin-tours-tomb",
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "requested_subject": "Tomb and relics of St Martin of Tours",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 2,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "c96b1f401fc8a7df85f0109c2cf416204c4e56386cfc7faf3970333a0b9c1d83",
+          "file": "File:Tombeau de Saint-Martin de Tours.jpg",
+          "review": "EXACT_TOURS_CRYPT_TOMB_PHOTO_RESEARCH"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "5608581ccf0eba0b3888781ea56367b6afd3558f7b4ed7fa8ba690fb17ba3726",
+          "file": "File:Tours - basilique Saint-Martin, crypte (05).jpg",
+          "review": "EXACT_TOURS_CRYPT_RELIQUARY_DARK_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 58,
+      "subject_id": "subject:relic:FR:montfort-basilica",
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "requested_subject": "Tomb of St Louis-Marie de Montfort",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 59,
+      "subject_id": "subject:relic:FR:marie-louise-trichet",
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "requested_subject": "Tomb of Blessed Marie-Louise Trichet",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 60,
+      "subject_id": "subject:relic:FR:magdalene-head-saint-maximin",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "requested_subject": "Reliquary of St Mary Magdalene's head",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f3d76a6b23a5fbf6facf1d0eedad6dbfafbadb694a17a25ba31df152e2a2097e",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 61,
+      "subject_id": "subject:relic:FR:maximin-sarcophagus",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "requested_subject": "Traditional sarcophagus of St Maximin",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 62,
+      "subject_id": "subject:relic:FR:benedict-fleury",
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "requested_subject": "Relics of St Benedict at Fleury Abbey",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 63,
+      "subject_id": "subject:relic:FR:martin-parents-lisieux",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "requested_subject": "Reliquary of Saints Louis and Zélie Martin",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "c16939f68d61e5008422b2cf8e0a8d4e705827b7b4c88bad290a6cad585629de",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 64,
+      "subject_id": "subject:relic:VA:peter-tomb",
+      "place_id": "place:VA:saint-peter-vatican",
+      "requested_subject": "Tomb of St Peter beneath Vatican basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "aa50db6a13998f92ce81d486da51d9d709f5fdbd92943e32c1e540875eda9920",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 65,
+      "subject_id": "subject:relic:IT:paul-tomb",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "requested_subject": "Tomb of St Paul the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 66,
+      "subject_id": "subject:relic:IT:paul-chains",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "requested_subject": "Chains traditionally associated with St Paul's imprisonment",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 67,
+      "subject_id": "subject:relic:IT:holy-crib-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "requested_subject": "Holy Crib wood at Santa Maria Maggiore",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 2,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "5de335f23b6b5de74855d775d007ac9e25f3334bd16bc5c10cef35f918aaf059",
+          "file": "File:SM Maggiore Roma fc13.jpg",
+          "review": "NAMED_SOURCE_RELIQUARY"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "7b695a8e9a7fe35cfd72bccc808a7c4480c310bb57acccfe5269ace3374dd3dc",
+          "file": "File:SM Maggiore Roma fc14.jpg",
+          "review": "NAMED_SOURCE_RELIQUARY_ALTERNATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 68,
+      "subject_id": "subject:relic:IT:matthew-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "requested_subject": "Relics traditionally identified as St Matthew",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 69,
+      "subject_id": "subject:relic:IT:jerome-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "requested_subject": "Remains traditionally identified as St Jerome",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 70,
+      "subject_id": "subject:relic:IT:holy-stairs",
+      "place_id": "place:IT:scala-santa-rome",
+      "requested_subject": "Holy Stairs — traditional steps from Pilate's praetorium",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 2,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "c1cf5f745c5790bd41cf5bc0a1354f8bc3d53bb3e810a3c39e39369594098799",
+          "file": "File:Scala Santa (Rome) 01.jpg",
+          "review": "NAMED_SOURCE_SITE_FEATURE"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "78d1f9e7a4376f59a0158b76f502abff5280bdc3f002661f0a0a448ce8c9bc33",
+          "file": "File:Scala Santa Roma Laterano.jpg",
+          "review": "NAMED_SOURCE_SITE_FEATURE_ALTERNATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 71,
+      "subject_id": "subject:relic:IT:sancta-sanctorum-ark",
+      "place_id": "place:IT:scala-santa-rome",
+      "requested_subject": "Relic treasury of the Sancta Sanctorum",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 72,
+      "subject_id": "subject:relic:ES:james-compostela",
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "requested_subject": "Reliquary and tomb of St James the Greater",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "1bc78e8874bc2c7313267dd4db98165a3226fba854231ed097afa171cd098255",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 73,
+      "subject_id": "subject:relic:ES:lignum-crucis-liebana",
+      "place_id": "place:ES:santo-toribio-liebana",
+      "requested_subject": "Lignum Crucis at Santo Toribio de Liébana",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "e2a51adbfbe5d9908416e9a4136b10c3b98ec5b045e1e5ed7681469f6a923786",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 74,
+      "subject_id": "subject:relic:ES:teresa-body-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "requested_subject": "Tomb and remains of St Teresa of Jesus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 75,
+      "subject_id": "subject:relic:ES:teresa-heart-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "requested_subject": "Relic of the heart of St Teresa of Jesus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "a667ef239251eedcf97b0c74745c177b6175cb0171fe3c3c750425fda497e726",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 76,
+      "subject_id": "subject:relic:ES:teresa-arm-alba",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "requested_subject": "Relic of St Teresa's arm",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 77,
+      "subject_id": "subject:relic:CA:brother-andre-tomb-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "requested_subject": "Tomb of Saint André Bessette",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 78,
+      "subject_id": "subject:relic:CA:brother-andre-heart-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "requested_subject": "Heart of Saint André Bessette",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 79,
+      "subject_id": "subject:relic:FR:basilique-saint-denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "requested_subject": "Traditional tomb site of Saint Denis",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 80,
+      "subject_id": "subject:relic:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "requested_subject": "Blood relic of Saint John Paul II",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ef643e987116fe054d7446bbb7624c2cad637a35c0248dae10d933008f9e1243",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 81,
+      "subject_id": "subject:relic:FR:basilique-saint-denys-argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "requested_subject": "Holy Tunic of Argenteuil",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "61f429c68947b984448f55d873c9a76a71e0dbaac509dfead5791c2eeaa0aeab",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 82,
+      "subject_id": "subject:relic:FR:cathedrale-notre-dame-amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "requested_subject": "Head relic attributed to Saint John the Baptist",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "bbd6a07ace5d123995120f1425b0ecda81c7a069175e435f37114627ad55e37a",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 83,
+      "subject_id": "subject:relic:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "requested_subject": "Relics attributed to Saint Mary Magdalene at Vézelay",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 84,
+      "subject_id": "subject:relic:FR:saint-saturnin-toulouse",
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "requested_subject": "Tomb and relics of Saint Saturninus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 85,
+      "subject_id": "subject:relic:FR:phalange-saint-nicolas-port",
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "requested_subject": "Phalanx attributed to Saint Nicholas",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 86,
+      "subject_id": "subject:relic:FR:main-saint-quentin",
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "requested_subject": "Reliquary of the hand of Saint Quentin",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "53e30e5a156abb61a77293fc14071d9ddd6edc16014594e9876b2d6e4ef9333c",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 87,
+      "subject_id": "subject:relic:FR:suaires-saints-sens",
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "requested_subject": "Historical saint-associated burial textiles of Sens treasury",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 88,
+      "subject_id": "subject:relic:CH:abbaye-saint-maurice-agaune",
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "requested_subject": "Treasury and relics of Saint Maurice and his companions",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_OBJECT_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 89,
+      "subject_id": "subject:relic:DE:kolner-dom-three-kings",
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "requested_subject": "Shrine of the Three Kings",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "719d7a8367277ed918270356659e191487fca792f85d233ea8a3f9442bf88beb",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 90,
+      "subject_id": "subject:relic:IT:basilica-san-marco-venezia",
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "requested_subject": "Tomb of Saint Mark beneath the high altar",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 91,
+      "subject_id": "subject:relic:IT:basilica-san-domenico-bologna",
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "requested_subject": "Tomb and ark of Saint Dominic",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 92,
+      "subject_id": "subject:relic:IT:amalfi-sant-andrea",
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "requested_subject": "Relics traditionally associated with Saint Andrew the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "48f49aee1e5ece2eaa47f0236b8cbe60754dcd49f2721b12d6fcc76d9cb54a13",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 93,
+      "subject_id": "subject:relic:IT:ortona-san-tommaso",
+      "place_id": "place:IT:ortona-san-tommaso",
+      "requested_subject": "Relics traditionally associated with Saint Thomas the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 94,
+      "subject_id": "subject:relic:IT:salerno-duomo",
+      "place_id": "place:IT:salerno-duomo",
+      "requested_subject": "Relics traditionally associated with Saint Matthew the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 95,
+      "subject_id": "subject:relic:DE:trier-sankt-matthias",
+      "place_id": "place:DE:trier-sankt-matthias",
+      "requested_subject": "Relics traditionally associated with Saint Matthias the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 96,
+      "subject_id": "subject:relic:IT:san-bartolomeo-isola",
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "requested_subject": "Relics traditionally associated with Saint Bartholomew the Apostle",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 97,
+      "subject_id": "subject:relic:IT:sant-ambrogio-milano",
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "requested_subject": "Relics traditionally associated with Saint Ambrose of Milan; Saint Gervasius of Milan; Saint Protasius of Milan",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "9d7bd915e87e9adc1fa6eb8c7482dde48e3d6478bea91187b82468b0e23fbaca",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 98,
+      "subject_id": "subject:relic:IT:san-pietro-ciel-doro",
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "requested_subject": "Relics traditionally associated with Saint Augustine of Hippo",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 99,
+      "subject_id": "subject:relic:IT:santa-giustina-padova",
+      "place_id": "place:IT:santa-giustina-padova",
+      "requested_subject": "Relics traditionally associated with Saint Luke the Evangelist",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "6a742762a57094ff2fe4d84163ecb374aa8f2222b605c980f3cf359d75ca79e0",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 100,
+      "subject_id": "subject:relic:IT:duomo-milano",
+      "place_id": "place:IT:duomo-milano",
+      "requested_subject": "Relics traditionally associated with Saint Charles Borromeo",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "d469a4e9131651a756c76a7cf7b4f7c922f146da94c878c389d92160abfa9ae5",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 101,
+      "subject_id": "subject:relic:FR:margaret-mary-paray",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "requested_subject": "St Margaret Mary Alacoque at Paray",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 102,
+      "subject_id": "subject:relic:FR:bernadette-nevers",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "requested_subject": "St Bernadette at Nevers",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 103,
+      "subject_id": "subject:relic:IT:anthony-padua-tongue",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Tongue of St Anthony of Padua",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "7569b60f7c724d4a32c911d36ab815a0aa25ca0fa360127fe5557956f436f4e8",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 104,
+      "subject_id": "subject:relic:IT:anthony-padua-jawbone",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Jawbone of St Anthony of Padua",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 105,
+      "subject_id": "subject:relic:IT:anthony-padua-voice",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Vocal apparatus of St Anthony",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 106,
+      "subject_id": "subject:relic:IT:anthony-padua-bones",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Other bodily relics of St Anthony",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 107,
+      "subject_id": "subject:relic:IT:john-paul-ii-padua",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Relic of St John Paul II at Padua",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 108,
+      "subject_id": "subject:relic:IT:true-cross-padua",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "requested_subject": "Relic of the True Cross at Padua",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 3,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_SUBJECT_REJECT"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "50d4df636fec72476ac3a2846cff74ebc0921b417eba64005b55694d289b9e36",
+          "file": "File:Titian - The Vendramin Family Venerating a Relic of the True Cross (detail) - WGA22811.jpg",
+          "review": "REJECT_PAINTING_NOT_RELIC"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "5b93ee4c3dac47cd9b420f6d2d3ab0fb2c209148e3fe6c8eb855916743c8e54f",
+          "file": "File:Tizian 104.jpg",
+          "review": "REJECT_PAINTING_NOT_RELIC"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 109,
+      "subject_id": "subject:relic:IN:francis-xavier-goa",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "requested_subject": "St Francis Xavier at Old Goa",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "82e5b3fe4a2dca0cc3fbd82c03911ed3237d3bfaef748600a4516f5495111339",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 110,
+      "subject_id": "subject:relic:CA:anne-beaupre-finger",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Finger-bone fragment of St Anne",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 111,
+      "subject_id": "subject:relic:CA:anne-beaupre-1892-forearm",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Forearm fragment of St Anne (1892)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 112,
+      "subject_id": "subject:relic:CA:anne-beaupre-1960-forearm",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Major forearm relic of St Anne (1960)",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "9bd10ab9160bca3f61670f520afcdf56f526cace166dc9512c06c4daa86e44d3",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 113,
+      "subject_id": "subject:relic:PT:jacinta-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "St Jacinta Marto's tomb at Fátima",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "93473cc30033d36190c646924ecd90143d222a31c5eaccc27e378c026b81ba77",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 114,
+      "subject_id": "subject:relic:PT:francisco-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "St Francisco Marto's tomb at Fátima",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SITE_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 115,
+      "subject_id": "subject:relic:PT:lucia-fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Sister Lúcia dos Santos's tomb at Fátima",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 116,
+      "subject_id": "subject:relic:FR:chartres-voile-vierge",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Veil of the Virgin at Chartres",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "037ced507b5b91a2d123b24f43f34cf59d5da564cbda5501e9e7b37faf7a2c2b",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 117,
+      "subject_id": "subject:relic:IT:santa-chiara-assisi",
+      "place_id": "place:IT:santa-chiara-assisi",
+      "requested_subject": "Relics traditionally associated with Saint Clare of Assisi",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "e8bfdf9ec3882ce433c6e36c2c1b46e19f2e345a57ae62acacf30a59be7f0066",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 118,
+      "subject_id": "subject:relic:IT:santa-maria-minerva-rome",
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "requested_subject": "Relics traditionally associated with Saint Catherine of Siena",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "6f54c53a6817f66cef8bdb2e778151e58265904eec8e5eb5b35f29f65f56975c",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 119,
+      "subject_id": "subject:relic:IT:chiesa-gesu-rome",
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "requested_subject": "Relics traditionally associated with Saint Ignatius of Loyola",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "7cd29834ac719403902f997761c18d663e56b59da36386627a4884b6d5970352",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 120,
+      "subject_id": "subject:relic:FR:couvent-jacobins-toulouse",
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "requested_subject": "Relics traditionally associated with Saint Thomas Aquinas",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "5d94697dd7a8c729b3f9c0004b00ffa469ed838fa0259300ae60efff3c353ab2",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 121,
+      "subject_id": "subject:relic:FR:collegiale-sainte-marthe-tarascon",
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "requested_subject": "Relics traditionally associated with Saint Martha of Bethany",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "bef4b6ad2474734574c08d13964704c56588412c9c6dc0d8cf765ee4355ccb16",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 122,
+      "subject_id": "subject:relic:FR:basilique-visitation-annecy",
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "requested_subject": "Relics traditionally associated with Saint Francis de Sales; Saint Jane Frances de Chantal",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 123,
+      "subject_id": "subject:relic:IT:sant-agostino-campo-marzio",
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "requested_subject": "Relics traditionally associated with Saint Monica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "1281091f04df505a9f015ca341deb06bd48034ede78921792c17700292a28cb0",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 124,
+      "subject_id": "subject:relic:IT:maria-ausiliatrice-torino",
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "requested_subject": "Relics traditionally associated with Saint John Bosco",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 125,
+      "subject_id": "subject:relic:IT:sant-alfonso-pagani",
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "requested_subject": "Relics traditionally associated with Saint Alphonsus Liguori",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 126,
+      "subject_id": "subject:relic:IT:cattedrale-sant-agata-catania",
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "requested_subject": "Relics traditionally associated with Saint Agatha of Sicily",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f3f1dd4f24a3146eec7e1818d6f0f471fb4b8eda68863f9fa2315a0bc0874cda",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 127,
+      "subject_id": "subject:relic:IT:duomo-sant-eusebio-vercelli",
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "requested_subject": "Relics traditionally associated with Saint Eusebius of Vercelli",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "dac6ec6bf84d0845c7a12fddee77dd5bb3837eba8302446046b36f9d0c2f1234",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 128,
+      "subject_id": "subject:relic:ES:convento-san-juan-cruz-segovia",
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "requested_subject": "Traditionally attributed relics of Saint John of the Cross",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 129,
+      "subject_id": "subject:relic:IT:san-geremia-santa-lucia-venezia",
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "requested_subject": "Traditionally attributed relics of Saint Lucy of Syracuse",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 130,
+      "subject_id": "subject:relic:GR:saint-titus-heraklion",
+      "place_id": "place:GR:saint-titus-heraklion",
+      "requested_subject": "Traditionally attributed relics of Saint Titus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 131,
+      "subject_id": "subject:relic:US:cathedral-katharine-drexel-philadelphia",
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "requested_subject": "Traditionally attributed relics of Saint Katharine Drexel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 132,
+      "subject_id": "subject:relic:SV:catedral-metropolitana-san-salvador",
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "requested_subject": "Traditionally attributed relics of Saint Oscar Romero",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 133,
+      "subject_id": "subject:relic:LB:monastery-saint-maron-annaya",
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "requested_subject": "Traditionally attributed relics of Saint Charbel Makhlouf",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 134,
+      "subject_id": "subject:relic:IT:sacra-famiglia-bakhita-schio",
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "requested_subject": "Traditionally attributed relics of Saint Josephine Bakhita",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 135,
+      "subject_id": "subject:relic:US:carmel-mission-basilica-serra",
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "requested_subject": "Traditionally attributed relics of Saint Junípero Serra",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 136,
+      "subject_id": "subject:relic:PE:convento-santo-domingo-lima",
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "requested_subject": "Traditionally attributed relics of Saint Rose of Lima and Saint Martin de Porres",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 137,
+      "subject_id": "subject:relic:GB:westminster-abbey-st-edward",
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "requested_subject": "Traditionally attributed relics of Saint Edward the Confessor",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 138,
+      "subject_id": "subject:relic:LU:basilica-st-willibrord-echternach",
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "requested_subject": "Traditionally attributed relics of Saint Willibrord",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 139,
+      "subject_id": "subject:relic:PL:wawel-cathedral-stanislaus",
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "requested_subject": "Traditionally attributed relics of Saint Stanislaus of Kraków",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 140,
+      "subject_id": "subject:relic:LT:vilnius-cathedral-st-casimir",
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "requested_subject": "Traditionally attributed relics of Saint Casimir",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 141,
+      "subject_id": "subject:relic:HU:st-stephen-basilica-budapest",
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "requested_subject": "Traditionally attributed relics of Saint Stephen of Hungary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 142,
+      "subject_id": "subject:relic:PL:gniezno-cathedral-adalbert",
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "requested_subject": "Traditionally attributed relics of Saint Adalbert of Prague",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 143,
+      "subject_id": "subject:relic:IT:abbey-san-colombano-bobbio",
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "requested_subject": "Traditionally attributed relics of Saint Columbanus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 144,
+      "subject_id": "subject:relic:BR:pateo-do-collegio-sao-paulo",
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "requested_subject": "Traditionally attributed relics of Saint José de Anchieta",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 145,
+      "subject_id": "subject:relic:FR:saint-hilaire-le-grand-poitiers",
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "requested_subject": "Historic Saint Hilary relic tradition",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 146,
+      "subject_id": "subject:relic:IT:santa-maria-vallicella-rome",
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "requested_subject": "Traditionally attributed relics of Saint Philip Neri",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 147,
+      "subject_id": "subject:relic:IT:duomo-torino-sindone",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "requested_subject": "Shroud of Turin — traditionally attributed burial cloth",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "75c5caf463ea4fdf2d120da847e71b1d1cb567ccd48e898f14340b8bb475ca87",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 148,
+      "subject_id": "subject:relic:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "requested_subject": "Four sacred textiles of Aachen Cathedral",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 149,
+      "subject_id": "subject:relic:DE:trierer-dom-heiliger-rock",
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "requested_subject": "Holy Robe of Trier — traditionally attributed tunic",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "a97ef91858e6d698a563ccec367083319aec74220f22fcfb2135fc24adff7540",
+          "file": "File:Holy Robe in Trier.JPG",
+          "review": "NAMED_SOURCE_HISTORICAL_2012_EXPOSITION"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 150,
+      "subject_id": "subject:relic:FR:cathedrale-saint-etienne-cahors",
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "requested_subject": "Sainte Coiffe of Cahors — reputed burial head-cloth",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "3303326a45b8f26bc6dda2fdb1b9cf59244242f16a404e31e5eddb2bb5383e57",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 151,
+      "subject_id": "subject:relic:ES:catedral-san-salvador-oviedo",
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "requested_subject": "Sudarium of Oviedo — traditionally attributed face-cloth",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 152,
+      "subject_id": "subject:relic:FR:abbatiale-sainte-trinite-fecamp",
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "requested_subject": "Precious Blood tradition of Fécamp",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 153,
+      "subject_id": "subject:relic:IT:santuario-volto-santo-manoppello",
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "requested_subject": "Holy Face of Manoppello — venerated image",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "09c47446e958b58876edf8e207282e39a868540c390f66a972fcbb08cd891b29",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 154,
+      "subject_id": "subject:relic:IT:montecassino-abbey",
+      "place_id": "place:IT:montecassino-abbey",
+      "requested_subject": "Traditionally attributed remains of Saints Benedict and Scholastica at Montecassino",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 155,
+      "subject_id": "subject:relic:MU:jacques-desire-laval-sainte-croix",
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "requested_subject": "Tomb of Blessed Jacques-Désiré Laval at Sainte-Croix",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 156,
+      "subject_id": "subject:relic:IE:oliver-plunkett-head-drogheda",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "requested_subject": "Head of St Oliver Plunkett at St Peter's, Drogheda",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+          "review": "DEDUPLICATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 157,
+      "subject_id": "subject:relic:GB:john-southworth-westminster",
+      "place_id": "place:GB:westminster-cathedral",
+      "requested_subject": "Body of St John Southworth at Westminster Cathedral",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "EXACT_SUBJECT_RESEARCH"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 158,
+      "subject_id": "subject:relic:IN:thomas-santhome-mylapore",
+      "place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "requested_subject": "Traditional tomb of St Thomas the Apostle at Santhome",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 159,
+      "subject_id": "subject:relic:IT:bartolo-longo-pompei",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "requested_subject": "Relics of St Bartolo Longo at Pompeii",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 160,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:grotto",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Massabielle Grotto",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "156c01194a3af453096e2990c814bfe4054d104633edf4f27f846298d4ef9261",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 161,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:basilicas",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Basilicas and crypt",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "bc8c9e275fcb547f5231300521b6b978275a449a133f8aa6db591be71f98f6c2",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 162,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-lourdes:procession",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "requested_subject": "Procession route and devotional fountains",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 163,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:chapel",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "requested_subject": "Chapel of the Apparitions",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b2c39d6331700a776f2388c196fe3f99411183f3b1fde7506556d3b87f5af1f6",
+          "review": "DEDUPLICATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 164,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:choir",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "requested_subject": "Historic chapel sanctuary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 165,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-sacre-coeur-paray:jubilee",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "requested_subject": "Pilgrimage encounter at the Visitation",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 166,
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:statue",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "requested_subject": "Site of the 1625 statue tradition",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 167,
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:chapel",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "requested_subject": "Historic chapel and Carmelite legacy",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 168,
+      "subject_id": "subject:guide-stop:FR:sainte-anne-d-auray:pardon",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "requested_subject": "Sanctuary during the Saint Anne pardon",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 169,
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:basilica",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "requested_subject": "Basilica and reliquary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 170,
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:carmel",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "requested_subject": "Carmel chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 171,
+      "subject_id": "subject:guide-stop:FR:basilique-sainte-therese-lisieux:buissonnets",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "requested_subject": "Les Buissonnets",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "2e81018311b3e5af5931888f6038bf03c159dae26b4b8d3d03bb75b14c9e7799",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 172,
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:veil",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Voile de la Vierge",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b5e47ae1cdb1ef59c92b705188153e47d43a8a538bd22deb55c10cb120a49602",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 173,
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:crypt",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Crypt of Fulbert",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 174,
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:pilier",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Notre-Dame du Pilier",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "0203171826e918d9e2d92f3fbdfa8e03c8503eefb1ebc391a354894206ca7580",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 175,
+      "subject_id": "subject:guide-stop:FR:chartres-notre-dame:labyrinth",
+      "place_id": "place:FR:chartres-notre-dame",
+      "requested_subject": "Nave labyrinth",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "fa26ebb88ed029ee32e643794dc71fec930857c6539b6d5ac0a33241b8ec59b9",
+          "review": "SHORTLIST_OBJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 176,
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:altar",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Chapel of the Marian visions",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 177,
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:catherine",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Remains of Saint Catherine Labouré",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 178,
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:vincentian",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "Saint Vincent and Saint Louise relics",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "77fa926ab494ffcd12cc5594dfc387fe088e7d0d3e23966d52ae559b22ad74cc",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 179,
+      "subject_id": "subject:guide-stop:FR:rue-du-bac:entrance",
+      "place_id": "place:FR:rue-du-bac",
+      "requested_subject": "140 rue du Bac pilgrim entrance",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "9cc88fccbf373f1a83f0af9c77423ac055dfc10f928168d0489af9fb81f4d4c5",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 180,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:statue",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "requested_subject": "Virgin and Child statue",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ea2839d6a4837b3d698c6d556557f6fc014107ac9b0142c759d5b7fd3a15e26c",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 181,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:exvotos",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "requested_subject": "Ex-voto museum",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "f4a41bfb0b59338fa1d957711f8ef85c5c8a43c40d60d6fb7af1cad98cdb04d7",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 182,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:cloister",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "requested_subject": "Cloister prayer circuits",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 183,
+      "subject_id": "subject:guide-stop:FR:sanctuaire-notre-dame-de-laghet:crypt",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "requested_subject": "Sanctuary crypt",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "00dbe74da326045b26786909c87b6c151d9cd36fdd8e95cdcab615a780bffa4c",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 184,
+      "subject_id": "subject:guide-stop:FR:pontmain:basilica",
+      "place_id": "place:FR:pontmain",
+      "requested_subject": "Basilica of Our Lady of Pontmain",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 185,
+      "subject_id": "subject:guide-stop:FR:pontmain:parish",
+      "place_id": "place:FR:pontmain",
+      "requested_subject": "Parish church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "8bac75463be6fba26edb46d2646a11584d5759aeefed9599a2bfa3254ed9c994",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 186,
+      "subject_id": "subject:guide-stop:FR:pontmain:column",
+      "place_id": "place:FR:pontmain",
+      "requested_subject": "Apparition memorial column",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 187,
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:virgin",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "requested_subject": "Chapel of the Black Virgin",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "4506f29b9c8fdc17f178ab402968e7a9ac8a333ff49e94de9e1f6da346bae54d",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 188,
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:stairs",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "requested_subject": "Great pilgrimage staircase",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 189,
+      "subject_id": "subject:guide-stop:FR:sanctuary-of-our-lady-of-rocamadour:relics",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "requested_subject": "Basilica and attributed relics of Saint Amadour",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 190,
+      "subject_id": "subject:guide-stop:IE:knock-shrine:chapel",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Apparition Chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "60a081580e11963a1678084ecae3dc3424993ff9790f0d3b31a9bf7d964c7e53",
+          "review": "DEDUPLICATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 191,
+      "subject_id": "subject:guide-stop:IE:knock-shrine:basilica",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Basilica of Our Lady, Queen of Ireland",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "7acb3153b544303605991ee2d4f421d9a010e689d0b1fe503e68c40247573f47",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 192,
+      "subject_id": "subject:guide-stop:IE:knock-shrine:parish",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Historic parish church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 193,
+      "subject_id": "subject:guide-stop:IE:knock-shrine:museum",
+      "place_id": "place:IE:knock-shrine",
+      "requested_subject": "Knock Museum and pilgrimage gardens",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 194,
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:island",
+      "place_id": "place:IE:lough-derg-station-island",
+      "requested_subject": "Station Island",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "3062d53b62801ee7a822c4a986289c1687a0645d5137feb7a05be8f130503856",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 195,
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:stations",
+      "place_id": "place:IE:lough-derg-station-island",
+      "requested_subject": "Penitential stations and prayer beds",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 196,
+      "subject_id": "subject:guide-stop:IE:lough-derg-station-island:historic",
+      "place_id": "place:IE:lough-derg-station-island",
+      "requested_subject": "Saints Island — historic monastic site",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 197,
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:base",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "requested_subject": "Murrisk pilgrimage starting car park",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 198,
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:ascent",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "requested_subject": "Penitential mountain path",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 199,
+      "subject_id": "subject:guide-stop:IE:croagh-patrick-murrisk-pilgrimage-base:summit",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "requested_subject": "Summit pilgrimage tradition",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 200,
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:church",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "requested_subject": "Saint Peter’s Catholic Church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 201,
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:shrine",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "requested_subject": "Shrine of Saint Oliver Plunkett",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "ac0f23de485ec547266a318628f70a81c4dbed939b4728d2eb9ae02c73c6b246",
+          "review": "DEDUPLICATE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 202,
+      "subject_id": "subject:guide-stop:IE:st-peters-oliver-plunkett-drogheda:memorial",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "requested_subject": "Martyrdom and relic history",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 203,
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:centre",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "requested_subject": "Solas Bhríde Centre and Hermitages",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 204,
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:wells",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "requested_subject": "Saint Brigid’s holy wells",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 205,
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:parish",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "requested_subject": "Saint Brigid’s Catholic parish church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "29e178f996e753af5b39677a794dc1f67ef3380cd341449a336ca57dfce60f2a",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 206,
+      "subject_id": "subject:guide-stop:IE:solas-bhride-kildare:cathedral",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "requested_subject": "Historic Saint Brigid’s Cathedral — Church of Ireland",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 207,
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:chapel",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Chapel of the Apparitions",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "be06ccfcb1c712b5969d711bc9cfca337aa8f5ee7f5541ea4fdf7b3b34692352",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 208,
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:rosary-basilica",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Basilica of Our Lady of the Rosary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "880ac594ee87d40cf58dac152fc4649f0a3b65d15e93cb51373564ae88154bdf",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 209,
+      "subject_id": "subject:guide-stop:PT:fatima-sanctuary:prayer-area",
+      "place_id": "place:PT:fatima-sanctuary",
+      "requested_subject": "Prayer Area",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 210,
+      "subject_id": "subject:guide-stop:IT:loreto-santa-casa:holy-house",
+      "place_id": "place:IT:loreto-santa-casa",
+      "requested_subject": "The Holy House",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_MEDIA_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 211,
+      "subject_id": "subject:guide-stop:IT:loreto-santa-casa:basilica",
+      "place_id": "place:IT:loreto-santa-casa",
+      "requested_subject": "Basilica of the Holy House",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "8f111717a9e103fd6a9859ee4b66f419516df85f030fc9ad44b9f1b357f4deaf",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 212,
+      "subject_id": "subject:guide-stop:DE:altoetting-gnadenkapelle:chapel",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "requested_subject": "Gnadenkapelle — Chapel of Grace",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "bf03daf4e63f8ef137fc864784e0e268101cb639da7f7aefbcc691cf35ce213f",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 213,
+      "subject_id": "subject:guide-stop:DE:altoetting-gnadenkapelle:tablets",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "requested_subject": "Votive walkway",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 214,
+      "subject_id": "subject:guide-stop:PL:jasna-gora:icon-chapel",
+      "place_id": "place:PL:jasna-gora",
+      "requested_subject": "Chapel of the Miraculous Icon",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "a863802c825f3b1dd895d9253e7955a7f0a06ac5b3eb1d77a6198eb1cae0cc63",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 215,
+      "subject_id": "subject:guide-stop:PL:jasna-gora:basilica",
+      "place_id": "place:PL:jasna-gora",
+      "requested_subject": "The monastery and basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "e2d91d2a0374f88ffb991d073acaec923ae5f7c842c32a64295cf49df981adf4",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 216,
+      "subject_id": "subject:guide-stop:IT:pompei-rosary-shrine:basilica",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "requested_subject": "Pontifical Shrine Basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 217,
+      "subject_id": "subject:guide-stop:IT:pompei-rosary-shrine:supplica",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "requested_subject": "Shrine forecourt",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 218,
+      "subject_id": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:new-basilica",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "requested_subject": "New Basilica of Guadalupe",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "98686df722c3ecd934f366ec3aeffe0423c28fde1a136804465569747311589a",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 219,
+      "subject_id": "subject:guide-stop:MX:basilica-guadalupe-mexico-city:old-basilica",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "requested_subject": "Historic Basilica — Cristo Rey",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 220,
+      "subject_id": "subject:guide-stop:BR:aparecida-national-shrine:basilica",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "requested_subject": "National Shrine Basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "05bb568958b5ae08e3d855f5d932298b5b119aac38c7c0ae7003da3519e9f957",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 221,
+      "subject_id": "subject:guide-stop:BR:aparecida-national-shrine:porto",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "requested_subject": "Porto Itaguaçu",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "b3515f02d3c4ebd5b2785e65abbe62fa76e29bcd82c02852513fe6106ad5d4c4",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 222,
+      "subject_id": "subject:guide-stop:CA:sainte-anne-de-beaupre:basilica",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Saint Anne's Basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "6a0a2ec3cd4db1389170d4888b3e565a87e741d9e046c3b4905909c63a3e6256",
+          "review": "REASSIGN_CONTEXT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 223,
+      "subject_id": "subject:guide-stop:CA:sainte-anne-de-beaupre:scala-santa",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "requested_subject": "Scala Santa and Way of the Cross",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_OBJECT_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 224,
+      "subject_id": "subject:guide-stop:UG:namugongo-martyrs:basilica",
+      "place_id": "place:UG:namugongo-martyrs",
+      "requested_subject": "Catholic Uganda Martyrs Basilica",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "cc6d83cc2b6654287e0400ffa17efb8cede732175abc56e24c59d435298f8075",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 225,
+      "subject_id": "subject:guide-stop:UG:namugongo-martyrs:grounds",
+      "place_id": "place:UG:namugongo-martyrs",
+      "requested_subject": "Pilgrimage grounds",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 226,
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:crypt",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Tomb of Saint Francis",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "27a64fa849e80eb99051c7c6a3d6fbdc6cad9f76640b8ddec8ad3e40dedfdb22",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 227,
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:lower",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Lower Church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "885504bd5096e11b059daef2f91ab5685303ae12a123608e0fc2e69bc4fb43f9",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 228,
+      "subject_id": "subject:guide-stop:IT:basilica-san-francesco-assisi:upper",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "requested_subject": "Upper Church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "344d76710d6e0a2e70f0519d45d74b2496449deef9194e470fb50db12f976691",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 229,
+      "subject_id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:church",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "requested_subject": "Basilica of Bom Jesus",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "5cd1e75f3c215fe24433b1b26be7d45860b4107720f28d4c3bd6615c518cdd54",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 230,
+      "subject_id": "subject:guide-stop:IN:basilica-bom-jesus-old-goa:relics",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "requested_subject": "Chapel of Saint Francis Xavier",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "dd9451d153b1c43d72d8dc9ab4e2a64d740d2d5493cf315c7d757c048f921eac",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 231,
+      "subject_id": "subject:guide-stop:GB:walsingham-catholic-shrine:slipper",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "requested_subject": "Slipper Chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 232,
+      "subject_id": "subject:guide-stop:GB:walsingham-catholic-shrine:holy-mile",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "requested_subject": "Traditional Holy Mile",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 233,
+      "subject_id": "subject:guide-stop:AT:mariazell-basilica:grace",
+      "place_id": "place:AT:mariazell-basilica",
+      "requested_subject": "Gnadenaltar — Altar of Grace",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "6888ee66b72506dfc75e15961bdc92d50a565cc17865c80753b861c8696a3190",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 234,
+      "subject_id": "subject:guide-stop:AT:mariazell-basilica:basilica",
+      "place_id": "place:AT:mariazell-basilica",
+      "requested_subject": "Historic basilica and high altar",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 2,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "7f1257f7ea9d5d3bce8889a6d5b6c3b30d28d3851e4e0c3109b012ce30237158",
+          "file": "File:Altare maggiore della basilica di Santo Spirito, Firenze.jpg",
+          "review": "REJECT_FLORENCE_NOT_MARIAZELL"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 235,
+      "subject_id": "subject:guide-stop:US:champion-shrine:apparition",
+      "place_id": "place:US:champion-shrine",
+      "requested_subject": "Apparition Chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "78f55d0d50a60fca01d2b57961db8d9af04c6c2f2576f39345ee353ac7d5b9f0",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 236,
+      "subject_id": "subject:guide-stop:US:champion-shrine:rosary",
+      "place_id": "place:US:champion-shrine",
+      "requested_subject": "Rosary Walk and grottos",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 237,
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:basilica",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "requested_subject": "Basilica and Marian image",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 3,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "4d4c71d07c096a4e8451edf2d9d8323efbf6705ff2e46301275a232ae2d43973",
+          "file": "File:Ethiopian - The Virgin and Child with Archangels, Scenes from the Life of Christ, and Saints - Walters 364 - Back.jpg",
+          "review": "REJECT_UNRELATED_ICON"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "947d8411e9520a21ee835602b3241682ce2a27035733aecaeb9ab67e7dd7ef0e",
+          "file": "File:Ethiopian - The Virgin and Child with Archangels, Scenes from the Life of Christ, and Saints - Walters 364 - Closed.jpg",
+          "review": "REJECT_UNRELATED_ICON"
+        },
+        {
+          "cohort": "B16_ORIGINAL_OR_SEARCH_PHOTO",
+          "sha256": "15888c8899d48a199f94f093fc6c6014a20165d3b5443d80cb47d7802cdbfde0",
+          "file": "File:Ethiopian - The Virgin and Child with Archangels, Scenes from the Life of Christ, and Saints - Walters 364 - Open.jpg",
+          "review": "REJECT_UNRELATED_ICON"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 238,
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:passion",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "requested_subject": "Passion chapels",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 239,
+      "subject_id": "subject:guide-stop:PL:kalwaria-zebrzydowska:marian",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "requested_subject": "Marian paths",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 240,
+      "subject_id": "subject:guide-stop:BE:banneux:chapel",
+      "place_id": "place:BE:banneux",
+      "requested_subject": "Chapel of the Apparitions",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 241,
+      "subject_id": "subject:guide-stop:BE:banneux:spring",
+      "place_id": "place:BE:banneux",
+      "requested_subject": "Spring of Banneux",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 242,
+      "subject_id": "subject:guide-stop:CO:las-lajas-ipiales:bridge",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "requested_subject": "Neo-Gothic bridge sanctuary",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 0,
+      "any_downloaded_file": false,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 243,
+      "subject_id": "subject:guide-stop:CO:las-lajas-ipiales:rock",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "requested_subject": "Marian rock image",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "WRONG_PLACE_REJECT"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 244,
+      "subject_id": "subject:guide-stop:HR:national-shrine-of-our-lady-of-marija-bistrica:statue",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "requested_subject": "Historic Marian statue",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "B15_NATIVE_ORIGINAL",
+          "review": "IDENTITY_UNCERTAIN_HOLD"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 245,
+      "subject_id": "subject:guide-stop:HR:national-shrine-of-our-lady-of-marija-bistrica:church",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "requested_subject": "National shrine church",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "44377eb134314b40ef5649dbd8c29d0dcd85f34903a2a1fe644a5cd9d68e0154",
+          "review": "REJECT_WRONG"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 246,
+      "subject_id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:basilica",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "requested_subject": "Basilica of Our Lady of Good Health",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": false,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "de912838710a1ef4266900e82a72a2e51249d976bbfa9734009b08d1f8bb7a5a",
+          "review": "REPLACE_QUALITY"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    },
+    {
+      "original_index": 247,
+      "subject_id": "subject:guide-stop:IN:basilica-of-our-lady-of-good-health-vailankanni:tank",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "requested_subject": "Our Lady's Tank Chapel",
+      "user_KEEP_preserved": false,
+      "downloaded_image_assignments": 1,
+      "any_downloaded_file": true,
+      "preliminarily_relevant_for_subject_or_site": true,
+      "source_artifacts": [
+        {
+          "cohort": "A100_OPTIMIZED_PREVIEW",
+          "sha256": "6024cc8804ce86efd2890c6d79d5cf740707fdbb32b2f8f1263642394abdb7b1",
+          "review": "SHORTLIST_SITE"
+        }
+      ],
+      "subject_identity_final_approved": false,
+      "underlying_rights_cleared": false,
+      "publication_allowed": false
+    }
+  ]
+}
