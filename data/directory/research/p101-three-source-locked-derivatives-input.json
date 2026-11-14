@@ -1,0 +1,70 @@
+{
+  "schema": "AO_P101_SOURCE_PINNED_THREE_DIRECTORY_DERIVATIVES_V1",
+  "created": "2026-10-29",
+  "source_archive_branch": "research/p93-archived-originals-20261029",
+  "source_archive_directory": "docs/research/directory/p93-bulk-28-originals-20261029",
+  "previous_visual_review": "data/directory/research/p100-four-p99-photo-preview-release-holds-20261029.json",
+  "dependent_place_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2015",
+  "state": "STAGE_DERIVATIVES_ONLY_NO_APPROVED_MEDIA_PUBLICATION",
+  "method": "Read fixed archived source originals by P93 Git tree, byte-verify original SHA1, SHA256, size and pixel dimensions, fit within 1400x1400 (no crop), generate WebP + detached SHA256 audit + contact previews, save permanently on this research PR. No publication, rights flag or crop gate automatically inferred from source metadata.",
+  "records": [
+    {
+      "row": 230,
+      "place_id": "place:US:st-john-cantius-chicago",
+      "source_file": "230-original.jpg",
+      "original_sha1": "400197c1d636d0fdd05df92799393afc1d487d0d",
+      "original_sha256": "a9f9b96f62adc257757a1c27419ac3a50ccc37eb605e34ce3b371607a89d4327",
+      "original_width": 1267,
+      "original_height": 1810,
+      "original_bytes": 611696,
+      "staged_path": "assets/staged/directory-p101/US-st-john-cantius-chicago.webp",
+      "creator": "Sjcantius",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_John_Cantius_Church_Chicago.jpg",
+      "identity_evidence": "https://www.cantius.org/contact-us",
+      "candidate_editorial_status": "STAGE_PRIMARY_FACADE_VERTICAL"
+    },
+    {
+      "row": 366,
+      "place_id": "place:IT:san-canziano-padova",
+      "source_file": "366-original.jpg",
+      "original_sha1": "caed676bbb4d2b4c9af45de9d10ee3016966d7c9",
+      "original_sha256": "d263ebdc6ee79c4c26469efafdf1ed9cacf42ef6bf3eea5785207dd9e6530b6c",
+      "original_width": 3967,
+      "original_height": 4782,
+      "original_bytes": 12341729,
+      "staged_path": "assets/staged/directory-p101/IT-san-canziano-padova.webp",
+      "creator": "Tournasol7",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Cantianus_church_in_Padua_(2).jpg",
+      "identity_evidence": "https://padovaper.comune.padova.it/servizi/cultura-e-turismo/chiesa-di-san-canziano",
+      "candidate_editorial_status": "STAGE_PRIMARY_FACADE_VERTICAL"
+    },
+    {
+      "row": 330,
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "source_file": "330-original.jpg",
+      "original_sha1": "9c8ec29a46fe8c3d27e32a600600e1bcefa3e8d4",
+      "original_sha256": "85711e4b1ad9f2c490c2d9329ea0ae077d160a5a3baeb48d7d3c4f95067ffdd4",
+      "original_width": 3408,
+      "original_height": 2520,
+      "original_bytes": 5277193,
+      "staged_path": "assets/staged/directory-p101/FR-saint-bruno-bordeaux.webp",
+      "creator": "Marc Ryckaert (MJJR)",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bordeaux_Saint-Bruno_R02.jpg",
+      "identity_evidence": "https://fssp-bordeaux.fr/emplacement/eglise-saint-bruno/",
+      "candidate_editorial_status": "STAGE_PRIMARY_FACADE_LANDSCAPE"
+    }
+  ],
+  "policy": {
+    "no_paid_services": true,
+    "never_substitute_commons_current_revision_for_archived_bytes": true,
+    "no_new_place_or_tlm_schedules": true,
+    "no_approved_place_media_edits": true,
+    "no_implicit_editorial_approval": true
+  }
+}
