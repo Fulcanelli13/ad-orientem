@@ -1,0 +1,204 @@
+{
+  "schema": "AO_TLM_B87_RESEARCH_G0_NINE_POLISH_FIRST_PARTY_SITES_2026-10-25_V1",
+  "publication": "RESEARCH_G0_ONLY_NO_PUBLIC_PLACE_OR_TIMETABLE_ADMISSION",
+  "report_date": "2026-10-25",
+  "upstream": "B86 research projection in PR #1699; previous B85 50 holds",
+  "B86_provisional_distinct_sites": 2595,
+  "B87_provisional_distinct_sites": 2604,
+  "historical_canonical_group_ID_records": 2607,
+  "venue_source_rows": 2710,
+  "inherited_timetrable_rows": 4681,
+  "inherited_verified_mass_rows": 3347,
+  "new_verified_mass_rows": 0,
+  "new_public_place_IDs": 0,
+  "triage": {
+    "B86_open_cases": 50,
+    "source_qualified_new_from_cases": 5,
+    "exact_existing_match_from_cases": 1,
+    "remaining_holds": 44,
+    "supplementary_regional_admissions": 4
+  },
+  "admissions": [
+    {
+      "lead_id": "B85-051",
+      "research_group_id": "RG-B87-8006F0D122CB",
+      "name": "Kościół św. Barbary",
+      "city": "Gdańsk",
+      "country": "PL",
+      "physical_address": "ul. Długie Ogrody 19",
+      "owner_liturgy_url": "https://sw-barbara.vn.pl/biuro.html",
+      "church_geometry_url": "https://www.diecezja.gda.pl/parafie/330",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B87-GD-JB",
+      "research_group_id": "RG-B87-671B8759FAB0",
+      "name": "Kościół św. Jana Bosko",
+      "city": "Gdańsk",
+      "country": "PL",
+      "physical_address": "ul. Gościnna 15",
+      "owner_liturgy_url": "https://tradycjagdansk.pl/gdzie-i-kiedy/",
+      "church_geometry_url": "https://www.diecezja.gda.pl/parafie/323",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B87-GD-NIP",
+      "research_group_id": "RG-B87-6AD633DE9E00",
+      "name": "Kościół Niepokalanego Poczęcia NMP",
+      "city": "Gdańsk",
+      "country": "PL",
+      "physical_address": "ul. Łąkowa 34A",
+      "owner_liturgy_url": "https://tradycjagdansk.pl/gdzie-i-kiedy/",
+      "church_geometry_url": "https://www.diecezja.gda.pl/parafie/324",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B85-066",
+      "research_group_id": "RG-B87-9C500220FE42",
+      "name": "Kościół Matki Bożej Królowej Korony Polskiej",
+      "city": "Gdańsk",
+      "country": "PL",
+      "physical_address": "ul. Polanki 131",
+      "owner_liturgy_url": "https://tradycjagdansk.pl/gdzie-i-kiedy/",
+      "church_geometry_url": "https://www.diecezja.gda.pl/wydarzenia/10429/dzien-skupienia-apostolatu-margaretka",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B87-GDY-JES",
+      "research_group_id": "RG-B87-A38E5FD17B3E",
+      "name": "Kaplica szkolna św. Stanisława Kostki (Jezuici)",
+      "city": "Gdynia",
+      "country": "PL",
+      "physical_address": "ul. Tatrzańska 35",
+      "owner_liturgy_url": "https://tradycjagdansk.pl/gdzie-i-kiedy/",
+      "church_geometry_url": "https://www.diecezja.gda.pl/parafie/374",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B87-RUM-KRZ",
+      "research_group_id": "RG-B87-607F40333475",
+      "name": "Kościół Podwyższenia Krzyża Świętego",
+      "city": "Rumia",
+      "country": "PL",
+      "physical_address": "ul. Kościelna 20",
+      "owner_liturgy_url": "https://tradycjagdansk.pl/gdzie-i-kiedy/",
+      "church_geometry_url": "https://www.diecezja.gda.pl/parafie/444",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B85-058",
+      "research_group_id": "RG-B87-209AE1443820",
+      "name": "Kościół Świętej Trójcy (Jezuici)",
+      "city": "Radom",
+      "country": "PL",
+      "physical_address": "pl. Kazimierza Wielkiego",
+      "owner_liturgy_url": "https://radom.jezuici.pl/msza-trydencka/",
+      "church_geometry_url": "https://radom.jezuici.pl/kontakt/",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B85-065",
+      "research_group_id": "RG-B87-8B601598DA36",
+      "name": "Kościół Matki Bożej Częstochowskiej",
+      "city": "Starachowice",
+      "country": "PL",
+      "physical_address": "Al. Najświętszej Maryi Panny 7",
+      "owner_liturgy_url": "https://parafialazy.pl/",
+      "church_geometry_url": "https://diecezja.radom.pl/starachowice-parafia-pw-matki-bozej-czestochowskiej/",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    },
+    {
+      "lead_id": "B85-018",
+      "research_group_id": "RG-B87-56B9D31B206D",
+      "name": "Kaplica Wszystkich Świętych",
+      "city": "Łódź",
+      "country": "PL",
+      "physical_address": "ul. Żubardzka 28",
+      "owner_liturgy_url": "https://www.tradycjalodz.com/kontakt",
+      "church_geometry_url": "https://www.tradycjalodz.com/kontakt",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule_state": "SOURCE_CLAIM_UNCERTIFIED",
+      "public_map_state": "NOT_PUBLISHED"
+    }
+  ],
+  "exact_identity_recovered": {
+    "lead": "B85-009",
+    "existing_group_id": "RG-440E0B1F1274",
+    "building": "Name of Mary and St Stanislaus, Szkolna 2a, Białystok",
+    "source": "https://tradycjabialystok.pl/",
+    "action": "KEEP_EXISTING_FROZEN_ID"
+  },
+  "excluded_current_venue": {
+    "name": "Blessed Edmund Bojanowski, Rumia",
+    "existing_id": "RG-B66-BFB487D25492",
+    "address": "Bojanowskiego 1",
+    "reason": "Already B86; distinguish from Holy Cross at Kościelna 20"
+  },
+  "cross_network_control": {
+    "network": "IBP Poland",
+    "source": "https://instytutdobregopasterza.pl/",
+    "entries": 6,
+    "existing_site_matches": 6,
+    "new_ids": 0,
+    "city_id_pairs": [
+      [
+        "Józefów",
+        "RG-3B26E419E5CC"
+      ],
+      [
+        "Olsztyn",
+        "RG-24DE8FCA3A1E"
+      ],
+      [
+        "Wołomin",
+        "RG-B65-30B684680BED"
+      ],
+      [
+        "Warszawa",
+        "RG-78944E351D9C"
+      ],
+      [
+        "Częstochowa",
+        "RG-A15EC4D94343"
+      ],
+      [
+        "Białystok",
+        "RG-440E0B1F1274"
+      ]
+    ]
+  },
+  "original_source_preservation": {
+    "B86_55_sheets_preserved": true,
+    "only_core_registers_appended": [
+      "CANONICAL SITES",
+      "PHYSICAL SITES",
+      "UNIFIED VENUES"
+    ],
+    "mass_rows_cell_equal": true
+  },
+  "delivery": {
+    "compact_review_xlsx": "Ad_Orientem_B87_50_Holds_9_New_Polish_Sites_2026-10-25.xlsx",
+    "compact_review_sha256": "a285fe2937b939ac0209ebbb7828e8984195f2b60573bace87200f067a467780",
+    "full_research_zip": "Ad_Orientem_B87_Research_Projection_2604_Sites_2026-10-25.zip",
+    "full_research_zip_sha256": "483be95847fd8f8f86474350f7d1504d0a2856ae131e70777384c23e5c7ae98c",
+    "audit_json": "Ad_Orientem_B87_Research_Audit_2026-10-25.json",
+    "note": "Binaries are separate conversation artifacts, not committed to PR"
+  },
+  "release_gate": "No production import or public map promotion. Exact coordinates, building/access, and current recurring 1962 schedule each require independent release checks."
+}
