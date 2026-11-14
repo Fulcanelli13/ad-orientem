@@ -1,0 +1,1237 @@
+{
+  "schema": "AO_CL27_CURRENT_SOURCE_WAVE5_V1",
+  "reviewed_on": "2026-11-08",
+  "publication": "RESEARCH_ONLY_NO_APP_IMPORT",
+  "canonical_source": {
+    "pr": 1775,
+    "source_blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d"
+  },
+  "summary": {
+    "previous_reviewed": 167,
+    "new_original_historical_rows_reviewed": 44,
+    "new_source_site_groups_reviewed": 28,
+    "cumulative_reviewed": 211,
+    "still_unreviewed": 85,
+    "published_current_events": 0,
+    "published_source_scoped_classifications": 0,
+    "collision_groups_source_adjudicated_unchanged": 7
+  },
+  "policy": [
+    "Only original CL2 historical_row IDs count as source-review progress",
+    "An official standing schedule is not a date-specific Mass occurrence",
+    "Do not assume SSPX operates an associated Carmelite, Clarisse, Dominican, Franciscan or Capuchin house",
+    "Retain exceptions for months, school holidays, first Saturdays, saint feasts and operator change",
+    "Never convert confession, exposition, Vespers or procession into Mass",
+    "No changes to production Atlas, GPS, historical source identities, canonical status, una-cum, or published Mass events"
+  ],
+  "cases": [
+    {
+      "cl2_anchor": "RG-D921C392A56D",
+      "venue_label": "Eglise Sainte-Jeanne d'Arc",
+      "country": "CA",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/eglise-sainte-jeanne-d-arc"
+      ],
+      "historical_rows": [
+        595,
+        2655,
+        2656
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 595,
+          "source_id": "SSPXMAP:OPE-001994",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche: 10h00 | 1er vendredi du mois: 18h30 | 1er samedi du mois: 09h00\""
+        },
+        {
+          "historical_row": 2655,
+          "source_id": "SSPXMAP:OPE-001994",
+          "day_pattern": "Friday",
+          "local_time": "18:30",
+          "frequency": "monthly (first Friday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche: 10h00 | 1er vendredi du mois: 18h30 | 1er samedi du mois: 09h00\""
+        },
+        {
+          "historical_row": 2656,
+          "source_id": "SSPXMAP:OPE-001994",
+          "day_pattern": "Saturday",
+          "local_time": "09:00",
+          "frequency": "monthly (first Saturday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche: 10h00 | 1er vendredi du mois: 18h30 | 1er samedi du mois: 09h00\""
+        }
+      ],
+      "current_owner_url": "https://sspx.ca/fr/prieure-saint-joseph-45081",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "IDENTITY_ONLY_HOURS_NOT_INDEPENDENTLY_CORROBORATED",
+      "source_observation": "Canada district identifies Église Sainte-Jeanne d'Arc in Sherbrooke as a church served by the Saint-Césaire priory, but the checked page directs readers to the current bulletin rather than confirming the frozen Sunday and first-Friday/Saturday clock patterns.",
+      "remaining_gate": "Obtain a current Saint-Césaire/Sherbrooke dated bulletin before approving any of the three times; do not borrow Mass hours from Saint-Césaire or Montréal.",
+      "role_scope": "SSPX Canada serving priory; no ownership or individual Mass inference",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-5D89ECCEB9E1",
+      "venue_label": "Chapelle Notre-Dame de Lourdes",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://fsspx.ch/fr/les-rousses-f-chapelle-notre-dame-lourdes-32449"
+      ],
+      "historical_rows": [
+        342,
+        3102
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 342,
+          "source_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-fr-les-rousses-nd-lourdes",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00; samedi 18h00; jours de fête se renseigner\""
+        },
+        {
+          "historical_row": 3102,
+          "source_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-fr-les-rousses-nd-lourdes",
+          "day_pattern": "Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00; samedi 18h00; jours de fête se renseigner\""
+        }
+      ],
+      "current_owner_url": "https://fsspx.ch/fr/les-rousses-f-chapelle-notre-dame-lourdes-32449",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_CROSS_BORDER_PROVIDER",
+      "source_observation": "Swiss district lists Les Rousses chapel, 2770 Route du Lac, Le Vivier, with Sunday 10:00 and Saturday 18:00; it is in France but served from the Onex/Geneva priory. Masses on feast days need local confirmation.",
+      "remaining_gate": "Retain FR physical country and Swiss ministry/serving district as distinct fields; current bulletin and feast-day schedule still required before a dated event.",
+      "role_scope": "SSPX District of Switzerland serves a physically French chapel",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B7936A693C8D",
+      "venue_label": "Chapelle Saint-Walfroy",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-walfroy"
+      ],
+      "historical_rows": [
+        536,
+        2613
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 536,
+          "source_id": "SSPXMAP:OPE-002098",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00 (sauf Pentecôte, Christ-Roi et juillet-août: 8h45); samedi 18h (en principe)\""
+        },
+        {
+          "historical_row": 2613,
+          "source_id": "SSPXMAP:OPE-002098",
+          "day_pattern": "Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00 (sauf Pentecôte, Christ-Roi et juillet-août: 8h45); samedi 18h (en principe)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/valdevesle/charleville-mezieres",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_SEASONAL_EXCEPTION",
+      "source_observation": "Charleville-Mézières chapel gives Sunday 10:00 except Pentecost, Christ the King and July-August at 08:45; Saturday 18:00 is explicitly en principe, not a guaranteed every-week occurrence.",
+      "remaining_gate": "Store exceptions and Saturday conditional state; verify dated parish announcements before production recurrence.",
+      "role_scope": "SSPX district-named chapel; Val-de-Vesle is serving priory, not site",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-443C0F99AB83",
+      "venue_label": "Chapelle Saint-François d'Assise",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-francois-d-assise"
+      ],
+      "historical_rows": [
+        504,
+        2591
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 504,
+          "source_id": "SSPXMAP:OPE-002095",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00 (sauf quatre dates 2025: 18h00); samedi 18h00\""
+        },
+        {
+          "historical_row": 2591,
+          "source_id": "SSPXMAP:OPE-002095",
+          "day_pattern": "Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00 (sauf quatre dates 2025: 18h00); samedi 18h00\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/nice/cannes",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_WITH_STALE_2025_EXCEPTION_WARNING",
+      "source_observation": "Cannes-La Bocca chapel currently displays Sunday 10:00 and Saturday 18:00; the same page carries specific July-August 2025 Sunday departures to 18:00. Those 2025 dates cannot be copied as a 2026 exception calendar.",
+      "remaining_gate": "Use current dated notices for present season; do not assume archived 2025 exceptions recur on identical month/day in 2026.",
+      "role_scope": "SSPX chapel served by Nice",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-941798AB9E5D",
+      "venue_label": "Chapelle Saint-Pierre-et-Saint-Paul",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-pierre-et-saint-paul"
+      ],
+      "historical_rows": [
+        529,
+        2604
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 529,
+          "source_id": "SSPXMAP:OPE-002609",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 8h30 messe basse, 10h messe chantée; semaine: consulter l'onglet annonces\""
+        },
+        {
+          "historical_row": 2604,
+          "source_id": "SSPXMAP:OPE-002609",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 8h30 messe basse, 10h messe chantée; semaine: consulter l'onglet annonces\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/lanvallay/rennes",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_DISTINCT_MASS_TYPES",
+      "source_observation": "Rennes chapel at 44 rue du Manoir de Servigné lists Sunday 08:30 Low Mass and 10:00 Sung Mass. Lanvallay is the serving priory at a different street address; weekday timing is explicitly delegated to announcements.",
+      "remaining_gate": "Before recurrence publication verify current weekly notices and never attach Lanvallay priory Masses to Rennes chapel.",
+      "role_scope": "SSPX Rennes chapel served from Lanvallay",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B88C49244D2E",
+      "venue_label": "Église Saint-Cyr",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/eglise-saint-cyr"
+      ],
+      "historical_rows": [
+        592,
+        2444
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 592,
+          "source_id": "SSPXMAP:OPE-002613",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 8h30 et 10h\""
+        },
+        {
+          "historical_row": 2444,
+          "source_id": "SSPXMAP:OPE-002613",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 8h30 et 10h\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/morgon/anse",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_FRIENDLY_COMMUNITY",
+      "source_observation": "Anse Église Saint-Cyr is presented on France district site as Capucins de Morgon, with Sunday 08:30 and 10:00, not the nearby Villié-Morgon convent schedule.",
+      "remaining_gate": "Confirm current dated celebrations; institute/source listing is not evidence that SSPX owns, operates or celebrates each Mass at this church.",
+      "role_scope": "Capucins de Morgon, not SSPX-owned by directory inclusion",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-13758BE6CF6C",
+      "venue_label": "Chapelle Saint-Joseph",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-joseph-laval"
+      ],
+      "historical_rows": [
+        515
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 515,
+          "source_id": "SSPXMAP:OPE-001598",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 09h00; samedi: se renseigner\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/moulin-du-pin/laval",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_WEEKDAY_UNSPECIFIED",
+      "source_observation": "Laval Chapelle Saint-Joseph at 107 quai Paul Boudet lists Sunday 09:00, while Saturday instructs se renseigner. Serving priory at Moulin du Pin is a separate site.",
+      "remaining_gate": "No fixed Saturday event or assumption about Missal/celebrant; check new local notices for a specific date.",
+      "role_scope": "SSPX Laval chapel supplied from Moulin du Pin",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B9ECF42A99E3",
+      "venue_label": "Chapelle Saint-Louis",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-louis-grasse"
+      ],
+      "historical_rows": [
+        519
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 519,
+          "source_id": "SSPXMAP:OPE-002096",
+          "day_pattern": "Sunday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 18h00 (sauf 29/06, 06/07, 20/07, 27/07, 03/08/25: pas de messe)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/nice/grasse",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_WITH_ARCHIVED_NO_MASS_EXCEPTIONS",
+      "source_observation": "Grasse Chapelle Saint-Louis at 4 avenue Chiris shows Sunday 18:00, but embeds archived no-Mass dates in June-August 2025. Historical regular listing does not prove all current Sundays.",
+      "remaining_gate": "Verify the actual 2026 Sunday programme rather than carrying 2025 cancellations forward.",
+      "role_scope": "SSPX chapel served from Nice",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-A9BB7EB19925",
+      "venue_label": "Chapelle Saint-Antoine",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-antoine-maligny"
+      ],
+      "historical_rows": [
+        490
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 490,
+          "source_id": "SSPXMAP:OPE-002607",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "twice a month (weeks not stated), not school holidays",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 9h00 deux fois par mois sauf vacances scolaires\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/flavigny/maligny",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "CONDITIONAL_TWICE_MONTHLY_NO_WEEK_NUMBERS",
+      "source_observation": "Maligny Chapelle Saint-Antoine lists 09:00 on two Sundays per month except school holidays; no fixed first/third or second/fourth recurrence is given.",
+      "remaining_gate": "Do not generate monthly dates without actual local announcements; school vacation dates matter.",
+      "role_scope": "SSPX chapel linked to Flavigny; no legal-ownership assumption",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-6688A500756B",
+      "venue_label": "Monastère Notre-Dame des Fontaines",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/monastere-notre-dame-des-fontaines"
+      ],
+      "historical_rows": [
+        779,
+        2448
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 779,
+          "source_id": "SSPXMAP:OPE-001695",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 08h30; fêtes 8h30 ou 10h30 (se renseigner)\""
+        },
+        {
+          "historical_row": 2448,
+          "source_id": "SSPXMAP:OPE-001695",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "07:15",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 7h15\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/guipavas/morlaix",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_FEAST_AND_COMMUNITY_EXCEPTIONS",
+      "source_observation": "Morlaix Monastère Notre-Dame des Fontaines, a Franciscaines du Trévoux house, lists Sunday 08:30 with feast alternatives 08:30 or 10:30 and weekday 07:15. Keep this monastery distinct from Notre-Dame du Mur in Plouigneau and Guipavas priory.",
+      "remaining_gate": "Require dated convent announcements for feast alternatives; privacy/access and celebrant/owner/Una Cum remain unverified.",
+      "role_scope": "Franciscaines du Trévoux host monastery; SSPX district lists services",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B613AF3ED66D",
+      "venue_label": "Oratoire Saint-Dominique",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/oratoire-saint-dominique"
+      ],
+      "historical_rows": [
+        801,
+        2451
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 801,
+          "source_id": "SSPXMAP:OPE-002619",
+          "day_pattern": "Friday",
+          "local_time": "19:00",
+          "frequency": "monthly (first Friday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"1er vendredi du mois: 19h00\""
+        },
+        {
+          "historical_row": 2451,
+          "source_id": "SSPXMAP:OPE-002619",
+          "day_pattern": "Saturday",
+          "local_time": "07:45",
+          "frequency": "monthly (first Saturday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"1er samedi du mois 07h45 (en principe)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/mjcf-gentilly",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_FIRST_FRIDAY_SATURDAY_CONDITIONAL",
+      "source_observation": "Gentilly Oratoire Saint-Dominique, hosted by Mouvement de la Jeunesse Catholique de France, lists first-Friday 19:00 and first-Saturday 07:45 en principe; these are monthly patterns, not weekly Friday/Saturday Masses.",
+      "remaining_gate": "Confirm month-specific presence/availability; do not substitute an SSPX priory as operating community or assert every 1st Saturday occurs.",
+      "role_scope": "MJCF hosted oratory, not site-wide SSPX ownership",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-20F5A383CAAF",
+      "venue_label": "Monastère Saint-Joseph",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/monastere-saint-joseph"
+      ],
+      "historical_rows": [
+        783,
+        2415
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 783,
+          "source_id": "SSPXMAP:OPE-001686",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "09:50",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 09h50\""
+        },
+        {
+          "historical_row": 2415,
+          "source_id": "SSPXMAP:OPE-001686",
+          "day_pattern": "Sunday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: se renseigner (8h ou 9h50)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/gastines/avrille-dominicaines",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "SUNDAY_TIME_ALTERNATIVE_NOT_FIXED",
+      "source_observation": "Monastère Saint-Joseph in Avrillé is a contemplative Dominican sisters house with weekday 09:50; its Sunday page says se renseigner (08:00 or 09:50), so frozen fixed 08:00 Sunday claim is NOT established.",
+      "remaining_gate": "Do not schedule unconditional Sunday 08:00; ask locally about convent accessibility/actual Sunday time, separate host community and serving priest.",
+      "role_scope": "Dominicaines Contemplatives host monastery; Gastines provides chaplain contact",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-53002AA1D2C1",
+      "venue_label": "Église Saint-Martin",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/eglise-saint-martin"
+      ],
+      "historical_rows": [
+        603
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 603,
+          "source_id": "SSPXMAP:OPE-002627",
+          "day_pattern": "Sunday",
+          "local_time": "17:00",
+          "frequency": "monthly (3rd Sunday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Messe à 17h00 le troisième dimanche de chaque mois (confessions dès 16h30)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/nancy/les-eparges",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "MONTHLY_THIRD_SUNDAY_PATTERN_ONLY",
+      "source_observation": "Église Saint-Martin in Les Eparges lists Mass at 17:00 on the third Sunday of the month and confessions beginning 16:30. This is a distinct monthly recurrence and cannot be flattened to every Sunday.",
+      "remaining_gate": "Check that month's dated notice; keep confessions separate and note historical church vs served Mass venue.",
+      "role_scope": "SSPX Nancy-served church without whole-building ownership claim",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-031C71A9AD7A",
+      "venue_label": "Église Saint-Martin-des-Gaules",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/eglise-saint-martin-des-gaules"
+      ],
+      "historical_rows": [
+        604,
+        2675
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 604,
+          "source_id": "SSPXMAP:OPE-001672",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00; 1er samedi 18h30 sauf juillet-août; vacances scolaires: se renseigner\""
+        },
+        {
+          "historical_row": 2675,
+          "source_id": "SSPXMAP:OPE-001672",
+          "day_pattern": "Saturday",
+          "local_time": "18:30",
+          "frequency": "monthly (first Saturday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00; 1er samedi 18h30 sauf juillet-août; vacances scolaires: se renseigner\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/chardonnet/noisy-le-grand",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_FIRST_SATURDAY_SUMMER_EXCLUSION",
+      "source_observation": "Noisy-le-Grand Église Saint-Martin-des-Gaules lists Sunday 10:00, first-Saturday 18:30 except July-August, with school-holiday confirmation required. These qualifiers cannot be omitted from a calendar.",
+      "remaining_gate": "Do not expand the first-Saturday event into summer; check dated holiday notes.",
+      "role_scope": "SSPX church served through Chardonnet; separate host from provider",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-4FDBB67357B4",
+      "venue_label": "Carmel du Cœur Immaculé de Marie",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/carmel-du-coeur-immacule-de-marie"
+      ],
+      "historical_rows": [
+        429,
+        2419
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 429,
+          "source_id": "SSPXMAP:OPE-002130",
+          "day_pattern": "Sunday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 08h00\""
+        },
+        {
+          "historical_row": 2419,
+          "source_id": "SSPXMAP:OPE-002130",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 08h00\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/bergerac/eynesse",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_HOSTED_CARMEL",
+      "source_observation": "Eynesse Carmel du Cœur Immaculé de Marie is labelled Carmélites, 1105 route de Barrail, with Sunday 08:00 and weekdays 08:00. Inclusion under Bergerac district directory is not legal-title or individual celebrant evidence.",
+      "remaining_gate": "Check convent public access, religious-community role, current dated changes and Mass book before admission.",
+      "role_scope": "Carmelites host the site; Bergerac SSPX listing is informational",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-E8701BB5CFEA",
+      "venue_label": "Monastère de l'Immaculée",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/monastere-de-l-immaculee"
+      ],
+      "historical_rows": [
+        778,
+        2447
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 778,
+          "source_id": "SSPXMAP:OPE-001017",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 10h00\""
+        },
+        {
+          "historical_row": 2447,
+          "source_id": "SSPXMAP:OPE-001017",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 10h00\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/montagnac",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_HOSTED_DOMINICAN_MONASTERY",
+      "source_observation": "Montagnac-la-Crempse Monastère de l'Immaculée is listed as Dominicaines Contemplatives, with Sunday and weekday 10:00 Mass. Time listing alone does not prove access for visitors or serving priest.",
+      "remaining_gate": "Check dated exceptions and whether celebrations are publicly accessible; avoid SSPX legal-title inference.",
+      "role_scope": "Dominican contemplative monastery hosts Mass",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-7D461F82AA6D",
+      "venue_label": "Chapelle Sainte-Marcelle et Sainte-Cécile",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-ste-marcelle-et-ste-cecile"
+      ],
+      "historical_rows": [
+        499
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 499,
+          "source_id": "SSPXMAP:OPE-002176",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 10h00\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/suresnes/lizy-sur-ourcq",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_NAMED_CHAPEL",
+      "source_observation": "Lizy-sur-Ourcq Chapelle Sainte-Marcelle et Sainte-Cécile at 10 route d'Echampeu lists Sunday 10:00. Suresnes/Paris priory contact is distinct from physical worship venue.",
+      "remaining_gate": "Confirm current date and site access before publishing live event.",
+      "role_scope": "SSPX chapel and serving priory as separate sites",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-A72CA22F0FF5",
+      "venue_label": "Chapelle saint-Hilaire",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-hilaire"
+      ],
+      "historical_rows": [
+        508
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 508,
+          "source_id": "SSPXMAP:OPE-002120",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 9h30 confessions, 10h messe chantée; semaine: consulter l'onglet annonces\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/lanvallay/saint-brieuc",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "SERVICE_TYPE_DISAMBIGUATED_CONFESSIONS",
+      "source_observation": "Saint-Brieuc Chapelle Saint-Hilaire lists confessions 09:30 and Sung Mass 10:00 on Sunday. Weekdays require announcements; confessions must not be minted as an extra Mass.",
+      "remaining_gate": "Check dated programme and distinguish the Lanvallay priory from Saint-Brieuc chapel.",
+      "role_scope": "SSPX Saint-Brieuc chapel served from Lanvallay",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-A667A2072167",
+      "venue_label": "Chapelle Notre-Dame de Pontmain",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-notre-dame-de-pontmain"
+      ],
+      "historical_rows": [
+        475
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 475,
+          "source_id": "SSPXMAP:OPE-002621",
+          "day_pattern": "Monthly on the 17th",
+          "local_time": "10:30",
+          "frequency": "monthly (17th of each month)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Tous les 17 de l'année: 10h30\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/moulin-du-pin/pontmain",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "DAY_OF_MONTH_NOT_WEEKLY_PATTERN",
+      "source_observation": "Pontmain Chapelle Notre-Dame de Pontmain lists Mass at 10:30 every 17th day of the month, not on the 17th weekday or weekly Sunday. Special pilgrim-day programme may vary.",
+      "remaining_gate": "Create exact calendar-day occurrence only after dated source confirmation; 17th must not be parsed as first/third Sunday.",
+      "role_scope": "SSPX district pilgrimage chapel served from Moulin du Pin",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-87CE879054F4",
+      "venue_label": "Chapelle Saint-Bernard",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-saint-bernard"
+      ],
+      "historical_rows": [
+        493
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 493,
+          "source_id": "SSPXMAP:OPE-002632",
+          "day_pattern": "Sunday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 18h00 (sauf Noël et Pâques: se renseigner)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/valdevesle/troyes",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_WITH_MAJOR_FEAST_HOLD",
+      "source_observation": "Troyes Chapelle Saint-Bernard lists Sunday 18:00, but explicitly says inquire at Christmas and Easter. The normal time does not cover those feasts.",
+      "remaining_gate": "Exclude special dates until dated confirmation.",
+      "role_scope": "SSPX district chapel separate from Val-de-Vesle priory",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-63F2EBD16FA7",
+      "venue_label": "Maison Saint-Jean",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/maison-saint-jean"
+      ],
+      "historical_rows": [
+        732
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 732,
+          "source_id": "SSPXMAP:OPE-002630",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "07:50",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 7h50\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/merigny/merigny",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_SISTERS_HOUSE",
+      "source_observation": "Mérigny Maison Saint-Jean, 11 place de l'Eglise, is listed as Sœurs de la Transfiguration with weekday 07:50. Maison Saint-Joseph at Le Bois is a different property and has its own programme.",
+      "remaining_gate": "Keep two named houses separate; verify public accessibility and who celebrates each Mass.",
+      "role_scope": "Sœurs de la Transfiguration host house; association with Fraternité de la Transfiguration distinct",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B860FBBF8E60",
+      "venue_label": "Maison Notre-Dame du bon conseil",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/maison-notre-dame-du-bon-conseil"
+      ],
+      "historical_rows": [
+        730
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 730,
+          "source_id": "SSPXMAP:OPE-002615",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 08h00 (se renseigner)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/assais/lamaire",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_WITH_EXPLICIT_CONFIRMATION_REQUIREMENT",
+      "source_observation": "Saint-Loup-Lamairé Maison Notre-Dame du Bon Conseil is Sœurs de la Transfiguration and lists weekday 08:00 se renseigner. Not enough to guarantee an individual weekday Mass.",
+      "remaining_gate": "Treat as source-reported, potentially restricted sister-house Mass; require dated local confirmation.",
+      "role_scope": "Sœurs de la Transfiguration host; separate from Assais chapel",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-C173C61BB658",
+      "venue_label": "Église Saint-Barthélemy",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/eglise-saint-barthelemy"
+      ],
+      "historical_rows": [
+        591
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 591,
+          "source_id": "SSPXMAP:OPE-002137",
+          "day_pattern": "Sunday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 09h30 (Christ-Roi, Pentecôte); 08h00\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/marlieux/chamont",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "HOLIDAY_08_00_EXCEPTION_REQUIRES_DATE",
+      "source_observation": "Saint-Chef Église Saint-Barthélemy lists Sunday 09:30 but 08:00 on Christ the King and Pentecost; the historical 08:00 record cannot be represented as a universal weekly Sunday time.",
+      "remaining_gate": "Reject weekly 08:00; check the intended feast and dated bulletin before any event.",
+      "role_scope": "SSPX served named church; nearby Marlieux school distinct",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-98CD7930BBAA",
+      "venue_label": "Chapelle Notre-Dame du Mur",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/chapelle-notre-dame-du-mur"
+      ],
+      "historical_rows": [
+        481
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 481,
+          "source_id": "SSPXMAP:OPE-002127",
+          "day_pattern": "Sunday",
+          "local_time": "11:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 11h00 messe chantée; 15h30 procession et vêpres (Pardon de Sainte-Anne 21 juillet 2024)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/guipavas/plouigneau",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_DISTINCT_CHAPEL_AND_EVENT_TYPE",
+      "source_observation": "Plouigneau Chapelle Notre-Dame du Mur lists Sunday 11:00; its published 21 July 2024 Sainte-Anne pardon adds a procession and Vespers at 15:30, not another Mass and not a continuing 2026 occurrence.",
+      "remaining_gate": "Keep the chapel separate from Morlaix monastery, and do not expand archived festival into a 2026 recurring event.",
+      "role_scope": "SSPX listed chapel served from Guipavas; distinct physical site",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-B474C34C66EF",
+      "venue_label": "Maison du Cœur Immaculé",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/maison-du-coeur-immacule"
+      ],
+      "historical_rows": [
+        729,
+        2445
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 729,
+          "source_id": "SSPXMAP:OPE-002616",
+          "day_pattern": "Sunday",
+          "local_time": "09:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 9h30 (préférable de téléphoner)\""
+        },
+        {
+          "historical_row": 2445,
+          "source_id": "SSPXMAP:OPE-002616",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "07:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 07h30 (préférable de téléphoner)\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/moussy",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_BUT_CALL_FIRST",
+      "source_observation": "Moussy Maison du Cœur Immaculé at 5 rue de la Croix lists Sunday 09:30 and weekdays 07:30, each explicitly preferably by telephone; no firm live timetable can be inferred.",
+      "remaining_gate": "Preserve contact-first caveat in both languages and check current dates.",
+      "role_scope": "SSPX house; not automatic public chapel access",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-0EE8C617FC2E",
+      "venue_label": "Monastère Sainte-Claire",
+      "country": "FR",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/monastere-sainte-claire"
+      ],
+      "historical_rows": [
+        781
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 781,
+          "source_id": "SSPXMAP:OPE-002617",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "07:15",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 07h15\""
+        }
+      ],
+      "current_owner_url": "https://laportelatine.org/lieux/morgon/morgon-clarisses",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_DISTINCT_CONVENT",
+      "source_observation": "Villié-Morgon Monastère Sainte-Claire (Clarisses), 852 Voie Romaine, lists weekday Mass 07:15. Separate Morgon Capuchin convent at 78 passage de la Morcille has different hours.",
+      "remaining_gate": "Never blend Clarisses and Capucins sites; verify access, celebrant and dated weekday occurrence.",
+      "role_scope": "Clarisses hosted convent, not Capuchin chapel or SSPX-owned",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-6F08FF27F739",
+      "venue_label": "Our Lady of Fatima Catholic Church",
+      "country": "US",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/our-lady-of-fatima-catholic-church"
+      ],
+      "historical_rows": [
+        822,
+        2405
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 822,
+          "source_id": "SSPXMAP:OPE-001216",
+          "day_pattern": "Sunday",
+          "local_time": "11:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sundays 11:30am Confessions after Mass\""
+        },
+        {
+          "historical_row": 2405,
+          "source_id": "SSPXMAP:OPE-001216",
+          "day_pattern": "Saturday",
+          "local_time": "08:30",
+          "frequency": "monthly (first Saturday)",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"1st Saturdays 8:30am\""
+        }
+      ],
+      "current_owner_url": "https://dickinson.tx.sspx.org/en/mission-chapels-31450",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "SUNDAY_PATTERN_CORROBORATED_FIRST_SATURDAY_NOT_RECHECKED",
+      "source_observation": "US SSPX mission list independently identifies Lacombe Our Lady of Fatima Catholic Church, 66110 Vortisch Road, Sunday 11:30. It does not establish the older first-Saturday 08:30 entry, which remains an unresolved conditional time.",
+      "remaining_gate": "Confirm any first Saturday and current dated Sunday locally; do not infer first Saturday from Sunday mission listing.",
+      "role_scope": "SSPX church listed in Louisiana mission-centre programme",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    },
+    {
+      "cl2_anchor": "RG-A7D9126805D5",
+      "venue_label": "Saint Dominic Chapel",
+      "country": "US",
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-dominic-chapel"
+      ],
+      "historical_rows": [
+        972,
+        2408
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 972,
+          "source_id": "SSPXMAP:OPE-001222",
+          "day_pattern": "Sunday",
+          "local_time": "10:30",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 10:30 am\""
+        },
+        {
+          "historical_row": 2408,
+          "source_id": "SSPXMAP:OPE-001222",
+          "day_pattern": "Monday to Saturday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "source_excerpt": "Official source, retrieved 2026-10-23: \"Monday to Saturday : 8:00 am\""
+        }
+      ],
+      "current_owner_url": "https://sspx.org/en/list-sspx-chapels",
+      "current_source_class": "CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE",
+      "source_review_decision": "PATTERN_CORROBORATED_AT_NAMED_CHAPEL",
+      "source_observation": "US district lists Saint Dominic Chapel in Post Falls, 20274 W Riverview Drive, Sunday 10:30 and Monday–Saturday 08:00. Not to be confused with other Idaho priory or Post Falls churches.",
+      "remaining_gate": "Verify current local bulletin/dates; do not extend church-specific book, legal owner or Una Cum inference from US district affiliation.",
+      "role_scope": "SSPX district-named chapel; individual rites and statuses not established",
+      "unknown_without_individual_evidence": [
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "exact_celebrant",
+        "liturgical_books",
+        "legal_title",
+        "public_access",
+        "dated_mass_occurrence"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS"
+    }
+  ]
+}

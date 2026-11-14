@@ -1,0 +1,834 @@
+{
+  "schema": "AO_CL27_FINAL_SOURCE_GAP_DISPOSITIONS_WAVE7_V1",
+  "reviewed_at": "2026-11-08",
+  "scope": "FINAL_32_HISTORICAL_ROW_SOURCE_DECISIONS_NOT_VERIFIED_PUBLIC_MASSES",
+  "canonical_source": {
+    "pr": 1775,
+    "blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d"
+  },
+  "summary": {
+    "previously_reviewed": 264,
+    "new_historical_rows_dispositioned": 32,
+    "cumulative_historical_rows_accounted_for": 296,
+    "unassessed_historical_rows": 0,
+    "current_mass_events_approved": 0,
+    "canonical_una_cum_claims_approved": 0,
+    "source_gap_or_time_hold_count": 32
+  },
+  "publication": "RESEARCH_ONLY_NO_APP_IMPORT",
+  "records": [
+    {
+      "cl2_anchor": "RG-9D79E31A64C4",
+      "venue_label": "Holy Family Log Church",
+      "country": "US",
+      "historical_rows": [
+        200
+      ],
+      "historical_source": "https://dio-bell.solutiosoftware.com/directory/parishes/holy-family-cahokia",
+      "current_evidence_url": "https://www.holyfamily1699.org/log-church.html",
+      "assessment": "FIRST_PARTY_PARISH_SUPPORTED",
+      "editorial_disposition": "Holy Family Log Church, Cahokia, traditional Latin Mass Sunday 09:00 is explicitly on parish page; the Institute of Christ the King separately confirms serving this specific celebration. Distinguish old log church from neighbouring newer parish church; no building-wide institute or Missal inference.",
+      "original_source_claims": [
+        {
+          "historical_row": 200,
+          "source_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: (9:00 a.m. Latin Mass - Log Church)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-B7BE65DF3422",
+      "venue_label": "Batea",
+      "country": "ES",
+      "historical_rows": [
+        376
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/batea",
+      "current_evidence_url": "https://fsspx.es/es/capillas-0",
+      "assessment": "FIRST_PARTY_SITE_ONLY",
+      "editorial_disposition": "Official Spain directory identifies Batea mission but current listing checked does not independently confirm Sunday 17:00 first-week clock; verify dated local organizer schedule.",
+      "original_source_claims": [
+        {
+          "historical_row": 376,
+          "source_id": "SSPXMAP:OPE-002205",
+          "day_pattern": "Sunday",
+          "local_time": "17:00",
+          "frequency": "monthly (1st Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1º domingo de mes 17:00\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-27A404C50FB4",
+      "venue_label": "Chapelle de l'Immaculée Conception",
+      "country": "FR",
+      "historical_rows": [
+        449
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/chapelle-de-la-charite",
+      "current_evidence_url": "https://laportelatine.org/lieux/le-herie/saint-quentin",
+      "assessment": "FIRST_PARTY_PATTERN_SUPPORTED",
+      "editorial_disposition": "Saint-Quentin Chapelle de l'Immaculée Conception (La Charité) at 38 rue des Patriotes is listed for Sunday 11:00; serving Le Hérie institution is a different site.",
+      "original_source_claims": [
+        {
+          "historical_row": 449,
+          "source_id": "SSPXMAP:OPE-001509",
+          "day_pattern": "Sunday",
+          "local_time": "11:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche: 11h00\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-DA0B29BCF199",
+      "venue_label": "Frères de Notre-Dame du Rosaire",
+      "country": "FR",
+      "historical_rows": [
+        609
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/fraternite-notre-dame-du-rosaire",
+      "current_evidence_url": "https://laportelatine.org/lieux/page/9",
+      "assessment": "FIRST_PARTY_SITE_ONLY",
+      "editorial_disposition": "Frères de Notre-Dame du Rosaire in Saint-Paul-de-Serre are classified as Dominican community; source directory does not independently confirm the historical Sunday 10:00. Call-first qualifier remains.",
+      "original_source_claims": [
+        {
+          "historical_row": 609,
+          "source_id": "SSPXMAP:OPE-001005",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 10h00 (se renseigner)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-F3707D0B6CD8",
+      "venue_label": "Chapelle du sacré-Coeur",
+      "country": "FR",
+      "historical_rows": [
+        456
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/chapelle-du-sacre-coeur-chatillon-sur-chalaronne",
+      "current_evidence_url": "https://laportelatine.org/lieux/marlieux/chatillon-sur-chalaronne",
+      "assessment": "FIRST_PARTY_PATTERN_SUPPORTED",
+      "editorial_disposition": "Châtillon-sur-Chalaronne Chapelle du Sacré-Cœur at 155 route du Grobon lists Sunday 08:30 and is distinct from the Marlieux school/priorato's Sunday timetable.",
+      "original_source_claims": [
+        {
+          "historical_row": 456,
+          "source_id": "SSPXMAP:OPE-002091",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 08h30\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-F83D02513BA7",
+      "venue_label": "Misiòn de la Fraternidad S. Pio X",
+      "country": "SV",
+      "historical_rows": [
+        748
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/mision-de-la-fraternidad-s-pio-x",
+      "current_evidence_url": "https://map.fsspx.org/en/places/mision-de-la-fraternidad-s-pio-x",
+      "assessment": "HISTORICAL_OPERATOR_URL_ONLY",
+      "editorial_disposition": "El Salvador mission historical fourth-Sunday 10:00 requires a current local first-party bulletin; older directory alone does not establish a November 2026 occurrence.",
+      "original_source_claims": [
+        {
+          "historical_row": 748,
+          "source_id": "SSPXMAP:OPE-002348",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "monthly (4th Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"4º Domingo: 10:00\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-10863F71F4B6",
+      "venue_label": "Immaculate Heart of Mary Chapel",
+      "country": "US",
+      "historical_rows": [
+        636
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/immaculate-heart-of-mary-chapel",
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "assessment": "FIRST_PARTY_PATTERN_SUPPORTED",
+      "editorial_disposition": "Kingsford Heights Indiana Immaculate Heart of Mary Chapel at 501 Wayland Road is listed Sunday 09:00 with confessions beforehand. Separate from other same-name US chapels.",
+      "original_source_claims": [
+        {
+          "historical_row": 636,
+          "source_id": "SSPXMAP:OPE-001158",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 9:00 am (confessions 1 hr prior)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-552E28BEA64F",
+      "venue_label": "Notre Dame de la Salette Chapel",
+      "country": "US",
+      "historical_rows": [
+        789
+      ],
+      "historical_source": "https://map.fsspx.org/en/places/notre-dame-de-la-salette-chapel",
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "assessment": "FIRST_PARTY_SITE_ONLY",
+      "editorial_disposition": "Georgetown Illinois Notre Dame de la Salette Chapel is officially located at 5065 Olivet Rd, but current directory does not corroborate a specific Sunday 09:30; frozen source referred to secondary Metalocator.",
+      "original_source_claims": [
+        {
+          "historical_row": 789,
+          "source_id": "SSPXMAP:OPE-001147",
+          "day_pattern": "Sunday",
+          "local_time": "09:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Mass on Sun. gen. at 9:30 AM (source: Metalocator)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-953C55879369",
+      "venue_label": "Capilla Nuestra Señora del Santo Rosario",
+      "country": "AR",
+      "historical_rows": [
+        2331
+      ],
+      "historical_source": "https://fsspx.ar/es/capillas",
+      "current_evidence_url": "https://fsspx.ar/es/capillas",
+      "assessment": "FIRST_PARTY_RELATIVE_PATTERN",
+      "editorial_disposition": "Rosario Capilla Nuestra Señora del Santo Rosario at Pasaje Independencia 3277, fourth Sunday 11:00 with preceding Saturday 19:30; Saturday is a calendar-relative date, not a fixed week or weekday occurrence.",
+      "original_source_claims": [
+        {
+          "historical_row": 2331,
+          "source_id": "SSPXMAP:OPE-002382",
+          "day_pattern": "(day adjacent to a main Sunday Mass - see excerpt)",
+          "local_time": "19:30",
+          "frequency": "monthly (before/after a Sunday Mass)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"El anterior sábado: 19:30\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-90A7DDBAE26A",
+      "venue_label": "Negros Occidental City Hall-Sugar Regulatory Administration",
+      "country": "PH",
+      "historical_rows": [
+        1252
+      ],
+      "historical_source": "https://adorientem.church/find?country=PH",
+      "current_evidence_url": "https://adorientem.church/find?country=PH",
+      "assessment": "SECONDARY_IDENTITY_UNVERIFIED",
+      "editorial_disposition": "Negros Occidental City Hall-Sugar Regulatory Administration public-office venue and Sunday 11:00 TLM require independent organizer and current access confirmation.",
+      "original_source_claims": [
+        {
+          "historical_row": 1252,
+          "source_id": "AO-ASIA-PH-007",
+          "day_pattern": "Sunday",
+          "local_time": "11:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 11:00 Low Mass\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-110FE4663ACA",
+      "venue_label": "Our Lady of the Assumption Cathedral (Maasin Cathedral)",
+      "country": "PH",
+      "historical_rows": [
+        1253
+      ],
+      "historical_source": "https://adorientem.church/find?country=PH",
+      "current_evidence_url": "https://adorientem.church/find?country=PH",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Maasin Cathedral Sunday 14:00 old-rite listing appears only on aggregator; a Catholic cathedral alone does not establish its Mass edition.",
+      "original_source_claims": [
+        {
+          "historical_row": 1253,
+          "source_id": "AO-ASIA-PH-010",
+          "day_pattern": "Sunday",
+          "local_time": "14:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 14:00 Low Mass\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-9767FB0FF881",
+      "venue_label": "Our Lady of the Rosary",
+      "country": "ZA",
+      "historical_rows": [
+        1256,
+        3402
+      ],
+      "historical_source": "https://adorientem.church/find/our-lady-of-the-rosary-cape-town",
+      "current_evidence_url": "https://adorientem.church/find/our-lady-of-the-rosary-cape-town",
+      "assessment": "SECONDARY_SOURCE_URL_GAP",
+      "editorial_disposition": "Cape Town older aggregator's purported bulletin link did not resolve to an authenticated owner page; both Sunday 08:30 and Wednesday 18:00 are held.",
+      "original_source_claims": [
+        {
+          "historical_row": 1256,
+          "source_id": "AO-AFR-ZA-04",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"adorientem.church lists Sunday 08:30 Sung Mass, 'last confirmed' ~4 months before this check (cited source: a parish bulletin link that did not resolve to a real address)\""
+        },
+        {
+          "historical_row": 3402,
+          "source_id": "AO-AFR-ZA-04",
+          "day_pattern": "Wednesday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"adorientem.church lists Wednesday 18:00 Low Mass\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-56F02DF320E1",
+      "venue_label": "Our Lady of Dolours Chapel",
+      "country": "IN",
+      "historical_rows": [
+        1765
+      ],
+      "historical_source": "https://adorientem.church/find/our-lady-of-dolours-mumbai",
+      "current_evidence_url": "https://adorientem.church/find/our-lady-of-dolours-mumbai",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Mumbai purported first-Sunday 16:00 chapel Mass needs original diocesan or organizer 2026 programme.",
+      "original_source_claims": [
+        {
+          "historical_row": 1765,
+          "source_id": "AO-ASIA-IN-002",
+          "day_pattern": "Sunday",
+          "local_time": "16:00",
+          "frequency": "monthly (first Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"First Sunday of the month 16:00 Low Mass (1962 Missal)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-28B6C5B21415",
+      "venue_label": "St. Joseph Chapel",
+      "country": "KE",
+      "historical_rows": [
+        1769,
+        3403,
+        3404
+      ],
+      "historical_source": "https://adorientem.church/find/st-joseph-nairobi",
+      "current_evidence_url": "https://adorientem.church/find/st-joseph-nairobi",
+      "assessment": "SECONDARY_PROVIDER_UNVERIFIED",
+      "editorial_disposition": "Nairobi claimed FSSP St Joseph Chapel Sunday 09:30 and Tue/Fri 18:00 lacks independently confirmed official FSSP site/bulletin in this pass; retain all three source claims on hold.",
+      "original_source_claims": [
+        {
+          "historical_row": 1769,
+          "source_id": "AO-AFR-KE-02",
+          "day_pattern": "Sunday",
+          "local_time": "09:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"adorientem.church lists Sunday 09:30 Sung Mass\""
+        },
+        {
+          "historical_row": 3403,
+          "source_id": "AO-AFR-KE-02",
+          "day_pattern": "Tuesday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"adorientem.church lists Tuesday 18:00 Low Mass\""
+        },
+        {
+          "historical_row": 3404,
+          "source_id": "AO-AFR-KE-02",
+          "day_pattern": "Friday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"adorientem.church lists Friday 18:00 Low Mass\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-DA0AFA244DB4",
+      "venue_label": "Kapel Susteran Gembala Baik, Jakarta Timur & Kapel Pondok Bambu (Skolastikat Sang Tunas)",
+      "country": "ID",
+      "historical_rows": [
+        1827
+      ],
+      "historical_source": "https://adorientem.church/find/kapel-susteran-gembala-baik-jakarta-timur-kapel-pondok-bambu-skolastikat-sang-tunas-rt-12-rw-2-9d1fbe71",
+      "current_evidence_url": "https://adorientem.church/find/kapel-susteran-gembala-baik-jakarta-timur-kapel-pondok-bambu-skolastikat-sang-tunas-rt-12-rw-2-9d1fbe71",
+      "assessment": "COMBINED_VENUE_INFERRED_SUNDAY",
+      "editorial_disposition": "Jakarta record combines two chapel names and original source 11:00 has NO weekday; Sunday was inferred without evidence. Reject this source-only Sunday hypothesis until an exact site and day are confirmed.",
+      "original_source_claims": [
+        {
+          "historical_row": 1827,
+          "source_id": "AO-ASIA-ID-002",
+          "day_pattern": "Sunday",
+          "local_time": "11:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"'Mass Time 11.00' - no day label given, assumed Sunday\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-A8870D2AC011",
+      "venue_label": "St. Joseph College Chapel",
+      "country": "ID",
+      "historical_rows": [
+        1828
+      ],
+      "historical_source": "https://adorientem.church/find/st-joseph-college-chapel-mojolangu-b72b8a49",
+      "current_evidence_url": "https://adorientem.church/find/st-joseph-college-chapel-mojolangu-b72b8a49",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Malang Saint Joseph College Chapel Sunday 10:00 lacks primary site/organizer evidence and current event confirmation.",
+      "original_source_claims": [
+        {
+          "historical_row": 1828,
+          "source_id": "AO-ASIA-ID-005",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday morning 10 am\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-F4E124F2F957",
+      "venue_label": "St. Francis Xavier Chapel",
+      "country": "JP",
+      "historical_rows": [
+        1833
+      ],
+      "historical_source": "https://adorientem.church/find/st-francis-xavier-tokyo",
+      "current_evidence_url": "https://adorientem.church/find/st-francis-xavier-tokyo",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Tokyo St Francis Xavier Chapel second-Sunday 14:00 claimed old-rite Mass lacks independently verified first-party bulletin.",
+      "original_source_claims": [
+        {
+          "historical_row": 1833,
+          "source_id": "AO-ASIA-JP-004",
+          "day_pattern": "Sunday",
+          "local_time": "14:00",
+          "frequency": "monthly (second Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Second Sunday of the month 14:00 Sung Mass (1962 Missal)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-07FDD0150233",
+      "venue_label": "Chapel of St. Augustine",
+      "country": "PH",
+      "historical_rows": [
+        1834,
+        3407,
+        3408
+      ],
+      "historical_source": "https://adorientem.church/find/san-agustin-manila",
+      "current_evidence_url": "https://adorientem.church/find/san-agustin-manila",
+      "assessment": "SECONDARY_UNVERIFIED_MULTI_MASS",
+      "editorial_disposition": "Manila chapel three claimed events (third Saturday 10:00, Sunday 08:00/17:00) cannot be attributed to a precisely identified current host chapel or books from aggregator listing alone.",
+      "original_source_claims": [
+        {
+          "historical_row": 1834,
+          "source_id": "AO-ASIA-PH-001",
+          "day_pattern": "Saturday",
+          "local_time": "10:00",
+          "frequency": "monthly (third Saturday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Third Saturday of the month 10:00 Solemn Mass\""
+        },
+        {
+          "historical_row": 3407,
+          "source_id": "AO-ASIA-PH-001",
+          "day_pattern": "Sunday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 08:00 Sung Mass (confession before Mass)\""
+        },
+        {
+          "historical_row": 3408,
+          "source_id": "AO-ASIA-PH-001",
+          "day_pattern": "Sunday",
+          "local_time": "17:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 17:00 Low Mass\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-A885F4D57F3A",
+      "venue_label": "Immaculate Conception Chapel",
+      "country": "PH",
+      "historical_rows": [
+        1835
+      ],
+      "historical_source": "https://adorientem.church/find/immaculate-conception-chapel-quezon-city-bd5b203d",
+      "current_evidence_url": "https://adorientem.church/find/immaculate-conception-chapel-quezon-city-bd5b203d",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Quezon City Sunday 15:00 purported old-form Mass has no attached current first-party chapel programme.",
+      "original_source_claims": [
+        {
+          "historical_row": 1835,
+          "source_id": "AO-ASIA-PH-004",
+          "day_pattern": "Sunday",
+          "local_time": "15:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 15:00 Sung Mass (1962 Missal)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-560C09E065F5",
+      "venue_label": "Holy Family Church",
+      "country": "TW",
+      "historical_rows": [
+        1836
+      ],
+      "historical_source": "https://adorientem.church/find/holy-family-church-miaoli-county-96e9e3c7",
+      "current_evidence_url": "https://adorientem.church/find/holy-family-church-miaoli-county-96e9e3c7",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Miaoli Holy Family fifth-Sunday 15:00 claim explicitly lacked independent confirmation in historical source.",
+      "original_source_claims": [
+        {
+          "historical_row": 1836,
+          "source_id": "AO-ASIA-TW-001",
+          "day_pattern": "Sunday",
+          "local_time": "15:00",
+          "frequency": "monthly (fifth Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Fifth Sunday of the month 15:00 (not independently confirmed)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-81634B90E878",
+      "venue_label": "National Dong Hwa University Catholic student centre",
+      "country": "TW",
+      "historical_rows": [
+        1837
+      ],
+      "historical_source": "https://adorientem.church/find/national-dong-hwa-university-catholic-student-centre-hualien-county-5b1f6a1d",
+      "current_evidence_url": "https://adorientem.church/find/national-dong-hwa-university-catholic-student-centre-hualien-county-5b1f6a1d",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Hualien university student-centre Wednesday 18:30 lacks an independently verified chaplaincy or diocesan older-form Mass announcement.",
+      "original_source_claims": [
+        {
+          "historical_row": 1837,
+          "source_id": "AO-ASIA-TW-002",
+          "day_pattern": "Wednesday",
+          "local_time": "18:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Every Wednesday 18:30 (not independently confirmed)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-5FC9A92238BA",
+      "venue_label": "Our Lady of Mount Carmel Church",
+      "country": "TW",
+      "historical_rows": [
+        1838
+      ],
+      "historical_source": "https://adorientem.church/find/our-lady-of-mount-carmel-church-hsinchu-city-d21b4e76",
+      "current_evidence_url": "https://adorientem.church/find/our-lady-of-mount-carmel-church-hsinchu-city-d21b4e76",
+      "assessment": "SECONDARY_1962_UNVERIFIED",
+      "editorial_disposition": "Hsinchu Our Lady of Mount Carmel second-Sunday 15:00 source was marked unconfirmed in the historical aggregator; do not certify current 1962 service.",
+      "original_source_claims": [
+        {
+          "historical_row": 1838,
+          "source_id": "AO-ASIA-TW-004",
+          "day_pattern": "Sunday",
+          "local_time": "15:00",
+          "frequency": "monthly (second Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Second Sunday of the month 15:00 (not independently confirmed)\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-32E422CAA192",
+      "venue_label": "Saint Gregory’s College",
+      "country": "NG",
+      "historical_rows": [
+        1846
+      ],
+      "historical_source": "https://www.latinmassdir.org/venue/ile-iwe-giga-mimo-gregory-saint-gregorys-college-lagos-nigeria/",
+      "current_evidence_url": "https://www.latinmassdir.org/venue/ile-iwe-giga-mimo-gregory-saint-gregorys-college-lagos-nigeria/",
+      "assessment": "SECONDARY_STALE_REFERENCE",
+      "editorial_disposition": "Lagos Saint Gregory's College 12:30 Sunday source is a third-party listing last modified years ago; SSPX Lagos priory/church schedules do not confirm this separate school venue.",
+      "original_source_claims": [
+        {
+          "historical_row": 1846,
+          "source_id": "LMD-AFR-11",
+          "day_pattern": "Sunday",
+          "local_time": "12:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Every Sunday 12:30 Mass, per latinmassdir.org ('last modified 3 years ago')\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-A87BAC717D44",
+      "venue_label": "Église Saint-Jean-Baptiste",
+      "country": "BJ",
+      "historical_rows": [
+        1865,
+        3405,
+        3406
+      ],
+      "historical_source": "https://www.latinmassdir.org/venue/eglise-saint-jean-baptiste-natitingou-benin/",
+      "current_evidence_url": "https://www.latinmassdir.org/venue/eglise-saint-jean-baptiste-natitingou-benin/",
+      "assessment": "SECONDARY_NO_PRIMARY_MASS_SOURCE",
+      "editorial_disposition": "Natitingou Église Saint-Jean-Baptiste 3 historic clocks rely on third-party Latin Mass Directory without verified operator, books or current dated events; keep separate from girls' lycée.",
+      "original_source_claims": [
+        {
+          "historical_row": 1865,
+          "source_id": "LMD-AFR-01",
+          "day_pattern": "Sunday",
+          "local_time": "07:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Every Sunday 07:30 Mass, per latinmassdir.org\""
+        },
+        {
+          "historical_row": 3405,
+          "source_id": "LMD-AFR-01",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Every Sunday 09:00 Mass, per latinmassdir.org\""
+        },
+        {
+          "historical_row": 3406,
+          "source_id": "LMD-AFR-01",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday",
+          "local_time": "07:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Monday-Saturday 07:00 Mass, per latinmassdir.org\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    },
+    {
+      "cl2_anchor": "RG-A583D1D5C7C5",
+      "venue_label": "Lycée des Jeunes Filles",
+      "country": "BJ",
+      "historical_rows": [
+        1866
+      ],
+      "historical_source": "https://www.latinmassdir.org/venue/lycee-des-jeunes-filles-natitingou-benin/",
+      "current_evidence_url": "https://www.latinmassdir.org/venue/lycee-des-jeunes-filles-natitingou-benin/",
+      "assessment": "SECONDARY_NO_PRIMARY_MASS_SOURCE",
+      "editorial_disposition": "Natitingou girls' lycée Sunday 08:30 is not an independently confirmed 2026 public chapel Mass; distinct physical venue from Saint-Jean-Baptiste.",
+      "original_source_claims": [
+        {
+          "historical_row": 1866,
+          "source_id": "LMD-AFR-02",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Every Sunday 08:30 Mass, per latinmassdir.org ('last modified 1 month ago')\""
+        }
+      ],
+      "gate": "RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE",
+      "source_status": [
+        "dated_current_occurrence_unverified",
+        "una_cum_unverified",
+        "canonical_status_unverified",
+        "exact_missal_unverified",
+        "ministry_and_owner_not_inferred"
+      ]
+    }
+  ]
+}

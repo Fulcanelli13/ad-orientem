@@ -1,0 +1,600 @@
+{
+  "schema": "AO_CL27_CURRENT_SOURCE_WAVE4_V1",
+  "reviewed_on": "2026-11-08",
+  "publication": "RESEARCH_ONLY_NO_APP_IMPORT",
+  "canonical_source": {
+    "branch": "data/cl27-bulk-schedule-collision-queue-20261026",
+    "blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d",
+    "pr": 1775
+  },
+  "summary": {
+    "new_source_groups_reviewed": 8,
+    "new_historical_rows_reviewed": 28,
+    "previous_reviewed": 139,
+    "cumulative_reviewed": 167,
+    "still_unreviewed": 129,
+    "new_current_mass_events_approved": 0,
+    "new_classifications_approved": 0
+  },
+  "boundaries": [
+    "No frozen CL2 identities or source rows rewritten",
+    "No new public Mass times, navigation GPS, ecclesial or una-cum classification",
+    "Source schedule pattern is not an independently verified dated occurrence",
+    "Ministry serving a chapel does not prove ownership or full liturgical book",
+    "Confessions, exposition and rosary are not Masses"
+  ],
+  "cases": [
+    {
+      "cl2_anchor": "RG-CB03C808AE8A",
+      "country": "BR",
+      "venue_label": "Capela Imaculada Conceição",
+      "historical_url": "https://map.fsspx.org/en/places/capela-imaculada-conceicao",
+      "historical_rows": [
+        383,
+        2477,
+        2478,
+        2479
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 383,
+          "source_id": "SSPXMAP:OPE-002395",
+          "day_pattern": "Friday",
+          "local_time": "19:00",
+          "frequency": "monthly (first Friday)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2477,
+          "source_id": "SSPXMAP:OPE-002395",
+          "day_pattern": "Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly except last Saturday",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2478,
+          "source_id": "SSPXMAP:OPE-002395",
+          "day_pattern": "Sunday",
+          "local_time": "10:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2479,
+          "source_id": "SSPXMAP:OPE-002395",
+          "day_pattern": "Sunday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+          "kind": "FIRST_PARTY_BRAZIL_UPDATED_VENUE_LIST"
+        },
+        {
+          "url": "https://fsspx.com.br/sites/default/files/documents/boletim-priorado-fevereiro-2026.pdf",
+          "kind": "FIRST_PARTY_DATED_FEBRUARY_2026_BULLETIN"
+        },
+        {
+          "url": "https://fsspx.com.br/pt/capelas",
+          "kind": "FIRST_PARTY_BRAZIL_LEGACY_CHAPEL_LIST"
+        }
+      ],
+      "decision": "CONFLICTING_CURRENT_OPERATOR_VENUE_LOCATION",
+      "source_observation": "Historical source lists Capela Imaculada Conceição in Campinas, Rua Capitão Augusto de Sales Pupo 49, with first Friday 19:00, Saturday 18:00 (not last) and Sunday 10:30/18:00 (not last). Another operator list and February 2026 bulletin identify a chapel of the same title in Indaiatuba at Rua Gabiroba 2, with a 10:30 Sunday and other service-pattern differences. The legacy Campinas list still coexists. This is a current location and possibly historical-site identity conflict, not automatic proof of a move, closure, replacement or same building.",
+      "identity_and_occurrence_gate": "Reconcile whether Campinas and Indaiatuba are the same migrating apostolate, a replacement chapel or separate worship places with operator/dated evidence. Do not transfer the four historical claims, remap CL2, change the published approximate coordinate or claim either venue's current timetable without identity resolution.",
+      "source_role_scope": "SSPX Brazil source/provider listings only; no settled physical-site crosswalk",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-9F9858FBD0DA",
+      "country": "FR",
+      "venue_label": "Chapelle de l'Immaculée Conception",
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-de-l-immaculee-conception",
+      "historical_rows": [
+        450,
+        2423,
+        2424,
+        2425
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 450,
+          "source_id": "SSPXMAP:OPE-001665",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2423,
+          "source_id": "SSPXMAP:OPE-001665",
+          "day_pattern": "Sunday",
+          "local_time": "10:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2424,
+          "source_id": "SSPXMAP:OPE-001665",
+          "day_pattern": "Friday",
+          "local_time": "18:30",
+          "frequency": "monthly (first Friday)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2425,
+          "source_id": "SSPXMAP:OPE-001665",
+          "day_pattern": "Saturday",
+          "local_time": "09:00",
+          "frequency": "monthly (first Saturday)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://laportelatine.org/lieux/merigny/poitiers",
+          "kind": "DIRECT_DISTRICT_NAMED_CHAPEL"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_CORROBORATED_EXCEPTION_HOLD",
+      "source_observation": "Poitiers 44 rue Jean Jaurès is explicitly classified on the district page as a Fraternité de la Transfiguration chapel. It lists Sunday 09:00/10:30, first Friday 18:30, and first Saturday 09:00; all four frozen claims match at pattern level. Do not reclassify it as an SSPX-owned church based on inclusion in the district directory.",
+      "identity_and_occurrence_gate": "Get the relevant local dated notices and confirmation of ministry/rite before publishing current individual Masses, a standing, or a church-wide 1962 assumption.",
+      "source_role_scope": "Fraternité de la Transfiguration named site; district directory supplies information but not legal title",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-AFA6AF1255DC",
+      "country": "FR",
+      "venue_label": "Chapelle de l'Immaculée",
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-de-l-immaculee-conception-saint-jean-de-la-ruelle",
+      "historical_rows": [
+        448,
+        2526,
+        2527,
+        2528
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 448,
+          "source_id": "SSPXMAP:OPE-002145",
+          "day_pattern": "Sunday",
+          "local_time": "08:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2526,
+          "source_id": "SSPXMAP:OPE-002145",
+          "day_pattern": "Sunday",
+          "local_time": "10:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2527,
+          "source_id": "SSPXMAP:OPE-002145",
+          "day_pattern": "Friday, Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2528,
+          "source_id": "SSPXMAP:OPE-002145",
+          "day_pattern": "Monday",
+          "local_time": "09:00",
+          "frequency": "weekly (school term only)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://laportelatine.org/lieux/prieure-saint-martin/saint-jean-de-la-ruelle",
+          "kind": "DIRECT_DISTRICT_NAMED_CHAPEL"
+        },
+        {
+          "url": "https://laportelatine.org/lieux/prieure-saint-martin/ecole-saint-jean-de-la-ruelle",
+          "kind": "DISTRICT_SCHOOL_HOSTED_CELEBRATION_CONTEXT"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_WITH_SCHOOL_TERM_EXCEPTIONS",
+      "source_observation": "Saint-Jean-de-La-Ruelle chapel, 26 bis rue Abbé de l'Épée, lists Sunday 08:30/10:30, ordinary Friday and Saturday 18:00 and Monday 09:00 only during term; on school resumption Mondays 09:30. Confessions 17:30 are NOT a second Mass. Frozen Monday 09:00 is therefore conditional, not a 52-week invariant.",
+      "identity_and_occurrence_gate": "Attach distinct school-term and first-day-after-holiday rules, verify actual calendar date and exact chapel identity before any recurring event approval.",
+      "source_role_scope": "SSPX district chapel, school-linked Monday schedule; no inference of property ownership",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-22BB6F85DA74",
+      "country": "CA",
+      "venue_label": "Prieuré et École Sainte-Famille",
+      "historical_url": "https://map.fsspx.org/en/places/prieure-sainte-famille",
+      "historical_rows": [
+        878,
+        2862,
+        2863,
+        2864
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 878,
+          "source_id": "SSPXMAP:OPE-001289",
+          "day_pattern": "Sunday",
+          "local_time": "07:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2862,
+          "source_id": "SSPXMAP:OPE-001289",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2863,
+          "source_id": "SSPXMAP:OPE-001289",
+          "day_pattern": "Saturday",
+          "local_time": "07:45",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2864,
+          "source_id": "SSPXMAP:OPE-001289",
+          "day_pattern": "Friday",
+          "local_time": "18:00",
+          "frequency": "monthly (first Friday)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://levis.sspx.ca/fr/horaire-des-messes-31948",
+          "kind": "DIRECT_PRIORY_GENERAL_MASS_HOURS"
+        },
+        {
+          "url": "https://levis.sspx.ca/fr/semainier-du-25-octobre-au-8-novembre-2026-61654",
+          "kind": "DATED_OCT_NOV_2026_SEMAINIER"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_WITH_DATED_2026_EXCEPTION_CONTROL",
+      "source_observation": "Lévis Sainte-Famille priory programme lists Sunday 07:30/10:00, Saturday 07:45, first Fridays 18:00, with weekday morning 07:00 during school term versus 07:45 during school holidays. Dated 25 Oct–8 Nov 2026 semainier confirms 1 and 8 Nov Sunday 07:30/10:00, 7 Nov Saturday 07:45, and 6 Nov first-Friday 18:00, with other weekdays changing 07:00/07:45/18:00. The Mass venue in that schedule is the Chapelle du Sacré-Cœur; separate Résidences du Précieux-Sang also lists Mass and must not be fused with the priory.",
+      "identity_and_occurrence_gate": "Bind each eventual event to the actual named chapel, not the priory or school address; verify the occurrence calendar and local exceptions every date before publishing.",
+      "source_role_scope": "SSPX Priory serving the Chapelle du Sacré-Cœur; distinct residential venue not merged",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-CAE3EAFB8924",
+      "country": "BR",
+      "venue_label": "Casa Dom Vital",
+      "historical_url": "https://map.fsspx.org/en/places/casa-dom-vital",
+      "historical_rows": [
+        434,
+        2511,
+        2512
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 434,
+          "source_id": "SSPXMAP:OPE-002569",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday",
+          "local_time": "07:15",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2511,
+          "source_id": "SSPXMAP:OPE-002569",
+          "day_pattern": "Sunday",
+          "local_time": "08:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2512,
+          "source_id": "SSPXMAP:OPE-002569",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+          "kind": "FIRST_PARTY_BRAZIL_SITE_LIST"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_CORROBORATED_SITE_SCOPED",
+      "source_observation": "Brazil operator's current listing identifies Casa Dom Vital in Arujá, Av. Internacional 223, as the autonomous house with Capela Nossa Senhora das Dores, listing Monday–Saturday 07:15 and Sunday 08:00/10:00. All three frozen clock claims are supported at source-pattern level; official page distinguishes the religious house, its chapel and served missions.",
+      "identity_and_occurrence_gate": "Verify dated changes, chapel access and occurrence scope. The Casa is not evidence about a different Arujá or Campinas chapel and is not legal-title proof.",
+      "source_role_scope": "SSPX Brazil autonomous house and named onsite chapel only",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-84B39A237AAB",
+      "country": "MQ",
+      "venue_label": "Chapelle Notre-Dame-de-la-Délivrande",
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-de-la-delivrande",
+      "historical_rows": [
+        468,
+        2547,
+        2548
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 468,
+          "source_id": "SSPXMAP:OPE-002193",
+          "day_pattern": "Sunday",
+          "local_time": "07:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2547,
+          "source_id": "SSPXMAP:OPE-002193",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2548,
+          "source_id": "SSPXMAP:OPE-002193",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "06:30",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://laportelatine.org/lieux/fort-de-france/chapelle-fort-de-france",
+          "kind": "DISTRICT_NAMED_CHAPEL"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_NON_MASS_DISAMBIGUATION",
+      "source_observation": "Fort-de-France Chapelle Notre-Dame-de-la-Délivrande, 64–66 rue Moreau de Jonnès, lists Sunday Low Mass 07:00, Sung Mass 09:00 and weekday Mass 06:30. The Thursday 07:15 item is exposition of the Blessed Sacrament, NOT a 07:15 Mass. The separate Priory Notre Dame de la Délivrande is at 40 avenue Martin Luther King; do not cross-assign chapel times to the priory's building.",
+      "identity_and_occurrence_gate": "Verify dated announcements and actual weekday exceptions before occurrence publication. Never convert Exposition, Confessions or Rosary into Mass.",
+      "source_role_scope": "SSPX chapel separate from priory; named service type applies only to cited chapel",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-1E9599A96067",
+      "country": "FR",
+      "venue_label": "Chapelle Sainte-Anne",
+      "historical_url": "https://map.fsspx.org/en/places/chapelle-sainte-anne",
+      "historical_rows": [
+        494,
+        2579,
+        2580
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 494,
+          "source_id": "SSPXMAP:OPE-002151",
+          "day_pattern": "Sunday",
+          "local_time": "08:15",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2579,
+          "source_id": "SSPXMAP:OPE-002151",
+          "day_pattern": "Sunday",
+          "local_time": "10:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2580,
+          "source_id": "SSPXMAP:OPE-002151",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "local_time": "18:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://laportelatine.org/lieux/saint-nolff/vannes",
+          "kind": "DISTRICT_NAMED_CHAPEL"
+        },
+        {
+          "url": "https://laportelatine.org/lieux/saint-nolff",
+          "kind": "DISTRICT_PRIORY_CHAPEL_CROSSCHECK"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_SCHOOL_TERM_EXCEPTION",
+      "source_observation": "Vannes Chapelle Sainte-Anne, 20 rue Aristide Briand, lists Sundays 08:15/10:00 and weekday 18:00, except Thursdays during school term at 11:15. The priory Saint-Vincent-Ferrier at Saint-Nolff also publishes its own 07:15/07:45 hours and the Sunday 18:00 St-Yves Chapel at Guer; none of those alternate-venue times belong to Sainte-Anne.",
+      "identity_and_occurrence_gate": "Split Thursday academic-term exception and ensure calendar/site-specific join; verify dated notices and venue before publication.",
+      "source_role_scope": "SSPX district chapel with separate named priory and St-Yves chapel",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    },
+    {
+      "cl2_anchor": "RG-AD6F646E897B",
+      "country": "US",
+      "venue_label": "Corpus Christi Church",
+      "historical_url": "https://map.fsspx.org/en/places/corpus-christi-church-edmonds",
+      "historical_rows": [
+        569,
+        2640,
+        2641
+      ],
+      "historical_claims": [
+        {
+          "historical_row": 569,
+          "source_id": "SSPXMAP:OPE-001131",
+          "day_pattern": "Sunday",
+          "local_time": "09:00",
+          "frequency": "weekly",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2640,
+          "source_id": "SSPXMAP:OPE-001131",
+          "day_pattern": "Saturday",
+          "local_time": "18:00",
+          "frequency": "weekly except first Saturday",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        },
+        {
+          "historical_row": 2641,
+          "source_id": "SSPXMAP:OPE-001131",
+          "day_pattern": "Saturday",
+          "local_time": "09:00",
+          "frequency": "monthly (first Saturday)",
+          "legacy_precision_holds": [
+            "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://icc.id.sspx.org/en/mass-centers-31326",
+          "kind": "FIRST_PARTY_NORTHWEST_PRIORY_SERVEDED_MASS_CENTER"
+        },
+        {
+          "url": "https://sspx.org/en/list-sspx-chapels",
+          "kind": "FIRST_PARTY_US_DISTRICT_IDENTITY"
+        }
+      ],
+      "decision": "FIRST_PARTY_PATTERN_DISTINCT_FIRST_SATURDAY",
+      "source_observation": "Corpus Christi Church, Edmonds Washington, 204 6th Avenue N, is listed by its serving Idaho priory as Sunday 09:00, ordinary Saturday 18:00 but FIRST Saturday 09:00 instead. These are exclusive recurrence types, not two Saturday Masses on first Saturday. Do not transfer the separately listed Spokane Carmel or Post Falls Masses to Edmonds.",
+      "identity_and_occurrence_gate": "Verify current dated programme and exception calendar for each intended event. Source states served Mass center, not legal ownership or complete liturgical-book details.",
+      "source_role_scope": "SSPX district-listed church served from Idaho priory; ministry-site distinction preserved",
+      "unproven": [
+        "exact_current_occurrence",
+        "specific_1962_missal",
+        "una_cum",
+        "pope_named_in_canon",
+        "canonical_status",
+        "legal_ownership",
+        "named_celebrant"
+      ],
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL"
+    }
+  ]
+}
