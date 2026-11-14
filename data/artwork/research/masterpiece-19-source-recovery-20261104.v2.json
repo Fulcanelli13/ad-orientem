@@ -1,0 +1,125 @@
+{
+  "schema": "AO_MASTERPIECE_19_SOURCE_RECOVERY_V2",
+  "asOf": "2026-11-04",
+  "originalRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41806023848",
+  "directRecoveryRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41808988342",
+  "directArtifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41808988342/artifacts/13310543509",
+  "numbers": {
+    "total": 19,
+    "firstRunDecoded": 4,
+    "secondRunAdditionalDecoded": 3,
+    "cumulativeUniqueOriginalsDecoded": 7,
+    "unrecovered": 12,
+    "http429": 11,
+    "tiffHold": 1,
+    "publicationChanges": 0
+  },
+  "previouslyDecoded": [
+    174,
+    192,
+    372,
+    373
+  ],
+  "additionallyDecoded": [
+    {
+      "approvedRecordIndex": 377,
+      "artist": "Caravaggio",
+      "title": "Annunciation",
+      "pixels": [
+        1138,
+        1587
+      ],
+      "bytes": 541267,
+      "sha256": "7565b633d33260372bb0d3b8c7eef65993d1923ad578d0572a8a928ab06dfee3",
+      "quality": "LOW_RES_FOR_HERO_SMALLER_USE_ONLY_AFTER_REVIEW",
+      "visualNotes": "Whole composition, no visible colour chart; moderate sharpness; better museum master desired"
+    },
+    {
+      "approvedRecordIndex": 379,
+      "artist": "Peter Paul Rubens",
+      "title": "Transfiguration",
+      "pixels": [
+        3645,
+        2150
+      ],
+      "bytes": 930314,
+      "sha256": "243f8a4354a5b2af663ac1fdef499ccddeac3a96ef89165246c7fbec49bf04f7",
+      "quality": "PROVISIONAL_GALLERY_CANDIDATE_NEEDS_SHARPNESS_COMPARATOR",
+      "visualNotes": "Complete panoramic composition, no visible calibration chart; heavy JPEG compression must be assessed at intended size"
+    },
+    {
+      "approvedRecordIndex": 386,
+      "artist": "Jacques-Louis David",
+      "title": "Saint Roch Interceding for Plague Victims",
+      "pixels": [
+        800,
+        1088
+      ],
+      "bytes": 116510,
+      "sha256": "00aac22b331942669dc19bee7ac4cb29d3e48ed47e00ef77f3d4e4a7983216c5",
+      "quality": "BETTER_SOURCE_REQUIRED",
+      "visualNotes": "Whole composition but small and strongly compressed; not a premium hero master"
+    }
+  ],
+  "held": [
+    {
+      "approvedRecordIndex": 248,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 264,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 268,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 331,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 345,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 376,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 384,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 521,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 525,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 528,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 535,
+      "reason": "HTTP_429"
+    },
+    {
+      "approvedRecordIndex": 266,
+      "reason": "ARCHIVAL_MULTIPAGE_TIFF_REQUIRES_DEDICATED_SOURCE_PROCESSING"
+    }
+  ],
+  "publicationRelease": false,
+  "rightsVerificationStatus": "INDEPENDENT_EXACT_SOURCE_LICENSE_REQUIRED",
+  "userApprovalPreserved": true,
+  "noCrop": true,
+  "noSourceSubstitutions": true,
+  "nextSteps": [
+    "Seek official museum original photos for 11 Commons-throttled works",
+    "Treat Michaelina Wautier 204MB TIFF separately with page/photograph identity",
+    "Re-verify per-file rights and actual high-res quality before adding to curated gallery",
+    "Preserve protected Calendar and Prayer artwork decisions"
+  ]
+}

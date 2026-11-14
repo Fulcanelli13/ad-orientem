@@ -1,0 +1,81 @@
+{
+  "schema": "AO_TWO_MASTERPIECE_TECHNICAL_DERIVATIVE_FINGERPRINTS_V1",
+  "date": "2026-11-04",
+  "github_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41807199556",
+  "publication_approved": false,
+  "source_originals_reproducible": true,
+  "production_tree_unchanged": true,
+  "derivative_policy": [
+    "SOURCE_ICC_CONVERTED_TO_SRGB",
+    "FULL_CANVAS_NO_CROP",
+    "NO_UPSCALING",
+    "SOURCE_ORIGINALS_UNMODIFIED",
+    "DO_NOT_DEPLOY_WITHOUT_EXPLICIT_RELEASE_REVIEW"
+  ],
+  "works": [
+    {
+      "approved_record_index": 174,
+      "artist": "Jan van Eyck",
+      "title": "Madonna with Canon van der Paele",
+      "source_file": "https://commons.wikimedia.org/wiki/File:Eyck,_Jan_van_-_Madonna_with_Canon_van_der_Paele.jpeg",
+      "source_sha256": "465ecfb7b90b21e87ccd276359d90536954d2198c636ace98a0838db3d4069e6",
+      "source_dimensions": [
+        8089,
+        6279
+      ],
+      "rights_hold": "PDM exact Flanders source reconciliation pending",
+      "variants": [
+        {
+          "name": "AO_MP_174_gallery-large.webp",
+          "width": 3200,
+          "height": 2484,
+          "sha256": "7772ed336661fbdba2004090b7bfbed56370def11b8c2ffb2bcc42dd2bad0209"
+        },
+        {
+          "name": "AO_MP_174_gallery-medium.webp",
+          "width": 1600,
+          "height": 1242,
+          "sha256": "9acc8ca0a2a85909eadf88b76983e8336310604d6f7a0befb2e0cfe261cb6988"
+        },
+        {
+          "name": "AO_MP_174_card.webp",
+          "width": 720,
+          "height": 559,
+          "sha256": "a015519b5f02694c58460813f8507ee5d8bf11984d4a63b509f94ae8119eaaac"
+        }
+      ]
+    },
+    {
+      "approved_record_index": 192,
+      "artist": "Gustave Doré",
+      "title": "Ecce Homo",
+      "source_file": "https://commons.wikimedia.org/wiki/File:Ecce_Homo,_PDUT1439.jpg",
+      "source_sha256": "0916cbee8b9cdae72a0e4139d98d678d07ab43462a5ec5cce309af173a93e3d5",
+      "source_dimensions": [
+        3420,
+        5494
+      ],
+      "rights_hold": "CC0 exact file; app publication and protected-assignment review pending",
+      "variants": [
+        {
+          "name": "AO_MP_192_gallery-large.webp",
+          "width": 1992,
+          "height": 3200,
+          "sha256": "f471059bcbe39f906c0b2c9aec85739419227861f2e5cb4345e7fe6d0ae00a30"
+        },
+        {
+          "name": "AO_MP_192_gallery-medium.webp",
+          "width": 996,
+          "height": 1600,
+          "sha256": "8791bde5b3976a63f8726d3b1bae63a7ffc9c2a9df7ac8e813cc3a5e848130b6"
+        },
+        {
+          "name": "AO_MP_192_card.webp",
+          "width": 448,
+          "height": 720,
+          "sha256": "d76ac9752a0d358f0e2627e1e30e05c61b4177c4416b66e5c85554135f721512"
+        }
+      ]
+    }
+  ]
+}
