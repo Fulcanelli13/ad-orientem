@@ -23,7 +23,13 @@
         "https://www.tradycja.org/index.php/dokumenty/mszeswiete",
         "https://gliwice.gosc.pl/gal/pokaz/1944384.Kosciol-pw-bl-Jana-Pawla-II-w-Dyrdach/13",
         "https://www.przymierzemilosci.pl/listamszy.html"
-      ]
+      ],
+      "research_update": "Original TLM congregation site still confirms Roman Catholic church of St John Paul II in Dyrdy on ul. Ks. Antosza. Previous landmark Papal Oak feature is adjacent, not its entrance or footprint.",
+      "verified_lead_urls": [
+        "https://www.dyrdytrydencka.pl/",
+        "https://diecezja.gliwice.pl/parafia/430"
+      ],
+      "next_evidence_needed": "Independently tagged footprint or georeferenced building-specific plan (not papal oak, 1875 Marian chapel or bare street)."
     },
     {
       "physical_group_id": "RG-5EE981E628B6",
@@ -45,7 +51,14 @@
         "lng": -46.70524,
         "feature": "Santa Casa hospital complex; NOT chapel pin",
         "source": "https://mapcarta.com/32799932"
-      }
+      },
+      "research_update": "Santo Amaro Diocese independently confirms the Traditional Mass is held in the Santa Casa chapel at Av. Adolfo Pinheiro 235. Schola Cantorum event pages list Av. João Dias 2046 as their own locality/footer; do not substitute it for the chapel.",
+      "verified_lead_urls": [
+        "https://diocesedesantoamaro.org.br/paroquias-da-diocese-de-santo-amaro/paroquia-rainha-santa-isabel-de-portugal/",
+        "https://www.descubrasampa.com.br/2021/04/capela-da-santa-casa-de-misericordia-de-santo-amaro.html",
+        "https://corogregoriano.com.br/pentecostes_2025/"
+      ],
+      "next_evidence_needed": "Exact chapel building geometry or address-specific doorway tied to Santa Casa chapel, not Santa Casa hospital complex or separate parish at Rua Artur Nascimento Junior 95."
     },
     {
       "physical_group_id": "RG-615FF6835AAE",
@@ -60,7 +73,13 @@
         "https://www.latinmassdir.org/venue/kaplnka-svatej-terezie-z-lisieux-poprad-slovakia/",
         "https://farabeckov.sk/farske-oznamy/",
         "https://poprad.oma.sk/u/komenskeho/5"
-      ]
+      ],
+      "research_update": "Latin Mass Directory's Poprad/Komenskeho record links a Trnava diocese and Beckov parish, while no independent Poprad St Therese chapel-building evidence was obtained. This is a possible source-city identity collision, not missing precision alone.",
+      "verified_lead_urls": [
+        "https://www.latinmassdir.org/venue/kaplnka-svatej-terezie-z-lisieux-poprad-slovakia/",
+        "https://farabeckov.sk/farske-oznamy/"
+      ],
+      "next_evidence_needed": "Resolve parish, city and liturgy venue identity from a primary operator source before any map point is introduced."
     },
     {
       "physical_group_id": "RG-CF40DBEAD235",
@@ -84,12 +103,21 @@
         "lng": 18.78274,
         "feature": "Holy Cross church; NOT distinct St Barbara chapel pin",
         "source": "https://www.dioblina.eu/Kosciol_Krzyza_Swietego_Zabrze"
-      }
+      },
+      "research_update": "Official parish history says the 1983–87 former mine adit was converted into St Barbara chapel before the new Holy Cross church was built and consecrated in 2000; these are distinct buildings. Diocese and parish confirm parish address Jaskolcza 37, and independent address/place directories identify a separate St Barbara chapel POI near Holy Cross, but its exact mapped object is not yet established.",
+      "verified_lead_urls": [
+        "https://www.swkrzyz-zabrze.pl/historia-parafii/",
+        "https://diecezja.gliwice.pl/parafia/449",
+        "https://sprawdzadres.pl/slaskie/zabrze/jaskolcza/37",
+        "https://wierni.net/msze/zabrze"
+      ],
+      "next_evidence_needed": "Retrieve and verify the exact OSM POI or footprint identifying the converted St Barbara chapel separately from the later Holy Cross church (and from the different St Barbara site at Wolnosci 504)."
     }
   ],
   "integrity": {
     "missing_pin_count": 4,
     "never_promote_nearby_landmark_to_church_pin": true,
     "photographic_search_blocked": true
-  }
+  },
+  "research_update": "2026-10-31 targeted independently sourced identity corrections; four building-level coordinate holds remain; zero public pins released"
 }
