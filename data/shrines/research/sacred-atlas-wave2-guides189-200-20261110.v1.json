@@ -1,0 +1,783 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES189_200_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 12,
+    "sections": 36,
+    "published": 0
+  },
+  "policy": [
+    "Draft content only; references to existing official or ecclesiastical registry sources.",
+    "Parish/cathedral and national shrine status differentiated; no automatic pilgrimage or rite inferred.",
+    "No change to approved places, images, maps or published guides."
+  ],
+  "guides": [
+    {
+      "place_id": "place:LV:aglona-assumption-basilica",
+      "place_name": "Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika",
+      "country_code": "LV",
+      "shrine_id": "shrine:LV:aglona-assumption-basilica",
+      "draft_order": 189,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Latvia’s Aglona Marian basilica and the Assumption pilgrimage on 15 August.",
+      "subtitle_fr": "La basilique mariale d’Aglona en Lettonie et le pèlerinage de l’Assomption le 15 août.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady at Aglona",
+          "title_fr": "Notre-Dame à Aglona",
+          "paragraphs": [
+            {
+              "en": "Aglona Basilica is an established Catholic Marian pilgrimage centre in Latvia, dedicated to the Assumption of the Blessed Virgin Mary. Its importance belongs to the country’s continuing Catholic history, not just to the architectural form of the church. Pilgrims travel to the named basilica to pray within a distinctive local and national devotional setting.",
+              "fr": "La basilique d’Aglona est un centre établi de pèlerinage marial catholique en Lettonie, dédié à l’Assomption de la Bienheureuse Vierge Marie. Son importance appartient à l’histoire catholique vivante du pays, au-delà de la forme architecturale de l’église. Les pèlerins rejoignent cette basilique nommée pour prier dans un cadre dévotionnel local et national singulier.",
+              "source_id": "SG-R73-SITE-SG-INV-0340",
+              "source_url": "https://www.latvia.travel/en/sight/aglona-basilica"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Assumption as the pilgrimage focus",
+          "title_fr": "L’Assomption comme centre du pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Latvia’s national tourism authority records the major pilgrimage associated with 15 August, the feast of the Assumption. This gives Aglona a clear annual rhythm rooted in its dedication. The date of the feast is stable, but the precise ceremonies, walking journeys and pastoral programme for each year remain the responsibility of current organisers.",
+              "fr": "L’autorité touristique lettone atteste le grand pèlerinage associé au 15 août, fête de l’Assomption. Cette observance donne à Aglona un rythme annuel clairement lié à sa dédicace. La date de la fête est stable, mais les cérémonies précises, les marches et le programme pastoral de chaque année relèvent des organisateurs actuels.",
+              "source_id": "SG-R73-SITE-SG-INV-0340",
+              "source_url": "https://www.latvia.travel/en/sight/aglona-basilica"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place for national pilgrimage",
+          "title_fr": "Un lieu de pèlerinage national",
+          "paragraphs": [
+            {
+              "en": "Aglona attracts pilgrims from across Latvia and beyond, joining devotion to Mary with the experience of gathering at a specific church. The basilica remains the central place of devotion during the August celebrations, while associated gatherings and processions may extend into the surrounding grounds. Pilgrims should consult the organisers’ current arrangements for worship and access.",
+              "fr": "Aglona attire des pèlerins de toute la Lettonie et d’ailleurs, unissant la dévotion à Marie à l’expérience du rassemblement dans une église précise. La basilique demeure le centre de la dévotion pendant les célébrations d’août, même lorsque rassemblements et processions s’étendent à ses abords. Les pèlerins doivent consulter les indications des organisateurs pour les offices et les accès.",
+              "source_id": "SG-R73-SITE-SG-INV-0340",
+              "source_url": "https://www.latvia.travel/en/sight/aglona-basilica"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LV:aglona-assumption-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.latvia.travel/en/sight/aglona-basilica"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "place_name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:rigaud-notre-dame-lourdes",
+      "draft_order": 190,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Québec Lourdes sanctuary on Rigaud Mountain welcoming pilgrims since 1874.",
+      "subtitle_fr": "Un sanctuaire de Lourdes au Québec, sur le mont Rigaud, accueillant les pèlerins depuis 1874.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Lourdes devotion in Québec",
+          "title_fr": "Une dévotion de Lourdes au Québec",
+          "paragraphs": [
+            {
+              "en": "The sanctuary of Notre-Dame-de-Lourdes at Rigaud has received Catholic pilgrims since 1874. The slopes of Rigaud Mountain give the pilgrimage its own physical setting. The site commemorates the Lourdes devotion from France without making any claim that an apparition occurred at Rigaud or that the Canadian sanctuary is the original Massabielle grotto.",
+              "fr": "Le sanctuaire Notre-Dame-de-Lourdes de Rigaud reçoit des pèlerins catholiques depuis 1874. Les pentes du mont Rigaud donnent à ce pèlerinage son cadre physique propre. Le lieu commémore la dévotion de Lourdes en France sans prétendre qu’une apparition aurait eu lieu à Rigaud ni que le sanctuaire canadien serait la grotte originale de Massabielle.",
+              "source_id": "AO-ED-RIGAUD-HISTORY-1874-20261111",
+              "source_url": "https://lourdesrigaud.ca/sanctuary-short-story/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The mountain and the prayer setting",
+          "title_fr": "La montagne et le cadre de prière",
+          "paragraphs": [
+            {
+              "en": "Rigaud’s natural landscape is part of the sanctuary’s devotional character, inviting pilgrims beyond an ordinary urban church visit. The sanctuary grounds provide a distinct place of Catholic worship within the wider Rigaud landscape; visitors can follow the sanctuary’s own directions to its devotional spaces.",
+              "fr": "Le paysage naturel de Rigaud fait partie du caractère dévotionnel du sanctuaire, invitant à une démarche différente d’une visite d’église urbaine. L’enceinte du sanctuaire constitue un lieu de culte catholique au sein du paysage plus vaste de Rigaud ; ses indications permettent aux visiteurs de rejoindre les espaces de dévotion.",
+              "source_id": "SG-R74-SITE-SG-INV-0414",
+              "source_url": "https://lourdesrigaud.ca/visit-us/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An enduring Canadian destination",
+          "title_fr": "Une destination canadienne durable",
+          "paragraphs": [
+            {
+              "en": "The historical continuity of pilgrimage since the nineteenth century makes Rigaud a distinctive Canadian Marian site. Its operator maintains visit information for the present sanctuary, a necessary complement to the older historical account. The site can be linked spiritually with Lourdes while keeping its own address, custodian and seasonal arrangements.",
+              "fr": "La continuité du pèlerinage depuis le XIXe siècle fait de Rigaud un lieu marial canadien particulier. Ses responsables publient des renseignements pour les visites actuelles, indispensables en complément du récit ancien. Le site peut être relié spirituellement à Lourdes tout en conservant sa propre adresse, ses responsables et ses modalités saisonnières.",
+              "source_id": "SG-R74-SITE-SG-INV-0414",
+              "source_url": "https://lourdesrigaud.ca/visit-us/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:rigaud-notre-dame-lourdes-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://lourdesrigaud.ca/visit-us/",
+        "https://lourdesrigaud.ca/sanctuary-short-story/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-RIGAUD-HISTORY-1874-20261111"
+      ]
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "place_name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "country_code": "BR",
+      "shrine_id": "shrine:BR:fortaleza-fatima-sanctuary",
+      "draft_order": 191,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Fortaleza’s parish and sanctuary of Our Lady of Fátima.",
+      "subtitle_fr": "La paroisse et le sanctuaire Notre-Dame de Fátima de Fortaleza.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Fátima devotion in Fortaleza",
+          "title_fr": "La dévotion à Fátima à Fortaleza",
+          "paragraphs": [
+            {
+              "en": "The Paróquia e Santuário Nossa Senhora de Fátima in Fortaleza is a functioning Catholic parish and Marian sanctuary. Its dedication draws upon the Fátima devotion associated with Portugal, but its church, community and pastoral history are Brazilian. The pilgrimage place is this named Fortaleza church, not the site of the reported Portuguese apparitions.",
+              "fr": "La paroisse et sanctuaire Nossa Senhora de Fátima de Fortaleza est une paroisse catholique en activité et un sanctuaire marial. Sa dédicace s’inspire de la dévotion à Fátima associée au Portugal, mais son église, sa communauté et son histoire pastorale sont brésiliennes. Le lieu de pèlerinage est cette église nommée de Fortaleza, non celui des apparitions rapportées au Portugal.",
+              "source_id": "AO-ED-CITATION-191-HISTORY-20261112",
+              "source_url": "https://igrejadefatima.com.br/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two functions of one church",
+          "title_fr": "Deux fonctions d’une même église",
+          "paragraphs": [
+            {
+              "en": "The parish and sanctuary designations refer to related functions within the same physical destination. Local parishioners attend ordinary worship while pilgrims may come particularly for Marian devotion.",
+              "fr": "Les désignations de paroisse et de sanctuaire renvoient à des fonctions liées d’une même destination physique. Les paroissiens participent au culte habituel tandis que des pèlerins viennent particulièrement pour la dévotion mariale.",
+              "source_id": "SG-R75-SITE-SG-INV-0482",
+              "source_url": "https://igrejadefatima.com.br/contato/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living Marian community",
+          "title_fr": "Une communauté mariale vivante",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s own contact information identifies an actual Catholic place within Fortaleza, making it possible to distinguish local worship from the broader Fátima tradition. The devotional title alone gives no grounds to assert a local apparition or a fixed programme of traditional Latin Masses. Present services belong to the parish’s current announcements.",
+              "fr": "Les coordonnées du sanctuaire identifient un lieu catholique réel dans Fortaleza, permettant de distinguer le culte local de la tradition plus vaste de Fátima. Le titre dévotionnel ne permet pas d’affirmer une apparition locale ni un programme fixe de messes latines traditionnelles. Les offices actuels relèvent des annonces de la paroisse.",
+              "source_id": "SG-R75-SITE-SG-INV-0482",
+              "source_url": "https://igrejadefatima.com.br/contato/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BR:fortaleza-fatima-sanctuary-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://igrejadefatima.com.br/contato/",
+        "https://igrejadefatima.com.br/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-191-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "place_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "country_code": "AR",
+      "shrine_id": "shrine:AR:alta-gracia-lourdes-sanctuary",
+      "draft_order": 192,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An Argentine Lourdes grotto pilgrimage sanctuary entrusted to the Discalced Carmelites.",
+      "subtitle_fr": "Un sanctuaire argentin de pèlerinage à la grotte de Lourdes confié aux Carmes déchaux.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Lourdes grotto at Alta Gracia",
+          "title_fr": "La grotte de Lourdes à Alta Gracia",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Lourdes at Alta Gracia in Argentina includes a grotto associated with Marian devotion inspired by Lourdes in France. Its local history is documented by the sanctuary and municipal sources. The Argentine grotto is a distinct religious destination, not a claim that the events reported at Lourdes in 1858 occurred in Córdoba Province.",
+              "fr": "Le sanctuaire Notre-Dame de Lourdes d’Alta Gracia, en Argentine, comprend une grotte liée à la dévotion mariale inspirée de Lourdes en France. Son histoire locale est documentée par le sanctuaire et la municipalité. La grotte argentine constitue une destination religieuse distincte, sans prétendre que les événements rapportés à Lourdes en 1858 se seraient produits dans la province de Córdoba.",
+              "source_id": "SG-R75-SITE-SG-INV-0494",
+              "source_url": "https://santuariolourdesal.wixsite.com/grutadealtagracia"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Carmelite care and pilgrimage",
+          "title_fr": "Présence carmélitaine et pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The sanctuary is associated with the Discalced Carmelites, linking the Lourdes devotion with a particular Catholic religious community. The grotto and wider sanctuary precinct are connected aspects of one pilgrim destination. Its history should identify this local ministry rather than merely repeat the biography of Bernadette Soubirous or a general account of French Lourdes.",
+              "fr": "Le sanctuaire est lié aux Carmes déchaux, réunissant la dévotion à Lourdes et une communauté religieuse catholique particulière. La grotte et l’ensemble du sanctuaire sont des aspects liés d’une même destination pèlerine. Son histoire doit présenter ce ministère local plutôt que répéter seulement la biographie de Bernadette Soubirous ou un récit général de Lourdes en France.",
+              "source_id": "SG-R75-SITE-SG-INV-0494",
+              "source_url": "https://santuariolourdesal.wixsite.com/grutadealtagracia"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting a sanctuary complex",
+          "title_fr": "Visiter un ensemble de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Within the Alta Gracia shrine, pilgrims move between areas for Marian prayer and worship. Its grotto and surrounding spaces form a particular Argentine pilgrimage destination, distinct from other replicas of Lourdes. Visitors seeking a specific entrance, group arrangements or service times can consult the sanctuary's current guidance.",
+              "fr": "Au sanctuaire d'Alta Gracia, les pèlerins circulent entre les espaces dédiés à la prière mariale et au culte. Sa grotte et ses abords constituent une destination argentine particulière, distincte des autres reproductions de Lourdes. Pour connaître une entrée précise, les visites de groupe ou les horaires des offices, les visiteurs peuvent consulter les informations actuelles du sanctuaire.",
+              "source_id": "SG-R75-SITE-SG-INV-0494",
+              "source_url": "https://santuariolourdesal.wixsite.com/grutadealtagracia"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AR:alta-gracia-lourdes-sanctuary-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://santuariolourdesal.wixsite.com/grutadealtagracia"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "place_name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "country_code": "UY",
+      "shrine_id": "shrine:UY:montevideo-gruta-lourdes-national-shrine",
+      "draft_order": 193,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Montevideo’s national Lourdes grotto sanctuary, designated in 1958.",
+      "subtitle_fr": "Le sanctuaire national de la grotte de Lourdes de Montevideo, reconnu en 1958.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Lourdes grotto in Montevideo",
+          "title_fr": "Une grotte de Lourdes à Montevideo",
+          "paragraphs": [
+            {
+              "en": "The Santuario Nacional Gruta de Lourdes in Montevideo is a Marian destination reflecting the devotion to Our Lady of Lourdes. Its grotto gives the sanctuary a recognisable physical focus and a religious setting different from an ordinary parish church. The devotion refers to Lourdes in France; there is no basis for transferring its apparition claims to Uruguay.",
+              "fr": "Le Santuario Nacional Gruta de Lourdes de Montevideo est une destination mariale liée à la dévotion à Notre-Dame de Lourdes. Sa grotte donne au sanctuaire un foyer physique reconnaissable et un cadre religieux différent d’une église paroissiale ordinaire. La dévotion renvoie à Lourdes en France ; rien ne permet de transférer les affirmations apparitionnelles à l’Uruguay.",
+              "source_id": "AO-ED-CITATION-193-HISTORY-20261112",
+              "source_url": "https://grutadelourdes.org/sobre-nosotros/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The 1958 national designation",
+          "title_fr": "La reconnaissance nationale de 1958",
+          "paragraphs": [
+            {
+              "en": "Uruguay’s bishops designated the Montevideo site a national sanctuary in 1958. That ecclesiastical date concerns the local shrine’s standing, not the origin of the French Lourdes devotion in the nineteenth century. The distinction helps readers understand why a grotto inspired by another sanctuary developed its own national Catholic significance.",
+              "fr": "Les évêques de l’Uruguay désignèrent le lieu de Montevideo comme sanctuaire national en 1958. Cette date ecclésiastique concerne le statut local du sanctuaire, non l’origine de la dévotion française à Lourdes au XIXe siècle. Elle aide à comprendre comment une grotte inspirée d’un autre sanctuaire acquit sa propre importance catholique nationale.",
+              "source_id": "AO-ED-MONTEVIDEO-GROTTO-1958-20261111",
+              "source_url": "https://grutadelourdes.org/sobre-nosotros/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Local prayer and responsible access",
+          "title_fr": "Prière locale et accès responsable",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to the Montevideo grotto to pray within an established Uruguayan Catholic tradition. The national title belongs to this grotto and its pilgrimage complex, whose present liturgical and visiting arrangements are announced locally. Current worship and practical access are matters for its custodians.",
+              "fr": "Les pèlerins viennent à la grotte de Montevideo pour prier dans une tradition catholique uruguayenne établie. Le titre national appartient à cette grotte et à son ensemble de pèlerinage, dont les dispositions liturgiques et de visite sont annoncées localement. Le culte et les accès actuels relèvent de ses responsables.",
+              "source_id": "SG-R75-SITE-SG-INV-0532",
+              "source_url": "https://iglesiacatolica.org.uy/virgen-de-lourdes-montevideo/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:UY:montevideo-gruta-lourdes-national-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://iglesiacatolica.org.uy/virgen-de-lourdes-montevideo/",
+        "https://grutadelourdes.org/sobre-nosotros/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MONTEVIDEO-GROTTO-1958-20261111",
+        "AO-ED-CITATION-193-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "place_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "country_code": "MZ",
+      "shrine_id": "shrine:MZ:namaacha-fatima-sanctuary",
+      "draft_order": 194,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Mozambique’s Fátima sanctuary at Namaacha, inaugurated in 1944.",
+      "subtitle_fr": "Le sanctuaire de Fátima à Namaacha, au Mozambique, inauguré en 1944.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Fátima devotion at Namaacha",
+          "title_fr": "La dévotion à Fátima à Namaacha",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Fátima at Namaacha is a Marian pilgrimage place in Mozambique, documented by the international Sanctuary of Fátima. Its foundation belongs to the history of local Catholic devotion inspired by the Portuguese Marian title. It is not the original site of the reported Fátima events and has its own community and geographical setting.",
+              "fr": "Le sanctuaire Notre-Dame de Fátima de Namaacha est un lieu marial de pèlerinage au Mozambique, documenté par le sanctuaire international de Fátima. Sa fondation appartient à l’histoire de la dévotion catholique locale inspirée par ce titre marial portugais. Il n’est pas le lieu originel des événements rapportés à Fátima et possède sa propre communauté et son propre cadre géographique.",
+              "source_id": "SG-R75-SITE-SG-INV-0721",
+              "source_url": "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The inauguration of 1944",
+          "title_fr": "L’inauguration de 1944",
+          "paragraphs": [
+            {
+              "en": "The Namaacha sanctuary was inaugurated in 1944, giving its history a specific twentieth-century foundation date. This should be distinguished from the early-twentieth-century origin of the Fátima devotion in Portugal.",
+              "fr": "Le sanctuaire de Namaacha fut inauguré en 1944, ce qui donne à son histoire une date précise de fondation au XXe siècle. Elle doit être distinguée des origines antérieures de la dévotion à Fátima au Portugal.",
+              "source_id": "SG-R75-SITE-SG-INV-0721",
+              "source_url": "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place within Mozambican Catholic life",
+          "title_fr": "Un lieu de la vie catholique mozambicaine",
+          "paragraphs": [
+            {
+              "en": "Pilgrims encounter Namaacha as a functioning Marian destination of Mozambique, not as an annex to Portugal. The sanctuary’s own address and worship context should determine practical information. A general location point may illustrate the complex, but it cannot guarantee the location of a church door or the existence of particular annual ceremonies.",
+              "fr": "Les pèlerins découvrent Namaacha comme une destination mariale vivante du Mozambique, et non comme une annexe du Portugal. L’adresse et le cadre liturgique du sanctuaire doivent déterminer les renseignements pratiques. Un point général peut illustrer l’ensemble sans garantir l’emplacement d’une porte d’église ni l’existence de cérémonies annuelles particulières.",
+              "source_id": "SG-R75-SITE-SG-INV-0721",
+              "source_url": "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MZ:namaacha-fatima-sanctuary-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "place_name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "country_code": "US",
+      "shrine_id": "shrine:US:allentown-guadalupe-national-shrine",
+      "draft_order": 195,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Allentown’s Guadalupe national shrine within the Church of the Immaculate Conception.",
+      "subtitle_fr": "Le sanctuaire national de Guadalupe à Allentown, au sein de l’église de l’Immaculée Conception.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Guadalupe shrine in Pennsylvania",
+          "title_fr": "Un sanctuaire de Guadalupe en Pennsylvanie",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Guadalupe, Mother of the Americas, is located within the Church of the Immaculate Conception in Allentown. The parish identifies the national shrine designation in 1974. This American devotional location is a real Catholic church at its own address, separate from the Mexican basilica at Tepeyac.",
+              "fr": "Le sanctuaire national Notre-Dame de Guadalupe, Mère des Amériques, se trouve dans l’église de l’Immaculée Conception d’Allentown. La paroisse indique que la désignation de sanctuaire national remonte à 1974. Ce lieu dévotionnel américain est une véritable église catholique possédant sa propre adresse, distincte de la basilique mexicaine de Tepeyac.",
+              "source_id": "SG-R76-SITE-SG-INV-0377",
+              "source_url": "https://www.immaculateconceptionallentown.org/history.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two dedications at one site",
+          "title_fr": "Deux dédicaces en un lieu",
+          "paragraphs": [
+            {
+              "en": "The parish church bears the title of the Immaculate Conception while the national shrine honours Our Lady of Guadalupe. Both descriptions refer to one physical church with related devotional functions, not to two unrelated buildings.",
+              "fr": "L’église paroissiale est dédiée à l’Immaculée Conception, tandis que le sanctuaire national honore Notre-Dame de Guadalupe. Les deux descriptions renvoient à une même église physique aux fonctions dévotionnelles liées, et non à deux bâtiments indépendants.",
+              "source_id": "SG-R76-SITE-SG-INV-0377",
+              "source_url": "https://www.immaculateconceptionallentown.org/history.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at a named parish shrine",
+          "title_fr": "Prière dans un sanctuaire paroissial précis",
+          "paragraphs": [
+            {
+              "en": "Pilgrims can honour Our Lady of Guadalupe while attending worship in the Allentown parish. The shrine’s designation gives the church a significance beyond ordinary neighbourhood life, but it does not establish the timings of future Masses or visits. Current arrangements should be obtained from the parish, and its site should remain separate from other American Guadalupe sanctuaries.",
+              "fr": "Les pèlerins peuvent honorer Notre-Dame de Guadalupe tout en participant au culte dans la paroisse d’Allentown. Le titre de sanctuaire donne à l’église une importance au-delà du quartier, mais ne fixe pas les horaires des messes ou visites futures. Les dispositions actuelles doivent venir de la paroisse, dont le site reste distinct des autres sanctuaires américains de Guadalupe.",
+              "source_id": "SG-R76-SITE-SG-INV-0377",
+              "source_url": "https://www.immaculateconceptionallentown.org/history.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:allentown-guadalupe-national-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.immaculateconceptionallentown.org/history.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "place_name": "Westminster Cathedral — Most Precious Blood",
+      "country_code": "GB",
+      "shrine_id": "shrine:GB:westminster-cathedral",
+      "draft_order": 196,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Catholic metropolitan Cathedral of the Most Precious Blood in Westminster, London.",
+      "subtitle_fr": "La cathédrale métropolitaine catholique du Très Précieux Sang à Westminster, Londres.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Catholic cathedral in London",
+          "title_fr": "Une cathédrale catholique à Londres",
+          "paragraphs": [
+            {
+              "en": "Westminster Cathedral is the metropolitan Catholic cathedral of the Archdiocese of Westminster, dedicated to the Most Precious Blood of Jesus Christ. It is distinct from Westminster Abbey, which belongs to the Church of England and stands at another location. The difference is ecclesial and physical, not merely a variation in the buildings’ names.",
+              "fr": "La cathédrale de Westminster est la cathédrale métropolitaine catholique de l’archidiocèse de Westminster, dédiée au Très Précieux Sang de Jésus-Christ. Elle se distingue de l’abbaye de Westminster, relevant de l’Église d’Angleterre et située à un autre emplacement. La différence est ecclésiale et physique, et non une simple variation de noms.",
+              "source_id": "SG-R79-SITE-SG-INV-0264",
+              "source_url": "https://westminstercathedral.org.uk/the-cathedral/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The metropolitan church and its dedication",
+          "title_fr": "L’église métropolitaine et sa dédicace",
+          "paragraphs": [
+            {
+              "en": "The cathedral serves as the principal church of the Catholic archdiocese and as a place of continuing public worship. Its dedication to the Precious Blood offers a Christological focus for prayer, while the building itself reflects a distinct period in London’s Catholic history. The name does not imply possession of an independently authenticated relic of Christ’s blood.",
+              "fr": "La cathédrale sert d’église principale à l’archidiocèse catholique et de lieu de culte public permanent. Sa dédicace au Précieux Sang offre un foyer christologique à la prière, tandis que l’édifice reflète une période particulière de l’histoire catholique de Londres. Ce nom n’implique pas la possession d’une relique indépendamment authentifiée du sang du Christ.",
+              "source_id": "SG-R79-SITE-SG-INV-0264",
+              "source_url": "https://westminstercathedral.org.uk/the-cathedral/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Worship rather than an invented pilgrimage programme",
+          "title_fr": "Le culte plutôt qu’un programme de pèlerinage inventé",
+          "paragraphs": [
+            {
+              "en": "Visitors encounter a cathedral with an active liturgical community, not a shrine defined by a single annual procession. Its published programme governs Masses, confessions and access to religious services.",
+              "fr": "Les visiteurs découvrent une cathédrale dotée d’une communauté liturgique active, non un sanctuaire défini par une unique procession annuelle. Le programme publié par la cathédrale régit les messes, les confessions et l’accès aux offices.",
+              "source_id": "SG-R79-SITE-SG-INV-0264",
+              "source_url": "https://westminstercathedral.org.uk/the-cathedral/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GB:westminster-cathedral-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://westminstercathedral.org.uk/the-cathedral/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "place_name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:sacre-coeur-montmartre",
+      "draft_order": 197,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Basilica of the Sacred Heart at Montmartre and its tradition of Eucharistic adoration.",
+      "subtitle_fr": "La basilique du Sacré-Cœur à Montmartre et sa tradition d’adoration eucharistique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Sacred Heart on Montmartre",
+          "title_fr": "Le Sacré-Cœur à Montmartre",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Sacré-Cœur crowns Montmartre in Paris as a Catholic sanctuary dedicated to the Sacred Heart of Jesus. Its religious identity is specifically Christological, even though the building is also a major Parisian landmark. This place should be distinguished from the Sacred Heart sanctuary of Paray-le-Monial, associated with the history of Saint Margaret Mary Alacoque.",
+              "fr": "La basilique du Sacré-Cœur couronne Montmartre à Paris comme sanctuaire catholique dédié au Sacré-Cœur de Jésus. Son identité religieuse est proprement christologique, bien que l’édifice soit également un monument majeur de Paris. Il faut distinguer ce lieu du sanctuaire du Sacré-Cœur de Paray-le-Monial, lié à l’histoire de sainte Marguerite-Marie Alacoque.",
+              "source_id": "SG-R79-SITE-SG-INV-0018",
+              "source_url": "https://www.sacre-coeur-montmartre.com/decouvrir/un-lieu-unique/le-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A sanctuary of Eucharistic adoration",
+          "title_fr": "Un sanctuaire d’adoration eucharistique",
+          "paragraphs": [
+            {
+              "en": "Eucharistic adoration is central to the Montmartre sanctuary’s purpose and continuing worship. This practice gives the basilica a devotional identity beyond architectural admiration or a view over the city.",
+              "fr": "L’adoration eucharistique est centrale dans la mission et le culte toujours vivant du sanctuaire de Montmartre. Cette pratique donne à la basilique une identité dévotionnelle au-delà de l’admiration architecturale ou du panorama urbain.",
+              "source_id": "SG-R79-SITE-SG-INV-0018",
+              "source_url": "https://www.sacre-coeur-montmartre.com/decouvrir/un-lieu-unique/le-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer in the city",
+          "title_fr": "Prière au cœur de la ville",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Montmartre for prayer and adoration in a working Catholic basilica. The site’s elevated position is part of its visible presence but does not define its religious mission. Current Masses, adoration access and group conditions should be taken from the sanctuary’s own notices rather than assumed from its public reputation.",
+              "fr": "Les pèlerins viennent à Montmartre pour prier et adorer dans une basilique catholique en activité. La situation élevée du lieu fait partie de sa présence visible sans définir sa mission religieuse. Messes, accès à l’adoration et conditions d’accueil des groupes doivent provenir des annonces du sanctuaire, non d’hypothèses fondées sur sa réputation publique.",
+              "source_id": "SG-R79-SITE-SG-INV-0018",
+              "source_url": "https://www.sacre-coeur-montmartre.com/decouvrir/un-lieu-unique/le-sanctuaire/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:sacre-coeur-montmartre-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.sacre-coeur-montmartre.com/decouvrir/un-lieu-unique/le-sanctuaire/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "place_name": "Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:duomo-orvieto",
+      "draft_order": 198,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Orvieto Cathedral, the Chapel of the Corporal and the traditional Bolsena Eucharistic miracle.",
+      "subtitle_fr": "La cathédrale d’Orvieto, la chapelle du Corporal et la tradition du miracle eucharistique de Bolsena.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The cathedral of the Assumption",
+          "title_fr": "La cathédrale de l’Assomption",
+          "paragraphs": [
+            {
+              "en": "Orvieto Cathedral is dedicated to the Assumption of the Blessed Virgin Mary and is celebrated for its sacred architecture. Its place in Catholic pilgrimage is also shaped by the Chapel of the Corporal and the Eucharistic tradition associated with Bolsena. The dedication of the cathedral and the specific relic-related devotion are related but distinct parts of its history.",
+              "fr": "La cathédrale d’Orvieto est dédiée à l’Assomption de la Bienheureuse Vierge Marie et connue pour son architecture sacrée. Sa place dans le pèlerinage catholique est également marquée par la chapelle du Corporal et la tradition eucharistique associée à Bolsena. La dédicace cathédrale et la dévotion particulière liée à une relique sont des aspects distincts de son histoire.",
+              "source_id": "AO-ED-ORVIETO-CORPORAL-CHAPEL-20261112",
+              "source_url": "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Chapel of the Corporal",
+          "title_fr": "La chapelle du Corporal",
+          "paragraphs": [
+            {
+              "en": "The cathedral houses the Chapel of the Corporal, associated with the traditional account of a Eucharistic miracle at Bolsena. The event tradition belongs geographically to Bolsena, while the chapel and the object venerated there belong to Orvieto.",
+              "fr": "La cathédrale abrite la chapelle du Corporal, liée à la tradition d’un miracle eucharistique à Bolsena. Le récit traditionnel de l’événement se situe géographiquement à Bolsena, tandis que la chapelle et l’objet qui y est vénéré appartiennent à Orvieto.",
+              "source_id": "AO-ED-ORVIETO-CORPORAL-CHAPEL-20261112",
+              "source_url": "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage between memory and worship",
+          "title_fr": "Pèlerinage entre mémoire et culte",
+          "paragraphs": [
+            {
+              "en": "Visitors may contemplate Orvieto’s architecture while praying in a cathedral that preserves Eucharistic devotional memory. The Chapel of the Corporal is an integral part of the cathedral. Access to its devotional objects depends on the custodians’ visiting and liturgical arrangements.",
+              "fr": "Les visiteurs peuvent contempler l’architecture d’Orvieto tout en priant dans une cathédrale qui conserve une mémoire eucharistique dévotionnelle. La chapelle du Corporal fait partie intégrante de la cathédrale. L’accès à ses objets de dévotion dépend des dispositions de visite et de liturgie fixées par les responsables.",
+              "source_id": "AO-ED-ORVIETO-CORPORAL-CHAPEL-20261112",
+              "source_url": "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:duomo-orvieto-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://duomoorvieto.it/en/",
+        "https://duomoorvieto.it/en/duomo-of-orvieto/the-chapel-of-the-corporal"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ORVIETO-CORPORAL-CHAPEL-20261112"
+      ]
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "place_name": "St Peter's Cathedral Basilica, Kumasi",
+      "country_code": "GH",
+      "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+      "draft_order": 199,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Kumasi’s Catholic metropolitan cathedral, raised to minor basilica in 2004.",
+      "subtitle_fr": "La cathédrale métropolitaine catholique de Kumasi, devenue basilique mineure en 2004.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The metropolitan Cathedral of Saint Peter",
+          "title_fr": "La cathédrale métropolitaine Saint-Pierre",
+          "paragraphs": [
+            {
+              "en": "Saint Peter's Cathedral Basilica serves as the metropolitan cathedral of the Catholic Archdiocese of Kumasi in Ghana's Ashanti Region. Dedicated to the Apostle Peter, it is a place of diocesan worship and pastoral life, with the distinct roles of a cathedral and a minor basilica.",
+              "fr": "La cathédrale-basilique Saint-Pierre est la cathédrale métropolitaine de l'archidiocèse catholique de Kumasi, dans la région Ashanti au Ghana. Dédiée à l'apôtre Pierre, elle est un lieu de culte et de vie pastorale diocésaine qui réunit les fonctions de cathédrale et de basilique mineure.",
+              "source_id": "SG-R76-SITE-SG-INV-0726",
+              "source_url": "https://gcatholic.org/churches/africa/1462"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The minor basilica title of 2004",
+          "title_fr": "Le titre de basilique mineure en 2004",
+          "paragraphs": [
+            {
+              "en": "Saint Peter's Cathedral received the title of minor basilica in June 2004, while retaining its status as the metropolitan cathedral of Kumasi. A Ghana News Agency report recorded the announcement that month. This title does not imply the custody of relics of the Apostle Peter or a separately established pilgrimage programme.",
+              "fr": "La cathédrale Saint-Pierre a reçu le titre de basilique mineure en juin 2004, tout en demeurant la cathédrale métropolitaine de Kumasi. Une dépêche de la Ghana News Agency en a rapporté l'annonce le même mois. Ce titre n'implique ni la présence de reliques de l'apôtre Pierre ni l'existence d'un programme de pèlerinage particulier.",
+              "source_id": "SG-R76-SITE-SG-INV-0726",
+              "source_url": "https://gcatholic.org/churches/africa/1462"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A church in contemporary Ghana",
+          "title_fr": "Une église du Ghana contemporain",
+          "paragraphs": [
+            {
+              "en": "The cathedral is an active Catholic church in Kumasi rather than a separately documented destination for an annual pilgrimage. Its formal titles and dedication form part of its diocesan ministry. Visitors should consult the archdiocese for current liturgical celebrations and practical access arrangements.",
+              "fr": "La cathédrale est une église catholique active à Kumasi, sans qu'un pèlerinage annuel particulier y soit établi par les sources consultées. Ses titres et sa dédicace s'inscrivent dans le ministère de l'archidiocèse. Les visiteurs doivent consulter celui-ci pour connaître les célébrations liturgiques et les conditions d'accès en vigueur.",
+              "source_id": "SG-R76-SITE-SG-INV-0726",
+              "source_url": "https://gcatholic.org/churches/africa/1462"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [
+        "Saint Peter the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://gcatholic.org/churches/africa/1462"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "place_name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "country_code": "MX",
+      "shrine_id": "shrine:MX:guadalupe-zacatecas-historic-sanctuary",
+      "draft_order": 200,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The seventeenth-century Guadalupe sanctuary of Zacatecas, beside a former Franciscan convent.",
+      "subtitle_fr": "Le sanctuaire de Guadalupe du XVIIe siècle à Zacatecas, voisin d’un ancien couvent franciscain.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Guadalupe sanctuary in Zacatecas",
+          "title_fr": "Un sanctuaire de Guadalupe à Zacatecas",
+          "paragraphs": [
+            {
+              "en": "The Santuario de Nuestra Señora de Guadalupe in the city of Guadalupe, Zacatecas, belongs to a seventeenth-century Catholic religious history. Mexico’s national monuments catalogue identifies the historic church and its local setting. This sanctuary is physically separate from the Basilica of Our Lady of Guadalupe at Tepeyac in Mexico City.",
+              "fr": "Le Santuario de Nuestra Señora de Guadalupe dans la ville de Guadalupe, Zacatecas, appartient à une histoire religieuse catholique remontant au XVIIe siècle. Le catalogue national mexicain des monuments identifie l’église historique et son cadre local. Ce sanctuaire est physiquement distinct de la basilique Notre-Dame de Guadalupe de Tepeyac, à Mexico.",
+              "source_id": "SG-R77-SITE-SG-INV-0431",
+              "source_url": "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/79623"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Church and former Franciscan convent",
+          "title_fr": "Église et ancien couvent franciscain",
+          "paragraphs": [
+            {
+              "en": "The sanctuary stands near the former Franciscan convent and museum, linking worship with an architectural and institutional history preserved in the same locality. These neighbouring structures are not interchangeable: the church is the devotional destination, while the former convent has its own heritage function.",
+              "fr": "Le sanctuaire se trouve près de l’ancien couvent franciscain et du musée, réunissant culte et histoire architecturale et institutionnelle dans la même localité. Ces structures voisines ne sont pas interchangeables : l’église est la destination dévotionnelle, tandis que l’ancien couvent possède sa propre fonction patrimoniale.",
+              "source_id": "SG-R77-SITE-SG-INV-0431",
+              "source_url": "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/79623"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Local Marian devotion and heritage",
+          "title_fr": "Dévotion mariale locale et patrimoine",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Guadalupe is a historic Catholic church in Guadalupe, Zacatecas, near the former Franciscan complex that now houses the Regional Museum of Guadalupe. The museum publishes its own visiting hours; these do not determine worship times or access arrangements at the sanctuary.",
+              "fr": "Le sanctuaire Notre-Dame de Guadalupe est une église catholique historique de Guadalupe, dans l'État de Zacatecas, située près de l'ancien ensemble franciscain qui abrite aujourd'hui le musée régional de Guadalupe. Le musée publie ses propres horaires de visite ; ceux-ci ne déterminent ni les horaires des offices ni les conditions d'accès au sanctuaire.",
+              "source_id": "AO-ED-ZACATECAS-INAH-MUSEUM-20261112",
+              "source_url": "https://lugares.inah.gob.mx/es/node/4259?page=1%2C%2C%2C%2C%2C1%2C%2C0"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MX:guadalupe-zacatecas-historic-sanctuary-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/79623",
+        "https://lugares.inah.gob.mx/es/node/4259?page=1%2C%2C%2C%2C%2C1%2C%2C0"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ZACATECAS-INAH-MUSEUM-20261112"
+      ]
+    }
+  ]
+}

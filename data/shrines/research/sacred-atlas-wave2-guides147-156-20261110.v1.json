@@ -1,0 +1,640 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES147_156_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Source-registry entries reused; the original webpages were not independently rechecked in this writing pass.",
+    "Passion relic claims are qualified; exceptional ostensions are not permanent public access.",
+    "Research-only: no published Place, photo, map, schedule, rite or missal field changed."
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "place_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+      "draft_order": 147,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The historic church of Saint Hilary in Poitiers and its episcopal memory.",
+      "subtitle_fr": "L’église historique Saint-Hilaire de Poitiers et sa mémoire épiscopale.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Hilary, bishop and Doctor of the Church",
+          "title_fr": "Hilaire, évêque et docteur de l’Église",
+          "paragraphs": [
+            {
+              "en": "Saint-Hilaire-le-Grand in Poitiers commemorates Hilary, the fourth-century bishop known for his theological defence of the Nicene faith. The church’s importance is rooted in the relationship between a named local bishop and a longstanding place of worship. Its history should not be reduced to a generic biography of Hilary detached from Poitiers and the church that honours him.",
+              "fr": "Saint-Hilaire-le-Grand de Poitiers commémore Hilaire, évêque du IVe siècle connu pour sa défense théologique de la foi nicéenne. L’importance de l’église vient du lien entre un évêque local nommé et un lieu ancien de culte. Son histoire ne doit pas être réduite à une biographie générique d’Hilaire sans rapport avec Poitiers et l’église qui l’honore.",
+              "source_id": "SHR-FR-saint-hilaire-le-grand-poitiers",
+              "source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "An ancient pilgrimage tradition",
+          "title_fr": "Une ancienne tradition de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The building belongs to a long religious history in which the memory of Saint Hilary attracted devotion beyond the immediate parish. Its surviving architecture should be understood as a witness to later periods of that history, rather than assumed to date entirely from the saint’s lifetime. Any tradition concerning the location of his remains should be attributed without independent authentication claims.",
+              "fr": "L’édifice s’inscrit dans une longue histoire religieuse où la mémoire de saint Hilaire attirait des fidèles au-delà de la seule paroisse. Son architecture conservée témoigne de périodes postérieures de cette histoire et ne doit pas être considérée dans son ensemble comme contemporaine du saint. Toute tradition concernant l’emplacement de ses restes doit être attribuée sans prétendre à une authentification indépendante.",
+              "source_id": "SHR-FR-saint-hilaire-le-grand-poitiers",
+              "source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A particular Poitiers destination",
+          "title_fr": "Une destination particulière à Poitiers",
+          "paragraphs": [
+            {
+              "en": "Visitors to Poitiers can encounter Saint-Hilaire-le-Grand as a distinct church within the city’s Christian heritage. Its dedication, heritage status and any relic tradition are related yet different aspects of the site. The current custodians’ arrangements should govern practical access and worship, rather than extrapolating a present Mass timetable from medieval pilgrimage history.",
+              "fr": "Les visiteurs de Poitiers peuvent découvrir Saint-Hilaire-le-Grand comme une église distincte du patrimoine chrétien de la ville. Sa dédicace, son statut patrimonial et toute tradition reliquaire sont des aspects liés mais différents du lieu. Les dispositions actuelles de ses responsables doivent régir l’accès et le culte, au lieu d’extrapoler un horaire de messe contemporain à partir de l’histoire médiévale du pèlerinage.",
+              "source_id": "SHR-FR-saint-hilaire-le-grand-poitiers",
+              "source_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:saint-hilaire-le-grand-poitiers:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Hilary of Poitiers"
+      ],
+      "bibliography_urls": [
+        "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-torino-sindone",
+      "place_name": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:duomo-torino-sindone",
+      "draft_order": 148,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Turin Cathedral and the Shroud: documented custody, disputed historical attribution.",
+      "subtitle_fr": "La cathédrale de Turin et le Saint Suaire : garde attestée, attribution historique débattue.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Shroud at Turin",
+          "title_fr": "Le Suaire à Turin",
+          "paragraphs": [
+            {
+              "en": "Turin Cathedral is associated with the custody of the cloth known as the Shroud of Turin. Christian devotion has traditionally linked this object to the burial of Jesus, but the historical identification and dating of the fabric are contested.",
+              "fr": "La cathédrale de Turin est associée à la conservation du tissu connu sous le nom de Saint Suaire. La dévotion chrétienne a traditionnellement relié cet objet à la sépulture de Jésus, mais son identification historique et sa datation sont débattues.",
+              "source_id": "SHR-IT-duomo-torino-sindone",
+              "source_url": "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Custody is not continuous exhibition",
+          "title_fr": "Conservation n’est pas exposition permanente",
+          "paragraphs": [
+            {
+              "en": "The archdiocesan information distinguishes the Shroud’s normal custody from exceptional ostensions when it is publicly displayed. These are important practical distinctions: visiting the cathedral does not guarantee that the cloth itself is visible. The relic’s place of conservation, the architecture of the church and a special display must therefore be described as separate layers of one destination.",
+              "fr": "Les informations de l’archidiocèse distinguent la garde habituelle du Suaire des ostensions exceptionnelles durant lesquelles il est montré au public. Cette distinction est essentielle : visiter la cathédrale ne garantit pas que le tissu lui-même soit visible. Le lieu de conservation, l’architecture de l’église et une présentation spéciale doivent donc être décrits comme des aspects distincts d’une même destination.",
+              "source_id": "SHR-IT-duomo-torino-sindone",
+              "source_url": "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer, study and responsible presentation",
+          "title_fr": "Prière, étude et présentation rigoureuse",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may approach the Shroud as an object of Christian contemplation, while historians and scientists ask different questions about its material history. Neither devotional interest nor scientific controversy should be misrepresented as a definitive conclusion.",
+              "fr": "Les pèlerins peuvent considérer le Suaire comme un objet de contemplation chrétienne, tandis que les historiens et les scientifiques posent d’autres questions sur son histoire matérielle. Ni l’intérêt dévotionnel ni les controverses scientifiques ne doivent être travestis en conclusion définitive.",
+              "source_id": "SHR-IT-duomo-torino-sindone",
+              "source_url": "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:duomo-torino-sindone:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "place_name": "Trierer Dom — Holy Robe",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
+      "draft_order": 149,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Trier Cathedral's Holy Robe tradition and the limits of relic authentication.",
+      "subtitle_fr": "La tradition de la Sainte Tunique de la cathédrale de Trèves et les limites de son authentification.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Holy Robe at Trier",
+          "title_fr": "La Sainte Tunique de Trèves",
+          "paragraphs": [
+            {
+              "en": "Trier Cathedral preserves the devotion centred on a garment known as the Holy Robe, traditionally associated with the clothing of Jesus. The cathedral itself documents the long history of this tradition. Importantly, its account acknowledges that historical and scientific methods cannot conclusively establish the garment’s authenticity as clothing worn by Christ.",
+              "fr": "La cathédrale de Trèves conserve la dévotion centrée sur un vêtement appelé Sainte Tunique, traditionnellement associé aux habits de Jésus. La cathédrale elle-même documente la longue histoire de cette tradition. Fait important, sa présentation reconnaît que les méthodes historiques et scientifiques ne permettent pas d’établir de manière concluante l’authenticité du vêtement comme habit porté par le Christ.",
+              "source_id": "SHR-DE-trierer-dom-heiliger-rock",
+              "source_url": "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Pilgrimage and public display",
+          "title_fr": "Pèlerinage et présentation publique",
+          "paragraphs": [
+            {
+              "en": "The Holy Robe has been a focus of pilgrimage through particular public displays and religious gatherings. A past pilgrimage or ostension is evidence of an event, not a promise that visitors can see the garment at any time.",
+              "fr": "La Sainte Tunique a été au centre de pèlerinages, d’ostensions publiques particulières et de rassemblements religieux. Un ancien pèlerinage ou une ostension atteste un événement, sans garantir que le vêtement soit visible en permanence.",
+              "source_id": "SHR-DE-trierer-dom-heiliger-rock",
+              "source_url": "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A cathedral distinct from Saint Matthias Abbey",
+          "title_fr": "Une cathédrale distincte de l’abbaye Saint-Matthias",
+          "paragraphs": [
+            {
+              "en": "Trier Cathedral is a different physical site from the city’s Benedictine Abbey of Saint Matthias, which has its own apostolic relic tradition. Visitors should seek the current cathedral information for Holy Robe access and refrain from treating a devotional attribution as proof of a textile’s first-century origin.",
+              "fr": "La cathédrale de Trèves est un lieu physique distinct de l’abbaye bénédictine Saint-Matthias de la ville, qui possède sa propre tradition de reliques apostoliques. Les visiteurs doivent consulter les informations actuelles de la cathédrale pour la Sainte Tunique et ne pas traiter une attribution dévotionnelle comme une preuve d’origine du Ier siècle.",
+              "source_id": "SHR-DE-trierer-dom-heiliger-rock",
+              "source_url": "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:trierer-dom-heiliger-rock:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "place_name": "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
+      "draft_order": 150,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Holy Coiffe tradition within Saint-Étienne Cathedral at Cahors.",
+      "subtitle_fr": "La tradition de la Sainte Coiffe dans la cathédrale Saint-Étienne de Cahors.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The cloth called the Sainte Coiffe",
+          "title_fr": "Le tissu appelé Sainte Coiffe",
+          "paragraphs": [
+            {
+              "en": "Cahors Cathedral preserves a devotional tradition concerning a cloth known as the Sainte Coiffe. Medieval accounts associate this covering with the head of Jesus at his burial. The parish documents the relic’s cult, but the historical or material identity of the textile is not independently authenticated by the existence of that tradition.",
+              "fr": "La cathédrale de Cahors conserve une tradition de dévotion autour d’un tissu appelé Sainte Coiffe. Des récits médiévaux associent ce couvre-chef à la tête de Jésus lors de sa sépulture. La paroisse documente le culte de la relique, mais l’identité historique ou matérielle du tissu n’est pas authentifiée indépendamment par l’existence de cette tradition.",
+              "source_id": "SHR-FR-cathedrale-saint-etienne-cahors",
+              "source_url": "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A cathedral and a specific relic history",
+          "title_fr": "Une cathédrale et une histoire reliquaire particulière",
+          "paragraphs": [
+            {
+              "en": "The Sainte Coiffe is one focus within the broader Catholic identity of the Cathedral of Saint-Étienne. Its shrine character belongs to a documented history of veneration, not to a claim that every building feature was constructed to house the cloth.",
+              "fr": "La Sainte Coiffe est un foyer de dévotion parmi d’autres dans l’identité catholique de la cathédrale Saint-Étienne. Son caractère de lieu de pèlerinage repose sur une histoire documentée de vénération, non sur l’affirmation que chaque élément du bâtiment fut conçu pour abriter le tissu.",
+              "source_id": "SHR-FR-cathedrale-saint-etienne-cahors",
+              "source_url": "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage activities and access",
+          "title_fr": "Activités de pèlerinage et accès",
+          "paragraphs": [
+            {
+              "en": "The parish provides information about pilgrimage activities associated with the Holy Coiffe. Such descriptions attest contemporary or recent devotional use but do not prove that an object is continuously exhibited or that a programme remains unchanged. The actual cathedral is the permanent destination; specific opportunities to see the cloth need current local confirmation.",
+              "fr": "La paroisse fournit des informations sur les activités de pèlerinage liées à la Sainte Coiffe. Ces descriptions attestent un usage dévotionnel contemporain ou récent, sans prouver que l’objet soit exposé continuellement ni qu’un programme reste inchangé. La cathédrale réelle demeure la destination permanente ; les occasions de voir le tissu doivent être confirmées localement et récemment.",
+              "source_id": "SHR-FR-cathedrale-saint-etienne-cahors",
+              "source_url": "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-saint-etienne-cahors:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "place_name": "Catedral de San Salvador — Cámara Santa, Oviedo",
+      "country_code": "ES",
+      "shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
+      "draft_order": 151,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Oviedo Cathedral's Cámara Santa and the cloth traditionally linked to Christ's burial.",
+      "subtitle_fr": "La Cámara Santa de la cathédrale d’Oviedo et le tissu traditionnellement lié à la sépulture du Christ.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Cámara Santa in Oviedo",
+          "title_fr": "La Cámara Santa d’Oviedo",
+          "paragraphs": [
+            {
+              "en": "The Cathedral of San Salvador in Oviedo contains the Cámara Santa, a historic chamber associated with the custody of sacred objects. One cloth in this tradition, often called the Sudarium, has been linked devotionally to the burial of Jesus. The Cathedral’s documented custody is distinct from independent proof that the cloth was used at the Gospel burial.",
+              "fr": "La cathédrale San Salvador d’Oviedo contient la Cámara Santa, chambre historique associée à la conservation d’objets sacrés. Un tissu de cette tradition, souvent appelé Sudarium, a été relié par la dévotion à la sépulture de Jésus. La garde documentée par la cathédrale est distincte de toute preuve indépendante que le tissu aurait servi lors de la sépulture évangélique.",
+              "source_id": "SHR-ES-catedral-san-salvador-oviedo",
+              "source_url": "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Related claims are not object identity",
+          "title_fr": "Des rapprochements ne prouvent pas une identité",
+          "paragraphs": [
+            {
+              "en": "Some devotional accounts compare the Oviedo cloth with the Shroud of Turin. Such comparisons and the desire to connect Passion relics do not establish that the objects have the same ancient origin.",
+              "fr": "Certains récits dévotionnels rapprochent le tissu d’Oviedo du Suaire de Turin. Ces comparaisons et le désir de relier les reliques de la Passion n’établissent pas que les objets aient la même origine ancienne.",
+              "source_id": "SHR-ES-catedral-san-salvador-oviedo",
+              "source_url": "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The cathedral and its visit arrangements",
+          "title_fr": "La cathédrale et ses modalités de visite",
+          "paragraphs": [
+            {
+              "en": "The Cámara Santa is a sacred space inside the functioning cathedral, not a second, unrelated church. Cultural visits and worship access may follow different practical arrangements.",
+              "fr": "La Cámara Santa est un espace sacré à l'intérieur de la cathédrale en activité, et non une seconde église sans lien avec l'édifice. Les visites culturelles et l’accès au culte peuvent répondre à des dispositions pratiques différentes.",
+              "source_id": "SHR-ES-catedral-san-salvador-oviedo",
+              "source_url": "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:ES:catedral-san-salvador-oviedo:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "place_name": "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
+      "draft_order": 152,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Fécamp Abbey Church and the two medieval accounts behind its Precious Blood devotion.",
+      "subtitle_fr": "L’abbatiale de Fécamp et les deux récits médiévaux de sa dévotion au Précieux Sang.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Precious Blood pilgrimage in Normandy",
+          "title_fr": "Un pèlerinage au Précieux Sang en Normandie",
+          "paragraphs": [
+            {
+              "en": "The Abbey Church of the Holy Trinity at Fécamp is linked to a medieval devotion to the Precious Blood of Christ. The site’s religious significance includes the life of an abbey church and the memory of a revered object. The existence of a local devotion does not independently establish that the relic contains blood from the historical Jesus.",
+              "fr": "L’abbatiale de la Sainte-Trinité de Fécamp est liée à une dévotion médiévale au Précieux Sang du Christ. L’importance religieuse du lieu associe la vie d’une église abbatiale à la mémoire d’un objet vénéré. L'existence d'une dévotion locale n'établit pas indépendamment que la relique contient du sang provenant du Jésus historique.",
+              "source_id": "SHR-FR-abbatiale-sainte-trinite-fecamp",
+              "source_url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two accounts, not one established origin",
+          "title_fr": "Deux récits, non une origine établie",
+          "paragraphs": [
+            {
+              "en": "Local heritage documentation reports differing medieval explanations of the Precious Blood tradition: an account of a Eucharistic miracle and another involving transmission from the Holy Land. These narratives are alternative accounts within the medieval tradition, not a single continuous chain of independently established events. Neither account authenticates the purported relic.",
+              "fr": "La documentation patrimoniale locale rapporte deux explications médiévales différentes de la tradition du Précieux Sang : un récit de miracle eucharistique et un autre évoquant une transmission depuis la Terre Sainte. Ces récits constituent des versions distinctes de la tradition médiévale, non une succession unique de faits établis indépendamment. Aucun n'authentifie à lui seul la relique attribuée au Christ.",
+              "source_id": "SHR-FR-abbatiale-sainte-trinite-fecamp",
+              "source_url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The abbey church and devotional life",
+          "title_fr": "L’abbatiale et la vie dévotionnelle",
+          "paragraphs": [
+            {
+              "en": "The present church remains a named heritage and sacred destination in Fécamp. Visitors can discover the architecture and the relic tradition as related, but should not infer that an exceptional display or particular rite is always available. Current information from the local custodians is required for religious use, access and any special pilgrimage observance.",
+              "fr": "L’église actuelle demeure une destination patrimoniale et sacrée nommée à Fécamp. Les visiteurs peuvent découvrir son architecture et la tradition reliquaire comme deux aspects liés, sans en déduire qu’une ostension exceptionnelle ou un rite particulier soient toujours proposés. Les responsables locaux doivent fournir les renseignements actuels sur le culte, l’accès et les pèlerinages spéciaux.",
+              "source_id": "SHR-FR-abbatiale-sainte-trinite-fecamp",
+              "source_url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:abbatiale-sainte-trinite-fecamp:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "place_name": "Basilica del Volto Santo di Manoppello",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
+      "draft_order": 153,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Capuchin Holy Face sanctuary at Manoppello and its contested image traditions.",
+      "subtitle_fr": "Le sanctuaire capucin de la Sainte Face à Manoppello et les traditions débattues de son image.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Holy Face at Manoppello",
+          "title_fr": "La Sainte Face de Manoppello",
+          "paragraphs": [
+            {
+              "en": "The Capuchin sanctuary at Manoppello preserves a venerated image known as the Volto Santo, the Holy Face. The custodians document its local history and an image tradition recorded in the seventeenth century. This establishes a specific pilgrimage destination, not the conclusion that the cloth’s production or identity has been explained by a supernatural cause.",
+              "fr": "Le sanctuaire capucin de Manoppello conserve une image vénérée appelée Volto Santo, la Sainte Face. Ses responsables documentent son histoire locale et une tradition relative à l’image attestée au XVIIe siècle. Cela établit une destination précise de pèlerinage, non la conclusion que la fabrication ou l’identité du tissu s’expliquerait par une cause surnaturelle.",
+              "source_id": "SHR-IT-santuario-volto-santo-manoppello",
+              "source_url": "https://www.voltosanto.it/volto-santo.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Roman Veronica comparison",
+          "title_fr": "Le rapprochement avec la Véronique romaine",
+          "paragraphs": [
+            {
+              "en": "Some authors identify the image at Manoppello with the ancient Roman Veronica, but that identification remains disputed. Devotion to the image does not, by itself, establish its origin, date or proposed identification.",
+              "fr": "Certains auteurs identifient l’image de Manoppello à l’ancienne Véronique romaine, mais cette identification demeure discutée. La vénération de l’image ne suffit pas, à elle seule, à établir son origine, sa datation ou cette attribution.",
+              "source_id": "SHR-IT-santuario-volto-santo-manoppello",
+              "source_url": "https://www.voltosanto.it/volto-santo.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at a Capuchin sanctuary",
+          "title_fr": "Prière dans un sanctuaire capucin",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to the named sanctuary to contemplate the image in the context of Catholic worship and Capuchin care. The religious purpose of that visit can be described without claiming the image’s authenticity or a guaranteed display schedule. Opening hours, group visits and current liturgical celebrations must come from Manoppello’s custodians.",
+              "fr": "Les pèlerins viennent dans ce sanctuaire nommé pour contempler l’image dans le cadre du culte catholique et de la présence capucine. On peut décrire le sens religieux de la visite sans affirmer l’authenticité de l’image ni garantir une exposition à horaire fixe. Les ouvertures, visites de groupes et célébrations actuelles doivent être confirmées auprès des responsables de Manoppello.",
+              "source_id": "SHR-IT-santuario-volto-santo-manoppello",
+              "source_url": "https://www.voltosanto.it/volto-santo.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santuario-volto-santo-manoppello:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.voltosanto.it/volto-santo.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "place_name": "Sacro Monte di Varallo",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:sacro-monte-di-varallo",
+      "draft_order": 154,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The late-fifteenth-century New Jerusalem at Varallo, expressed in devotional chapels.",
+      "subtitle_fr": "La Nouvelle Jérusalem de Varallo, née à la fin du XVe siècle et racontée par ses chapelles.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A New Jerusalem in the Alps",
+          "title_fr": "Une Nouvelle Jérusalem dans les Alpes",
+          "paragraphs": [
+            {
+              "en": "The Sacro Monte of Varallo originated in the late fifteenth century as an attempt to bring the sacred geography of Jerusalem closer to pilgrims unable to travel to the Holy Land. Its hillside setting and sequence of chapels make it more than a single church. UNESCO documents Varallo as the earliest of the Sacri Monti, part of a broader landscape of devotional architecture.",
+              "fr": "Le Sacro Monte de Varallo naquit à la fin du XVe siècle pour rapprocher la géographie sacrée de Jérusalem des pèlerins qui ne pouvaient gagner la Terre Sainte. Son site de colline et sa succession de chapelles en font davantage qu’une église isolée. L’UNESCO présente Varallo comme le plus ancien des Sacri Monti, au sein d’un ensemble plus vaste d’architecture dévotionnelle.",
+              "source_id": "SG-PROFILE-20261010-01",
+              "source_url": "https://whc.unesco.org/en/list/1068"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Scenes of the life and Passion of Christ",
+          "title_fr": "Scènes de la vie et de la Passion du Christ",
+          "paragraphs": [
+            {
+              "en": "The chapels present episodes of Christ’s life and Passion, allowing pilgrims to meditate by moving through a constructed sacred landscape. The sequence is a representation of biblical places, not the actual geographical site of the events in Palestine.",
+              "fr": "Les chapelles présentent des épisodes de la vie et de la Passion du Christ, permettant aux pèlerins de méditer en parcourant un paysage sacré construit. Cette succession représente les lieux bibliques sans constituer les emplacements géographiques réels des événements en Palestine.",
+              "source_id": "SG-PROFILE-20261010-01",
+              "source_url": "https://whc.unesco.org/en/list/1068"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "One complex with many devotional stops",
+          "title_fr": "Un ensemble et de nombreuses étapes de dévotion",
+          "paragraphs": [
+            {
+              "en": "Varallo’s chapels form a coherent pilgrimage complex, with successive stations encountered as pilgrims ascend through the hillside sanctuary. Its devotional, architectural and artistic dimensions meet in the experience of moving uphill through the site. Present access, terrain conditions and the opening of individual chapels depend on current local arrangements.",
+              "fr": "Les chapelles de Varallo forment un ensemble cohérent de pèlerinage, dont les stations se succèdent lors de la montée à travers le sanctuaire sur la colline. Les dimensions dévotionnelle, architecturale et artistique se rejoignent dans la montée à travers le site. L’accès actuel, l’état du terrain et l’ouverture de chaque chapelle dépendent des dispositions locales en vigueur.",
+              "source_id": "SG-PROFILE-20261010-01",
+              "source_url": "https://whc.unesco.org/en/list/1068"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://whc.unesco.org/en/list/1068"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "place_name": "Santa Maria de Montserrat Abbey",
+      "country_code": "ES",
+      "shrine_id": "shrine:ES:santa-maria-de-montserrat-abbey",
+      "draft_order": 155,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Benedictine abbey and Black Madonna of Montserrat in Catalonia.",
+      "subtitle_fr": "L’abbaye bénédictine et la Vierge noire de Montserrat, en Catalogne.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Benedictine sanctuary in the mountains",
+          "title_fr": "Un sanctuaire bénédictin dans les montagnes",
+          "paragraphs": [
+            {
+              "en": "Montserrat Abbey stands in a distinctive mountain setting in Catalonia, combining the daily life of a Benedictine community with pilgrimage to Our Lady of Montserrat. The sanctuary is not simply a viewpoint or a historic monastery museum. Its identity depends on the religious relationship between the monastic church, the venerated Marian image and the pilgrims who visit.",
+              "fr": "L’abbaye de Montserrat se dresse dans un cadre montagneux singulier de Catalogne, réunissant la vie quotidienne d’une communauté bénédictine et le pèlerinage à Notre-Dame de Montserrat. Le sanctuaire n’est pas seulement un belvédère ni un musée monastique. Son identité tient au lien religieux entre l’église abbatiale, l’image mariale vénérée et les pèlerins qui viennent la prier.",
+              "source_id": "AO-ED-MONTSERRAT-BASILICA-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The image of Our Lady of Montserrat",
+          "title_fr": "L’image de Notre-Dame de Montserrat",
+          "paragraphs": [
+            {
+              "en": "Pilgrims venerate Our Lady of Montserrat, affectionately called La Moreneta because of the dark colour of her face and hands. The abbey identifies the statue as a Romanesque wooden carving of the late twelfth century, representing the Virgin and Child; the stories of the image's discovery belong to a separate devotional tradition.",
+              "fr": "Les pèlerins vénèrent Notre-Dame de Montserrat, appelée affectueusement la Moreneta en raison de la couleur sombre de son visage et de ses mains. L’abbaye date cette statue en bois de la fin du XIIe siècle : elle représente la Vierge à l’Enfant. Les récits de sa découverte relèvent d’une tradition dévotionnelle distincte.",
+              "source_id": "AO-ED-MONTSERRAT-IMAGE-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/our-lady-of-montserrat"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer, liturgy and sacred music",
+          "title_fr": "Prière, liturgie et musique sacrée",
+          "paragraphs": [
+            {
+              "en": "The monastery’s living prayer and sacred music are part of the experience of pilgrimage, alongside prayer before the Marian image. Current liturgical and visiting times belong to the abbey’s own notices; the site’s long history is not evidence of a fixed traditional Roman rite.",
+              "fr": "La prière monastique et la musique sacrée font partie de l’expérience du pèlerinage, aux côtés du recueillement devant l’image mariale. Les horaires de liturgie et de visite relèvent des annonces de l’abbaye ; l’ancienneté du site ne prouve pas l’usage permanent d’un rite romain traditionnel.",
+              "source_id": "AO-ED-MONTSERRAT-BASILICA-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://abadiamontserrat.cat/en/sanctuary/start",
+        "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship",
+        "https://abadiamontserrat.cat/en/santuari/our-lady-of-montserrat"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MONTSERRAT-BASILICA-20261111",
+        "AO-ED-MONTSERRAT-IMAGE-20261111"
+      ]
+    },
+    {
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "place_name": "National Shrine of Our Lady of Ta' Pinu",
+      "country_code": "MT",
+      "shrine_id": "shrine:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "draft_order": 156,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Gozo's Ta' Pinu sanctuary, its older chapel and the 1883 Karmela Grima tradition.",
+      "subtitle_fr": "Le sanctuaire de Ta’ Pinu à Gozo, sa chapelle ancienne et la tradition de Karmela Grima en 1883.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The older chapel at Ta' Pinu",
+          "title_fr": "L’ancienne chapelle de Ta’ Pinu",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Ta’ Pinu on Gozo developed around an older Marian chapel, which remains important to the sanctuary’s identity. The present pilgrimage destination therefore brings together different phases of religious architecture in one setting. A visitor should distinguish the historic chapel from the later monumental sanctuary while understanding why they belong to the same tradition.",
+              "fr": "Le sanctuaire national Notre-Dame de Ta’ Pinu, sur l’île de Gozo, s’est développé autour d’une ancienne chapelle mariale, toujours importante pour son identité. La destination réunit ainsi différentes phases d’architecture religieuse en un même lieu. Le visiteur doit distinguer la chapelle historique du sanctuaire monumental postérieur tout en comprenant leur appartenance à une seule tradition.",
+              "source_id": "SG-PROFILE-20261010-03",
+              "source_url": "https://tapinu.org/index.php/sanctuary/historical-glance"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Karmela Grima and the call of 1883",
+          "title_fr": "Karmela Grima et l’appel de 1883",
+          "paragraphs": [
+            {
+              "en": "The shrine’s historical account recounts that Karmela Grima heard a call to prayer associated with the chapel in 1883. This narrative helps explain the development of Ta’ Pinu as a Marian pilgrimage place. The reported experience should be attributed to the local devotional tradition rather than narrated as an independently demonstrated supernatural event.",
+              "fr": "Le récit historique du sanctuaire rapporte que Karmela Grima entendit un appel à la prière lié à la chapelle en 1883. Cette narration aide à comprendre le développement de Ta’ Pinu comme lieu de pèlerinage marial. L’expérience rapportée doit être attribuée à la tradition dévotionnelle locale plutôt que présentée comme un événement surnaturel démontré indépendamment.",
+              "source_id": "SG-PROFILE-20261010-03",
+              "source_url": "https://tapinu.org/index.php/sanctuary/historical-glance"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage within Gozo",
+          "title_fr": "Un pèlerinage à Gozo",
+          "paragraphs": [
+            {
+              "en": "Ta’ Pinu is a particular Marian destination on Gozo, distinct from Malta’s other churches and island shrines. Its older chapel, later church and traditions of prayer form chapters in the history of the same pilgrimage grounds. The sanctuary’s current arrangements, rather than any historical year in the foundation narrative, determine access and present liturgical celebrations.",
+              "fr": "Ta’ Pinu est une destination mariale particulière de Gozo, distincte des autres églises et sanctuaires de l’archipel maltais. L’ancienne chapelle, l’église postérieure et leurs traditions de prière forment des chapitres de l’histoire du même ensemble de pèlerinage. Les dispositions actuelles du sanctuaire, non une date historique des origines, déterminent les accès et les célébrations liturgiques en vigueur.",
+              "source_id": "SG-PROFILE-20261010-03",
+              "source_url": "https://tapinu.org/index.php/sanctuary/historical-glance"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://tapinu.org/index.php/sanctuary/historical-glance"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}

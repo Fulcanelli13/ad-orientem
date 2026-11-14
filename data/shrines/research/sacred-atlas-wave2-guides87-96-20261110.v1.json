@@ -1,0 +1,666 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES87_96_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "owner_approved": 0,
+    "published": 0
+  },
+  "policy": [
+    "Source claims reuse previously curated canonical source records; editorial review must check every paragraph against primary source text.",
+    "No rewriting prior Wave-1 or published guides; no automatic publication, image, or unverified GPS.",
+    "Do not infer apparition authenticity or translate dated programmes into permanent promises."
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:montligeon",
+      "place_name": "Sanctuaire Notre-Dame de Montligeon",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:montligeon",
+      "draft_order": 87,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian sanctuary dedicated especially to prayer for the dead.",
+      "subtitle_fr": "Un sanctuaire marial consacré tout particulièrement à la prière pour les défunts.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Montligeon",
+          "title_fr": "Notre-Dame de Montligeon",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Montligeon in the Diocese of Séez has an unusually clear spiritual mission: to encourage Christian prayer for the dead. Its Marian dedication is therefore joined to intercession and the Church’s hope for those who have died. This specific purpose distinguishes Montligeon from sanctuaries chiefly known for an apparition narrative or a particular miraculous image.",
+              "fr": "Le sanctuaire Notre-Dame de Montligeon, dans le diocèse de Séez, possède une mission spirituelle particulièrement nette : encourager la prière chrétienne pour les défunts. Sa dédicace mariale s’unit ainsi à l’intercession et à l’espérance de l’Église pour ceux qui sont morts. Cette finalité distingue Montligeon des sanctuaires principalement connus pour un récit d’apparition ou pour une image particulière.",
+              "source_url": "https://montligeon.org/le-sanctuaire-notre-dame-de-montligeon/",
+              "source_id": "SHR-MONTLIGEON"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Intercession and remembrance",
+          "title_fr": "Intercession et mémoire",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Montligeon with the names and memory of deceased relatives and friends. Within Catholic devotion, prayer for the dead is neither the same as claiming knowledge of an individual soul’s state nor a substitute for the Church’s liturgical remembrance. The shrine offers a concrete setting where personal grief, intercession and Christian hope can be brought together.",
+              "fr": "Les pèlerins viennent à Montligeon avec les noms et le souvenir de parents ou d’amis défunts. Dans la dévotion catholique, prier pour les morts ne revient ni à prétendre connaître l’état de chaque âme ni à remplacer la mémoire liturgique de l’Église. Le sanctuaire offre un cadre concret où peuvent se rejoindre le deuil personnel, l’intercession et l’espérance chrétienne.",
+              "source_url": "https://montligeon.org/le-sanctuaire-notre-dame-de-montligeon/",
+              "source_id": "SHR-MONTLIGEON"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "November's Pèlerinages du Ciel",
+          "title_fr": "Les Pèlerinages du Ciel en novembre",
+          "paragraphs": [
+            {
+              "en": "The sanctuary organises recurring November pilgrimages known as the Pèlerinages du Ciel, centred on prayer for the departed. These gatherings express Montligeon’s particular mission during the season when Catholics especially remember the faithful departed.",
+              "fr": "Le sanctuaire organise en novembre des pèlerinages récurrents appelés « Pèlerinages du Ciel », centrés sur la prière pour les défunts. Ces rassemblements expriment la mission particulière de Montligeon durant la période où les catholiques font spécialement mémoire des fidèles défunts.",
+              "source_url": "https://montligeon.org/les-pelerinages-du-ciel/",
+              "source_id": "PIL-MONTLIGEON-CIEL"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:montligeon-destination",
+        "pilgrimage:FR:montligeon-ciel"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://montligeon.org/le-sanctuaire-notre-dame-de-montligeon/",
+        "https://montligeon.org/les-pelerinages-du-ciel/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "place_name": "Gebetsstätte Maria vom Sieg Wigratzbad",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
+      "draft_order": 88,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian prayer site at Wigratzbad with the Chapel of Grace and church of reparation.",
+      "subtitle_fr": "Un lieu marial de prière à Wigratzbad avec sa chapelle des Grâces et son église de réparation.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Mary of Victory at Wigratzbad",
+          "title_fr": "Marie de la Victoire à Wigratzbad",
+          "paragraphs": [
+            {
+              "en": "Wigratzbad’s Gebetsstätte Maria vom Sieg is a Marian prayer site of the Diocese of Augsburg. Its named precinct includes a Chapel of Grace and the Herz Jesu und Mariä Sühnekirche, a church dedicated to the Hearts of Jesus and Mary in a spirit of reparation. The Chapel of Grace and the Church of Reparation are distinct settings for prayer within the same Marian sanctuary.",
+              "fr": "La Gebetsstätte Maria vom Sieg de Wigratzbad est un lieu marial de prière du diocèse d’Augsbourg. Son ensemble comprend une chapelle des Grâces et la Herz Jesu und Mariä Sühnekirche, église dédiée aux Cœurs de Jésus et de Marie dans un esprit de réparation. La chapelle des Grâces et l’église de Réparation sont deux lieux de prière distincts au sein du même sanctuaire marial.",
+              "source_url": "https://www.gebetsstaette.de/",
+              "source_id": "SHR-WIGRATZBAD"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Reparation and devotion",
+          "title_fr": "Réparation et dévotion",
+          "paragraphs": [
+            {
+              "en": "The site’s name and its church of reparation express a devotional emphasis involving Eucharistic prayer, confession and Marian intercession. Those practices explain why pilgrims come to Wigratzbad beyond any curiosity about the buildings.",
+              "fr": "Le nom du lieu et son église de réparation expriment une orientation dévotionnelle qui associe prière eucharistique, confession et intercession mariale. Ces pratiques expliquent pourquoi les pèlerins se rendent à Wigratzbad au-delà de l’intérêt pour ses bâtiments.",
+              "source_url": "https://www.gebetsstaette.de/",
+              "source_id": "SHR-WIGRATZBAD"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage services and Sühnesamstag",
+          "title_fr": "Offices de pèlerinage et Sühnesamstag",
+          "paragraphs": [
+            {
+              "en": "The prayer site publishes a liturgical order mentioning the Sühnesamstag and other devotional practices. These regular observances must be linked to the actual Wigratzbad operator and its current schedule; they do not establish that every service follows the same rite or occurs at a fixed hour all year. Pilgrims should distinguish the Chapel of Grace from the church where particular services are held.",
+              "fr": "Le lieu de prière publie un ordre des offices mentionnant le Sühnesamstag et d’autres pratiques dévotionnelles. Ces observances doivent être rattachées aux responsables de Wigratzbad et à leur programme actuel ; elles ne prouvent pas que tous les offices suivent le même rite ni qu’ils se déroulent toute l’année à heure fixe. Les pèlerins doivent distinguer la chapelle des Grâces de l’église où sont célébrés certains offices.",
+              "source_url": "https://www.gebetsstaette.de/aktuelles/gottesdienstordnung/",
+              "source_id": "PIL-WIGRATZBAD-SUEHNE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:wigratzbad-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.gebetsstaette.de/",
+        "https://www.gebetsstaette.de/aktuelles/gottesdienstordnung/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:mariahilf-amberg",
+      "place_name": "Wallfahrtskirche Maria Hilf Amberg",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:mariahilf-amberg",
+      "draft_order": 89,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An Upper Palatinate Marian pilgrimage rooted in a 1634 plague vow.",
+      "subtitle_fr": "Un pèlerinage marial du Haut-Palatinat né d’un vœu pendant la peste de 1634.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The plague vow of 1634",
+          "title_fr": "Le vœu pendant la peste de 1634",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage to Maria Hilf at Amberg took shape during the plague of 1633–1634. The church's history reports that, on the advice of the Jesuit Father Hell, a Marian image was carried in solemn procession up the hill on 3 September 1634, after which the epidemic subsided. A Baroque church was later built as the number of pilgrims increased.",
+              "fr": "Le pèlerinage de Maria Hilf à Amberg prit forme durant la peste de 1633–1634. Selon l’histoire publiée par l’église, sur le conseil du jésuite, le père Hell, une image mariale fut portée solennellement en procession sur la colline le 3 septembre 1634, après quoi l’épidémie recula. Une église baroque fut ensuite construite pour accueillir des pèlerins toujours plus nombreux.",
+              "source_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+              "source_id": "PIL-MARIAHILF-AMBERG-BERGFEST"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The church on Mariahilfberg",
+          "title_fr": "L’église du Mariahilfberg",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage is centred on the church of Mary Help at Mariahilfberg and its Marian image. The site’s location gives a concrete destination to a devotion born out of a local historical experience. The church, the hill and its Marian image together form the setting of this locally rooted pilgrimage.",
+              "fr": "Le pèlerinage se concentre sur l’église de Marie Auxiliatrice au Mariahilfberg et sur son image mariale. La situation du lieu donne une destination concrète à une dévotion née d’une expérience historique locale. L’église, la colline et son image mariale forment ensemble le cadre de ce pèlerinage enraciné dans l’histoire locale.",
+              "source_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+              "source_id": "AO-ED-CITATION-89-IDENTITY-20261112"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The annual Bergfest",
+          "title_fr": "Le Bergfest annuel",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage church celebrates the Visitation of Mary on 2 July and holds the annual Bergfest with pilgrims travelling on foot from surrounding communities. This lasting custom recalls the Marian devotion that developed at Amberg during the plague of 1634.",
+              "fr": "L’église de pèlerinage célèbre la Visitation de Marie le 2 juillet et accueille la fête annuelle du Bergfest, à laquelle des pèlerins des communautés voisines se rendent à pied. Cette coutume durable rappelle la dévotion mariale qui se développa à Amberg pendant la peste de 1634.",
+              "source_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+              "source_id": "PIL-MARIAHILF-AMBERG-BERGFEST"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:mariahilf-amberg-destination",
+        "pilgrimage:DE:mariahilf-amberg-bergfest"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+        "https://www.mariahilfberg-amberg.de/index.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-89-IDENTITY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "place_name": "Kirche St. Leonhard Nußdorf am Inn",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "draft_order": 90,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The pilgrimage church of Saint Leonard at Nußdorf and its revived horse procession.",
+      "subtitle_fr": "L’église de pèlerinage Saint-Léonard à Nußdorf et sa procession équestre restaurée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Leonard’s pilgrimage church",
+          "title_fr": "L’église de pèlerinage Saint-Léonard",
+          "paragraphs": [
+            {
+              "en": "At Nußdorf am Inn, the church of Saint Leonard is a historic pilgrimage place associated with devotion to Saint Leonard of Noblac. The local account also records a longstanding Scapular confraternity, giving the church a distinctive combination of saints’ and Marian devotional practices. Its identity concerns this particular Bavarian church, not any Saint Leonard church elsewhere.",
+              "fr": "À Nußdorf am Inn, l’église Saint-Léonard est un lieu historique de pèlerinage lié à la dévotion envers saint Léonard de Noblac. Le récit local mentionne aussi une ancienne confrérie du scapulaire, donnant à l’église une combinaison particulière de dévotions aux saints et à la Vierge. Son identité concerne cet édifice bavarois précis, et non toutes les églises Saint-Léonard.",
+              "source_url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard",
+              "source_id": "PIL-ST-LEONHARD-NUSSDORF"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Scapular feast",
+          "title_fr": "La fête du scapulaire",
+          "paragraphs": [
+            {
+              "en": "The town’s record places a traditional pilgrimage feast on the Sunday following 19 July. This annual celebration reflects the church’s local devotional history and the confraternity associated with it. Its liturgical or civic form should not be assumed identical to those of other Scapular feasts, since local customs and celebrants may change over time.",
+              "fr": "Les documents de la commune situent une fête traditionnelle de pèlerinage le dimanche suivant le 19 juillet. Cette célébration annuelle reflète l’histoire dévotionnelle de l’église et de la confrérie qui lui est liée. Il ne faut pas supposer que sa forme liturgique ou civique soit identique à celle d’autres fêtes du scapulaire, car les usages et les célébrants locaux peuvent évoluer.",
+              "source_url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard",
+              "source_id": "PIL-ST-LEONHARD-NUSSDORF"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Leonhardiritt",
+          "title_fr": "Le Leonhardiritt",
+          "paragraphs": [
+            {
+              "en": "The local Leonhardiritt, a procession associated with Saint Leonard and horses, has been revived and is linked to 6 November in the town’s account. It is a different observance from the July pilgrimage feast and illustrates the breadth of the site’s local customs. Any road procession or event route should be confirmed from current organisers rather than drawn from an assumed historic circuit.",
+              "fr": "Le Leonhardiritt local, procession liée à saint Léonard et aux chevaux, a été rétabli et rattaché au 6 novembre dans la présentation communale. Il s’agit d’une observance distincte de la fête de pèlerinage de juillet, montrant la diversité des coutumes locales. Tout parcours de procession ou itinéraire routier doit être confirmé auprès des organisateurs actuels et non déduit d’un circuit historique supposé.",
+              "source_url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard",
+              "source_id": "PIL-ST-LEONHARD-NUSSDORF"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:st-leonhard-nussdorf-destination",
+        "pilgrimage:DE:st-leonhard-nussdorf-ritt"
+      ],
+      "saint_name_associations": [
+        "Saint Leonard of Noblac"
+      ],
+      "bibliography_urls": [
+        "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "place_name": "St. Apollinaris Frielingsdorf",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "draft_order": 91,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A German church where Saint Apollinaris is honoured in an annual July octave.",
+      "subtitle_fr": "Une église allemande où saint Apollinaire est honoré par une octave annuelle en juillet.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A diocesan pilgrimage place",
+          "title_fr": "Un lieu de pèlerinage diocésain",
+          "paragraphs": [
+            {
+              "en": "The Church of Saint Apollinaris at Frielingsdorf is identified in Archdiocese of Cologne pilgrimage material as a destination associated with the saint. This church must retain its own local identity, even though the same martyr’s dedication appears in other regions. Its significance is expressed through a persistent local pattern of gathering in prayer.",
+              "fr": "L’église Saint-Apollinaire de Frielingsdorf figure dans les documents des pèlerinages de l’archidiocèse de Cologne comme un lieu consacré au saint. Elle doit conserver son identité locale propre, même si d’autres régions possèdent des églises de même dédicace. Son importance s’exprime par une pratique durable de rassemblement dans la prière.",
+              "source_url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+              "source_id": "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The octave of Saint Apollinaris",
+          "title_fr": "L’octave de saint Apollinaire",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage account places an annual octave around the feast of Saint Apollinaris on 23 July. An octave extends remembrance beyond a single day and gives the local community a recognisable period for worship and pilgrimage. The precise form of each day’s ceremonies must be attributed to an actual annual parish programme rather than assumed from the term octave alone.",
+              "fr": "Le récit du pèlerinage situe une octave annuelle autour de la fête de saint Apollinaire, le 23 juillet. Une octave prolonge la mémoire au-delà d’une seule journée et donne à la communauté locale une période identifiable de culte et de pèlerinage. Le déroulement précis des célébrations quotidiennes doit provenir du programme paroissial de l’année et ne peut être déduit du seul mot « octave ».",
+              "source_url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+              "source_id": "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living local observance",
+          "title_fr": "Une observance locale vivante",
+          "paragraphs": [
+            {
+              "en": "The Lindlar parish news index announced the Saint Apollinaris octave at Frielingsdorf for 18–25 July 2026. The dated notice confirms a local observance in that year, but does not establish a permanent daily schedule. Visitors should consult the parish's current announcements for liturgies and access.",
+              "fr": "L'index des actualités de la paroisse de Lindlar annonçait l'octave de saint Apollinaire à Frielingsdorf du 18 au 25 juillet 2026. Cette annonce datée atteste la célébration locale de cette année-là, sans établir d'horaire quotidien permanent. Pour les offices et les visites, il convient de consulter les annonces paroissiales actuelles.",
+              "source_url": "https://www.katholisch-in-lindlar.de/news/index.html",
+              "source_id": "SHR-ST-APOLLINARIS-FRIELINGSDORF"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
+        "pilgrimage:DE:st-apollinaris-frielingsdorf-octave"
+      ],
+      "saint_name_associations": [
+        "Saint Apollinaris"
+      ],
+      "bibliography_urls": [
+        "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+        "https://www.katholisch-in-lindlar.de/news/index.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "place_name": "Wallfahrtskirche St. Salvator Bettbrunn",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "draft_order": 92,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Bavaria’s early Eucharistic pilgrimage at Bettbrunn and the later Salvator image.",
+      "subtitle_fr": "Un ancien pèlerinage eucharistique bavarois à Bettbrunn et l’image ultérieure du Sauveur.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Host pilgrimage tradition",
+          "title_fr": "La tradition du pèlerinage de l’Hostie",
+          "paragraphs": [
+            {
+              "en": "The Diocese of Regensburg presents Bettbrunn as Bavaria’s oldest attested Hostienwallfahrt, a pilgrimage associated with the Eucharistic Host. This makes the church of Saint Salvator a distinctive Christological site, not merely another church named after the Saviour. The diocesan historical framing should be retained without turning every episode of the medieval tradition into a modern scientific assertion.",
+              "fr": "Le diocèse de Ratisbonne présente Bettbrunn comme le plus ancien pèlerinage eucharistique à l’Hostie attesté en Bavière. Cela donne à l’église Saint-Sauveur une identité christologique particulière, au-delà d’une simple église dédiée au Sauveur. Il convient de conserver le cadre historique diocésain sans transformer chaque épisode de la tradition médiévale en affirmation scientifique moderne.",
+              "source_url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
+              "source_id": "SHR-BETTBRUNN-ST-SALVATOR"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "From the Host to the Salvator image",
+          "title_fr": "De l’Hostie à l’image du Sauveur",
+          "paragraphs": [
+            {
+              "en": "The diocesan history explains that the medieval Host associated with the pilgrimage was eventually lost. A surviving image of the Salvator then became the focus of the shrine’s devotion. This transition is essential to an accurate description: a visitor should not be told that the original medieval Host remains physically on display today.",
+              "fr": "L’histoire diocésaine explique que l’Hostie médiévale associée au pèlerinage fut finalement perdue. Une image du Sauveur conservée sur place devint ensuite le centre de la dévotion. Cette transition est essentielle à une présentation exacte : il ne faut pas affirmer au visiteur que l’Hostie médiévale originelle serait encore matériellement exposée aujourd’hui.",
+              "source_url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
+              "source_id": "SHR-BETTBRUNN-ST-SALVATOR"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Preith walking pilgrimage",
+          "title_fr": "Le pèlerinage à pied de Preith",
+          "paragraphs": [
+            {
+              "en": "The parish of Preith describes an annual two-day pilgrimage on foot to Bettbrunn, traditionally held on the weekend following Ascension and tracing continuity back to 1578. Such a long tradition ties neighbouring Catholic communities to the sanctuary across generations. The precise walking track and hospitality arrangements need confirmation from the present organisers rather than automatic reconstruction from the historical date.",
+              "fr": "La paroisse de Preith décrit un pèlerinage annuel à pied de deux jours vers Bettbrunn, traditionnellement tenu le week-end suivant l’Ascension et inscrit dans une continuité remontant à 1578. Cette longue tradition relie les communautés catholiques voisines au sanctuaire de génération en génération. Le tracé exact et les modalités d’accueil doivent être confirmés auprès des organisateurs actuels, et non reconstruits automatiquement à partir de la date historique.",
+              "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/",
+              "source_id": "PIL-BETTBRUNN-PREITH"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:bettbrunn-destination",
+        "pilgrimage:DE:bettbrunn-preith",
+        "pilgrimage:DE:bettbrunn-men"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
+        "https://preith.bistum-eichstaett.de/wallfahrt/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:maria-vesperbild",
+      "place_name": "Wallfahrtskirche Maria Vesperbild",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:maria-vesperbild",
+      "draft_order": 93,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Swabian Marian sanctuary known for pilgrimage days and Fatima devotion.",
+      "subtitle_fr": "Un sanctuaire marial souabe connu pour ses journées de pèlerinage et sa dévotion à Fatima.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Mary at Maria Vesperbild",
+          "title_fr": "La Vierge à Maria Vesperbild",
+          "paragraphs": [
+            {
+              "en": "Maria Vesperbild is an established Marian pilgrimage site in the Diocese of Augsburg. The sanctuary uses the expression 'Swabian capital of Mary' to convey its regional devotional significance.",
+              "fr": "Maria Vesperbild est un lieu établi de pèlerinage marial dans le diocèse d’Augsbourg. Le sanctuaire emploie l’expression « capitale mariale de Souabe » pour exprimer son importance dévotionnelle régionale.",
+              "source_url": "https://maria-vesperbild.de/",
+              "source_id": "SHR-MARIA-VESPERBILD"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The monthly Fatima pilgrim day",
+          "title_fr": "La journée mensuelle de pèlerinage de Fatima",
+          "paragraphs": [
+            {
+              "en": "The sanctuary announces pilgrim observances associated with Fatima on the thirteenth day of each month, including Mass, the Rosary and Benediction. This connection belongs to the devotional programme of a German sanctuary; it does not relocate the original 1917 Fatima events to Swabia. The exact ceremonies are subject to the current published liturgical order.",
+              "fr": "Le sanctuaire annonce des observances de pèlerinage liées à Fatima le treizième jour de chaque mois, notamment la messe, le Rosaire et la bénédiction du Saint-Sacrement. Cette relation appartient au programme dévotionnel d’un sanctuaire allemand ; elle ne déplace pas en Souabe les événements originels de Fatima de 1917. Le détail des cérémonies dépend du programme liturgique actuellement publié.",
+              "source_url": "https://maria-vesperbild.de/",
+              "source_id": "PIL-MARIA-VESPERBILD-FATIMA"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Regular worship and pilgrimage",
+          "title_fr": "Culte régulier et pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Alongside its gatherings on the thirteenth day of the month, Maria Vesperbild receives pilgrims for Marian prayer and the liturgical life of the sanctuary. These observances are rooted in the religious practice of this Augsburg diocesan pilgrimage church. The sanctuary announces the programme of Masses, confessions and celebrations for the relevant dates.",
+              "fr": "Outre ses rassemblements le treizième jour du mois, Maria Vesperbild accueille les pèlerins pour la prière mariale et la vie liturgique du sanctuaire. Ces observances s’inscrivent dans la pratique religieuse de cette église de pèlerinage du diocèse d’Augsbourg. Le sanctuaire annonce les messes, confessions et célébrations aux dates concernées.",
+              "source_url": "https://maria-vesperbild.de/",
+              "source_id": "SHR-MARIA-VESPERBILD"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:maria-vesperbild-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://maria-vesperbild.de/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "place_name": "St. Mary of the Assumption Parish and Shrine",
+      "country_code": "US",
+      "shrine_id": "shrine:US:st-mary-assumption-oswego",
+      "draft_order": 94,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An ICKSP-served Marian parish shrine in Oswego with the traditional Roman liturgy.",
+      "subtitle_fr": "Une paroisse-sanctuaire mariale d’Oswego desservie par l’ICRSP avec la liturgie romaine traditionnelle.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Mary of the Assumption at Oswego",
+          "title_fr": "Sainte-Marie-de-l’Assomption à Oswego",
+          "paragraphs": [
+            {
+              "en": "Saint Mary of the Assumption at Oswego, New York, serves both as a Catholic parish church and as a Marian shrine. The Institute of Christ the King Sovereign Priest provides its pastoral ministry and celebrates the traditional Roman liturgy there. The building's dual role joins the worship of a local parish community with Marian pilgrimage.",
+              "fr": "Sainte-Marie-de-l’Assomption d’Oswego, dans l’État de New York, est à la fois une église paroissiale catholique et un sanctuaire marial. L’Institut du Christ Roi Souverain Prêtre y assure le ministère pastoral et célèbre la liturgie romaine traditionnelle. Cette double fonction unit la vie d’une communauté paroissiale locale au pèlerinage marial.",
+              "source_url": "https://institute-christ-king.org/oswego-home",
+              "source_id": "SHR-OSWEGO-ASSUMPTION"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A traditional liturgical life",
+          "title_fr": "Une vie liturgique traditionnelle",
+          "paragraphs": [
+            {
+              "en": "The institute’s official Oswego information identifies a full programme of Traditional Latin Masses. Here, reference to the traditional Roman liturgy rests on the custodian’s published practice rather than on the church’s age or architecture.",
+              "fr": "Les informations officielles de l’Institut pour Oswego indiquent un programme complet de messes traditionnelles latines. La référence à la liturgie romaine traditionnelle repose ici sur une pratique publiée par les responsables du lieu, non sur l’âge ou l’architecture de l’église.",
+              "source_url": "https://institute-christ-king.org/oswego-home",
+              "source_id": "SHR-OSWEGO-ASSUMPTION"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A parish and a shrine",
+          "title_fr": "Une paroisse et un sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The parish and shrine share the same church building in Oswego. Worshippers gather there for the traditional Roman liturgy and devotions connected with Our Lady of the Assumption. Details of confessions, feast-day ceremonies and visiting arrangements are published through the Institute's local apostolate.",
+              "fr": "La paroisse et le sanctuaire occupent la même église d’Oswego. Les fidèles s’y réunissent pour la liturgie romaine traditionnelle et les dévotions liées à Notre-Dame de l’Assomption. Les horaires des confessions, des fêtes et des visites sont publiés par l’apostolat local de l’Institut.",
+              "source_url": "https://institute-christ-king.org/oswego-home",
+              "source_id": "SHR-OSWEGO-ASSUMPTION"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:oswego-assumption-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://institute-christ-king.org/oswego-home"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "place_name": "The National Shrine of The Divine Mercy",
+      "country_code": "US",
+      "shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "draft_order": 95,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian Fathers’ national Divine Mercy sanctuary at Eden Hill in Stockbridge.",
+      "subtitle_fr": "Le sanctuaire national de la Divine Miséricorde des Pères marianistes à Eden Hill, Stockbridge.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The shrine at Eden Hill",
+          "title_fr": "Le sanctuaire d’Eden Hill",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of The Divine Mercy is a Catholic pilgrimage destination at Eden Hill in Stockbridge, Massachusetts. It is served by the Marian Fathers and is associated with the devotion to Divine Mercy, including the spiritual heritage of Saint Faustina Kowalska. The site is a concrete American shrine, not the Polish places connected to Faustina’s life.",
+              "fr": "Le sanctuaire national de la Divine Miséricorde est une destination catholique de pèlerinage à Eden Hill, Stockbridge, dans le Massachusetts. Desservi par les Pères mariens, il est lié à la dévotion à la Miséricorde divine et à l’héritage spirituel de sainte Faustine Kowalska. Le site est un sanctuaire américain bien réel, et non l’un des lieux polonais associés à la vie de Faustine.",
+              "source_url": "https://shrineofdivinemercy.org/visiting",
+              "source_id": "SHR-DIVINE-MERCY-STOCKBRIDGE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Prayer and the pilgrim’s visit",
+          "title_fr": "Prière et visite du pèlerin",
+          "paragraphs": [
+            {
+              "en": "The shrine publishes information on visiting, daily devotions and the pastoral welcome offered to groups. These practices express the sanctuary’s continuing religious purpose outside the principal annual feast.",
+              "fr": "Le sanctuaire publie des informations sur les visites, les dévotions quotidiennes et l’accueil pastoral des groupes. Ces pratiques expriment sa mission religieuse permanente en dehors de la principale fête annuelle.",
+              "source_url": "https://shrineofdivinemercy.org/visiting",
+              "source_id": "SHR-DIVINE-MERCY-STOCKBRIDGE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Divine Mercy Sunday pilgrimage",
+          "title_fr": "Le pèlerinage du dimanche de la Divine Miséricorde",
+          "paragraphs": [
+            {
+              "en": "The annual Divine Mercy Sunday observance brings large numbers of pilgrims to Stockbridge, with Mass, confession, the Chaplet and Benediction among the recorded activities. The event’s scale and spiritual programme show why this location functions as a national pilgrimage destination. However, figures, traffic arrangements and exact ceremonies from one year must not be presented as guarantees for another.",
+              "fr": "L’observance annuelle du dimanche de la Divine Miséricorde attire de nombreux pèlerins à Stockbridge, avec notamment messe, confession, chapelet de la Miséricorde et bénédiction du Saint-Sacrement. L’ampleur de la rencontre et son programme spirituel expliquent la fonction nationale du lieu comme destination de pèlerinage. Les chiffres de fréquentation, les dispositions de circulation et les cérémonies d’une année ne doivent toutefois pas devenir des garanties pour une autre.",
+              "source_url": "https://www.shrineofdivinemercy.org/Divine-Mercy-Sunday-Weekend",
+              "source_id": "PIL-DIVINE-MERCY-SUNDAY"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:divine-mercy-stockbridge-destination",
+        "pilgrimage:US:divine-mercy-sunday-stockbridge"
+      ],
+      "saint_name_associations": [
+        "Saint Faustina Kowalska"
+      ],
+      "bibliography_urls": [
+        "https://shrineofdivinemercy.org/visiting",
+        "https://www.shrineofdivinemercy.org/Divine-Mercy-Sunday-Weekend"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:la-salette-attleboro",
+      "place_name": "National Shrine of Our Lady of La Salette",
+      "country_code": "US",
+      "shrine_id": "shrine:US:la-salette-attleboro",
+      "draft_order": 96,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The American La Salette national shrine opened in 1953, dedicated to reconciliation.",
+      "subtitle_fr": "Le sanctuaire national américain de La Salette, ouvert en 1953 et consacré à la réconciliation.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A La Salette shrine in Massachusetts",
+          "title_fr": "Un sanctuaire de La Salette au Massachusetts",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of La Salette at Attleboro opened in 1953 under the Missionaries of Our Lady of La Salette. Its purpose draws upon the Marian devotion associated with La Salette in France while serving pilgrims in a distinct American setting. The origin of the sanctuary in 1953 is not the date of the original French apparition tradition.",
+              "fr": "Le sanctuaire national Notre-Dame de La Salette d’Attleboro fut ouvert en 1953 sous la responsabilité des Missionnaires de Notre-Dame de La Salette. Sa mission s’inspire de la dévotion mariale liée à La Salette en France tout en accueillant les pèlerins dans un cadre américain distinct. L’ouverture du sanctuaire en 1953 ne constitue pas la date de la tradition apparitionnelle française originelle.",
+              "source_url": "https://www.lasaletteattleboroshrine.org/the-la-salette-story",
+              "source_id": "AO-ED-ATTLEBORO-LASALETTE-1953-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The 1846 message and reconciliation",
+          "title_fr": "Le message de 1846 et la réconciliation",
+          "paragraphs": [
+            {
+              "en": "The shrine’s own historical presentation associates the devotion with the reported events at La Salette on 19 September 1846. Its pastoral emphasis on reconciliation is rooted in that tradition.",
+              "fr": "La présentation historique du sanctuaire rattache la dévotion aux événements rapportés à La Salette le 19 septembre 1846. Son accent pastoral sur la réconciliation s’enracine dans cette tradition.",
+              "source_url": "https://www.lasaletteattleboroshrine.org/the-la-salette-story",
+              "source_id": "OBS-LA-SALETTE-SEP19"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living pilgrimage ministry",
+          "title_fr": "Un ministère de pèlerinage vivant",
+          "paragraphs": [
+            {
+              "en": "The missionaries maintain the Attleboro shrine as a site of Catholic worship and pilgrimage, not simply as an American memorial to a French event. Visitors should encounter its present devotional programme as belonging to this specific institution. For current celebrations, group visits and opening conditions, the operator’s latest information takes precedence over undated historical descriptions.",
+              "fr": "Les missionnaires entretiennent le sanctuaire d’Attleboro comme lieu de culte catholique et de pèlerinage, et non comme un simple mémorial américain d’un événement français. Les visiteurs doivent découvrir son programme dévotionnel comme celui de cette institution précise. Pour les célébrations, les groupes et les accès actuels, les renseignements les plus récents des responsables priment sur les descriptions historiques non datées.",
+              "source_url": "https://www.lasaletteattleboroshrine.org/",
+              "source_id": "SHR-LA-SALETTE-ATTLEBORO"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:la-salette-attleboro-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.lasaletteattleboroshrine.org/",
+        "https://www.lasaletteattleboroshrine.org/the-la-salette-story"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ATTLEBORO-LASALETTE-1953-20261111"
+      ]
+    }
+  ]
+}

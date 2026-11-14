@@ -1,0 +1,661 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES137_146_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Source-registry entries reused; the original webpages were not independently rechecked in this writing pass.",
+    "Historical relic assertions are attributed and the present Orthodox identity of Saint Titus, Heraklion is explicit.",
+    "Research-only: no published Place, photo, map, schedule, rite or missal field changed."
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "place_name": "Couvent des Jacobins, Toulouse",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+      "draft_order": 137,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Toulouse's Dominican convent and the venerated remains of Saint Thomas Aquinas.",
+      "subtitle_fr": "Le couvent dominicain de Toulouse et les restes vénérés de saint Thomas d’Aquin.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Dominican convent in Toulouse",
+          "title_fr": "Le couvent dominicain de Toulouse",
+          "paragraphs": [
+            {
+              "en": "Dominican friars settled on the present Jacobins site in Toulouse in 1230, building a brick church that grew from a modest preaching hall into a vaulted Gothic complex. Thomas Aquinas himself never came to Toulouse: after his canonisation in 1323, Pope Urban V entrusted his relics to the city's Dominicans in the late 1360s. Devotion to the saint here arose from the translation of his remains, not from a visit during his lifetime.",
+              "fr": "Les frères dominicains s’établirent en 1230 sur l’emplacement actuel des Jacobins de Toulouse. Leur église de brique passa d’un modeste lieu de prédication à un grand ensemble gothique voûté. Thomas d’Aquin ne vint jamais à Toulouse : après sa canonisation en 1323, le pape Urbain V confia ses reliques aux dominicains de la ville à la fin des années 1360. La dévotion locale au saint naquit de la translation de ses restes, non d’une visite de son vivant.",
+              "source_id": "SHR-FR-couvent-jacobins-toulouse",
+              "source_url": "https://jacobins.toulouse.fr/fr/histoire/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Relic tradition within a historic church",
+          "title_fr": "La tradition reliquaire dans une église historique",
+          "paragraphs": [
+            {
+              "en": "Behind the church's austere brick exterior rises a luminous Gothic choir whose vaults were raised to about 28 metres in the thirteenth century. The cloister, refectory and chapter room recall the mendicant friars' life of prayer, study and preaching; the Saint-Antonin chapel belongs to a later building phase. The relics of Saint Thomas Aquinas give this architectural ensemble a special place in Dominican pilgrimage.",
+              "fr": "Derrière la façade austère de brique s’élève un chœur gothique lumineux, dont les voûtes furent portées à environ 28 mètres au XIIIe siècle. Le cloître, le réfectoire et la salle capitulaire rappellent la vie des frères mendiants, partagée entre prière, étude et prédication ; la chapelle Saint-Antonin appartient à une phase de construction ultérieure. Les reliques de saint Thomas d’Aquin font aussi de cet ensemble un lieu particulier de pèlerinage dominicain.",
+              "source_id": "SHR-FR-couvent-jacobins-toulouse",
+              "source_url": "https://jacobins.toulouse.fr/fr/histoire/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and heritage access",
+          "title_fr": "Pèlerinage et accès patrimonial",
+          "paragraphs": [
+            {
+              "en": "The French Revolution drove the friars from the convent, which later served as military barracks and stables: the Saint-Antonin chapel even became an infirmary for horses. Restoration recovered much of the church and cloister. Visitors now encounter both the relics of Thomas Aquinas and a city-owned historic monument used for cultural exhibitions, rather than a continuously functioning Dominican convent.",
+              "fr": "La Révolution française chassa les frères du couvent, qui servit ensuite de caserne et d’écuries : la chapelle Saint-Antonin devint même une infirmerie pour chevaux. Les restaurations permirent de retrouver une grande partie de l’église et du cloître. Les visiteurs découvrent aujourd’hui les reliques de Thomas d’Aquin dans un monument historique municipal accueillant aussi des expositions, et non dans un couvent dominicain demeuré en activité sans interruption.",
+              "source_id": "SHR-FR-couvent-jacobins-toulouse",
+              "source_url": "https://jacobins.toulouse.fr/fr/histoire/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:couvent-jacobins-toulouse:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Thomas Aquinas"
+      ],
+      "bibliography_urls": [
+        "https://jacobins.toulouse.fr/fr/histoire/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "place_name": "Collégiale Sainte-Marthe de Tarascon",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+      "draft_order": 138,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Provençal church and the traditional tomb of Saint Martha of Bethany.",
+      "subtitle_fr": "Une collégiale provençale et le tombeau traditionnel de sainte Marthe de Béthanie.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Martha's memory at Tarascon",
+          "title_fr": "La mémoire de Marthe à Tarascon",
+          "paragraphs": [
+            {
+              "en": "The Collegiate Church of Saint Martha in Tarascon is a Provençal centre of devotion to Martha of Bethany, remembered in the Gospels as sister of Mary and Lazarus. Local tradition connects her later life and burial with Tarascon. That narrative is part of the sanctuary’s religious identity; the Gospel itself does not locate her tomb in Provence.",
+              "fr": "La collégiale Sainte-Marthe de Tarascon est un centre provençal de dévotion à Marthe de Béthanie, présentée dans les Évangiles comme la sœur de Marie et de Lazare. La tradition locale relie la suite de sa vie et sa sépulture à Tarascon. Ce récit appartient à l’identité religieuse du sanctuaire ; l’Évangile lui-même ne situe pas son tombeau en Provence.",
+              "source_id": "SHR-FR-collegiale-sainte-marthe-tarascon",
+              "source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Tomb and local tradition",
+          "title_fr": "Tombeau et tradition locale",
+          "paragraphs": [
+            {
+              "en": "The church’s pilgrim appeal centres on the tomb traditionally attributed to Saint Martha, a place where the biblical figure is joined to the religious memory of the town. The attribution remains a tradition rather than independent archaeological certainty.",
+              "fr": "L’attrait pèlerin de l’église se concentre sur le tombeau traditionnellement attribué à sainte Marthe, où la figure biblique rejoint la mémoire religieuse de la ville. L’attribution demeure une tradition, non une certitude archéologique indépendante.",
+              "source_id": "SHR-FR-collegiale-sainte-marthe-tarascon",
+              "source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An individual Provençal destination",
+          "title_fr": "Une destination provençale distincte",
+          "paragraphs": [
+            {
+              "en": "The Collegiate Church of Saint Martha at Tarascon is part of Provence's historic landscape of devotion to the figures of early Christianity. Pilgrims visit the tomb traditionally associated with Martha of Bethany, while the sanctuary of Mary Magdalene at Saint-Maximin preserves a separate local tradition. The collegiate church remains a place of prayer and remembrance in Tarascon.",
+              "fr": "La collégiale Sainte-Marthe de Tarascon appartient au paysage provençal de dévotion aux figures du christianisme ancien. Les pèlerins y visitent le tombeau traditionnellement associé à Marthe de Béthanie, tandis que le sanctuaire de Marie-Madeleine à Saint-Maximin conserve une tradition locale distincte. La collégiale demeure un lieu de prière et de mémoire à Tarascon.",
+              "source_id": "SHR-FR-collegiale-sainte-marthe-tarascon",
+              "source_url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:collegiale-sainte-marthe-tarascon:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Martha of Bethany"
+      ],
+      "bibliography_urls": [
+        "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "place_name": "Basilica Sant'Agostino in Campo Marzio, Rome",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+      "draft_order": 139,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Rome's Augustinian basilica and the venerated tomb of Saint Monica.",
+      "subtitle_fr": "La basilique augustinienne de Rome et le tombeau vénéré de sainte Monique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Monica's resting place in Rome",
+          "title_fr": "Le lieu de repos de Monique à Rome",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Sant’Agostino in Campo Marzio is a Roman Catholic church associated with the veneration of Saint Monica, mother of Saint Augustine. Although Monica’s death is connected historically with Ostia, Rome’s basilica became a centre of her later relic tradition. The site should be identified by its own church and dedication rather than conflated with places connected with Augustine in North Africa.",
+              "fr": "La basilique Sant’Agostino in Campo Marzio est une église catholique de Rome associée à la vénération de sainte Monique, mère de saint Augustin. Bien que la mort de Monique soit historiquement liée à Ostie, la basilique romaine devint un lieu de sa tradition reliquaire ultérieure. Le site doit être identifié par son église et sa dédicace, sans être confondu avec les lieux liés à Augustin en Afrique du Nord.",
+              "source_id": "SHR-IT-sant-agostino-campo-marzio",
+              "source_url": "https://www.santagostinoroma.it/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Mother and son in Christian memory",
+          "title_fr": "Mère et fils dans la mémoire chrétienne",
+          "paragraphs": [
+            {
+              "en": "Saint Monica is remembered especially through the account of Augustine’s conversion and their relationship in his Confessions. Prayer at the basilica can connect that spiritual memory with the church’s reported custody of her remains. The tradition of relic identity should be attributed to the sanctuary, without suggesting that a literary account by Augustine itself establishes the present tomb’s material authenticity.",
+              "fr": "Sainte Monique est surtout connue par le récit de la conversion d’Augustin et de leur relation dans les Confessions. La prière dans la basilique permet de relier cette mémoire spirituelle à la garde des restes qui lui sont attribués. L’identité reliquaire doit être rapportée comme une tradition du sanctuaire, sans prétendre qu’un récit littéraire d’Augustin authentifie matériellement le tombeau actuel.",
+              "source_id": "SHR-IT-sant-agostino-campo-marzio",
+              "source_url": "https://www.santagostinoroma.it/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting an active basilica",
+          "title_fr": "Visiter une basilique en activité",
+          "paragraphs": [
+            {
+              "en": "Sant’Agostino is an active church within the densely layered sacred geography of central Rome. Its devotional identity is specific even though other Roman churches honour Augustine and Monica. Visitors should consult the basilica’s present arrangements for access, the tomb and liturgy rather than derive practical information from the saint’s ancient biography.",
+              "fr": "Sant’Agostino est une église en activité au sein de la géographie sacrée dense du centre de Rome. Son identité dévotionnelle est spécifique, même si d’autres églises romaines honorent Augustin et Monique. Il faut consulter les dispositions actuelles de la basilique pour l’accès, le tombeau et la liturgie, plutôt que déduire ces informations de la biographie ancienne de la sainte.",
+              "source_id": "SHR-IT-sant-agostino-campo-marzio",
+              "source_url": "https://www.santagostinoroma.it/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:sant-agostino-campo-marzio:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Monica"
+      ],
+      "bibliography_urls": [
+        "https://www.santagostinoroma.it/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "place_name": "Basilica Maria Ausiliatrice, Turin",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+      "draft_order": 140,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Salesian basilica of Mary Help of Christians and Saint John Bosco in Turin.",
+      "subtitle_fr": "La basilique salésienne de Marie Auxiliatrice et de saint Jean Bosco à Turin.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A basilica of the Salesian tradition",
+          "title_fr": "Une basilique de tradition salésienne",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Mary Help of Christians in Turin belongs to the religious landscape shaped by Saint John Bosco and the Salesian movement. Its Marian dedication reflects a devotion particularly important in Salesian spirituality. The building is a specific Italian basilica, not an interchangeable portrait of every church dedicated to Mary Help of Christians.",
+              "fr": "La basilique Marie-Auxiliatrice de Turin appartient au paysage religieux façonné par saint Jean Bosco et le mouvement salésien. Sa dédicace mariale reflète une dévotion particulièrement importante dans la spiritualité salésienne. L’édifice est une basilique italienne précise, non une représentation interchangeable de toutes les églises dédiées à Marie Auxiliatrice.",
+              "source_id": "AO-ED-VALDOCCO-CUSTODIAN-BASILICA-20261112",
+              "source_url": "https://basilicamariaausiliatrice.it/basilica-3/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "John Bosco's devotional memory",
+          "title_fr": "La mémoire dévotionnelle de Jean Bosco",
+          "paragraphs": [
+            {
+              "en": "The basilica is associated with the veneration of John Bosco’s remains and with the educational and pastoral apostolate he founded. The tomb tradition is one part of a much wider living Salesian identity.",
+              "fr": "La basilique est associée à la vénération des restes de Jean Bosco et à l’apostolat éducatif et pastoral qu’il a fondé. La tradition du tombeau ne constitue qu’un aspect d’une identité salésienne vivante plus vaste.",
+              "source_id": "AO-ED-VALDOCCO-CUSTODIAN-BASILICA-20261112",
+              "source_url": "https://basilicamariaausiliatrice.it/basilica-3/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer among Salesian places",
+          "title_fr": "Prière parmi les lieux salésiens",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may connect the Turin basilica with other sites of Don Bosco’s work, but the church and its devotional spaces remain one named Place. The custodians’ current information is needed for liturgy, group visits and access to particular areas. The Salesian context should be documented specifically rather than taken as proof of a particular form of the Roman Mass.",
+              "fr": "Les pèlerins peuvent relier la basilique de Turin à d’autres lieux de l’œuvre de Don Bosco, mais l’église et ses espaces dévotionnels demeurent un seul lieu nommé. Les renseignements des responsables actuels sont nécessaires pour la liturgie, les groupes et les accès particuliers. Le contexte salésien doit être décrit précisément sans être pris comme preuve d’une forme particulière de la messe romaine.",
+              "source_id": "AO-ED-VALDOCCO-CUSTODIAN-BASILICA-20261112",
+              "source_url": "https://basilicamariaausiliatrice.it/basilica-3/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:maria-ausiliatrice-torino:destination"
+      ],
+      "saint_name_associations": [
+        "Saint John Bosco"
+      ],
+      "bibliography_urls": [
+        "https://basilicamariaausiliatrice.it/basilica-3/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-VALDOCCO-CUSTODIAN-BASILICA-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "place_name": "Basilica Cattedrale di Catania",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+      "draft_order": 141,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Catania Cathedral, the relic tradition of Saint Agatha and exceptional expositions.",
+      "subtitle_fr": "La cathédrale de Catane, la tradition reliquaire de sainte Agathe et les ostensions exceptionnelles.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Agatha and the cathedral of Catania",
+          "title_fr": "Agathe et la cathédrale de Catane",
+          "paragraphs": [
+            {
+              "en": "The Cathedral of Catania is dedicated to Saint Agatha, the early Christian martyr honoured as a patroness of the city. Her memory has long been part of Catania’s Catholic identity. The cathedral is a physical place of worship and local veneration, distinct from the historical narratives about the precise circumstances of Agatha’s martyrdom.",
+              "fr": "La cathédrale de Catane est dédiée à sainte Agathe, martyre des premiers siècles chrétiens honorée comme patronne de la ville. Sa mémoire appartient depuis longtemps à l’identité catholique de Catane. La cathédrale est un lieu physique de culte et de vénération locale, distinct des récits historiques concernant les circonstances exactes de son martyre.",
+              "source_id": "SHR-IT-cattedrale-sant-agata-catania",
+              "source_url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The reliquary and extraordinary display",
+          "title_fr": "Le reliquaire et l’ostension extraordinaire",
+          "paragraphs": [
+            {
+              "en": "The Archdiocese of Catania documented an exceptional 2026 exposition involving a relic attributed to Agatha’s head and its precious reliquary bust. That announcement supports a specific act of veneration and custody, not a claim that the relic is continuously exposed to the public. Nor does the existence of a reliquary independently authenticate the biological identity attributed to its contents.",
+              "fr": "L’archidiocèse de Catane a documenté une ostension extraordinaire en 2026 concernant une relique attribuée à la tête d’Agathe et son précieux buste reliquaire. Cette annonce atteste un acte précis de vénération et de garde, non une exposition publique permanente. L’existence d’un reliquaire ne suffit pas non plus à authentifier indépendamment l’identité biologique attribuée à son contenu.",
+              "source_id": "SHR-IT-cattedrale-sant-agata-catania",
+              "source_url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The city's devotion and the real church",
+          "title_fr": "La dévotion de la ville et l’église réelle",
+          "paragraphs": [
+            {
+              "en": "A feast procession and a one-time exposition require separate event records. Current cathedral access and the visibility of individual relics must be verified through the archdiocese rather than assumed from a dated announcement.",
+              "fr": "Une procession de fête et une ostension ponctuelle exigent des notices d’événement distinctes. L’accès à la cathédrale et la visibilité des reliques doivent être vérifiés auprès de l’archidiocèse, sans être déduits d’une annonce datée.",
+              "source_id": "SHR-IT-cattedrale-sant-agata-catania",
+              "source_url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:cattedrale-sant-agata-catania:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Agatha of Sicily"
+      ],
+      "bibliography_urls": [
+        "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "place_name": "Convento de San Juan de la Cruz, Segovia",
+      "country_code": "ES",
+      "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+      "draft_order": 142,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Discalced Carmelite monastery at Segovia containing Saint John of the Cross's tomb.",
+      "subtitle_fr": "Le monastère des Carmes déchaux de Ségovie qui abrite le tombeau de saint Jean de la Croix.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "John of the Cross at Segovia",
+          "title_fr": "Jean de la Croix à Ségovie",
+          "paragraphs": [
+            {
+              "en": "The Discalced Carmelite convent of Saint John of the Cross in Segovia preserves the tomb traditionally associated with the Carmelite reformer and mystic. Spain’s official tourism documentation identifies a mausoleum of marble and bronze in a side chapel. This is a particular Segovian religious site, different from the places where the saint was born or died.",
+              "fr": "Le couvent des Carmes déchaux de saint Jean de la Croix à Ségovie conserve le tombeau traditionnellement associé au réformateur et mystique carmélitain. Les documents officiels du tourisme espagnol décrivent un mausolée de marbre et de bronze dans une chapelle latérale. C’est un lieu religieux particulier de Ségovie, distinct de ceux où le saint naquit ou mourut.",
+              "source_id": "SHR-ES-convento-san-juan-cruz-segovia",
+              "source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The side chapel and mausoleum",
+          "title_fr": "La chapelle latérale et le mausolée",
+          "paragraphs": [
+            {
+              "en": "The tomb monument creates a tangible focus for devotion to John of the Cross within the convent church. Its presence links the saint’s spiritual writing and Carmelite reform to the living memory of a religious community. The historical tradition of bodily relics should be distinguished from an independent authentication of every remain, while the monument itself can be described as part of the architecture.",
+              "fr": "Le monument funéraire offre un foyer tangible à la dévotion envers Jean de la Croix dans l’église conventuelle. Il relie ses écrits spirituels et la réforme du Carmel à la mémoire vivante d’une communauté religieuse. La tradition des reliques corporelles doit être distinguée de l’authentification indépendante de chaque reste, tandis que le monument peut être décrit comme un élément architectural réel.",
+              "source_id": "SHR-ES-convento-san-juan-cruz-segovia",
+              "source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and monastic boundaries",
+          "title_fr": "Pèlerinage et limites du monastère",
+          "paragraphs": [
+            {
+              "en": "A visit may bring pilgrims into the public chapel while the convent retains areas belonging to its religious community. Worship times, visitor hours and permission to enter side chapels require current information from the custodians.",
+              "fr": "Une visite peut conduire les pèlerins à la chapelle publique, tandis que le couvent conserve des espaces réservés à sa communauté religieuse. Les horaires de culte et de visite ainsi que l’ouverture des chapelles latérales dépendent des renseignements actuels des responsables.",
+              "source_id": "SHR-ES-convento-san-juan-cruz-segovia",
+              "source_url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:ES:convento-san-juan-cruz-segovia:destination"
+      ],
+      "saint_name_associations": [
+        "Saint John of the Cross"
+      ],
+      "bibliography_urls": [
+        "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GR:saint-titus-heraklion",
+      "place_name": "Church of Saint Titus, Heraklion",
+      "country_code": "GR",
+      "shrine_id": "shrine:GR:saint-titus-heraklion",
+      "draft_order": 143,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Heraklion's Saint Titus church: a historic Latin connection, now Orthodox custody.",
+      "subtitle_fr": "L’église Saint-Tite d’Héraklion : un passé lié au rite latin, une église aujourd’hui orthodoxe.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The memory of Saint Titus in Crete",
+          "title_fr": "La mémoire de saint Tite en Crète",
+          "paragraphs": [
+            {
+              "en": "In Heraklion, the church dedicated to Saint Titus became a Latin episcopal seat under Venetian rule. During the Ottoman period it was converted into a mosque. The earthquake of 1856 destroyed that building, which was subsequently rebuilt; after the population exchange, the Church of Crete restored it for Orthodox worship and rededicated it to Saint Titus in 1925.",
+              "fr": "À Héraklion, l’église dédiée à saint Tite devint un siège épiscopal latin sous la domination vénitienne. Pendant la période ottomane, elle fut transformée en mosquée. Le séisme de 1856 détruisit cet édifice, qui fut ensuite reconstruit ; après l’échange des populations, l’Église de Crète le restaura pour le culte orthodoxe et le consacra de nouveau à saint Tite en 1925.",
+              "source_id": "SHR-GR-saint-titus-heraklion",
+              "source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "An Orthodox church today",
+          "title_fr": "Une église orthodoxe aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "Saint Titus is now a functioning Orthodox church, not a Latin Catholic cathedral. It houses a skull relic traditionally attributed to Titus, Saint Paul's companion, and a venerated Marian icon known as the Messopapaditissa. These objects belong to the church's present devotional life, while its architecture bears the marks of Byzantine, Venetian and Ottoman history.",
+              "fr": "Saint-Tite est aujourd’hui une église orthodoxe en activité, et non une cathédrale catholique latine. Elle conserve une relique crânienne traditionnellement attribuée à Tite, compagnon de saint Paul, ainsi qu’une icône mariale vénérée appelée Messopapaditissa. Ces objets appartiennent à la vie dévotionnelle actuelle de l’église, dont l’architecture garde aussi la trace des périodes byzantine, vénitienne et ottomane.",
+              "source_id": "SHR-GR-saint-titus-heraklion",
+              "source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A historical connection, not a Catholic listing",
+          "title_fr": "Un lien historique, non un classement comme lieu catholique",
+          "paragraphs": [
+            {
+              "en": "Worship at Saint Titus follows the Orthodox liturgy of the Church of Crete. The church preserves the memory of an earlier Latin cathedral and of the Ottoman mosque that succeeded it, as well as the local veneration of Titus. Catholic visitors may encounter an important site of early Christian memory here, but should not mistake it for a present-day Catholic Mass venue.",
+              "fr": "Le culte à Saint-Tite suit aujourd’hui la liturgie orthodoxe de l’Église de Crète. L’édifice garde la mémoire d’une ancienne cathédrale latine puis de la mosquée ottomane qui lui succéda, ainsi que de la vénération locale de Tite. Les visiteurs catholiques peuvent y découvrir un lieu important de mémoire paléochrétienne, sans le confondre avec une église où se célèbre actuellement la messe catholique.",
+              "source_id": "SHR-GR-saint-titus-heraklion",
+              "source_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GR:saint-titus-heraklion:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Titus"
+      ],
+      "bibliography_urls": [
+        "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "place_name": "Catedral Metropolitana de San Salvador",
+      "country_code": "SV",
+      "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+      "draft_order": 144,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "San Salvador's metropolitan cathedral and the tomb of Saint Óscar Romero.",
+      "subtitle_fr": "La cathédrale métropolitaine de San Salvador et le tombeau de saint Óscar Romero.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Romero and the metropolitan cathedral",
+          "title_fr": "Romero et la cathédrale métropolitaine",
+          "paragraphs": [
+            {
+              "en": "The Metropolitan Cathedral of San Salvador is associated with the tomb of Saint Óscar Romero, archbishop and martyr. His burial connects a particular cathedral with the history of the Salvadoran Church and the witness of a twentieth-century pastor. His tomb is in the cathedral, whereas the chapel where Romero was killed and the other sites of his ministry are separate places.",
+              "fr": "La cathédrale métropolitaine de San Salvador est associée au tombeau de saint Óscar Romero, archevêque et martyr. Sa sépulture relie une cathédrale précise à l’histoire de l’Église salvadorienne et au témoignage d’un pasteur du XXe siècle. Son tombeau se trouve dans la cathédrale, tandis que la chapelle où Romero fut tué et les autres lieux de son ministère sont des sites distincts.",
+              "source_id": "SHR-SV-catedral-metropolitana-san-salvador",
+              "source_url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A tomb and a public witness",
+          "title_fr": "Un tombeau et un témoignage public",
+          "paragraphs": [
+            {
+              "en": "Romero’s grave provides a focus for remembering the archbishop’s preaching, pastoral care and martyrdom. The presence of his tomb in the cathedral links memory and Catholic worship without making the entire building a museum devoted exclusively to him. His historical witness deserves a distinct explanation alongside the cathedral’s ordinary ecclesiastical function.",
+              "fr": "Le tombeau de Romero constitue un foyer de mémoire de sa prédication, de son action pastorale et de son martyre. Sa présence dans la cathédrale relie mémoire et culte catholique sans transformer tout l’édifice en musée exclusivement consacré à lui. Son témoignage historique mérite une explication propre, à côté de la fonction ecclésiastique ordinaire de la cathédrale.",
+              "source_id": "SHR-SV-catedral-metropolitana-san-salvador",
+              "source_url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to the cathedral",
+          "title_fr": "Pèlerinage à la cathédrale",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may visit the place of Romero’s burial and attend worship in a living metropolitan cathedral. Its identity as a diocesan church remains distinct from any commemorative ceremonies for the martyr.",
+              "fr": "Les pèlerins peuvent visiter le lieu de sépulture de Romero et participer au culte dans une cathédrale métropolitaine vivante. Son identité d’église diocésaine demeure distincte des cérémonies commémoratives du martyr.",
+              "source_id": "SHR-SV-catedral-metropolitana-san-salvador",
+              "source_url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:SV:catedral-metropolitana-san-salvador:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Oscar Romero"
+      ],
+      "bibliography_urls": [
+        "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "place_name": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+      "draft_order": 145,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Schio's Church of the Holy Family and the memory of Saint Josephine Bakhita.",
+      "subtitle_fr": "L’église de la Sainte-Famille de Schio et la mémoire de sainte Joséphine Bakhita.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Bakhita in Schio",
+          "title_fr": "Bakhita à Schio",
+          "paragraphs": [
+            {
+              "en": "The Church of the Holy Family at Schio is associated with Saint Josephine Bakhita, who lived her religious vocation as a Canossian sister. The local heritage description ties her memory to this named church and town. Its historical meaning is different from the places in Sudan connected with her childhood and enslavement, which should retain their separate geography.",
+              "fr": "L’église de la Sainte-Famille de Schio est associée à sainte Joséphine Bakhita, qui vécut sa vocation religieuse comme sœur canossienne. La présentation patrimoniale locale rattache sa mémoire à cette église et à la ville. Sa signification historique diffère de celle des lieux soudanais liés à son enfance et à son esclavage, qui doivent conserver leur géographie propre.",
+              "source_id": "SHR-IT-sacra-famiglia-bakhita-schio",
+              "source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A witness in a religious community",
+          "title_fr": "Un témoignage au sein d’une communauté religieuse",
+          "paragraphs": [
+            {
+              "en": "The saint’s history of suffering, freedom and religious service has made Schio a place of remembrance and prayer. Her life among the Canossian sisters explains the local association more concretely than a generic dedication to a modern saint.",
+              "fr": "L’histoire de souffrance, de liberté et de service religieux de la sainte a fait de Schio un lieu de mémoire et de prière. Sa vie parmi les sœurs canossiennes explique plus concrètement le lien local qu’une simple dédicace à une sainte contemporaine.",
+              "source_id": "SHR-IT-sacra-famiglia-bakhita-schio",
+              "source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The church and its pilgrimage identity",
+          "title_fr": "L’église et son identité de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Visitors interested in Josephine Bakhita can connect the church’s devotional purpose to the town’s wider history of her presence. Any present-day liturgy, community access or organised pilgrimage must be confirmed with local custodians.",
+              "fr": "Les visiteurs intéressés par Joséphine Bakhita peuvent relier la fonction dévotionnelle de l’église à l’histoire plus vaste de sa présence dans la ville. La liturgie actuelle, l’accès à la communauté et les pèlerinages organisés doivent être confirmés auprès des responsables locaux.",
+              "source_id": "SHR-IT-sacra-famiglia-bakhita-schio",
+              "source_url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:sacra-famiglia-bakhita-schio:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Josephine Bakhita"
+      ],
+      "bibliography_urls": [
+        "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "place_name": "Vilnius Cathedral — Chapel of Saint Casimir",
+      "country_code": "LT",
+      "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+      "draft_order": 146,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Chapel of Saint Casimir inside Vilnius Cathedral and Lithuania's royal saint.",
+      "subtitle_fr": "La chapelle Saint-Casimir dans la cathédrale de Vilnius et le saint royal de Lituanie.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Casimir and the cathedral chapel",
+          "title_fr": "Casimir et la chapelle cathédrale",
+          "paragraphs": [
+            {
+              "en": "Vilnius Cathedral contains a chapel dedicated to Saint Casimir, the prince whose memory holds a special place in Lithuanian Catholic devotion. This is a chapel within the cathedral basilica, not an independent cathedral or another church elsewhere in Vilnius. Its religious identity links the saint’s veneration to a specific architectural and liturgical setting.",
+              "fr": "La cathédrale de Vilnius comprend une chapelle dédiée à saint Casimir, prince dont la mémoire tient une place particulière dans la dévotion catholique lituanienne. C’est une chapelle située dans la basilique cathédrale, non une cathédrale indépendante ni une autre église de Vilnius. Son identité religieuse relie la vénération du saint à un cadre architectural et liturgique précis.",
+              "source_id": "SHR-LT-vilnius-cathedral-st-casimir",
+              "source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Tomb and national memory",
+          "title_fr": "Tombeau et mémoire nationale",
+          "paragraphs": [
+            {
+              "en": "For pilgrims, it connects a royal saint to the spiritual history of Lithuania, while remaining a part of the cathedral’s larger life. A tomb tradition may be described as such without independently authenticating each relic or conflating the saint’s historical activities with every later chapel decoration.",
+              "fr": "Pour les pèlerins, elle relie un saint royal à l’histoire spirituelle de la Lituanie tout en demeurant une partie de la vie de la cathédrale. La tradition du tombeau peut être racontée sans authentifier indépendamment chaque relique ni confondre les activités historiques du saint avec tous les décors postérieurs.",
+              "source_id": "SHR-LT-vilnius-cathedral-st-casimir",
+              "source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A stop within Vilnius pilgrimage",
+          "title_fr": "Une étape dans le pèlerinage de Vilnius",
+          "paragraphs": [
+            {
+              "en": "A visitor to Vilnius may encounter the chapel as one stop within the cathedral and a wider network of Catholic sacred sites. As a chapel within the cathedral, it belongs to the same sacred building while retaining its own dedication to Saint Casimir. The cathedral’s current schedules and rules govern whether the chapel is accessible for prayer at a particular time.",
+              "fr": "Le visiteur de Vilnius peut découvrir la chapelle comme une étape dans la cathédrale et dans un réseau plus vaste de lieux sacrés catholiques. Située dans la cathédrale, elle appartient au même édifice sacré tout en conservant sa dédicace particulière à saint Casimir. Les horaires et les règles actuelles de la cathédrale déterminent si la chapelle est accessible à la prière à un moment donné.",
+              "source_id": "SHR-LT-vilnius-cathedral-st-casimir",
+              "source_url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LT:vilnius-cathedral-st-casimir:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Casimir"
+      ],
+      "bibliography_urls": [
+        "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}

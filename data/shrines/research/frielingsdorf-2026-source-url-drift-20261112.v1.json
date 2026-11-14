@@ -1,0 +1,32 @@
+{
+  "schema": "ao.shrines.source-url-drift-review.v1",
+  "as_of": "2026-11-12",
+  "status": "SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_AUTHORITY_CHANGE",
+  "source_registry": "data/shrines/source-registry.v1.json",
+  "original_source_id_contract": "ORIGINAL_SOURCE_IDS_PRESERVED",
+  "affected_shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+  "affected_place_id": "place:DE:st-apollinaris-frielingsdorf",
+  "obsolete_url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+  "original_url_status": "Original detailed 2026 article no longer resolves (previous direct-source audit: 404); the official parish index retains the dated item.",
+  "current_official_domain": "www.katholisch-in-lindlar.de",
+  "independent_ecclesial_confirmation": "https://www.erzbistum-koeln.de/kirche_vor_ort/kirchengemeinden/pastoralbezirk-sued/oberbergischer_kreis/0407_seelsorgebereich_lindlar/index.html",
+  "records": [
+    {
+      "source_id": "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+      "historical_url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+      "replacement_url": "https://www.katholisch-in-lindlar.de/news/index.html",
+      "replacement_title": "Seelsorgebereich Lindlar — parish news index, St Apollinaris Frielingsdorf octave 2026",
+      "evidence_scope": "HISTORICAL_18_TO_25_JULY_2026_OCTAVE_NOTICE",
+      "claim_limit": "Supports only the parish index's dated announcement of the 2026 octave at this exact church; no daily ceremony times, future schedule, routes or current visitor access."
+    }
+  ],
+  "unchanged": [
+    "archived R61 research URL and original source ID",
+    "canonical place and shrine identities",
+    "Mass programme and liturgical classification",
+    "geographical pins",
+    "existing published guides and images",
+    "editorial and owner publication authorizations"
+  ],
+  "publication_state": "RESEARCH_ONLY_NOT_EDITOR_CERTIFIED_NOT_OWNER_AUTHORIZED"
+}

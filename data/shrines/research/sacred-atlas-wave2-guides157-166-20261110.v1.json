@@ -1,0 +1,633 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES157_166_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Factual claims written against earlier source registry summaries; primary webpages not refetched in this drafting pass.",
+    "Distinct Marian sanctuaries, dates, internal chapels and recurring celebrations preserved without assuming unverified miracles or permanent programmes.",
+    "Draft content only: no published registry, map, art, rite, entrance or app changes."
+  ],
+  "guides": [
+    {
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "place_name": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+      "country_code": "PL",
+      "shrine_id": "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "draft_order": 157,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Divine Mercy chapel, Saint Faustina’s tomb and the modern sanctuary complex.",
+      "subtitle_fr": "La chapelle de la Divine Miséricorde, le tombeau de sainte Faustine et l’ensemble moderne.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The chapel and Saint Faustina",
+          "title_fr": "La chapelle et sainte Faustine",
+          "paragraphs": [
+            {
+              "en": "The Divine Mercy Sanctuary at Kraków-Łagiewniki grew around a place associated with Saint Faustina Kowalska and her religious community. The chapel containing her tomb and the Divine Mercy image is the most direct focus of this memory. It remains distinguishable from the later, larger basilica, although both belong to the same pilgrimage complex.",
+              "fr": "Le sanctuaire de la Divine Miséricorde à Cracovie-Łagiewniki s’est développé autour d’un lieu associé à sainte Faustine Kowalska et à sa communauté religieuse. La chapelle où se trouvent son tombeau et l’image de la Miséricorde divine est au centre de cette mémoire. Elle se distingue de la grande basilique construite ultérieurement, bien que les deux appartiennent au même ensemble de pèlerinage.",
+              "source_id": "SG-PROFILE-20261010-04",
+              "source_url": "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The image and the devotion",
+          "title_fr": "L’image et la dévotion",
+          "paragraphs": [
+            {
+              "en": "The image of the Merciful Jesus is part of the spirituality associated with Faustina’s writings and the practice of prayer to Divine Mercy. A visitor should understand its place within the chapel rather than confuse it with every later copy of the image.",
+              "fr": "L’image de Jésus miséricordieux appartient à la spiritualité liée aux écrits de Faustine et à la prière à la Miséricorde divine. Le visiteur doit comprendre sa place dans la chapelle sans la confondre avec toutes les copies ultérieures de cette image.",
+              "source_id": "SG-PROFILE-20261010-04",
+              "source_url": "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Two spaces, one pilgrimage",
+          "title_fr": "Deux espaces, un pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Pilgrims can pray at Faustina’s tomb and attend worship in the modern basilica during one visit to Łagiewniki. The chapel and basilica are linked but identifiable spaces within the same sanctuary, not unrelated destinations across Kraków. Present worship times and access to the community’s premises depend on the sanctuary’s own programme.",
+              "fr": "Les pèlerins peuvent prier au tombeau de Faustine et participer aux offices de la basilique moderne lors d’une même visite à Łagiewniki. Chapelle et basilique sont deux espaces liés mais identifiables au sein du même sanctuaire, et non deux destinations sans rapport à Cracovie. Les horaires du culte et l’accès aux bâtiments communautaires relèvent du programme du sanctuaire.",
+              "source_id": "SG-PROFILE-20261010-04",
+              "source_url": "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "place_name": "National Shrine of Saint Joseph, Karlovac",
+      "country_code": "HR",
+      "shrine_id": "shrine:HR:national-shrine-of-saint-joseph-karlovac",
+      "draft_order": 158,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Croatia’s national shrine of Saint Joseph at Karlovac-Dubovac.",
+      "subtitle_fr": "Le sanctuaire national croate de saint Joseph à Karlovac-Dubovac.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Joseph at Dubovac",
+          "title_fr": "Saint Joseph à Dubovac",
+          "paragraphs": [
+            {
+              "en": "The Church of Saint Joseph in Karlovac-Dubovac is recognised as Croatia’s national shrine dedicated to the foster father of Jesus. This national devotional role belongs to the particular church at Karlovac-Dubovac, distinct from other Croatian churches dedicated to Saint Joseph. Pilgrims honour Joseph there as guardian of the Holy Family and a model of faithful service.",
+              "fr": "L’église Saint-Joseph de Karlovac-Dubovac est reconnue comme sanctuaire national croate dédié au père nourricier de Jésus. Cette fonction dévotionnelle nationale appartient précisément à l'église de Karlovac-Dubovac, distincte des autres églises croates dédiées à saint Joseph. Les pèlerins y honorent Joseph comme gardien de la Sainte Famille et modèle de service fidèle.",
+              "source_id": "SG-PROFILE-20261010-05",
+              "source_url": "https://svetijosip.com/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A national dedication and local church",
+          "title_fr": "Une dédicace nationale dans une église locale",
+          "paragraphs": [
+            {
+              "en": "The shrine combines a countrywide dedication with a concrete local community at Dubovac. A national title indicates a recognised pilgrimage role, not that the church occupies the whole town or that every Croatian Saint Joseph celebration takes place there. The official shrine material identifies its proper ecclesial designation and continuing prayers.",
+              "fr": "Le sanctuaire unit une dédicace d’envergure nationale à une communauté locale concrète à Dubovac. Le titre national indique un rôle reconnu de pèlerinage ; il ne signifie ni que l’église occupe toute la ville ni que toutes les célébrations croates de saint Joseph s’y déroulent. Les documents du sanctuaire précisent son statut ecclésial et sa vie de prière.",
+              "source_id": "SG-PROFILE-20261010-05",
+              "source_url": "https://svetijosip.com/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The rhythm of Josephine devotion",
+          "title_fr": "Le rythme de la dévotion à saint Joseph",
+          "paragraphs": [
+            {
+              "en": "The sanctuary receives pilgrims for gatherings and devotions to Saint Joseph throughout its religious year. Its identity lies in an active place of prayer, rather than only in the formal title of national shrine.",
+              "fr": "Le sanctuaire accueille des pèlerins lors de rassemblements et de dévotions à saint Joseph au cours de l’année religieuse. Son identité repose sur un lieu de prière vivant, au-delà du seul titre officiel de sanctuaire national.",
+              "source_id": "SG-PROFILE-20261010-05",
+              "source_url": "https://svetijosip.com/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://svetijosip.com/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "place_name": "Basilica of Our Lady of Luján",
+      "country_code": "AR",
+      "shrine_id": "shrine:AR:basilica-of-our-lady-of-lujan",
+      "draft_order": 159,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Argentina’s Marian basilica, its venerated image and a national pilgrimage tradition.",
+      "subtitle_fr": "La basilique mariale d’Argentine, son image vénérée et une tradition nationale de pèlerinage.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian image of Luján",
+          "title_fr": "L’image mariale de Luján",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Luján houses the Marian image around which one of Argentina’s major Catholic pilgrimage traditions developed. Our Lady of Luján is honoured as patroness of Argentina, giving a local devotion a national significance. The basilica is a distinct destination with its own devotional history, not simply another church bearing a familiar Marian title.",
+              "fr": "La basilique Notre-Dame de Luján conserve l’image mariale autour de laquelle s’est développée l’une des grandes traditions de pèlerinage catholique d’Argentine. Notre-Dame de Luján est honorée comme patronne du pays, donnant à une dévotion locale une portée nationale. La basilique est une destination distincte dotée de sa propre histoire, non une église portant seulement un titre marial connu.",
+              "source_id": "SG-PROFILE-20261010-06",
+              "source_url": "https://santuariodelujan.org.ar/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A monumental church for pilgrims",
+          "title_fr": "Une église monumentale pour les pèlerins",
+          "paragraphs": [
+            {
+              "en": "The neo-Gothic basilica gives architectural form to the longstanding devotion to the image. Its large scale reflects the church’s role as a gathering place, while the venerated image remains a particular object of prayer within the building. The basilica, its venerated Marian image and the religious life surrounding it together express the sanctuary’s identity.",
+              "fr": "La basilique néogothique donne une forme architecturale à l’ancienne dévotion envers l’image. Ses grandes dimensions correspondent à sa fonction de rassemblement, tandis que l’image vénérée demeure un objet particulier de prière dans l’édifice. La basilique, l’image mariale vénérée et la vie religieuse qui l’entoure composent ensemble l’identité du sanctuaire.",
+              "source_id": "SG-PROFILE-20261010-06",
+              "source_url": "https://santuariodelujan.org.ar/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The living pilgrimage to Luján",
+          "title_fr": "Le pèlerinage vivant vers Luján",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come from beyond the city to honour Our Lady of Luján and take part in the sanctuary’s prayer life. The official shrine documents this continuing role as a Marian destination. Organised pilgrimages follow their own routes and dates, while the basilica separately announces its programme of worship.",
+              "fr": "Les pèlerins viennent d’au-delà de la ville pour honorer Notre-Dame de Luján et participer à la vie de prière du sanctuaire. Les documents officiels confirment ce rôle durable de destination mariale. Les pèlerinages organisés suivent leurs parcours et leurs dates propres, tandis que la basilique annonce séparément son programme de culte.",
+              "source_id": "AO-ED-CITATION-159-PILGRIMAGE-20261112",
+              "source_url": "https://santuariodelujan.org.ar/peregrinaciones/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://santuariodelujan.org.ar/",
+        "https://santuariodelujan.org.ar/peregrinaciones/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-159-PILGRIMAGE-20261112"
+      ]
+    },
+    {
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "place_name": "Basilica of Notre-Dame d’Afrique, Algiers",
+      "country_code": "DZ",
+      "shrine_id": "shrine:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "draft_order": 160,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian Catholic basilica overlooking Algiers and witnessing to the Church in Algeria.",
+      "subtitle_fr": "Une basilique catholique mariale dominant Alger, témoin de l’Église en Algérie.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Africa above Algiers",
+          "title_fr": "Notre-Dame d’Afrique au-dessus d’Alger",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame d’Afrique stands above Algiers as a Catholic basilica dedicated to the Virgin Mary. Its prominent hilltop position makes the building a recognisable part of the city’s religious landscape. The dedication and the surviving life of Catholic worship are integral to its meaning, beyond the building’s value as a historical monument.",
+              "fr": "Notre-Dame d’Afrique domine Alger : c’est une basilique catholique dédiée à la Vierge Marie. Sa position élevée en fait un élément reconnaissable du paysage religieux de la ville. La dédicace et la vie de culte catholique qui s’y poursuit sont essentielles à sa signification, au-delà de l’intérêt du bâtiment comme monument historique.",
+              "source_id": "SG-PROFILE-20261010-08",
+              "source_url": "https://notre-dame-afrique.org/horaires/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A distinctive Algerian Catholic setting",
+          "title_fr": "Un cadre catholique algérien singulier",
+          "paragraphs": [
+            {
+              "en": "The basilica belongs to the particular history of Catholic communities in Algeria. Its Marian dedication and position in Algiers give the church a local religious identity extending beyond its architecture. This history is distinct from that of European Marian shrines, even where they share a dedication to Our Lady.",
+              "fr": "La basilique appartient à l'histoire particulière des communautés catholiques d'Algérie. Sa dédicace mariale et son implantation à Alger donnent à l'église une identité religieuse locale qui dépasse son architecture. Cette histoire est distincte de celle des sanctuaires mariaux européens, même lorsque ceux-ci portent également une dédicace à Notre-Dame.",
+              "source_id": "SG-PROFILE-20261010-08",
+              "source_url": "https://notre-dame-afrique.org/horaires/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer and visiting",
+          "title_fr": "Prière et visite",
+          "paragraphs": [
+            {
+              "en": "The basilica’s own published arrangements confirm that it remains a place of worship and visits. Pilgrims and visitors may encounter both its religious purpose and its architecture, but those activities need not follow the same schedule. Current opening, liturgy and group access are matters for the basilica’s custodians rather than deductions from its skyline position.",
+              "fr": "Les dispositions publiées par la basilique confirment qu’elle demeure un lieu de culte et de visite. Pèlerins et visiteurs peuvent y découvrir sa finalité religieuse autant que son architecture, mais ces activités ne suivent pas nécessairement les mêmes horaires. L’ouverture, la liturgie et l’accueil des groupes relèvent des responsables de la basilique, et non de déductions tirées de sa silhouette urbaine.",
+              "source_id": "SG-PROFILE-20261010-08",
+              "source_url": "https://notre-dame-afrique.org/horaires/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://notre-dame-afrique.org/horaires/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "place_name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "country_code": "SN",
+      "shrine_id": "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "draft_order": 161,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The 1888 beginnings of the Popenguine Marian pilgrimage and its Pentecost gatherings.",
+      "subtitle_fr": "Les origines de 1888 du pèlerinage marial de Popenguine et ses rassemblements de Pentecôte.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian pilgrimage established in 1888",
+          "title_fr": "Un pèlerinage marial établi en 1888",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame de la Délivrande at Popenguine is one of Senegal’s leading Catholic Marian pilgrimage destinations. A papal homily recalls the beginning of the pilgrimage on 22 May 1888, anchoring the devotion in a dated local history. This history belongs to the coastal sanctuary at Popenguine, distinct from similarly dedicated churches in France.",
+              "fr": "Notre-Dame de la Délivrande à Popenguine est l’une des grandes destinations de pèlerinage marial catholique du Sénégal. Une homélie pontificale rappelle que le pèlerinage commença le 22 mai 1888, inscrivant la dévotion dans une histoire locale datée. Cette histoire appartient au sanctuaire côtier de Popenguine, distinct des églises françaises portant une dédicace semblable.",
+              "source_id": "SG-PROFILE-20261010-09",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/fr/homilies/1992/documents/hf_jp-ii_hom_19920221_poponguine.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The sanctuary within Senegalese Catholic life",
+          "title_fr": "Le sanctuaire dans la vie catholique sénégalaise",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage at Popenguine gathers Catholic faithful from beyond the immediate coastal town, continuing a Marian tradition recorded since 1888. Its gatherings express a shared memory of faith and prayer across generations in Senegal, with the basilica as a particular local destination.",
+              "fr": "Le pèlerinage de Popenguine rassemble des fidèles catholiques bien au-delà de la commune côtière, dans la continuité d'une tradition mariale attestée depuis 1888. Ses rassemblements expriment une mémoire commune de foi et de prière à travers les générations au Sénégal, dont la basilique est un lieu particulier.",
+              "source_id": "SG-PROFILE-20261010-09",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/fr/homilies/1992/documents/hf_jp-ii_hom_19920221_poponguine.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pentecost pilgrimage",
+          "title_fr": "Pèlerinage de Pentecôte",
+          "paragraphs": [
+            {
+              "en": "Popenguine is especially associated with pilgrimage around Pentecost, when Catholic groups travel to the sanctuary for communal prayer and celebration. The recurring season is significant, but an individual year’s route, Masses and organisation may differ.",
+              "fr": "Popenguine est particulièrement associé au pèlerinage de Pentecôte, lorsque des groupes catholiques se rendent au sanctuaire pour prier et célébrer ensemble. Le retour de cette période est significatif, mais les parcours, les messes et l’organisation varient selon les années.",
+              "source_id": "SG-PROFILE-20261010-09",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/fr/homilies/1992/documents/hf_jp-ii_hom_19920221_poponguine.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/john-paul-ii/fr/homilies/1992/documents/hf_jp-ii_hom_19920221_poponguine.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "place_name": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+      "country_code": "US",
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "draft_order": 162,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Washington’s national Marian basilica and its chapels representing diverse devotions.",
+      "subtitle_fr": "La basilique mariale nationale de Washington et ses chapelles de dévotions variées.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A national shrine of the Immaculate Conception",
+          "title_fr": "Un sanctuaire national de l’Immaculée Conception",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the National Shrine of the Immaculate Conception in Washington, DC, is dedicated to Mary under the title of the Immaculate Conception. It is a major Catholic place of national prayer, distinct from the cathedral of the Archdiocese of Washington. Its identity brings together a Marian dedication, an extensive church building and a continuing programme of worship.",
+              "fr": "La basilique du Sanctuaire national de l’Immaculée Conception, à Washington, est dédiée à Marie sous le titre de l’Immaculée Conception. C’est un grand lieu national de prière catholique, distinct de la cathédrale de l’archidiocèse de Washington. Son identité réunit une dédicace mariale, un vaste édifice religieux et un programme de culte vivant.",
+              "source_id": "SG-PROFILE-20261010-10",
+              "source_url": "https://www.nationalshrine.org/history/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Chapels and communities",
+          "title_fr": "Chapelles et communautés",
+          "paragraphs": [
+            {
+              "en": "The shrine’s chapels and devotional artworks express Marian traditions brought by different Catholic communities. This range explains why the basilica is more than a single image or altar: it is a place where multiple devotions are represented within one ecclesiastical setting. These chapels remain distinctive interior spaces within the one basilica, reflecting the communities that endowed them.",
+              "fr": "Les chapelles et œuvres de dévotion du sanctuaire expriment des traditions mariales apportées par différentes communautés catholiques. Cette diversité montre que la basilique dépasse une image ou un autel unique : plusieurs dévotions y sont représentées dans un même cadre ecclésial. Ces chapelles sont des espaces intérieurs distinctifs au sein de la même basilique, témoignant des communautés qui les ont fondées.",
+              "source_id": "SG-PROFILE-20261010-10",
+              "source_url": "https://www.nationalshrine.org/history/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to a working basilica",
+          "title_fr": "Pèlerinage dans une basilique en activité",
+          "paragraphs": [
+            {
+              "en": "Visitors may combine Marian prayer with exploration of the national shrine’s artistic and architectural spaces. Its role as an active church means the timing of liturgy and devotional visits can be different from general touring arrangements. Current Masses, accessibility and group visits should be taken from the shrine’s published information rather than an older pilgrimage account.",
+              "fr": "Les visiteurs peuvent joindre la prière mariale à la découverte des espaces artistiques et architecturaux du sanctuaire national. Comme il s’agit d’une église en activité, les horaires des offices et des visites dévotionnelles peuvent différer de ceux des parcours généraux. Messes, accessibilité et accueil des groupes doivent être vérifiés dans les renseignements publiés par le sanctuaire, non déduits d’un ancien récit de pèlerinage.",
+              "source_id": "SG-PROFILE-20261010-10",
+              "source_url": "https://www.nationalshrine.org/history/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.nationalshrine.org/history/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "place_name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "country_code": "CL",
+      "shrine_id": "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "draft_order": 163,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "La Tirana’s Carmelite Marian feast in northern Chile and its living processional tradition.",
+      "subtitle_fr": "La fête mariale du Carmel à La Tirana, au nord du Chili, et ses processions vivantes.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of La Tirana",
+          "title_fr": "Notre-Dame de La Tirana",
+          "paragraphs": [
+            {
+              "en": "The sanctuary of La Tirana in northern Chile is dedicated to Our Lady of Mount Carmel under a local Marian title. Its religious identity belongs to this particular town and church, rather than to a generic icon of Our Lady of Carmel. The devotion is expressed publicly through a well-established annual festival that brings pilgrims to the shrine.",
+              "fr": "Le sanctuaire de La Tirana, dans le nord du Chili, est dédié à Notre-Dame du Mont-Carmel sous un titre marial local. Son identité religieuse appartient à cette commune et à cette église particulières, non à une image générique de Notre-Dame du Carmel. La dévotion s’exprime publiquement par une fête annuelle bien établie qui attire les pèlerins au sanctuaire.",
+              "source_id": "AO-ED-LATIRANA-DIOCESE-2025-20261111",
+              "source_url": "https://www.iglesiadeiquique.cl/noticias/pastoral-de-bailes-religiosos-celebra-eucarist%C3%ADa-con-primeras-comuniones-en-el-santuario-de-la-tirana"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A feast shaped by communal devotion",
+          "title_fr": "Une fête marquée par la dévotion communautaire",
+          "paragraphs": [
+            {
+              "en": "At La Tirana, Catholic worship is accompanied by the religious dancing associations of northern Chile. The Diocese of Iquique reported a Mass for the dancers and first communions at the sanctuary on 15 July 2025, illustrating how the local festival joins Marian devotion, sacraments and communal participation.",
+              "fr": "À La Tirana, le culte catholique est accompagné par les associations de danses religieuses du nord du Chili. Le diocèse d’Iquique a relaté une messe pour les danseurs et des premières communions au sanctuaire le 15 juillet 2025, montrant comment la fête locale associe dévotion mariale, sacrements et participation communautaire.",
+              "source_id": "AO-ED-LATIRANA-DIOCESE-2025-20261111",
+              "source_url": "https://www.iglesiadeiquique.cl/noticias/pastoral-de-bailes-religiosos-celebra-eucarist%C3%ADa-con-primeras-comuniones-en-el-santuario-de-la-tirana"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The July pilgrimage",
+          "title_fr": "Le pèlerinage de juillet",
+          "paragraphs": [
+            {
+              "en": "The Diocese of Iquique documented Eucharistic celebrations and organised religious dancing during the July 2025 festivities at La Tirana. These records describe a specific edition of the pilgrimage festival, not a timetable valid for every year. Pilgrims should check the sanctuary’s latest announcements for future dates and arrangements.",
+              "fr": "Le diocèse d’Iquique a documenté des célébrations eucharistiques et des danses religieuses organisées pendant les festivités de juillet 2025 à La Tirana. Ces récits décrivent une édition particulière du pèlerinage, non un programme valable chaque année. Les pèlerins doivent consulter les dernières annonces du sanctuaire pour les dates et modalités futures.",
+              "source_id": "AO-ED-LATIRANA-DIOCESE-2025-20261111",
+              "source_url": "https://www.iglesiadeiquique.cl/noticias/pastoral-de-bailes-religiosos-celebra-eucarist%C3%ADa-con-primeras-comuniones-en-el-santuario-de-la-tirana"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.santuariodelatirana.cl/2025/06/entrega-de-programacion-y-formularios-para-medios-de-comunicacion-tirana-2025/",
+        "https://www.iglesiadeiquique.cl/noticias/pastoral-de-bailes-religiosos-celebra-eucarist%C3%ADa-con-primeras-comuniones-en-el-santuario-de-la-tirana"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-LATIRANA-DIOCESE-2025-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "place_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+      "country_code": "PL",
+      "shrine_id": "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "draft_order": 164,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Pallottine Fatima sanctuary linked to thanksgiving for John Paul II’s survival in 1981.",
+      "subtitle_fr": "Un sanctuaire pallottin de Fatima lié à l’action de grâce pour la survie de Jean-Paul II en 1981.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Fatima devotion in Krzeptówki",
+          "title_fr": "La dévotion à Fatima à Krzeptówki",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Fatima at Krzeptówki, near Zakopane, is served by the Pallottines. Its origin story links Fatima devotion with thanksgiving after Pope John Paul II survived the assassination attempt of 1981. The Polish sanctuary shares a Marian title with the Portuguese shrine but has its own physical identity and a distinct modern history.",
+              "fr": "Le sanctuaire national Notre-Dame de Fatima de Krzeptówki, près de Zakopane, est desservi par les Pallottins. Son histoire associe la dévotion à Fatima à l’action de grâce après que le pape Jean-Paul II eut survécu à l’attentat de 1981. Le sanctuaire polonais partage un titre marial avec celui du Portugal, mais possède son identité physique et son histoire contemporaine propres.",
+              "source_id": "SG-PROFILE-20261010-12",
+              "source_url": "https://smbf.pl/en/the-national-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two dates in the shrine’s history",
+          "title_fr": "Deux dates de l’histoire du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "John Paul II consecrated the church in 1997, while the Polish bishops recognised its national shrine status in 2018. These dates describe different ecclesiastical acts and should not be treated as interchangeable foundation ceremonies. The site’s custodians explain these stages as part of the sanctuary’s religious history.",
+              "fr": "Jean-Paul II consacra l’église en 1997, tandis que les évêques polonais reconnurent son statut de sanctuaire national en 2018. Ces dates correspondent à des actes ecclésiastiques différents et ne doivent pas être confondues avec une seule cérémonie de fondation. Les responsables présentent ces étapes comme des éléments de l’histoire religieuse du lieu.",
+              "source_id": "SG-PROFILE-20261010-12",
+              "source_url": "https://smbf.pl/en/the-national-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and papal memory",
+          "title_fr": "Pèlerinage et mémoire pontificale",
+          "paragraphs": [
+            {
+              "en": "At Krzeptówki, prayer to Our Lady of Fatima is linked with remembrance of a particular episode in the life of John Paul II. Pilgrims encounter a living sanctuary rather than only a memorial to the pope. Its Pallottine programme and opening arrangements remain specific to the local church, not to all Fatima pilgrimages in Poland or elsewhere.",
+              "fr": "À Krzeptówki, la prière à Notre-Dame de Fatima est liée au souvenir d’un épisode précis de la vie de Jean-Paul II. Les pèlerins découvrent un sanctuaire vivant et non seulement un mémorial du pape. Le programme pallottin et les modalités d’accès appartiennent à l’église locale, non à tous les pèlerinages de Fatima en Pologne ou ailleurs.",
+              "source_id": "SG-PROFILE-20261010-12",
+              "source_url": "https://smbf.pl/en/the-national-shrine/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://smbf.pl/en/the-national-shrine/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "place_name": "Church of the Primacy of Saint Peter, Tabgha",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "draft_order": 165,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Galilean shoreline shrine recalling Christ’s charge to Peter in John 21.",
+      "subtitle_fr": "Le sanctuaire au bord du lac de Galilée rappelant la mission confiée à Pierre en Jean 21.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The risen Christ and Peter",
+          "title_fr": "Le Christ ressuscité et Pierre",
+          "paragraphs": [
+            {
+              "en": "The Church of the Primacy of Saint Peter at Tabgha commemorates the encounter in John 21 in which the risen Christ charges Peter to feed and tend his flock. The Gospel text provides the theological focus of the shrine. The present church marks a place identified by pilgrimage tradition; it does not establish the exact coordinates of every exchange described by the Evangelist.",
+              "fr": "L’église de la Primauté de saint Pierre à Tabgha commémore la rencontre de Jean 21, où le Christ ressuscité confie à Pierre le soin de nourrir et de paître son troupeau. Le texte évangélique donne au sanctuaire son centre théologique. L’église actuelle marque un lieu identifié par la tradition pèlerine, sans établir les coordonnées exactes de chaque échange rapporté par l’évangéliste.",
+              "source_id": "AO-ED-TABGHA-PRIMACY-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A shoreline sanctuary",
+          "title_fr": "Un sanctuaire au bord du lac",
+          "paragraphs": [
+            {
+              "en": "The church stands by the Sea of Galilee, making the shore an important part of the pilgrim’s experience and of the episode remembered there. This is a different named church from the nearby site commemorating the multiplication of the loaves.",
+              "fr": "L’église se trouve au bord du lac de Galilée, faisant de la rive une partie importante de l’expérience pèlerine et du récit qu’on y commémore. C’est une église distincte du lieu voisin où l’on commémore la multiplication des pains.",
+              "source_id": "AO-ED-TABGHA-PRIMACY-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Franciscan pilgrimage tradition",
+          "title_fr": "La tradition franciscaine de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The Franciscan Custody’s account associates worship at Tabgha with the memory of Peter’s mission in the Church. A visitor can meditate on that connection without confusing the sanctuary with the actual administrative seat of a later diocese. Present liturgy, coastal access and group arrangements must follow the church’s current custodial instructions.",
+              "fr": "Le récit de la Custodie franciscaine associe le culte à Tabgha à la mémoire de la mission de Pierre dans l’Église. Le visiteur peut méditer ce lien sans confondre le sanctuaire avec le siège administratif d’un diocèse ultérieur. La liturgie actuelle, l’accès à la rive et l’accueil des groupes relèvent des instructions présentes des responsables.",
+              "source_id": "AO-ED-TABGHA-PRIMACY-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/news/celebrating-peters-primacy-tabgha/",
+        "https://www.custodia.org/en/sanctuaries/tabgha/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TABGHA-PRIMACY-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "place_name": "Church of Saint Peter, Jaffa",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:church-of-saint-peter-jaffa",
+      "draft_order": 166,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Franciscan church in ancient Jaffa recalling Peter’s ministry in the Acts of the Apostles.",
+      "subtitle_fr": "Une église franciscaine de l’antique Jaffa rappelant le ministère de Pierre dans les Actes.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Peter in the port city of Jaffa",
+          "title_fr": "Pierre dans la ville portuaire de Jaffa",
+          "paragraphs": [
+            {
+              "en": "The Church of Saint Peter in Jaffa recalls the apostle’s ministry in the port city known as Joppa in the Acts of the Apostles. The scriptural association gives this church a particular place within the Holy Land pilgrimage tradition. It should be distinguished from other places honouring Peter, especially the Galilean shoreline sanctuary and the churches of Jerusalem.",
+              "fr": "L’église Saint-Pierre de Jaffa rappelle le ministère de l’apôtre dans la ville portuaire appelée Joppé dans les Actes des Apôtres. Ce lien scripturaire lui donne une place particulière dans la tradition des pèlerinages en Terre Sainte. Il faut la distinguer des autres lieux honorant Pierre, notamment du sanctuaire au bord du lac de Galilée et des églises de Jérusalem.",
+              "source_id": "AO-ED-JAFFA-STPETER-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/jaffa/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A Franciscan place of Christian memory",
+          "title_fr": "Un lieu franciscain de mémoire chrétienne",
+          "paragraphs": [
+            {
+              "en": "The Franciscans maintain Saint Peter’s Roman Catholic church in the old port city of Jaffa. According to the Custody, the present church was built in 1888–1894 above a former Crusader-era stronghold; its stained glass recalls episodes from Peter’s ministry in Acts, rather than claiming that the surviving walls date from apostolic times.",
+              "fr": "Les franciscains desservent l’église catholique Saint-Pierre dans la vieille ville portuaire de Jaffa. Selon la Custodie, l’édifice actuel fut construit de 1888 à 1894 sur l’emplacement d’une ancienne forteresse des Croisades ; ses vitraux évoquent les épisodes du ministère de Pierre dans les Actes, sans faire remonter ses murs à l’époque apostolique.",
+              "source_id": "AO-ED-JAFFA-STPETER-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/jaffa/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A distinctive stop in the Holy Land",
+          "title_fr": "Une étape particulière en Terre Sainte",
+          "paragraphs": [
+            {
+              "en": "Jaffa can form a stage of pilgrimage through places associated with the early Church, alongside Galilee and Jerusalem. The named church is a permanent physical destination, while the wider route belongs to each pilgrim group’s itinerary. Current worship and access must follow local guidance, particularly when travel arrangements change.",
+              "fr": "Jaffa peut constituer une étape de pèlerinage parmi les lieux liés à l’Église primitive, aux côtés de la Galilée et de Jérusalem. L’église nommée est une destination physique permanente, tandis que le parcours plus vaste dépend de l’itinéraire de chaque groupe. Les offices et les accès actuels doivent suivre les indications locales, surtout lorsque les conditions de déplacement évoluent.",
+              "source_id": "AO-ED-JAFFA-STPETER-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/jaffa/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/jaffa/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-JAFFA-STPETER-20261111"
+      ]
+    }
+  ]
+}

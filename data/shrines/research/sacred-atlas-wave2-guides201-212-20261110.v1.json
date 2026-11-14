@@ -1,0 +1,794 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES201_212_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 12,
+    "sections": 36,
+    "published": 0
+  },
+  "policy": [
+    "Historic details limited by the linked existing record, with no new source-page fetch. Source verification and French proofreading pending.",
+    "One physical sanctuary per canonical Place ID; no shared media or imported apparition or rite claim.",
+    "No publication, admission, GPS changes or unapproved images."
+  ],
+  "guides": [
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "place_name": "Divine Mercy Sanctuary, Vilnius",
+      "country_code": "LT",
+      "shrine_id": "shrine:LT:divine-mercy-sanctuary-vilnius",
+      "draft_order": 201,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Vilnius’s original 1934 Divine Mercy painting and the Catholic sanctuary that houses it.",
+      "subtitle_fr": "La peinture originale de la Divine Miséricorde de 1934 à Vilnius et le sanctuaire catholique qui la conserve.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The 1934 image",
+          "title_fr": "L’image de 1934",
+          "paragraphs": [
+            {
+              "en": "The Divine Mercy Sanctuary in Vilnius houses the painting made by Eugeniusz Kazimirowski in 1934 following Saint Faustina Kowalska’s instructions. The original Vilnius painting has a distinct place in the devotion’s history; it is different from the Divine Mercy image venerated at Kraków-Łagiewniki and from later reproductions.",
+              "fr": "Le sanctuaire de la Divine Miséricorde de Vilnius conserve le tableau exécuté en 1934 par Eugeniusz Kazimirowski selon les indications de sainte Faustine Kowalska. Le tableau original de Vilnius occupe une place particulière dans l’histoire de la dévotion ; il se distingue de l’image de la Divine Miséricorde vénérée à Cracovie-Łagiewniki et des reproductions ultérieures.",
+              "source_id": "AO-ED-VILNIUS-DIVINE-MERCY-20261111",
+              "source_url": "https://vilnensis.lt/new-digital-life-given-to-vilnius-image-of-divine-mercy-as-popes-visit-to-lithuanian-capital-nears/?lang=en"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Vilnius setting",
+          "title_fr": "Le cadre de Vilnius",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Divine Mercy is a Catholic church in Vilnius that houses the original Divine Mercy painting by Eugeniusz Kazimirowski. The Archdiocese of Vilnius recounts the image’s long and difficult history during the Soviet era and its continuing veneration. The shrine building and the painting are related but distinct subjects.",
+              "fr": "Le sanctuaire de la Divine Miséricorde est une église catholique de Vilnius qui abrite le tableau original d’Eugeniusz Kazimirowski. L’archidiocèse de Vilnius relate l’histoire mouvementée de cette image pendant l’époque soviétique et la poursuite de sa vénération. L’édifice du sanctuaire et le tableau sont deux sujets liés mais distincts.",
+              "source_id": "AO-ED-VILNIUS-DIVINE-MERCY-20261111",
+              "source_url": "https://vilnensis.lt/new-digital-life-given-to-vilnius-image-of-divine-mercy-as-popes-visit-to-lithuanian-capital-nears/?lang=en"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer before the image",
+          "title_fr": "Prière devant l’image",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to pray before the original painting within the living sanctuary. Its presence gives Vilnius a distinctive place in a pilgrimage exploring the history of the Divine Mercy devotion. Current Masses and access must be confirmed with the church rather than assumed from the date when the picture was painted.",
+              "fr": "Les pèlerins viennent prier devant le tableau original dans ce sanctuaire toujours vivant. Sa présence donne à Vilnius une place singulière dans un pèlerinage sur l’histoire de la dévotion à la Miséricorde divine. Les messes et l’accès actuels doivent être confirmés auprès de l’église, non déduits de la date d’exécution du tableau.",
+              "source_id": "AO-ED-VILNIUS-DIVINE-MERCY-20261111",
+              "source_url": "https://vilnensis.lt/new-digital-life-given-to-vilnius-image-of-divine-mercy-as-popes-visit-to-lithuanian-capital-nears/?lang=en"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97",
+        "https://vilnensis.lt/new-digital-life-given-to-vilnius-image-of-divine-mercy-as-popes-visit-to-lithuanian-capital-nears/?lang=en"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-VILNIUS-DIVINE-MERCY-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "place_name": "Basilica of Our Lady of Lourdes, Poondi",
+      "country_code": "IN",
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "draft_order": 202,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Tamil Nadu Catholic Marian basilica dedicated to Our Lady of Lourdes.",
+      "subtitle_fr": "Une basilique mariale catholique du Tamil Nadu dédiée à Notre-Dame de Lourdes.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lourdes at Poondi",
+          "title_fr": "Notre-Dame de Lourdes à Poondi",
+          "paragraphs": [
+            {
+              "en": "Poondi’s Marian church in Tamil Nadu traces its beginnings, according to the basilica’s own history, to a foundation by Jesuit missionary Constantine Joseph Beschi between 1714 and 1718. Pope John Paul II granted the church the title of minor basilica on 3 August 1999.",
+              "fr": "L’histoire publiée par la basilique de Poondi, au Tamil Nadu, situe sa fondation entre 1714 et 1718 sous l’impulsion du missionnaire jésuite Constantin Joseph Beschi. Jean-Paul II a accordé à cette église le titre de basilique mineure le 3 août 1999.",
+              "source_id": "AO-ED-POONDI-HISTORY-20261111",
+              "source_url": "https://www.poondimadhabasilica.org/about/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A local Marian pilgrimage church",
+          "title_fr": "Une église locale de pèlerinage marial",
+          "paragraphs": [
+            {
+              "en": "The basilica’s historical account associates its Marian devotion with a statue brought from France by the missionary Father Darres. The devotion at Poondi has its own Indian history; its image is not evidence that the Lourdes apparitions took place in Tamil Nadu.",
+              "fr": "Selon le récit historique de la basilique, sa dévotion mariale est liée à une statue apportée de France par le missionnaire père Darres. La dévotion de Poondi possède une histoire indienne propre ; cette image ne situe pas les apparitions de Lourdes au Tamil Nadu.",
+              "source_id": "AO-ED-POONDI-HISTORY-20261111",
+              "source_url": "https://www.poondimadhabasilica.org/about/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place for prayer in Tamil Nadu",
+          "title_fr": "Un lieu de prière au Tamil Nadu",
+          "paragraphs": [
+            {
+              "en": "Poondi remains a Catholic centre of Marian pilgrimage and worship in southern India. The basilica publishes its own announcements and celebrations, which are the appropriate reference for current events and local visiting arrangements.",
+              "fr": "Poondi demeure un centre catholique de pèlerinage et de culte marial dans le sud de l’Inde. La basilique publie ses annonces et célébrations, qui constituent la référence pour les événements actuels et les modalités locales de visite.",
+              "source_id": "AO-ED-POONDI-VISIT-20261111",
+              "source_url": "https://www.poondimadhabasilica.org/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.poondimadhabasilica.org/about/",
+        "https://www.poondimadhabasilica.org/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-POONDI-HISTORY-20261111",
+        "AO-ED-POONDI-VISIT-20261111"
+      ]
+    },
+    {
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "place_name": "Shrine of Our Lady of Madhu",
+      "country_code": "LK",
+      "shrine_id": "shrine:LK:shrine-of-our-lady-of-madhu",
+      "draft_order": 203,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Sri Lanka’s northern Marian shrine of Our Lady of Madhu and its revered image.",
+      "subtitle_fr": "Le sanctuaire marial du nord du Sri Lanka consacré à Notre-Dame de Madhu et à son image vénérée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image of Our Lady of Madhu",
+          "title_fr": "L’image de Notre-Dame de Madhu",
+          "paragraphs": [
+            {
+              "en": "At the Shrine of Our Lady of Madhu in northern Sri Lanka, devotion centres on a venerated Marian image associated with the island's Catholic heritage. Pope Francis visited on 14 January 2015 and called the sanctuary a home where Sri Lankans of different communities could pray together.",
+              "fr": "Au sanctuaire Notre-Dame de Madhu, dans le nord du Sri Lanka, la dévotion se rassemble autour d'une image mariale vénérée liée au patrimoine catholique de l'île. Le pape François s'y rendit le 14 janvier 2015, présentant ce lieu comme une maison commune de prière pour les Sri-Lankais.",
+              "source_id": "AO-ED-MADHU-VATICAN-20261111",
+              "source_url": "https://www.vatican.va/content/francesco/en/speeches/2015/january/documents/papa-francesco_20150114_srilanka-filippine-preghiera-mariana.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A northern Sri Lankan destination",
+          "title_fr": "Une destination du nord du Sri Lanka",
+          "paragraphs": [
+            {
+              "en": "In his address at Madhu, Pope Francis recalled the suffering caused by the civil conflict and the removal of the revered statue during those years. The shrine therefore bears a history of both Marian devotion and the hope for reconciliation among Tamil and Sinhalese pilgrims.",
+              "fr": "Dans son allocution à Madhu, le pape François rappela les souffrances de la guerre civile et le déplacement de la statue vénérée durant cette période. Le sanctuaire porte ainsi une histoire de dévotion mariale et d'espérance de réconciliation entre pèlerins tamouls et cinghalais.",
+              "source_id": "AO-ED-MADHU-VATICAN-20261111",
+              "source_url": "https://www.vatican.va/content/francesco/en/speeches/2015/january/documents/papa-francesco_20150114_srilanka-filippine-preghiera-mariana.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The pilgrim and the sanctuary",
+          "title_fr": "Le pèlerin et le sanctuaire",
+          "paragraphs": [
+            {
+              "en": "Madhu remains a significant Catholic pilgrimage place, and its sanctity was invoked in appeals to protect civilians during the island's conflict. Pilgrims come here for prayer before the Marian image, while practical visiting arrangements depend on present local conditions.",
+              "fr": "Madhu demeure un lieu important de pèlerinage catholique ; son caractère sacré fut invoqué dans des appels à protéger les civils pendant le conflit. Les pèlerins viennent y prier devant l'image mariale, tandis que les modalités de visite dépendent des conditions locales actuelles.",
+              "source_id": "AO-ED-MADHU-FIDES-20261111",
+              "source_url": "https://www.fides.org/en/news/13175-ASIA_SRI_LANKA_Bishops_renew_their_plea_for_the_protection_of_the_Marian_Shrine_of_Madhu"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/francesco/en/speeches/2015/january/documents/papa-francesco_20150114_srilanka-filippine-preghiera-mariana.html",
+        "https://www.fides.org/en/news/13175-ASIA_SRI_LANKA_Bishops_renew_their_plea_for_the_protection_of_the_Marian_Shrine_of_Madhu"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MADHU-VATICAN-20261111",
+        "AO-ED-MADHU-FIDES-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "place_name": "National Shrine of Our Lady of Lourdes, Quezon City",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "draft_order": 204,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The national Marian shrine of Lourdes in Quezon City, distinct from the French sanctuary.",
+      "subtitle_fr": "Le sanctuaire marial national de Lourdes à Quezon City, distinct du sanctuaire français.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Lourdes devotion in Quezon City",
+          "title_fr": "La dévotion à Lourdes à Quezon City",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Lourdes stands in Sta Mesa Heights, Quezon City, under the care of the Capuchin Franciscans. The city government’s history records that construction of the church followed the Second World War, with its cornerstone laid on 29 January 1950. Its Marian dedication recalls Lourdes in France but does not make it the site of the French apparitions.",
+              "fr": "Le sanctuaire national Notre-Dame de Lourdes se trouve à Sta Mesa Heights, à Quezon City, et est confié aux franciscains capucins. Selon l’histoire publiée par la municipalité, l’église fut construite après la Seconde Guerre mondiale et sa première pierre posée le 29 janvier 1950. Sa dédicace rappelle Lourdes en France sans situer aux Philippines les apparitions françaises.",
+              "source_id": "AO-ED-QUEZON-LOURDES-20261111",
+              "source_url": "https://quezoncity.gov.ph/place/national-shrine-of-our-lady-of-lourdes/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A shrine of a particular city",
+          "title_fr": "Un sanctuaire d’une ville précise",
+          "paragraphs": [
+            {
+              "en": "The Capuchin Franciscans care for this particular national shrine in Quezon City. Its church and venerated image have their own local history, including a canonical coronation of the Marian image in August 2020 according to the city’s account. It is not the same physical sanctuary as the grotto and basilicas at Lourdes in France.",
+              "fr": "Les franciscains capucins ont la charge de ce sanctuaire national précis à Quezon City. Son église et son image vénérée ont leur histoire locale, dont le couronnement canonique de l’image mariale en août 2020 selon le récit de la municipalité. Il ne s’agit pas du même lieu que la grotte et les basiliques de Lourdes en France.",
+              "source_id": "AO-ED-QUEZON-LOURDES-20261111",
+              "source_url": "https://quezoncity.gov.ph/place/national-shrine-of-our-lady-of-lourdes/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer and present-day celebrations",
+          "title_fr": "Prière et célébrations actuelles",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visit for Marian devotion and the worship of an active Catholic shrine. The shrine's own communications announce its Masses, devotional celebrations and particular pilgrimage events. Its parish and pilgrimage history belongs to Quezon City, separately from churches with the same Marian dedication.",
+              "fr": "Les pèlerins viennent pour la dévotion mariale et le culte d’un sanctuaire catholique en activité. Les communications du sanctuaire annoncent ses messes, ses célébrations dévotionnelles et ses événements de pèlerinage. Son histoire paroissiale et pèlerine appartient à Quezon City, distinctement des églises portant la même dédicace mariale.",
+              "source_id": "AO-ED-QUEZON-LOURDES-20261111",
+              "source_url": "https://quezoncity.gov.ph/place/national-shrine-of-our-lady-of-lourdes/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://nsoll.ph/",
+        "https://quezoncity.gov.ph/place/national-shrine-of-our-lady-of-lourdes/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-QUEZON-LOURDES-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "place_name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "draft_order": 205,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Valenzuela national shrine dedicated to the Marian devotion of Fátima.",
+      "subtitle_fr": "Un sanctuaire national de Valenzuela dédié à la dévotion mariale de Fátima.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Fátima in Valenzuela",
+          "title_fr": "Notre-Dame de Fátima à Valenzuela",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Fátima stands in Barangay Marulas, Valenzuela, within the Diocese of Malolos. It is a Philippine place of Marian devotion dedicated to Our Lady of Fátima, distinct from the sanctuary associated with the reported apparitions in Portugal.",
+              "fr": "Le sanctuaire national Notre-Dame de Fátima se trouve à Barangay Marulas, Valenzuela, dans le diocèse de Malolos. Ce lieu philippin de dévotion mariale est distinct du sanctuaire portugais lié aux apparitions rapportées à Fátima.",
+              "source_id": "AO-ED-VALENZUELA-CITY-20261111",
+              "source_url": "https://valenzuela.gov.ph/fatima-coronation/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A national shrine and a local church",
+          "title_fr": "Un sanctuaire national et une église locale",
+          "paragraphs": [
+            {
+              "en": "On 25 February 2024, the shrine hosted the canonical coronation of the National Pilgrim Image of Our Lady of Fátima. The ceremony was presided over by Archbishop Charles John Brown, Apostolic Nuncio to the Philippines, marking a documented event in the devotional history of Valenzuela.",
+              "fr": "Le 25 février 2024, le sanctuaire accueillit le couronnement canonique de l'image nationale pèlerine de Notre-Dame de Fátima. La cérémonie fut présidée par Mgr Charles John Brown, nonce apostolique aux Philippines, événement attesté dans l'histoire dévotionnelle de Valenzuela.",
+              "source_id": "AO-ED-VALENZUELA-CITY-20261111",
+              "source_url": "https://valenzuela.gov.ph/fatima-coronation/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living place of Marian prayer",
+          "title_fr": "Un lieu vivant de prière mariale",
+          "paragraphs": [
+            {
+              "en": "The 2024 coronation was preceded by local Masses, a procession and other preparations involving pilgrims and parishioners. Those ceremonies record a particular occasion, not an unchanging annual programme; current liturgy and access are determined by the local shrine.",
+              "fr": "Le couronnement de 2024 fut précédé de messes locales, d'une procession et d'autres préparatifs réunissant pèlerins et paroissiens. Ces célébrations décrivent une occasion particulière, et non un programme annuel immuable ; les offices et accès actuels relèvent du sanctuaire.",
+              "source_id": "AO-ED-VALENZUELA-CITY-20261111",
+              "source_url": "https://valenzuela.gov.ph/fatima-coronation/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://valenzuela.gov.ph/fatima-coronation/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-VALENZUELA-CITY-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "place_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "draft_order": 206,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Makati’s Marian shrine of Guadalupe, distinct from Tepeyac and Extremadura.",
+      "subtitle_fr": "Le sanctuaire marial de Guadalupe à Makati, distinct de Tepeyac et de l’Estrémadure.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Guadalupe in Makati",
+          "title_fr": "Guadalupe à Makati",
+          "paragraphs": [
+            {
+              "en": "The National Shrine and Parish of Our Lady of Guadalupe is a Catholic church in Guadalupe Nuevo, Makati, under the Archdiocese of Manila. The archdiocese identified it as a pilgrim church for the 2021–2022 jubilee. It is distinct from the older Nuestra Señora de Gracia church in Guadalupe Viejo, whose colonial history belongs to another site.",
+              "fr": "Le sanctuaire national et paroisse Notre-Dame de Guadalupe est une église catholique de Guadalupe Nuevo, à Makati, dans l'archidiocèse de Manille. Celui-ci l'a désigné comme église de pèlerinage pour le jubilé de 2021–2022. Il se distingue de l'ancienne église Nuestra Señora de Gracia de Guadalupe Viejo, dont l'histoire coloniale appartient à un autre lieu.",
+              "source_id": "AO-ED-MAKATI-ARCHDIOCESE-20261112",
+              "source_url": "https://rcam.org/archdiocese-of-manila-to-declare-pilgrim-churches-for-500-years-of-christianity/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The meaning of a shared Marian title",
+          "title_fr": "Le sens d’un titre marial partagé",
+          "paragraphs": [
+            {
+              "en": "The Catholic shrine association records the Makati parish's declaration as the National Shrine of Our Lady of Guadalupe on 31 May 2010. Its designation belongs to this particular church and does not transfer the colonial history of other nearby buildings to the shrine.",
+              "fr": "L'association catholique des sanctuaires indique que la paroisse de Makati fut déclarée sanctuaire national Notre-Dame de Guadalupe le 31 mai 2010. Ce titre appartient à cette église précise et ne lui transfère pas l'histoire coloniale d'autres bâtiments voisins.",
+              "source_id": "AO-ED-MAKATI-ACSP-20261111",
+              "source_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A local destination for prayer",
+          "title_fr": "Une destination locale de prière",
+          "paragraphs": [
+            {
+              "en": "For the 2021–2022 jubilee, the Archdiocese of Manila included the National Shrine of Our Lady of Guadalupe among its designated pilgrim churches, inviting prayer, reconciliation and works of charity. That was a dated programme; today's Mass times, feast celebrations and parish access require current local notices.",
+              "fr": "Pour le jubilé de 2021–2022, l'archidiocèse de Manille a inscrit le sanctuaire national Notre-Dame de Guadalupe parmi ses églises de pèlerinage, lieux de prière, de réconciliation et de charité. Il s'agissait d'un programme daté ; les horaires actuels des messes, les fêtes et l'accès paroissial exigent la consultation des annonces locales en vigueur.",
+              "source_id": "AO-ED-MAKATI-ARCHDIOCESE-20261112",
+              "source_url": "https://rcam.org/archdiocese-of-manila-to-declare-pilgrim-churches-for-500-years-of-christianity/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.parishph.com/2022/01/national-shrine-of-our-lady-of-guadalupe.html",
+        "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "https://rcam.org/archdiocese-of-manila-to-declare-pilgrim-churches-for-500-years-of-christianity/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MAKATI-PARISH-20261111",
+        "AO-ED-MAKATI-ACSP-20261111",
+        "AO-ED-MAKATI-ARCHDIOCESE-20261112"
+      ]
+    },
+    {
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "place_name": "Padre Pio Shrine, Santo Tomas, Batangas",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+      "draft_order": 207,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "International shrine of Saint Pio of Pietrelcina at Santo Tomas, elevated by the Holy See in 2026.",
+      "subtitle_fr": "Sanctuaire international Saint-Pio-de-Pietrelcina à Santo Tomas, élevé à ce rang par le Saint-Siège en 2026.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Pio honoured in Batangas",
+          "title_fr": "Saint Pio honoré à Batangas",
+          "paragraphs": [
+            {
+              "en": "The Saint Padre Pio shrine in Santo Tomas, Batangas, honours the Capuchin priest of Pietrelcina. According to the Archdiocese of Manila's September 2026 report, the Holy See elevated this Philippine sanctuary from national to international shrine status by decree dated 25 May 2026.",
+              "fr": "Le sanctuaire Saint-Padre-Pio de Santo Tomas, à Batangas, honore le capucin de Pietrelcina. Selon le compte rendu publié en septembre 2026 par l'archidiocèse de Manille, le Saint-Siège a élevé ce sanctuaire philippin du rang national au rang international par décret du 25 mai 2026.",
+              "source_id": "AO-ED-PIO-2026-20261111",
+              "source_url": "https://rcam.veritasph.net/national-shrine-of-st-padre-pio-in-batangas-elevated-to-international-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A saint’s memory in a different country",
+          "title_fr": "La mémoire d’un saint dans un autre pays",
+          "paragraphs": [
+            {
+              "en": "The international designation recognises the pilgrimage and pastoral role of Santo Tomas while acknowledging its spiritual relationship with San Giovanni Rotondo in Italy. These are two distinct physical places associated with devotion to Padre Pio, not interchangeable locations of the saint's life.",
+              "fr": "La désignation internationale reconnaît le rôle pastoral et pèlerin de Santo Tomas et son lien spirituel avec San Giovanni Rotondo, en Italie. Il s'agit de deux lieux physiques distincts de dévotion à Padre Pio, et non de sites interchangeables de la vie du saint.",
+              "source_id": "AO-ED-PIO-2026-20261111",
+              "source_url": "https://rcam.veritasph.net/national-shrine-of-st-padre-pio-in-batangas-elevated-to-international-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and the ministry of reconciliation",
+          "title_fr": "Pèlerinage et ministère de la réconciliation",
+          "paragraphs": [
+            {
+              "en": "The 2026 declaration formalised the sanctuary's growing place in prayer, reconciliation and evangelisation, as the local archbishop explained. Pilgrims visit Santo Tomas under Saint Pio's patronage; current liturgical schedules must be checked with the sanctuary.",
+              "fr": "La déclaration de 2026 a consacré le rôle croissant du sanctuaire dans la prière, la réconciliation et l'évangélisation, selon l'archevêque local. Les pèlerins viennent à Santo Tomas sous le patronage de saint Pio ; les horaires actuels sont à vérifier auprès du sanctuaire.",
+              "source_id": "AO-ED-PIO-2026-20261111",
+              "source_url": "https://rcam.veritasph.net/national-shrine-of-st-padre-pio-in-batangas-elevated-to-international-shrine/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://rcam.veritasph.net/national-shrine-of-st-padre-pio-in-batangas-elevated-to-international-shrine/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-PIO-2026-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "place_name": "National Shrine of Saint Joseph, Mandaue",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+      "draft_order": 208,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Catholic national shrine dedicated to Saint Joseph in Mandaue, Cebu.",
+      "subtitle_fr": "Le sanctuaire national catholique dédié à saint Joseph à Mandaue, Cebu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Joseph at Mandaue",
+          "title_fr": "Saint Joseph à Mandaue",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Saint Joseph in Mandaue, Cebu, marked the twenty-fifth anniversary of its church dedication and national shrine declaration in August 2026. Its history as a designated pilgrimage church is thus documented by the Archdiocese of Cebu, rather than inferred from the dedication alone.",
+              "fr": "Le sanctuaire national Saint-Joseph de Mandaue, à Cebu, a célébré en août 2026 le vingt-cinquième anniversaire de la dédicace de son église et de sa déclaration comme sanctuaire national. Cette histoire est attestée par l'archidiocèse de Cebu, et non déduite de sa seule dédicace.",
+              "source_id": "AO-ED-MANDAUE-JUBILEE-20261111",
+              "source_url": "https://thearchdioceseofcebu.com/st-joseph-shrine-marks-silver-jubilee-launches-tripod-pastoral-mission/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The guardian of the Holy Family",
+          "title_fr": "Le gardien de la Sainte Famille",
+          "paragraphs": [
+            {
+              "en": "The archdiocesan directory identifies the National Shrine of Saint Joseph on S. B. Cabahug Street in central Mandaue and lists its parish clergy. This is a particular Cebu church dedicated to the spouse of Mary and guardian of the Holy Family.",
+              "fr": "L'annuaire diocésain situe le sanctuaire national Saint-Joseph rue S. B. Cabahug, dans le centre de Mandaue, et indique son clergé paroissial. Il s'agit d'une église précise de Cebu, dédiée à l'époux de Marie et protecteur de la Sainte Famille.",
+              "source_id": "AO-ED-MANDAUE-ARCHDIOCESE-20261111",
+              "source_url": "https://thearchdioceseofcebu.com/parish/national-shrine-of-st-joseph/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A local sanctuary with a national title",
+          "title_fr": "Un sanctuaire local au titre national",
+          "paragraphs": [
+            {
+              "en": "The sanctuary honours Saint Joseph with a patronal feast on 8 May according to the Archdiocese of Cebu's directory. Pilgrims can take part in the local life of prayer and worship, with specific ceremonies and visiting arrangements governed by current parish notices.",
+              "fr": "Selon l'annuaire de l'archidiocèse de Cebu, le sanctuaire célèbre la fête patronale de saint Joseph le 8 mai. Les pèlerins participent à la prière et au culte locaux ; les célébrations précises et les modalités de visite relèvent des annonces paroissiales actuelles.",
+              "source_id": "AO-ED-MANDAUE-ARCHDIOCESE-20261111",
+              "source_url": "https://thearchdioceseofcebu.com/parish/national-shrine-of-st-joseph/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://thearchdioceseofcebu.com/st-joseph-shrine-marks-silver-jubilee-launches-tripod-pastoral-mission/",
+        "https://thearchdioceseofcebu.com/parish/national-shrine-of-st-joseph/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MANDAUE-JUBILEE-20261111",
+        "AO-ED-MANDAUE-ARCHDIOCESE-20261111"
+      ]
+    },
+    {
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "place_name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "country_code": "CI",
+      "shrine_id": "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "draft_order": 209,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The monumental domed Basilica of Our Lady of Peace at Yamoussoukro, Côte d’Ivoire.",
+      "subtitle_fr": "La monumentale basilique à coupole Notre-Dame de la Paix de Yamoussoukro, en Côte d’Ivoire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian basilica in Yamoussoukro",
+          "title_fr": "Une basilique mariale à Yamoussoukro",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Peace at Yamoussoukro was commissioned under Côte d’Ivoire’s first president, Félix Houphouët-Boigny. According to the ecclesial history, its first stone was laid in February 1986 and the construction was completed in 1989 from designs by architect Pierre Fakhoury.",
+              "fr": "La basilique Notre-Dame de la Paix de Yamoussoukro fut édifiée à l’initiative du premier président de Côte d’Ivoire, Félix Houphouët-Boigny. Selon l’histoire ecclésiale, sa première pierre fut posée en février 1986 et le chantier achevé en 1989, d’après les plans de l’architecte Pierre Fakhoury.",
+              "source_id": "AO-ED-YAMOUSSOUKRO-DIOCESE-20261111",
+              "source_url": "https://www.dioceseabidjan.com/diocese/index.php/fr/basilique"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Architecture in the service of worship",
+          "title_fr": "L’architecture au service du culte",
+          "paragraphs": [
+            {
+              "en": "Pope John Paul II dedicated the basilica on 10 September 1990. In his homily, he connected its Marian dedication with Christian worship and the charitable works planned around the sanctuary, giving the monumental building an explicitly religious and social meaning.",
+              "fr": "Jean-Paul II a dédicacé la basilique le 10 septembre 1990. Dans son homélie, il relia sa dédicace mariale au culte chrétien et aux œuvres de charité prévues autour du sanctuaire, donnant à cet édifice monumental une signification religieuse et sociale.",
+              "source_id": "AO-ED-YAMOUSSOUKRO-VATICAN-20261111",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/fr/homilies/1990/documents/hf_jp-ii_hom_19900910_yamoussoukro.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A distinct West African Catholic site",
+          "title_fr": "Un lieu catholique ouest-africain distinct",
+          "paragraphs": [
+            {
+              "en": "The Pallottine Fathers and Brothers have been entrusted with the basilica’s pastoral care. It welcomes pilgrimages during the year, while its published notices provide the relevant details for worship and visits; historic schedules are not permanent guarantees.",
+              "fr": "La charge pastorale de la basilique a été confiée aux pères et frères pallottins. Elle accueille des pèlerinages au cours de l’année, tandis que ses annonces précisent les offices et visites ; les horaires anciens ne constituent pas des garanties permanentes.",
+              "source_id": "AO-ED-YAMOUSSOUKRO-DIOCESE-20261111",
+              "source_url": "https://www.dioceseabidjan.com/diocese/index.php/fr/basilique"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.dioceseabidjan.com/diocese/index.php/fr/basilique",
+        "https://www.vatican.va/content/john-paul-ii/fr/homilies/1990/documents/hf_jp-ii_hom_19900910_yamoussoukro.html"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-YAMOUSSOUKRO-DIOCESE-20261111",
+        "AO-ED-YAMOUSSOUKRO-VATICAN-20261111"
+      ]
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "place_name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "country_code": "US",
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "draft_order": 210,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The American national Fátima pilgrimage basilica at Lewiston, New York.",
+      "subtitle_fr": "La basilique américaine nationale de pèlerinage à Fátima située à Lewiston, dans l’État de New York.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Fátima devotion at Lewiston",
+          "title_fr": "La dévotion à Fátima à Lewiston",
+          "paragraphs": [
+            {
+              "en": "The Lewiston sanctuary of Our Lady of Fátima in New York State dates from 1954 and is served by the Barnabite Fathers. Its basilica is known for its glass dome and the large statue of the Virgin above it, features of this American place of pilgrimage rather than the Portuguese apparition site.",
+              "fr": "Le sanctuaire Notre-Dame de Fátima de Lewiston, dans l’État de New York, remonte à 1954 et est desservi par les pères barnabites. Sa basilique est connue pour sa coupole vitrée et la grande statue de la Vierge qui la surmonte, propres à ce lieu de pèlerinage américain et non au site portugais des apparitions.",
+              "source_id": "AO-ED-LEWISTON-FATIMA-20261111",
+              "source_url": "https://www.fatima.pt/en/locations/our-lady-of-fatima-shrine-lewiston-ny"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica with a national dedication",
+          "title_fr": "Une basilique à dédicace nationale",
+          "paragraphs": [
+            {
+              "en": "The Barnabite Fathers’ provincial directory identifies the church at 1023 Swann Road as the Basilica of the National Shrine of Our Lady of Fatima. This ecclesial identity belongs to Lewiston itself and distinguishes the sanctuary from other American churches with the same Marian dedication.",
+              "fr": "L’annuaire provincial des pères barnabites identifie l’église du 1023 Swann Road comme la basilique du Sanctuaire national Notre-Dame de Fátima. Cette identité ecclésiale appartient à Lewiston et distingue ce sanctuaire des autres églises américaines portant la même dédicace mariale.",
+              "source_id": "AO-ED-LEWISTON-BARNABITES-20261111",
+              "source_url": "https://www.barnabites.com/the-north-american-province/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The pilgrim’s visit",
+          "title_fr": "La visite du pèlerin",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visit the Lewiston shrine for Marian prayer in the care of the Barnabite community. The local custodians provide the appropriate point of contact for worship and practical visits; arrangements at Fátima in Portugal are separate.",
+              "fr": "Les pèlerins se rendent au sanctuaire de Lewiston pour la prière mariale auprès de la communauté barnabite. Les responsables sur place constituent le contact approprié pour le culte et les visites ; les dispositions de Fátima au Portugal sont distinctes.",
+              "source_id": "AO-ED-LEWISTON-BARNABITES-20261111",
+              "source_url": "https://www.barnabites.com/the-north-american-province/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.fatima.pt/en/locations/our-lady-of-fatima-shrine-lewiston-ny",
+        "https://www.barnabites.com/the-north-american-province/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-LEWISTON-FATIMA-20261111",
+        "AO-ED-LEWISTON-BARNABITES-20261111"
+      ]
+    },
+    {
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "place_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "country_code": "LB",
+      "shrine_id": "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "draft_order": 211,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The hilltop Marian statue and sanctuary of Our Lady of Lebanon at Harissa.",
+      "subtitle_fr": "La statue mariale et le sanctuaire de Notre-Dame du Liban sur la hauteur de Harissa.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lebanon above Jounieh",
+          "title_fr": "Notre-Dame du Liban au-dessus de Jounieh",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Lebanon stands on the hills above the Bay of Jounieh at Harissa. Patriarch Elias Hoayek supported the Marian monument, whose statue and sanctuary were inaugurated in May 1908, giving the hill a lasting place in Lebanese Catholic devotion.",
+              "fr": "Le sanctuaire Notre-Dame du Liban se dresse sur les hauteurs dominant la baie de Jounieh, à Harissa. Le patriarche Elias Hoayek soutint ce monument marial, dont la statue et le sanctuaire furent inaugurés en mai 1908, inscrivant durablement cette colline dans la dévotion catholique libanaise.",
+              "source_id": "AO-ED-HARISSA-HISTORY-20261111",
+              "source_url": "https://www.ololb.org/content/history-information"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The statue and the sanctuary",
+          "title_fr": "La statue et le sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The Marian statue, its pedestal and the wider sanctuary form a connected pilgrimage precinct. From the shrine’s foundation, its administration was entrusted to the Lebanese Maronite Missionaries, linking this prominent landmark to the continuing pastoral life of the Maronite Church.",
+              "fr": "La statue mariale, son socle et l’ensemble du sanctuaire forment un même lieu de pèlerinage. Dès la fondation du sanctuaire, son administration fut confiée aux Missionnaires libanais maronites, reliant ce monument à la vie pastorale continue de l’Église maronite.",
+              "source_id": "AO-ED-HARISSA-HISTORY-20261111",
+              "source_url": "https://www.ololb.org/content/history-information"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage in Lebanon",
+          "title_fr": "Pèlerinage au Liban",
+          "paragraphs": [
+            {
+              "en": "The sanctuary describes itself as an international Marian pilgrimage destination associated with the Maronite Patriarchate and open to the wider life of the Church. Prayer and pastoral activities are therefore central to Harissa, alongside its well-known coastal panorama.",
+              "fr": "Le sanctuaire se présente comme une destination internationale de pèlerinage marial liée au patriarcat maronite et ouverte à la vie de l’Église. La prière et les activités pastorales occupent ainsi une place centrale à Harissa, à côté de son célèbre panorama côtier.",
+              "source_id": "AO-ED-HARISSA-ABOUT-20261111",
+              "source_url": "https://www.ololb.org/page/about-us"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.ololb.org/content/history-information",
+        "https://www.ololb.org/page/about-us"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-HARISSA-HISTORY-20261111",
+        "AO-ED-HARISSA-ABOUT-20261111"
+      ]
+    },
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "place_name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "country_code": "LK",
+      "shrine_id": "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "draft_order": 212,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Sri Lanka’s National Basilica of Our Lady of Lanka at Tewatta.",
+      "subtitle_fr": "La basilique nationale Notre-Dame de Lanka à Tewatta, au Sri Lanka.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lanka at Tewatta",
+          "title_fr": "Notre-Dame de Lanka à Tewatta",
+          "paragraphs": [
+            {
+              "en": "The National Basilica of Our Lady of Lanka at Tewatta was developed under Cardinal Thomas Cooray, Archbishop of Colombo, in fulfilment of a wartime vow. The Archdiocese of Colombo records that the basilica was consecrated on 6 February 1974, anchoring its Marian history in a documented local chronology.",
+              "fr": "La basilique nationale Notre-Dame de Lanka à Tewatta fut développée sous l'impulsion du cardinal Thomas Cooray, archevêque de Colombo, en accomplissement d'un vœu formulé durant la guerre. L'archidiocèse de Colombo indique que la basilique fut consacrée le 6 février 1974.",
+              "source_id": "AO-ED-TEWATTA-COORAY-20261111",
+              "source_url": "https://archdioceseofcolombo.lk/about/cardinal_cooray"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica and national dedication",
+          "title_fr": "Une basilique et une dédicace nationale",
+          "paragraphs": [
+            {
+              "en": "Cardinal Cooray envisaged Tewatta as a centre of Marian devotion for Sri Lanka. Its national character belongs to this basilica near Colombo and differs from the Shrine of Our Lady of Madhu in the island's north, which has a separate image and historical tradition.",
+              "fr": "Le cardinal Cooray voulut faire de Tewatta un centre de dévotion mariale pour le Sri Lanka. Son caractère national appartient à cette basilique proche de Colombo, distincte du sanctuaire Notre-Dame de Madhu, dans le nord de l'île, avec sa propre image et sa tradition historique.",
+              "source_id": "AO-ED-TEWATTA-COORAY-20261111",
+              "source_url": "https://archdioceseofcolombo.lk/about/cardinal_cooray"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at the actual basilica",
+          "title_fr": "Prier dans la basilique réelle",
+          "paragraphs": [
+            {
+              "en": "The Archdiocese of Colombo reported its annual blessing for the sick at Tewatta on 30 August 2026, drawing pilgrims and families for prayer. Such documented celebrations show the basilica's pastoral life, although any future dates or visiting arrangements require fresh local confirmation.",
+              "fr": "L'archidiocèse de Colombo a relaté la bénédiction annuelle des malades célébrée à Tewatta le 30 août 2026, réunissant des pèlerins et des familles pour la prière. Ces célébrations attestent la vie pastorale de la basilique, mais les dates futures et les accès exigent une confirmation locale.",
+              "source_id": "AO-ED-TEWATTA-ARCHDIOCESE-20261111",
+              "source_url": "https://www.archdioceseofcolombo.lk/article/2026_Sick_Day_Blessing_at_Tewatta_Basilica/97"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://archdioceseofcolombo.lk/about/cardinal_cooray",
+        "https://www.archdioceseofcolombo.lk/article/2026_Sick_Day_Blessing_at_Tewatta_Basilica/97"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TEWATTA-COORAY-20261111",
+        "AO-ED-TEWATTA-ARCHDIOCESE-20261111"
+      ]
+    }
+  ]
+}

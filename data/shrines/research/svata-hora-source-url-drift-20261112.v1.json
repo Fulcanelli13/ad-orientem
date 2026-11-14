@@ -1,0 +1,43 @@
+{
+  "schema": "ao.shrines.source-url-drift-review.v1",
+  "as_of": "2026-11-12",
+  "status": "SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_AUTHORITY_CHANGE",
+  "source_registry": "data/shrines/source-registry.v1.json",
+  "original_source_id_contract": "ORIGINAL_SOURCE_IDS_PRESERVED",
+  "affected_shrine_id": "shrine:CZ:svata-hora",
+  "affected_place_id": "place:CZ:svata-hora-pribram",
+  "obsolete_host": "svata-hora.cz",
+  "observed_current_obsolete_host_subject": "No longer the active Roman Catholic parish website; old site may resolve to unrelated commercial accommodation content",
+  "obsolete_root_checked": "https://svata-hora.cz/",
+  "current_official_domain": "farnost-svatahora.cz",
+  "independent_ecclesial_confirmation": "https://katalog.apha.cz/web/farnosti/1254",
+  "records": [
+    {
+      "source_id": "SHR-SVATA-HORA-OFFICIAL",
+      "historical_url": "https://svata-hora.cz/",
+      "replacement_url": "https://farnost-svatahora.cz/",
+      "replacement_title": "Římskokatolická farnost — Svatá Hora",
+      "evidence_scope": "ACTIVE_PARISH_SITE_IDENTITY_AND_ADDRESS",
+      "claim_limit": "Does not independently certify origin of the Marian statue or miracles"
+    },
+    {
+      "source_id": "PIL-SVATA-HORA-FEAST",
+      "historical_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
+      "replacement_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
+      "replacement_title": "Hlavní poutě — 2026 programme",
+      "evidence_scope": "2026_PRINCIPAL_PILGRIMAGE_DATES",
+      "claim_limit": "Supersedes an inaccessible 2025 PDF for current festival evidence; cannot establish the exact 2025 procession schedule, or permanent liturgy"
+    }
+  ],
+  "unchanged": [
+    "original R61 archived research URLs",
+    "shrine_id",
+    "place_id",
+    "pilgrimage IDs and source IDs",
+    "ritual classification",
+    "published guide count",
+    "media and geographical registry",
+    "relic authenticity and ecclesiastical recognition decisions"
+  ],
+  "ecclesiastical_context": "Archdiocese of Prague directory records the end of Redemptorist administration on 31 August 2025 and diocesan priests from 1 September 2025; this context must not be inferred merely from source-domain replacement."
+}

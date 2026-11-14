@@ -1,0 +1,704 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES57_66_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "owner_approved": 0,
+    "published": 0
+  },
+  "policy": [
+    "No rewriting of the 56 already drafted Wave-1 guides or the 33 published extended guides",
+    "Texts are newly authored but grounded in existing source-registry contributions; editor must check precise factual support for each paragraph",
+    "Do not infer apparition authenticity, liturgical rite or immutable schedules, or claim entrance-grade GPS",
+    "No research-only source automatically publishes; preserve existing Place and shrine identities"
+  ],
+  "guides": [
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "place_name": "Gnadenkapelle Kevelaer",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "draft_order": 57,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Chapel of Grace and devotion to the Consoler of the Afflicted.",
+      "subtitle_fr": "La chapelle des Grâces et la dévotion à la Consolatrice des affligés.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image at the heart of the shrine",
+          "title_fr": "L’image au cœur du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "Kevelaer’s Chapel of Grace houses a modest copper engraving dated 1640, probably printed in Antwerp, depicting Mary as Consolatrix Afflictorum, the Consoler of the Afflicted. According to the parish history, Hendrick Busman attached it to a wooden board; later votive gifts and a crown made this small image the visible heart of the pilgrimage.",
+              "fr": "La chapelle des Grâces de Kevelaer conserve une modeste gravure sur cuivre datée de 1640, probablement imprimée à Anvers, représentant Marie sous le titre de Consolatrix Afflictorum, Consolatrice des affligés. D’après l’histoire paroissiale, Hendrick Busman la fixa sur une planche de bois ; les ex-voto et la couronne ajoutés plus tard firent de cette petite image le cœur visible du pèlerinage.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+              "source_id": "SHR-KEVELAER-GNADENKAPELLE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The pilgrimage precinct",
+          "title_fr": "L’ensemble de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The Gnadenkapelle remains a distinct chapel within Kevelaer’s wider ensemble of pilgrimage churches. Its revered image is housed in a separate chapel, distinct from the larger Marian basilica, the Candle Chapel, and the chapels for confession and the Blessed Sacrament. The parish identifies these buildings separately, even though pilgrims encounter them during the same visit.",
+              "fr": "La Gnadenkapelle reste une chapelle distincte au sein de l’ensemble des églises de pèlerinage de Kevelaer. Son image vénérée se trouve dans une chapelle distincte de la grande basilique mariale, de la chapelle des Cierges et des chapelles consacrées à la confession et au Saint-Sacrement. La paroisse distingue ces édifices, même lorsqu’un pèlerin les visite au cours d’un même séjour.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+              "source_id": "SHR-KEVELAER-GNADENKAPELLE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and liturgy",
+          "title_fr": "Pèlerinage et liturgie",
+          "paragraphs": [
+            {
+              "en": "The parish lists a Sunday Mass according to the 1962 Roman Missal in the Kerzenkapelle, the Candle Chapel. Its published seasonal order shows an 8 a.m. celebration during the pilgrimage season and 9 a.m. outside it; these times remain subject to the current parish timetable. This is a particular chapel’s programme, not the rite of every church at Kevelaer.",
+              "fr": "La paroisse annonce une messe dominicale selon le missel romain de 1962 à la Kerzenkapelle, chapelle des Cierges. Son ordre saisonnier mentionne une célébration à 8 h pendant la saison des pèlerinages et à 9 h en dehors de celle-ci ; ces heures restent soumises au programme paroissial en vigueur. Il s’agit de l’horaire d’une chapelle précise, non du rite de toutes les églises de Kevelaer.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung",
+              "source_id": "SHR-KEVELAER-1962-SCHEDULE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:kevelaer-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+        "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "place_name": "Wallfahrtsbasilika Maria Taferl",
+      "country_code": "AT",
+      "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "draft_order": 58,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Austrian Marian pilgrimage on the Taferlberg, with origins in seventeenth-century devotion.",
+      "subtitle_fr": "Un pèlerinage marial autrichien sur le Taferlberg, enraciné dans la dévotion du XVIIe siècle.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The seventeenth-century beginnings",
+          "title_fr": "Les origines au XVIIe siècle",
+          "paragraphs": [
+            {
+              "en": "The traditional origins of Maria Taferl involve two accounts associated with an oak on the Taferlberg. In 1633, shepherd Thomas Pachmann was said to have been healed after discovering a crucifix there; in 1642, Alexander Schinagl reportedly replaced that cross with a Pietà. These are the sanctuary’s recorded devotional accounts, not independently established medical or supernatural findings.",
+              "fr": "Les origines traditionnelles de Maria Taferl comprennent deux récits liés à un chêne du Taferlberg. En 1633, le berger Thomas Pachmann aurait été guéri après y avoir découvert un crucifix ; en 1642, Alexander Schinagl aurait remplacé cette croix par une Pietà. Il s’agit de récits dévotionnels transmis par le sanctuaire, non de constatations médicales ou surnaturelles établies indépendamment.",
+              "source_url": "https://basilika.at/info/geschichte/index.html",
+              "source_id": "SHR-MARIA-TAFERL-HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "From devotion to basilica",
+          "title_fr": "De la dévotion à la basilique",
+          "paragraphs": [
+            {
+              "en": "The foundation stone of the pilgrimage church was laid on 25 April 1660, with the tree and revered image incorporated into the building. Construction continued for more than sixty years, and the church was consecrated on 29 June 1724 by the prince-bishop of Passau. Its long building history places the Baroque basilica alongside, but not within, the seventeenth-century reports that prompted pilgrimage.",
+              "fr": "La première pierre de l’église de pèlerinage fut posée le 25 avril 1660, le chêne et l’image vénérée étant intégrés dans l’édifice. Le chantier dura plus de soixante ans et l’église fut consacrée le 29 juin 1724 par le prince-évêque de Passau. Cette longue histoire architecturale distingue la basilique baroque des récits du XVIIe siècle qui avaient suscité les pèlerinages.",
+              "source_url": "https://www.basilika.at/info/baugeschichte/index.html",
+              "source_id": "AO-ED-TAFERL-CONSTRUCTION-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living pilgrimage church",
+          "title_fr": "Une église de pèlerinage vivante",
+          "paragraphs": [
+            {
+              "en": "Maria Taferl remains an active Austrian Marian pilgrimage basilica, rather than solely a monument of Baroque architecture. Its management publishes direct contact information for pilgrims, while worship arrangements, group visits and any specific ceremonies depend on the church’s notices at the time. A past feast or extraordinary-event narrative does not establish the Mass schedule of a future visit.",
+              "fr": "Maria Taferl demeure une basilique autrichienne de pèlerinage marial, et non seulement un monument baroque. Ses responsables publient des renseignements permettant aux pèlerins de les contacter ; les offices, l’accueil des groupes et les cérémonies particulières dépendent des annonces du moment. Une fête passée ou un récit extraordinaire n’établit pas les horaires des messes d’une visite future.",
+              "source_url": "https://basilika.at/kontakt/index.php",
+              "source_id": "SHR-MARIA-TAFERL-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AT:maria-taferl-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://basilika.at/info/geschichte/index.html",
+        "https://basilika.at/kontakt/index.php",
+        "https://www.basilika.at/info/baugeschichte/index.html"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TAFERL-CONSTRUCTION-20261111"
+      ]
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "place_name": "Kloster Einsiedeln / Gnadenkapelle",
+      "country_code": "CH",
+      "shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "draft_order": 59,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Benedictine monastery and the Chapel of Grace at the heart of Swiss Marian pilgrimage.",
+      "subtitle_fr": "Un monastère bénédictin et sa chapelle des Grâces au cœur du pèlerinage marial suisse.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Monastic life and Marian pilgrimage",
+          "title_fr": "Vie monastique et pèlerinage marial",
+          "paragraphs": [
+            {
+              "en": "At Einsiedeln, the Chapel of Grace containing the Black Madonna is the focal point of Marian pilgrimage within a living Benedictine abbey. According to the monastery, it stands at the place associated with the hermit Saint Meinrad, who was killed in 861. The revered image and chapel remain physically within the abbey complex, not separate destinations elsewhere in the town.",
+              "fr": "À Einsiedeln, la chapelle des Grâces abritant la Vierge noire est le centre du pèlerinage marial dans une abbaye bénédictine vivante. Selon le monastère, elle se trouve au lieu associé à l’ermite saint Meinrad, tué en 861. L’image vénérée et la chapelle appartiennent matériellement à l’ensemble abbatial et ne sont pas des destinations distinctes ailleurs dans la ville.",
+              "source_url": "https://www.kloster-einsiedeln.ch/kloster/gesamtuebersicht/kirchen-kapellen/gnadenkapelle",
+              "source_id": "AO-ED-EINSIEDELN-CHAPEL-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Engelweihe feast",
+          "title_fr": "La fête de l’Engelweihe",
+          "paragraphs": [
+            {
+              "en": "The abbey celebrates the dedication of the Chapel of Grace on 14 September as the Engelweihe. Its medieval legend relates that Christ himself, surrounded by angels and saints, consecrated the chapel in the year 948. Einsiedeln explicitly presents this as a legend within its historical devotional memory, rather than a modern demonstration of a supernatural dedication.",
+              "fr": "L’abbaye célèbre chaque 14 septembre la dédicace de la chapelle des Grâces sous le nom d’Engelweihe. Une légende médiévale raconte que le Christ lui-même, entouré d’anges et de saints, aurait consacré la chapelle en 948. Einsiedeln présente expressément ce récit comme une légende appartenant à sa mémoire dévotionnelle, non comme une démonstration moderne d’une consécration surnaturelle.",
+              "source_url": "https://www.kloster-einsiedeln.ch/kloster/geschichte/engelweihe-legende",
+              "source_id": "AO-ED-EINSIEDELN-ENGELWEIHE-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Planning a pilgrimage",
+          "title_fr": "Organiser un pèlerinage",
+          "paragraphs": [
+            {
+              "en": "For the Engelweihe of 2026, the abbey announced solemn worship on 13 and 14 September, including pontifical services, Vespers and processions. That published programme illustrates the living liturgical celebration of the Chapel of Grace’s dedication; it is a dated 2026 record rather than a timetable automatically continuing in subsequent years.",
+              "fr": "Pour l’Engelweihe de 2026, l’abbaye a annoncé des offices solennels les 13 et 14 septembre, comprenant célébrations pontificales, vêpres et processions. Ce programme témoigne de la fête vivante de la dédicace de la chapelle des Grâces ; il s’agit d’un document daté de 2026, non d’un horaire automatiquement reconduit les années suivantes.",
+              "source_url": "https://www.kloster-einsiedeln.ch/information/aktuelles/detail/vorankuendigung-einsiedler-engelweihe-am-13-14-september-2026",
+              "source_id": "AO-ED-EINSIEDELN-2026-20261111"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:einsiedeln-destination",
+        "pilgrimage:CH:einsiedeln-engelweihe"
+      ],
+      "saint_name_associations": [
+        "Saint Meinrad"
+      ],
+      "bibliography_urls": [
+        "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+        "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/wallfahrtskalender_2025_definitiv.pdf",
+        "https://www.kloster-einsiedeln.ch/kloster/gesamtuebersicht/kirchen-kapellen/gnadenkapelle",
+        "https://www.kloster-einsiedeln.ch/kloster/geschichte/engelweihe-legende",
+        "https://www.kloster-einsiedeln.ch/information/aktuelles/detail/vorankuendigung-einsiedler-engelweihe-am-13-14-september-2026"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-EINSIEDELN-CHAPEL-20261111",
+        "AO-ED-EINSIEDELN-ENGELWEIHE-20261111",
+        "AO-ED-EINSIEDELN-2026-20261111"
+      ]
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "place_name": "Kloster Mariastein / Gnadenkapelle",
+      "country_code": "CH",
+      "shrine_id": "shrine:CH:mariastein-our-lady",
+      "draft_order": 60,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Benedictine pilgrimage focused on the Gnadenkapelle at Mariastein.",
+      "subtitle_fr": "Pèlerinage bénédictin centré sur la chapelle des Grâces de Mariastein.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Benedictine sanctuary",
+          "title_fr": "Le sanctuaire bénédictin",
+          "paragraphs": [
+            {
+              "en": "Mariastein brings together a Benedictine monastic community, its basilica and a Chapel of Grace that remains a Marian pilgrimage focus. The monastery presents its history through the earlier foundations at Beinwil and the growth of the Mariastein sanctuary. Its monastic buildings and sacred chapels are parts of one religious complex, with different purposes and access conditions.",
+              "fr": "Mariastein réunit une communauté bénédictine, sa basilique et une chapelle des Grâces demeurée un foyer de pèlerinage marial. Le monastère présente son histoire depuis les fondations anciennes de Beinwil jusqu’au développement du sanctuaire de Mariastein. Les bâtiments conventuels et les chapelles forment un même ensemble religieux, avec des fonctions et des conditions d’accès distinctes.",
+              "source_url": "https://www.kloster-mariastein.ch/en/monastery/our-history/",
+              "source_id": "AO-ED-MARIASTEIN-HISTORY-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A recurring Marian pilgrimage",
+          "title_fr": "Un pèlerinage marial régulier",
+          "paragraphs": [
+            {
+              "en": "The first Wednesday of each month has a distinctive pilgrimage rhythm at Mariastein. The monastery’s published programme combines the Eucharist with confession and the Rosary; the 2026 schedule lists a morning convent liturgy and a second Mass with the monks in the afternoon. These arrangements belong to this particular monastery and are subject to its current announcements.",
+              "fr": "Le premier mercredi de chaque mois marque un rythme particulier de pèlerinage à Mariastein. Le programme publié par le monastère associe eucharistie, confession et rosaire ; celui de 2026 prévoit une célébration conventuelle le matin et une autre messe avec les moines l’après-midi. Ces dispositions sont propres à ce monastère et dépendent de ses annonces en vigueur.",
+              "source_url": "https://www.kloster-mariastein.ch/wallfahrt/gottesdienste/",
+              "source_id": "SHR-MARIASTEIN-MONTHLY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The place and the pilgrim",
+          "title_fr": "Le lieu et le pèlerin",
+          "paragraphs": [
+            {
+              "en": "The basilica and Chapel of Grace are accessible to pilgrims according to the monastery’s published visiting arrangements, while the convent itself has separate areas and opening conditions. Mariastein gives its address as Klosterplatz 2 in Mariastein, Switzerland, and offers a pilgrimage contact service. Visitors should confirm the day’s programme directly rather than assume unrestricted access to every part of the abbey.",
+              "fr": "La basilique et la chapelle des Grâces sont accessibles aux pèlerins suivant les dispositions publiées par le monastère, tandis que le couvent possède des espaces et des conditions d’ouverture distincts. Mariastein indique l’adresse Klosterplatz 2, à Mariastein en Suisse, et dispose d’un service d’accueil des pèlerins. Il convient de confirmer le programme du jour sans présumer l’accès à tous les bâtiments.",
+              "source_url": "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+              "source_id": "SHR-MARIASTEIN-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:mariastein-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+        "https://www.kloster-mariastein.ch/wallfahrt/gottesdienste/",
+        "https://www.kloster-mariastein.ch/en/monastery/our-history/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MARIASTEIN-HISTORY-20261111"
+      ]
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "place_name": "Shrine of Our Lady of Guadalupe",
+      "country_code": "US",
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "draft_order": 61,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian pilgrimage on the bluffs of La Crosse, with chapels and liturgical life.",
+      "subtitle_fr": "Un pèlerinage marial à La Crosse, avec ses chapelles et sa vie liturgique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A pilgrimage rather than a single doorway",
+          "title_fr": "Un pèlerinage plutôt qu’une simple entrée",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Our Lady of Guadalupe at La Crosse is arranged as a pilgrimage through landscaped grounds toward the main shrine church. Its official description distinguishes the pilgrim centre, a Memorial to the Unborn, devotional areas and the church itself. These places form one sanctuary whose architecture and successive stops are intended to support prayer.",
+              "fr": "Le sanctuaire Notre-Dame de Guadalupe de La Crosse propose un parcours pèlerin à travers un domaine paysager jusqu’à l’église principale. Sa présentation officielle distingue l’accueil des pèlerins, un mémorial aux enfants à naître, des espaces de dévotion et l’église elle-même. Ces lieux constituent un seul sanctuaire, dont l’architecture et les étapes successives accompagnent la prière.",
+              "source_url": "https://guadalupeshrine.org/pilgrimage-experience/",
+              "source_id": "SHR-GUADALUPE-PILGRIMAGE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The votive candle chapel",
+          "title_fr": "La chapelle des cierges votifs",
+          "paragraphs": [
+            {
+              "en": "The Votive Candle Chapel is one of the named devotional stops within the La Crosse sanctuary. The shrine describes a chapel with 700 candles, where pilgrims may express a prayer intention through the traditional lighting of a votive light. It is a chapel belonging to the main sanctuary grounds, not an unrelated church or a separate pilgrimage destination across Wisconsin.",
+              "fr": "La chapelle des cierges votifs est l’une des étapes de dévotion nommées du sanctuaire de La Crosse. Le sanctuaire y décrit 700 cierges, que les pèlerins peuvent allumer pour accompagner une intention de prière. Cette chapelle appartient au domaine du sanctuaire principal ; elle n’est ni une église sans lien ni une autre destination de pèlerinage du Wisconsin.",
+              "source_url": "https://guadalupeshrine.org/pilgrimage-experience/",
+              "source_id": "SHR-GUADALUPE-PILGRIMAGE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Distinct liturgical celebrations",
+          "title_fr": "Des célébrations liturgiques distinctes",
+          "paragraphs": [
+            {
+              "en": "The shrine publishes a programme that includes Mass in the traditional Latin rite as well as English- and Spanish-language celebrations. When consulted in November 2026, its official schedule listed a weekday Traditional Latin Low Mass and a Sunday Traditional Latin Mass, alongside other services. The day’s exact times must be confirmed with the shrine and must not be inferred from its Marian dedication.",
+              "fr": "Le sanctuaire publie un programme comprenant des messes dans le rite latin traditionnel ainsi que des célébrations en anglais et en espagnol. Consulté en novembre 2026, son calendrier officiel annonçait une messe basse traditionnelle en semaine et une messe latine traditionnelle le dimanche, parmi d’autres offices. Il faut vérifier les horaires du jour auprès du sanctuaire, sans les déduire de sa dédicace mariale.",
+              "source_url": "https://guadalupeshrine.org/mass-schedules/",
+              "source_id": "SHR-GUADALUPE-SCHEDULE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:guadalupe-la-crosse-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Juan Diego"
+      ],
+      "bibliography_urls": [
+        "https://guadalupeshrine.org/pilgrimage-experience/",
+        "https://guadalupeshrine.org/mass-schedules/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "place_name": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
+      "country_code": "US",
+      "shrine_id": "shrine:US:holy-hill-mary-help",
+      "draft_order": 62,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Wisconsin Marian sanctuary entrusted to the Discalced Carmelites.",
+      "subtitle_fr": "Un sanctuaire marial du Wisconsin confié aux Carmes déchaux.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Carmelite Marian sanctuary",
+          "title_fr": "Un sanctuaire marial carmélitain",
+          "paragraphs": [
+            {
+              "en": "Holy Hill, in Wisconsin, is the Basilica and National Shrine of Mary Help of Christians. Discalced Carmelite friars have ministered there since 1906; the current church was dedicated in 1931, and Pope Benedict XVI conferred basilica status in 2006. This is the history of a particular Carmelite pilgrimage church, distinct from the societies that may organise walks to it.",
+              "fr": "Holy Hill, dans le Wisconsin, est la basilique et sanctuaire national de Marie Auxiliatrice. Les Carmes déchaux y exercent leur ministère depuis 1906 ; l’église actuelle fut consacrée en 1931 et Benoît XVI lui conféra le titre de basilique en 2006. C’est l’histoire d’un sanctuaire carmélitain particulier, distinct des sociétés qui peuvent organiser des marches vers lui.",
+              "source_url": "https://www.holyhill.com/welcome",
+              "source_id": "SHR-HOLY-HILL-OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A landscape of pilgrimage",
+          "title_fr": "Un paysage de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The sanctuary sits among wooded hills and offers worship in its basilica alongside outdoor Stations of the Cross and other devotional spaces. Its Discalced Carmelite custodians welcome pilgrims and visitors to the same site, whose name describes a Marian destination rather than an officially surveyed footpath. Approach routes chosen by pilgrims are not all identical to one permanent sanctuary itinerary.",
+              "fr": "Le sanctuaire se trouve parmi des collines boisées et propose le culte dans sa basilique, ainsi qu’un chemin de croix extérieur et d’autres espaces de dévotion. Les Carmes déchaux y accueillent pèlerins et visiteurs sur un même site, dont le nom désigne une destination mariale plutôt qu’un sentier officiellement mesuré. Les parcours choisis pour y parvenir ne constituent pas tous un itinéraire unique et permanent.",
+              "source_url": "https://www.holyhill.com/",
+              "source_id": "AO-ED-HOLYHILL-HOME-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting groups and their programmes",
+          "title_fr": "Les groupes de pèlerins et leurs programmes",
+          "paragraphs": [
+            {
+              "en": "Separately from the Carmelite ministry, Saint Pius V Chapel advertised an organised pilgrimage to Holy Hill for 20–22 August 2026. The organiser described a roughly thirty-three-mile journey over three days, ending at the basilica. This is a dated outside group's pilgrimage to the Carmelite sanctuary, not the sanctuary's permanent Mass timetable or evidence that the Carmelites operate the event.",
+              "fr": "Indépendamment du ministère carmélitain, la chapelle Saint-Pie-V annonçait un pèlerinage organisé vers Holy Hill du 20 au 22 août 2026. L’organisateur décrivait une marche d’environ trente-trois milles sur trois jours, aboutissant à la basilique. C’était un pèlerinage daté d’un groupe extérieur vers le sanctuaire carmélitain, non son horaire permanent des messes ni une manifestation administrée par les Carmes.",
+              "source_url": "https://mukwonago.wi.sspx.org/en/events/holy-hill-pilgrimage-2026-57859",
+              "source_id": "PIL-HOLY-HILL-SSPX"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:holy-hill-destination",
+        "pilgrimage:US:holy-hill-traditional"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.holyhill.com/welcome",
+        "https://mukwonago.wi.sspx.org/en/events/holy-hill-pilgrimage-2026-57859",
+        "https://www.holyhill.com/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-HOLYHILL-HOME-20261111"
+      ]
+    },
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "place_name": "Sanctuaire Notre-Dame-du-Cap",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:notre-dame-du-cap",
+      "draft_order": 63,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An enduring Québec Marian sanctuary with an Assumption pilgrimage tradition.",
+      "subtitle_fr": "Un sanctuaire marial historique du Québec marqué par le pèlerinage de l’Assomption.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The sanctuary at Cap-de-la-Madeleine",
+          "title_fr": "Le sanctuaire de Cap-de-la-Madeleine",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame-du-Cap is a Marian pilgrimage sanctuary at Cap-de-la-Madeleine, now part of Trois-Rivières in Québec. The sanctuary's history recalls the coronation of its Marian statue on 12 October 1904, an occasion that became important to its annual celebrations. Its address and pilgrim facilities belong to the sanctuary itself, rather than to an approximate location elsewhere in the city.",
+              "fr": "Notre-Dame-du-Cap est un sanctuaire marial de pèlerinage situé à Cap-de-la-Madeleine, aujourd’hui intégré à Trois-Rivières au Québec. L’histoire du sanctuaire rappelle le couronnement de sa statue mariale le 12 octobre 1904, événement qui marqua ses célébrations annuelles. Son adresse et ses espaces d’accueil relèvent du sanctuaire lui-même, et non d’un emplacement approximatif dans la ville.",
+              "source_url": "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/",
+              "source_id": "AO-ED-NOTREDAMECAP-NOVENA-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Assumption novena",
+          "title_fr": "La neuvaine de l’Assomption",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s own history explains that the Assumption on 15 August became the main date of its programme in 1919, replacing the earlier emphasis on the October anniversary of the statue’s coronation. In 1920, approximately eight thousand people attended the August celebration preceded by a preparatory novena. The novena thus has a dated local devotional development, not a universal origin at this site.",
+              "fr": "L’histoire du sanctuaire explique qu’en 1919 l’Assomption, le 15 août, devint la date principale de son programme, auparavant centré sur l’anniversaire d’octobre du couronnement de la statue. En 1920, quelque huit mille personnes participèrent à la célébration d’août, précédée d’une neuvaine préparatoire. Cette neuvaine possède donc une histoire dévotionnelle locale datée, sans être née comme pratique universelle en ce lieu.",
+              "source_url": "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/",
+              "source_id": "PIL-NDC-ASSUMPTION"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Praying at the existing sanctuary",
+          "title_fr": "Prier dans le sanctuaire actuel",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Notre-Dame-du-Cap to pray at its established sanctuary and take part in a tradition associated especially with the August Marian celebrations. The current rectorate publishes separate contact and visitor information for access, group programmes and services. Specific Mass hours and ceremonies in a future year require current confirmation rather than being deduced from the historical novena.",
+              "fr": "Les pèlerins viennent prier au sanctuaire établi de Notre-Dame-du-Cap et prendre part à une tradition particulièrement liée aux fêtes mariales d’août. Le rectorat publie séparément des renseignements pour les visites, les groupes et les offices. Les horaires et cérémonies d’une année future doivent être vérifiés dans le programme actuel, sans être déduits de la neuvaine historique.",
+              "source_url": "https://www.sanctuaire-ndc.ca/nous-joindre/",
+              "source_id": "SHR-NDC-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:notre-dame-du-cap-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.sanctuaire-ndc.ca/nous-joindre/",
+        "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-NOTREDAMECAP-NOVENA-20261111"
+      ]
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "place_name": "Martyrs' Shrine",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:martyrs-midland",
+      "draft_order": 64,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Jesuit pilgrimage shrine of the Canadian Martyrs at Midland.",
+      "subtitle_fr": "Le sanctuaire jésuite des martyrs canadiens à Midland.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Remembering the Canadian Martyrs",
+          "title_fr": "Faire mémoire des martyrs canadiens",
+          "paragraphs": [
+            {
+              "en": "Martyrs’ Shrine in Midland, Ontario, commemorates eight Catholic missionaries and companions connected with the seventeenth-century Jesuit mission among the Wendat. The shrine's own history distinguishes their lives and places of death from the later pilgrimage church, first established beside the historic Sainte-Marie mission site in 1926. The eight were canonised in 1930.",
+              "fr": "Le sanctuaire des Martyrs de Midland, en Ontario, commémore huit missionnaires catholiques et compagnons liés à la mission jésuite du XVIIe siècle auprès des Wendats. L’histoire du sanctuaire distingue leur vie et les lieux de leur mort de l’église de pèlerinage établie près du site historique de Sainte-Marie en 1926. Les huit furent canonisés en 1930.",
+              "source_url": "https://martyrs-shrine.com/our-ministry/",
+              "source_id": "SHR-MARTYRS-MINISTRY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Jesuit pastoral care",
+          "title_fr": "Le ministère pastoral des Jésuites",
+          "paragraphs": [
+            {
+              "en": "At Midland, the nearby Sainte-Marie among the Hurons preserves the site of a seventeenth-century Jesuit mission through a modern reconstruction. Huronia Historical Parks records that the reconstructed heritage attraction opened to the public in 1967. This historical site and the Martyrs’ Shrine are linked by their past but serve distinct purposes today.",
+              "fr": "À Midland, le site voisin de Sainte-Marie-au-pays-des-Hurons conserve, par une reconstruction moderne, l’emplacement d’une mission jésuite du XVIIe siècle. Huronia Historical Parks précise que ce lieu patrimonial reconstitué fut ouvert au public en 1967. Il est historiquement lié au sanctuaire des Martyrs, mais les deux lieux remplissent aujourd’hui des fonctions différentes.",
+              "source_url": "https://hhp.on.ca/digital-tour-of-sainte-marie/",
+              "source_id": "AO-ED-MIDLAND-STE-MARIE-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A destination for pilgrim groups",
+          "title_fr": "Une destination pour les groupes de pèlerins",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Midland gives its address on Highway 12 and publishes seasonal information for the shrine church, grounds and pilgrim facilities. These notices are the appropriate basis for planning a present visit. The historical network of Jesuit missions extends beyond the current shrine precinct; a visit to Midland does not by itself identify the exact site of each martyrdom or every early mission station.",
+              "fr": "Le sanctuaire de Midland indique son adresse sur la route 12 et publie des renseignements saisonniers sur l’église, les terrains et les installations destinées aux pèlerins. Ces annonces servent à préparer une visite actuelle. Le réseau historique des missions jésuites dépasse l’enceinte du sanctuaire ; une visite à Midland ne situe pas à elle seule le lieu précis de chaque martyre ou de chaque ancienne station missionnaire.",
+              "source_url": "https://martyrs-shrine.com/contact-us/",
+              "source_id": "SHR-MARTYRS-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:martyrs-midland-destination",
+        "pilgrimage:CA:canadian-martyrs-traditional"
+      ],
+      "saint_name_associations": [
+        "Saint Jean de Brébeuf",
+        "Saint Isaac Jogues"
+      ],
+      "bibliography_urls": [
+        "https://martyrs-shrine.com/our-ministry/",
+        "https://martyrs-shrine.com/contact-us/",
+        "https://hhp.on.ca/digital-tour-of-sainte-marie/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MIDLAND-STE-MARIE-20261111"
+      ]
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "place_name": "St Winefride's Shrine & Well",
+      "country_code": "GB",
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "draft_order": 65,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Saint Winefride’s Welsh holy well and continuing Catholic pilgrimage.",
+      "subtitle_fr": "La fontaine sacrée galloise de sainte Winefride et son pèlerinage catholique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A shrine centred on a holy well",
+          "title_fr": "Un sanctuaire centré sur une fontaine sacrée",
+          "paragraphs": [
+            {
+              "en": "The National Catholic Shrine of Saint Winefride in Holywell, Wales, is centred on the well long associated with the saint. The shrine welcomes pilgrims within the Diocese of Wrexham and presents the saint’s story explicitly as a received legend, while continuing to maintain the physical well and devotional spaces. The traditional miracle narrative and the present sanctuary belong to different kinds of historical evidence.",
+              "fr": "Le sanctuaire national catholique de sainte Winefride à Holywell, au pays de Galles, a pour centre le puits anciennement associé à la sainte. Il accueille les pèlerins dans le diocèse de Wrexham et présente le récit de la sainte comme une légende reçue, tout en entretenant le puits et les espaces de dévotion. Le récit miraculeux traditionnel et le sanctuaire actuel relèvent de types de témoignages historiques différents.",
+              "source_url": "https://www.stwinefridesshrine.org/",
+              "source_id": "AO-ED-HOLYWELL-WELCOME-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Pilgrimage and veneration",
+          "title_fr": "Pèlerinage et vénération",
+          "paragraphs": [
+            {
+              "en": "The shrine and well remain under the responsibility of the Roman Catholic Diocese of Wrexham. Its administrators publish information for organised pilgrimages, group bookings, access and the veneration of Saint Winefride’s relic. Seasonal visiting hours and individual religious celebrations must be checked with the shrine itself; the well is a distinct physical devotional focus, not merely an epithet for a parish church.",
+              "fr": "Le sanctuaire et le puits restent sous la responsabilité du diocèse catholique de Wrexham. Ses responsables communiquent des renseignements sur les pèlerinages organisés, les groupes, l’accès et la vénération de la relique de sainte Winefride. Les heures d’ouverture saisonnières et les célébrations doivent être vérifiées auprès du sanctuaire ; le puits est un lieu concret de dévotion, non un simple nom donné à une église paroissiale.",
+              "source_url": "https://www.stwinefridesshrine.org/blank-1",
+              "source_id": "AO-ED-HOLYWELL-VISIT-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A separate traditional pilgrimage",
+          "title_fr": "Un pèlerinage traditionnel distinct",
+          "paragraphs": [
+            {
+              "en": "The Latin Mass Society describes an annual pilgrimage to Holywell in association with the Institute of Christ the King Sovereign Priest. Its traditional programme includes High Mass at Saint Winefride’s parish church, followed by a Rosary procession to the well and veneration of the saint’s relic. This describes an independently organised pilgrimage, not the permanent Mass timetable of the Catholic shrine.",
+              "fr": "La Latin Mass Society décrit un pèlerinage annuel à Holywell en association avec l’Institut du Christ Roi Souverain Prêtre. Son programme traditionnel comprend une grand-messe dans l’église paroissiale Sainte-Winefride, suivie d’une procession du rosaire vers le puits et de la vénération de la relique de la sainte. Il s’agit d’un pèlerinage organisé séparément, non de l’horaire permanent des messes du sanctuaire catholique.",
+              "source_url": "https://lms.org.uk/pilgrimages",
+              "source_id": "PIL-HOLYWELL-LMS"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GB:holywell-destination",
+        "pilgrimage:GB:holywell-lms"
+      ],
+      "saint_name_associations": [
+        "Saint Winefride",
+        "Saint Beuno"
+      ],
+      "bibliography_urls": [
+        "https://www.stwinefridesshrine.org/blank-2",
+        "https://www.stwinefridesshrine.org/pilgrimages",
+        "https://lms.org.uk/pilgrimages",
+        "https://www.stwinefridesshrine.org/",
+        "https://www.stwinefridesshrine.org/blank-1"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-HOLYWELL-WELCOME-20261111",
+        "AO-ED-HOLYWELL-VISIT-20261111"
+      ]
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "place_name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "country_code": "AU",
+      "shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "draft_order": 66,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An Australian Pauline Fathers’ Marian shrine centred on a Jasna Góra icon replica.",
+      "subtitle_fr": "Un sanctuaire marial australien des Pères pauliniens centré sur une copie de l’icône de Jasna Góra.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian pilgrimage in New South Wales",
+          "title_fr": "Un pèlerinage marial en Nouvelle-Galles du Sud",
+          "paragraphs": [
+            {
+              "en": "Penrose Park developed as a Pauline Marian shrine after Father Augustine Lazur arrived in Australia in 1981 and acquired the property in 1984 with the help of pilgrims and benefactors. The shrine's history records the dedication of its new church on 24 May 1997 by Bishop Philip Wilson of Wollongong. These dates describe the Australian foundation, not the older Polish origins of devotion to Our Lady of Częstochowa.",
+              "fr": "Penrose Park devint un sanctuaire marial paulinien après l’arrivée du père Augustine Lazur en Australie en 1981 et l’acquisition du terrain en 1984 avec l’aide des pèlerins et bienfaiteurs. L’histoire du sanctuaire situe la dédicace de sa nouvelle église au 24 mai 1997, par Mgr Philip Wilson de Wollongong. Ces dates concernent la fondation australienne et non les origines polonaises plus anciennes de la dévotion à Notre-Dame de Częstochowa.",
+              "source_url": "https://penrosepark.com.au/shrine/",
+              "source_id": "SHR-PENROSE-IDENTITY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The devotion of the Pauline community",
+          "title_fr": "La dévotion de la communauté paulinienne",
+          "paragraphs": [
+            {
+              "en": "The shrine's International Chapels were developed by different cultural and national communities, each commemorating saints or devotional traditions connected with their heritage. They stand within the same Pauline-owned Penrose Park precinct, although pilgrims may visit individual chapels as distinct stops. The central Marian image is associated with Jasna Góra in Poland, but the Australian shrine is physically and institutionally separate.",
+              "fr": "Les chapelles internationales du sanctuaire furent aménagées par diverses communautés culturelles et nationales, en mémoire de saints ou de traditions propres à leur héritage. Elles se trouvent dans la même enceinte paulinienne de Penrose Park, même si le pèlerin peut les visiter comme étapes distinctes. L’image mariale centrale renvoie à Jasna Góra en Pologne, mais le sanctuaire australien en est matériellement et institutionnellement distinct.",
+              "source_url": "https://penrosepark.com.au/international-chapels/",
+              "source_id": "AO-ED-PENROSE-INTERNATIONAL-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Finding the actual shrine",
+          "title_fr": "Se rendre au sanctuaire réel",
+          "paragraphs": [
+            {
+              "en": "The shrine gives its actual visitor address as 120 Hanging Rock Road, Sutton Forest, New South Wales. Its official directions expressly warn that the postal association with Berrima and the name Penrose do not identify the correct village exit or location. For a visit, the shrine's own driving directions and current programme take precedence over the postal locality name.",
+              "fr": "Le sanctuaire indique comme adresse de visite le 120 Hanging Rock Road, à Sutton Forest en Nouvelle-Galles du Sud. Ses instructions officielles préviennent que l’adresse postale associée à Berrima et le nom de Penrose ne désignent ni la bonne sortie ni le village où se trouve réellement le site. Pour s’y rendre, les pèlerins doivent suivre les indications routières et le programme du sanctuaire plutôt que le seul nom de localité figurant dans l’adresse postale.",
+              "source_url": "https://penrosepark.com.au/findus/",
+              "source_id": "AO-ED-PENROSE-DIRECTIONS-20261111"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AU:penrose-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://penrosepark.com.au/shrine/",
+        "https://penrosepark.com.au/findus/",
+        "https://penrosepark.com.au/international-chapels/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_SOURCE_RECHECK_20261111_RESEARCH_ONLY_NOT_RELEASED",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-PENROSE-INTERNATIONAL-20261111",
+        "AO-ED-PENROSE-DIRECTIONS-20261111"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES107_116_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "published": 0
+  },
+  "policy": [
+    "Existing approved and earlier draft material are never rewritten; only existing Shrine and Place IDs.",
+    "Historical and ceremonial claims depend on canonical source summaries; source URLs need checking against the precise new wording by the second editor.",
+    "All media, relics, extraordinary events and current programmes are subject to independent existing publication gates."
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "place_name": "Cathédrale Notre-Dame de l’Annonciation du Puy-en-Velay",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:cathedrale-notre-dame-le-puy",
+      "draft_order": 107,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian cathedral at Le Puy and the beginning of a major route to Santiago.",
+      "subtitle_fr": "La cathédrale mariale du Puy et le départ d’une grande voie vers Saint-Jacques.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "An early Marian pilgrimage on the hill",
+          "title_fr": "Un ancien pèlerinage marial sur la hauteur",
+          "paragraphs": [
+            {
+              "en": "The Cathedral of Our Lady of the Annunciation at Le Puy-en-Velay stands in one of France’s longstanding Marian pilgrimage landscapes. The origins of its sanctuary are accompanied by an early healing legend, which forms part of the site’s inherited devotional narrative. The cathedral’s continuing historical identity does not depend on presenting that legend as a separately verified medical or supernatural event.",
+              "fr": "La cathédrale Notre-Dame de l’Annonciation du Puy-en-Velay s’inscrit dans l’un des anciens paysages français de pèlerinage marial. Les origines de son sanctuaire sont accompagnées d’une légende de guérison, qui fait partie du récit dévotionnel transmis par le lieu. L’identité historique durable de la cathédrale ne suppose pas de présenter cette légende comme un événement médical ou surnaturel vérifié indépendamment.",
+              "source_id": "SHR-PIL-BULK-FR-cathedrale-notre-dame-le-puy",
+              "source_url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The cathedral and its Marian dedication",
+          "title_fr": "La cathédrale et sa dédicace mariale",
+          "paragraphs": [
+            {
+              "en": "The building’s dedication to the Annunciation links local prayer with the Christian commemoration of Mary’s consent to the Incarnation. At Le Puy, this is expressed in a specific cathedral visited by generations of pilgrims, not simply in an image or a diocesan title. A historical account should distinguish the older sacred tradition from the successive architectural phases of the church.",
+              "fr": "La dédicace à l’Annonciation relie la prière locale à la mémoire chrétienne du consentement de Marie à l’Incarnation. Au Puy, elle s’exprime dans une cathédrale précise, visitée par des générations de pèlerins, et non dans une simple image ou un titre diocésain. Le récit historique doit distinguer l’ancienne tradition sacrée des phases architecturales successives de l’édifice.",
+              "source_id": "SHR-PIL-BULK-FR-cathedrale-notre-dame-le-puy",
+              "source_url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Departure toward Compostela",
+          "title_fr": "Le départ vers Compostelle",
+          "paragraphs": [
+            {
+              "en": "Le Puy also became a major starting point for pilgrims travelling toward Santiago de Compostela. This gives its cathedral a double place in sacred geography: a Marian destination in its own right and a starting point for a much longer pilgrimage. The routes followed by modern pilgrims reflect this historical connection, although their precise paths have changed over time.",
+              "fr": "Le Puy est aussi devenu un grand point de départ pour les pèlerins se rendant à Saint-Jacques-de-Compostelle. Sa cathédrale tient ainsi une double place dans la géographie sacrée : destination mariale en elle-même et point de départ d’un pèlerinage beaucoup plus long. Les parcours des pèlerins actuels prolongent ce lien historique, bien que leurs tracés précis aient changé au fil du temps.",
+              "source_id": "SHR-PIL-BULK-FR-cathedrale-notre-dame-le-puy",
+              "source_url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:cathedrale-notre-dame-le-puy:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "place_name": "Basilique Notre-Dame des Victoires, Paris",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-victoires-paris",
+      "draft_order": 108,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Paris Marian basilica shaped by prayer to the Immaculate Heart of Mary.",
+      "subtitle_fr": "Une basilique mariale parisienne marquée par la prière au Cœur immaculé de Marie.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A royal foundation and a Marian sanctuary",
+          "title_fr": "Une fondation royale et un sanctuaire marial",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame des Victoires in Paris has a historical foundation associated with the French monarchy, but its subsequent significance is especially tied to Marian devotion. The sanctuary’s own historical account connects the church with sustained prayer to Mary. The phases of its history should be distinguished: a royal-era foundation is not itself the origin date of every later archconfraternity or pilgrimage practice.",
+              "fr": "Notre-Dame des Victoires à Paris possède une fondation historique liée à la monarchie française, mais son importance ultérieure est surtout marquée par la dévotion mariale. Le récit historique du sanctuaire relie l’église à une prière durable adressée à la Vierge. Il convient de distinguer les étapes de cette histoire : une fondation de l’époque royale n’est pas à elle seule la date d’origine de toutes les confréries ou pratiques pèlerines postérieures.",
+              "source_id": "R63-NDV-HISTORY",
+              "source_url": "https://www.notredamedesvictoires.com/histoire/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Immaculate Heart and shared prayer",
+          "title_fr": "Le Cœur immaculé et la prière commune",
+          "paragraphs": [
+            {
+              "en": "The basilica became closely associated with devotion to the Immaculate Heart of Mary and an archconfraternity of prayer. These particular spiritual associations help explain why an urban church could become a destination of pilgrimage beyond its immediate parish.",
+              "fr": "La basilique s’est étroitement liée à la dévotion au Cœur immaculé de Marie et à une archiconfrérie de prière. Ces liens spirituels précis expliquent comment une église urbaine a pu devenir un lieu de pèlerinage au-delà de sa seule paroisse.",
+              "source_id": "R63-NDV-HISTORY",
+              "source_url": "https://www.notredamedesvictoires.com/histoire/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A pilgrimage in the heart of Paris",
+          "title_fr": "Un pèlerinage au cœur de Paris",
+          "paragraphs": [
+            {
+              "en": "The sanctuary maintains visitor and pilgrimage information for those wishing to pray at Notre-Dame des Victoires. Its location within Paris does not diminish its separate sacred identity among the capital’s many churches. A visitor can seek the basilica for Marian prayer while consulting its own current arrangements for groups and liturgical celebrations, rather than borrowing times from another Parisian shrine.",
+              "fr": "Le sanctuaire propose des renseignements pour les visiteurs et les pèlerins qui souhaitent prier à Notre-Dame des Victoires. Sa situation dans Paris n’efface pas son identité sacrée distincte parmi les nombreuses églises de la capitale. On peut venir à la basilique pour la prière mariale tout en consultant ses dispositions actuelles pour les groupes et les célébrations, sans emprunter les horaires d’un autre sanctuaire parisien.",
+              "source_id": "R63-NDV-PILGRIMS",
+              "source_url": "https://www.notredamedesvictoires.com/venir-en-pelerinage/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-notre-dame-victoires-paris:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.notredamedesvictoires.com/histoire/",
+        "https://www.notredamedesvictoires.com/venir-en-pelerinage/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "place_name": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "draft_order": 109,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The parish basilica of Our Lady of Perpetual Help in eastern Paris.",
+      "subtitle_fr": "La basilique paroissiale Notre-Dame du Perpétuel-Secours dans l’est de Paris.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The story of a Paris basilica",
+          "title_fr": "L’histoire d’une basilique parisienne",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Perpetual Help in Paris’s eleventh arrondissement has a local church history recorded by its own parish. That history belongs to a particular Catholic community and building, even though the Marian title is familiar worldwide. The basilica should therefore be described through its own development rather than confused with other Perpetual Help sanctuaries or the Roman location associated with the original icon.",
+              "fr": "La basilique Notre-Dame du Perpétuel-Secours, dans le onzième arrondissement de Paris, possède une histoire d’église locale rapportée par sa paroisse. Cette histoire appartient à une communauté catholique et à un édifice particuliers, bien que le titre marial soit connu dans le monde entier. Il faut donc présenter l’évolution propre de la basilique sans la confondre avec d’autres sanctuaires du Perpétuel-Secours ni avec le lieu romain associé à l’icône originale.",
+              "source_id": "R63-NDPS-HISTORY",
+              "source_url": "https://basilique-ndps.fr/la-basilique/lhistorique-de-la-basilique/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A Marian image in parish life",
+          "title_fr": "Une image mariale dans la vie paroissiale",
+          "paragraphs": [
+            {
+              "en": "The basilica’s dedication centres on Our Lady of Perpetual Help, a devotion conveyed through a widely venerated iconographic tradition. In this Paris church, that dedication is lived through parish worship rather than only through private veneration of an image. A description should keep the distinction between the global devotion and the particular building in which local believers gather.",
+              "fr": "La dédicace de la basilique est centrée sur Notre-Dame du Perpétuel-Secours, dévotion transmise par une tradition iconographique largement vénérée. Dans cette église parisienne, cette dédicace se vit dans le culte paroissial et non seulement dans la vénération privée d’une image. Il importe de distinguer la dévotion mondiale de l’édifice particulier où se rassemble la communauté locale.",
+              "source_id": "SHR-PIL-BULK-FR-basilique-notre-dame-perpetuel-secours-paris",
+              "source_url": "https://basilique-ndps.fr/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A functioning sacred place",
+          "title_fr": "Un lieu sacré toujours vivant",
+          "paragraphs": [
+            {
+              "en": "The parish’s account of the basilica’s history gives visitors a basis for understanding the church as both a heritage building and an active place of Catholic worship. Its formal basilica identity should be preserved alongside its parish role. Current access, confession and Mass times are operational information, not details that can be reconstructed safely from the historical account alone.",
+              "fr": "L’histoire de la basilique publiée par la paroisse aide les visiteurs à comprendre l’église comme édifice patrimonial et lieu vivant de culte catholique. Son identité officielle de basilique doit être conservée en même temps que sa fonction paroissiale. Les accès, confessions et horaires des messes relèvent des informations pratiques actuelles et ne peuvent être reconstitués de manière fiable à partir du seul récit historique.",
+              "source_id": "R63-NDPS-HISTORY",
+              "source_url": "https://basilique-ndps.fr/la-basilique/lhistorique-de-la-basilique/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-notre-dame-perpetuel-secours-paris:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://basilique-ndps.fr/la-basilique/lhistorique-de-la-basilique/",
+        "https://basilique-ndps.fr/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "place_name": "Sanctuaire des Grottes de Saint-Antoine, Brive",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+      "draft_order": 110,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Franciscan grotto sanctuary at Brive associated with Saint Anthony of Padua.",
+      "subtitle_fr": "Le sanctuaire franciscain des grottes de Brive lié à saint Antoine de Padoue.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The grottos of Saint Anthony",
+          "title_fr": "Les grottes de saint Antoine",
+          "paragraphs": [
+            {
+              "en": "The Grottes de Saint-Antoine at Brive preserve a Franciscan pilgrimage place connected with Saint Anthony of Padua. The grotto setting is integral to its identity: pilgrims come to a place of prayer whose landscape is part of its memory.",
+              "fr": "Les Grottes de Saint-Antoine de Brive conservent un lieu de pèlerinage franciscain lié à saint Antoine de Padoue. Le cadre des grottes fait partie intégrante de son identité : les pèlerins viennent prier dans un paysage qui appartient à la mémoire du lieu.",
+              "source_id": "SHR-PIL-BULK-FR-grottes-saint-antoine-brive",
+              "source_url": "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Franciscan religious memory",
+          "title_fr": "Une mémoire religieuse franciscaine",
+          "paragraphs": [
+            {
+              "en": "The sanctuary places Anthony’s devotion within the Franciscan religious tradition and the particular history of Brive. Its appeal is therefore more specific than simply venerating a universally known saint. The relationship between the saint, the caves and the present sanctuary belongs to Brive's inherited religious memory; the precise medieval paths attributed to Anthony remain uncertain.",
+              "fr": "Le sanctuaire situe la dévotion à saint Antoine dans la tradition religieuse franciscaine et dans l’histoire particulière de Brive. Son attrait dépasse ainsi la simple vénération d’un saint connu dans le monde entier. Le lien entre le saint, les grottes et le sanctuaire actuel relève de la mémoire religieuse transmise à Brive ; les itinéraires médiévaux précis attribués à Antoine demeurent incertains.",
+              "source_id": "SHR-PIL-BULK-FR-grottes-saint-antoine-brive",
+              "source_url": "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer in a distinctive sanctuary",
+          "title_fr": "Prier dans un sanctuaire singulier",
+          "paragraphs": [
+            {
+              "en": "The caves make Brive’s pilgrimage experience different from that of an urban basilica or cathedral. Visitors approach the place for recollection and prayer within a devotional setting shaped by the grotto. The present Franciscan sanctuary should supply access and group information; no description of the caves alone establishes that every passage or chapel is accessible without restriction.",
+              "fr": "Les grottes donnent au pèlerinage de Brive une expérience différente de celle d’une basilique ou d’une cathédrale urbaine. Les visiteurs s’y rendent pour le recueillement et la prière dans un cadre dévotionnel façonné par la grotte. Les responsables du sanctuaire franciscain doivent fournir les renseignements d’accès et de groupe ; la seule description des grottes ne garantit pas que tous les passages ou chapelles soient librement accessibles.",
+              "source_id": "SHR-PIL-BULK-FR-grottes-saint-antoine-brive",
+              "source_url": "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:grottes-saint-antoine-brive:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Anthony of Padua"
+      ],
+      "bibliography_urls": [
+        "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "place_name": "Basilique Saint-Martin de Tours",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+      "draft_order": 111,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The basilica and tomb of Saint Martin of Tours, a major centre of pilgrimage in Gaul.",
+      "subtitle_fr": "La basilique et le tombeau de saint Martin de Tours, grand centre de pèlerinage de Gaule.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The tomb of a bishop of Tours",
+          "title_fr": "Le tombeau d’un évêque de Tours",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint Martin in Tours is associated with the traditional burial place of Martin, the fourth-century bishop whose cult became influential across Gaul. Pilgrimage to his tomb linked a specific city to a saint honoured far beyond it. The basilica’s importance should be explained through the tomb and local veneration, not merely by repeating the general biography of Martin.",
+              "fr": "La basilique Saint-Martin de Tours est associée au lieu traditionnel de sépulture de Martin, évêque du IVe siècle dont le culte s’étendit largement en Gaule. Le pèlerinage à son tombeau relia une ville précise à un saint honoré bien au-delà. Il faut expliquer l’importance de la basilique par le tombeau et la vénération locale, plutôt que répéter uniquement la biographie générale de Martin.",
+              "source_id": "SHR-PIL-BULK-FR-basilique-saint-martin-tours",
+              "source_url": "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A living cult through changing buildings",
+          "title_fr": "Un culte vivant au fil des bâtiments",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage tradition of Saint Martin at Tours is older than the present basilica building. This distinction matters in a city where successive phases of sacred architecture bear witness to changing periods while preserving the memory of a particular grave. The visitor should understand continuity of the devotional destination without being told that every surviving wall dates to Martin’s lifetime.",
+              "fr": "La tradition de pèlerinage de saint Martin à Tours est plus ancienne que l’édifice actuel de la basilique. Cette distinction compte dans une ville où plusieurs phases d’architecture sacrée témoignent d’époques différentes tout en conservant la mémoire d’un tombeau particulier. Le visiteur doit comprendre la continuité de la destination dévotionnelle sans croire que tous les murs conservés remontent à la vie de Martin.",
+              "source_id": "SHR-PIL-BULK-FR-basilique-saint-martin-tours",
+              "source_url": "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A historic French pilgrimage centre",
+          "title_fr": "Un centre historique du pèlerinage français",
+          "paragraphs": [
+            {
+              "en": "The basilica remains a named Catholic destination associated with the veneration of Saint Martin. Its history joins the commemoration of an early bishop with the religious geography of Tours, making it a meaningful stop independently of other sites dedicated to him.",
+              "fr": "La basilique demeure une destination catholique nommée, liée à la vénération de saint Martin. Son histoire réunit la mémoire d’un évêque ancien et la géographie religieuse de Tours, ce qui en fait une étape significative indépendamment d’autres lieux qui lui sont dédiés.",
+              "source_id": "SHR-PIL-BULK-FR-basilique-saint-martin-tours",
+              "source_url": "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-saint-martin-tours:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Martin of Tours"
+      ],
+      "bibliography_urls": [
+        "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "place_name": "Sanctuaire Notre-Dame de Grâces, Cotignac",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:notre-dame-graces-cotignac",
+      "draft_order": 112,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian sanctuary of Cotignac and its separate neighbouring Saint Joseph tradition.",
+      "subtitle_fr": "Le sanctuaire marial de Cotignac et la tradition distincte de saint Joseph dans les environs.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Graces at Cotignac",
+          "title_fr": "Notre-Dame de Grâces à Cotignac",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Graces at Cotignac is rooted in a local tradition of reported Marian apparitions. The Marian devotion is attached to an identifiable sanctuary in Provence, rather than to every chapel or religious landmark around the village.",
+              "fr": "Le sanctuaire Notre-Dame de Grâces de Cotignac s’enracine dans une tradition locale d’apparitions mariales rapportées. La dévotion est rattachée à un sanctuaire identifiable de Provence, et non à toutes les chapelles ou curiosités religieuses des environs du village.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-graces-cotignac",
+              "source_url": "https://mairiecotignac.fr/decouvrir-le-village/patrimoine/patrimoine-sanctuaires/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two different sacred places",
+          "title_fr": "Deux lieux sacrés distincts",
+          "paragraphs": [
+            {
+              "en": "The Cotignac landscape also includes a Saint Joseph sanctuary associated with the Bessillon tradition. Despite their shared Cotignac setting, the Bessillon shrine and the Marian Sanctuary of Our Lady of Graces are separate destinations with different dedications and physical sites. A pilgrim may visit both in the same region.",
+              "fr": "Le paysage religieux de Cotignac comprend également un sanctuaire de saint Joseph associé à la tradition du Bessillon. Malgré leur implantation dans la région de Cotignac, le sanctuaire du Bessillon et le sanctuaire marial Notre-Dame de Grâces sont deux destinations distinctes, avec des dédicaces et des lieux physiques différents. Un pèlerin peut visiter les deux.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-graces-cotignac",
+              "source_url": "https://mairiecotignac.fr/decouvrir-le-village/patrimoine/patrimoine-sanctuaires/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage among the shrines",
+          "title_fr": "Pèlerinage entre les sanctuaires",
+          "paragraphs": [
+            {
+              "en": "The local heritage description treats Cotignac’s sanctuaries as part of a religious itinerary, but their relationship should be explained without drawing an unsupported pedestrian route or assigning identical visiting conditions to both. Marian prayer at Notre-Dame de Grâces has its own history and setting. Any organised pilgrimage programme or group arrangements belong to the current respective custodians.",
+              "fr": "La présentation patrimoniale locale relie les sanctuaires de Cotignac dans un ensemble religieux, mais il faut expliquer ce lien sans tracer un parcours pédestre non étayé ni attribuer les mêmes conditions de visite aux deux lieux. La prière mariale à Notre-Dame de Grâces possède son histoire et son cadre propres. Les programmes de pèlerinage et l’accueil des groupes relèvent des responsables actuels de chaque sanctuaire.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-graces-cotignac",
+              "source_url": "https://mairiecotignac.fr/decouvrir-le-village/patrimoine/patrimoine-sanctuaires/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-graces-cotignac:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mairiecotignac.fr/decouvrir-le-village/patrimoine/patrimoine-sanctuaires/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "place_name": "Sanctuaire Notre-Dame de La Salette",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:notre-dame-la-salette-fallavaux",
+      "draft_order": 113,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Alpine La Salette sanctuary and the 1846 testimony of Maximin and Mélanie.",
+      "subtitle_fr": "Le sanctuaire alpin de La Salette et le témoignage de Maximin et Mélanie en 1846.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The mountain events of 1846",
+          "title_fr": "Les événements montagnards de 1846",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of La Salette in the French Alps commemorates the Marian apparition reported on 19 September 1846 by the children Maximin and Mélanie. The precise Alpine setting is central to the story remembered by the shrine. The account should identify the children as witnesses to reported events and keep that testimony distinct from the present buildings and the history of the religious congregation serving pilgrims.",
+              "fr": "Le sanctuaire Notre-Dame de La Salette, dans les Alpes françaises, commémore l’apparition mariale rapportée le 19 septembre 1846 par les enfants Maximin et Mélanie. Le cadre alpin précis est central dans l’histoire conservée par le sanctuaire. Il convient d’identifier les enfants comme témoins des événements rapportés et de distinguer leur témoignage des bâtiments actuels et de l’histoire de la congrégation religieuse qui accueille les pèlerins.",
+              "source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+              "source_url": "https://www.lasalette.cef.fr/lhistoire/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Conversion and reconciliation",
+          "title_fr": "Conversion et réconciliation",
+          "paragraphs": [
+            {
+              "en": "The Marian tradition of La Salette is associated with an appeal to conversion and reconciliation. This pastoral emphasis helps explain the spiritual mission of the sanctuary rather than reducing its importance to the extraordinary character of an apparition account. The devotion's teachings and the Church's reception of La Salette belong to its documented religious history; they do not independently substantiate every detail of the reported experiences.",
+              "fr": "La tradition mariale de La Salette est associée à un appel à la conversion et à la réconciliation. Cet accent pastoral explique la mission spirituelle du sanctuaire, au-delà du caractère extraordinaire du récit d’apparition. Les enseignements de la dévotion et l'accueil réservé à La Salette par l'Église appartiennent à son histoire religieuse documentée, sans établir indépendamment chaque détail des expériences rapportées.",
+              "source_id": "AO-ED-CITATION-113-HISTORY-20261112",
+              "source_url": "https://www.lasalette.cef.fr/lhistoire/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to a high mountain sanctuary",
+          "title_fr": "Pèlerinage à un sanctuaire de haute montagne",
+          "paragraphs": [
+            {
+              "en": "Pilgrims travel to a named mountain sanctuary rather than merely to a town associated with the story. Its geographic situation shapes the experience of prayer and practical access, which can be affected by season and conditions.",
+              "fr": "Les pèlerins se rendent dans un sanctuaire de montagne nommé, et non simplement dans une commune liée au récit. Sa situation géographique façonne l’expérience de prière et les conditions d’accès, susceptibles de varier selon la saison et les circonstances.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
+              "source_url": "https://lasalette.cef.fr/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-la-salette-fallavaux:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://lasalette.cef.fr/",
+        "https://www.lasalette.cef.fr/lhistoire/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-113-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-du-laus",
+      "place_name": "Sanctuaire Notre-Dame du Laus",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:notre-dame-du-laus",
+      "draft_order": 114,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Alpine sanctuary associated with Benoîte Rencurel and the call to reconciliation.",
+      "subtitle_fr": "Le sanctuaire alpin associé à Benoîte Rencurel et à l’appel à la réconciliation.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Benoîte Rencurel and the beginnings",
+          "title_fr": "Benoîte Rencurel et les origines",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame du Laus, in the French Alps, is associated with Marian experiences reported by Benoîte Rencurel beginning in 1664. The sanctuary’s historical presentation treats these reports as part of a lengthy local religious story rather than a single event that can stand for the whole site.",
+              "fr": "Notre-Dame du Laus, dans les Alpes françaises, est associé à des expériences mariales rapportées par Benoîte Rencurel à partir de 1664. La présentation historique du sanctuaire inscrit ces récits dans une longue histoire religieuse locale plutôt que dans un événement unique censé résumer tout le lieu.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-du-laus",
+              "source_url": "https://www.sanctuaire-notredamedulaus.com/le-message/histoire"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A sanctuary of reconciliation",
+          "title_fr": "Un sanctuaire de réconciliation",
+          "paragraphs": [
+            {
+              "en": "The spiritual tradition of Laus places particular emphasis on conversion, confession and reconciliation. These practices are a central part of why the Marian site continues to attract pilgrims. Describing that religious purpose gives readers a fuller understanding than an apparition narrative alone, while avoiding unsupported assertions that all pilgrims receive identical spiritual experiences or that reported extraordinary occurrences can be independently reproduced.",
+              "fr": "La tradition spirituelle du Laus met particulièrement l’accent sur la conversion, la confession et la réconciliation. Ces pratiques comptent parmi les raisons centrales pour lesquelles le lieu marial continue d’attirer des pèlerins. Décrire cette finalité religieuse éclaire davantage le lecteur qu’un seul récit d’apparition, sans supposer que tous les pèlerins vivent la même expérience spirituelle ni que les faits extraordinaires rapportés peuvent être reproduits indépendamment.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-du-laus",
+              "source_url": "https://www.sanctuaire-notredamedulaus.com/le-message/histoire"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The named sanctuary and the pilgrim",
+          "title_fr": "Le sanctuaire nommé et le pèlerin",
+          "paragraphs": [
+            {
+              "en": "The present Notre-Dame du Laus is a specific Catholic sanctuary with its own custodians and devotional programme. Its Alpine setting is part of its identity, but the pilgrimage destination is not a vague mountain locality.",
+              "fr": "Le Notre-Dame du Laus actuel est un sanctuaire catholique précis, doté de responsables et d’un programme dévotionnel propres. Son cadre alpin fait partie de son identité, mais la destination du pèlerinage n’est pas une localité montagnarde indéterminée.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-du-laus",
+              "source_url": "https://www.sanctuaire-notredamedulaus.com/le-message/histoire"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-du-laus:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.sanctuaire-notredamedulaus.com/le-message/histoire"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "place_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
+      "country_code": "RW",
+      "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
+      "draft_order": 115,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Rwandan Marian sanctuary of Kibeho and the bishop’s 2001 determination.",
+      "subtitle_fr": "Le sanctuaire marial rwandais de Kibeho et la décision de l’évêque en 2001.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The reported Marian experiences",
+          "title_fr": "Les expériences mariales rapportées",
+          "paragraphs": [
+            {
+              "en": "The Sanctuary of Our Lady of Sorrows at Kibeho is associated with Marian experiences reported in Rwanda. The official Vatican record of the local bishop’s 2001 declaration gives this shrine an unusually important documented ecclesiastical context. These reported events belong to Kibeho's own history, distinct from other African Marian sites and from unrelated later private claims about the locality.",
+              "fr": "Le sanctuaire Notre-Dame des Douleurs de Kibeho est lié à des expériences mariales rapportées au Rwanda. Le document officiel du Vatican sur la déclaration de l’évêque local en 2001 donne au lieu un contexte ecclésiastique particulièrement important et attesté. Ces événements rapportés relèvent de l'histoire propre de Kibeho, distincte des autres lieux mariaux africains et des affirmations privées ultérieures sans lien avec ce dossier.",
+              "source_id": "SHR-PIL-BULK-RW-sanctuaire-kibeho",
+              "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2001/06/29/0382/01118.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Recognition with a defined scope",
+          "title_fr": "Une reconnaissance de portée définie",
+          "paragraphs": [
+            {
+              "en": "The bishop’s 2001 declaration recognised the reported experiences of three visionaries. This is a precise ecclesiastical finding; it does not amount to approval of all alleged visions, messages or persons associated with Kibeho. An explanatory text should say what the Church recognised and preserve the distinction between that finding, historical testimony and the devotional life of the current sanctuary.",
+              "fr": "La déclaration de l’évêque en 2001 a reconnu les expériences rapportées de trois voyantes. Il s’agit d’un constat ecclésiastique précis, qui ne vaut pas approbation de toutes les visions, de tous les messages ni de toutes les personnes associés à Kibeho. Un texte explicatif doit indiquer ce que l’Église a reconnu et maintenir la distinction entre cette décision, les témoignages historiques et la vie dévotionnelle du sanctuaire actuel.",
+              "source_id": "SHR-PIL-BULK-RW-sanctuaire-kibeho",
+              "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2001/06/29/0382/01118.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to Our Lady of Sorrows",
+          "title_fr": "Le pèlerinage à Notre-Dame des Douleurs",
+          "paragraphs": [
+            {
+              "en": "The shrine’s dedication to Our Lady of Sorrows connects the recognised religious history with a continuing place of Catholic prayer. Pilgrims visit an identifiable Rwandan sanctuary, not merely the geographic area in which the events were reported.",
+              "fr": "La dédicace du sanctuaire à Notre-Dame des Douleurs relie l’histoire religieuse reconnue à un lieu de prière catholique toujours vivant. Les pèlerins visitent un sanctuaire rwandais identifiable, et non simplement la région où furent rapportés les événements.",
+              "source_id": "SHR-PIL-BULK-RW-sanctuaire-kibeho",
+              "source_url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2001/06/29/0382/01118.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:RW:sanctuaire-kibeho:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2001/06/29/0382/01118.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "place_name": "Cathédrale Notre-Dame de Paris",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:notre-dame-paris",
+      "draft_order": 116,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The cathedral of Notre-Dame and its living Marian liturgical tradition in Paris.",
+      "subtitle_fr": "La cathédrale Notre-Dame et sa tradition liturgique mariale vivante à Paris.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The cathedral dedicated to Our Lady",
+          "title_fr": "La cathédrale dédiée à Notre-Dame",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame de Paris is the cathedral dedicated to the Virgin Mary at the heart of the French capital. It is a functioning Catholic liturgical church with its own diocesan identity, beyond its status as a celebrated monument of architecture.",
+              "fr": "Notre-Dame de Paris est la cathédrale dédiée à la Vierge Marie au cœur de la capitale française. C’est une église catholique de culte dotée de son identité diocésaine propre, au-delà de sa célébrité architecturale.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-paris",
+              "source_url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Marian feast of the Assumption",
+          "title_fr": "La fête mariale de l’Assomption",
+          "paragraphs": [
+            {
+              "en": "The cathedral’s own liturgical material records the solemn celebration of the Assumption of the Virgin Mary. That observance expresses the relationship between its dedication and continuing religious life through public worship.",
+              "fr": "Les documents liturgiques de la cathédrale mentionnent la célébration solennelle de l’Assomption de la Vierge Marie. Cette observance manifeste le lien entre sa dédicace et une vie religieuse qui se poursuit par le culte public.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-paris",
+              "source_url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A sacred place within a larger city",
+          "title_fr": "Un lieu sacré au sein d’une grande ville",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame de Paris attracts worshippers, pilgrims and visitors interested in architecture and history. It remains a distinct Catholic cathedral with its own liturgical programme, separate from neighbouring Parisian churches and shrines.",
+              "fr": "Notre-Dame de Paris accueille des fidèles, des pèlerins et des visiteurs attirés par son architecture et son histoire. Elle demeure une cathédrale catholique distincte, dotée de son propre programme liturgique, séparée des églises et sanctuaires voisins.",
+              "source_id": "SHR-PIL-BULK-FR-notre-dame-paris",
+              "source_url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-paris:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}

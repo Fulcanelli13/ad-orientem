@@ -1,0 +1,671 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES127_136_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Original canonical source registry reused without new source-page validation; editorial fact/FR review pending.",
+    "Relic authenticity, correct internal site identity and public access must remain qualified.",
+    "No changes to Places, maps, galleries or published reader."
+  ],
+  "guides": [
+    {
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "place_name": "Duomo Sant'Andrea, Amalfi",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:amalfi-sant-andrea",
+      "draft_order": 127,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Amalfi Cathedral and the crypt where Saint Andrew the Apostle is venerated.",
+      "subtitle_fr": "La cathédrale d’Amalfi et la crypte où l’on vénère saint André apôtre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A cathedral dedicated to Andrew",
+          "title_fr": "Une cathédrale dédiée à André",
+          "paragraphs": [
+            {
+              "en": "The Cathedral of Saint Andrew at Amalfi is a major Catholic church dedicated to one of Christ’s apostles. Its identity is closely linked to the tradition that relics of Andrew are kept at this site. That claim gives the cathedral its particular pilgrimage significance and should be attributed as a tradition of custody rather than independent scientific proof of the remains.",
+              "fr": "La cathédrale Saint-André d’Amalfi est une grande église catholique dédiée à l’un des apôtres du Christ. Son identité est étroitement liée à la tradition selon laquelle des reliques d’André y sont conservées. Cette affirmation donne à la cathédrale son importance particulière de pèlerinage et doit être attribuée comme une tradition de garde, non comme une preuve scientifique indépendante des restes.",
+              "source_id": "SHR-IT-amalfi-sant-andrea",
+              "source_url": "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The crypt and the relic devotion",
+          "title_fr": "La crypte et la dévotion aux reliques",
+          "paragraphs": [
+            {
+              "en": "The diocesan museum’s description identifies the crypt as a principal space associated with the veneration of Saint Andrew. The crypt is a specific sacred space within Amalfi Cathedral, distinct from the larger building and from other churches dedicated to Andrew. The history of the relic’s arrival must be distinguished from the physical fact that a crypt is used for devotion today.",
+              "fr": "La présentation du musée diocésain identifie la crypte comme un espace majeur de vénération de saint André. La crypte est un espace sacré particulier à l'intérieur de la cathédrale d'Amalfi, distinct de l'ensemble de l'édifice et des autres églises dédiées à André. L’histoire de l’arrivée des reliques doit être distinguée du fait matériel que la crypte sert aujourd’hui à la dévotion.",
+              "source_id": "SHR-IT-amalfi-sant-andrea",
+              "source_url": "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An apostolic pilgrimage at Amalfi",
+          "title_fr": "Un pèlerinage apostolique à Amalfi",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visit Amalfi not only for the cathedral’s architecture but also to pray at a site traditionally associated with an apostle. Present access to the crypt and religious services must come from the cathedral’s current custodians, not an assumed historical timetable.",
+              "fr": "Les pèlerins viennent à Amalfi non seulement pour l’architecture de la cathédrale, mais aussi pour prier dans un lieu traditionnellement lié à un apôtre. L’accès actuel à la crypte et les offices religieux doivent être confirmés auprès des responsables, sans supposer un horaire historique permanent.",
+              "source_id": "SHR-IT-amalfi-sant-andrea",
+              "source_url": "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:amalfi-sant-andrea:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Andrew the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://museodiocesanoamalfi.it/app/it/la-cripta/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "place_name": "Basilica Concattedrale di San Tommaso, Ortona",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:ortona-san-tommaso",
+      "draft_order": 128,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Ortona basilica and the traditional relics of Saint Thomas the Apostle.",
+      "subtitle_fr": "La basilique d’Ortona et les reliques traditionnellement attribuées à saint Thomas apôtre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Thomas at Ortona",
+          "title_fr": "Saint Thomas à Ortona",
+          "paragraphs": [
+            {
+              "en": "The Basilica and Co-Cathedral of Saint Thomas at Ortona is associated with the reported custody of relics of Thomas the Apostle. Its religious identity is therefore shaped by a specific apostolic devotion, beyond its status as a Catholic church on the Adriatic coast. The reported identity of the relics belongs to historical tradition and is not independently established simply by the church’s name.",
+              "fr": "La basilique et cocathédrale Saint-Thomas d’Ortona est associée à la garde rapportée de reliques de l’apôtre Thomas. Son identité religieuse est ainsi marquée par une dévotion apostolique particulière, au-delà de son statut d’église catholique sur l’Adriatique. L’identité attribuée aux reliques appartient à la tradition historique et n’est pas établie indépendamment par le seul nom de l’édifice.",
+              "source_id": "SHR-IT-ortona-san-tommaso",
+              "source_url": "https://diocesilanciano.it/?p=6295"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The tomb as a devotional focus",
+          "title_fr": "Le tombeau comme foyer de dévotion",
+          "paragraphs": [
+            {
+              "en": "The diocesan source presents the church as a destination for venerating the relic tradition of Saint Thomas. The focus of prayer is connected with a particular tomb or reliquary setting within the church.",
+              "fr": "La source diocésaine présente l’église comme une destination de vénération de la tradition des reliques de saint Thomas. La prière se concentre autour d’un tombeau ou d’un lieu reliquaire particulier dans l’église.",
+              "source_id": "SHR-IT-ortona-san-tommaso",
+              "source_url": "https://diocesilanciano.it/?p=6295"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to a named co-cathedral",
+          "title_fr": "Pèlerinage dans une cocathédrale nommée",
+          "paragraphs": [
+            {
+              "en": "The building is a distinct ecclesiastical destination in Ortona, not a generic memorial to Thomas or a substitute for the sites of his missionary traditions elsewhere. Pilgrims can connect the apostle’s memory with the present church without asserting that the remains have been independently authenticated. Current services and access should be checked with the diocese or local church.",
+              "fr": "L’édifice est une destination ecclésiastique distincte à Ortona, non un mémorial générique de Thomas ni un substitut aux lieux de ses traditions missionnaires ailleurs. Les pèlerins peuvent relier sa mémoire à l’église actuelle sans affirmer une authentification indépendante des restes. Les offices et les conditions d’accès doivent être vérifiés auprès du diocèse ou de l’église locale.",
+              "source_id": "SHR-IT-ortona-san-tommaso",
+              "source_url": "https://diocesilanciano.it/?p=6295"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:ortona-san-tommaso:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Thomas the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://diocesilanciano.it/?p=6295"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "place_name": "Cattedrale di Salerno",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:salerno-duomo",
+      "draft_order": 129,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The cathedral of Salerno and its crypt traditionally associated with Saint Matthew.",
+      "subtitle_fr": "La cathédrale de Salerne et sa crypte traditionnellement associée à saint Matthieu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The cathedral and Matthew",
+          "title_fr": "La cathédrale et Matthieu",
+          "paragraphs": [
+            {
+              "en": "Salerno Cathedral is dedicated to Saint Matthew, apostle and evangelist, and is associated with a tradition of keeping his relics. That association has shaped the cathedral’s religious identity and its attraction for pilgrims. A careful description attributes the identity of the remains to the sanctuary’s tradition rather than presenting it as independently established historical certainty.",
+              "fr": "La cathédrale de Salerne est dédiée à saint Matthieu, apôtre et évangéliste, et est associée à une tradition de conservation de ses reliques. Ce lien a façonné l’identité religieuse de l’édifice et son attrait pour les pèlerins. Une description rigoureuse attribue l’identité des restes à la tradition du sanctuaire, sans la présenter comme une certitude historique établie indépendamment.",
+              "source_id": "SHR-IT-salerno-duomo",
+              "source_url": "https://www.cattedraledisalerno.it/la-cripta.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The crypt beneath the church",
+          "title_fr": "La crypte sous l’église",
+          "paragraphs": [
+            {
+              "en": "The cathedral’s own presentation identifies the crypt as a central space in the veneration of Saint Matthew. It is both an architectural feature and an important devotional location, distinguishable from the cathedral nave and its other chapels.",
+              "fr": "La présentation de la cathédrale identifie la crypte comme un espace central dans la vénération de saint Matthieu. Elle est à la fois un élément architectural et un lieu dévotionnel important, distinct de la nef et des autres chapelles.",
+              "source_id": "SHR-IT-salerno-duomo",
+              "source_url": "https://www.cattedraledisalerno.it/la-cripta.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer in Salerno",
+          "title_fr": "Prière à Salerne",
+          "paragraphs": [
+            {
+              "en": "A pilgrimage to Salerno’s cathedral joins remembrance of the apostle with worship in an active Catholic church. The traditional tomb may be an important focus, but it does not determine every current ceremony or guarantee access to every section of the crypt. Visitors should consult the cathedral’s own arrangements for religious services and entry.",
+              "fr": "Le pèlerinage à la cathédrale de Salerne unit la mémoire de l’apôtre au culte d’une église catholique en activité. Le tombeau traditionnel peut être un foyer important de prière, mais il ne détermine pas chaque cérémonie actuelle ni ne garantit l’accès à toutes les parties de la crypte. Les visiteurs doivent consulter les dispositions propres à la cathédrale pour les offices et l’entrée.",
+              "source_id": "SHR-IT-salerno-duomo",
+              "source_url": "https://www.cattedraledisalerno.it/la-cripta.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:salerno-duomo:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Matthew the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://www.cattedraledisalerno.it/la-cripta.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "place_name": "Benediktinerabtei St Matthias, Trier",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:trier-sankt-matthias",
+      "draft_order": 130,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Benedictine abbey church at Trier associated with Saint Matthias the Apostle.",
+      "subtitle_fr": "Une église abbatiale bénédictine de Trèves associée à saint Matthias apôtre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Apostolic memory at Trier",
+          "title_fr": "La mémoire apostolique à Trèves",
+          "paragraphs": [
+            {
+              "en": "Saint Matthias Abbey at Trier is a Benedictine Catholic site associated with the traditional relics of Matthias, the apostle chosen to replace Judas. Its identity differs from the city’s cathedral and from other churches dedicated to apostles. The reported apostolic relic attribution gives this abbey a special pilgrimage role, without being independent authentication of human remains.",
+              "fr": "L’abbaye Saint-Matthias de Trèves est un lieu catholique bénédictin associé aux reliques traditionnellement attribuées à Matthias, l’apôtre choisi pour remplacer Judas. Son identité se distingue de la cathédrale de la ville et des autres églises dédiées aux apôtres. Cette attribution traditionnelle donne à l’abbaye un rôle particulier de pèlerinage sans authentifier indépendamment les restes humains.",
+              "source_id": "AO-ED-TRIER-CHAPTER-MATTHIAS-20261112",
+              "source_url": "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Monastic life and a relic destination",
+          "title_fr": "Vie monastique et destination reliquaire",
+          "paragraphs": [
+            {
+              "en": "The church belongs to a Benedictine abbey, so the site joins the continuing life of a religious community with veneration of an apostolic figure. Those two dimensions should be kept together without conflating the monastery’s private spaces with the public church. The story of the relic and the current monastic community are different historical strands of one sacred place.",
+              "fr": "L’église appartient à une abbaye bénédictine ; le lieu unit donc la vie actuelle d’une communauté religieuse à la vénération d’une figure apostolique. Ces deux dimensions doivent rester liées sans confondre les espaces privés du monastère avec l’église publique. L’histoire de la relique et celle de la communauté monastique actuelle sont deux fils historiques distincts d’un même lieu sacré.",
+              "source_id": "AO-ED-TRIER-CHAPTER-MATTHIAS-20261112",
+              "source_url": "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Trier pilgrimage distinct from the cathedral",
+          "title_fr": "Un pèlerinage à Trèves distinct de la cathédrale",
+          "paragraphs": [
+            {
+              "en": "Visitors following Trier’s Christian heritage may encounter both the cathedral and Saint Matthias Abbey, but they are not the same building and should have separate Place identities. Pilgrimage information should identify the abbey church as the destination for Matthias devotion. Current entry and celebration arrangements must come from the abbey and local church authorities.",
+              "fr": "Les visiteurs du patrimoine chrétien de Trèves peuvent découvrir la cathédrale et l’abbaye Saint-Matthias, mais ce ne sont pas le même bâtiment et elles doivent posséder des identités de lieu séparées. Les renseignements de pèlerinage doivent désigner l’église abbatiale comme destination de la dévotion à Matthias. L’accès et les célébrations actuelles relèvent de l’abbaye et des autorités ecclésiastiques locales.",
+              "source_id": "AO-ED-TRIER-CHAPTER-MATTHIAS-20261112",
+              "source_url": "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:trier-sankt-matthias:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Matthias the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://www.trierer-dom.de/aktuelles/gottesdienste/innenstadtkirchen/sankt-matthias/index.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TRIER-CHAPTER-MATTHIAS-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "place_name": "Basilica San Bartolomeo all'Isola, Rome",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:san-bartolomeo-isola",
+      "draft_order": 131,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Roman island basilica traditionally associated with the relics of Saint Bartholomew.",
+      "subtitle_fr": "Une basilique romaine sur une île traditionnellement associée aux reliques de saint Barthélemy.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Bartholomew on the Tiber Island",
+          "title_fr": "Saint Barthélemy sur l’île Tibérine",
+          "paragraphs": [
+            {
+              "en": "The Basilica of San Bartolomeo all’Isola stands on Rome’s Tiber Island and bears the dedication of the apostle Bartholomew. Its relic tradition identifies the church as a place of veneration linked to an apostolic figure. The dedication and location are established features of the church; the precise identity of relics preserved there is a separate historical attribution.",
+              "fr": "La basilique San Bartolomeo all’Isola se trouve sur l’île Tibérine à Rome et porte la dédicace de l’apôtre Barthélemy. Sa tradition reliquaire identifie l’église comme lieu de vénération lié à une figure apostolique. La dédicace et l’emplacement sont des caractéristiques établies de l’édifice ; l’identité précise des reliques conservées relève d’une attribution historique distincte.",
+              "source_id": "AO-ED-CITATION-131-HISTORY-20261112",
+              "source_url": "https://www.turismoroma.it/en/node/695"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "An island church and the martyrs’ memory",
+          "title_fr": "Une église insulaire et la mémoire des martyrs",
+          "paragraphs": [
+            {
+              "en": "A papal homily at this basilica situates the place within the Church’s remembrance of martyrs and witnesses to the faith. That dimension belongs to its present religious interpretation as well as to its apostolic dedication.",
+              "fr": "Une homélie pontificale prononcée dans cette basilique situe le lieu dans la mémoire ecclésiale des martyrs et des témoins de la foi. Cette dimension appartient à son interprétation religieuse actuelle autant qu’à sa dédicace apostolique.",
+              "source_id": "SHR-IT-san-bartolomeo-isola",
+              "source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A distinct stop on the Tiber",
+          "title_fr": "Une étape distincte sur le Tibre",
+          "paragraphs": [
+            {
+              "en": "Saint Bartholomew on Tiber Island is a functioning Roman basilica and a memorial to Christians who died for their faith in the twentieth and twenty-first centuries. In his 7 April 2008 homily there, Pope Benedict XVI recalled John Paul II’s decision to entrust this memorial to the Community of Sant’Egidio. Pilgrimage here thus embraces modern Christian witness as well as the church’s ancient dedication. Present worship and access depend on current local arrangements.",
+              "fr": "Saint-Barthélemy-en-l’Île est une basilique romaine en activité et un mémorial des chrétiens morts pour leur foi aux XXe et XXIe siècles. Dans son homélie prononcée sur place le 7 avril 2008, Benoît XVI rappela la décision de Jean-Paul II de confier ce mémorial à la Communauté de Sant’Egidio. Le pèlerinage y associe donc le témoignage chrétien contemporain à l’antique dédicace de l’église. Le culte et les visites dépendent des dispositions locales en vigueur.",
+              "source_id": "SHR-IT-san-bartolomeo-isola",
+              "source_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:san-bartolomeo-isola:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Bartholomew the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+        "https://www.turismoroma.it/en/node/695"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-131-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-giustina-padova",
+      "place_name": "Abbazia di Santa Giustina, Padua",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:santa-giustina-padova",
+      "draft_order": 132,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Benedictine basilica in Padua and the veneration of Saint Luke the Evangelist.",
+      "subtitle_fr": "La basilique bénédictine de Padoue et la vénération de saint Luc l’Évangéliste.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Luke at Santa Giustina",
+          "title_fr": "Saint Luc à Sainte-Justine",
+          "paragraphs": [
+            {
+              "en": "The Abbey Basilica of Santa Giustina in Padua preserves a tradition of veneration associated with Saint Luke the Evangelist. The Benedictine abbey and its basilica form a specific sacred destination, separate from other churches in Padua. The attribution of these remains to the Evangelist belongs to the basilica's tradition of veneration, rather than to independent archaeological proof of their identity.",
+              "fr": "La basilique abbatiale Sainte-Justine de Padoue conserve une tradition de vénération associée à saint Luc l’Évangéliste. L’abbaye bénédictine et sa basilique constituent une destination sacrée précise, distincte des autres églises de Padoue. L'attribution de ces restes à l'Évangéliste appartient à la tradition de vénération de la basilique, non à une preuve archéologique indépendante de leur identité.",
+              "source_id": "SHR-IT-santa-giustina-padova",
+              "source_url": "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The place of a venerated body",
+          "title_fr": "Le lieu d’un corps vénéré",
+          "paragraphs": [
+            {
+              "en": "The abbey’s own material describes Saint Luke’s devotional presence within the basilica. The tomb or reliquary setting is one focus inside a larger church that also has its own dedication to Saint Justina.",
+              "fr": "Les documents de l’abbaye présentent la présence dévotionnelle de saint Luc dans la basilique. Le lieu du tombeau ou du reliquaire est un foyer au sein d’une grande église qui possède aussi sa dédicace propre à sainte Justine.",
+              "source_id": "SHR-IT-santa-giustina-padova",
+              "source_url": "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Benedictine worship and pilgrimage",
+          "title_fr": "Culte bénédictin et pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Santa Giustina is both a living abbey church and a place where pilgrims may honour the tradition of Saint Luke. Monastic worship and relic veneration should be described together while keeping private religious spaces distinct from public access. The abbey’s current information must govern visiting hours, ceremonies and whether a particular sacred area is accessible.",
+              "fr": "Sainte-Justine est à la fois une église abbatiale vivante et un lieu où les pèlerins peuvent honorer la tradition de saint Luc. Le culte monastique et la vénération des reliques doivent être présentés ensemble, tout en distinguant les espaces religieux privés de l’accès public. Les renseignements actuels de l’abbaye doivent régir les visites, les cérémonies et l’accès aux espaces sacrés particuliers.",
+              "source_id": "SHR-IT-santa-giustina-padova",
+              "source_url": "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-giustina-padova:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Luke the Evangelist"
+      ],
+      "bibliography_urls": [
+        "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-milano",
+      "place_name": "Duomo di Milano",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:duomo-milano",
+      "draft_order": 133,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Milan Cathedral and the scurolo where Saint Charles Borromeo is venerated.",
+      "subtitle_fr": "La cathédrale de Milan et le scurolo où l’on vénère saint Charles Borromée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The cathedral of Saint Charles’s city",
+          "title_fr": "La cathédrale de la ville de saint Charles",
+          "paragraphs": [
+            {
+              "en": "Milan Cathedral is a major Catholic place of worship associated with the life and pastoral memory of Saint Charles Borromeo, archbishop of Milan. His relationship with the cathedral is more specific than a later dedication to a distant saint. The Duomo’s identity is also larger than the shrine of Charles: it is the cathedral church of Milan with its own liturgical history.",
+              "fr": "La cathédrale de Milan est une grande église catholique associée à la vie et à la mémoire pastorale de saint Charles Borromée, archevêque de la ville. Son lien avec l’édifice est plus précis qu’une dédicace ultérieure à un saint lointain. L’identité du Duomo dépasse cependant le sanctuaire de Charles : c’est l’église cathédrale de Milan, dotée de sa propre histoire liturgique.",
+              "source_id": "SHR-IT-duomo-milano",
+              "source_url": "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The scurolo and the saint’s remains",
+          "title_fr": "Le scurolo et les restes du saint",
+          "paragraphs": [
+            {
+              "en": "The cathedral documents the restoration of the scurolo, the special space associated with the veneration of Saint Charles’s body. Within Milan Cathedral, the scurolo is a particular place of veneration of Saint Charles, not a separate church. The custodian’s identification of the remains is distinct from a claim that every element has been independently authenticated through modern forensic methods.",
+              "fr": "La cathédrale documente la restauration du scurolo, espace particulier associé à la vénération du corps de saint Charles. Au sein du Duomo de Milan, le scurolo est un lieu particulier de vénération de saint Charles, et non une église distincte. L’identification des restes par les responsables est distincte d’une affirmation selon laquelle chaque élément aurait été authentifié par des méthodes médico-légales modernes.",
+              "source_id": "SHR-IT-duomo-milano",
+              "source_url": "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage inside a working cathedral",
+          "title_fr": "Pèlerinage dans une cathédrale vivante",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may come to pray at the place of Saint Charles’s veneration while the Duomo continues its broader cathedral life. Its sacred spaces, heritage tourism and liturgical celebrations can have different arrangements. Visitors should consult the current cathedral access policy rather than assuming that a historic crypt or shrine is continuously open on the same terms as the nave.",
+              "fr": "Les pèlerins peuvent venir prier au lieu de vénération de saint Charles tandis que le Duomo poursuit sa vie cathédrale plus large. Ses espaces sacrés, le tourisme patrimonial et les célébrations liturgiques peuvent relever de dispositions différentes. Il faut consulter les règles d’accès actuelles, sans supposer qu’une crypte ou un sanctuaire historique reste ouvert en permanence dans les mêmes conditions que la nef.",
+              "source_id": "SHR-IT-duomo-milano",
+              "source_url": "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:duomo-milano:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Charles Borromeo"
+      ],
+      "bibliography_urls": [
+        "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "place_name": "Basilica di Santa Chiara, Assisi",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:santa-chiara-assisi",
+      "draft_order": 134,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The basilica of Saint Clare in Assisi and the crypt dedicated to her memory.",
+      "subtitle_fr": "La basilique Sainte-Claire d’Assise et la crypte dédiée à sa mémoire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A basilica remembering Clare",
+          "title_fr": "Une basilique consacrée à la mémoire de Claire",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint Clare in Assisi is a principal site of devotion to Clare, a central figure of the early Franciscan movement. It is a distinct church in the city’s religious landscape, not the basilica of Saint Francis under a different name. Its importance is associated with Clare’s memory, the community inspired by her and the tradition surrounding her remains.",
+              "fr": "La basilique Sainte-Claire d’Assise est un lieu majeur de dévotion à Claire, figure centrale des débuts du mouvement franciscain. C’est une église distincte du paysage religieux de la ville, et non la basilique Saint-François sous un autre nom. Son importance est liée à la mémoire de Claire, à la communauté inspirée par elle et à la tradition entourant ses restes.",
+              "source_id": "AO-ED-ASSISI-OFM-SANTA-CHIARA-20261112",
+              "source_url": "https://assisiofm.it/santuari/basilica-di-santa-chiara/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The crypt and relic custody",
+          "title_fr": "La crypte et la garde des reliques",
+          "paragraphs": [
+            {
+              "en": "The basilica’s official material describes the crypt and the relics associated with Saint Clare. The remains venerated as those of Saint Clare are part of the basilica's devotional setting. Their historical attribution belongs to the tradition maintained by its custodians, not to independent forensic authentication.",
+              "fr": "Les documents officiels de la basilique décrivent la crypte et les reliques associées à sainte Claire. Les restes vénérés comme ceux de sainte Claire font partie du cadre dévotionnel de la basilique. Leur attribution historique relève de la tradition conservée par ses responsables, non d'une authentification médico-légale indépendante.",
+              "source_id": "AO-ED-ASSISI-OFM-SANTA-CHIARA-20261112",
+              "source_url": "https://assisiofm.it/santuari/basilica-di-santa-chiara/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer within Assisi’s Franciscan landscape",
+          "title_fr": "La prière dans le paysage franciscain d’Assise",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may connect Saint Clare’s basilica with other Franciscan places in Assisi, but each site has its own history and religious community. Prayer before Clare’s memorial belongs to this particular destination. Access and liturgical information should be taken from the basilica’s current custodians rather than from a general Assisi pilgrimage schedule.",
+              "fr": "Les pèlerins peuvent relier la basilique Sainte-Claire à d’autres lieux franciscains d’Assise, mais chaque site possède son histoire et sa communauté religieuse. La prière auprès de la mémoire de Claire appartient à cette destination particulière. Les renseignements d’accès et de liturgie doivent provenir des responsables actuels de la basilique, et non d’un programme général des pèlerinages d’Assise.",
+              "source_id": "AO-ED-ASSISI-OFM-SANTA-CHIARA-20261112",
+              "source_url": "https://assisiofm.it/santuari/basilica-di-santa-chiara/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-chiara-assisi:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Clare of Assisi"
+      ],
+      "bibliography_urls": [
+        "https://assisiofm.it/santuari/basilica-di-santa-chiara/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ASSISI-OFM-SANTA-CHIARA-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "place_name": "Santa Maria sopra Minerva, Rome",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+      "draft_order": 135,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Roman Dominican church containing the traditional tomb of Saint Catherine of Siena.",
+      "subtitle_fr": "L’église dominicaine romaine abritant le tombeau traditionnel de sainte Catherine de Sienne.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Catherine of Siena in Rome",
+          "title_fr": "Catherine de Sienne à Rome",
+          "paragraphs": [
+            {
+              "en": "The Church of Santa Maria sopra Minerva in Rome is associated with the tomb of Saint Catherine of Siena. Her connection to this Roman church offers a distinct place of veneration, even though Siena is also central to her life and memory.",
+              "fr": "L’église Santa Maria sopra Minerva de Rome est associée au tombeau de sainte Catherine de Sienne. Son lien avec cette église romaine offre un lieu distinct de vénération, bien que Sienne soit également centrale dans sa vie et sa mémoire.",
+              "source_id": "SHR-IT-santa-maria-minerva-rome",
+              "source_url": "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The saint’s tomb in a Dominican church",
+          "title_fr": "Le tombeau dans une église dominicaine",
+          "paragraphs": [
+            {
+              "en": "The church’s own description identifies the tomb of Saint Catherine within the Dominican setting of Santa Maria sopra Minerva. Her spiritual and historical association with the Order of Preachers gives the location a particular religious meaning.",
+              "fr": "La présentation de l’église situe le tombeau de sainte Catherine dans le cadre dominicain de Santa Maria sopra Minerva. Son lien spirituel et historique avec l’Ordre des Prêcheurs donne à ce lieu une signification religieuse particulière.",
+              "source_id": "SHR-IT-santa-maria-minerva-rome",
+              "source_url": "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage among Rome’s churches",
+          "title_fr": "Pèlerinage parmi les églises de Rome",
+          "paragraphs": [
+            {
+              "en": "Visitors may pray at Catherine’s tomb while exploring the wider Dominican and Roman Christian heritage. The physical destination remains one named church, distinct from other shrines of the saint and from Siena’s own sites. The operator’s latest arrangements determine access to the tomb area, Masses and confessions; devotional significance alone cannot certify a visitor timetable.",
+              "fr": "Les visiteurs peuvent prier au tombeau de Catherine tout en découvrant le patrimoine dominicain et chrétien de Rome. La destination physique demeure une église nommée, distincte des autres sanctuaires de la sainte et des lieux de Sienne. Les dispositions récentes des responsables déterminent l’accès au tombeau, les messes et les confessions ; l’importance dévotionnelle ne suffit pas à certifier un horaire de visite.",
+              "source_id": "SHR-IT-santa-maria-minerva-rome",
+              "source_url": "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-maria-minerva-rome:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Catherine of Siena"
+      ],
+      "bibliography_urls": [
+        "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "place_name": "Chiesa del Gesù, Rome",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:chiesa-gesu-rome",
+      "draft_order": 136,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Church of the Gesù and the tomb of Saint Ignatius of Loyola.",
+      "subtitle_fr": "L’église du Gesù et le tombeau de saint Ignace de Loyola.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Jesuit mother church",
+          "title_fr": "L’église-mère des Jésuites",
+          "paragraphs": [
+            {
+              "en": "The Church of the Gesù in Rome is closely associated with the Society of Jesus and its founder, Saint Ignatius of Loyola. Its importance is rooted in the spiritual and institutional history of the Jesuits as well as its architecture.",
+              "fr": "L’église du Gesù à Rome est étroitement associée à la Compagnie de Jésus et à son fondateur, saint Ignace de Loyola. Son importance tient à l’histoire spirituelle et institutionnelle des Jésuites autant qu’à son architecture.",
+              "source_id": "AO-ED-GESU-ROME-CHURCH-20261112",
+              "source_url": "https://www.chiesadelgesu.org/la-chiesa/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The founder’s tomb",
+          "title_fr": "Le tombeau du fondateur",
+          "paragraphs": [
+            {
+              "en": "The Gesù is associated with the venerated tomb of Saint Ignatius, giving the church a particular role for pilgrims interested in Jesuit history and spirituality. His memorial belongs within a functioning church rather than in a standalone museum. The church's relic-custody tradition is historically significant, although it does not independently authenticate every material attribution.",
+              "fr": "Le Gesù est associé au tombeau vénéré de saint Ignace, donnant à l’église un rôle particulier pour les pèlerins intéressés par l’histoire et la spiritualité jésuites. Sa mémoire se trouve dans une église en activité, non dans un musée autonome. La tradition ecclésiastique de garde des reliques est historiquement importante, sans pour autant authentifier indépendamment chaque attribution matérielle.",
+              "source_id": "AO-ED-GESU-ROME-CHURCH-20261112",
+              "source_url": "https://www.chiesadelgesu.org/la-chiesa/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place of Jesuit prayer in Rome",
+          "title_fr": "Un lieu de prière jésuite à Rome",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visiting the Gesù can connect the memory of Ignatius with the continuing life of Catholic worship and the Jesuit tradition. The shrine’s exact location and the church’s liturgical arrangements should remain specific to this building. Its Jesuit identity does not alone prove that a particular historical Roman Missal is used at every celebration.",
+              "fr": "Les pèlerins qui visitent le Gesù peuvent relier la mémoire d’Ignace à la vie actuelle du culte catholique et à la tradition jésuite. L’emplacement du sanctuaire et les dispositions liturgiques doivent rester propres à cet édifice. Son identité jésuite ne prouve pas à elle seule qu’une édition historique particulière du Missel romain est employée à chaque célébration.",
+              "source_id": "AO-ED-GESU-ROME-CHURCH-20261112",
+              "source_url": "https://www.chiesadelgesu.org/la-chiesa/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:chiesa-gesu-rome:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Ignatius of Loyola"
+      ],
+      "bibliography_urls": [
+        "https://www.chiesadelgesu.org/la-chiesa/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-GESU-ROME-CHURCH-20261112"
+      ]
+    }
+  ]
+}

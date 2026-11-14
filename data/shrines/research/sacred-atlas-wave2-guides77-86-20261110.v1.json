@@ -1,0 +1,680 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES77_86_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "owner_approved": 0,
+    "published": 0
+  },
+  "policy": [
+    "Source claims reuse previously curated canonical source records; editorial review must check every paragraph against primary source text.",
+    "No rewriting prior Wave-1 or published guides; no automatic publication, image, or unverified GPS.",
+    "Do not infer apparition authenticity or translate dated programmes into permanent promises."
+  ],
+  "guides": [
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "place_name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "country_code": "NL",
+      "shrine_id": "shrine:NL:heiloo-olv-ter-nood",
+      "draft_order": 77,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Dutch Marian sanctuary shaped by recurring prayer and First Saturday pilgrimage.",
+      "subtitle_fr": "Un sanctuaire marial néerlandais marqué par la prière et le pèlerinage du premier samedi.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady in Distress at Heiloo",
+          "title_fr": "Notre-Dame du Secours à Heiloo",
+          "paragraphs": [
+            {
+              "en": "Heiloo’s Heiligdom Onze Lieve Vrouw ter Nood is an established Catholic Marian sanctuary in the Netherlands. Its Dutch title evokes Our Lady invoked in distress and distinguishes this particular pilgrimage destination from the many churches dedicated to Mary elsewhere. The present-day custodian maintains the sanctuary as a place of worship and prayer, not merely a local historical attraction.",
+              "fr": "Le Heiligdom Onze Lieve Vrouw ter Nood de Heiloo est un sanctuaire marial catholique établi aux Pays-Bas. Son titre néerlandais évoque Notre-Dame invoquée dans la détresse et distingue ce pèlerinage des nombreuses autres églises dédiées à la Vierge. Les responsables actuels entretiennent le sanctuaire comme un lieu de culte et de prière, et non comme une simple curiosité historique.",
+              "source_url": "https://olvternood.nl/over-het-heiligdom-olvternood/",
+              "source_id": "AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The First Saturday rhythm",
+          "title_fr": "Le rythme du premier samedi",
+          "paragraphs": [
+            {
+              "en": "The sanctuary describes a recurring First Saturday pilgrimage that brings together confession, the Rosary, Mass, Eucharistic adoration and Benediction. These practices explain the practical shape of its Marian devotion more concretely than a general claim that visitors come to pray. The observance is recurring, although any individual date and its precise times belong to the current programme.",
+              "fr": "Le sanctuaire décrit un pèlerinage récurrent du premier samedi, réunissant confession, Rosaire, messe, adoration eucharistique et bénédiction du Saint-Sacrement. Ces pratiques expliquent plus concrètement sa vie mariale qu’une simple affirmation selon laquelle les visiteurs viennent y prier. L’observance est régulière, mais la date particulière et ses horaires relèvent toujours du programme en vigueur.",
+              "source_url": "https://olvternood.nl/over-het-heiligdom-olvternood/",
+              "source_id": "PIL-HEILOO-FIRST-SATURDAY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The sanctuary as a destination",
+          "title_fr": "Le sanctuaire comme destination",
+          "paragraphs": [
+            {
+              "en": "The Heiloo Marian sanctuary is the setting for this pilgrimage, rather than an unrelated chapel or a generic town-centre point. The sanctuary’s current notices provide practical information about access, liturgy and group visits.",
+              "fr": "Le sanctuaire marial de Heiloo constitue la destination de ce pèlerinage, distincte d’une autre chapelle ou d’un simple repère en centre-ville. Ses annonces officielles précisent les modalités actuelles d’accès, de liturgie et d’accueil des groupes.",
+              "source_url": "https://olvternood.nl/contact/",
+              "source_id": "SHR-HEILOO-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NL:heiloo-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://olvternood.nl/contact/",
+        "https://olvternood.nl/over-het-heiligdom-olvternood/",
+        "https://olvternood.nl/over-het-heiligdom-olvternood/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-HEILOO-SANCTUARY-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "place_name": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+      "country_code": "NL",
+      "shrine_id": "shrine:NL:maastricht-sterre-der-zee",
+      "draft_order": 78,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Maastricht basilica, its Star of the Sea image and walking-pilgrimage tradition.",
+      "subtitle_fr": "La basilique de Maastricht, l’image de l’Étoile de la mer et les pèlerinages à pied.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Star of the Sea devotion",
+          "title_fr": "La dévotion à l’Étoile de la mer",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady in Maastricht is closely associated with the Marian title Sterre der Zee, Star of the Sea. The name refers to a particular image and local tradition of devotion within an actual Catholic basilica. This distinguishes the shrine from similarly named Marian dedications and preserves the link between devotional object, church and city.",
+              "fr": "La basilique Notre-Dame de Maastricht est étroitement liée au titre marial Sterre der Zee, « Étoile de la mer ». Ce nom renvoie à une image particulière et à une tradition locale de dévotion au sein d’une véritable basilique catholique. Il distingue le sanctuaire d’autres dédicaces mariales semblables tout en préservant le lien entre l’objet vénéré, l’église et la ville.",
+              "source_url": "https://olv-sintpieter.nl/kerken/",
+              "source_id": "SHR-MAASTRICHT-STERRE-DER-ZEE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Walking to the basilica",
+          "title_fr": "Marcher jusqu’à la basilique",
+          "paragraphs": [
+            {
+              "en": "The parish recorded a 2026 pilgrims’ walk approaching Maastricht from Winthagen through Schin op Geul and Houthem. That organised journey reflects the wider tradition of coming on foot to the Sterre der Zee, alongside the city’s devotional bidweg. The recorded 2026 journey is useful historical evidence of living practice, not proof that the same route is open or organised on every subsequent date.",
+              "fr": "La paroisse a annoncé en 2026 une marche de pèlerins vers Maastricht depuis Winthagen, passant par Schin op Geul et Houthem. Cette démarche organisée prolonge la tradition de rejoindre à pied la Sterre der Zee, parallèlement au bidweg dévotionnel de la ville. L’itinéraire annoncé pour 2026 atteste une pratique vivante, sans garantir que le même parcours sera organisé ou accessible à toute date ultérieure.",
+              "source_url": "https://bisdom-roermond.nl/Pelgrims-voettocht%20Sterre%20der%20Zee",
+              "source_id": "AO-ED-STERRE-DER-ZEE-DIOCESAN-WALK-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A precise church and a wider tradition",
+          "title_fr": "Une église précise et une tradition plus vaste",
+          "paragraphs": [
+            {
+              "en": "The basilica has its own identifiable location at Onze Lieve Vrouweplein in Maastricht. Its pilgrimage history, however, extends through routes, neighbourhood prayer and the movement of people toward the Marian image.",
+              "fr": "La basilique possède un emplacement identifiable sur l’Onze Lieve Vrouweplein, à Maastricht. Son histoire de pèlerinage s’étend néanmoins aux chemins, à la prière dans les quartiers et aux fidèles qui viennent auprès de l’image mariale.",
+              "source_url": "https://olv-sintpieter.nl/kerken/",
+              "source_id": "SHR-MAASTRICHT-STERRE-DER-ZEE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NL:maastricht-sterre-der-zee"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://olv-sintpieter.nl/kerken/",
+        "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/",
+        "https://bisdom-roermond.nl/Pelgrims-voettocht%20Sterre%20der%20Zee"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-STERRE-DER-ZEE-DIOCESAN-WALK-20261111"
+      ]
+    },
+    {
+      "place_id": "place:PT:sameiro-braga",
+      "place_name": "Santuário de Nossa Senhora do Sameiro",
+      "country_code": "PT",
+      "shrine_id": "shrine:PT:sameiro",
+      "draft_order": 79,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian sanctuary above Braga and its archdiocesan pilgrimage calendar.",
+      "subtitle_fr": "Un sanctuaire marial dominant Braga et son calendrier de pèlerinage archidiocésain.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Sameiro",
+          "title_fr": "Notre-Dame de Sameiro",
+          "paragraphs": [
+            {
+              "en": "The sanctuary of Our Lady of Sameiro stands on a hill above Braga, distinct from the city's cathedral. Devotion there began in 1863 when Father Martinho António Pereira da Silva promoted a monument to the Immaculate Conception. The hilltop complex developed into one of Portugal's principal Marian pilgrimage destinations, with its basilica, dome and crypt.",
+              "fr": "Le sanctuaire de Notre-Dame de Sameiro se dresse sur une hauteur dominant Braga, distincte de la cathédrale de la ville. La dévotion y prit son essor en 1863, lorsque l'abbé Martinho António Pereira da Silva lança un monument en l'honneur de l'Immaculée Conception. L'ensemble devint l'un des principaux lieux de pèlerinage marial du Portugal, avec sa basilique, son dôme et sa crypte.",
+              "source_url": "https://visitbraga.travel/highlights/monumentos/basilica-do-sameiro/",
+              "source_id": "AO-ED-SAMEIRO-BRAGA-CIVIC-20261112"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The archdiocesan pilgrimage",
+          "title_fr": "Le pèlerinage archidiocésain",
+          "paragraphs": [
+            {
+              "en": "The sanctuary describes an archdiocesan pilgrimage on the first Sunday of June, associated with a movement from Braga Cathedral to Sameiro. That relationship makes the two sites parts of a religious itinerary while preserving their different identities. The annual pilgrimage links the two churches, while its departure arrangements and walking route are announced for each edition.",
+              "fr": "Le sanctuaire décrit un pèlerinage archidiocésain le premier dimanche de juin, lié à une démarche depuis la cathédrale de Braga jusqu’à Sameiro. Cette relation fait des deux lieux les étapes d’un parcours religieux tout en maintenant leurs identités distinctes. Le pèlerinage annuel relie les deux églises, tandis que ses départs et son parcours sont annoncés pour chaque édition.",
+              "source_url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/",
+              "source_id": "PIL-SAMEIRO-PILGRIMAGES"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Feast and candlelight prayer",
+          "title_fr": "Fête et prière aux flambeaux",
+          "paragraphs": [
+            {
+              "en": "Sameiro’s pilgrimage material also identifies 12 June as a feast observance and describes candlelight processions on the twelfth day of months from May through October. These devotional rhythms give the sanctuary a fuller calendar than a single annual pilgrimage. Their precise ceremonies, hours and availability should nevertheless be taken from the current sanctuary announcements.",
+              "fr": "Les documents de Sameiro indiquent aussi une fête le 12 juin et décrivent des processions aux flambeaux le douzième jour de certains mois, de mai à octobre. Ces rythmes dévotionnels donnent au sanctuaire un calendrier plus riche qu’un unique pèlerinage annuel. Le détail des cérémonies, les horaires et leur maintien doivent toutefois être vérifiés dans les annonces actuelles du sanctuaire.",
+              "source_url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/",
+              "source_id": "PIL-SAMEIRO-PILGRIMAGES"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PT:sameiro-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://santuariodosameiro.pt/contatos-e-horarios/",
+        "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/",
+        "https://visitbraga.travel/highlights/monumentos/basilica-do-sameiro/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-SAMEIRO-BRAGA-CIVIC-20261112"
+      ]
+    },
+    {
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "place_name": "National Shrine of Saint Alphonsus Liguori",
+      "country_code": "US",
+      "shrine_id": "shrine:US:alphonsus-baltimore",
+      "draft_order": 80,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Baltimore’s nineteenth-century Saint Alphonsus shrine and its current traditional liturgy.",
+      "subtitle_fr": "Le sanctuaire Saint-Alphonse de Baltimore, du XIXe siècle, et sa liturgie traditionnelle actuelle.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A historic Baltimore church",
+          "title_fr": "Une église historique de Baltimore",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Saint Alphonsus Liguori in Baltimore was dedicated on 14 March 1845 after three years of construction. Built in a Bavarian-inspired neo-Gothic style, it became an important centre of Redemptorist ministry in the city. Its dedication joins the Immaculate Conception with Saint Alphonsus, founder of the Redemptorists.",
+              "fr": "Le sanctuaire national Saint-Alphonse-de-Liguori de Baltimore fut dédié le 14 mars 1845, après trois années de construction. Édifié dans un style néogothique d’inspiration bavaroise, il devint un centre important du ministère des rédemptoristes dans la ville. Sa dédicace associe l’Immaculée Conception à saint Alphonse, fondateur des rédemptoristes.",
+              "source_url": "https://stalphonsusbalt.org/",
+              "source_id": "SHR-ALPHONSUS-BALTIMORE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The shrine and its present custody",
+          "title_fr": "Le sanctuaire et sa desserte actuelle",
+          "paragraphs": [
+            {
+              "en": "The Redemptorists formerly served the Baltimore shrine, where Saint John Neumann was pastor in 1848. In 2017 Archbishop William Lori entrusted the church to the Priestly Fraternity of Saint Peter. These successive ministries belong to the history of this particular church and explain its continuing life as a Catholic place of worship.",
+              "fr": "Les rédemptoristes ont desservi le sanctuaire de Baltimore, dont saint Jean Népomucène Neumann fut curé en 1848. En 2017, l’archevêque William Lori confia l’église à la Fraternité sacerdotale Saint-Pierre. Ces ministères successifs appartiennent à l’histoire de cette église et éclairent sa vie catholique actuelle.",
+              "source_url": "https://stalphonsusbalt.org/",
+              "source_id": "SHR-ALPHONSUS-BALTIMORE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The traditional Roman Mass",
+          "title_fr": "La messe romaine traditionnelle",
+          "paragraphs": [
+            {
+              "en": "The shrine’s own material identifies the Traditional Latin Mass as part of its liturgical life under the FSSP. This is one of the cases where an explicit rite description is supported by the custodian rather than inferred from a historical building style or saintly dedication. Visitors must still consult the current Mass and confession schedule before making plans.",
+              "fr": "Les documents du sanctuaire attestent que la messe traditionnelle latine fait partie de sa vie liturgique sous la responsabilité de la FSSP. Il s’agit d’un cas où la description du rite repose sur une source propre au lieu, plutôt que sur une déduction tirée de son architecture ancienne ou de sa dédicace. Les visiteurs doivent néanmoins vérifier les horaires des messes et des confessions avant leur venue.",
+              "source_url": "https://stalphonsusbalt.org/",
+              "source_id": "SHR-ALPHONSUS-BALTIMORE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:alphonsus-baltimore-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Alphonsus Liguori",
+        "Saint John Neumann"
+      ],
+      "bibliography_urls": [
+        "https://stalphonsusbalt.org/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "place_name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "country_code": "US",
+      "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+      "draft_order": 81,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Philadelphia’s Miraculous Medal basilica and the Monday Perpetual Novena begun in 1930.",
+      "subtitle_fr": "La basilique de la Médaille miraculeuse à Philadelphie et sa neuvaine perpétuelle du lundi inaugurée en 1930.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A shrine of the Miraculous Medal",
+          "title_fr": "Un sanctuaire de la Médaille miraculeuse",
+          "paragraphs": [
+            {
+              "en": "Philadelphia’s Basilica Shrine of Our Lady of the Miraculous Medal is a Catholic destination dedicated to the Marian devotion associated with Saint Catherine Labouré. Its identity is anchored in an actual American basilica and the ministry of the Central Association of the Miraculous Medal. The Philadelphia shrine is distinct from the Paris chapel associated with the devotion's original events.",
+              "fr": "La basilique-sanctuaire Notre-Dame de la Médaille miraculeuse de Philadelphie est un lieu catholique consacré à la dévotion mariale associée à sainte Catherine Labouré. Son identité repose sur une basilique américaine réelle et sur le ministère de la Central Association of the Miraculous Medal. Le sanctuaire de Philadelphie est distinct de la chapelle parisienne liée aux événements originels de la dévotion.",
+              "source_url": "https://miraculousmedal.org/visit-us/",
+              "source_id": "SHR-MIRACULOUS-MEDAL-PHILADELPHIA"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Monday Perpetual Novena",
+          "title_fr": "La neuvaine perpétuelle du lundi",
+          "paragraphs": [
+            {
+              "en": "The association traces its Perpetual Novena to 8 December 1930 and presents the Monday observance as having continued without interruption. This specific rhythm of repeated prayer is central to the shrine’s devotional history. It should be distinguished from a one-time nine-day novena and from the precise modern timetable of services, which may be updated independently.",
+              "fr": "L’association fait remonter sa neuvaine perpétuelle au 8 décembre 1930 et présente son observance du lundi comme s’étant poursuivie sans interruption. Ce rythme concret de prière répétée est central dans l’histoire dévotionnelle du sanctuaire. Il faut le distinguer d’une simple neuvaine de neuf jours et des horaires actuels des offices, qui peuvent être modifiés indépendamment.",
+              "source_url": "https://miraculousmedal.org/pray/perpetual-novena/",
+              "source_id": "PIL-MIRACULOUS-MEDAL-NOVENA"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrims and retreatants",
+          "title_fr": "Pèlerins et retraitants",
+          "paragraphs": [
+            {
+              "en": "The basilica shrine in Philadelphia welcomes pilgrims and retreat groups through its pastoral programme. Its local schedules and visitor arrangements are provided by the shrine itself, independently of other Miraculous Medal sites.",
+              "fr": "La basilique-sanctuaire de Philadelphie accueille des pèlerins et des groupes de retraite dans le cadre de son programme pastoral. Les horaires et les modalités de visite relèvent de ses propres informations, distinctes de celles des autres lieux dédiés à la Médaille miraculeuse.",
+              "source_url": "https://miraculousmedal.org/visit-us/",
+              "source_id": "SHR-MIRACULOUS-MEDAL-PHILADELPHIA"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:miraculous-medal-philadelphia-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Catherine Labouré"
+      ],
+      "bibliography_urls": [
+        "https://miraculousmedal.org/visit-us/",
+        "https://miraculousmedal.org/pray/perpetual-novena/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:czestochowa-doylestown",
+      "place_name": "National Shrine of Our Lady of Czestochowa",
+      "country_code": "US",
+      "shrine_id": "shrine:US:czestochowa-doylestown",
+      "draft_order": 82,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Polish-American Marian shrine founded in 1955 and reached by walking pilgrimages.",
+      "subtitle_fr": "Un sanctuaire marial polono-américain fondé en 1955 et rejoint par des pèlerinages à pied.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The American Częstochowa",
+          "title_fr": "La Częstochowa américaine",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Częstochowa at Doylestown, Pennsylvania, was established in 1955 as a Polish-American Marian destination. It carries a devotion associated with the icon of Our Lady of Częstochowa into a different national setting. The American sanctuary is not the Jasna Góra monastery in Poland, even though their religious identity is closely linked.",
+              "fr": "Le sanctuaire national Notre-Dame de Częstochowa de Doylestown, en Pennsylvanie, a été fondé en 1955 comme destination mariale polono-américaine. Il fait vivre dans un autre contexte national la dévotion liée à l’icône de Notre-Dame de Częstochowa. Le sanctuaire américain n’est pas le monastère de Jasna Góra en Pologne, malgré leur étroite parenté religieuse.",
+              "source_url": "https://osppe.us/american-czestochowa/",
+              "source_id": "AO-ED-DOYLESTOWN-PAULINE-1955-20261111"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Arriving on foot",
+          "title_fr": "Arriver à pied",
+          "paragraphs": [
+            {
+              "en": "The shrine’s own pilgrimage information records multi-day walking journeys toward Doylestown from departure areas including Great Meadows, Trenton and Philadelphia. These long approaches are part of the pilgrimage’s lived character and connect distant Catholic communities with one destination. The actual walking routes and arrangements are determined by the organisers of each pilgrimage.",
+              "fr": "Les renseignements de pèlerinage du sanctuaire mentionnent des marches de plusieurs jours vers Doylestown, notamment depuis les régions de Great Meadows, Trenton et Philadelphie. Ces longues démarches font partie de la vie du pèlerinage et relient des communautés catholiques éloignées à une destination commune. Les parcours effectivement empruntés et leurs modalités sont déterminés par les organisateurs de chaque pèlerinage.",
+              "source_url": "https://czestochowa.us/en/ministries/6-pilgrimage",
+              "source_id": "PIL-CZESTOCHOWA-US-WALK"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and Polish-American memory",
+          "title_fr": "Pèlerinage et mémoire polono-américaine",
+          "paragraphs": [
+            {
+              "en": "The dedication and founding date situate the shrine within the religious memory of Polish Catholics in the United States. Its liturgical and devotional programme belongs to the actual Doylestown institution rather than to the Polish source sanctuary. Visitors should consult its own information for dates, group arrangements and access, particularly around organised walking pilgrimages.",
+              "fr": "La dédicace et la date de fondation situent le sanctuaire dans la mémoire religieuse des catholiques polonais des États-Unis. Son programme liturgique et dévotionnel relève de l’institution de Doylestown, non du sanctuaire d’origine en Pologne. Les visiteurs doivent consulter ses propres renseignements pour les dates, l’accueil des groupes et les accès, notamment lors des pèlerinages organisés à pied.",
+              "source_url": "https://czestochowa.us/",
+              "source_id": "SHR-CZESTOCHOWA-US"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:czestochowa-doylestown-destination",
+        "pilgrimage:US:czestochowa-walking"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://czestochowa.us/",
+        "https://czestochowa.us/en/ministries/6-pilgrimage",
+        "https://osppe.us/american-czestochowa/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-DOYLESTOWN-PAULINE-1955-20261111"
+      ]
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "place_name": "National Shrine Grotto of Our Lady of Lourdes",
+      "country_code": "US",
+      "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+      "draft_order": 83,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Emmitsburg Lourdes grotto and its February novena of pilgrimage.",
+      "subtitle_fr": "La grotte de Lourdes d’Emmitsburg et sa neuvaine de pèlerinage en février.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "An American Lourdes grotto",
+          "title_fr": "Une grotte de Lourdes américaine",
+          "paragraphs": [
+            {
+              "en": "The National Shrine Grotto of Our Lady of Lourdes at Emmitsburg is a Marian pilgrimage destination modelled on the grotto at Lourdes, France. The shrine’s history places the American replica approximately seventeen years after the Lourdes events of 1858. Its religious identity lies in the adoption of the Lourdes devotion at Emmitsburg, not in a claim that the French apparition took place in Maryland.",
+              "fr": "Le sanctuaire national de la grotte Notre-Dame de Lourdes d’Emmitsburg est un lieu de pèlerinage marial inspiré de la grotte de Lourdes, en France. Son histoire situe la réalisation américaine environ dix-sept ans après les événements de Lourdes en 1858. Son identité religieuse tient à l’accueil de la dévotion lourdaise à Emmitsburg, et non à l’affirmation que l’apparition française aurait eu lieu dans le Maryland.",
+              "source_url": "https://www.nsgrotto.org/",
+              "source_id": "SHR-GROTTO-LOURDES-EMMITSBURG"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A February novena",
+          "title_fr": "Une neuvaine de février",
+          "paragraphs": [
+            {
+              "en": "For its 2026 feast-day Mass enrolment, the National Shrine Grotto advertised an observance it called a Novena of Masses, running from 2 through 11 February. The announced period led to the feast of Our Lady of Lourdes on 11 February. Those dates describe the 2026 arrangement, rather than a permanent calendar for every future year.",
+              "fr": "Pour les inscriptions aux messes de sa fête patronale en 2026, le sanctuaire d’Emmitsburg annonça une célébration appelée « neuvaine de messes », du 2 au 11 février. Cette période conduisait à la fête de Notre-Dame de Lourdes, le 11 février. Ces dates décrivent l’organisation de 2026 et non un calendrier permanent pour les années suivantes.",
+              "source_url": "https://www.nsgrotto.org/lourdesenrollment.html",
+              "source_id": "PIL-GROTTO-LOURDES-FEAST"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The grotto as a place of prayer",
+          "title_fr": "La grotte comme lieu de prière",
+          "paragraphs": [
+            {
+              "en": "At Emmitsburg, the National Shrine Grotto of Our Lady of Lourdes is itself the focus of the pilgrimage grounds, where visitors come for Marian prayer and contemplation. The grotto and its surrounding outdoor spaces form one destination. The sanctuary's notices provide current guidance about worship, visits and access.",
+              "fr": "À Emmitsburg, la grotte du sanctuaire national Notre-Dame de Lourdes est au centre du lieu de pèlerinage, où les visiteurs viennent prier et méditer auprès de la Vierge Marie. La grotte et ses espaces extérieurs constituent une seule destination. Les responsables du sanctuaire publient les informations à jour sur le culte, les visites et l'accès.",
+              "source_url": "https://www.nsgrotto.org/",
+              "source_id": "SHR-GROTTO-LOURDES-EMMITSBURG"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:lourdes-grotto-emmitsburg-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Bernadette Soubirous"
+      ],
+      "bibliography_urls": [
+        "https://www.nsgrotto.org/",
+        "https://www.nsgrotto.org/lourdesenrollment.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:bermont-greux",
+      "place_name": "Chapelle Notre-Dame de Bermont",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:bermont-greux",
+      "draft_order": 84,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A small Marian chapel near Domrémy remembered for Saint Joan of Arc’s prayer.",
+      "subtitle_fr": "Une chapelle mariale près de Domrémy où l’on garde mémoire de la prière de sainte Jeanne d’Arc.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A sanctuary in Joan of Arc’s landscape",
+          "title_fr": "Un sanctuaire dans le paysage de Jeanne d’Arc",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame de Bermont is a Marian chapel near Greux and Domrémy, within the landscape associated with Saint Joan of Arc’s youth. Its religious significance comes from the connection between a concrete place of prayer and Joan’s own devotion. The chapel is not simply a monument to a later national memory; it is presented as a place she visited.",
+              "fr": "Notre-Dame de Bermont est une chapelle mariale près de Greux et de Domrémy, dans le paysage lié à l’enfance de sainte Jeanne d’Arc. Son importance religieuse provient du lien entre un lieu de prière concret et la dévotion de Jeanne elle-même. La chapelle n’est pas seulement un monument d’une mémoire nationale ultérieure : elle est présentée comme un lieu qu’elle fréquentait.",
+              "source_url": "https://www.nd-bermont.fr/",
+              "source_id": "SHR-BERMONT-GREUX"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Candles, flowers and prayer",
+          "title_fr": "Cierges, fleurs et prière",
+          "paragraphs": [
+            {
+              "en": "According to the sanctuary’s historical account, Joan came to pray and offer candles and flowers. This local memory does not, by itself, establish speeches or miracles absent from that account.",
+              "fr": "Selon le récit historique du sanctuaire, Jeanne venait y prier et offrir des cierges et des fleurs. Cette mémoire locale ne permet pas, à elle seule, d’attribuer à Jeanne des paroles ou des miracles que le récit ne rapporte pas.",
+              "source_url": "https://www.nd-bermont.fr/",
+              "source_id": "SHR-BERMONT-GREUX"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting the surviving chapel",
+          "title_fr": "Visiter la chapelle conservée",
+          "paragraphs": [
+            {
+              "en": "The present chapel remains a separately identified Marian site near Domrémy. Its association with Joan of Arc recalls a particular place of prayer near her childhood home, rather than every site connected with her life. Visitors should seek the sanctuary’s own directions and opening arrangements.",
+              "fr": "La chapelle actuelle demeure un lieu marial distinct près de Domrémy. Son lien avec Jeanne d’Arc rappelle un lieu de prière particulier près de son village natal, distinct des autres sites liés à sa vie. Les visiteurs doivent se renseigner sur ses indications d’accès et ses modalités d’ouverture propres.",
+              "source_url": "https://www.nd-bermont.fr/",
+              "source_id": "SHR-BERMONT-GREUX"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:bermont-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Joan of Arc"
+      ],
+      "bibliography_urls": [
+        "https://www.nd-bermont.fr/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "place_name": "Sanctuaire Notre-Dame des Marins — Basilique Notre-Dame d’Arcachon",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:arcachon-marins",
+      "draft_order": 85,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A sailors’ Marian sanctuary in Arcachon, with a centuries-long devotion and basilica history.",
+      "subtitle_fr": "Un sanctuaire marial des marins à Arcachon, avec une dévotion pluriséculaire et une histoire de basilique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of the Sailors",
+          "title_fr": "Notre-Dame des Marins",
+          "paragraphs": [
+            {
+              "en": "According to the Diocese of Bordeaux, the devotion to Notre-Dame des Marins at Arcachon began with the traditional discovery of a Marian statue on the shore during a storm in 1519. Successive chapels served the sailors' devotion. The chapel erected in 1722 was destroyed by fire in January 1986, and its reconstruction was inaugurated on 25 March 1987.",
+              "fr": "Selon le diocèse de Bordeaux, la dévotion à Notre-Dame des Marins d’Arcachon naquit de la découverte traditionnelle d’une statue de la Vierge sur la plage pendant une tempête en 1519. Plusieurs chapelles successives accueillirent cette dévotion des marins. La chapelle édifiée en 1722 fut détruite par un incendie en janvier 1986 ; sa reconstruction fut inaugurée le 25 mars 1987.",
+              "source_url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+              "source_id": "SHR-ARCACHON-MARINS"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Coronation and basilica",
+          "title_fr": "Couronnement et basilique",
+          "paragraphs": [
+            {
+              "en": "The diocesan account records the crowning of the venerated Virgin in 1870 and the raising of the church to minor-basilica status in 1953. These are separate moments in a longer history: the crowning concerns Marian devotion, while the basilican title concerns the church’s ecclesiastical standing. Neither date should be treated as the founding of the much older maritime devotion.",
+              "fr": "Le diocèse indique le couronnement de la Vierge vénérée en 1870 et l’élévation de l’église au rang de basilique mineure en 1953. Il s’agit de deux moments distincts d’une histoire plus longue : le couronnement touche la dévotion mariale, tandis que le titre de basilique concerne le statut ecclésiastique de l’église. Aucune de ces dates ne constitue l’origine de la dévotion maritime, bien antérieure.",
+              "source_url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+              "source_id": "SHR-ARCACHON-MARINS"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A named pilgrimage church",
+          "title_fr": "Une église de pèlerinage nommée",
+          "paragraphs": [
+            {
+              "en": "The history of Notre-Dame des Marins links a venerated Marian statue, successive chapels and the prayer of the coastal community. The diocese also records the statue's coronation in 1870 and the ecclesiastical title of minor basilica granted in 1953. Present-day visiting and worship arrangements depend on current local notices.",
+              "fr": "L’histoire de Notre-Dame des Marins associe une statue mariale vénérée, plusieurs chapelles successives et la prière de la communauté maritime. Le diocèse rappelle aussi le couronnement de la statue en 1870 et le titre ecclésiastique de basilique mineure accordé en 1953. Les conditions actuelles de visite et de culte dépendent des annonces locales en vigueur.",
+              "source_url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+              "source_id": "SHR-ARCACHON-MARINS"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:arcachon-marins-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "place_name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:pellevoisin",
+      "draft_order": 86,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Pellevoisin’s Marian devotion, apparition chapel and Scapular of the Sacred Heart.",
+      "subtitle_fr": "La dévotion mariale de Pellevoisin, sa chapelle des apparitions et le scapulaire du Sacré-Cœur.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian shrine of Pellevoisin",
+          "title_fr": "Le sanctuaire marial de Pellevoisin",
+          "paragraphs": [
+            {
+              "en": "At Pellevoisin in 1876, Estelle Faguette reported fifteen experiences of the Virgin Mary. The chapel linked to these accounts became a place of Marian prayer and pilgrimage. The Archdiocese of Bourges traces organised pilgrimage here to 1877, showing that devotion at the site has a history extending beyond the reported events themselves.",
+              "fr": "À Pellevoisin, en 1876, Estelle Faguette rapporta quinze expériences de la Vierge Marie. La chapelle liée à ces récits devint un lieu de prière et de pèlerinage marial. L’archidiocèse de Bourges fait remonter le pèlerinage organisé à 1877, témoignant d’une histoire de dévotion qui dépasse les événements rapportés eux-mêmes.",
+              "source_url": "https://www.pellevoisin.net/",
+              "source_id": "SHR-PELLEVOISIN"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Scapular of the Sacred Heart",
+          "title_fr": "Le scapulaire du Sacré-Cœur",
+          "paragraphs": [
+            {
+              "en": "A letter of 22 August 2024 from the Dicastery for the Doctrine of the Faith, made public with the Pellevoisin nihil obstat on 30 August, supported Marian devotion without declaring the reported apparitions supernatural in origin. The same Vatican letter recalls that the Archbishop of Bourges recognised Estelle Faguette's healing as miraculous on 8 September 1983, with the Holy See's consent. It also records papal support for the Scapular of the Sacred Heart.",
+              "fr": "Dans une lettre du 22 août 2024, rendue publique avec le nihil obstat de Pellevoisin le 30 août, le Dicastère pour la Doctrine de la Foi soutint la dévotion mariale sans déclarer l'origine surnaturelle des apparitions rapportées. La même lettre rappelle que l'archevêque de Bourges avait reconnu comme miraculeuse la guérison d'Estelle Faguette le 8 septembre 1983, avec l'accord du Saint-Siège. Elle évoque également le soutien pontifical au scapulaire du Sacré-Cœur.",
+              "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html",
+              "source_id": "AO-ED-PELLEVOISIN-VATICAN-LETTER-20261111"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The annual pilgrimage",
+          "title_fr": "Le pèlerinage annuel",
+          "paragraphs": [
+            {
+              "en": "The sanctuary advertises a major annual pilgrimage on the last weekend of August, with Mass, Rosary, processions and scapular devotion among the religious activities. The recurrence gives pilgrims a recognisable time of gathering but not an immutable programme. Details of a given year, including confession, access and liturgical order, should always come from the current sanctuary notice.",
+              "fr": "Le sanctuaire annonce un grand pèlerinage annuel le dernier week-end d’août, avec notamment messe, Rosaire, processions et dévotion au scapulaire. Ce retour régulier offre aux pèlerins un temps de rassemblement reconnaissable sans rendre le programme immuable. Les détails propres à chaque année, notamment confessions, accès et ordre des célébrations, doivent toujours provenir des annonces actuelles du sanctuaire.",
+              "source_url": "https://www.pellevoisin.net/activites-du-sanctuaire-2/le-pelerinage-annuel/",
+              "source_id": "PIL-PELLEVOISIN-ANNUAL"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:pellevoisin-destination",
+        "pilgrimage:FR:pellevoisin-annual"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.pellevoisin.net/",
+        "https://www.pellevoisin.net/activites-du-sanctuaire-2/le-pelerinage-annuel/",
+        "https://www.diocese-bourges.org/actualites/2852-nihil-obstat-a-la-devotion-mariale-au-sanctuaire-de-pellevoisin/",
+        "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240822_lettera-faguette_en.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-PELLEVOISIN-DDF-20261111",
+        "AO-ED-PELLEVOISIN-VATICAN-LETTER-20261111"
+      ]
+    }
+  ]
+}

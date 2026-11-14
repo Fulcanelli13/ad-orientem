@@ -16,6 +16,8 @@ on:
       - 'data/customs/customs-atlas-seed.v1.json'
       - 'tools/geography/audit-sacred-atlas-editorial.mjs'
       - 'tests/sacred-atlas-editorial-master-530-contract.mjs'
+      - 'tests/sacred-atlas-approved-guide-mobile-dry-run.mjs'
+      - 'scripts/export-sacred-atlas-editorial-review-pack.mjs'
       - '.github/workflows/sacred-atlas-editorial-master.yml'
   workflow_dispatch:
 
@@ -38,3 +40,59 @@ jobs:
           node-version: '22'
       - name: Check master can be regenerated exactly from canonical owners
         run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+      - name: Wave-2 original bilingual histories (research only)
+        run: |
+          node tests/sacred-atlas-wave2-guides57-76.mjs
+          node tests/sacred-atlas-wave2-guides57-96.mjs
+          node tests/sacred-atlas-wave2-guides57-116.mjs
+          node tests/sacred-atlas-wave2-guides57-136.mjs
+          node tests/sacred-atlas-wave2-guides57-156.mjs
+          node tests/sacred-atlas-wave2-guides57-176.mjs
+          node tests/sacred-atlas-wave2-guides57-200.mjs
+          node tests/sacred-atlas-wave2-guides57-224.mjs
+          node tests/sacred-atlas-draft-to-reader-release-gate.mjs
+          node scripts/compile-approved-sacred-place-guides.mjs --check
+
+
+  approved-guide-mobile-dry-run:
+    name: synthetic approved-only EN/FR 320/390px folio QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for isolated browser test
+        run: npx playwright install --with-deps chromium
+      - name: Render synthetic reviewed guides with approved photo and no-photo fallback
+        run: node tests/sacred-atlas-approved-guide-mobile-dry-run.mjs
+      - name: Upload internal-only phone QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-approved-only-synthetic-320-390
+          path: artifacts/sacred-atlas-approved-guide-dry-run
+          if-no-files-found: ignore
+
+  consolidated-editorial-review-pack:
+    name: exact-revision 672 EN/FR editorial review export
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assemble all research paragraph pairs for independent editor
+        env:
+          AO_REVIEW_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: node scripts/export-sacred-atlas-editorial-review-pack.mjs
+      - name: Upload internal-only 224-guide bilingual editorial packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-672-en-fr-editorial-review-pack
+          path: artifacts/sacred-atlas-editorial-review
+          if-no-files-found: error

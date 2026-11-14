@@ -1,0 +1,669 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES117_126_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Existing sources reused without new primary-page retrieval; historical editor must verify claims and French before promotion.",
+    "Relic authenticity and private-revelation recognition must be attributed without overstatement.",
+    "No admission, image, entrance, liturgy or existing production mutation."
+  ],
+  "guides": [
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "place_name": "Basilica Papale di Santa Maria Maggiore",
+      "country_code": "IT",
+      "shrine_id": "shrine:20261009:IT:santa-maria-maggiore-rome",
+      "draft_order": 117,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Roman papal basilica and the Marian icon Salus Populi Romani.",
+      "subtitle_fr": "Une basilique papale de Rome et l’icône mariale Salus Populi Romani.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The basilica and Marian devotion",
+          "title_fr": "La basilique et la dévotion mariale",
+          "paragraphs": [
+            {
+              "en": "Saint Mary Major is one of Rome’s principal papal basilicas and a longstanding centre of devotion to the Mother of God. Its title and place in the city are distinct from other Roman churches dedicated to Mary. Visitors encounter a historical basilica with living worship, not merely a museum dedicated to an ancient image.",
+              "fr": "Sainte-Marie-Majeure est l’une des principales basiliques papales de Rome et un ancien centre de dévotion à la Mère de Dieu. Son titre et sa place dans la ville la distinguent des autres églises romaines dédiées à Marie. Le visiteur découvre une basilique historique où le culte se poursuit, et non un simple musée consacré à une image ancienne.",
+              "source_id": "SHR-PIL-IT-santa-maria-maggiore-rome",
+              "source_url": "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Salus Populi Romani image",
+          "title_fr": "L’image Salus Populi Romani",
+          "paragraphs": [
+            {
+              "en": "The Marian icon honoured as Salus Populi Romani is central to the basilica’s identity. The title, traditionally understood as the protection or salvation of the Roman people, expresses a relationship between civic memory and prayer.",
+              "fr": "L’icône mariale vénérée sous le titre de Salus Populi Romani est centrale dans l’identité de la basilique. Ce titre, traditionnellement associé à la protection ou au salut du peuple romain, exprime un lien entre la mémoire de la ville et la prière.",
+              "source_id": "SHR-PIL-IT-santa-maria-maggiore-rome",
+              "source_url": "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to a papal basilica",
+          "title_fr": "Pèlerinage dans une basilique papale",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Saint Mary Major to pray before the Marian image and to visit a major church of the Roman pilgrimage landscape. Its position in Rome can be linked to other basilicas without merging their individual identities. Present-day Mass arrangements must come from the basilica; its Marian character alone does not establish a particular missal edition.",
+              "fr": "Les pèlerins viennent à Sainte-Marie-Majeure pour prier devant l’image mariale et visiter une grande église du paysage pèlerin de Rome. Sa place dans la ville peut être reliée aux autres basiliques sans confondre leurs identités propres. Les horaires actuels des messes doivent provenir de la basilique ; son caractère marial ne permet pas de déduire l’édition du missel employée.",
+              "source_id": "SHR-PIL-IT-santa-maria-maggiore-rome",
+              "source_url": "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:santa-maria-maggiore-rome:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "place_name": "Basílica de Nuestra Señora del Pilar",
+      "country_code": "ES",
+      "shrine_id": "shrine:20261009:ES:basilica-del-pilar-zaragoza",
+      "draft_order": 118,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The pillar, the Virgin’s image and Zaragoza’s enduring Marian sanctuary.",
+      "subtitle_fr": "La colonne, l’image de la Vierge et le sanctuaire marial de Saragosse.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A tradition centred on a pillar",
+          "title_fr": "Une tradition centrée sur une colonne",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of the Pillar in Zaragoza takes its distinctive name from the pillar associated with an ancient Marian appearance tradition. The cathedral authorities preserve the history of the revered image and the column. These elements give the site a recognisable identity beyond the general dedication of a church to Our Lady.",
+              "fr": "La basilique Notre-Dame du Pilier de Saragosse tient son nom particulier de la colonne associée à une ancienne tradition de manifestation mariale. Les autorités cathédrales conservent l’histoire de l’image vénérée et de la colonne. Ces éléments donnent au lieu une identité reconnaissable au-delà de la dédicace générale d’une église à Notre-Dame.",
+              "source_id": "SHR-PIL-ES-basilica-del-pilar-zaragoza",
+              "source_url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Image, column and church",
+          "title_fr": "Image, colonne et église",
+          "paragraphs": [
+            {
+              "en": "The image of the Virgin and the pillar belong to the same devotional setting within the basilica. A visitor should be able to tell these material features from the tradition that explains their significance. The traditional account may be narrated as the shrine’s inheritance without claiming that its supernatural details are accessible to independent historical verification.",
+              "fr": "L’image de la Vierge et la colonne appartiennent au même cadre dévotionnel à l’intérieur de la basilique. Le visiteur doit pouvoir distinguer ces éléments matériels de la tradition qui explique leur importance. Le récit ancien peut être présenté comme un héritage du sanctuaire sans prétendre que ses détails surnaturels puissent tous être vérifiés historiquement de manière indépendante.",
+              "source_id": "SHR-PIL-ES-basilica-del-pilar-zaragoza",
+              "source_url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Zaragoza destination",
+          "title_fr": "Une destination à Saragosse",
+          "paragraphs": [
+            {
+              "en": "At Zaragoza, the Basilica of Our Lady of the Pillar is a Marian pilgrimage church centred on a venerated image and column. The Cathedral Chapter recounts the ancient tradition that Mary came to encourage the Apostle James by the Ebro while she was still living; it describes a coming, rather than an apparition after her Assumption. This religious narrative remains a tradition, not independently established historical fact. Present liturgies and access follow the cathedral's announcements.",
+              "fr": "À Saragosse, la basilique Notre-Dame du Pilier est un lieu de pèlerinage marial centré sur une image vénérée et sa colonne. Le chapitre cathédral transmet l’ancienne tradition selon laquelle Marie serait venue encourager l’apôtre Jacques au bord de l’Èbre alors qu’elle vivait encore ; il s’agit d’une venue, et non d’une apparition après son Assomption. Ce récit demeure une tradition religieuse, non un fait historique établi indépendamment. Les célébrations et l’accès suivent les annonces de la cathédrale.",
+              "source_id": "SHR-PIL-ES-basilica-del-pilar-zaragoza",
+              "source_url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:basilica-del-pilar-zaragoza:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "place_name": "Church of the Holy Sepulchre — shared Christian sanctuary",
+      "country_code": "PS",
+      "shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
+      "draft_order": 119,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Calvary and the Tomb of Christ within a shared sanctuary in Jerusalem.",
+      "subtitle_fr": "Le Calvaire et le tombeau du Christ dans un sanctuaire partagé à Jérusalem.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Calvary and the Empty Tomb",
+          "title_fr": "Le Calvaire et le tombeau vide",
+          "paragraphs": [
+            {
+              "en": "The Church of the Holy Sepulchre brings together sites venerated as Calvary and the Tomb from which Christ rose. This concentration of two central places of Passion and Resurrection memory makes the complex a principal Christian pilgrimage destination. The site’s religious significance is rooted in these identified locations, not in a claim that every detail of the Gospel narrative can be mapped to a separate doorway.",
+              "fr": "L’église du Saint-Sépulcre réunit des lieux vénérés comme le Calvaire et le tombeau d’où le Christ est ressuscité. Cette réunion de deux lieux essentiels à la mémoire de la Passion et de la Résurrection en fait une destination majeure du pèlerinage chrétien. Sa signification religieuse repose sur ces emplacements identifiés, sans supposer que chaque détail évangélique corresponde à une entrée distincte.",
+              "source_id": "AO-ED-HOLY-SEPULCHRE-UNESCO-SITES-20261112",
+              "source_url": "https://whc.unesco.org/document/221350"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Shared Christian custody",
+          "title_fr": "Une garde chrétienne partagée",
+          "paragraphs": [
+            {
+              "en": "The Church of the Holy Sepulchre is administered through a historic arrangement of shared custodianship. Catholic Franciscans of the Custody of the Holy Land, Greek Orthodox Christians and the Armenian Apostolic community have distinct responsibilities and liturgical traditions there. The building is a shared Christian sanctuary, not the exclusive church of one confession.",
+              "fr": "L’église du Saint-Sépulcre est administrée selon un partage historique des responsabilités. Les franciscains catholiques de la Custodie de Terre Sainte, les chrétiens grecs orthodoxes et la communauté arménienne apostolique y exercent des fonctions distinctes selon leurs traditions liturgiques. L’édifice est un sanctuaire chrétien partagé, non l’église exclusive d’une seule confession.",
+              "source_id": "AO-ED-HOLY-SEPULCHRE-STATUS-QUO-20261112",
+              "source_url": "https://en.jerusalem-patriarchate.info/announcements/statement-for-the-church-of-the-holy-sepulchre/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage under changing conditions",
+          "title_fr": "Pèlerinage soumis aux conditions locales",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to the Holy Sepulchre to pray at the places venerated as Calvary and Christ's Tomb. The shared custody of the complex shapes its worship and visiting arrangements. Access and celebrations are also affected by circumstances in Jerusalem, so the current notices of the Custody and local authorities govern practical visits.",
+              "fr": "Les pèlerins viennent au Saint-Sépulcre pour prier aux lieux vénérés comme le Calvaire et le tombeau du Christ. Le partage de la garde du sanctuaire organise les célébrations et les visites. Les circonstances à Jérusalem peuvent également influer sur l’accès ; les annonces de la Custodie et des autorités locales règlent donc les visites pratiques.",
+              "source_id": "SHR-PIL-PS-holy-sepulchre-jerusalem",
+              "source_url": "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:PS:holy-sepulchre-jerusalem:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/",
+        "https://whc.unesco.org/document/221350",
+        "https://en.jerusalem-patriarchate.info/announcements/statement-for-the-church-of-the-holy-sepulchre/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-HOLY-SEPULCHRE-UNESCO-SITES-20261112",
+        "AO-ED-HOLY-SEPULCHRE-STATUS-QUO-20261112"
+      ]
+    },
+    {
+      "place_id": "place:PS:nativity-bethlehem",
+      "place_name": "Church of the Nativity — shared Christian sanctuary",
+      "country_code": "PS",
+      "shrine_id": "shrine:20261009:PS:nativity-bethlehem",
+      "draft_order": 120,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Bethlehem basilica and grotto commemorating the Nativity of Christ.",
+      "subtitle_fr": "La basilique et la grotte de Bethléem qui commémorent la Nativité du Christ.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The basilica and the Grotto",
+          "title_fr": "La basilique et la grotte",
+          "paragraphs": [
+            {
+              "en": "At Bethlehem, the Basilica of the Nativity encloses the grotto venerated as the place of Christ’s birth. The church building and the subterranean devotional space are related but not interchangeable features of one pilgrimage complex. Their association with the Gospel Nativity gives the place a particular meaning within the Christian history of salvation.",
+              "fr": "À Bethléem, la basilique de la Nativité abrite la grotte vénérée comme lieu de la naissance du Christ. L’église et l’espace dévotionnel souterrain sont deux éléments liés, mais distincts, d’un même ensemble de pèlerinage. Leur association avec la Nativité évangélique donne au lieu un sens particulier dans l’histoire chrétienne du salut.",
+              "source_id": "SHR-PIL-PS-nativity-bethlehem",
+              "source_url": "https://www.custodia.org/en/sanctuaries/bethlehem-basilica-of-the-nativity/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Different churches, one sanctuary",
+          "title_fr": "Différentes Églises, un sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the Nativity is shared by communities with distinct liturgical traditions. The Franciscan Custody of the Holy Land represents the Catholic presence alongside the Greek Orthodox and Armenian Apostolic communities. The grotto and basilica form one historic pilgrimage complex, while the churches maintain their separate responsibilities.",
+              "fr": "La basilique de la Nativité est partagée entre des communautés de traditions liturgiques distinctes. La Custodie franciscaine de Terre Sainte y représente la présence catholique aux côtés des communautés grecque orthodoxe et arménienne apostolique. La grotte et la basilique forment un même ensemble historique de pèlerinage, tandis que les Églises conservent des responsabilités propres.",
+              "source_id": "SHR-PIL-PS-nativity-bethlehem",
+              "source_url": "https://www.custodia.org/en/sanctuaries/bethlehem-basilica-of-the-nativity/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at Bethlehem",
+          "title_fr": "Prière à Bethléem",
+          "paragraphs": [
+            {
+              "en": "The Grotto is a natural focal point for pilgrims meditating on the Incarnation, while the basilica is also a functioning place of worship shared across communities. Access to both can depend on current schedules and local restrictions.",
+              "fr": "La grotte est un foyer naturel de prière pour les pèlerins méditant l’Incarnation, tandis que la basilique demeure un lieu de culte partagé entre plusieurs communautés. Les accès peuvent dépendre des horaires et de restrictions locales.",
+              "source_id": "SHR-PIL-PS-nativity-bethlehem",
+              "source_url": "https://www.custodia.org/en/sanctuaries/bethlehem-basilica-of-the-nativity/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:PS:nativity-bethlehem:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/bethlehem-basilica-of-the-nativity/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "place_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "country_code": "JP",
+      "shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
+      "draft_order": 121,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Japanese Marian chapel at Akita and its historically assessed devotional account.",
+      "subtitle_fr": "La chapelle mariale japonaise d’Akita et le récit dévotionnel évalué historiquement.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian account in Akita",
+          "title_fr": "Un récit marial à Akita",
+          "paragraphs": [
+            {
+              "en": "The chapel of the Handmaids of the Holy Eucharist at Akita is a Japanese Catholic place of prayer associated with reports concerning a wooden statue of the Virgin Mary. According to the convent's own account, tears were reported from the statue on occasions between 4 January 1975 and 15 September 1981. Those occurrences are presented as the community's testimony, not as independently established supernatural events.",
+              "fr": "La chapelle des Servantes de la Sainte Eucharistie à Akita est un lieu de prière catholique japonais lié à des récits concernant une statue de bois de la Vierge Marie. Selon le récit de la communauté, des larmes auraient été observées sur la statue à plusieurs reprises entre le 4 janvier 1975 et le 15 septembre 1981. Ces événements sont rapportés comme des témoignages de la communauté, et non comme des phénomènes surnaturels établis de manière indépendante.",
+              "source_id": "AO-ED-AKITA-CUSTODIAN-20261112",
+              "source_url": "https://www.seitaihoshikai.com/us/index.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Historical local approval",
+          "title_fr": "Une approbation locale historique",
+          "paragraphs": [
+            {
+              "en": "In a pastoral letter dated 22 April 1984, Bishop John Shōjirō Itō of Niigata permitted devotion to Our Lady of Akita within his diocese pending any judgment from the Holy See. In 2026, his successor Bishop Daisuke Narui quoted the letter and explained that Rome had issued no judgment on the Akita events. Permission for local veneration is not a definitive finding that the reported phenomena are supernatural.",
+              "fr": "Dans une lettre pastorale datée du 22 avril 1984, Mgr John Shōjirō Itō, évêque de Niigata, permit la dévotion à Notre-Dame d'Akita dans son diocèse en attendant un éventuel jugement du Saint-Siège. En 2026, son successeur Mgr Daisuke Narui cita cette lettre et précisa que Rome n'avait rendu aucun jugement sur les événements d'Akita. L'autorisation de la vénération locale ne constitue pas une reconnaissance définitive du caractère surnaturel des faits rapportés.",
+              "source_id": "AO-ED-AKITA-NIIGATA-DIOCESE-20261112",
+              "source_url": "https://www.catholic-niigata.net/archives/9340"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A chapel, not an inferred liturgy",
+          "title_fr": "Une chapelle, non une liturgie supposée",
+          "paragraphs": [
+            {
+              "en": "At the Seitai Hoshikai convent in Akita, visitors may pray at the Marian chapel subject to the community's published access arrangements. The convent says there is no resident priest and no regular Mass schedule; visiting priests may request permission to celebrate. Neither the reported events nor those arrangements establish the celebration of a Traditional Latin Mass there.",
+              "fr": "Au couvent Seitai Hoshikai d'Akita, les visiteurs peuvent prier dans la chapelle mariale selon les conditions d'accueil publiées par la communauté. Celle-ci précise qu'aucun prêtre n'y réside et qu'il n'y a pas de messes régulières ; des prêtres de passage peuvent demander à y célébrer. Ni les événements rapportés ni ces dispositions n'établissent qu'une messe traditionnelle latine y soit célébrée.",
+              "source_id": "AO-ED-AKITA-CUSTODIAN-20261112",
+              "source_url": "https://www.seitaihoshikai.com/us/index.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:JP:our-lady-akita-convent:destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.seitaihoshikai.com/us/index.html",
+        "https://www.catholic-niigata.net/archives/9340"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-AKITA-CUSTODIAN-20261112",
+        "AO-ED-AKITA-NIIGATA-DIOCESE-20261112"
+      ]
+    },
+    {
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_name": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie",
+      "country_code": "PL",
+      "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+      "draft_order": 122,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Kraków sanctuary dedicated to John Paul II and its venerated blood relic.",
+      "subtitle_fr": "Le sanctuaire de Cracovie dédié à Jean-Paul II et sa relique de sang vénérée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A sanctuary dedicated to a modern saint",
+          "title_fr": "Un sanctuaire dédié à un saint contemporain",
+          "paragraphs": [
+            {
+              "en": "Kraków’s Sanctuary of Saint John Paul II the Great is dedicated to the Polish pope and belongs to the city’s Catholic pilgrimage landscape. The dedication should be distinguished from sites connected directly with his childhood or papal ministry. This is a specific sanctuary created to foster memory and prayer around the saint, not a generic name for every John Paul II memorial.",
+              "fr": "Le sanctuaire Saint-Jean-Paul-II-le-Grand de Cracovie est dédié au pape polonais et appartient au paysage catholique des pèlerinages de la ville. Sa dédicace doit être distinguée des lieux directement liés à son enfance ou à son ministère pontifical. Il s’agit d’un sanctuaire précis consacré à la mémoire et à la prière autour du saint, non d’un nom générique pour tous ses mémoriaux.",
+              "source_id": "SHR-JPII-KRAKOW-OFFICIAL",
+              "source_url": "https://sjanpawel2.pl/en/misja-cjp/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The documented relic",
+          "title_fr": "La relique documentée",
+          "paragraphs": [
+            {
+              "en": "The custodians of Kraków's Saint John Paul II Sanctuary report the presence of a blood relic associated with the saint. Its veneration is a distinctive feature of prayer there, connecting visitors to the memory of the Polish pope. The site's religious identity is rooted in his life and in the community's continuing devotion.",
+              "fr": "Les responsables du sanctuaire Saint-Jean-Paul-II de Cracovie indiquent qu'une relique de sang associée au saint y est conservée. Sa vénération constitue une dimension particulière de la prière au sanctuaire et relie les pèlerins à la mémoire du pape polonais. L'identité religieuse du lieu s'enracine dans sa vie et dans la dévotion que la communauté continue de lui porter.",
+              "source_id": "SHR-JPII-KRAKOW-OFFICIAL",
+              "source_url": "https://sjanpawel2.pl/en/misja-cjp/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage in Kraków",
+          "title_fr": "Pèlerinage à Cracovie",
+          "paragraphs": [
+            {
+              "en": "Visitors may combine this sanctuary with other Catholic places in Kraków, but each church and historical site retains its own identity and religious context. The sanctuary provides the reference point for information about its relic and mission. Current ceremonies, group visits and access must be checked with its custodians instead of inferred from the saint’s universal feast.",
+              "fr": "Les visiteurs peuvent joindre ce sanctuaire à d’autres lieux catholiques de Cracovie, mais chaque église ou site historique garde son identité et son contexte religieux. Le sanctuaire demeure la source de référence pour sa relique et sa mission. Les cérémonies, visites de groupes et accès actuels doivent être vérifiés auprès de ses responsables et non déduits de la fête universelle du saint.",
+              "source_id": "SHR-JPII-KRAKOW-OFFICIAL",
+              "source_url": "https://sjanpawel2.pl/en/misja-cjp/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PL:sanktuarium-jana-pawla-ii-krakow:destination"
+      ],
+      "saint_name_associations": [
+        "Saint John Paul II"
+      ],
+      "bibliography_urls": [
+        "https://sjanpawel2.pl/en/misja-cjp/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "place_name": "Basilique Saint-Denys d’Argenteuil",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+      "draft_order": 123,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Basilica of Saint-Denys and the Holy Tunic traditionally linked to Christ.",
+      "subtitle_fr": "La basilique Saint-Denys et la Sainte Tunique traditionnellement liée au Christ.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Argenteuil relic tradition",
+          "title_fr": "La tradition de la relique d’Argenteuil",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint-Denys at Argenteuil preserves a garment venerated as the Holy Tunic and traditionally associated with Christ’s Passion. The basilica’s religious importance is linked to this inherited attribution and its history of veneration. The existence and custodianship of the textile should be clearly distinguished from independent authentication of the garment’s connection to Jesus.",
+              "fr": "La basilique Saint-Denys d’Argenteuil conserve un vêtement vénéré comme la Sainte Tunique, traditionnellement associé à la Passion du Christ. L’importance religieuse du lieu tient à cette attribution héritée et à l’histoire de sa vénération. Il convient de distinguer clairement l’existence et la garde du textile de toute authentification indépendante de son lien avec Jésus.",
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Veneration and exceptional exposition",
+          "title_fr": "Vénération et ostension exceptionnelle",
+          "paragraphs": [
+            {
+              "en": "The Holy Tunic is normally kept in a reliquary at the Basilica of Saint-Denys in Argenteuil. The sanctuary distinguishes prayer before its altar-reliquary from exceptional public displays of the garment: its published FAQ records an ostension from 18 April to 11 May 2025. Pilgrims may pray at the basilica outside such exhibitions, but should consult a new official announcement before expecting to see the fabric itself.",
+              "fr": "La Sainte Tunique est habituellement conservée dans un reliquaire de la basilique Saint-Denys d’Argenteuil. Le sanctuaire distingue la prière devant l’autel-reliquaire des ostensions exceptionnelles du vêtement : sa foire aux questions rappelle celle du 18 avril au 11 mai 2025. Les pèlerins peuvent prier à la basilique en dehors de ces présentations, mais doivent consulter une nouvelle annonce officielle avant de s’attendre à voir l’étoffe elle-même.",
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A named basilica, not a generic relic site",
+          "title_fr": "Une basilique nommée, non un lieu générique de relique",
+          "paragraphs": [
+            {
+              "en": "The physical destination is the Basilica of Saint-Denys in Argenteuil, which has its own church identity apart from the relic’s debated historical attribution. Pilgrimage and relic veneration can be explained together without conflating this building with the Basilica of Saint-Denis north of Paris. Site names and images therefore need especially careful matching.",
+              "fr": "La destination physique est la basilique Saint-Denys d’Argenteuil, dont l’identité ecclésiale existe indépendamment de l’attribution historique débattue de la relique. Pèlerinage et vénération peuvent être expliqués ensemble sans confondre cet édifice avec la basilique Saint-Denis au nord de Paris. Les noms des sites et leurs images demandent donc une correspondance particulièrement soignée.",
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-denys-argenteuil:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Denis of Paris"
+      ],
+      "bibliography_urls": [
+        "https://saintetunique.com/foire-aux-questions/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111"
+      ]
+    },
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "place_name": "Hohe Domkirche St. Petrus, Köln",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:kolner-dom-three-kings",
+      "draft_order": 124,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Cologne Cathedral and the shrine traditionally holding the relics of the Three Magi.",
+      "subtitle_fr": "La cathédrale de Cologne et la châsse traditionnellement associée aux trois Mages.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Shrine of the Three Kings",
+          "title_fr": "La châsse des trois Rois",
+          "paragraphs": [
+            {
+              "en": "Cologne Cathedral is closely associated with the Shrine of the Three Kings, the monumental reliquary traditionally said to contain relics of the Magi. This tradition gives the cathedral a specific pilgrimage identity beyond its role as a diocesan church.",
+              "fr": "La cathédrale de Cologne est étroitement liée à la châsse des trois Rois, monumental reliquaire traditionnellement réputé contenir les reliques des Mages. Cette tradition donne à la cathédrale une identité particulière de pèlerinage au-delà de sa fonction diocésaine.",
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Relic and cathedral architecture",
+          "title_fr": "Reliquaire et architecture cathédrale",
+          "paragraphs": [
+            {
+              "en": "The reliquary belongs to the history of the cathedral’s worship and artistic heritage, yet it is a distinct object within the larger sacred building. The fame of the relic tradition contributed to Cologne’s identity as a destination for pilgrims.",
+              "fr": "Le reliquaire appartient à l’histoire du culte et du patrimoine artistique de la cathédrale, mais il constitue un objet distinct au sein de l’édifice. La célébrité de la tradition des reliques a contribué à faire de Cologne une destination de pèlerinage.",
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting the actual cathedral",
+          "title_fr": "Visiter la cathédrale réelle",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may seek the shrine within Cologne Cathedral, which has its own liturgy and rules for visiting. The Shrine of the Three Kings is a place of veneration inside the cathedral itself, not a separate church. Access to the reliquary and present worship arrangements should be checked with the cathedral rather than promised on the basis of a historical description.",
+              "fr": "Les pèlerins peuvent se rendre auprès de la châsse dans la cathédrale de Cologne, dotée de sa propre liturgie et de règles de visite. La châsse des Rois mages est un lieu de vénération à l’intérieur même de la cathédrale, et non une église distincte. L’accès au reliquaire et les dispositions actuelles du culte doivent être vérifiés auprès de la cathédrale plutôt que garantis sur la base d’un récit historique.",
+              "source_id": "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112",
+              "source_url": "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:kolner-dom-three-kings:destination"
+      ],
+      "saint_name_associations": [
+        "The Three Magi"
+      ],
+      "bibliography_urls": [
+        "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-COLOGNE-CHAPTER-DREIKOENIG-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "place_name": "Basilica Cattedrale Patriarcale di San Marco",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+      "draft_order": 125,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Saint Mark’s Basilica in Venice and the traditional tomb of the Evangelist.",
+      "subtitle_fr": "La basilique Saint-Marc de Venise et le tombeau traditionnel de l’évangéliste.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Venice and Saint Mark",
+          "title_fr": "Venise et saint Marc",
+          "paragraphs": [
+            {
+              "en": "The Patriarchal Basilica of Saint Mark is a principal Catholic church of Venice and a historic focus of devotion to Saint Mark the Evangelist. Its association with the Evangelist gives the city and the basilica a recognisable religious identity. The saint’s traditional relic history should be attributed as a long-standing claim of custodianship, not presented as independent proof of bodily identity.",
+              "fr": "La basilique patriarcale Saint-Marc est l’une des principales églises catholiques de Venise et un foyer historique de dévotion à saint Marc l’Évangéliste. Son association avec l’évangéliste donne à la ville et à la basilique une identité religieuse reconnaissable. L’histoire traditionnelle de ses reliques doit être attribuée comme une ancienne revendication de garde, non comme une preuve indépendante de leur identité corporelle.",
+              "source_id": "SHR-IT-basilica-san-marco-venezia",
+              "source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The tomb beneath the altar",
+          "title_fr": "Le tombeau sous l’autel",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s documentation identifies the tomb of Saint Mark beneath the high altar. The location of the venerated tomb is a concrete feature of the basilica, distinct from the artistic decoration that surrounds it. Visitors should not confuse the physical placement of a tomb with independent authentication of the remains or imagine unrestricted access to spaces beneath the altar.",
+              "fr": "La documentation du sanctuaire situe le tombeau de saint Marc sous le maître-autel. L’emplacement du tombeau vénéré est une caractéristique concrète de la basilique, distincte de son décor artistique. Les visiteurs ne doivent pas confondre la position matérielle du tombeau avec une authentification indépendante des restes ni supposer un accès libre aux espaces situés sous l’autel.",
+              "source_id": "SHR-IT-basilica-san-marco-venezia",
+              "source_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and living worship",
+          "title_fr": "Pèlerinage et culte vivant",
+          "paragraphs": [
+            {
+              "en": "Saint Mark's is both a historic Venetian monument and a functioning Catholic basilica. For prayer and Mass, its official guidance directs worshippers to the Porta dei Fiori entrance on the north side, separately from ticketed sightseeing access. The basilica's current liturgical and visitor information should be checked before a visit; veneration of Saint Mark's traditional tomb does not imply public access beneath the high altar.",
+              "fr": "Saint-Marc est à la fois un monument historique de Venise et une basilique catholique en activité. Pour la prière et la messe, ses indications officielles orientent les fidèles vers la Porta dei Fiori, du côté nord, distincte de l'entrée touristique avec billet. Il convient de consulter les renseignements liturgiques et pratiques actuels avant la visite ; la vénération du tombeau traditionnel de saint Marc n'implique pas un accès public sous le maître-autel.",
+              "source_id": "AO-ED-SAN-MARCO-LITURGY-20261112",
+              "source_url": "https://www.basilicasanmarco.it/en/liturgical-services/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:basilica-san-marco-venezia:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Mark the Evangelist"
+      ],
+      "bibliography_urls": [
+        "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+        "https://www.basilicasanmarco.it/en/liturgical-services/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-SAN-MARCO-LITURGY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "place_name": "Basilica di San Domenico, Bologna",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+      "draft_order": 126,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Saint Dominic’s tomb and the Dominican pilgrimage tradition in Bologna.",
+      "subtitle_fr": "Le tombeau de saint Dominique et la tradition dominicaine de pèlerinage à Bologne.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A basilica dedicated to the Dominican founder",
+          "title_fr": "Une basilique dédiée au fondateur dominicain",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint Dominic in Bologna is a principal destination for Catholics honouring Saint Dominic de Guzmán, founder of the Order of Preachers. Its religious significance is associated with the saint’s burial and the community that preserves his memory. The physical basilica belongs to Bologna’s own sacred geography, distinct from other Dominican churches founded under his inspiration.",
+              "fr": "La basilique Saint-Dominique de Bologne est l’une des grandes destinations pour les catholiques qui honorent saint Dominique de Guzmán, fondateur de l’Ordre des Prêcheurs. Son importance religieuse est liée à la sépulture du saint et à la communauté qui conserve sa mémoire. L’édifice appartient à la géographie sacrée de Bologne, distincte des autres églises dominicaines fondées sous son inspiration.",
+              "source_id": "SHR-IT-basilica-san-domenico-bologna",
+              "source_url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Ark of Saint Dominic",
+          "title_fr": "L’arche de saint Dominique",
+          "paragraphs": [
+            {
+              "en": "The shrine is associated with the Arca di San Domenico, the tomb monument and reliquary at the heart of the basilica’s pilgrimage tradition. Its artistic form and religious function should both be recognised. Describing its custody and veneration does not amount to independently authenticating every relic attribution or attributing the monument’s full execution to a single artist without evidence.",
+              "fr": "Le sanctuaire est associé à l’Arca di San Domenico, monument funéraire et reliquaire au cœur de la tradition pèlerine de la basilique. Il faut reconnaître à la fois sa forme artistique et sa fonction religieuse. Décrire sa garde et sa vénération ne revient ni à authentifier indépendamment chaque attribution de relique ni à attribuer sans preuve toute l’exécution du monument à un seul artiste.",
+              "source_id": "SHR-IT-basilica-san-domenico-bologna",
+              "source_url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at the founder’s resting place",
+          "title_fr": "Prière auprès de la sépulture du fondateur",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visit the Bologna basilica to pray in a place linked to Saint Dominic and to the Dominican tradition of preaching and religious life. The saint’s tomb provides a particular focus within the broader church. Present-day services and access to individual chapels should be confirmed locally, rather than inferred from the shrine’s medieval history.",
+              "fr": "Les pèlerins visitent la basilique de Bologne pour prier dans un lieu associé à saint Dominique et à la tradition dominicaine de prédication et de vie religieuse. Son tombeau donne un foyer particulier à la dévotion au sein de la vaste église. Les offices actuels et l’accès aux chapelles particulières doivent être confirmés localement, sans être déduits de l’histoire médiévale du sanctuaire.",
+              "source_id": "SHR-IT-basilica-san-domenico-bologna",
+              "source_url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:basilica-san-domenico-bologna:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Dominic de Guzmán"
+      ],
+      "bibliography_urls": [
+        "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
+      "publication_authorized": false
+    }
+  ]
+}

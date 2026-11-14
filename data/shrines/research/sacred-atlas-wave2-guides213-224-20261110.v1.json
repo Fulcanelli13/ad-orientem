@@ -1,0 +1,771 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES213_224_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 12,
+    "sections": 36,
+    "published": 0
+  },
+  "policy": [
+    "Evidence-limited historic claims attributed to existing source registry; source-page verification and substantive FR editorial check required.",
+    "Parish/cathedral/co-cathedral records stay correctly classified; dated Jubilee 2025 event not a permanent shrine entitlement.",
+    "Eucharistic miracle accounts are devotional traditions; no independent miracle or relic authentication asserted.",
+    "Research content only, no automatic publication or map/photo/rite changes."
+  ],
+  "guides": [
+    {
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "place_name": "Church of Saint Peter in Gallicantu, Jerusalem",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "draft_order": 213,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Jerusalem’s Saint Peter in Gallicantu, commemorating Peter’s denial of Christ.",
+      "subtitle_fr": "Saint-Pierre-en-Gallicante à Jérusalem, commémorant le reniement de Pierre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Peter’s denial in the Passion",
+          "title_fr": "Le reniement de Pierre dans la Passion",
+          "paragraphs": [
+            {
+              "en": "The present Saint Peter in Gallicantu church in Jerusalem was built by the Assumptionists in the twentieth century on a site with Byzantine and Crusader church remains. The sanctuary's history traces four successive churches, while the biblical association with Peter's denial remains a pilgrimage tradition.",
+              "fr": "L'église actuelle de Saint-Pierre-en-Gallicante, à Jérusalem, fut construite par les Assomptionnistes au XXe siècle sur un lieu comportant des vestiges d'églises byzantine et croisée. L'histoire du sanctuaire retrace quatre édifices successifs ; le lien avec le reniement de Pierre relève de la tradition pèlerine.",
+              "source_id": "AO-ED-GALLICANTU-HISTORY-20261111",
+              "source_url": "https://www.stpeter-gallicantu.org/history-of-the-place-116.html?lang=fr"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Tradition and the physical church",
+          "title_fr": "La tradition et l’église réelle",
+          "paragraphs": [
+            {
+              "en": "The neo-Byzantine church and its crypt present mosaics and sacred imagery recalling the Passion of Christ and the denial of Peter. These features make the Gospel narrative visible in a later building, without demonstrating that every ancient stair or chamber is the precise place of the events.",
+              "fr": "L'église néo-byzantine et sa crypte présentent mosaïques et images sacrées rappelant la Passion du Christ et le reniement de Pierre. Ces éléments rendent le récit évangélique visible dans un édifice postérieur, sans prouver que chaque escalier ou salle ancienne fut le lieu exact des événements.",
+              "source_id": "AO-ED-GALLICANTU-CRYPT-20261111",
+              "source_url": "https://www.stpeter-gallicantu.org/Church-and-crypt.html?lang=en"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A distinct Jerusalem stop",
+          "title_fr": "Une étape distincte à Jérusalem",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's own visitor information describes a church, crypt, archaeological remains and a viewpoint over Jerusalem. These elements form a single pilgrimage destination; access conditions and opening arrangements are set by its current custodians, not inferred from Gospel chronology.",
+              "fr": "Les renseignements du sanctuaire décrivent une église, une crypte, des vestiges archéologiques et un panorama sur Jérusalem. Ces éléments forment une même destination pèlerine ; les modalités d'accès et les horaires dépendent de ses responsables actuels, non de la chronologie évangélique.",
+              "source_id": "AO-ED-GALLICANTU-VISIT-20261111",
+              "source_url": "https://www.stpeter-gallicantu.org/Prepare-your-visit.html?lang=en"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.stpeter-gallicantu.org/history-of-the-place-116.html?lang=fr",
+        "https://www.stpeter-gallicantu.org/Church-and-crypt.html?lang=en",
+        "https://www.stpeter-gallicantu.org/Prepare-your-visit.html?lang=en"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-GALLICANTU-HISTORY-20261111",
+        "AO-ED-GALLICANTU-CRYPT-20261111",
+        "AO-ED-GALLICANTU-VISIT-20261111"
+      ]
+    },
+    {
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "place_name": "Saint Anne's National Shrine, Talawila",
+      "country_code": "LK",
+      "shrine_id": "shrine:LK:saint-anne-s-national-shrine-talawila",
+      "draft_order": 214,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Saint Anne pilgrimage sanctuary at Talawila on Sri Lanka’s north-western coast.",
+      "subtitle_fr": "Le sanctuaire de pèlerinage Sainte-Anne de Talawila sur la côte nord-ouest du Sri Lanka.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Anne at Talawila",
+          "title_fr": "Sainte Anne à Talawila",
+          "paragraphs": [
+            {
+              "en": "The Saint Anne shrine at Talawila, on Sri Lanka's north-western coast, has a long tradition of Catholic pilgrimage. The Oblate historical account records local stories of an early foundation, possibly in the seventeenth century, but distinguishes these transmitted traditions from documented nineteenth-century pastoral records.",
+              "fr": "Le sanctuaire Sainte-Anne de Talawila, sur la côte nord-ouest du Sri Lanka, possède une longue tradition de pèlerinage catholique. L'histoire publiée par les Oblats rapporte des récits de fondation ancienne, peut-être au XVIIe siècle, en les distinguant des documents pastoraux du XIXe siècle.",
+              "source_id": "AO-ED-TALAWILA-OMI-20261111",
+              "source_url": "https://www.omiworld.org/lemma/kalpity-sri-lanka/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The coastal sanctuary",
+          "title_fr": "Le sanctuaire côtier",
+          "paragraphs": [
+            {
+              "en": "According to the Oblates, a recorded chaplain served Saint Anne's shrine from 1843, while Oblate missionary care began in 1850. The same account quotes an 1850 report describing the site as already attracting many pilgrims to fulfil vows, establishing a historical pilgrimage tradition.",
+              "fr": "Selon les Oblats, un chapelain est attesté au sanctuaire Sainte-Anne dès 1843 et les missionnaires oblats commencèrent à en assurer la charge en 1850. Le même récit cite un rapport de 1850 décrivant déjà l'affluence de pèlerins venus accomplir leurs vœux.",
+              "source_id": "AO-ED-TALAWILA-OMI-20261111",
+              "source_url": "https://www.omiworld.org/lemma/kalpity-sri-lanka/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrims honouring Saint Anne",
+          "title_fr": "Les pèlerins qui honorent sainte Anne",
+          "paragraphs": [
+            {
+              "en": "Talawila's coastal sanctuary remains associated with devotion to Saint Anne and longstanding communal pilgrimage. Nineteenth-century records describe annual feast gatherings, but the particular dates, services and accommodation arrangements for any present visit require current local information.",
+              "fr": "Le sanctuaire côtier de Talawila demeure lié à la dévotion à sainte Anne et au pèlerinage communautaire. Les documents du XIXe siècle décrivent des rassemblements annuels, mais les dates, offices et modalités d'accueil des visites actuelles nécessitent des renseignements locaux récents.",
+              "source_id": "AO-ED-TALAWILA-OMI-20261111",
+              "source_url": "https://www.omiworld.org/lemma/kalpity-sri-lanka/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.omiworld.org/lemma/kalpity-sri-lanka/"
+      ],
+      "source_evidence_scope": "INSTITUTIONAL_SOURCE_ALIGNMENT_PARTIAL_NOT_FINAL_EDITORIAL_APPROVAL",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TALAWILA-OMI-20261111"
+      ]
+    },
+    {
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "place_name": "National Marian Shrine of Our Lady of La Vang",
+      "country_code": "VN",
+      "shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "draft_order": 215,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Vietnam’s Marian shrine of La Vang, connected with the memory of Catholics during persecution.",
+      "subtitle_fr": "Le sanctuaire marial vietnamien de La Vang, lié à la mémoire des catholiques pendant les persécutions.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian tradition of La Vang",
+          "title_fr": "La tradition mariale de La Vang",
+          "paragraphs": [
+            {
+              "en": "La Vang in central Vietnam is a major Catholic Marian pilgrimage sanctuary associated with the faith of Vietnamese Christians during periods of persecution. Devotional tradition also reports a Marian apparition.",
+              "fr": "La Vang, au centre du Vietnam, est un grand sanctuaire de pèlerinage marial catholique lié à la foi des chrétiens vietnamiens pendant les périodes de persécution. La tradition dévotionnelle rapporte aussi une apparition mariale.",
+              "source_id": "SG-MAJOR2-SITE-VN",
+              "source_url": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A place of Vietnamese Catholic memory",
+          "title_fr": "Un lieu de mémoire catholique vietnamienne",
+          "paragraphs": [
+            {
+              "en": "La Vang’s significance belongs to the history of the Catholic community of Vietnam, not simply to the spread of a European Marian title. Pilgrims encounter a named sacred place connected with endurance and prayer. The sanctuary is distinct from the many churches around the world that later adopted the title Our Lady of La Vang.",
+              "fr": "L’importance de La Vang appartient à l’histoire de la communauté catholique du Vietnam, et non simplement à la diffusion d’un titre marial européen. Les pèlerins découvrent un lieu sacré nommé, lié à la persévérance et à la prière. Le sanctuaire est distinct des nombreuses églises du monde qui ont ensuite adopté le titre Notre-Dame de La Vang.",
+              "source_id": "SG-MAJOR2-SITE-VN",
+              "source_url": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and present conditions",
+          "title_fr": "Pèlerinage et conditions actuelles",
+          "paragraphs": [
+            {
+              "en": "The Holy See’s news reporting documents contemporary celebrations at La Vang, confirming that the shrine remains a living Catholic destination. Individual pilgrimages and events have their own dates and organisation.",
+              "fr": "Les informations du Saint-Siège documentent des célébrations contemporaines à La Vang, confirmant que le sanctuaire reste une destination catholique vivante. Chaque pèlerinage et événement possède ses propres dates et modalités d’organisation.",
+              "source_id": "SG-MAJOR2-SITE-VN",
+              "source_url": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:VN:our-lady-la-vang-national-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "place_name": "Cathédrale Saint-Pierre de Rabat",
+      "country_code": "MA",
+      "shrine_id": "shrine:MA:cathedrale-saint-pierre-rabat",
+      "draft_order": 216,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Rabat’s Catholic Cathedral of Saint Peter and its Moroccan architectural and devotional character.",
+      "subtitle_fr": "La cathédrale catholique Saint-Pierre de Rabat et ses caractères architecturaux et dévotionnels marocains.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Catholic cathedral of Rabat",
+          "title_fr": "La cathédrale catholique de Rabat",
+          "paragraphs": [
+            {
+              "en": "The Cathedral of Saint Peter at Rabat is the principal Catholic cathedral church of the Archdiocese of Rabat, situated at Place du Golan. Its dedication recalls the apostle Peter, while its institutional role belongs to the Catholic Church in Morocco. It is a functioning diocesan cathedral, not a separately erected Marian shrine.",
+              "fr": "La cathédrale Saint-Pierre de Rabat est l’église cathédrale principale de l’archidiocèse de Rabat, située place du Golan. Sa dédicace rappelle l’apôtre Pierre, tandis que son rôle institutionnel appartient à l’Église catholique du Maroc. C'est une cathédrale diocésaine en activité, non un sanctuaire marial érigé séparément.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0705",
+              "source_url": "https://dioceserabat.org/la-cathedrale-du-monde/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Architecture and Notre-Dame du Maroc",
+          "title_fr": "Architecture et Notre-Dame du Maroc",
+          "paragraphs": [
+            {
+              "en": "The archdiocese describes a twentieth-century building with Moroccan-influenced interior elements and an image of Notre-Dame du Maroc. The Marian image is one devotional feature of the cathedral, not evidence that the entire church bears a different dedication. Its architecture reflects a particular encounter between a Catholic institution and its local setting.",
+              "fr": "L’archidiocèse décrit un édifice du XXe siècle avec des éléments intérieurs d’influence marocaine et une image de Notre-Dame du Maroc. Cette image mariale est l’un des éléments dévotionnels de la cathédrale, non la preuve que toute l’église porte une autre dédicace. Son architecture reflète une rencontre particulière entre une institution catholique et son cadre local.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0705",
+              "source_url": "https://dioceserabat.org/la-cathedrale-du-monde/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Present diocesan worship",
+          "title_fr": "Le culte diocésain actuel",
+          "paragraphs": [
+            {
+              "en": "The cathedral supports the Catholic liturgical life of Rabat rather than an independently documented recurring pilgrimage route. Visitors can discover its historical and architectural identity while respecting its function as a place of worship. Mass times and access should come from the archdiocese’s current information, not from an assumed tourist timetable.",
+              "fr": "La cathédrale soutient la vie liturgique catholique de Rabat plutôt qu’un itinéraire récurrent de pèlerinage documenté séparément. Les visiteurs peuvent découvrir son identité historique et architecturale en respectant sa fonction cultuelle. Les horaires des messes et les accès doivent venir des informations actuelles de l’archidiocèse, non d’un programme touristique supposé.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0705",
+              "source_url": "https://dioceserabat.org/la-cathedrale-du-monde/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [
+        "Saint Peter the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://dioceserabat.org/la-cathedrale-du-monde/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "place_name": "Église Notre-Dame de Lourdes, Casablanca",
+      "country_code": "MA",
+      "shrine_id": "shrine:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "draft_order": 217,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Casablanca’s active parish of Our Lady of Lourdes and its patronal celebration.",
+      "subtitle_fr": "La paroisse vivante Notre-Dame de Lourdes de Casablanca et sa fête patronale.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Catholic parish in Casablanca",
+          "title_fr": "Une paroisse catholique à Casablanca",
+          "paragraphs": [
+            {
+              "en": "The Church of Our Lady of Lourdes is an active Catholic parish at Casablanca’s Rond-point d’Europe. It belongs to the Archdiocese of Rabat and retains a particular local community and Marian dedication. Its status is that of a parish church, not a separately documented canonical shrine or the site of the French Lourdes apparitions.",
+              "fr": "L’église Notre-Dame de Lourdes est une paroisse catholique en activité au rond-point d’Europe de Casablanca. Elle appartient à l’archidiocèse de Rabat et conserve une communauté locale et une dédicace mariale propres. Son statut est celui d’une église paroissiale, non d’un sanctuaire canonique attesté séparément ni du lieu des apparitions françaises de Lourdes.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0706",
+              "source_url": "https://dioceserabat.org/casablanca-celebration-de-la-fete-patronale-de-la-paroisse-notre-dame-de-lourdes/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The patronal feast in February 2025",
+          "title_fr": "La fête patronale de février 2025",
+          "paragraphs": [
+            {
+              "en": "The archdiocese recorded the parish’s celebration of its Lourdes patronal feast in February 2025. This provides a dated example of local Catholic worship and continuity of devotion. The 2025 ceremonies do not establish a permanent yearly timetable; this local patronal celebration is distinct from liturgies at Lourdes in France.",
+              "fr": "L’archidiocèse a relaté la célébration de la fête patronale de Lourdes par la paroisse en février 2025. Il s’agit d’un exemple daté du culte catholique local et de la continuité de la dévotion. Les cérémonies de 2025 ne constituent pas un horaire annuel permanent ; cette fête patronale locale est distincte des célébrations de Lourdes, en France.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0706",
+              "source_url": "https://dioceserabat.org/casablanca-celebration-de-la-fete-patronale-de-la-paroisse-notre-dame-de-lourdes/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A local church rather than a new apparition site",
+          "title_fr": "Une église locale, non un nouveau lieu d’apparition",
+          "paragraphs": [
+            {
+              "en": "Parishioners and visitors may pray at this named Casablanca church under the title of Our Lady of Lourdes. The local Marian dedication is distinct from the history of Massabielle and from other Lourdes churches across the world. Present worship and visiting conditions need confirmation from the parish or archdiocese.",
+              "fr": "Paroissiens et visiteurs peuvent prier dans cette église de Casablanca sous le titre de Notre-Dame de Lourdes. La dédicace mariale locale se distingue de l’histoire de Massabielle et des autres églises de Lourdes dans le monde. Les offices actuels et les modalités de visite nécessitent une confirmation auprès de la paroisse ou de l’archidiocèse.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0706",
+              "source_url": "https://dioceserabat.org/casablanca-celebration-de-la-fete-patronale-de-la-paroisse-notre-dame-de-lourdes/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://dioceserabat.org/casablanca-celebration-de-la-fete-patronale-de-la-paroisse-notre-dame-de-lourdes/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "place_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:lanciano-eucharistic-miracle",
+      "draft_order": 218,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Franciscan Church of San Francesco at Lanciano and its traditional Eucharistic miracle relics.",
+      "subtitle_fr": "L’église franciscaine San Francesco de Lanciano et ses reliques liées à la tradition d’un miracle eucharistique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Eucharistic tradition at Lanciano",
+          "title_fr": "Une tradition eucharistique à Lanciano",
+          "paragraphs": [
+            {
+              "en": "The Church of San Francesco at Lanciano is a Catholic Franciscan pilgrimage sanctuary associated with a traditional account of a Eucharistic miracle. Objects venerated there belong to that religious narrative and its continued custody.",
+              "fr": "L’église San Francesco de Lanciano est un sanctuaire catholique franciscain de pèlerinage associé au récit traditionnel d’un miracle eucharistique. Les objets qui y sont vénérés appartiennent à cette histoire religieuse et à leur garde continue.",
+              "source_id": "AO-ED-LANCIANO-BEWEB-HISTORY-20261112",
+              "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Custody of venerated objects",
+          "title_fr": "La garde des objets vénérés",
+          "paragraphs": [
+            {
+              "en": "The Italian bishops' cultural-heritage documentation records the veneration of objects associated with Lanciano's Eucharistic-miracle tradition at the Church of San Francesco. Their material custody and veneration are distinct from claims about their ancient origin or miraculous transformation. This church is a specific physical pilgrimage destination, separate from other Eucharistic-miracle sites in Italy and elsewhere.",
+              "fr": "La documentation patrimoniale de l'Église catholique italienne décrit la vénération, dans l'église San Francesco, d'objets associés à la tradition du miracle eucharistique de Lanciano. Leur conservation matérielle et leur vénération se distinguent des affirmations relatives à leur origine ancienne ou à une transformation miraculeuse. Cette église constitue un lieu précis de pèlerinage, distinct d'autres sites liés à des traditions de miracles eucharistiques en Italie et ailleurs.",
+              "source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
+              "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer around the Eucharist",
+          "title_fr": "La prière autour de l’Eucharistie",
+          "paragraphs": [
+            {
+              "en": "Pilgrims at Lanciano reflect on the Eucharist through the sanctuary’s traditional narrative and present Catholic worship. Current exhibition, Mass and access information belongs to the Franciscan custodians rather than to undated accounts.",
+              "fr": "Les pèlerins de Lanciano méditent l’Eucharistie à travers le récit traditionnel du sanctuaire et le culte catholique actuel. Les renseignements sur les ostensions, les messes et l’accès appartiennent aux responsables franciscains plutôt qu’aux récits non datés.",
+              "source_id": "AO-ED-LANCIANO-BEWEB-CHURCH-20261112",
+              "source_url": "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:lanciano-eucharistic-miracle-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.miracoloeucaristico.eu/",
+        "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/",
+        "https://beweb.chiesacattolica.it/percorsitematici/miracoli-eucaristici/il-miracolo-custodito-nella-chiesa-di-san-francesco/la-chiesa-di-san-francesco-santuario-del-miracolo-eucaristico/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-LANCIANO-BEWEB-HISTORY-20261112",
+        "AO-ED-LANCIANO-BEWEB-CHURCH-20261112"
+      ]
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "place_name": "Igreja de Santo Estêvão — Santuário do Santíssimo Milagre, Santarém",
+      "country_code": "PT",
+      "shrine_id": "shrine:PT:santarem-santissimo-milagre",
+      "draft_order": 219,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Santarém’s Church of Santo Estêvão and its medieval Eucharistic miracle tradition.",
+      "subtitle_fr": "L’église Santo Estêvão de Santarém et sa tradition médiévale de miracle eucharistique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Church of the Most Holy Miracle",
+          "title_fr": "L’église du Très Saint Miracle",
+          "paragraphs": [
+            {
+              "en": "The Church of Santo Estêvão at Santarém is also known as the Sanctuary of the Most Holy Miracle. This alternative name expresses the Catholic Eucharistic devotion associated with a medieval miraculous account. The church’s historical identity and protected architectural standing can be documented separately from any judgment about the supernatural authenticity of the tradition.",
+              "fr": "L’église Santo Estêvão de Santarém est également connue comme sanctuaire du Très Saint Miracle. Cette autre appellation exprime la dévotion eucharistique catholique liée à un récit miraculeux médiéval. L’identité historique de l’église et son statut architectural protégé peuvent être documentés séparément de tout jugement sur l’authenticité surnaturelle de la tradition.",
+              "source_id": "SG-R72-SITE-SG-INV-0152",
+              "source_url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A protected Portuguese church",
+          "title_fr": "Une église portugaise protégée",
+          "paragraphs": [
+            {
+              "en": "Portugal’s heritage register identifies the physical Church of Santo Estêvão and its significance. It is one particular Catholic site in Santarém, not a generic illustration of Eucharistic miracles.",
+              "fr": "Le registre patrimonial du Portugal identifie l’église Santo Estêvão et son importance. C’est un lieu catholique précis de Santarém, non une illustration générique des miracles eucharistiques.",
+              "source_id": "SG-R72-SITE-SG-INV-0152",
+              "source_url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A pilgrimage of Eucharistic devotion",
+          "title_fr": "Un pèlerinage de dévotion eucharistique",
+          "paragraphs": [
+            {
+              "en": "Visitors come to the church for prayer connected to the Eucharist and its historical tradition of veneration. Its sacred role can be explained without asserting independent proof of a miracle or assuming constant public display of any associated object.",
+              "fr": "Les visiteurs viennent dans l’église pour prier en lien avec l’Eucharistie et sa tradition historique de vénération. Son rôle sacré peut être expliqué sans affirmer une preuve indépendante du miracle ni supposer l’exposition publique permanente des objets associés.",
+              "source_id": "SG-R72-SITE-SG-INV-0152",
+              "source_url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PT:santarem-santissimo-milagre-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=70433"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "place_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "country_code": "CN",
+      "shrine_id": "shrine:CN:sheshan-our-lady-help-christians",
+      "draft_order": 220,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian basilica of Sheshan near Shanghai, dedicated to Mary Help of Christians.",
+      "subtitle_fr": "La basilique mariale de Sheshan près de Shanghai, dédiée à Marie Auxiliatrice.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian hill shrine of Sheshan",
+          "title_fr": "Le sanctuaire marial de la colline de Sheshan",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady Help of Christians at Sheshan near Shanghai is an established Catholic Marian pilgrimage destination in China. Its elevated site and Marian dedication provide a particular physical focus for prayer. This Chinese pilgrimage basilica is distinct from shrines sharing the same Marian title in Turin or elsewhere.",
+              "fr": "La basilique Marie Auxiliatrice de Sheshan près de Shanghai est une destination établie de pèlerinage marial catholique en Chine. Sa situation élevée et sa dédicace donnent à la prière un foyer physique particulier. Cette basilique chinoise de pèlerinage est distincte des sanctuaires portant le même titre marial à Turin ou ailleurs.",
+              "source_id": "SG-R72-SITE-SG-INV-0610",
+              "source_url": "https://www.osservatoreromano.va/en/news/2020-11/the-mother-of-china.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Prayer in union with the Church in China",
+          "title_fr": "Prière en union avec l’Église en Chine",
+          "paragraphs": [
+            {
+              "en": "The Holy See has encouraged prayer in spiritual union with Chinese Catholics, connecting this Marian sanctuary to concerns for the Church’s life in China. This gives Sheshan a devotional importance beyond its architecture. The invitation to pray must not be treated as evidence of particular present-day visitor permissions or an unchanged local liturgical timetable.",
+              "fr": "Le Saint-Siège a encouragé la prière en union spirituelle avec les catholiques chinois, reliant ce sanctuaire marial aux préoccupations pour la vie de l’Église en Chine. Cela donne à Sheshan une importance dévotionnelle au-delà de son architecture. Cette invitation à prier ne prouve pas l’existence de permissions d’accès particulières ou d’un horaire liturgique local immuable.",
+              "source_id": "SG-R72-SITE-SG-INV-0610",
+              "source_url": "https://www.osservatoreromano.va/en/news/2020-11/the-mother-of-china.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A real destination under local conditions",
+          "title_fr": "Une destination réelle soumise aux conditions locales",
+          "paragraphs": [
+            {
+              "en": "The Sheshan church is a concrete place of Catholic worship and pilgrimage, not merely a symbol of Marian prayer in China. Access conditions may be subject to local circumstances and must be checked against current reliable information.",
+              "fr": "L’église de Sheshan est un lieu concret de culte et de pèlerinage catholique, non un simple symbole de prière mariale en Chine. L’accès peut dépendre des conditions locales et doit être vérifié auprès de renseignements fiables et récents.",
+              "source_id": "SG-R72-SITE-SG-INV-0610",
+              "source_url": "https://www.osservatoreromano.va/en/news/2020-11/the-mother-of-china.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CN:sheshan-our-lady-help-christians-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.osservatoreromano.va/en/news/2020-11/the-mother-of-china.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "place_name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "country_code": "TT",
+      "shrine_id": "shrine:TT:laventille-our-lady-fatima-shrine",
+      "draft_order": 221,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The hilltop Church and Shrine of Our Lady of Fátima above Port of Spain.",
+      "subtitle_fr": "L’église et sanctuaire Notre-Dame de Fátima sur la colline de Laventille, au-dessus de Port of Spain.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Fátima in Laventille",
+          "title_fr": "Notre-Dame de Fátima à Laventille",
+          "paragraphs": [
+            {
+              "en": "The Church and Shrine of Our Lady of Fátima stands on Laventille hill above Port of Spain in Trinidad and Tobago. The National Trust documents its identity and place within the island’s religious landscape. This hilltop Catholic church is distinct from the sanctuary at Fátima in Portugal and does not claim the Portuguese events occurred locally.",
+              "fr": "L’église et sanctuaire Notre-Dame de Fátima se trouve sur la colline de Laventille, au-dessus de Port of Spain à Trinité-et-Tobago. Le National Trust documente son identité et sa place dans le paysage religieux de l’île. Cette église catholique perchée est distincte du sanctuaire de Fátima au Portugal et n’affirme pas que les événements portugais aient eu lieu localement.",
+              "source_id": "SG-R76-SITE-SG-INV-0474",
+              "source_url": "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Walking pilgrimage and the hillside",
+          "title_fr": "Pèlerinage à pied et paysage de colline",
+          "paragraphs": [
+            {
+              "en": "The local devotional history includes walking pilgrimages toward the hilltop sanctuary. The ascent is therefore part of the lived character of the place, not merely an approach to a scenic building. The form of each organised walk depends on local arrangements and conditions of access to the hillside sanctuary.",
+              "fr": "L’histoire dévotionnelle locale comprend des pèlerinages à pied vers le sanctuaire au sommet de la colline. La montée appartient donc au caractère vécu du lieu, et n’est pas seulement l’accès à un bâtiment panoramique. La forme de chaque marche organisée dépend des dispositions locales et des conditions d’accès au sanctuaire sur la colline.",
+              "source_id": "SG-R76-SITE-SG-INV-0474",
+              "source_url": "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Local prayer under a shared Marian title",
+          "title_fr": "Prière locale sous un titre marial partagé",
+          "paragraphs": [
+            {
+              "en": "Fátima devotion gives the Laventille site a spiritual connection to Portuguese Marian history while the church retains its Trinidadian identity. Pilgrims visit a specific religious community and sanctuary complex. The National Trust’s historical record and the current church programme answer different questions and should not be substituted for each other.",
+              "fr": "La dévotion à Fátima donne au lieu de Laventille un lien spirituel avec l’histoire mariale portugaise, tandis que l’église conserve son identité trinidadienne. Les pèlerins visitent une communauté religieuse et un ensemble cultuel précis. La notice historique du National Trust et le programme actuel de l’église répondent à des questions différentes et ne doivent pas se remplacer.",
+              "source_id": "SG-R76-SITE-SG-INV-0474",
+              "source_url": "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:TT:laventille-our-lady-fatima-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "place_name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "country_code": "BZ",
+      "shrine_id": "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "draft_order": 222,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Belmopan’s Catholic Co-Cathedral of Our Lady of Guadalupe and its time-limited Jubilee role.",
+      "subtitle_fr": "La cocathédrale catholique Notre-Dame de Guadalupe de Belmopan et son rôle jubilaire temporaire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A co-cathedral in Belmopan",
+          "title_fr": "Une cocathédrale à Belmopan",
+          "paragraphs": [
+            {
+              "en": "Our Lady of Guadalupe Co-Cathedral on East Ring Road in Belmopan is a Roman Catholic church of the Diocese of Belize City–Belmopan. Its function as co-cathedral belongs to the diocese’s ecclesiastical organisation. The Marian dedication does not independently establish a canonically erected shrine or an apparition associated with Belmopan.",
+              "fr": "La cocathédrale Notre-Dame de Guadalupe sur East Ring Road à Belmopan est une église catholique romaine du diocèse de Belize City–Belmopan. Sa fonction de cocathédrale relève de l’organisation ecclésiastique du diocèse. La dédicace mariale ne prouve pas à elle seule l’érection canonique d’un sanctuaire ni une apparition associée à Belmopan.",
+              "source_id": "SG-R77-SITE-SG-INV-0449",
+              "source_url": "https://www.catholicdiocesebelize.org/en/parishes"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Jubilee 2025 sacred-site designation",
+          "title_fr": "La désignation jubilaire de 2025",
+          "paragraphs": [
+            {
+              "en": "For Jubilee 2025, the Diocese of Belize City and Belmopan designated Our Lady of Guadalupe Co-Cathedral in Belmopan as a Jubilee Sacred Site and Holy Door. The diocesan celebration opened there on 4 January 2025. This was a time-bound pastoral designation, not evidence of a permanent special pilgrimage programme or a continuing Holy Door.",
+              "fr": "Pour le Jubilé 2025, le diocèse de Belize City et Belmopan désigna la cocathédrale Notre-Dame-de-Guadalupe de Belmopan comme lieu sacré jubilaire doté d’une Porte sainte. Les célébrations diocésaines y débutèrent le 4 janvier 2025. Il s’agissait d’une désignation pastorale limitée dans le temps, non d’un programme permanent de pèlerinage ou du maintien de la Porte sainte.",
+              "source_id": "AO-ED-CITATION-222-IDENTITY-20261112",
+              "source_url": "https://www.catholicdiocesebelize.org/en/news/holy-doors-of-holy-redeemer-cathedral-opened"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Marian diocesan church",
+          "title_fr": "Une église diocésaine mariale",
+          "paragraphs": [
+            {
+              "en": "The Belmopan church combines a Marian dedication with an ongoing diocesan liturgical role. Pilgrims or parishioners may pray there without the site needing an invented national shrine designation. Current liturgy and visiting access should be taken from diocesan information, distinct from both historic Guadalupe sanctuaries in Mexico and Spain.",
+              "fr": "L’église de Belmopan unit une dédicace mariale à une fonction liturgique diocésaine permanente. Pèlerins ou paroissiens peuvent y prier sans qu’il faille inventer un titre de sanctuaire national. La liturgie et les accès actuels doivent provenir des informations diocésaines, distinctes des sanctuaires historiques de Guadalupe au Mexique et en Espagne.",
+              "source_id": "SG-R77-SITE-SG-INV-0449",
+              "source_url": "https://www.catholicdiocesebelize.org/en/parishes"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.catholicdiocesebelize.org/en/parishes",
+        "https://www.catholicdiocesebelize.org/en/news/holy-doors-of-holy-redeemer-cathedral-opened"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-CITATION-222-IDENTITY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "place_name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "country_code": "CR",
+      "shrine_id": "shrine:CR:montes-oca-our-lady-lourdes-parish",
+      "draft_order": 223,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Jesuit-associated parish of Our Lady of Lourdes in Montes de Oca, Costa Rica.",
+      "subtitle_fr": "La paroisse Notre-Dame de Lourdes de Montes de Oca au Costa Rica, liée aux Jésuites.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Lourdes parish in Montes de Oca",
+          "title_fr": "Une paroisse de Lourdes à Montes de Oca",
+          "paragraphs": [
+            {
+              "en": "The Parish of Our Lady of Lourdes at Montes de Oca is a Catholic church in San José Province, Costa Rica. Its Marian dedication reflects devotion to Lourdes in France, while its religious life belongs to a distinct Costa Rican community. The local parish is neither an authenticated apparition site nor an independently established national Marian shrine.",
+              "fr": "La paroisse Notre-Dame de Lourdes de Montes de Oca est une église catholique de la province de San José au Costa Rica. Sa dédicace mariale reflète la dévotion à Lourdes en France, tandis que sa vie religieuse appartient à une communauté costaricienne distincte. Cette paroisse locale n'est ni un lieu d'apparition authentifié ni un sanctuaire marial national établi par des preuves indépendantes.",
+              "source_id": "SG-R77-SITE-SG-INV-0459",
+              "source_url": "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Jesuit association and parish history",
+          "title_fr": "Lien jésuite et histoire paroissiale",
+          "paragraphs": [
+            {
+              "en": "The Jesuits’ regional material documents the parish’s historical development, resilience and missionary life. This provides a specifically local history beyond the universal Lourdes dedication. The order’s connection should be described in the scope established by its source rather than assuming that every parish activity or current office is performed by a Jesuit.",
+              "fr": "Les documents régionaux des Jésuites retracent le développement historique de la paroisse, sa résilience et sa vie missionnaire. Ils offrent une histoire propre au lieu au-delà de la dédicace universelle à Lourdes. Le lien avec l’ordre doit être décrit dans la portée attestée par la source, sans supposer que chaque activité paroissiale ou charge actuelle soit assurée par un Jésuite.",
+              "source_id": "SG-R77-SITE-SG-INV-0459",
+              "source_url": "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A parish, not an invented shrine",
+          "title_fr": "Une paroisse, non un sanctuaire inventé",
+          "paragraphs": [
+            {
+              "en": "Visitors may come to this church for Marian prayer and parish worship, but a Lourdes title does not confer juridical shrine status. Mass schedules and access depend on the present parish, not on celebrations held in France.",
+              "fr": "Les visiteurs peuvent venir dans cette église pour la prière mariale et le culte paroissial, mais le titre de Lourdes ne confère pas le statut juridique de sanctuaire. Messes et accès relèvent de la paroisse actuelle, non de célébrations tenues en France.",
+              "source_id": "SG-R77-SITE-SG-INV-0459",
+              "source_url": "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "place_name": "Our Lady of Fatima Catholic Church, Karachi",
+      "country_code": "PK",
+      "shrine_id": "shrine:PK:karachi-our-lady-fatima-parish",
+      "draft_order": 224,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Karachi’s Catholic parish dedicated to Our Lady of Fátima on Randle Road.",
+      "subtitle_fr": "La paroisse catholique Notre-Dame de Fátima de Karachi, sur Randle Road.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian parish in Karachi",
+          "title_fr": "Une paroisse mariale à Karachi",
+          "paragraphs": [
+            {
+              "en": "Our Lady of Fátima Catholic Church at 73 Randle Road is a parish in the Archdiocese of Karachi, Pakistan. Its dedication connects the community to the wider Fátima devotion, but it remains a local Catholic church with its own identity. This local Karachi parish is distinct from the Portuguese apparition sanctuary and from other parishes dedicated to Our Lady of Fátima.",
+              "fr": "L’église catholique Notre-Dame de Fátima du 73 Randle Road est une paroisse de l’archidiocèse de Karachi, au Pakistan. Sa dédicace relie la communauté à la dévotion plus vaste de Fátima, mais elle demeure une église catholique locale possédant sa propre identité. Cette paroisse de Karachi est distincte du sanctuaire d'apparition portugais et des autres paroisses dédiées à Notre-Dame de Fátima.",
+              "source_id": "SG-R77-SITE-SG-INV-0609",
+              "source_url": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The church in the archdiocese",
+          "title_fr": "L’église dans l’archidiocèse",
+          "paragraphs": [
+            {
+              "en": "Catholic directory information identifies the Karachi church, its location and its Marian title. This is adequate for describing a physical parish but not for asserting a canonically erected national shrine, a documented relic or a recurring pilgrim procession. Those stronger claims would require separate ecclesiastical records.",
+              "fr": "Les renseignements des annuaires catholiques identifient l’église de Karachi, sa situation et son titre marial. Cela suffit pour décrire une paroisse physique, mais non pour affirmer l’érection canonique d’un sanctuaire national, l’existence d’une relique documentée ou une procession pèlerine récurrente. De telles affirmations exigeraient des archives ecclésiastiques distinctes.",
+              "source_id": "SG-R77-SITE-SG-INV-0609",
+              "source_url": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Ordinary parish prayer",
+          "title_fr": "La prière paroissiale ordinaire",
+          "paragraphs": [
+            {
+              "en": "The church serves Catholic worship in Karachi under the patronage of Our Lady of Fátima. Current Masses and access require local confirmation, and the mapped location remains illustrative rather than an entrance-certified coordinate.",
+              "fr": "L’église sert le culte catholique à Karachi sous le patronage de Notre-Dame de Fátima. Les messes et les accès exigent une confirmation locale, et le point cartographique reste indicatif plutôt qu’une coordonnée d’entrée certifiée.",
+              "source_id": "SG-R77-SITE-SG-INV-0609",
+              "source_url": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    }
+  ]
+}

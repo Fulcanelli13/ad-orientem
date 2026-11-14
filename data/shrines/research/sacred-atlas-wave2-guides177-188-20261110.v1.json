@@ -1,0 +1,770 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES177_188_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 12,
+    "sections": 36,
+    "published": 0
+  },
+  "policy": [
+    "Draft content only; each paragraph's original source-registry record retained without a new primary-page fetch.",
+    "Greek Catholic/Latin Catholic traditions and ecclesiastical dates differentiated; miracle reports not independently authenticated.",
+    "No current schedule, admission, photograph, route, rite or publication inferred."
+  ],
+  "guides": [
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "place_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "country_code": "HU",
+      "shrine_id": "shrine:HU:mariapocs-greek-catholic-basilica",
+      "draft_order": 177,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Greek Catholic Marian pilgrimage basilica with an icon central to Hungary’s devotional history.",
+      "subtitle_fr": "Une basilique mariale gréco-catholique dont l’icône marque l’histoire dévotionnelle hongroise.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The icon and Máriapócs",
+          "title_fr": "L’icône et Máriapócs",
+          "paragraphs": [
+            {
+              "en": "Máriapócs is a major centre of Hungarian Greek Catholic pilgrimage, known for devotion to an icon of the Mother of God. Traditional accounts describe tears associated with the image. Those accounts help explain the sanctuary’s history, but the existence of the basilica does not independently establish the supernatural nature of the reports.",
+              "fr": "Máriapócs est un grand centre hongrois de pèlerinage gréco-catholique, connu pour la dévotion à une icône de la Mère de Dieu. Des récits traditionnels évoquent des larmes associées à l’image. Ces récits éclairent l’histoire du sanctuaire, mais l’existence de la basilique ne prouve pas indépendamment leur caractère surnaturel.",
+              "source_id": "SG-R72-SITE-SG-INV-0320",
+              "source_url": "https://www.nekb.gov.hu/nemzeti-emlekhelyek/mariapocs/mariapocs-kegytemplom-es-bazilita-monostor"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "An Eastern Catholic sanctuary",
+          "title_fr": "Un sanctuaire catholique oriental",
+          "paragraphs": [
+            {
+              "en": "The basilica and Basilian monastery form a connected religious complex with a specifically Greek Catholic heritage. This ecclesial identity is important: Greek Catholic worship follows the Byzantine tradition while remaining in communion with Rome. A visitor should not assume that the ordinary liturgy at Máriapócs follows the Latin Roman Missal.",
+              "fr": "La basilique et le monastère basilien forment un ensemble religieux lié à un héritage expressément gréco-catholique. Cette identité ecclésiale importe : le culte gréco-catholique suit la tradition byzantine tout en restant en communion avec Rome. Il ne faut pas supposer que la liturgie ordinaire de Máriapócs suit le Missel romain latin.",
+              "source_id": "SG-R72-SITE-SG-INV-0320",
+              "source_url": "https://www.nekb.gov.hu/nemzeti-emlekhelyek/mariapocs/mariapocs-kegytemplom-es-bazilita-monostor"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and sacred space",
+          "title_fr": "Pèlerinage et espace sacré",
+          "paragraphs": [
+            {
+              "en": "Pilgrims approach Máriapócs to honour the Mother of God and to participate in the prayer of a living Eastern Catholic community. The venerated icon, monastery and basilica are related parts of the destination, not three unrelated geographical sites. Current celebration and visiting arrangements should be obtained from its custodians.",
+              "fr": "Les pèlerins viennent à Máriapócs pour honorer la Mère de Dieu et participer à la prière d’une communauté catholique orientale vivante. L’icône vénérée, le monastère et la basilique sont des éléments liés d’une même destination et non trois sites géographiques sans rapport. Les célébrations et modalités de visite actuelles relèvent de leurs responsables.",
+              "source_id": "SG-R72-SITE-SG-INV-0320",
+              "source_url": "https://www.nekb.gov.hu/nemzeti-emlekhelyek/mariapocs/mariapocs-kegytemplom-es-bazilita-monostor"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:HU:mariapocs-greek-catholic-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.nekb.gov.hu/nemzeti-emlekhelyek/mariapocs/mariapocs-kegytemplom-es-bazilita-monostor"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "place_name": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:manaoag-rosary-basilica",
+      "draft_order": 178,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Dominican Marian basilica in Pangasinan, crowned in 1926 and raised to minor basilica in 2014.",
+      "subtitle_fr": "Une basilique mariale dominicaine du Pangasinan, couronnée en 1926 et élevée au rang de basilique mineure en 2014.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image of Our Lady of Manaoag",
+          "title_fr": "L’image de Notre-Dame de Manaoag",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Manaoag centres on a Marian image honoured as Our Lady of the Rosary. Its longstanding place in Filipino devotion makes it a destination for pilgrims beyond Pangasinan. The Dominican community’s ministry connects the image with the living prayer of the Church rather than treating it as a detached historical object.",
+              "fr": "Le sanctuaire de Manaoag est centré sur une image mariale honorée sous le titre de Notre-Dame du Rosaire. Sa place ancienne dans la dévotion philippine en fait une destination pour des pèlerins venus d’au-delà du Pangasinan. Le ministère dominicain relie l’image à la prière vivante de l’Église, et non à un objet historique isolé.",
+              "source_id": "SG-R72-SITE-SG-INV-0633",
+              "source_url": "https://www.manaoagminorbasilica.org/whoweare"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Coronation and basilica title",
+          "title_fr": "Couronnement et titre de basilique",
+          "paragraphs": [
+            {
+              "en": "The image received a canonical coronation in 1926, while the church was granted the title of minor basilica in 2014. These dates refer to different ecclesiastical acts, distinct from the older origins of local Marian devotion. The basilica’s title describes the church; the coronation concerns the venerated image.",
+              "fr": "L’image reçut un couronnement canonique en 1926, tandis que l’église obtint le titre de basilique mineure en 2014. Ces dates renvoient à des actes ecclésiastiques différents, distincts des origines plus anciennes de la dévotion mariale locale. Le titre de basilique concerne l’église ; le couronnement concerne l’image vénérée.",
+              "source_id": "SG-R72-SITE-SG-INV-0633",
+              "source_url": "https://www.manaoagminorbasilica.org/whoweare"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Dominican place of pilgrimage",
+          "title_fr": "Un lieu dominicain de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The basilica remains a Catholic place of worship administered by the Dominicans. Pilgrims may associate their visit with the Rosary and Marian intercession, while practical arrangements follow the shrine’s present pastoral programme. It is the distinct Manaoag destination, not a generic icon of the Virgin or another Filipino shrine of the Rosary.",
+              "fr": "La basilique demeure un lieu de culte catholique administré par les Dominicains. Les pèlerins peuvent associer leur visite au Rosaire et à l’intercession mariale, tandis que les modalités pratiques suivent le programme pastoral en vigueur. Il s’agit de Manaoag, destination précise, et non d’une image générique de la Vierge ou d’un autre sanctuaire philippin du Rosaire.",
+              "source_id": "SG-R72-SITE-SG-INV-0633",
+              "source_url": "https://www.manaoagminorbasilica.org/whoweare"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PH:manaoag-rosary-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.manaoagminorbasilica.org/whoweare"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "place_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "country_code": "GT",
+      "shrine_id": "shrine:GT:esquipulas-black-christ-basilica",
+      "draft_order": 179,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Black Christ of Esquipulas and the Central American pilgrimage built around its image.",
+      "subtitle_fr": "Le Christ noir d’Esquipulas et le pèlerinage centraméricain né autour de son image.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Black Christ of Esquipulas",
+          "title_fr": "Le Christ noir d’Esquipulas",
+          "paragraphs": [
+            {
+              "en": "Esquipulas is renowned for a venerated image of the crucified Christ known as the Black Christ. The municipality’s historical account marks a tradition of devotion spanning more than four centuries. The figure is a particular object of Christian prayer within Guatemala, not an apparition or a generic copy of every black crucifix in Central America.",
+              "fr": "Esquipulas est connu pour une image vénérée du Christ crucifié, appelée le Christ noir. Le récit historique de la municipalité souligne une tradition de dévotion de plus de quatre siècles. La figure est un objet particulier de prière chrétienne au Guatemala, non une apparition ni une copie générique de tous les crucifix noirs d’Amérique centrale.",
+              "source_id": "SG-R72-SITE-SG-INV-0444",
+              "source_url": "https://muniesquipulas.gob.gt/2023/03/01/9-de-marzo-de-2023-428-anos-de-veneracion-del-cristo-negro/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A church shaped by pilgrimage",
+          "title_fr": "Une église façonnée par le pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The present basilica was built to accommodate pilgrims attracted by devotion to the image. This distinction between a long-existing cult and a later monumental building is essential to its history. The basilica, image and gatherings form one named site, even as pilgrims arrive from different countries of the region.",
+              "fr": "La basilique actuelle fut construite pour accueillir les pèlerins attirés par la dévotion à l’image. La distinction entre un culte ancien et un édifice monumental postérieur est essentielle à son histoire. Basilique, image et rassemblements composent un lieu nommé, même si les pèlerins arrivent de différents pays de la région.",
+              "source_id": "SG-R72-SITE-SG-INV-0444",
+              "source_url": "https://muniesquipulas.gob.gt/2023/03/01/9-de-marzo-de-2023-428-anos-de-veneracion-del-cristo-negro/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A shared Central American destination",
+          "title_fr": "Une destination de l’Amérique centrale",
+          "paragraphs": [
+            {
+              "en": "The devotion extends beyond the town of Esquipulas, connecting Catholics from across Central America with this particular sanctuary. The image is revered at this basilica, and present visits remain subject to local worship and access conditions.",
+              "fr": "La dévotion dépasse la ville d’Esquipulas et relie des catholiques de toute l’Amérique centrale à ce sanctuaire particulier. L’image est vénérée dans cette basilique, et les visites suivent les conditions locales de culte et d’accès.",
+              "source_id": "SG-R72-SITE-SG-INV-0444",
+              "source_url": "https://muniesquipulas.gob.gt/2023/03/01/9-de-marzo-de-2023-428-anos-de-veneracion-del-cristo-negro/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GT:esquipulas-black-christ-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://muniesquipulas.gob.gt/2023/03/01/9-de-marzo-de-2023-428-anos-de-veneracion-del-cristo-negro/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "place_name": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+      "country_code": "PY",
+      "shrine_id": "shrine:PY:caacupe-our-lady-miracles",
+      "draft_order": 180,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Paraguay’s Marian pilgrimage basilica and the December devotion to the Virgin of Caacupé.",
+      "subtitle_fr": "La basilique mariale du Paraguay et la dévotion de décembre à la Vierge de Caacupé.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Virgin of Caacupé",
+          "title_fr": "La Vierge de Caacupé",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Miracles at Caacupé is a central Marian pilgrimage destination in Paraguay. Devotion to the Virgin of Caacupé is bound to this actual sanctuary, giving the city a place in the country’s religious memory. The title ‘of Miracles’ is devotional and is not an independent authentication of individual miracle claims.",
+              "fr": "La basilique Notre-Dame des Miracles de Caacupé est une destination centrale du pèlerinage marial au Paraguay. La dévotion envers la Vierge de Caacupé est liée à ce sanctuaire réel, donnant à la ville une place dans la mémoire religieuse nationale. Le titre « des Miracles » est dévotionnel et ne constitue pas une authentification indépendante de miracles particuliers.",
+              "source_id": "SG-R72-SITE-SG-INV-0527",
+              "source_url": "https://visitparaguay.travel/places/basilica-nuestra-senora-de-los-milagros-de-caacupe"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The basilica and the gathering",
+          "title_fr": "La basilique et le rassemblement",
+          "paragraphs": [
+            {
+              "en": "The church provides a fixed place for an extensive devotion that reaches well beyond the immediate town. The religious geography is therefore both local and national: a named basilica receives pilgrims who travel toward it. Its Marian image, church building and gatherings deserve distinct descriptions without multiplying physical site records.",
+              "fr": "L’église offre un lieu fixe à une dévotion qui dépasse largement la commune. Sa géographie religieuse est donc locale et nationale : une basilique nommée accueille les pèlerins qui la rejoignent. Son image mariale, son édifice et ses rassemblements méritent des descriptions distinctes sans multiplier les fiches de lieux physiques.",
+              "source_id": "SG-R72-SITE-SG-INV-0527",
+              "source_url": "https://visitparaguay.travel/places/basilica-nuestra-senora-de-los-milagros-de-caacupe"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The December pilgrimage season",
+          "title_fr": "La période de pèlerinage de décembre",
+          "paragraphs": [
+            {
+              "en": "The Caacupé devotion is especially associated with pilgrimages in December, when the sanctuary becomes a focus for communal prayer. That seasonal pattern can be explained without inventing a universal route or fixing all annual ceremonies to an old timetable. Visitors should seek current information from local church and pilgrimage organisers.",
+              "fr": "La dévotion à Caacupé est particulièrement liée aux pèlerinages de décembre, lorsque le sanctuaire devient un foyer de prière communautaire. Ce rythme saisonnier peut être expliqué sans inventer de parcours universel ni figer toutes les cérémonies annuelles dans un ancien horaire. Les visiteurs doivent consulter les responsables ecclésiastiques et les organisateurs actuels.",
+              "source_id": "SG-R72-SITE-SG-INV-0527",
+              "source_url": "https://visitparaguay.travel/places/basilica-nuestra-senora-de-los-milagros-de-caacupe"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PY:caacupe-our-lady-miracles-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://visitparaguay.travel/places/basilica-nuestra-senora-de-los-milagros-de-caacupe"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:HN:suyapa-basilica",
+      "place_name": "Basílica de Nuestra Señora de Suyapa",
+      "country_code": "HN",
+      "shrine_id": "shrine:HN:suyapa-basilica",
+      "draft_order": 181,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Honduras’s national devotion to Our Lady of Suyapa and her basilica in Tegucigalpa.",
+      "subtitle_fr": "La dévotion nationale du Honduras à Notre-Dame de Suyapa et sa basilique à Tegucigalpa.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Suyapa",
+          "title_fr": "Notre-Dame de Suyapa",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Suyapa in Tegucigalpa is a major destination for Honduran Marian pilgrimage. The title recalls the Virgin honoured as patroness of Honduras, a national devotion also recognised in papal addresses. The basilica is a particular church that houses this religious memory, not every chapel dedicated to Mary in the country.",
+              "fr": "La basilique Notre-Dame de Suyapa à Tegucigalpa est une destination majeure du pèlerinage marial hondurien. Le titre rappelle la Vierge honorée comme patronne du Honduras, dévotion nationale également mentionnée dans des discours pontificaux. La basilique est une église particulière portant cette mémoire religieuse, non chacune des chapelles dédiées à Marie dans le pays.",
+              "source_id": "SG-R73-SITE-SG-INV-0450",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/speeches/1994/february/documents/hf_jp-ii_19940204_limina-honduras.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A patronal devotion and a sanctuary",
+          "title_fr": "Une dévotion patronale et un sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The relationship between Suyapa and Honduran Catholics extends beyond local parish life: the devotion belongs to a shared national Catholic identity. Its patronal standing and the visible basilica are different facts, even though they belong to one place of pilgrimage. Accounts of the origin of its image should be attributed to their historical sources rather than embellished.",
+              "fr": "Le lien entre Suyapa et les catholiques honduriens dépasse la vie paroissiale : la dévotion appartient à une identité catholique nationale partagée. Le statut patronal et la basilique visible sont deux réalités différentes, liées à un même lieu de pèlerinage. Les récits des origines de l’image doivent être attribués à leurs sources historiques sans être embellis.",
+              "source_id": "SG-R73-SITE-SG-INV-0450",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/speeches/1994/february/documents/hf_jp-ii_19940204_limina-honduras.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage to Tegucigalpa",
+          "title_fr": "Pèlerinage vers Tegucigalpa",
+          "paragraphs": [
+            {
+              "en": "Pilgrims gather at Suyapa to pray before the venerated Marian image and participate in the life of the basilica. The national significance does not determine specific times or routes for every visiting group. The church’s current celebrations and access arrangements should be kept separate from the enduring history of the devotion.",
+              "fr": "Les pèlerins se rassemblent à Suyapa pour prier devant l’image mariale vénérée et participer à la vie de la basilique. L’importance nationale ne détermine ni l’heure ni le parcours de chaque groupe. Les célébrations et accès actuels de l’église doivent être distingués de l’histoire durable de la dévotion.",
+              "source_id": "SG-R73-SITE-SG-INV-0450",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/speeches/1994/february/documents/hf_jp-ii_19940204_limina-honduras.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:HN:suyapa-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/john-paul-ii/es/speeches/1994/february/documents/hf_jp-ii_19940204_limina-honduras.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "place_name": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+      "country_code": "CR",
+      "shrine_id": "shrine:CR:cartago-virgen-angeles",
+      "draft_order": 182,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Cartago’s Basilica of Our Lady of the Angels and the Marian image called La Negrita.",
+      "subtitle_fr": "La basilique Notre-Dame-des-Anges de Cartago et l’image mariale appelée La Negrita.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image called La Negrita",
+          "title_fr": "L’image appelée La Negrita",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of the Angels at Cartago centres on a small Marian image commonly called La Negrita. This venerated object gives the sanctuary a distinctive identity in Costa Rican Catholic life. The title and local history of the venerated image belong to the sanctuary's living devotion; not every story associated with the image has been independently verified.",
+              "fr": "La basilique Notre-Dame-des-Anges de Cartago est centrée sur une petite image mariale communément appelée La Negrita. Cet objet vénéré donne au sanctuaire une identité particulière dans la vie catholique costaricienne. Le titre dévotionnel et l'histoire locale de l'image appartiennent à la piété vivante du sanctuaire ; tous les récits qui lui sont associés n'ont pas été vérifiés indépendamment.",
+              "source_id": "SG-R73-SITE-SG-INV-0457",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/angelus/1992/documents/hf_jp-ii_ang_19920802.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A national place of Marian prayer",
+          "title_fr": "Un lieu national de prière mariale",
+          "paragraphs": [
+            {
+              "en": "Cartago is a principal Marian pilgrimage destination in Costa Rica, a national significance reflected in papal addresses. The basilica gathers believers at a fixed place while the devotion reaches Catholic families throughout the country. The basilica's dedication and local history are distinct from those of other churches sharing the title of Our Lady of the Angels.",
+              "fr": "Cartago est une destination majeure du pèlerinage marial au Costa Rica, importance nationale reflétée dans des interventions pontificales. La basilique réunit les fidèles en un lieu fixe tandis que la dévotion touche des familles catholiques dans tout le pays. La dédicace et l'histoire locale de la basilique se distinguent de celles des autres églises portant le titre de Notre-Dame des Anges.",
+              "source_id": "SG-R73-SITE-SG-INV-0457",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/angelus/1992/documents/hf_jp-ii_ang_19920802.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Walking pilgrimage and devotion",
+          "title_fr": "Marche pèlerine et dévotion",
+          "paragraphs": [
+            {
+              "en": "The basilica’s pilgrimage tradition includes Catholics journeying to Cartago to honour the Virgin. The spiritual meaning of travel can be explained independently of an individual year’s organiser or route.",
+              "fr": "La tradition pèlerine de la basilique comprend des catholiques qui se rendent à Cartago pour honorer la Vierge. Le sens spirituel du déplacement peut être expliqué indépendamment de l’organisateur ou du parcours d’une année particulière.",
+              "source_id": "SG-R73-SITE-SG-INV-0457",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/es/angelus/1992/documents/hf_jp-ii_ang_19920802.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CR:cartago-virgen-angeles-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/john-paul-ii/es/angelus/1992/documents/hf_jp-ii_ang_19920802.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "place_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
+      "country_code": "MY",
+      "shrine_id": "shrine:MY:st-anne-bukit-mertajam",
+      "draft_order": 183,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Penang diocesan Saint Anne complex, including its older church and newer basilica.",
+      "subtitle_fr": "L’ensemble diocésain Sainte-Anne de Penang, avec son ancienne église et sa nouvelle basilique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Anne in Bukit Mertajam",
+          "title_fr": "Sainte Anne à Bukit Mertajam",
+          "paragraphs": [
+            {
+              "en": "The Minor Basilica of Saint Anne in Bukit Mertajam is one of Malaysia’s major Catholic pilgrimage destinations. It honours the saint traditionally regarded as Mary’s mother, giving the site a distinctive place in local devotion. The Penang diocesan account identifies the basilica and its pilgrimage precinct as a continuing place of worship.",
+              "fr": "La basilique mineure Sainte-Anne de Bukit Mertajam est l’une des grandes destinations de pèlerinage catholique de Malaisie. Elle honore la sainte traditionnellement considérée comme la mère de Marie, donnant au lieu une place particulière dans la dévotion locale. Le diocèse de Penang présente la basilique et son ensemble pèlerin comme un lieu vivant de culte.",
+              "source_id": "SG-R73-SITE-SG-INV-0675",
+              "source_url": "https://pgdiocese.org/parish/minor-basilica-of-st-anne-bukit-mertajam/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Old church and new basilica",
+          "title_fr": "Ancienne église et nouvelle basilique",
+          "paragraphs": [
+            {
+              "en": "The complex includes the historic older church, the newer basilica and additional devotional stations. This layered setting is central to its character: not everything visible belongs to the same construction period. The separate buildings should be explained as parts of one recognised pilgrimage precinct without inventing independent church identities for each station.",
+              "fr": "L’ensemble comprend l’ancienne église historique, la basilique plus récente et d’autres étapes dévotionnelles. Cette superposition est essentielle à son caractère : les bâtiments ne datent pas tous de la même époque. Les édifices peuvent être expliqués comme parties d’un seul périmètre de pèlerinage reconnu, sans inventer une identité ecclésiale indépendante pour chaque station.",
+              "source_id": "SG-R73-SITE-SG-INV-0675",
+              "source_url": "https://pgdiocese.org/parish/minor-basilica-of-st-anne-bukit-mertajam/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Saint Anne pilgrimage",
+          "title_fr": "Le pèlerinage de sainte Anne",
+          "paragraphs": [
+            {
+              "en": "Pilgrims gather at Bukit Mertajam for devotion to Saint Anne and for celebrations involving the church complex. A visitor may experience several prayer spaces within the same sanctuary, but current access, crowd arrangements and ceremony times must come from the diocese. The pilgrimage is not interchangeable with Saint Anne shrines in Canada or elsewhere.",
+              "fr": "Les pèlerins se rassemblent à Bukit Mertajam pour la dévotion à sainte Anne et pour les célébrations dans l’ensemble religieux. Plusieurs espaces de prière peuvent jalonner la visite, mais les accès, l’accueil des foules et les horaires relèvent du diocèse. Ce pèlerinage ne se confond pas avec les sanctuaires de sainte Anne au Canada ou ailleurs.",
+              "source_id": "SG-R73-SITE-SG-INV-0675",
+              "source_url": "https://pgdiocese.org/parish/minor-basilica-of-st-anne-bukit-mertajam/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MY:st-anne-bukit-mertajam-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://pgdiocese.org/parish/minor-basilica-of-st-anne-bukit-mertajam/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SK:levoca-marianska-hora-basilica",
+      "place_name": "Bazilika Navštívenia Panny Márie — Mariánska hora, Levoča",
+      "country_code": "SK",
+      "shrine_id": "shrine:SK:levoca-marianska-hora-basilica",
+      "draft_order": 184,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Slovak Marian Hill basilica, dedicated to the Visitation and visited by John Paul II in 1995.",
+      "subtitle_fr": "La basilique de la colline mariale slovaque, dédiée à la Visitation et visitée par Jean-Paul II en 1995.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Visitation on Mariánska hora",
+          "title_fr": "La Visitation à Mariánska hora",
+          "paragraphs": [
+            {
+              "en": "The Marian Hill sanctuary above Levoča is dedicated to the Visitation of the Blessed Virgin Mary. The elevated basilica provides a focal point for Catholic pilgrimage in Slovakia and connects the devotion to the Gospel meeting of Mary and Elizabeth. The hill and the church form one named destination, not the entire historic town below.",
+              "fr": "Le sanctuaire de la colline mariale au-dessus de Levoča est dédié à la Visitation de la Bienheureuse Vierge Marie. La basilique située en hauteur constitue un foyer de pèlerinage catholique en Slovaquie et rattache la dévotion à la rencontre évangélique de Marie et d’Élisabeth. La colline et l’église composent une destination nommée, non toute la vieille ville située en contrebas.",
+              "source_id": "SG-R73-SITE-SG-INV-0296",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/it/homilies/1995/documents/hf_jp-ii_hom_19950703_levoca.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The papal Mass of 1995",
+          "title_fr": "La messe pontificale de 1995",
+          "paragraphs": [
+            {
+              "en": "Pope John Paul II celebrated Mass at Levoča during his July 1995 visit to Slovakia. The Vatican homily records this episode, giving a firm historical anchor to the sanctuary’s place in modern Catholic pilgrimage. The papal event is distinct from the basilica’s earlier foundation and from the annual programmes organised in subsequent years.",
+              "fr": "Jean-Paul II célébra la messe à Levoča au cours de sa visite en Slovaquie en juillet 1995. L’homélie publiée par le Vatican atteste cet épisode, donnant un repère historique solide à la place du sanctuaire dans le pèlerinage catholique moderne. L’événement pontifical se distingue de la fondation plus ancienne de la basilique et des programmes annuels ultérieurs.",
+              "source_id": "SG-R73-SITE-SG-INV-0296",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/it/homilies/1995/documents/hf_jp-ii_hom_19950703_levoca.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The climb and gathering",
+          "title_fr": "La montée et le rassemblement",
+          "paragraphs": [
+            {
+              "en": "The ascent to Mariánska hora is part of the distinctive experience of reaching this sanctuary. Pilgrims join a devotional landscape shaped by the hill and the church, rather than merely visiting a civic landmark. The exact approach, ceremony times and transport arrangements should follow the organisers’ current notices.",
+              "fr": "La montée vers Mariánska hora fait partie de l’expérience particulière de ce pèlerinage. Les fidèles découvrent un paysage de dévotion façonné par la colline et l’église, plutôt qu’un simple monument civil. Le parcours exact, les horaires des cérémonies et les transports doivent suivre les annonces actuelles des organisateurs.",
+              "source_id": "SG-R73-SITE-SG-INV-0296",
+              "source_url": "https://www.vatican.va/content/john-paul-ii/it/homilies/1995/documents/hf_jp-ii_hom_19950703_levoca.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:SK:levoca-marianska-hora-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/john-paul-ii/it/homilies/1995/documents/hf_jp-ii_hom_19950703_levoca.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "place_name": "Sanktuarium Matki Jedności Chrześcijan — Święta Lipka",
+      "country_code": "PL",
+      "shrine_id": "shrine:PL:swieta-lipka-jesuit-shrine",
+      "draft_order": 185,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Święta Lipka’s Jesuit Marian basilica, revered image and historic organ.",
+      "subtitle_fr": "La basilique mariale jésuite de Święta Lipka, son image vénérée et son orgue historique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian devotion at Święta Lipka",
+          "title_fr": "La dévotion mariale à Święta Lipka",
+          "paragraphs": [
+            {
+              "en": "Święta Lipka in northeastern Poland is a long-established Marian pilgrimage site centred on a revered image of the Mother of God. The basilica is served by the Jesuits, whose custody is part of its present religious identity. Its particular local story should not be replaced by a generic account of Polish Marian devotion.",
+              "fr": "Święta Lipka, dans le nord-est de la Pologne, est un ancien lieu de pèlerinage marial centré sur une image vénérée de la Mère de Dieu. La basilique est desservie par les Jésuites, dont la présence fait partie de son identité religieuse actuelle. Son histoire locale ne doit pas être remplacée par un récit générique de la dévotion mariale polonaise.",
+              "source_id": "AO-ED-SWIETA-LIPKA-HISTORY-20261112",
+              "source_url": "https://www.swlipka.pl/dla-pielgrzyma/historia"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica with a celebrated organ",
+          "title_fr": "Une basilique dotée d’un orgue renommé",
+          "paragraphs": [
+            {
+              "en": "The sanctuary preserves an important historic organ as well as its Marian devotional setting. This musical heritage belongs to the religious and artistic history of the basilica, without making a concert identical to a liturgical celebration. The organ and image are separate features within one sanctuary and deserve different explanations.",
+              "fr": "Le sanctuaire conserve un orgue historique important ainsi que son cadre de dévotion mariale. Ce patrimoine musical appartient à l’histoire religieuse et artistique de la basilique, sans qu’un concert soit équivalent à une célébration liturgique. L’orgue et l’image sont deux éléments distincts d’un même sanctuaire et méritent des explications différentes.",
+              "source_id": "AO-ED-SWIETA-LIPKA-HISTORY-20261112",
+              "source_url": "https://www.swlipka.pl/dla-pielgrzyma/historia"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage, prayer and music",
+          "title_fr": "Pèlerinage, prière et musique",
+          "paragraphs": [
+            {
+              "en": "Visitors encounter a living Marian pilgrimage destination enriched by Jesuit ministry and the basilica’s artistic heritage. Its pilgrimage use should be distinguished from changing musical presentations or visitor programmes. Current Masses, confession and access times must come from the shrine rather than assumptions based on the presence of the organ.",
+              "fr": "Les visiteurs découvrent une destination mariale vivante, enrichie par le ministère jésuite et le patrimoine artistique de la basilique. La vie du pèlerinage doit être distinguée des présentations musicales et programmes de visite variables. Messes, confessions et horaires d’accès doivent provenir du sanctuaire plutôt que d’hypothèses fondées sur la présence de l’orgue.",
+              "source_id": "AO-ED-SWIETA-LIPKA-HISTORY-20261112",
+              "source_url": "https://www.swlipka.pl/dla-pielgrzyma/historia"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PL:swieta-lipka-jesuit-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.swlipka.pl/kontakt",
+        "https://www.swlipka.pl/dla-pielgrzyma/historia"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-SWIETA-LIPKA-HISTORY-20261112"
+      ]
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "place_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+      "country_code": "DO",
+      "shrine_id": "shrine:DO:higuey-altagracia-basilica",
+      "draft_order": 186,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian basilica-cathedral at Higüey and the image of Our Lady of Altagracia.",
+      "subtitle_fr": "La basilique-cathédrale mariale de Higüey et l’image de Notre-Dame d’Altagracia.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Altagracia in Higüey",
+          "title_fr": "Notre-Dame d’Altagracia à Higüey",
+          "paragraphs": [
+            {
+              "en": "The Basilica-Cathedral of Our Lady of Altagracia is a principal Marian pilgrimage church in the Dominican Republic. Pilgrims honour a venerated Marian image identified with Altagracia devotion. This devotion belongs to the particular basilica at Higüey, rather than to another church sharing its Marian title or to an image detached from the building.",
+              "fr": "La basilique-cathédrale Notre-Dame d’Altagracia est l’une des principales églises mariales de pèlerinage en République dominicaine. Les fidèles y honorent une image de la Vierge liée à la dévotion d’Altagracia. Cette dévotion est attachée à la basilique de Higüey elle-même, distincte des autres églises portant le même titre marial et de toute représentation isolée de l'édifice.",
+              "source_id": "SG-R73-SITE-SG-INV-0467",
+              "source_url": "https://basilicaaltagracia.do/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A cathedral and pilgrimage sanctuary",
+          "title_fr": "Une cathédrale et un sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The building’s double identity as basilica and cathedral belongs to its ecclesiastical role, while Marian pilgrimage gives it a broader devotional significance. These are compatible but distinct attributes of one church.",
+              "fr": "La double identité de basilique et de cathédrale appartient à la fonction ecclésiastique de l’édifice, tandis que le pèlerinage marial lui donne une signification dévotionnelle plus large. Ces attributs sont compatibles mais distincts dans une même église.",
+              "source_id": "SG-R73-SITE-SG-INV-0467",
+              "source_url": "https://basilicaaltagracia.do/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A centre of Dominican Catholic prayer",
+          "title_fr": "Un centre de prière catholique dominicaine",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s official presentation places Marian worship and the reception of pilgrims at the centre of its purpose. Its significance reaches beyond Higüey while remaining tied to this specific church. Visiting conditions and the programme of Masses should be checked locally and not inferred from any other Caribbean Marian sanctuary.",
+              "fr": "La présentation officielle du sanctuaire met le culte marial et l’accueil des pèlerins au centre de sa mission. Son importance dépasse Higüey tout en restant liée à cette église précise. Les conditions de visite et le programme des messes doivent être vérifiés localement, et non déduits de ceux d’un autre sanctuaire marial des Caraïbes.",
+              "source_id": "SG-R73-SITE-SG-INV-0467",
+              "source_url": "https://basilicaaltagracia.do/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DO:higuey-altagracia-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://basilicaaltagracia.do/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "place_name": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+      "country_code": "CU",
+      "shrine_id": "shrine:CU:el-cobre-caridad-basilica",
+      "draft_order": 187,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Cuba’s sanctuary of Our Lady of Charity at El Cobre, raised to minor basilica in 1977.",
+      "subtitle_fr": "Le sanctuaire cubain de Notre-Dame de la Charité à El Cobre, élevé en basilique mineure en 1977.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Charity at El Cobre",
+          "title_fr": "Notre-Dame de la Charité à El Cobre",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Charity at El Cobre is a central place of Cuban Catholic Marian devotion. Pilgrims gather before an image of Our Lady of Charity, whose significance reaches beyond the surrounding community. The devotion is linked to this particular site and should not be treated as interchangeable with any church dedicated to Charity elsewhere.",
+              "fr": "Le sanctuaire national Notre-Dame de la Charité à El Cobre occupe une place centrale dans la dévotion mariale catholique cubaine. Les pèlerins se rassemblent devant une image de Notre-Dame de la Charité, dont la signification dépasse la communauté locale. Cette dévotion est liée à ce site particulier et ne doit pas se confondre avec toute autre église dédiée à la Charité.",
+              "source_id": "SG-R73-SITE-SG-INV-0462",
+              "source_url": "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The minor basilica title of 1977",
+          "title_fr": "Le titre de basilique mineure en 1977",
+          "paragraphs": [
+            {
+              "en": "Pope Paul VI raised the sanctuary church to the rank of minor basilica in 1977, as recorded in the papal letter. This formal act concerns the status of the church and is separate from the earlier history of its Marian devotion. The document provides an ecclesiastical date without making any independent finding about miracle narratives.",
+              "fr": "Paul VI éleva l’église du sanctuaire au rang de basilique mineure en 1977, comme le consigne la lettre pontificale. Cet acte formel concerne le statut de l’église et se distingue de l’histoire antérieure de sa dévotion mariale. Le document fournit une date ecclésiastique sans établir indépendamment les récits miraculeux.",
+              "source_id": "SG-R73-SITE-SG-INV-0462",
+              "source_url": "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Cuban Marian pilgrimage",
+          "title_fr": "Un pèlerinage marial cubain",
+          "paragraphs": [
+            {
+              "en": "El Cobre is a named destination for prayer to Our Lady of Charity in Cuba. Pilgrims encounter both a national religious symbol and a functioning Catholic basilica, without needing to conflate the two. Current services and access remain under the sanctuary’s arrangements, not a timetable inferred from the 1977 decree.",
+              "fr": "El Cobre est une destination nommée de prière à Notre-Dame de la Charité à Cuba. Les pèlerins y rencontrent à la fois un symbole religieux national et une basilique catholique en activité, sans devoir confondre les deux. Les offices et accès actuels relèvent des dispositions du sanctuaire, non d’un horaire déduit du décret de 1977.",
+              "source_id": "SG-R73-SITE-SG-INV-0462",
+              "source_url": "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CU:el-cobre-caridad-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19771222_quanto-christifideles.html"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "place_name": "Bazilika Marije Pomagaj — Brezje",
+      "country_code": "SI",
+      "shrine_id": "shrine:SI:brezje-mary-help-basilica",
+      "draft_order": 188,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Slovenia’s Franciscan national Marian shrine of Mary Help of Christians at Brezje.",
+      "subtitle_fr": "Le sanctuaire marial national franciscain de Marie Auxiliatrice à Brezje, en Slovénie.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Mary Help of Christians at Brezje",
+          "title_fr": "Marie Auxiliatrice à Brezje",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Mary Help of Christians at Brezje is a national Marian pilgrimage sanctuary in Slovenia. The devotional title is attached to a specific church and revered Marian image, not simply to the general Catholic invocation of Mary as helper. The Franciscan community’s presence gives the sanctuary a living pastoral setting.",
+              "fr": "La basilique de Marie Auxiliatrice à Brezje est un sanctuaire national de pèlerinage marial en Slovénie. Ce titre dévotionnel est lié à une église précise et à une image mariale vénérée, et non simplement à l’invocation catholique générale de Marie comme secours. La présence franciscaine donne au sanctuaire un cadre pastoral vivant.",
+              "source_id": "AO-ED-BREZJE-SANCTUARY-20261112",
+              "source_url": "https://marija.si/en/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Basilica and monastery",
+          "title_fr": "Basilique et monastère",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s official information identifies the basilica and adjacent Franciscan monastery. They are connected parts of a pilgrimage precinct with distinct functions: a public church for worship and religious community spaces.",
+              "fr": "Les renseignements officiels du sanctuaire identifient la basilique et le monastère franciscain voisin. Il s’agit d’éléments liés d’un ensemble de pèlerinage remplissant des fonctions distinctes : église publique de culte et espaces communautaires religieux.",
+              "source_id": "AO-ED-BREZJE-SANCTUARY-20261112",
+              "source_url": "https://marija.si/en/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The national pilgrimage destination",
+          "title_fr": "La destination nationale de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Brezje draws pilgrims who come to pray to the Virgin under the title Mary Help of Christians, within a specifically Slovenian religious setting. Its national importance is not evidence that all Slovenian Marian celebrations occur there. Current liturgy, group hospitality and arrival arrangements must come from the shrine’s own custodians.",
+              "fr": "Brezje accueille des pèlerins qui prient la Vierge sous le titre de Marie Auxiliatrice, dans un cadre religieux proprement slovène. Son importance nationale ne signifie pas que toutes les célébrations mariales de Slovénie s’y déroulent. La liturgie actuelle, l’accueil des groupes et les modalités d’arrivée relèvent des responsables du sanctuaire.",
+              "source_id": "AO-ED-BREZJE-SANCTUARY-20261112",
+              "source_url": "https://marija.si/en/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:SI:brezje-mary-help-basilica-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://marija.si/en/contact/",
+        "https://marija.si/en/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-BREZJE-SANCTUARY-20261112"
+      ]
+    }
+  ]
+}

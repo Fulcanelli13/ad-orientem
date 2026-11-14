@@ -1,0 +1,3345 @@
+{
+  "schema": "AO_SACRED_ATLAS_BULK_PREFLIGHT_WAVE1_V1",
+  "as_of": "2026-11-11",
+  "state": "RESEARCH_ONLY_NO_SOURCE_TO_CLAIM_CERTIFICATION",
+  "method": "Direct bibliography URL and EN/FR completeness verification. Passing does not certify historical or theological assertions.",
+  "summary": {
+    "draft_guides": 56,
+    "paragraphs": 168,
+    "checked_first_pass": 0,
+    "scoped_only": 168,
+    "direct_bibliography_citations": 168,
+    "flagged_claims": 133,
+    "high_priority_paragraphs": 69,
+    "distinct_places": 56,
+    "flag_counts": {
+      "HISTORICAL_YEAR_OR_DATED_EVENT": 66,
+      "REPORTED_SUPERNATURAL_OR_DEVOTIONAL": 9,
+      "PROGRAMME_ACCESS_OR_LITURGY": 52,
+      "RELIC_OR_BURIAL_ATTRIBUTION": 62,
+      "GEOGRAPHY_ROUTE_PRECISION": 28
+    },
+    "invalid": [],
+    "first_pass_site_count": 0
+  },
+  "guides": [
+    {
+      "draft_order": 1,
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "name": "St James Parish Church — Međugorje",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-1428daed",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "parish",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.medjugorje.hr/en/prayer-sites",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "discernment",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.medjugorje.hr/en/instructions-for-pilgrims",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 2,
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "name": "National Shrine of St. John Neumann",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-5aecc60a",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saint-and-shrine",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.stjohnneumann.org/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrim-day",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.stjohnneumann.org/pilgrimagesandretreats",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "access",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.stjohnneumann.org/faq-1",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 3,
+      "place_id": "place:IT:scala-santa-rome",
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-d88b7151",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "stairs-and-tradition",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.scala-santa.com/info-eng/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "chapel",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.scala-santa.com/info-eng/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "prayer-and-visit",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.scala-santa.com/info-eng/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 4,
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+      "name": "Abbaye de Fleury — Saint-Benoît-sur-Loire",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-dd83c890",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "origin",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-fleury.com/histoire.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "architecture",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-fleury.com/la-basilique.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "living-community",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-fleury.com/horaires-des-offices.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 5,
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+      "name": "Abbaye du Mont-Saint-Michel",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-6789f304",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "benedictines",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage-and-access",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 6,
+      "place_id": "place:IT:san-michele-gargano",
+      "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+      "name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-1af1757d",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "grotto",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "devotion",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.parcogargano.it/itinerario/pellegrinaggio-al-santuario-di-san-michele-arcangelo/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "commemoration",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 7,
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "shrine_id": "shrine:MU:pere-laval",
+      "name": "Centre Père Laval",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-23a6c8a9",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "annual-pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "meaning-and-prayer",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 8,
+      "place_id": "place:US:seton-emmitsburg",
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-246bb6ed",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saint-and-site",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://setonshrine.org/visit-the-seton-shrine-historic-site-and-museum/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "historic-houses",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://setonshrine.org/historic-homes-tours/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "visiting",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://setonshrine.org/hours-directions/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 9,
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+      "name": "Abbaye de Saint-Maurice d'Agaune",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-04c3e410",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "martyr-memory",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "abbey-history",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "treasury",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/tresor/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 10,
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "name": "Aachener Dom — Four Sacred Textiles",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "revision": "fnv1a32-6e3edfa4",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "four-textiles",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "history",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 11,
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "name": "Basilique de la Visitation, Annecy",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-264271bd",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "construction",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "relics",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 12,
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+      "name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-93bce9bc",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "nevers",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "body",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/sainte-bernadette/son-corps/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/pelerinage/pelerinage-individuel/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 13,
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "name": "Basilica Papale di San Paolo fuori le Mura",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-390abc99",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "architecture",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/storia.htm",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "chapel",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/esposizioni.htm",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 14,
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+      "name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-ffb7a6ca",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "oratory",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "rome",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 15,
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-5e07f389",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "old-sanctuary",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantuariopadrepio.it/it/il-santuario/il-santuario-di-santa-maria-delle-grazie.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "new-church",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantuariopadrepio.it/it/il-santuario/la-chiesa-di-san-pio-da-pietrelcina.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "veneration",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 16,
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+      "name": "Monastery of Saint Maron — Annaya",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-f583c339",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "monastery",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saintcharbel.com/monastery/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saintcharbel.com/monastery/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "hermitage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saintcharbel.com/the-hermitage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 17,
+      "place_id": "place:VA:saint-peter-vatican",
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "name": "St Peter's Basilica — Vatican",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-86106d61",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "burial",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "memory",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "basilica",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 18,
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+      "name": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-2397ef8b",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "tombs",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "building",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "prayer",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basiliquemontfort.com/infos-pratiques/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 19,
+      "place_id": "place:FR:basilique-saint-denis",
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "name": "Basilique cathédrale de Saint-Denis",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-a433ecf0",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "martyr",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintdenis.fr/basilique-cathedrale",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "kings",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintdenis.fr/basilique-cathedrale",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "gothic",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintdenis.fr/basilique-cathedrale",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 20,
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "revision": "fnv1a32-4c6e20f1",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "medieval",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://whc.unesco.org/en/list/84/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "architecture",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://whc.unesco.org/en/list/84/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "magdalene",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basiliquedevezelay.org/marie-madeleine/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 21,
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "name": "Cathédrale Notre-Dame d’Amiens",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-aefbd83e",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "relic",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "reliquary",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "treasury",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 22,
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-574d70b9",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saint",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "discovery",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "transfers",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 23,
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-0ba6a5ef",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "augustine",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "architecture",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "others",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 24,
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-7ee71bfd",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "museum",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 25,
+      "place_id": "place:IT:montecassino-abbey",
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "name": "Abbazia di Montecassino — Tomb of Saints Benedict and Scholastica",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-4e3cd7a4",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "founder",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "shared-tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "visit",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 26,
+      "place_id": "place:US:auriesville-martyrs",
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "name": "National Shrine of Our Lady of Martyrs",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-80e36c03",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "martyrs",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.ourladyofmartyrsshrine.org/story-of-the-martyrs",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "location",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.ourladyofmartyrsshrine.org/auriesville-is-ossernenon",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "development",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.ourladyofmartyrsshrine.org/shrine-history",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 27,
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "name": "Oratoire Saint-Joseph du Mont-Royal",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-079eae92",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "founder",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saint-joseph.org/en/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "heart",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 28,
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+      "name": "Sanctuaire Saint-Joseph du Bessillon",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-e4b911ff",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "apparition",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintjosephcotignac.com/histoire",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "identity",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintjosephcotignac.com/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "prayer",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.saintjosephcotignac.com/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 29,
+      "place_id": "place:PL:divine-mercy-plock",
+      "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+      "name": "Sanktuarium Bożego Miłosierdzia, Płock",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-9666aa50",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "faustina",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://faustynaplock.pl/historia-sanktuarium/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "image",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://faustynaplock.pl/historia-sanktuarium/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://faustynaplock.pl/historia-sanktuarium/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 30,
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+      "name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "revision": "fnv1a32-db2c1030",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "anchieta",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "rebuilt-church",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 31,
+      "place_id": "place:ES:carmel-alba-tormes",
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-5786f0d4",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelitasalba.org/historia-y-arte/fundacion-del-convento/",
+          "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
+          "source_metadata_excerpt": "Alba de Tormes Carmelite foundation dated 25 January 1571 by the monastery's own historical documentation",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "relics",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "museum",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 32,
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "name": "Catedral de Santiago de Compostela",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-6df48a21",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "sepulchre",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://catedraldesantiago.es/en/pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrims",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://catedraldesantiago.es/en/pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "rites",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://catedraldesantiago.es/en/pilgrimage/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 33,
+      "place_id": "place:ES:santo-toribio-liebana",
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "name": "Monasterio de Santo Toribio de Liébana",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-ce0ae57c",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "history",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "cross",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "jubilee",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 34,
+      "place_id": "place:FR:basilique-ars",
+      "shrine_id": "shrine:20261009:FR:basilique-ars",
+      "name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-88750484",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "oldchurch",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.arsnet.org/plan-du-sanctuaire/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "basilica",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.arsnet.org/plan-du-sanctuaire/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "worship",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.arsnet.org/sanctuaire/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 35,
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "name": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-001c3c91",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "devotion",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "relic",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "artwork",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 36,
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "name": "Basilique Saint-Quentin",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-ff1211d0",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "martyr",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "reliquary",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "dating",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 37,
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "name": "Basilique Saint-Sernin de Toulouse",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-64af6cfc",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saint",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "crypts",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrims",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 38,
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-8be7d647",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "tradition",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "church",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "research",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://archives.frejustoulon.fr/2026/07/22/ouverture-du-tombeau-de-sainte-marie-madeleine-1904/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 39,
+      "place_id": "place:FR:carmel-lisieux",
+      "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+      "name": "Chapelle du Carmel de Lisieux",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-3671200b",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "carmel",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/la-beatification-et-la-canonisation/retour-de-therese-au-carmel/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Carmel Lisieux archives directly date St Thérèse's translation from the municipal cemetery to Carmel on 26 March 1923; archive page fetch returned 403 but indexed institutional content and related archived letters corroborate date. Does not describe access arrangements.",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "memory",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmeldelisieux.fr/le-memorial-sainte-therese-de-lej/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "visit",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmeldelisieux.fr/contact/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 40,
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "name": "Cathédrale Saint-Étienne de Sens",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-f1675e19",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "cathedral",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "textiles",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "visitor",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 41,
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+      "name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-c2cab8fb",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "king",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "shrine",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "present",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.churchofengland.org/stories-and-features/what-royal-peculiar",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 42,
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+      "name": "Saint Stephen's Basilica, Budapest",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-af523644",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "king",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "reliquary",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "feast",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 43,
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+      "name": "Abbazia di San Colombano, Bobbio",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "revision": "fnv1a32-f7e7f414",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "archaeology",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 44,
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+      "name": "Basilica di San Nicola, Bari",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-1786d3a3",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "arrival",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.arcidiocesibaribitonto.it/luoghi-di-culto/pontificia-basilica-san-nicola/storia",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "crypt",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.cartapulia.it/esplora-la-carta/-/rcp/ricercaCartapulia_INSTANCE_1yi8w0oVRO9u/dettaglio/15706",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "pilgrimage",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.arcidiocesibaribitonto.it/luoghi-di-culto/pontificia-basilica-san-nicola/storia",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 45,
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+      "name": "Basilica di Sant'Antonio, Padova",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-60fd6e2d",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "tomb",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.santantonio.org/fr/content/la-chapelle-du-tombeau",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "objects",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "treasury",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 46,
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+      "name": "Basilica di Santa Rita da Cascia",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-d7c52cdb",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "basilica",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://santaritadacascia.org/santuario/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "relic",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://santaritadacascia.org/santuario/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "art",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://santaritadacascia.org/santuario/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 47,
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+      "name": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-d3e8d27b",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "venice",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+          "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
+          "source_metadata_excerpt": "Venice Patriarch's 13 December 2024 homily describes San Geremia as the diocesan Saint Lucy shrine and an international pilgrimage destination",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "translation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.patriarcatovenezia.it/wd-document/omelia-del-patriarca-durante-la-s-messa-in-occasione-della-festa-di-s-lucia-venezia-santuario-diocesano-di-s-lucia-13-dicembre-2024/",
+          "source_note_scope": "SOURCE_NOTE_HAS_CONTEXT",
+          "source_metadata_excerpt": "The same 2024 patriarchal homily expressly describes a temporary visit of Saint Lucy's body to Sicily",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "prayer",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.patriarcatovenezia.it/wp-content/uploads/sites/18/2024/12/Omelia-Santa-Lucia-VE-13-dic-24.pdf",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 48,
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "shrine_id": "shrine:IT:sant-ambrogio-milano",
+      "name": "Basilica Sant'Ambrogio, Milan",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-c29b4aae",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saints",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "altar",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "layers",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 49,
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "shrine_id": "shrine:IT:santa-croce-rome",
+      "name": "Basilica di Santa Croce in Gerusalemme",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-3f5ba480",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "origin",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "titulus",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.iubilaeum2025.va/content/dam/iubilaeum2025/pellegrinaggio/cammini-giubilari-dentro-roma/sette-chiese/libretti/05-_EN_S.CROCE-GERUSALEMME.pdf",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "closure",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 50,
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+      "name": "Basilica of Saint Willibrord, Echternach",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-334c6ed4",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "founder",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilika.lu/en/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "artwork",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilika.lu/en/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "dancing",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://basilika.lu/en/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 51,
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+      "name": "Basílica y Convento de Santo Domingo, Lima",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-5068a5e9",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "foundation",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "saints",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "rosary",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.conventosantodomingo.com.pe/basilica/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 52,
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+      "name": "Gniezno Cathedral — Saint Adalbert",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-aef61558",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "martyr",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "dispersal",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "custody",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 53,
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+      "name": "Wawel Cathedral, Kraków",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-3963ff91",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "saint",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "confession",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "cathedral",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 54,
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+      "name": "Carmel Mission Basilica — Saint Junípero Serra",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-baf3a861",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "mission",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelmission.org/serra-grave/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "burials",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelmission.org/serra-grave/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "memory",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://carmelmission.org/serra-grave/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "GEOGRAPHY_ROUTE_PRECISION"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 55,
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+      "name": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-c10cdfeb",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "founder",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://cathedralphila.org/drexel/about/history/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "shrine",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://cathedralphila.org/drexel/about/history/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "prayer",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://cathedralphila.org/drexel/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "RELIC_OR_BURIAL_ATTRIBUTION",
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "TARGETED_SOURCE_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    },
+    {
+      "draft_order": 56,
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "shrine_id": "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "name": "Bishop Velychkovsky National Martyr's Shrine",
+      "source_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "revision": "fnv1a32-a04eec5f",
+      "publication_authorized": false,
+      "sections": [
+        {
+          "section_id": "identity",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bvmartyrshrine.com/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "chapel",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bvmartyrshrine.com/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        },
+        {
+          "section_id": "liturgy",
+          "paragraph_index": 0,
+          "source_id": null,
+          "source_url": "https://bvmartyrshrine.com/",
+          "source_note_scope": "DIRECT_BIBLIOGRAPHY_NO_CANONICAL_SOURCE_ID",
+          "source_metadata_excerpt": "Wave-1 bibliography URL; URL association alone does not certify individual historical claims",
+          "first_pass_checked": false,
+          "automated_citation_link_pass": true,
+          "claim_flags": [
+            "PROGRAMME_ACCESS_OR_LITURGY",
+            "HISTORICAL_YEAR_OR_DATED_EVENT"
+          ],
+          "editorial_review_priority": "STANDARD_EDITORIAL_REVIEW",
+          "second_editor_approved": false,
+          "owner_publication_authorized": false
+        }
+      ]
+    }
+  ]
+}

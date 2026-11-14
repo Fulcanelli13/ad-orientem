@@ -1,0 +1,642 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES167_176_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "published": 0
+  },
+  "policy": [
+    "Existing canonical ecclesial, heritage and source metadata reused, without new external source-page fetch.",
+    "Traditional Gospel-site identifications distinguished from archaeological precision; current worship not inferred.",
+    "Publication, images, Rite/Missal, map coordinates and canonical Places unchanged."
+  ],
+  "guides": [
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "place_name": "Basilica of the Annunciation, Nazareth",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:basilica-of-the-annunciation-nazareth",
+      "draft_order": 167,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Nazareth’s basilica and grotto commemorating Mary’s assent at the Annunciation.",
+      "subtitle_fr": "La basilique et la grotte de Nazareth commémorant le consentement de Marie à l’Annonciation.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Annunciation in Nazareth",
+          "title_fr": "L’Annonciation à Nazareth",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the Annunciation in Nazareth commemorates Gabriel’s greeting to Mary and her response recorded in Luke 1. Christian pilgrimage tradition associates a grotto at this place with the domestic setting of the Annunciation. The Gospel gives the theological narrative, while identifying one particular cave as its exact location belongs to the history of Christian veneration.",
+              "fr": "La basilique de l’Annonciation à Nazareth commémore la salutation de Gabriel à Marie et sa réponse rapportées en Luc 1. La tradition chrétienne du pèlerinage associe une grotte de ce lieu au cadre domestique de l’Annonciation. L’Évangile donne le récit théologique, tandis que l’identification d’une cavité précise avec l’emplacement exact appartient à l’histoire de la vénération chrétienne.",
+              "source_id": "AO-ED-NAZARETH-ANNUNCIATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The grotto within a modern basilica",
+          "title_fr": "La grotte dans une basilique moderne",
+          "paragraphs": [
+            {
+              "en": "The present Basilica of the Annunciation was consecrated in 1969. Its lower level preserves the traditional Grotto of the Annunciation alongside archaeological remains of earlier Christian buildings, including Byzantine and Crusader churches. The revered cave forms part of the basilica itself, rather than a separately situated shrine in Nazareth.",
+              "fr": "La basilique actuelle de l’Annonciation fut consacrée en 1969. Son niveau inférieur conserve la grotte traditionnelle de l’Annonciation et les vestiges d’édifices chrétiens plus anciens, notamment byzantins et croisés. La grotte vénérée fait partie de la basilique elle-même et non d’un sanctuaire situé ailleurs à Nazareth.",
+              "source_id": "AO-ED-NAZARETH-ANNUNCIATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A pilgrimage to the Incarnation",
+          "title_fr": "Un pèlerinage lié à l’Incarnation",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Nazareth to meditate on the Incarnation through the words of the Annunciation and the sanctuary’s physical setting. Its Catholic liturgical life belongs to the actual basilica, while its Gospel associations extend into the wider town. Access to the grotto and group worship must be checked against current local arrangements rather than assumed from a general Nazareth itinerary.",
+              "fr": "Les pèlerins viennent à Nazareth pour méditer l’Incarnation à partir des paroles de l’Annonciation et du cadre matériel du sanctuaire. Sa vie liturgique catholique appartient à la basilique réelle, tandis que ses liens évangéliques s’étendent à la ville. L’accès à la grotte et les célébrations des groupes doivent être vérifiés dans les dispositions locales actuelles plutôt que supposés à partir d’un itinéraire général de Nazareth.",
+              "source_id": "AO-ED-NAZARETH-ANNUNCIATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-NAZARETH-ANNUNCIATION-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "place_name": "Basilica of the Transfiguration, Mount Tabor",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:basilica-of-the-transfiguration-mount-tabor",
+      "draft_order": 168,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Mount Tabor basilica and the Gospel memory of Christ’s Transfiguration.",
+      "subtitle_fr": "La basilique du mont Thabor et la mémoire évangélique de la Transfiguration.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Transfiguration and the mountain",
+          "title_fr": "La Transfiguration et la montagne",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the Transfiguration on Mount Tabor commemorates Christ’s manifestation of glory to Peter, James and John, as told in the Synoptic Gospels. Christian tradition associates the mountain with the event, although the Gospel texts do not name Mount Tabor explicitly.",
+              "fr": "La basilique de la Transfiguration sur le mont Thabor commémore la manifestation de la gloire du Christ à Pierre, Jacques et Jean, racontée par les Évangiles synoptiques. La tradition chrétienne associe cette montagne à l’événement, bien que les textes évangéliques ne nomment pas explicitement le Thabor.",
+              "source_id": "AO-ED-TABOR-TRANSFIGURATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A sanctuary on a summit",
+          "title_fr": "Un sanctuaire au sommet",
+          "paragraphs": [
+            {
+              "en": "The present Franciscan Basilica of the Transfiguration was built on Mount Tabor between 1921 and 1924 to designs by Antonio Barluzzi, over a landscape venerated since Byzantine times. Chapels recall Moses and Elijah, who appear beside Christ in the Gospel narrative. This twentieth-century architecture serves an older tradition of pilgrimage.",
+              "fr": "L’actuelle basilique franciscaine de la Transfiguration fut construite sur le mont Thabor entre 1921 et 1924 selon les plans d’Antonio Barluzzi, dans un lieu vénéré depuis l’époque byzantine. Des chapelles rappellent Moïse et Élie, apparus auprès du Christ dans le récit évangélique. Cette architecture du XXe siècle sert une tradition pèlerine plus ancienne.",
+              "source_id": "AO-ED-TABOR-TRANSFIGURATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer in the memory of glory",
+          "title_fr": "Prier dans la mémoire de la gloire",
+          "paragraphs": [
+            {
+              "en": "At Tabor, pilgrims contemplate the Transfiguration and the disciples’ encounter with Christ’s glory. The devotion may be accompanied by the reading of Scripture and worship at the sanctuary, but no particular ceremony or route can be assumed to operate continuously. Current visiting and liturgical arrangements depend on the custodians and conditions of access to the mountain.",
+              "fr": "Au Thabor, les pèlerins méditent la Transfiguration et la rencontre des disciples avec la gloire du Christ. La dévotion peut s’accompagner de lecture biblique et de culte au sanctuaire, mais aucune cérémonie ni aucun parcours ne doit être considéré comme permanent. Les modalités actuelles de visite et de liturgie dépendent des responsables et des conditions d’accès à la montagne.",
+              "source_id": "AO-ED-TABOR-TRANSFIGURATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TABOR-TRANSFIGURATION-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "place_name": "Church of the Multiplication, Tabgha",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:church-of-the-multiplication-tabgha",
+      "draft_order": 169,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Tabgha church recalling the feeding of the multitude beside Galilee.",
+      "subtitle_fr": "L’église de Tabgha rappelant la multiplication des pains près du lac de Galilée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The loaves and fishes",
+          "title_fr": "Les pains et les poissons",
+          "paragraphs": [
+            {
+              "en": "The Church of the Multiplication at Tabgha commemorates the Gospel feeding of the multitude with loaves and fish. The location near the Sea of Galilee gives pilgrims a landscape in which to meditate on the narrative and its place in Christ’s ministry. The identification of this particular church with the episode is a pilgrimage tradition, not an independent survey of the event’s exact location.",
+              "fr": "L’église de la Multiplication à Tabgha commémore le récit évangélique où une foule est nourrie de pains et de poissons. Sa situation près du lac de Galilée offre aux pèlerins un paysage dans lequel méditer cet épisode et sa place dans le ministère du Christ. L’identification de cette église à l’événement relève d’une tradition pèlerine, non d’un relevé indépendant de son emplacement exact.",
+              "source_id": "AO-ED-TABGHA-MULTIPLICATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The church and its symbolic art",
+          "title_fr": "L’église et son art symbolique",
+          "paragraphs": [
+            {
+              "en": "The Benedictine Church of the Multiplication preserves ancient mosaics, including the familiar loaves-and-fishes motif near the altar. The Franciscan Custody distinguishes this church from the nearby Chapel of the Primacy of Peter, associated instead with the risen Christ’s encounter with the apostles. Both are separate pilgrimage places in Tabgha.",
+              "fr": "L’église bénédictine de la Multiplication conserve d’anciennes mosaïques, dont le motif des pains et des poissons près de l’autel. La Custodie franciscaine distingue cette église de la chapelle voisine de la Primauté de Pierre, liée plutôt à la rencontre du Christ ressuscité avec les apôtres. Ce sont deux lieux de pèlerinage distincts à Tabgha.",
+              "source_id": "AO-ED-TABGHA-MULTIPLICATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A meditation on gift and abundance",
+          "title_fr": "Une méditation sur le don et l’abondance",
+          "paragraphs": [
+            {
+              "en": "Pilgrims meditate on Christ’s compassion and the shared bread of the Gospel narrative at Tabgha. Christian reflection may also connect the feeding to Eucharistic themes, without claiming that the site is the historical location of the Last Supper. The actual visitor and worship arrangements belong to the church’s current guardians, not to an assumed itinerary across all Galilean sites.",
+              "fr": "À Tabgha, les pèlerins méditent la compassion du Christ et le pain partagé dans le récit évangélique. La réflexion chrétienne peut relier la multiplication à des thèmes eucharistiques sans prétendre que le lieu serait l’emplacement historique de la Cène. Les modalités de visite et de culte dépendent des responsables actuels de l’église, non d’un parcours supposé de tous les sites galiléens.",
+              "source_id": "AO-ED-TABGHA-MULTIPLICATION-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/tabgha/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/tabgha/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-TABGHA-MULTIPLICATION-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "place_name": "Church of the Visitation, Ein Karem",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:church-of-the-visitation-ein-karem",
+      "draft_order": 170,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A hillside Franciscan sanctuary recalling Mary’s visit to Elizabeth and the Magnificat.",
+      "subtitle_fr": "Un sanctuaire franciscain sur la colline rappelant la visite de Marie à Élisabeth et le Magnificat.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Mary and Elizabeth in Luke’s Gospel",
+          "title_fr": "Marie et Élisabeth dans l’Évangile de Luc",
+          "paragraphs": [
+            {
+              "en": "The Church of the Visitation at Ein Karem commemorates Mary’s visit to Elizabeth, remembered in Luke 1. It invites pilgrims to contemplate the meeting of the two women and the words of the Magnificat. The site’s geographical association with that encounter is transmitted by Christian tradition; the Gospel does not provide coordinates for a specific modern building.",
+              "fr": "L’église de la Visitation à Ein Karem commémore la visite de Marie à Élisabeth rapportée en Luc 1. Elle invite les pèlerins à méditer la rencontre des deux femmes et les paroles du Magnificat. L’association géographique du site avec cet épisode est transmise par la tradition chrétienne ; l’Évangile ne donne pas les coordonnées d’un édifice moderne précis.",
+              "source_id": "AO-ED-EINKAREM-VISITATION-20261111",
+              "source_url": "https://www.custodia.org/en/news/visit-believe-rejoice-the-feast-of-the-visitation-in-ein-karem/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A sanctuary on the hillside",
+          "title_fr": "Un sanctuaire sur la colline",
+          "paragraphs": [
+            {
+              "en": "The Church of the Visitation rises on the hillside at Ein Karem, traditionally associated with the house of Zechariah and Elizabeth. The Franciscan Custody describes the Magnificat displayed in many languages and the modern church built over earlier remains. This sanctuary is separate from Ein Karem sites dedicated to John the Baptist.",
+              "fr": "L’église de la Visitation se dresse sur les hauteurs d’Ein Karem, traditionnellement associées à la maison de Zacharie et d’Élisabeth. La Custodie franciscaine décrit le Magnificat présenté dans de nombreuses langues et l’église moderne construite sur des vestiges plus anciens. Ce sanctuaire se distingue des lieux d’Ein Karem dédiés à saint Jean-Baptiste.",
+              "source_id": "AO-ED-EINKAREM-VISITATION-20261111",
+              "source_url": "https://www.custodia.org/en/news/visit-believe-rejoice-the-feast-of-the-visitation-in-ein-karem/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and the Magnificat",
+          "title_fr": "Pèlerinage et Magnificat",
+          "paragraphs": [
+            {
+              "en": "Prayer at the Visitation church naturally turns to the Magnificat and to the joy expressed in Mary’s meeting with Elizabeth. The sanctuary offers a focused stop within a larger Holy Land journey, but access to the hillside and religious services depend on current conditions.",
+              "fr": "La prière à l’église de la Visitation se tourne naturellement vers le Magnificat et vers la joie exprimée dans la rencontre de Marie et d’Élisabeth. Le sanctuaire offre une étape précise dans un pèlerinage plus vaste en Terre Sainte, mais l’accès à la colline et les offices dépendent des conditions actuelles.",
+              "source_id": "AO-ED-EINKAREM-VISITATION-20261111",
+              "source_url": "https://www.custodia.org/en/news/visit-believe-rejoice-the-feast-of-the-visitation-in-ein-karem/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/convents/ain-karem-monastery-of-the-visitation/",
+        "https://www.custodia.org/en/news/visit-believe-rejoice-the-feast-of-the-visitation-in-ein-karem/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-EINKAREM-VISITATION-20261111"
+      ]
+    },
+    {
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "place_name": "Dominus Flevit Church, Mount of Olives",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:dominus-flevit-church-mount-of-olives",
+      "draft_order": 171,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Mount of Olives church recalling Christ’s tears over Jerusalem.",
+      "subtitle_fr": "L’église du mont des Oliviers rappelant les larmes du Christ sur Jérusalem.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "He wept over the city",
+          "title_fr": "Il pleura sur la ville",
+          "paragraphs": [
+            {
+              "en": "Dominus Flevit, meaning 'the Lord wept', commemorates the episode in Luke 19 in which Jesus laments over Jerusalem. The church on the Mount of Olives turns the Gospel memory toward the city itself. Its meaning is more particular than a general viewpoint: the pilgrim comes to meditate on Christ’s grief, compassion and warning in the biblical account.",
+              "fr": "Dominus Flevit, « le Seigneur pleura », commémore l’épisode de Luc 19 où Jésus se lamente sur Jérusalem. L’église du mont des Oliviers oriente la mémoire évangélique vers la ville elle-même. Sa signification dépasse celle d’un simple belvédère : le pèlerin vient méditer la douleur, la compassion et l’avertissement du Christ dans le récit biblique.",
+              "source_id": "AO-ED-DOMINUS-FLEVIT-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/dominus-flevit/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A view framing a Gospel lament",
+          "title_fr": "Une vue qui encadre une lamentation évangélique",
+          "paragraphs": [
+            {
+              "en": "The Dominus Flevit sanctuary overlooks Jerusalem from the Mount of Olives. The Franciscan Custody traces written references to the place commemorating Jesus’ tears to the late thirteenth or early fourteenth century. That record establishes a longstanding Christian remembrance, not archaeological proof of the exact spot described in Luke’s Gospel.",
+              "fr": "Le sanctuaire Dominus Flevit domine Jérusalem depuis le mont des Oliviers. La Custodie franciscaine situe les premières mentions écrites du lieu commémorant les larmes de Jésus à la fin du XIIIe ou au début du XIVe siècle. Elles attestent une mémoire chrétienne ancienne, sans prouver archéologiquement le point exact du récit de Luc.",
+              "source_id": "AO-ED-DOMINUS-FLEVIT-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/dominus-flevit/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A Franciscan stop on the Mount of Olives",
+          "title_fr": "Une étape franciscaine au mont des Oliviers",
+          "paragraphs": [
+            {
+              "en": "Dominus Flevit forms one distinct stop among the Christian sites of the Mount of Olives. Nearby churches commemorate other episodes of Christ's Passion and remain distinct destinations. Each sanctuary provides its own access and worship information; proximity alone does not establish a shared processional route.",
+              "fr": "Dominus Flevit forme une étape distincte parmi les lieux chrétiens du mont des Oliviers. Les églises voisines commémorent d'autres épisodes de la Passion du Christ et sont des destinations distinctes. Les modalités d'accès et de culte relèvent de chaque sanctuaire ; la proximité ne suffit pas à établir un itinéraire de procession commun.",
+              "source_id": "AO-ED-DOMINUS-FLEVIT-20261111",
+              "source_url": "https://www.custodia.org/en/sanctuaries/dominus-flevit/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/dominus-flevit/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-DOMINUS-FLEVIT-20261111"
+      ]
+    },
+    {
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "place_name": "Real Monasterio de Santa María de Guadalupe",
+      "country_code": "ES",
+      "shrine_id": "shrine:ES:real-monasterio-santa-maria-guadalupe",
+      "draft_order": 172,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Royal Monastery of Guadalupe in Extremadura, its Marian image and Spanish pilgrimage heritage.",
+      "subtitle_fr": "Le monastère royal de Guadalupe en Estrémadure, son image mariale et le pèlerinage espagnol.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Virgin of Guadalupe in Extremadura",
+          "title_fr": "La Vierge de Guadalupe en Estrémadure",
+          "paragraphs": [
+            {
+              "en": "The Royal Monastery of Santa María de Guadalupe is a historic Marian pilgrimage destination in Extremadura. Devotion centres on an image of the Virgin venerated in the monastery’s church. This Spanish place has its own long religious history and should never be confused with the later sanctuary of Our Lady of Guadalupe at Tepeyac in Mexico.",
+              "fr": "Le monastère royal de Santa María de Guadalupe est une destination historique de pèlerinage marial en Estrémadure. La dévotion s’y concentre sur une image de la Vierge vénérée dans l’église monastique. Ce lieu espagnol possède sa propre longue histoire religieuse et ne doit jamais être confondu avec le sanctuaire postérieur de Notre-Dame de Guadalupe à Tepeyac, au Mexique.",
+              "source_id": "SG-MAJOR2-SITE-ES",
+              "source_url": "https://whc.unesco.org/en/list/665/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Monastery, church and cloisters",
+          "title_fr": "Monastère, église et cloîtres",
+          "paragraphs": [
+            {
+              "en": "The sanctuary brings together a church, monastic buildings and cloisters, expressing several centuries of religious and artistic life in one complex. UNESCO records its heritage significance, which complements rather than replaces its Marian pilgrimage identity. The individual spaces can be explained within one site without inventing a separate destination for every courtyard or chapel.",
+              "fr": "Le sanctuaire réunit une église, des bâtiments monastiques et des cloîtres, exprimant plusieurs siècles de vie religieuse et artistique dans un même ensemble. L’UNESCO reconnaît son importance patrimoniale, qui complète sans remplacer son identité de pèlerinage marial. Les différents espaces peuvent être expliqués au sein d’un seul site sans inventer une destination distincte pour chaque cour ou chapelle.",
+              "source_id": "SG-MAJOR2-SITE-ES",
+              "source_url": "https://whc.unesco.org/en/list/665/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and Spanish religious memory",
+          "title_fr": "Pèlerinage et mémoire religieuse espagnole",
+          "paragraphs": [
+            {
+              "en": "Pilgrims approach Guadalupe to honour the Marian image and encounter a monastery whose history is connected to wider Spanish religious culture. The heritage visitor programme and the functioning church may follow different arrangements.",
+              "fr": "Les pèlerins viennent à Guadalupe pour honorer l’image mariale et découvrir un monastère dont l’histoire appartient à une culture religieuse espagnole plus vaste. Les visites patrimoniales et le culte de l’église peuvent suivre des modalités différentes.",
+              "source_id": "SG-MAJOR2-SITE-ES",
+              "source_url": "https://whc.unesco.org/en/list/665/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://whc.unesco.org/en/list/665/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "place_name": "Memorial of Saint Peter — Capernaum",
+      "country_code": "IL",
+      "shrine_id": "shrine:IL:capernaum-saint-peter-memorial",
+      "draft_order": 173,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Capernaum’s modern Saint Peter memorial over a traditional early Christian house site.",
+      "subtitle_fr": "Le mémorial moderne de saint Pierre à Capharnaüm, au-dessus d’un lieu domestique chrétien ancien.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Capernaum and the memory of Peter",
+          "title_fr": "Capharnaüm et la mémoire de Pierre",
+          "paragraphs": [
+            {
+              "en": "At Capernaum, the Memorial of Saint Peter recalls the apostle’s association with the town where Jesus carried out much of his Galilean ministry. The modern church stands above remains traditionally identified as Peter’s house and a place of early Christian worship. The distinction between biblical narrative, archaeological remains and devotional identification should remain clear.",
+              "fr": "À Capharnaüm, le mémorial de saint Pierre rappelle le lien de l’apôtre avec la localité où Jésus exerça une part importante de son ministère galiléen. L’église moderne domine des vestiges traditionnellement identifiés à la maison de Pierre et à un ancien lieu de culte chrétien. Il faut distinguer le récit biblique, les vestiges archéologiques et leur identification dévotionnelle.",
+              "source_id": "SG-MAJOR2-SITE-IL",
+              "source_url": "https://www.custodia.org/en/sanctuaries/capernaum/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Layers of a sacred building",
+          "title_fr": "Les strates d’un édifice sacré",
+          "paragraphs": [
+            {
+              "en": "The site includes remains associated with an early domestic structure and later Christian worship, including an octagonal church from a subsequent period. The modern elevated memorial lets visitors contemplate this sequence of construction. The archaeological remains, octagonal church and modern memorial belong to successive phases of the same historic Christian site.",
+              "fr": "Le site comprend des vestiges associés à une ancienne structure domestique et à des formes ultérieures de culte chrétien, notamment une église octogonale d’une époque postérieure. Le mémorial moderne surélevé permet de contempler cette succession de constructions. Les vestiges archéologiques, l’église octogonale et le mémorial moderne appartiennent à des phases successives d’un même site chrétien historique.",
+              "source_id": "SG-MAJOR2-SITE-IL",
+              "source_url": "https://www.custodia.org/en/sanctuaries/capernaum/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage between Scripture and archaeology",
+          "title_fr": "Pèlerinage entre Écriture et archéologie",
+          "paragraphs": [
+            {
+              "en": "Pilgrims at Capernaum connect Gospel readings with a concrete place of Christian remembrance, while recognising that a traditional identification is not identical to scientific certainty about every stone. The complex’s archaeological and liturgical spaces can have different access arrangements. The site is an archaeological complex, not a single marked doorway whose exact relation to Peter's house can be established with certainty.",
+              "fr": "À Capharnaüm, les pèlerins relient la lecture des Évangiles à un lieu concret de mémoire chrétienne, tout en reconnaissant qu’une identification traditionnelle ne garantit pas une certitude scientifique pour chaque pierre. Les espaces archéologiques et liturgiques peuvent avoir des accès différents. Le site constitue un ensemble archéologique, et non une porte précisément repérée dont le lien avec la maison de Pierre serait établi avec certitude.",
+              "source_id": "SG-MAJOR2-SITE-IL",
+              "source_url": "https://www.custodia.org/en/sanctuaries/capernaum/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.custodia.org/en/sanctuaries/capernaum/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "place_name": "Church of Our Lady of Lourdes, Singapore",
+      "country_code": "SG",
+      "shrine_id": "shrine:SG:church-our-lady-of-lourdes-ophir",
+      "draft_order": 174,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Singapore’s Lourdes church and its Tamil Catholic heritage on Ophir Road.",
+      "subtitle_fr": "L’église Notre-Dame de Lourdes de Singapour et son héritage catholique tamoul sur Ophir Road.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A church built for Tamil Catholics",
+          "title_fr": "Une église bâtie pour les catholiques tamouls",
+          "paragraphs": [
+            {
+              "en": "The Church of Our Lady of Lourdes on Ophir Road was established to serve Singapore’s Tamil Catholic community. That local pastoral purpose is essential to the church’s historical identity, rather than an incidental detail of its dedication to Lourdes. The building belongs to the city’s Catholic history and remains distinct from the sanctuary in France that inspired its Marian title.",
+              "fr": "L’église Notre-Dame de Lourdes sur Ophir Road fut établie pour servir la communauté catholique tamoule de Singapour. Cette fonction pastorale locale est essentielle à son identité historique, et non un détail secondaire de sa dédicace à Lourdes. L’édifice appartient à l’histoire catholique de la ville et reste distinct du sanctuaire français qui inspira son titre marial.",
+              "source_id": "SG-R70-CUSTODIAN-SG-INV-0680",
+              "source_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-our-lady-of-lourdes"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A grotto and Gothic architecture",
+          "title_fr": "Une grotte et une architecture gothique",
+          "paragraphs": [
+            {
+              "en": "Singapore’s National Heritage Board records the church’s Lourdes grotto, Rosary-themed stained glass and Gothic architectural character. These features express both a Marian devotion and a distinctive religious-artistic heritage. The local grotto is a devotional representation, not a claim that the 1858 events at Lourdes occurred in Singapore.",
+              "fr": "Le National Heritage Board de Singapour mentionne la grotte de Lourdes de l’église, ses vitraux consacrés au Rosaire et son caractère architectural gothique. Ces éléments expriment une dévotion mariale et un patrimoine religieux et artistique particulier. La grotte locale est une représentation dévotionnelle, et non l’affirmation que les événements de Lourdes de 1858 se seraient déroulés à Singapour.",
+              "source_id": "AO-ED-SINGAPORE-LOURDES-CHURCH-HISTORY-20261112",
+              "source_url": "https://ourladyoflourdes.sg/history-of-the-church"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living Catholic parish",
+          "title_fr": "Une paroisse catholique vivante",
+          "paragraphs": [
+            {
+              "en": "The building is a functioning Catholic parish, not simply a monument or a formally certified apparition shrine. Its history makes it meaningful for visitors interested in the growth of Catholic communities in Singapore.",
+              "fr": "L’édifice est une paroisse catholique en activité, non un simple monument ni un sanctuaire d’apparitions formellement certifié. Son histoire intéresse ceux qui souhaitent comprendre le développement des communautés catholiques de Singapour.",
+              "source_id": "AO-ED-SINGAPORE-LOURDES-PARISH-HOME-20261112",
+              "source_url": "https://ourladyoflourdes.sg/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-our-lady-of-lourdes",
+        "https://ourladyoflourdes.sg/history-of-the-church",
+        "https://ourladyoflourdes.sg/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-SINGAPORE-LOURDES-CHURCH-HISTORY-20261112",
+        "AO-ED-SINGAPORE-LOURDES-PARISH-HOME-20261112"
+      ]
+    },
+    {
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "place_name": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+      "country_code": "SG",
+      "shrine_id": "shrine:SG:nativity-blessed-virgin-mary-hougang",
+      "draft_order": 175,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Hougang’s Catholic church, the French missions and the Teochew community.",
+      "subtitle_fr": "L’église catholique de Hougang, les Missions étrangères et la communauté teochew.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A parish shaped by missions",
+          "title_fr": "Une paroisse façonnée par les missions",
+          "paragraphs": [
+            {
+              "en": "The Church of the Nativity of the Blessed Virgin Mary at Hougang is linked to the nineteenth-century work of the Missions Étrangères de Paris and the Teochew Catholic community. Its religious history is therefore rooted in the growth of a particular local community, not merely in a universal Marian dedication. The church remains an identifiable place in Singapore’s Catholic geography.",
+              "fr": "L’église de la Nativité de la Bienheureuse Vierge Marie de Hougang est liée au travail des Missions étrangères de Paris au XIXe siècle et à la communauté catholique teochew. Son histoire religieuse s’enracine donc dans le développement d’une communauté locale précise, et non seulement dans une dédicace mariale universelle. L’église demeure un lieu identifiable de la géographie catholique de Singapour.",
+              "source_id": "SG-R70-SITE-SG-INV-0681",
+              "source_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The neo-Gothic building and its expansion",
+          "title_fr": "L’édifice néogothique et son agrandissement",
+          "paragraphs": [
+            {
+              "en": "The present neo-Gothic church dates to the period 1898–1901 and was expanded in 1933. These dates distinguish the history of the building from the earlier history of the Catholic community it serves. The surviving architecture is a witness to different phases of parish growth and should not be inaccurately described as an apparition chapel or a newly built national shrine.",
+              "fr": "L’église néogothique actuelle date de la période 1898–1901 et fut agrandie en 1933. Ces dates distinguent l’histoire du bâtiment de celle, plus ancienne, de la communauté catholique qu’il dessert. L’architecture conservée témoigne des différentes étapes de l’expansion paroissiale et ne doit pas être décrite à tort comme une chapelle d’apparitions ou un nouveau sanctuaire national.",
+              "source_id": "SG-R70-SITE-SG-INV-0681",
+              "source_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Marian devotion in a living neighbourhood",
+          "title_fr": "La dévotion mariale dans un quartier vivant",
+          "paragraphs": [
+            {
+              "en": "The Nativity dedication gives the parish a Marian identity within the particular social and linguistic history of Hougang. Visitors may encounter religious heritage and active parish worship at the same site.",
+              "fr": "La dédicace à la Nativité donne à la paroisse une identité mariale au sein de l’histoire sociale et linguistique particulière de Hougang. Les visiteurs découvrent sur place le patrimoine religieux et le culte paroissial actuel.",
+              "source_id": "SG-R70-SITE-SG-INV-0681",
+              "source_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-the-nativity-of-the-blessed-virgin-mary"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "place_name": "Archdiocese of Lusaka Marian Shrine",
+      "country_code": "ZM",
+      "shrine_id": "shrine:ZM:archdiocese-lusaka-marian-shrine",
+      "draft_order": 176,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Lusaka’s diocesan Marian shrine and the documented Assumption pilgrimage of 2025.",
+      "subtitle_fr": "Le sanctuaire marial diocésain de Lusaka et le pèlerinage attesté de l’Assomption 2025.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian sanctuary of Lusaka",
+          "title_fr": "Un sanctuaire marial de Lusaka",
+          "paragraphs": [
+            {
+              "en": "The Archdiocese of Lusaka maintains a Marian shrine on Great East Road, providing a distinct place of prayer within the Zambian capital’s Catholic life. The shrine’s identity is established by the diocese rather than by the title alone. It must be distinguished from ordinary parishes dedicated to Mary and from Marian sites in other parts of Zambia.",
+              "fr": "L’archidiocèse de Lusaka possède un sanctuaire marial sur Great East Road, offrant un lieu de prière distinct dans la vie catholique de la capitale zambienne. Son identité est attestée par le diocèse et non par sa seule appellation. Il faut le distinguer des paroisses ordinaires dédiées à Marie et des sanctuaires mariaux situés ailleurs en Zambie.",
+              "source_id": "SG-R70-SITE-SG-INV-0724",
+              "source_url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The 2025 Assumption pilgrimage",
+          "title_fr": "Le pèlerinage de l’Assomption 2025",
+          "paragraphs": [
+            {
+              "en": "An official archdiocesan report documents a pilgrimage from Roma Parish to the shrine on 15 August 2025. The gathering culminated in Mass and a diocesan consecration to Mary, linking a Marian feast to an organised journey through the city. The account establishes that particular event, not an automatically recurring route with an unchanged programme every year.",
+              "fr": "Un rapport officiel de l’archidiocèse documente un pèlerinage depuis la paroisse de Roma jusqu’au sanctuaire le 15 août 2025. Le rassemblement culmina par la messe et une consécration diocésaine à Marie, reliant une fête mariale à une marche organisée dans la ville. Ce récit atteste cet événement précis, non un parcours reconduit automatiquement avec un programme inchangé chaque année.",
+              "source_id": "SG-R70-SITE-SG-INV-0724",
+              "source_url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A destination distinct from its procession route",
+          "title_fr": "Une destination distincte du parcours de procession",
+          "paragraphs": [
+            {
+              "en": "The sanctuary is the physical destination of the Lusaka pilgrimage, while the procession from Roma Parish is a dated event with its own starting point. The 2025 procession connected the two places but had the Marian shrine as its destination. Future departures and walking routes depend on the archdiocese's arrangements for each year.",
+              "fr": "Le sanctuaire est la destination physique du pèlerinage de Lusaka, tandis que la marche depuis la paroisse de Roma est un événement daté possédant son propre point de départ. La procession de 2025 reliait les deux lieux, mais avait le sanctuaire marial pour destination. Les départs et parcours ultérieurs dépendent des dispositions fixées chaque année par l’archidiocèse.",
+              "source_id": "SG-R70-SITE-SG-INV-0724",
+              "source_url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:ZM:archdiocese-lusaka-marian-shrine-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "EDITORIAL_SOURCE_TO_CLAIM_AND_FR_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}
