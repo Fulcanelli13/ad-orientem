@@ -1,0 +1,57 @@
+name: Holy Trinity 3 held works - reference-source audit
+
+on:
+  push:
+    branches:
+      - curation/holy-trinity-six-20261113
+    paths:
+      - .github/workflows/holy-trinity-three-held-reference-once.yml
+
+permissions:
+  contents: read
+
+jobs:
+  held-references:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pillow
+      - name: Acquire source photographs for private curatorial research only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,urllib.request
+          from PIL import Image
+          base=pathlib.Path("trinity-held-references");base.mkdir(exist_ok=True)
+          works=[
+           (2,"02_guido_reni_1625_REFERENCE_ONLY.jpg","https://upload.wikimedia.org/wikipedia/commons/9/9e/La_Trinit%C3%A0_-_Guido_Reni.jpg","QUALITY_HOLD_AND_SOURCE_RIGHTS_REVIEW"),
+           (4,"04_tiepolo_london_1735_REFERENCE_ONLY.jpg","https://upload.wikimedia.org/wikipedia/commons/a/af/Giovanni_Battista_Tiepolo_094.jpg","YORCK_PD_ART_NON_MUSEUM_CC0_REVIEW"),
+           (8,"08_durer_1511_REFERENCE_ONLY.jpg","https://upload.wikimedia.org/wikipedia/commons/6/61/Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_%28Landauer_Altar%29_-_Google_Art_Project.jpg","GOOGLE_ART_PROJECT_PD_ART_NON_MUSEUM_CC0_REVIEW")
+          ]
+          report=[]
+          for n,name,url,hold in works:
+           rec={"selection":n,"file":name,"url":url,"releaseHold":hold,"productionEligible":False}
+           try:
+            req=urllib.request.Request(url,headers={"User-Agent":"AdOrientemCuratorialReview/1.0 (+https://github.com/Fulcanelli13/ad-orientem)"})
+            with urllib.request.urlopen(req,timeout=65) as r: data=r.read()
+            if not data.startswith(bytes.fromhex("ffd8")): raise ValueError("Not a JPEG")
+            p=base/name;p.write_bytes(data)
+            with Image.open(p) as im: rec["width"],rec["height"]=im.size; im.verify()
+            rec["bytes"]=len(data);rec["sha256"]=hashlib.sha256(data).hexdigest()
+            rec["status"]="DOWNLOADED_FOR_RESEARCH_ONLY"
+           except Exception as e:rec["status"]="FAILED";rec["error"]=str(e)[:180]
+           report.append(rec);print(json.dumps(rec),flush=True)
+          (base/"RIGHTS_QUALITY_HOLDS.json").write_text(json.dumps(report,indent=2)+"\n")
+          (base/"README.txt").write_text("These three historic artworks are NOT image-release certified. Reni lacks sufficient resolution; the independent images for Durer and Tiepolo require reproduction-rights review. Do not use in a commercial app until independently cleared. No images have been deployed.\n")
+          PY
+      - name: Save reference images and audit only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-trinity-three-held-research-photographs
+          path: trinity-held-references/
+          retention-days: 30
+          if-no-files-found: warn
