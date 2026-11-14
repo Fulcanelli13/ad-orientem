@@ -20,6 +20,7 @@ import "./full-mass-preflight-styles.js";
 import "./observed-local-orations-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
+import {mountLiveHandoffBand} from "./reader-live-handoff-band.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { R17_REVIEWED_POSTURE_ASSETS } from "./reader-reviewed-posture-assets.js";
@@ -732,6 +733,12 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
   installReaderSpecialMassContext(previewState.preview,prepared);
+  // Preview-only Stage B. Fails closed unless ?aoLiveBandPreview=1 and all
+  // 65 native source cuts exactly crosswalk. Never mutates reader/Schola state.
+  globalThis.AO_R17_LIVE_BAND_PREVIEW?.dispose?.();
+  globalThis.AO_R17_LIVE_BAND_PREVIEW=mountLiveHandoffBand({
+    preview:previewState.preview,doc:document,
+  });
   globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
   globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
     preview:previewState.preview,prepared,doc:document,
