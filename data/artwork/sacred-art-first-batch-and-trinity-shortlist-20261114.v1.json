@@ -1,0 +1,329 @@
+{
+  "schema": "AO_CURATED_FIRST_BATCH_AND_HOLY_TRINITY_LINK_V1",
+  "updated_on": "2026-11-14",
+  "purpose": "Cross-reference first 20 prayer painting image-source decisions with six owner-selected Holy Trinity paintings. No automatic prayer assignments, binaries committed, asset release, app transfer, or deployment.",
+  "provenance": {
+    "holy_trinity_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2929",
+    "holy_trinity_photo_audit": "data/artwork/holy-trinity-six-reproduction-quality-audit-20261114.v1.json",
+    "holy_trinity_research_archive": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/43581772504/artifacts/14107943098",
+    "batch01_decision_origin": "AO_Sacred_Art_Curation_2026-11-14_BATCH01_REVIEW.csv (user's workbook)",
+    "consolidated_shortlist_snapshot": "AO_Sacred_Art_Curation_2026-11-14_TRINITY_BATCH01.xlsx (conversation deliverable, not pushed as xlsx)"
+  },
+  "totals": {
+    "distinct_selected_artworks": 120,
+    "preferred_sources": 72,
+    "investigations": 48,
+    "prayer_assignments_unchanged": 149,
+    "first_batch_count": 20,
+    "first_batch_direct": 12,
+    "first_batch_held": 8,
+    "trinity_selected": 6,
+    "trinity_direct": 3,
+    "trinity_held": 3,
+    "prior_shortlist_campeche_deduped": true
+  },
+  "trinity": [
+    {
+      "artwork_id": "owner-selected:holy-trinity:rubens-1620",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "DIRECT_SOURCE",
+      "source_rights_note": "KMSKA CC0",
+      "source_dimensions": {
+        "width": 19178,
+        "height": 19721
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    },
+    {
+      "artwork_id": "owner-selected:holy-trinity:reni-1625",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "INVESTIGATE",
+      "source_rights_note": "Professional open source not found; 634x1193 reference only",
+      "source_dimensions": {
+        "width": 634,
+        "height": 1193
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    },
+    {
+      "artwork_id": "owner-selected:holy-trinity:dolci-1640",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "DIRECT_SOURCE",
+      "source_rights_note": "RISD CC0, 877x1024; restrained zoom only",
+      "source_dimensions": {
+        "width": 877,
+        "height": 1024
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    },
+    {
+      "artwork_id": "owner-selected:holy-trinity:tiepolo-1735",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "INVESTIGATE",
+      "source_rights_note": "Yorck PD-Art claim vs National Gallery non-commercial image terms",
+      "source_dimensions": {
+        "width": 2024,
+        "height": 2623
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    },
+    {
+      "artwork_id": "owner-selected:holy-trinity:durer-1511",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "INVESTIGATE",
+      "source_rights_note": "Commons Google Art Project PD-Art vs KHM commercial terms",
+      "source_dimensions": {
+        "width": 4969,
+        "height": 5434
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    },
+    {
+      "artwork_id": "NEW::met-917618",
+      "source_registry": "src/art/sacred-art-holy-trinity-owner-selected.v1.js",
+      "status": "DIRECT_SOURCE",
+      "source_rights_note": "Met CC0; existing master record NEW::met-917618",
+      "source_dimensions": {
+        "width": 2700,
+        "height": 4000
+      },
+      "original_in_separate_research_archive": true,
+      "productionEligible": false
+    }
+  ],
+  "first_batch": [
+    {
+      "order": 1,
+      "artwork_id": "REVIEW::cma:127664",
+      "status": "INVESTIGATE",
+      "title": "Crucifixion",
+      "preferred_source": "https://www.clevelandart.org/art/127664",
+      "restriction_or_evidence": "Unresolved Cleveland identity; do not attach substitution",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 2,
+      "artwork_id": "REVIEW::nga:52",
+      "status": "DIRECT_SOURCE",
+      "title": "Christ Appearing to the Virgin",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:Christ_Appearing_to_the_Virgin_A22130.jpg",
+      "restriction_or_evidence": "NGA-derived open source, 2305x4000; attribution Follower of Rogier van der Weyden",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 3,
+      "artwork_id": "REVIEW::met:436781",
+      "status": "DIRECT_SOURCE",
+      "title": "The Adoration of the Christ Child",
+      "preferred_source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436781/796610/main-image",
+      "restriction_or_evidence": "Met CC0; attributed Follower of Jan Joest of Kalkar; binary dimensions pending",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 4,
+      "artwork_id": "CANONICAL::met-437542",
+      "status": "DIRECT_SOURCE",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "preferred_source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437542/2006481/main-image",
+      "restriction_or_evidence": "Met CC0; Workshop of Peter Paul Rubens",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 5,
+      "artwork_id": "CANONICAL::cma-97147",
+      "status": "INVESTIGATE",
+      "title": "The Crucifixion",
+      "preferred_source": "https://www.clevelandart.org/art/1916.786",
+      "restriction_or_evidence": "Selected Sodoma attribution not reconciled with follower attribution",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 6,
+      "artwork_id": "REVIEW::smk:KMSSP13",
+      "status": "DIRECT_SOURCE",
+      "title": "The Annunciation",
+      "preferred_source": "https://open.smk.dk/artwork/image/KMSsp13",
+      "restriction_or_evidence": "SMK public-domain reproduction",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 7,
+      "artwork_id": "NEW::vandyck-potsdam-pentecost",
+      "status": "DIRECT_SOURCE",
+      "title": "Pentecost",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+      "restriction_or_evidence": "Van Dyck; Google Art Project/Commons PD-Art source, 6064x7368",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 8,
+      "artwork_id": "CANONICAL::ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "status": "DIRECT_SOURCE",
+      "title": "The Ascension — Antwerp Rosary cycle",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+      "restriction_or_evidence": "KIK-IRPA-derived source, 3348x4500; reuse verification to follow source acquisition",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 9,
+      "artwork_id": "NEW::khm-caravaggio-crowning-thorns",
+      "status": "DIRECT_SOURCE",
+      "title": "The Crowning with Thorns",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:The_Crowning_with_Thorns-Caravaggio_(1602).jpg",
+      "restriction_or_evidence": "Caravaggio, Vienna; public-domain scan candidate 11037x8443",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 10,
+      "artwork_id": "NEW::capodimonte-caravaggio-flagellation",
+      "status": "INVESTIGATE",
+      "title": "The Flagellation of Christ",
+      "preferred_source": "https://capodimonte.cultura.gov.it/terms-and-conditions-for-reproductions-and-permission-to-film-video-and-photo/?lang=en",
+      "restriction_or_evidence": "Publication permission/fees for museum photo; no paid source authorised",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 11,
+      "artwork_id": "NEW::ngi-L14702",
+      "status": "INVESTIGATE",
+      "title": "The Taking of Christ",
+      "preferred_source": "https://onlinecollection.nationalgallery.ie/objects/2882/the-taking-of-christ",
+      "restriction_or_evidence": "National Gallery of Ireland photograph requires licence",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 12,
+      "artwork_id": "REVIEW::smk:KMSSP48",
+      "status": "DIRECT_SOURCE",
+      "title": "Christ’s Agony in the Garden of Gethsemane",
+      "preferred_source": "https://open.smk.dk/artwork/image/KMSsp48",
+      "restriction_or_evidence": "Carlo Dolci; SMK public-domain source, 4724x6096",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 13,
+      "artwork_id": "NEW::louvre-inv297",
+      "status": "DIRECT_SOURCE",
+      "title": "The Visitation",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:La_Visitation_avec_Marie-Jacobie_et_Marie-Salomé_-_Domenico_Ghirlandaio_-_Musée_du_Louvre_Peintures_INV_297_;_MR_240.jpg",
+      "restriction_or_evidence": "Ghirlandaio; Commons faithful public-domain reproduction, 7805x8026",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 14,
+      "artwork_id": "REVIEW::smk:KMS1168",
+      "status": "DIRECT_SOURCE",
+      "title": "The Presentation of Christ in the Temple, and the Baptism of Christ",
+      "preferred_source": "https://open.smk.dk/artwork/image/KMS1168",
+      "restriction_or_evidence": "Frantz Clein; SMK open image; dimensions after binary retrieval",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 15,
+      "artwork_id": "REVIEW::rijks:20028095",
+      "status": "DIRECT_SOURCE",
+      "title": "Christ Crowned with Thorns",
+      "preferred_source": "https://www.rijksmuseum.nl/en/collection/object/De-doornenkroning-van-Jezus--9c89ad27853218f13af2effaf52cd6ea",
+      "restriction_or_evidence": "Gerrit van Honthorst; Rijksmuseum public-domain source",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 16,
+      "artwork_id": "NEW::hermitage-4612",
+      "status": "INVESTIGATE",
+      "title": "Christ in the Garden of Gethsemane",
+      "preferred_source": "https://resources.metmuseum.org/resources/metpublications/pdf/Dutch_and_Flemish_Paintings_from_the_Hermitage.pdf",
+      "restriction_or_evidence": "Inventory exists; reusable open image not verified",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 17,
+      "artwork_id": "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "status": "INVESTIGATE",
+      "title": "San Polo Via Crucis — Station 05",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
+      "restriction_or_evidence": "In-situ photo, not acceptable clean master",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 18,
+      "artwork_id": "NEW::vatican-reni-pentecost-1608",
+      "status": "INVESTIGATE",
+      "title": "Pentecost (fresco)",
+      "preferred_source": "https://commons.wikimedia.org/wiki/File:Guido_Reni,_Pentecoste,_circa_1609_-FG_02.jpg",
+      "restriction_or_evidence": "CC0 candidate does not meet framing/reproduction standard",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 19,
+      "artwork_id": "NEW::lyon-reni-assumption-A123",
+      "status": "INVESTIGATE",
+      "title": "The Assumption of the Virgin",
+      "preferred_source": "https://www.mba-lyon.fr/fr/fiche-oeuvre/lassomption-de-la-vierge",
+      "restriction_or_evidence": "Lyon image copyright credited; Commons alternatives in situ",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    },
+    {
+      "order": 20,
+      "artwork_id": "REVIEW::smk:KMSSP365",
+      "status": "DIRECT_SOURCE",
+      "title": "Christ Crowned with Thorns",
+      "preferred_source": "https://open.smk.dk/artwork/image/KMSsp365",
+      "restriction_or_evidence": "Hendrick ter Brugghen; SMK free-use, confirm master pixels after download",
+      "source_image_bytes_attached": false,
+      "mobile_variant_attached": false,
+      "productionEligible": false
+    }
+  ],
+  "curationRules": [
+    "Preserve exact owner-selected artwork identity",
+    "No substitutions based on similar painting titles",
+    "Wide compositions remain full-frame; cinematic camera navigates",
+    "Source approval is not image-binary QA nor publication permission",
+    "Do not distribute museum-controlled photographs without source-specific licence",
+    "No production repository changes; GitHub Actions + Pages exclusively for any future deployment"
+  ]
+}
