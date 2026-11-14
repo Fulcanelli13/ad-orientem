@@ -1,0 +1,739 @@
+{
+  "schema": "AO_SACRED_ATLAS_BATCH_A_GUIDE_DRAFTS_V1",
+  "created": "2026-11-04",
+  "based_on": "data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json",
+  "source_dossiers": "data/geography/research/sacred-atlas-batch-a-56-source-dossiers-20261104.md",
+  "summary": {
+    "research_guides": 12,
+    "bilingual_paragraph_pairs": 36,
+    "publication_approvals": 0,
+    "new_photo_approvals": 0
+  },
+  "policy": {
+    "scope": "Editorial source-verified first drafts, not production app copy",
+    "second_review": "Required per paragraph, identity, French proofreading, relic/apparition qualification, site exactness",
+    "media": "No photograph reuse or promotion approved by this draft",
+    "saints": "No saint-name alias resolution or biography publishing by this draft",
+    "deployment": "Never include research files in GitHub Pages static output"
+  },
+  "guides": [
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "name": "St James Parish Church — Međugorje",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The parish of Međugorje was established in 1892 under the patronage of Saint James the Greater. Its first church was completed in 1897, but unstable ground damaged the building; construction of its successor began in 1934 and the present church was blessed on 19 January 1969.",
+              "fr": "La paroisse de Međugorje a été fondée en 1892 sous le patronage de saint Jacques le Majeur. Sa première église fut achevée en 1897, mais l’instabilité du terrain endommagea l’édifice ; la construction de l’église actuelle commença en 1934 et celle-ci fut bénie le 19 janvier 1969.",
+              "source_url": "https://archive.medjugorje.hr/en/medjugorje-phenomenon/guide/",
+              "issuer": "Medjugorje parish official archive",
+              "evidence_scope": "SITE_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "Saint James’s church is a focal point of parish and pilgrim life, with Mass, confession and prayer at its centre. Nearby spaces for adoration, candle-lighting and the Way of the Cross form part of the larger devotional landscape; they should not be mistaken for separate canonical church sites.",
+              "fr": "L’église Saint-Jacques est un centre de la vie paroissiale et de l’accueil des pèlerins, où la messe, la confession et la prière occupent une place essentielle. Les espaces voisins d’adoration, de cierges et de chemin de croix appartiennent au même ensemble de dévotion et ne doivent pas être confondus avec des églises canoniquement distinctes.",
+              "source_url": "https://www.medjugorje.hr/en/prayer-sites",
+              "issuer": "Medjugorje parish",
+              "evidence_scope": "SITE_PRACTICE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "In its note of 19 September 2024, the Dicastery for the Doctrine of the Faith permitted public devotion through a nihil obstat in recognition of positive spiritual fruits. It expressly did not declare the reported apparitions or messages to be supernatural in origin; the latter must be described as alleged messages.",
+              "fr": "Dans sa note du 19 septembre 2024, le Dicastère pour la doctrine de la foi a autorisé la dévotion publique par un nihil obstat, compte tenu des fruits spirituels positifs. Il n’a expressément pas déclaré surnaturelles les apparitions ou les messages rapportés ; ceux-ci doivent être désignés comme des messages présumés.",
+              "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html",
+              "issuer": "Dicastery for the Doctrine of the Faith",
+              "evidence_scope": "ECCLESIASTICAL_DISCERNMENT_NOT_SUPERNATURAL_AUTHENTICATION"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Never describe nihil obstat as proof of apparitions; distinguish historical parish from alleged phenomena."
+      ]
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "name": "National Shrine of St John Neumann — Philadelphia",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "John Neumann was ordained a priest in New York in 1836, joined the Redemptorists, and became Bishop of Philadelphia in 1852. The shrine's own history associates his episcopate with the growth of Catholic schools and churches in the diocese; this biography is contextual material, not a replacement for a separate Lives of Saints entry.",
+              "fr": "Jean Neumann fut ordonné prêtre à New York en 1836, entra chez les rédemptoristes et devint évêque de Philadelphie en 1852. L’histoire publiée par le sanctuaire relie son épiscopat au développement des écoles et des églises catholiques du diocèse ; ce contexte ne remplace pas une Vie de saint distincte.",
+              "source_url": "https://www.stjohnneumann.org/about-st-john-neumann",
+              "issuer": "National Shrine of St. John Neumann",
+              "evidence_scope": "SAINT_SITE_CONTEXT"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "The shrine traces prayer at his tomb to his burial on 9 January 1860 beneath Saint Peter the Apostle Church. As the number of pilgrims grew, the Redemptorists adapted the lower church to receive visitors; the tomb is the historical focus of the national shrine.",
+              "fr": "Le sanctuaire fait remonter la prière auprès de son tombeau à son inhumation du 9 janvier 1860 sous l’église Saint-Pierre-Apôtre. Devant l’affluence des pèlerins, les rédemptoristes aménagèrent l’église inférieure pour les accueillir ; ce tombeau demeure le centre historique du sanctuaire national.",
+              "source_url": "https://www.stjohnneumann.org/about-st-john-neumann",
+              "issuer": "National Shrine of St. John Neumann",
+              "evidence_scope": "TOMB_AND_SHRINE_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The Redemptorist custodians present the site as a place of continuing mission through the Eucharist, the sacrament of reconciliation, pilgrimages and retreats. The church's upper and lower spaces and its visitor facilities are related parts of one shrine, not automatically separate Places on the Atlas map.",
+              "fr": "Les rédemptoristes présentent ce lieu comme une mission permanente, portée par l’Eucharistie, le sacrement de réconciliation, les pèlerinages et les retraites. L’église haute, l’église basse et les espaces d’accueil relèvent d’un même sanctuaire et ne deviennent pas automatiquement des Places distinctes sur la carte.",
+              "source_url": "https://www.stjohnneumann.org/sjn-shrine-mission",
+              "issuer": "National Shrine of St. John Neumann",
+              "evidence_scope": "CONTEMPORARY_SHRINE_PRACTICE"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Do not reuse a saint portrait until identity, subject and rights are approved."
+      ]
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "name": "Pontifical Sanctuary of the Holy Stairs and Sancta Sanctorum — Rome",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The sanctuary takes its name from twenty-eight steps traditionally identified as those of Pontius Pilate’s praetorium. Their arrival in Rome is linked by tradition to Saint Helena’s journey to the Holy Land; the custodians explain that pilgrims ascend them on their knees in remembrance of Christ’s Passion. The identification of the steps is a devotional tradition, not an independently proven archaeological fact.",
+              "fr": "Le sanctuaire doit son nom à vingt-huit marches que la tradition identifie à celles du prétoire de Ponce Pilate. Leur arrivée à Rome est traditionnellement liée au voyage de sainte Hélène en Terre sainte ; les responsables expliquent que les pèlerins les montent à genoux en mémoire de la Passion du Christ. Cette identification relève d’une tradition dévotionnelle et non d’un fait archéologique établi.",
+              "source_url": "https://www.scala-santa.com/la-scala-santa/",
+              "issuer": "Pontifical Sanctuary of the Scala Santa",
+              "evidence_scope": "TRADITION_NOT_ARCHAEOLOGICAL_CERTAINTY"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "At the summit is the chapel of Saint Lawrence in Palatio, commonly called the Sancta Sanctorum, formerly the popes’ private chapel in the Lateran complex. Its Gothic restoration under Nicholas III after the earthquake of 1277 and its Cosmatesque pavement belong to the documented architectural history of the sanctuary.",
+              "fr": "Au sommet se trouve la chapelle Saint-Laurent in Palatio, généralement appelée Sancta Sanctorum, autrefois chapelle privée des papes dans l’ensemble du Latran. Sa restauration gothique sous Nicolas III après le séisme de 1277 et son pavement cosmatesque appartiennent à l’histoire architecturale documentée du sanctuaire.",
+              "source_url": "https://www.scala-santa.com/sanctasanctorum/",
+              "issuer": "Pontifical Sanctuary of the Scala Santa",
+              "evidence_scope": "DOCUMENTED_ARCHITECTURE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The chapel preserves a venerable image of Christ enthroned under the title of the Most Holy Saviour, and its historic association with relics accounts for the name Sancta Sanctorum. Its sacred objects, stairs and chapels are distinct features within a single pilgrimage complex; attribution of relics and ancient traditions should remain explicitly qualified.",
+              "fr": "La chapelle conserve une vénérable image du Christ en majesté sous le titre du Très-Saint-Sauveur ; son lien historique avec les reliques explique le nom de Sancta Sanctorum. Objets sacrés, escaliers et chapelles constituent différents éléments d’un même ensemble de pèlerinage ; les attributions de reliques et traditions anciennes doivent rester explicitement qualifiées.",
+              "source_url": "https://www.scala-santa.com/info-eng/",
+              "issuer": "Pontifical Sanctuary of the Scala Santa",
+              "evidence_scope": "HISTORIC_DEVOTION_AND_RELIC_TRADITION"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Do not assert authenticity of Pilate-stair provenance or historical indulgence conditions without their exact scope."
+      ]
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "name": "Abbey of Mont-Saint-Michel",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The Diocese of Coutances dates the foundation of the sanctuary to 709 and recounts the tradition that Saint Aubert built a chapel on the rock in response to an instruction attributed to Saint Michael. That account is a founding tradition as presented by the diocese and should not be phrased as independent proof of an apparition.",
+              "fr": "Le diocèse de Coutances situe la fondation du sanctuaire en 709 et rapporte la tradition selon laquelle saint Aubert éleva une chapelle sur le rocher en réponse à un ordre attribué à saint Michel. Il s’agit d’un récit fondateur transmis par le diocèse, et non d’une preuve indépendante d’une apparition.",
+              "source_url": "https://don.diocese50.fr/sanctuaire-msm/",
+              "issuer": "Diocese of Coutances",
+              "evidence_scope": "FOUNDING_TRADITION"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "From its early centuries the Mont became a destination for prayer to Saint Michael, and in the Middle Ages it developed into one of Europe's major pilgrimage places. The abbey has a civic and architectural history, but the site’s Christian meaning is inseparable from its long pilgrim tradition.",
+              "fr": "Dès les premiers siècles, le Mont devint un lieu de prière à saint Michel ; au Moyen Âge, il prit rang parmi les grands pèlerinages européens. L’abbaye possède aussi une histoire civile et architecturale, mais sa signification chrétienne demeure inséparable de sa longue tradition de pèlerinage.",
+              "source_url": "https://don.diocese50.fr/sanctuaire-msm/",
+              "issuer": "Diocese of Coutances",
+              "evidence_scope": "DIOCESAN_HISTORICAL_ACCOUNT"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The present sanctuary's pastoral life extends beyond the abbey to the parish church of Saint-Pierre and the priory at Ardevon. The diocese describes pilgrimages, liturgical celebrations, confession and welcome for visitors; these are related destinations within the broader Mont-Saint-Michel complex and not interchangeable with the abbey's specific Place identity.",
+              "fr": "La vie pastorale actuelle du sanctuaire s’étend au-delà de l’abbaye, à l’église Saint-Pierre et au prieuré d’Ardevon. Le diocèse présente pèlerinages, célébrations liturgiques, confession et accueil des visiteurs ; ces lieux appartiennent à l’ensemble du Mont-Saint-Michel mais ne se confondent pas avec l’identité propre de l’abbaye.",
+              "source_url": "https://don.diocese50.fr/sanctuaire-msm/",
+              "issuer": "Diocese of Coutances",
+              "evidence_scope": "CURRENT_PASTORAL_CONTEXT"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Keep abbey versus parish church versus Ardevon identities separate."
+      ]
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "name": "Centre Père Laval — Sainte-Croix, Mauritius",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage site at Sainte-Croix is centred on the tomb of Blessed Jacques-Désiré Laval, whose memory is closely connected with the history of Catholic Mauritius. The Diocese of Port Louis recalls his ministry among vulnerable people, including the sick and formerly enslaved, and presents his witness through the themes of dignity and fraternity.",
+              "fr": "Le lieu de pèlerinage de Sainte-Croix s’organise autour du tombeau du bienheureux Jacques-Désiré Laval, dont la mémoire est étroitement liée à l’histoire de l’Église à Maurice. Le diocèse de Port-Louis rappelle son ministère auprès des plus vulnérables, notamment les malades et les anciens esclaves, et souligne son témoignage de dignité et de fraternité.",
+              "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+              "issuer": "Diocese of Port Louis",
+              "evidence_scope": "DIOCESAN_SAINT_SITE_CONTEXT"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "Every September, pilgrims travel to Sainte-Croix to pray near his tomb around his feast. In its notice for the 2026 pilgrimage, the diocese described organized walking departures from Port Louis and Terre-Rouge as part of that particular annual observance, not as permanent daily itineraries.",
+              "fr": "Chaque septembre, des pèlerins se rendent à Sainte-Croix pour prier près de son tombeau à l’occasion de sa fête. Dans son annonce du pèlerinage 2026, le diocèse décrivait des départs à pied depuis Port-Louis et Terre-Rouge pour cette édition annuelle particulière, et non des itinéraires quotidiens permanents.",
+              "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+              "issuer": "Diocese of Port Louis",
+              "evidence_scope": "DATED_2026_PILGRIMAGE_NOTICE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "For the 2026 observance the diocese also described opportunities for prayer, confession and pastoral listening around the tomb. These services illustrate the active devotional character of Père Laval's shrine, but their stated hours apply only to that year’s programme and must not be reproduced as current opening hours.",
+              "fr": "Pour l’édition 2026, le diocèse annonçait également des temps de prière, de confession et d’écoute pastorale autour du caveau. Ces initiatives illustrent le caractère vivant du sanctuaire du Père Laval, mais les horaires publiés concernaient uniquement cette édition et ne doivent pas être repris comme horaires permanents.",
+              "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+              "issuer": "Diocese of Port Louis",
+              "evidence_scope": "DATED_2026_PASTORAL_PROGRAMME"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Preserve 'Blessed', not 'Saint'; do not propagate historical 2026 event times as live schedules."
+      ]
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "name": "National Shrine of Saint Elizabeth Ann Seton — Emmitsburg",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "Emmitsburg preserves places where Elizabeth Ann Seton lived, taught and founded her religious work. The shrine’s historic-tour account identifies the Stone Farmhouse with the beginnings of the Sisters of Charity and Saint Joseph’s House with the school she established for girls.",
+              "fr": "Emmitsburg conserve des lieux où Élisabeth Ann Seton a vécu, enseigné et développé son œuvre religieuse. Le parcours historique du sanctuaire situe dans la maison de pierre les débuts des Sœurs de la Charité et dans la maison Saint-Joseph l’école qu’elle fonda pour les filles.",
+              "source_url": "https://setonshrine.org/historic-homes-tours/",
+              "issuer": "National Shrine of Saint Elizabeth Ann Seton",
+              "evidence_scope": "HISTORIC_SITE_AND_FOUNDATION"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "The site also encompasses the historic cemetery and buildings associated with her companions and pupils. These houses and grounds offer a concrete history of nineteenth-century Catholic education and community life in Maryland, rather than merely a symbolic dedication to a saint.",
+              "fr": "Le site comprend également le cimetière historique et des bâtiments liés à ses compagnes et à ses élèves. Ces maisons et leurs abords donnent à voir l’histoire concrète de l’éducation catholique et de la vie communautaire dans le Maryland au XIXe siècle, au-delà d’une simple dédicace symbolique à une sainte.",
+              "source_url": "https://setonshrine.org/discovering-and-experiencing-our-historic-site/",
+              "issuer": "National Shrine of Saint Elizabeth Ann Seton",
+              "evidence_scope": "HISTORIC_SITE_CONTEXT"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "Visitors may approach the site through the basilica, museum and guided historic-home tours. The shrine describes daily access for prayer and visits, but opening hours and Mass schedules are operational data and should be checked from the live custodian before display rather than copied into an enduring historical guide.",
+              "fr": "Les visiteurs peuvent découvrir le sanctuaire par la basilique, le musée et les visites guidées des maisons historiques. Le sanctuaire annonce un accueil quotidien pour la prière et les visites, mais les horaires d’ouverture et de messe sont des données pratiques à vérifier auprès des responsables avant affichage, non à figer dans une notice historique.",
+              "source_url": "https://setonshrine.org/hours-directions/",
+              "issuer": "National Shrine of Saint Elizabeth Ann Seton",
+              "evidence_scope": "VISITOR_PRACTICE_NOT_LIVE_SCHEDULE"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Cover candidate in R25 remains editorially unapproved; do not promote."
+      ]
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "name": "Aachen Cathedral — Four Sacred Textiles",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "Aachen Cathedral's pilgrimage account connects its sacred textiles with a tradition of gifts brought to Charlemagne from Jerusalem. The cathedral itself marks this as tradition, not a verified chain of custody; the narrative should preserve that distinction when introducing the four reputed relics.",
+              "fr": "Le récit du pèlerinage de la cathédrale d’Aix-la-Chapelle associe ses textiles sacrés à une tradition de présents venus de Jérusalem pour Charlemagne. La cathédrale elle-même présente cette origine comme une tradition, non comme une chaîne de provenance démontrée ; la notice doit conserver cette distinction pour les quatre reliques réputées.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+              "issuer": "Aachen Cathedral",
+              "evidence_scope": "ATTRIBUTED_RELIC_TRADITION"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "The cathedral describes four textiles venerated as Mary's garment, Christ's swaddling cloths and crucifixion loincloth, and a fabric associated with the head of John the Baptist. They have been presented to pilgrims in a seven-year cycle since 1349; describing their devotional names does not amount to authenticating their first-century origins.",
+              "fr": "La cathédrale décrit quatre textiles vénérés comme le vêtement de Marie, les langes de Jésus, le linge attribué au Christ crucifié et un tissu lié à la tête de saint Jean-Baptiste. Ils sont montrés aux pèlerins selon un cycle de sept ans depuis 1349 ; la reprise de leurs appellations dévotionnelles ne garantit pas une origine au Ier siècle.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+              "issuer": "Aachen Cathedral",
+              "evidence_scope": "RELIC_VENERATION_NOT_AUTHENTICATION"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The ten-day Aachen Pilgrimage remains a citywide and diocesan event with prayer, communal encounter and cultural significance. The custodian names 2028 as the next pilgrimage year; this is an event date, separate from an ongoing Mass timetable or from the permanent location of the cathedral.",
+              "fr": "Le pèlerinage d’Aix-la-Chapelle, qui dure dix jours, demeure un événement pour la ville et le diocèse, associant prière, rencontres et vie culturelle. Les responsables annoncent 2028 comme prochaine année de pèlerinage ; cette date événementielle ne doit pas être confondue avec les horaires habituels de la cathédrale ni avec sa localisation permanente.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+              "issuer": "Aachen Cathedral",
+              "evidence_scope": "PILGRIMAGE_CYCLE"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Verified-original photograph candidate is not publication-approved."
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "name": "Basilica of the Visitation — Annecy",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the Visitation at Annecy was conceived as a tribute to Saint Francis de Sales and Saint Jane Frances de Chantal. According to the Visitandine community, its first stone was blessed on 7 May 1922, bringing to fruition a project anticipated since 1913.",
+              "fr": "La basilique de la Visitation d’Annecy fut conçue comme un hommage à saint François de Sales et à sainte Jeanne-Françoise de Chantal. Selon la communauté de la Visitation, la première pierre fut bénite le 7 mai 1922, concrétisant un projet envisagé dès 1913.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+              "issuer": "Visitandines of Annecy",
+              "evidence_scope": "CONSTRUCTION_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "The church was consecrated on 2 July 1949 by Cardinal Tedeschini, when the Visitation was celebrated on that date. On 26 August 1951 it received the title of basilica during the community's annual novena; these are different milestones in the history of the same building.",
+              "fr": "L’église fut consacrée le 2 juillet 1949 par le cardinal Tedeschini, à l’époque où la Visitation se célébrait à cette date. Elle reçut le titre de basilique le 26 août 1951, lors de la neuvaine annuelle de la communauté ; il s’agit de deux étapes distinctes de l’histoire du même édifice.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+              "issuer": "Visitandines of Annecy",
+              "evidence_scope": "DATED_LITURGICAL_AND_BASILICA_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The Visitandines present the basilica as a memorial to the spiritual inheritance of their founders. Its association with Francis de Sales and Jane de Chantal is therefore rooted in the order's own history, but separate biographies and relic descriptions still require identity-specific evidence.",
+              "fr": "Les visitandines présentent la basilique comme un mémorial de l’héritage spirituel de leurs fondateurs. Son lien avec François de Sales et Jeanne de Chantal s’enracine ainsi dans l’histoire même de l’ordre, mais leurs biographies et la description de leurs reliques exigent des sources propres à chaque sujet.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/",
+              "issuer": "Visitandines of Annecy",
+              "evidence_scope": "ORDER_AND_SITE_IDENTITY"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Do not infer specific relic custody from this page alone."
+      ]
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "name": "Sanctuary of Saint Bernadette — Nevers",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The Saint-Gildard hill in Nevers had a religious history long before Bernadette Soubirous arrived. The sanctuary traces its medieval priory to approximately the late seventh or early eighth century, while explaining that by the nineteenth century little remained of its earlier buildings.",
+              "fr": "La colline Saint-Gildard à Nevers possédait une histoire religieuse bien avant l’arrivée de Bernadette Soubirous. Le sanctuaire situe les origines de son prieuré médiéval vers la fin du VIIe ou le début du VIIIe siècle, tout en précisant qu’il ne subsistait au XIXe siècle que peu de vestiges des premiers bâtiments.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/",
+              "issuer": "Sanctuary of Saint Bernadette",
+              "evidence_scope": "SITE_HISTORY_WITH_APPROXIMATE_DATING"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "The Sisters of Charity of Nevers established their motherhouse and novitiate on the site, whose new buildings were blessed in July 1856. Bernadette arrived at Saint-Gildard on 7 July 1866 to enter religious formation and remained there for thirteen years, until her death.",
+              "fr": "Les Sœurs de la Charité de Nevers y établirent leur maison mère et leur noviciat ; les nouveaux bâtiments furent bénits en juillet 1856. Bernadette arriva à Saint-Gildard le 7 juillet 1866 pour sa formation religieuse et y demeura treize ans, jusqu’à sa mort.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/",
+              "issuer": "Sanctuary of Saint Bernadette",
+              "evidence_scope": "RELIGIOUS_COMMUNITY_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "Today pilgrims come to Nevers to pray near Saint Bernadette and to follow an itinerary through the house, garden and exhibits devoted to her life. The sanctuary describes these as a way to understand both her Lourdes experience and her ordinary religious life in Nevers, without treating the two locations as one site.",
+              "fr": "Aujourd’hui, les pèlerins viennent à Nevers prier auprès de sainte Bernadette et parcourir la maison, le jardin et les expositions consacrés à sa vie. Le sanctuaire présente cette démarche comme une découverte de son expérience à Lourdes et de sa vie religieuse quotidienne à Nevers, sans confondre ces deux lieux.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/pelerinage/pelerinage-individuel/",
+              "issuer": "Sanctuary of Saint Bernadette",
+              "evidence_scope": "CURRENT_PILGRIMAGE_PRACTICE"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Keep Lourdes and Nevers as distinct canonical Places."
+      ]
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "name": "Papal Basilica of Saint Paul Outside the Walls — Rome",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The basilica stands in the long-standing Roman tradition of devotion to the burial place of the Apostle Paul on the Ostian Way. The basilica's custodial history recounts his burial near a Roman necropolis after his martyrdom and the emergence of early Christian remembrance at the site.",
+              "fr": "La basilique s’inscrit dans la longue tradition romaine de vénération de la sépulture de l’apôtre Paul sur la voie Ostienne. L’histoire publiée par le sanctuaire relate son inhumation près d’une nécropole romaine après son martyre et le développement d’un culte mémoriel chrétien autour du lieu.",
+              "source_url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+              "issuer": "Holy See — Basilica of Saint Paul",
+              "evidence_scope": "TOMB_TRADITION_AND_SITE_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "Beneath the papal altar is a marble funerary inscription naming Paul the Apostle, and the shrine describes a large sarcophagus below successive altars of the Confessio. These features explain the continuity of veneration even as the basilica’s fabric and pilgrim access have changed.",
+              "fr": "Sous l’autel papal se trouve une inscription funéraire en marbre portant le nom de l’apôtre Paul, et le sanctuaire décrit un grand sarcophage au-dessous des autels successifs de la Confession. Ces éléments éclairent la continuité de la vénération malgré les transformations de la basilique et de son accès aux pèlerins.",
+              "source_url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+              "issuer": "Holy See — Basilica of Saint Paul",
+              "evidence_scope": "CUSTODIAN_ARCHAEOLOGICAL_DESCRIPTION"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The tomb is the reason for the basilica’s distinct sacred identity: pilgrims come to pray at a place traditionally associated with Paul’s burial, not simply to see a monumental Roman church. The published account provides the basis for this site narrative, while any assertion about specific relic authentication requires a separate and precise evidentiary review.",
+              "fr": "Le tombeau donne à la basilique son identité sacrée particulière : les pèlerins y prient en un lieu traditionnellement associé à la sépulture de Paul, et ne visitent pas seulement un monument romain. Le récit officiel fonde cette présentation, tandis que toute affirmation sur l’authentification de reliques précises demanderait un examen documentaire distinct.",
+              "source_url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+              "issuer": "Holy See — Basilica of Saint Paul",
+              "evidence_scope": "RELIC_VENERATION_NOT_INDEPENDENT_AUTHENTICATION"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Original page returned readable primary-source text in one retrieval but intermittent 404 on repeat; second reviewer should recheck."
+      ]
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "name": "Monastery of Saint Maron — Annaya",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The Lebanese Maronite Order places the Monastery of Saint Maron at Annaya in the mountains above Jbeil. Its own history dates the completion of the first monastic building to 1828 and of the early church to the period 1838–1841, long before the later expansion of the shrine.",
+              "fr": "L’Ordre libanais maronite situe le monastère Saint-Maron à Annaya, dans les montagnes au-dessus de Jbeil. Selon son histoire officielle, le premier bâtiment monastique fut achevé en 1828 et la première église entre 1838 et 1841, bien avant les agrandissements ultérieurs du sanctuaire.",
+              "source_url": "https://saintcharbel.com/monastery/",
+              "issuer": "Monastery of Saint Maron, Annaya",
+              "evidence_scope": "MONASTERY_CONSTRUCTION_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "Saint Charbel lived at the monastery and entered the nearby hermitage of Saints Peter and Paul on 15 February 1875. The monastic custodian records that he died there in 1898; the hermitage and the monastery are related sites in his life, not identical buildings.",
+              "fr": "Saint Charbel vécut au monastère puis entra à l’ermitage voisin des Saints-Pierre-et-Paul le 15 février 1875. Les responsables monastiques indiquent qu’il y mourut en 1898 ; l’ermitage et le monastère sont deux lieux liés à sa vie, mais non deux bâtiments identiques.",
+              "source_url": "https://saintcharbel.com/the-hermitage/",
+              "issuer": "Monastery of Saint Maron, Annaya",
+              "evidence_scope": "HERMITE_MONASTIC_HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The Order expanded the sanctuary after Charbel's beatification, including the church dedicated to him in 1974. Pilgrimage today centres on prayer at his tomb and the monastery's liturgical life; reports of favours and miracles belong to the devotional testimony of the shrine and should not be repackaged as independently verified medical findings.",
+              "fr": "L’Ordre développa le sanctuaire après la béatification de Charbel, notamment par la construction d’une église qui lui est dédiée en 1974. Le pèlerinage actuel s’articule autour de son tombeau et de la vie liturgique du monastère ; les récits de grâces et de miracles relèvent du témoignage dévotionnel et ne doivent pas devenir des conclusions médicales présentées comme indépendamment vérifiées.",
+              "source_url": "https://saintcharbel.com/monastery/",
+              "issuer": "Monastery of Saint Maron, Annaya",
+              "evidence_scope": "CURRENT_MONASTIC_PILGRIMAGE_WITH_DEVOTIONAL_CAVEAT"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "This is a Maronite Catholic sanctuary; do not imply Roman 1962 Mass schedule."
+      ]
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "name": "Saint Peter's Basilica — Vatican",
+      "publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "image_policy": "NO_NEW_IMAGES_APPROVED",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Origins and setting",
+          "title_fr": "Origines et cadre",
+          "paragraphs": [
+            {
+              "en": "The official basilica account locates the traditional tomb of Saint Peter beneath the high altar on the Vatican hill, near the area associated with persecution under Nero. A modest memorial identified with the 'Trophy of Gaius' marked the site by the end of the second century, according to the ancient testimony cited by the basilica.",
+              "fr": "Le récit officiel de la basilique situe le tombeau traditionnel de saint Pierre sous le maître-autel, sur la colline du Vatican, près du lieu associé aux persécutions sous Néron. Un modeste mémorial appelé « trophée de Gaïus » y signalait la sépulture dès la fin du IIe siècle, selon le témoignage ancien cité par la basilique.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+              "issuer": "Fabbrica di San Pietro",
+              "evidence_scope": "EARLY_MEMORIAL_AND_TRADITION"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "title_en": "Sacred heritage",
+          "title_fr": "Patrimoine sacré",
+          "paragraphs": [
+            {
+              "en": "Pilgrimage to the burial site preceded Constantine's basilica of the fourth century. The Vatican's account links the later Renaissance building to the same sacred focal point, with successive altars and the great canopy continuing the alignment over the tomb.",
+              "fr": "Le pèlerinage vers la sépulture précéda la basilique constantinienne du IVe siècle. Le récit du Vatican relie l’édifice de la Renaissance au même foyer sacré : autels successifs et grand baldaquin perpétuent cet axe au-dessus du tombeau.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+              "issuer": "Fabbrica di San Pietro",
+              "evidence_scope": "BASILICA_CONSTRUCTION_CONTINUITY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage today",
+          "title_fr": "Pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "Twentieth-century excavations, conducted from 1939 to 1949, brought the ancient burial complex and its inscriptions into scholarly view. The Atlas can describe this archaeology and the basilica's veneration of Peter, while keeping interpretation of individual graffiti and relic identity explicitly attributed to the custodial account.",
+              "fr": "Des fouilles conduites de 1939 à 1949 ont remis en lumière l’ensemble funéraire ancien et ses inscriptions. L’Atlas peut présenter cette archéologie et la vénération de Pierre dans la basilique, tout en attribuant explicitement aux responsables l’interprétation des graffites particuliers et l’identification des reliques.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+              "issuer": "Fabbrica di San Pietro",
+              "evidence_scope": "ARCHAEOLOGY_WITH_ATTRIBUTED_INTERPRETATION"
+            }
+          ]
+        }
+      ],
+      "chronology": [],
+      "stops": [],
+      "programmes": [],
+      "editorial_notes": [
+        "Do not treat interpretations of PETR[...] graffiti as unambiguous proof."
+      ]
+    }
+  ],
+  "excluded_from_this_pass": [
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "reason": "Original history URL presented a browser-verification wall; welcome/contact page available but insufficient for full verified 3-paragraph historical guide"
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "reason": "Original shrine site timed out; requires primary-source retrieval"
+    },
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "reason": "Original institutional page exceeded retrieval size; targeted source needed"
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "reason": "Available Oratorian itinerary needs exact Chiesa Nuova section extraction before site-specific draft"
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "reason": "Indexed article is a dated archive notice, not enough for a historical guide"
+    }
+  ]
+}
