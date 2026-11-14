@@ -1,0 +1,145 @@
+{
+  "schema": "AO_TLM_B88_FSSP_FIRST_PARTY_AND_ITALY_SECONDARY_CROSSWALK_V1",
+  "date": "2026-10-25",
+  "scope": "RESEARCH_G0_ONLY_NO_PUBLIC_RELEASE",
+  "dependency": {
+    "B87": "https://github.com/Fulcanelli13/ad-orientem/pull/1700",
+    "baseline_distinct_sites": 2604,
+    "baseline_historical_canonical_groups": 2607,
+    "baseline_venue_source_rows": 2710
+  },
+  "screening": {
+    "source_entry_total": 127,
+    "families": [
+      {
+        "name": "FSSP German-speaking district physical Mass venues",
+        "count": 80,
+        "first_party": true,
+        "source_urls": [
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php",
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/schweiz/messorte.php",
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/suedtirol/messorte.php",
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/tschechien.php",
+          "https://petrusbruderschaft.de/pages/wo-wir-sind/niederlande.php"
+        ]
+      },
+      {
+        "name": "RitoAntico Italy named church Sunday-directory leads",
+        "count": 47,
+        "first_party": false,
+        "source_url": "https://ritoantico.it/domenica",
+        "caution": "Cached secondary index excerpt; rite/type and actual current 1962 celebration cannot be inferred from generic 'Rito Romano' or Sunday hours."
+      }
+    ],
+    "raw_match_classes": {
+      "EXACT_ADDRESS_REVIEW": 49,
+      "STRONG_NAME_AND_LOCALITY_REVIEW": 26,
+      "NAME_OR_GEOGRAPHY_REVIEW": 16,
+      "WEAK_CANDIDATE_REVIEW": 34,
+      "NO_CLOSE_MATCH_REVIEW": 2
+    },
+    "priority_owner_review_entries": 36,
+    "principle": "Fuzzy/country/building matching is not proof of identical place or new physical site. 75 high-confidence candidate matches still require owner identity checks."
+  },
+  "new_G0_research_admission": {
+    "source_entry_id": "B88-060",
+    "canonical_group_id": "RG-B88-58C280A6D190",
+    "source_id": "FSSP-B88-AT-WERFEN-KLOSTER-20261025",
+    "country": "AT",
+    "locality": "Werfen",
+    "worship_site": "Klosterkirche Werfen",
+    "worship_address": "Josef-Struber-Gasse 12, 5450 Werfen, Salzburg, Austria",
+    "first_party_mass_venue_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php",
+    "independent_2025_parish_building_evidence": "https://www.pfarrverband-werfen.at/fileadmin/user_upload/subportale/Pfarrverband_Werfen/PDF/Gottesdienstordnung/Gottesdienstordnung.15.09.bis_28.09.2025__1_.pdf",
+    "confidence": "PHYSICAL_WORSHIP_BUILDING_AND_FSSP_REPORTED_MASS_SITE",
+    "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+    "schedule_state": "OWNER_LISTING_ONLY_NO_CURRENT_RECURRENCE_CERTIFICATION",
+    "geometry": "EXACT_PIN_PENDING"
+  },
+  "selected_owner_dispositions": [
+    {
+      "source": "B88-059",
+      "decision": "EXISTING",
+      "group_id": "RG-B6E90898FB7F",
+      "note": "Schardenberg parish church is the winter building, distinct from the existing Fatimakapelle RG-64607C31CF5E"
+    },
+    {
+      "source": "B88-062",
+      "decision": "EXISTING",
+      "group_id": "RG-6E34EAEC72A1",
+      "note": "Wiener Neustadt St Leopold variant naming"
+    },
+    {
+      "source": "B88-067",
+      "decision": "EXISTING",
+      "group_id": "RG-E3A7CEDE7577",
+      "note": "Fribourg Basilique Notre Dame / Liebfrauenbasilika are translations for one building"
+    },
+    {
+      "source": "B88-109",
+      "decision": "EXISTING",
+      "group_id": "RG-6FA18F105A71",
+      "note": "Lecce Chiesa Sant Anna, Via Libertini 13",
+      "owner": "https://icrsslecce.wixsite.com/icrsslecce/orari"
+    },
+    {
+      "source": "B88-089",
+      "decision": "POSSIBLE_DUPLICATE_HOLD",
+      "candidate_groups": [
+        "RG-44B197BD0666",
+        "RG-C46040E6B3C4"
+      ],
+      "note": "Udine St Bernardino name variants could be identical physical church; 2026 responsible Una Voce group confirms Mass but no automatic alias link",
+      "owner": "https://liturgiatradizionalefriuli.blogspot.com/"
+    },
+    {
+      "source": "B88-087",
+      "decision": "EXISTING_CANDIDATE_ADDRESS_ENRICH_HOLD",
+      "candidate_group": "RG-2E634483B0D4",
+      "note": "Mariano del Friuli San Gottardo: requires original group city proof",
+      "owner": "https://liturgiatradizionalefriuli.blogspot.com/"
+    },
+    {
+      "source": "B88-110",
+      "decision": "RITE_UNCONFIRMED_HOLD",
+      "note": "Monopoli San Francesco real building at Largo Plebiscito but current owner information does not establish 1962 Mass",
+      "municipality": "https://www.comune.monopoli.ba.it/Vivere-il-comune/Luoghi/Chiesa-San-Francesco-D-Assisi"
+    },
+    {
+      "source": "B88-081",
+      "decision": "RITE_UNCONFIRMED_HOLD",
+      "note": "Silvi Ss.mo Salvatore directory labels 'Rito Romano' without unambiguous 1962 form",
+      "directory": "https://ritoantico.it/abruzzo/silvi/chiesa-del-ss-mo-salvatore"
+    }
+  ],
+  "B88_research_projection": {
+    "distinct_provisional_physical_sites": 2605,
+    "historical_canonical_group_records": 2608,
+    "venue_source_rows": 2711,
+    "mass_timetable_rows": 4681,
+    "previously_verified_timetable_rows": 3347,
+    "new_verified_mass_rows": 0,
+    "new_public_map_sites": 0
+  },
+  "QA": {
+    "previous_B87_60_sheets_preserved": true,
+    "append_only_existing_core_sheets": [
+      "CANONICAL SITES",
+      "PHYSICAL SITES",
+      "UNIFIED VENUES"
+    ],
+    "original_MASS_TIMES_4681_rows_cell_exact": true,
+    "frozen_existing_site_ids_unchanged": true,
+    "frozen_existing_source_ids_unchanged": true,
+    "nonproduction_no_geometry": false
+  },
+  "artifacts": {
+    "crosswalk_filename": "Ad_Orientem_B88_127_FSSP_RitoAntico_Site_Crosswalk_2026-10-25.xlsx",
+    "crosswalk_sha256": "1f0bae12fd2eea6d898796676bb6986072a088e388c27d1594ff1ec51d84d521",
+    "consolidated_json_zip_filename": "Ad_Orientem_B88_Research_Projection_2605_Sites_2026-10-25.zip",
+    "consolidated_json_zip_sha256": "9835b8d1519b7ee1a75ca990a21a6e5f29beb5189719a2295171577c62d49d81",
+    "git_status": "Only research evidence manifest, not attached binary crosswalk or ZIP"
+  },
+  "gates": "B88 is an offline research projection. The public site count is unaffected and no Mass times are certified. The 44 B87 Polish holds remain separate. Await current FSSP 2026 owner parish schedule and actual chapel geo before publication."
+}
