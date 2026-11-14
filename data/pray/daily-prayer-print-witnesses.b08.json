@@ -1,0 +1,148 @@
+{
+  "schema": "ad-orientem.daily-prayer-print-witnesses.b08",
+  "batch": "B08",
+  "date": "2026-10-27",
+  "source_method": "Manually read original printed-page images linked by page_urls and checked complete text against corresponding transcribed historical chapter; no edition-wide certification or modern text substitution",
+  "counts": {
+    "complete_body_print_checked_new": 5,
+    "eng_morning": 2,
+    "eng_evening": 3,
+    "source_page_images_checked": 4,
+    "previous_complete_bodies_b07": 9,
+    "total_complete_bodies": 14
+  },
+  "forms": [
+    {
+      "code": "pocket-1899-morning-sacred-heart-offering",
+      "occurrence_id": "AO.DAILY.B04.004",
+      "source": "POCKET1899",
+      "period": "morning",
+      "category": "offering",
+      "heading": "MORNING OFFERING TO THE SACRED HEART",
+      "language": "en",
+      "pages": [
+        {
+          "printed": "8",
+          "scan_index": 17
+        },
+        {
+          "printed": "9",
+          "scan_index": 18
+        }
+      ],
+      "full_text": "O Lord Jesus-Christ, in union with that divine intention with which Thou, whilst on earth, didst give praise to God through Thy most sacred Heart, and still dost continue to give praise to Him in the Sacrament of the Eucharist everywhere, even unto the consummation of the world, I, wishing to imitate the most sacred Heart of the ever immaculate Virgin Mary, most willingly, offer to Thee during this whole day, not excepting the smallest part therefrom, all my intentions and thoughts, all my affections and desires, all my words and actions.",
+      "comparison": "Substantially distinct from Apostleship and Moran Good Intention offerings; complete prayer, separate tab candidate.",
+      "page_urls": [
+        "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/17",
+        "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/18"
+      ],
+      "status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "transcription_convention": "Printed words retained, column/line breaks and split syllables joined; no liturgical wording modernization",
+      "words": 92
+    },
+    {
+      "code": "pocket-1899-morning-short-faith",
+      "occurrence_id": "AO.DAILY.B04.005",
+      "source": "POCKET1899",
+      "period": "morning",
+      "category": "virtues.faith",
+      "heading": "AN ACT OF FAITH",
+      "language": "en",
+      "pages": [
+        {
+          "printed": "9",
+          "scan_index": 18
+        }
+      ],
+      "full_text": "O my God! I firmly believe all the sacred truths which Thy holy Catholic Church believes and teaches, because Thou hast revealed them, who neither canst deceive nor be deceived.",
+      "comparison": "Genuinely shorter faith form than Baltimore's Trinitarian and eschatological wording; compare to other manuals before choosing separate tab.",
+      "page_urls": [
+        "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/18"
+      ],
+      "status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "transcription_convention": "Printed words retained, column/line breaks and split syllables joined; no liturgical wording modernization",
+      "words": 30
+    },
+    {
+      "code": "moran-1883-evening-for-faithful-departed",
+      "occurrence_id": "AO.DAILY.B04.059",
+      "source": "MORAN1883",
+      "period": "evening",
+      "category": "departed",
+      "heading": "PRAYER FOR THE FAITHFUL DEPARTED",
+      "language": "en",
+      "pages": [
+        {
+          "printed": "15",
+          "scan_index": 33
+        }
+      ],
+      "full_text": "O God, the Creator and Redeemer of all the faithful, grant to the souls of thy servants departed full remission of all their offences, that, through the help of pious supplications, they may obtain the pardon of which they have been always desirous: who livest and reignest, world without end. Amen.",
+      "comparison": "Same historic Fidelium Deus collect identity as Key of Heaven and existing dead_fidelium_deus canonical ID; punctuation and 'grant/give' may vary.",
+      "page_urls": [
+        "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/33"
+      ],
+      "status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "transcription_convention": "Printed words retained, column/line breaks and split syllables joined; no liturgical wording modernization",
+      "words": 51
+    },
+    {
+      "code": "moran-1883-evening-salva-nos",
+      "occurrence_id": "AO.DAILY.B04.060",
+      "source": "MORAN1883",
+      "period": "evening",
+      "category": "night-protection",
+      "heading": "SAVE US, O LORD",
+      "language": "en",
+      "pages": [
+        {
+          "printed": "16",
+          "scan_index": 34
+        }
+      ],
+      "full_text": "Save us, O Lord, waking; and keep us, sleeping; that we may watch with Christ, and rest in peace. Amen.",
+      "comparison": "Same Salva nos antiphon as Key of Heaven; one prayer family, citations for both works.",
+      "page_urls": [
+        "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/34"
+      ],
+      "status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "transcription_convention": "Printed words retained, column/line breaks and split syllables joined; no liturgical wording modernization",
+      "words": 20
+    },
+    {
+      "code": "moran-1883-evening-visita-quaesumus",
+      "occurrence_id": "AO.DAILY.B04.061",
+      "source": "MORAN1883",
+      "period": "evening",
+      "category": "night-protection",
+      "heading": "THE PRAYER (Visita quaesumus)",
+      "language": "en",
+      "pages": [
+        {
+          "printed": "16",
+          "scan_index": 34
+        }
+      ],
+      "full_text": "Visit, we beseech thee, O Lord, this habitation, and repel from it all the snares of the enemy. Let thy holy angels dwell herein to preserve us in peace; and may thy blessing be upon us for ever: through Christ our Lord. Amen.",
+      "comparison": "Historic source wording differs from Key of Heaven's 'dwell therein'/'all snares' but same Latin collect family; no unnecessary duplicate tab.",
+      "page_urls": [
+        "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/34"
+      ],
+      "status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "publication_status": "RESEARCH_ONLY_NOT_APPROVED",
+      "transcription_convention": "Printed words retained, column/line breaks and split syllables joined; no liturgical wording modernization",
+      "words": 43
+    }
+  ],
+  "notices": [
+    "No present-day indulgence assertions",
+    "Source-book repetitions are not independent prayer families",
+    "Historical private prayer verses/priest actor language must be reviewed separately",
+    "Distinct edition variants require both printed bodies, not just the opening line",
+    "No release until editorial, provenance and reuse review"
+  ]
+}

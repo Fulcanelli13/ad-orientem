@@ -1,0 +1,161 @@
+{
+  "schema": "ad-orientem.daily-prayer-morning-offering-editorial-b10.v1",
+  "date": "2026-10-27",
+  "batch": "B10",
+  "status": "SOURCE_VERIFIED_EDITORIAL_PROPOSAL_NOT_APPROVED",
+  "scope": {
+    "text_witnesses_new": 1,
+    "printed_source_pages_directly_inspected": 2,
+    "cumulative_complete_source_witnesses": 28,
+    "english_total": 13,
+    "french_total": 15,
+    "new_source_occurrence_count": 0,
+    "distinct_offering_options_presented": 6
+  },
+  "witness": {
+    "id": "b10-bbg-1925-apostleship-morning-offering",
+    "occurrence_id": "AO.DAILY.B01.004",
+    "source": "BBG1925",
+    "edition": "Callan and McHugh, Blessed Be God, New York, P. J. Kenedy & Sons, 1925",
+    "period": "morning",
+    "stage": "offering",
+    "printed_page": 2,
+    "scan_index": 48,
+    "page_url": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/48",
+    "scan_image_evidence": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Blessedbegodcomp00call.pdf/page48-500px-Blessedbegodcomp00call.pdf.jpg",
+    "verification": "FULL_BODY_AND_END_OF_CHAPTER_CHECKED_AGAINST_PRINTED_PAGE_IMAGE",
+    "text": "O Jesus, through the Immaculate Heart of Mary, I offer Thee my prayers, works and sufferings of this day for all the intentions of Thy Sacred Heart, in union with the Holy Sacrifice of the Mass throughout the world, in reparation for my sins, for the intentions of all our Associates and in particular for the intention of the Apostleship of Prayer.",
+    "text_boundary": {
+      "first_phrase": "O Jesus, through the Immaculate Heart of Mary",
+      "last_phrase": "intention of the Apostleship of Prayer.",
+      "next_page_title": "Prayers to be Said Every Day",
+      "next_page": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/49"
+    },
+    "editorial_status": "VERIFIED_HISTORICAL_SOURCE_NOT_APPROVED_FOR_DEFAULT_OR_SHIPPING",
+    "copyright_hold": "1925 US publication is marked public domain in US by Wikisource/Commons, but confirm target jurisdictions and any embedded elements before publication.",
+    "notes": "Printed Morning Prayers ends on p.2. Earlier B01 warning 'Wikisource incomplete after Morning Offering' is demonstrably false; p.3 starts a separate common-prayers section."
+  },
+  "variants": [
+    {
+      "slug": "bbg-1925-through-mary",
+      "name": "Through the Immaculate Heart (1925)",
+      "prayer_body_ref": "b10-bbg-1925-apostleship-morning-offering",
+      "related_occurrence_ids": [
+        "AO.DAILY.B01.004"
+      ],
+      "witness_urls": [
+        "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/48"
+      ],
+      "status": "PRINT_PAGE_VERIFIED",
+      "length": "medium",
+      "family": "apostleship-morning-offering",
+      "editorial_difference": "195? no; exact 1925 formulation asks reparation for 'my sins' and all Associates, general Apostleship intention.",
+      "proposed_priority": "DEFAULT_CANDIDATE_NOT_APPROVED",
+      "caveat": "Not the 1911 text; book Morning Prayers ends on p.2."
+    },
+    {
+      "slug": "lasance-1911-heart-union",
+      "name": "In Union with the Sacred Heart (1911)",
+      "prayer_body_ref": "b09-lasance-apostleship-my-god",
+      "related_occurrence_ids": [],
+      "witness_urls": [
+        "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/137"
+      ],
+      "status": "B09_PRINT_PAGE_VERIFIED",
+      "length": "medium",
+      "family": "apostleship-morning-offering",
+      "editorial_difference": "To God, in union with Sacred Heart, includes thanksgiving, reparation 'our offenses', associates, intention of the current month.",
+      "proposed_priority": "ALTERNATIVE",
+      "caveat": "Lasance explicitly prints this as the first of two alternatives on p127."
+    },
+    {
+      "slug": "lasance-1911-through-mary",
+      "name": "Through the Immaculate Heart (1911)",
+      "prayer_body_ref": "b09-lasance-apostleship-o-jesus",
+      "related_occurrence_ids": [
+        "AO.DAILY.B01.087"
+      ],
+      "witness_urls": [
+        "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/137"
+      ],
+      "status": "B09_PRINT_PAGE_VERIFIED",
+      "length": "medium",
+      "family": "apostleship-morning-offering",
+      "editorial_difference": "Like 1925 through Mary but concludes with Pope-recommended intention rather than 1925 'reparation for my sins' / Apostleship intention.",
+      "proposed_priority": "ALTERNATIVE",
+      "caveat": "Meaningful historical variation; option could appear under extended More versions if too many choices."
+    },
+    {
+      "slug": "pocket-1899-eucharistic-heart",
+      "name": "Eucharistic Sacred Heart Offering (1899)",
+      "prayer_body_ref": "pocket-1899-morning-sacred-heart-offering",
+      "related_occurrence_ids": [
+        "AO.DAILY.B04.004"
+      ],
+      "witness_urls": [
+        "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/17",
+        "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/18"
+      ],
+      "status": "B08_PRINT_PAGE_VERIFIED",
+      "length": "long",
+      "family": "sacred-heart-morning-offering",
+      "editorial_difference": "Unites the day’s thoughts, affections, desires, words and actions with Christ’s praise in the Eucharist; not an Apostleship form.",
+      "proposed_priority": "ALTERNATIVE",
+      "caveat": "Independently long formula; may be better for complete routine."
+    },
+    {
+      "slug": "moran-1883-good-intention",
+      "name": "Good Intention (1883)",
+      "prayer_body_ref": "moran-1883-morning-good-intention",
+      "related_occurrence_ids": [
+        "AO.DAILY.B04.044"
+      ],
+      "witness_urls": [
+        "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20"
+      ],
+      "status": "B07_PRINT_PAGE_VERIFIED",
+      "length": "short",
+      "family": "daily-good-intention",
+      "editorial_difference": "Offers work and suffering in union with Jesus and Mary; shorter than the Apostleship alternatives.",
+      "proposed_priority": "ARCHIVAL_ALTERNATIVE",
+      "caveat": "Full historical text includes an indulgence intention: historical wording, not a current indulgence grant; not recommended default."
+    },
+    {
+      "slug": "french-1905-thanks-offering",
+      "name": "Remerciement et offrande (1905)",
+      "prayer_body_ref": "fr-1905-morning-thanks-offering",
+      "related_occurrence_ids": [
+        "AO.DAILY.B06.005"
+      ],
+      "witness_urls": [
+        "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38"
+      ],
+      "status": "B07_PRINT_PAGE_VERIFIED",
+      "length": "medium",
+      "family": "thanksgiving-and-day-offering",
+      "editorial_difference": "Original French paragraph thanks God for life and dedicates thought, words, actions and hardships; single compound prayer, should not display twice as two cards.",
+      "proposed_priority": "FRENCH_DEFAULT_CANDIDATE_NOT_APPROVED",
+      "caveat": "Not a translation of the Apostleship offering, and should never be presented as such."
+    }
+  ],
+  "source_chapter_check": {
+    "book": "Blessed Be God",
+    "morning_print_range": "pp.1–2",
+    "last_prayer": "b10-bbg-1925-apostleship-morning-offering",
+    "next_print_page": 3,
+    "next_heading": "Prayers to be Said Every Day",
+    "finding": "THE_PREVIOUS_B01_INCOMPLETE_CHAPTER_WARNING_WAS_INCORRECT",
+    "book_index_url": "https://en.wikisource.org/wiki/Index:Blessedbegodcomp00call.pdf",
+    "page_1": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/47",
+    "page_2": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/48",
+    "page_3": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/49"
+  },
+  "tab_policy": [
+    "One default proposal, at most 2–3 primary alternatives, with More versions for other verified formulations; book name alone not a new tab.",
+    "Verified forms may differ by theological intent, recipient or scope; preserve exact wording and provenance.",
+    "Combined French offering/thanksgiving occupies one recitation position, not two copies.",
+    "Common prayers printed after Morning Prayers on p.3 are separate additions/preset optional material.",
+    "Do not conflate publication rights with the source text being visible online.",
+    "Timer remains independent optional session feature."
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "schema": "ad-orientem.daily-prayer-editorial-decisions.v1",
+  "batch": "B12",
+  "date": "2026-10-27",
+  "state": "REVIEW_PROPOSALS_NOT_USER_APPROVED",
+  "counts": {
+    "image_checked_forms": 42,
+    "additional_complete_transcription_image_pending": 1,
+    "review_groups": 14,
+    "production_changes": 0
+  },
+  "decisions": [
+    {
+      "period": "morning",
+      "language": "en",
+      "stage": "Adoration and Thanksgiving",
+      "recommended": "b11-lasance-morning-adoration-thanksgiving",
+      "alternates": [
+        "moran-1883-morning-thanksgiving"
+      ],
+      "why": "Lasance is one complete act serving two purposes.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "b11-lasance-morning-adoration-thanksgiving",
+        "source": "LAS1911",
+        "language": "en",
+        "opening": "Almighty and eternal God, I adore Thee, and I thank Thee for all",
+        "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/147",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+      },
+      "alternatives": [
+        {
+          "id": "moran-1883-morning-thanksgiving",
+          "source": "MORAN1883",
+          "language": "en",
+          "opening": "O my God! I adore thee, and I love thee with my whole",
+          "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+        }
+      ]
+    },
+    {
+      "period": "morning",
+      "language": "en",
+      "stage": "Morning Offering",
+      "recommended": "b10-bbg-1925-apostleship-morning-offering",
+      "alternates": [
+        "b09-lasance-apostleship-my-god",
+        "b09-lasance-apostleship-o-jesus",
+        "pocket-1899-morning-sacred-heart-offering",
+        "moran-1883-morning-good-intention"
+      ],
+      "why": "Different complete prayers and intentions; Moran historical indulgence wording requires context.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "b10-bbg-1925-apostleship-morning-offering",
+        "source": "BBG1925",
+        "opening": "O Jesus, through the Immaculate Heart of Mary, I offer Thee my prayers,",
+        "url": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/48",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-morning-offering-choices.b10.json"
+      },
+      "alternatives": [
+        {
+          "id": "b09-lasance-apostleship-my-god",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "O my God, I offer Thee my prayers, works, and sufferings this day",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/137",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        },
+        {
+          "id": "b09-lasance-apostleship-o-jesus",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "O, Jesus, through the immaculate heart of Mary, I offer Thee my prayers,",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/137",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        },
+        {
+          "id": "pocket-1899-morning-sacred-heart-offering",
+          "source": "POCKET1899",
+          "language": "en",
+          "opening": "O Lord Jesus-Christ, in union with that divine intention with which Thou, whilst",
+          "url": "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/17",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-print-witnesses.b08.json"
+        },
+        {
+          "id": "moran-1883-morning-good-intention",
+          "source": "MORAN1883",
+          "language": "en",
+          "opening": "To thee, my God, I offer all that I shall do, all that",
+          "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+        }
+      ]
+    },
+    {
+      "period": "morning",
+      "language": "en",
+      "stage": "Faith",
+      "recommended": "b11-lasance-morning-faith",
+      "alternates": [
+        "pocket-1899-morning-short-faith"
+      ],
+      "why": "Pocket is a genuinely shorter complete formulation.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "b11-lasance-morning-faith",
+        "source": "LAS1911",
+        "language": "en",
+        "opening": "O my God, I believe in Thee, because Thou art Truth itself, and",
+        "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/147",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+      },
+      "alternatives": [
+        {
+          "id": "pocket-1899-morning-short-faith",
+          "source": "POCKET1899",
+          "language": "en",
+          "opening": "O my God! I firmly believe all the sacred truths which Thy holy",
+          "url": "https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/18",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-print-witnesses.b08.json"
+        }
+      ]
+    },
+    {
+      "period": "morning",
+      "language": "en",
+      "stage": "Hope and Charity",
+      "recommended": "b11-lasance-morning-hope",
+      "alternates": [
+        "b11-lasance-morning-love"
+      ],
+      "why": "Two separate recitations in Complete; optional in Short.",
+      "display": "sequence",
+      "recommended_witness": {
+        "id": "b11-lasance-morning-hope",
+        "source": "LAS1911",
+        "language": "en",
+        "opening": "O my God, I hope in Thee, because Thou art omnipotent, most merciful,",
+        "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/147",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+      },
+      "alternatives": [
+        {
+          "id": "b11-lasance-morning-love",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "O my God, I love Thee with my whole heart, and above all",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/148",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+        }
+      ]
+    },
+    {
+      "period": "morning",
+      "language": "en",
+      "stage": "Petition and Resolution",
+      "recommended": "moran-1883-morning-grace",
+      "alternates": [
+        "b11-lasance-morning-supplication",
+        "b11-lasance-morning-consecration"
+      ],
+      "why": "Complementary rather than always competing.",
+      "display": "optional",
+      "recommended_witness": {
+        "id": "moran-1883-morning-grace",
+        "source": "MORAN1883",
+        "language": "en",
+        "opening": "O my Jesus! bear me in thy hands this day. Mary, holy Virgin!",
+        "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+      },
+      "alternatives": [
+        {
+          "id": "b11-lasance-morning-supplication",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "O my God, I beseech Thee most earnestly to bless me that I",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/148",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+        },
+        {
+          "id": "b11-lasance-morning-consecration",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "O my God, I wish to consecrate this day and all the days",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/148",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+        }
+      ]
+    },
+    {
+      "period": "morning",
+      "language": "fr",
+      "stage": "Thanksgiving and Offering",
+      "recommended": "fr-1905-morning-thanks-offering",
+      "alternates": [],
+      "why": "French historical combined text: display once.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "fr-1905-morning-thanks-offering",
+        "source": "FRENCH1905",
+        "language": "fr",
+        "opening": "Mon Dieu, je Vous remercie très humblement de toutes les grâces que Vous",
+        "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+      },
+      "alternatives": []
+    },
+    {
+      "period": "morning",
+      "language": "fr",
+      "stage": "Faith Hope and Charity",
+      "recommended": "fr-1905-morning-act-faith",
+      "alternates": [
+        "fr-1905-morning-act-hope",
+        "fr-1905-morning-act-charity"
+      ],
+      "why": "Three original French acts, in order.",
+      "display": "sequence",
+      "recommended_witness": {
+        "id": "fr-1905-morning-act-faith",
+        "source": "FRENCH1905",
+        "language": "fr",
+        "opening": "Mon Dieu, je crois fermement toutes les vérités que Vous avez révélées et",
+        "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+      },
+      "alternatives": [
+        {
+          "id": "fr-1905-morning-act-hope",
+          "source": "FRENCH1905",
+          "language": "fr",
+          "opening": "Mon Dieu, j'espère avec une ferme confiance que Vous me donnerez, par les",
+          "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+        },
+        {
+          "id": "fr-1905-morning-act-charity",
+          "source": "FRENCH1905",
+          "language": "fr",
+          "opening": "Mon Dieu, je Vous aime de tout mon cœur et par-dessus toutes choses,",
+          "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-scan-checked-forms.b07.json"
+        }
+      ]
+    },
+    {
+      "period": "evening",
+      "language": "en",
+      "stage": "Presence and Thanksgiving",
+      "recommended": "b11-lasance-evening-adoration-thanksgiving-light",
+      "alternates": [
+        "b11-bbg-evening-presence",
+        "b11-bbg-evening-thanksgiving"
+      ],
+      "why": "Short uses one Lasance composite; Complete may use BBG Presence and Thanksgiving separately.",
+      "display": "composite-vs-separate",
+      "recommended_witness": {
+        "id": "b11-lasance-evening-adoration-thanksgiving-light",
+        "source": "LAS1911",
+        "language": "en",
+        "opening": "Almighty and eternal God, I adore Thee, and I thank Thee for all",
+        "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/151",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+      },
+      "alternatives": [
+        {
+          "id": "b11-bbg-evening-presence",
+          "source": "BBG1925",
+          "language": "en",
+          "opening": "O Almighty and eternal God, Whose majesty filleth heaven and earth, I firmly",
+          "url": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/58",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+        },
+        {
+          "id": "b11-bbg-evening-thanksgiving",
+          "source": "BBG1925",
+          "language": "en",
+          "opening": "I most heartily thank Thee, O Lord, for all Thy mercies and blessings",
+          "url": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/59",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+        }
+      ]
+    },
+    {
+      "period": "evening",
+      "language": "en",
+      "stage": "Light before Examination",
+      "recommended": "b12-baltimore-evening-examination-light",
+      "alternates": [],
+      "why": "Complete independent prayer after thanksgiving; original page image still pending.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "b12-baltimore-evening-examination-light",
+        "source": "BAL1888",
+        "language": "en",
+        "opening": "O my God, sovereign Judge of men, who desirest not the death of",
+        "url": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
+        "verification": "PROOFREAD_PAGE_IMAGE_PENDING",
+        "data_path": "data/pray/daily-prayer-evening-light-boundary.b12.json"
+      },
+      "alternatives": []
+    },
+    {
+      "period": "evening",
+      "language": "en",
+      "stage": "Contrition",
+      "recommended": "b11-lasance-evening-contrition",
+      "alternates": [
+        "b09-moran-long-contrition"
+      ],
+      "why": "Concise full act vs complete lengthy 1883 penitential act.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "b11-lasance-evening-contrition",
+        "source": "LAS1911",
+        "language": "en",
+        "opening": "O my God, I am truly sorry for having sinned, because Thou art",
+        "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/152",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-short-form-print-witnesses.b11.json"
+      },
+      "alternatives": [
+        {
+          "id": "b09-moran-long-contrition",
+          "source": "MORAN1883",
+          "language": "en",
+          "opening": "O dread Lord, and most indulgent Father of mercies, I, a wretched worm,",
+          "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/32",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        }
+      ]
+    },
+    {
+      "period": "evening",
+      "language": "en",
+      "stage": "Departed",
+      "recommended": "moran-1883-evening-for-faithful-departed",
+      "alternates": [],
+      "why": "Traditional collect, not Psalm 129.",
+      "display": "single",
+      "recommended_witness": {
+        "id": "moran-1883-evening-for-faithful-departed",
+        "source": "MORAN1883",
+        "language": "en",
+        "opening": "O God, the Creator and Redeemer of all the faithful, grant to the",
+        "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/33",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-print-witnesses.b08.json"
+      },
+      "alternatives": []
+    },
+    {
+      "period": "evening",
+      "language": "en",
+      "stage": "Night protection",
+      "recommended": "moran-1883-evening-visita-quaesumus",
+      "alternates": [
+        "moran-1883-evening-salva-nos",
+        "b09-lasance-alphonsus-night"
+      ],
+      "why": "Antiphon, collect and St Alphonsus night prayer can coexist.",
+      "display": "complementary",
+      "recommended_witness": {
+        "id": "moran-1883-evening-visita-quaesumus",
+        "source": "MORAN1883",
+        "language": "en",
+        "opening": "Visit, we beseech thee, O Lord, this habitation, and repel from it all",
+        "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/34",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-print-witnesses.b08.json"
+      },
+      "alternatives": [
+        {
+          "id": "moran-1883-evening-salva-nos",
+          "source": "MORAN1883",
+          "language": "en",
+          "opening": "Save us, O Lord, waking; and keep us, sleeping; that we may watch",
+          "url": "https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/34",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-print-witnesses.b08.json"
+        },
+        {
+          "id": "b09-lasance-alphonsus-night",
+          "source": "LAS1911",
+          "language": "en",
+          "opening": "Jesus Christ, my God, I adore Thee and I thank Thee for all",
+          "url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/155",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        }
+      ]
+    },
+    {
+      "period": "evening",
+      "language": "fr",
+      "stage": "Thanksgiving, examination and contrition",
+      "recommended": "b09-fr1905-evening-thanksgiving",
+      "alternates": [
+        "b09-fr1905-evening-light",
+        "b09-fr1905-evening-contrition"
+      ],
+      "why": "Three separate historical prayers with an intervening guided examination.",
+      "display": "sequence",
+      "recommended_witness": {
+        "id": "b09-fr1905-evening-thanksgiving",
+        "source": "FRENCH1905",
+        "language": "fr",
+        "opening": "Quelles actions de grâces Vous rendrai-je, ô mon Dieu, pour tous les biens",
+        "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+      },
+      "alternatives": [
+        {
+          "id": "b09-fr1905-evening-light",
+          "source": "FRENCH1905",
+          "language": "fr",
+          "opening": "Source éternelle de lumière, Esprit-Saint, dissipez les ténèbres qui me cachent la laideur",
+          "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        },
+        {
+          "id": "b09-fr1905-evening-contrition",
+          "source": "FRENCH1905",
+          "language": "fr",
+          "opening": "Me voici, Seigneur, tout couvert de confusion, et pénétré de douleur à la",
+          "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/43",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        }
+      ]
+    },
+    {
+      "period": "evening",
+      "language": "fr",
+      "stage": "Night protection",
+      "recommended": "b09-fr1905-evening-bedtime",
+      "alternates": [
+        "b09-fr1905-evening-visita"
+      ],
+      "why": "Both prayers can be selected.",
+      "display": "complementary",
+      "recommended_witness": {
+        "id": "b09-fr1905-evening-bedtime",
+        "source": "FRENCH1905",
+        "language": "fr",
+        "opening": "Bénissez, ô mon Dieu, le repos que je vais prendre pour réparer mes",
+        "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
+        "verification": "PRINT_IMAGE_CHECKED",
+        "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+      },
+      "alternatives": [
+        {
+          "id": "b09-fr1905-evening-visita",
+          "source": "FRENCH1905",
+          "language": "fr",
+          "opening": "Nous Vous supplions, Seigneur, de visiter notre demeure, et d’en éloigner toutes les",
+          "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
+          "verification": "PRINT_IMAGE_CHECKED",
+          "data_path": "data/pray/daily-prayer-high-priority-original-prints.b09.json"
+        }
+      ]
+    }
+  ],
+  "release_rules": [
+    "No invented source-aligned translation; EN and FR texts have independent witnesses.",
+    "Historical prayers serving multiple purposes recited once.",
+    "Short means fewer whole prayers; timer never truncates or advances prayer.",
+    "Salva nos, Visita, and Alphonsus are complementary night devotions.",
+    "Guided examen questions and printed rubrics are not vocal prayer texts.",
+    "No unpublished defaults marked approved or merged.",
+    "Original historical image check for Baltimore printed p82 remains outstanding."
+  ]
+}

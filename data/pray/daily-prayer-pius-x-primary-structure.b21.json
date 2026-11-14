@@ -1,0 +1,567 @@
+{
+  "schema": "ad-orientem.daily-prayer-pius-x-primary-b21.v1",
+  "date": "2026-10-28",
+  "status": "SOURCE_ANCHOR_NOT_PUBLIC_RELEASE",
+  "editorial_priority": "ST_PIUS_X_CATECHISM_PRIMARY_OTHER_MANUALS_SUPPLEMENTARY",
+  "parentage": {
+    "original1905": "Compendio della dottrina cristiana (Rome, 1905), Orazioni quotidiane e altre preci",
+    "authorizedFrench1913": "Catéchisme de la doctrine chrétienne, French edition printed with March 7 1913 authorization, derived from revised 1912 Italian catechism",
+    "greaterCatechism": "Catechismo maggiore of St Pius X, Q 972–985, practical daily pious exercises",
+    "laterUpdatedAppendix": "Postconciliar redaction of prayer formulas published as a 1967 update is NOT an original 1905/1912 Pius X prayer witness"
+  },
+  "hierarchy": [
+    "Pius X's original 1905 and revised 1912/authorized 1913 catechism: govern exact source-edition prayer order",
+    "Historically attested English witness 1914 Hagan is bibliographically identified; actual printed appendix requires image/text verification",
+    "Hagan-associated online Q972–985 English catechetical advice may be shown only as provisional English reference, never as certified original 1914 wording",
+    "Only edition-checked complete English/French source prayer bodies may be added to the future public approved registry",
+    "Other printed Catholic prayer manuals: clearly optional complementary devotions"
+  ],
+  "sources": [
+    {
+      "name": "1905 printed-source transcription",
+      "url": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Orazioni_quotidiane_ed_altre_preci"
+    },
+    {
+      "name": "French 1913 direct scanned pages 117–118",
+      "url": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf"
+    },
+    {
+      "name": "Catechismo maggiore Q972–985",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/"
+    }
+  ],
+  "editions": [
+    {
+      "id": "piusx-1905-it",
+      "name": "Compendio della dottrina cristiana (1905), original Italian daily-prayer appendix",
+      "lang": "it",
+      "date": "1905",
+      "kind": "ORIGINAL_1905_TEXT",
+      "url": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Orazioni_quotidiane_ed_altre_preci",
+      "imageChecked": false,
+      "note": "Proofread 1905 transcription. Do not treat its wording as identical to the later 1912/1913 authorized revised edition.",
+      "routines": {
+        "morning": {
+          "text": "Vi adoro, Dio mio, e vi amo con tutto il cuore: vi ringrazio di avermi creato, fatto cristiano e conservato in questa notte: vi offerisco tutte la mie azioni, vi prego di preservarmi in questo giorno dal peccato e liberarmi da ogni male. Così sia.",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Opening Sign of the Cross",
+              "before-core"
+            ],
+            [
+              "daily-prayer",
+              "Morning adoration, thanksgiving and offering",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater noster",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave Maria",
+              "common"
+            ],
+            [
+              "creed",
+              "Apostles' Creed",
+              "common"
+            ],
+            [
+              "faith",
+              "Act of Faith",
+              "common"
+            ],
+            [
+              "hope",
+              "Act of Hope",
+              "common"
+            ],
+            [
+              "charity",
+              "Act of Charity",
+              "common"
+            ],
+            [
+              "salve-regina",
+              "Salve Regina",
+              "common"
+            ],
+            [
+              "guardian-angel",
+              "Angele Dei",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "Vi adoro, Dio mio, e vi amo con tutto il cuore; vi ringrazio d’avermi creato, fatto cristiano e conservato in questo giorno: vi offerisco tutto quello che oggi ho fatto di bene e vi prego a liberarmi da ogni male. Così sia.",
+          "stages": [
+            [
+              "daily-prayer",
+              "Evening adoration, thanksgiving and offering",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater noster",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave Maria",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria Patri",
+              "common"
+            ],
+            [
+              "contrition",
+              "Act of Contrition",
+              "common"
+            ],
+            [
+              "jesus-joseph-mary-1",
+              "Jesus, Joseph and Mary — dedication",
+              "final"
+            ],
+            [
+              "jesus-joseph-mary-2",
+              "Jesus, Joseph and Mary — last agony",
+              "final"
+            ],
+            [
+              "jesus-joseph-mary-3",
+              "Jesus, Joseph and Mary — peaceful death",
+              "final"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "piusx-1913-fr",
+      "name": "Catéchisme de la doctrine chrétienne, French edition (1913, authorized)",
+      "lang": "fr",
+      "date": "1913",
+      "kind": "AUTHORIZED_1913_FRENCH_TRANSLATION_OF_REVISED_1912_TEXT",
+      "url": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+      "imagePages": [
+        117,
+        118
+      ],
+      "imageChecked": true,
+      "note": "French edition carries the March 7, 1913 approval letter for the revised catechism. It is not word-for-word the 1905 Italian appendix.",
+      "routines": {
+        "morning": {
+          "text": "Je vous adore, mon Dieu, et vous aime de tout mon cœur. Je vous remercie de m'avoir créé, fait chrétien et conservé en cette nuit. Je vous offre les actions de la journée; faites qu'elles soient toutes selon votre sainte volonté, pour votre plus grande gloire. Préservez-moi du péché et de tout mal. Que votre grâce soit toujours avec moi et avec tous ceux qui me sont chers. Ainsi soit-il.",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Signe de la Croix",
+              "core"
+            ],
+            [
+              "daily-prayer",
+              "Prière du matin : adoration, action de grâces et offrande",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria",
+              "common"
+            ],
+            [
+              "creed",
+              "Credo",
+              "common"
+            ],
+            [
+              "faith",
+              "Acte de foi",
+              "common"
+            ],
+            [
+              "hope",
+              "Acte d’espérance",
+              "common"
+            ],
+            [
+              "charity",
+              "Acte de charité",
+              "common"
+            ],
+            [
+              "salve-regina",
+              "Salve Regina",
+              "common"
+            ],
+            [
+              "guardian-angel",
+              "Angele Dei",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "Je vous adore, mon Dieu, et vous aime de tout mon cœur. Je vous remercie de m'avoir créé, fait chrétien et conservé en ce jour. Pardonnez-moi le mal que j'ai commis aujourd'hui, et si j'ai accompli quelque bien, acceptez-le. Gardez-moi dans le repos et délivrez-moi des dangers. Que votre grâce soit toujours avec moi et avec tous ceux qui me sont chers. Ainsi soit-il.",
+          "stages": [
+            [
+              "daily-prayer",
+              "Prière du soir : adoration, action de grâces et protection",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria",
+              "common"
+            ],
+            [
+              "creed",
+              "Credo",
+              "common"
+            ],
+            [
+              "faith",
+              "Acte de foi",
+              "common"
+            ],
+            [
+              "hope",
+              "Acte d’espérance",
+              "common"
+            ],
+            [
+              "charity",
+              "Acte de charité",
+              "common"
+            ],
+            [
+              "examen",
+              "Bref examen de conscience",
+              "guided"
+            ],
+            [
+              "contrition",
+              "Acte de contrition",
+              "common"
+            ],
+            [
+              "de-profundis",
+              "De profundis — pour les âmes du Purgatoire",
+              "supplement-after"
+            ],
+            [
+              "jesus-joseph-mary",
+              "Jésus, Joseph, Marie : invocations",
+              "supplement-after"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "piusx-hagan-en-derived",
+      "name": "English Pius X daily-prayer catechesis — Hagan-associated English text, later digital presentation; original 1914 print NOT checked",
+      "lang": "en",
+      "date": "1910 Hagan translation tradition; online transcription date unknown",
+      "kind": "EARLY_ENGLISH_CATECHETICAL_PARAPHRASE_UNVERIFIED_ORIGINAL_PRINT",
+      "url": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions",
+      "sourceEditionHold": "https://catalogue.nli.ie/Record/vtls000760522",
+      "imageChecked": false,
+      "sourceConflicts": "Q974 morning body is not identical to either 1905 Italian printed Morning Prayer or the 1913 French revised version. Q984 directs one to recite same prayers; it does not give a standalone distinct evening prayer body in this English witness.",
+      "note": "Transcribed from an Hagan-associated modern English web presentation of the Greater Catechism Q972–985, NOT compared with an original printed English edition. The 1914 Hagan translation has a reliable National Library of Ireland bibliographic record but its actual prayer appendix has not been inspected.",
+      "routines": {
+        "morning": {
+          "text": "I adore Thee, O my God, and I love Thee with all my heart. I give Thee thanks for having made me a Christian and keeping me through this night. I offer Thee all my acts. I pray Thee to keep me this day without sin and to deliver me from all evil. Amen.",
+          "textProvenance": "English Q974 as published in an online derivative; not original 1914 printed-text certified",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Sign of the Cross — on waking",
+              "rubric"
+            ],
+            [
+              "daily-prayer",
+              "Morning act of adoration, thanksgiving and offering (Q974)",
+              "derived-text"
+            ],
+            [
+              "our-father",
+              "Our Father (Q974)",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Hail Mary (Q974)",
+              "common"
+            ],
+            [
+              "creed",
+              "Apostles' Creed (Q974)",
+              "common"
+            ],
+            [
+              "faith",
+              "Act of Faith (Q974)",
+              "common"
+            ],
+            [
+              "hope",
+              "Act of Hope (Q974)",
+              "common"
+            ],
+            [
+              "charity",
+              "Act of Charity (Q974)",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "",
+          "textProvenance": "Q984 directs the same devotional prayers as in the morning; no distinct complete English Evening Prayer formula has been verified in the 1914 print",
+          "stages": [
+            [
+              "presence",
+              "Place yourself in God's presence (Q984)",
+              "rubric"
+            ],
+            [
+              "daily-prayer",
+              "Same prayers as Morning (Q984), not a separately printed English evening formula",
+              "rubric"
+            ],
+            [
+              "examen",
+              "Examine your conscience (Q984)",
+              "guided"
+            ],
+            [
+              "contrition",
+              "Ask pardon for sins committed that day (Q984)",
+              "rubric"
+            ],
+            [
+              "sign-of-cross",
+              "Sign of the Cross before sleep (Q985)",
+              "rubric"
+            ],
+            [
+              "jesus-mary-joseph",
+              "Bedtime commendation to the Trinity, Jesus, Mary and Joseph (Q985)",
+              "derived-text"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "caveats": [
+    "1905 original Italian and 1912 revised/1913 French order differ; do not synthesize as one alleged original.",
+    "The 1913 printed French text was visually checked on pages 117 and 118. The 1905 Italian appendix presently relies on proofread Wikisource transcription, not a direct image check in this pass.",
+    "1913 French appended De Profundis and deathbed invocations are adjacent devotions, not necessarily core prescribed evening list.",
+    "Some older indulgence notes are historically situated and not current indulgence promises.",
+    "All strings are research witnesses and guide labels; no rights clearance, user editorial choice or public manifest authorization is implied.",
+    "French printed-page transcriptions have been visually inspected but still need a second proofreader before clearing public copy.",
+    "An English Hagan 1914 bibliographic record is located, but the actual original 1914 pages are not yet available/checked. The online English Q972–985 reference is visibly marked derivative and research-only."
+  ],
+  "commonPrayers": {
+    "piusx-1913-fr": {
+      "sign-of-cross": {
+        "text": "Au nom du Père et du Fils et du Saint-Esprit. Ainsi soit-il.",
+        "page": 10
+      },
+      "our-father": {
+        "text": "Notre Père qui êtes aux cieux, que votre nom soit sanctifié, que votre règne arrive, que votre volonté soit faite sur la terre comme au ciel. Donnez-nous aujourd’hui notre pain quotidien, pardonnez-nous nos offenses comme nous pardonnons à ceux qui nous ont offensés, et ne nous laissez pas succomber à la tentation, mais délivrez-nous du mal. Ainsi soit-il.",
+        "page": 11
+      },
+      "hail-mary": {
+        "text": "Je vous salue, Marie pleine de grâce; le Seigneur est avec vous; vous êtes bénie entre toutes les femmes, et Jésus, le fruit de vos entrailles, est béni. Sainte Marie, Mère de Dieu, priez pour nous, pauvres pécheurs, maintenant et à l’heure de notre mort. Ainsi soit-il.",
+        "page": 12
+      },
+      "glory-be": {
+        "text": "Gloire au Père, et au Fils et au Saint-Esprit, comme il était au commencement, maintenant et toujours, dans les siècles des siècles. Ainsi soit-il.",
+        "page": 12
+      },
+      "creed": {
+        "text": "Je crois en Dieu le Père tout-puissant, créateur du ciel et de la terre, et en Jésus-Christ, son Fils unique Notre-Seigneur, qui a été conçu du Saint-Esprit, est né de la Vierge Marie, a souffert sous Ponce-Pilate, a été crucifié, est mort et a été enseveli, est descendu aux enfers; le troisième jour est ressuscité d’entre les morts, est monté au ciel, est assis à la droite de Dieu le Père tout-puissant, d’où il viendra juger les vivants et les morts. Je crois au Saint-Esprit, à la sainte Eglise catholique, à la communion des saints, à la rémission des péchés, à la résurrection de la chair, à la vie éternelle. Ainsi soit-il.",
+        "page": 10
+      },
+      "faith": {
+        "text": "Mon Dieu, je crois fermement tout ce que vous, infaillible Vérité, avez révélé et que l’Eglise nous propose à croire. Je crois expressément en vous, unique vrai Dieu en trois personnes égales et distinctes, Père, Fils et Saint-Esprit. Je crois de même au Fils incarné et mort pour nous, Jésus-Christ, qui donnera à chacun, selon ses mérites, la récompense ou la peine éternelle. Je veux toujours vivre conformément à cette foi. — Seigneur, augmentez ma foi.",
+        "page": 14
+      },
+      "hope": {
+        "text": "Mon Dieu, j’espère de votre bonté, à cause des promesses et des mérites de Jésus-Christ notre Sauveur, la vie éternelle et les grâces nécessaires pour la mériter par les bonnes œuvres que je dois et veux accomplir. — Seigneur, que je ne sois pas éternellement confondu.",
+        "page": 14
+      },
+      "charity": {
+        "text": "Mon Dieu, je vous aime de tout mon cœur par-dessus toutes choses, ô Bien infini et notre éternelle félicité; par amour pour vous j’aime mon prochain comme moi-même et je pardonne les offenses reçues. — Seigneur, faites que je vous aime toujours davantage.",
+        "page": 14
+      },
+      "contrition": {
+        "text": "Mon Dieu, je me repens de mes péchés de tout mon cœur; je les hais et les déteste parce qu’ils offensent votre Majesté infinie, sont la cause de la mort de votre divin Fils Jésus, et constituent ma ruine spirituelle. Je ne veux plus en commettre à l’avenir, et je me propose d’en fuir les occasions. — Seigneur, miséricorde, pardonnez-moi.",
+        "page": 14
+      },
+      "salve-regina": {
+        "text": "Salut, Reine, Mère de miséricorde; notre vie, notre douceur et notre espérance, salut. Nous élevons nos cris vers vous, enfants d’Eve exilés. Nous soupirons vers vous avec pleurs et gémissements, en cette vallée de larmes. Ecoutez-nous donc, ô notre Avocate; tournez vers nous ces regards pleins de vos miséricordes. Et au terme de cet exil, montrez-nous le fruit béni de vos entrailles, Jésus. O clémente, ô pieuse, ô douce Vierge Marie.",
+        "page": 13
+      },
+      "guardian-angel": {
+        "text": "Ange de Dieu, qui êtes mon gardien, par un bienfait de la divine charité, éclairez-moi, protégez-moi, dirigez-moi et gouvernez-moi. Ainsi soit-il.",
+        "page": 13
+      },
+      "jesus-joseph-mary": {
+        "text": "Jésus, Joseph, Marie, je vous donne mon cœur, mon esprit et ma vie.\nJésus, Joseph, Marie, daignez m’assister dans ma dernière agonie.\nJésus, Joseph, Marie, donnez-moi, je vous prie, de rendre l’âme en paix dans votre compagnie.",
+        "page": 118
+      }
+    },
+    "piusx-1905-it": {
+      "jesus-joseph-mary-1": {
+        "text": "Gesù, Giuseppe e Maria, vi dono il cuore e l’anima mia.",
+        "page": null
+      },
+      "jesus-joseph-mary-2": {
+        "text": "Gesù, Giuseppe e Maria, assistetemi nell’ultima agonia.",
+        "page": null
+      },
+      "jesus-joseph-mary-3": {
+        "text": "Gesù, Giuseppe e Maria, spiri in pace con voi l’anima mia.",
+        "page": null
+      },
+      "sign-of-cross": {
+        "text": "Nel nome del Padre e del Figliuolo e dello Spirito Santo. Così sia.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_I",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "our-father": {
+        "text": "Padre nostro, che sei ne’ cieli, sia santificato il nome tuo. Venga il regno tuo. Sia fatta la volontà tua, come in cielo, così in terra. Dacci oggi il nostro pane quotidiano. E rimetti a noi i nostri debiti, siccome noi li rimettiamo ai nostri debitori. E non c’indurre in tentazione. Ma liberaci dal male. Così sia.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_II",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "hail-mary": {
+        "text": "Dio ti salvi, o Maria, piena di grazia. Il Signore è teco. Tu sei benedetta fra le donne, e benedetto è il frutto del tuo seno Gesù. Santa Maria, Madre di Dio, prega per noi peccatori, adesso e nell’ora della morte nostra. Così sia.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_II",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "glory-be": {
+        "text": "Gloria al Padre, al Figlio e allo Spirito Santo, come era nel principio, adesso e sempre e nei secoli dei secoli. Così sia.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_II",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "creed": {
+        "text": "Io credo in Dio Padre onnipotente creatore del cielo e della terra. E in Gesù Cristo, suo figliuolo unico, Signor nostro. Il quale fu concepito di Spirito Santo: nacque da Maria Vergine. Patì sotto Ponzio Pilato: fu crocifisso, morto e sepolto. Discese all’inferno: il terzo giorno risuscitò da morte. Salì al Cielo: siede alla destra di Dio Padre onnipotente. Di là ha da venire a giudicare i vivi e i morti. Credo nello Spirito Santo. La santa Chiesa Cattolica: la comunione dei santi. La remissione de’ peccati. La risurrezione della carne. La vita eterna. Amen.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_II",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "faith": {
+        "text": "Io credo fermamente, perchè così ha rivelato Dio, infallibile verità, alla santa Chiesa cattolica, e per mezzo di essa lo rivela anche a noi, che vi è un solo Dio in tre Persone Divine, uguali e distinte, che si chiamano Padre, Figliuolo e Spirito Santo; che il Figliuolo si fece uomo, prendendo, per opera dello Spirito Santo, carne ed anima umana nel seno della purissima Vergine Maria: morì per noi in croce, risuscitò, salì al cielo, e di là ha da venire alla fine del mondo a giudicare tutti i vivi ed i morti, per dare per sempre ai buoni il paradiso ed ai cattivi l’inferno. E di più per l’istesso motivo credo tutto quello che crede ed insegna la medesima santa Chiesa.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "hope": {
+        "text": "Dio mio, perchè siete onnipotente ed infinitamente buono e misericordioso, io spero che, per i meriti della passione e morte di Gesù Cristo nostro Salvatore, mi darete la vita eterna, la quale Voi fedelissimo avete promessa a chi farà opere da buon cristiano, come propongo di fare col vostro santo aiuto.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "charity": {
+        "text": "Dio mio, perchè siete sommo e perfettissimo Bene, vi amo con tutto il cuore e sopra ogni altra cosa, e, piuttosto che offendervi, sono disposto a perdere ogni altra cosa e per amor vostro amo ancora e voglio amare il prossimo mio come me medesimo.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      },
+      "contrition": {
+        "text": "Dio mio, per esser Voi somma Bontà, e perchè vi amo sopra ogni cosa, mi pento e mi dolgo di vero cuore di avervi offeso, e propongo fermamente, col vostro santo aiuto, di non peccare mai più nell’avvenire, ed in particolare di fuggire le occasioni prossime del peccato.",
+        "page": null,
+        "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III",
+        "sourceStatus": "PROOFREAD_ORIGINAL_1905_COMPENDIO_TEXT_NOT_PRINT_IMAGE_VERIFIED",
+        "presentation": "Punctuation/numbered layout compacted for continuous reading; compare original Q/A form in source"
+      }
+    },
+    "piusx-hagan-en-derived": {
+      "jesus-mary-joseph": {
+        "text": "My Lord and my God, I give Thee all my heart; Most Holy Trinity, give me grace to live a good life and to die a good death; Jesus, Mary, and Joseph, I give you my heart and my soul.",
+        "page": null,
+        "verification": "ONLINE_DERIVED_Q985_NOT_ORIGINAL_EDITION_PRINT_VERIFIED",
+        "sourceUrl": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions"
+      }
+    }
+  },
+  "commonTextPolicy": "The French common-prayer text fields are independently transcribed from visually inspected early French printed pages 10–15 and 118. The 1905 Italian common prayer words remain unfilled until exact original-page witness checks; do not silently borrow the 1913 revision or current canonical app text.",
+  "englishResearch": {
+    "bibliographic1914": {
+      "work": "Catechism of Christian Doctrine: published by order of His Holiness Pius X",
+      "translator": "Rev. John Hagan",
+      "publisher": "M. H. Gill, Dublin",
+      "year": 1914,
+      "pages": 152,
+      "library": "National Library of Ireland",
+      "record": "https://catalogue.nli.ie/Record/vtls000760522",
+      "language": "English",
+      "translates": "Compendio della dottrina cristiana",
+      "editionPrintInspected": false,
+      "fullDailyPrayerTextRetrieved": false,
+      "reuseRights": "REVIEW_PENDING"
+    },
+    "englishCatechesisOnline": {
+      "reference": "Greater Catechism Q972–985; Hagan-associated online presentation",
+      "source": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions",
+      "sourceTier": "SECONDARY_ONLINE_ENGLISH_TRANSCRIPTION",
+      "original1910PrintVerified": false,
+      "notEditionMatchedTo1914": true,
+      "entireMorningEveningSequenceAuthenticAs1914": false
+    },
+    "oldHaganCompendium": {
+      "title": "A Compendium of Catechetical Instruction",
+      "editor": "John Hagan",
+      "year": "c.1908–1911; later reprints",
+      "scope": "mixed Roman Catechism, Pius X catechism and Raineri material",
+      "notInterchangeableWith": "1914 English translation of revised catechism"
+    },
+    "blockedSubstitutions": [
+      "1974 Kevane edition revised from 1953 abridged Italian",
+      "Modern online Hagan-derived Q974 wording presented falsely as a 1914 printed-page facsimile",
+      "English text newly translated from 1913 French by Ad Orientem without labelling a modern translation"
+    ]
+  }
+}

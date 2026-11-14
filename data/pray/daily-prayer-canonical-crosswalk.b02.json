@@ -1,0 +1,1502 @@
+{
+  "schema": "ad-orientem.daily-prayer-canonical-concordance.v1",
+  "batch": "B02",
+  "date": "2026-10-27",
+  "prerequisite": "data/pray/daily-prayer-source-concordance.b01.json",
+  "canonical_witness": "src/pray/canonical-data.js",
+  "method": "Classify prayer-family membership by prayer title/incipit, not assume exact historical text equality. Compare source incipit signatures; manually inspect select edition differences.",
+  "stats": {
+    "occurrences": 93,
+    "canonical_ids_in_corpus": 48,
+    "relations": {
+      "NOT_IN_CANONICAL_48": 46,
+      "FAMILY_EXISTS_WORDING_DIVERGES": 34,
+      "NEEDS_PRAYER_BOUNDARY_REVIEW": 10,
+      "POTENTIAL_LITURGICAL_BRIDGE_REVIEW": 3
+    },
+    "candidate_families": 33,
+    "identical_incipit_candidate_clusters": 17,
+    "occurrences_in_same_incipit_clusters": 41,
+    "distinct_incipit_signatures": 69,
+    "links_missing": 0,
+    "exact_text_collations_complete": 0
+  },
+  "rows": [
+    {
+      "occurrence_id": "AO.DAILY.B01.001",
+      "source": "BBG1925",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Sign of the Cross / rising invocation",
+      "incipit": "In the Name of our Lord Jesus Christ crucified",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.002",
+      "source": "BBG1925",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Prayer for attention before praying",
+      "incipit": "Free my mind, O Lord",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.003",
+      "source": "BBG1925",
+      "period": "morning",
+      "stage": "thanksgiving",
+      "title": "Acts of Adoration and Thanksgiving",
+      "incipit": "Blessed be the holy and undivided Trinity",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.004",
+      "source": "BBG1925",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Morning Offering (Apostleship form)",
+      "incipit": "O Jesus, through the Immaculate Heart of Mary",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+      "canonical_family": "morning-offering-apostleship",
+      "canonical_id": "foundations_morning_offering",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.005",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "presence",
+      "title": "An Act of the Presence of God",
+      "incipit": "O Almighty and eternal God, Whose majesty filleth",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.006",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "An Act of Thanksgiving",
+      "incipit": "I most heartily thank Thee, O Lord",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.007",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "optional-saint",
+      "title": "Prayers of Sœur Thérèse: Love of God",
+      "incipit": "At the close of evening I shall appear",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "evening-optional-saint-prayers-of-s-ur-th-r-se-l",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.008",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "optional-saint",
+      "title": "Prayers of Sœur Thérèse: Gratitude",
+      "incipit": "O my God, how good Thou art to me",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "evening-optional-saint-prayers-of-s-ur-th-r-se-g",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.009",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "optional-saint",
+      "title": "Prayers of Sœur Thérèse: Hope",
+      "incipit": "A day ... an hour ... and we shall",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "evening-optional-saint-prayers-of-s-ur-th-r-se-h",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.010",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "examination",
+      "title": "An Examination of Conscience",
+      "incipit": "O my Lord Jesus Christ, Judge of the living and the dead",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "nightly-examination-historical-intro",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48",
+      "existing_module": "pray.nightly_examen"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.011",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "The Confiteor",
+      "incipit": "I confess to Almighty God, to blessed Mary ever Virgin",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "confiteor-private-vs-liturgical",
+      "canonical_id": "mass_confiteor",
+      "relation": "POTENTIAL_LITURGICAL_BRIDGE_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.012",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "An Act of Contrition",
+      "incipit": "O my God! I am heartily sorry for having offended",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.013",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "intercession",
+      "title": "Prayer for the Living",
+      "incipit": "O God, hear my prayers on behalf of our Holy Father",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "intercession-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.014",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "departed",
+      "title": "De Profundis and Requiem aeternam",
+      "incipit": "Out of the depths I have cried to Thee",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "de-profundis-psalm-129",
+      "canonical_id": "dead_de_profundis",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.015",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "departed",
+      "title": "Collect for the faithful departed",
+      "incipit": "O God! the Creator and Redeemer of all the faithful",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "fidelium-deus",
+      "canonical_id": "dead_fidelium_deus",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.016",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Acts of Petition / Visita quaesumus",
+      "incipit": "Vouchsafe, O Lord, this night",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "visita-quaesumus-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.017",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Save us, O Lord, when we are awake",
+      "incipit": "Save us, O Lord, when we are awake",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "salva-nos-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.018",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Prayer of St Alphonsus",
+      "incipit": "Lord Jesus Christ, my God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "alphonsus-night-prayer",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.019",
+      "source": "BBG1925",
+      "period": "evening",
+      "stage": "commendation",
+      "title": "Into Thy hands / prayers after retiring",
+      "incipit": "Into Thy hands, O Lord, I commend my spirit",
+      "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
+      "canonical_family": "in-manus-tuas-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.020",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Holy Holy Holy morning aspiration",
+      "incipit": "Holy, Holy, Holy, Lord God of hosts",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.021",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "invocation",
+      "title": "Come Holy Ghost",
+      "incipit": "Come, Holy Ghost, fill the hearts of Thy faithful",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "come-holy-spirit",
+      "canonical_id": "sacrament_come_holy_spirit",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.022",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Adoration of the Trinity",
+      "incipit": "Most holy and adorable Trinity, one God in three Persons",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.023",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "thanksgiving",
+      "title": "Thanksgiving and offering of the day",
+      "incipit": "O my God, I most humbly thank Thee",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.024",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "resolution",
+      "title": "Resolution to imitate Christ",
+      "incipit": "Adorable Jesus, my Saviour and Master",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "supplication-resolution-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.025",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "supplication",
+      "title": "Prayer for grace throughout the day",
+      "incipit": "O my God, Thou knowest my poverty and weakness",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "supplication-resolution-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.026",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "common",
+      "title": "Our Father, Hail Mary, Creed, Confiteor",
+      "incipit": "Our Father. Hail Mary. I believe in God",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "confiteor-private-vs-liturgical",
+      "canonical_id": "mass_confiteor",
+      "relation": "POTENTIAL_LITURGICAL_BRIDGE_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.027",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "An Act of Faith",
+      "incipit": "O my God! I firmly believe that Thou art one God",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "act-of-faith",
+      "canonical_id": "foundations_act_of_faith",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.028",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "An Act of Hope",
+      "incipit": "O my God! relying on Thy infinite goodness and promises",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "act-of-hope",
+      "canonical_id": "foundations_act_of_hope",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.029",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "An Act of Charity",
+      "incipit": "O my God! I love Thee above all things",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "act-of-charity",
+      "canonical_id": "foundations_act_of_love",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.030",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "contrition",
+      "title": "An Act of Contrition",
+      "incipit": "O my God! I am heartily sorry for having offended",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.031",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "marian",
+      "title": "Prayer to the Holy Virgin",
+      "incipit": "O holy Virgin, Mother of God, my Mother and Patroness",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "morning-marian-prayer-to-the-holy-virgin",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.032",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "saints",
+      "title": "Prayer to St Joseph",
+      "incipit": "O faithful Guardian and Father of virgins",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "st-joseph-daily-intercession",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.033",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "guardian",
+      "title": "Angel of God",
+      "incipit": "Angel of God, my Guardian dear",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "guardian-angel",
+      "canonical_id": "foundations_guardian_angel",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.034",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "saints",
+      "title": "Prayer to patron saint",
+      "incipit": "O great Saint, whose name I bear",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "morning-saints-prayer-to-patron-saint",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.035",
+      "source": "BAL1888",
+      "period": "morning",
+      "stage": "conclusion",
+      "title": "Trinitarian concluding invocation",
+      "incipit": "May the power of the Father govern and protect me",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+      "canonical_family": "concluding-invocations",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.036",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Evening adoration and theological virtues",
+      "incipit": "O my God, I present myself before Thee at the end of another day",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.037",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Thanksgiving for the day",
+      "incipit": "Thou hast thought of me, and loved me",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.038",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Prayer for light and examination",
+      "incipit": "O my God, sovereign Judge of men",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "nightly-examination-historical-intro",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48",
+      "existing_module": "pray.nightly_examen"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.039",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Traditional evening Act of Contrition",
+      "incipit": "O my God, I heartily repent",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.040",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Confiteor (optional)",
+      "incipit": "I confess to Almighty God",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "confiteor-private-vs-liturgical",
+      "canonical_id": "mass_confiteor",
+      "relation": "POTENTIAL_LITURGICAL_BRIDGE_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.041",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "intercession",
+      "title": "For clergy, relations and enemies",
+      "incipit": "O God, hear my prayers on behalf of our Holy Father",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "intercession-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.042",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "departed",
+      "title": "For souls in purgatory",
+      "incipit": "O God of mercy and goodness, have compassion",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "deceased-intercessions",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.043",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Blessing of rest",
+      "incipit": "Bless, O Lord, the repose I am about to take",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "evening-night-protection-blessing-of-rest",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.044",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Our Lady, St Joseph, guardian and patron",
+      "incipit": "O Blessed Virgin Mary, Mother of mercy",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "guardian-angel",
+      "canonical_id": "foundations_guardian_angel",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.045",
+      "source": "BAL1888",
+      "period": "evening",
+      "stage": "conclusion",
+      "title": "Holy Holy Holy conclusion",
+      "incipit": "Holy, Holy, Holy, Lord God of hosts",
+      "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "canonical_family": "concluding-invocations",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.046",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Trinitarian aspirations",
+      "incipit": "Blessed be the Holy Trinity, one God",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.047",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "thanksgiving",
+      "title": "Act of Adoration and Thanksgiving",
+      "incipit": "Almighty and eternal God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.048",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Faith",
+      "incipit": "O my God, I believe in Thee, because Thou art Truth itself",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "act-of-faith",
+      "canonical_id": "foundations_act_of_faith",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.049",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Hope",
+      "incipit": "O my God, I hope in Thee, because Thou art omnipotent",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "act-of-hope",
+      "canonical_id": "foundations_act_of_hope",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.050",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Love",
+      "incipit": "O my God, I love Thee with my whole heart",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "act-of-charity",
+      "canonical_id": "foundations_act_of_love",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.051",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "supplication",
+      "title": "Act of Supplication",
+      "incipit": "O my God, I beseech Thee most earnestly",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "supplication-resolution-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.052",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "contrition",
+      "title": "Act of Contrition",
+      "incipit": "O my God, I am truly sorry for having sinned",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.053",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "consecration",
+      "title": "Act of Consecration",
+      "incipit": "O my God, I wish to consecrate this day",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "daily-consecration",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.054",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Sacred Heart offering",
+      "incipit": "Almighty and eternal God! I offer Thee all my prayers",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "sacred-heart-morning-offering",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.055",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "marian",
+      "title": "O Mary my Queen my Mother consecration",
+      "incipit": "O Mary! my Queen! my Mother! I give myself entirely",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "marian-devotional",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.056",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "guardian",
+      "title": "Angel of God",
+      "incipit": "Angel of God, my guardian dear",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "guardian-angel",
+      "canonical_id": "foundations_guardian_angel",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.057",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "saints",
+      "title": "All holy angels and saints / patron saint",
+      "incipit": "All ye holy angels and saints of God",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "morning-saints-all-holy-angels-and-saint",
+      "canonical_id": null,
+      "relation": "NEEDS_PRAYER_BOUNDARY_REVIEW"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.058",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Evening trinitarian invocation",
+      "incipit": "Blessed be the Holy Trinity, one God",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.059",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Act of Adoration and Thanksgiving",
+      "incipit": "Almighty and eternal God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.060",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Examination of conscience instructions",
+      "incipit": "Here examine your conscience on the faults of the day",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "nightly-examination-historical-intro",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48",
+      "existing_module": "pray.nightly_examen"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.061",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Act of Contrition",
+      "incipit": "O my God, I am truly sorry for having sinned",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.062",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "virtues",
+      "title": "Act of Love and perseverance",
+      "incipit": "I love Thee, my Lord and my God",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "act-of-charity",
+      "canonical_id": "foundations_act_of_love",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.063",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "marian",
+      "title": "Memorare",
+      "incipit": "Remember, O most gracious Virgin Mary",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "marian-memorare",
+      "canonical_id": "marian_memorare",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.064",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "intercession",
+      "title": "Prayer for benefactors",
+      "incipit": "Vouchsafe, O Lord, to reward with eternal life",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "intercession-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.065",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Invocation of Mary Joseph saints guardian angel",
+      "incipit": "May the Blessed Virgin Mary, St Joseph, and all the saints",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "guardian-angel",
+      "canonical_id": "foundations_guardian_angel",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.066",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "departed",
+      "title": "De Profundis",
+      "incipit": "Out of the depths I have cried to Thee",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "de-profundis-psalm-129",
+      "canonical_id": "dead_de_profundis",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.067",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Trinitarian aspirations",
+      "incipit": "Blessed be the Holy Trinity, one God",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.068",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "thanksgiving",
+      "title": "Act of Adoration and Thanksgiving",
+      "incipit": "Almighty and eternal God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.069",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Faith",
+      "incipit": "My God, I believe in Thee, because Thou art Truth itself",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-faith",
+      "canonical_id": "foundations_act_of_faith",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.070",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Hope",
+      "incipit": "My God, I hope in Thee, because Thou art all-powerful",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-hope",
+      "canonical_id": "foundations_act_of_hope",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.071",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Act of Love",
+      "incipit": "My God, I love Thee with my whole heart",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-charity",
+      "canonical_id": "foundations_act_of_love",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.072",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "supplication",
+      "title": "Act of Supplication",
+      "incipit": "My God, I beseech Thee most earnestly",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "supplication-resolution-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.073",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "contrition",
+      "title": "Act of Contrition",
+      "incipit": "My God, I am truly sorry for having sinned",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.074",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "consecration",
+      "title": "Act of Consecration",
+      "incipit": "My God, I wish and I resolve to consecrate this day",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "daily-consecration",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.075",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Sacred Heart offering",
+      "incipit": "I offer Thee all my prayers, works, and sufferings",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "sacred-heart-morning-offering",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.076",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "marian",
+      "title": "Marian consecration and ejaculation",
+      "incipit": "O Mary! my queen! my mother!",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "marian-devotional",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.077",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "guardian",
+      "title": "Angel of God",
+      "incipit": "Angel of God, my guardian dear",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "guardian-angel",
+      "canonical_id": "foundations_guardian_angel",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.078",
+      "source": "YMG1910",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Apostleship of Prayer Morning Offering",
+      "incipit": "O Jesus, through the immaculate heart of Mary",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "morning-offering-apostleship",
+      "canonical_id": "foundations_morning_offering",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.079",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Evening trinitarian invocation",
+      "incipit": "Blessed be the Holy Trinity, one God",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "presence-adoration-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.080",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Act of Adoration and Thanksgiving",
+      "incipit": "Almighty and eternal God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "thanksgiving-daily",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.081",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Examination of conscience instructions",
+      "incipit": "Here examine your conscience on the faults of the day",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "nightly-examination-historical-intro",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48",
+      "existing_module": "pray.nightly_examen"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.082",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Act of Contrition",
+      "incipit": "My God, I am truly sorry for having sinned",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-contrition",
+      "canonical_id": "sacrament_act_of_contrition",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.083",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "virtues",
+      "title": "Act of Love and perseverance",
+      "incipit": "I love Thee, my Lord and my God",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "act-of-charity",
+      "canonical_id": "foundations_act_of_love",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.084",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "marian",
+      "title": "Memorare",
+      "incipit": "Remember, O most gracious Virgin Mary",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "marian-memorare",
+      "canonical_id": "marian_memorare",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.085",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Night invocation to Mary Joseph saints and angel",
+      "incipit": "May the Blessed Virgin Mary, St Joseph, and all the saints",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "marian-devotional",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.086",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "departed",
+      "title": "De Profundis",
+      "incipit": "Out of the depths I have cried to Thee",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "de-profundis-psalm-129",
+      "canonical_id": "dead_de_profundis",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.087",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Apostleship of Prayer Morning Offering",
+      "incipit": "O Jesus, through the immaculate heart of Mary",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "canonical_family": "morning-offering-apostleship",
+      "canonical_id": "foundations_morning_offering",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.088",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Night Prayer by St Alphonsus Liguori",
+      "incipit": "Jesus Christ, my God, I adore Thee",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "alphonsus-night-prayer",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.089",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Visita quaesumus collect",
+      "incipit": "Visit, we beseech Thee, O Lord, this habitation",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "visita-quaesumus-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.090",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "commendation",
+      "title": "Into Thy hands",
+      "incipit": "Lord, into Thy hands I commend my spirit",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "canonical_family": "in-manus-tuas-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.091",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "departed",
+      "title": "Collect for the faithful departed",
+      "incipit": "O God! the Creator and Redeemer of all the faithful",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "fidelium-deus",
+      "canonical_id": "dead_fidelium_deus",
+      "relation": "FAMILY_EXISTS_WORDING_DIVERGES"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.092",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Visita quaesumus collect",
+      "incipit": "Visit, we beseech Thee, O Lord, this habitation",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "visita-quaesumus-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    },
+    {
+      "occurrence_id": "AO.DAILY.B01.093",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "commendation",
+      "title": "Into Thy hands",
+      "incipit": "Lord, into Thy hands I commend my spirit",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "canonical_family": "in-manus-tuas-night",
+      "canonical_id": null,
+      "relation": "NOT_IN_CANONICAL_48"
+    }
+  ],
+  "incipit_candidate_clusters": [
+    {
+      "incipit_fingerprint": "almighty and eternal god i adore thee",
+      "count": 4,
+      "occurrence_ids": [
+        "AO.DAILY.B01.047",
+        "AO.DAILY.B01.059",
+        "AO.DAILY.B01.068",
+        "AO.DAILY.B01.080"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "thanksgiving-daily"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "blessed be the holy trinity one god",
+      "count": 4,
+      "occurrence_ids": [
+        "AO.DAILY.B01.046",
+        "AO.DAILY.B01.058",
+        "AO.DAILY.B01.067",
+        "AO.DAILY.B01.079"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "presence-adoration-daily"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "angel of god my guardian dear",
+      "count": 3,
+      "occurrence_ids": [
+        "AO.DAILY.B01.033",
+        "AO.DAILY.B01.056",
+        "AO.DAILY.B01.077"
+      ],
+      "source_keys": [
+        "BAL1888",
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "guardian-angel"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "o jesus through the immaculate heart of mary",
+      "count": 3,
+      "occurrence_ids": [
+        "AO.DAILY.B01.004",
+        "AO.DAILY.B01.078",
+        "AO.DAILY.B01.087"
+      ],
+      "source_keys": [
+        "BBG1925",
+        "YMG1910",
+        "LAS1911"
+      ],
+      "family_candidates": [
+        "morning-offering-apostleship"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "out of the depths i have cried to thee",
+      "count": 3,
+      "occurrence_ids": [
+        "AO.DAILY.B01.014",
+        "AO.DAILY.B01.066",
+        "AO.DAILY.B01.086"
+      ],
+      "source_keys": [
+        "BBG1925",
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "de-profundis-psalm-129"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "here examine your conscience on the faults of the da",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.060",
+        "AO.DAILY.B01.081"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "nightly-examination-historical-intro"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "holy holy holy lord god of hosts",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.020",
+        "AO.DAILY.B01.045"
+      ],
+      "source_keys": [
+        "BAL1888"
+      ],
+      "family_candidates": [
+        "presence-adoration-daily",
+        "concluding-invocations"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "i love thee my lord and my god",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.062",
+        "AO.DAILY.B01.083"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "act-of-charity"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "lord into thy hands i commend my spirit",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.090",
+        "AO.DAILY.B01.093"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "in-manus-tuas-night"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "may the blessed virgin mary st joseph and all the sa",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.065",
+        "AO.DAILY.B01.085"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "guardian-angel",
+        "marian-devotional"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "my god i am truly sorry for having sinned",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.073",
+        "AO.DAILY.B01.082"
+      ],
+      "source_keys": [
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "act-of-contrition"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "o god hear my prayers on behalf of our holy father",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.013",
+        "AO.DAILY.B01.041"
+      ],
+      "source_keys": [
+        "BBG1925",
+        "BAL1888"
+      ],
+      "family_candidates": [
+        "intercession-daily"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "o god the creator and redeemer of all the faithful",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.015",
+        "AO.DAILY.B01.091"
+      ],
+      "source_keys": [
+        "BBG1925",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "fidelium-deus"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "o my god i am heartily sorry for having offended",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.012",
+        "AO.DAILY.B01.030"
+      ],
+      "source_keys": [
+        "BBG1925",
+        "BAL1888"
+      ],
+      "family_candidates": [
+        "act-of-contrition"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "o my god i am truly sorry for having sinned",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.052",
+        "AO.DAILY.B01.061"
+      ],
+      "source_keys": [
+        "LAS1911"
+      ],
+      "family_candidates": [
+        "act-of-contrition"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "remember o most gracious virgin mary",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.063",
+        "AO.DAILY.B01.084"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "marian-memorare"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    },
+    {
+      "incipit_fingerprint": "visit we beseech thee o lord this habitation",
+      "count": 2,
+      "occurrence_ids": [
+        "AO.DAILY.B01.089",
+        "AO.DAILY.B01.092"
+      ],
+      "source_keys": [
+        "LAS1911",
+        "YMG1910"
+      ],
+      "family_candidates": [
+        "visita-quaesumus-night"
+      ],
+      "status": "POTENTIAL_SHARED_OPENING_ONLY_NOT_IDENTICAL_TEXT"
+    }
+  ],
+  "manually_inspected_differences": [
+    {
+      "a": "LAS1911:morning:Act of Faith",
+      "b": "YMG1910:morning:Act of Faith",
+      "classification": "SUBSTANTIVE_WORDING_VARIANT",
+      "evidence": "With God uses 'I firmly believe all the sacred truths ... because Thou hast revealed them'; Young Man's Guide reads 'as Thou hast revealed them to her, I believe ...'. Full-form facsimile check pending.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ]
+    },
+    {
+      "a": "LAS1911:morning:Act of Hope",
+      "b": "YMG1910:morning:Act of Hope",
+      "classification": "MINOR_LEXICAL_VARIANT",
+      "evidence": "The books use 'omnipotent' and 'all-powerful' respectively. Do not create two user-facing tabs solely for this.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ]
+    },
+    {
+      "a": "LAS1911:morning:Act of Consecration",
+      "b": "YMG1910:morning:Act of Consecration",
+      "classification": "SUBSTANTIVE_WORDING_VARIANT",
+      "evidence": "With God 'I wish to consecrate'; Young Man's Guide 'I wish and I resolve to consecrate'.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ]
+    },
+    {
+      "a": "LAS1911:morning:Act of Contrition",
+      "b": "LAS1911:evening:Act of Contrition",
+      "classification": "SUBSTANTIVE_WORDING_VARIANT",
+      "evidence": "Evening formula includes a firmer resolution with help of grace; the morning formula asks to avoid occasions and do God's will. Do not collapse morning and evening versions by title alone.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers"
+      ]
+    },
+    {
+      "a": "BBG1925:morning:Apostleship offering",
+      "b": "LAS1911:morning:Apostleship offering",
+      "classification": "SUBSTANTIVE_WORDING_VARIANT",
+      "evidence": "Blessed Be God explicitly mentions 'reparation for my sins' and 'intention of the Apostleship of Prayer'; With God specifies monthly papal intention and associates. Canonical modern Morning Offering mentions joys/sufferings, reunion of Christians: not identical 1925 words.",
+      "urls": [
+        "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
+        "https://en.wikisource.org/wiki/With_God/Morning_Prayers"
+      ]
+    },
+    {
+      "a": "LAS1911:evening:Night Prayer St Alphonsus",
+      "b": "YMG1910:evening:Night Prayer St Alphonsus",
+      "classification": "SOURCE_ONLY_ONE",
+      "evidence": "With God has explicit Night Prayer by St Alphonsus; The Young Man's Guide Daily Prayers portion has no such headed night prayer. No YMG entry should be fabricated.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ]
+    },
+    {
+      "a": "LAS1911:evening:Visita quaesumus",
+      "b": "YMG1910:evening:Visita quaesumus",
+      "classification": "LIKELY_SAME_HISTORICAL_FORM",
+      "evidence": "Both print the nocturnal collect beginning 'Visit, we beseech Thee, O Lord, this habitation'. Original page comparison needed before exact-match certificate.",
+      "urls": [
+        "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+        "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions"
+      ]
+    }
+  ],
+  "publication_guard": "NO exact-text variants released. These are family-identity matches, not complete word-for-word collation or licence determination."
+}
