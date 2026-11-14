@@ -1,0 +1,28 @@
+{
+  "schema": "AO_P81_ONE_WAVE_ALL_2579_COMMONS_DIRECT_SOURCE_SEARCH_V1",
+  "as_of": "2026-10-29",
+  "source_intake_ref": "research/directory-unified-photo-intake",
+  "source_intake_sha": "f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2",
+  "source_cl2_sha": "eb67711a9886a7626916b7a145787c5e99105968",
+  "source_manifest": "data/directory/research/unified-photo-intake/cl2-eb67711a-20261029/manifest.json",
+  "total_anchors": 2579,
+  "total_countries": 76,
+  "shards": 11,
+  "parallel_workers": 3,
+  "request_scope": "ALL_2579_EXACT_PHYSICAL_ANCHOR_IDS_IN_ONE_CAMPAIGN",
+  "max_source_image_candidates_per_site": 4,
+  "commons_namespace": 6,
+  "max_source_requests_per_worker": 250,
+  "delay_per_search_seconds": 1.1,
+  "previous_country_p18_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40856809723",
+  "previous_p18_source_records": 44777,
+  "previous_p18_source_errors": [
+    "BR",
+    "IN",
+    "MX"
+  ],
+  "publication": "RESEARCH_ONLY_NO_VISUAL_APPROVAL_NO_PUBLICATION",
+  "future_editorial_gate": "ONE_COMBINED_2579_ANCHOR_VISUAL_SELECTION_NOT_ONE_GATE_PER_SHARD",
+  "license_rule": "ONLY_VERIFIED_CREATIVE_COMMONS_METADATA_PROMOTABLE_AFTER_INDEPENDENT_PHOTO_SUBJECT_AND_RIGHTS_REVIEW",
+  "budget": "EUR_0"
+}
