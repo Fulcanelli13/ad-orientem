@@ -1,0 +1,62 @@
+name: Prayer Wave 1 - Seven Sorrows canonical novena photo proof
+on:
+  push:
+    branches:
+      - feature/prayer-wave1-seven-sorrows-novena-proof-20261028
+    paths:
+      - .github/workflows/prayer-wave1-seven-sorrows-novena-proof-20261028.yml
+      - src/pray/seven-sorrows-novena-hero-proof.js
+      - src/pray/novena-runtime.js
+      - assets/pray/hero-proof/seven-sorrows-whole-*
+      - tests/pray-wave1-seven-sorrows-novena-proof.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify-canonical-nine-day-novena:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing free Playwright
+        run: npm install --no-save --package-lock=false --ignore-scripts --no-fund --no-audit @playwright/test@1.55.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check original novena with opt-in artwork and real browser
+        run: |
+          node --check src/pray/seven-sorrows-novena-hero-proof.js
+          node --check src/pray/novena-runtime.js
+          node --check tests/pray-wave1-seven-sorrows-novena-proof.mjs
+          node tests/pray-wave1-seven-sorrows-novena-proof.mjs
+      - name: Preserve all six screenshot originals and their checksums in branch
+        if: success()
+        run: |
+          mkdir -p assets/staged/prayer-wave1-seven-sorrows-novena-qa-20261028
+          for state in collapsed expanded; do
+            for width in 320 390 1440; do
+              cp "artifacts/prayer-wave1-seven-sorrows-proof/sorrows-${state}-${width}.png" "assets/staged/prayer-wave1-seven-sorrows-novena-qa-20261028/sorrows-${state}-${width}.png"
+            done
+          done
+          (
+            cd assets/staged/prayer-wave1-seven-sorrows-novena-qa-20261028
+            sha256sum *.png > SCREENSHOT-SHA256.txt
+          )
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-wave1-seven-sorrows-novena-qa-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(prayer art): preserve Seven Sorrows canonical novena real device proof"
+          git pull --rebase origin feature/prayer-wave1-seven-sorrows-novena-proof-20261028
+          git push origin HEAD:feature/prayer-wave1-seven-sorrows-novena-proof-20261028
+      - name: Secondary temporary screenshots (not sole archive)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-seven-sorrows-review-${{ github.run_id }}
+          path: artifacts/prayer-wave1-seven-sorrows-proof/
+          retention-days: 3
+          if-no-files-found: warn
