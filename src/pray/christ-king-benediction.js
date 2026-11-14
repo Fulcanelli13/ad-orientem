@@ -40,10 +40,11 @@ export const CHRIST_KING_CONSECRATION=Object.freeze({
 /**
  * Source-owned complete Laudes Regiae (Royal Praises / Christus vincit).
  * Witness: Vatican papal chant booklet, 7 Oct 2012, pp. 26–41.
- * ICKSP's 2009 catalogue independently lists 'Christus vincit (avec versets
- * pour le pape, l'évêque et les fidèles)', but its full local 2026 booklet
- * has not been identified. Never assert that the exact names/verses below
- * were sung in Mauritius.
+ * The ICKSP's linked 2009 PDF is a two-page announcement for a planned
+ * updated chant booklet; it is NOT a copy of that booklet, a chant score,
+ * or evidence that this Vatican recension was sung in a particular chapel.
+ * Its full local 2026 booklet has not been identified. Never assert that
+ * the exact names/verses below were sung in Mauritius.
  *
  * This presentation follows the four-section 2012 witness, with a neutral
  * N. in place of the then-reigning pope's personal name. English follows
