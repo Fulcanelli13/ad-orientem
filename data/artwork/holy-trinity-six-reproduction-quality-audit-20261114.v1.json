@@ -1,0 +1,179 @@
+{
+  "schema": "AO_HOLY_TRINITY_SIX_REPRODUCTION_QUALITY_AUDIT_V1",
+  "auditedAt": "2026-11-14",
+  "userSelection": "ALL_SIX_RETAINED_AND_LOCKED_AT_ARTWORK_LEVEL",
+  "selectionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    9
+  ],
+  "purpose": "Curate authentic frameless artwork reproduction for high-fidelity mobile cinematic presentation, independent of aspect ratio.",
+  "constraints": [
+    "PRESERVE_ALL_SIX_WORK_IDENTITIES",
+    "NO_ARTWORK_SUBSTITUTION_BY_SIMILAR_TITLE",
+    "CINEMATIC_PAN_ALLOWED_FOR_WIDE_PAINTINGS",
+    "PREFER_ORIGINAL_INSTITUTIONAL_STRAIGHT_ON_COLOUR_CAPTURE",
+    "NO_GALLERY_WALL_OR_INSTALLATION_PHOTOGRAPHS",
+    "DO_NOT_UPSCALE_LOW_RES_AND_CALL_IT_PRISTINE",
+    "ORIGINAL_FILES_IMMUTABLE_AND_SEPARATE_FROM_WEBP_AVIF_DERIVATIVES",
+    "NO_CONTACT_FEES_OR_LICENSE_PURCHASES",
+    "NO_AUTO_PUBLICATION_OR_PRAYER_SLOT_CHANGES",
+    "ONLY_GITHUB_ACTIONS_AND_PAGES_FOR_FUTURE_RELEASE"
+  ],
+  "localAcquisition": {
+    "originalImageBytesDownloaded": false,
+    "imagePixelChecksPerformed": false,
+    "reason": "Remote JPEG download is blocked from the current workspace; intrinsic byte-level colour/sharpness/crop inspection remains pending.",
+    "sha256ChecksumsComputed": 0,
+    "webOptimizedDerivativesGenerated": 0
+  },
+  "works": [
+    {
+      "number": 1,
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity",
+      "institution": "KMSKA Antwerp",
+      "accession": "314",
+      "preferredMaster": "https://iiif.kmska.be/c/iiif/2/public@28958.tif/full/full/0/default.jpg",
+      "mirrorPage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+      "institutionalRecord": "https://kmska.be/en/masterpiece/the-holy-trinity",
+      "rightsEvidence": "https://vlaamsekunstcollectie.be/en/collectie/314",
+      "rightsAssessment": "INSTITUTIONAL_CC0_IMAGE_DECLARATION",
+      "knownSourcePixels": {
+        "width": 19178,
+        "height": 19721
+      },
+      "knownSourceBytes": 56200164,
+      "knownSizeBasis": "Wikimedia original JPEG file entry, decimal bytes from prior manifest; 53.6 MiB displayed on Commons",
+      "framelessAssessment": "VISUALLY_CLEAN_STRAIGHT_ON_IN_PREVIEW_FULL_RES_DETAIL_UNTESTED",
+      "visualPotential": "EXCELLENT",
+      "action": "PRIORITIZE_ARCHIVAL_MASTER_AND_GENERATE_SEPARATE_RESPONSIVE_DERIVATIVES",
+      "blocker": "JPEG_MASTER_NOT_LOCALLY_FETCHED",
+      "note": "Original size does not represent app payload. Preserve original; generate high-quality 1600/2400/3200 long-edge derivatives after source QA."
+    },
+    {
+      "number": 2,
+      "artist": "Guido Reni",
+      "title": "The Holy Trinity",
+      "institution": "Santissima Trinità dei Pellegrini, Rome",
+      "institutionalRecord": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200145358",
+      "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:La_Trinit%C3%A0_-_Guido_Reni.jpg",
+      "researchLead": "https://factumfoundation.org/our-projects/digitisation/recreations-for-guercino-lera-ludovisi-a-roma/",
+      "rightsAssessment": "PAINTING_PD_UNRELEASED_PROFESSIONAL_PHOTOGRAPH",
+      "knownSourcePixels": {
+        "width": 634,
+        "height": 1193
+      },
+      "knownSourceBytes": 789404,
+      "framelessAssessment": "BOOK_DERIVED_FRONT_ON_COPY_LOW_RESOLUTION",
+      "visualPotential": "LOW_WITH_CURRENT_REUSABLE_FILE",
+      "action": "HOLD_AND_SEARCH_FOR_HIGH_RES_STRAIGHT_ON_REPRODUCTION",
+      "blocker": "NO_SUITABLE_LICENSED_PUBLIC_HIGH_RES_MASTER",
+      "note": "Factum Foundation recorded the exact Roman altarpiece in 2024, but a free usable master has not been established. Large Commons photos include church architecture; Osimo Trinity and copies are different paintings."
+    },
+    {
+      "number": 3,
+      "artist": "Carlo Dolci",
+      "title": "The Trinity in Glory",
+      "institution": "RISD Museum",
+      "accession": "59.009",
+      "institutionalRecord": "https://risdmuseum.org/art-design/collection/trinity-glory-59009",
+      "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:Carlo_Dolci_-_The_Trinity_in_Glory_-_59.009_-_Rhode_Island_School_of_Design_Museum.jpg",
+      "rightsAssessment": "EXPLICIT_RISD_CC0",
+      "knownSourcePixels": {
+        "width": 877,
+        "height": 1024
+      },
+      "knownSourceBytes": 707216,
+      "framelessAssessment": "CLEAN_ART_SURFACE_IN_PREVIEW_LIMITED_PIXEL_DATA",
+      "visualPotential": "GOOD_AS_STATIC_OR_SUBTLE_MOVEMENT",
+      "action": "HOLD_DEEP_ZOOM_UNTIL_MORE_NATIVE_PIXELS_FOUND",
+      "blocker": "NO_CONFIRMED_PUBLIC_HIGHER_RESOLUTION_REPRODUCTION",
+      "note": "Embedded 2006 Hasselblad/Imacon metadata mentions 4080x4080 working capture, but the actual public JPEG is 877x1024; do not mistake EXIF fields for source dimensions. RISD invites photography requests, but no contact or fees are authorised."
+    },
+    {
+      "number": 4,
+      "artist": "Giovanni Battista Tiepolo",
+      "title": "A Vision of the Trinity",
+      "institution": "National Gallery London",
+      "accession": "NG6273",
+      "institutionalRecord": "https://www.nationalgallery.org.uk/paintings/giovanni-battista-tiepolo-a-vision-of-the-trinity",
+      "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_094.jpg",
+      "rightsAssessment": "INDEPENDENT_YORCK_PROJECT_PD_ART_CLAIM_NOT_MUSEUM_CC0",
+      "knownSourcePixels": {
+        "width": 2024,
+        "height": 2623
+      },
+      "knownSourceBytes": 793000,
+      "knownSizeBasis": "Commons rounds displayed size to 793 KB",
+      "framelessAssessment": "FULL_ARTWORK_REPRODUCTION_IN_PREVIEW_NOT_BYTE_INSPECTED",
+      "visualPotential": "MODERATE_FOR_MOBILE",
+      "action": "VISUALLY_TEST_INDEPENDENT_SOURCE_AND_REVIEW_IMAGE_RIGHTS",
+      "blocker": "INDEPENDENT_IMAGE_REUSE_RESTRICTION_AND_DETAIL_NOT_CLEARED",
+      "note": "Preserve London modello NG6273; Munich altarpiece is another physical artwork and is not an automatic substitute. Commons Art UK 635x800 copy is worse."
+    },
+    {
+      "number": 8,
+      "artist": "Albrecht Dürer",
+      "title": "The Adoration of the Holy Trinity",
+      "institution": "Kunsthistorisches Museum Vienna",
+      "accession": "GG 838",
+      "institutionalRecord": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar/_wGp9zTkz0OVqQ",
+      "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
+      "rightsAssessment": "COMMONS_PD_ART_REPRODUCTION_CLAIM_NOT_INSTITUTIONAL_CC0",
+      "knownSourcePixels": {
+        "width": 4969,
+        "height": 5434
+      },
+      "knownSourceBytes": 5931350,
+      "framelessAssessment": "CLEAN_STRAIGHT_ON_PAINTING_REPRODUCTION_IN_PREVIEW",
+      "visualPotential": "EXCELLENT",
+      "action": "PROVISIONALLY_PREFER_GOOGLE_ART_PROJECT_FILE_PENDING_RIGHTS_AND_BYTES",
+      "blocker": "SOURCE_FILE_NOT_DOWNLOADED_AND_RIGHTS_ASSESSMENT_PENDING",
+      "note": "Do not substitute lower-resolution institutional walls or the sculpted original frame. Existing 989 research group HERO::khm:GG-838 remains authoritative."
+    },
+    {
+      "number": 9,
+      "artist": "José Campeche",
+      "title": "The Trinity",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "2025.244",
+      "institutionalRecord": "https://www.metmuseum.org/art/collection/search/917618",
+      "preferredMaster": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/917618/2494779/main-image",
+      "rightsEvidence": "https://www.metmuseum.org/hubs/open-access",
+      "rightsAssessment": "INSTITUTIONAL_MET_OPEN_ACCESS_CC0",
+      "knownSourcePixels": null,
+      "knownSourceBytes": null,
+      "framelessAssessment": "MUSEUM_CAPTURE_SHOWS_PAINTING_WITH_DARK_BOUNDARY_VERIFY_EXACT_TRIM",
+      "visualPotential": "EXCELLENT_IF_PIXEL_COUNT_SUFFICIENT",
+      "action": "PRIORITIZE_MASTER_BYTES_AND_VERIFY_PAINT_BOUNDARY_BEFORE_TRIM",
+      "blocker": "INTRINSIC_FILE_PIXEL_DIMENSIONS_NOT_YET_OBSERVED",
+      "note": "Conserve irregular painted edges. A border of the original wooden panel is not necessarily a photographic frame and must not be blindly removed."
+    }
+  ],
+  "derivativePlan": {
+    "masterOriginal": "Keep full pixel data, untouched",
+    "responsiveLongEdgesPx": [
+      1200,
+      2000,
+      3200
+    ],
+    "highDprFocus": "Use 2400–3200 px long-edge variant for cinematic zoom as required; test zoom range against image's actual usable pixels.",
+    "formats": [
+      "AVIF",
+      "WebP"
+    ],
+    "quality": "Visual metric not an arbitrary byte target; inspect sharpness, brushwork, colour and edge halos at phone DPR 2-3.",
+    "admission": "Per-asset signoff after local bytes/sha256/actual file quality verified.",
+    "noDistortingAspectRatio": true
+  },
+  "publication": {
+    "readyImageAssets": 0,
+    "readyForProduction": false,
+    "sourceOnly": true,
+    "productionRepoUntouched": true
+  }
+}
