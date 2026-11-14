@@ -1,0 +1,506 @@
+{
+  "schema": "AO_SACRED_ART_MANY_TO_MANY_EDITORIAL_CROSSWALK_V1",
+  "as_of": "2026-11-09",
+  "state": "RESEARCH_ONLY_NOT_RUNTIME_NOT_PUBLICATION",
+  "sources": {
+    "prayer": {
+      "path": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+      "branch": "main",
+      "blob_sha": "96f2d9526a84ec9ab56df7183edd0bb2c017ecde"
+    },
+    "subject": {
+      "path": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "branch": "platform/885-sacred-art-candidates",
+      "blob_sha": "67c6b75feb77c958b43c7bbf9430d0569f85640b"
+    },
+    "blocklist": {
+      "path": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+      "branch": "platform/885-sacred-art-candidates",
+      "blob_sha": "33f5fb680164469d96e9c2e2369ea6ab5286e842"
+    },
+    "calendar": {
+      "path": "data/artwork/2026-prior-date-artwork-evidence.v1.json",
+      "branch": "main",
+      "blob_sha": "6aec038ec900ff277b5ca145245cf31bf5accf98"
+    },
+    "claude_v3": {
+      "filename": "Ad_Orientem_Gallery_Assignment_Release_Gates_v3_2026-11-09.json",
+      "uploaded_file_id": "file_00000000ab648208b12bac329168bc94",
+      "schema": "AO_SACRED_ART_ASSIGNMENT_RELEASE_GATES_V3",
+      "date": "2026-11-09",
+      "records": 640
+    }
+  },
+  "policy": [
+    "Treat each artwork-destination relationship as a distinct edge. Multiple works can match each target, and each work can match multiple targets.",
+    "Respect decision precedence: explicit later owner locks > earlier owner placement decisions > accepted alternatives > contextual reuse > Claude proposals > research leads.",
+    "Accepted alternatives do not change the active painting or authorize auto-rotation.",
+    "Prayer and Rosary protected covers/stage behavior remain unchanged. Rosary mystery image stays fixed throughout the decade.",
+    "Subject-based selections never silently become Calendar date or Prayer-slot placements.",
+    "A selected artwork is not a licence or exact photograph release authorization; source, rights, pixel and mobile QA gates remain separate.",
+    "Global rejected IDs are excluded only for the exact original/verified identity. Placement-specific rejection must not globally reject artwork.",
+    "No image acquisition, new app assignments, deployment or Vercel activity."
+  ],
+  "counts": {
+    "claude_targets": 640,
+    "prayer_master_slots": 267,
+    "oct_subjects": 235,
+    "global_rejected_original_ids": 103,
+    "prior_calendar_days": 365,
+    "historical_accepted_option_rows": 507,
+    "HISTORICAL_CURRENT_PRIMARY": 248,
+    "OWNER_ACCEPTED_OPTION": 507,
+    "MISROUTED_SCOPE_EVIDENCE_NOT_PLACEMENT_APPROVAL": 2,
+    "CONTEXTUAL_REUSE_NOT_NEW_OWNER_APPROVAL": 84,
+    "ORIGINAL_USER_KEEP_INHERITED": 11,
+    "HISTORICAL_SUBJECT_SELECTED": 101,
+    "HISTORICAL_DATE_SELECTION_EVIDENCE": 53,
+    "CLAUDE_V3_DISPLAY_RECOMMENDATION": 443,
+    "CLAUDE_V3_ALTERNATIVE_RESEARCH_ONLY": 140,
+    "relationship_edges": 1589,
+    "audit_flags": 194
+  },
+  "shards": [
+    {
+      "kind": "PRAYER_HISTORICAL",
+      "path": "data/artwork/research/m2m-prayer-852-20261109.v1.json",
+      "count": 852,
+      "bytes": 783756
+    },
+    {
+      "kind": "HISTORICAL_CALENDAR_AND_SUBJECT",
+      "path": "data/artwork/research/m2m-calendar-subject-154-20261109.v1.json",
+      "count": 154,
+      "bytes": 123125
+    },
+    {
+      "kind": "CLAUDE_V3_UNCERTIFIED_OVERLAY",
+      "path": "data/artwork/research/m2m-claude-583-20261109.v1.json",
+      "count": 583,
+      "bytes": 564255
+    },
+    {
+      "kind": "DESTINATIONS",
+      "path": "data/artwork/research/m2m-destinations-640-20261109.v1.json",
+      "count": 640,
+      "bytes": 250047
+    },
+    {
+      "kind": "QA_AND_REJECTION_EVIDENCE",
+      "path": "data/artwork/research/m2m-qa-evidence-20261109.v1.json",
+      "count": null,
+      "bytes": 226709
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_AND_HISTORICAL_CONFLICT_BATCH1",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json",
+      "count": 10,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_AND_OBJECT_IDENTITY_BATCH2",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
+      "count": 15,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_AND_OBJECT_IDENTITY_BATCH3",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json",
+      "count": 20,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_FINAL_SEVEN_DIRECT_SCENE_BATCH4",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch4-20261109.v1.json",
+      "count": 7,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "LITURGICAL_THEMATIC_HIGH_RISK_BATCH5",
+      "path": "data/artwork/research/m2m-liturgical-thematic-batch5-20261109.v1.json",
+      "count": 14,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "LITURGICAL_FEAST_BATCH6",
+      "path": "data/artwork/research/m2m-liturgical-batch6-20261109.v1.json",
+      "count": 12,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "LITURGICAL_FEAST_BATCH7",
+      "path": "data/artwork/research/m2m-liturgical-batch7-20261109.v1.json",
+      "count": 15,
+      "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "THEMATIC_SCRIPTURAL_BATCH8",
+      "path": "data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json",
+      "count": 21,
+      "photo_publication": "NOT_AUTHORISED"
+    }
+  ],
+  "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
+  "critical_audit": "See data/artwork/research/m2m-qa-evidence-20261109.v1.json",
+  "deployment": "DO_NOT_IMPORT_OR_PUBLISH",
+  "review_evidence": {
+    "scene_batch1": "data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json",
+    "confirmed_different_scriptural_episodes": 5,
+    "source_supported_correct_episodes_with_remaining_identity_photo_gates": 2,
+    "liturgical_or_object_uncertainty": 3,
+    "globally_rejected_original_with_later_preserved_slots": "cma-122338",
+    "scene_batch2": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
+    "batch2_new_direct_scene_proposals": 15,
+    "cumulative_new_Claude_proposals_source_adjudicated": 114,
+    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 0,
+    "important_batch2_relational_downgrades": [
+      "2026-01-13",
+      "2026-11-22",
+      "2026-12-26"
+    ],
+    "object_identity_exception": "2026-11-30 Michel II Corneille Rennes INV 801.1.24 distinct from Arras painting; 2026-12-27 autograph Luca Giordano Rennes D.1955.3.1 distinct from school-of painting at Voltaggio; 2026-11-03 Boullogne Rennes original distinct from Paris Museums preparatory sketch.",
+    "scene_batch3": "data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json",
+    "remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication": 0,
+    "batch3_provenance_hold": "2026-03-14: Giandomenico Tiepolo MNR 84, currently held by French state in restitution pool; rights/provenance status not cured by artwork approval",
+    "batch3_object_identity_hold": "2026-01-19 Cana attributed Cornelis de Baellieur: not independently verified against physical accession",
+    "scene_batch4": "data/artwork/research/m2m-scene-adjudication-batch4-20261109.v1.json",
+    "direct_scene_batch4_holds": [
+      "2026-04-18 Crucifixion Flémal attribution and exact museum accession unverified",
+      "2026-07-02 Geneva Visitation attributed to Philippe de Champaigne workshop in secondary catalogue, requires institutional credit confirmation",
+      "2026-12-30 Orléans Annibale Carracci Shepherds object referenced in Commons/Wikidata; current institution catalogue not independently verified"
+    ],
+    "liturgical_thematic_batch5": "data/artwork/research/m2m-liturgical-thematic-batch5-20261109.v1.json",
+    "liturgical_thematic_batch5_findings": {
+      "papal_5_keys_matches": "Jan16 Matt16:24–27; Apr22 John15:5–11; Oct14 Matt16:13–19 exact; Nov12 Luke14:26–33; Dec11 conflicting Matthew24:42–47/Matthew16:13–19 across sources",
+      "photographer_artist_misattribution_dates": [
+        "2026-06-26",
+        "2026-10-06",
+        "2026-11-09"
+      ],
+      "jonah_duplicate_catalogue_id_hold": "Lille webpage 976.3.1 circle Bril vs older French Joconde P1904 Paul Bril. Cannot assert same physical work from current evidence.",
+      "guercino_saint_identity_metadata_hold": "French Joconde explicitly labels Paul de Tarse, while work title is martyrs Saints Jean et Paul; exact feast saints identification must be checked.",
+      "another_basilica": "Saint-Sernin Toulouse, not Lateran Rome"
+    },
+    "liturgical_batch6": "data/artwork/research/m2m-liturgical-batch6-20261109.v1.json",
+    "liturgical_batch6_findings": {
+      "2026-01-21": "Wautier KMSKA 599 is a historiated portrait of girls AS Agnes and Dorothea, not saint biography",
+      "2026-01-30": "Granet Cortona oil-on-copper INV107 is not Princeton or Palatina canvas variant",
+      "2026-06-13": "Murillo Gemäldegalerie 414 is recorded probably destroyed in 1945; surviving work must not be claimed",
+      "2026-11-23": "Fungai Strasbourg 453.b; INHA related notice contains erroneous 453.a citation",
+      "2026-11-21": "Baugin Granet main painting distinct from Rennes sketch; noncanonical Marian tradition"
+    },
+    "liturgical_batch7": "data/artwork/research/m2m-liturgical-batch7-20261109.v1.json",
+    "liturgical_batch7_findings": {
+      "2026-02-05": "Zurbarán Saint Agatha is Musée Fabre inv 852.1.3, but Claude URL is detail crop",
+      "2026-06-23": "Moreelse adult John the Baptist iconography does not narrate Zacharias' annunciation in Luke 1",
+      "2026-07-14": "Vaccaro Bonaventure vision supported by secondary Naples guide; exact institutional accession/attribution hold",
+      "2026-07-22": "Guido Reni Walters Art Museum 37.2631; other distinct Reni Magdalenes cannot be collapsed",
+      "2026-08-04": "Coello Saint Dominic confirmed Prado P000662; owner Prado source exclusion binding",
+      "2026-08-10": "Elsheimer NG1014 is preparation for St Lawrence martyrdom; multiple separate copies",
+      "2026-09-08": "Greek-school Marian Nativity icon PPP4898, signed Johannis 1785; traditional feast subject",
+      "2026-09-14": "Bruges 0000.GRO0470.I is anonymous COPY after Edelinck engraving after Le Brun",
+      "2026-10-17": "Giaquinto Sacred Heart saint painting in private collection; WGA reproduction low-res",
+      "2026-10-24": "Le Sueur Grenoble Raphael scene is Tobit 12, not a Gospel miracle",
+      "2026-11-11": "Bourdon 1938 F97 St Martin miracle is reduced replica; older catalogue called it St Gregory Thaumaturgus; RMN photo restricted",
+      "2026-11-13": "Murillo Saint Didacus Toulouse D1846 1 owned Louvre, on long-term loan",
+      "2026-11-18": "Ribera Strasbourg MBA180 depicts Apostles Peter/Paul, not basilica dedication; photo permission required",
+      "2026-11-19": "Pierre attribution Saint Elizabeth Magnin 1938F651 requires primary catalogue confirmation",
+      "2026-11-25": "de Crayer Grenoble 1622 Saint Catherine martyrdom confirmed; independent photograph rights pending"
+    },
+    "remaining_new_Claude_liturgical_proposals_needing_individual_source_adjudication": 0,
+    "remaining_new_Claude_thematic_proposals_needing_individual_source_adjudication": 0,
+    "remaining_new_Claude_scriptural_proposals_needing_individual_source_adjudication": 0,
+    "thematic_scriptural_batch8": "data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json",
+    "thematic_scriptural_batch8_findings": {
+      "2026-03-03": "Lille Jordaens P103 Pharisees includes Matthew5:20 inscription; not certifiable Matthew23 Gospel exact",
+      "2026-03-28": "Rubens Dijon entry scene John12:12–19 within larger appointed reading; Commons photographer not painter",
+      "2026-07-04,2026-11-07": "KMSKA Allori 896 current catalogue gives Alessandro; institutional 2008 annual report says copy after Allori",
+      "2026-07-11,2026-11-28": "Petit Palais Glycophilousa PPP4869 icon contains Luke4:18 scroll, not Luke11:27–28",
+      "2026-06-20,2026-10-31": "Strasbourg Sassoferrato Virgin in Prayer 44.2019.2.11; photo reuse requires phototheque",
+      "2026-12-09,12,15,19,23": "Bruges St John preaching GRO1561 workshop copy after Pieter Elder; Matthew11 and John1 are different episodes; Luke3 topical preaching yes without precise exact-passaged claim",
+      "2026-12-10,14,17,22": "Moreelse John Baptist adult portrait relevant thematically, never exact events from Matthew11/John1/Luke3",
+      "2026-06-27": "van Eyck Madonna with Canon van der Paele GRO0161 donor portrait with Donatian/George, not Luke11 Gospel",
+      "2026-02-14,08-01,09-12": "Nicolas Mignard Virgin Child Marseille WGA attribution; current exact museum accession unverified"
+    },
+    "new_proposals_review_methodology": "All 114 Claude NEW_PROPOSAL edges now have individual editorial source-and-context assessments. This is NOT full certification of artist identity, exact underlying physical object, source photograph, license, mobile crop, or runtime assignment; unresolved holds remain explicit."
+  },
+  "release_gate_evidence": {
+    "status": "RESEARCH_ONLY_ALL_NEW_ASSIGNMENTS_BLOCKED",
+    "edge_manifest": "data/artwork/research/m2m-new-assignment-gate-edges-20261109.v1.json",
+    "destination_manifest": "data/artwork/research/m2m-destination-release-gates-640-20261109.v1.json",
+    "regression": "tests/sacred-art-release-gates-research.test.mjs",
+    "source_relationships": 1589,
+    "source_targets": 640,
+    "owner_accepted_prayer_options_preserved": 507,
+    "relevance_reviewed_new_claude_proposals": 114,
+    "authorised_new_assignments": 0,
+    "missing_id_flagged_preserved_primary_destinations": 46,
+    "missing_artwork_id_across_all_edges": 197,
+    "existing_user_rejection_bouts": {
+      "original_id": "cma-122338",
+      "referenced_edges": 13,
+      "affected_destinations": 5,
+      "novena_alternative_discovered": true,
+      "explicit_owner_reversal_not_established": true
+    },
+    "no_autofill_calendar_destinations": 170,
+    "note": "Manifest exports *no* runtime assignments; the referenced edge and destination queues are editorial and fail closed. Existing live art is not invalidated, replaced or published.",
+    "protected_missing_id_queue": "data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json",
+    "protected_missing_id_triage": {
+      "source_url_leads": 11,
+      "title_artist_only_leads": 6,
+      "no_internal_lead": 29,
+      "verified_canonical_id_links": 0
+    },
+    "exact_url_identity_batch9": "data/artwork/research/m2m-exact-url-identity-batch9-20261109.v1.json",
+    "metadata_difference_batch10": "data/artwork/research/m2m-prayer-metadata-23-batch10-20261109.v1.json",
+    "identity_and_metadata_reconciliation_progress": {
+      "missing_primary_links": 46,
+      "source_url_matching_destination_records": 11,
+      "grouped_source_url_physical_works": 5,
+      "fully_assigned_verified_app_canonical_ids": 0,
+      "metadata_disagreement_flags_adjudicated": 23,
+      "historical_metadata_flags_retained": 23,
+      "confirmed_different_champaigne_visitation_objects_at_prayer_destinations": 2,
+      "source_attribution_correction_targets": [
+        "HERO-10",
+        "HERO-11",
+        "STG-pray.seven_words-06"
+      ],
+      "source_photo_and_mobile_QA_complete": 0,
+      "replacement_assignments_authorised": 0,
+      "title_artist_only_leads_researched": 6,
+      "title_artist_only_distinct_work_groups": 3,
+      "remaining_no_internal_lead_destinations": 29,
+      "external_museum_accessions_are_not_app_ids": true,
+      "all_protected_missing_ids_type_triaged": 46,
+      "source_url_lead_destinations": 11,
+      "title_artist_lead_destinations": 6,
+      "no_internal_lead_destinations_type_triaged": 29,
+      "no_internal_lead_destinations_identity_certified": 0
+    },
+    "title_artist_batch11": "data/artwork/research/m2m-title-artist-leads-6-batch11-20261109.v1.json",
+    "no_internal_leads_batch12": "data/artwork/research/m2m-no-internal-lead-29-batch12-20261109.v1.json",
+    "protected_asset_provenance_batch13": "data/artwork/research/m2m-protected-asset-provenance-batch13-20261109.v1.json",
+    "asset_recovery_29": {
+      "provenance_matched_local_files": 3,
+      "source_mapped_remote_previews": 2,
+      "approved_derived_image_final_files_unlocated": 4,
+      "multi_scene_easter_vigil_composite": 1,
+      "selected_original_asset_unlocated_in_reviewed_sources": 19,
+      "local_archived_san_polo_station_numbers": [
+        13,
+        14
+      ],
+      "user_approved_historic_photo_slot": "COV-novena.st_therese",
+      "new_assignments_authorised": 0,
+      "bouts_legacy_released_registry_conflict": "Bouts cma-122338 is still in src/art/released-module-paintings.v1.js via PR2340; active runtime exposure not tested",
+      "user_library_ai_visual_draft_files_recovered": 2,
+      "approved_ai_derived_originals_remaining_unlocated_across_searched_sources": 0,
+      "library_recovery_does_not_override_prior_repo_only_unlocated_count": true,
+      "bouts_static_gallery_exposure_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/2761",
+      "user_library_ai_original_image_files_located_total": 4,
+      "editorial_preference_conflict_requiring_resolution_dates": [
+        "2026-03-22"
+      ],
+      "final_production_certified_ai_images": 0,
+      "source_boundary_note": "Prior batch14 count of 2 is correct as a 9 Nov interim snapshot, superseded by batch15 after exact-file recovery and fresh SHA-256 computation.",
+      "institutional_source_object_destinations_reviewed_from_other19": 19,
+      "other_original_source_destinations_still_needing_institutional_review": 0,
+      "owner_selected_exact_photo_master_additionally_certified": 0,
+      "version_conflict_2026_04_06": "Caravaggio Supper at Emmaus London NG172 versus Milan Brera 2296; user-picked exact photo source unresolved",
+      "other_original_exact_user_selected_photographs_still_unverified": 19,
+      "artwork_identity_potential_suspect_cases": [
+        {
+          "target": "2026-04-06",
+          "type": "TWO_CARAVAGGIO_AUTOGRAPH_EMMAUS_VERSIONS"
+        },
+        {
+          "target": "2026-06-24",
+          "type": "PRADO_REPRODUCTION_SOURCE_PROHIBITED"
+        },
+        {
+          "target": "2026-03-30",
+          "type": "HERMITAGE_SECONDARY_ONLY"
+        },
+        {
+          "target": "2026-04-07",
+          "type": "HERMITAGE_SECONDARY_ONLY"
+        },
+        {
+          "target": "2026-05-30",
+          "type": "COMMONS_DATE_VS_BIRMINGHAM_DATE_CONFLICT"
+        }
+      ],
+      "latest_selected_ai_asset_file_recovery": {
+        "found_png_files": 4,
+        "verified_sha256": 4,
+        "prior_manifest_hash_matches": 3,
+        "one_new_hash_no_prior_manifest": true,
+        "explicit_or_draft_approval_evidence": 3,
+        "march22_file_specific_approval_pending": 1,
+        "still_unlocated_file_count": 0,
+        "source": "data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json",
+        "note": "Independent four-file hash supplement corroborates earlier original two-image 20 Oct source manifest and concurrent batch15 two-image recovery; no extra image or new publishing approval."
+      },
+      "institutional_object_leads_for_other_nineteen": {
+        "supplemental_subset_source": "data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json",
+        "supplemental_corroboration_rows": 9,
+        "authoritative_existing_object_source_shards": [
+          "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
+          "data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json"
+        ],
+        "total_distinct_destination_records_with_object_leads_or_explicit_source_holds": 19,
+        "remaining_unresearched_object_dispositions": 0,
+        "photo_files_newly_verified": 0,
+        "version_ambiguity_caravaggio_emmaus": true,
+        "maker_uncertainty_figge_good_shepherd": true,
+        "note": "Supplemental nine-record file is a subset corroboration, NOT nine new unique objects. Existing canonical source-research batches16+17 already cover all 19. All 19 selected exact photo masters remain unverified."
+      },
+      "superseded_historical_snapshot_note": "Batch13 and batch14 counts were correct for their earlier search scopes. Batch15 establishes that all four original AI-derived image files are recoverable from the user Library. The files have not been imported or approved for publication.",
+      "exact_historical_prayer_commons_links": {
+        "source_confirmed_current_prayer_edges": 3,
+        "distinct_physical_work_groups": 2,
+        "original_onscreen_selected_file_bytes_rehashed": 0,
+        "photographer_rights_and_mobile_QA_cleared": 0,
+        "notes": "Two St Anthony Prayer destinations share the exact Córdoba DJ0033P Commons source filename; one Molteni Confession destination refers to a separate Cariplo Commons source. Listed image dimensions/SHA1 are Commons metadata, not independently fetched bytes."
+      }
+    },
+    "user_library_derivative_batch14": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json",
+    "ai_source_original_batch15": "data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json",
+    "original19_institutional_batch16": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
+    "original19_institutional_batch17": "data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json",
+    "ai_four_hash_batch15": "data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json",
+    "institutional_object_batch16": "data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json",
+    "exact_commons_source_batch18": "data/artwork/research/m2m-exact-commons-source-metadata-batch18-20261109.v1.json"
+  },
+  "derivedResearchImageSelectionQueue": {
+    "path": "data/artwork/research/m2m-consolidated-image-selection-queue-20261110.v1.json",
+    "guide": "data/artwork/research/README-image-selection-queue-20261110.md",
+    "test": "tests/sacred-art-consolidated-image-selection-queue-research.test.mjs",
+    "asOf": "2026-11-10",
+    "originalResearchEdges": 198,
+    "originalResearchArtworkKeys": 151,
+    "outsideEdgePoolAdditionalArtworks": 4,
+    "totalReviewKeys": 156,
+    "originalGapDatesPreserved": 170,
+    "distinctPriorityOilArtworksAudited": 68,
+    "originalNonPriorityKeysWithOilMediumEdge": 9,
+    "exactMuseumPhotographsHashed": 10,
+    "historicalOwnerArtworkDecisionsOverridden": 0,
+    "newDateApprovals": 0,
+    "productionImagesImported": 0,
+    "scope": "Derived research/selection surface only, outside historical 1589-edge owner-decision counts; excludes prior 195 date assets and Prayer-gallery completeness from its own census",
+    "verifiedOriginal198EdgePoolPhotographs": 8,
+    "openColourBatch2Manifest": "data/artwork/research/m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json",
+    "openColourBatch2Verification": "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
+    "openColourBatch2Results": {
+      "attempted": 3,
+      "verified": 1,
+      "blockedHttp403": 2,
+      "technicalImagePassButMobileHeroHold": 1
+    },
+    "unverifiedPhotoSearchLane": 0,
+    "currentRestrictedMuseumPhotoSearchLane": 49,
+    "newInstitutionPolicyHolds10November2026": 9,
+    "currentMSKAndKrakowBatch3Manifest": "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
+    "currentMSKAndKrakowBatch3Workflow": ".github/workflows/sacred-art-msk-mnk-batch3-research.yml",
+    "specialPolicyQualification": "MSK full-front IIIF specifies Public Domain Mark and credits Cedric Verhelst; photo bytes still pending. No commercial publication without source-specific terms and owner approval.",
+    "newICCDPhotoPolicyHolds10November2026": 27,
+    "totalNewInstitutionPhotoPolicyHolds10November2026": 36,
+    "iccdOfficialTerms": "https://www.catalogo.beniculturali.it/termini-uso",
+    "iccdRightsFinding": "CC BY 4.0 catalogue metadata does NOT cover photos; photo reproduction needs institution-specific authorization and can involve charges. Distinct open-photographed exact artwork sources are still researchable.",
+    "batch3InitialRun": {
+      "runId": 42821076217,
+      "attempted": 3,
+      "acquired": 0,
+      "status": "OLDER_SCRIPT_MSGBENT_IIIF_PARSER_FAILED_MNK_NO_PAGE_IMAGE",
+      "correctedRetryPending": false
+    },
+    "nationalmuseumMediaPortalSource": "https://media.nationalmuseum.se/search/all",
+    "nationalmuseumMediaPortalUnmatchedObjectCount": 2,
+    "mskGhentVerifiedImage": "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
+    "mskGhentVerification": {
+      "workKey": "MSKGent:S-43",
+      "pixels": [
+        2000,
+        3887
+      ],
+      "sha256": "b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b",
+      "sourceAcquired": true,
+      "rightsForMonetisedAppApproved": false,
+      "visualDiagonalLineHold": true,
+      "ownerDateSelectionApproved": false
+    },
+    "batch3CorrectedRun": {
+      "runId": 42821674233,
+      "verifiedSources": 1,
+      "krakowSourceMisses": 2,
+      "publicRelease": 0
+    },
+    "clientRenderedMuseumPortalHolds": 4,
+    "clientRenderedPortalReport": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+    "portalStaticDiscoveryRun": {
+      "id": 42837900450,
+      "completed": true,
+      "artifactId": 13773124665,
+      "recordsInvestigated": 4,
+      "downloadableUrlsIdentified": 0,
+      "originalSourcePhotoBytesAcquired": 0
+    },
+    "mnkJohnCantiusSubject": "Broken-milk-jug miracle directly depicted; source-specific photo still pending",
+    "mnkStanislausSubject": "Excommunication of King Bolesław depicted, NOT saint's martyrdom; keep distinct",
+    "directObjectRecordsWithoutImageFile": 2,
+    "originalPhotoRightsOrAttributionUnresolved": 2,
+    "eightPriorityOilSourceClosure": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+    "eightPriorityOilSourceClosureCounts": {
+      "reviewed": 8,
+      "officialPhotoRestrictive": 4,
+      "objectRecordNoPhoto": 2,
+      "sourceRightsOrAttributionNotResolved": 2,
+      "newHashVerified": 0
+    },
+    "nextAcquisitionPriority": "IDENTIFY_INDEPENDENTLY_OPEN_INSTITUTIONAL_EQUIVALENTS_AND_NEW_NONREJECTED_ICONOGRAPHIC_ALTERNATIVES",
+    "directSourcePhotoSearchEndState": "EXHAUSTED_OR_RIGHTS_HELD_DO_NOT_REPEAT",
+    "newOpenMuseumAlternativeResearch": {
+      "manifest": "data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json",
+      "workflow": ".github/workflows/sacred-art-cc0-museum-alternatives-batch4.yml",
+      "expectedTargetSubjects": 8,
+      "providers": [
+        "CMA",
+        "AIC",
+        "MET"
+      ],
+      "queries": 24,
+      "ownerApprovalAuthority": "NONE_METADATA_ONLY"
+    },
+    "metWenceslasAlternateObjectResearch": {
+      "accession": "44.147.2",
+      "objectId": 437005,
+      "manifest": "data/artwork/research/m2m-met-437005-wenceslas-alternative-20261110.v1.json",
+      "photoVerification": "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json",
+      "sourceWorkflowRunId": 42855525191,
+      "verifiedPhotoSha256": "468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608",
+      "originalWorkRetained": "Olomouc:Skreta-WenceslasCycle",
+      "duplicateOfOriginalPainting": false,
+      "paintedScene": "BURIAL_DIFFERENT_FROM_EUCHARISTIC_PREPARATION",
+      "ownerSelection": false,
+      "notYetCheckedAgainstHistoricallyRejectedIDs": true
+    },
+    "twoDistinctOutsideEdgePoolAlternatives": [
+      "Pinakothek:909",
+      "Met:437005"
+    ],
+    "cc0MuseumSearchBatch4": {
+      "providerSearchRunId": 42855524422,
+      "manifest": "data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json",
+      "screening": "data/artwork/research/m2m-cc0-batch4-exact-iconographic-screening-20261110.v1.json",
+      "apiRequests": 85,
+      "rawPaintingHits": 35,
+      "wrongSubject": 33,
+      "provisionalSaintRelatedCandidates": 2,
+      "acquiredExternalMetPhotoCount": 1,
+      "ownerApprovedDatePlacements": 0
+    }
+  }
+}

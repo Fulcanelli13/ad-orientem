@@ -1,0 +1,155 @@
+{
+  "schema": "AO_SACRED_ART_CC0_BATCH4_ICONOGRAPHIC_SCREENING_V1",
+  "asOf": "2026-11-10",
+  "status": "35_RAW_ARTWORK_HITS_SCREENED_33_NOT_TARGET_2_EDITORIAL_ALTERNATIVES_ZERO_APPROVALS",
+  "sourceWorkflowRunId": 42855524422,
+  "sourceArtifactId": 13783190565,
+  "sourceArtifactName": "sacred-art-cc0-alternatives-eight-targets",
+  "sourceQueries": 24,
+  "sourceApiRequests": 85,
+  "sourceApiErrors": 0,
+  "sourceReportSchema": "AO_SACRED_ART_CC0_MUSEUM_ALTERNATIVES_PROVISIONAL_V1",
+  "selectionRule": "Positive matches require title/depicted saint or exact Gospel episode corroboration, not any words in artist names. Exclude irrelevant saints, apostle Andrew vs Andrew Avellino, blind vs deaf/mute healing, unrelated Jean-Baptiste artists, and user-excluded Fra Angelico. A legitimate same-saint alternate still requires stylistic, photo and owner approval gates.",
+  "perTarget": [
+    {
+      "originalKey": "Holburne:A17",
+      "rawCount": 4,
+      "irrelevantAicIds": [
+        11575,
+        15486,
+        70008,
+        22862
+      ],
+      "exactMatches": [],
+      "reason": "The saint Andrew among hits is the Apostle or unrelated modern individuals, not Andrew Avellino"
+    },
+    {
+      "originalKey": "IAPH:67609",
+      "rawCount": 10,
+      "irrelevantAicIds": [
+        110879,
+        111442,
+        40599,
+        866,
+        26650,
+        31816,
+        10281,
+        129756,
+        21445
+      ],
+      "irrelevantMetIds": [
+        14356
+      ],
+      "exactMatches": [],
+      "reason": "Mary, Anthony, saint, and artist-name coincidences; AIC:129756 is Fra Angelico and globally excluded by aesthetic rule, not Claret"
+    },
+    {
+      "originalKey": "Lombardia:C0150-00107",
+      "rawCount": 0,
+      "exactMatches": [],
+      "reason": "No painting/photo-linked institutional API results"
+    },
+    {
+      "originalKey": "LvivNationalGallery:Ж-1791",
+      "rawCount": 0,
+      "exactMatches": [],
+      "reason": "No painting/photo-linked institutional API results"
+    },
+    {
+      "originalKey": "Olomouc:Skreta-WenceslasCycle",
+      "rawCount": 4,
+      "irrelevantAicIds": [
+        25740,
+        27310,
+        100342
+      ],
+      "exactMatches": [
+        {
+          "source": "MET",
+          "id": 437005,
+          "title": "The Burial of Saint Wenceslas",
+          "artist": "Master of Eggenburg",
+          "medium": "Oil and gold on spruce",
+          "fidelity": "EXACT_SAINT_DIFFERENT_NARRATIVE",
+          "aesthetic": "MEDIEVAL_NOT_PREFERRED_BAROQUE",
+          "newSourcePhotoHashVerified": true
+        }
+      ],
+      "reason": "AIC hits concern unrelated saints and Rubens artworks; Met 437005 is exact Wenceslas but burial, not Eucharistic work"
+    },
+    {
+      "originalKey": "POP:PM51000939",
+      "rawCount": 7,
+      "irrelevantAicIds": [
+        886,
+        81512,
+        885,
+        94126,
+        887,
+        17161,
+        111418
+      ],
+      "exactMatches": [],
+      "reason": "False positive French artist forename Jean-Baptiste, no Saint John Baptist de La Salle"
+    },
+    {
+      "originalKey": "Thoma:AthanasiusOfAlexandria",
+      "rawCount": 6,
+      "irrelevantAicIds": [
+        11,
+        27992,
+        9,
+        20684,
+        28560
+      ],
+      "exactMatches": [
+        {
+          "source": "AIC",
+          "id": 111444,
+          "title": "Retable of Saints Athanasius, Blaise, and Agatha",
+          "artist": "Master of Riglos",
+          "medium": "Tempera on panel",
+          "fidelity": "EXACT_SAINT_PART_OF_LARGE_MULTI_SCENE_RETABLE",
+          "aesthetic": "LATE_GOTHIC_NOT_BAROQUE",
+          "newSourcePhotoHashVerified": false
+        }
+      ],
+      "reason": "Athanasius named in retable, but not a standalone saint portrait, image subject is small and work is not an oil painting"
+    },
+    {
+      "originalKey": "UMMA:1960/2.93",
+      "rawCount": 4,
+      "irrelevantAicIds": [
+        226550,
+        10509
+      ],
+      "irrelevantMetIds": [
+        10371,
+        471846
+      ],
+      "exactMatches": [],
+      "reason": "Healing of Venus/Aeneas, True Cross, blind man/Lazarus and secular works are NOT Mark 7 deaf/mute miracle"
+    }
+  ],
+  "total": {
+    "originalTargets": 8,
+    "rawProviderArtworks": 35,
+    "uniqueProviderArtworks": 35,
+    "screenedWrongSubject": 33,
+    "retainedForSeparateEditorialResearch": 2,
+    "retainedDistinctExactSaintWenceslasBurial": 1,
+    "retainedMultiSaintAthanasiusTempera": 1,
+    "verifiedNewOfficialSourceJpegs": 1,
+    "sourceBytesDownloadedByBatch4Search": 0,
+    "sourceBytesDownloadedBySeparateMetJob": 1,
+    "ownerApprovedDatePlacements": 0,
+    "publicArtworkReleases": 0
+  },
+  "specialNotes": [
+    "Met 437005 distinct from Olomouc Škréta work; source JPEG via separate Met workflow, not API search metadata job. Portrait central burial narrative, different devotional theme.",
+    "AIC 111444 is a wide/tall multi-scene Gothic altarpiece with St Athanasius among other subjects; source image/scene detail and suitability have NOT been acquired or approved.",
+    "Do not count 35 fuzzy name matches as 35 legitimate saints, Gospel matches, or release-ready CC0 images.",
+    "Do not automatically swap in Fra Angelico, print/engraving, saint Anthony Abbot, Blind Man, Saint John the Baptist, or secular portraits.",
+    "Keep original 151 research artwork keys and historical 198 relationships untouched; all new work remains a separate provisional alternative."
+  ]
+}

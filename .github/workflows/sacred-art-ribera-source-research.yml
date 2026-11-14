@@ -1,0 +1,48 @@
+name: Sacred Art Pinakothek Ribera research photograph
+
+# Exact first-party catalogue download, no app asset import.
+on:
+  pull_request:
+    paths:
+      - 'scripts/sacred-art-fetch-pinakothek909-research.py'
+      - 'data/artwork/research/m2m-st-peter-alcantara-ribera-alternative-20261110.v1.json'
+      - 'tests/sacred-art-ribera-alcantara-alternative-research.test.mjs'
+      - 'tests/sacred-art-ribera-alcantara-source-verified-research.test.mjs'
+      - 'data/artwork/research/m2m-ribera-alcantara-pinakothek909-verified-native-photo-20261110.v1.json'
+      - '.github/workflows/sacred-art-ribera-source-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-ribera-image-source:
+    name: inspect first-party Ribera source and preserve release hold
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout research PR
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Verify alternative remains unapproved
+        run: node tests/sacred-art-ribera-alcantara-alternative-research.test.mjs
+      - name: Guard verified photo checksum, licence and original selection
+        run: node tests/sacred-art-ribera-alcantara-source-verified-research.test.mjs
+      - name: Download and test museum-linked colour image
+        run: |
+          python scripts/sacred-art-fetch-pinakothek909-research.py \
+            --ledger data/artwork/research/m2m-st-peter-alcantara-ribera-alternative-20261110.v1.json \
+            --output research-pinakothek909
+      - name: Save temporary original and QA report for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-ribera-alcantara-research-only
+          path: research-pinakothek909/
+          retention-days: 7
+          if-no-files-found: warn

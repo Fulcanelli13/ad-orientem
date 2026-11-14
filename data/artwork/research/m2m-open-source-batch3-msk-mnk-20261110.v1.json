@@ -1,0 +1,168 @@
+{
+  "schema": "AO_SACRED_ART_EXACT_MUSEUM_SOURCE_BATCH3_V1",
+  "asOf": "2026-11-10",
+  "status": "SECOND_RUN_ONE_MSK_IMAGE_VERIFIED_TWO_KRAKOW_OBJECT_IMAGE_LINKS_UNRESOLVED",
+  "purpose": "Acquire exact institutional image files only where public-domain original/source rights allow a research copy; do not assume commercial rights from object metadata",
+  "candidates": [
+    {
+      "workKey": "MSKGent:S-43",
+      "reviewDate": "2026-01-23",
+      "title": "Saint Raymund of Pennafort Venerating the Child",
+      "artist": "Luigi Primo",
+      "sourceObject": "https://www.mskgent.be/en/collection/s-43",
+      "sourceManifest": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json",
+      "sourceMethod": "MSK_GHENT_IIIF_MANIFEST_CANVAS_SERVICE",
+      "rightsEvidence": "https://www.mskgent.be/en/collection/image-rights",
+      "objectRightsMark": "PUBLIC_DOMAIN",
+      "photoReuseDisposition": "ONLINE_OFFERED_RESOLUTION_REUSE_PERMITTED_HIRES_COMMERCIAL_NEEDS_OBJECT_SPECIFIC_ART_IN_FLANDERS_CHECK",
+      "acceptableWidthForResearch": 1170,
+      "maxTargetWidth": 2000,
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false,
+      "iiifManifestConfirmed": {
+        "manifestUrl": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json",
+        "manifestRights": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "canvasWidth": 5347,
+        "canvasHeight": 10391,
+        "photographer": "Cedric Verhelst",
+        "imageServiceId": "https://imagehub.mskgent.be/iiif/2/public%2F6344.tif",
+        "officialPhotoUrlAtResearchSize": "https://imagehub.mskgent.be/iiif/2/public%2F6344.tif/full/2000,/0/default.jpg",
+        "sourceServiceDeclaredAs": "ImageService2 in IIIF Presentation 3 Manifest",
+        "sourcePhotoCredits": "Museum of Fine Arts Ghent; photographer Cedric Verhelst",
+        "rightsQualification": "Public Domain Mark is an institutional public-domain designation, not a Creative Commons image licence grant. MSK collection rules separately permit reuse of online displayed resolutions. Exact digital-app/commercial attribution must be retained; high-res master remains separately handled by Art in Flanders.",
+        "sourceEvidence": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json"
+      },
+      "sourceRights": "PUBLIC_DOMAIN_MARK_MANIFEST_AND_ONLINE_COLLECTION_REUSE",
+      "originalPhotoDownloaded": true,
+      "firstAttempt": {
+        "runId": 42821076217,
+        "artifactId": 13767802775,
+        "status": "NOT_ACQUIRED",
+        "code": "IIIF_SERVICE_PARSER_DID_NOT_FIND_UNIQUE_ID",
+        "reason": "Initial batch3 runner on older script did not resolve ImageService2. The exact S-43 service had already been pinned; latest script uses that exact service with a manifest identity check.",
+        "state": "RETRY_ON_CORRECTED_SCRIPT_QUEUED"
+      },
+      "verifiedOriginal": "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
+      "sourcePhotoSha256": "b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b",
+      "verifiedOriginalPixels": [
+        2000,
+        3887
+      ],
+      "lastRunStatus": "IMAGE_BYTES_ACQUIRED_AND_INDEPENDENTLY_CHECKSUM_VERIFIED_RELEASE_HELD"
+    },
+    {
+      "workKey": "MNK:II-a-448",
+      "reviewDate": "2026-10-20",
+      "title": "The Miracle of Saint John Cantius",
+      "artist": "Tadeusz Kuntze-Konicz",
+      "sourceObject": "https://zbiory.mnk.pl/en/search-result/catalog/377412?phrase=jan%2520kanty",
+      "sourceMethod": "MNK_OBJECT_HTML_EXACT_PHOTO_METADATA_ONLY",
+      "rightsEvidence": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+      "objectRightsMark": "PUBLIC_DOMAIN_ON_CATALOGUE",
+      "photoReuseDisposition": "MUSEUM_OFFERS_SELF_DOWNLOAD_OF_EXISTING_DIGITAL_IMAGES_WITH_SCOPE_CONDITIONS_IMAGE_SPECIFIC_FILE_PENDING",
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false,
+      "firstAttempt": {
+        "runId": 42821076217,
+        "artifactId": 13767802775,
+        "status": "NOT_ACQUIRED",
+        "code": "NO_EXACT_OBJECT_OG_IMAGE",
+        "reason": "Museum object page returned HTML without a distinct object-linked og:image or twitter:image; no direct JPEG URL established.",
+        "state": "HOLD_IMAGE_IDENTIFIER_DISCOVERY"
+      },
+      "lastRunStatus": "UNRESOLVED_OBJECT_IMAGE_METADATA_NO_BYTES_ACQUIRED",
+      "originalPhotoDownloaded": false
+    },
+    {
+      "workKey": "MNK:II-a-9",
+      "reviewDate": "2026-05-07",
+      "title": "Saint Stanislaus and King Bolesław",
+      "artist": "Juliusz Knoor",
+      "sourceObject": "https://zbiory.mnk.pl/pl/katalog/271512",
+      "sourceMethod": "MNK_OBJECT_HTML_EXACT_PHOTO_METADATA_ONLY",
+      "rightsEvidence": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+      "objectRightsMark": "PUBLIC_DOMAIN_ON_CATALOGUE",
+      "photoReuseDisposition": "MUSEUM_SELF_DOWNLOAD_DESCRIBED_BUT_EXACT_IMAGE_FILE_AND_SCENE_ACTION_UNVERIFIED",
+      "sceneHold": "Alternative institutional titles conflate a curse, murder and martyrdom episode; require visual adjudication",
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false,
+      "firstAttempt": {
+        "runId": 42821076217,
+        "artifactId": 13767802775,
+        "status": "NOT_ACQUIRED",
+        "code": "NO_EXACT_OBJECT_OG_IMAGE",
+        "reason": "Museum object page returned HTML without a distinct object-linked og:image or twitter:image; no direct JPEG URL established.",
+        "state": "HOLD_IMAGE_IDENTIFIER_DISCOVERY"
+      },
+      "lastRunStatus": "UNRESOLVED_OBJECT_IMAGE_METADATA_NO_BYTES_ACQUIRED",
+      "originalPhotoDownloaded": false
+    }
+  ],
+  "policyHolds": [
+    {
+      "workKeys": [
+        "Louvre:INV20459",
+        "Louvre:INV20573",
+        "Louvre:INV259",
+        "Louvre:MI888",
+        "Louvre:RF1966.1",
+        "Louvre:RF1983.56"
+      ],
+      "source": "https://collections.louvre.fr/en/page/cgu",
+      "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+      "note": "May research different independently open photo, but not Louvre official photo commercial use."
+    },
+    {
+      "workKeys": [
+        "Cincinnati:1917.58"
+      ],
+      "source": "https://www.cincinnatiartmuseum.org/about/contact-us/photography-licensing-social-media-policies/",
+      "disposition": "BRIDGEMAN_IMAGE_LICENSING_REQUIRES_REQUEST_HOLD"
+    },
+    {
+      "workKeys": [
+        "Timken:1957:002"
+      ],
+      "source": "https://www.timkenmuseum.org/static/media/uploads/Resources%20/rights_reproduction_policy_timken_museum_of_art.pdf",
+      "disposition": "MUSEUM_WRITTEN_PERMISSION_AND_USAGE_FEE_REQUIRED_HOLD"
+    },
+    {
+      "workKeys": [
+        "KHM:GG52"
+      ],
+      "source": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+      "disposition": "KHM_MUSEUM_IMAGE_REPRODUCTION_RIGHTS_NOT_OPEN_HOLD"
+    }
+  ],
+  "policies": [
+    "User policy no fees, no correspondence, no Prado photograph, no Vercel",
+    "First-party object and photo byte identity must be distinguishable from artwork and object rights",
+    "Do not automatically promote Wikimedia Commons imagery",
+    "No production gallery assets, no owner date approval, no image assignment changes",
+    "If first-party source is inaccessible or ambiguous, record failure without inventing source URLs",
+    "Authenticated / account-required portals not bypassed"
+  ],
+  "counts": {
+    "batchKeys": 3,
+    "independentPolicyHeldInstitutionalWorks": 9,
+    "sourcePhotosAcquired": 1,
+    "newUserApprovals": 0,
+    "newPublicReleases": 0,
+    "lastExaminedAttempted": 3,
+    "lastExaminedVerified": 1,
+    "totalIndependentlyVerifiedPhotoCorpus": 9
+  },
+  "latestRun": {
+    "runId": 42821674233,
+    "artifactId": 13769685012,
+    "originallyDownloaded": 1,
+    "unretrievedKrakow": 2,
+    "technicalPhotoPass": 1,
+    "ownerPhotoApproval": 0,
+    "appRightsFinalApproval": 0,
+    "publicReleases": 0
+  }
+}

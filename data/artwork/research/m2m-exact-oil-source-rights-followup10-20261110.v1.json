@@ -1,0 +1,236 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_RIGHTS_FOLLOWUP10_V1",
+  "asOf": "2026-11-10",
+  "status": "OBJECT_CATALOGUE_CONFIRMED_PHOTOS_HELD",
+  "relationshipPool": "79 direct-subject oil relationships / 68 research work keys, first 18 already separately audited",
+  "scope": "Ten ADDITIONAL unique work keys; no files fetched or app assets changed",
+  "totals": {
+    "newUniqueOilWorkKeysAudited": 10,
+    "priorUniqueOilWorkKeysAudited": 18,
+    "cumulativeUniqueOilWorkKeysAudited": 28,
+    "totalDistinctOilWorkKeys": 68,
+    "remainingOilWorkKeys": 40,
+    "openImageFilesSelected": 0,
+    "artworkPhotoSHA256Verified": 0,
+    "newOwnerPlacementsApproved": 0,
+    "publicPhotosReleased": 0
+  },
+  "rightsRiskCounts": {
+    "sourceNoncommercialRestricted": 1,
+    "publicDomainObjectPageButPhotoUnverified": 2,
+    "photoPermissionOrSourceUnverified": 7
+  },
+  "rules": [
+    "Only individual museum artwork identity and source access were checked; no original image bytes or mobile crop inspected",
+    "Thyssen selected image unusable commercially absent independently open image source; do not request paid rights",
+    "Public-domain artwork or metadata-labelled CC BY does not automatically license all photographs",
+    "Preserve historical author attribution nuances and two distinct Vaccaro works",
+    "Don't replace owner selections or grant new Calendar date assignment authority"
+  ],
+  "records": [
+    {
+      "workKey": "Timken:1957:002",
+      "calendarDates": [
+        "2026-02-08",
+        "2026-02-13"
+      ],
+      "title": "Parable of the Sower",
+      "artist": "Pieter Bruegel the Elder",
+      "catalogueUrl": "https://www.timkenmuseum.org/art/parable-of-the-sower",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "MUSEUM_IMAGE_POLICY_NOT_VERIFIED",
+      "objectNotes": "Timken original, accession 1957:002, 1557 oil panel; appointed Sexagesima Gospel sower",
+      "photoQAHold": "Museum record validates artwork and media but not a specific openly licensed image",
+      "priority": "P1_FIND_ORIGINAL_OPEN_REPRO",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "UMMA:1960/2.93",
+      "calendarDates": [
+        "2026-08-09",
+        "2026-08-11",
+        "2026-08-13"
+      ],
+      "title": "Christ Healing the Deaf-Mute",
+      "artist": "Philippe de Champaigne",
+      "catalogueUrl": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "MUSEUM_IMAGE_POLICY_NOT_VERIFIED",
+      "objectNotes": "UMMA accession 1960/2.93: exact Mark 7 scene, oil canvas; artist is user's preferred Champaigne",
+      "photoQAHold": "Original selected museum photo and mobile actor scale not verified",
+      "priority": "P1_FIND_ORIGINAL_OPEN_REPRO",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Thyssen:1979.62",
+      "calendarDates": [
+        "2026-11-08"
+      ],
+      "title": "The Parable of the Weeds",
+      "artist": "Domenico Fetti",
+      "catalogueUrl": "https://www.museothyssen.org/en/collection/artists/fetti-domenico/parable-weeds",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "THYSSEN_OFFICIAL_PHOTO_PRIVATE_NONCOMMERCIAL_ONLY",
+      "objectNotes": "Original Thyssen 1979.62, Fetti autograph, c.1622 oil panel; curator distinguishes copies/prototype",
+      "photoQAHold": "Do not use Thyssen photo in potentially monetised app; seek institutional CC0 alternative or retain hold, no contacting or fees",
+      "priority": "P0_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Nationalmuseum:NM420",
+      "calendarDates": [
+        "2026-02-01",
+        "2026-02-03"
+      ],
+      "title": "Parable of the Labourers in the Vineyard",
+      "artist": "Attributed to David III Ryckaert",
+      "catalogueUrl": "https://collection.nationalmuseum.se/en/collection/item/17423/",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "MUSEUM_PAGE_PUBLIC_DOMAIN_LABEL_EXACT_BYTES_NOT_VERIFIED",
+      "objectNotes": "Swedish Nationalmuseum NM420, oil canvas, workers paid equal wages Matthew 20:1–16. Museum prose also mistakenly references different tenants parable John?/Matthew21; do not import that error",
+      "photoQAHold": "Need exact photo download and copyright/attribution metadata for chosen source bytes; do not reuse as wicked tenants",
+      "priority": "P1_RESOLVE_PHOTO_ID",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Nationalmuseum:NM1134",
+      "calendarDates": [
+        "2026-02-01"
+      ],
+      "title": "Parable of the Labourers in the Vineyard",
+      "artist": "Marten de Vos",
+      "catalogueUrl": "https://collection.nationalmuseum.se/en/collection/item/18137/",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "MUSEUM_PAGE_PUBLIC_DOMAIN_LABEL_EXACT_BYTES_NOT_VERIFIED",
+      "objectNotes": "Swedish Nationalmuseum NM1134, distinct oil on wooden panel, NOT same painting as NM420",
+      "photoQAHold": "Choose source image separately and inspect license and pixel dimensions",
+      "priority": "P1_RESOLVE_PHOTO_ID",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Louvre:INV259",
+      "calendarDates": [
+        "2026-04-21"
+      ],
+      "title": "Immaculate Conception with Saints Anselm and Martin",
+      "artist": "Giuseppe Maria Crespi",
+      "catalogueUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "OBJECT_RECORD_NO_VERIFIED_PHOTO_REUSE",
+      "objectNotes": "Louvre INV259 oil canvas 1730–37, St Anselm identified in group; Louvre reports Napoleonic seizure from Piacenza in 1803",
+      "photoQAHold": "Historical ownership/provenance object description distinct from photograph licence; no fees/permissions sought",
+      "priority": "P1_OPEN_PHOTO_REQUIRED",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1500657386",
+      "calendarDates": [
+        "2026-06-25"
+      ],
+      "title": "St William of Vercelli and the Wolf",
+      "artist": "Domenico Antonio Vaccaro",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500657386",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "CC_BY_4_METADATA_ONLY_PHOTO_NOT_VERIFIED",
+      "objectNotes": "Montevergine no.52, 1735 oil canvas; wolf carries building materials to make amends for killing the saint's donkey. Alternative attribution Andrea Vaccaro recorded, but not chosen as autograph without further work",
+      "photoQAHold": "High-value narrative Baroque, unknown reusable image file; refuse inference from metadata CC BY4",
+      "priority": "P1_OPEN_PHOTO_REQUIRED",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1500657385",
+      "calendarDates": [
+        "2026-06-25"
+      ],
+      "title": "Miracle of Gualtiero through St William of Vercelli",
+      "artist": "Domenico Antonio Vaccaro",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500657385",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "CC_BY_4_METADATA_ONLY_PHOTO_NOT_VERIFIED",
+      "objectNotes": "Montevergine no.51, distinct 1735 oil canvas of healing Gualtiero's arm; national catalogue mentions older Andrea Vaccaro attribution",
+      "photoQAHold": "Not same painting as wolf; license on national CATALOGUE METADATA only, photo still held",
+      "priority": "P1_OPEN_PHOTO_REQUIRED",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1000025129",
+      "calendarDates": [
+        "2026-05-16"
+      ],
+      "title": "Saint Ubaldus and Frederick Barbarossa",
+      "artist": "Ciro Ferri",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1000025129",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "CC_BY_4_METADATA_ONLY_PHOTO_NOT_VERIFIED",
+      "objectNotes": "Original 1683 oil canvas, Madonna del Prato, 324×205cm; catalogue notes a 1700 date claim conflicts with Ciro Ferri death in 1683",
+      "photoQAHold": "Preserve attribution/dating inconsistency, no selected source photo clearance",
+      "priority": "P1_OPEN_PHOTO_REQUIRED",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1200962402",
+      "calendarDates": [
+        "2026-08-07"
+      ],
+      "title": "Saint Cajetan Writing the Theatine Rule",
+      "artist": "Lazzaro Baldi",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200962402",
+      "objectIdentity": "INSTITUTIONAL_CATALOGUE_SOURCE_CORROBORATED",
+      "photoRightsStatus": "CC_BY_4_METADATA_ONLY_PHOTO_NOT_VERIFIED",
+      "objectNotes": "Galleria Spada inv.42, 1690–98 oil canvas; exact saint and Theatine historical event",
+      "photoQAHold": "No selected image license or mobile QA, do not infer rights from metadata notice",
+      "priority": "P1_OPEN_PHOTO_REQUIRED",
+      "selectedFileUrl": null,
+      "selectedFileSHA256": null,
+      "sourcePixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    }
+  ]
+}

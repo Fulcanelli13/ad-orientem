@@ -1,0 +1,318 @@
+{
+  "schema": "AO_SACRED_ART_SCENE_ADJUDICATION_BATCH1_20261109_V1",
+  "as_of": "2026-11-09",
+  "state": "INDEPENDENT_CATALOGUE_CROSSCHECK_ONLY_NO_APP_WRITES",
+  "scope": "10 Claude Calendar associations plus single historic Bouts conflict affecting four Prayer placements",
+  "definitions": {
+    "PROVEN_DIFFERENT_EPISODE": "An identified physical work depicts another narrative episode than the appointed Gospel",
+    "EXACT_PASSAGE_SUPPORTED_BY_COLLECTION_CATALOGUE": "Physical-artwork family/after-print cataloguing explicitly associates correct Scripture passage; still verify exact version and photo",
+    "CORE_SCENE_SUPPORTED_PETER_DETAIL_UNVERIFIED": "Broad scene identified; particular figures/narrative variant not established",
+    "MIRACULOUS_CATCH_OBJECT_VERIFIED_PERICOPE_UNRESOLVED": "Physical artwork known but Luke 5 vs John 21 not documented",
+    "LITURGICAL_ANTICIPATION_NOT_DIRECT_PERICOPE": "Appropriate to feast/vigil, not the appointed Gospel"
+  },
+  "rules": [
+    "NO_AUTOMATIC_ASSIGNMENTS_OR_REPLACEMENT",
+    "RETAIN_OWNER_APPROVED_WORKS_IN_GALLERY",
+    "BIBLICAL_SCENE_IDENTITY_SEPARATE_FROM_RELEVANCE",
+    "RIGHTS_OF_ACTUAL_REPRODUCTION_INDEPENDENT_OF_PUBLIC_DOMAIN_PAINTING",
+    "SAME_ARTWORK_MAY_BE_RELATED_TO_MULTIPLE_SUBJECTS_BUT_ONLY_CLAIM_THE_ACTUAL_DEPICTED_EPISODE",
+    "HOLD_BOUTS_OBJECT_FOR_OWNER_CHRONOLOGY_RECONCILIATION"
+  ],
+  "summary": {
+    "records": 10,
+    "different_pericope": 5,
+    "correct_episode_with_caveats": 2,
+    "ambiguous_or_liturgical": 3,
+    "historical_rejection_conflicts": 1,
+    "affected_prayer_slots": 4
+  },
+  "records": [
+    {
+      "destination_id": "2026-02-15",
+      "destination_type": "CALENDAR",
+      "destination_label": "Quinquagesima Sunday",
+      "artwork_id": "PRAYER20261105::SI-2",
+      "artwork_title": "Christ Healing the Blind Man",
+      "claude_basis_original": "SCRIPTURAL",
+      "claude_confidence_original": "LOW",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-02-15",
+      "artwork": "PRAYER20261105::SI-2",
+      "gospel": "Luke 18:31-43",
+      "painting_episode": "John 9:1-7, man blind from birth",
+      "grade": "PROVEN_DIFFERENT_EPISODE",
+      "relation": "RELATED_MIRACLE_ONLY_NOT_EXACT_GOSPEL",
+      "status": "REMOVE_DIRECT_GOSPEL_CLAIM_HOLD_NEW_DATE_ASSIGNMENT",
+      "photo": "NATIONAL_GALLERIES_SCOTLAND_PHOTO_NONCOMMERCIAL_TERMS_HOLD",
+      "evidence": [
+        "https://www.nationalgalleries.org/art-and-artists/36325/christ-healing-blind-man",
+        "https://www.nationaltrustcollections.org.uk/object/732265"
+      ],
+      "notes": "The national gallery identifies a man blind from birth; the National Trust identifies clay and John 9. Different from Jericho blind man in Luke 18. NGS official image licence specifies personal/non-commercial use.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-02-16",
+      "destination_type": "CALENDAR",
+      "destination_label": "Feria",
+      "artwork_id": "PRAYER20261105::SI-4",
+      "artwork_title": "Christ Healing the Blind Man",
+      "claude_basis_original": "SCRIPTURAL",
+      "claude_confidence_original": "MEDIUM",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-02-16",
+      "artwork": "PRAYER20261105::SI-4",
+      "gospel": "Luke 18:31-43",
+      "painting_episode": "John 9:7, healing man blind from birth",
+      "grade": "PROVEN_DIFFERENT_EPISODE_FROM_DERIVATIVE_CATALOGUE",
+      "relation": "RELATED_MIRACLE_ONLY_NOT_EXACT_GOSPEL",
+      "status": "REMOVE_DIRECT_GOSPEL_CLAIM_HOLD_NEW_DATE_ASSIGNMENT",
+      "photo": "EXACT_PHOTOGRAPH_STATUS_NOT_CERTIFIED",
+      "evidence": [
+        "https://datenbank.museum-kassel.de/320609/33111/0/0/b2/0/0/objekt.html",
+        "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_003.jpg"
+      ],
+      "notes": "Hessen Kassel Heritage catalogues an engraving after Le Sueur's Potsdam painting, gives John 9:7 and iconclass 73C412. The original picture's exact object accession and rights still require a direct collection match.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-02-17",
+      "destination_type": "CALENDAR",
+      "destination_label": "Feria",
+      "artwork_id": "PRAYER20261105::SI-2",
+      "artwork_title": "Christ Healing the Blind Man",
+      "claude_basis_original": "SCRIPTURAL",
+      "claude_confidence_original": "LOW",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-02-17",
+      "artwork": "PRAYER20261105::SI-2",
+      "gospel": "Luke 18:31-43",
+      "painting_episode": "John 9:1-7, man blind from birth",
+      "grade": "PROVEN_DIFFERENT_EPISODE",
+      "relation": "RELATED_MIRACLE_ONLY_NOT_EXACT_GOSPEL",
+      "status": "REMOVE_DIRECT_GOSPEL_CLAIM_HOLD_NEW_DATE_ASSIGNMENT",
+      "photo": "NATIONAL_GALLERIES_SCOTLAND_PHOTO_NONCOMMERCIAL_TERMS_HOLD",
+      "evidence": [
+        "https://www.nationalgalleries.org/art-and-artists/36325/christ-healing-blind-man",
+        "https://www.nationaltrustcollections.org.uk/object/732265"
+      ],
+      "notes": "Same physical Ricci painting as 15 February. Keep an artwork-to-scripture relation with John 9; do not claim Luke 18 episode.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-02-21",
+      "destination_type": "CALENDAR",
+      "destination_label": "Saturday after Ash Wednesday",
+      "artwork_id": "PRAYER20261105::AH-3",
+      "artwork_title": "Walking on Water (1888)",
+      "claude_basis_original": "DIRECT_SCENE",
+      "claude_confidence_original": "MEDIUM",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-02-21",
+      "artwork": "PRAYER20261105::AH-3",
+      "gospel": "Mark 6:47-56",
+      "painting_episode": "Jesus walking on water, Aivazovsky 1888 painting",
+      "grade": "CORE_SCENE_SUPPORTED_PETER_DETAIL_UNVERIFIED",
+      "relation": "DIRECT_WATER_WALKING_EVENT_POSSIBLE",
+      "status": "HOLD_SOURCE_PHOTO_IDENTITY_AND_DEPICTED_PETER_DETAIL",
+      "photo": "PHOTOGRAPH_SOURCE_AND_RIGHTS_UNCERTIFIED",
+      "evidence": [
+        "https://commons.wikimedia.org/wiki/File:Po_vodam_1888.jpg"
+      ],
+      "notes": "1888 painting is recorded in the Museum of the History of Religion, St Petersburg. Do not conflate with the different 1897 Feodosia gallery work; do not claim Peter sinking (only in Matthew's version) without image verification.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-02-27",
+      "destination_type": "CALENDAR",
+      "destination_label": "Ember Friday of Lent",
+      "artwork_id": "PRAYER20261105::SI-1",
+      "artwork_title": "The Healing of the Paralytic",
+      "claude_basis_original": "SCRIPTURAL",
+      "claude_confidence_original": "LOW",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-02-27",
+      "artwork": "PRAYER20261105::SI-1",
+      "gospel": "John 5:1-15",
+      "painting_episode": "John 5:1-9, pool of Bethesda",
+      "grade": "EXACT_PASSAGE_SUPPORTED_BY_COLLECTION_CATALOGUE",
+      "relation": "EXACT_EPISODE_SUPPORTED_NOT_PHOTO_CLEARED",
+      "status": "ELIGIBLE_FOR_EDITORIAL_EXACT_SCENE_AFTER_OBJECT_RECONCILIATION",
+      "photo": "PREVIOUS_COMMONS_PHOTO_NOT_INDEPENDENTLY_CLEARED",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/Genezing-van-de-man-bij-het-bad-van-Betesda--0b9b7cb63d67605e2c0bc7b5501d3e88",
+        "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_The_healing_of_the_paralytic.jpg"
+      ],
+      "notes": "Rijksmuseum print after van Dyck painting carries inscription from John 5 and identifies Bethesda. Commons record places a Van Dyck painting at Staatsgalerie Neuburg; reconcile exact physical artwork, not copy/print as interchangeable photograph.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-03-18",
+      "destination_type": "CALENDAR",
+      "destination_label": "Feria IV after the IV Sunday of Lent",
+      "artwork_id": "PRAYER20261105::SI-4",
+      "artwork_title": "Christ Healing the Blind Man",
+      "claude_basis_original": "DIRECT_SCENE",
+      "claude_confidence_original": "HIGH",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-03-18",
+      "artwork": "PRAYER20261105::SI-4",
+      "gospel": "John 9:1-38",
+      "painting_episode": "John 9:7, man blind from birth",
+      "grade": "EXACT_PASSAGE_SUPPORTED_BY_DERIVATIVE_CATALOGUE",
+      "relation": "EXACT_EPISODE_SUPPORTED_NOT_PHOTO_CLEARED",
+      "status": "KEEP_CANDIDATE_PENDING_ORIGINAL_OBJECT_IDENTITY",
+      "photo": "PHOTOGRAPH_SOURCE_AND_RIGHTS_UNCERTIFIED",
+      "evidence": [
+        "https://datenbank.museum-kassel.de/320609/33111/0/0/b2/0/0/objekt.html",
+        "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_003.jpg"
+      ],
+      "notes": "Same Le Sueur work wrongly suggested for 16 February; correct many-to-many linkage to John 9 has documentary support.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-05-13",
+      "destination_type": "CALENDAR",
+      "destination_label": "Vigil of the Ascension",
+      "artwork_id": "RECENT575::372",
+      "artwork_title": "The Ascension of Christ",
+      "claude_basis_original": "LITURGICAL",
+      "claude_confidence_original": "MEDIUM",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-05-13",
+      "artwork": "RECENT575::372",
+      "gospel": "John 17:1-11 (1962 Vigil of the Ascension proper; Rogation Mass alternative may vary)",
+      "painting_episode": "Ascension of Christ (feast event, not the Gospel speech in John 17)",
+      "grade": "LITURGICAL_ANTICIPATION_NOT_DIRECT_PERICOPE",
+      "relation": "APPROPRIATE_VIGIL_FEAST_THEME_NOT_EXACT_GOSPEL",
+      "status": "RETAIN_AS_THEMATIC_PROPOSAL_PENDING_OWNER_DATE_APPROVAL",
+      "photo": "EXACT_SOURCE_PHOTOGRAPH_NOT_CLEARED",
+      "evidence": [
+        "https://missalemeum.com/en/calendar/2026-05-13",
+        "https://1962ordo.today/day/vigil-of-ascension-2-2-2-2-2-2-2-2/"
+      ],
+      "notes": "The previous CSV left the date's Gospel blank. Verified 1962 vigil proper gives the high-priestly prayer, John 17. Do not transplant the Ascension feast's Mark 16 Gospel onto the vigil.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-06-21",
+      "destination_type": "CALENDAR",
+      "destination_label": "IV Sunday after Pentecost",
+      "artwork_id": "RECENT575::404",
+      "artwork_title": "The miraculous draught of fish",
+      "claude_basis_original": "DIRECT_SCENE",
+      "claude_confidence_original": "HIGH",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-06-21",
+      "artwork": "RECENT575::404",
+      "gospel": "Luke 5:1-11",
+      "painting_episode": "The miraculous catch of fish; exact Luke 5 versus John 21 not identified in object catalogue",
+      "grade": "MIRACULOUS_CATCH_OBJECT_VERIFIED_PERICOPE_UNRESOLVED",
+      "relation": "SCRIPTURE_SCENE_FAMILY_ONLY",
+      "status": "DOWNGRADE_FROM_DIRECT_EXACT_CLAIM_PENDING_IDENTIFICATION",
+      "photo": "MUSEUM_CATALOGUE_PHOTO_CREDIT_PHILIPP_BERNARD_RIGHTS_HOLD",
+      "evidence": [
+        "https://pop.culture.gouv.fr/notice/joconde/000PE016616",
+        "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_The_miraculous_draught_of_fish.jpg"
+      ],
+      "notes": "French Ministry of Culture confirms Lille work P 183, title and depicted miraculous catch. It does not specify which of the two Gospel catches. Museum photo credit © Philipp Bernard does not establish reusable app photograph.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-09-27",
+      "destination_type": "CALENDAR",
+      "destination_label": "XVIII Sunday after Pentecost",
+      "artwork_id": "PRAYER20261105::SI-1",
+      "artwork_title": "The Healing of the Paralytic",
+      "claude_basis_original": "DIRECT_SCENE",
+      "claude_confidence_original": "MEDIUM",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-09-27",
+      "artwork": "PRAYER20261105::SI-1",
+      "gospel": "Matthew 9:1-8",
+      "painting_episode": "John 5:1-9, pool of Bethesda",
+      "grade": "PROVEN_DIFFERENT_EPISODE",
+      "relation": "RELATED_PARALYTIC_MIRACLE_ONLY_NOT_EXACT_GOSPEL",
+      "status": "REMOVE_DIRECT_SCENE_CLAIM_HOLD_NEW_DATE_ASSIGNMENT",
+      "photo": "PHOTOGRAPH_SOURCE_AND_RIGHTS_UNCERTIFIED",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/Genezing-van-de-man-bij-het-bad-van-Betesda--0b9b7cb63d67605e2c0bc7b5501d3e88",
+        "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_The_healing_of_the_paralytic.jpg"
+      ],
+      "notes": "The Capernaum roof-lowering story Matthew 9 is distinct from Bethesda John 5. The known van Dyck physical painting matches the latter.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    },
+    {
+      "destination_id": "2026-10-01",
+      "destination_type": "CALENDAR",
+      "destination_label": "Feria",
+      "artwork_id": "PRAYER20261105::SI-1",
+      "artwork_title": "The Healing of the Paralytic",
+      "claude_basis_original": "DIRECT_SCENE",
+      "claude_confidence_original": "MEDIUM",
+      "existing_assignment_status": "NEW_PROPOSAL",
+      "date": "2026-10-01",
+      "artwork": "PRAYER20261105::SI-1",
+      "gospel": "Matthew 9:1-8",
+      "painting_episode": "John 5:1-9, pool of Bethesda",
+      "grade": "PROVEN_DIFFERENT_EPISODE",
+      "relation": "RELATED_PARALYTIC_MIRACLE_ONLY_NOT_EXACT_GOSPEL",
+      "status": "REMOVE_DIRECT_SCENE_CLAIM_HOLD_NEW_DATE_ASSIGNMENT",
+      "photo": "PHOTOGRAPH_SOURCE_AND_RIGHTS_UNCERTIFIED",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/Genezing-van-de-man-bij-het-bad-van-Betesda--0b9b7cb63d67605e2c0bc7b5501d3e88",
+        "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_The_healing_of_the_paralytic.jpg"
+      ],
+      "notes": "Same exact scene conflict as 27 September.",
+      "override_allowed": false,
+      "photo_release_authorised": false
+    }
+  ],
+  "historical_conflicts": [
+    {
+      "artwork_id": "cma-122338",
+      "title": "The Annunciation",
+      "artist": "Albert Bouts",
+      "exact_object_url": "https://www.clevelandart.org/art/1942.635",
+      "global_rejection": {
+        "source": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+        "score": 2,
+        "as_of": "2026-10-15"
+      },
+      "later_prayer_master": {
+        "source": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+        "editorial_acceptances": "Four Prayer/Rosary protected placements preserve/accept this exact object after earlier globally rejected score; chronological override intent is not established."
+      },
+      "affected_destinations": [
+        "STG-pray.angelus-04",
+        "STG-pray.angelus-05",
+        "STG-pray.angelus-06",
+        "STG-pray.rosary-02"
+      ],
+      "hold_policy": "BLOCK_NEW_USE_OF_EXACT_REJECTED_PHYSICAL_ARTWORK; AUDIT_EXISTING_RUNTIME_REFERENCES; PRESERVE_HISTORICAL_ASSOCIATIONS_FOR_PROVENANCE; DO_NOT_AUTO_SUBSTITUTE_ANOTHER_PAINTING",
+      "museum_reuse_status": "Cleveland Museum of Art Open Access (CC0) for its image; rights status never overrides user's aesthetic rejection.",
+      "evidence": [
+        "https://www.clevelandart.org/art/1942.635"
+      ],
+      "decision_precedence_assessment": "Recorded 15 October exact-original owner-score 2 rejection remains a blocking source until a demonstrably explicit owner reversal of that same physical object is found. The later November 1 Prayer master shows selected/accepted options but does not itself establish such a reversal.",
+      "released_local_asset": {
+        "source": "src/art/released-module-paintings.v1.js",
+        "key": "bouts",
+        "source_object": "https://clevelandart.org/art/1942.635",
+        "local_image": "assets/prayer/released/bouts-annunciation-original.jpg",
+        "release_pr": 2340,
+        "interpretation": "A released file exists in the repository; this is not evidence that the owner reversed the aesthetic rejection or that the asset currently renders in any individual Prayer slot."
+      },
+      "proposed_safe_remediation": "Separate authored rejection and later orphaned gallery/Prayer imports; do not edit runtime until the owner-specific chronology audit is complete. Preserve Rosary and Angelus scene structure; substitute only a separately approved exact-slot work if a runtime correction becomes necessary."
+    }
+  ]
+}

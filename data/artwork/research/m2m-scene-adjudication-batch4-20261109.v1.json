@@ -1,0 +1,191 @@
+{
+  "schema": "AO_SACRED_ART_SCENE_ADJUDICATION_BATCH4_20261109_V1",
+  "date": "2026-11-09",
+  "state": "RESEARCH_ONLY_NO_NEW_IMAGE_OR_ASSIGNMENT_APPROVAL",
+  "scope": "Last seven new-Claude DIRECT_SCENE candidate destinations; object metadata and actual appointed 1962 Gospel",
+  "caveats": [
+    "No assertion of independent raw-pixel image inspection",
+    "Historical owner alternatives and locks unchanged",
+    "Any attribution discrepancy stays held until exact institutional object and image reconciliation",
+    "Same work may link multiple destinations; multiple works may link one destination, never auto-rotate the Rosary",
+    "Owner-approved artworks are not automatically approved for every slot or source photo"
+  ],
+  "summary": {
+    "records": 7,
+    "distinct_artwork_ids": 7,
+    "confirmed_institutional_objects": 4,
+    "attribution_or_current_catalogue_holds": 3,
+    "direct_scene_proposals_after_batch": 0
+  },
+  "records": [
+    {
+      "destination_id": "2026-01-09",
+      "artwork_id": "RECENT575::516",
+      "artwork_title": "L'Adoration des mages, par Francisco de Zurbarán",
+      "claimed_artist": "Francisco de Zurbarán",
+      "corrected_attribution": "Francisco de Zurbarán",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_GOSPEL_MAGI_EPIPHANY",
+      "adjudication_status": "GOSPEL_EXACT_SUBJECT_INSTITUTIONALLY_SUPPORTED",
+      "appointed_gospel": "Matthew 2:1-12",
+      "object_identity": "Musée de Grenoble MG 1325, Zurbarán, Adoration of the Magi, 1638–39",
+      "findings": "French government Joconde 09940005608 and Grenoble museum identify this Magi work. Separate from Grenoble MG1324 Shepherds; institutional photograph credited Grenoble/J.-L. Lacroix (no automatic permission).",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:L%27Adoration_des_mages,_par_Francisco_de_Zurbar%C3%A1n.jpg",
+        "https://pop.culture.gouv.fr/notice/joconde/09940005608",
+        "https://www.museedegrenoble.fr/2310-francisco-de-zurbaran.htm",
+        "https://ordo.fsspx.org/en/day/2026-01-09?source=nullius&texts=readings"
+      ],
+      "photo_release_gate": "OFFICIAL_GRENOBLE_PHOTOGRAPH_CREDIT_NEEDS_REUSE_CHECK",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-04-18",
+      "artwork_id": "RECENT575::094",
+      "artwork_title": "Le Christ en croix, la Vierge, la Madeleine et saint Jean",
+      "claimed_artist": "Attribué à Bertholet I Flémalle",
+      "corrected_attribution": "Attribution to Bertholet Flémal UNVERIFIED for exact pictured object",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_MARIAN_GOSPEL_CRUCIFIXION_WITH_AUTHOR_HOLD",
+      "adjudication_status": "EXACT_SUBJECT_BUT_ATTRIBUTION_UNRESOLVED",
+      "appointed_gospel": "John 19:25-27",
+      "object_identity": "Commons original photograph in Musée des Augustins Toulouse category; exact institution accession not established from authoritative object metadata",
+      "findings": "Selected 1962 Mass of Our Lady in Paschaltide reads John 19:25-27. Photo shows/caption indicates Christ crucified with Mary/Magdalene/John, but matching the source photograph to an original museum inventory and Flémal credit is not established. Do NOT substitute a similarly titled Flémal work, Toulouse Neri di Bicci RO401, anonymous Spanish inv.48 18 119, Louvre van Dyck INV1766, or other lookalikes.",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:Christ_en_croix,_la_Vierge,_la_Madeleine_et_Saint_Jean.tif",
+        "https://commons.wikimedia.org/wiki/Category:Religious_paintings_in_the_Mus%C3%A9e_des_Augustins_de_Toulouse",
+        "https://ordo.fsspx.org/fr/day/2026-04-18?lang=en&mode=liturgical&source=pal&texts=readings",
+        "https://collections.augustins.toulouse.fr/fr/notice/48-18-119-christ-en-croix-entre-la-vierge-une-sainte-femme-et-madeleine-d-une-part-saint-jean-et-joseph-d-arimathie-d-autre-part-ea0f0e1b-5dc5-4229-85f8-b80a1e25a251"
+      ],
+      "photo_release_gate": "EXACT_MUSEUM_OBJECT_AND_AUTHOR_NOT_CONFIRMED_RIGHTS_HOLD",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-07-02",
+      "artwork_id": "RECENT575::359",
+      "artwork_title": "Champaigne Visitation Genève",
+      "claimed_artist": "Philippe de Champaigne",
+      "corrected_attribution": "Philippe de Champaigne WORKSHOP attribution in cross-gallery catalogue; verify museum current credit",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_VISITATION_FEAST_AND_GOSPEL",
+      "adjudication_status": "EXACT_OBJECT_IDENTITY_WITH_WORKSHOP_ATTRIBUTION_HOLD",
+      "appointed_gospel": "Luke 1:39-47",
+      "object_identity": "Musée d'art et d'histoire de Genève 1942-0009; Visitation around 1650, work associated with Philippe de Champaigne's workshop",
+      "findings": "Geneva museum accession 1942-0009 corresponds to Commons Champaigne Visitation Genève. Distinguish from Princeton original y1994-17 and Villeneuve-lès-Avignon PL86.1.5, separately catalogued Visitation paintings. Owner-approved Rosary Visitation is not assumed identical without object/photo crosswalk.",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:Champaigne_Visitation_Gen%C3%A8ve.jpg",
+        "https://www.mahmah.ch/collection/oeuvres/la-visitation/1942-0009",
+        "https://commons.wikimedia.org/wiki/Paintings_by_Philippe_de_Champaigne",
+        "https://artmuseum.princeton.edu/art/collections/objects/34052",
+        "https://pop.culture.gouv.fr/notice/joconde/04640036278",
+        "https://missalemeum.com/en/calendar/2026-07-02"
+      ],
+      "photo_release_gate": "GENEVA_PHOTO_AND_WORKSHOP_ATTRIBUTION_NEED_INSTITUTIONAL_RECHECK",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-08-29",
+      "artwork_id": "CANONICAL::met-437738",
+      "artwork_title": "The Beheading of Saint John the Baptist",
+      "claimed_artist": "Spanish Catalan Painter",
+      "corrected_attribution": "Spanish (Catalan) Painter",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_BEHEADING_OF_JOHN_GOSPEL",
+      "adjudication_status": "EXACT_OBJECT_GOSPEL_SCENE_MET_OPEN_ACCESS",
+      "appointed_gospel": "Mark 6:17-29",
+      "object_identity": "Metropolitan Museum of Art 32.100.127 / object search 437738, Spanish Catalan painter, mid-15th century, tempera and gold",
+      "findings": "Exact painting depicts John's beheading; matches 1962 feast's Mark 6:17-29. Met describes public-domain work/open-access commercial/noncommercial images. Still must map exact Met downloadable file to local pixel/crop and owner selected placement.",
+      "source_urls": [
+        "https://www.metmuseum.org/art/collection/search/437738",
+        "https://www.metmuseum.org/art/collection/search/437738",
+        "https://ordo.fsspx.org/fr/day/2026-08-29?lang=en&mode=liturgical&source=pal&texts=readings"
+      ],
+      "photo_release_gate": "MET_CC0_SOURCE_ELIGIBLE_NEEDS_EXACT_IMAGE_ASSET_AND_VISUAL_QA",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-09-21",
+      "artwork_id": "RECENT575::106",
+      "artwork_title": "De roeping van Mattheus",
+      "claimed_artist": "Jacob van Oost",
+      "corrected_attribution": "Jacob van Oost I",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_CALLING_OF_MATTHEW_GOSPEL",
+      "adjudication_status": "EXACT_EPISODE_WITH_CHURCH_SITE_OBJECT_RECONCILIATION",
+      "appointed_gospel": "Matthew 9:9-13",
+      "object_identity": "Onze-Lieve-Vrouwekerk (Church of Our Lady) Bruges; Jacob van Oost the Elder Calling of Saint Matthew (circa 1640–48), RKD work 61819; church-owned setting not assumed Groeningemuseum accession",
+      "findings": "Dutch RKD catalogue records Calling of Matthew at Onze-Lieve-Vrouwekerk with citations and WWII restitution; Open Kerken confirms this work in church, distinct from generic Musea Brugge 'photographer/source'. Matches Matthew 9:9-13. Exact local image origin/rights need verification.",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:De_roeping_van_Mattheus_-_Jacob_de_Oude_Van_Oost_-_Musea_Brugge_-_1.jpg",
+        "https://openchurches.eu/nl-be/gebouwen/onze-lieve-vrouw-brugge-109",
+        "https://rkddb.rkd.nl/rkddb/digital_book/202000095.pdf",
+        "https://ordo.fsspx.org/fr/day/2026-09-21?mode=liturgical&texts=readings"
+      ],
+      "photo_release_gate": "CHURCH_PAINTING_PHOTO_MUSEA_BRUGGE_CREDIT_NOT_RELEASE_CLEARED",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-12-30",
+      "artwork_id": "RECENT575::521",
+      "artwork_title": "Adoration of the Shepherds",
+      "claimed_artist": "Annibale Carracci",
+      "corrected_attribution": "Annibale Carracci (attribution in Commons/Wikidata; museum reconciliation pending)",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_SHEPHERDS_ADORATION_GOSPEL",
+      "adjudication_status": "KNOWN_COLLECTION_OBJECT_NO_INDEPENDENT_CURRENT_MUSEUM_CONFIRMATION",
+      "appointed_gospel": "Luke 2:15-20",
+      "object_identity": "Musée des Beaux-Arts d'Orléans 192; Wikidata/Joconde 00000102967 identify Annibale Carracci Adoration of the Shepherds",
+      "findings": "Actual 1962 Octave Feria 30 Dec Gospel Luke 2:15-20 includes shepherds discovering newborn. Commons lists Orléans accession 192 and 1280x1624px image; did not independently verify current museum attribution/source, so no image asset promotion from Commons alone.",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File%3AAnnibale_Carracci_Adorazione_dei_Pastori_Orleans.png",
+        "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_Adorazione_dei_Pastori_Orleans.png",
+        "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Collection/Mus%C3%A9e_des_Beaux-Arts_d%27Orl%C3%A9ans",
+        "https://latinmasspropers.com/mass/feria-in-the-octave-of-christmas/"
+      ],
+      "photo_release_gate": "COMMONS_SOURCE_CURRENT_INSTITUTIONAL_ATTRIBUTION_AND_LICENSE_HOLD",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    },
+    {
+      "destination_id": "2026-12-31",
+      "artwork_id": "RECENT575::490",
+      "artwork_title": "Adoration of the Shepherds (Grenoble)",
+      "claimed_artist": "Jacob Jordaens",
+      "corrected_attribution": "Jacob Jordaens",
+      "claimed_relationship": "DIRECT_SCENE",
+      "relationship_after_source_check": "DIRECT_SHEPHERDS_ADORATION_GOSPEL",
+      "adjudication_status": "EXACT_INSTITUTIONAL_OBJECT_AND_APPOINTED_GOSPEL",
+      "appointed_gospel": "Luke 2:15-20",
+      "object_identity": "Musée de Grenoble MG84; Louvre-owned Jacob Jordaens oil painting (ca 1617), deposited Grenoble",
+      "findings": "Grenoble museum and Louvre collection independently identify MG84 (same physical work). Dec31 Christmas-Octave feria repeats Luke 2:15-20. Distinct from Orléans Carracci work. Museum photographic credit Grenoble/J.-L. Lacroix; not thereby commercial-app cleared.",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_Adoration_of_the_Shepherds_(Grenoble).jpg",
+        "https://www.museedegrenoble.fr/oeuvre/134/1922-l-adoration-des-bergers.htm",
+        "https://collections.louvre.fr/en/ark:/53355/cl010058821",
+        "https://latinmasspropers.com/mass/feria-in-the-octave-of-christmas/"
+      ],
+      "photo_release_gate": "CREDITED_GRENOBLE_MUSEUM_PHOTO_NO_APP_RELEASE",
+      "owner_approvals_untouched": true,
+      "display_change_authorised": false,
+      "photograph_publication_authorised": false,
+      "pixel_visual_qa_complete": false
+    }
+  ]
+}

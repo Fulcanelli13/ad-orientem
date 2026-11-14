@@ -1,0 +1,48 @@
+name: Sacred Art Wellcome full-front image research
+
+# Research-only source diagnostic. No public release, no asset import.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-wellcome-walters-remaining-source-reconciliation-20261110.v1.json'
+      - 'tests/sacred-art-wellcome-walters-image-source-research.test.mjs'
+      - 'tests/sacred-art-wellcome-v0017627-verified-image-research.test.mjs'
+      - 'data/artwork/research/m2m-wellcome-v0017627-verified-native-photo-20261110.v1.json'
+      - 'scripts/sacred-art-fetch-wellcome-full-front-research.py'
+      - '.github/workflows/sacred-art-wellcome-front-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-probe-first-party:
+    name: check Wellcome photo provenance and exact-source access
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout research PR
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install research image decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Verify source identity and closed release gates
+        run: node tests/sacred-art-wellcome-walters-image-source-research.test.mjs
+      - name: Verify previously fetched official Wellcome JPEG identity, SHA and release hold
+        run: node tests/sacred-art-wellcome-v0017627-verified-image-research.test.mjs
+      - name: Test legacy first-party URL and image-specific IIIF hypothesis
+        run: |
+          python scripts/sacred-art-fetch-wellcome-full-front-research.py \
+            --ledger data/artwork/research/m2m-wellcome-walters-remaining-source-reconciliation-20261110.v1.json \
+            --output research-wellcome-full-front
+      - name: Save research report and optional original JPEG for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-wellcome-full-front-source-qa
+          path: research-wellcome-full-front/
+          retention-days: 7
+          if-no-files-found: warn

@@ -1,0 +1,110 @@
+{
+  "schema": "AO_MET_ORIGINAL_BYTES_ASPECT_RATIO_DIAGNOSTIC_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_ASSISTANT_DIAGNOSTIC_NOT_OWNER_OR_APP_CROP_CERTIFICATION",
+  "source": {
+    "githubActionsRunId": 42767850376,
+    "artifactId": 13740158139,
+    "artifactName": "ad-orientem-sacred-art-source-qa",
+    "sourceManifest": "data/artwork/research/m2m-met-original-image-verification4-20261110.v1.json",
+    "method": "Independent ZIP extraction and SHA256 recomputation from original file bytes; Pillow RGB/ICC and exact-ratio 390×240 and 390×520 contain vs center-cover/focal crops, inspected in a diagnostic contact sheet"
+  },
+  "checks": {
+    "sourceFiles": 4,
+    "shaMatched": 4,
+    "rgbDecoded": 4,
+    "iccPresent": 2,
+    "noIccPresent": 2,
+    "wide390x240ProvisionalCoverPass": 2,
+    "wide390x240ProvisionalCoverFail": 2,
+    "portrait390x520ProvisionalCoverPass": 3,
+    "portrait390x520ProvisionalCoverFail": 1,
+    "ownerApprovedCrops": 0,
+    "assetsPublished": 0
+  },
+  "instructions": [
+    "No automatic production object-fit policy change; diagnostic frames are not the actual app container",
+    "Retained source image area is a geometric metric, not subjective quality approval",
+    "The prior global claim that all Saint Clare centered crops are unsuitable is overbroad: Cima works better in wide than portrait, while Bishop work works better in portrait than wide",
+    "Absence of ICC is not proof that colours are wrong; avoid asserting calibrated color accuracy",
+    "No new assignment, source image asset in Pages, Commons imports, or release permission"
+  ],
+  "rows": [
+    {
+      "key": "Met:724811",
+      "label": "Costanzi — Miracle of St Joseph of Cupertino",
+      "sha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+      "pixels": [
+        2878,
+        4000
+      ],
+      "iccPresent": true,
+      "wideRetentionPct": 44.3,
+      "portraitRetentionPct": 95.9,
+      "wideAssessment": "FAIL_SUBJECT_VERTICAL_SCENE_TRUNCATED",
+      "portraitAssessment": "PASS_PROVISIONAL_ALL_ESSENTIAL_FIGURES_VISIBLE",
+      "recommendation": "contain on 390×240; portrait cover may be provisionally viable but preserve full image if affordance permits",
+      "sourceImageSHA256Verified": true,
+      "ownerPlacementApproved": false,
+      "formalMobileCropCertified": false,
+      "releaseReady": false
+    },
+    {
+      "key": "Met:435901",
+      "label": "Cima — Madonna and Child with Francis and Clare",
+      "sha256": "3d65cb4f6c5f39b4ea2604571529a9ce7b781be4d1940102f0f2a5088f934a03",
+      "pixels": [
+        4000,
+        3008
+      ],
+      "iccPresent": true,
+      "wideRetentionPct": 81.8,
+      "portraitRetentionPct": 56.4,
+      "wideAssessment": "PASS_PROVISIONAL_ALL_FOUR_FIGURES_VISIBLE_FRAME_TRIMMED",
+      "portraitAssessment": "FAIL_CENTER_OMITS_PORTIONS_OF_ST_FRANCIS_AND_CLARE; FOCAL_X_0_73_PRESERVES_CLARE_BUT_LOSES_FRANCIS",
+      "recommendation": "wide cover possible after owner composition check; portrait should contain entire horizontal painting",
+      "sourceImageSHA256Verified": true,
+      "ownerPlacementApproved": false,
+      "formalMobileCropCertified": false,
+      "releaseReady": false
+    },
+    {
+      "key": "Met:469892",
+      "label": "Bishop of Assisi Giving Palm to St Clare",
+      "sha256": "522ed5d29396ceaa851862b5a685d8ec0f3a83af75b80a8001e5c17a64e13662",
+      "pixels": [
+        1812,
+        2779
+      ],
+      "iccPresent": false,
+      "wideRetentionPct": 40.1,
+      "portraitRetentionPct": 86.9,
+      "wideAssessment": "FAIL_BISHOP_TOP_CUT_AND_BOTTOM_NARRATIVE_LOST",
+      "portraitAssessment": "PASS_PROVISIONAL_MAIN_FIGURES_AND_GESTURE_VISIBLE_SMALL_TOP_BOTTOM_TRIM",
+      "recommendation": "contain on 390×240; portrait cover only with subject-safe framing and authorisation",
+      "sourceImageSHA256Verified": true,
+      "ownerPlacementApproved": false,
+      "formalMobileCropCertified": false,
+      "releaseReady": false
+    },
+    {
+      "key": "Met:1991.153",
+      "label": "Fetti — Parable of the Mote and Beam",
+      "sha256": "848017868a51fbda0e7d7b9cc07c70d809bc849a13ecc4e0f5553e99708de724",
+      "pixels": [
+        2781,
+        3720
+      ],
+      "iccPresent": false,
+      "wideRetentionPct": 46,
+      "portraitRetentionPct": 99.7,
+      "wideAssessment": "PASS_PROVISIONAL_PARABLE_GESTURE_AND_BEAM_VISIBLE_BUT_MUCH_SKY_AND_BODY_TRIMMED",
+      "portraitAssessment": "PASS_PROVISIONAL_NEAR_COMPLETE_COMPOSITION",
+      "recommendation": "portrait cover viable pending app rendering; wide crop optional only if not misrepresented as complete painting",
+      "sourceImageSHA256Verified": true,
+      "ownerPlacementApproved": false,
+      "formalMobileCropCertified": false,
+      "releaseReady": false
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "AO_WALTERS_37_453_RESEARCH_ACQUISITION_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_CC0_COLOUR_JPEG_ACQUIRED_AND_HASH_REVERIFIED_EPHEMERAL",
+  "candidate": {
+    "workKey": "Walters:37.453",
+    "liturgicalDate": "2026-05-05",
+    "title": "Portrait of Pope Pius V",
+    "creator": "Bartolomeo Passarotti and workshop (probable replica)",
+    "museumObjectUrl": "https://art.thewalters.org/object/37.453/",
+    "photoUrl": "https://art.thewalters.org/images/art/PS1_37.453_FntAftTrt_DD_T09.jpg",
+    "licencePage": "https://thewalters.org/about/policies/rights-reproductions/",
+    "licencePageStatus": "Object page CC0; digital photography covered by museum's CC0 policy for public domain works",
+    "ownerPlacementApproved": false,
+    "releaseReady": false,
+    "sourcePhotoVerification": {
+      "workflowRunId": 42808235142,
+      "artifactId": 13762090344,
+      "artifactName": "ad-orientem-walters-pius-v-research-only",
+      "photoSource": "https://art.thewalters.org/images/art/PS1_37.453_FntAftTrt_DD_T09.jpg",
+      "byteLength": 250278,
+      "sha256": "763546212a905904d7d664f94af7c0d3981da169f70d47fbb8904bdc6b9206fa",
+      "pixelWidth": 1342,
+      "pixelHeight": 1799,
+      "decodedMode": "RGB",
+      "embeddedIccProfile": false,
+      "thumbnailMeanSaturation": 48.13,
+      "sourceWidthGate": "PASS_1170",
+      "originalImageVerifiedFromActionsArchive": true,
+      "ephemeralArtifactNotPublicAsset": true
+    },
+    "mobileCropResearch": {
+      "status": "ASSISTANT_ASPECT_DIAGNOSTIC_ONLY_NOT_FORMAL_APP_UI_QA",
+      "wide390x240CoverRetentionPercent": 45.9,
+      "portrait390x520CoverRetentionPercent": 99.5,
+      "wide390x240": "FAIL_CROPS_POPE_HEAD_AND_LOWER_BOOK_INSCRIPTION",
+      "portrait390x520": "PROVISIONAL_PASS_FULL_SUBJECT_BLESSING_BOOK_AND_INSCRIPTION",
+      "recommendedDisplay": "use object-fit contain in wide frames; portrait cover possible after owner/editorial signoff",
+      "ownerApprovedCrop": false
+    },
+    "productionAssetPath": null
+  },
+  "safeguards": [
+    "Allowlist exact first-party image URL; fail on redirect, oversize, bad JPEG",
+    "Source downloaded only to temporary Actions artifact, never production assets",
+    "Photo licence does not grant date-specific editorial approval",
+    "Retain workshop replica qualifier and 5 May date placement hold",
+    "No paid rights, correspondence, Commons auto-promotion or deployment",
+    "The verified full-colour first-party file remains research-only; no visual signoff of production UI container or 5 May placement"
+  ],
+  "releaseReady": false
+}

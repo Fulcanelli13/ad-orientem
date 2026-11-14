@@ -1,0 +1,45 @@
+name: Sacred Art original image research QA
+
+# Specialist job on only the research branch's source manifest/script.
+# Images are uploaded as short-lived Actions artifacts, NEVER to GitHub Pages.
+on:
+  pull_request:
+    paths:
+      - 'scripts/sacred-art-fetch-open-image-qa.py'
+      - 'tests/sacred-art-exact-oil-photo-rights-research.test.mjs'
+      - 'data/artwork/research/m2m-open-photo-acquisition-queue6-20261110.v1.json'
+      - '.github/workflows/sacred-art-original-image-research-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-source-images:
+    name: retrieve and verify Met originals, no publication
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Enforce museum-front selection and no-publication research contract
+        run: node tests/sacred-art-exact-oil-photo-rights-research.test.mjs
+      - name: Fetch four source candidates and record SHA, pixels and colour diagnostics
+        run: |
+          python scripts/sacred-art-fetch-open-image-qa.py \
+            --queue data/artwork/research/m2m-open-photo-acquisition-queue6-20261110.v1.json \
+            --output research-open-image-qa
+      - name: Preserve research report, retrieved originals and review thumbnails for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-sacred-art-source-qa
+          path: research-open-image-qa/
+          retention-days: 7
+          if-no-files-found: warn

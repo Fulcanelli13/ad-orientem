@@ -1,0 +1,44 @@
+name: Sacred Art Walters Pius V research image QA
+
+# Research-only; Actions artifacts retained seven days. Never deploy to Pages.
+on:
+  pull_request:
+    paths:
+      - 'scripts/sacred-art-fetch-walters-pius-v-research.py'
+      - 'data/artwork/research/m2m-walters-37-453-photo-research-20261110.v1.json'
+      - 'tests/sacred-art-walters-pius-v-source-image-research.test.mjs'
+      - '.github/workflows/sacred-art-walters-pius-v-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire-photo-research-only:
+    name: verify exact Walters CC0 colour photograph
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout research head
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Guard unchanged source identity, checksum and unpublished status
+        run: node tests/sacred-art-walters-pius-v-source-image-research.test.mjs
+      - name: Verify museum image bytes, colour and size
+        run: |
+          python scripts/sacred-art-fetch-walters-pius-v-research.py \
+            --queue data/artwork/research/m2m-walters-37-453-photo-research-20261110.v1.json \
+            --output research-walters-pius-v
+      - name: Preserve temporary original, report and thumbnail for seven days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-walters-pius-v-research-only
+          path: research-walters-pius-v/
+          retention-days: 7
+          if-no-files-found: warn

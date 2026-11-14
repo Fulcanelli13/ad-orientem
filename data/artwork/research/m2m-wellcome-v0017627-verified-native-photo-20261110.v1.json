@@ -1,0 +1,87 @@
+{
+  "schema": "AO_WELLCOME_V0017627_NATIVE_IMAGE_VERIFIED_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_WELLCOME_IIIF_SOURCE_BYTES_RETRIEVED_SHA256_INDEPENDENTLY_CHECKED_RESEARCH_ONLY",
+  "work": {
+    "workKey": "Wellcome:45078i",
+    "title": "The Halt and the Blind Being Summoned to the Great Supper",
+    "artist": "Joost Cornelisz Droochsloot",
+    "date": "1620–1629",
+    "biblicalEpisode": "Luke 14:15–24",
+    "calendarCandidateDate": "2026-06-07",
+    "museumWorkUrl": "https://wellcomecollection.org/works/jgxd7rrf"
+  },
+  "verifiedPhoto": {
+    "photoId": "V0017627",
+    "role": "WHOLE_FRONT_OIL_PAINTING",
+    "exactFirstPartySourceUrl": "https://iiif.wellcomecollection.org/image/V0017627/full/max/0/default.jpg",
+    "sha256": "e1bf34e04d8e05e8a6b566675d9a892c9736cbe50e387b4ead50caf5d6af54c4",
+    "sha1": "78d2c2407bc77b68bc9b33be900298dfa515d9e2",
+    "byteLength": 1655388,
+    "pixelWidth": 3550,
+    "pixelHeight": 1995,
+    "decodedFormat": "JPEG",
+    "decodedMode": "RGB",
+    "meanThumbnailSaturation": 115.49,
+    "iccProfileEmbedded": false,
+    "fullFrontVisualIdentityConfirmed": true,
+    "independentArtifactByteHashVerified": true
+  },
+  "comparison": {
+    "historicalWellcomeCommonsSha1": "f5b16cc5f168cb0c0776e3a96e99bd380324f565",
+    "historicalCommonsResolution": [
+      3550,
+      1995
+    ],
+    "sameImageIdentifier": true,
+    "jpegBytesDiffer": true,
+    "possibleReason": "Different JPEG export/encoding; not evidence of a different painting",
+    "commonsSelectionAutoAllowed": false
+  },
+  "licence": {
+    "historicalSourcePhotoLicence": "CC BY 4.0",
+    "historicalImageIdentity": "V0017627",
+    "evidenceUrl": "https://commons.wikimedia.org/wiki/File:The_halt_and_the_blind_being_summoned_to_the_great_supper._O_Wellcome_V0017627.jpg",
+    "wellcomeCurrentWork": "https://wellcomecollection.org/works/jgxd7rrf",
+    "currentFirstPartyImageLicencePageForExactModernFileNotIndependentlyMatched": true,
+    "proposedCredit": "The halt and the blind being summoned to the great supper. Oil painting by Joost Cornelisz. Droochsloot. Wellcome Collection. Source: Wellcome Collection. Historical image V0017627 marked CC BY 4.0.",
+    "attributionRequired": true,
+    "commercialReuseStatus": "LICENCE_EVIDENCE_PRESENT_FROM_ARCHIVAL_FILE; PENDING_CURRENT_PHOTO_ID_POLICY_RECONCILIATION"
+  },
+  "displayQA": {
+    "wide390x240CoverRetainsAreaPercent": 91.3,
+    "portrait390x520CoverRetainsAreaPercent": 42.1,
+    "wide": "PROVISIONAL_WIDE_CROP_OK_MINOR_EDGES_TRIM",
+    "portrait": "FAIL_LARGE_LEFT_AND_RIGHT_GROUP_LOSS_IF_COVER",
+    "recommended": "Use full-width natural aspect ratio or object-fit contain; do not use portrait cover without editorial decision",
+    "realAppContainerTested": false,
+    "ownerCropApproved": false
+  },
+  "githubActions": {
+    "runId": 42810676438,
+    "artifactId": 13761339118,
+    "artifactName": "ad-orientem-wellcome-full-front-source-qa",
+    "artifactRetentionDays": 7,
+    "originalBytesInPublicRepo": false,
+    "sourceScript": "scripts/sacred-art-fetch-wellcome-full-front-research.py",
+    "sourceProvenanceLedger": "data/artwork/research/m2m-wellcome-walters-remaining-source-reconciliation-20261110.v1.json"
+  },
+  "gates": {
+    "sourceImageAcquisition": true,
+    "hashAndImageDecode": true,
+    "exactArtworkVisualMatch": true,
+    "metadataAndHistoricalLicenceEvidence": true,
+    "currentPerImageLicenceFinalSignoff": false,
+    "ownerDateSpecificApproval": false,
+    "formalPhoneCropApproval": false,
+    "productionImageImport": false,
+    "releaseReady": false
+  },
+  "safeguards": [
+    "Keep this as new research record; do not substitute for previously selected image or auto-promote Commons",
+    "Photo front identifier V0017627; reverse L0014632 remains rejected for hero image",
+    "Do not mistake successful Actions job as date-specific assignment authority",
+    "No paid image license or outreach required for this acquisition",
+    "PR remains research-only; no Pages/public gallery changes"
+  ]
+}

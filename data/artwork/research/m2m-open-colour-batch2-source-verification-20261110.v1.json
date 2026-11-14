@@ -1,0 +1,122 @@
+{
+  "schema": "AO_SACRED_ART_BATCH2_SOURCE_VERIFICATION_V1",
+  "asOf": "2026-11-10",
+  "status": "ONE_RIJKSMUSEUM_FIRST_PARTY_IIIF_JPEG_SHA_VERIFIED_TWO_NATIONALMUSEUM_403_HOLDS",
+  "workflow": {
+    "runId": 42817873585,
+    "artifactId": 13764359268,
+    "artifactName": "ad-orientem-open-colour-batch2-research-only",
+    "retentionDays": 7,
+    "sourceManifest": "data/artwork/research/m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json",
+    "sourceScript": "scripts/sacred-art-acquire-open-colour-batch2.py"
+  },
+  "download": {
+    "workKey": "Rijks:SK-A-868",
+    "title": "Kitchen Scene with the Parable of the Rich Man and Poor Lazarus",
+    "artist": "Attributed to Pieter Cornelisz. van Rijck",
+    "exactPhotoUrl": "https://iiif.micr.io/yYdKx/full/max/0/default.jpg",
+    "canonicalObjectUrl": "https://www.rijksmuseum.nl/en/collection/object/Kitchen-Scene-with-the-Parable-of-the-Rich-Man-and-Poor-Lazarus--52a0c9546d60ccda0e4d0cf6e88b9117",
+    "museumObjectId": "20026170",
+    "visualItemId": "20226170",
+    "digitalObjectId": "5008410848741031167482",
+    "sourceLicence": "PUBLIC_DOMAIN_RIJKSMUSEUM_OBJECT_IMAGE_VIA_LINKED_ART_IIIF",
+    "museumInformationPolicy": "https://data.rijksmuseum.nl/policy/",
+    "recommendedAttribution": "Pieter Cornelisz. van Rijck (attributed), Kitchen Scene with the Parable of the Rich Man and Poor Lazarus, 1610–1620. Rijksmuseum, Amsterdam. Image via Rijksmuseum IIIF.",
+    "sha256": "507a9317f4aaa9a8ba217aa1d75a889a2f82cc2233a93484d1ab955e7d93ca73",
+    "byteLength": 6063138,
+    "pixelWidth": 6132,
+    "pixelHeight": 4483,
+    "mode": "RGB",
+    "iccPresent": false,
+    "thumbnailMeanSaturation": 120.01,
+    "hashVerifiedFromDownloadedActionsArtifact": true,
+    "actualPhotoDownloaded": true,
+    "colourFront": true,
+    "wide390x240RetainsPercent": 84.2,
+    "portrait390x520RetainsPercent": 54.8,
+    "iconographicFinding": "Very large foreground kitchen and game; biblical rich man banqueting and Lazarus begging are tiny figures at upper right. Whole-image mobile framing does not make the Gospel episode easy to discern.",
+    "wideHeroDisposition": "VISUAL_HOLD_GOSPEL_SCENE_TOO_SMALL",
+    "portraitHeroDisposition": "VISUAL_HOLD_RIGHT_BACKGROUND_EPISODE_CROPPED_OR_TINY",
+    "galleryFullArtOption": "RESEARCH_CANDIDATE_ONLY_SHOW_FULL_PAINTING_AND_USE_EXPLANATORY_CAPTION",
+    "technicalPhotoPass": true,
+    "formalAppCropCertified": false,
+    "ownerDateApproval": false,
+    "releaseReady": false,
+    "publicRepoImageBytesAdded": false
+  },
+  "holds": [
+    {
+      "workKey": "Nationalmuseum:NM420",
+      "source": "https://collection.nationalmuseum.se/multimedia/5/multimedia-958995.large.jpg",
+      "result": "HTTP_403",
+      "rightsEvidence": "PUBLIC_DOMAIN_ON_OBJECT_IMAGE",
+      "fullResPhotoAcquired": false,
+      "sha256": null,
+      "next": "Check Nationalmuseum official media.nationalmuseum.se by inventory number; inspect exact painting, file and reuse label, then hash a high-res colour download. The old collection JPEG remains HTTP 403. Commons link alone is not owner permission.",
+      "additionalInstitutionalEvidence": {
+        "historicalMuseumDonation": "https://commons.wikimedia.org/wiki/File:The_Parable_of_the_Labourers_in_the_Vineyard_(David_III_Ryckaert)_-_Nationalmuseum_-_17423.tif",
+        "museumProvidedArchivalImage": "Provided to Wikimedia Commons by Nationalmuseum as part of an official partnership; original TIFF lists pixel composition Black and white, one component.",
+        "archivalImageSizePx": [
+          3271,
+          1974
+        ],
+        "archivalOriginalColour": "BLACK_AND_WHITE_ARCHIVAL_REPRODUCTION",
+        "implication": "This legacy museum-donated TIFF is not a true-colour alternative. Do not falsely recolour or auto-promote Commons file. Current object page may link a distinct colour photograph but its selected JPEG returned 403.",
+        "museumRightsSource": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "photoFoundForCurrentBatch": false
+      },
+      "alternativeFirstPartySourceDiscovery": {
+        "museumMediaPortal": "https://media.nationalmuseum.se/search/all",
+        "collectionRightsPolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "sourceEvidence": "https://www.nationalmuseum.se/en/explore-art-and-design/images",
+        "launchNews": "https://www.nationalmuseum.se/om-nationalmuseum/nyheter/nationalmuseum-tillg%C3%A4ngligg%C3%B6r-bildskatt-genom-ny-mediaportal",
+        "photoLookupKey": "NM 420",
+        "status": "SOURCE_PORTAL_AVAILABLE_EXACT_OBJECT_MEDIA_FILE_NOT_YET_MATCHED",
+        "museumPhotoMustHaveInventoryIdAndExplicitLicence": true,
+        "mediaPortalImageFileUrl": null,
+        "individualMediaLicenceVerified": false,
+        "autoCommonsPromotionForbidden": true
+      }
+    },
+    {
+      "workKey": "Nationalmuseum:NM1134",
+      "source": "https://collection.nationalmuseum.se/multimedia/3/multimedia-7493.large.jpg",
+      "result": "HTTP_403",
+      "rightsEvidence": "PUBLIC_DOMAIN_ON_OBJECT_IMAGE",
+      "fullResPhotoAcquired": false,
+      "sha256": null,
+      "next": "Check Nationalmuseum official media.nationalmuseum.se by inventory number; inspect exact painting, file and reuse label, then hash a high-res colour download. The old collection JPEG remains HTTP 403. Commons link alone is not owner permission.",
+      "alternativeFirstPartySourceDiscovery": {
+        "museumMediaPortal": "https://media.nationalmuseum.se/search/all",
+        "collectionRightsPolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "sourceEvidence": "https://www.nationalmuseum.se/en/explore-art-and-design/images",
+        "launchNews": "https://www.nationalmuseum.se/om-nationalmuseum/nyheter/nationalmuseum-tillg%C3%A4ngligg%C3%B6r-bildskatt-genom-ny-mediaportal",
+        "photoLookupKey": "NM 1134",
+        "status": "SOURCE_PORTAL_AVAILABLE_EXACT_OBJECT_MEDIA_FILE_NOT_YET_MATCHED",
+        "museumPhotoMustHaveInventoryIdAndExplicitLicence": true,
+        "mediaPortalImageFileUrl": null,
+        "individualMediaLicenceVerified": false,
+        "autoCommonsPromotionForbidden": true
+      }
+    }
+  ],
+  "census": {
+    "attemptedOriginalArtworkKeys": 3,
+    "acquiredAndHashVerifiedSources": 1,
+    "failedFirstPartySources": 2,
+    "previouslyVerifiedSources": 7,
+    "newTotalVerifiedSources": 8,
+    "originalPoolVerifiedSources": 7,
+    "externalRiberaVerifiedAlternatives": 1,
+    "newDateApproved": 0,
+    "newAppImageReleased": 0,
+    "firstPartyAlternateMediaPortalsIdentified": 1
+  },
+  "safeguards": [
+    "Nothing published. Do not treat source file quality as a liturgical-scene approval.",
+    "Do not use a false full-scene portrait crop to make the Gospel parable legible.",
+    "Preserve Nationalmuseum artist attribution caveats and Matthew 20 correction.",
+    "Do not auto-promote non-owner-handpicked Wikimedia images.",
+    "All original owner art placement/rejection precedence unchanged."
+  ]
+}

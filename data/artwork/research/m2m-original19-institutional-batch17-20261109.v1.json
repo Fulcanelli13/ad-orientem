@@ -1,0 +1,210 @@
+{
+  "schema": "AO_SACRED_ART_ORIGINAL19_MUSEUM_OBJECTS_BATCH17_V1",
+  "as_of": "2026-11-09",
+  "state": "PRIMARY_AND_SECONDARY_OBJECT_IDENTIFICATIONS_WITH_ALL_PUBLICATION_GATES_HELD",
+  "based_on": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
+  "notes": [
+    "The nine still-unreviewed 2026 Calendar selections now have object leads; primary catalogue confidence varies and is stated per row",
+    "Museum object information must not be elevated to selected source photograph or licence",
+    "Do not treat a Commons photo of a Prado painting as a permitted exception to the no-Prado image policy",
+    "For Sacchi compare the Prado painting with separate Lateran-cycle canvases and later prints, not just title",
+    "No automatic transfer of prior gallery choices, including the San Rocco Circumcision shared Prayer scene"
+  ],
+  "counts": {
+    "source_object_research_rows_added": 9,
+    "source_object_research_rows_total_across_batches16_17": 19,
+    "primary_or_institutional_object_confidence_rows": 6,
+    "secondary_or_unfetched_museum_photo_record_rows": 3,
+    "photo_masters_selected_and_verified": 0,
+    "canonical_ids_assigned": 0,
+    "production_assignments_created": 0
+  },
+  "records": [
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-01-01",
+      "artist": "Tintoretto and workshop",
+      "title": "The Circumcision",
+      "institution": "Scuola Grande di San Rocco, Venice",
+      "physical_identity": "IN_SITU_INSTITUTIONAL_MATCH_WITH_PRAYER_CROSS_REFERENCE",
+      "object_id": "Sala Terrena The Circumcision (1587)",
+      "sources": [
+        "https://www.scuolagrandesanrocco.org/en/tintoretto/ground-floor-hall/"
+      ],
+      "finding": "Previously identified 1587 San Rocco original is a plausible shared work with batch9 Prayer identity; substantial workshop and Domenico involvement explicitly noted. Date-specific chosen photograph not matched to Prayer's photo; keep as two separate placement edges.",
+      "photo_hold": "ORIGINAL_OWNER_SELECTED_PHOTO_SOURCE_UNKNOWN"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-03-30",
+      "artist": "Peter Paul Rubens and Anthony van Dyck",
+      "title": "The Anointing at Bethany",
+      "institution": "State Hermitage Museum, St Petersburg (secondary reports only)",
+      "physical_identity": "SECONDARY_REPORT_OF_HERMITAGE_1618_WORK_NO_PRIMARY_INVENTORY_VERIFICATION",
+      "object_id": null,
+      "sources": [
+        "https://www.indcatholicnews.com/news/46882",
+        "https://avisitwithjesus.com/bible_art_detail.php?num=646"
+      ],
+      "finding": "Independent secondary discussions call it a 1618 Rubens–van Dyck collaboration at Hermitage, depicting John 12:1–11; primary museum accession and exact physical canvas not directly verified.",
+      "photo_hold": "HERMITAGE_PRIMARY_RECORD_IMAGE_AND_RIGHTS_MISSING"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-04-07",
+      "artist": "Anthony van Dyck",
+      "title": "Appearance of Christ to His Disciples",
+      "institution": "State Hermitage Museum (Commons-reported, primary catalogue not fetched)",
+      "physical_identity": "SECONDARY_COMMONS_METADATA_MATCH_PRIMARY_OBJECT_UNVERIFIED",
+      "object_id": null,
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Appearance_of_Christ_to_his_Disciples.jpg"
+      ],
+      "finding": "Commons source describes van Dyck 1625–26 oil canvas and Hermitage custody. Original museum accession and selected photo remain unverified; do not infer from shared title.",
+      "photo_hold": "COMMONS_ONLY_MUSEUM_EQUIVALENT_AND_EXACT_PHOTO_REQUIRED"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-05-28",
+      "artist": "Anonymous North Netherlandish",
+      "title": "The Sending Out of the Twelve Disciples",
+      "institution": "Centraal Museum Utrecht",
+      "physical_identity": "OFFICIAL_OBJECT_MATCH",
+      "object_id": "2474",
+      "sources": [
+        "https://prod.centraalmuseum.nl/en/collection/2474-de-uitzending-van-de-twaalf-discipelen-anoniem-noord-nederlands"
+      ],
+      "finding": "Museum confirms anonymous North Netherlandish oil canvas ca.1573, object 2474; exact 1962 Gospel subject appropriate; Commons image available but not specifically owner-selected or photo-cleared.",
+      "photo_hold": "REQUIRE_SELECTED_FILE_PIXEL_LICENSE_QA"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-05-30",
+      "artist": "John Bridges",
+      "title": "Jesus Restoring to Health Peter's Wife's Mother",
+      "institution": "Birmingham Museum of Art",
+      "physical_identity": "OFFICIAL_OBJECT_MATCH_WITH_COMMONS_DATE_CONFLICT",
+      "object_id": "1978.29",
+      "sources": [
+        "https://www.artsbma.org/collection/jesus-restoring-to-health-peters-wifes-mother/",
+        "https://commons.wikimedia.org/wiki/File:Christ_Healing_the_Mother_of_Simon_Peter%E2%80%99s_Wife_by_John_Bridges.jpg"
+      ],
+      "finding": "Birmingham's official painting record gives John Bridges, 1833, signed 'John Bridges / Roma 1833', collection 1978.29. Commons metadata describes same sized object but calls it 1839; official object date supersedes that field, without asserting Commons photograph is approved.",
+      "photo_hold": "COMMONS_DATE_INCONSISTENCY_AND_EXACT_SELECTED_IMAGE_UNVERIFIED"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-06-24",
+      "artist": "Andrea Sacchi",
+      "title": "The Birth of Saint John the Baptist",
+      "institution": "Museo del Prado, Madrid (inventory represented by Commons painting index; object page inaccessible during review)",
+      "physical_identity": "LIKELY_EXACT_OBJECT_PRADO_SOURCE_REPRODUCTION_EXCLUDED",
+      "object_id": "P000003",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Nacimiento_de_San_Juan_Bautista.jpg",
+        "https://www.museodelprado.es/coleccion/obra-de-arte/wd/8b9101fc-1e7b-4b32-8e01-166db1fcd435"
+      ],
+      "finding": "Commons original is an uploaded Prado photograph of Sacchi's Birth of St John, painting index lists P000003. Prado object page could not be directly read. A separate painting subject by Sacchi for Lateran cycle and later prints/copies must not be conflated.",
+      "photo_hold": "NO_PRADO_SOURCE_REPRODUCTION_EVEN_VIA_COMMONS_REUPLOAD"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-12-06",
+      "artist": "Michael Willmann",
+      "title": "The Family of Christ",
+      "institution": "National Museum in Wrocław digital collections",
+      "physical_identity": "OFFICIAL_OBJECT_MATCH",
+      "object_id": "MNWr VIII-2328 (secondary Commons accession; institutional page confirms work)",
+      "sources": [
+        "https://muzeumcyfrowe.mnwr.pl/en/exhibit/the-family-of-jesus-christ",
+        "https://commons.wikimedia.org/wiki/File:Michael_L._Willmann_-_Rodzina_Chrystusa.jpg"
+      ],
+      "finding": "Museum digital collection identifies 1677–79 oil on oak panel (119x73cm), family/genealogy of Jesus; separate Commons metadata associates inventory MNWr VIII-2328. Selected source photo not QA-cleared.",
+      "photo_hold": "INSTITUTIONAL_EXACT_ARTWORK_ACCEPTANCE_NOT_SELECTED_PHOTO_HASH"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-12-13",
+      "artist": "Bernardo Strozzi",
+      "title": "Saint John the Baptist Interrogated about Christ",
+      "institution": "National Trust, Kedleston Hall",
+      "physical_identity": "OFFICIAL_OBJECT_MATCH_HISTORIC_MISTITLE_CORRECTED",
+      "object_id": "NT 108873",
+      "sources": [
+        "https://www.nationaltrustcollections.org.uk/object/108873"
+      ],
+      "finding": "National Trust identifies St John interrogated in John 1:19–28, historically mislabelled 'Incredulity of Saint Thomas'; do not merge with the separate Strozzi Woman of Samaria apparent pendant (NT108872). Historic attribution debates must remain source-scoped.",
+      "photo_hold": "NATIONAL_TRUST_PHOTOGRAPH_ORDER_IMAGE_NON_OPEN_USE_UNTESTED"
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "canonical_app_artwork_id": null,
+      "selected_exact_image_file_sha256": null,
+      "selected_photo_reuse_licensed": false,
+      "photograph_mobile_QA_passed": false,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-12-20",
+      "artist": "Giovanni Battista Gaulli (Baciccio)",
+      "title": "La Prédication de saint Jean Baptiste",
+      "institution": "Musée du Louvre",
+      "physical_identity": "OFFICIAL_MUSEUM_INVENTORY_MATCH",
+      "object_id": "INV 20298",
+      "sources": [
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+        "https://agorha.inha.fr/ark:/54721/256c8a25-8d28-410a-9fca-64583803f3cb"
+      ],
+      "finding": "Louvre confirms Gaulli Baciccio oil on canvas, INV20298; older Dijon deposit ended 1968. Do not confuse separate Natoire copy or Giovanni Battista Tiepolo preaching pictures.",
+      "photo_hold": "LOUVRE_IMAGE_REUSE_AND_EXACT_SELECTED_FILE_CROP_UNCHECKED"
+    }
+  ],
+  "production_assignments": []
+}

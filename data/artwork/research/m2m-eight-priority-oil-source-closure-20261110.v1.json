@@ -1,0 +1,98 @@
+{
+  "schema": "AO_SACRED_ART_EIGHT_SOURCE_TERMINAL_TRIAGE_V1",
+  "asOf": "2026-11-10",
+  "status": "DIRECT_MUSEUM_SOURCE_RESEARCH_RECONCILED_NO_NEW_IMAGE_BYTES_OR_RELEASE",
+  "scope": "Eight original priority-oil artwork keys in C_LOCATE_REUSABLE_COLOUR_SOURCE immediately after verified MSK Ghent acquisition and four browser-only museum portal holds.",
+  "policy": "Artwork is separate from chosen photo; an old/public-domain painting or open metadata record does not license the specific digital reproduction. No fees, outreach, automatic Commons promotion, Prado photographs, Vercel or public release.",
+  "counts": {
+    "reviewed": 8,
+    "restrictedInstitutionalPhotoSources": 4,
+    "objectRecordsWithoutDownloadablePhoto": 2,
+    "sourceRightsOrAttributionUnresolved": 2,
+    "firstPartyProductionPhotoLicencesCleared": 0,
+    "sourceImageBytesDownloaded": 0,
+    "previouslyVerifiedOriginalMuseumPhotos": 9,
+    "newOwnerPlacementApprovals": 0,
+    "newPublicReleases": 0
+  },
+  "sources": [
+    {
+      "artworkKey": "Thoma:AthanasiusOfAlexandria",
+      "classification": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "issue": "FOUNDATION_EXPLICIT_NO_COMMERCIAL_IMAGE_USE",
+      "objectSource": "https://thomafoundation.org/saint-athanasius-of-alexandria/",
+      "policySource": "https://thomafoundation.org/collections/image-research-requests/",
+      "evidence": "Official foundation only considers scholarly/educational image requests, expressly prohibits commercial image use; website terms allow ordinary copying for non-commercial purposes only.",
+      "next": "Seek separately documented open image of the same exact painting, otherwise alternative exact-saint painting as independent research candidate; no requests."
+    },
+    {
+      "artworkKey": "UMMA:1960/2.93",
+      "classification": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "issue": "UMMA_OFFICIAL_PUBLICATION_IMAGE_REQUEST_REQUIRED",
+      "objectSource": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+      "policySource": "https://umma.umich.edu/about/services/request-image/",
+      "evidence": "Museum asks applicants to request commercial or scholarly reproduction image specifying intended use, online duration and rights; no exact-file commercial licence independently verified.",
+      "next": "Find separately openly licensed reproduction of exact Champaigne painting without museum request, otherwise hold; no paid permission."
+    },
+    {
+      "artworkKey": "Lombardia:C0150-00107",
+      "classification": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "issue": "LOMBARDIA_HIGH_RES_PHOTO_OWNER_CONTACT_REQUIRED",
+      "objectSource": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+      "policySource": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+      "evidence": "The exact SIRBeC page says high-resolution photographic documentation requests are to be made directly to the public/private holding institution; no open full-resolution selected photo identified.",
+      "next": "Find already open original Orelli photograph from a distinct rights-bearing institution. Do not contact Bergamo municipality or buy photo."
+    },
+    {
+      "artworkKey": "Olomouc:Skreta-WenceslasCycle",
+      "classification": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "issue": "OLOMOUC_PHOTOGRAPHY_PERSONAL_ONLY_NO_COMMERCIAL_RELEASE",
+      "objectSource": "https://muo.cz/en/vystavy/st-wenceslas-christian-prince-and-martyr/",
+      "policySource": "https://muo.cz/en/visit/admission-to-the-exhibitions/",
+      "evidence": "MUO visitor rules restrict permitted exhibition photography to personal use and disallow making copies. The identified Škréta/Wenceslas cycle has private-ownership provenance and no image-specific open licence.",
+      "next": "Keep individual narrative panels as work research only; identify an independently open photo from another institutional source, not this exhibition photo."
+    },
+    {
+      "artworkKey": "IAPH:67609",
+      "classification": "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES",
+      "issue": "IAPH_OBJECT_REPOSITORY_RECORD_HAS_NO_FILE",
+      "objectSource": "https://repositorio.iaph.es/handle/11532/43186",
+      "policySource": "https://repositorio.iaph.es/handle/11532/43186",
+      "evidence": "Official IAPH San Antonio María Claret record 67609 explicitly says 'No hay ficheros asociados a este ítem'. Its public-use attribution language is not a downloadable colour photograph; different IAPH images may have a BY-NC-SA 3.0 photo licence and cannot be silently substituted.",
+      "next": "Research exact accession 67609 in the IAPH Guía Digital or other distinct official archival photo registry. Do not pretend this handle has bytes or borrow a different Claret image."
+    },
+    {
+      "artworkKey": "POP:PM51000939",
+      "classification": "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES",
+      "issue": "POP_PROTECTED_OBJECT_HAS_ONLY_HISTORIC_PHOTO_REFERENCES",
+      "objectSource": "https://pop.culture.gouv.fr/notice/palissy/PM51000939",
+      "policySource": "https://pop.culture.gouv.fr/donnees-ouvertes",
+      "evidence": "The exact 19th-century Touzet canvas catalogue cites MH86ZZ10/5 and MH66V1463 archival photographs but no image-specific open reuse licence or original painting JPEG. POP distinguishes downloadable open public data from copyrighted multimedia requiring authorization.",
+      "next": "Look up the two named photographic archive identifiers under POP/Mémoire; accept only a specifically licensed exact photo, and do not treat the app notice's download button as painting image."
+    },
+    {
+      "artworkKey": "Holburne:A17",
+      "classification": "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION",
+      "issue": "HOLBURNE_A17_CONFLICTING_ARTIST_FIELDS_PHOTO_LICENSE_UNSPECIFIED",
+      "objectSource": "https://holburne.collectionsindex.com/object-a17",
+      "policySource": "https://holburne.collectionsindex.com/object-a17",
+      "evidence": "Museum record heading says Giovanni Battista Piazzetta, but object title and descriptive text attribute the oil study of the Death of St Andrew Avellino to Giambettino Cignaroli. Neither wording is a photograph licence. The study is not automatically interchangeable with its Crema altarpiece.",
+      "next": "Resolve conflicting A17 attribution from an independent institutional catalogue/collection update and find one specific colour photo with documented reuse rights; keep both names as catalogue evidence."
+    },
+    {
+      "artworkKey": "LvivNationalGallery:Ж-1791",
+      "classification": "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION",
+      "issue": "LVIV_SPECIFIC_PHOTO_REUSE_RIGHTS_NOT_STATED",
+      "objectSource": "https://collection-lvivgallery.org.ua/en/works/3812-sviata-iadviha-myryt-konrada-mazovetskoho-zi-svoijm-cholovikom-henrykom-borodatym",
+      "policySource": "https://collection-lvivgallery.org.ua/en/works/3812-sviata-iadviha-myryt-konrada-mazovetskoho-zi-svoijm-cholovikom-henrykom-borodatym",
+      "evidence": "Gallery confirms Aleksander Lesser 1848–1850, exact Hedwig mediation scene, object Ж-1791; page includes images but a general 2026 all-rights-reserved site notice, with no specific photo CC0/PD licence identified.",
+      "next": "Identify the actual image photographer and explicit licence of an exact reproduction. Do not infer free reuse from Lesser's 1884 death or the page displaying photos."
+    }
+  ],
+  "nextResearchOrder": [
+    "Start with independently open institution-hosted exact work photographs and preserve accession-level identity; museum marketing or press assets without CC0/PD/CC BY clearance are not sufficient.",
+    "For subject/date coverage, investigate different non-rejected open-access Baroque artworks as separate artwork keys; never silently replace original requested paintings or claim historical owner approval.",
+    "Treat the 49 rights-restricted official-photo records as eligible for alternate-source research rather than global artwork rejection.",
+    "Do not repeatedly probe 2 IAPH/POP record URLs for nonexistent original image bytes; use documented photography archive identifiers."
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_RIGHTS_FOLLOWUP10B_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_OBJECT_QA_NOT_PHOTO_RELEASE",
+  "scope": "Ten additional DISTINCT unique oil work keys not among audit18 or followup10, selected systematically in calendar order",
+  "baseline": {
+    "directOilRelationships": 79,
+    "uniqueOilWorkKeys": 68,
+    "previouslyAudited": 28,
+    "thisBatch": 10,
+    "cumulativelyAudited": 38,
+    "remaining": 30
+  },
+  "counts": {
+    "thisBatchKeys": 10,
+    "confirmedFirstPartyCC0ImagePage": 1,
+    "museumPublicDomainPageWithCommercialHighResPolicyConflict": 1,
+    "otherWorkPhotoPermissionsUncleared": 8,
+    "exactSelectedImageBytesDownloaded": 0,
+    "sha256Verified": 0,
+    "fullResolutionVerified": 0,
+    "mobile390CropCertified": 0,
+    "newCalendarAssignmentsApproved": 0,
+    "newProductionReleases": 0
+  },
+  "safeguards": [
+    "Do not replace owner-selected artworks or revive globally rejected originals",
+    "Museum page or object PD != license for an exact photographic file",
+    "Source index snippets count as provisional catalogue evidence, not direct page verification",
+    "No new date-specific editorial approval; retain previous 198-edge research triage",
+    "All 10 entries require source bytes, exact-source image licence, color and phone composition checks before release"
+  ],
+  "sources": [
+    "https://art.thewalters.org/object/37.453/",
+    "https://www.mskgent.be/en/collection/s-43",
+    "https://www.mskgent.be/en/collection/image-rights",
+    "https://zbiory.mnk.pl/pl/katalog/271512",
+    "https://pop.culture.gouv.fr/notice/palissy/PM51000939",
+    "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1201202757",
+    "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100088399",
+    "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800022020",
+    "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800404274",
+    "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800193038",
+    "https://www.mks-sticna.si/eng/collections/digital-collections/slike-eng"
+  ],
+  "records": [
+    {
+      "workKey": "ICCD:0800404274",
+      "calendarDates": [
+        "2026-01-14"
+      ],
+      "title": "Madonna incoronata coi Santi Bernardo, Francesco Saverio, Tommaso, Maria Maddalena de' Pazzi, Ilario, Giovanni Battista",
+      "artist": "Giovanni Battista Merano",
+      "catalogueUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800404274",
+      "sourceAccess": "OFFICIAL_CATALOGUE_INDEX_RETRIEVED_DIRECT_URL_403",
+      "identity": "OBJECT_ID_AND_INCLUDED_HILARY_CORROBORATED",
+      "photoRights": "CC_BY_4_METADATA_ONLY_PHOTO_UNVERIFIED",
+      "note": "Parma, Galleria Nazionale / Palazzo della Pilotta, inv. 1191; about 1687–1688; St Hilary of Poitiers is one of numerous saints, not the sole subject. Crop may suppress him.",
+      "priority": "P1_IDENTIFY_HILARY_IN_FULL_FRAME_AND_FIND_OPEN_PHOTO",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MSKGent:S-43",
+      "calendarDates": [
+        "2026-01-23"
+      ],
+      "title": "Saint Raymund of Pennafort Venerating the Child",
+      "artist": "Luigi Primo",
+      "catalogueUrl": "https://www.mskgent.be/en/collection/s-43",
+      "sourceAccess": "DIRECT_MUSEUM_PAGE_AND_IMAGE_RIGHTS_PAGE_RETRIEVED",
+      "identity": "OBJECT_ID_ARTIST_OIL_CANVAS_AND_SAINT_VERIFIED",
+      "photoRights": "PUBLIC_DOMAIN_OBJECT_PAGE_MUSEUM_IMAGE_RIGHTS_SCOPE_UNRESOLVED_FOR_COMMERCIAL_HIGH_RES",
+      "note": "S-43 oil on canvas. Museum marks page Public Domain and offers IIIF manifest https://imagehub.mskgent.be/iiif/3/6344/manifest.json; image-rights page permits collection-image resolutions offered online but sends high-res/commercial use to Art in Flanders. Distinguish St Raymund of Pennafort from St Raymond Nonnatus; museum subject keywords misleadingly call him founder of Mercedarians.",
+      "priority": "P1_RECONCILE_IMAGE_SPECIFIC_LICENCE_WITH_COMMERCIAL_USE_AND_IIIF",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MKS-Sticna:SLU36",
+      "calendarDates": [
+        "2026-01-29"
+      ],
+      "title": "St. Francis de Sales",
+      "artist": "Unidentified painter",
+      "catalogueUrl": "https://www.mks-sticna.si/eng/collections/digital-collections/slike-eng",
+      "sourceAccess": "OFFICIAL_COLLECTION_INDEX_RETRIEVED_DIRECT_PAGE_TIMED_OUT",
+      "identity": "ENTRY_IDENTIFIES_REG_NO_SLU_36_19C_OIL_CANVAS",
+      "photoRights": "MUSEUM_COPYRIGHT_NOTICE_NO_OPEN_PHOTO_PERMISSION",
+      "note": "Slovene Museum of Christianity listing, registration ŠLU 36; first half 19th century; oval portrait. Official page marks © Slovene Museum of Christianity. No image-source reuse cleared.",
+      "priority": "P1_FIND_INDEPENDENT_OPEN_REPRO_OR_HOLD",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1201202757",
+      "calendarDates": [
+        "2026-04-28"
+      ],
+      "title": "San Paolo della Croce",
+      "artist": "Roman school, unidentified",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1201202757",
+      "sourceAccess": "DIRECT_NATIONAL_CATALOGUE_PAGE_RETRIEVED",
+      "identity": "OIL_CANVAS_PATRON_IDENTIFIED",
+      "photoRights": "CC_BY_4_METADATA_ONLY_PHOTO_UNVERIFIED",
+      "note": "19th-century oil painting at San Gallicano, Rome. Saint with Passionist rule, cross-heart emblem and angels; object page licenses only metadata CC BY 4.0, not a chosen photo.",
+      "priority": "P1_FIND_IMAGE_AND_RIGHTS",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Walters:37.453",
+      "calendarDates": [
+        "2026-05-05"
+      ],
+      "title": "Portrait of Pope Pius V",
+      "artist": "Bartolomeo Passarotti and workshop",
+      "catalogueUrl": "https://art.thewalters.org/object/37.453/",
+      "sourceAccess": "DIRECT_MUSEUM_OBJECT_AND_IMAGE_LICENCE_PAGE_RETRIEVED",
+      "identity": "OBJECT_ACC_37_453_IDENTIFIED_WITH_WORKSHOP_REPLICA_QUALIFIER",
+      "photoRights": "FIRST_PARTY_CC0_IMAGE_MARKED_NOT_DOWNLOADED",
+      "note": "Walters dates c. 1566, oil on canvas; says likely workshop replica after lost original. Page explicitly marks Creative Commons Zero and offers image download; cannot assign full photograph SHA, image-size or crop approval until acquiring the selected file.",
+      "priority": "P0_ACQUIRE_OFFICIAL_COLOUR_DOWNLOAD_AND_MOBILE_QA",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false,
+      "exactMuseumDownloadCandidateUrl": "https://art.thewalters.org/object/37.453/?download=PS1_37.453_FntAftTrt_DD_T09.jpg",
+      "persistentCatalogueUrl": "https://purl.thewalters.org/art/37.453/",
+      "downloadCandidateVerification": "Official museum download link is present on CC0 page; browsing returned image/jpg MIME unsupported by text reader. Local image download failed due network access; no photo bytes, dimensions, SHA or mobile QA were established."
+    },
+    {
+      "workKey": "ICCD:0100088399",
+      "calendarDates": [
+        "2026-05-05"
+      ],
+      "title": "Papa Pio V in preghiera per la battaglia di Lepanto",
+      "artist": "Italian school, unnamed",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100088399",
+      "sourceAccess": "DIRECT_NATIONAL_CATALOGUE_PAGE_RETRIEVED",
+      "identity": "OIL_CANVAS_CATALOGUE_AND_LOCATION_CORROBORATED",
+      "photoRights": "CC_BY_4_METADATA_ONLY_PHOTO_UNVERIFIED",
+      "note": "Racconigi Castle inv. 835. Pius V kneels in prayer while naval battle is seen through window; object location was reverified in 2016, despite 2002 storage uncertainty. No image rights cleared.",
+      "priority": "P1_FIND_IMAGE_AND_RIGHTS",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MNK:II-a-9",
+      "calendarDates": [
+        "2026-05-07"
+      ],
+      "title": "Biskup Stanisław Szczepanowski rzucający klątwę na króla Bolesława Śmiałego",
+      "artist": "Juliusz Knoor",
+      "catalogueUrl": "https://zbiory.mnk.pl/pl/katalog/271512",
+      "sourceAccess": "OFFICIAL_CATALOGUE_SEARCH_INDEX_RETRIEVED_DIRECT_PAGE_JS_SHELL",
+      "identity": "OIL_CANVAS_ACC_II_A_9_VERIFIED_BY_OFFICIAL_INDEX",
+      "photoRights": "OBJECT_COPYRIGHT_CLASS_PUBLIC_DOMAIN_PHOTO_VERSION_NOT_VERIFIED",
+      "note": "c. 1840. Official catalogue lists alternative titles spanning excommunication, murder, blessing his killers and death; do not assume exact action from title without photo inspection. Public-domain copyright classification listed but no named source photograph license/bytes established.",
+      "priority": "P1_SCENE_VISUAL_ADJUDICATION_AND_SELECTED_PHOTO_RIGHTS",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "POP:PM51000939",
+      "calendarDates": [
+        "2026-05-15"
+      ],
+      "title": "Saint Jean-Baptiste de la Salle",
+      "artist": "Touzet",
+      "catalogueUrl": "https://pop.culture.gouv.fr/notice/palissy/PM51000939",
+      "sourceAccess": "DIRECT_FRENCH_MINISTRY_PALISSY_RECORD_RETRIEVED",
+      "identity": "OIL_CANVAS_PROTECTED_OBJECT_IDENTIFIED_REIMS",
+      "photoRights": "HISTORICAL_PHOTO_REFERENCES_NOT_OPEN_FILE_LICENCE",
+      "note": "First-quarter 19th-century bust portrait in Reims birthplace; catalogue says possibly a replica after a lost early-18th-century painting, also possibly copy after another. Protected object privately owned. Archival photograph numbers not permission to reproduce.",
+      "priority": "P1_FIND_REUSABLE_SELECTED_PHOTO_AND_KEEP_COPY_QUALIFIER",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0800022020",
+      "calendarDates": [
+        "2026-05-16"
+      ],
+      "title": "Madonna con Bambino e Sant'Ubaldo",
+      "artist": "Francesco Stringa",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800022020",
+      "sourceAccess": "DIRECT_NATIONAL_CATALOGUE_PAGE_RETRIEVED",
+      "identity": "OIL_CANVAS_BY_STRINGA_AND_UBALDUS_ICONOGRAPHY_VERIFIED",
+      "photoRights": "CC_BY_4_METADATA_ONLY_PHOTO_UNVERIFIED",
+      "note": "c. 1680, in Rimini, 313x220cm. Saint Ubaldus kneels toward Virgin and Child; two possessed people at lower left; heavy historic overpainting largely reversed by 1972 restoration. Full-frame composition/crop will need inspection.",
+      "priority": "P1_SOURCE_PHOTO_AND_CROP_SUBJECT",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0800193038",
+      "calendarDates": [
+        "2026-05-18"
+      ],
+      "title": "San Venanzio martire",
+      "artist": "Attributed to Carlo Rizzi/Ricci",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800193038",
+      "sourceAccess": "OFFICIAL_CATALOGUE_SEARCH_INDEX_RETRIEVED_DIRECT_PAGE_TIMEOUT",
+      "identity": "OIL_CANVAS_WITH_SAINT_VENANTIUS_AND_ATTRIBUTION_CAUTION",
+      "photoRights": "PHOTO_PERMISSION_NOT_VERIFIED",
+      "note": "Maranello, oil canvas; full-length armour-clad Venantius with red cloak and flag. Catalogue credits Rizzi Carlo while critical note proposes attribution to Carlo Ricci; preserve name/attribution uncertainty, do not silently standardize maker.",
+      "priority": "P1_VERIFY_ATTRIBUTION_AND_FIND_OPEN_IMAGE",
+      "selectedFileSHA256": null,
+      "selectedFilePixelSize": null,
+      "selectedImagePhotoQACertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    }
+  ]
+}

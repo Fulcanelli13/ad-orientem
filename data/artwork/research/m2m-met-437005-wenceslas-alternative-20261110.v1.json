@@ -1,0 +1,52 @@
+{
+  "schema": "AO_SACRED_ART_MET_WENCESLAS_ALTERNATIVE_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_CC0_JPEG_SHA_VERIFIED_UNAPPROVED_SEPARATE_ARTWORK",
+  "candidate": {
+    "key": "Met:437005",
+    "originalBlockedWorkKey": "Olomouc:Skreta-WenceslasCycle",
+    "liturgicalDate": "2026-09-28",
+    "title": "The Burial of Saint Wenceslas",
+    "creator": "Master of Eggenburg",
+    "date": "ca. 1490–1500",
+    "medium": "Oil and gold on spruce",
+    "museumAccession": "44.147.2",
+    "museumObjectId": 437005,
+    "objectPage": "https://www.metmuseum.org/art/collection/search/437005",
+    "officialMetadataApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437005",
+    "sourceImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP164825.jpg",
+    "sourceImageBytesAcquired": true,
+    "sourceImageSha256": "468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608",
+    "museumObjectMarkedPublicDomain": true,
+    "photoLicencePolicy": "MET_OPEN_ACCESS_CC0_ONLY_WHEN_IS_PUBLIC_DOMAIN_TRUE_AND_PRIMARY_IMAGE_URL_ON_MUSEUM_IMAGES_HOST",
+    "iconography": "Burial of the martyr saint, not preparing hosts or pressing sacramental wine",
+    "fidelity": "SAINT_PERSON_EXACT_DIFFERENT_NARRATIVE",
+    "visualStyle": "LATE_GOTHIC_EARLY_RENAISSANCE_NON_BAROQUE_LOWER_AESTHETIC_PRIORITY",
+    "chronologyRelation": "Different work, artist, scene and owner from Škréta cycle; no claimed same-work replacement",
+    "isExistingOwnerSelected": false,
+    "globalRejectionMasterCrosscheckComplete": false,
+    "notAlreadyIn151WorkResearchPool": true,
+    "productionEligible": false,
+    "ownerCalendarApproval": false,
+    "sourcePixels": [
+      2453,
+      3832
+    ],
+    "photoSourceEvidence": "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json"
+  },
+  "constraints": [
+    "Use first-party Met object API and original CRDImages JPEG only; do not source from Commons, even if filename discovered there",
+    "No user-global artwork rejection override or first-party gallery insertion",
+    "Only image from exact Met 437005; do not use adjacent 44.147.1 altarpiece or infrared/X-ray variants",
+    "Decode image and verify original SHA/pixels before increasing source count",
+    "If exact photo is absent/monochrome, report failure and retain research hold",
+    "No payments, external contacts, Vercel or production app changes"
+  ],
+  "count": {
+    "newExternalAlternativeCandidates": 1,
+    "originalFocalWorksReplaced": 0,
+    "originalPhotoFilesAcquired": 1,
+    "ownerApprovedCalendarPlacements": 0,
+    "publications": 0
+  }
+}

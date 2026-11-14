@@ -1,0 +1,205 @@
+{
+  "schema": "AO_SACRED_ART_WEAK_TITLE_ARTIST_LEADS_6_BATCH11_V1",
+  "as_of": "2026-11-09",
+  "state": "RESEARCH_ONLY_NO_CANONICAL_ID_AUTOMATIC_RESOLUTION",
+  "origin": "data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json",
+  "policy": [
+    "Preserve six historical owner selections and their repeated multi-destination use",
+    "Do not treat artist/title string equality as physical-object identity without independent source references",
+    "External museum accession is not automatically the application's canonical registry ID",
+    "Photograph, crop and owner source preferences must be cleared independently"
+  ],
+  "summary": {
+    "reviewed": 6,
+    "distinct_work_groups": 3,
+    "museum_accessions_supported": 2,
+    "secondary_vatican_work_accession_unconfirmed": 1,
+    "app_canonical_ids_created": 0,
+    "new_assignments_authorised": 0,
+    "remaining_no_internal_candidate_destinations": 29
+  },
+  "works": [
+    {
+      "work_key": "VAN_DYCK_INDIANAPOLIS_ENTRY",
+      "targets": [
+        "2026-03-29",
+        "HERO-08"
+      ],
+      "artist": "Anthony van Dyck",
+      "title": "Entry of Christ into Jerusalem",
+      "institution": "Indianapolis Museum of Art at Newfields",
+      "accession": "58.3",
+      "evidence_urls": [
+        "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+      ],
+      "identity_state": "ACCESSION_SUPPORTED_BY_MUSEUM_ASSOCIATED_COLLECTION_PROFILE",
+      "qualification": "About 1617; same Commons file in both preserved Calendar/Palm Hero references. Do not conflate with Rubens Dijon Entry, or infer cropped/photograph release from public-domain painting.",
+      "photo_hold": "NEWFIELDS_OBJECT_IMAGE_EXACT_SOURCE_FILE_RIGHTS_CROP_UNTESTED"
+    },
+    {
+      "work_key": "JOHN_MARTIN_TATE_WRATH",
+      "targets": [
+        "2026-11-29",
+        "HERO-01"
+      ],
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "institution": "Tate Britain",
+      "accession": "N05613",
+      "evidence_urls": [
+        "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+        "https://artsandculture.google.com/asset/the-great-day-of-his-wrath/RQFpgg6aFrwrtw?hl=en-GB"
+      ],
+      "identity_state": "ACCESSION_SUPPORTED_BY_TATE_LINK_AND_COLLECTION_SECONDARY",
+      "qualification": "1851–1853 oil on canvas, part of Martin's triptych; both preserved relationships refer to same Commons Google Art Project file. Tate official page returned access denied in research browser, so accession is supported by referenced collection records rather than fetched institutional object text.",
+      "photo_hold": "TATE_SELECTED_GOOGLE_ART_PROJECT_MEDIA_RIGHTS_EXACT_BYTES_MOBILE_UNTESTED"
+    },
+    {
+      "work_key": "CARRACCI_VATICAN_PURGATORY",
+      "targets": [
+        "2026-11-02",
+        "HERO-21"
+      ],
+      "artist": "Ludovico Carracci / workshop context qualified",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "institution": "Pinacoteca Vaticana (per WGA; institutional item not directly fetched)",
+      "accession": null,
+      "evidence_urls": [
+        "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      ],
+      "identity_state": "SECONDARY_CATALOGUE_IDENTIFICATION_INSTITUTIONAL_ACCESSION_MISSING",
+      "qualification": "Circa 1610, 44×51 cm; reportedly sketch for an altarpiece produced by Carracci workshop. Maintain attribution and institution accession hold, and do not present as an altar's complete version.",
+      "photo_hold": "VATICAN_CARRACCI_INSTITUTIONAL_RECORD_ATTRIBUTION_AND_FILE_RIGHTS_NOT_VERIFIED"
+    }
+  ],
+  "records": [
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-03-29",
+      "prior_selected_title": "The Entry of Christ into Jerusalem",
+      "prior_selected_artist": "Anthony van Dyck",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "work_key": "VAN_DYCK_INDIANAPOLIS_ENTRY",
+      "institution": "Indianapolis Museum of Art at Newfields",
+      "object_accession": "58.3",
+      "work_identity_state": "ACCESSION_SUPPORTED_BY_MUSEUM_ASSOCIATED_COLLECTION_PROFILE",
+      "evidence_urls": [
+        "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+      ],
+      "qualification": "About 1617; same Commons file in both preserved Calendar/Palm Hero references. Do not conflate with Rubens Dijon Entry, or infer cropped/photograph release from public-domain painting.",
+      "photo_reuse_hold": "NEWFIELDS_OBJECT_IMAGE_EXACT_SOURCE_FILE_RIGHTS_CROP_UNTESTED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-11-02",
+      "prior_selected_title": "An Angel Frees the Souls of Purgatory",
+      "prior_selected_artist": "Ludovico Carracci",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "work_key": "CARRACCI_VATICAN_PURGATORY",
+      "institution": "Pinacoteca Vaticana (per WGA; institutional item not directly fetched)",
+      "object_accession": null,
+      "work_identity_state": "SECONDARY_CATALOGUE_IDENTIFICATION_INSTITUTIONAL_ACCESSION_MISSING",
+      "evidence_urls": [
+        "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      ],
+      "qualification": "Circa 1610, 44×51 cm; reportedly sketch for an altarpiece produced by Carracci workshop. Maintain attribution and institution accession hold, and do not present as an altar's complete version.",
+      "photo_reuse_hold": "VATICAN_CARRACCI_INSTITUTIONAL_RECORD_ATTRIBUTION_AND_FILE_RIGHTS_NOT_VERIFIED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-11-29",
+      "prior_selected_title": "The Great Day of His Wrath",
+      "prior_selected_artist": "John Martin",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "work_key": "JOHN_MARTIN_TATE_WRATH",
+      "institution": "Tate Britain",
+      "object_accession": "N05613",
+      "work_identity_state": "ACCESSION_SUPPORTED_BY_TATE_LINK_AND_COLLECTION_SECONDARY",
+      "evidence_urls": [
+        "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+        "https://artsandculture.google.com/asset/the-great-day-of-his-wrath/RQFpgg6aFrwrtw?hl=en-GB"
+      ],
+      "qualification": "1851–1853 oil on canvas, part of Martin's triptych; both preserved relationships refer to same Commons Google Art Project file. Tate official page returned access denied in research browser, so accession is supported by referenced collection records rather than fetched institutional object text.",
+      "photo_reuse_hold": "TATE_SELECTED_GOOGLE_ART_PROJECT_MEDIA_RIGHTS_EXACT_BYTES_MOBILE_UNTESTED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "HERO-01",
+      "prior_selected_title": "The Great Day of His Wrath",
+      "prior_selected_artist": "John Martin",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "work_key": "JOHN_MARTIN_TATE_WRATH",
+      "institution": "Tate Britain",
+      "object_accession": "N05613",
+      "work_identity_state": "ACCESSION_SUPPORTED_BY_TATE_LINK_AND_COLLECTION_SECONDARY",
+      "evidence_urls": [
+        "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+        "https://artsandculture.google.com/asset/the-great-day-of-his-wrath/RQFpgg6aFrwrtw?hl=en-GB"
+      ],
+      "qualification": "1851–1853 oil on canvas, part of Martin's triptych; both preserved relationships refer to same Commons Google Art Project file. Tate official page returned access denied in research browser, so accession is supported by referenced collection records rather than fetched institutional object text.",
+      "photo_reuse_hold": "TATE_SELECTED_GOOGLE_ART_PROJECT_MEDIA_RIGHTS_EXACT_BYTES_MOBILE_UNTESTED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "HERO-08",
+      "prior_selected_title": "The Entry of Christ into Jerusalem",
+      "prior_selected_artist": "Anthony van Dyck",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "work_key": "VAN_DYCK_INDIANAPOLIS_ENTRY",
+      "institution": "Indianapolis Museum of Art at Newfields",
+      "object_accession": "58.3",
+      "work_identity_state": "ACCESSION_SUPPORTED_BY_MUSEUM_ASSOCIATED_COLLECTION_PROFILE",
+      "evidence_urls": [
+        "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+      ],
+      "qualification": "About 1617; same Commons file in both preserved Calendar/Palm Hero references. Do not conflate with Rubens Dijon Entry, or infer cropped/photograph release from public-domain painting.",
+      "photo_reuse_hold": "NEWFIELDS_OBJECT_IMAGE_EXACT_SOURCE_FILE_RIGHTS_CROP_UNTESTED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "HERO-21",
+      "prior_selected_title": "An Angel Frees the Souls of Purgatory",
+      "prior_selected_artist": "Ludovico Carracci",
+      "prior_image_url": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "work_key": "CARRACCI_VATICAN_PURGATORY",
+      "institution": "Pinacoteca Vaticana (per WGA; institutional item not directly fetched)",
+      "object_accession": null,
+      "work_identity_state": "SECONDARY_CATALOGUE_IDENTIFICATION_INSTITUTIONAL_ACCESSION_MISSING",
+      "evidence_urls": [
+        "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      ],
+      "qualification": "Circa 1610, 44×51 cm; reportedly sketch for an altarpiece produced by Carracci workshop. Maintain attribution and institution accession hold, and do not present as an altar's complete version.",
+      "photo_reuse_hold": "VATICAN_CARRACCI_INSTITUTIONAL_RECORD_ATTRIBUTION_AND_FILE_RIGHTS_NOT_VERIFIED",
+      "canonical_app_artwork_id": null,
+      "canonical_app_id_resolved": false,
+      "current_owner_selection_preserved": true,
+      "new_assignment_authorised": false
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+name: Sacred Art consolidated selection queue gate
+
+# Research-only consistency checks. Never publishes images or deploys anything.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-consolidated-image-selection-queue-20261110.v1.json'
+      - 'data/artwork/research/README-image-selection-queue-20261110.md'
+      - 'tests/sacred-art-consolidated-image-selection-queue-research.test.mjs'
+      - '.github/workflows/sacred-art-selection-queue-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consolidated-selection-census:
+    name: verify dates, rights, hashes and owner release holds
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact research commit
+        uses: actions/checkout@v4
+      - name: Run consolidated image source and editorial-release gate
+        run: node tests/sacred-art-consolidated-image-selection-queue-research.test.mjs
+      - name: Re-run existing exact-oil source gate
+        run: node tests/sacred-art-exact-oil-68-source-rights-gate-research.test.mjs
+      - name: Verify previous source-photo checks remain protected
+        run: |
+          node tests/sacred-art-wellcome-v0017627-verified-image-research.test.mjs
+          node tests/sacred-art-ribera-alcantara-source-verified-research.test.mjs
+          node tests/sacred-art-walters-pius-v-source-image-research.test.mjs

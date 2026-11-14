@@ -1,0 +1,304 @@
+{
+  "schema": "AO_SACRED_ART_ORIGINAL19_MUSEUM_OBJECTS_BATCH16_V1",
+  "as_of": "2026-11-09",
+  "status": "OBJECT_PROVENANCE_RESEARCH_ONLY_NO_PHOTOGRAPH_CLEARANCE",
+  "source_29": "data/artwork/research/m2m-protected-asset-provenance-batch13-20261109.v1.json",
+  "scope": "First ten of nineteen unreconciled owner-selected destination image sources; independent museum object ID versus already-selected specific photo are distinct checks.",
+  "counts": {
+    "previous_unresolved_selected_source_destinations": 19,
+    "destinations_in_this_primary_source_review": 10,
+    "destinations_not_yet_primary_source_reviewed": 9,
+    "ambiguous_caravaggio_physical_work_choice": 1,
+    "distinct_prayer_slots_same_castillo_object": 2,
+    "new_canonical_app_ids_assigned": 0,
+    "exact_selected_photo_masters_validated": 0,
+    "new_publications_authorised": 0
+  },
+  "guidance": [
+    "Keep each original approved calendar and prayer choice stable, regardless of museum attribution work",
+    "Physical object identity is a research lead, not proof of the owner's exact photograph, photo licence or image quality",
+    "Do not confuse London 1601 and Brera 1606 Caravaggio Emmaus canvases",
+    "Do not silently label Figge Good Shepherd an uncontested autograph Bruegel",
+    "Do not treat Minardi Quirinale fresco as an oil canvas",
+    "Do not auto-substitute private museum or RMN photographs for Commons images",
+    "Do not infer accepted use of a non-handpicked Commons file"
+  ],
+  "records": [
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-03-01",
+      "title": "The Transfiguration",
+      "artist": "Raphael",
+      "identity_state": "LIKELY_SAME_PHYSICAL_WORK_PRIMARY_INSTITUTION_EVIDENCE",
+      "institution": "Vatican Museums, Pinacoteca, Room VIII",
+      "physical_objects": [
+        {
+          "title": "The Transfiguration",
+          "creator": "Raphael (Raffaello Sanzio)",
+          "museum_id": null,
+          "artwork_url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html"
+        }
+      ],
+      "source_finding": "Vatican official gallery confirms Raphael's final monumental Transfiguration, originally commissioned for Narbonne; official article identifies two Gospel events in upper/lower registers.",
+      "photo_gate": "VATICAN_PHOTOGRAPH_NOT_SOURCE_FILE_IDENTIFIED_OR_LICENSED",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-04-06",
+      "title": "The Supper at Emmaus",
+      "artist": "Caravaggio",
+      "identity_state": "PHYSICAL_VERSION_SELECTION_CONFLICT_TWO_AUTOGRAPH_WORKS",
+      "institution": "National Gallery London / Pinacoteca di Brera",
+      "physical_objects": [
+        {
+          "title": "The Supper at Emmaus",
+          "creator": "Michelangelo Merisi da Caravaggio",
+          "date": "1601",
+          "museum_id": "NG172",
+          "artwork_url": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus"
+        },
+        {
+          "title": "Supper at Emmaus",
+          "creator": "Michelangelo Merisi da Caravaggio",
+          "date": "1606",
+          "museum_id": "2296",
+          "artwork_url": "https://pinacotecabrera.org/en/collezioni/collezione-on-line/supper-at-emmaus/"
+        }
+      ],
+      "source_finding": "Two physically different autograph Caravaggio paintings share the same title. User's prior Calendar decision says Caravaggio but supplies no object/photo URL; neither can be silently promoted.",
+      "photo_gate": "CHOOSE_EXACT_PREVIOUSLY_APPROVED_CANVAS_BEFORE_IMAGE_ACQUISITION",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-04-09",
+      "title": "Christ and St Mary Magdalen at the Tomb",
+      "artist": "Rembrandt",
+      "identity_state": "LIKELY_SAME_PHYSICAL_WORK_PRIMARY_INSTITUTION_EVIDENCE",
+      "institution": "Royal Collection Trust",
+      "physical_objects": [
+        {
+          "title": "Christ and St Mary Magdalen at the Tomb",
+          "creator": "Rembrandt van Rijn",
+          "date": "1638",
+          "museum_id": "RCIN 404816",
+          "artwork_url": "https://www.rct.uk/collection/stories/easter-in-the-royal-collection/christ-and-st-mary-magdalen-at-the-tomb"
+        }
+      ],
+      "source_finding": "Signed 1638 oil on panel, Royal Collection 404816. Official page distinguishes later unrelated Rembrandt treatment in Brunswick; don't swap source photo.",
+      "photo_gate": "ROYAL_COLLECTION_PHOTO_RIGHTS_SELECTED_REPRODUCTION_NOT_IDENTIFIED",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-04-10",
+      "title": "Missione degli Apostoli",
+      "artist": "Tommaso Minardi, earlier registry also mentions Fontana/workshop association",
+      "identity_state": "PRIMARY_CATALOGUE_EXACT_NAMED_WORK_ART_MATERIAL_CORRECTION",
+      "institution": "Palazzo del Quirinale, Galleria di Alessandro VII, Rome (per Fondazione Zeri)",
+      "physical_objects": [
+        {
+          "title": "Missione degli apostoli",
+          "creator": "Tommaso Minardi",
+          "date": "1864",
+          "museum_id": "Fondazione Zeri catalogue entry 99995 / record 97887",
+          "artwork_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/99995/Minardi%20Tommaso%2C%20Missione%20degli%20apostoli"
+        }
+      ],
+      "source_finding": "Zeri explicitly catalogs it as a signed *mural fresco*, not a freestanding canvas; location is Quirinale gallery. Do not treat Zeri archival photo as reusable museum image.",
+      "photo_gate": "QUirinale_FRESCO_PHOTO_PROVENANCE_RIGHTS_AND_CROP_HELD",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-04-11",
+      "title": "Peter and John Running to the Sepulchre",
+      "artist": "Eugène Burnand",
+      "identity_state": "LIKELY_SAME_PHYSICAL_WORK_PRIMARY_INSTITUTION_EVIDENCE",
+      "institution": "Musée d'Orsay, Paris",
+      "physical_objects": [
+        {
+          "title": "Les Disciples Pierre et Jean courant au Sépulcre le matin de la Résurrection",
+          "creator": "Eugène Burnand",
+          "date": "1898",
+          "museum_id": "RF 1153",
+          "artwork_url": "https://www.musee-orsay.fr/en/artworks/les-disciples-pierre-et-jean-courant-au-sepulcre-le-matin-de-la-resurrection-9239"
+        }
+      ],
+      "source_finding": "Official Orsay page confirms 1898 canvas and RF1153; current displayed photographic credits are RMN-Grand Palais, not automatic Open Access media rights.",
+      "photo_gate": "RMN_GRAND_PALAIS_PHOTOGRAPHY_NOT_AUTOMATICALLY_OPEN",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-05-25",
+      "title": "Nicodemus",
+      "artist": "Henry Ossawa Tanner",
+      "identity_state": "LIKELY_SAME_PHYSICAL_WORK_PRIMARY_INSTITUTION_EVIDENCE",
+      "institution": "Pennsylvania Academy of the Fine Arts, Philadelphia",
+      "physical_objects": [
+        {
+          "title": "Nicodemus",
+          "creator": "Henry Ossawa Tanner",
+          "date": "1899",
+          "museum_id": "1900.1",
+          "artwork_url": "https://www.pafa.org/museum/collection/item/nicodemus"
+        }
+      ],
+      "source_finding": "PAFA identifies dated 1899 original oil on canvas, accession 1900.1, depicting Nicodemus's nocturnal visit from John 3; museum reports no known copyright restrictions, but no exact selected photo/crop certified.",
+      "photo_gate": "OBJECT_COPYRIGHT_NOTE_NOT_A_SELECTED_PHOTO_MASTER_HASH",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "2026-05-26",
+      "title": "The Parable of the Good Shepherd",
+      "artist": "16th-century Netherlandish; Pieter Bruegel attribution disputed",
+      "identity_state": "PRIMARY_MUSEUM_OBJECT_WITH_CONTESTED_AUTHOR",
+      "institution": "Figge Art Museum, Davenport, Iowa",
+      "physical_objects": [
+        {
+          "title": "The Parable of the Good Shepherd",
+          "creator": "Pieter Bruegel the Elder (museum heading; attribution debated)",
+          "museum_id": "25.0032",
+          "artwork_url": "https://figgeartmuseum.org/art/collections/item/the-parable-of-the-good-shepherd-250032/922"
+        }
+      ],
+      "source_finding": "Figge explains no signature/date; could be elder Bruegel, younger Bruegel, or contemporaneous copyist; preserve attribution doubt despite headword.",
+      "photo_gate": "FIGGE_PHOTOGRAPH_PROVENANCE_NOT_QA_CLEARED",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "CALENDAR_DATE",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "COV-novena.st_anthony_nine_tuesdays",
+      "title": "Apparition of the Christ Child to St Anthony",
+      "artist": "Antonio del Castillo y Saavedra",
+      "identity_state": "PRIMARY_SPANISH_CATALOGUE_MATCH_TO_SUBJECT_AND_ARTIST",
+      "institution": "Museo de Bellas Artes de Córdoba",
+      "physical_objects": [
+        {
+          "title": "Aparición del Niño a San Antonio",
+          "creator": "Antonio del Castillo Saavedra",
+          "date": "1650",
+          "museum_id": "DJ0033P",
+          "artwork_url": "https://ceres.mcu.es/pages/Main?idt=121796&inventary=DJ0033P&museum=MBACO&table=FMUS"
+        }
+      ],
+      "source_finding": "CER.es and Andalucía museum record signed Castillo painting 142x110cm and DJ0033P. This is reused by TWO approved Prayer destinations; original Commons file must be independently matched to this exact object and photo rights.",
+      "photo_gate": "COMMONS_UPLOADED_REPRODUCTION_OBJECT_AND_PIXEL_QA_NOT_DONE",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "PRAYER_SLOT",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "COV-devotion_st_anthony_lost_items",
+      "title": "Apparition of the Christ Child to St Anthony",
+      "artist": "Antonio del Castillo y Saavedra",
+      "identity_state": "PRIMARY_SPANISH_CATALOGUE_MATCH_TO_SUBJECT_AND_ARTIST",
+      "institution": "Museo de Bellas Artes de Córdoba",
+      "physical_objects": [
+        {
+          "title": "Aparición del Niño a San Antonio",
+          "creator": "Antonio del Castillo Saavedra",
+          "date": "1650",
+          "museum_id": "DJ0033P",
+          "artwork_url": "https://ceres.mcu.es/pages/Main?idt=121796&inventary=DJ0033P&museum=MBACO&table=FMUS"
+        }
+      ],
+      "source_finding": "SAME physical work as COV-novena.st_anthony_nine_tuesdays; maintain independent approval edges and no automatic source-image replacement.",
+      "photo_gate": "COMMONS_UPLOADED_REPRODUCTION_OBJECT_AND_PIXEL_QA_NOT_DONE",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "PRAYER_SLOT",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    },
+    {
+      "app_canonical_id": null,
+      "exact_selected_photo_identified": false,
+      "selected_photo_rights_certified": false,
+      "selected_original_file_sha256": null,
+      "owner_selection_preserved": true,
+      "new_assignment_authorised": false,
+      "target_id": "STG-pray.confession-03",
+      "title": "La Confessione (The Confession)",
+      "artist": "Giuseppe Molteni",
+      "identity_state": "PRIMARY_MUSEUM_EXACT_NAMED_ARTWORK",
+      "institution": "Gallerie d'Italia, Milano; Collezione Fondazione Cariplo",
+      "physical_objects": [
+        {
+          "title": "La confessione",
+          "creator": "Giuseppe Molteni",
+          "date": "1838",
+          "museum_id": null,
+          "artwork_url": "https://www.gallerieditalia.com/en/online-museums/artworks/the_confession-18920/"
+        }
+      ],
+      "source_finding": "Gallerie d'Italia confirms signed 1838 oil on canvas 173.5x141cm in Fondazione Cariplo; Commons source describes same picture, but publication identity and pixel QA independently held.",
+      "photo_gate": "CARIPLO_COMMONS_UPLOADED_IMAGE_EXACT_RIGHTS_AND_CROP_NOT_CLEARED",
+      "selected_date_or_slot_rights_basis": "EXISTING_USER_SELECTION_PRESERVED_NOT_NEW_APPROVAL",
+      "target_type": "PRAYER_SLOT",
+      "reviewer_does_not_assert_exact_owner_photo_match": true
+    }
+  ],
+  "production_imports": []
+}
