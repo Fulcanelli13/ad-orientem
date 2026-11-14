@@ -1,0 +1,68 @@
+name: TLM 28 pinned Commons sources to research-only WebP staging
+on:
+  push:
+    branches: [research/tlm-28-commons-source-transport-20261112]
+    paths:
+      - data/directory/research/tlm-28-commons-source-import-20261112.v1.json
+      - tools/directory/stage-tlm-28-commons-from-source.py
+      - .github/workflows/tlm-28-commons-source-transport.yml
+permissions:
+  contents: write
+concurrency:
+  group: tlm-28-source-transport-20261112
+  cancel-in-progress: false
+jobs:
+  transport:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder only
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Preflight 28 exact CL2 source sites and no public approvals
+        run: python tools/directory/stage-tlm-28-commons-from-source.py --preflight
+      - name: Fetch and SHA1 validate exact Wikimedia originals, stage regenerated WebPs
+        run: python tools/directory/stage-tlm-28-commons-from-source.py
+      - name: Verify staging binary integrity and never approve
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          base=pathlib.Path(".")
+          proof=json.loads((base/"data/directory/research/tlm-28-commons-source-stage-result-20261112.v1.json").read_text())
+          ok=[r for r in proof["records"] if r["status"]=="STAGED_NOT_APPROVED"]
+          assert len(ok)==proof["counts"]["staged"] and proof["counts"]["approved"]==proof["counts"]["published"]==0
+          assert ok
+          for r in ok:
+              b=(base/r["staged_asset_path"]).read_bytes()
+              assert b[:4]==b"RIFF" and b[8:12]==b"WEBP"
+              assert hashlib.sha256(b).hexdigest()==r["derived_sha256"]
+              assert r["byte_identical_to_owner_archive"] is False
+          print("TLM28_STAGED_REGENERATED_WEBPS",len(ok),"OUT_OF_28_NOT_APPROVED")
+          PY
+      - name: Save research audit and regenerated binaries on THIS branch only
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = "research/tlm-28-commons-source-transport-20261112"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/directory-commons-rebuilt-20261112/ data/directory/research/tlm-28-commons-source-stage-result-20261112.v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Research only: stage SHA1-verified Wikimedia source WebPs; no public approvals"
+            git push origin HEAD:refs/heads/research/tlm-28-commons-source-transport-20261112
+          fi
+      - name: Retain independently inspectable staging evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TLM28_COMMONS_SHA1_VERIFIED_REGENERATED_STAGING_NOT_APPROVED
+          path: |
+            data/directory/research/tlm-28-commons-source-stage-result-20261112.v1.json
+            assets/staged/directory-commons-rebuilt-20261112/
+          if-no-files-found: warn
+          retention-days: 7
