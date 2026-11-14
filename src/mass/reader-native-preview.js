@@ -11,6 +11,7 @@ import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCar
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
+import { createReaderSanctuaryPreview } from "./reader-sanctuary-visual.js";
 import { postLowMassLeonineEligible } from "./reader-post-low-mass.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
 import {projectNativeRiteMusicItinerary} from "./reader-schola-special-rite-itinerary.js";
@@ -80,7 +81,8 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
 import {with1962RitusXIVParagraphRubrics} from "./1962-all-souls-consecutive-rites.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
-import { withRequiemXIII3MissalNotes } from "./reader-requiem-conditions.js";
+import { withRequiemXIII3MissalNotes, isExplicitRequiemMass } from "./reader-requiem-conditions.js";
+import {checkSediliaObservation} from "./reader-sedilia-reverence.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
@@ -1412,6 +1414,7 @@ export async function mountNativeReaderPreview({
   let current=readerModel.cardBySequence(1);
   let postLowMassLeonineOpened=false;
   let reader=null;
+  let sanctuaryVisual=null;
   let canonManualUI=null;
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
@@ -1443,6 +1446,13 @@ export async function mountNativeReaderPreview({
       .map(unit=>[unit.cue_id,unit.clock])
   );
   let observedCuratedPriestEvent=null;
+  // The native C57 source card can accept an actual human observation of
+  // MC-COM-320 (priest returns to altar). This is a separate source lane:
+  // no reader scroll, Schola event or legacy MC pointer may invent it.
+  let observedCommunionReturn=null;
+  let communionReturnCancelled=false;
+  let observedSediliaReverence=null;
+  let sediliaReverenceCancelled=false;
   const priestEventIndex=new Map(ready.events.map(e=>[e.id,e]));
   let scheduled=false;
   let initialCardRender=true;
@@ -2010,6 +2020,18 @@ export async function mountNativeReaderPreview({
           cueId:activeCueId,matrixAction,priestAction,
         }),
       nativeEventId:eventState?.canonicalEventId??null,
+      observedSediliaReverence:observedSediliaReverence&&
+        current?.sectionId===observedSediliaReverence.nativeCardId&&
+        readerModel?.presentationMode==="LIVE"?observedSediliaReverence:null,
+      incarnatusKneelException:resolveIncarnatusSungAction(resolvedMass)==="KNEEL",
+      sediliaReverenceCancelled,
+      observedCommunionReturn:observedCommunionReturn&&
+        (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025"&&
+        current?.sectionId===observedCommunionReturn.nativeCardId&&
+        String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ?observedCommunionReturn:null,
+      communionReturnCancelled:communionReturnCancelled&&
+        (current?.sourceSectionId??current?.sectionId)==="AO.CARD.025",
       independentlyObservedPriestEvent:observedPriest?.eventId??null,
       sourceOnlyPriestCue:observedPriest?.cueId??null,
       nativeCueId:activeCueId,
@@ -2105,6 +2127,12 @@ export async function mountNativeReaderPreview({
       handoff:projected.state.handoff??null,
       formulaState:projected.state.formulaState,
     });
+    // The original P1 scene is outside the 65 Mass cards. Only native
+    // R20 rite-state ownership can display it, and no chant/scroll cue
+    // automatically starts the historic nave walk.
+    sanctuaryVisual?.project({aspergesState:projected.state,
+      form:prepared?.session?.resolvedMass?.form,
+      mode:readerModel?.presentationMode});
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
     return projected.state;
@@ -2830,6 +2858,13 @@ export async function mountNativeReaderPreview({
     syncRiteChoice(null,null);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
+    if(changed){
+      observedCommunionReturn=null;
+      communionReturnCancelled=false;
+    }
+    if(previous?.sectionId!==card.sectionId){
+      observedSediliaReverence=null;sediliaReverenceCancelled=false;
+    }
     // Explicit priest-side state persists between Gloria/Credo subcards but
     // must not leak into an unrelated source Mass section.
     if(previous && (previous.sourceSectionId??previous.sectionId)!==
@@ -2977,6 +3012,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    sanctuaryVisual?.project({card:visibleCard,state,prepared,
+      form:prepared?.session?.resolvedMass?.form,mode:readerModel?.presentationMode});
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
       scroll.scrollTop=0;
@@ -3021,6 +3058,12 @@ export async function mountNativeReaderPreview({
   }
 
   function switchPresentationMode(nextMode){
+    // Mode changes never mean the celebrant returned from Communion.
+    // A former observed return must not replay on LIVE re-entry.
+    observedCommunionReturn=null;
+    communionReturnCancelled=true;
+    observedSediliaReverence=null;
+    sediliaReverenceCancelled=false;
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
@@ -3344,6 +3387,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    sanctuaryVisual?.project({card:current,state,
+      form:prepared?.session?.resolvedMass?.form,mode:readerModel?.presentationMode});
   }
 
   function queue(){
@@ -3355,9 +3400,14 @@ export async function mountNativeReaderPreview({
   }
 
   function destroy(){
+    sanctuaryVisual?.destroy?.();sanctuaryVisual=null;
     priestEntranceState.reset();
     chaliceObservationState.close();
+    observedCommunionReturn=null;
+    communionReturnCancelled=false;
     observedPriestEvent=null;
+    observedSediliaReverence=null;
+    sediliaReverenceCancelled=false;
     canonManualUI?.destroy();
     canonManualUI=null;
     clearCanonObservation();
@@ -3383,6 +3433,11 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
+  // Opt-in staging only: the original owner-supplied visual must be present
+  // locally under the GitHub Pages asset path before this can be enabled.
+  sanctuaryVisual=createReaderSanctuaryPreview({root:host,win,
+    enabled:new URLSearchParams(win?.location?.search??"").get("aoSanctuaryPreview")==="1" &&
+      String(readerModel?.presentationMode).toUpperCase()==="LIVE"});
   // The existing Mass preferences surface owns secondary tools: no floating
   // button over the section selector or the 48-step LIVE ribbon.
   const nativePreferences=host.querySelector('[data-role="mass-preferences"]');
@@ -3632,6 +3687,94 @@ export async function mountNativeReaderPreview({
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
+    // Explicit, independently observed priest-return boundary. This does
+    // not observe automatically or expose a new UI button. An authorized
+    // human observer may report the REAL, source-certified E64 event while
+    // the native C57 LIVE source card is active; ordinary card movement,
+    // the triple Domine non sum dignus and MC-COM-305 Schola cannot call it.
+    observeCommunionReturn:observation=>{
+      const form=ready.prepared?.session?.resolvedMass?.form;
+      const event=priestEventIndex.get("MC-COM-320");
+      const actualCard=current?.sourceSectionId==="AO.CARD.025"&&
+        current?.sectionId==="AO.LIVECURATED.AO.CARD.025.1";
+      const valid=ready.curatedEligible===true&&actualCard&&
+        readerModel?.presentationMode==="LIVE"&&
+        ["LOW","SOLEMN"].includes(form)&&
+        ![inAsperges,inPalm,inAsh,inCandlemas,inRogations,
+          inRequiemAbsolution,inCorpusChristi,inHolyThursdayPost,
+          inGenericProcession,inLifecycle].some(Boolean)&&
+        observation?.observed===true&&
+        observation?.eventId==="MC-COM-320"&&
+        observation?.actor==="PRIEST"&&
+        observation?.action==="RETURN_TO_ALTAR"&&
+        event?.id==="MC-COM-320"&&event?.actor==="PRIEST"&&
+        event?.phase==="COMMUNION_OF_FAITHFUL"&&
+        event?.evidenceTier==="A"&&
+        event?.sourceMomentRefs?.includes("E64")&&
+        event?.forms?.[form]==="CERTIFIED"&&
+        (!ready.objectiveRuntime.supported||
+          ready.objectiveRuntime.allows("MC-COM-320"));
+      if(!valid)return Object.freeze({
+        accepted:false,reason:"UNOBSERVED_OR_UNCERTIFIED_COMMUNION_RETURN"
+      });
+      if(observedCommunionReturn)return Object.freeze({
+        accepted:true,duplicate:true,eventId:"MC-COM-320"
+      });
+      observedCommunionReturn=Object.freeze({
+        eventId:"MC-COM-320",nativeCardId:current.sectionId,
+        sourceSectionId:"AO.CARD.025",actor:"PRIEST",
+        observed:true,action:"RETURN_TO_ALTAR",
+        owner:"EXPLICIT_PRIEST_COMMUNION_OBSERVATION"
+      });
+      communionReturnCancelled=false;
+      queue();
+      return Object.freeze({accepted:true,duplicate:false,eventId:"MC-COM-320"});
+    },
+    getObservedCommunionReturn:()=>observedCommunionReturn,
+    clearObservedCommunionReturn:()=>{
+      const had=Boolean(observedCommunionReturn);
+      observedCommunionReturn=null;
+      // An explicit manual cancellation is not a transient missing event:
+      // the source bridge must stop walking and restore the static rail.
+      communionReturnCancelled=true;
+      queue();
+      return Object.freeze({cleared:had});
+    },
+    // Source-registered sung words require independent observation, never
+    // priest recitation, scroll or an inferred choir performance timestamp.
+    observeSediliaReverence:observation=>{
+      const mass=ready.prepared?.session?.resolvedMass;
+      const special=[inAsperges,inPalm,inAsh,inCandlemas,inRogations,
+        inRequiemAbsolution,inCorpusChristi,inHolyThursdayPost,
+        inGenericProcession,inLifecycle].some(Boolean);
+      const outcome=checkSediliaObservation({
+        observation,card:ready.curatedEligible&&!special?current:null,
+        form:mass?.form,mode:readerModel?.presentationMode,
+        rite:isExplicitRequiemMass(ready.prepared)?"REQUIEM":null,
+        exceptionalIncarnatus:resolveIncarnatusSungAction(mass)==="KNEEL"
+      });
+      if(!outcome.accepted)return outcome;
+      if(observation.phase==="END"&&
+        (observedSediliaReverence?.eventId!==observation.eventId||
+         observedSediliaReverence?.phase!=="BEGIN"))
+        return Object.freeze({accepted:false,reason:"END_WITHOUT_BEGIN"});
+      const duplicate=observedSediliaReverence?.eventId===observation.eventId&&
+        observedSediliaReverence?.phase===observation.phase;
+      if(duplicate)return Object.freeze({...outcome,duplicate:true});
+      observedSediliaReverence=Object.freeze({
+        eventId:observation.eventId,phase:observation.phase,observed:true,
+        owner:"EXPLICIT_SEDILIA_GESTURE_OBSERVATION",
+        nativeCardId:current.sectionId,sourceSectionId:current.sourceSectionId
+      });
+      sediliaReverenceCancelled=false;
+      queue();return Object.freeze({...outcome,duplicate:false});
+    },
+    getObservedSediliaReverence:()=>observedSediliaReverence,
+    clearObservedSediliaReverence:()=>{
+      const had=Boolean(observedSediliaReverence);
+      observedSediliaReverence=null;sediliaReverenceCancelled=true;queue();
+      return Object.freeze({cleared:had});
+    },
     // Priest-mode adapter. A caller must independently observe a canonical
     // MC event; swiping a card or changing Schola lyrics never calls this.
     // Invalid/unmatched form, source section or conditional sedilia events

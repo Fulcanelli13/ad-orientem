@@ -1297,9 +1297,36 @@ export function canonicalAssetIdForPrayRoute(route){
   return AO_PRAY_ROUTE_ASSET_IDS[String(route??"").trim()]??null;
 }
 
+// Explicit owner-selected 12 Nov Mass gesture extension. This is NOT one of
+// the 109 frozen V4 core or eight hardened V4.1.1 extension identities;
+// those contract counts, bytes and approved donor aliases remain unchanged.
+export const AO_USER_MASS_GESTURE_EXTENSION_20261112=Object.freeze({
+  "ao-live-gospel-triple-cross-20261112":Object.freeze({
+    semanticId:"GESTURE.FAITHFUL.GOSPEL_SMALL_CROSSES.USER_VARIANT_20261112",
+    assetId:"ao-live-gospel-triple-cross-20261112",label:"Gospel three small crosses",
+    kind:"symbol",status:"USER_APPROVED_ADDENDUM",
+    path:"assets/extensions/mass-user-gesture-20261112/gospel_crosses.svg",
+    sha256:"af9d51de1a37ea57dfaac0359bc8c7b8a91eb4d561480fc9c90655fd2c706cd6",
+  }),
+  "ao-live-breast-strike-20261112":Object.freeze({
+    semanticId:"GESTURE.CHEST_STRIKE.USER_VARIANT_20261112",
+    assetId:"ao-live-breast-strike-20261112",label:"Strike breast",
+    kind:"symbol",status:"USER_APPROVED_ADDENDUM",
+    path:"assets/extensions/mass-user-gesture-20261112/breast_strike.svg",
+    sha256:"dd4bee111cd6e81e134738cba5ccffff381a7c4a9f2bd7bd0f21571ffbe0c060",
+  }),
+  "ao-live-profound-bow-20261112":Object.freeze({
+    semanticId:"GESTURE.FAITHFUL.BOW_PROFOUND.USER_VARIANT_20261112",
+    assetId:"ao-live-profound-bow-20261112",label:"Profound body bow",
+    kind:"symbol",status:"USER_APPROVED_ADDENDUM",
+    path:"assets/extensions/mass-user-gesture-20261112/profound_bow.svg",
+    sha256:"d4027ad551c40d7d1bd33c1a078669803c6067599ed226d49f1f87a279b2e6fa",
+  }),
+});
+
 export function getCanonicalAsset(assetId){
   const id=String(assetId??"").trim();
-  return AO_CANONICAL_CORE_ASSETS[id]??AO_CANONICAL_EXTENSION_ASSETS[id]??null;
+  return AO_CANONICAL_CORE_ASSETS[id]??AO_CANONICAL_EXTENSION_ASSETS[id]??AO_USER_MASS_GESTURE_EXTENSION_20261112[id]??null;
 }
 
 export function isCanonicalAssetId(assetId){
@@ -1308,7 +1335,7 @@ export function isCanonicalAssetId(assetId){
 
 export function resolveCanonicalAssetUrl(assetId,baseUrl=import.meta.url){
   const id=String(assetId??"").trim();
-  const record=AO_CANONICAL_CORE_ASSETS[id]??AO_CANONICAL_EXTENSION_ASSETS[id];
+  const record=AO_CANONICAL_CORE_ASSETS[id]??AO_CANONICAL_EXTENSION_ASSETS[id]??AO_USER_MASS_GESTURE_EXTENSION_20261112[id];
   const recovery=AO_RUNTIME_ASSET_RECOVERIES[id];
   const runtimePath=recovery?.path??record?.path;
   if(!runtimePath)return null;

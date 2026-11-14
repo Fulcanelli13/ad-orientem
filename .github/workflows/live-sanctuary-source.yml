@@ -1,0 +1,76 @@
+name: LIVE Sanctuary source and choreography acceptance
+on:
+  pull_request:
+    paths:
+      - "assets/mass/live-sanctuary/**"
+      - "src/mass/reader-sanctuary-visual.js"
+      - "src/mass/reader-native-preview.js"
+      - "tests/reader-sanctuary-source-65.mjs"
+      - "tests/reader-sanctuary-native65-phone.mjs"
+      - "tests/reader-all-saints-asperges-phone.mjs"
+      - "tests/reader-sanctuary-original-motion.mjs"
+      - "tests/reader-sanctuary-all-scenes-review.mjs"
+      - ".github/workflows/live-sanctuary-source.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  source-and-native:
+    name: Original artwork and native 65-card LIVE verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: |
+          node --check src/mass/reader-native-preview.js
+          node --check src/mass/reader-sanctuary-visual.js
+          node --check assets/mass/live-sanctuary/ao-sanctuary-embedded.js
+          node --check tests/reader-sanctuary-native65-phone.mjs
+          node --check tests/reader-sanctuary-original-motion.mjs
+          node --check tests/reader-sanctuary-all-scenes-review.mjs
+      - name: Protect original artwork, exact source cues, rubrics and cinematics
+        run: |
+          node tests/reader-sanctuary-source-65.mjs
+          node tests/reader-sanctuary-visual.mjs
+          node tests/reader-cue-focus.mjs
+          node tests/reader-cinematic-scenes.mjs
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Actual 65-card Low Sung Solemn portrait landscape desktop
+        run: node tests/reader-sanctuary-native65-phone.mjs
+      - name: Native source Asperges and observed-sprinkling visual acceptance
+        run: node tests/reader-all-saints-asperges-phone.mjs
+      - name: Confirm LIVE rubric and cinematic enter-exit behaviour
+        run: node tests/reader-cinematic-scenes-phone.mjs
+      - name: Watch original full-motion routines without certifying choreography
+        run: node tests/reader-sanctuary-original-motion.mjs
+      - name: Build complete 65-scene five-form visual acceptance package
+        run: |
+          node tests/reader-sanctuary-all-scenes-review.mjs
+          mkdir -p artifacts/sanctuary-review/original-interactive
+          cp -R assets/mass/live-sanctuary/. artifacts/sanctuary-review/original-interactive/
+          mkdir -p artifacts/sanctuary-review/native-motion-samples
+          cp artifacts/sanctuary-live/*.png artifacts/sanctuary-review/native-motion-samples/ || true
+      - name: Upload review gallery, actor matrix and original interactive sanctuary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanctuary-65-scene-five-form-review
+          path: artifacts/sanctuary-review/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Capture source visual screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanctuary-native-live-review
+          path: |
+            artifacts/sanctuary-live/*.png
+          if-no-files-found: warn
+          retention-days: 7

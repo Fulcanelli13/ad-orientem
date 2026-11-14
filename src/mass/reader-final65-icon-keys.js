@@ -292,15 +292,31 @@ export function finalCurated65IconKeys(state={}){
  const approvedRubricKey=rubricAction&&actionCue===currentCue&&sourceAction===rubricAction.action
    ?rubricAction.key:null;
  const posture=token(state.posture?.value??state.posture?.label);
+ // C0021 permits a profound bow OR continued kneeling by faithful profile.
+ // Newly provided art is displayed only for an explicit source-owned bow,
+ // never merely because the Confiteor card is visible or the choir sings.
+ const explicitProfound=token(state.gesture?.type??state.gesture?.value);
+ const resolvedProfound=(["PROFOUND_BOW","BOW_PROFOUND"].includes(explicitProfound)||
+   (state.gesture?.owner==="GESTURE_MATRIX_SOT"&&
+    /^PROFOUND BOW\b/i.test(String(state.gesture?.action??state.gesture?.label??""))&&
+    posture==="STAND"));
+ const observedFaithfulProfoundBow=currentCue==="AO.SM.C0021"&&
+   gestureCue===currentCue&&resolvedProfound&&
+   posture!=="KNEEL"&&posture!=="GENUFLECT"
+     ?"profound_bow":null;
+ const priestProfound=Boolean(state.priestAction&&actionCue===currentCue&&
+   ["AO.SM.C0016","AO.SM.C0079","AO.SM.C0150","AO.SM.C0187"].includes(currentCue)&&
+   ["BOWS PROFOUNDLY","PROFOUND BOW"].includes(sourceAction));
  const facesPeople=facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN";
  return Object.freeze({
   postureIconKey:POSTURES[posture]??null,
-  gestureIconKey:state.gesture?FINAL_65_CUE_ICON_KEYS.faithfulGesture[gestureCue]??null:null,
+  gestureIconKey:state.gesture?(observedFaithfulProfoundBow??FINAL_65_CUE_ICON_KEYS.faithfulGesture[gestureCue]??null):null,
   responseIconKey:state.response?"final_response":null,
   priestVoiceIconKey:priestVoiceKey,
   scholaIconKey:state.schola?"final_schola":null,
   priestPositionIconKey:station==="FOOT_CENTER"?null:(facesPeople?"final_new_priest_facing":FINAL_65_PRIEST_POSITION_ICON_KEYS[station]??null),
-  priestActionIconKey:state.priestAction?(FINAL_65_CUE_ICON_KEYS.priestAction[actionCue]??approvedRubricKey??null):null,
+  priestActionIconKey:state.priestAction?(priestProfound?"owner_profound_bow":
+    (FINAL_65_CUE_ICON_KEYS.priestAction[actionCue]??approvedRubricKey??null)):null,
   bellIconKey:state.bell?"bells":null,
  });
 }

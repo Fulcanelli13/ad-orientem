@@ -1,4 +1,5 @@
 import { CANONICAL_ICON_ASSETS } from "../src/mass/reader-canonical-icons.js";
+import { USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112 } from "../src/mass/reader-user-supplied-gesture-art-20261112.js";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
@@ -48,17 +49,22 @@ for(const name of [
 assert.equal(Object.keys(R17_FINAL_APPROVED_MASS_ASSETS).length,68,
   "Final approved originals must remain in their separately certified 68-item bank");
 assert.equal(Object.keys(productionIcons).length,
-  R17_FROZEN_ACTIVE_ICON_KEYS.length+5+68+Object.keys(CANONICAL_ICON_ASSETS).length,
-  "Host must expose donor masters, five posture aliases, 68 approved originals and the canonical 21 Oct set");
+  R17_FROZEN_ACTIVE_ICON_KEYS.length+5+68+Object.keys(CANONICAL_ICON_ASSETS).length+1,
+  "Host must expose donor masters, reviewed postures, 68 originals, canonical meanings and one new exact-action alias");
 for(const [key,url] of Object.entries(CANONICAL_ICON_ASSETS)){
   assert.ok(key.startsWith("canon:"),"Canonical icon overwrote another bank key: "+key);
-  assert.equal(productionIcons[key],url,"Canonical icon missing from the production host: "+key);
+  assert.equal(productionIcons[key],USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112[key]??url,
+    "Canonical meaning lost its approved artwork / owner extension: "+key);
 }
 for(const [key,url] of Object.entries(R17_FINAL_APPROVED_MASS_ASSETS)){
   assert.ok(key.startsWith("final_"),"Approved original overwrote a frozen donor key: "+key);
-  assert.equal(productionIcons[key],url,"Exact approved Mass original missing: "+key);
+  assert.equal(productionIcons[key],USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112[key]??url,
+    "The approved 12 Nov artwork extension must not mutate the original bank bytes: "+key);
   assert.match(url,/assets\/active\/mass-final\//,"Approved Mass original escaped its separate bank");
 }
+for(const [key,url] of Object.entries(USER_SUPPLIED_MASS_GESTURE_ASSETS_20261112))
+ assert.equal(productionIcons[key],url,
+   "User-supplied Gospel / breast / bow art not active on the LIVE/Missal reader: "+key);
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
 assert.match(productionIcons.stand,/assets\/active\/mass-v46\/stand\.svg$/);

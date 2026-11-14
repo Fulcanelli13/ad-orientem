@@ -41,7 +41,7 @@ try{
     page.on("pageerror",error=>errors.push(error.message));
     const params=new URLSearchParams({
      production:"1",date:"2026-11-01",rite:"asperges",
-     mode,lang,form:"MISSA_CANTATA_SIMPLE",
+     mode,lang,form:"MISSA_CANTATA_SIMPLE",aoSanctuaryPreview:"1",
     });
     await page.goto("http://127.0.0.1:"+server.address().port+
       "/tests/fixtures/reader-phone-harness.html?"+params,
@@ -64,6 +64,21 @@ try{
     assert.equal(opening.formula?.omitGloriaPatri,false,"The doxology is not omitted on All Saints");
     assert.equal(opening.modelCards,mode==="LIVE"?65:opening.modelCards);
     assert.ok(opening.sourceCards===39||opening.sourceCards===30);
+
+    let sanctuaryFrame=null;
+    if(mode==="LIVE"){
+      await page.waitForFunction(()=>{
+        const iframe=document.querySelector(".ao-sanctuary-window iframe");
+        return iframe?.contentWindow?.AO_SANCTUARY_EMBED_TEST?.getState?.()?.card==="P1";
+      },null,{timeout:25000});
+      sanctuaryFrame=page.frames().find(f=>f.url().includes(
+        "/assets/mass/live-sanctuary/index.html"));
+      assert.ok(sanctuaryFrame,"Native R20 Sunday rite must stage original P1 scene in LIVE");
+    }else{
+      assert.equal(page.frames().some(f=>f.url().includes(
+        "/assets/mass/live-sanctuary/index.html")),false,
+        "MISSAL must remain a native text reader without embedded sanctuary");
+    }
 
     const navigate=async direction=>{
      const moved=await page.evaluate(direction=>{
@@ -104,7 +119,35 @@ try{
       else assert.ok(state.translation.some(t=>/sprinkle me/.test(t)));
       await page.screenshot({path:out+"/"+mode+"-"+lang+"-asperges.png"});
      }
+     if(id==="ASP-R03"&&mode==="LIVE"){
+      const before=await sanctuaryFrame.evaluate(()=>{
+       const bridge=window.AO_SANCTUARY_EMBED_TEST;
+       const actor=M3.actors().P;
+       return {card:bridge.getState()?.card,stage:bridge.getState()?.riteStageId,
+        water:Boolean(actor?.b?.el?.querySelector(".ao-sanctuary-asp-water"))};
+      });
+      assert.deepEqual(before,{card:"P1",stage:"ASP-R03",water:false},
+       "R20 stage cannot fake a water gesture from chant or scroll");
+      await page.evaluate(()=>window.__AO_PHONE_PREVIEW.markActuallySprinkled());
+      await sanctuaryFrame.waitForFunction(()=>{
+       const bridge=window.AO_SANCTUARY_EMBED_TEST;
+       return bridge?.getState?.()?.aspergesObserved===true;
+      },null,{timeout:10000});
+      const after=await sanctuaryFrame.evaluate(()=>{
+       const bridge=window.AO_SANCTUARY_EMBED_TEST;
+       return {observed:bridge.getState().aspergesObserved,
+        water:Boolean(M3.actors().P?.b?.el?.querySelector(".ao-sanctuary-asp-water"))};
+      });
+      assert.deepEqual(after,{observed:true,water:true},
+       "Only an explicit personal observed-sprinkling event activates added water FX");
+     }
      if(id==="ASP-R04"){
+      if(mode==="LIVE"){
+       const cleared=await sanctuaryFrame.evaluate(()=>
+        Boolean(M3.actors().P?.b?.el?.querySelector(".ao-sanctuary-asp-water")));
+       assert.equal(cleared,false,
+        "Recipient-only water visual must end at return versicles");
+      }
       assert.ok(state.latin.some(t=>t.includes("℣. Orémus.")),
        "The appointed Oremus was omitted");
       assert.ok(state.latin.some(t=>t.includes("℟. Amen.")),

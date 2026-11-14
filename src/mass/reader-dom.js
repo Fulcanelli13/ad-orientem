@@ -2807,7 +2807,15 @@ const loadDonorRichMask=createDonorRichMaskLoader();
 // donor wrapper file as a donor key, so the unwrap decision follows the file.
 const DONOR_PNG_WRAPPER_URLS=new Set(R17_DONOR_PNG_ICON_KEYS.map(k=>R17_FROZEN_ACTIVE_ICON_ASSETS[k]).filter(Boolean));
 export function isDonorPngWrapper(id,src){
-  return R17_DONOR_PNG_ICON_KEYS.includes(id) || DONOR_PNG_WRAPPER_URLS.has(String(src??""));
+  // Owner-approved later artwork may reuse the SAME semantic cue key but
+  // provide a native vector instead of a V4.6 donor-PNG SVG wrapper.
+  // The resolved URL is authoritative for raster unwrapping; blindly
+  // matching the old key would try to unwrap the newer SVG and destroy
+  // its mask/transparent silhouette. Keep ID fallback for legacy
+  // no-URL audits, without changing any frozen donor payloads.
+  const url=String(src??"").trim();
+  return url ? DONOR_PNG_WRAPPER_URLS.has(url)
+    : R17_DONOR_PNG_ICON_KEYS.includes(id);
 }
 
 function applyIconNode(el,key,iconResolver){
