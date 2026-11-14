@@ -1,0 +1,43 @@
+name: Prayer registry Stage 9 — source-owner boundaries
+on:
+  push:
+    branches:
+      - research/prayer-work-identity-registry-20261106
+    paths:
+      - .github/workflows/pray-work-stage9-source-owner-20261107.yml
+      - tests/pray-work-stage9-source-owner-boundaries-phone-20261107.mjs
+      - data/pray/prayer-work-identity-registry-20261106.v1.json
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pray-work-stage9-source-owner-20261107.yml
+      - tests/pray-work-stage9-source-owner-boundaries-phone-20261107.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-stage9-source-owner-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-owner-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependency tree
+        run: npm install --no-audit --no-fund
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Seven Words full body, Psalm references, historical Litany offline, and Lasance source boundaries
+        run: node tests/pray-work-stage9-source-owner-boundaries-phone-20261107.mjs
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage9-source-owner-boundaries
+          path: artifacts/pray-work-stage9-source-boundaries/stage9-source-owner-boundaries.json
+          if-no-files-found: warn
+          retention-days: 7

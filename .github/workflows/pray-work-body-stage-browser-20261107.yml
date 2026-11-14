@@ -1,0 +1,113 @@
+name: Prayer registry Stage 6 — original body and specialised reader browser gates
+on:
+  push:
+    branches:
+      - research/prayer-work-identity-registry-20261106
+    paths:
+      - .github/workflows/pray-work-body-stage-browser-20261107.yml
+      - tests/pray-work-nine-intercessions-visible-phone-20261107.mjs
+      - data/pray/prayer-work-identity-registry-20261106.v1.json
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pray-work-body-stage-browser-20261107.yml
+      - tests/pray-work-nine-intercessions-visible-phone-20261107.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-stage6-source-body-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  individual-work-bodies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify historical source witness selection is not a fabricated translation
+        run: |
+          node tests/pray-historical-intercessions-novena-visible-v1.mjs
+          node tests/pray-confession-adoration-chaplet-stage-faces-v1.mjs
+      - name: Compare all nine visible priestly and occasional prayer bodies to original source
+        run: node tests/pray-work-nine-intercessions-visible-phone-20261107.mjs
+      - name: Preserve actual source-body parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage6-nine-intercession-body-parity
+          path: artifacts/pray-work-nine-intercessions/nine-intercessions-visible-source.json
+          if-no-files-found: warn
+          retention-days: 7
+
+  confession-benediction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise Confession three paths and Benediction ordinary and Christ the King stages
+        run: node tests/pray-confession-benediction-stage-matrix-phone.mjs
+      - name: Preserve stage matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage6-confession-benediction
+          path: artifacts/pray-stage-matrix/confession-benediction-stage-matrix.json
+          if-no-files-found: warn
+          retention-days: 7
+
+  adoration-guided:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise all selected Adoration guided stages and treasury handoffs
+        run: node tests/pray-adoration-full-stage-phone.mjs
+      - name: Preserve adoration stage matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage6-adoration-guided
+          path: artifacts/pray-adoration-full-stage/complete-adoration-phone-evidence.json
+          if-no-files-found: warn
+          retention-days: 7
+
+  rosary-chaplets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Preserve the canonical Rosary bead engine, Scripture handoffs and original navigation
+        run: node tests/rosary-canonical-phone-controls.mjs
+      - name: Exercise the original source-owned chaplet variants at 320 and 390 pixels
+        run: node tests/pray-chaplet-f07-variants-phone.mjs
+      - name: Preserve selected Rosary and Chaplet browser artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage6-rosary-chaplet-captures
+          path: |
+            artifacts/rosary-canonical-phone-controls/
+            artifacts/pray-chaplet-f07-variants/
+          if-no-files-found: warn
+          retention-days: 7

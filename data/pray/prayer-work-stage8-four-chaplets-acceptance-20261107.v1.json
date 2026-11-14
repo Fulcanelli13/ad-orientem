@@ -1,0 +1,69 @@
+{
+  "schema": "ao.pray.stage8.four-chaplets-source-body-acceptance.v1",
+  "checkedAt": "2026-11-07",
+  "branch": "research/prayer-work-identity-registry-20261106",
+  "pullRequest": 2594,
+  "sourceCommit": "9d2786ea2af03b58aa66a1e368908cbf794c127e",
+  "run": {
+    "id": 42403675308,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403675308",
+    "jobId": 128496673724,
+    "artifactId": 13586182585,
+    "conclusion": "success"
+  },
+  "test": "tests/pray-work-stage8-four-chaplets-source-body-phone-20261107.mjs",
+  "browser": "Chromium GitHub Actions, service workers blocked",
+  "widths": [
+    320,
+    390
+  ],
+  "uiLanguages": [
+    "en",
+    "fr"
+  ],
+  "exactRenderedSourceChecks": 612,
+  "failedChecks": 0,
+  "workCoverage": [
+    {
+      "workId": "pray.five_wounds",
+      "route": "pray.five_wounds",
+      "checks": 124,
+      "scope": "All 30 canonical repetitions visible in EN/FR at two widths plus one Latin position per context"
+    },
+    {
+      "workId": "pray.little_crown",
+      "route": "pray.little_crown",
+      "checks": 128,
+      "scope": "All fifteen source-owned aspirations and canonical repetitions at both widths/EN-FR plus one Latin aspiration and Pater per context"
+    },
+    {
+      "workId": "pray.st_joseph_seven_sorrows",
+      "route": "pray.st_joseph_seven_sorrows",
+      "checks": 140,
+      "scope": "Seven original English supplications, each three existing vernacular canonical repetitions, four ending components, and three Latin repeated prayers at one step in each context"
+    },
+    {
+      "workId": "pray.precious_blood",
+      "route": "pray.precious_blood",
+      "checks": 220,
+      "scope": "Opening V/R/Gloria, 33 Pater + 7 Gloria + 7 source historical responses, one Latin Pater per context, and four closing components, including original English-only 1910 closing"
+    }
+  ],
+  "distinctWorksWithNewEvidence": 4,
+  "stabatResearchRecord": "data/pray/prayer-work-stabat-1962-20-tercet-candidate-20261107.v1.json",
+  "sourceQualifications": [
+    "No printed source facsimiles were independently recollated in this Stage 8 browser pass.",
+    "The fully 20-tercet 1962 September Stabat witness is now provisionally identified, but canonical 13-tercet text is unchanged and distinct Passiontide use must be considered.",
+    "The French text in Saint Joseph Seven Sorrows does not independently translate the original English historical supplications.",
+    "The Little Crown French aspiration is an independent ICKSP witness and Latin is Vulgate John 1:14, not purported historical 1940 original.",
+    "The Precious Blood short-form 35-versus-33 count conflict remains withheld.",
+    "All primary positions at two viewport widths do not constitute offline certification or independent historical edition authentication."
+  ],
+  "historicalSourcePrintCertified": false,
+  "sourceReaderCompleteCertified": false,
+  "registryImportedToRuntime": false,
+  "publicationChanges": false,
+  "prayerTextChanges": false,
+  "genericRendererIntroduced": false,
+  "deployments": false
+}
