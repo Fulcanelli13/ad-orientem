@@ -1,0 +1,151 @@
+{
+  "schema": "AO_TLM_B89_ITALY_FIRST_PARTY_47_ADJUDICATION_V1",
+  "report_date": "2026-10-25",
+  "status": "G0_RESEARCH_EVIDENCE_ONLY",
+  "upstream_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1705",
+  "baseline": {
+    "B88_provisional_distinct_sites": 2605,
+    "B88_historical_canonical_ids": 2608,
+    "B88_venue_source_rows": 2711,
+    "original_mass_rows": 4681,
+    "original_verified_mass_rows": 3347
+  },
+  "screened": {
+    "directory_family": "RITOANTICO_IT_SUNDAY",
+    "B88_source_entries": 47,
+    "existing_group_references": 29,
+    "holds": 16,
+    "new_g0": 2,
+    "warning": "29 existing research ID references include some tentative title-only matches requiring original address review. They are not a tally of 29 fully certified physical identities."
+  },
+  "existing_B88_source_code_to_group_id": {
+    "100": "RG-EAB29B2CF083",
+    "103": "RG-A846C7A80E77",
+    "104": "RG-20DDA8C9C2AC",
+    "105": "RG-CAA20D54B69E",
+    "107": "RG-BFDE85452DA9",
+    "109": "RG-6FA18F105A71",
+    "111": "RG-B8FBD3EBD6FA",
+    "112": "RG-03DA6A1B21AA",
+    "113": "RG-33D9A91FD40B",
+    "115": "RG-4D729B16E2AD",
+    "116": "RG-A59E16CD01C5",
+    "117": "RG-3E220BD8508F",
+    "120": "RG-A3A716030F90",
+    "121": "RG-1B537058DF51",
+    "122": "RG-88663EE7D7F5",
+    "123": "RG-3BF51715FBED",
+    "124": "RG-BE23723D6B4A",
+    "125": "RG-B83250877BEB",
+    "126": "RG-ED4A6315F9E3",
+    "127": "RG-5090FBF8C2D5",
+    "085": "RG-8C0EAC57708C",
+    "087": "RG-2E634483B0D4",
+    "088": "RG-27005F1C1EF6",
+    "089": "RG-C46040E6B3C4",
+    "091": "RG-B0F32F6743EC",
+    "092": "RG-851C08B3BAD5",
+    "094": "RG-447C70006F0D",
+    "095": "RG-699AC7323DA5",
+    "098": "RG-4F6045FD2887"
+  },
+  "holds_B88_source_code_to_reason": {
+    "101": "possible-existing-address",
+    "106": "Barletta-vs-Belluno-same-name",
+    "108": "rite",
+    "110": "rite",
+    "114": "same-name-different-city",
+    "118": "rite",
+    "119": "rite",
+    "081": "rite",
+    "082": "possible-existing-address",
+    "083": "city-only",
+    "084": "mobile-venue",
+    "086": "rite-and-building",
+    "090": "rite",
+    "096": "rite",
+    "097": "rite-and-same-saint-different-city",
+    "099": "rite"
+  },
+  "new_G0": [
+    {
+      "B88_source_id": "B88-093",
+      "new_group_id": "RG-B89-4FFBC6AB3EC5",
+      "new_source_id": "AO-RSCH-RG-B89-4FFBC6AB3EC5",
+      "country": "IT",
+      "town": "Albenga",
+      "name": "Santuario di Nostra Signora di Pontelungo",
+      "worship_address": "Viale Pontelungo 89, 17031 Albenga (SV), Italy",
+      "current_mass_claim_owner": "https://santuariopontelungo.it/orari",
+      "building_source": "https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/0700111135",
+      "diocesan_source": "https://www.diocesidialbengaimperia.it/wd-annuario-enti/albenga-nostra-signora-di-pontelungo-santuario-antico-4263/",
+      "reason": "Sanctuary itself labels Sunday 11:30 Mass as tridentina; a claim only, not certified schedule",
+      "geometry": "PIN_PENDING",
+      "public_map": false,
+      "verified_timetable_rows": 0
+    },
+    {
+      "B88_source_id": "B88-102",
+      "new_group_id": "RG-B89-F7BFDAA8E4BB",
+      "new_source_id": "AO-RSCH-RG-B89-F7BFDAA8E4BB",
+      "country": "IT",
+      "town": "Rivarolo Canavese",
+      "name": "Chiesa della Confraternita dei Santi Rocco e Carlo",
+      "worship_address": "Piazza Garibaldi 7, 10086 Rivarolo Canavese (TO), Italy",
+      "current_mass_claim_owner": "https://parrocchia.rivarolocanavese.org/ottobre-novembre-2026-foglio-parrocchiale-n-8/",
+      "historical_current_claim": "https://parrocchia.rivarolocanavese.org/settembre-ottobre-2026-foglio-parrocchiale-n-7/",
+      "building_source": "https://www.comune.rivarolo.to.it/it-it/vivere-il-comune/cosa-vedere/chiesa-della-confraternita-di-san-rocco-e-san-carlo-53676-1-3e66ea35fb19ee82c51e9bb36f178910",
+      "reason": "2026 parish bulletins explicitly label rito antico at San Rocco but note date exceptions, including omitted 25 October; do not infer an uninterrupted weekly schedule",
+      "geometry": "PIN_PENDING",
+      "public_map": false,
+      "verified_timetable_rows": 0
+    }
+  ],
+  "separate_identity_review": [
+    {
+      "id_a": "RG-44B197BD0666",
+      "id_b": "RG-C46040E6B3C4",
+      "case": "Udine San Bernardino possible exact same physical source identity",
+      "action": "HOLD_ALIAS_NO_GROUP_COLLAPSE until old original locality established"
+    },
+    {
+      "id_a": "RG-5DB8924C5BEB",
+      "id_b": "RG-8C0EAC57708C",
+      "case": "Santissima Trinità in Rome versus Pordenone",
+      "action": "KEEP_DISTINCT"
+    },
+    {
+      "id_a": "RG-447C70006F0D",
+      "id_b": "RG-5090FBF8C2D5",
+      "case": "Sant Antonio Abate oratories in Genoa versus Longare",
+      "action": "KEEP_DISTINCT"
+    }
+  ],
+  "projected_snapshot": {
+    "distinct_physical_site_groups": 2607,
+    "historical_canonical_ids": 2610,
+    "venue_source_rows": 2713,
+    "inherited_timetable_rows": 4681,
+    "inherited_verified_timetable_rows": 3347,
+    "newly_verified_rows": 0,
+    "new_public_pins": 0,
+    "underlying_B88_JSON_sheet_equivalents": 64,
+    "projected_JSON_sheet_equivalents": 68
+  },
+  "qa": {
+    "B88_frozen_ID_sets_unchanged": true,
+    "B88_all_64_sheets_preserved_except_two_append_only_rows_each_in_canonical_physical_source": true,
+    "Mass_timetable_row_content_exact": true,
+    "new_site_IDs_frozen": true,
+    "old_44_Poland_holds_unmodified": true
+  },
+  "external_artifacts": {
+    "B89_audit_workbook": "Ad_Orientem_B89_47_Italy_Adjudication_2_G0_2026-10-25.xlsx",
+    "xlsx_sha256": "0b8fc2b6c4d7c359a82ca60e6249c33d88b08ab11cddbba3c368e44e66d820bc",
+    "B89_full_research_zip": "Ad_Orientem_B89_Research_Projection_2607_Sites_2026-10-25.zip",
+    "zip_sha256": "0af2b2105818514505b7c23af3797eb5af70fe3f6e4c8a263f6c48d13f4b4f2c",
+    "B89_audit_JSON": "Ad_Orientem_B89_Italy_47_Evidence_Audit_2026-10-25.json",
+    "note": "These binaries are separate downloaded conversation files; GitHub PR does NOT commit them and is NOT a production import."
+  },
+  "publication_gate": "No public pins or certified schedule rows; only source-backed research admissions pending separate owner access, exact building entrance geometry, present calendar/recurrence, current 1962 rite, and release review"
+}
