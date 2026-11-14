@@ -1,0 +1,33 @@
+{
+  "schema": "AO_TLM_P110_TWO_CLEAN_COMMONS_ALTERNATIVES_INPUT_V1",
+  "as_of": "2026-11-12",
+  "publication_approved": false,
+  "usage": "Source-original acquisition and visual editorial evaluation only; no public cover approval",
+  "source_review": "data/directory/research/tlm-7-held-photo-resolution-20261112.v1.json",
+  "candidates": [
+    {
+      "cl2_anchor": "RG-0B11C840F55E",
+      "venue_id": "AO-B34-L-GB-52D1803A1F95",
+      "church": "Our Lady of Lourdes and St Cecilia, Blandford Forum",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Whitecliff_Mill_Street,_Blandford_Forum_(September_2025)_(4).jpg",
+      "expected_creator": "Hassocks5489",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "first_party_witness": "https://www.plymouth-diocese.org.uk/church/blandford-forum-lady-lourdes-st-cecilia/",
+      "stage_path": "assets/staged/directory-photo-p110-20261112/RG-0B11C840F55E-alternate.webp",
+      "visual_question": "Does the no-car full church exterior frame keep the gable, porch, windows, and name at 320 and 390px without misleading crop?"
+    },
+    {
+      "cl2_anchor": "RG-18825D70FD67",
+      "venue_id": "V19:DIO-GB-BIRM-OXFORD-SGA",
+      "church": "SS Gregory and Augustine, Oxford",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saints_Gregory_and_Augustine_-_geograph.org.uk_-_3011889.jpg",
+      "expected_creator": "Des Blenkinsopp",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "first_party_witness": "https://www.ssgregoryandaugustine.org/",
+      "stage_path": "assets/staged/directory-photo-p110-20261112/RG-18825D70FD67-alternate.webp",
+      "visual_question": "Does the frontal image show the Catholic church entrance and sign clearly at 320 and 390px without tree blockage?"
+    }
+  ]
+}

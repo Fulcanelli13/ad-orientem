@@ -1,0 +1,74 @@
+name: TLM P110 research verify two cleaner exact church originals
+on:
+  push:
+    branches: [research/tlm-p110-clean-commons-alternates-20261112]
+    paths:
+      - .github/workflows/tlm-p110-two-clean-commons-alternates.yml
+      - tools/directory/stage-tlm-p110-clean-alternates.py
+      - data/directory/research/tlm-p110-clean-alternates-input-20261112.v1.json
+permissions:
+  contents: write
+concurrency:
+  group: tlm-p110-20261112-staging
+  cancel-in-progress: false
+jobs:
+  exact-commons-original:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned source decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify two exact Commons originals and produce research WebPs only
+        run: python tools/directory/stage-tlm-p110-clean-alternates.py
+      - name: Verify source bytes and staged content, with zero approved photos
+        run: |
+          python - <<'PY'
+          import json, pathlib, hashlib
+          p=pathlib.Path("data/directory/research/tlm-p110-clean-alternates-stage-20261112.v1.json")
+          data=json.loads(p.read_text())
+          assert data["schema"]=="AO_TLM_P110_TWO_CLEAN_COMMONS_ALTERNATES_STAGING_V1"
+          assert data["summary"]=={
+            "candidate_count":2,"verified_source_originals":2,"sha1_matches":2,
+            "licence_creator_matches":2,"approved":0,"published":0
+          }
+          assert {x["cl2_anchor"] for x in data["records"]}=={
+            "RG-0B11C840F55E","RG-18825D70FD67"
+          }
+          for row in data["records"]:
+            raw=pathlib.Path(row["staged_asset_path"]).read_bytes()
+            assert raw[:4]==b"RIFF" and raw[8:12]==b"WEBP"
+            assert hashlib.sha256(raw).hexdigest()==row["derived_sha256"]
+            assert row["rights_metadata_verified"] and row["site_anchor_matched"]
+            assert not row["publication_approved"] and not row["crop_reviewed"]
+          assert pathlib.Path(data["contact_sheet_path"]).is_file()
+          print("P110_SOURCE_ONLY_2_SHA1_LICENCES_HASHES_OK_NO_PUBLIC_MEDIA")
+          PY
+      - name: Push only research evidence and WebPs to this branch
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = "research/tlm-p110-clean-commons-alternates-20261112"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/directory/research/tlm-p110-clean-alternates-stage-20261112.v1.json \
+            assets/staged/directory-photo-p110-20261112/
+          if ! git diff --cached --quiet; then
+            git commit -m "P110 research: preserve two original-SHA1-verified Commons alternatives without publication"
+            git push origin HEAD:refs/heads/research/tlm-p110-clean-commons-alternates-20261112
+          fi
+      - name: Preserve visual and binary QA artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P110_COMMONS_TWO_ORIGINAL_SHA1_RESEARCH_WEBPS
+          path: |
+            data/directory/research/tlm-p110-clean-alternates-stage-20261112.v1.json
+            assets/staged/directory-photo-p110-20261112/
+          retention-days: 14
+          if-no-files-found: warn
