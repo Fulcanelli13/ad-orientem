@@ -1,0 +1,712 @@
+{
+  "schema": "AO_R18_ELEVEN_CALENDAR_PARENT_SUBTYPE_EDITORIAL_STRUCTURE_V1",
+  "as_of": "2026-10-29",
+  "branch_owner_pr": 1759,
+  "source_identity_decision_file": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json",
+  "source_blob_sha": "5a5c2521b150da62d5da5b84a99a4d5ef8c35981",
+  "purpose": "Stage the eleven unpublished R18 actions as distinct proposed regional/local identities, preserving subordinate cultural forms. Thematic families are indexing aids, not canonical parent Customs.",
+  "summary": {
+    "staged_candidate_actions": 11,
+    "provisional_theme_families": 8,
+    "regional_or_seasonal_candidates": 7,
+    "local_event_bound_candidates": 4,
+    "subtype_examples": 15,
+    "separate_published_customs": 0,
+    "assigned_new_ids": 0,
+    "approved_copy": 0,
+    "live_events": 0,
+    "indulgences": 0,
+    "existing_six_canonical_dossiers": 6,
+    "existing_noncanonical_companion": 1,
+    "separate_cohort_reserved_ids": [
+      "EPIP-003",
+      "CRIB-001"
+    ]
+  },
+  "policy": {
+    "no_generic_procession_canonical_parent": true,
+    "no_forced_merge_of_polish_hungarian_acts": true,
+    "decorated_egg_craft_one_identity_with_regional_subtypes": true,
+    "no_calendar_events_from_feast_date": true,
+    "no_current_shrine_indulgence_presumption": true,
+    "original_1962_date_resolver_only": true,
+    "no_import_to_live_calendar": true,
+    "mandatory_human_copy_and_identity_signoff": true,
+    "no_extra_calendar_seed_record": true
+  },
+  "staged": [
+    {
+      "review_key": "CUSTOMS-R18-03",
+      "working_master_id": "CANDIDATE-STJOHN-BONFIRE",
+      "article_title": {
+        "en": "St John Baptist's community bonfire",
+        "fr": "Le feu communautaire de la Saint-Jean-Baptiste"
+      },
+      "proposal_kind": "LOCAL_CEREMONIAL_CONTEXT",
+      "provisional_family_key": "SAINT_JOHN_BAPTIST_LOCAL_FIRE",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "LOCALITY_BOUND_FEAST_CONTEXT_NOT_A_GLOBAL_CALENDAR_EVENT",
+      "calendar_anchor": "Nativity of St John the Baptist (not St John the Evangelist, 27 December)",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "BLSS-003"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Oloron-Sainte-Marie and specific heritage localities",
+      "local_programme_requirement": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-03:HISTORICAL_PARISH_FIRE",
+          "title": {
+            "en": "Historically documented parish fire gatherings",
+            "fr": "Rassemblements paroissiaux autour du feu, attestés historiquement"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "The June 20, 2026 Oloron event is not an automatically recurring June 23/24 event and is separate from St John the Evangelist's December blessing of wine.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-03.unpublished_bilingual_article",
+      "primary_source_url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false,
+      "local_event_record_requires_current_date_and_place": true
+    },
+    {
+      "review_key": "CUSTOMS-R18-04",
+      "working_master_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "article_title": {
+        "en": "Decorating Easter eggs: pisanki and pysanky",
+        "fr": "Décorer les œufs de Pâques : pisanki et pysanky"
+      },
+      "proposal_kind": "SINGLE_CRAFT_IDENTITY_WITH_NAMED_REGIONAL_SUBTYPES",
+      "provisional_family_key": "EASTER_EGG_DECORATION",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Easter preparation and regional cultural tradition; no universal decorating day",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "BLSS-004",
+        "FOOD-001"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Polish and Ukrainian cultural areas, not exclusively Latin Catholic",
+      "local_programme_requirement": "SEASONAL_HERITAGE_CONTEXT_ONLY",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-04:PL_PISANKI",
+          "title": {
+            "en": "Polish pisanki decorating techniques",
+            "fr": "Techniques polonaises de décoration des pisanki"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        },
+        {
+          "subtype_review_key": "CUSTOMS-R18-04:UA_PYSANKA",
+          "title": {
+            "en": "Ukrainian pysanka decorating techniques",
+            "fr": "Techniques ukrainiennes de décoration des pysanky"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "The Polish and Ukrainian names are subtypes, not two canonical identities; neither decoration nor its symbolism is a clerical blessing or Roman-Catholic-exclusive practice.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-04.unpublished_bilingual_article",
+      "primary_source_url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-05",
+      "working_master_id": "CUST-ADVT-HERBERGSUCHE",
+      "article_title": {
+        "en": "Herbergsuche — Advent Marian-image visits between households",
+        "fr": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent"
+      },
+      "proposal_kind": "LOCAL_HOUSEHOLD_RELAY",
+      "provisional_family_key": "ADVENT_HOLY_FAMILY_HOSPITALITY",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Advent, days fixed by the participating parish or family network",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "ADVT-001",
+        "ADVT-002",
+        "ADVT-003"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Named Austrian parish only; no worldwide relay",
+      "local_programme_requirement": "LOCAL_PARISH_PARTICIPATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-05:MARIAN_IMAGE_RELAY",
+          "title": {
+            "en": "House-to-house Marian image relay",
+            "fr": "Passage d'une image mariale de foyer en foyer"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Do not conflate an actual Marian-image relay with Las Posadas or unverified theatrical Herbergsuche variants; local participating homes need confirmation.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-05.unpublished_bilingual_article",
+      "primary_source_url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-07",
+      "working_master_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "article_title": {
+        "en": "La guignolée — French Canadian Christmas alms collection",
+        "fr": "La guignolée — quête caritative canadienne-française de Noël"
+      },
+      "proposal_kind": "LOCAL_CHARITABLE_COLLECTION",
+      "provisional_family_key": "HOUSE_TO_HOUSE_SEASONAL_VISITS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Locally announced charity campaign in the Christmas season",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "XMAS-001",
+        "FOOD-001",
+        "EPIP-001"
+      ],
+      "cross_candidate_related_not_equivalent": [
+        "CUSTOMS-R18-08"
+      ],
+      "region_scope": "Québec; no global campaign date",
+      "local_programme_requirement": "LOCAL_ORGANIZER_CONFIRMATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-07:LOCAL_CHARITY_DRIVE",
+          "title": {
+            "en": "Locally organized charitable collection",
+            "fr": "Collecte caritative organisée localement"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "An extant charity campaign must be announced by its organizer; the historical practice is not a scheduled Catholic parish rite.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-07.unpublished_bilingual_article",
+      "primary_source_url": "https://ssvp-mtl.org/fr/guignolee",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-08",
+      "working_master_id": "CUST-XMAS-POLISH-KOLEDNICI",
+      "article_title": {
+        "en": "Polish kolędnicy — Christmas visiting carollers",
+        "fr": "Kolędnicy polonais — quêteurs et chanteurs de Noël"
+      },
+      "proposal_kind": "REGIONAL_VISITING_PERFORMANCE_SIBLING",
+      "provisional_family_key": "CHRISTMASTIDE_VISITING_PERFORMERS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Christmastide, varying dates by regional troupe",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "EPIP-001",
+        "ADVT-003"
+      ],
+      "cross_candidate_related_not_equivalent": [
+        "CUSTOMS-R18-09",
+        "CUSTOMS-R18-07"
+      ],
+      "region_scope": "Regional Polish families and troupes",
+      "local_programme_requirement": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-08:VISITING_CAROL",
+          "title": {
+            "en": "House-to-house Christmas carollers",
+            "fr": "Chanteurs itinérants de Noël"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        },
+        {
+          "subtype_review_key": "CUSTOMS-R18-08:LOCAL_NATIVITY_PLAY",
+          "title": {
+            "en": "Nativity and Herod dramatic forms within kolędnicy",
+            "fr": "Jeux de la Nativité et d'Hérode dans les kolędnicy"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Polish kolędnicy and Hungarian betlehemezés remain distinct national/linguistic identities within a shared thematic family, not merged records.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-08.unpublished_bilingual_article",
+      "primary_source_url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-09",
+      "working_master_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "article_title": {
+        "en": "Hungarian betlehemezés Nativity visiting plays",
+        "fr": "Jeux hongrois de la Nativité betlehemezés"
+      },
+      "proposal_kind": "REGIONAL_VISITING_PERFORMANCE_SIBLING",
+      "provisional_family_key": "CHRISTMASTIDE_VISITING_PERFORMERS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Christmas season, local performances",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "EPIP-001",
+        "ADVT-003"
+      ],
+      "cross_candidate_related_not_equivalent": [
+        "CUSTOMS-R18-08"
+      ],
+      "region_scope": "Hungarian localities, without fabricated schedules",
+      "local_programme_requirement": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-09:ACTORS",
+          "title": {
+            "en": "Nativity dramas performed by actors",
+            "fr": "Jeux de la Nativité joués par des acteurs"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        },
+        {
+          "subtype_review_key": "CUSTOMS-R18-09:PUPPETS",
+          "title": {
+            "en": "Nativity dramas performed with puppets",
+            "fr": "Jeux de la Nativité avec marionnettes"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Actor/puppet forms are subtypes of one Hungarian practice, and not extra canonical Customs or proof of active local performances.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-09.unpublished_bilingual_article",
+      "primary_source_url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-13",
+      "working_master_id": "CUST-EASTER-MALTESE-IRXOXT",
+      "article_title": {
+        "en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+        "fr": "L-Irxoxt — procession maltaise du Ressuscité portée au pas de course"
+      },
+      "proposal_kind": "LOCAL_CEREMONIAL_CONTEXT",
+      "provisional_family_key": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "LOCALITY_BOUND_FEAST_CONTEXT_NOT_A_GLOBAL_CALENDAR_EVENT",
+      "calendar_anchor": "Easter Sunday, only where an actual procession is announced",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "EAST-001",
+        "MARI-001"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Named Maltese/Gozo places, not the whole islands uniformly",
+      "local_programme_requirement": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-13:RESURRECTION_PROCESSION",
+          "title": {
+            "en": "Local Easter procession of the Risen Christ",
+            "fr": "Procession locale du Christ ressuscité à Pâques"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        },
+        {
+          "subtype_review_key": "CUSTOMS-R18-13:RUNNING",
+          "title": {
+            "en": "Running with the statue in certain localities",
+            "fr": "Course avec la statue dans certaines localités"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Running is a locality-specific form inside the Maltese Resurrection procession, not a separate universally prescribed Easter action.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-13.unpublished_bilingual_article",
+      "primary_source_url": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false,
+      "local_event_record_requires_current_date_and_place": true
+    },
+    {
+      "review_key": "CUSTOMS-R18-14",
+      "working_master_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "article_title": {
+        "en": "Pentecost greenery decorating Polish homes",
+        "fr": "Décorations végétales de Pentecôte dans les foyers polonais"
+      },
+      "proposal_kind": "REGIONAL_SEASONAL_DECORATION",
+      "provisional_family_key": "SEASONAL_GREENERY_DECORATIONS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Pentecost; date resolves through the 1962 Calendar and not a fixed civil date",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "BLSS-002",
+        "CORP-001"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Poland, regional and archival witness",
+      "local_programme_requirement": "REGIONAL_HERITAGE_CONTEXT_ONLY",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-14:HOUSEHOLD_GREENERY",
+          "title": {
+            "en": "Pentecost greenery at houses and gates",
+            "fr": "Feuillages de Pentecôte sur les maisons et portails"
+          },
+          "source_scope": "ATTESTED_REGIONAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Greenery belongs to Polish Pentecost home decoration, not the Assumption herb blessing or Corpus Christi street-flower decoration; verify archival-photo caption.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-14.unpublished_bilingual_article",
+      "primary_source_url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false
+    },
+    {
+      "review_key": "CUSTOMS-R18-15",
+      "working_master_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "article_title": {
+        "en": "Tivoli's Inchinata procession",
+        "fr": "La procession de l’Inchinata à Tivoli"
+      },
+      "proposal_kind": "LOCAL_CEREMONIAL_CONTEXT",
+      "provisional_family_key": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "LOCALITY_BOUND_FEAST_CONTEXT_NOT_A_GLOBAL_CALENDAR_EVENT",
+      "calendar_anchor": "Local Assumption Eve / feast, specifically announced for 14–15 August 2026",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "MARI-001"
+      ],
+      "cross_candidate_related_not_equivalent": [
+        "CUSTOMS-R18-16"
+      ],
+      "region_scope": "Tivoli only",
+      "local_programme_requirement": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-15:IMAGE_MEETING_BOW",
+          "title": {
+            "en": "Meeting and ceremonial bow of processional images",
+            "fr": "Rencontre et inclinaison cérémonielle des images portées"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "The Tivoli meeting/bow of two images is not the Sassari guild procession or generic French Assumption procession; 2026 programme cannot establish 2027 schedule.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-15.unpublished_bilingual_article",
+      "primary_source_url": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false,
+      "local_event_record_requires_current_date_and_place": true
+    },
+    {
+      "review_key": "CUSTOMS-R18-16",
+      "working_master_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "article_title": {
+        "en": "Faradda di li Candareri — Sassari's Marian offering procession",
+        "fr": "Faradda di li Candareri — procession votive mariale de Sassari"
+      },
+      "proposal_kind": "LOCAL_CEREMONIAL_CONTEXT",
+      "provisional_family_key": "LOCAL_PUBLIC_FEAST_PROCESSIONS",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "LOCALITY_BOUND_FEAST_CONTEXT_NOT_A_GLOBAL_CALENDAR_EVENT",
+      "calendar_anchor": "14 August 2026 municipal programme; not a universal Marian vigil rite",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "MARI-001",
+        "BLSS-003"
+      ],
+      "cross_candidate_related_not_equivalent": [
+        "CUSTOMS-R18-15"
+      ],
+      "region_scope": "Sassari municipality, no automatic other-town replication",
+      "local_programme_requirement": "LOCAL_EVENT_VERIFICATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-16:GUILD_WOODEN_CANDELIERI",
+          "title": {
+            "en": "Guild procession carrying monumental wooden candelieri",
+            "fr": "Procession des corporations portant de grands candelieri en bois"
+          },
+          "source_scope": "ATTESTED_LOCAL_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "Sassari's wooden votive candelieri are not liturgical candles or priestly blessings; events only from fresh municipal/diocesan announcements.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-16.unpublished_bilingual_article",
+      "primary_source_url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false,
+      "local_event_record_requires_current_date_and_place": true
+    },
+    {
+      "review_key": "CUSTOMS-R18-17",
+      "working_master_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "article_title": {
+        "en": "Frauendreißiger — thirty days of Marian devotion",
+        "fr": "Frauendreißiger — trente jours de dévotion mariale"
+      },
+      "proposal_kind": "LOCAL_SHRINE_DEVOTIONAL_PERIOD",
+      "provisional_family_key": "MARIAN_REGIONAL_DEVOTIONAL_CYCLES",
+      "family_key_is_canonical_article_id": false,
+      "canonical_parent_id": null,
+      "canonical_article_id": null,
+      "independently_publishable_record": false,
+      "proposed_identity_route": "NAMED_ACTION_IDENTITY_PENDING_EDITORIAL_APPROVAL",
+      "placement_after_approval": "REGIONAL_OR_SEASONAL_CONTEXT_VIA_EXISTING_1962_CALENDAR",
+      "calendar_anchor": "Historical 15 August–14 September association; not an extra 1962 liturgical season",
+      "calendar_event_date": null,
+      "published_canonical_comparators": [
+        "MARI-001",
+        "BLSS-002",
+        "DEV-001"
+      ],
+      "cross_candidate_related_not_equivalent": [],
+      "region_scope": "Named Bavarian shrines only",
+      "local_programme_requirement": "SHRINE_PROGRAMME_VERIFICATION_REQUIRED",
+      "subtype_examples": [
+        {
+          "subtype_review_key": "CUSTOMS-R18-17:DEVOTIONAL_PERIOD",
+          "title": {
+            "en": "Named Assumption-to-Holy-Cross Marian devotional period",
+            "fr": "Période nommée de dévotion mariale, de l'Assomption à la Sainte-Croix"
+          },
+          "source_scope": "ATTESTED_SHRINE_SUBTYPE",
+          "independent_canonical_article": false,
+          "approved_for_calendar": false
+        }
+      ],
+      "editorial_warning_en": "This shrine-specific devotional period is not a Roman liturgical season; original papal indulgence grant and conditions are unverified.",
+      "article_pointer": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json#CUSTOMS-R18-17.unpublished_bilingual_article",
+      "primary_source_url": "https://www.mariathalkirchen.de/index.php?id=164",
+      "copy_approved": false,
+      "identity_approved": false,
+      "scheduled_event_approved": false,
+      "indulgence_approved": false,
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "stage": "NONCANONICAL_EDITORIAL_RELEASE_CANDIDATE",
+      "rendering_enabled_in_production": false,
+      "indulgence_primary_grant_verified": false
+    }
+  ]
+}

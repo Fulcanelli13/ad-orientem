@@ -1,0 +1,102 @@
+{
+  "schema": "AO_R18_SIX_IDENTITIES_COMPARATOR_REVIEW_V1",
+  "as_of": "2026-10-26",
+  "method": "Action-level lexical and source-scoped comparison with canonical main corpus; this ledger records candidate distinctness, not editorial acceptance.",
+  "source_owner": "data/customs/customs-r18-six-canonical-release-candidate.v1.json",
+  "published_baseline": 35,
+  "publication_changed": false,
+  "identity_accepted": 0,
+  "records": [
+    {
+      "proposed_id": "PATR-002",
+      "working_master_id": "CANDIDATE-STPATRICK-RIBBON",
+      "compare_to_existing_canonical_ids": [
+        "PATR-001"
+      ],
+      "comparator_distinct_action_justification": "Regional handmade ribbon/card crosses worn on St Patrick's Day; PATR-001 describes a local village patronal feast and related collective observance, not the badge-making action.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_HOUSEHOLD_BADGE_FROM_PATRONAL_EVENT",
+      "claims_limit": "Irish historical practice; not currently universal",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    },
+    {
+      "proposed_id": "XMAS-002",
+      "working_master_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "compare_to_existing_canonical_ids": [
+        "XMAS-001",
+        "ADVT-001",
+        "DOM-011"
+      ],
+      "comparator_distinct_action_justification": "Christmas-night candle at a window or table in Irish folklore differs from a Polish opłatek sharing, an Advent wreath prayer and Candlemas blessed candles.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_CHRISTMAS_WINDOW_TABLE_LIGHT_FROM_OTHER_CANDLE_DEVOTIONS",
+      "claims_limit": "Irish archival traditions; spirits/beliefs are recorded folklore, not Catholic doctrine",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    },
+    {
+      "proposed_id": "XMAS-003",
+      "working_master_id": "CUST-XMAS-POLISH-HAY",
+      "compare_to_existing_canonical_ids": [
+        "XMAS-001",
+        "ADVT-002"
+      ],
+      "comparator_distinct_action_justification": "Wigilia hay beneath the tablecloth is a separate symbolic action from sharing the opłatek wafer; it is also distinct from placing good-deed straw in an Advent manger.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_WIGILIA_HAY_FROM_O_PLATEK_AND_MANGER_STRAW",
+      "claims_limit": "Optional Polish household practice, without divination",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    },
+    {
+      "proposed_id": "SBAR-001",
+      "working_master_id": "CUST-BARBARA-BRANCHES",
+      "compare_to_existing_canonical_ids": [
+        "ADVT-002",
+        "BLSS-002"
+      ],
+      "comparator_distinct_action_justification": "Branches of fruit trees put into water around St Barbara's day to flower near Christmas differ from the symbolic Advent manger of good deeds and Assumption blessing of herbs.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_SEASONAL_BRANCH_GROWING_FROM_BLESSED_HERBS",
+      "claims_limit": "Vienna source; biography uncertain; not predictive magic",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    },
+    {
+      "proposed_id": "XMAS-004",
+      "working_master_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "compare_to_existing_canonical_ids": [
+        "EPIP-002",
+        "FOOD-001"
+      ],
+      "comparator_distinct_action_justification": "Provençal cross-scored Christmas Eve bread including poor person's portion differs from French Epiphany galette and from general contextual regional feast foods.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_GROS_SOUPER_BREAD_FROM_EPIPHANY_CAKE",
+      "claims_limit": "Pre-midnight Christmas Eve Gros Souper, not Eucharistic or universally blessed bread",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    },
+    {
+      "proposed_id": "EPIP-004",
+      "working_master_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "compare_to_existing_canonical_ids": [
+        "EPIP-001",
+        "EPIP-002",
+        "SNIC-001"
+      ],
+      "comparator_distinct_action_justification": "Children setting out shoes for Three Kings gifts differs from Epiphany home-visiting singers and Epiphany cake; gift-receiving resemblance to St Nicholas is not the same feast or cultural custom.",
+      "identity_disposition": "PROVISIONALLY_DISTINCT_NEEDS_EDITORIAL_ACCEPTANCE",
+      "comparison_route": "SEPARATE_SHOE_GIFT_ACTION_FROM_STAR_SINGING_KING_CAKE_AND_NICHOLAS",
+      "claims_limit": "Household cultural tradition, no automatic civic parade or miraculous delivery",
+      "source_independence_checked": false,
+      "human_editorial_accepted": false,
+      "new_calendar_articles_activated": false
+    }
+  ]
+}

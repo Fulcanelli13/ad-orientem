@@ -1,0 +1,321 @@
+{
+  "schema": "AO_R18_ELEVEN_BILINGUAL_EDITORIAL_COPY_REVIEW_V1",
+  "as_of": "2026-10-29",
+  "source_article_file": "data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json",
+  "structure_file": "data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json",
+  "policy": {
+    "no_automatic_copy_acceptance": true,
+    "entire_original_eight_field_article_preserved": true,
+    "no_production_import": true,
+    "original_history_is_research_input_not_final_public_source_certification": true,
+    "independently_verify_source_text_before_signoff": true,
+    "do_not_add_scheduled_local_programmes": true,
+    "do_not_infer_1962_rites_or_indulgences": true
+  },
+  "counts": {
+    "records": 11,
+    "bilingual_revised_fields_per_article": 3,
+    "bilingual_field_pairs_total": 33,
+    "canonical_publications": 0,
+    "approved_articles": 0
+  },
+  "records": [
+    {
+      "review_key": "CUSTOMS-R18-13",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "Some Maltese Easter processions carry a statue of the Risen Christ through the streets; in certain localities the bearers briefly run with it.",
+          "fr": "Dans certaines processions pascales maltaises, une statue du Christ ressuscité est portée dans les rues ; en quelques lieux, les porteurs courent brièvement avec elle."
+        },
+        "history": {
+          "en": "Maltese public heritage accounts attest local Resurrection processions, and reporting from Senglea documents the distinctive running. Running is a geographic subtype of the local procession, not an element prescribed within the Roman Easter Mass.",
+          "fr": "Des témoignages publics maltais attestent des processions locales de la Résurrection, et des reportages à Senglea décrivent la course particulière. Cette course est une variante géographique de la procession locale, et non un acte prescrit dans la messe romaine de Pâques."
+        },
+        "caution": {
+          "en": "Do not assume every Maltese or Gozitan parish runs with the statue or announces a procession annually; require an actual current local programme.",
+          "fr": "Ne pas supposer que toutes les paroisses de Malte ou de Gozo courent avec la statue ou annoncent chaque année une procession ; un programme local actuel est nécessaire."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-14",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "In certain Polish regional Pentecost customs, households and gates are decorated with spring greenery.",
+          "fr": "Dans certains usages régionaux polonais de Pentecôte, les maisons et les portails sont ornés de feuillages de printemps."
+        },
+        "history": {
+          "en": "Polish State Forests describe the greenery of Zielone Świątki as a seasonal cultural tradition. An archival photograph has been cited for a specific locality and period, but its caption requires independent verification before use as a precise historical attribution.",
+          "fr": "Les Forêts d'État polonaises décrivent les feuillages des Zielone Świątki comme une tradition culturelle saisonnière. Une photographie d'archives a été invoquée pour une localité et une époque précises, mais sa légende exige une vérification indépendante avant toute attribution historique détaillée."
+        },
+        "caution": {
+          "en": "This regional household decoration is neither a prescribed Roman Pentecost practice nor a priestly blessing; do not attribute magical protection to the branches.",
+          "fr": "Cette décoration domestique régionale n'est ni une pratique prescrite de la Pentecôte romaine ni une bénédiction sacerdotale ; ne prêter aux branches aucun pouvoir magique de protection."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-15",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "Tivoli's Inchinata is an Assumption observance in which processional images of Christ and Our Lady meet and bow.",
+          "fr": "L'Inchinata de Tivoli est un usage de l'Assomption dans lequel des images portées du Christ et de Notre-Dame se rencontrent et s'inclinent."
+        },
+        "history": {
+          "en": "The Diocese of Tivoli and civic sources describe the meeting of two images near Santa Maria Maggiore, including a locally announced programme for 14–15 August 2026. Accounts of an ancient founding date are devotional tradition, not independently established chronology.",
+          "fr": "Le diocèse de Tivoli et des sources municipales décrivent la rencontre de deux images près de Santa Maria Maggiore, notamment dans un programme local annoncé pour les 14 et 15 août 2026. Les récits d'une fondation très ancienne relèvent de la tradition dévotionnelle plutôt que d'une chronologie historiquement établie."
+        },
+        "caution": {
+          "en": "This city-specific ceremony is distinct from other Assumption processions and from the Mass; no future itinerary or event date follows automatically from the 2026 notice.",
+          "fr": "Cette cérémonie propre à la ville se distingue des autres processions de l'Assomption et de la messe ; l'annonce de 2026 ne détermine automatiquement aucun parcours ni aucune date futurs."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-16",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "At Sassari, the Faradda features guilds carrying large decorated wooden candelieri in an August Marian votive procession.",
+          "fr": "À Sassari, la Faradda réunit des corporations qui portent de grands candelieri en bois décoré lors d'une procession votive mariale en août."
+        },
+        "history": {
+          "en": "Municipal and Italian cultural-heritage sources describe the guild procession toward Santa Maria di Betlem and its locally remembered civic vow. Official 2026 material establishes a contemporary local celebration, not a standing programme for future years.",
+          "fr": "Des sources municipales et patrimoniales italiennes décrivent la procession des corporations vers Santa Maria di Betlem et son vœu civique conservé dans la mémoire locale. Les documents officiels de 2026 attestent une célébration locale contemporaine, non un programme fixe pour les années suivantes."
+        },
+        "caution": {
+          "en": "The large votive wooden structures are not ordinary candles to be blessed at home. The local event is not a universal Roman Assumption rite or Tivoli's Inchinata.",
+          "fr": "Ces grandes structures votives en bois ne sont pas des bougies ordinaires à bénir chez soi. L'événement local n'est ni un rite universel de l'Assomption romaine ni l'Inchinata de Tivoli."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-17",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "Frauendreißiger names a period of Marian devotion at certain Bavarian shrines between the Assumption and Holy Cross feasts.",
+          "fr": "Le Frauendreißiger désigne une période de dévotion mariale dans certains sanctuaires bavarois, entre l'Assomption et la fête de la Sainte-Croix."
+        },
+        "history": {
+          "en": "The Archdiocese of Munich and Maria Thalkirchen shrine describe the local devotional period traditionally associated with 15 August to 14 September. Individual Masses and pilgrimages follow each shrine's current programme; this is not an additional season of the 1962 Roman Calendar.",
+          "fr": "L'archidiocèse de Munich et le sanctuaire Maria Thalkirchen décrivent cette période locale de dévotion traditionnellement associée au 15 août et au 14 septembre. Les messes et pèlerinages dépendent du programme actuel de chaque sanctuaire ; il ne s'agit pas d'un temps supplémentaire du calendrier romain de 1962."
+        },
+        "caution": {
+          "en": "No shrine service or indulgence can be scheduled or promised from this historical note. A reported papal privilege requires independent verification of its original grant and exact conditions.",
+          "fr": "Aucune cérémonie de sanctuaire ni indulgence ne peut être annoncée ou promise à partir de cette notice historique. Un privilège pontifical signalé par une source exige la vérification indépendante de son acte original et de ses conditions précises."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-03",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "In parts of France, Saint John the Baptist's feast has been marked by locally organised fires and parish gatherings.",
+          "fr": "Dans certaines régions de France, la fête de saint Jean-Baptiste a été marquée par des feux et des rassemblements paroissiaux organisés localement."
+        },
+        "history": {
+          "en": "A French heritage inventory describes a local procession and fire. Separately, the Diocese of Bayonne documented an Oloron-Sainte-Marie parish event on 20 June 2026 with Mass, a meal, prayer and a bonfire; that particular date does not establish a universal annual custom.",
+          "fr": "Un inventaire patrimonial français décrit une procession locale suivie d'un feu. Le diocèse de Bayonne a, séparément, annoncé à Oloron-Sainte-Marie une rencontre paroissiale le 20 juin 2026, comprenant messe, repas, prière et feu ; cette date ne fixe pas un usage annuel universel."
+        },
+        "caution": {
+          "en": "A local bonfire is not a prescribed Roman fire-blessing rite or a general parish schedule. Follow actual organiser announcements and fire-safety rules; do not confuse Saint John the Baptist with Saint John the Evangelist.",
+          "fr": "Un feu local n'est ni un rite romain universel de bénédiction du feu ni un programme paroissial permanent. Respecter les annonces et les consignes de sécurité ; ne pas confondre saint Jean-Baptiste avec saint Jean l'Évangéliste."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-04",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "Polish pisanki and Ukrainian pysanky are related regional traditions of decorating eggs for Easter, with distinct techniques and cultural histories.",
+          "fr": "Les pisanki polonaises et les pysanky ukrainiennes sont des traditions régionales apparentées de décoration des œufs à Pâques, avec des techniques et des histoires culturelles distinctes."
+        },
+        "history": {
+          "en": "UNESCO documents Ukrainian pysanka, including wax-resist decoration, as a living cultural tradition across religious communities. Polish museum sources separately describe pisanki techniques. Neither source establishes a uniquely Roman Catholic origin or a single mandatory Holy Saturday activity.",
+          "fr": "L'UNESCO documente les pysanky ukrainiennes, notamment la décoration à la réserve de cire, comme une tradition culturelle pratiquée dans différents milieux religieux. Des sources muséales polonaises décrivent séparément les techniques des pisanki. Ces sources n'établissent ni une origine exclusivement catholique romaine ni une activité prescrite le Samedi saint."
+        },
+        "caution": {
+          "en": "Decorating eggs is not the priestly blessing of Easter food, does not confer sacramental status and carries no guaranteed protective or divinatory power.",
+          "fr": "Décorer des œufs n'est pas la bénédiction sacerdotale des aliments de Pâques, ne confère pas le caractère d'un sacramental et ne garantit aucun pouvoir protecteur ou divinatoire."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-05",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "In a documented Austrian Advent practice, a Marian image is received successively by participating households, which pray when it arrives or departs.",
+          "fr": "Dans un usage de l'Avent attesté en Autriche, une image mariale passe successivement dans des foyers participants, où l'on prie à son arrivée ou à son départ."
+        },
+        "history": {
+          "en": "The Catholic parish of Großpetersdorf describes an image or statue passed from home to home during Advent, recalling Mary and Joseph's journey toward Bethlehem. This particular household relay is not evidence of a universal novena, nor identical with theatrical lodging-search plays or Mexican Las Posadas.",
+          "fr": "La paroisse catholique de Großpetersdorf décrit le passage d'une image ou statue de foyer en foyer pendant l'Avent, en souvenir du voyage de Marie et Joseph vers Bethléem. Cette visite domestique ne prouve ni une neuvaine universelle ni l'identité avec des jeux théâtraux de recherche d'hospitalité ou les Posadas mexicaines."
+        },
+        "caution": {
+          "en": "The route and participation depend on the local parish or households; no visit or service should be announced without current confirmation.",
+          "fr": "Le parcours et la participation dépendent de la paroisse ou des familles locales ; aucune visite ou cérémonie ne doit être annoncée sans confirmation actuelle."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-07",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "La guignolée is a Québec Christmas-season tradition of collecting food and donations for people in need.",
+          "fr": "La guignolée est une tradition québécoise de collecte de denrées et de dons pour les personnes démunies pendant la période de Noël."
+        },
+        "history": {
+          "en": "Québec heritage sources and the Society of St Vincent de Paul describe house-to-house charitable collections with Catholic historical links, later also organised by civic groups. The tradition is separate from a liturgical offertory, and campaign dates vary by organiser.",
+          "fr": "Des sources patrimoniales du Québec et la Société de Saint-Vincent-de-Paul décrivent des quêtes charitables de maison en maison, historiquement liées au catholicisme puis également organisées par des groupes civiques. La coutume est distincte de l'offertoire liturgique et les dates varient selon l'organisateur."
+        },
+        "caution": {
+          "en": "Neither a Catholic rite nor a required donation. A current drive, its organiser and dates must be checked locally before it is recommended as an event.",
+          "fr": "Ni rite catholique ni don obligatoire. L'existence d'une collecte actuelle, son organisateur et ses dates doivent être vérifiés localement avant toute annonce d'événement."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-08",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "In Polish Christmas custom, kolędnicy visit households to sing carols and, in some places, perform seasonal dramatic scenes.",
+          "fr": "Dans des usages polonais de Noël, les kolędnicy visitent les foyers pour chanter et, selon les lieux, jouer de courtes scènes traditionnelles."
+        },
+        "history": {
+          "en": "A Polish state educational resource describes the carollers, seasonal costumes and performances, including Nativity and Herod-related forms. These are regional subtypes of Polish visiting performance, not universally prescribed Catholic processions or the German Sternsinger institution.",
+          "fr": "Une ressource pédagogique publique polonaise décrit les chanteurs, les costumes saisonniers et les jeux, notamment autour de la Nativité ou d'Hérode. Il s'agit de variantes régionales de spectacles itinérants polonais, non de processions catholiques universelles ni de l'institution allemande des Sternsinger."
+        },
+        "caution": {
+          "en": "No standard troupe script or annual itinerary is established. Polish kolędnicy and Hungarian betlehemezés share a broad visiting-performance family but remain distinct traditions.",
+          "fr": "Aucun scénario unique ni itinéraire annuel n'est établi. Les kolędnicy polonais et les betlehemezés hongrois appartiennent à une large famille de spectacles itinérants, sans constituer une seule et même tradition."
+        }
+      }
+    },
+    {
+      "review_key": "CUSTOMS-R18-09",
+      "revision_status": "UNAPPROVED_EDITORIAL_COPY_PROPOSAL",
+      "language_review_en": "PENDING",
+      "language_review_fr": "PENDING",
+      "independent_full_source_verification": false,
+      "replaces_only": [
+        "description",
+        "history",
+        "caution"
+      ],
+      "reason": "Distinguish compact description from source-bounded history, make geographic and minister roles explicit and prevent unsupported dates/rites/indulgences.",
+      "changes": {
+        "description": {
+          "en": "Hungarian betlehemezés consists of regional Nativity plays performed during Christmas visits, sometimes with actors or puppets.",
+          "fr": "Le betlehemezés hongrois comprend des jeux régionaux de la Nativité présentés lors des visites de Noël, parfois par des acteurs ou avec des marionnettes."
+        },
+        "history": {
+          "en": "The Hungarian Catholic Lexicon and ethnographic sources describe shepherd dialogue, song and differing dramatic forms. Actor and puppet versions remain subtypes within this named Hungarian tradition, not additional canonical Customs.",
+          "fr": "Le Lexique catholique hongrois et des sources ethnographiques décrivent les dialogues des bergers, les chants et diverses formes théâtrales. Les versions avec acteurs ou marionnettes restent des variantes de cette tradition hongroise, non des coutumes canoniques supplémentaires."
+        },
+        "caution": {
+          "en": "Do not infer current parish performances or a fixed Christmas date, and do not merge the Hungarian practice with Polish visiting carollers or Mexican Las Posadas.",
+          "fr": "Ne pas supposer des représentations paroissiales actuelles ni une date fixe de Noël, et ne pas confondre cette tradition hongroise avec les chanteurs polonais ou les Posadas mexicaines."
+        }
+      }
+    }
+  ]
+}

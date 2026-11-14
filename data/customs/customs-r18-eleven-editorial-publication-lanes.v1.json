@@ -1,0 +1,356 @@
+{
+  "schema": "AO_R18_ELEVEN_ACTION_LANE_EDITORIAL_ADJUDICATION_V1",
+  "as_of": "2026-10-30",
+  "source": "data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json",
+  "updated_copy": "data/customs/customs-r18-eleven-bilingual-qa-amendments.v1.json",
+  "purpose": "Real publication-lane decisions after source recheck and copy edits, reducing default Calendar publication candidates from eleven to seven regional histories; four local event histories require locality-specific presentation rather than global customs IDs.",
+  "summary": {
+    "reviewed": 11,
+    "regional_standalone_recommendations": 7,
+    "local_context_only_recommendations": 4,
+    "final_approvals": 0,
+    "canonical_ids_allocated": 0,
+    "calendar_events_published": 0,
+    "indulgences_published": 0
+  },
+  "rules": {
+    "regional_cultural_articles_are_optional": true,
+    "local_context_must_not_be_an_annual_event_without_confirmation": true,
+    "cultural_heritage_not_new_1962_rite": true,
+    "editorial_recommendation_not_publication_permission": true,
+    "all_signoffs_remain_false": true,
+    "retain_all_eleven_dossiers": true
+  },
+  "records": [
+    {
+      "review_key": "CUSTOMS-R18-03",
+      "working_master_id": "CANDIDATE-STJOHN-BONFIRE",
+      "title": {
+        "en": "St John Baptist's community bonfire",
+        "fr": "Le feu communautaire de la Saint-Jean-Baptiste"
+      },
+      "reviewer_recommendation": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+      "recommendation_reason": "Parish fire is a local organised gathering; no global activity suggestion",
+      "next_release_condition": "Document a current named parish programme if exposing an event",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "LOCAL_PROVENANCE_AND_EVENT_DATA_REQUIRED_FOR_DATE"
+    },
+    {
+      "review_key": "CUSTOMS-R18-04",
+      "working_master_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "title": {
+        "en": "Decorated Easter eggs — Polish pisanki and Ukrainian pysanky",
+        "fr": "Œufs de Pâques décorés — pisanki polonais et pysanky ukrainiens"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "One Easter-egg decoration identity with Polish/Ukrainian subtypes, cultural reach beyond Catholicism",
+      "next_release_condition": "Confirm article is acceptable as Easter-related folklore rather than a liturgical Catholic duty",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-05",
+      "working_master_id": "CUST-ADVT-HERBERGSUCHE",
+      "title": {
+        "en": "Herbergsuche — Advent visits of a Marian image",
+        "fr": "Herbergsuche — visite d'une image mariale pendant l'Avent"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Parish-led Marian image relay differs from Las Posadas",
+      "next_release_condition": "Confirm named Austrian scope and any current participation instructions",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-07",
+      "working_master_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "title": {
+        "en": "Québec guignolée — Christmas charity collection",
+        "fr": "La guignolée québécoise — collecte caritative de Noël"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Québec guignolée distinct charitable act, not an offertory or fixed campaign date",
+      "next_release_condition": "If promoting a current drive, check organizer and venue-specific 2026 dates",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-08",
+      "working_master_id": "CUST-XMAS-POLISH-KOLEDNICI",
+      "title": {
+        "en": "Polish kolędnicy — visiting Christmas carollers",
+        "fr": "Kolędnicy polonais — chanteurs itinérants de Noël"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Polish kolędnicy singers and dramatists; region-specific",
+      "next_release_condition": "Preserve separation from Hungarian betlehemezés and German Sternsinger",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-09",
+      "working_master_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "title": {
+        "en": "Hungarian betlehemezés — visiting Nativity plays",
+        "fr": "Betlehemezés hongrois — jeux itinérants de la Nativité"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Hungarian betlehemezés; actor/puppet internal forms",
+      "next_release_condition": "Preserve a distinct regional article; no claimed current date",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-13",
+      "working_master_id": "CUST-EASTER-MALTESE-IRXOXT",
+      "title": {
+        "en": "L-Irxoxt — Maltese Easter Resurrection processions",
+        "fr": "L-Irxoxt — processions maltaises de la Résurrection"
+      },
+      "reviewer_recommendation": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+      "recommendation_reason": "Maltese/Gozo Easter Resurrection processions; running is locality-specific",
+      "next_release_condition": "Require named local parish/municipal programme for any date or running claim",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "LOCAL_PROVENANCE_AND_EVENT_DATA_REQUIRED_FOR_DATE"
+    },
+    {
+      "review_key": "CUSTOMS-R18-14",
+      "working_master_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "title": {
+        "en": "Pentecost greenery decorating Polish homes",
+        "fr": "Décorations végétales de Pentecôte dans les foyers polonais"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Polish Pentecost household greenery distinct from priestly blessings",
+      "next_release_condition": "Do not publish unverified archival-photograph attribution or magical protection",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "EXPLICIT_CANONICAL_SCOPE_AND_COPY_APPROVAL_REQUIRED"
+    },
+    {
+      "review_key": "CUSTOMS-R18-15",
+      "working_master_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "title": {
+        "en": "Tivoli's Inchinata procession",
+        "fr": "La procession de l’Inchinata à Tivoli"
+      },
+      "reviewer_recommendation": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+      "recommendation_reason": "Tivoli Inchinata 14–15 Aug 2026, not perpetual scheduled event",
+      "next_release_condition": "Require current diocese programme for future-year listing; no fabricated origins",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "LOCAL_PROVENANCE_AND_EVENT_DATA_REQUIRED_FOR_DATE"
+    },
+    {
+      "review_key": "CUSTOMS-R18-16",
+      "working_master_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "title": {
+        "en": "Faradda di li Candareri — Sassari's Marian offering procession",
+        "fr": "Faradda di li Candareri — procession votive mariale de Sassari"
+      },
+      "reviewer_recommendation": "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID",
+      "recommendation_reason": "Sassari Faradda guild votive procession with wooden candelieri",
+      "next_release_condition": "Require current municipal programme; avoid suggestion of candle-blessing sacramental",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "LOCAL_PROVENANCE_AND_EVENT_DATA_REQUIRED_FOR_DATE"
+    },
+    {
+      "review_key": "CUSTOMS-R18-17",
+      "working_master_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "title": {
+        "en": "Frauendreißiger — Bavarian Marian pilgrimage period",
+        "fr": "Frauendreißiger — période bavaroise de pèlerinage marial"
+      },
+      "reviewer_recommendation": "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF",
+      "recommendation_reason": "Bavarian Marian pilgrimage period not a new 1962 liturgical season",
+      "next_release_condition": "Indulgence original grant and conditions independently unverified, never promise",
+      "canonical_id": null,
+      "canonical_parent_id": null,
+      "child_subtype_ids": [],
+      "published": false,
+      "recurring_event": false,
+      "source_narrow_claim_corroborated": true,
+      "full_copy_human_approved": false,
+      "editorial_gates": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "decision_stage": "ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF",
+      "blocking_condition": "ORIGINAL_INDULGENCE_GRANT_NOT_VALIDATED"
+    }
+  ]
+}
