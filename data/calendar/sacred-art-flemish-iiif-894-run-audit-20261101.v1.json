@@ -1,0 +1,36 @@
+{
+  "schema": "AO_FLEMISH_IIIF_894_BULK_SOURCE_AUDIT_20261101_V1",
+  "status": "COMPLETED_SOURCE_DIAGNOSTIC_DO_NOT_REPEAT_AS_PRIMARY_ACQUISITION",
+  "date": "2026-11-01",
+  "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41347279954",
+  "source": "https://imagehub.vlaamsekunstcollectie.be/iiif/3/collection/top",
+  "counts": {
+    "manifestsProcessed": 894,
+    "metadataParsed": 894,
+    "sourceErrors": 0,
+    "licenseFlagEligible": 502,
+    "religiousTitleMatches": 25,
+    "religiousTitleAndLicenseEligible": 0,
+    "paintingsWithUsableMediumMetadata": 0,
+    "artistMetadataPresent": 0,
+    "manifestTitlesPresent": 797,
+    "uniqueTitleStrings": 188,
+    "distinctImageServices": 295,
+    "downloadedImages": 0
+  },
+  "fieldDiagnosis": {
+    "artist": "No artist field in any one of 894 manifest records.",
+    "medium": "No usable material/medium field in any one of 894 manifest records.",
+    "subject": "Religious cue match based on sparse titles is inadequate; all 25 title matches have undetermined/incompatible rights.",
+    "rights": "502 PDM/CC0 records cannot be treated as suitable religious paintings; majority are unrelated works/records.",
+    "physicalDuplication": "894 manifests represented only 295 unique IIIF image-service URIs; repeats must be accession/image deduplicated."
+  },
+  "decision": {
+    "imagehub": "HOLD_AS_PRIMARY_BULK_ACQUISITION_SOURCE",
+    "nextAction": "Use linked full LIDO OAI-PMH object catalogue for names, creator, medium and date/subject; connect verified accession to IIIF photo only if photo rights are explicit.",
+    "preserve": "Do not treat 0 images acquired as proof of no possible religious artwork in Flemish museums.",
+    "runSafety": "Disable automatic reruns of unproductive image-only catalogue filter; preserve standalone dispatch for corrected logic after full-source metadata audit."
+  },
+  "sourceArchive": "GitHub Actions artifact 13100287142 (report.json and 894-row all-museum-items.json)",
+  "dedupScope": "Source IDs and artist/title not fully available in this manifest set; previous 383/451 compare not sufficient to assert newness"
+}
