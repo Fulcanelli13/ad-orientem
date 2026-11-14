@@ -26,19 +26,39 @@ const DATA={
   ["collect","Concluding Collect","Oraison finale","Oremus",[3]]
  ]
 };
+// Owner-approved A1 storyboard: the conclusion is a distinct final
+// movement, directly following the Collect, while the original card plan
+// remains available for legacy consumers and source regression tests.
+const A1_DATA={
+ angelus:[
+  ["announcement","The Annunciation","L’Annonciation","Angelus Domini",[0,1]],
+  ["fiat","The Fiat","Le Fiat","Ecce ancilla",[2,3]],
+  ["incarnation","The Incarnation","L’Incarnation","Et Verbum caro",[4,5]],
+  ["prayer","The Prayer","L’Oraison","Oremus",[6,7]],
+  ["conclusion","Historical Conclusion","Conclusion historique","Conclusio",[]]
+ ],
+ regina:[
+  ["rejoice","Queen of Heaven","Reine du ciel","Regina cæli",[0]],
+  ["resurrection","He Is Risen","Il est ressuscité","Resurrexit",[1]],
+  ["prayer","The Prayer","L’Oraison","Gaude et lætare",[2,3]],
+  ["conclusion","Historical Conclusion","Conclusion historique","Conclusio",[]]
+ ]
+};
 const APPENDIX=[
  ["doxology","Doxology","Doxologie","Gloria Patri",0],
  ["faithful-departed","For the Faithful Departed","Pour les fidèles défunts","Fidelium animæ",1],
  ["divine-assistance","Divine Assistance","Secours divin","Divinum auxilium",2]
 ];
-export function angelusCardPlan({form="angelus",language="en",historicalConclusion=false}={}){
+export function angelusCardPlan({form="angelus",language="en",historicalConclusion=false,layout="folio"}={}){
  if(!Object.hasOwn(DATA,form))throw new RangeError("Unknown canonical Marian form");
  const fr=language==="fr";
- const items=DATA[form].map(([id,en,titleFr,latin,indices])=>Object.freeze({
+ const rows=layout==="a1"?A1_DATA[form].filter(item=>historicalConclusion||item[0]!=="conclusion"):DATA[form];
+ const items=rows.map(([id,en,titleFr,latin,indices])=>Object.freeze({
   id,title:fr?titleFr:en,latin,unitIndices:Object.freeze([...indices]),
   appendixIndex:null,ritual:id==="incarnation"?"profound-bow":null
  }));
- // The customary conclusion belongs on the Collect card, never extra cards.
+ // In the legacy folio the customary conclusion remains within Collect;
+ // the approved A1 storyboard gives it its own final visual movement.
  return Object.freeze(items);
 }
 function create(doc,tag,className,value){
@@ -129,11 +149,11 @@ function visible(el){return Boolean(el&&el.getClientRects().length)}
  * recitation role markup, language flip handlers, or seasonal posture resolver.
  */
 export function installAngelusCardDeck({mount,form="angelus",language="en",
- historicalConclusion=false,appendixText,latinPreferred=false,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
+ historicalConclusion=false,layout="folio",appendixText,latinPreferred=false,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
  const doc=mount?.ownerDocument,host=mount?.querySelector(".aoP435930AngelusSequence");
  if(!doc||!host)return null;
  if(host.dataset.aoDevotionalDeck==="v1")return host.__aoDevotionalDeck||null;
- const plan=angelusCardPlan({form,language,historicalConclusion});
+ const plan=angelusCardPlan({form,language,historicalConclusion,layout});
  const units=[...host.querySelectorAll(":scope > .aoP435930PrayerUnit")];
  if(units.length!==(form==="angelus"?8:4))return null;
  const originalAppendix=mount.querySelector(".aoP435930Appendix");
@@ -175,7 +195,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
   body.tabIndex=0; // Keyboard users can focus the scroll region and switch cards.
   entry.unitIndices.forEach(j=>body.append(units[j]));
-  if(form==="angelus"&&entry.id==="collect"&&parts){
+  const legacyCollect=entry.id==="collect"&&parts;
+  if((layout==="a1"&&entry.id==="conclusion"&&parts)||(layout!=="a1"&&form==="angelus"&&legacyCollect)){
    APPENDIX.forEach(([id,en,titleFr,latin,appendixIndex])=>{
     const group=create(doc,"section","aoFolioConclusionPart");
     group.dataset.aoConclusionPart=id;
