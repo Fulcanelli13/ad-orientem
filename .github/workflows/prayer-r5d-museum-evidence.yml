@@ -1,0 +1,55 @@
+name: Prayer R5D museum image acquisition evidence
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-acquire-museum-photos.py
+      - tests/prayer-r5d-research-staging.mjs
+      - .github/workflows/prayer-r5d-museum-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  acquire-for-review:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/prayer-r5d-museum-clearance-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-r5d-museum-clearance-20261104
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify preserved originals and 15-slot research-only contract
+        run: node tests/prayer-r5d-research-staging.mjs
+      - name: Install image decoder
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Acquire museum images and verify identity, rights and dimensions
+        run: python scripts/prayer-r5d-acquire-museum-photos.py
+      - name: Upload evidence for manual visual review (never publish)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-museum-evidence
+          path: r5d-museum-evidence/
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Preserve exact acquired originals in research branch only
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/prayer/research/r5d-museum-originals
+          cp r5d-museum-evidence/cleveland-1916.786.jpg assets/prayer/research/r5d-museum-originals/
+          cp r5d-museum-evidence/met-437542.jpg assets/prayer/research/r5d-museum-originals/
+          cp r5d-museum-evidence/evidence.json assets/prayer/research/r5d-museum-originals/evidence.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/prayer/research/r5d-museum-originals/
+          if git diff --cached --quiet; then
+            echo "Exact research assets already preserved"
+          else
+            git commit -m "research(prayer): preserve two hashed museum originals, not publication assets"
+            git push origin HEAD:research/prayer-r5d-museum-clearance-20261104
+          fi

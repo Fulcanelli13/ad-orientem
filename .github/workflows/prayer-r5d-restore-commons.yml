@@ -1,0 +1,56 @@
+name: Prayer R5D restore two previously acquired Commons originals
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-recover-commons-artifact.py
+      - .github/workflows/prayer-r5d-restore-commons.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  recover:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/prayer-r5d-museum-clearance-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: prayer-r5d-recover-commons
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-r5d-museum-clearance-20261104
+          persist-credentials: true
+      - name: Recover existing image artifact; do not request Wikimedia again
+        uses: actions/download-artifact@v4
+        with:
+          name: prayer-r5d-commons-20-review
+          run-id: 41788484887
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: recovered-commons/
+      - name: Verify rights metadata, exact hashes and six non-Rosary assignments
+        run: python scripts/prayer-r5d-recover-commons-artifact.py recovered-commons
+      - name: Commit to research branch with fetch/rebase protection
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=research/prayer-r5d-museum-clearance-20261104
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/prayer/research/r5d-commons-recovered-originals/
+          if git diff --cached --quiet; then
+            echo "Images already safely preserved"
+            exit 0
+          fi
+          git commit -m "research(prayer): recover two approved Commons source files for QA only"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin "$branch"
+            git rebase "origin/$branch"
+            if git push origin "HEAD:$branch"; then
+              echo "Research originals preserved"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Could not update research branch without force push" >&2
+          exit 1

@@ -1,0 +1,64 @@
+name: Prayer R5D 21-work, 53-slot reader staging acceptance
+on:
+  pull_request:
+    paths:
+      - data/pray/research/r5d-21-work-canonical-source-ledger.v1.json
+      - tests/fixtures/prayer-r5d-reader-preview.v1.js
+      - tests/prayer-r5d-first-release-crosswalk.mjs
+      - tests/prayer-r5d-destination-routing-policy.mjs
+      - data/pray/research/r5d-first-cohort-53-destinations.v1.json
+      - tests/prayer-r5d-research-reader-mount-phone.mjs
+      - .github/workflows/prayer-r5d-reader-staging.yml
+      - assets/prayer/research/r5d-commons-originals/**
+      - assets/prayer/research/r5d-commons-recovered-originals/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  crosswalk:
+    name: Stage gate — 21 hashes, 53 exact approvals, production isolation
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify main Prayer startup import recovered
+        run: node tests/pray-production-cover-photo-qa-import.mjs
+      - name: Fail closed on hash, identity, publication or Rosary change
+        run: |
+          node tests/prayer-r5d-first-release-crosswalk.mjs
+          node tests/prayer-r5d-destination-routing-policy.mjs
+      - name: Upload research stage evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-r5d-21work-53slot-hash-check
+          path: r5d-first-release-qa/
+          retention-days: 14
+          if-no-files-found: warn
+  qa-browser:
+    name: Actual Prayer mount — 320/390 EN/FR QA images (not final route)
+    needs: crosswalk
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Decode all 21 source photos in real Prayer DOM, two phone widths, two languages
+        run: node tests/prayer-r5d-research-reader-mount-phone.mjs
+      - name: Preserve screenshots and failure reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-21work-staged-reader-mount-browser
+          path: artifacts/prayer-r5d-first-cohort-preview/
+          retention-days: 14
+          if-no-files-found: warn

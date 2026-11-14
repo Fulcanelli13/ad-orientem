@@ -1,0 +1,96 @@
+name: Prayer R5D bulk museum artwork acquisition (14 works)
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-bulk-museum-acquire.py
+      - tests/prayer-r5d-bulk-museum-crosswalk.mjs
+      - .github/workflows/prayer-r5d-bulk-museum.yml
+      - data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  acquire:
+    name: Museum batch ${{ matrix.batch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [a, b]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify 14 works and 22 allowed placements
+        run: node tests/prayer-r5d-bulk-museum-crosswalk.mjs
+      - name: Install Pillow
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Capture exact object evidence and photographs
+        run: python scripts/prayer-r5d-bulk-museum-acquire.py ${{ matrix.batch }}
+      - name: Upload original sources and per-work provenance (not publication)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-r5d-bulk-museum-${{ matrix.batch }}
+          path: r5d-bulk-${{ matrix.batch }}/
+          if-no-files-found: error
+          retention-days: 14
+  preserve-research:
+    name: Preserve both museum batches without publication
+    needs: acquire
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/prayer-r5d-museum-clearance-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    concurrency:
+      group: prayer-r5d-preserve
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-r5d-museum-clearance-20261104
+          persist-credentials: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: prayer-r5d-bulk-museum-*
+          path: museum-batches
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify and commit exact research originals
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,shutil
+          from pathlib import Path
+          destination=Path('assets/prayer/research/r5d-bulk-museum-originals')
+          destination.mkdir(parents=True,exist_ok=True)
+          records=[]
+          for batch in ('a','b'):
+              path=Path('museum-batches')/f'prayer-r5d-bulk-museum-{batch}'
+              evidence=json.loads((path/'evidence.json').read_text())
+              assert evidence['acquired']==7 and evidence['blocked']==0
+              for row in evidence['entries']:
+                  assert row['status']=='ACQUIRED_FOR_QA' and row['publication_authorized'] is False
+                  original=path/Path(row['file']).name
+                  data=original.read_bytes()
+                  assert hashlib.sha256(data).hexdigest()==row['sha256']
+                  assert len(data)==row['bytes']
+                  target=destination/original.name
+                  shutil.copyfile(original,target)
+                  records.append({k:row[k] for k in ('museum','object_id','source_page','master_title','master_artist','curatorial_title','curatorial_artist','approved_slots','deferred_rosary','rights','image_url','format','width','height','bytes','sha256','publication_authorized','human_visual_review_passed','responsive_browser_qa_passed')})
+          assert len(records)==14 and sum(len(x['approved_slots']) for x in records)==22
+          (destination/'manifest.json').write_text(json.dumps({'schema':'AO_PRAYER_R5D_BULK_MUSEUM_PRESERVED_V1','acquired':14,'eligible_slots':22,'publication_authorized':False,'artworks':records},indent=2)+'\n')
+          print('Preserved 14 verified museum originals covering 22 placements; 0 published.')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/prayer/research/r5d-bulk-museum-originals/
+          if git diff --cached --quiet; then
+            echo "Research originals already preserved"
+          else
+            git commit -m "research(prayer): preserve 14 museum originals and QA manifest"
+            git push origin HEAD:research/prayer-r5d-museum-clearance-20261104
+          fi

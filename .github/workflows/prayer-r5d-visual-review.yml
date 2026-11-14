@@ -1,0 +1,31 @@
+name: Prayer R5D sixteen-artwork visual QA evidence
+on:
+  pull_request:
+    paths:
+      - scripts/prayer-r5d-build-visual-review.py
+      - .github/workflows/prayer-r5d-visual-review.yml
+      - assets/prayer/research/r5d-museum-originals/**
+      - assets/prayer/research/r5d-bulk-museum-originals/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Validate 16 hashes and 37 exact approved assignments; make review sheets
+        run: python scripts/prayer-r5d-build-visual-review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prayer-r5d-sixteen-work-visual-review
+          path: r5d-visual-review/
+          retention-days: 14
+          if-no-files-found: warn

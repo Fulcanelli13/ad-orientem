@@ -1,0 +1,432 @@
+{
+  "schema": "AO_PRAYER_R5D_21_WORK_CANONICAL_RESEARCH_LEDGER_V1",
+  "scope": "21 research assets, 53 exact placements, no production permission",
+  "workCount": 21,
+  "placementCount": 53,
+  "publicationAuthorized": false,
+  "manualVisualReviewApproved": false,
+  "readerAcceptancePassed": false,
+  "provenance": [
+    {
+      "kind": "museum",
+      "basis": "official museum object IDs and acquired image checksums"
+    },
+    {
+      "kind": "commons",
+      "basis": "union of run-evidence and retained original hashes; previous Commons manifest versions preserved in Git history"
+    }
+  ],
+  "sourceConflictResolved": "Earlier Commons evidence overwritten by concurrent batch. Curated union of 3796c7da and current reports with exact source+hash concordance.",
+  "works": [
+    {
+      "title": "The Crucifixion",
+      "credit": "follower of Sodoma",
+      "sourcePage": "https://www.clevelandart.org/art/1916.786",
+      "imagePath": "assets/prayer/research/r5d-museum-originals/cleveland-1916.786.jpg",
+      "sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "bytes": 8293229,
+      "slots": [
+        "COV-pray.seven_words",
+        "COV-pray.stations",
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "rightsEvidence": "Museum object page explicitly permits copying, modification and distribution under its Open Access Initiative",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-museum-source-verification-20261104.v1",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "credit": "Workshop of Peter Paul Rubens",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "imagePath": "assets/prayer/research/r5d-museum-originals/met-437542.jpg",
+      "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "bytes": 4103505,
+      "slots": [
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "COV-foundations_eternal_rest",
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "rightsEvidence": "Public Domain object record with Download Image link; Met Open Access permits unrestricted commercial and noncommercial use",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-museum-source-verification-20261104.v1",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Immaculate Conception",
+      "credit": "Bartolomé Esteban Murillo (Spanish, 1617–1682)",
+      "sourcePage": "https://clevelandart.org/art/1959.189",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/cleveland-1959.189.jpg",
+      "sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "bytes": 4691706,
+      "slots": [
+        "COV-litany_loreto_1962",
+        "STG-pray.montfort_consecration-03"
+      ],
+      "rightsEvidence": "Cleveland Open Access CC0",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Holy Family with a Shepherd",
+      "credit": "Battista Dossi (Italian, c. 1490–1548)",
+      "sourcePage": "https://clevelandart.org/art/1949.185",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/cleveland-1949.185.jpg",
+      "sha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+      "bytes": 7196131,
+      "slots": [
+        "STG-pray.adoration.night-01",
+        "STG-pray.adoration.night-04"
+      ],
+      "rightsEvidence": "Cleveland Open Access CC0",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Paradise",
+      "credit": "Carlo Saraceni",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437607",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-437607.jpg",
+      "sha256": "dd8a69a0c86c0855b7836a63439d7978205ae37fa108db05e7d18035f2a54e78",
+      "bytes": 4659156,
+      "slots": [
+        "HERO-20",
+        "STG-pray.litany_saints-03"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+      "credit": "Giovanni Battista Pittoni (Italian, 1687–1767)",
+      "sourcePage": "https://clevelandart.org/art/1982.36",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/cleveland-1982.36.jpg",
+      "sha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+      "bytes": 6063450,
+      "slots": [
+        "STG-litany_loreto_1962-01",
+        "STG-pray.angelus_regina-01"
+      ],
+      "rightsEvidence": "Cleveland Open Access CC0",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Trinity",
+      "credit": "Hendrik van Balen (Flemish, 1575–1632)",
+      "sourcePage": "https://clevelandart.org/art/1996.26",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/cleveland-1996.26.jpg",
+      "sha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+      "bytes": 4353315,
+      "slots": [
+        "COV-benediction_divine_praises",
+        "DOOR-D2"
+      ],
+      "rightsEvidence": "Cleveland Open Access CC0",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Adoration of the Christ Child",
+      "credit": "Jan Joest of Kalkar",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436781",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-436781.jpg",
+      "sha256": "c68cefb090b0f7b0009b1ee6d97a41304e9ffa5d7e1dd500e8ef3f39d2a15bd2",
+      "bytes": 3233524,
+      "slots": [
+        "STG-novena.st_therese-01",
+        "STG-pray.st_joseph_seven_sorrows-02"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Agony in the Garden",
+      "credit": "Nicolas Poussin",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/442488",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-442488.jpg",
+      "sha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "bytes": 3749251,
+      "slots": [
+        "COV-pray.tenebrae",
+        "STG-pray.adoration.night-02"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Christ Presented to the People (Ecce Homo)",
+      "credit": "Sodoma (Giovanni Antonio Bazzi)",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437978",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-437978.jpg",
+      "sha256": "cfe165e22f7b9fe81b1952fc1f81c909a1de49ccbcf50d764b09f77d76aae7d6",
+      "bytes": 3579324,
+      "slots": [
+        "HERO-07",
+        "STG-pray.adoration.four_ends-03"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+      "credit": "Adriaen Isenbrant",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436721",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-436721.jpg",
+      "sha256": "69fe6aae9e565c621b05515ed4205044b216be63a5bcff6d7fe87163deb97623",
+      "bytes": 4666803,
+      "slots": [
+        "STG-pray.precious_blood-04"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Burial of Christ",
+      "credit": "Annibale Carracci",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438338",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-438338.jpg",
+      "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+      "bytes": 2111362,
+      "slots": [
+        "STG-prayer.seven_sorrows_chaplet-07"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Christ Healing the Sick",
+      "credit": "Christian Wilhelm Ernst Dietrich",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436199",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-436199.jpg",
+      "sha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "bytes": 3874119,
+      "slots": [
+        "STG-litany_loreto_1962-04"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Holy Family",
+      "credit": "Gaetano Gandolfi (Italian, 1734–1802)",
+      "sourcePage": "https://clevelandart.org/art/1998.10",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/cleveland-1998.10.jpg",
+      "sha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "bytes": 1127551,
+      "slots": [
+        "COV-pray.adoration.night"
+      ],
+      "rightsEvidence": "Cleveland Open Access CC0",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Rest on the Flight into Egypt",
+      "credit": "Gerard David",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/436101",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-436101.jpg",
+      "sha256": "a30c4d70bbd9e70a3a67c2b9eb45f75688952711c8cea565ff26e2800ff145b1",
+      "bytes": 4440703,
+      "slots": [
+        "COV-devotion_ad_te_beate_ioseph"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Annunciation",
+      "credit": "Hans Memling",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437490",
+      "imagePath": "assets/prayer/research/r5d-bulk-museum-originals/met-437490.jpg",
+      "sha256": "4a5b21d087c1c827c792b89b0c37c689e1c72b0779cc1a3b8bea92a1de69a36a",
+      "bytes": 2001949,
+      "slots": [
+        "STG-litany_loreto_1962-02"
+      ],
+      "rightsEvidence": "Met Open Access public domain",
+      "sourceType": "museum",
+      "sourceRendition": "official-museum-print-or-original",
+      "recordRef": "r5d-bulk-museum-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Saint Thomas Aquinas",
+      "credit": "Carlo Crivelli",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "imagePath": "assets/prayer/research/r5d-commons-originals/commons-5cbf0a0d01ffdd3.jpg",
+      "sha256": "67509963a0515b44b6403c7ea33451d96b6e564d9c05e07f7a1e645970afdc0f",
+      "bytes": 4970724,
+      "slots": [
+        "COV-benediction_o_salutaris",
+        "COV-benediction_tantum_ergo",
+        "STG-pray.benediction-02",
+        "STG-pray.litany_saints-05"
+      ],
+      "rightsEvidence": "Public domain",
+      "sourceType": "commons",
+      "sourceRendition": "Commons thumbnail rendition",
+      "recordRef": "r5d-commons-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "The Nativity or the Adoration of the Angels",
+      "credit": "Gerard Seghers",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg",
+      "imagePath": "assets/prayer/research/r5d-commons-originals/commons-a535435237abb59.jpg",
+      "sha256": "025dbb3803660a497060f157199d4936cc4d375dde79349c54f0802dae6e883a",
+      "bytes": 2006711,
+      "slots": [
+        "COV-pray.adoration.four_ends",
+        "HERO-02",
+        "STG-pray.adoration.four_ends-01"
+      ],
+      "rightsEvidence": "Public domain",
+      "sourceType": "commons",
+      "sourceRendition": "Commons thumbnail rendition",
+      "recordRef": "r5d-commons-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Archangel Michael Defeating Satan",
+      "credit": "Guido Reni",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "imagePath": "assets/prayer/research/r5d-commons-originals/commons-62c24c9b47b85c8.jpg",
+      "sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "bytes": 513396,
+      "slots": [
+        "COV-devotion_prayer_st_michael",
+        "COV-mass_devotion_leonine",
+        "COV-novena.st_michael"
+      ],
+      "rightsEvidence": "Public domain",
+      "sourceType": "commons",
+      "sourceRendition": "Commons thumbnail rendition",
+      "recordRef": "r5d-commons-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Presentation of Jesus at the Temple",
+      "credit": "Philippe de Champaigne",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "imagePath": "assets/prayer/research/r5d-commons-originals/commons-edb1eee5613d724.jpg",
+      "sha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869",
+      "bytes": 2519688,
+      "slots": [
+        "HERO-04",
+        "STG-pray.st_joseph_seven_sorrows-04",
+        "STG-prayer.seven_sorrows_chaplet-01"
+      ],
+      "rightsEvidence": "Public domain",
+      "sourceType": "commons",
+      "sourceRendition": "Commons thumbnail rendition",
+      "recordRef": "r5d-commons-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    },
+    {
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "credit": "David Teniers the Elder",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "imagePath": "assets/prayer/research/r5d-commons-recovered-originals/commons-5e6f63ecbf0e480.jpg",
+      "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "bytes": 1916709,
+      "slots": [
+        "HERO-06",
+        "STG-pray.precious_blood-02",
+        "STG-pray.tenebrae-01"
+      ],
+      "rightsEvidence": "Public domain",
+      "sourceType": "commons",
+      "sourceRendition": "Commons thumbnail rendition",
+      "recordRef": "r5d-commons-recovered-originals/manifest.json",
+      "publicationAuthorized": false,
+      "visualQA": "PENDING",
+      "readerBrowserQA": "PENDING"
+    }
+  ]
+}
