@@ -1,0 +1,230 @@
+{
+  "schema": "ao.office.compline-jan11-17-2027-source-intake.v1",
+  "state": "RESEARCH_ONLY",
+  "publicReleaseApproved": false,
+  "universalRomanRubrics": "1960",
+  "priorPublicCivilLastDate": "2027-01-10",
+  "completeLatinTextCollated": false,
+  "sourceRightsApprovedForBatch": false,
+  "independentMame1961PsalterFacsimileCertified": false,
+  "translationsApproved": false,
+  "sourceVersions": {
+    "latinDivinumOfficiumPin": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "nativitiMarianGitBlob": "bf44a58ba1076b17466b88fa4004c1cab29f96ae"
+  },
+  "provenance": {
+    "icrspDatedJanuary2027": "https://icrspfrance.fr/ordo.php?d=2027-01-03",
+    "icrsp1960BaptismChanges": "https://icrspfrance.fr/textes-liturgiques.php?article=a0112_ancien",
+    "fsspxJanuary2027": "https://ordo.fsspx.org/en/calendar/2027/1",
+    "roman1960Rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html"
+  },
+  "classificationWarnings": [
+    "13 Jan Baptism II Compline is Sunday, not Wednesday; 1960 Variationes 24 explicitly follows Epiphany at Compline.",
+    "16 Jan Saturday after First Vespers of II Sunday after Epiphany takes SATURDAY psalms under BR 166(b), unlike II-class feast first Compline.",
+    "Seasonal Marian Alma Redemptoris Mater [Nativiti] remains until Candlemas; not Advent.",
+    "This is a universal 1960 Roman Office research ledger, not a locally altered Ordo or Mass calendar.",
+    "No printed 1961 Mame Psalm leaf parity or musical tone is asserted."
+  ],
+  "dates": [
+    {
+      "date": "2027-01-11",
+      "weekday": "Feria II",
+      "principalOffice": "Feria in Epiphanytide, commemorating St Hyginus at Lauds",
+      "officeClass": "IV_FERIA",
+      "officeDate": "2027-01-11",
+      "psalmDay": "Feria II",
+      "rubric": "171(e)",
+      "firstVespers": "NONE",
+      "commemoration": "St Hyginus, Pope and Martyr (Lauds)",
+      "psalmIds": [
+        6,
+        7
+      ],
+      "printedPsalmFrames": 28,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-12",
+      "weekday": "Feria III",
+      "principalOffice": "Epiphanytide Feria",
+      "officeClass": "IV_FERIA",
+      "officeDate": "2027-01-12",
+      "psalmDay": "Feria III",
+      "rubric": "171(e)",
+      "firstVespers": "NONE",
+      "commemoration": null,
+      "psalmIds": [
+        11,
+        12,
+        15
+      ],
+      "printedPsalmFrames": 26,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-13",
+      "weekday": "Feria IV",
+      "principalOffice": "Commemoration of the Baptism of Our Lord",
+      "officeClass": "II_FEAST",
+      "officeDate": "2027-01-13",
+      "psalmDay": "Dominica",
+      "rubric": "1960_VARIATIONES_24;168(d)",
+      "firstVespers": "NONE_AFTER_BAPTISM_VESPERS",
+      "commemoration": null,
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-14",
+      "weekday": "Feria V",
+      "principalOffice": "St Hilary of Poitiers, Bishop, Confessor and Doctor",
+      "officeClass": "III_FEAST",
+      "officeDate": "2027-01-14",
+      "psalmDay": "Feria V",
+      "rubric": "169(e)",
+      "firstVespers": "NONE",
+      "commemoration": "St Felix, Priest and Martyr (Lauds)",
+      "psalmIds": [
+        69,
+        70
+      ],
+      "printedPsalmFrames": 33,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-15",
+      "weekday": "Feria VI",
+      "principalOffice": "St Paul the First Hermit, Confessor",
+      "officeClass": "III_FEAST",
+      "officeDate": "2027-01-15",
+      "psalmDay": "Feria VI",
+      "rubric": "169(e)",
+      "firstVespers": "NONE",
+      "commemoration": "St Maur, Abbot (Lauds)",
+      "psalmIds": [
+        76,
+        85
+      ],
+      "printedPsalmFrames": 36,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-16",
+      "weekday": "Sabbato",
+      "principalOffice": "First Compline of the Second Sunday after Epiphany",
+      "officeClass": "II_SUNDAY_FIRST_VESPERS",
+      "officeDate": "2027-01-17",
+      "psalmDay": "Sabbato",
+      "rubric": "166(b)",
+      "firstVespers": "SECOND_SUNDAY_AFTER_EPIPHANY_I_VESPERS",
+      "commemoration": null,
+      "civilOffice": "St Marcellus I, Pope and Martyr (III class) before First Vespers",
+      "psalmIds": [
+        87,
+        102
+      ],
+      "printedPsalmFrames": 41,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    },
+    {
+      "date": "2027-01-17",
+      "weekday": "Dominica",
+      "principalOffice": "Second Sunday after Epiphany",
+      "officeClass": "II_SUNDAY",
+      "officeDate": "2027-01-17",
+      "psalmDay": "Dominica",
+      "rubric": "166(h)",
+      "firstVespers": "NONE_AFTER_SECOND_SUNDAY_II_VESPERS",
+      "commemoration": null,
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "marianSection": "Nativiti",
+      "sourceStage": "DATED_2027_OFFICE_ORDO_RUBRICAL_RESEARCH",
+      "textVerified": false,
+      "latinSourceRightsVerified": false,
+      "liturgicallyCertified": false,
+      "publishable": false,
+      "published": false,
+      "holdReasons": [
+        "INDEPENDENT_COMPLETE_1960_LATIN_COMPLINE_SOURCE_AND_RIGHTS_REVIEW",
+        "POSITIVE_SOURCE_FIRST_42_TO_40_READER_TEST_REQUIRED",
+        "NATIVE_PUBLIC_320_390_ACCEPTANCE_REQUIRED"
+      ]
+    }
+  ]
+}

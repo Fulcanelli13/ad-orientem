@@ -20,6 +20,8 @@ import {researchDec28Jan03PrivateComplineAppointment}
  from "./compline-dec28-jan03-2027-source-gate.js";
 import {researchJan04_10PrivateComplineAppointment}
  from "./compline-epiphany-jan04-10-2027-source-gate.js";
+import {researchJan11_17PrivateComplineAppointment}
+ from "./compline-jan11-17-2027-source-gate.js";
 const PRIVATE_APPOINTMENT_STATUSES=new Set([
  "EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
  "EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH"
@@ -80,17 +82,21 @@ function held(reason,weekday="Sabbato"){
 export function createComplinePinnedReader({
  fetchSource,weekday=null,date=null,languages,
  privateChristmasResearch=false,privateYearBoundaryResearch=false,
- privateEpiphanyResearch=false
+ privateEpiphanyResearch=false,privatePostEpiphanyResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
- const reviewed=date===null?null:privateEpiphanyResearch?
+ const reviewed=date===null?null:privatePostEpiphanyResearch?
+  researchJan11_17PrivateComplineAppointment(date):
+  privateEpiphanyResearch?
   researchJan04_10PrivateComplineAppointment(date):
   privateYearBoundaryResearch?
   researchDec28Jan03PrivateComplineAppointment(date):
   privateChristmasResearch?privateComplineSourceAppointment(date):
   reviewAdventIComplineAppointment(date);
- if(date!==null&&!(privateEpiphanyResearch?
+ if(date!==null&&!(privatePostEpiphanyResearch?
+     reviewed.status==="EXPLICIT_POST_EPIPHANY_PRIVATE_SOURCE_RESEARCH":
+     privateEpiphanyResearch?
      reviewed.status==="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH":
      privateYearBoundaryResearch?
      reviewed.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
@@ -210,19 +216,23 @@ function stanzas(lines){
 export async function assembleWeekdayComplinePilot({
  reader,weekday="Sabbato",date=null,languages,
  privateChristmasResearch=false,privateYearBoundaryResearch=false,
- privateEpiphanyResearch=false
+ privateEpiphanyResearch=false,privatePostEpiphanyResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
- const review=privateEpiphanyResearch?
+ const review=privatePostEpiphanyResearch?
+  researchJan11_17PrivateComplineAppointment(appointedDate):
+  privateEpiphanyResearch?
   researchJan04_10PrivateComplineAppointment(appointedDate):
   privateYearBoundaryResearch?
   researchDec28Jan03PrivateComplineAppointment(appointedDate):
   privateChristmasResearch?privateComplineSourceAppointment(appointedDate):
   reviewAdventIComplineAppointment(appointedDate);
- if(!(privateEpiphanyResearch?
+ if(!(privatePostEpiphanyResearch?
+     review.status==="EXPLICIT_POST_EPIPHANY_PRIVATE_SOURCE_RESEARCH":
+     privateEpiphanyResearch?
      review.status==="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH":
      privateYearBoundaryResearch?
      review.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
@@ -553,5 +563,23 @@ export async function assembleJan04_10PrivateLatinComplinePilot({reader,date}={}
   return held("EPIPHANY_PRIVATE_DATE_NOT_REVIEWED");
  return assembleWeekdayComplinePilot({
   reader,date,languages:LATIN_ONLY,privateEpiphanyResearch:true
+ });
+}
+
+/** The 11–17 January 2027 Latin source review is opt-in and never public. */
+export function createJan11_17PrivateLatinPinnedReader({date,fetchSource}={}){
+ const q=researchJan11_17PrivateComplineAppointment(date);
+ if(q.status!=="EXPLICIT_POST_EPIPHANY_PRIVATE_SOURCE_RESEARCH")
+  throw Error("JAN11_17_PRIVATE_DATE_NOT_REVIEWED");
+ return createComplinePinnedReader({
+  date,fetchSource,languages:LATIN_ONLY,privatePostEpiphanyResearch:true
+ });
+}
+export async function assembleJan11_17PrivateLatinComplinePilot({reader,date}={}){
+ const q=researchJan11_17PrivateComplineAppointment(date);
+ if(q.status!=="EXPLICIT_POST_EPIPHANY_PRIVATE_SOURCE_RESEARCH")
+  return held("JAN11_17_PRIVATE_DATE_NOT_REVIEWED");
+ return assembleWeekdayComplinePilot({
+  reader,date,languages:LATIN_ONLY,privatePostEpiphanyResearch:true
  });
 }
