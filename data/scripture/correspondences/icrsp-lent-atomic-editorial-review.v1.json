@@ -1,0 +1,245 @@
+{
+  "schema": "ao.scripture.correspondences.icrsp-atomic-editorial-review.v1",
+  "status": "scripture_owner_research_only_not_approved_not_user_visible",
+  "origin": "ICRSP France Lent thematic sample sourced from source owner PR #1666",
+  "receivedOn": "2026-10-26",
+  "owner": {
+    "pr": 1553,
+    "issue": 1552,
+    "branch": "explore/1552-biblical-correspondences-evidence",
+    "sourceOwnerPr": 1666,
+    "sourceOwnerPinnedCommit": "88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9"
+  },
+  "scope": {
+    "atomicClaims": 7,
+    "distinctMassProperPaths": 5,
+    "alreadyExistingThematicSeedTopics": 8,
+    "alreadyExistingCandidateUbsThemes": 56,
+    "ubsGroupsInspected": 2193,
+    "unrelatedCatholicReferenceRows": 565,
+    "notes": "All 2,193 imported UBS groups and 565 deuterocanonical candidates have been checked for exact passage identity as imported; this is not a semantic deduplication of all scriptural relationships and historical interpretations. No new topic, biblical text, quote or UI was created."
+  },
+  "reviewStates": {
+    "editorial_review_candidate": 4,
+    "context_only_not_typology": 1,
+    "source_critical_hold": 1,
+    "existing_chapter_overlap_hold": 1
+  },
+  "citationsPolicy": "Attested patristic or liturgical interpretations are distinct from canonical direct references; the existence of a selected Mass pair is not a Scripture-fulfilment assertion. Do not quote modern protected translations or copy historical polemics without source and period context.",
+  "claims": [
+    {
+      "id": "ICRSP-B12-CLM-001",
+      "day": "Tempora/Quad3-1",
+      "article": "a0191_ancien",
+      "state": "editorial_review_candidate",
+      "kind": "direct_biblical_named_reference",
+      "family": "baptism",
+      "passages": [
+        "2KI.5.1-15",
+        "LUK.4.27"
+      ],
+      "source": "Luke 4:27 explicitly recalls Naaman; 2 Kings 5 is the narrative referent.",
+      "priority": "P1",
+      "gate": "Confirm passage text and Vulgate 4 Regum/English 2 Kings crosswalk before display.",
+      "upstream": "icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "witness": "B12 Mass lesson source path and canonical Bible references",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-002",
+      "day": "Tempora/Quad3-1",
+      "article": "a0191_ancien",
+      "state": "editorial_review_candidate",
+      "kind": "patristic_sacramental_typology",
+      "family": "baptism",
+      "passages": [
+        "2KI.5.1-15"
+      ],
+      "source": "Ambrose, De mysteriis III.16–17, baptismal interpretation of Naaman in the Jordan; Guéranger comments on the selected lesson.",
+      "priority": "P1",
+      "gate": "Verify the original Ambrose Latin against cited textual witness and review a correct Catholic baptismal theological formulation. Do NOT fabricate a direct NT quotation.",
+      "upstream": "icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json",
+      "witness": "Ambrose's original-language Latin witness identified on ICRSP PR #1666; exact modern-source rights unresolved",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-003",
+      "day": "Tempora/Quad3-6",
+      "article": "a0198_ancien",
+      "state": "context_only_not_typology",
+      "kind": "historical_liturgical_lection_pair",
+      "family": "spirit-church",
+      "passages": [
+        "DAN.13.1-9",
+        "DAN.13.15-17",
+        "DAN.13.19-30",
+        "DAN.13.33-62",
+        "JHN.8.1-11"
+      ],
+      "source": "Guéranger compares Susanna's innocence with Christ's mercy in John 8. The 1962 Daniel reading is segmented.",
+      "priority": "P2",
+      "gate": "Belongs to Mass Proper commentary context; do not infer a direct OT/NT quote, or export the entire Daniel chapter as the lesson.",
+      "upstream": "icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json",
+      "witness": "Guéranger hosted Lent transcription with ICRSP parallel commentary",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-004",
+      "day": "Tempora/Quad3-6",
+      "article": "a0198_ancien",
+      "state": "source_critical_hold",
+      "kind": "patristic_ecclesial_typology",
+      "family": "spirit-church",
+      "passages": [
+        "DAN.13.1-9",
+        "DAN.13.15-17",
+        "DAN.13.19-30",
+        "DAN.13.33-62"
+      ],
+      "source": "Traditionally Hippolytus-attributed In Danielem associates Susanna with the Church, and Jehoiakim with Christ.",
+      "priority": "P2",
+      "gate": "Resolve the Bonwetsch/Fabricius/Schmidt numbering discrepancy; check the primary Greek and precise passage in the print, author attribution, period rhetoric, and modern-translation rights.",
+      "upstream": "icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "witness": "Historical Guéranger note citing Fabricius p.27; different digital editions use I.15.5, 14.5 and OCR block 1.4",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-005",
+      "day": "Tempora/Quad4-4",
+      "article": "a0205_ancien",
+      "state": "editorial_review_candidate",
+      "kind": "historical_mass_day_pair_with_patristic_general_resurrection",
+      "family": "passion",
+      "passages": [
+        "2KI.4.25-38",
+        "LUK.7.11-16"
+      ],
+      "source": "Guéranger presents Elisha as prefiguration of Christ for the Nain Gospel; Aphrahat Demonstration VIII.11 comments on Elisha's resurrection miracle but not Nain.",
+      "priority": "P2",
+      "gate": "Attribute exact Elisha–Nain pairing to Guéranger only. Never attach Aphrahat as attesting the exact paired passages; original Syriac TEI remains an uncorrected digital transcription.",
+      "upstream": "icrsp-france-b15-original-language-and-print-evidence.v1.json",
+      "witness": "ICRSP Lent IV Thursday source and Aphrahat Syriac VIII.11",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "2Kings 4:25–38",
+        "gospel": "Luke 7:11–16"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b15-original-language-and-print-evidence.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-006",
+      "day": "Tempora/Quad4-5",
+      "article": "a0206_ancien",
+      "state": "editorial_review_candidate",
+      "kind": "patristic_christological_analogy",
+      "family": "passion",
+      "passages": [
+        "1KI.17.17-24",
+        "JHN.11.1-45"
+      ],
+      "source": "Aphrahat Demonstration XXI.14 directly compares Elijah raising a widow's son with Jesus raising the widow's son and Lazarus; Guéranger pairs Elijah with the Lazarus Gospel.",
+      "priority": "P1",
+      "gate": "This is an analogy, NOT a direct prediction of John 11. Original Syriac TEI is uncorrected; preserve author and era; do not substitute Elisha's bones for the selected 1 Kings passage.",
+      "upstream": "icrsp-france-b15-original-language-and-print-evidence.v1.json",
+      "witness": "Digital Syriac Corpus original Syriac section XXI.14, plus historical English translation",
+      "existingOverlap": null,
+      "existingMassProper": {
+        "lesson": "1Kings 17:17–24",
+        "gospel": "John 11:1–45"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b15-original-language-and-print-evidence.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-007",
+      "day": "Tempora/Quad2-5",
+      "article": "a0186_ancien",
+      "state": "existing_chapter_overlap_hold",
+      "kind": "historical_joseph_christ_interpretation",
+      "family": "christ-prefigured",
+      "passages": [
+        "GEN.37.6-22",
+        "MAT.21.33-46"
+      ],
+      "source": "Guéranger compares Joseph and Christ while explaining the Friday Lent II Proper; Genesis 37:28 actual sale is not included in the selected lesson.",
+      "priority": "P3",
+      "gate": "Existing 'wisdom-recounts-joseph' covers GEN.37 at chapter scope under a DIFFERENT Scripture-retelling relationship. Reconcile, do not duplicate or merge these two claims automatically; Genesis 37:28 must never be declared a Mass lesson.",
+      "upstream": "icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "witness": "ICRSP Friday Lent II commentary and preexisting Mass Scripture audit",
+      "existingOverlap": {
+        "topicId": "wisdom-recounts-joseph",
+        "seedPath": "data/scripture/correspondences/thematic-seed.v1.json",
+        "overlap": "GEN.37_chapter_only_not_same_relation",
+        "resolution": "reuse_existing_joseph_subject_if_theological_link_approved_but_keep_scripture_retelling_distinct"
+      },
+      "existingMassProper": {
+        "lesson": "Genesis 37:6–22",
+        "gospel": "Matthew 21:33–46"
+      },
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "sourceResearchUrl": "https://github.com/Fulcanelli13/ad-orientem/blob/88d922d8bf9e3cf92d0e414e04edc66a5cd3b1e9/data/source-text/icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json",
+      "acceptedForPublication": false,
+      "humanTheologicalReviewCompleted": false,
+      "criticalEditionPublicationCleared": false,
+      "corpusWideSemanticDedupCompleted": false
+    }
+  ],
+  "release": {
+    "humanReviewed": 0,
+    "sourceEditionVerifiedForDisplay": 0,
+    "theologicalClaimsApproved": 0,
+    "productionChanges": 0,
+    "licenceGrants": 0,
+    "closed": false
+  },
+  "followup": "Human editorial reading of four candidates may proceed without waiting for every 1903/1716/1894 printed page. Held source attribution remains barred from publication and the one existing Joseph topic must not be duplicated."
+}

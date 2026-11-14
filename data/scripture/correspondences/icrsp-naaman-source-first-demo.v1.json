@@ -1,0 +1,91 @@
+{
+  "schema": "ao.scripture.correspondences.source-first-example.v1",
+  "status": "research_only_source_display_example_not_publishable",
+  "id": "naaman-water-and-grace",
+  "title": "Naaman: cleansing and Baptism",
+  "family": "baptism",
+  "scope": "One candidate compendium subject combining a direct New Testament identification of an Old Testament person with a separately attributed patristic sacramental reading.",
+  "sourceClaimIds": [
+    "ICRSP-B12-CLM-001",
+    "ICRSP-B12-CLM-002"
+  ],
+  "physicalMassDay": "Tempora/Quad3-1",
+  "viewerPolicy": {
+    "scriptureSideBySide": true,
+    "fullPublicDomainBibleTextRequiresLocalCanonicalVerseResolver": true,
+    "ancientWriterWordsPreferredToGeneratedSummaries": true,
+    "translatorApprovalPending": true,
+    "doNotShowAmbroseAsNarratorOrImpersonation": true,
+    "interactiveSourceNavigation": false,
+    "initialLanguage": "Latin source excerpt with precise original location; full source linked",
+    "reuseRights": "Bible sample excerpt is public-domain Douay-Rheims 1899; Ambrose Latin transcribed from Migne 1845; no copyrighted Guéranger-host translation or current English patristic translation copied."
+  },
+  "scripture": {
+    "edition": "Douay-Rheims 1899 American / historic Challoner revision, public domain",
+    "directBiblicalReferenceType": "new_testament_identifies_old_testament_person",
+    "left": {
+      "bookId": "2Kings",
+      "canonicalAddress": "2KI.5.14",
+      "selectedProperContext": "2Kings 5:1–15",
+      "textExcerpt": "Then he went down, and washed in the Jordan seven times",
+      "fullText": "https://studybible.info/DouayRheims/2%20Kings%205%3A10-14",
+      "note": "Historic Vulgate Bible book name IV Regum equals English 2 Kings."
+    },
+    "right": {
+      "bookId": "Luke",
+      "canonicalAddress": "LUK.4.27",
+      "selectedProperContext": "Luke 4:23–30",
+      "textExcerpt": "and none of them was cleansed but Naaman the Syrian.",
+      "fullText": "https://www.biblegateway.com/passage/?search=Luke+4%3A23-30&version=DRA",
+      "note": "Jesus directly names Naaman; He does not label the event Baptism in Luke 4."
+    }
+  },
+  "patristic": {
+    "author": "St Ambrose of Milan",
+    "work": "De mysteriis",
+    "era": "4th century",
+    "originalLanguage": "Latin",
+    "sourceTextEdition": "Migne PL 16, Latin transcription (1845), noncritical",
+    "sourceUrl": "https://la.wikisource.org/wiki/De_mysteriis_(ed._Migne)",
+    "originalPassages": [
+      {
+        "locus": "III.17",
+        "text": "non aquarum esse quod unusquisque mundatur, sed gratiae.",
+        "editorialLabel": "On cleansing by grace, rather than water alone"
+      },
+      {
+        "locus": "IV.21",
+        "text": "tu autem baptizatus es in nomine Trinitatis",
+        "editorialLabel": "Explicit comparison with Christian Baptism"
+      }
+    ],
+    "reproductionStatus": "Short original Latin excerpts in a research-only fixture. Translator-approved full English text is not included; link to Latin witness instead.",
+    "clearDistinction": "This sacramental typology is an early Church author's interpretation, not Luke's explicit scriptural identification of Baptism."
+  },
+  "otherWitness": {
+    "author": "Dom Prosper Guéranger",
+    "work": "L'Année liturgique — Le Carême",
+    "locus": "Monday of Lent III, lesson commentary",
+    "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+    "original1903PageInspected": false,
+    "permissionToCopyIcrspWebsiteText": false,
+    "decision": "External source link only; not part of the quote preview."
+  },
+  "editorialGates": {
+    "scripturalNameReferenceTextVerified": true,
+    "ambroseLatinSectionsLocated": true,
+    "completeEditionCriticalPageCheck": false,
+    "humanDoctrinalReview": false,
+    "fullBibleEditionResolverPassed": false,
+    "patristicTranslationApproved": false,
+    "appPublished": false
+  },
+  "nonGoals": [
+    "No narration inside Historia Salutis",
+    "No theological AI impersonation of St Ambrose",
+    "No alteration of 1962 Mass proper",
+    "No long invented 'the Father answers you' text",
+    "No app integration by merely committing research data"
+  ],
+  "sourceAttributionAndDates": "All textual words shown directly attributable to public-domain Scripture excerpt or Ambrose original Latin. Editorial context notes are plainly not quotations."
+}

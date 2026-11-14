@@ -1,0 +1,2300 @@
+{
+  "schema": "ao.scripture.correspondences.original-douay-margins.v1",
+  "status": "research_only_historical_source_collation",
+  "source": {
+    "repository": "janvier-s/original-douay-rheims",
+    "commit": "d82b2852d55a2ab8f0e57311ee42acde25740781",
+    "format": "bible/tagged/{book}.json",
+    "rights": "CC0; original 1582/1609–1610 Douay–Rheims edition transcription",
+    "notes": "Each item preserves a printed margin literal, not a blindly parsed normalized chapter or verse reference."
+  },
+  "against": {
+    "repository": "ronaldoscotti/catholic-bible",
+    "commit": "e7b233ab9403b89a223c37017d3d12e8732fdcf0",
+    "file": "catholic-deuterocanon-candidates.v1.json",
+    "source_key": "douay",
+    "upstream_normalization_not_certified": true
+  },
+  "audit": {
+    "books": 7,
+    "original_verses_with_marginal_marks": 217,
+    "original_marginal_entries": 227,
+    "modern_upstream_douay_records": 232,
+    "modern_source_addresses": 202,
+    "shared_source_verse_addresses": 199,
+    "original_only_source_verse_addresses": 18,
+    "modern_only_source_verse_addresses": 3
+  },
+  "by_book": [
+    {
+      "book": "WIS",
+      "original_verses_with_marginal_marks": 34,
+      "original_marginal_entries": 34,
+      "modern_source_addresses": 33,
+      "shared": 30,
+      "original_only": 4,
+      "import_only": 3,
+      "original_blob_sha": "3adaf49cc8df6cf535a0e71ecf2bcfe26256e198"
+    },
+    {
+      "book": "SIR",
+      "original_verses_with_marginal_marks": 127,
+      "original_marginal_entries": 128,
+      "modern_source_addresses": 127,
+      "shared": 127,
+      "original_only": 0,
+      "import_only": 0,
+      "original_blob_sha": "369ffb0c581a4700d914a5c8e6346770b175b259"
+    },
+    {
+      "book": "TOB",
+      "original_verses_with_marginal_marks": 14,
+      "original_marginal_entries": 22,
+      "modern_source_addresses": 1,
+      "shared": 1,
+      "original_only": 13,
+      "import_only": 0,
+      "original_blob_sha": "9c24ccae4124ef4910d58ebf1cd9b118340b6431"
+    },
+    {
+      "book": "JDT",
+      "original_verses_with_marginal_marks": 9,
+      "original_marginal_entries": 10,
+      "modern_source_addresses": 9,
+      "shared": 9,
+      "original_only": 0,
+      "import_only": 0,
+      "original_blob_sha": "c190c3cb0b0e7884fd9b7222cace42135ab914ab"
+    },
+    {
+      "book": "BAR",
+      "original_verses_with_marginal_marks": 8,
+      "original_marginal_entries": 8,
+      "modern_source_addresses": 8,
+      "shared": 8,
+      "original_only": 0,
+      "import_only": 0,
+      "original_blob_sha": "6af378bffede428f5ed0d7e0065e2111af7f8f32"
+    },
+    {
+      "book": "1MA",
+      "original_verses_with_marginal_marks": 18,
+      "original_marginal_entries": 18,
+      "modern_source_addresses": 18,
+      "shared": 18,
+      "original_only": 0,
+      "import_only": 0,
+      "original_blob_sha": "90fc959c0745c1192f22fe9250354469e9f1d52d"
+    },
+    {
+      "book": "2MA",
+      "original_verses_with_marginal_marks": 7,
+      "original_marginal_entries": 7,
+      "modern_source_addresses": 6,
+      "shared": 6,
+      "original_only": 1,
+      "import_only": 0,
+      "original_blob_sha": "caa76fd3745f948217b6a81dacda5877952d52d0"
+    }
+  ],
+  "original_source_verses": [
+    {
+      "source": "WIS.1.1",
+      "printed_margins": [
+        "3. Reg. 3. Isa. 56. 2. Para. 15."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.3.1",
+        "2CH.15.1",
+        "ISA.56.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.1.6",
+      "printed_margins": [
+        "Gal. 5. v. 22."
+      ],
+      "upstream_normalized_targets": [
+        "GAL.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.2.13",
+      "printed_margins": [
+        "Mat. 27. v. 43."
+      ],
+      "upstream_normalized_targets": [
+        "MAT.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.3.7",
+      "printed_margins": [
+        "Mat. 13. v. 43."
+      ],
+      "upstream_normalized_targets": [
+        "MAT.13.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.5.4",
+      "printed_margins": [
+        "Chap. 3. v. 2."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "WIS.5.11",
+      "printed_margins": [
+        "Pro. 30. v. 19."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.30.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.6.1",
+      "printed_margins": [
+        "Eccle. 9. v. 18."
+      ],
+      "upstream_normalized_targets": [
+        "ECC.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.7.8",
+      "printed_margins": [
+        "3. Reg. 3. v. 9."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.7.26",
+      "printed_margins": [
+        "Heb. 1. v. 3."
+      ],
+      "upstream_normalized_targets": [
+        "HEB.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.8.3",
+      "printed_margins": [
+        "3. Re. 3."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.9.2",
+      "printed_margins": [
+        "3. Reg. 3. v. 9. 12."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.9.7",
+      "printed_margins": [
+        "1. Para. 28. v. 5."
+      ],
+      "upstream_normalized_targets": [
+        "1CH.28.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.9.8",
+      "printed_margins": [
+        "2. Par. 1. v. 9."
+      ],
+      "upstream_normalized_targets": [
+        "2CH.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.9.9",
+      "printed_margins": [
+        "Prov. 8. v. 22."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.8.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.10.13",
+      "printed_margins": [
+        "Gen. 37."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.37.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.10.14",
+      "printed_margins": [
+        "Gen. 41."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.41.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.10.16",
+      "printed_margins": [
+        "Exo. 1. Exo. 3."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.1.1",
+        "EXO.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.10.18",
+      "printed_margins": [
+        "Exo. 14."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.10.20",
+      "printed_margins": [
+        "Exo. 12. Exo. 15."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.12.1",
+        "EXO.15.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.11.1",
+      "printed_margins": [
+        "Exo. 16. Exo. 27."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.16.1",
+        "EXO.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.11.4",
+      "printed_margins": [
+        "Num. 20."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.11.18",
+      "printed_margins": [
+        "Levi. 26. v. 22. Iere. 8. v. 17."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "WIS.12.9",
+      "printed_margins": [
+        "Exo. 23. Deu. 7."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.7.1",
+        "EXO.23.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.12.24",
+      "printed_margins": [
+        "Rom. 1. v. 23."
+      ],
+      "upstream_normalized_targets": [
+        "ROM.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.13.1",
+      "printed_margins": [
+        "Rom. 1."
+      ],
+      "upstream_normalized_targets": [
+        "ROM.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.13.2",
+      "printed_margins": [
+        "Deut. 4."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.13.10",
+      "printed_margins": [
+        "Isa. 4."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.13.11",
+      "printed_margins": [
+        "Ier. 10."
+      ],
+      "upstream_normalized_targets": [
+        "JER.10.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.17.2",
+      "printed_margins": [
+        "Exo. 1. & 10."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.18.20",
+      "printed_margins": [
+        "Num. 16."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.16.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.19.2",
+      "printed_margins": [
+        "Exo. 14."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "WIS.19.12",
+      "printed_margins": [
+        "Exo. 16."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "WIS.19.19",
+      "printed_margins": [
+        "Exo. 9. v. 24."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "WIS.19.20",
+      "printed_margins": [
+        "Exo. 19. v. 21."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.1.17",
+      "printed_margins": [
+        "Prov. 1. &. 9."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.3.8",
+      "printed_margins": [
+        "Exo. 20. Deut. 5."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.5.1",
+        "EXO.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.3.10",
+      "printed_margins": [
+        "Gen. 27. & 49."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.3.19",
+      "printed_margins": [
+        "Phil. 2."
+      ],
+      "upstream_normalized_targets": [
+        "PHP.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.3.22",
+      "printed_margins": [
+        "Pro. 25. v. 2."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.3.33",
+      "printed_margins": [
+        "Dan. 4. v. 24."
+      ],
+      "upstream_normalized_targets": [
+        "DAN.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.2",
+      "printed_margins": [
+        "Iob. 9."
+      ],
+      "upstream_normalized_targets": [
+        "JOB.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.3",
+      "printed_margins": [
+        "Ps. 142."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.142.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.4",
+      "printed_margins": [
+        "Eccl. 7."
+      ],
+      "upstream_normalized_targets": [
+        "ECC.6.12"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.22",
+      "printed_margins": [
+        "Levi. 19."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.29",
+      "printed_margins": [
+        "Tob. 4."
+      ],
+      "upstream_normalized_targets": [
+        "TOB.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.31",
+      "printed_margins": [
+        "Deu. 12."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.34",
+      "printed_margins": [
+        "Levit. 2. Num. 18."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.2.1",
+        "NUM.18.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.7.38",
+      "printed_margins": [
+        "Rom. 12. v. 15."
+      ],
+      "upstream_normalized_targets": [
+        "ROM.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.8.6",
+      "printed_margins": [
+        "Gal. 6."
+      ],
+      "upstream_normalized_targets": [
+        "GAL.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.8.13",
+      "printed_margins": [
+        "Prov. 26."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.26.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.8.19",
+      "printed_margins": [
+        "Prov. 22. v. 24."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.9.4",
+      "printed_margins": [
+        "Prov. 5."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.10.1",
+      "printed_margins": [
+        "Pro. 29."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.29.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.10.7",
+      "printed_margins": [
+        "Dan. 4."
+      ],
+      "upstream_normalized_targets": [
+        "DAN.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.10.28",
+      "printed_margins": [
+        "Prov. 17."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.10.30",
+      "printed_margins": [
+        "Prov. 12."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.11.9",
+      "printed_margins": [
+        "Deu. 13."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.13.2"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.11.12",
+      "printed_margins": [
+        "Iob. 42."
+      ],
+      "upstream_normalized_targets": [
+        "JOB.42.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.13.1",
+      "printed_margins": [
+        "Deut. 7."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.7.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.14.1",
+      "printed_margins": [
+        "Iac. 3."
+      ],
+      "upstream_normalized_targets": [
+        "JAS.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.14.9",
+      "printed_margins": [
+        "Prov. 27. v. 20."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.14.18",
+      "printed_margins": [
+        "Isa. 40. v. 7."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.40.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.15.14",
+      "printed_margins": [
+        "Gen. 2."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.15.16",
+      "printed_margins": [
+        "Mat. 19. v. 17."
+      ],
+      "upstream_normalized_targets": [
+        "MAT.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.15.18",
+      "printed_margins": [
+        "Ier. 2. v. 8."
+      ],
+      "upstream_normalized_targets": [
+        "JER.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.16.8",
+      "printed_margins": [
+        "Gen. 6."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.16.11",
+      "printed_margins": [
+        "Num. 26."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.26.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.17.15",
+      "printed_margins": [
+        "Rom. 13."
+      ],
+      "upstream_normalized_targets": [
+        "ROM.13.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.18.8",
+      "printed_margins": [
+        "Psa. 89. v. 10."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.89.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.18.20",
+      "printed_margins": [
+        "1. Cor. 11."
+      ],
+      "upstream_normalized_targets": [
+        "1CO.11.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.19.2",
+      "printed_margins": [
+        "3. Reg. 11."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.11.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.19.4",
+      "printed_margins": [
+        "Ios. 22."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.19.13",
+      "printed_margins": [
+        "Levit. 19. Mat. 18."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.19.1",
+        "MAT.18.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.19.17",
+      "printed_margins": [
+        "Iac. 3."
+      ],
+      "upstream_normalized_targets": [
+        "JAS.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.20.3",
+      "printed_margins": [
+        "Eccle. 3."
+      ],
+      "upstream_normalized_targets": [
+        "ECC.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.20.30",
+      "printed_margins": [
+        "Prov. 12."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.20.31",
+      "printed_margins": [
+        "Exo. 23. Deu. 16."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.16.1",
+        "EXO.23.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.22.13",
+      "printed_margins": [
+        "Gen. 50. Pro. 27."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.50.1",
+        "PRO.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.22.18",
+      "printed_margins": [
+        "Pro. 27."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.22.33",
+      "printed_margins": [
+        "Ps. 140."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.140.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.23.9",
+      "printed_margins": [
+        "Mat. 5."
+      ],
+      "upstream_normalized_targets": [
+        "MAT.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.23.26",
+      "printed_margins": [
+        "Isa. 26."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.26.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.24.27",
+      "printed_margins": [
+        "Psa. 18."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.18.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.24.36",
+      "printed_margins": [
+        "Iosu. 3."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.25.11",
+      "printed_margins": [
+        "Iac. 3."
+      ],
+      "upstream_normalized_targets": [
+        "JAS.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.25.23",
+      "printed_margins": [
+        "Pro. 21."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.27.1",
+      "printed_margins": [
+        "1. Tim. 6."
+      ],
+      "upstream_normalized_targets": [
+        "1TI.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.27.6",
+      "printed_margins": [
+        "Prov. 27."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.27.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.27.25",
+      "printed_margins": [
+        "Pro. 10."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.10.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.27.29",
+      "printed_margins": [
+        "Pro. 26. Eccl. 10."
+      ],
+      "upstream_normalized_targets": [
+        "ECC.10.1",
+        "PRO.26.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.28.12",
+      "printed_margins": [
+        "Prov. 26."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.26.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.29.13",
+      "printed_margins": [
+        "Exo. 22. Deu. 14."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.14.1",
+        "EXO.21.37"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.29.16",
+      "printed_margins": [
+        "Tob. 4."
+      ],
+      "upstream_normalized_targets": [
+        "TOB.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.30.1",
+      "printed_margins": [
+        "Pro. 13. & 23."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.13.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.30.4",
+      "printed_margins": [
+        "Deut. 6."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.30.19",
+      "printed_margins": [
+        "Deu. 14."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.30.22",
+      "printed_margins": [
+        "Pro. 12. 15. & 17."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.31.19",
+      "printed_margins": [
+        "Pro. 23."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.23.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.31.28",
+      "printed_margins": [
+        "Pro. 22."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.31.35",
+      "printed_margins": [
+        "Prov. 31. Psa. 103."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.31.1",
+        "PSA.103.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.33.13",
+      "printed_margins": [
+        "Rom. 9."
+      ],
+      "upstream_normalized_targets": [
+        "ROM.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.34.19",
+      "printed_margins": [
+        "Psal. 32."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.32.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.34.21",
+      "printed_margins": [
+        "Pro. 21. v. 27."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.34.22",
+      "printed_margins": [
+        "Prov. 15. v. 8."
+      ],
+      "upstream_normalized_targets": [
+        "PRO.15.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.34.26",
+      "printed_margins": [
+        "Levi. 19."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.35.11",
+      "printed_margins": [
+        "2. Cor. 9. Tob. 4."
+      ],
+      "upstream_normalized_targets": [
+        "2CO.9.1",
+        "TOB.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.35.14",
+      "printed_margins": [
+        "Levit. 22. Deu. 15."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.15.1",
+        "LEV.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.35.16",
+      "printed_margins": [
+        "2. Paral. 19. Rom. 2. Act. 10."
+      ],
+      "upstream_normalized_targets": [
+        "2CH.19.1",
+        "ACT.10.1",
+        "ROM.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.36.14",
+      "printed_margins": [
+        "Exo. 4."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.36.19",
+      "printed_margins": [
+        "Num. 6."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.37.30",
+      "printed_margins": [
+        "1. Cor. 6."
+      ],
+      "upstream_normalized_targets": [
+        "1CO.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.38.5",
+      "printed_margins": [
+        "Exo. 15."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.15.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.38.23",
+      "printed_margins": [
+        "2. Reg. 12."
+      ],
+      "upstream_normalized_targets": [
+        "2SA.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.39.21",
+      "printed_margins": [
+        "Gen. 1."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.39.22",
+      "printed_margins": [
+        "Exo. 14."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.39.28",
+      "printed_margins": [
+        "Gen. 7."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.7.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.40.10",
+      "printed_margins": [
+        "Gen. 7."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.7.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.40.11",
+      "printed_margins": [
+        "Eccle. 1."
+      ],
+      "upstream_normalized_targets": [
+        "ECC.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.41.27",
+      "printed_margins": [
+        "Mat. 5. v. 28."
+      ],
+      "upstream_normalized_targets": [
+        "MAT.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.42.1",
+      "printed_margins": [
+        "Levit. 19. Deu. 1. 16. Pro. 24. Iacob. 2."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.1.1",
+        "JAS.2.1",
+        "LEV.19.1",
+        "PRO.24.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.44.22",
+      "printed_margins": [
+        "Gen. 22. Heb. 11."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.22.1",
+        "HEB.11.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.1",
+      "printed_margins": [
+        "Exo. 3."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.5",
+      "printed_margins": [
+        "Num. 21."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.7",
+      "printed_margins": [
+        "Exo. 28."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.28.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.17",
+      "printed_margins": [
+        "Lev. 8."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.8.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.22",
+      "printed_margins": [
+        "Num. 16."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.16.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.45.28",
+      "printed_margins": [
+        "Nu. 25."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.5",
+      "printed_margins": [
+        "Iosue 10."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.10.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.9",
+      "printed_margins": [
+        "Nu. 14."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.11",
+      "printed_margins": [
+        "Iosue 14."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.14",
+      "printed_margins": [
+        "1. Reg. 17."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.20",
+      "printed_margins": [
+        "1. Reg. 7."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.7.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.46.22",
+      "printed_margins": [
+        "1. Reg. 12."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.1",
+      "printed_margins": [
+        "2. Reg. 11."
+      ],
+      "upstream_normalized_targets": [
+        "2SA.11.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.3",
+      "printed_margins": [
+        "1. Reg. 17."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.7",
+      "printed_margins": [
+        "1. Reg. 18."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.18.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.11",
+      "printed_margins": [
+        "1. Par. 25."
+      ],
+      "upstream_normalized_targets": [
+        "1CH.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.13",
+      "printed_margins": [
+        "2. Reg. 12."
+      ],
+      "upstream_normalized_targets": [
+        "2SA.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.15",
+      "printed_margins": [
+        "3. Reg. 3.",
+        "3. Reg. 4."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.3.1",
+        "1KI.4.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.20",
+      "printed_margins": [
+        "3. Reg. 10."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.10.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.24",
+      "printed_margins": [
+        "Psa. 88. v. 34."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.88.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.47.28",
+      "printed_margins": [
+        "3. Reg. 12."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.2",
+      "printed_margins": [
+        "3. Reg. 17."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.8",
+      "printed_margins": [
+        "3. Reg. 9."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.9",
+      "printed_margins": [
+        "4. Reg. 2."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.19",
+      "printed_margins": [
+        "4. Reg. 20."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.20",
+      "printed_margins": [
+        "4. Reg. 18."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.18.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.23",
+      "printed_margins": [
+        "4. Reg. 19."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.24",
+      "printed_margins": [
+        "Isa. 37."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.37.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.48.26",
+      "printed_margins": [
+        "4. Reg. 20. Isa. 38."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.20.1",
+        "ISA.38.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.1",
+      "printed_margins": [
+        "4. Reg. 22."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.3",
+      "printed_margins": [
+        "2. Par. 34."
+      ],
+      "upstream_normalized_targets": [
+        "2CH.34.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.4",
+      "printed_margins": [
+        "4. Reg. 13."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.13.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.8",
+      "printed_margins": [
+        "4. Reg. 25."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.9",
+      "printed_margins": [
+        "Iere. 1."
+      ],
+      "upstream_normalized_targets": [
+        "JER.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.10",
+      "printed_margins": [
+        "Ezec. 1."
+      ],
+      "upstream_normalized_targets": [
+        "EZK.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.13",
+      "printed_margins": [
+        "Agge. 2."
+      ],
+      "upstream_normalized_targets": [
+        "HAG.1.15"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.14",
+      "printed_margins": [
+        "1. Esd. 3. 3. Esd. 5. Zach. 3."
+      ],
+      "upstream_normalized_targets": [
+        "EZR.3.1",
+        "ZEC.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.15",
+      "printed_margins": [
+        "2. Esd. 2."
+      ],
+      "upstream_normalized_targets": [
+        "NEH.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.49.17",
+      "printed_margins": [
+        "Gen. 39. 40 &c."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.39.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "SIR.50.22",
+      "printed_margins": [
+        "Num. 6. v. 23."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "TOB.2.6",
+      "printed_margins": [
+        "Amos 8. v. 10."
+      ],
+      "upstream_normalized_targets": [
+        "AMO.8.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "TOB.4.3",
+      "printed_margins": [
+        "1.",
+        "2."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.6",
+      "printed_margins": [
+        "3."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.7",
+      "printed_margins": [
+        "4."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.13",
+      "printed_margins": [
+        "5."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.14",
+      "printed_margins": [
+        "6."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.15",
+      "printed_margins": [
+        "7."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.16",
+      "printed_margins": [
+        "8."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.18",
+      "printed_margins": [
+        "9.",
+        "10."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.19",
+      "printed_margins": [
+        "11."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.20",
+      "printed_margins": [
+        "12."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.21",
+      "printed_margins": [
+        "13."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.4.23",
+      "printed_margins": [
+        "14."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "TOB.12.3",
+      "printed_margins": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5.",
+        "6.",
+        "7."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "JDT.4.13",
+      "printed_margins": [
+        "Exod. 17."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.7",
+      "printed_margins": [
+        "Gen. 11."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.11.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.9",
+      "printed_margins": [
+        "Gen. 12."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.12.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.10",
+      "printed_margins": [
+        "Exod. 1.",
+        "Exod. 7. &c."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.1.1",
+        "EXO.7.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.15",
+      "printed_margins": [
+        "Exod. 15. 16. 17."
+      ],
+      "upstream_normalized_targets": [
+        "EXO.15.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.17",
+      "printed_margins": [
+        "Iudic. 2. 3. 4. &c."
+      ],
+      "upstream_normalized_targets": [
+        "JDG.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.19",
+      "printed_margins": [
+        "Nu. 21."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.20",
+      "printed_margins": [
+        "Ios. 21."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "JDT.5.22",
+      "printed_margins": [
+        "4. Reg. 21."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.21.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.2.5",
+      "printed_margins": [
+        "Deu. 28. v. 43."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.28.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.2.20",
+      "printed_margins": [
+        "Iere. 2. v. 8."
+      ],
+      "upstream_normalized_targets": [
+        "JER.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.2.29",
+      "printed_margins": [
+        "Deut. 28. v. 62."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.28.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.2.35",
+      "printed_margins": [
+        "Ier. 31. v. 31. &c."
+      ],
+      "upstream_normalized_targets": [
+        "JER.31.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.4.18",
+      "printed_margins": [
+        "Deu. 28. v. 49. Iere. 5. v. 15."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.28.1",
+        "JER.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.6.1",
+      "printed_margins": [
+        "Iere. 25. v. 8. 9. &c."
+      ],
+      "upstream_normalized_targets": [
+        "JER.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.6.2",
+      "printed_margins": [
+        "Isa. 44."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.44.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "BAR.6.24",
+      "printed_margins": [
+        "Isa. 46. v. 6."
+      ],
+      "upstream_normalized_targets": [
+        "ISA.46.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.26",
+      "printed_margins": [
+        "Num. 25."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.52",
+      "printed_margins": [
+        "Gen. 22."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.22.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.53",
+      "printed_margins": [
+        "Gen. 41."
+      ],
+      "upstream_normalized_targets": [
+        "GEN.41.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.54",
+      "printed_margins": [
+        "Num. 25."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.25.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.55",
+      "printed_margins": [
+        "Iosue. 1"
+      ],
+      "upstream_normalized_targets": [
+        "JOS.1.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.56",
+      "printed_margins": [
+        "Num. 14."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.14.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.57",
+      "printed_margins": [
+        "2. Reg. 2."
+      ],
+      "upstream_normalized_targets": [
+        "2SA.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.58",
+      "printed_margins": [
+        "4. Reg. 2."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.2.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.59",
+      "printed_margins": [
+        "Dan. 3."
+      ],
+      "upstream_normalized_targets": [
+        "DAN.3.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.2.60",
+      "printed_margins": [
+        "Dan. 5."
+      ],
+      "upstream_normalized_targets": [
+        "DAN.5.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.3.56",
+      "printed_margins": [
+        "Deu. 20."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.4.24",
+      "printed_margins": [
+        "Psal. 106."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.106.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.4.30",
+      "printed_margins": [
+        "1. Reg. 17. 1. Reg. 14."
+      ],
+      "upstream_normalized_targets": [
+        "1SA.14.1",
+        "1SA.17.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.4.56",
+      "printed_margins": [
+        "Ioan. 10."
+      ],
+      "upstream_normalized_targets": [
+        "JHN.10.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.5.48",
+      "printed_margins": [
+        "Num. 20."
+      ],
+      "upstream_normalized_targets": [
+        "NUM.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.7.17",
+      "printed_margins": [
+        "Psal. 78."
+      ],
+      "upstream_normalized_targets": [
+        "PSA.78.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.7.41",
+      "printed_margins": [
+        "4. Reg. 19."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "1MA.9.46",
+      "printed_margins": [
+        "2. Par. 20. v. 3."
+      ],
+      "upstream_normalized_targets": [
+        "2CH.20.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.2.8",
+      "printed_margins": [
+        "Exo. 40. 3. Reg. 8."
+      ],
+      "upstream_normalized_targets": [
+        "1KI.8.1",
+        "EXO.40.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.2.11",
+      "printed_margins": [
+        "Levit. 9. v. 24."
+      ],
+      "upstream_normalized_targets": [
+        "LEV.9.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.5.18",
+      "printed_margins": [
+        "ch. 3. v. 23. 27."
+      ],
+      "upstream_normalized_targets": [],
+      "status": "no_matching_upstream_source_address"
+    },
+    {
+      "source": "2MA.7.6",
+      "printed_margins": [
+        "Deut. 32. v. 43."
+      ],
+      "upstream_normalized_targets": [
+        "DEU.32.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.8.19",
+      "printed_margins": [
+        "4. Reg. 19."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.19.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.12.15",
+      "printed_margins": [
+        "Iosue. 6."
+      ],
+      "upstream_normalized_targets": [
+        "JOS.6.1"
+      ],
+      "status": "address_correspondence_only"
+    },
+    {
+      "source": "2MA.15.22",
+      "printed_margins": [
+        "4. Reg. 19."
+      ],
+      "upstream_normalized_targets": [
+        "2KI.19.1"
+      ],
+      "status": "address_correspondence_only"
+    }
+  ],
+  "modern_only_addresses": [
+    {
+      "source": "WIS.11.17",
+      "upstream_normalized_targets": [
+        "JER.8.1",
+        "LEV.26.1"
+      ],
+      "status": "source_address_requires_original_print_review"
+    },
+    {
+      "source": "WIS.19.13",
+      "upstream_normalized_targets": [
+        "EXO.16.1"
+      ],
+      "status": "source_address_requires_original_print_review"
+    },
+    {
+      "source": "WIS.19.22",
+      "upstream_normalized_targets": [
+        "EXO.19.1"
+      ],
+      "status": "source_address_requires_original_print_review"
+    }
+  ],
+  "qualification": "Source-verse matches alone do not verify that the printed marginal destination equals the modernized destination. In Tobit some cross_refs are numbered index markers rather than directly interpretable Scripture addresses."
+}
