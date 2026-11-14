@@ -23,6 +23,11 @@ for (const work of selected) {
   assert.equal(work.image, null, "No invented local image bytes");
   assert.equal(work.original, null, "No invented local original");
   assert.equal(work.originalFileAcquired, false);
+  assert.equal(work.researchOriginalAcquired, true, "All six original JPEGs were acquired outside the app repository");
+  assert.equal(work.researchImageArchive, "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip");
+  assert.match(work.sourceOriginalSha256, /^[a-f0-9]{64}$/, "A verified SHA-256 exists for each research original");
+  assert.ok(Number.isInteger(work.sourcePixels.width) && work.sourcePixels.width > 0);
+  assert.ok(Number.isInteger(work.sourcePixels.height) && work.sourcePixels.height > 0);
   assert.equal(work.productionEligible, false);
   assert.equal(work.newPhotoPublication, false);
   assert.equal(work.photoReleaseState, "PHOTOGRAPH_NOT_RELEASED");
@@ -36,4 +41,7 @@ assert.equal(durer.preexisting989GroupId, "HERO::khm:GG-838", "Dürer links to p
 assert.ok(selected.some(w => w.artist === "Guido Reni" && w.reproductionQualityState.includes("HOLD")));
 assert.ok(selected.some(w => w.artist === "Giovanni Battista Tiepolo" && w.photographRightsState.includes("REVIEW")));
 assert.deepEqual(sacredArtMatchesForPrayerSlot("STG-pray.rosary-02").filter(w => ids.has(w.id)), []);
+const campeche = selected.find(w => w.artist === "José Campeche");
+assert.equal(campeche.preferredOriginalFileUrl, "https://images.metmuseum.org/CRDImages/ad/original/DP-44679-003.jpg");
+assert.deepEqual(campeche.sourcePixels, { width: 2700, height: 4000 });
 console.log("Holy Trinity owner selection: six gallery records, zero photo releases or placement changes.");
