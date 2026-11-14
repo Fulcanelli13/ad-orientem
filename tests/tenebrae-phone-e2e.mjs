@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const visualProof=resolve(root,"artifacts/tenebrae-phone-visual");
+await mkdir(visualProof,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".woff2":"font/woff2",".jpg":"image/jpeg",".webp":"image/webp"};
 const requests=[];
 const server=http.createServer(async(req,res)=>{
@@ -49,8 +51,11 @@ try{
    assert.equal(await progress.count(),1,"One shared Tenebrae progress track");
    assert.equal(await progress.getAttribute("aria-valuenow"),"1");
    assert.equal(await progress.getAttribute("aria-valuemax"),hour==="MATINS"?"32":"10");
-   assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),0,
-      "No redundant Previous/Next buttons");
+   assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),2,
+     "Office needs explicit Previous/Next once horizontal gestures select the presentation view");
+   const workspace=page.locator('#aoPray435930 .aoPrayerRitualWorkspace[data-ao-prayer-workspace="tenebrae"]');
+   await workspace.locator('[data-ao-ritual-view="both"]').click();
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"both");
    const reading=page.locator('#aoPray435930 .aoTenebReading');
    const swipe=async(dx,dy)=>{
     await page.locator('#aoPray435930 .aoTenebReading').evaluate((el,{dx,dy})=>{
@@ -63,18 +68,22 @@ try{
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
     "Vertical scroll must never advance the Office card");
    await swipe(-160,8);
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"text",
+    "Horizontal swipe must change the mode instead of advancing the Office");
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   await page.locator('#aoPray435930 [data-p435930-tenebrae-move="1"]').click();
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
-    "Horizontal swipe must advance exactly one source-owned step");
-   assert.equal(await progress.getAttribute("aria-valuenow"),"2",
-    "Tenebrae progress did not follow stage change");
+    "Explicit Next must advance source-owned Office text");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"2");
    await page.locator('#aoPray435930 .aoTenebReading').focus();
    await page.keyboard.press("ArrowLeft");
-   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
-    "Keyboard left must return one step");
-   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
-   await page.keyboard.press("ArrowRight");
+   assert.equal(await workspace.getAttribute("data-ao-ritual-mode"),"both");
    assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
-    "Keyboard right must advance one step");
+    "Left arrow must not silently change the Office stage");
+   await page.locator('#aoPray435930 [data-p435930-tenebrae-move="-1"]').click();
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
+    "Explicit Previous must return to prior source-owned passage");
   }
  }
  await page.locator('#aoPray435930 [data-p435930-tenebrae-hour="MATINS"]').click();
@@ -94,11 +103,45 @@ try{
  assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N3.P1");
  await page.locator('#aoPray435930 [data-p435930-tenebrae-jump="0"]').click();
  assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N1.P1");
+ // The historical candle companion is opt-in and its image occupies the
+ // scene pane only after explicitly enabling local observational mode.
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1);
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchCinema[data-ao-cinema-kind="tenebrae"][data-ao-cinema-phase="office"]').count(),1,
+  "The canonical Office begins with animated church geometry but no historical candle ceremony");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').count(),15,
+  "Fifteen dormant 3-D candle locations are modeled independently of the canonical Office");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').first().evaluate(el=>getComputedStyle(el).display),"none",
+  "Candles must not be visible until the local ceremonial companion is enabled");
+ await page.screenshot({path:resolve(visualProof,"tenebrae-office-390.png"),animations:"disabled"});
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="enable"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae"]').count(),1);
+ const candles=page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-candle-index]');
+ assert.equal(await candles.count(),15,"Historically triangular hearse must contain fifteen visual candles");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchCinema .aoChurchBillboard').count(),15,
+  "The historical candle rite must also be depicted in 3-D, not solely in an SVG-like 2-D figure");
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual .aoChurchBillboard').first().evaluate(el=>getComputedStyle(el).display),"block",
+  "Enabling an observed local ceremonial must reveal the physically modeled candles");
+ assert.equal(await page.locator('#aoPray435930 .aoTenebCeremony .aoPrayerCeremonialScene').count(),0,
+  "The optional source owner keeps controls but the scene has exactly one visual owner");
+ assert.equal(await candles.nth(14).evaluate(el=>getComputedStyle(el).getPropertyValue("--ao-candle-x").trim()),"50%");
+ await page.screenshot({path:resolve(visualProof,"tenebrae-optional-15-candles-390.png"),animations:"disabled"});
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-ceremony="disable"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoPrayerRitualVisual [data-ao-scene-kind="tenebrae-office"]').count(),1,
+  "Closing optional ceremony must return to the neutral canonical Office scene");
  const overflow=await page.evaluate(()=>{
   const el=document.querySelector("#aoPray435930 .aoTenebBody");
   return el?el.scrollWidth-el.clientWidth:null
  });
  assert.ok(overflow!==null&&overflow<4,"Tenebrae horizontal mobile overflow: "+overflow);
+ await page.setViewportSize({width:320,height:568});
+ const compact=await page.evaluate(()=>{
+   const root=document.querySelector("#aoPray435930 .aoTenebBody");
+   return {document:document.documentElement.scrollWidth-innerWidth,
+     reading:root?.scrollWidth-root?.clientWidth};
+ });
+ assert.ok(compact.document<=1&&compact.reading<=16,
+   "Tenebrae 320px compact overflow: "+JSON.stringify(compact));
+ await page.screenshot({path:resolve(visualProof,"tenebrae-office-320.png"),animations:"disabled"});
  assert.deepEqual(external.filter(url=>/Quad6-[456]|Psalm(?:50|68|231)/i.test(url)),[],
    "Tenebrae text/psalter must never request upstream URLs at runtime");
  assert.ok(requests.some(r=>r.endsWith("/psalms-01.json")),"Offline Psalter not loaded");

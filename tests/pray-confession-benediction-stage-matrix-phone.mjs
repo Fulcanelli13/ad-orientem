@@ -62,6 +62,31 @@ try{
     await chooser.click();
     await page.locator(confession+" [data-p435930-conf-next]").click();
     await page.locator(confessionTimeline+" [data-ao-devo-chapter='0']").waitFor({state:"attached",timeout:12000});
+    if(path==="regular"){
+     const ws=page.locator(confession+" .aoPrayerRitualWorkspace[data-ao-prayer-workspace='confession']");
+     assert.equal(await ws.count(),1,"Confession split must be mounted without replacing canonical cards");
+     assert.equal(await ws.locator("[data-ao-ritual-view]").count(),3,"Exactly three horizontal presentation views");
+     const readRatio=async()=>Number.parseFloat(await ws.evaluate(el=>
+      getComputedStyle(el).getPropertyValue("--ao-ritual-scene-share")));
+     await ws.locator("[data-ao-ritual-view='scene']").click();
+     assert.ok((await readRatio())>60,"Scene view allocates most of the height to animation");
+     await ws.locator("[data-ao-ritual-view='text']").click();
+     assert.ok((await readRatio())<20,"Text view allocates most of the height to prayer text");
+     await ws.locator("[data-ao-ritual-view='both']").click();
+     const before=await readRatio();
+     const grip=ws.locator("[data-ao-ritual-divider]");
+     await grip.scrollIntoViewIfNeeded();
+     const rect=await grip.boundingBox();
+     assert.ok(rect?.height>0,"Resizable divider missing");
+     await page.mouse.move(rect.x+rect.width/2,rect.y+rect.height/2);
+     await page.mouse.down();
+     await page.mouse.move(rect.x+rect.width/2,rect.y+rect.height/2-27,{steps:5});
+     await page.mouse.up();
+     assert.ok((await readRatio())<before-2,
+      "Dragging prayer text upward should continuously shrink the animation");
+     assert.equal(await ws.locator("input[type=text],textarea").count(),0,
+      "Workspace must never collect examination answers");
+    }
     const exam=confessionExaminationCards(path,confessionExtendedSections(expectedExamSource.sections,{path,french:ui==="fr"}));
     const rite=confessionRiteCards(path),after=confessionAfterCards();
     for(const [stage,cards,part] of [[1,exam,"confessionExamination"],[2,rite,"confessionRite"],[3,after,"confessionAfter"]]){

@@ -4,6 +4,7 @@
  * about universal ceremonial rubrics. No timer, no automatic advancement.
  * Witness: https://www.institute-christ-king.org/pittsburgh-gallery/1633-tenebrae2024
  */
+import {prayerCeremonialSceneState,renderPrayerCeremonialScene} from "./prayer-ceremonial-stage.v1.js";
 const SOURCE="https://www.institute-christ-king.org/pittsburgh-gallery/1633-tenebrae2024";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 export const freshTenebraeCeremony=()=>({enabled:false,extinguished:0,observedPsalms:[],hidden:false,strepitus:false,returned:false});
@@ -24,17 +25,14 @@ export function renderTenebraeCeremony({ceremony,step,french=false}={}){
  const s={...freshTenebraeCeremony(),...ceremony},L=(en,fr)=>french?fr:en;
  if(!s.enabled)return '<section class="aoTenebCeremonyIntro"><button type="button" data-p435930-tenebrae-ceremony="enable">'+esc(L("Follow solemn Tenebrae (optional local ceremony)","Suivre les Ténèbres solennelles (cérémonial local facultatif)"))+'</button><p>'+esc(L("The fifteen-candle ceremony is not required by the 1960 Office. Use this companion only when actually following a celebration with these ceremonies.","Le cérémonial des quinze cierges n’est pas exigé par l’Office de 1960. Utilisez ce compagnon seulement si vous suivez une célébration qui le pratique."))+'</p></section>';
  const number=Math.max(0,Math.min(14,s.extinguished));
- const lamps=Array.from({length:15},(_,i)=>{
-  const lit=i===14?!s.hidden||s.returned:i>=number;
-  return '<span role="img" aria-label="'+esc(L("Candle ","Cierge ")+(i+1)+(lit?L(" lit"," allumé"):L(" extinguished or concealed"," éteint ou caché")))+'" style="height:40px;width:8px;margin:3px;background:'+(lit?'#ddab58':'#5e6065')+';border-radius:6px;display:inline-block;opacity:'+(lit?'1':'.37')+'"></span>';
- }).join("");
+ const candleScene=renderPrayerCeremonialScene(prayerCeremonialSceneState({kind:"tenebrae",ceremony:s}),{french});
  const psalm=step?.kind==="PSALM"&&!s.observedPsalms.includes(step.id||"");
  const cue=psalm?L("Psalm reading: record at most one extinguishing for this distinct psalm, and only if observed at the service.","Psaume : notez au plus une extinction pour ce psaume distinct, et seulement si elle est observée."):L("Follow the current Office passage. Ceremonial events are recorded manually, not triggered by navigation.","Suivez la lecture de l’Office. Les événements sont constatés manuellement, non déclenchés par la navigation.");
  const button=(action,en,fr,disabled=false)=>'<button type="button" data-p435930-tenebrae-ceremony="'+action+'" '+(disabled?'disabled ':'')+'>'+esc(L(en,fr))+'</button>';
  return '<aside class="aoTenebCeremony" aria-label="'+esc(L("Observed local Tenebrae ceremony","Cérémonial local des Ténèbres observé"))+'" style="padding:1rem;border:1px solid currentColor;border-radius:12px;margin:1rem 0">'+
  '<h3>'+esc(L("Solemn Tenebrae · local ceremony","Ténèbres solennelles · cérémonial local"))+'</h3>'+
  '<p>'+esc(L("Optional witnessed ceremonial; separate from the canonical 1960 Office. Never extinguish a physical candle on the app’s instruction.","Cérémonial observé facultatif, distinct de l’Office canonique de 1960. L’application ne commande jamais d’éteindre un cierge réel."))+'</p>'+
- '<div role="group" aria-label="'+esc(L("Fifteen ceremonial candles","Quinze cierges cérémoniels"))+'" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px">'+lamps+'</div>'+
+ candleScene+
  '<p aria-live="polite">'+esc(L("Recorded extinguishings: ","Extinctions constatées : ")+number+"/14"+(s.hidden?L(" · final candle concealed"," · dernier cierge caché"):"")+(s.strepitus?" · strepitus":"")+(s.returned?L(" · final candle returned"," · dernier cierge réapparu"):""))+'</p>'+
  '<p>'+esc(cue)+'</p><div class="aoTenebCeremonyControls" style="display:flex;gap:8px;flex-wrap:wrap">'+
  (number<14?button("extinguish","Observed: extinguish one","Observé : éteindre un cierge",!psalm):"")+

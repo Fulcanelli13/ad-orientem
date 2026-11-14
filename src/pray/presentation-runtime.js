@@ -87,6 +87,9 @@ import {certifiedPublicStationCue,stationPhaseOfFocusedParagraph,STATIONS_PUBLIC
 import {resolveDevotionalActionScene,createDevotionalActionCinematic} from "./devotional-action-cinematics.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
+import "./prayer-ceremonial-stage-styles.js";
+import {prayerCeremonialSceneState,renderPrayerCeremonialScene} from "./prayer-ceremonial-stage.v1.js";
+import {installPrayerRitualWorkspace} from "./prayer-ritual-workspace.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import {freshTenebraeCeremony,tenebraeCeremonialAction} from "./tenebrae-ceremonial.v1.js";
@@ -269,6 +272,19 @@ function semanticRails(){
    const cue=cues[stage]||cues[1];
    left=semanticRailChip(cue[0],cue[1],cue[2],{channel:cue[3]});
    right=semanticRailChip('ao-rich-adoration',L('Forty Hours','Quarante-Heures'),L(FORTY_STAGES[stage]?.[0]||'',FORTY_STAGES[stage]?.[1]||''),{channel:'persistent'});
+ }else if(view==='tenebrae'&&TEN.model){
+   // Matins/Lauds contain no universal candle/posture command. Preserve the
+   // independent rail vocabulary without manufacturing a gesture.
+   const current=TEN.model.steps?.[TEN.step];
+   if(current){
+     const labels={PSALM:L('Psalm','Psaume'),LESSON:L('Lesson','Leçon'),
+       RESPONSORY:L('Responsory','Répons'),VERSICLE:L('Versicle','Verset'),
+       CANTICLE:L('Canticle','Cantique'),ANTIPHON:L('Antiphon','Antienne'),
+       PRAYER:L('Prayer','Prière'),COLLECT:L('Collect','Oraison')};
+     right=semanticRailChip('ao-refined-scripture',labels[current.kind]||L('Office','Office'),
+       (TEN.hour==='MATINS'?L('Matins','Matines'):L('Lauds','Laudes'))+
+       ' · '+(TEN.step+1)+'/'+TEN.model.steps.length,{channel:'persistent'});
+   }
  }else if(view==='confession'){
    // The phone accompanies preparation only. The sign-of-cross cue belongs
    // to the first rehearsal card, not to every card or an implied live rite.
@@ -2061,7 +2077,7 @@ function renderConfession(){
    esc(choice==='cards'?L('By section','Par section'):L('Read continuously','Lire sans interruption'))+'</button>').join('')+'</nav>':'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const stageEyebrow=`<small class="aoP435930ConfProgressLabel">${CONF.stage+1} ${esc(L('OF','SUR'))} ${stages.length} · ${esc(stages[CONF.stage])}</small>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${optionalHistorical}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${renderPrayerCeremonialScene(prayerCeremonialSceneState({kind:"confession",stage:CONF.stage,cardId:cardSequence?.[cardIndex]?.id}),{french:isFr()})}${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${optionalHistorical}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -3028,6 +3044,9 @@ function horizontalStep(direction){
  return false;
 }
 function onPrayTouchStart(e){
+ // The ritual workspace owns mode swipes. Do not interpret them as a second
+ // chapter or Office cursor advance in this legacy global swipe handler.
+ if(e.target?.closest?.('[data-ao-prayer-workspace]')){prayTouch=null;return}
  // A dual-axis card is the sole owner of its horizontal touch gesture.
  // Do not also advance the historical global step cursor (two-card skip).
  if(e.target?.closest?.('.aoDevoCardScroll')&&mount()?.querySelector('.aoDevoSequenceTimeline')){
@@ -4196,6 +4215,12 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   });
   if(reader)m.querySelector('.aoP435930ConfessionReader')?.setAttribute('data-ao-confession-dual-axis','true');
  });
+ if(view==='confession'||view==='tenebrae')queueMicrotask(()=>{
+  installPrayerRitualWorkspace({
+    mount:m,kind:view,french:isFr(),hour:TEN.hour,
+    ceremony:view==="tenebrae"?TEN.ceremony:null
+  });
+ });
  if(view==='adoration'&&['visit','holy','four','night'].includes(ADOR.mode))queueMicrotask(()=>{
   const mode=ADOR.mode;
   const steps=mode==='visit'?visitSteps():mode==='holy'?holySteps():mode==='night'?nightHomeAsGuided(lang()):fourSteps();
@@ -4780,6 +4805,14 @@ function onClick(e){
  }
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-mode')){
   TEN.guided=b.dataset.p435930TenebraeMode==='guided';return render();
+ }
+ if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-move')){
+  if(!TEN.model)return;
+  const delta=Number(b.dataset.p435930TenebraeMove);
+  if(![-1,1].includes(delta))return;
+  const next=Math.max(0,Math.min(TEN.model.steps.length-1,TEN.step+delta));
+  if(next===TEN.step)return;
+  TEN.step=next;return render();
  }
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-jump')){
   if(!TEN.model)return;

@@ -71,7 +71,10 @@ for(let day=0;day<3;day++){
   assert.ok(html.includes('aria-valuetext="'+(day===1?"Étape 1 sur ":"Stage 1 of ")+model.steps.length+'"'));
   assert.ok(html.includes('class="aoTenebStageNav"'),"Jump links and progress share a sticky rail");
   assert.ok(html.includes('tabindex="0" role="region"'),"Keyboard reading region missing");
-  assert.ok(!html.includes('data-p435930-tenebrae-move'),"Do not show Previous/Next actions");
+  assert.equal((html.match(/data-p435930-tenebrae-move=/g)||[]).length,2,
+    "Explicit source passage controls required when horizontal swipes switch the view");
+  assert.ok(html.includes('data-p435930-tenebrae-move="-1" disabled'),
+    "First canonical Office passage must not allow moving backwards");
   assert.ok(!html.includes('aoTenebFooter'),"Obsolete duplicated step count remains");
   const last=renderTenebraeBody({day,hour,index:model.steps.length-1,data:model,french:day===1});
   assert.ok(last.includes('aria-valuenow="'+model.steps.length+'"'));
