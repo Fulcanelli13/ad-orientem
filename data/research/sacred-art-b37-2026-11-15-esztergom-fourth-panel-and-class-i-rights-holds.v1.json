@@ -1,0 +1,54 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B37",
+  "asOf": "2026-11-15",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B36",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B37-01",
+      "kind": "PHYSICAL_ALTARPIECE_COMPONENT_ADDITION",
+      "subject": "Andrea di Bartolo Marian childhood altarpiece; fourth surviving component",
+      "findingEn": "NGA scholarly catalogue (Boskovits, published 21 March 2016) identifies a fourth surviving physical component, Joachim Leaving Jerusalem, in Keresztény Múzeum, Esztergom, Hungary, alongside three NGA panels 1939.1.41, .42 and .43. This fourth object is distinct from the Nativity painting and is not a newly certified image route. Other hypothesized scenes in reconstruction are lost/unverified and must not be promoted to extant works.",
+      "findingFr": "Le catalogue scientifique de la NGA (Boskovits, 21 mars 2016) identifie un quatrième panneau conservé du cycle marial d'Andrea di Bartolo : Joachim quittant Jérusalem, au Keresztény Múzeum d'Esztergom (Hongrie), distinct des trois panneaux de Washington. Les autres épisodes reconstitués demeurent hypothétiques ou perdus.",
+      "sources": [
+        "https://www.nga.gov/research/publications/italian-paintings-thirteenth-and-fourteenth-centuries-0/italian-paintings-thirteenth-and-fourteenth-centuries-presentation-virgin-temple-c-14001405",
+        "https://www.nga.gov/sites/default/files/2025-01/2016-03-21_italian-paintings-of-the-thirteenth-and-fourteenth-centuries.pdf"
+      ],
+      "rightsStatus": "UNKNOWN_FOR_ESZTERGOM_IMAGE",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B37-02",
+      "kind": "CLASS_I_RIGHTS_HOLD_RECONFIRMATION",
+      "subject": "Strozzi NT 108873 and Gaulli Louvre INV 20298",
+      "findingEn": "Fresh institutional catalogue checks confirm National Trust NT 108873 has a specifically credited Andrew Patterson photograph and an 'Order this image' route, not an explicit open-photo grant; Louvre INV 20298 confirms physical painting identity and display in Denon room 717 but offers no verified open-photo reuse grant in the checked object record. Neither qualifies as a freely reusable exact photographic master on present evidence.",
+      "findingFr": "La photographie du Strozzi NT 108873 porte le crédit National Trust / Andrew Patterson et une option de commande, sans licence libre établie. La notice du Louvre INV 20298 confirme l'identité et l'exposition du Gaulli, mais non les droits de libre réutilisation de sa photographie.",
+      "sources": [
+        "https://www.nationaltrustcollections.org.uk/object/108873",
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348"
+      ],
+      "rightsStatus": "HOLD_EXACT_PHOTOGRAPH",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Find institutional object record and exact-image rights for Esztergom Joachim Leaving Jerusalem, preserving separate physical identity",
+    "Resolve photographic rights for approved Class I Strozzi, Benson, Carracci, Gaulli",
+    "Acquire/hash/QA NGA 1939.1.42, NGA 1939.1.72, Städel 830 in network-capable execution",
+    "Find strict Lateran dedication depiction"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
