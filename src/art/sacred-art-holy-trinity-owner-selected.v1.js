@@ -27,6 +27,12 @@ const ownerSelected = (r) => Object.freeze({
   rightsEvidenceUrl: r.rightsEvidence,
   photographRightsState: r.rights,
   reproductionQualityState: r.quality,
+  // The source JPEG exists in an offline research archive, not in the app repository.
+  researchOriginalAcquired: r.researchOriginalAcquired,
+  researchImageArchive: r.researchImageArchive,
+  sourceOriginalSha256: r.sourceOriginalSha256,
+  sourcePixels: Object.freeze(r.sourcePixels),
+  preferredOriginalFileUrl: r.preferredOriginalFileUrl ?? null,
   originalFileAcquired: false,
   image: null,
   original: null,
@@ -57,8 +63,15 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
     "rightsEvidence": "https://vlaamsekunstcollectie.be/en/collection/314",
     "rights": "CC0_SOURCE_DECLARATION",
-    "quality": "HIGH_RESOLUTION_SOURCE_IDENTIFIED_NOT_DOWNLOADED",
-    "notes": "KMSKA/Vlaamse Kunstcollectie lists the image as CC0; no local source master acquired."
+    "quality": "VERIFIED_19178x19721_FRAMELESS_ARCHIVAL_MASTER_MOBILE_DERIVATIVES_AVAILABLE",
+    "notes": "KMSKA 56.2MB original acquired and hash-verified in separate research ZIP; 768/1200/2000/3200 WebP candidates prepared. No automatic app publication.",
+    "sourceOriginalSha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+    "sourcePixels": {
+      "width": 19178,
+      "height": 19721
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip"
   },
   {
     "key": "reni-1625",
@@ -78,8 +91,15 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:La_Trinit%C3%A0_-_Guido_Reni.jpg",
     "rightsEvidence": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200145358",
     "rights": "PHOTOGRAPH_RIGHTS_NOT_INDEPENDENTLY_CLEARED",
-    "quality": "HOLD_LOW_RESOLUTION_REFERENCE",
-    "notes": "Selected artwork. Existing reference photograph is not an adequate production master. Factum Foundation has documented digitisation but not a freely reusable master."
+    "quality": "SOURCE_HOLD_634x1193_CLEAN_REPRODUCTION_TOO_SMALL_FOR_CINEMATIC_CLOSEUPS",
+    "notes": "The 634x1193 direct reproduction is a study reference only; larger church photographs are not frameless artwork masters. Factum Foundation's colour recording has no verified free public download.",
+    "sourceOriginalSha256": "072a057948a88931b84f18699554fa50386ef84c4beb9cf448c3778cd74b7955",
+    "sourcePixels": {
+      "width": 634,
+      "height": 1193
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip"
   },
   {
     "key": "dolci-1640",
@@ -98,8 +118,15 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:Carlo_Dolci_-_The_Trinity_in_Glory_-_59.009_-_Rhode_Island_School_of_Design_Museum.jpg",
     "rightsEvidence": "https://risdmuseum.org/art-design/collection/trinity-glory-59009",
     "rights": "MUSEUM_CC0",
-    "quality": "PUBLIC_COPY_MODERATE_RESOLUTION_IMAGE_QA_PENDING",
-    "notes": "RISD marks this work CC0; known online copy is modest resolution. No master acquired."
+    "quality": "RISD_CC0_877x1024_NATIVE_DETAIL_LIMITED_DO_NOT_UPSCALE",
+    "notes": "RISD public CC0 reproduction acquired and hash-verified; clean visual reproduction but only 877x1024. Limited/subtle cinematic motion only. Larger source not proven publicly accessible.",
+    "sourceOriginalSha256": "bf2e2ddf7920d04ceb9ea92eeb15bccb39dbe38e2264451bf94ae8a21ce234fc",
+    "sourcePixels": {
+      "width": 877,
+      "height": 1024
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip"
   },
   {
     "key": "tiepolo-1735",
@@ -119,8 +146,15 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_094.jpg",
     "rightsEvidence": "https://www.nationalgallery.org.uk/terms-of-use",
     "rights": "INDEPENDENT_REPRODUCTION_RIGHTS_REVIEW_REQUIRED",
-    "quality": "INDEPENDENT_COPY_NEEDS_VISUAL_REVIEW",
-    "notes": "National Gallery collection reproductions have restrictive terms. Do not treat the independent Yorck Commons copy as an institutional CC0 grant."
+    "quality": "YORCK_2024x2623_UNCALIBRATED_COLOUR_RIGHTS_HOLD",
+    "notes": "The 2024x2623 Yorck Project reproduction was acquired for research. National Gallery's official images are restricted for commercial use; Yorck PD-Art is not equivalent to museum CC0; colour fidelity not verified.",
+    "sourceOriginalSha256": "18fcac3ebc74eb3ae0730cf7d662008f58c7c19ebc19691e1cf9e08de764bf65",
+    "sourcePixels": {
+      "width": 2024,
+      "height": 2623
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip"
   },
   {
     "key": "durer-1511",
@@ -140,8 +174,15 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
     "rightsEvidence": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
     "rights": "PUBLIC_DOMAIN_REPRODUCTION_CLAIM_REVIEW_PENDING",
-    "quality": "HIGH_RESOLUTION_SOURCE_IDENTIFIED_NOT_DOWNLOADED",
-    "notes": "Already indexed as HERO::khm:GG-838 among 989 research work groups: owner approval links to that identity; do not add a second research group."
+    "quality": "GOOGLE_ART_PROJECT_4969x5434_CLEAN_SOURCE_KHM_RIGHTS_HOLD",
+    "notes": "Acquired and hash-verified Google Art Project frameless reproduction, linked to existing research group HERO::khm:GG-838. Official KHM image terms restrict commercial reuses; independent Commons PD-Art claim requires review.",
+    "sourceOriginalSha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+    "sourcePixels": {
+      "width": 4969,
+      "height": 5434
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip"
   },
   {
     "key": "campeche-1790",
@@ -160,8 +201,16 @@ export const SACRED_ART_HOLY_TRINITY_OWNER_SELECTED_V1 = Object.freeze(
     "filePage": "https://www.metmuseum.org/art/collection/search/917618",
     "rightsEvidence": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",
     "rights": "MET_OPEN_ACCESS_CC0",
-    "quality": "INSTITUTIONAL_DOWNLOAD_IDENTIFIED_DIMENSIONS_NOT_VERIFIED",
-    "notes": "The Met marks its image public domain/Open Access; exact downloaded master not yet validated."
+    "quality": "MET_CC0_2700x4000_FULL_ORIGINAL_CINEMATIC_MOBILE_DERIVATIVES_AVAILABLE",
+    "notes": "Verified direct Met 2700x4000 original at images.metmuseum.org/CRDImages/ad/original/DP-44679-003.jpg. WebP mobile versions trim only the black studio surround, preserving painting and original master.",
+    "sourceOriginalSha256": "8578e12ebb3c067c567b882fb48e9ca1d008c71ab6e53f3590269892711065bb",
+    "sourcePixels": {
+      "width": 2700,
+      "height": 4000
+    },
+    "researchOriginalAcquired": true,
+    "researchImageArchive": "Ad_Orientem_Holy_Trinity_6_Actual_Images_Final_Review_2026-11-14.zip",
+    "preferredOriginalFileUrl": "https://images.metmuseum.org/CRDImages/ad/original/DP-44679-003.jpg"
   }
 ].map(ownerSelected)
 );
