@@ -1,0 +1,143 @@
+{
+  "schema": "AO_SACRED_ART_2026_PARTIAL_GROUPS_EXISTING_ARCHIVE_BATCH6_V1",
+  "asOf": "2026-10-31",
+  "status": "RESEARCH_ONLY_UNCERTIFIED_PARTIAL_FEAST_ASSOCIATIONS",
+  "sources": [
+    {
+      "path": "data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json",
+      "ref": "research/sacred-art-phase1-consolidation-20261029",
+      "sha": "a76ef2eda5366c63fe23ed9b15675ed71c049456"
+    },
+    {
+      "path": "data/research/saints-of-day-physical-artwork-crosswalk-w60-20261015.v1.json",
+      "ref": "research/w60-sanctoral-art-physical-dedupe-20261015",
+      "sha": "75c472b95f9ccf571f536396dc6bfed952e2abf5"
+    }
+  ],
+  "counts": {
+    "classIIISanctoralDatePartsNew": 3,
+    "legacyNamedFiles": 3,
+    "accepted856SourceCards": 1,
+    "completeFeastDateNew": 0,
+    "classIIISanctoralCompleteMatchedStill": 53,
+    "classIIISanctoralCompleteUnmatchedStill": 78,
+    "sourceImageRightsApproved": 0,
+    "productionHomeArtPublished": 0
+  },
+  "rows": [
+    {
+      "date": "2026-01-22",
+      "principalId": "sancti:01-22:3:r",
+      "observedTitle": "Sts. Vincent & Anastasius",
+      "source": "ACCEPTED_856",
+      "partialRelationship": "SAINT_VINCENT_ONLY_OF_VINCENT_ANASTASIUS",
+      "depictedMembers": [
+        "St Vincent (subject identity must be confirmed as Vincent of Saragossa)"
+      ],
+      "missingMembers": [
+        "St Anastasius"
+      ],
+      "strictFullFeastMatch": false,
+      "subjectIdentityVerified": false,
+      "works": [
+        {
+          "sourceCardId": "met:435847",
+          "title": "Saint Vincent, Patron Saint of Lisbon",
+          "artist": "Frei Carlos",
+          "museumObjectAccession": "58.145.2",
+          "objectUrl": "https://www.metmuseum.org/art/collection/search/435847",
+          "sourceDecision": "IMPORT",
+          "canonical383ArtworkId": null,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Saint Vincent is titled Patron Saint of Lisbon; confirm identification with Vincent of Saragossa before allowing even this partial depiction as a subject match. Never equate Vincent with Anastasius or treat one painting as full two-martyr feast."
+    },
+    {
+      "date": "2026-07-10",
+      "principalId": "sancti:07-10:3:r",
+      "observedTitle": "Seven Holy Brothers and Sts. Rufina & Secunda",
+      "source": "W60_HISTORICAL_NAMED_FILE",
+      "partialRelationship": "SEVEN_BROTHERS_GROUP_ONLY_RUFINA_SECUNDA_NOT_PRESENT",
+      "depictedMembers": [
+        "Seven Holy Brothers — candidate identity unverified"
+      ],
+      "missingMembers": [
+        "St Rufina of Rome",
+        "St Secunda of Rome"
+      ],
+      "strictFullFeastMatch": false,
+      "subjectIdentityVerified": false,
+      "works": [
+        {
+          "historicalFile": "File:SevenBrothers.jpg",
+          "legacyIdentity": "group.seven-holy-brothers",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Legacy filename SevenBrothers.jpg does not establish that subjects are the Roman brothers rather than unrelated Seven Sleepers or Maccabean martyrs. User historically excluded misleading Justa and Rufina of Seville, which remains disallowed."
+    },
+    {
+      "date": "2026-07-28",
+      "principalId": "sancti:07-28:3:r",
+      "observedTitle": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
+      "source": "W60_HISTORICAL_NAMED_FILE",
+      "partialRelationship": "NAZARIUS_CELSUS_ONLY_OF_FOUR_SAINTS",
+      "depictedMembers": [
+        "St Nazarius",
+        "St Celsus"
+      ],
+      "missingMembers": [
+        "Pope St Victor I",
+        "Pope St Innocent I"
+      ],
+      "strictFullFeastMatch": false,
+      "subjectIdentityVerified": false,
+      "works": [
+        {
+          "historicalFile": "File:St. Nazarius and St. Celsus Met DP891050.jpg",
+          "legacyIdentity": "group.nazarius-celsus",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        },
+        {
+          "historicalFile": "File:Nazarius Celsus.jpg",
+          "legacyIdentity": "group.nazarius-celsus",
+          "priorHistoricalFileDirective": true,
+          "physicalOriginalVerified": false,
+          "commonsFileAccessVerified": false,
+          "photoReleaseCertified": false,
+          "rotationEligible": false
+        }
+      ],
+      "warning": "Two file names may depict same painting or derivative photos; source URL, physical identity, image rights and artist quality all require verification. No complete four-saint date binding."
+    }
+  ],
+  "excludes": [
+    {
+      "date": "2026-07-10",
+      "sourceCardId": "commons:29858581",
+      "reason": "Justa and Rufina of Seville, not the Rufina and Secunda of Rome commemorated on this date"
+    },
+    {
+      "date": "2026-01-20",
+      "reason": "Already accounted for Sebastian-only partials; not another newly recovered complete date"
+    }
+  ],
+  "policy": {
+    "noNewExternalSearch": true,
+    "newEditorialArtworkApprovals": 0,
+    "ratingsModified": 0,
+    "productionMutation": false,
+    "licenceCertification": false,
+    "heroRotationAllowed": false
+  }
+}
