@@ -1,0 +1,2156 @@
+{
+  "schema": "ao.prayer.artwork.editorial.master.b01_b05.v1",
+  "asOf": "2026-11-05",
+  "scope": "Consolidation of exactly five user-authorized, research-only approval batches. Additive overlay to existing 267-slot curatorial authority, not a replacement of historic or production registries.",
+  "editorialAuthority": "USER_EXPLICIT_APPROVAL_OF_PAINTED_WORK; NOT OF A PARTICULAR PHOTOGRAPH OR REASSIGNMENT",
+  "inputs": {
+    "existingSlotMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+    "existingGalleryCrosswalk": "data/prayer/artwork-editorial-20261101/gallery-archive-crosswalk-267-20261103.v1.json",
+    "userApprovalPullRequests": [
+      {
+        "pr": 2519,
+        "url": "https://github.com/Fulcanelli13/ad-orientem/pull/2519",
+        "branch": "research/prayer-art-b01-user-approvals-20261105",
+        "decisionFile": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json"
+      },
+      {
+        "pr": 2521,
+        "url": "https://github.com/Fulcanelli13/ad-orientem/pull/2521",
+        "branch": "research/prayer-art-b02-user-approvals-20261105",
+        "decisionFile": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json"
+      },
+      {
+        "pr": 2522,
+        "url": "https://github.com/Fulcanelli13/ad-orientem/pull/2522",
+        "branch": "research/prayer-art-b03-user-approvals-20261105",
+        "decisionFile": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json"
+      },
+      {
+        "pr": 2523,
+        "url": "https://github.com/Fulcanelli13/ad-orientem/pull/2523",
+        "branch": "research/prayer-art-b04-user-approvals-20261105",
+        "decisionFile": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json"
+      },
+      {
+        "pr": 2528,
+        "url": "https://github.com/Fulcanelli13/ad-orientem/pull/2528",
+        "branch": "research/prayer-art-b05-user-approvals-20261105",
+        "decisionFile": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json"
+      }
+    ]
+  },
+  "counts": {
+    "approvedPaintingRecords": 56,
+    "distinctOptionIds": 56,
+    "distinctNormalizedArtistTitleWorkKeys": 56,
+    "additionalNonpaintingApprovedSubject": 1,
+    "existingExactArtistTitleWorkOverlapsIn267SlotSnapshot": 1,
+    "baselinePositions": 267,
+    "baselineEditorialHolds": 14,
+    "photoReleaseReady": 0,
+    "automaticallyReassignedCovers": 0
+  },
+  "policies": [
+    "Explicit user approval applies to the depicted work and relevant subject across Prayer, never automatically to every possible placement.",
+    "Keep unselected options eligible and not rejected. Preserve every earlier explicit rejection, specific-only placement, artwork source, and fixed cover lock.",
+    "Do not alter canonical 267-slot registry, live runtime, Mass reader, Rosary bead mapping or special-rite reader in this research PR.",
+    "Never rotate fixed covers or replace protected images by inheritance. A suggested slot is not an approved primary cover.",
+    "Before release require exact work identification, source object ID, photograph URL and rights evidence, original pixel QA, frame/crop QA, and an actual asset path.",
+    "Do not conflate a painting being centuries old with verified worldwide rights to a particular modern photograph.",
+    "Existing 267-slot audit is a time-stamped snapshot, not a claim about current live asset coverage."
+  ],
+  "protectedCovers": [
+    {
+      "slot": "COV-pray.rosary",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario"
+    },
+    {
+      "slot": "COV-prayer.seven_sorrows_chaplet",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "title": "The Virgin of the Seven Sorrows"
+    },
+    {
+      "slot": "COV-novena.st_therese",
+      "artist": "Historical photograph of St Thérèse",
+      "title": "Therese_lisieux_portrait.jpg"
+    },
+    {
+      "slot": "COV-pray.benediction",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "title": "The Virgin Adoring the Host"
+    },
+    {
+      "slot": "COV-pray.confession",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son"
+    }
+  ],
+  "approvedShroudSubject": {
+    "optionId": "HF-6",
+    "subject": "Face on the Shroud of Turin",
+    "decision": "USER_APPROVED_HOLY_FACE_SUBJECT_NOT_IMAGE",
+    "preferredHistoricalPhotography": {
+      "creator": "Secondo Pia",
+      "date": "1898",
+      "title": "The Shroud of Turin (photographic negative)",
+      "museum_source": "https://artmuseum.princeton.edu/art/collections/objects/42977",
+      "high_res_pd_reproduction_candidate": "https://commons.wikimedia.org/wiki/File:Secundo_Pia_Turinske_platno_1898.jpg"
+    },
+    "exactPhotoApproved": false,
+    "reproductionRightsAndPixelsVerified": false,
+    "alternateModernShroudPhotosNotImplicitlyAuthorized": true,
+    "proposedPlacement": [
+      "COV-novena.holy_face_1887"
+    ],
+    "noCoverOverride": true
+  },
+  "approvedPaintings": [
+    {
+      "optionId": "SH-3",
+      "batch": 1,
+      "reviewCategory": "Sacred Heart",
+      "work": {
+        "artist": "Miguel Cabrera",
+        "title": "Sacred Heart",
+        "identityKey": "miguelcabrera::sacredheart"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Sagrado_coraz%C3%B3n_por_Miguel_Cabrera.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SH-4",
+      "batch": 1,
+      "reviewCategory": "Sacred Heart",
+      "work": {
+        "artist": "José de Páez",
+        "title": "Sacred Heart of Jesus with Saint Ignatius of Loyola and Saint Aloysius Gonzaga",
+        "identityKey": "josedepaez::sacredheartofjesuswithsaintignatiusofloyolaandsaintaloysiusgonzaga"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_1770.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_SOURCE_NOTED_IN_REVIEW"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SH-5",
+      "batch": 1,
+      "reviewCategory": "Sacred Heart",
+      "work": {
+        "artist": "Corrado Giaquinto",
+        "title": "St Margaret Mary Alacoque Contemplating the Sacred Heart of Jesus",
+        "identityKey": "corradogiaquinto::stmargaretmaryalacoquecontemplatingthesacredheartofjesus"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Corrado_Giaquinto_-_St_Margaret_Mary_Alacoque_Contemplating_the_Sacred_Heart_of_Jesus_-_WGA8959.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GD-1",
+      "batch": 1,
+      "reviewCategory": "Good Death",
+      "work": {
+        "artist": "Bartolomeo Altomonte",
+        "title": "The Death of Saint Joseph",
+        "identityKey": "bartolomeoaltomonte::thedeathofsaintjoseph"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Altomonte_-_Der_Tod_des_heiligen_Joseph.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GD-2",
+      "batch": 1,
+      "reviewCategory": "Good Death",
+      "work": {
+        "artist": "Carlo Maratta",
+        "title": "The Death of Saint Joseph",
+        "identityKey": "carlomaratta::thedeathofsaintjoseph"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:The_Death_of_Saint_Joseph_Maratta.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GD-3",
+      "batch": 1,
+      "reviewCategory": "Good Death",
+      "work": {
+        "artist": "Giuseppe Maria Crespi",
+        "title": "The Death of Saint Joseph",
+        "identityKey": "giuseppemariacrespi::thedeathofsaintjoseph"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Death_of_S._Joseph_by_G.M.Crespi_(c._1712,_Hermitage).jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_SOURCE_VERIFY",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EU-1",
+      "batch": 1,
+      "reviewCategory": "Holy Eucharist",
+      "work": {
+        "artist": "Peter Paul Rubens",
+        "title": "The Meeting of Abraham and Melchizedek",
+        "identityKey": "peterpaulrubens::themeetingofabrahamandmelchizedek"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+        "candidateProviderClass": "NGA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "NGA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EU-2",
+      "batch": 1,
+      "reviewCategory": "Holy Eucharist",
+      "work": {
+        "artist": "Diego Velázquez",
+        "title": "The Supper at Emmaus",
+        "identityKey": "diegovelazquez::thesupperatemmaus"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/437871",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS_CC0",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EU-5",
+      "batch": 1,
+      "reviewCategory": "Holy Eucharist",
+      "work": {
+        "artist": "Jan van den Hoecke",
+        "title": "The Holy Communion of Blessed Frederick of Regensburg",
+        "identityKey": "janvandenhoecke::theholycommunionofblessedfrederickofregensburg"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Jan_van_den_Hoecke_-_The_Holy_Communion_of_the_Blessed_Frederick_of_Regensburg.jpeg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "HS-1",
+      "batch": 1,
+      "reviewCategory": "Holy Spirit",
+      "work": {
+        "artist": "Titian",
+        "title": "The Descent of the Holy Spirit (Pentecost)",
+        "identityKey": "titian::thedescentoftheholyspiritpentecost"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Tiziano_Pentecost%C3%A9s.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_SOURCE_VERIFY",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "HS-2",
+      "batch": 1,
+      "reviewCategory": "Holy Spirit",
+      "work": {
+        "artist": "Peter Paul Rubens",
+        "title": "Pentecost",
+        "identityKey": "peterpaulrubens::pentecost"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Rubens_-_RKDimages,_190134.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_REPRODUCTION_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "HS-4",
+      "batch": 1,
+      "reviewCategory": "Holy Spirit",
+      "work": {
+        "artist": "Jacob de Backer",
+        "title": "Pentecost",
+        "identityKey": "jacobdebacker::pentecost"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2519,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch01-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Jacob_de_Backer_-_Pentecost.jpeg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_SOURCE_VERIFY",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PP-1",
+      "batch": 2,
+      "reviewCategory": "Prayer for Priests",
+      "work": {
+        "artist": "Spanish painter",
+        "title": "The Mass of Saint Gregory",
+        "identityKey": "spanishpainter::themassofsaintgregory"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/437722",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PP-2",
+      "batch": 2,
+      "reviewCategory": "Prayer for Priests",
+      "work": {
+        "artist": "Hans Baldung",
+        "title": "The Mass of Saint Gregory",
+        "identityKey": "hansbaldung::themassofsaintgregory"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.clevelandart.org/art/1952.112",
+        "candidateProviderClass": "CMA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "CMA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PP-3",
+      "batch": 2,
+      "reviewCategory": "Prayer for Priests",
+      "work": {
+        "artist": "Carlo Dolci",
+        "title": "Saint Philip Neri",
+        "identityKey": "carlodolci::saintphilipneri"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/712539",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PP-5",
+      "batch": 2,
+      "reviewCategory": "Prayer for Priests",
+      "work": {
+        "artist": "Lorenzo Monaco",
+        "title": "Christ Giving the Keys to Saint Peter",
+        "identityKey": "lorenzomonaco::christgivingthekeystosaintpeter"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.nga.gov/artworks/45750-christ-giving-keys-saint-peter",
+        "candidateProviderClass": "NGA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "NGA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PS-1",
+      "batch": 2,
+      "reviewCategory": "Penitential Psalms",
+      "work": {
+        "artist": "Pieter de Grebber",
+        "title": "King David in Prayer",
+        "identityKey": "pieterdegrebber::kingdavidinprayer"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:5201-king-david-in-prayer-pieter-de-grebber.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PS-2",
+      "batch": 2,
+      "reviewCategory": "Penitential Psalms",
+      "work": {
+        "artist": "Aert de Gelder",
+        "title": "King David",
+        "identityKey": "aertdegelder::kingdavid"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.rijksmuseum.nl/en/collection/object/King-David--d019062aea85f018274b37f2c1dd6005",
+        "candidateProviderClass": "RIJKSMUSEUM_PUBLIC_DOMAIN_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "RIJKSMUSEUM_PUBLIC_DOMAIN_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [
+          "STG-pray.penitential_psalms-01",
+          "STG-pray.penitential_psalms-03",
+          "STG-pray.penitential_psalms-04",
+          "STG-pray.penitential_psalms-05",
+          "STG-pray.penitential_psalms-07"
+        ],
+        "matchingMethod": "TITLE_ARTIST_TEXT_ONLY_WITHIN_EXISTING_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PS-3",
+      "batch": 2,
+      "reviewCategory": "Penitential Psalms",
+      "work": {
+        "artist": "Frederic Leighton",
+        "title": "David: Oh, That I Had Wings Like a Dove!",
+        "identityKey": "fredericleighton::davidohthatihadwingslikeadove"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.clevelandart.org/art/1986.74",
+        "candidateProviderClass": "CMA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "CMA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PS-4",
+      "batch": 2,
+      "reviewCategory": "Penitential Psalms",
+      "work": {
+        "artist": "Jusepe de Ribera",
+        "title": "The Tears of Saint Peter",
+        "identityKey": "jusepederibera::thetearsofsaintpeter"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/441971",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GA-1",
+      "batch": 2,
+      "reviewCategory": "Guardian Angels and Saint Raphael",
+      "work": {
+        "artist": "Filippino Lippi",
+        "title": "Tobias and the Angel",
+        "identityKey": "filippinolippi::tobiasandtheangel"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.nga.gov/artworks/370-tobias-and-angel",
+        "candidateProviderClass": "NGA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "NGA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GA-2",
+      "batch": 2,
+      "reviewCategory": "Guardian Angels and Saint Raphael",
+      "work": {
+        "artist": "Francesco Guardi",
+        "title": "Tobias and the Angel",
+        "identityKey": "francescoguardi::tobiasandtheangel"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.clevelandart.org/art/1952.235.2",
+        "candidateProviderClass": "CMA_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "CMA_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "GA-3",
+      "batch": 2,
+      "reviewCategory": "Guardian Angels and Saint Raphael",
+      "work": {
+        "artist": "Eglon van der Neer",
+        "title": "Tobias and the Angel",
+        "identityKey": "eglonvanderneer::tobiasandtheangel"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.rijksmuseum.nl/en/collection/object/Tobias-and-the-angel--3d4159420861b3da3052c4c8612272f8",
+        "candidateProviderClass": "RIJKSMUSEUM_PUBLIC_DOMAIN_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "RIJKSMUSEUM_PUBLIC_DOMAIN_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "QM-1",
+      "batch": 2,
+      "reviewCategory": "Salve Regina and Queenship of Mary",
+      "work": {
+        "artist": "Annibale Carracci",
+        "title": "The Coronation of the Virgin",
+        "identityKey": "annibalecarracci::thecoronationofthevirgin"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/435853",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "QM-2",
+      "batch": 2,
+      "reviewCategory": "Salve Regina and Queenship of Mary",
+      "work": {
+        "artist": "Guido Reni",
+        "title": "The Coronation of the Virgin",
+        "identityKey": "guidoreni::thecoronationofthevirgin"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_(1575-1642)_-_The_Coronation_of_the_Virgin_-_NG214_-_National_Gallery.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "QM-3",
+      "batch": 2,
+      "reviewCategory": "Salve Regina and Queenship of Mary",
+      "work": {
+        "artist": "Peter Paul Rubens",
+        "title": "The Coronation and Assumption of the Virgin",
+        "identityKey": "peterpaulrubens::thecoronationandassumptionofthevirgin"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Coronation-of-the-Virgin.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "MC-2",
+      "batch": 2,
+      "reviewCategory": "Montfort Consecration",
+      "work": {
+        "artist": "Filippino Lippi",
+        "title": "The Apparition of the Virgin to Saint Bernard",
+        "identityKey": "filippinolippi::theapparitionofthevirgintosaintbernard"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Filippino_lippi,_apparizione,_01.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "MC-3",
+      "batch": 2,
+      "reviewCategory": "Montfort Consecration",
+      "work": {
+        "artist": "Ludovico Carracci",
+        "title": "The Virgin and Child Appearing to Saint Hyacinth",
+        "identityKey": "ludovicocarracci::thevirginandchildappearingtosainthyacinth"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2521,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch02-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Carracci_Saint_Hyacinth.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "IM-1",
+      "batch": 3,
+      "reviewCategory": "Immaculate Heart and First Saturdays",
+      "work": {
+        "artist": "Luís António Bernes",
+        "title": "Immaculate Heart of Mary (1921)",
+        "identityKey": "luisantoniobernes::immaculateheartofmary1921"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2522,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Imaculado_Cora%C3%A7%C3%A3o_de_Maria_by_Lu%C3%ADs_Ant%C3%B3nio_Bernes_(1921).jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SW-2",
+      "batch": 3,
+      "reviewCategory": "Seven Last Words",
+      "work": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Crucifixion (c.1675)",
+        "identityKey": "bartolomeestebanmurillo::thecrucifixionc1675"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2522,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/437172",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS_CC0_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "PB-5",
+      "batch": 3,
+      "reviewCategory": "Precious Blood",
+      "work": {
+        "artist": "Francesco Trevisani",
+        "title": "Dead Christ Supported by Angels (c.1710)",
+        "identityKey": "francescotrevisani::deadchristsupportedbyangelsc1710"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2522,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/441965",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS_CC0_CANDIDATE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SO-4",
+      "batch": 3,
+      "reviewCategory": "Holy Souls in Purgatory",
+      "work": {
+        "artist": "Alonso Cano",
+        "title": "Souls in Purgatory (1636)",
+        "identityKey": "alonsocano::soulsinpurgatory1636"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2522,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:%C3%81nimas_del_Purgatorio,_de_Alonso_Cano_(Museo_de_Bellas_Artes_de_Sevilla).JPG",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_CANDIDATE_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SO-5",
+      "batch": 3,
+      "reviewCategory": "Holy Souls in Purgatory",
+      "work": {
+        "artist": "Attributed to António Joaquim Padrão",
+        "title": "Souls in Purgatory (c.1765–70)",
+        "identityKey": "attributedtoantoniojoaquimpadrao::soulsinpurgatoryc176570"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2522,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch03-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_souls_in_Purgatory",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": false,
+        "claimsFromFirstReview": "SOURCE_EXACT_OBJECT_NOT_YET_DETERMINED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "CATEGORY_LINK_NOT_EXACT_OBJECT",
+          "WORK_IDENTITY_ATTRIBUTION_REVIEW"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SA-1",
+      "batch": 4,
+      "reviewCategory": "Saint Anthony of Padua",
+      "work": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "Saint Anthony of Padua with the Christ Child",
+        "identityKey": "bartolomeestebanmurillo::saintanthonyofpaduawiththechristchild"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_(1617_-_1682)_-_Saint_Anthony_of_Padua_with_Christ_as_a_child_-_414_-_Gem%C3%A4ldegalerie.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SI-1",
+      "batch": 4,
+      "reviewCategory": "Sick and afflicted",
+      "work": {
+        "artist": "Anthony van Dyck",
+        "title": "The Healing of the Paralytic",
+        "identityKey": "anthonyvandyck::thehealingoftheparalytic"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_The_healing_of_the_paralytic.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SI-2",
+      "batch": 4,
+      "reviewCategory": "Sick and afflicted",
+      "work": {
+        "artist": "Sebastiano Ricci",
+        "title": "Christ Healing the Blind Man",
+        "identityKey": "sebastianoricci::christhealingtheblindman"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_(1659-1734)_-_Christ_Healing_the_Blind_Man_-_NG_2623_-_National_Galleries_of_Scotland.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SI-3",
+      "batch": 4,
+      "reviewCategory": "Sick and afflicted",
+      "work": {
+        "artist": "Rembrandt van Rijn",
+        "title": "The Raising of Lazarus",
+        "identityKey": "rembrandtvanrijn::theraisingoflazarus"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_The_Raising_of_Lazarus_-_WGA19118.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SI-4",
+      "batch": 4,
+      "reviewCategory": "Sick and afflicted",
+      "work": {
+        "artist": "Eustache Le Sueur",
+        "title": "Christ Healing the Blind Man",
+        "identityKey": "eustachelesueur::christhealingtheblindman"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Eustache_Le_Sueur_003.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SI-5",
+      "batch": 4,
+      "reviewCategory": "Sick and afflicted",
+      "work": {
+        "artist": "Fritz von Uhde",
+        "title": "Christ Healing the Sick",
+        "identityKey": "fritzvonuhde::christhealingthesick"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Christ_healing_the_sick.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SM-4",
+      "batch": 4,
+      "reviewCategory": "Saint Michael",
+      "work": {
+        "artist": "Claudio Coello",
+        "title": "Saint Michael the Archangel",
+        "identityKey": "claudiocoello::saintmichaelthearchangel"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Claudio_Coello_-_Saint_Michael_the_Archangel_-_BF.1980.10_-_Museum_of_Fine_Arts.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SM-5",
+      "batch": 4,
+      "reviewCategory": "Saint Michael",
+      "work": {
+        "artist": "Peter Paul Rubens",
+        "title": "Saint Michael Subduing Lucifer",
+        "identityKey": "peterpaulrubens::saintmichaelsubduinglucifer"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Rubens_-_Saint_Michael_subduing_Lucifer_2006_CKS_07294_0010(012049).jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_LOW_RES",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SM-1",
+      "batch": 4,
+      "reviewCategory": "Saint Michael",
+      "work": {
+        "artist": "Raphael",
+        "title": "Saint Michael Vanquishing Satan",
+        "identityKey": "raphael::saintmichaelvanquishingsatan"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Raphael_-_St._Michael_Vanquishing_Satan.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "SM-2",
+      "batch": 4,
+      "reviewCategory": "Saint Michael",
+      "work": {
+        "artist": "Workshop of Peter Paul Rubens",
+        "title": "Saint Michael Expelling Lucifer and the Rebel Angels",
+        "identityKey": "workshopofpeterpaulrubens::saintmichaelexpellingluciferandtherebelangels"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Saint_Michael_expelling_Lucifer_and_the_Rebellious_Angels,_1622.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART_ATTRIBUTION_QA",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "WORK_IDENTITY_ATTRIBUTION_REVIEW"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EV-1",
+      "batch": 4,
+      "reviewCategory": "Evening Prayer",
+      "work": {
+        "artist": "Anna Ancher",
+        "title": "Evening Prayer",
+        "identityKey": "annaancher::eveningprayer"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Evening_Prayer_(Anna_Ancher).jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EV-2",
+      "batch": 4,
+      "reviewCategory": "Evening Prayer",
+      "work": {
+        "artist": "Jean-François Millet",
+        "title": "The Angelus",
+        "identityKey": "jeanfrancoismillet::theangelus"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "COMMONS_PD_ART",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "EV-4",
+      "batch": 4,
+      "reviewCategory": "Evening Prayer",
+      "work": {
+        "artist": "Matthias Stom",
+        "title": "Old Woman Praying",
+        "identityKey": "matthiasstom::oldwomanpraying"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2523,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch04-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://www.metmuseum.org/art/collection/search/437757",
+        "candidateProviderClass": "MET_OPEN_ACCESS_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "MET_OPEN_ACCESS",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "MP-4",
+      "batch": 5,
+      "reviewCategory": "Morning Prayer and Morning Offering",
+      "work": {
+        "artist": "John William Waterhouse",
+        "title": "The Missal",
+        "identityKey": "johnwilliamwaterhouse::themissal"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Missal.JPG",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED_SMALL_FILE",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "LOW_RESOLUTION_PROPOSED_PHOTO"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "MP-5",
+      "batch": 5,
+      "reviewCategory": "Morning Prayer and Morning Offering",
+      "work": {
+        "artist": "Jankieĺ Kruhier",
+        "title": "Morning Prayer (1897)",
+        "identityKey": "jankielkruhier::morningprayer1897"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Jankie%C4%BA_Kruhier_1897_Morning_Prayer.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED_SOURCE_CHECK",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "TN-2",
+      "batch": 5,
+      "reviewCategory": "Tenebrae and Passion",
+      "work": {
+        "artist": "Caravaggio",
+        "title": "The Taking of Christ (1602)",
+        "identityKey": "caravaggio::thetakingofchrist1602"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:The_Taking_of_Christ-Caravaggio_(c.1602).jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "TN-3",
+      "batch": 5,
+      "reviewCategory": "Tenebrae and Passion",
+      "work": {
+        "artist": "Gerard van Honthorst",
+        "title": "Christ before the High Priest",
+        "identityKey": "gerardvanhonthorst::christbeforethehighpriest"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_-_Christ_before_the_High_Priest_-_WGA11650.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "LS-2",
+      "batch": 5,
+      "reviewCategory": "Litany of Saints",
+      "work": {
+        "artist": "Albrecht Dürer",
+        "title": "The Adoration of the Trinity (Landauer Altarpiece)",
+        "identityKey": "albrechtdurer::theadorationofthetrinitylandaueraltarpiece"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "AH-1",
+      "batch": 5,
+      "reviewCategory": "Act of Hope and Divine Providence",
+      "work": {
+        "artist": "Rembrandt",
+        "title": "Christ in the Storm on the Sea of Galilee",
+        "identityKey": "rembrandt::christinthestormontheseaofgalilee"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_HISTORICAL_REPRODUCTION_STOLEN_ORIGINAL",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": [
+          "ORIGINAL_STOLEN_HISTORICAL_REPRODUCTION_ONLY"
+        ]
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "AH-2",
+      "batch": 5,
+      "reviewCategory": "Act of Hope and Divine Providence",
+      "work": {
+        "artist": "Gustave Brion",
+        "title": "Jesus and Peter on the Water (1863)",
+        "identityKey": "gustavebrion::jesusandpeteronthewater1863"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Jesus_and_Peter_on_the_Water_by_Gustave_Brion.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "AH-3",
+      "batch": 5,
+      "reviewCategory": "Act of Hope and Divine Providence",
+      "work": {
+        "artist": "Ivan Aivazovsky",
+        "title": "Walking on Water (1888)",
+        "identityKey": "ivanaivazovsky::walkingonwater1888"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Po_vodam_1888.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "AH-4",
+      "batch": 5,
+      "reviewCategory": "Act of Hope and Divine Providence",
+      "work": {
+        "artist": "Ludolf Bakhuizen",
+        "title": "Christ in the Storm on the Sea of Galilee",
+        "identityKey": "ludolfbakhuizen::christinthestormontheseaofgalilee"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Backhuysen,_Ludolf,_I_-_Christ_in_the_Storm_on_the_Sea_of_Galilee_-_Google_Art_Project.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    },
+    {
+      "optionId": "AH-5",
+      "batch": 5,
+      "reviewCategory": "Act of Hope and Divine Providence",
+      "work": {
+        "artist": "Robert Loftin Newman",
+        "title": "Christ Saving Peter",
+        "identityKey": "robertloftinnewman::christsavingpeter"
+      },
+      "editorial": {
+        "decision": "USER_APPROVED_WORK",
+        "scope": "ARTWORK_APPROVAL_ONLY",
+        "sourcePr": 2528,
+        "sourceRecord": "data/prayer/artwork-editorial-20261105/user-approved-prayer-painting-batch05-20261105.v1.json",
+        "notCoverOverride": true
+      },
+      "source": {
+        "proposedUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Christ_Saving_Peter_-_Robert_Loftin_Newman_-_overall.jpg",
+        "candidateProviderClass": "COMMONS_PD_ART_OR_CREATOR_SPECIFIC_CANDIDATE",
+        "exactObjectUrl": true,
+        "claimsFromFirstReview": "PD_ART_PROPOSED",
+        "rightsVerifiedForSpecificPhotograph": false,
+        "actualImagePixelsVerified": false,
+        "downloadedMasterPath": null,
+        "sourceQAFlags": []
+      },
+      "existingCrosswalk": {
+        "matchedExactArtistAndTitleSlots": [],
+        "matchingMethod": "NO_EXACT_TITLE_ARTIST_ASSIGNMENT_IN_267_SNAPSHOT",
+        "notProofOfAbsenceFromLargerGallery": true
+      },
+      "publication": {
+        "ready": false,
+        "assignedToLiveCover": false
+      }
+    }
+  ],
+  "remainingWork": "Place into per-slot candidate matrix, verify photo licenses and pixels, choose primaries for held slots after safety QA. No publication on master import alone."
+}
