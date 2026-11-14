@@ -1,0 +1,122 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_CLEAN_THREE_PHOTO_MANUAL_RELEASE_GATE_V1",
+  "date": "2026-11-08",
+  "base_policy": "GitHub Pages only; no Vercel; do not publish unapproved source photographs",
+  "source_branch": "research/sacred-art-batch1-three-photo-release-package-20261108",
+  "new_public_photos": 0,
+  "existing_public_gallery_entries": 16,
+  "physical_artworks": 3,
+  "existing_prayer_placements": 18,
+  "photos": [
+    {
+      "id": "artwork-pending:01",
+      "painting": "The Crucifixion",
+      "attribution": "Follower of Sodoma",
+      "museum": "Cleveland Museum of Art",
+      "inventory": "1916.786",
+      "selected_photo": "CMA official Open Access",
+      "original_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "edition_sha256": "ca7cd0c516768c608e3e01db5a5bd05c472557bbd6eed8616a63bc3929434520",
+      "path": "assets/staged/sacred-art-batch1/01-crucifixion-cma-fullframe.webp",
+      "edition_pixels": [
+        1024,
+        1303
+      ],
+      "edition_bytes": 383796,
+      "source_rights": "CC0",
+      "photo_credit": "Cleveland Museum of Art, Open Access",
+      "prayer_assignments": [
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "COV-pray.stations",
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "source_photo_approved_by_owner": false,
+      "display_edition_approved_by_owner": false,
+      "public_app_image_registered": false,
+      "public_placement_change_authorized": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    },
+    {
+      "id": "artwork-pending:02",
+      "painting": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "attribution": "Workshop of Peter Paul Rubens (museum webpage)",
+      "museum": "The Metropolitan Museum of Art",
+      "inventory": "17.190.19",
+      "selected_photo": "Met primaryImage for 437542",
+      "original_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "edition_sha256": "65f9402889b198d56e8f5038fe76b2561fb56002893de07a79d08169ea852004",
+      "path": "assets/staged/sacred-art-batch1/02-teresa-met-fullframe.webp",
+      "edition_pixels": [
+        1024,
+        1324
+      ],
+      "edition_bytes": 181322,
+      "source_rights": "Public domain (Met Open Access)",
+      "photo_credit": "The Metropolitan Museum of Art, Open Access",
+      "prayer_assignments": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "source_photo_approved_by_owner": false,
+      "display_edition_approved_by_owner": false,
+      "public_app_image_registered": false,
+      "public_placement_change_authorized": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    },
+    {
+      "id": "artwork-pending:09",
+      "painting": "The Miracle of the Loaves and Fishes",
+      "attribution": "Giovanni Lanfranco",
+      "museum": "National Gallery of Ireland",
+      "inventory": "NGI.72",
+      "selected_photo": "Sailko Commons 2020 painting-only framed-out edition",
+      "original_sha256": "13ceac9a8d54c0468a1414af4ea3331d1312474e487c71119f25d03916cb2654",
+      "edition_sha256": "bc70834b049d1c98d61035823bc59f1a4a64e9c752529d37ecebd16aa479e3e5",
+      "path": "assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp",
+      "edition_pixels": [
+        1600,
+        856
+      ],
+      "edition_bytes": 237020,
+      "source_rights": "CC BY 3.0 Unported",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco,_moltiplicazione_dei_pani_e_dei_pesci,_1624-25,_01.jpg",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "photo_credit": "Photograph: Sailko (2020), CC BY 3.0; edition perspective-rectified to exclude photographed physical frame and resized",
+      "prayer_assignments": [
+        "COV-foundations_our_father",
+        "COV-foundations_grace_before_meals",
+        "COV-foundations_grace_after_meals"
+      ],
+      "source_photo_approved_by_owner": false,
+      "display_edition_approved_by_owner": false,
+      "public_app_image_registered": false,
+      "public_placement_change_authorized": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    }
+  ],
+  "manual_photo_approval_pending": true,
+  "release_allowed": false,
+  "ready_for_merge": false,
+  "blocked_until": [
+    "Owner selects each exact source photograph and the specific displayed edition",
+    "Accurate work attribution and photographer/photo rights verified in release PR",
+    "Source and displayed file checksums unchanged",
+    "All 18 destination slot assignments checked against live Prayer source",
+    "Production visual tests in EN/FR on 390px mobile",
+    "New images registered only in separate explicitly authorized release PR"
+  ],
+  "privacy_guard": "Assets live under assets/staged/ which tools/build-web-preview.mjs excludes from public GitHub Pages output."
+}
