@@ -1,0 +1,63 @@
+name: Holy Trinity Campeche - verify Met original size
+
+on:
+  push:
+    branches:
+      - curation/holy-trinity-six-20261113
+    paths:
+      - .github/workflows/holy-trinity-campeche-original-probe-once.yml
+
+permissions:
+  contents: read
+
+jobs:
+  met-original-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Probe Met object API for actual full-size master
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request,hashlib,json,pathlib
+          from PIL import Image
+          out=pathlib.Path("met-campeche-source-audit");out.mkdir(exist_ok=True)
+          record={"object":917618,"accession":"2025.244","imageCurrentKnown":{"width":810,"height":1200},"candidates":[]}
+          headers={"User-Agent":"AdOrientemHolyTrinityQualityAudit/1.0 (+https://github.com/Fulcanelli13/ad-orientem)"}
+          def load(url):
+              return urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=65)
+          try:
+              j=json.load(load("https://collectionapi.metmuseum.org/public/collection/v1/objects/917618"))
+              record["isPublicDomain"]=j.get("isPublicDomain")
+              record["recordTitle"]=j.get("title")
+              candidates=[("primaryImage",j.get("primaryImage")),("primaryImageSmall",j.get("primaryImageSmall"))]
+              for label,url in candidates:
+                  if not url:continue
+                  row={"label":label,"source":url}
+                  try:
+                      with load(url) as r:data=r.read()
+                      row["bytes"]=len(data)
+                      if not data.startswith(bytes.fromhex("ffd8")):raise ValueError("Not a JPEG")
+                      p=out/("campeche_"+label+".jpg");p.write_bytes(data)
+                      with Image.open(p) as im:row["width"],row["height"]=im.size
+                      row["sha256"]=hashlib.sha256(data).hexdigest()
+                      row["higherResolutionThanKnown"]=row["width"]>810 or row["height"]>1200
+                  except Exception as e:row["error"]=type(e).__name__+": "+str(e)[:160]
+                  record["candidates"].append(row)
+          except Exception as e: record["apiError"]=type(e).__name__+": "+str(e)[:200]
+          (out/"MET_ORIGINAL_PROBE.json").write_text(json.dumps(record,indent=2)+"\n")
+          print(json.dumps(record,indent=2))
+          PY
+      - name: Save public domain Met source comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-campeche-met-original-image-comparison
+          path: met-campeche-source-audit/
+          retention-days: 30
+          if-no-files-found: warn
