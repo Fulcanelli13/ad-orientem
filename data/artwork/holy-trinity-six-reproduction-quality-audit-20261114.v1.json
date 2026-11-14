@@ -96,7 +96,7 @@
       "framelessAssessment": "BOOK_DERIVED_FRONT_ON_COPY_LOW_RESOLUTION",
       "visualPotential": "LOW_WITH_CURRENT_REUSABLE_FILE",
       "action": "HOLD_AND_SEARCH_FOR_HIGH_RES_STRAIGHT_ON_REPRODUCTION",
-      "blocker": "LOW_RESOLUTION_AND_NO_PUBLIC_FACTUM_REPRODUCTION_LICENSE",
+      "blocker": "NO_HIGH_QUALITY_FRAMLESS_SOURCE_FREE_PUBLIC_DOWNLOAD_VERIFIED",
       "note": "Factum Foundation recorded the exact Roman altarpiece in 2024, but a free usable master has not been established. Large Commons photos include church architecture; Osimo Trinity and copies are different paintings.",
       "acquiredSource": {
         "status": "ACQUIRED_REFERENCE_ONLY_NOT_RELEASE_ELIGIBLE",
@@ -123,10 +123,10 @@
         "height": 1024
       },
       "knownSourceBytes": 707216,
-      "framelessAssessment": "CLEAN_ART_SURFACE_IN_PREVIEW_LIMITED_PIXEL_DATA",
+      "framelessAssessment": "CLEAN_FRAMLESS_REPRODUCTION_VISUALLY_VERIFIED",
       "visualPotential": "GOOD_AS_STATIC_OR_SUBTLE_MOVEMENT",
-      "action": "HOLD_DEEP_ZOOM_UNTIL_MORE_NATIVE_PIXELS_FOUND",
-      "blocker": "MASTER_ACQUIRED_BUT_MANUAL_PIXEL_QA_AND_PRODUCTION_RELEASE_PENDING",
+      "action": "KEEP_NATIVE_REPRODUCTION_WITH_LIGHT_CINEMATIC_MOTION_ONLY",
+      "blocker": "SOURCE_877x1024_NO_HIGHER_PUBLIC_VERSION_VERIFIED",
       "note": "Embedded 2006 Hasselblad/Imacon metadata mentions 4080x4080 working capture, but the actual public JPEG is 877x1024; do not mistake EXIF fields for source dimensions. RISD invites photography requests, but no contact or fees are authorised.",
       "acquiredSource": {
         "status": "ACQUIRED_CC0_SOURCE",
@@ -147,7 +147,7 @@
       "accession": "NG6273",
       "institutionalRecord": "https://www.nationalgallery.org.uk/paintings/giovanni-battista-tiepolo-a-vision-of-the-trinity",
       "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_094.jpg",
-      "rightsAssessment": "INDEPENDENT_YORCK_PROJECT_PD_ART_CLAIM_NOT_MUSEUM_CC0",
+      "rightsAssessment": "YORCK_PD_ART_CLAIM_NOT_NATIONAL_GALLERY_CC0",
       "knownSourcePixels": {
         "width": 2024,
         "height": 2623
@@ -157,7 +157,7 @@
       "framelessAssessment": "FULL_ARTWORK_REPRODUCTION_IN_PREVIEW_NOT_BYTE_INSPECTED",
       "visualPotential": "MODERATE_FOR_MOBILE",
       "action": "VISUALLY_TEST_INDEPENDENT_SOURCE_AND_REVIEW_IMAGE_RIGHTS",
-      "blocker": "NON_MUSEUM_CC0_REPRODUCTION_AND_COLOUR_FIDELITY_REVIEW",
+      "blocker": "INDEPENDENT_SOURCE_RIGHTS_REVIEW_REQUIRED_OFFICIAL_NG_NC_ND",
       "note": "Preserve London modello NG6273; Munich altarpiece is another physical artwork and is not an automatic substitute. Commons Art UK 635x800 copy is worse.",
       "acquiredSource": {
         "status": "ACQUIRED_REFERENCE_ONLY_NOT_RELEASE_ELIGIBLE",
@@ -178,7 +178,7 @@
       "accession": "GG 838",
       "institutionalRecord": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar/_wGp9zTkz0OVqQ",
       "preferredCandidatePage": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
-      "rightsAssessment": "COMMONS_PD_ART_REPRODUCTION_CLAIM_NOT_INSTITUTIONAL_CC0",
+      "rightsAssessment": "COMMONS_PD_ART_CLAIM_VERSUS_KHM_COMMERCIAL_RIGHTS_TERMS_UNRESOLVED",
       "knownSourcePixels": {
         "width": 4969,
         "height": 5434
@@ -187,7 +187,7 @@
       "framelessAssessment": "CLEAN_STRAIGHT_ON_PAINTING_REPRODUCTION_IN_PREVIEW",
       "visualPotential": "EXCELLENT",
       "action": "PROVISIONALLY_PREFER_GOOGLE_ART_PROJECT_FILE_PENDING_RIGHTS_AND_BYTES",
-      "blocker": "NON_MUSEUM_CC0_REPRODUCTION_RIGHTS_REVIEW",
+      "blocker": "COMMERCIAL_USE_RIGHTS_SOURCE_SPECIFIC_HOLD",
       "note": "Do not substitute lower-resolution institutional walls or the sculpted original frame. Existing 989 research group HERO::khm:GG-838 remains authoritative.",
       "acquiredSource": {
         "status": "ACQUIRED_REFERENCE_ONLY_NOT_RELEASE_ELIGIBLE",
@@ -215,10 +215,10 @@
         "height": 4000
       },
       "knownSourceBytes": 3692616,
-      "framelessAssessment": "STRAIGHT_ON_STUDIO_REPRODUCTION_WITH_BLACK_NON_PAINTING_SURROUND",
+      "framelessAssessment": "PAINTING_BOUNDARIES_PRESERVED_IN_TRIMMED_MOBILE_DERIVATIVES",
       "visualPotential": "EXCELLENT_IF_PIXEL_COUNT_SUFFICIENT",
-      "action": "USE_VERIFIED_MET_2700x4000_ORIGINAL_AS_ARCHIVAL_MASTER_VERIFY_BOUNDARY_CROP",
-      "blocker": "PRODUCTION_VISUAL_QA_AND_EDGE_TRIM_APPROVAL_ONLY",
+      "action": "USE_VERIFIED_2700x4000_MET_MASTER_AND_TRIM_ONLY_STUDIO_BLACK_SURROUND_IN_DERIVATIVES",
+      "blocker": "FINAL_APP_VISUAL_ACCEPTANCE_NOT_YET_TESTED",
       "note": "Met public object record's primaryImage is 2700x4000, 3.69MB; the 810x1200 IIIF endpoint is merely a low-res variant. Original preserved. Black surrounding panel can be trimmed only from derivatives.",
       "acquiredSource": {
         "status": "ACQUIRED_CC0_SOURCE",
@@ -266,5 +266,53 @@
       8
     ]
   },
-  "actualFilesStatus": "SIX_REAL_SOURCE_PHOTOGRAPHS_ACQUIRED_THREE_CC0_THREE_REFERENCE_HOLD"
+  "actualFilesStatus": "SIX_REAL_SOURCE_PHOTOGRAPHS_ACQUIRED_THREE_CC0_THREE_REFERENCE_HOLD",
+  "finalMobileQualityPass": {
+    "archiveFilename": "Ad_Orientem_Holy_Trinity_Mobile_Quality_Pass_2026-11-14.zip",
+    "archiveBytes": 5997831,
+    "selectedWorks": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      9
+    ],
+    "cc0MobileDerivativeCounts": {
+      "rubens": 4,
+      "dolci": 2,
+      "campeche": 4
+    },
+    "quality": "No aspect-ratio cropping, no AI alterations, no colour regrading, no upscaling; actual source pixels retained",
+    "campecheStudioBorderCrop": [
+      89,
+      77,
+      2612,
+      3916
+    ],
+    "campecheCanvasCropOutputLongEdges": [
+      768,
+      1200,
+      2000,
+      3200
+    ],
+    "campecheMasterUntouched": true,
+    "dolciLargerSourceProbe": "RISD public API and collection page returned HTTP 403 from GitHub Actions on 2026-11-14; no larger downloadable public image independently verified",
+    "researchOnlyReferencePreviews": [
+      2,
+      4,
+      8
+    ],
+    "noProductionUse": true
+  },
+  "rightsRecheck": {
+    "rubens": "KMSKA/Flemish Art Collection CC0 source record",
+    "dolci": "RISD Museum CC0 on exact object 59.009",
+    "campeche": "Met OA/CC0 confirmed in object API; full 2700x4000 primaryImage",
+    "reni": "Object is historic/public domain; exact modern photographic rights undetermined; existing reproduction only 634x1193",
+    "tiepolo": "National Gallery website images CC BY-NC-ND 4.0 and not commercial app eligible; separate Yorck project PD-Art claim not an institutional licence",
+    "durer": "KHM shop image use terms require explicit written authorization for museum-managed material; Commons Google Art Project PD-Art source not a museum-granted CC0 licence",
+    "noContactOrFees": true
+  },
+  "photoQualityAssessment": "Image observations are from actual ZIP masters and derivatives, not just web previews; 100% full-resolution photometric certification remains manual before publication."
 }
