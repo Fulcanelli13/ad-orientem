@@ -1,0 +1,29 @@
+name: PRAY Mass sequences — exact public release gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/github-pages-release-proof.mjs'
+      - 'tests/github-pages-release-proof.test.mjs'
+      - 'tests/pray-three-mass-sequences-live-pages-phone.mjs'
+      - 'tests/pray-three-mass-sequences-source-20261110.mjs'
+      - '.github/workflows/github-pages.yml'
+      - '.github/workflows/pray-mass-sequences-live-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-published-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check live test syntax without hitting a stale public site
+        run: node --check tests/pray-three-mass-sequences-live-pages-phone.mjs
+      - name: Confirm exact Prayer Mass source and failure gates
+        run: node tests/pray-three-mass-sequences-source-20261110.mjs
+      - name: Confirm release-proof source hashes and distinct source owners
+        run: node --test tests/github-pages-release-proof.test.mjs

@@ -85,6 +85,10 @@ const FIXED_CRITICAL_PATHS=[
  "src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js",
  "src/pray/prayer-design-pilot.js",
  "src/pray/presentation-runtime.js",
+ // Source-owned Sequentia adapter and All Souls editorial-line exclusion must
+ // match the same exact SHA as the live Prayer reader; no silent stale module.
+ "src/pray/mass-sequences-from-proper.v1.js",
+ "src/mass/1962-all-souls-sequence-english.js",
  ...SAN_POLO_CYCLE_CRITICAL_PATHS,
  ...MASS_SCHOLA_CRITICAL_PATHS,
  ...NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,

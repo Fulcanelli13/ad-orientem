@@ -40,6 +40,7 @@ on:
       - 'tests/pray-holy-face-1895-french-live-pages-phone.mjs'
       - 'tests/pray-public-pages-library-witness-phone-20261111.mjs'
       - 'tests/installed-pages-live-phone.mjs'
+      - 'tests/pray-three-mass-sequences-live-pages-phone.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
     paths:
@@ -170,6 +171,26 @@ jobs:
           path: artifacts/github-pages-phone/
           if-no-files-found: warn
           retention-days: 14
+
+  public-prayer-sequences:
+    name: Verify public PRAY three Mass sequences 320/390 EN/FR
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify exact deployed source, all three appointed Sequentiae, EN/FR 320/390px
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
+        run: node tests/pray-three-mass-sequences-live-pages-phone.mjs
 
   public-offline:
     name: Verify public staged snapshot, offline reload and update settings

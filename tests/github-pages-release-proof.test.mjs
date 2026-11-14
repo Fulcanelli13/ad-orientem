@@ -25,7 +25,7 @@ test("build provenance includes fourteen San Polo photographs, attribution and a
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
  }
- for(const file of ["src/pray/novena-runtime.js","src/pray/holy-face-janvier-1887-b25.js","src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
+ for(const file of ["src/pray/novena-runtime.js","src/pray/holy-face-janvier-1887-b25.js","src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js","src/pray/mass-sequences-from-proper.v1.js","src/mass/1962-all-souls-sequence-english.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
  assert.equal(DISCOVERY_CRITICAL_PATHS.length,15);
