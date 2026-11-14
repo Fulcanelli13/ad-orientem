@@ -1,0 +1,70 @@
+{
+  "schema": "AO_P1_APOSTLE_VIGIL_VARIANT_SOURCE_AUDIT_V1",
+  "asOf": "2026-10-16",
+  "subject": "Commune/C1v",
+  "status": "NAMED_LAT_EN_FR_COLLECTS_FOUND_BUT_ENGLISH_SECOND_VARIANT_SUSPECT",
+  "liveSourceWitness": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928880736",
+  "sourceOwner": "Ad Orientem AO_RUNTIME_V8.resolver.properResolver.resolveSource",
+  "sourceDeclarationLatin": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Latin/Commune/C1v.txt",
+  "sourceDeclarationEnglish": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/English/Commune/C1v.txt",
+  "sourceDeclarationFrench": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Francais/Commune/C1v.txt",
+  "runtimeSectionProblem": {
+    "LatinOratioDefaultPresent": true,
+    "EnglishOratioDefaultPresent": false,
+    "FrenchOratioDefaultPresent": false,
+    "LatinDefaultContainsMultipleCollectOptions": true,
+    "oneLocoNamedVariantPresentInAllThree": true,
+    "twoLocoNamedVariantPresentInAllThree": true,
+    "evangelistNamedVariantPresentInAllThree": true
+  },
+  "variants": [
+    {
+      "key": "Oratio 1 loco",
+      "sourceLocation": "Commune/C1v",
+      "name": "First/ordinary vigil Collect",
+      "languageRows": {
+        "la": 2,
+        "en": 2,
+        "fr": 2
+      },
+      "latinDistinct": true,
+      "readOnlyReferencePossible": true,
+      "selectedAsNormativeVigilCollect": false
+    },
+    {
+      "key": "Oratio 2 loco",
+      "sourceLocation": "Commune/C1v",
+      "name": "Alternate vigil Collect",
+      "languageRows": {
+        "la": 2,
+        "en": 2,
+        "fr": 2
+      },
+      "latinDistinct": true,
+      "englishTranslationProblem": "EN 2 loco text matches EN 1 loco substantively although their Latin Collects differ",
+      "frenchTextIsDistinct": true,
+      "readOnlyReferencePossible": true,
+      "certifiedEnglishTranslation": false,
+      "selectedAsNormativeVigilCollect": false
+    },
+    {
+      "key": "Oratio pro Evangelistae",
+      "sourceLocation": "Commune/C1v",
+      "name": "Evangelist variant",
+      "languageRows": {
+        "la": 2,
+        "en": 2,
+        "fr": 2
+      },
+      "latinSourceDerivedViaExplicitSubstitution": true,
+      "readOnlyReferencePossible": true,
+      "selectedAsNormativeVigilCollect": false
+    }
+  ],
+  "sourceCompletionDecision": "RETAIN_PARTIAL_PENDING_RUBRIC_AWARE_SELECTED_COLLECT_AND_ENGLISH_SECOND_VARIANT_TRANSLATION_REVIEW",
+  "mustNotCollapseToSingleCollect": true,
+  "noNewUserFacingRoute": true,
+  "actualMissalChoiceNotSelected": true,
+  "latinTextCopiedToRepo": false,
+  "nextStep": "Resolve liturgical conditions governing 1 loco, 2 loco and evangelist variants, compare English 2 loco with original Latin using source-backed translation review, then implement one explicit source-variant target in app-owned Missal. Never auto-apply first variant as blanket fallback."
+}

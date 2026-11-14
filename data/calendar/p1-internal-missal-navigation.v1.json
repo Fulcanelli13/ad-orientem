@@ -1,0 +1,384 @@
+{
+  "schema": "AO_P1_INTERNAL_MISSAL_NAVIGATION_CONTRACT_V1",
+  "asOf": "2026-10-16",
+  "phase": "RESEARCH_ONLY_P0_READER_OWNER_IMPLEMENTATION_PENDING",
+  "governingCorrection": "All user-facing formulary/prayer links must resolve into the canonical Ad Orientem Missal, NOT book page numbers, facsimile images, PDF URLs, outside missal sites, or a second transcript.",
+  "sourceOfTruth": {
+    "resolver": "Existing 1962 day + Proper source resolution; do not infer observed Mass from supplemental saint entry.",
+    "resolverIdentityOwner": "src/calendar/traditional-day-adjudication.js",
+    "sourcePathOwner": "src/mass/reader-proper-runtime-recovery.js",
+    "resolvedProperShape": "src/mass/proper-contracts.js (manifest sourceRef, id, Latin text and conclusion semantics)",
+    "readerSlotsOwner": "src/mass/proper-reader-slots.js",
+    "readerParagraphOwner": "src/mass/reader-projection.js",
+    "existingSurfaceNavigation": "src/mass/browser-entry.js: navigateReaderSurface via AO_APP_SHELL_V1.navigate(surface)",
+    "existingSurfaceName": "mass",
+    "sourceProvenanceOwner": "data/mass/source-reconciliation-gates.v1.json"
+  },
+  "readerSlots": [
+    "INTROIT",
+    "COLLECT_SET",
+    "EPISTLE_OR_LESSON",
+    "GRADUAL",
+    "ALLELUIA_TRACT_SEQUENCE",
+    "GOSPEL",
+    "OFFERTORY",
+    "SECRET_SET",
+    "PREFACE",
+    "COMMUNION",
+    "POSTCOMMUNION_SET"
+  ],
+  "linksMustBeTyped": true,
+  "supportedIntents": [
+    "FORMULARY",
+    "MASS_SECTION",
+    "PRAYER",
+    "COMMEMORATIVE_PRAYER"
+  ],
+  "targetModel": {
+    "ownerKind": "CANONICAL_MASS_PROPER",
+    "sourceIdentityId": "resolver day.main.id or exact commemoration identity (not translated saint label)",
+    "canonicalFormularyId": "existing 1962 Proper or accepted Common ID; alias map for printed family variants",
+    "commonVariant": "doctor pontiff, doctor non-pontiff, and other printed variant when source explicitly requires",
+    "resolvedSourcePath": "from existing ProperResolver, never synthesized from date/title",
+    "resolvedOrationId": "from exact source-owned row; required for individual Collect/Secret/Postcommunion deep links",
+    "readerSlot": "one of existing READER_PROPER_SLOTS",
+    "prayerRole": "PRINCIPAL_ORATION | COMMEMORATION_ORATION",
+    "locale": "user-selected app language; Latin bilingual presentation follows existing reader policy",
+    "readerMode": "MISSAL",
+    "readOnly": true,
+    "selectedFormularyIdNeverMutated": true
+  },
+  "resolutionAlgorithm": [
+    "Use the canonical saint ID and explicit Mass authority; a supplemental saint alone yields NO_MASS_TARGET.",
+    "If a historical 1962 observance or commemoration is requested, fetch that canonical 1962 resolver identity and existing source Proper.",
+    "Resolve the exact proper.sourcePath and authenticated component/oration ID in the current app; never guess sourcePath from the printed page or nominal month/day.",
+    "For optional later-saint formularies, require a lawfully approved 1962 Proper/Supplement/Common and explicit accepted variant; if the app lacks that text, return NOT_IN_INTERNAL_MISSAL.",
+    "Build a read-only historical Missal reference for the source-owned prayer independent of whether the optional prayer was recited at the user's Mass; never confuse this with the active Mass-form's appliedCommemorations.",
+    "If the router cannot deep-link into the read-only Missal yet, return ROUTE_NOT_IMPLEMENTED; show an unavailable link rather than redirecting to an unrelated Mass.",
+    "Keep source provenance in References/Source audit metadata separate from navigation, optionally expandable for scholarly verification."
+  ],
+  "currentNavigationLimitation": "Existing AO_APP_SHELL_V1.navigate('mass') only opens the Mass surface; source owner and six prayer rows are now verified via actual resolver, but exact read-only prayer navigation is not implemented.",
+  "exampleInternalAnchors": [
+    {
+      "anchorId": "p1:missal:leonardi:collect",
+      "sourceIdentityId": "sancti:10-09:3:w",
+      "sourceKind": "PRINCIPAL_1962",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "COLLECT_SET",
+      "orationRole": "PRINCIPAL_ORATION",
+      "orationOwnerId": "sancti:10-09:3:w",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "COLLECT_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    },
+    {
+      "anchorId": "p1:missal:leonardi:secret",
+      "sourceIdentityId": "sancti:10-09:3:w",
+      "sourceKind": "PRINCIPAL_1962",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "SECRET_SET",
+      "orationRole": "PRINCIPAL_ORATION",
+      "orationOwnerId": "sancti:10-09:3:w",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "SECRET_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    },
+    {
+      "anchorId": "p1:missal:leonardi:postcommunion",
+      "sourceIdentityId": "sancti:10-09:3:w",
+      "sourceKind": "PRINCIPAL_1962",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "POSTCOMMUNION_SET",
+      "orationRole": "PRINCIPAL_ORATION",
+      "orationOwnerId": "sancti:10-09:3:w",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "POSTCOMMUNION_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    },
+    {
+      "anchorId": "p1:missal:dionysius-rusticus-eleutherius:collect",
+      "sourceIdentityId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "sourceKind": "HISTORICAL_COMMEMORATION",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "COLLECT_SET",
+      "orationRole": "COMMEMORATION_ORATION",
+      "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": "sancti:10-09t:4:r",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "COLLECT_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    },
+    {
+      "anchorId": "p1:missal:dionysius-rusticus-eleutherius:secret",
+      "sourceIdentityId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "sourceKind": "HISTORICAL_COMMEMORATION",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "SECRET_SET",
+      "orationRole": "COMMEMORATION_ORATION",
+      "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": "sancti:10-09t:4:r",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "SECRET_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    },
+    {
+      "anchorId": "p1:missal:dionysius-rusticus-eleutherius:postcommunion",
+      "sourceIdentityId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "sourceKind": "HISTORICAL_COMMEMORATION",
+      "requestedSurface": "MISSAL_READ_ONLY",
+      "readerMode": "MISSAL",
+      "slot": "POSTCOMMUNION_SET",
+      "orationRole": "COMMEMORATION_ORATION",
+      "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "calendarDate": "2026-10-09",
+      "resolvedSourcePath": "Sancti/10-09",
+      "resolvedOrationId": null,
+      "route": null,
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": "sancti:10-09t:4:r",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "POSTCOMMUNION_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
+    }
+  ],
+  "formExample": {
+    "subjectId": "saint.john-henry-newman",
+    "proposedPrintedFamilyId": "commune-print:doctorum",
+    "existingResearchAliasId": "commune:1962:doctor_non_pontiff",
+    "requiredVariant": "DOCTOR_NON_PONTIFF",
+    "targetKind": "FORMULARY",
+    "sourcePath": null,
+    "route": null,
+    "status": "LAW_TEXT_AND_INTERNAL_MISSAL_TARGET_PENDING",
+    "note": "A proposed Doctor Common does not assert Newman's actual Mass or that the app currently contains it."
+  },
+  "oldMissalEvidencePolicy": {
+    "retained": "Source certification and provenance only, under data/calendar/p1-1962-missal-facsimile-collation.v1.json.",
+    "publicLinkDestination": "INTERNAL_ONLY",
+    "outsidePageImagesAsButtons": false,
+    "pdfPageFragmentNavigation": false,
+    "copyOfExternalLatinTexts": false,
+    "sourceBibliographyMayContainExternalWitnesses": true
+  },
+  "contractValidation": {
+    "runtimeNavigationAuthorized": false,
+    "currentDirectPrayerDeepLinksVerified": 0,
+    "exactSourcePathEvidenceRequired": true,
+    "exactOrationRowEvidenceRequired": true,
+    "postconciliarProperFallback": false,
+    "generatedPdfRouteFallback": false,
+    "modifyExistingMassReader": false,
+    "actualSourceIdentitiesVerified": 2,
+    "actualPrayerRowsVerified": 6,
+    "activeMassSelectionAllowedViaP1Bridge": false,
+    "referenceNavigationDependentOnForm": false,
+    "sourceOwnedParagraphTargetsVerified": 6
+  },
+  "runtimeResolutionModule": "src/calendar/p1-internal-missal-link-resolution.js",
+  "runtimeResolutionModuleStatus": "RESEARCH_ONLY_NOT_IMPORTED_BY_PRODUCTION",
+  "verifiedLegacyPrayerRoutes": 0,
+  "syntheticFixtureValidationScope": "Schema/path/paragraph projection tested against source-owned Reader Proper model; this is NOT a live 9 October resolver lookup.",
+  "prayerLinkResolutionRule": "In READ_ONLY_REFERENCE mode resolve exact canonical 1962 source + owner + reader slot + paragraph. A source-backed commemoration may be opened even if not applied to a particular sung Mass; such a link never asserts it was recited. Active Mass-form application remains separate and forbidden through this helper.",
+  "requireCurrentResolverCommemorationId": "Verified original 1962 commemoration: sancti:10-09t:4:r (Sancti/10-09t). Read-only reference may use its complete source Proper even when not recited; any active Mass usage MUST separately check appliedCommemorations and the selected Mass-form.",
+  "actualSourceEvidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+  "actualSourceVerifiedObservanceCount": 2,
+  "actualPrayerRowLanguageCoverage": 6,
+  "actualSourceYears": [
+    2026,
+    2027
+  ],
+  "missalReferenceVsCelebrantMass": {
+    "historicalPrayerReference": {
+      "mode": "READ_ONLY",
+      "governedBy": "ORIGINAL_1962_DAY_SOURCE",
+      "permittedWhenPrayerExistsButNotActuallyRecited": true,
+      "labels": "Historical prayer in 1962 Missal; not proof of what was recited",
+      "changesCurrentMass": false
+    },
+    "activeCelebrationPrayer": {
+      "mode": "ACTUAL_MASS_ONLY",
+      "governedBy": "SELECTED_MASS_FORM_AND_APPLIED_COMMEMORATIONS",
+      "allowedThroughThisP1Bridge": false,
+      "needsReaderP0Gate": true
+    },
+    "invariant": "The historical reference link does not assert Mass-form permissibility or applied status; the live Mass reader never uses P1 reference links for recitation."
+  },
+  "actualReaderParagraphTargetsVerified": 6,
+  "actualReadOnlyParagraphProofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630",
+  "navigationToImplementOnlyInReaderP0": {
+    "inputFields": [
+      "sourcePath",
+      "sourceIdentityId",
+      "readerMode",
+      "readerSlot",
+      "readerParagraphId",
+      "readOnly"
+    ],
+    "effect": "Navigate to existing Missal in read-only mode, focus exact verified paragraph, preserve active Live session state and actual Mass selection",
+    "allowedWithoutValidatedSource": false,
+    "route": null,
+    "status": "READER_OWNER_ACTION_REQUIRED"
+  }
+}

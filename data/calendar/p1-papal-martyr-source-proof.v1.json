@@ -1,0 +1,121 @@
+{
+  "schema": "AO_P1_PAPAL_MARTYR_COMMON_APP_SOURCE_PROOF_V1",
+  "asOf": "2026-10-16",
+  "sourceMethod": "Actual Ad Orientem production ProperResolver in browser plus fail-closed research-only composition",
+  "liveRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38930425274",
+  "module": "src/calendar/p1-papal-martyr-source-composition.js",
+  "sourceOwner": "Commune/C4b",
+  "targetCodes": [
+    "Commune/C2b",
+    "Commune/C3b"
+  ],
+  "originalSourceSections": [
+    "Introitus",
+    "Lectio",
+    "Graduale",
+    "Evangelium",
+    "Offertorium",
+    "Secreta",
+    "Communio",
+    "Postcommunio"
+  ],
+  "originalLatinIdentityCountPerTarget": 8,
+  "borrowedFrenchEnglishSectionsPerTarget": 16,
+  "sourceDeclaredAliases": true,
+  "uniqueVariantCollectRetained": true,
+  "languages": [
+    "la",
+    "en",
+    "fr"
+  ],
+  "verifiedSourceCompleteTargets": 2,
+  "proofByTarget": [
+    {
+      "target": "Commune/C2b",
+      "sourceOwner": "Commune/C4b",
+      "canonicalSourcePath": "Commune/C2b",
+      "status": "SOURCE_COMPOSITION_VERIFIED",
+      "literalRoute": null,
+      "distinctCollect": {
+        "path": "Commune/C2b",
+        "latin": true,
+        "english": true,
+        "french": true,
+        "neverBorrowFromC4b": true
+      },
+      "inherited": {
+        "la": [],
+        "en": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Secreta",
+          "Communio",
+          "Postcommunio"
+        ],
+        "fr": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Secreta",
+          "Communio",
+          "Postcommunio"
+        ]
+      },
+      "realLatinParityVerified": true,
+      "approvedForOptionalNewSaintMass": false
+    },
+    {
+      "target": "Commune/C3b",
+      "sourceOwner": "Commune/C4b",
+      "canonicalSourcePath": "Commune/C3b",
+      "status": "SOURCE_COMPOSITION_VERIFIED",
+      "literalRoute": null,
+      "distinctCollect": {
+        "path": "Commune/C3b",
+        "latin": true,
+        "english": true,
+        "french": true,
+        "neverBorrowFromC4b": true
+      },
+      "inherited": {
+        "la": [],
+        "en": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Secreta",
+          "Communio",
+          "Postcommunio"
+        ],
+        "fr": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Secreta",
+          "Communio",
+          "Postcommunio"
+        ]
+      },
+      "realLatinParityVerified": true,
+      "approvedForOptionalNewSaintMass": false
+    }
+  ],
+  "remainingSourceQueue": {
+    "complete": 28,
+    "partial": 7,
+    "ambiguous": 3
+  },
+  "externalMissalLinks": 0,
+  "readerLiveModeTouched": false,
+  "printedEditionCertification": false,
+  "liturgicalPermissionAssumed": false
+}

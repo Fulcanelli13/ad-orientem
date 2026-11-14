@@ -1,0 +1,188 @@
+{
+  "schema": "AO_P1_PRIMARY_RUBRICS_AND_OCTOBER9_TEXT_SOURCE_AUDIT_V1",
+  "asOf": "2026-10-16",
+  "status": "1960_ORIGINAL_LATIN_NORMATIVE_CLAUSES_VERIFIED_1962_FACSIMILE_OCT9_AND_DOCTORS_STRUCTURE_VISUALLY_WITNESSED",
+  "primaryNormativeSources": [
+    {
+      "id": "AAS_52_1960_RG",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+      "authority": "SACRA_CONGREGATIO_RITUUM_ORIGINAL_LATIN",
+      "parts": [
+        {
+          "pdfPage": 614,
+          "printedPage": 615,
+          "clauses": [
+            "RG106",
+            "RG107",
+            "RG108",
+            "RG109",
+            "RG110",
+            "RG111(a)-(c)"
+          ]
+        },
+        {
+          "pdfPage": 615,
+          "printedPage": 616,
+          "clauses": [
+            "RG111(d)",
+            "RG112",
+            "RG113",
+            "RG114",
+            "RG115"
+          ]
+        }
+      ],
+      "verifiedBy": "SOURCE_PDF_OCR_PLUS_VISUAL_PAGE_INSPECTION",
+      "confidence": "PRINT_SCAN_CONFIRMED"
+    },
+    {
+      "id": "AAS_52_1960_RGMR",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+      "authority": "SACRA_CONGREGATIO_RITUUM_ORIGINAL_LATIN",
+      "parts": [
+        {
+          "pdfPage": 670,
+          "printedPage": 671,
+          "clauses": [
+            "RGMR434",
+            "RGMR435",
+            "RGMR436",
+            "RGMR437",
+            "RGMR438"
+          ]
+        }
+      ],
+      "verifiedBy": "SOURCE_PDF_OCR_PLUS_VISUAL_PAGE_INSPECTION",
+      "confidence": "PRINT_SCAN_CONFIRMED"
+    },
+    {
+      "id": "CUM_SANCTISSIMA_2020",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+      "authority": "CD_FIDEI_NORMATIVE_DECREE",
+      "clauses": [
+        "§1",
+        "§2",
+        "§4",
+        "§5",
+        "§6",
+        "§7",
+        "§8"
+      ],
+      "verifiedBy": "OFFICIAL_WEB_TEXT",
+      "confidence": "OFFICIAL_NORMATIVE_SOURCE"
+    }
+  ],
+  "canonicalityCaveat": "Certifies cited 1960 paragraphs in Latin from official promulgation; does NOT certify text or form variants of 1962 printed Missal or later competent legal interpretation.",
+  "resolvedErrors": [
+    {
+      "id": "P1-RUBRICS-HTML-MISSING-108",
+      "source": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "defect": "Omitted RG108 Mass-scope provision and incorrectly numbered actual RG109 privileged classes as RG108; primary AAS checked.",
+      "classification": "CORRUPT_SECONDARY_TRANSCRIPTION_DO_NOT_USE_SOLELY"
+    },
+    {
+      "id": "P1-MAX-ONE",
+      "defect": "English paraphrase of RG111(a) could omit explicit numeral; source Latin states unam and RGMR434(a) specifies one privileged.",
+      "source": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+      "classification": "PRIMARY_LATIN_RESOLVED"
+    }
+  ],
+  "textWitnesses": [
+    {
+      "id": "1962-OCT09-MISSALE-ONLINE",
+      "url": "https://missale.online/kalender/en/2026-10-09",
+      "kind": "SECONDARY_DIGITAL_1962_CLAIM",
+      "date": "2026-10-09",
+      "principalTitle": "St John Leonardi",
+      "principalMassIntroitIncipit": "In sermónibus Dómini",
+      "principalMassCollectIncipit": "Deus, qui beátum Joánnem",
+      "historicalCommemorationTitle": "Sts Dionysius, Rusticus and Eleutherius",
+      "historicalCommemorationCollectIncipit": "Deus, qui hodiérna die beátum Dionýsium",
+      "leonardiThreeOrationsVisible": true,
+      "historicalCommemorationThreeOrationsVisible": true,
+      "sourceCollatedWithPrinted1962": false
+    },
+    {
+      "id": "1962-OCT09-MISSALEMEUM",
+      "url": "https://www.missalemeum.com/en/calendar/2026-10-09",
+      "kind": "SECONDARY_DIGITAL_1962_CLAIM",
+      "date": "2026-10-09",
+      "principalTitle": "St John Leonardi",
+      "principalMassIntroitIncipit": "In sermónibus Dómini",
+      "principalMassCollectIncipit": "Deus, qui beátum Joánnem",
+      "historicalCommemorationTitle": "St Dionysius and companions",
+      "historicalCommemorationCollectIncipit": "Deus, qui hodiérna die beátum Dionýsium",
+      "leonardiThreeOrationsVisible": true,
+      "historicalCommemorationThreeOrationsVisible": true,
+      "sourceCollatedWithPrinted1962": false
+    },
+    {
+      "id": "1962-OCT09-SSPX-ORDO",
+      "url": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
+      "kind": "SECONDARY_DIGITAL_CALENDAR_AND_MASS_CLAIM",
+      "date": "2026-10-09",
+      "principalTitle": "St John Leonard",
+      "calendarPrincipalAndCommemorationMatchesOthers": true,
+      "displayedMassIntroitIncipit": "Sapiéntiam Sanctórum",
+      "displayedMassCollectIncipit": "Deus, qui nos concédis sanctórum Mártyrum tuórum N. et N.",
+      "displayedMassGospel": "Luke 6:17-23",
+      "conflict": "PAGE_HEADING_LABELS_LEONARDI_BUT_SELECTED_MASS_TEXT_MATCHES_STANDALONE_DIONYSIUS_GROUP_COMMEMORATION_PRINTED_P_698_699; DO_NOT_INFER_BUG_OR_LEONARDI_TEXT",
+      "acceptedAsNewmanLeonardiMassTextWitness": false,
+      "probableCause": "UNDETERMINED_SELECTED_CELEBRATION_PARAMETER_MAY_SHOW_SECONDARY_MARTYRS_COMMEMORATION",
+      "furtherReviewNeeded": true,
+      "disagreementReassessment": "Compared to printed page 698, Sapientiam sanctorum appears as standalone Oct 9 martyrs commemoration. The Ordo page includes celebration=403 selection parameter, so apparent mismatch may reflect chosen sub-celebration rather than bad data."
+    }
+  ],
+  "crossSourceAgreement": {
+    "principalProper": [
+      "1962-OCT09-MISSALE-ONLINE",
+      "1962-OCT09-MISSALEMEUM"
+    ],
+    "commemorativeTriples": [
+      "1962-OCT09-MISSALE-ONLINE",
+      "1962-OCT09-MISSALEMEUM"
+    ],
+    "print1962FinalVerdict": "PRINTED_PAGE_LAYOUT_AND_INCIPITS_VISUALLY_MATCHED_VIA_3RD_PARTY_FACSIMILE; INDEPENDENT_EDITION_PROVENANCE_AND_FULL_LATIN_TEXT_COMPARISON_PENDING"
+  },
+  "unresolvedLegalInterpretation": {
+    "id": "CUM_SANCTISSIMA_4_NONCONVENTUAL_SUNG",
+    "oldLaw": [
+      "RG108",
+      "RG111(a)",
+      "RGMR434(a)"
+    ],
+    "newLaw": [
+      "Cum sanctissima §4",
+      "RG111(d)",
+      "2020 decree final all-things-contrary-notwithstanding clause"
+    ],
+    "issue": "Whether a later compulsory ordinary commemoration on a new saint's festive Mass derogates older nonconventual sung rule; requires competent liturgical interpretation.",
+    "default": "UNKNOWN_NOT_PERMITTED_AUTOMATICALLY"
+  },
+  "runtimeApproved": false,
+  "facsimile1962AuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+  "original1962PhotoFolios": [
+    {
+      "subject": "Leonardi and same-day Dionysius commemoration",
+      "folios": "696-699",
+      "photoScans": [
+        773,
+        774,
+        775,
+        776
+      ],
+      "visualStatus": "READ_PRINTED_MISSAL_PAGE_IMAGES",
+      "independentPhotoEditionProof": false
+    },
+    {
+      "subject": "Single Commune Doctorum, pontiff/non-pontiff Secret/Postcommunion",
+      "folios": "(23)-(24)",
+      "photoScans": [
+        846,
+        847
+      ],
+      "visualStatus": "READ_PRINTED_MISSAL_PAGE_IMAGES",
+      "independentPhotoEditionProof": false
+    }
+  ]
+}

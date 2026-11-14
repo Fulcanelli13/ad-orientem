@@ -1,0 +1,580 @@
+{
+  "schema": "AO_P1_RUBRICAL_PERMISSION_MATRIX_V1",
+  "asOf": "2026-10-16",
+  "branch": "research/1224-traditional-formularies",
+  "baseCommit": "359ed283ebc6dd28797039c9667791c80323c271",
+  "sourceReferences": {
+    "RG": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+    "RGMR": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+    "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+    "RG_PRINTED_1960_IMPRIMATUR_TRANSLATION": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+    "RG_ABBREVIATED_MISNUMBERED_TRANSCRIPTION": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "ORIGINAL_LATIN_1960_CODE": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf"
+  },
+  "status": "RESEARCH_NO_AUTOMATIC_PERMISSION",
+  "ruleCount": 35,
+  "sourceIndependence": "Existing day adjudicator remains canonical runtime owner; P1 is legislation/source research only.",
+  "interpretationCaveat": "RGMR clauses from 1960 Code are source-referenced; original signed printed-edition/page collation still required. Legal interpretation of §4 versus RG111(a) held.",
+  "commemorationCaps": [
+    {
+      "context": "CLASS_I",
+      "max": 1,
+      "types": [
+        "PRIVILEGED"
+      ],
+      "ref": "RG 111(a)",
+      "limitStatus": "ORIGINAL_AAS_LATIN_RG111A_AND_RGMR434A_EXPLICIT_UNAM"
+    },
+    {
+      "context": "SUNG_NONCONVENTUAL",
+      "max": 1,
+      "types": [
+        "PRIVILEGED"
+      ],
+      "ref": "RG 111(a)",
+      "cumSanctissimaSection4Conflict": "HELD_FOR_INTERPRETATION",
+      "limitStatus": "ORIGINAL_AAS_LATIN_RG111A_AND_RGMR434A_EXPLICIT_UNAM_AND_2020_APPLICATION_STILL_HELD"
+    },
+    {
+      "context": "CLASS_II_SUNDAY",
+      "max": 1,
+      "types": [
+        "SPECIFIC_SECOND_CLASS_FEAST_OR_PRIVILEGED"
+      ],
+      "ref": "RG 111(b)"
+    },
+    {
+      "context": "CLASS_II_OTHER",
+      "max": 1,
+      "types": [
+        "PRIVILEGED",
+        "ORDINARY"
+      ],
+      "ref": "RG 111(c)"
+    },
+    {
+      "context": "CLASS_III_IV",
+      "max": 2,
+      "types": [
+        "PRIVILEGED",
+        "ORDINARY"
+      ],
+      "ref": "RG 111(d)"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01_SOURCE_BASELINE",
+      "sourceCitation": "RG 1-8; 91-102",
+      "decision": "Resolve liturgical day under 1960 Code, 1962 Missal and applicable particular calendars; modern observance metadata cannot substitute Mass or Office.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R02_OCCURRENCE",
+      "sourceCitation": "RG 92-95",
+      "decision": "Two liturgical days on one date: use table of precedence; lower ranked feast may be commemorated or omitted, not automatically replaced.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R03_TRANSFER",
+      "sourceCitation": "RG 96-99",
+      "decision": "Only eligible impeded first-class feast transfers under accidental occurrence; preserves its class.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R04_PERPETUAL_OCCURRENCE",
+      "sourceCitation": "RG 100-102",
+      "decision": "Separate permanent reassignment with diocesan/institute/local reach from accidental transfer.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R05_CONCURRENCE",
+      "sourceCitation": "RG 103-105",
+      "decision": "Vespers concurrence differs from Mass occurrence; do not use Vespers preference as a Mass switch.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R06_CLASS_PRECEDENCE",
+      "sourceCitation": "RG table of precedence 91",
+      "decision": "Classes, Sundays, seasonal ferias, vigils and local feasts evaluated by actual date.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R07_CLASS_II_EMBER",
+      "sourceCitation": "RG table of precedence 18",
+      "decision": "September Ember Wednesday, Friday and Saturday are II-class ferias and block ordinary III-class substitution.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R08_PRIVILEGED_COMM",
+      "sourceCitation": "RG 109(a)-(f)",
+      "decision": "List of privileged categories is in RG 109, not RG 108. RG 108 governs the Mass forms on which privileged and ordinary commemorations are made.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R09_ORDINARY_COMM",
+      "sourceCitation": "RG 108-109",
+      "decision": "RG 108 explicitly confines ordinary commemorations to Lauds, Conventual Mass and Low Mass; all non-listed subjects are ordinary under RG 109.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R10_INSEPARABLE_APOSTLES",
+      "sourceCitation": "RG 110(a)-(c)",
+      "decision": "Peter/Paul inseparable oration is added under one conclusion and counted as one.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R11_CLASS_I_COMM",
+      "sourceCitation": "RG 111(a); 108",
+      "decision": "I-class day admits at most one privileged commemoration: original Latin RG111(a) 'praeter unam privilegiatam'; confirmed RGMR434(a).",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R12_SUNG_NONCONVENTUAL",
+      "sourceCitation": "RG 108; 111(a)",
+      "decision": "Nonconventual Sung Mass admits at most one privileged commemoration under original Latin RG108, RG111(a) 'praeter unam privilegiatam', RGMR434(a). §4 of 2020 decree is separate legal-review case.",
+      "scope": "SUNG_NONCONVENTUAL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R13_SECOND_SUNDAY",
+      "sourceCitation": "RG 111(b)",
+      "decision": "On II-class Sunday: II-class feast commemoration, or privileged if occurring; max one.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R14_SECOND_OTHER",
+      "sourceCitation": "RG 111(c)",
+      "decision": "On other II-class days max one, privileged or ordinary.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R15_THIRD_FOURTH",
+      "sourceCitation": "RG 111(d)",
+      "decision": "On III- and IV-class days no more than two; actual admissibility independently limited by RG 108 and Mass form.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R16_EXCLUSIONS",
+      "sourceCitation": "RG 112(a)-(d)",
+      "decision": "Exclude redundant mysteries/person invocations and conflicting seasonal orations.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R17_ORDER",
+      "sourceCitation": "RG 113-114",
+      "decision": "Season first then precedence; excess omitted.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R18_CONCLUSIONS",
+      "sourceCitation": "RG 115-116; RGMR 436-446",
+      "decision": "Exact Latin conclusion depends on prayer addressee and mentions of Son/Holy Spirit; do not manufacture formula.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R19_THREE_ORATIONS",
+      "sourceCitation": "RGMR 433-437",
+      "decision": "Commemoration at Mass uses Collect, Secret, Postcommunion; own conclusion except expressly under-one-conclusion cases.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          671
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R20_SPECIAL_PRAYER_TYPES",
+      "sourceCitation": "RGMR 438-460",
+      "decision": "Identical-wording substitutions, ritual prayers, votive prayer and oratio imperata have distinct hierarchy; not all are commemorations.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R21_MULTI_LESSON",
+      "sourceCitation": "RGMR 442-443",
+      "decision": "Multiple-lesson Ember Mass orations have special placement; feria commemoration uses specified first oration.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R22_OPTIONAL_FESTIVE",
+      "sourceCitation": "Cum sanctissima §§1-2; RGMR 302(c)",
+      "decision": "For just cause, festival Mass in wider sense on permitted III-class days and III-class vigils; saint canonized after 26 July 1960 on established universal liturgical date.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R23_OPTIONAL_VOTIVE",
+      "sourceCitation": "Cum sanctissima §2; RGMR 311",
+      "decision": "Different faculty for votive saint Mass; apply complete votive day/class restrictions, not feast rule.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R24_MASS_AND_OFFICE",
+      "sourceCitation": "Cum sanctissima §3; RGBR 169",
+      "decision": "If missa festiva latiore sensu is celebrated, full proper Office may follow; Office permission is not a Mass choice.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R25_OMITTED_FEAST",
+      "sourceCitation": "Cum sanctissima §4; RG 111(d)",
+      "decision": "Ordinary commemoration of omitted traditional feast or vigil required; must be reconciled with pre-existing comms and form.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R26_FORMULARY_ORDER",
+      "sourceCitation": "Cum sanctissima §5",
+      "decision": "1962 pro aliquibus locis > approved Holy See traditional Supplement > edition-appropriate Common; ad libitum choice only among available forms of that Common.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R27_AD_LIB_COMM",
+      "sourceCitation": "Cum sanctissima §6; RG 111(d)",
+      "decision": "Optional separate commemoration on III/IV day only if saint/mystery specifically entered for that date in 1962 pro aliquibus locis or approved traditional Supplement; fallback Common does not establish entitlement.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R28_RELIGIOUS_HOUSES",
+      "sourceCitation": "Cum sanctissima §7",
+      "decision": "In religious institute/society houses, superior determines use in Conventual Mass or common/choir Office, not the celebrant.",
+      "scope": "CONVENTUAL_INSTITUTE",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R29_PROTECTED_70",
+      "sourceCitation": "Cum sanctissima §8 and annex",
+      "decision": "Exact 70 listed III-class feasts cannot be displaced; use canonical resolver identity, not month/day-only lookup.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R30_LENT_PROTECTED",
+      "sourceCitation": "Cum sanctissima §8",
+      "decision": "Protected feasts may be celebrated on III-class Lent or Passiontide feria, commemorating the feria as required.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R31_EXTERNAL_SOLEMNITY",
+      "sourceCitation": "RGMR 356-361",
+      "decision": "External solemnity is an authorized distinct Mass circumstance; no automatic Sunday transfer or universal saint permission.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R32_VOTIVE_FORMS",
+      "sourceCitation": "RGMR 306-343",
+      "decision": "Votive Mass classes/privileges and restrictions require a separate exact rubric evaluation.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R33_PARTICULAR",
+      "sourceCitation": "RG 43-46; RG table of precedence 12,19,23; Cum sanctissima preamble and §7",
+      "decision": "Diocese, titular church, order, house, Oratorian and other permissions need original jurisdictional authority and historical effective dates.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R34_HIGH_MASS_TENSION",
+      "sourceCitation": "Cum sanctissima §4; RG 108, 109, 111(a),(d); Vatican explanatory note paragraphs 7-11",
+      "decision": "Original 1960 Latin RG111(a) and RGMR434(a) set at most one privileged prayer at nonconventual Sung Mass; *Cum sanctissima* §4 mandates an ordinary commemoration of omitted feast and references only RG111(d). Whether later law derogates or redirects this limit is unadjudicated.",
+      "scope": "SUNG_NONCONVENTUAL",
+      "certification": "LEGAL_INTERPRETATION_UNRESOLVED",
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17,
+      "primaryLatinLegislation": {
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "authority": "AAS_52_1960_LATIN",
+        "printedPages": [
+          615,
+          616
+        ],
+        "verifiedFromOriginalImage": true
+      }
+    },
+    {
+      "id": "R35_DOCTOR_TITLE",
+      "sourceCitation": "Cum sanctissima §5; historical 1962 saint Proper",
+      "decision": "Later Doctor proclamation changes saint's title/recognition but does not per se rewrite existing 1962 feast/Proper or create second observance.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    }
+  ],
+  "protectedFeastsCanonicalPath": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+  "externalSolemnitiesOwner": "src/calendar/traditional-day-adjudication.js",
+  "runtimeAutomaticAuthorization": false,
+  "codexNumberingCorrection": "Official AAS Latin: RG108 Mass form applicability, RG109 privilege classes, RG111(a) explicitly 'praeter unam privilegiatam' (one, NOT unlimited), RGMR434(a) confirms.",
+  "printedSourceStatus": "Original official Latin AAS 52 (1960), printed pp.615-616 and 671 inspected by image. Full printed 1962 Missal formulary collation remains independent and outstanding.",
+  "explanatoryNote": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html",
+  "sourceAssessment": [
+    {
+      "source": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "kind": "CONTEMPORARY_1960_IMPRIMATUR_ENGLISH_CODE_TRANSLATION_PAGES_20_22",
+      "integrity": "RG108/109/111_PRESENT_CORRECTLY",
+      "isOriginalLatinAAS": false
+    },
+    {
+      "source": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "kind": "LATER_ABBREVIATED_HTML_1960_RUBRICS",
+      "integrity": "OMITS_RG108_FORM_SCOPE_AND_MISLABELS_RG109_PRIVILEGED_CATEGORIES_AS_108",
+      "approvedAsSoleReference": false
+    },
+    {
+      "source": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+      "kind": "ORIGINAL_1960_ACTA_APOSTOLICAE_SEDIS_LATIN",
+      "integrity": "ORIGINAL_1960_LATIN_RG_106_116_AND_RGMR_433_438_SCANNED_AND_COLLATED",
+      "approvedAsSoleReference": true,
+      "pages": [
+        614,
+        615,
+        670
+      ]
+    }
+  ],
+  "rubricCorrectionRisk": "Code translation is contemporary 1960 English witness with imprimatur; original AAS Latin collation needed for final legislative certification.",
+  "originalLatinPagesReviewed": [
+    {
+      "pdfPageIndex": 614,
+      "printedAASPage": 615,
+      "sections": [
+        "RG 106-111(a)-(c)"
+      ],
+      "verification": "READ_ORIGINAL_SCAN_AND_OCR"
+    },
+    {
+      "pdfPageIndex": 615,
+      "printedAASPage": 616,
+      "sections": [
+        "RG 111(d),112-115(d)"
+      ],
+      "verification": "READ_ORIGINAL_SCAN_AND_OCR"
+    },
+    {
+      "pdfPageIndex": 670,
+      "printedAASPage": 671,
+      "sections": [
+        "RGMR 434-438"
+      ],
+      "verification": "READ_ORIGINAL_SCAN_AND_OCR"
+    }
+  ],
+  "laterLegislationOverlay": {
+    "status": "APPLICABILITY_MUST_BE_REVIEWED_IN_2026_NOT_AUTOMATIC_ABROGATION",
+    "sources": [
+      {
+        "id": "TRADITIONIS_CUSTODES_2021",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/07/16/210716b.html",
+        "references": [
+          "art.2",
+          "art.3 §§2-3",
+          "art.4",
+          "art.5",
+          "art.7",
+          "art.8"
+        ],
+        "effect": "Roman Missal 1962 authorization by diocesan bishop and further Roman reservations; older norms contrary to 2021 motu proprio abrogated."
+      },
+      {
+        "id": "RESPONSA_AD_DUBIA_2021",
+        "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+        "references": [
+          "authorization of priest",
+          "temporal and territorial scope"
+        ],
+        "effect": "Additional Holy See administrative interpretation; not direct resolution of 2020 §4 ordinary commemoration conflict."
+      },
+      {
+        "id": "RESCRIPTUM_2023",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html",
+        "references": [
+          "first reserved dispensation",
+          "second reserved dispensation"
+        ],
+        "effect": "Parish church/personal parish and post-2021 ordained priests specified dispensation cases reserved to Apostolic See; does not itself identify Newman Proper or liturgical commemoration practice."
+      }
+    ],
+    "cumSanctissimaSurvival": "WHETHER_2020_SPECIFIC_SAINT_FORMULARY_FACULTY_REMAINS_CONFORMING_AND_APPLICABLE_IN_EACH_JURISDICTION_REQUIRES_DOCUMENTARY_AUTHORITY_REVIEW",
+    "noAssumption": "Do not claim blanket abrogation or blanket contemporary permission on the basis of this database."
+  },
+  "prohibitedInference": "Rubrical festival eligibility does not imply authorization to use the 1962 Missal at a particular place/date or by a particular priest; later 2021/2023 legislation and competent authority may affect admissibility."
+}

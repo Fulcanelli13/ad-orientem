@@ -1,0 +1,89 @@
+{
+  "schema": "AO_P1_MISSING_MASS_TEXT_SOURCE_ANALYSIS_V1",
+  "asOf": "2026-10-16",
+  "purpose": "Trace source-owned missing 1962 Common language rows into existing Missal, never external PDF paths",
+  "claims": [
+    {
+      "target": "Commune/C7",
+      "missingOriginal": "Lectio",
+      "originalLatinSourceDeclaration": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Latin/Commune/C7.txt",
+      "canonicalLatinParentPath": "Commune/C6",
+      "parentDeclaration": "@Commune/C6",
+      "bookReference": "Eccli 51:1-8; 51:12",
+      "rejectedAlternativePath": "Commune/C6-1",
+      "rejectedReadingReference": "Eccli 51:13-17",
+      "appSourceProof": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867",
+      "status": "CLOSED_SOURCE_COMPOSITION_VERIFIED_LA_EN_FR",
+      "note": "C6-1 may own some inherited chants, but not the original Lectio. All nine C7 core sections now available without new text assets."
+    },
+    {
+      "target": "Commune/C3ap",
+      "missingOriginal": "Six French Mass sections",
+      "actualBaseSourcePath": "Commune/C3p",
+      "missingSections": [
+        "Introitus",
+        "Lectio",
+        "Graduale",
+        "Evangelium",
+        "Offertorium",
+        "Communio"
+      ],
+      "upstreamFrenchDocument": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Francais/Commune/C3p.txt",
+      "upstreamFrenchContents": "Only [Officium] and [Missa] section headings; no prayer, chants or readings",
+      "knownLatinAndEnglishComplete": true,
+      "inheritedOrationsOwner": "Commune/C3a",
+      "completeTranslationExistsInAdOrientemSource": false,
+      "status": "FRENCH_TRANSLATION_WITNESSES_LOCATED_SIX_EDITORIAL_CANDIDATES_REQUIRE_PARITY_REVIEW",
+      "nextAction": "Compare original draft translations against historical French and exact 1962 Latin section line boundaries, approve/revise, and only then import into existing Commune/C3p French canonical source; Commune/C3ap inherits without duplication.",
+      "sourceWitnesses": [
+        {
+          "publisher": "Institut du Christ Roi Souverain Prêtre — Province de France",
+          "title": "Textes liturgiques, Commun de plusieurs Martyrs au Temps Pascal : Sancti tui",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "relevance": "Current Catholic traditional Missal index names matching original Common; textual parity and re-use rights not certified",
+          "navigationDestination": false
+        },
+        {
+          "publisher": "Historical Latin–French Paroissien romain (Wikimedia/Internet Archive copy)",
+          "title": "Paroissien romain containing Common of Martyrs in Paschal time",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Paroissien_romain_-_contenant_les_offices_de_tous_les_dimanches_et_des_principales_f%C3%AAtes_de_l%27ann%C3%A9e_en_latin_et_en_fran%C3%A7ais_%28IA_paroissienromain00cath_0%29.pdf",
+          "relevance": "Historical bilingual printed witness explicitly has Sancti tui, 1 Peter lection and John 15 Gospel; imprint/date, French parity and rights verification outstanding; research only",
+          "navigationDestination": false
+        }
+      ],
+      "editorialFrenchDraft": "docs/research/P1-PASCHAL-MARTYRS-FRENCH-EDITORIAL-CANDIDATES-20261016.md",
+      "editorialCandidateCount": 6,
+      "editorialCandidateStatus": "DRAFT_ONLY_NOT_IMPORTED_OR_SOURCE_CERTIFIED"
+    },
+    {
+      "target": "Commune/C1v",
+      "missingOriginal": "French and English generic Oratio section",
+      "upstreamTextEvidence": "English and French sources have [Oratio 1 loco] and [Oratio 2 loco], while the default [Oratio] source key is absent; original Latin contains a rubric-sensitive default [Oratio] referring to these",
+      "status": "SECOND_ENGLISH_COLLECT_DUPLICATES_FIRST_CORRECTION_DRAFTED_NOT_PUBLISHED",
+      "riskyFallback": "Do not automatically select 1 loco vs 2 loco or Evangelist variant as generic Collect without explicit rubric and canonically authenticated variant selection.",
+      "proposedCorrection": "docs/research/P1-APOSTLES-VIGIL-SECOND-COLLECT-ENGLISH-20261016.md",
+      "sourceTranslationMismatchVerified": true,
+      "sourceKeysStillDistinct": [
+        "Oratio 1 loco",
+        "Oratio 2 loco",
+        "Oratio pro Evangelistae"
+      ],
+      "nextAction": "Seek independent bilingual liturgical review for proposed English 2 loco; correct original app source only after acceptance, and never infer universal variant."
+    }
+  ],
+  "existingSourceRepository": "https://github.com/DivinumOfficium/divinum-officium",
+  "note": "External original source files serve metadata and textual parity verification only; every app navigation destination remains the existing internal Missal.",
+  "recognizedCompleteSources": 26,
+  "knownIncompleteSources": 9,
+  "ambiguousOnlineIndexEntries": 3,
+  "externalNavigationButtons": 0,
+  "liturgicalPermissionInferred": false,
+  "reviewDraftsWritten": 2,
+  "frenchPaschalDraftSectionCount": 6,
+  "copyOfLatinProperIntoNewRuntimeLibrary": false,
+  "nextSourceCoverageCount": {
+    "complete": 28,
+    "partial": 7,
+    "ambiguous": 3
+  }
+}

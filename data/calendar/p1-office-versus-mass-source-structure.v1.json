@@ -1,0 +1,63 @@
+{
+  "schema": "AO_P1_COMMON_MISSA_SOURCE_STRUCTURE_CLASSIFICATION_V1",
+  "asOf": "2026-10-16",
+  "status": "FOUR_OFFICE_OR_DERIVED_VARIANTS_NOT_STANDALONE_MASS_SOURCE_FILES",
+  "basis": "Actual upstream original Latin Commune source file structural heading inventory; no [Missa] heading and no nine core Mass sections in the exact source file. Not a verdict on a 1962 printed Missal family.",
+  "sourceTree": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Commune",
+  "records": [
+    {
+      "sourcePath": "Commune/C1",
+      "sourceFile": "C1.txt",
+      "role": "APOSTLE_OFFICE_COMMON",
+      "declaredMissa": false,
+      "containsText": "[Oratio] !Oratio propria.",
+      "printedIndependentMassDetermined": false,
+      "issue": "No generic standalone source-owned Missa Proper here; must identify real 1962 Apostle Mass text owner instead of inventing one."
+    },
+    {
+      "sourcePath": "Commune/C4c",
+      "sourceFile": "C4c.txt",
+      "role": "PLURAL_BISHOP_CONFESSOR_VARIANT",
+      "declaredMissa": false,
+      "sourceParent": "Commune/C4",
+      "sourceSpecialty": "[Oratio] derives from C4 with explicit beati N. → beatorum N. et N. plural substitution",
+      "printedIndependentMassDetermined": false,
+      "issue": "Research plural liturgical identity and exact-language transformation; not a complete Mass source."
+    },
+    {
+      "sourcePath": "Commune/C5c",
+      "sourceFile": "C5c.txt",
+      "role": "PLURAL_CONFESSOR_VARIANT",
+      "declaredMissa": false,
+      "sourceParent": "Commune/C5",
+      "sourceSpecialty": "Explicit plurals plus a distinct source Collect; sibling C4c used for Office readings.",
+      "printedIndependentMassDetermined": false,
+      "issue": "Cannot attach a singular Confessor Mass and blindly substitute plurals."
+    },
+    {
+      "sourcePath": "Commune/C7b",
+      "sourceFile": "C7b.txt",
+      "role": "PLURAL_NONVIRGIN_FEMALE_MARTYR_VARIANT",
+      "declaredMissa": false,
+      "sourceParent": "Commune/C7",
+      "sourceSpecialty": "Plural orations reference Commune/C6b with substitutions removing references to virginity.",
+      "printedIndependentMassDetermined": false,
+      "issue": "Not a self-contained Mass; non-virgin plural noun inflections and oration sources must be identified exactly."
+    }
+  ],
+  "coverageAccounting": {
+    "countAsSourceComplete": false,
+    "stillPartial": true,
+    "totalMasterIndexRows": 38,
+    "sourceComplete": 28,
+    "partial": 7,
+    "ambiguous": 3
+  },
+  "negativeRules": [
+    "Do not fabricate nine-section proper in office-only file",
+    "Do not assert absent [Missa] file proves no 1962 printed Common exists",
+    "Do not auto-select these for later saints based solely on names",
+    "No external PDF navigation",
+    "Only canonical app Missal source IDs can become reader targets"
+  ]
+}
