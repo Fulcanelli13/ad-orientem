@@ -1,0 +1,32 @@
+name: Novena Rose Window day navigation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pray/novena-rose-window.v1.js'
+      - 'src/pray/novena-rose-window-styles.js'
+      - 'src/pray/novena-runtime.js'
+      - 'tests/novena-rose-window-v1.mjs'
+      - 'tests/novena-rose-window-phone.mjs'
+      - '.github/workflows/novena-rose-window.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: novena-rose-window-v1
+  cancel-in-progress: true
+jobs:
+  rose-window:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check rose SVG and source separation
+        run: node --test tests/novena-rose-window-v1.mjs
+      - name: Install browser
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Exercise 320/390px tap route in the real Novena reader
+        run: node tests/novena-rose-window-phone.mjs
