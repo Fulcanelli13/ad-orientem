@@ -1,0 +1,438 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B16_PREMARITAL_SOURCE_PRECISION_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 4,
+    "answerUnits": 8,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE031",
+      "sourceQuestionId": "CSE031",
+      "canonicalOwner": "SEX-CORE-08",
+      "originalRecord": {
+        "source_question_id": "CSE031",
+        "conversation_id": "CHA-CSE-CSE031",
+        "canonical_topic_owner": "SEX-CORE-08",
+        "title": "Why is premarital sex wrong if two people genuinely love each other?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Why is premarital sex wrong if two people genuinely love each other?",
+          "fr": "Pourquoi les relations sexuelles avant le mariage sont-elles mauvaises si deux personnes s’aiment vraiment ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Because affection alone does not establish the marital covenant, exclusivity and stable parental responsibilities to which sexual union is naturally ordered. Catholic teaching does not deny the couple’s love; it denies that love by itself creates marriage.",
+          "fr": "Parce que l’affection seule n’établit pas l’alliance conjugale, l’exclusivité et les responsabilités parentales stables auxquelles l’union sexuelle est naturellement ordonnée. L’enseignement catholique ne nie pas l’amour du couple ; il nie que l’amour, à lui seul, crée le mariage."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Affection may be very real, but affection alone does not establish marriage. The conjugal act belongs within a covenant of exclusive fidelity and lasting responsibility for children. The Church asks lovers to prepare for that promise rather than assume they have already made it.",
+          "fr": "L’affection peut être très réelle, mais elle ne constitue pas à elle seule le mariage. L’acte conjugal appartient à une alliance de fidélité exclusive et de responsabilité durable envers les enfants. L’Église demande aux fiancés de se préparer à cet engagement, non de supposer qu’il existe déjà."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But modern contraception separates sex from parenthood, so why must the legal or sacramental bond come first?",
+          "fr": "Mais la contraception moderne sépare la sexualité de la parentalité ; pourquoi le lien juridique ou sacramentel doit-il venir d’abord ?"
+        },
+        "original_source_followup_reply": {
+          "en": "That argument assumes contraception changes the moral meaning of sex rather than merely reducing the likelihood of conception. Catholicism rejects that premise: intercourse remains the kind of act naturally connected to generation and therefore to stable parental responsibility.",
+          "fr": "Cet argument suppose que la contraception change la signification morale de la sexualité au lieu de simplement réduire la probabilité de conception. Le catholicisme rejette cette prémisse : l’union demeure le type d’acte naturellement lié à la génération et donc à une responsabilité parentale stable."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Contraception may alter the probability of conception, but it does not, in Catholic teaching, change the kind of act chosen. Sexual union remains related to generation and the duties of stable parenthood. We ought therefore to examine that claim instead of assuming technology has already answered it.",
+          "fr": "La contraception peut modifier la probabilité de concevoir ; selon l’Église, elle ne change pas pour autant la nature de l’acte choisi. L’union sexuelle garde un rapport à la génération et aux devoirs d’une parenté stable. Examinons cette affirmation plutôt que de supposer la question réglée par la technique."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST154",
+              "locator": "a.2"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§17–20"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1057 · matrimonial consent establishes marriage"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "obligations outside marriage"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Sincere affection does not itself establish marriage. Persona humana §7 reserves genital acts to marriage, including where a couple firmly intends to marry.",
+          "fr": "L’affection sincère ne constitue pas à elle seule le mariage. Persona humana §7 réserve les actes génitaux au mariage, même si le couple veut fermement se marier.",
+          "claims": [
+            {
+              "text": "Source moral/legal distinction",
+              "refs": [
+                "PH7"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Avoiding conception does not answer that moral argument about the proper setting of sexual union.",
+          "fr": "Éviter la conception ne répond pas à cet argument moral sur le cadre propre de l’union sexuelle.",
+          "claims": [
+            {
+              "text": "Bounded application",
+              "refs": [
+                "PH7"
+              ],
+              "type": "APOLOGETICAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE032",
+      "sourceQuestionId": "CSE032",
+      "canonicalOwner": "SEX-CORE-08",
+      "originalRecord": {
+        "source_question_id": "CSE032",
+        "conversation_id": "CHA-CSE-CSE032",
+        "canonical_topic_owner": "SEX-CORE-08",
+        "title": "Is engagement morally equivalent to marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is engagement morally equivalent to marriage?",
+          "fr": "Les fiançailles sont-elles moralement équivalentes au mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Engagement is a serious promise and preparation for marriage, but it is not the matrimonial bond itself. A future intention to marry does not create the present rights and duties of marriage. Engagement is also the time to resolve serious disagreements about fidelity, contraception, openness to children and sexual ethics before matrimonial consent is exchanged.",
+          "fr": "Non. Les fiançailles sont une promesse sérieuse et une préparation au mariage, mais elles ne sont pas le lien matrimonial lui-même. L’intention future de se marier ne crée pas les droits et devoirs présents du mariage. Les fiançailles sont aussi le moment de résoudre les désaccords sérieux sur la fidélité, la contraception, l’ouverture aux enfants et la morale sexuelle avant l’échange du consentement matrimonial."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Engagement is a serious promise and preparation, but it is not yet marriage. The intention to marry does not confer conjugal rights in advance. Use this time to speak plainly about fidelity, contraception, openness to children, the duties of marriage and any serious disagreement before you exchange matrimonial consent.",
+          "fr": "Les fiançailles sont une promesse sérieuse et une préparation, mais elles ne sont pas encore le mariage. Le projet de se marier ne donne pas d'avance les droits conjugaux. Profitez de ce temps pour parler franchement de la fidélité, de la contraception, de l'accueil des enfants, des devoirs du mariage et de tout désaccord grave avant l'échange des consentements."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But we've already promised to marry. Why should a date on the calendar matter?",
+          "fr": "Mais nous avons déjà promis de nous marier. Pourquoi attendre une date ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Because the promise to marry is not yet the exchange of matrimonial consent. The duties and rights of a marriage arise with the marriage itself; engagement is a time to prepare for them, not to assume them.",
+          "fr": "Parce que la promesse de se marier n’est pas encore l’échange des consentements matrimoniaux. Les droits et devoirs conjugaux naissent avec le mariage lui-même ; les fiançailles y préparent sans les anticiper."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§5–10, 11–30"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "cann. 1055–1057, 1062 §§1–2 (engagement creates no enforceable marriage bond)"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE032"
+      },
+      "proposedTurns": [
+        {
+          "en": "A promise to marry is not matrimonial consent.",
+          "fr": "La promesse de mariage n’est pas le consentement matrimonial.",
+          "claims": [
+            {
+              "text": "Source moral/legal distinction",
+              "refs": [
+                "CIC1057-1062"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "This concerns marriage itself, rather than merely a calendar date.",
+          "fr": "Il s’agit du mariage lui-même, et non d’une simple date.",
+          "claims": [
+            {
+              "text": "Bounded application",
+              "refs": [
+                "CIC1057-1062"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE033",
+      "sourceQuestionId": "CSE033",
+      "canonicalOwner": "SEX-CORE-08",
+      "originalRecord": {
+        "source_question_id": "CSE033",
+        "conversation_id": "CHA-CSE-CSE033",
+        "canonical_topic_owner": "SEX-CORE-08",
+        "title": "How far is “too far” physically before marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How far is “too far” physically before marriage?",
+          "fr": "Jusqu’où peut-on aller physiquement avant le mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "There is no honest universal centimetre-rule. Affection becomes morally wrong when the couple deliberately seeks sexual pleasure proper to intercourse, chooses acts ordered to it, or knowingly places themselves in a proximate occasion they are not prepared to resist.",
+          "fr": "Il n’existe pas de règle honnête mesurée en centimètres. L’affection devient moralement mauvaise lorsque le couple recherche délibérément le plaisir sexuel propre à l’union, choisit des actes qui y sont ordonnés, ou se place sciemment dans une occasion prochaine qu’il n’est pas prêt à combattre."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Do not look for a measurement in inches or centimetres. Ask instead what you intend and where the gesture is leading you. Genuine tenderness is not identical with deliberately seeking the sexual pleasure reserved to marriage, or placing yourselves in a danger you already know you cannot resist.",
+          "fr": "Ne cherchez pas une mesure en centimètres. Demandez-vous plutôt ce que vous recherchez et où conduit ce geste. La tendresse véritable ne se confond ni avec la recherche délibérée du plaisir sexuel réservé au mariage ni avec le choix d’un danger auquel vous savez ne pas pouvoir résister."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Wouldn't making any rule simply make engaged couples anxious?",
+          "fr": "Toute règle ne risque-t-elle pas de rendre les fiancés anxieux ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "An arbitrary list can do that. The point is to cultivate prudent affection and know one's actual limits, not to measure every gesture anxiously. A couple should discuss boundaries calmly and honestly.",
+          "fr": "Une liste arbitraire peut produire cet effet. Il s’agit de cultiver une affection prudente et de connaître ses limites réelles, non de mesurer chaque geste avec inquiétude. Que les fiancés en parlent paisiblement et franchement."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST154",
+              "locator": "a.4"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Prudence concerns chosen pleasure and circumstances, rather than measurements.",
+          "fr": "La prudence concerne le plaisir choisi et les circonstances, plutôt que des mesures.",
+          "claims": [
+            {
+              "text": "Source moral/legal distinction",
+              "refs": [
+                "ST154a4"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Discuss prudent boundaries calmly.",
+          "fr": "Parlez paisiblement de limites prudentes.",
+          "claims": [
+            {
+              "text": "Bounded application",
+              "refs": [
+                "ST154a4"
+              ],
+              "type": "EDITORIAL_COUNSEL_NOT_CLINICAL_PREDICTION"
+            }
+          ]
+        }
+      ],
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE034",
+      "sourceQuestionId": "CSE034",
+      "canonicalOwner": "SEX-CORE-08",
+      "originalRecord": {
+        "source_question_id": "CSE034",
+        "conversation_id": "CHA-CSE-CSE034",
+        "canonical_topic_owner": "SEX-CORE-08",
+        "title": "When can kissing or touching become sinful?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "When can kissing or touching become sinful?",
+          "fr": "Quand les baisers ou les attouchements peuvent-ils devenir pécheurs ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "When they are deliberately used to seek illicit sexual pleasure, to arouse oneself or another toward sexual activity outside marriage, or when they create a knowingly chosen proximate occasion of serious sin.",
+          "fr": "Lorsqu’ils sont délibérément utilisés pour rechercher un plaisir sexuel illicite, pour s’exciter soi-même ou exciter l’autre vers une activité sexuelle hors mariage, ou lorsqu’ils créent une occasion prochaine de péché grave sciemment choisie."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A kiss or an embrace is not automatically sinful. Intention and circumstances matter: affection may be innocent, while a gesture deliberately chosen to arouse illicit sexual pleasure can become an occasion of serious sin. Exercise prudence without treating ordinary tenderness as suspect.",
+          "fr": "Un baiser ou une étreinte n’est pas automatiquement un péché. L’intention et les circonstances comptent : l’affection peut être innocente, tandis qu’un geste choisi pour éveiller un plaisir sexuel illicite peut devenir une occasion grave de péché. Soyez prudents sans soupçonner toute tendresse ordinaire."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What if a kiss is affectionate rather than intended to excite desire?",
+          "fr": "Et si le baiser exprime l’affection plutôt que le désir ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Then it cannot be judged solely by its physical appearance. Intention, circumstances and the likely consequences matter; do not assume every innocent gesture is sinful.",
+          "fr": "On ne saurait alors le juger selon sa seule apparence physique. L’intention, les circonstances et les conséquences prévisibles comptent ; ne supposez pas que tout geste innocent soit pécheur."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST154",
+              "locator": "a.4"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Affectionate kissing is not automatically sinful; choosing illicit pleasure differs.",
+          "fr": "Le baiser affectueux n’est pas automatiquement coupable ; choisir un plaisir illicite diffère.",
+          "claims": [
+            {
+              "text": "Source moral/legal distinction",
+              "refs": [
+                "ST154a4"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Appearance alone cannot establish that choice.",
+          "fr": "L’apparence seule ne peut établir ce choix.",
+          "claims": [
+            {
+              "text": "Bounded application",
+              "refs": [
+                "ST154a4"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "PH7",
+      "work": "Persona humana (29 December 1975), §7, first and final paragraphs",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "originalLanguageUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_lt.html",
+      "exactLatinExcerpt": "qualemcumque genitalem hominis actionem matrimonii terminis contineri debere",
+      "supports": "Firm intention or impeded wedding does not establish moral permission for premarital genital acts; no empirical contraception-rate assertion"
+    },
+    {
+      "id": "CIC1057-1062",
+      "work": "CIC cann.1057 §§1–2 and1062 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "supports": "Consent and promise distinguished; canon1062 still preserves particular-law and possible damages effects, so not a blanket statement engagement has no obligations"
+    },
+    {
+      "id": "ST154a4",
+      "work": "Aquinas, Summa theologiae II–II q.154 a.4 corpus, English Dominican translation",
+      "url": "https://www.newadvent.org/summa/3154.htm#article4",
+      "supports": "Affection/illicit delectation distinction; classification needs review"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "CSE031: add direct PH7 support, avoid importing an unverified scientific contraception claim",
+    "CSE032: no implication engagement has no legal effects; its limited distinction is promise versus marriage. Do not imply any private consent automatically overcomes canonical form or impediments",
+    "CSE033: remove unsupported psychological prediction that arbitrary rules cause anxiety; retain calm conversation as marked pastoral advice",
+    "CSE034: choosing illicit pleasure is not merely an occasion of another sin; flag original mitigation wording for theological correction"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE033",
+        "CSE034"
+      ],
+      "decision": "Same source and closely overlapping guidance; recommend shared underlying guidance module with distinct visitor questions, without deleting IDs or auto-routing"
+    }
+  ],
+  "humanDecisions": [
+    "Moral theologian must decide sufficient explanation and wording about gravity, intended pleasure and occasion of sin before certification",
+    "Canon lawyer reviews marriage/engagement distinction if expanded into particular advice",
+    "Concise candidate drafts require English/French and persona review"
+  ],
+  "newSubstantiveGaps": [],
+  "continue": true
+}

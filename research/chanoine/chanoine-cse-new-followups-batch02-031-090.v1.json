@@ -1,0 +1,571 @@
+{
+  "schema": "AO_CHANOINE_CSE_BILINGUAL_EDITORIAL_FOLLOWUPS_V1",
+  "batch": "BATCH02_CSE031_090",
+  "source": "research/chanoine/chanoine-cse-source-conversation-seeds.v1.json",
+  "publication_gate": "RESEARCH_ONLY",
+  "description": "33 source-absent debate follow-ups drafted individually for CSE031–CSE090. Distinct editorial prose, not inherited source or historical quotations; source existing debates and archived CSE055/CSE056/CSE058 excluded.",
+  "record_count": 33,
+  "records": [
+    {
+      "source_question_id": "CSE032",
+      "source_seed_conversation_id": "CHA-CSE-CSE032",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "But we've already promised to marry. Why should a date on the calendar matter?",
+        "fr": "Mais nous avons déjà promis de nous marier. Pourquoi attendre une date ?"
+      },
+      "chanoine": {
+        "en": "Because the promise to marry is not yet the exchange of matrimonial consent. The duties and rights of a marriage arise with the marriage itself; engagement is a time to prepare for them, not to assume them.",
+        "fr": "Parce que la promesse de se marier n’est pas encore l’échange des consentements matrimoniaux. Les droits et devoirs conjugaux naissent avec le mariage lui-même ; les fiançailles y préparent sans les anticiper."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE033",
+      "source_seed_conversation_id": "CHA-CSE-CSE033",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Wouldn't making any rule simply make engaged couples anxious?",
+        "fr": "Toute règle ne risque-t-elle pas de rendre les fiancés anxieux ?"
+      },
+      "chanoine": {
+        "en": "An arbitrary list can do that. The point is to cultivate prudent affection and know one's actual limits, not to measure every gesture anxiously. A couple should discuss boundaries calmly and honestly.",
+        "fr": "Une liste arbitraire peut produire cet effet. Il s’agit de cultiver une affection prudente et de connaître ses limites réelles, non de mesurer chaque geste avec inquiétude. Que les fiancés en parlent paisiblement et franchement."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE034",
+      "source_seed_conversation_id": "CHA-CSE-CSE034",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What if a kiss is affectionate rather than intended to excite desire?",
+        "fr": "Et si le baiser exprime l’affection plutôt que le désir ?"
+      },
+      "chanoine": {
+        "en": "Then it cannot be judged solely by its physical appearance. Intention, circumstances and the likely consequences matter; do not assume every innocent gesture is sinful.",
+        "fr": "On ne saurait alors le juger selon sa seule apparence physique. L’intention, les circonstances et les conséquences prévisibles comptent ; ne supposez pas que tout geste innocent soit pécheur."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE036",
+      "source_seed_conversation_id": "CHA-CSE-CSE036",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What about a couple who share housing because neither can afford separate rent?",
+        "fr": "Et si les deux ne peuvent payer deux logements séparés ?"
+      },
+      "chanoine": {
+        "en": "Financial hardship is a serious circumstance, not something to dismiss. The moral questions remain whether they are continent, safe, prudent and free from avoidable scandal; seek workable arrangements rather than pretending that money is irrelevant.",
+        "fr": "La difficulté financière est une circonstance sérieuse, qu’il ne faut pas mépriser. Il reste à examiner la continence, la sécurité, la prudence et le scandale évitable ; cherchons des arrangements possibles sans feindre que l’argent n’importe pas."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE037",
+      "source_seed_conversation_id": "CHA-CSE-CSE037",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "How can I know whether something is a near occasion without becoming fearful of everything?",
+        "fr": "Comment reconnaître l’occasion prochaine sans avoir peur de tout ?"
+      },
+      "chanoine": {
+        "en": "Use experience and proportion: a proximate occasion is a predictable serious danger for you, not every remote possibility. Where doubt becomes obsessive, rely on stable spiritual guidance instead of multiplying restrictions.",
+        "fr": "Appuyez-vous sur l’expérience et la proportion : c’est un danger grave et prévisible pour vous, non toute possibilité lointaine. Si le doute devient obsessionnel, suivez un conseil spirituel stable au lieu de multiplier les interdits."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE041",
+      "source_seed_conversation_id": "CHA-CSE-CSE041",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Why does the Church speak of marriage as a covenant rather than just a contract?",
+        "fr": "Pourquoi l’Église parle-t-elle d’alliance plutôt que de simple contrat ?"
+      },
+      "chanoine": {
+        "en": "Consent truly establishes obligations, but marriage also concerns a lasting communion of persons and responsibilities towards children. Calling it a covenant highlights that it cannot be reduced to a temporary exchange of benefits.",
+        "fr": "Le consentement établit bien des obligations, mais le mariage concerne aussi une communion durable des personnes et des devoirs envers les enfants. Le mot « alliance » rappelle qu’il ne se réduit pas à un échange provisoire d’avantages."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE042",
+      "source_seed_conversation_id": "CHA-CSE-CSE042",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "If every culture regulates marriage differently, how can its essence be universal?",
+        "fr": "Si chaque culture règle le mariage autrement, comment son essence serait-elle universelle ?"
+      },
+      "chanoine": {
+        "en": "Different ceremonies, property rules and customs do not prove that the institution has no enduring goods. The Church distinguishes these changing arrangements from fidelity, permanence and the natural relation to family life.",
+        "fr": "Des cérémonies, règles patrimoniales et coutumes différentes ne prouvent pas l’absence de biens permanents. L’Église distingue ces arrangements variables de la fidélité, de la permanence et du rapport naturel à la vie familiale."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE046",
+      "source_seed_conversation_id": "CHA-CSE-CSE046",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Does calling children the primary end make companionship secondary or unimportant?",
+        "fr": "Dire que les enfants sont la fin première rend-il la compagnie secondaire ou négligeable ?"
+      },
+      "chanoine": {
+        "en": "No. A hierarchy of ends is not a denial of other genuine goods. Mutual help, affection and sanctification remain important even when spouses cannot have children.",
+        "fr": "Non. Une hiérarchie des fins ne nie pas les autres biens véritables. L’entraide, l’affection et la sanctification restent importantes même si les époux ne peuvent avoir d’enfants."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE047",
+      "source_seed_conversation_id": "CHA-CSE-CSE047",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "If conception is impossible, what remains of the procreative meaning?",
+        "fr": "Si la conception est impossible, que reste-t-il du sens procréateur ?"
+      },
+      "chanoine": {
+        "en": "The Church distinguishes an act's natural kind from whether it succeeds in conceiving in particular circumstances. The spouses' infertility does not turn their conjugal union into a different moral act.",
+        "fr": "L’Église distingue la nature de l’acte de son résultat dans des circonstances particulières. L’infertilité des époux ne transforme pas leur union conjugale en un autre acte moral."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE048",
+      "source_seed_conversation_id": "CHA-CSE-CSE048",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Isn't this just saying a ceremony magically changes biology?",
+        "fr": "N’est-ce pas dire qu’une cérémonie change magiquement la biologie ?"
+      },
+      "chanoine": {
+        "en": "No. Biology is not the whole moral description. A promise can make giving, taking or intimacy morally different because it creates real obligations; marriage likewise establishes duties the physical description alone omits.",
+        "fr": "Non. La biologie n’épuise pas la description morale. Une promesse peut changer le sens moral d’un don ou d’une intimité en créant de vrais devoirs ; le mariage établit ainsi des obligations que la seule description physique omet."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE052",
+      "source_seed_conversation_id": "CHA-CSE-CSE052",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Does a spouse have to comply whenever the other asks?",
+        "fr": "Un époux doit-il céder chaque fois que l’autre le demande ?"
+      },
+      "chanoine": {
+        "en": "No. Mutual conjugal duties are bounded by justice, health, reason and charity. A refusal for serious cause can be legitimate, and no conjugal right permits coercion.",
+        "fr": "Non. Les devoirs réciproques sont limités par la justice, la santé, la raison et la charité. Un refus pour cause grave peut être légitime, et aucun droit conjugal n’autorise la contrainte."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE053",
+      "source_seed_conversation_id": "CHA-CSE-CSE053",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Can concern about pain or emotional safety justify saying no?",
+        "fr": "La douleur ou la sécurité affective peuvent-elles justifier un refus ?"
+      },
+      "chanoine": {
+        "en": "Certainly those are morally relevant facts, and safety cannot be dismissed. A spouse must not be pressured to endure injury or fear; difficult cases call for respectful communication and appropriate professional support.",
+        "fr": "Assurément, ce sont des faits moralement pertinents, et la sécurité ne doit pas être écartée. On ne doit pas pousser un conjoint à subir la blessure ou la peur ; les cas difficiles demandent dialogue respectueux et soutien approprié."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE057",
+      "source_seed_conversation_id": "CHA-CSE-CSE057",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What if a specific practice isn't named in the Catechism?",
+        "fr": "Et si une pratique précise n’est pas nommée dans le Catéchisme ?"
+      },
+      "chanoine": {
+        "en": "Silence is not universal approval or prohibition. Identify the precise act and its relation to consent, dignity and the conjugal union; where authority is unclear, label the conclusion as moral reasoning, not as a quoted magisterial ruling.",
+        "fr": "Le silence n’est ni une permission ni une interdiction universelle. Il faut définir l’acte et son rapport au consentement, à la dignité et à l’union conjugale ; lorsque l’autorité ne s’est pas prononcée, présentons une analyse morale, non une décision magistérielle citée."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE059",
+      "source_seed_conversation_id": "CHA-CSE-CSE059",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Does sickness cancel all the duties of marriage?",
+        "fr": "La maladie supprime-t-elle tous les devoirs conjugaux ?"
+      },
+      "chanoine": {
+        "en": "No, but it changes what those duties reasonably demand. Care, fidelity and companionship can deepen when sexual relations are impossible or harmful; neither spouse is entitled to disregard another's condition.",
+        "fr": "Non, mais elle change ce qu’ils exigent raisonnablement. Le soin, la fidélité et la compagnie peuvent s’approfondir lorsque les relations sont impossibles ou nuisibles ; aucun conjoint ne peut mépriser l’état de l’autre."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE060",
+      "source_seed_conversation_id": "CHA-CSE-CSE060",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Would permanent infertility make contraception morally irrelevant?",
+        "fr": "L’infertilité permanente rendrait-elle la contraception moralement indifférente ?"
+      },
+      "chanoine": {
+        "en": "The issue with contraception concerns a deliberately chosen act against the procreative meaning of intercourse, not simply a calculation of likely conception. Clinical facts and intention still need careful attention; infertility by itself is not a blanket moral permission.",
+        "fr": "La question de la contraception concerne le choix délibéré contre le sens procréateur de l’union, non seulement un calcul de probabilité. Les faits médicaux et l’intention doivent encore être examinés ; l’infertilité n’est pas une permission générale."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE062",
+      "source_seed_conversation_id": "CHA-CSE-CSE062",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Isn't avoiding pregnancy always a sign of selfishness?",
+        "fr": "Éviter une grossesse est-il toujours égoïste ?"
+      },
+      "chanoine": {
+        "en": "No. Serious obligations to health, family and existing children can justify postponement. The judgment concerns both the proportionate reasons and the means chosen, not a presumption that every postponement is selfish.",
+        "fr": "Non. De graves devoirs envers la santé, la famille et les enfants déjà nés peuvent justifier un report. Il faut examiner les raisons proportionnées et les moyens choisis, sans présumer que tout report est égoïste."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE065",
+      "source_seed_conversation_id": "CHA-CSE-CSE065",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Who decides whether our reason is sufficiently serious?",
+        "fr": "Qui décide si notre raison est suffisamment grave ?"
+      },
+      "chanoine": {
+        "en": "The spouses must form their consciences honestly in light of Catholic teaching and their real obligations. A wise confessor can assist, but cannot replace knowledge of their circumstances with a universal checklist.",
+        "fr": "Les époux doivent former honnêtement leur conscience selon l’enseignement catholique et leurs obligations réelles. Un confesseur sage peut les aider, mais ne peut remplacer la connaissance de leur situation par une liste universelle."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE066",
+      "source_seed_conversation_id": "CHA-CSE-CSE066",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Then why does the Church insist on an openness to life?",
+        "fr": "Pourquoi l’Église insiste-t-elle alors sur l’ouverture à la vie ?"
+      },
+      "chanoine": {
+        "en": "Because it distinguishes welcoming the procreative nature of the conjugal act from demanding conception at every encounter. Natural infertility is not itself a chosen refusal of fertility.",
+        "fr": "Parce qu’elle distingue le respect de la nature procréatrice de l’acte conjugal de l’exigence d’une conception à chaque rencontre. L’infécondité naturelle n’est pas en soi un refus volontaire de la fécondité."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE067",
+      "source_seed_conversation_id": "CHA-CSE-CSE067",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Would relying on infertile periods for many years still be permissible?",
+        "fr": "Le recours aux périodes infertiles pendant de longues années serait-il licite ?"
+      },
+      "chanoine": {
+        "en": "Duration alone does not decide the question. Traditional teaching recognised prolonged recourse for serious reasons; spouses must reconsider their actual circumstances and motives responsibly.",
+        "fr": "La durée ne suffit pas à trancher. L’enseignement traditionnel a reconnu ce recours prolongé pour des raisons sérieuses ; les époux doivent réexaminer avec responsabilité leur situation et leurs motifs."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE068",
+      "source_seed_conversation_id": "CHA-CSE-CSE068",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What if a procedure both treats disease and causes infertility?",
+        "fr": "Et si une intervention soigne une maladie tout en causant l’infertilité ?"
+      },
+      "chanoine": {
+        "en": "We must establish whether infertility is being chosen as the means or merely foreseen as a side effect of legitimate treatment. This is a clinical and moral distinction, not one a general answer can settle for every procedure.",
+        "fr": "Il faut établir si l’infécondité est choisie comme moyen ou simplement prévue comme effet secondaire d’un traitement légitime. C’est une distinction clinique et morale qu’une réponse générale ne peut trancher pour toute intervention."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE069",
+      "source_seed_conversation_id": "CHA-CSE-CSE069",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Is it hypocritical to accept infertility from surgery but reject direct sterilisation?",
+        "fr": "N’est-il pas hypocrite d’accepter l’infertilité après chirurgie mais de refuser la stérilisation directe ?"
+      },
+      "chanoine": {
+        "en": "No, if the object truly differs. Removing diseased tissue to treat pathology is not morally identical to choosing infertility as a goal; the medical facts and intent must support that account.",
+        "fr": "Non, si l’objet diffère réellement. Enlever un tissu malade pour soigner une pathologie n’est pas identique au choix de l’infertilité comme but ; les faits médicaux et l’intention doivent confirmer cette distinction."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE072",
+      "source_seed_conversation_id": "CHA-CSE-CSE072",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Does an addiction mean I never freely choose anything?",
+        "fr": "L’addiction signifie-t-elle que je ne choisis jamais librement ?"
+      },
+      "chanoine": {
+        "en": "Not necessarily. Freedom can be impaired without disappearing in every moment. Honest discernment looks at present choices and practical support rather than declaring the person wholly culpable or wholly powerless.",
+        "fr": "Pas nécessairement. La liberté peut être diminuée sans disparaître à tout instant. Le discernement examine les choix présents et les moyens de soutien plutôt que de déclarer la personne entièrement coupable ou impuissante."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE073",
+      "source_seed_conversation_id": "CHA-CSE-CSE073",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Should an adolescent be frightened by descriptions of grave sin?",
+        "fr": "Faut-il effrayer un adolescent par des descriptions de péché grave ?"
+      },
+      "chanoine": {
+        "en": "Teaching should be truthful but proportionate to age and maturity. The aim is responsible formation, not fear or humiliation; personal culpability cannot be inferred merely from the prevalence of a behaviour.",
+        "fr": "L’enseignement doit être vrai mais proportionné à l’âge et à la maturité. Le but est une formation responsable, non la peur ni l’humiliation ; la culpabilité personnelle ne se déduit pas de la fréquence d’un comportement."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE075",
+      "source_seed_conversation_id": "CHA-CSE-CSE075",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What if no one was exploited in making the material?",
+        "fr": "Et si personne n’a été exploité pour produire ces images ?"
+      },
+      "chanoine": {
+        "en": "That would remove one possible injustice, and it matters. The separate moral question remains whether deliberately consuming sexual intimacy to arouse lust is ordered to chastity.",
+        "fr": "Cela éliminerait une injustice possible, et ce n’est pas négligeable. Reste la question morale distincte : consommer volontairement l’intimité sexuelle pour exciter la luxure est-il conforme à la chasteté ?"
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE077",
+      "source_seed_conversation_id": "CHA-CSE-CSE077",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Can something be wrong if the image depicts no real person at all?",
+        "fr": "Quel mal y aurait-il si l’image ne représente aucune personne réelle ?"
+      },
+      "chanoine": {
+        "en": "An absent performer changes some harms, but not necessarily the user's chosen purpose. Traditional principles still ask whether the act deliberately cultivates lust; the Church has not issued a historical ruling naming generative AI.",
+        "fr": "L’absence d’acteur réel change certains torts, mais pas nécessairement le but recherché. Les principes traditionnels demandent toujours si l’on cultive volontairement la luxure ; l’Église n’a pas publié d’ancien jugement nommant l’IA générative."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE078",
+      "source_seed_conversation_id": "CHA-CSE-CSE078",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Should I delete every social-media account to avoid temptation?",
+        "fr": "Dois-je supprimer tous mes comptes pour éviter la tentation ?"
+      },
+      "chanoine": {
+        "en": "Not automatically. Use prudent boundaries proportionate to what actually leads you into sin. A tool may be removed when necessary, but treating every accidental image as a moral failure is not sound discernment.",
+        "fr": "Pas automatiquement. Fixez des limites prudentes selon ce qui vous conduit réellement au péché. Il peut être nécessaire de supprimer un outil, mais traiter chaque image accidentelle comme une faute n’est pas un bon discernement."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE079",
+      "source_seed_conversation_id": "CHA-CSE-CSE079",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Could explicit material ever be studied for a legitimate professional reason?",
+        "fr": "Un contenu explicite peut-il être étudié pour une raison professionnelle légitime ?"
+      },
+      "chanoine": {
+        "en": "Yes, context and proportionate necessity can distinguish professional examination from seeking arousal. Even then, prudence and protection against needless exposure remain important.",
+        "fr": "Oui, le contexte et la nécessité proportionnée distinguent l’examen professionnel de la recherche d’excitation. La prudence et la protection contre l’exposition inutile demeurent toutefois importantes."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE080",
+      "source_seed_conversation_id": "CHA-CSE-CSE080",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "What if prayer alone has not stopped the habit?",
+        "fr": "Et si la prière seule n’a pas arrêté l’habitude ?"
+      },
+      "chanoine": {
+        "en": "Prayer is not opposed to practical means. Remove predictable triggers, seek trustworthy accountability and, where compulsive behaviour persists, consider qualified clinical assistance. Difficulty is not a reason for despair.",
+        "fr": "La prière ne s’oppose pas aux moyens pratiques. Écartez les déclencheurs prévisibles, cherchez un soutien digne de confiance et, si la compulsion persiste, envisagez une aide clinique qualifiée. La difficulté n’est pas une raison de désespérer."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE081",
+      "source_seed_conversation_id": "CHA-CSE-CSE081",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Am I guilty merely because I cannot make an attraction disappear?",
+        "fr": "Suis-je coupable parce que je ne peux faire disparaître une attirance ?"
+      },
+      "chanoine": {
+        "en": "No. An unchosen inclination is not a freely chosen act. You are responsible for your decisions, not for instantaneously abolishing every feeling; dignity is never conditional on the experience of attraction.",
+        "fr": "Non. Une inclination non choisie n’est pas un acte librement posé. Vous répondez de vos décisions, non de la disparition instantanée de tout sentiment ; la dignité ne dépend jamais des attirances éprouvées."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE082",
+      "source_seed_conversation_id": "CHA-CSE-CSE082",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Can temptation be intense without any deliberate consent?",
+        "fr": "Une tentation peut-elle être intense sans consentement délibéré ?"
+      },
+      "chanoine": {
+        "en": "Yes. Strength of feeling is not proof of the will's agreement. The distinction is especially important when a person experiences recurring thoughts or attractions they did not choose.",
+        "fr": "Oui. La force du sentiment ne prouve pas l’adhésion de la volonté. Cette distinction est particulièrement importante lorsqu’une personne éprouve des pensées ou attirances répétées qu’elle n’a pas choisies."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE085",
+      "source_seed_conversation_id": "CHA-CSE-CSE085",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Isn't loyalty enough to make a relationship morally good?",
+        "fr": "La loyauté ne suffit-elle pas à rendre une relation moralement bonne ?"
+      },
+      "chanoine": {
+        "en": "Loyalty is a genuine good, but Catholic ethics asks about the kind of sexual act as well as the motives and circumstances. We should recognise fidelity honestly while explaining the distinct marital claim.",
+        "fr": "La loyauté est un bien véritable, mais la morale catholique considère le genre d’acte sexuel ainsi que les motifs et les circonstances. Il faut reconnaître honnêtement la fidélité tout en exposant l’affirmation distincte concernant le mariage."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE086",
+      "source_seed_conversation_id": "CHA-CSE-CSE086",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Why do people still feel judged when the Church says it judges acts, not persons?",
+        "fr": "Pourquoi certains se sentent-ils jugés quand l’Église dit juger les actes et non les personnes ?"
+      },
+      "chanoine": {
+        "en": "Because moral teaching can be delivered with contempt, and listeners may have been treated unjustly. The distinction must be reflected in conduct: speak respectfully, avoid assumptions and protect everyone's dignity.",
+        "fr": "Parce que l’enseignement peut être présenté avec mépris et que des personnes ont pu subir l’injustice. La distinction doit se voir dans les actes : parler avec respect, éviter les suppositions et protéger la dignité de tous."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    },
+    {
+      "source_question_id": "CSE090",
+      "source_seed_conversation_id": "CHA-CSE-CSE090",
+      "origin": "ORIGINAL_EDITORIAL_FOLLOWUP_NOT_SOURCE_TEXT",
+      "visitor": {
+        "en": "Does a celibate friendship have to be emotionally distant?",
+        "fr": "Une amitié chaste doit-elle être froide et distante ?"
+      },
+      "chanoine": {
+        "en": "No. True friendship can be tender, faithful and profound. Chastity orders affection; it does not prohibit human closeness. Prudence concerns individual circumstances, not a universal ban on friendship.",
+        "fr": "Non. Une véritable amitié peut être tendre, fidèle et profonde. La chasteté ordonne l’affection ; elle n’interdit pas la proximité humaine. La prudence regarde les circonstances particulières, non une interdiction universelle de l’amitié."
+      },
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_QUESTION_SPECIFIC_BILINGUAL_FOLLOWUP"
+    }
+  ]
+}

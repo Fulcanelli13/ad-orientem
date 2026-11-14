@@ -1,0 +1,561 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B05_AUTHORITY_CONSCIENCE_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_UNAPPROVED_BILINGUAL_DELTAS",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "sourceOwnerBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "counts": {
+    "families": 4,
+    "answerUnits": 8,
+    "specialistFamilies": 2,
+    "generalReviewFamilies": 2,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE016",
+      "sourceQuestionId": "CSE016",
+      "canonicalOwner": "SEX-CORE-04",
+      "originalRecord": {
+        "source_question_id": "CSE016",
+        "conversation_id": "CHA-CSE-CSE016",
+        "canonical_topic_owner": "SEX-CORE-04",
+        "title": "What if my conscience tells me the Church is wrong?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What if my conscience tells me the Church is wrong?",
+          "fr": "Et si ma conscience me dit que l’Église se trompe ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Conscience must be taken seriously, but it is not an infallible power that creates moral truth. It is a personal judgment about how objective moral truth applies here and now, and it can be mistaken.",
+          "fr": "La conscience doit être prise au sérieux, mais elle n’est pas une puissance infaillible qui crée la vérité morale. Elle est un jugement personnel sur l’application ici et maintenant de la vérité morale objective, et elle peut se tromper."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Your conscience cannot simply be ignored; you must act responsibly before God. Yet conscience is a judgment that seeks the truth, not a power that makes something true by deciding it. Let us examine the difficulty without haste: what exactly is taught, on what grounds, and what have you understood?",
+          "fr": "On ne peut simplement écarter votre conscience ; vous devez agir en personne responsable devant Dieu. Toutefois, la conscience est un jugement qui cherche la vérité, non un pouvoir qui la crée par sa décision. Examinons sans précipitation la difficulté : qu’enseigne-t-on exactement, sur quels fondements, et qu’en avez-vous compris ?"
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Doesn’t “form your conscience” just mean “make it agree with the Church”?",
+          "fr": "« Former sa conscience » ne signifie-t-il pas simplement « la faire coïncider avec l’Église » ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Donum Veritatis §§28–30 addresses theologians who have serious difficulties with non-irreformable teaching: it demands patient inquiry, loyalty to the Magisterium and readiness to revise their views. The instruction does not turn private conscience into an alternative teaching authority. Every Catholic must seek to form conscience truthfully rather than treat sincere disagreement as permission to disregard a moral norm.",
+          "fr": "Donum Veritatis (§§28–30) traite des théologiens éprouvant de sérieuses difficultés devant un enseignement non irréformable : il demande une recherche patiente, la fidélité au Magistère et la disponibilité à réviser leurs conclusions. Ce texte ne fait pas de la conscience privée une autorité doctrinale parallèle. Tout catholique doit former sa conscience dans la vérité et ne peut tenir un désaccord sincère pour une permission de méconnaître une norme morale."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Formation of conscience is not a command to suspend thought. It asks that we seek the truth, examine the reasons and give the Church’s teaching its proper authority. Even serious difficulties require patient inquiry; sincerity does not transform private judgment into a second Magisterium.",
+          "fr": "Former la conscience n’ordonne pas de cesser de réfléchir. Il faut chercher la vérité, examiner les raisons et reconnaître à l’enseignement de l’Église son autorité propre. Même une difficulté sérieuse demande une recherche patiente ; la sincérité ne transforme pas le jugement privé en second Magistère."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST19",
+              "locator": "aa.5–6"
+            },
+            {
+              "registry_key": "VS",
+              "locator": "§§54–64"
+            },
+            {
+              "registry_key": "DONUMVER",
+              "locator": "§§24–31"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "conscience chapter"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CANONICAL_AND_THEOLOGICAL_REVIEW",
+        "review_attention": [
+          "CANONICAL_AND_THEOLOGICAL_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Conscience judges how we should act; it does not create moral truth and can err. Let us examine the teaching and the difficulty carefully, while seeking to form conscience truthfully.",
+          "fr": "La conscience juge comment nous devons agir ; elle ne crée pas la vérité morale et peut se tromper. Examinons soigneusement l’enseignement et la difficulté, en cherchant à former la conscience dans la vérité.",
+          "claims": [
+            {
+              "text": "Conscience practical judgment, imperative, liable to error",
+              "refs": [
+                "VS59-64"
+              ]
+            },
+            {
+              "text": "Invitation to examine",
+              "refs": [
+                "VS59-64"
+              ],
+              "classification": "PASTORAL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "No. Formation seeks truth. Donum veritatis addresses theologians with serious difficulties: it calls for patient study and loyalty, and acknowledges that difficulties can persist. It does not make private conscience a rival doctrinal authority.",
+          "fr": "Non. La formation cherche la vérité. Donum veritatis s’adresse aux théologiens éprouvant de sérieuses difficultés : il demande étude patiente et loyauté, tout en reconnaissant que des difficultés peuvent demeurer. Il ne fait pas de la conscience privée une autorité doctrinale rivale.",
+          "claims": [
+            {
+              "text": "Formation seeks truth",
+              "refs": [
+                "VS59-64"
+              ]
+            },
+            {
+              "text": "Theologian-specific difficulty, study, persistence and private conscience limit",
+              "refs": [
+                "DV28-31"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "EDITORIAL_CHANOINE_PARAPHRASE_AND_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "sourceHumanCertification": false,
+      "theologyApproved": false,
+      "languageApproved": false,
+      "voiceApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE017",
+      "sourceQuestionId": "CSE017",
+      "canonicalOwner": "SEX-CORE-04",
+      "originalRecord": {
+        "source_question_id": "CSE017",
+        "conversation_id": "CHA-CSE-CSE017",
+        "canonical_topic_owner": "SEX-CORE-04",
+        "title": "What if I sincerely believe a sexual act is morally acceptable?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What if I sincerely believe a sexual act is morally acceptable?",
+          "fr": "Et si je crois sincèrement qu’un acte sexuel est moralement acceptable ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Sincerity matters, but sincerity and truth are not identical. A genuinely unavoidable error can reduce or remove guilt; ignorance caused by negligence or refusal to learn does not automatically excuse.",
+          "fr": "La sincérité compte, mais sincérité et vérité ne sont pas identiques. Une erreur réellement inévitable peut diminuer ou supprimer la culpabilité ; l’ignorance due à la négligence ou au refus de s’instruire n’excuse pas automatiquement."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Sincerity is important, and God sees what we have truly understood and freely chosen. But conviction alone does not establish that an act is right. An unavoidable mistake may diminish culpability; a refusal to seek the truth is a different matter. A sound examination of conscience must hold both points together.",
+          "fr": "La sincérité importe, et Dieu voit ce que nous avons réellement compris et librement choisi. Mais la conviction ne suffit pas à rendre un acte juste. Une erreur invincible peut diminuer la culpabilité ; le refus de chercher la vérité est tout autre chose. Un bon examen de conscience doit tenir ensemble ces deux points."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does that mean I am guilty even when I have tried sincerely to understand?",
+          "fr": "Cela signifie-t-il que je suis coupable même si j’ai sincèrement cherché à comprendre ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No one should draw that conclusion from sincerity alone. Responsibility depends on what you could reasonably know and freely choose in the actual circumstances. A confessor may help you discern this; neither harsh presumption nor automatic self-acquittal is adequate.",
+          "fr": "Il ne faut pas tirer cette conclusion de la seule sincérité. La responsabilité dépend de ce que vous pouviez raisonnablement connaître et choisir librement dans les circonstances réelles. Un confesseur peut aider à discerner ; ni la sévérité présumée ni l’absolution automatique ne suffisent."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST76",
+              "locator": "aa.1–4"
+            },
+            {
+              "registry_key": "VS",
+              "locator": "§§62–64"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Sincerity does not make an act objectively good. Invincible ignorance may remove personal guilt; culpable neglect of the truth is different. I cannot decide your personal culpability from sincerity alone.",
+          "fr": "La sincérité ne rend pas un acte objectivement bon. L’ignorance invincible peut supprimer la culpabilité personnelle ; négliger coupablement la vérité est différent. Je ne peux juger votre culpabilité personnelle sur la seule sincérité.",
+          "claims": [
+            {
+              "text": "Objective disorder versus non-imputability and culpable ignorance",
+              "refs": [
+                "VS62-64"
+              ]
+            },
+            {
+              "text": "No individual verdict",
+              "refs": [],
+              "classification": "EPISTEMIC_BOUNDARY"
+            }
+          ]
+        },
+        {
+          "en": "That conclusion does not follow. We must distinguish the act’s moral character from what you knew and freely chose; a confessor can help examine the circumstances.",
+          "fr": "Cette conclusion ne s’impose pas. Il faut distinguer la valeur morale de l’acte de ce que vous saviez et choisissiez librement ; un confesseur peut aider à examiner les circonstances.",
+          "claims": [
+            {
+              "text": "Objective character versus knowledge and choice",
+              "refs": [
+                "VS62-64",
+                "PX700"
+              ]
+            },
+            {
+              "text": "Seek confessor's counsel",
+              "refs": [
+                "PX737"
+              ],
+              "classification": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "EDITORIAL_CHANOINE_PARAPHRASE_AND_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "sourceHumanCertification": false,
+      "theologyApproved": false,
+      "languageApproved": false,
+      "voiceApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE018",
+      "sourceQuestionId": "CSE018",
+      "canonicalOwner": "SEX-CORE-04",
+      "originalRecord": {
+        "source_question_id": "CSE018",
+        "conversation_id": "CHA-CSE-CSE018",
+        "canonical_topic_owner": "SEX-CORE-04",
+        "title": "What if Catholic theologians disagree?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What if Catholic theologians disagree?",
+          "fr": "Et si des théologiens catholiques ne sont pas d’accord ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "The first question is not how many theologians disagree, but what authority the disputed teaching has. Some questions are genuinely open. But where the Magisterium has authoritatively settled a moral point, theological dissent does not by itself make the opposite position permissible. Donum Veritatis explicitly distinguishes legitimate difficulty or further inquiry from treating the Magisterium as merely one opinion among others.",
+          "fr": "La première question n’est pas de savoir combien de théologiens sont en désaccord, mais quelle autorité possède l’enseignement contesté. Certaines questions sont réellement ouvertes. Mais lorsque le Magistère a tranché de manière autoritative un point moral, le dissentiment de théologiens ne rend pas, à lui seul, la position contraire permise. Donum Veritatis distingue explicitement une difficulté légitime ou une recherche ultérieure du fait de traiter le Magistère comme une opinion parmi d’autres."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The existence of disagreement is a reason to identify the question more exactly, not to count opposing names. Some matters are open to theological inquiry; others have been authoritatively settled. We must establish the authority and scope of the teaching before deciding how a disagreement affects it.",
+          "fr": "L’existence d’un désaccord invite à mieux définir la question, non à compter les noms de part et d’autre. Certaines matières demeurent ouvertes à la recherche théologique ; d’autres ont été tranchées avec autorité. Il faut établir l’autorité et la portée de l’enseignement avant de juger de la valeur du désaccord."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But theologians sometimes challenge authoritative teaching precisely because they think the argument is defective.",
+          "fr": "Mais des théologiens contestent parfois un enseignement autoritatif précisément parce qu’ils jugent l’argument défectueux."
+        },
+        "original_source_followup_reply": {
+          "en": "Where a teaching is genuinely non-irreformable, serious difficulties can warrant disciplined examination; they do not create an automatic permission to contradict the teaching. Donum Veritatis §§28–31 demands an honest search for resolution, loyalty to the Magisterium and avoidance of treating theologians as a competing authority.",
+          "fr": "Lorsqu’un enseignement n’est réellement pas irréformable, des difficultés sérieuses peuvent justifier un examen rigoureux ; elles ne donnent pas automatiquement la permission de contredire l’enseignement. Donum Veritatis (§§28–31) demande une recherche loyale de solution, la fidélité au magistère et le refus de substituer une autorité théologique concurrente."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "A theologian may encounter real difficulties, especially with a teaching that is not irreformable. That permits serious and loyal examination, not an automatic licence to teach the opposite as settled truth. We should identify the teaching’s precise weight rather than count voices on either side.",
+          "fr": "Un théologien peut rencontrer de réelles difficultés, surtout devant un enseignement non irréformable. Cela permet un examen sérieux et loyal, non la permission automatique de présenter le contraire comme établi. Il faut préciser le degré d’autorité de l’enseignement, et non compter les voix."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "DONUMVER",
+              "locator": "§§23–31"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CANONICAL_AND_THEOLOGICAL_REVIEW",
+        "review_attention": [
+          "CANONICAL_AND_THEOLOGICAL_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "First identify the teaching’s authority. Revealed doctrine, definitive teaching and non-definitive magisterial teaching call for distinct forms of assent; disagreement alone does not settle the question.",
+          "fr": "Précisons d’abord l’autorité de l’enseignement. Doctrine révélée, enseignement définitif et enseignement magistériel non définitif appellent des formes distinctes d’adhésion ; le désaccord seul ne tranche pas la question.",
+          "claims": [
+            {
+              "text": "Distinctions of assent",
+              "refs": [
+                "DV23-24"
+              ]
+            },
+            {
+              "text": "Disagreement insufficient",
+              "refs": [
+                "DV28-31"
+              ],
+              "classification": "FAITHFUL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Serious difficulties about non-irreformable teaching call for loyal examination and communication with the responsible authority. Donum veritatis distinguishes persistent personal difficulty from public dissent; it does not require pretending that every difficulty has vanished.",
+          "fr": "De sérieuses difficultés devant un enseignement non irréformable demandent un examen loyal et un échange avec l’autorité responsable. Donum veritatis distingue la difficulté personnelle persistante du dissentiment public ; il ne demande pas de feindre que toute difficulté a disparu.",
+          "claims": [
+            {
+              "text": "Study, authorities, persistence versus public dissent",
+              "refs": [
+                "DV28-32"
+              ]
+            },
+            {
+              "text": "No pretended resolution",
+              "refs": [
+                "DV31"
+              ],
+              "classification": "FAITHFUL_EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "EDITORIAL_CHANOINE_PARAPHRASE_AND_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "sourceHumanCertification": false,
+      "theologyApproved": false,
+      "languageApproved": false,
+      "voiceApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE019",
+      "sourceQuestionId": "CSE019",
+      "canonicalOwner": "SEX-CORE-04",
+      "originalRecord": {
+        "source_question_id": "CSE019",
+        "conversation_id": "CHA-CSE-CSE019",
+        "canonical_topic_owner": "SEX-CORE-04",
+        "title": "What is the difference between grave matter and personal guilt?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What is the difference between grave matter and personal guilt?",
+          "fr": "Quelle différence y a-t-il entre matière grave et culpabilité personnelle ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Grave matter describes the objective seriousness of an act. Mortal culpability additionally requires sufficient knowledge and deliberate consent, so the Church can judge an act’s gravity more readily than the interior guilt of a particular person.",
+          "fr": "La matière grave décrit la gravité objective d’un acte. La culpabilité mortelle exige en outre une connaissance suffisante et un consentement délibéré ; l’Église peut donc juger plus facilement la gravité d’un acte que la culpabilité intérieure d’une personne particulière."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Grave matter describes the seriousness of the deed; mortal sin in a particular soul also requires sufficient knowledge and deliberate consent. Those are distinct judgments. I can explain the moral law; I cannot read another person's conscience or announce with certainty the state of that soul before God.",
+          "fr": "La matière grave désigne la gravité de l’acte ; le péché mortel d’une personne exige aussi une connaissance suffisante et un consentement délibéré. Ce sont deux jugements distincts. Je peux exposer la loi morale ; je ne peux lire la conscience d’autrui ni déclarer avec certitude l’état de son âme devant Dieu."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "So can someone commit an objectively grave act without mortal sin?",
+          "fr": "Quelqu’un peut-il donc accomplir un acte objectivement grave sans commettre de péché mortel ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Yes, where full knowledge or deliberate consent is absent. That does not make the act objectively good; it means we must not confuse its gravity with a verdict on a soul. In confession, speak plainly without trying to calculate your guilt by yourself.",
+          "fr": "Oui, lorsque la pleine connaissance ou le consentement délibéré fait défaut. Cela ne rend pas l’acte objectivement bon ; cela signifie qu’il ne faut pas confondre sa gravité avec un verdict sur une âme. En confession, parlez simplement sans chercher à calculer seul votre culpabilité."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "PIUSX",
+              "locator": "conditions for mortal sin"
+            },
+            {
+              "registry_key": "ST76",
+              "locator": "aa.1–4"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Grave matter concerns the act’s seriousness. Mortal sin also requires full awareness and deliberate consent. I can explain those conditions, but cannot read a person’s conscience.",
+          "fr": "La matière grave concerne la gravité de l’acte. Le péché mortel exige aussi une pleine connaissance et un consentement délibéré. Je peux expliquer ces conditions, mais non lire la conscience d’une personne.",
+          "claims": [
+            {
+              "text": "Mortal sin conditions",
+              "refs": [
+                "PX700"
+              ]
+            },
+            {
+              "text": "Limit of speaker",
+              "refs": [],
+              "classification": "EPISTEMIC_BOUNDARY"
+            }
+          ]
+        },
+        {
+          "en": "Yes, if full awareness or deliberate consent is lacking. This concerns personal culpability; it does not turn an objectively evil act into a good act.",
+          "fr": "Oui, si la pleine connaissance ou le consentement délibéré fait défaut. Cela concerne la culpabilité personnelle ; un acte objectivement mauvais n’en devient pas bon.",
+          "claims": [
+            {
+              "text": "Conditions and objective act distinction",
+              "refs": [
+                "PX700",
+                "VS63"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "EDITORIAL_CHANOINE_PARAPHRASE_AND_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "sourceHumanCertification": false,
+      "theologyApproved": false,
+      "languageApproved": false,
+      "voiceApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DV23-24",
+      "work": "CDF, Donum veritatis, 24 May 1990, §§23–24",
+      "urlEN": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "urlFR": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_fr.html",
+      "urlLatin": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_lt.html",
+      "exactLatinExcerpt": "religiosum voluntatis et intellectus obsequium",
+      "supports": "Distinct authority/assent categories and assessment of nature, repetition and mode of expression"
+    },
+    {
+      "id": "DV28-31",
+      "work": "Same instruction §§28–31",
+      "urlEN": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "urlFR": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_fr.html",
+      "urlLatin": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_lt.html",
+      "exactLatinExcerpt": "conscientiae theologi",
+      "supports": "Theologian's serious difficulty, no autonomous doctrinal authority, patient study, notification of magisterial authority, possible persistence"
+    },
+    {
+      "id": "DV28-32",
+      "work": "Same instruction §§28–32",
+      "urlEN": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "urlFR": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_fr.html",
+      "urlLatin": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_lt.html",
+      "supports": "Personal difficulty versus public dissent"
+    },
+    {
+      "id": "DV31",
+      "work": "Same instruction §31",
+      "urlEN": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "urlFR": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_fr.html",
+      "urlLatin": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_lt.html",
+      "exactLatinExcerpt": "difficultates remaneant",
+      "supports": "Possibility difficulty persists after loyal study; continued openness"
+    },
+    {
+      "id": "VS59-64",
+      "work": "John Paul II, Veritatis splendor (6 August 1993), §§59–64",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "exactEnglishExcerpt": "The judgment of conscience does not establish the law",
+      "supports": "Conscience's judgment/authority/error/truth/formation"
+    },
+    {
+      "id": "VS62-64",
+      "work": "Same encyclical §§62–64",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "supports": "Invincible and culpable ignorance; objective evil versus non-imputability"
+    },
+    {
+      "id": "VS63",
+      "work": "Same encyclical §63",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "supports": "Non-imputability does not make objective evil good"
+    },
+    {
+      "id": "PX700",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §3; editorial Q700",
+      "incipitItalian": "Che cosa si richiede perché un peccato sia mortale?",
+      "exactItalianExcerpt": "materia grave, piena avvertenza, e perfetto consenso della volontà.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX737",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q737",
+      "incipitItalian": "Che cosa si deve fare per correggere gli abiti cattivi?",
+      "exactItalianExcerpt": "avere un buon direttore stabile",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    }
+  ],
+  "meaningfulChanges": [
+    "Avoid transferring a theologian-specific procedural instruction wholesale to every lay conscience problem",
+    "Include §31 persistent difficulty, which the shorter original pastoral reply could obscure",
+    "Distinguish revealed/definitive/non-definitive assent rather than a binary settled/open formula",
+    "Do not equate sincere disagreement with innocence or public dissent automatically"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE016",
+        "CSE018"
+      ],
+      "relation": "Shared SEX-CORE-04 and DV source; distinct lay conscience versus theologians' disagreement intents retained"
+    },
+    {
+      "ids": [
+        "CSE017",
+        "CSE019"
+      ],
+      "relation": "Subjective imputability versus objective gravity; same owner, no duplicated canonical rule"
+    }
+  ],
+  "humanDecisions": [
+    "Qualified theological reviewer must assess precise doctrinal weight of any specific teaching; this packet does not assign a blanket authority to all sexual-ethics propositions",
+    "Verify EN/FR authority terminology and no coercive counseling"
+  ],
+  "newSubstantiveGaps": [],
+  "denzingerRequired": false,
+  "continue": true
+}

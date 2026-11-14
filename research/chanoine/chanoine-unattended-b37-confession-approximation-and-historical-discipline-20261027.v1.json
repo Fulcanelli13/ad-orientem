@@ -1,0 +1,195 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B37_PENANCE_SOURCE_CROSSLINK_V1",
+  "asOf": "2026-10-27",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": {
+    "historicalBaseline": "2026-10-21: 68 families examined including duplicates, 65 improved, 130 answer units, 64 complete packets awaiting human certification",
+    "latestRead": "B35 (2026-10-26) and 147-family source/review ledger; no B37+ before this write",
+    "scope": "existing CHA-CSE-CSE131 through CSE140, no new canonical family",
+    "originalEnglishChanoineSource": "STILL_BLOCKED_DO_NOT_RECONSTRUCT",
+    "personas": "Chanoine editorial persona distinct from Pius X; neither later 1983 code nor modern application attributed to historical speaker"
+  },
+  "sources": {
+    "PX1905": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q630–631, Q731–740, Q751–752",
+      "class": "historical Italian catechism online transcription, print not collated"
+    },
+    "CIC": {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "loci": "can. 979, 987–988",
+      "class": "1983 canon law, later editorial source"
+    },
+    "CCC": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "§§1454–1458",
+      "class": "later catechism"
+    },
+    "RS": {
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html",
+      "loci": "§81, quoting 1983 can. 916",
+      "class": "2004 authoritative liturgical instruction"
+    }
+  },
+  "proposals": [
+    {
+      "existingFamilyId": "CHA-CSE-CSE134",
+      "sourceQuestionId": "CSE134",
+      "change": "ADD_PRECISE_HISTORICAL_LOCATOR_NOT_A_NEW_FAMILY",
+      "proposedOpening": {
+        "en": "When the exact number of grave sins is genuinely forgotten, give an honest approximate number rather than an invented precision. The duty to confess grave sins by kind and number remains; the 1905 Catechism itself expressly allows an approximate number when memory fails.",
+        "fr": "Lorsque le nombre exact des péchés graves est réellement oublié, donnez un nombre approximatif sincère plutôt qu'une précision inventée. L'obligation de confesser les péchés graves selon l'espèce et le nombre demeure ; le Catéchisme de 1905 prévoit lui-même un nombre approximatif quand la mémoire fait défaut."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is approximation only a modern pastoral relaxation?",
+          "fr": "L'approximation est-elle une simple concession pastorale moderne ?"
+        },
+        "answer": {
+          "en": "No. Question 752 of the 1905 Catechism directly addresses imperfect recollection of the number. Canon 988 §1 supplies the later legal obligation; do not misattribute the exact 1905 wording to that canon.",
+          "fr": "Non. La question 752 du Catéchisme de 1905 traite directement du souvenir imparfait du nombre. Le canon 988 §1 énonce l'obligation juridique ultérieure ; il ne faut pas lui attribuer les mots exacts du texte de 1905."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q752",
+        "CIC 1983 can. 988 §1"
+      ],
+      "evidenceClass": "ITALIAN_SOURCE_LOCATOR_VERIFIED_EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_AND_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE135",
+      "sourceQuestionId": "CSE135",
+      "change": "OPTIONAL_SOURCE_DEEPENING_PRESERVE_EXISTING_DRAFT",
+      "proposedOpening": {
+        "en": "A firm purpose of amendment is a real decision now to turn away from sin and use the means needed to avoid it. It does not mean pretending to know that no future fall is possible. The 1905 Catechism also calls for prayer, vigilance and steady spiritual guidance when habits are entrenched.",
+        "fr": "Le ferme propos est une décision réelle, prise maintenant, de se détourner du péché et d'employer les moyens nécessaires pour l'éviter. Il ne consiste pas à prétendre savoir qu'aucune chute future ne sera possible. Le Catéchisme de 1905 recommande aussi la prière, la vigilance et une direction spirituelle suivie lorsque les habitudes sont enracinées."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What if a dangerous situation cannot simply be avoided?",
+          "fr": "Et si une situation dangereuse ne peut être simplement évitée ?"
+        },
+        "answer": {
+          "en": "Question 740 advises bringing an unavoidable occasion to the confessor and following prudent counsel. This is not a license to remain deliberately in avoidable near occasions; nor is it a claim that every difficult circumstance can be removed immediately.",
+          "fr": "La question 740 conseille d'exposer au confesseur une occasion qu'on ne peut éviter et de suivre ses conseils prudents. Cela n'autorise pas à demeurer volontairement dans les occasions prochaines évitables ; cela ne suppose pas non plus que toute situation difficile puisse être supprimée immédiatement."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q731, Q735–740",
+        "CIC 1983 can. 987"
+      ],
+      "evidenceClass": "ITALIAN_SOURCE_LOCATOR_VERIFIED_EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_AND_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE139",
+      "sourceQuestionId": "CSE139",
+      "change": "HISTORICAL_VS_CURRENT_DISCIPLINE_CLARIFICATION_OPTIONAL_FOLLOWUP",
+      "proposedOpening": {
+        "en": "A person conscious of grave sin ordinarily goes to sacramental confession before Holy Communion. Current discipline provides a narrow exception only when there is a grave reason to receive and no opportunity for confession; perfect contrition and the intention to confess as soon as possible are required. The older 1905 Catechism's instruction should not be silently rewritten as though it stated that later exception.",
+        "fr": "Une personne consciente d'un péché grave recourt normalement à la confession sacramentelle avant la sainte Communion. La discipline actuelle ne prévoit une exception étroite qu'en présence d'une raison grave de communier et de l'impossibilité de se confesser ; elle exige la contrition parfaite et l'intention de se confesser dès que possible. Il ne faut pas réécrire silencieusement l'instruction du Catéchisme de 1905 comme si elle formulait cette exception ultérieure."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Did the 1905 text give the present canonical exception in those terms?",
+          "fr": "Le texte de 1905 formulait-il l'exception canonique actuelle dans ces termes ?"
+        },
+        "answer": {
+          "en": "No. Its questions 630–631 teach confession before Communion for one conscious of mortal sin. The grave-reason/no-confession-opportunity exception is stated in current canon 916, reiterated by Redemptionis Sacramentum §81. Distinguish the documents and their dates.",
+          "fr": "Non. Ses questions 630–631 enseignent la confession avant la Communion pour qui a conscience d'un péché mortel. L'exception de la raison grave et de l'absence de possibilité de confession relève du canon 916 actuel, rappelé dans Redemptionis Sacramentum, §81. Il faut distinguer les documents et leurs dates."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q630–631",
+        "CIC 1983 can. 916 (quoted in Redemptionis Sacramentum §81)",
+        "CCC §1457"
+      ],
+      "evidenceClass": "CROSS_PERIOD_DOCTRINAL_DISCIPLINARY_COMPARISON_EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "reviewGate": "HUMAN_HISTORICAL_VOICE_AND_PASTORAL_REVIEW_REQUIRED_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "noRewrite": [
+    {
+      "id": "CSE132",
+      "reason": "Kind/number explanation already source-consistent; no duplicate improvement."
+    },
+    {
+      "id": "CSE138",
+      "reason": "Existing repentance/hope pastoral draft source-consistent; retain."
+    },
+    {
+      "id": "CSE140",
+      "reason": "Existing virtue programme source-consistent; retain."
+    }
+  ],
+  "specialistHolds": [
+    {
+      "id": "CSE131",
+      "reason": "Confessional handling and unnecessary detail: priestly pastoral review"
+    },
+    {
+      "id": "CSE133",
+      "reason": "Sensitive questioning: canon 979, pastoral safeguarding review"
+    },
+    {
+      "id": "CSE136",
+      "reason": "Scruples and intrusive thoughts: individual pastoral/mental-health review, no universal rule"
+    },
+    {
+      "id": "CSE137",
+      "reason": "Scrupulosity and consent: pastoral/mental-health review"
+    }
+  ],
+  "nextQueue": [
+    "CSE141–147: reconcile with existing 147-family editorial review and specialist flags before proposing edits",
+    "CSE131/CSE133/CSE136/CSE137: human confessional/safeguarding review",
+    "CSE134/CSE135/CSE139: human historical and modern-source distinction",
+    "Original English Chanoine witness remains blocked; no invented source text"
+  ],
+  "counts": {
+    "existingFamiliesScoped": 10,
+    "proposedDistinctFamilies": 3,
+    "bilingualAnswerUnitsProposed": 6,
+    "noRewrite": 3,
+    "specialistHolds": 4,
+    "newCanonicalIds": 0,
+    "humanCertified": 0
+  },
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}

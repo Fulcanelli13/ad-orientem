@@ -1,0 +1,390 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B09_MORAL_OBJECT_SOURCE_DELTAS_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE008",
+      "sourceQuestionId": "CSE008",
+      "canonicalOwner": "SEX-CORE-02",
+      "originalRecord": {
+        "source_question_id": "CSE008",
+        "conversation_id": "CHA-CSE-CSE008",
+        "canonical_topic_owner": "SEX-CORE-02",
+        "title": "Can a good intention justify a sexual act?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Can a good intention justify a sexual act?",
+          "fr": "Une bonne intention peut-elle justifier un acte sexuel ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "A good intention matters, but it cannot make every means good. Catholic morality examines both why a person acts and what the person deliberately chooses to do.",
+          "fr": "Une bonne intention compte, mais elle ne peut rendre bon n’importe quel moyen. La morale catholique examine à la fois pourquoi une personne agit et ce qu’elle choisit délibérément de faire."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A good intention deserves to be taken seriously, particularly when a person is afraid or distressed. Still, the end we desire and the means we deliberately choose are not the same thing. Compassion should help us seek a good way forward, not persuade us that any means becomes right through affection.",
+          "fr": "Une bonne intention mérite d’être prise au sérieux, surtout lorsqu’une personne agit dans la peur ou la détresse. Toutefois, la fin désirée et les moyens volontairement choisis ne sont pas identiques. La compassion doit nous aider à chercher une voie juste, non à croire que l’affection rend tout moyen légitime."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But in real life the object and intention are often inseparable. Isn’t this distinction artificial?",
+          "fr": "Mais dans la vie réelle, l’objet et l’intention sont souvent inséparables. Cette distinction n’est-elle pas artificielle ?"
+        },
+        "original_source_followup_reply": {
+          "en": "They are connected but not identical. The same desired end can be pursued by different means, and moral reasoning routinely distinguishes between them. Wanting to save a relationship, avoid pregnancy or relieve distress does not tell us which act was chosen to achieve that end.",
+          "fr": "Ils sont liés mais non identiques. La même fin désirée peut être poursuivie par des moyens différents, et le raisonnement moral les distingue constamment. Vouloir sauver une relation, éviter une grossesse ou soulager une détresse ne dit pas quel acte a été choisi pour y parvenir."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "I grant you that intention and action are closely joined. Yet someone may seek one good end through several very different means. To know that a person wishes to preserve love or avoid suffering is not yet to know what he has actually chosen to do.",
+          "fr": "Je vous accorde que l’intention et l’acte sont étroitement unis. Pourtant, on peut rechercher une même bonne fin par des moyens fort différents. Savoir qu’une personne souhaite préserver l’amour ou éviter la souffrance ne nous dit pas encore quel acte elle a choisi."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Rom 3:8"
+            },
+            {
+              "registry_key": "ST18",
+              "locator": "aa.4,6"
+            },
+            {
+              "registry_key": "VS",
+              "locator": "§§78–80"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "A good intention cannot make an evil chosen means good. We must ask both what you intend to achieve and what you deliberately choose to do.",
+          "fr": "Une bonne intention ne peut rendre bon un moyen mauvais choisi. Il faut considérer à la fois la fin recherchée et ce que vous choisissez délibérément de faire.",
+          "claims": [
+            {
+              "text": "Intent versus chosen moral object",
+              "refs": [
+                "VS78",
+                "ST18a4"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "They are connected, but not identical. The moral object is the proximate end of the deliberate choice, not merely a physical event or the further benefit hoped for.",
+          "fr": "Ils sont liés, mais non identiques. L’objet moral est la fin prochaine du choix délibéré, non un simple événement physique ni le bien ultérieur espéré.",
+          "claims": [
+            {
+              "text": "Moral object/proximate end versus ulterior intent",
+              "refs": [
+                "VS78"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_APOLOGETICAL_PARAPHRASE_WITH_MARKED_METHOD_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE009",
+      "sourceQuestionId": "CSE009",
+      "canonicalOwner": "SEX-CORE-02",
+      "originalRecord": {
+        "source_question_id": "CSE009",
+        "conversation_id": "CHA-CSE-CSE009",
+        "canonical_topic_owner": "SEX-CORE-02",
+        "title": "Can circumstances make an otherwise wrong act right?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Can circumstances make an otherwise wrong act right?",
+          "fr": "Les circonstances peuvent-elles rendre bon un acte autrement mauvais ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Circumstances can affect gravity, culpability and sometimes the moral species of an act. But favourable circumstances cannot make every possible choice good if the object deliberately chosen is itself intrinsically disordered.",
+          "fr": "Les circonstances peuvent affecter la gravité, la culpabilité et parfois l’espèce morale d’un acte. Mais des circonstances favorables ne peuvent rendre bon n’importe quel choix si l’objet volontairement choisi est lui-même intrinsèquement désordonné."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Circumstances matter greatly: they can alter the seriousness of a deed and a person's responsibility, and sometimes help specify what act was actually chosen. They cannot, however, turn an intrinsically wrong moral object into a good one. We must judge carefully before applying either conclusion to a particular case.",
+          "fr": "Les circonstances comptent beaucoup : elles peuvent modifier la gravité d'un acte et la responsabilité d'une personne, et parfois préciser l'acte réellement choisi. Elles ne peuvent cependant rendre bon un objet moral intrinsèquement mauvais. Il faut examiner soigneusement les faits avant de porter l'un ou l'autre jugement sur un cas particulier."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If circumstances can change what an act is, isn't the rule meaningless?",
+          "fr": "Si les circonstances peuvent modifier la nature d’un acte, la règle n’est-elle pas vide ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Facts may be essential to identifying the chosen object, but they do not abolish moral distinctions. We should first describe the action accurately; only then ask what its circumstances change about responsibility, gravity or moral classification.",
+          "fr": "Non. Les faits peuvent être essentiels pour identifier l’objet choisi, mais ils n’abolissent pas les distinctions morales. Décrivons d’abord exactement l’acte ; demandons ensuite ce que ses circonstances changent à la responsabilité, à la gravité ou à sa qualification morale."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST18",
+              "locator": "aa.10–11"
+            },
+            {
+              "registry_key": "VS",
+              "locator": "§§79–82"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Some facts help identify the moral object itself; other circumstances affect gravity or responsibility. Neither good consequences nor a further good intention makes an intrinsically evil object good.",
+          "fr": "Certains faits précisent l’objet moral lui-même ; d’autres circonstances modifient la gravité ou la responsabilité. Ni de bonnes conséquences ni une bonne intention ultérieure ne rendent bon un objet intrinsèquement mauvais.",
+          "claims": [
+            {
+              "text": "Specifying facts versus accidental circumstances",
+              "refs": [
+                "ST18a10-11"
+              ]
+            },
+            {
+              "text": "Intrinsic object not justified by outcomes",
+              "refs": [
+                "VS79-81"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "No. Aquinas distinguishes a circumstance that becomes a condition of the object from one that merely makes an act better or worse. Accurate classification comes before applying the rule.",
+          "fr": "Non. Saint Thomas distingue la circonstance qui devient une condition de l’objet de celle qui augmente seulement le bien ou le mal de l’acte. Il faut identifier exactement l’acte avant d’appliquer la règle.",
+          "claims": [
+            {
+              "text": "Species conditions versus degree",
+              "refs": [
+                "ST18a10-11"
+              ]
+            },
+            {
+              "text": "Classification first",
+              "refs": [
+                "VS78"
+              ],
+              "type": "METHOD_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_APOLOGETICAL_PARAPHRASE_WITH_MARKED_METHOD_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE010",
+      "sourceQuestionId": "CSE010",
+      "canonicalOwner": "SEX-CORE-02",
+      "originalRecord": {
+        "source_question_id": "CSE010",
+        "conversation_id": "CHA-CSE-CSE010",
+        "canonical_topic_owner": "SEX-CORE-02",
+        "title": "What does “intrinsically evil” mean?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What does “intrinsically evil” mean?",
+          "fr": "Que signifie « intrinsèquement mauvais » ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "It means an act is wrong because of the kind of act deliberately chosen, not merely because it usually has bad consequences. This objective judgment must still be distinguished from the personal culpability of the person acting.",
+          "fr": "Cela signifie qu’un acte est mauvais en raison du type d’acte volontairement choisi, et non simplement parce qu’il produit habituellement de mauvaises conséquences. Ce jugement objectif doit toutefois être distingué de la culpabilité personnelle de celui qui agit."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "This expression concerns the act, not a verdict upon the whole person. It means that a certain kind of deliberate choice is wrong by its very object, not simply because it often ends badly. Establishing that judgment requires an argument; and the person's knowledge and freedom must still be considered separately.",
+          "fr": "Cette expression concerne l’acte ; ce n’est pas un verdict sur la personne tout entière. Elle signifie qu’un certain type de choix délibéré est mauvais par son objet même, et non seulement parce qu’il entraîne souvent de mauvaises conséquences. Il faut le démontrer ; la connaissance et la liberté de la personne restent à examiner séparément."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Doesn’t that simply define the answer in advance?",
+          "fr": "Cela ne revient-il pas simplement à définir la réponse d’avance ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Only if no argument is offered for why the object is always incompatible with the good. The real work is identifying the moral object correctly and showing why it cannot be ordered to a good end. “Intrinsic evil” is the conclusion of that analysis, not a substitute for it.",
+          "fr": "Seulement si aucun argument n’est donné pour montrer pourquoi l’objet est toujours incompatible avec le bien. Le vrai travail consiste à identifier correctement l’objet moral et à montrer pourquoi il ne peut être ordonné à une bonne fin. « Intrinsèquement mauvais » est la conclusion de l’analyse, non son substitut."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "It would indeed be a circular argument if I merely pronounced the label and stopped. We must identify the chosen moral object and explain why it is always incompatible with the good. The phrase marks a conclusion to be established, not an excuse to avoid reasoning.",
+          "fr": "L’argument serait circulaire si je prononçais simplement cette étiquette. Il faut définir l’objet moral choisi et montrer pourquoi il demeure incompatible avec le bien. L’expression nomme une conclusion à démontrer, non un prétexte pour éviter le raisonnement."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "VS",
+              "locator": "§§79–82"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "An intrinsically evil act is wrong by its chosen moral object, whatever further good is intended. That judgment concerns the act; personal mortal guilt also requires knowledge and deliberate consent.",
+          "fr": "Un acte intrinsèquement mauvais l’est par son objet moral choisi, quel que soit le bien ultérieur recherché. Ce jugement porte sur l’acte ; la culpabilité mortelle exige aussi connaissance et consentement délibéré.",
+          "claims": [
+            {
+              "text": "Intrinsic evil",
+              "refs": [
+                "VS79-81"
+              ]
+            },
+            {
+              "text": "Personal culpability",
+              "refs": [
+                "PX700"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The label alone proves nothing. We must identify the object and explain why it is incompatible with the true good of the person.",
+          "fr": "L’étiquette seule ne prouve rien. Il faut identifier l’objet et montrer pourquoi il est incompatible avec le bien véritable de la personne.",
+          "claims": [
+            {
+              "text": "Reasoned identification and evaluation",
+              "refs": [
+                "VS78",
+                "VS79-81"
+              ],
+              "type": "APOLOGETICAL_METHOD_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_APOLOGETICAL_PARAPHRASE_WITH_MARKED_METHOD_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "VS78",
+      "work": "Veritatis splendor, §78",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "exactEnglishExcerpt": "the proximate end of a deliberate decision",
+      "supports": "Chosen object, perspective of acting person, not merely physical event; ulterior intention insufficient"
+    },
+    {
+      "id": "VS79-81",
+      "work": "Same encyclical §§79–81",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "supports": "Intrinsic evil by object; no good intent/circumstance justification"
+    },
+    {
+      "id": "ST18a4",
+      "work": "Aquinas, Summa theologiae I–II, q.18, a.4",
+      "url": "https://www.newadvent.org/summa/2018.htm#article4",
+      "language": "English Dominican translation on New Advent",
+      "supports": "End and object distinctions",
+      "originalLatinAvailableInThisRun": false
+    },
+    {
+      "id": "ST18a10-11",
+      "work": "Same question aa.10–11, corpus and replies",
+      "url": "https://www.newadvent.org/summa/2018.htm#article10",
+      "exactEnglishExcerpt": "a condition of the object",
+      "supports": "Circumstance specifying moral act versus merely modifying degree",
+      "originalLatinAttempt": "Corpus Thomisticum URL inaccessible; no Latin invented"
+    },
+    {
+      "id": "PX700",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §3; editorial Q700",
+      "incipitItalian": "Che cosa si richiede perché un peccato sia mortale?",
+      "exactItalianExcerpt": "materia grave, piena avvertenza, e perfetto consenso della volontà.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "CSE008: moral object is not reduced to external physical performance; distinguish chosen proximate end from ulterior desired benefit",
+    "CSE009: a condition specifying the object is not a merely accidental circumstance that justifies the same evil object",
+    "CSE010: preserve act/person and objective-gravity/subjective-culpability distinctions; label is not an argument"
+  ],
+  "canonicalRelationship": {
+    "owner": "Existing CSE moral-foundation dossier",
+    "broaderAPOLOwner": "APOL-052",
+    "action": "Keep application in CSE; reuse one foundational source principle, no cloned APOL answer",
+    "routingEnabled": false
+  },
+  "duplicates": [
+    {
+      "ids": [
+        "CSE008",
+        "CSE009",
+        "CSE010"
+      ],
+      "decision": "One moral method source bundle, distinct intention/circumstances/intrinsic-evil questions; retain contexts"
+    }
+  ],
+  "humanDecisions": [
+    "Qualified moral theologian checks object/end terminology and classification, especially CSE009",
+    "Independent English/French clarity and Chanoine persona review"
+  ],
+  "newSubstantiveGaps": [],
+  "optionalSourceLimit": "Latin Aquinas retrieval failed; existing English text supports bounded claims without bottleneck.",
+  "continue": true
+}
