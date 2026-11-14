@@ -1,0 +1,335 @@
+{
+  "schema": "ao-icksp-1962-icon-exception-adjudication-v1",
+  "asOf": "2026-10-25",
+  "status": "SOURCE_AND_EXISTING_RUNTIME_ADJUDICATION_NO_REGISTRY_OR_ASSET_MUTATION",
+  "authoritativeInputs": [
+    "data/mass/icksp-1962-full-icon-cue-screening-20261025.v1.json",
+    "data/mass/gesture-matrix.v1.json",
+    "src/mass/faithful-gesture-cues.js",
+    "src/mass/reader-cue-state.js",
+    "src/mass/reader-canonical-icons.js"
+  ],
+  "externalSources": [
+    "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+    "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+    "https://www.newadvent.org/cathen/02751a.htm"
+  ],
+  "counts": {
+    "lexicalCandidates": 15,
+    "alreadyProtectedGloriaCredo": 12,
+    "validNonliteralAnchor": 1,
+    "alreadySuppressedCanonDuplicates": 2,
+    "unboundArtRows": 17,
+    "priestArtRows": 7,
+    "faithfulArtRows": 10,
+    "liveCodeChanges": 0,
+    "canonicalIdChanges": 0
+  },
+  "lexicalAdjudications": [
+    {
+      "cueId": "AO.SM.C0055",
+      "legacyTriggerBelongsTo": "AO.SM.C0056",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0057",
+      "legacyTriggerBelongsTo": "AO.SM.C0056",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0059",
+      "legacyTriggerBelongsTo": "AO.SM.C0058",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0060",
+      "legacyTriggerBelongsTo": "AO.SM.C0061",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0062",
+      "legacyTriggerBelongsTo": "AO.SM.C0061",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0063",
+      "legacyTriggerBelongsTo": "AO.SM.C0064",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0066",
+      "legacyTriggerBelongsTo": "AO.SM.C0067",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0069",
+      "legacyTriggerBelongsTo": "AO.SM.C0068",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0092",
+      "legacyTriggerBelongsTo": "AO.SM.C0093",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0094",
+      "legacyTriggerBelongsTo": "AO.SM.C0093",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0100",
+      "legacyTriggerBelongsTo": "AO.SM.C0101",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0102",
+      "legacyTriggerBelongsTo": "AO.SM.C0101",
+      "disposition": "RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER",
+      "runtimeEvidence": [
+        "src/mass/reader-canonical-icons.js#gestureMeaning",
+        "src/mass/faithful-gesture-cues.js#GLORIA_CREDO_FAITHFUL_GESTURES"
+      ],
+      "note": "The source donor row repeats an instantaneous traditional faithful gesture on the previous/next choir phrase. Current curated LIVE permits only its exact canonical cue and applicable profile/custom, not a second icon at this cue."
+    },
+    {
+      "cueId": "AO.SM.C0084",
+      "legacyTriggerBelongsTo": "AO.SM.C0084",
+      "disposition": "VALID_SEMANTIC_EVENT_ANCHOR_NOT_LITERAL_LATIN_ERROR",
+      "runtimeEvidence": [
+        "src/mass/faithful-gesture-cues.js#ORDINARY_SUNG_GESTURE_ANCHORS"
+      ],
+      "note": "At Gospel announcement means the source event that contains Sequentia ✠; not a misaligned instruction simply because these English words are not in the Latin."
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "legacyTriggerBelongsTo": "AO.SM.C0196",
+      "disposition": "ALREADY_SUPPRESSED_BY_ACTIVE_V183_CUE_CONTROLLER",
+      "runtimeEvidence": [
+        "src/mass/reader-cue-state.js#V183_GESTURE_SUPPRESS",
+        "data/presentation/reader-text-sung.v1.json#AO.SM.C0196"
+      ],
+      "note": "The Nobis quoque peccatoribus breast strike is performed once at C0196; C0197 is the ensuing silent petition, C0198 the concluding Per Christum. The canonical cue controller already suppresses both duplicate donor gestures."
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "legacyTriggerBelongsTo": "AO.SM.C0196",
+      "disposition": "ALREADY_SUPPRESSED_BY_ACTIVE_V183_CUE_CONTROLLER",
+      "runtimeEvidence": [
+        "src/mass/reader-cue-state.js#V183_GESTURE_SUPPRESS",
+        "data/presentation/reader-text-sung.v1.json#AO.SM.C0196"
+      ],
+      "note": "The Nobis quoque peccatoribus breast strike is performed once at C0196; C0197 is the ensuing silent petition, C0198 the concluding Per Christum. The canonical cue controller already suppresses both duplicate donor gestures."
+    }
+  ],
+  "unboundArtDisposition": [
+    {
+      "cueId": "AO.SM.C0021",
+      "gestureMatrixId": "GM.F.C0021.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "PROFOUND_BOW",
+      "disposition": "FAITHFUL_CUSTOM_PROFILE_TEXT_ONLY",
+      "reason": "Profound inclination or remain kneeling depends on participation posture and local practice; do not show a universally compulsory extra action",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0023",
+      "gestureMatrixId": "GM.F.C0023.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "FAITHFUL_CUSTOM_TRANSITION_TEXT_ONLY",
+      "reason": "Continuation/end of Confiteor body bow is contextual; no new instantaneous icon",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0056",
+      "gestureMatrixId": "GM.F.C0056.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "ALREADY_HANDLED_BY_ACTIVE_EXACT_CUE_PROFILE",
+      "reason": "Adoramus te gesture supplied as optional profile-specific exact cue by Gloria/Credo projector",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0096",
+      "gestureMatrixId": "GM.F.C0096.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "GENUFLECT",
+      "disposition": "ALREADY_HANDLED_BY_ACTIVE_RUBRICAL_CALENDAR_GATE",
+      "reason": "Incarnatus genuflect/kneel resolved by selected sung Mass, including Christmas and Annunciation exception",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0117",
+      "gestureMatrixId": "GM.P.C0117.01",
+      "actor": "PRIEST",
+      "sourceGesture": "RAISE_EYES_AND_HANDS",
+      "disposition": "PRIEST_COMPLEX_ACTION_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Raised eyes and hands cannot be represented as an ordinary head bow",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "gestureMatrixId": "GM.P.C0155.01",
+      "actor": "PRIEST",
+      "sourceGesture": "MEMENTO_HANDS",
+      "disposition": "PRIEST_COMPLEX_ACTION_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Memento for the living combines hands and head movement, not a generic bow",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0161",
+      "gestureMatrixId": "GM.P.C0161.01",
+      "actor": "PRIEST",
+      "sourceGesture": "HANDS_OVER_OBLATIONS",
+      "disposition": "PRIEST_SPECIAL_GESTURE_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Hands over oblations cannot be replaced by a generic orans icon",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0169",
+      "gestureMatrixId": "GM.P.C0169.01",
+      "actor": "PRIEST",
+      "sourceGesture": "RAISE_EYES",
+      "disposition": "PRIEST_COMPLEX_ACTION_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Eyes raised over host: do not use an Elevation of the Host image prematurely",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "gestureMatrixId": "GM.F.C0173.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "ELEVATION_NOT_SAME_AS_CONSECRATION_WORDS",
+      "reason": "Held-back faithful gesture belongs to actual observed Host elevation, not the words of consecration",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "gestureMatrixId": "GM.F.C0174.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "OBSERVED_ELEVATION_PRESENTATION_SEPARATE_ATTENTION_CUE",
+      "reason": "Faithful posture/attention follows actual elevation, not an unverified source bow",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "gestureMatrixId": "GM.F.C0179.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "ELEVATION_NOT_SAME_AS_CONSECRATION_WORDS",
+      "reason": "Chalice consecration words do not establish that the Chalice is raised",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "gestureMatrixId": "GM.P.C0193.01",
+      "actor": "PRIEST",
+      "sourceGesture": "MEMENTO_HANDS",
+      "disposition": "PRIEST_COMPLEX_ACTION_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Memento of the Dead posture is multiple hand/eye phases",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "gestureMatrixId": "GM.P.C0204.01",
+      "actor": "PRIEST",
+      "sourceGesture": "MINOR_ELEVATION",
+      "disposition": "PRIEST_MINOR_ELEVATION_NEEDS_EXACT_APPROVED_ART",
+      "reason": "Minor elevation of Host and Chalice together is not either separate major elevation",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0235",
+      "gestureMatrixId": "GM.F.C0235.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "OPTIONAL_SECOND_CONFITEOR_PROFILE_TEXT_ONLY",
+      "reason": "Only if locally selected; retain conditional kneeling/bowing rather than impose icon",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0237",
+      "gestureMatrixId": "GM.F.C0237.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "HEAD_OR_BODY_BOW",
+      "disposition": "OPTIONAL_SECOND_CONFITEOR_PROFILE_TEXT_ONLY",
+      "reason": "Continuation of conditional second Confiteor; no new timed cue",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0242",
+      "gestureMatrixId": "GM.F.C0242.01",
+      "actor": "FAITHFUL",
+      "sourceGesture": "REVERENT_ATTENTION",
+      "disposition": "EXISTING_ACTIVE_ATTENTION_MEANING_NOT_NEW_GESTURE",
+      "reason": "The approved attention/look meaning is available separately in canonical byCue",
+      "approvalRequiredBeforeNewArtwork": true
+    },
+    {
+      "cueId": "AO.SM.C0263",
+      "gestureMatrixId": "GM.P.C0263.01",
+      "actor": "PRIEST",
+      "sourceGesture": "RAISE_EYES_AND_HANDS",
+      "disposition": "PRIEST_COMPLEX_ACTION_TEXT_ONLY_APPROVED_ART_ABSENT",
+      "reason": "Eyes + hands + inclination toward Cross comprise multiple gestures; keep authored rubrics until exact artwork is approved",
+      "approvalRequiredBeforeNewArtwork": true
+    }
+  ],
+  "releaseGate": "Still requires human/rendered inspection before approving new artwork or editing a frozen register; no glyphs automatically generated."
+}
