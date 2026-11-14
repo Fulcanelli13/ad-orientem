@@ -1,0 +1,78 @@
+name: Holy Trinity Dolci - one-time RISD source resolution probe
+on:
+  push:
+    branches:
+      - curation/holy-trinity-six-20261113
+    paths:
+      - .github/workflows/holy-trinity-risd-source-probe-once.yml
+permissions:
+  contents: read
+jobs:
+  risd-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install pillow
+      - name: Query documented RISD public collection API and image files
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request,json,pathlib,hashlib,io,re
+          from PIL import Image
+          folder=pathlib.Path("risd-trinity-dolci-probe");folder.mkdir(exist_ok=True)
+          headers={"User-Agent":"AdOrientemCuratorialReview/1.0 (https://github.com/Fulcanelli13/ad-orientem)"}
+          report={"object":"RISD 59.009","status":"RESEARCH_ONLY","candidates":[]}
+          def load(url,timeout=35):
+              req=urllib.request.Request(url,headers=headers)
+              with urllib.request.urlopen(req,timeout=timeout) as f:
+                  return f.read()
+          url="https://risdmuseum.org/api/v1/collection?search_api_fulltext=59.009&items_per_page=5"
+          try:
+              payload=load(url)
+              data=json.loads(payload)
+              if isinstance(data,dict):data=data.get("results") or data.get("items") or data.get("data") or []
+              report["apiCount"]=len(data)
+              matches=[x for x in data if "59.009" in str(x.get("objectNumber",""))]
+              report["matches"]=[{"id":x.get("id"),"title":x.get("title"),"objectNumber":x.get("objectNumber"),"publicDomain":x.get("publicDomain"),"images":x.get("images")} for x in matches]
+              urls=[]
+              for x in matches:
+                  imgs=x.get("images") or []
+                  for im in imgs:
+                      if isinstance(im,str):urls.append(im)
+                      elif isinstance(im,dict):urls+=list(v for v in im.values() if isinstance(v,str) and v.startswith("http"))
+              report["candidateURLs"]=list(dict.fromkeys(urls))
+              for i,uri in enumerate(report["candidateURLs"][:8]):
+                  cand={"url":uri}
+                  try:
+                      data=load(uri,timeout=65)
+                      with Image.open(io.BytesIO(data)) as im:
+                          cand["width"],cand["height"]=im.size
+                          cand["format"]=im.format
+                      cand["bytes"]=len(data);cand["sha256"]=hashlib.sha256(data).hexdigest()
+                      if max(cand["width"],cand["height"])>1024 and cand["format"] in ("JPEG","PNG","WEBP"):
+                          name="risd_dolci_candidate_"+str(i)+"."+(cand["format"].lower().replace("jpeg","jpg"))
+                          (folder/name).write_bytes(data)
+                          cand["researchFile"]=name
+                  except Exception as e:cand["error"]=repr(e)[:200]
+                  report["candidates"].append(cand)
+          except Exception as e:report["apiError"]=repr(e)[:400]
+          try:
+              html=load("https://risdmuseum.org/art-design/collection/trinity-glory-59009").decode("utf-8","ignore")
+              report["metaImages"]=list(dict.fromkeys(re.findall(r'<meta[^>]+(?:og:image|twitter:image)[^>]+content=["\']([^"\']+)',html,re.I)))[:8]
+              report["filePaths"]=list(dict.fromkeys(re.findall(r'["\']([^"\']*(?:museumplus|69902|Trinity)[^"\']*\.(?:jpg|jpeg|png|webp))',html,re.I)))[:10]
+          except Exception as e:report["htmlError"]=repr(e)[:300]
+          (folder/"RISD_SOURCE_PROBE.json").write_text(json.dumps(report,indent=2)+"\n")
+          print(json.dumps(report,ensure_ascii=False)[:9500])
+          PY
+      - name: Save research-only source probe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-trinity-risd-source-probe
+          path: risd-trinity-dolci-probe/
+          retention-days: 30
+          if-no-files-found: warn
