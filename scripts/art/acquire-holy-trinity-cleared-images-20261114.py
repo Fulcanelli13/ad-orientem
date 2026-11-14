@@ -5,6 +5,7 @@ Requires Pillow. Writes source originals unchanged and separate WebP derivatives
 """
 import hashlib, json, os, pathlib, shutil, sys, time, urllib.request
 from PIL import Image, ImageOps
+Image.MAX_IMAGE_PIXELS = 400_000_000  # verified 19k x 19k KMSKA IIIF provenance
 
 ROOT=pathlib.Path("trinity-cleared-acquisition")
 MASTERS=ROOT/"originals"
@@ -49,6 +50,8 @@ for filename,urls,rights,expected in IMAGES:
         for attempt in range(2):
             try:
                 dimensions=get(url,file)
+                if expected and dimensions!=(expected["width"],expected["height"]):
+                    raise ValueError("Institutional image pixel dimensions do not match known source")
                 record["status"]="ACQUIRED"
                 record["source"]=url
                 record["width"],record["height"]=dimensions
@@ -57,6 +60,8 @@ for filename,urls,rights,expected in IMAGES:
                 record["bytes"]=file.stat().st_size
                 record["expectedDimensionsEqual"]=(expected is None or dimensions==(expected["width"],expected["height"]))
                 image=Image.open(file)
+                if max(image.size)>5000 and image.format=="JPEG":
+                    image.draft("RGB",(4000,4000))  # decode reduced source for derivatives only
                 icc=image.info.get("icc_profile")
                 image=ImageOps.exif_transpose(image)
                 if image.mode not in ("RGB","RGBA"):
