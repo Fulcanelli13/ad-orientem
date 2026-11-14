@@ -1,0 +1,192 @@
+{
+  "schema": "AO_LMD_TEN_AMBIGUOUS_AND_OLD_NAME_CONFLICT_IDENTITY_EVIDENCE_V1",
+  "date": "2026-11-11",
+  "scope": "2 multi-candidate locality rows and 8 historical name-only suggestion conflicts from existing 1531-row LMD archive crosswalk; not fresh LMD bulk extraction",
+  "baseline": [
+    "data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json",
+    "data/directory/generated/cl2-physical-site-index.v1.json"
+  ],
+  "counts": {
+    "archive_cases_reviewed": 10,
+    "old_name_conflicts_reviewed": 8,
+    "multiple_locality_candidates_reviewed": 2,
+    "unique_existing_single_site_identities": 6,
+    "current_parish_venue_move_requires_excel_review": 1,
+    "strong_same_building_double_cl2_id_groups": 2,
+    "separate_physical_buildings_must_not_merge": 1,
+    "duplicate_pairs_for_excel_review": 2,
+    "production_merges": 0,
+    "new_canonical_sites": 0,
+    "new_pins": 0,
+    "imported_mass_schedules": 0
+  },
+  "cases": [
+    {
+      "source_id": "LMD:all-souls-historic-chapel-sanford-united-states",
+      "kind": "DISTINCT_PARISH_BUILDINGS_NOT_DUPLICATE",
+      "cl2_ids": [
+        "RG-84277A3C62ED",
+        "RG-A5A7B8559AF2"
+      ],
+      "preferred_lmd_physical_id": "RG-A5A7B8559AF2",
+      "evidence_urls": [
+        "https://www.asccsanford.org/mass-times"
+      ],
+      "finding": "Owner distinguishes All Souls main church (3280 W 1st St) from All Souls Historic Chapel (800 S Oak Ave). LMD historic-chapel identity selects RG-A5A7B8559AF2. The separate generic CL2 All Souls RG-84277A3C62ED has locality-only address and should NOT be merged or silently assigned to the historic chapel; determine whether it denotes the main church at Excel review.",
+      "status": "IDENTITY_RESOLVED_TO_HISTORIC_CHAPEL_GENERIC_CL2_HOLD",
+      "excel_merge_approved": false,
+      "current_rite_certified": false
+    },
+    {
+      "source_id": "LMD:capela-nossa-senhora-das-dores-our-lady-of-sorrows-chapel-brasilia-federal-district-brazil",
+      "kind": "SAME_BUILDING_DOUBLE_CL2_ID",
+      "cl2_ids": [
+        "RG-3C3AAA8BD104",
+        "RG-FECDA1DB9A9E"
+      ],
+      "preferred_lmd_physical_id": null,
+      "evidence_urls": [
+        "https://ibpamericalatina.org/casa/brasilia/",
+        "https://ibpamericalatina.org/"
+      ],
+      "finding": "Both CL2 records describe Capela Nossa Senhora das Dores on Av. das Paineiras, Entrequadra 9/10, Jardim Botânico III, Brasilia, sharing the same Institute of the Good Shepherd institutional source. Owner identifies one chapel at this address. Distinct CL2 labels Diocesan versus IBP represent institutional classification disagreement, NOT two buildings. Needs Excel/CL27 alias+roles review; no auto-merge.",
+      "status": "STRONG_DUPLICATE_CANDIDATE_EXCEL_IDENTITY_HOLD",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:adelhauser-kirche-maria-verkundigung-und-sankt-katharina-freiburg-im-breisgau-germany",
+      "kind": "SAME_BUILDING_DOUBLE_CL2_ID",
+      "cl2_ids": [
+        "RG-0A6B76396C09",
+        "RG-CC7E25BA567F"
+      ],
+      "preferred_lmd_physical_id": null,
+      "evidence_urls": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/schweiz/niederlassungen/thalwil/freiburg.php",
+        "https://www.alte-messe.info/"
+      ],
+      "finding": "Both CL2 records refer to the same Adelhauser Kirche, Adelhauserstrasse 31A, Freiburg. FSSP states archdiocese provided the building for traditional rite from 23 March 2025, with FSSP ministry delegated by local parish. Diocesan and FSSP labels are roles at ONE physical site, not independent churches. Earlier archive FSSP source candidate pointed to RG-CC7E25BA567F and should not be considered a wrong-place match.",
+      "status": "STRONG_DUPLICATE_CANDIDATE_EXCEL_IDENTITY_HOLD",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:immaculate-conception-church-colorado-springs-united-states",
+      "kind": "SINGLE_CL2_ID_VENUE_RELOCATION_20261108",
+      "cl2_ids": [
+        "RG-E6BFCFC669A3"
+      ],
+      "preferred_lmd_physical_id": "RG-E6BFCFC669A3",
+      "evidence_urls": [
+        "https://www.cosfssp.org/"
+      ],
+      "finding": "Existing Colorado Springs Immaculate Conception FSSP parish record has unverified address 2745 E Pikes Peak Ave. Its first-party official Nov 2026 announcement states Sunday Masses moved to NEW church building at 2715 E Pikes Peak Ave effective 8 November 2026. Exact new building/address, possible old/new physical site distinction and map placement require Excel review; do not blindly overwrite historical CL2 evidence, merge with El Paso, or copy Mass timetable.",
+      "status": "CURRENT_BUILDING_RELOCATION_EXCEL_LOCATION_REVIEW",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:immaculate-conception-church-omaha-united-states",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-F1132C8E46E5"
+      ],
+      "preferred_lmd_physical_id": "RG-F1132C8E46E5",
+      "evidence_urls": [
+        "https://latinmassomaha.org/about/"
+      ],
+      "finding": "Official FSSP parish confirms Immaculate Conception at 2708 South 24th St, Omaha, matching current CL2 record. Historic same-dedication suggestion to El Paso and other cities is a false positive; no new venue.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_OWNER_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:immaculate-conception-church-rapid-city-united-states",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-4943D1C3E848"
+      ],
+      "preferred_lmd_physical_id": "RG-4943D1C3E848",
+      "evidence_urls": [
+        "https://fssp-rapidcity.org/contact"
+      ],
+      "finding": "Official FSSP parish confirms Immaculate Conception at 922 5th Street, Rapid City, matching CL2. Historic same-name candidates in other states are invalid for this source city; no new venue.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_OWNER_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:eglise-notre-dame-church-of-our-lady-la-roche-sur-yon-france",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-F1ED8101F0B9"
+      ],
+      "preferred_lmd_physical_id": "RG-F1ED8101F0B9",
+      "evidence_urls": [
+        "https://stlouisdelaroche.fr/la-paroisse-et-ses-eglises/",
+        "https://stlouisdelaroche.fr/wp-content/uploads/2025/09/Horaires-messes-2025-2026_pour-imprim-A5.pdf"
+      ],
+      "finding": "Parish itself lists Eglise Notre Dame at 14 rue Lazare Carnot, La Roche-sur-Yon. Its 2025-26 parish schedule separately labels the Sunday Mass at this Notre Dame church as 'rite tridentin', explicitly defining that as 1962 Missal. Existing CL2 has the named town and church, but locality-only street. Historical name-only matches to Bourges/Chambery were false.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_OWNER_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:eglise-notre-dame-des-victoires-church-of-our-lady-of-victories-angers-france",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-6CC764E4B257"
+      ],
+      "preferred_lmd_physical_id": "RG-6CC764E4B257",
+      "evidence_urls": [
+        "https://www.diocese49.org/evenement/messe-presidee-par-monseigneur-delmas/",
+        "https://www.diocese49.org/wp-content/uploads/2025/04/paques-2025-horaires-semaine-sainte-angers.pdf"
+      ],
+      "finding": "Angers diocese specifically identifies Notre-Dame des Victoires in Angers in its 11 Nov 2026 event; published Holy Week 2025 diocesan timetable says rites according to the Missal of John XXIII at that site. Existing CL2 RG-6CC... is correct locality-specific identity, not Bourges/Chambery. No copied schedule.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_OWNER_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:eglise-notre-dame-du-rosaire-our-lady-of-the-rosary-church-saint-maur-des-fosses-france",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-1FB1C4BCCBF2"
+      ],
+      "preferred_lmd_physical_id": "RG-1FB1C4BCCBF2",
+      "evidence_urls": [
+        "https://www.fssp.org/en/find-us/where-are-we/",
+        "https://catholiques-val-de-marne.cef.fr/diocese/communes/saint-maur-des-fosses/notre-dame-rosaire/"
+      ],
+      "finding": "FSSP lists Notre Dame du Rosaire, Place des Marronniers, Saint-Maur-des-Fossés; diocese confirms named parish at 11 avenue Joffre (contact/office address, not necessarily entrance). Existing CL2 is the correct named venue. Historic Notre Dame candidates in Bourges/Chambery are false matches. Keep church entrance and office separate.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_OWNER_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    },
+    {
+      "source_id": "LMD:eglise-saint-michel-dingouville-saint-michael-of-ingouville-church-le-havre-france",
+      "kind": "LOCALITY_SPECIFIC_EXISTING_IDENTITY",
+      "cl2_ids": [
+        "RG-2EA3A303947B"
+      ],
+      "preferred_lmd_physical_id": "RG-2EA3A303947B",
+      "evidence_urls": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "finding": "FSSP lists Chapelle Saint-Michel d'Ingouville, rue Saint-Michel, 76600 Le Havre. Existing CL2 chapel at Le Havre is the locality-specific identity. Historical same-name candidate RG-51A9B8B7B8A4 is at Dijon and must NOT be linked as the Le Havre site.",
+      "status": "EXISTING_PHYSICAL_IDENTITY_FSSP_CONFIRMED",
+      "excel_merge_approved": false,
+      "current_rite_certified": true
+    }
+  ],
+  "decision_rules": [
+    "Keep original automated candidate suggestions and source provenance for historical traceability; overlay verified identity evidence separately.",
+    "An identical parish dedication without city/address is not proof of identity.",
+    "Different operator/institute labels for identical building and address are institutional roles; require Excel canonical identity/alias review.",
+    "All Souls Historic Chapel, Sanford, is physically separate from the parish's main church; preserve both physical-site identities.",
+    "For a current relocation, the old address remains in evidence history until Excel review; publication of the new address/pin is a separate approval.",
+    "Independent liturgical evidence is scoped to the named church, time and original rubrical claim; no timetable is imported.",
+    "No LMD-only omission proves any Ad Orientem site wrong."
+  ]
+}

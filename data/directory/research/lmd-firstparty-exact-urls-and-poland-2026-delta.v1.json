@@ -1,0 +1,321 @@
+{
+  "schema": "AO_LMD_FIRSTPARTY_SOURCE_AND_2026_POLAND_DELTA_V1",
+  "date": "2026-11-11",
+  "sources": [
+    "data/directory/research/approved-mass-worldwide-crosswalk-20261009.v1.json",
+    "data/directory/generated/cl2-physical-site-index.v1.json",
+    "https://www.latinmassdir.org/trends/2026/pl/"
+  ],
+  "counts": {
+    "archived_exact_original_source_cases": 4,
+    "cl2_ids_in_exact_source_cases": 5,
+    "owner_confirmed_older_rite_cases": 3,
+    "source_owner_building_confirmed_but_rite_hold": 1,
+    "possible_same_building_cl2_collision_groups": 1,
+    "poland_2026_lmd_added_positions": 8,
+    "poland_lmd_canceled_positions": 1,
+    "poland_new_positions_already_in_cl2": 1,
+    "new_cl2_approved": 0,
+    "canonical_merged": 0,
+    "scheduled_times_imported": 0,
+    "poland_2026_independent_owner_or_diocesan_institution_identifications": 8,
+    "poland_2026_new_positions_with_independent_older_rite_confirmation": 3,
+    "poland_2026_new_positions_with_older_rite_unconfirmed_or_exact_chapel_hold": 5,
+    "poland_2026_excel_import_approved": 0,
+    "archived_nonexact_original_url_cases_screened": 9,
+    "archived_nonexact_existing_cl2_single_sites": 6,
+    "archived_nonexact_same_complex_chapel_reassignment": 1,
+    "archived_nonexact_community_multiple_cl2_sites": 1,
+    "archived_nonexact_new_physical_site_excel_candidates": 1,
+    "archived_original_urls_all_13_screened": 13
+  },
+  "firstparty_exact_url_evidence": [
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:annunciation-monastery-of-the-poor-clare-colettine-nuns-minooka-united-states",
+      "cl2_ids": [
+        "RG-4ED6CD089356",
+        "RG-AFAA6529F2CD"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "POTENTIAL_DOUBLE_CANONICAL_IDENTITY_REVIEW_NOT_AUTO_MERGE",
+      "owner_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "summary": "Both CL2 rows are the same named monastery at 6200 E Minooka Rd. One records FSSP ministry and the other convent ownership; check CL2 entity model before any alias operation. Monastery confirms daily Traditional Latin Mass."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:ave-maria-church-ave-maria-united-states",
+      "cl2_ids": [
+        "RG-F6A26D3ABFF8"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "EXISTING_SITE_OWNER_EVIDENCE_ENRICHMENT_ONLY",
+      "owner_url": "https://www.avemariaparish.org/",
+      "summary": "Current parish identifies Ave Maria church, Florida and explicitly lists Sunday Extraordinary Form. Existing CL2 site only has locality-level address; do not infer precise entrance."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:basilica-of-saint-stephen-new-orleans-united-states",
+      "cl2_ids": [
+        "RG-97E3BC28CBFC"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": false,
+      "action": "EXISTING_SITE_OLD_RITE_SCHEDULE_AND_CHURCH_ROOM_HOLD",
+      "owner_url": "https://www.goodshepherdparishnola.com/",
+      "summary": "Parish and archdiocese identify St Stephen at 1025 Napoleon Ave. Parish says first Friday Latin Mass, not by itself a 1962 Missal attestation; archdiocesan last-Sunday EF claim must be venue-scoped and reconciled to parish/OLGC locations before certification."
+    },
+    {
+      "type": "EXACT_SHARED_FIRST_PARTY_URL",
+      "source_id": "LMD:chapel-of-the-blessed-sacrament-gibson-united-states",
+      "cl2_ids": [
+        "RG-C2B98DF5683B"
+      ],
+      "same_building_owner_confirmed": true,
+      "old_rite_owner_confirmed": true,
+      "action": "EXISTING_SITE_DIOCESAN_OWNER_SOURCE_ENRICHMENT_ONLY",
+      "owner_url": "https://htdiocese.org/blessedsacramentchapel",
+      "summary": "Diocese explicitly sanctions and approves Extraordinary Form worship at Blessed Sacrament Chapel and states 138 Carroll St, Gibson LA. Existing CL2 address remains locality-only; do not auto-promote exact geography or Mass times."
+    }
+  ],
+  "poland_2026_trend_dispositions": [
+    {
+      "key": "LMD_COUNTRY_TREND:PL:OSTROW_WIELKOPOLSKI",
+      "label": "Kościół Chrystusa Króla, Ostrów Wielkopolski",
+      "kind": "LMD_CANCELED",
+      "cl2_site_ids": [],
+      "other_url": null,
+      "status": "NO_MATCH_IN_CL2_DO_NOT_DELETE_OR_SUPPRESS_ANYTHING",
+      "note": "2026 LMD canceled position not found under matching town in current Polish CL2. Historic cancellation does not prove another church wrong."
+    },
+    {
+      "key": "LMD:kosciol-sw-trojcy-wlodzienin-poland",
+      "label": "Holy Trinity church, Włodzienin",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://parafiawlodzienin-wojnowice.pl/",
+      "status": "OFFICIAL_PHYSICAL_PARISH_1962_RITE_UNCONFIRMED",
+      "note": "Parish confirms building and ordinary schedule; owner site does not independently distinguish 1962 old rite."
+    },
+    {
+      "key": "LMD:kaplica-pw-matki-bozej-lesnianskiej-styrzyniec-poland",
+      "label": "Our Lady of Leśna chapel, Styrzyniec",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://diecezja.siedlce.pl/parafie/parafia-narodzenia-nmp/",
+      "status": "DIOCESE_CHAPEL_PHYSICAL_IDENTITY_CONFIRMED_OLD_RITE_AND_SCHEDULE_HOLD",
+      "note": "The Siedlce diocesan parish register explicitly identifies the Our Lady of Leśna chapel in Styrzyniec and a parish Sunday chapel Mass. This proves the chapel's existence but does not independently verify a 1962-Missal service there; LMD's older-rite time must not be substituted for the parish's published ordinary chapel time.",
+      "additional_evidence": [
+        {
+          "url": "https://parafianabrzeskiej.eu/?page_id=988",
+          "type": "PARISH_CHAPEL_RECOGNITION_AND_UNSPECIFIED_RITE_MASS"
+        }
+      ]
+    },
+    {
+      "key": "LMD_COUNTRY_TREND:PL:STARY_SLAWACINEK",
+      "label": "Our Lady of Częstochowa chapel, Stary Sławacinek",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://diecezja.siedlce.pl/parafie/parafia-narodzenia-nmp/",
+      "status": "DIOCESE_CHAPEL_PHYSICAL_IDENTITY_CONFIRMED_OLD_RITE_AND_SCHEDULE_HOLD",
+      "note": "Siedlce diocesan parish register explicitly identifies the Our Lady of Częstochowa chapel in Sławacinek Stary. The parish publishes Sunday worship at that chapel without identifying the 1962 rite. LMD's listing is not by itself independent older-rite certification.",
+      "additional_evidence": [
+        {
+          "url": "https://parafianabrzeskiej.eu/?page_id=988",
+          "type": "PARISH_CHAPEL_RECOGNITION_AND_UNSPECIFIED_RITE_MASS"
+        }
+      ]
+    },
+    {
+      "key": "LMD:kosciol-sw-wojciecha-i-matki-bozej-snieznej-mikolow-poland",
+      "label": "Old church of St Adalbert and Our Lady of the Snows, Mikołów",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [
+        "RG-783CD50DD217"
+      ],
+      "other_url": "https://www.bazylikamikolow.pl/duszpasterstwo/msze-i-nabozenstwa",
+      "status": "EXISTING_CL2_LOCALITY_MATCH_OWNER_TRADITIONAL_RITE_CONFIRMED",
+      "note": "Current parish identifies old church and traditional Roman Rite on second and fourth Sundays. CL2 title is shorter; do not create another site; treat change as same-physical-venue owner-evidence enrichment."
+    },
+    {
+      "key": "LMD:kosciol-ojcow-piarow-pw-matki-bozej-laskawej-i-sw-wojciecha-lowicz-poland",
+      "label": "Piarist church of Our Lady of Grace and St Adalbert, Łowicz",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://www.lowicz.pijarzy.pl/",
+      "status": "OWNER_FIRSTPARTY_TRADITIONAL_ROMAN_RITE_AT_IDENTIFIED_CHURCH_CONFIRMED",
+      "note": "The Piarist church's 1 November 2026 owner notice explicitly announces the Extraordinary Form (Vetus Ordo) and states first-Sunday-of-month recurrence. The Piarist province independently identifies the same rectoral church and address at ul. Pijarska 2. Existing CL2 locality match remains absent; candidate for Excel physical-site review, not approved import or copied timetable.",
+      "additional_evidence": [
+        {
+          "url": "https://pijarzy.pl/strona%2C14.html",
+          "type": "ORDER_INSTITUTIONAL_PHYSICAL_SITE_ADDRESS"
+        },
+        {
+          "url": "https://www.lowicz.pijarzy.pl/6-wrzesnia-2026-r",
+          "type": "OWNER_2026_PRIOR_OLDER_RITE_MASS_CONFIRMATION"
+        }
+      ]
+    },
+    {
+      "key": "LMD:kaplica-matki-bozej-niepokalanej-brwinow-poland",
+      "label": "Immaculate Mother of God chapel, Brwinów",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://archwwa.pl/zakony-i-zgromadzenia/",
+      "status": "ARCHDIOCESE_MONASTERY_ADDRESS_CONFIRMED_SPECIFIC_CHAPEL_AND_1962_HOLD",
+      "note": "Warsaw archdiocese independently lists the Poor Clare Capuchin nuns' enclosed monastery at Kępińska 57, Brwinów; that is the address used by the LMD chapel lead. It does not independently identify the titled chapel or certify older-rite Mass within it. The archdiocese separately lists a Tridentine Mass at St Florian's parish at Biskupicka 2; do NOT merge the two worship spaces or transfer parish times to the convent.",
+      "additional_evidence": [
+        {
+          "url": "https://archwwa.pl/parafie/brwinow-sw-floriana/",
+          "type": "DIFFERENT_PARISH_AND_OLDER_RITE_MASS_DO_NOT_CONFLATE"
+        }
+      ]
+    },
+    {
+      "key": "LMD:kosciol-rektoralny-pw-swietego-ducha-w-sandomierzu-sandomierz-poland",
+      "label": "Holy Spirit Rectoral Church, Sandomierz",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://diecezjasandomierska.pl/sandomierz-rektorat-pw-ducha-swietego/",
+      "status": "DIOCESE_PHYSICAL_SITE_CONFIRMED_1962_RITE_HOLD",
+      "note": "Diocesan church identity verified, but diocesan public Mass timetable does not explicitly certify old-rite recurrence."
+    },
+    {
+      "key": "LMD:kosciol-p-w-sw-jakuba-wiekszego-w-obrze-obra-poland",
+      "label": "St James the Greater church, Obra",
+      "kind": "LMD_NEW",
+      "cl2_site_ids": [],
+      "other_url": "https://oblaci.pl/2026/01/19/obra-msze-swiete-trydenckie-w-przyklasztornym-kosciele-sw-jakuba/",
+      "status": "ORDER_FIRSTPARTY_TRADITIONAL_ROMAN_RITE_AT_IDENTIFIED_CHURCH_CONFIRMED_RECURRENCE_HOLD",
+      "note": "Missionary Oblates' 19 January 2026 report directly identifies St James' monastery church in Obra as hosting Traditional Roman Rite Mass, with permission and named celebrant. It reports a January celebration, a subsequent break and plans to resume regularly from April; this does not prove an uninterrupted November 2026 timetable. Candidate for Excel review, no schedule import.",
+      "additional_evidence": []
+    }
+  ],
+  "guardrails": [
+    "The original first-party URL equality is direct corroboration of a source relationship, not permission to rewrite historical provenance or automatically merge CL2 sites.",
+    "An institution's owner-reported Mass time must not be imported into CL27 schedules without separate current-site and rite validation.",
+    "Same postal address and same monastery strongly indicate one physical-site identity; FSSP ministry and convent owner fields must remain distinct before dedup.",
+    "The LMD 'new' status is a change in LMD listings, NOT proof of a new physical church.",
+    "The eight recent LMD Poland additions are not eight proven missing CL2 sites; at least one is already present under an abbreviated title.",
+    "Do not suppress any Ad Orientem-only site based on LMD omission or canceled status.",
+    "All cases remain research-only; use CL2 Excel approval for any proposed new group or merge.",
+    "For Brwinów, the St Florian parish's older-rite Mass is a different physical church from the separately indexed Poor Clare Capuchin nuns' chapel; preserve chapel-specific certification hold.",
+    "Historic community/group-level LMD records may refer to multiple distinct current Mass chapels; do not create one physical site per organization or collapse physically separate CL2 sites.",
+    "Boston Cathedral's Blessed Sacrament Chapel and Our Lady's Chapel are distinct internal worship rooms; the historical LMD label must not override the current official venue label.",
+    "Winona St Mary of the Angels is independently attested as a 1962-Missal venue with a physical chapel but still requires original Excel CL2 master identity approval before any app addition."
+  ],
+  "nonexact_firstparty_original_url_dispositions": [
+    {
+      "source_id": "LMD:agrupacion-catolica-universitaria-miami-united-states",
+      "category": "COMMUNITY_NOT_SINGLE_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-2B24CC45DB61",
+        "RG-4ACD125CC3CD",
+        "RG-A03EB23BDD92"
+      ],
+      "independent_source_url": "https://latinmassmiami.org/mass-times",
+      "evidence": "Archived ACU/community source links to the current Holy Face of Jesus FSSP Miami chaplaincy listing Our Lady of Belén Chapel (Sunday), Our Lady of Mercy Chapel (weekday) and Our Lady of Lourdes (second Saturdays). CL2 already contains all three as separate physical sites. Do not equate Agrupación Católica Universitaria itself with a physical church or assert organizational succession.",
+      "rite": "Older Roman Rite supported for current chaplaincy; organization/venue lineage distinct.",
+      "action": "NO_NEW_COMMUNITY_SITE; PRESERVE_THREE_INDIVIDUAL_CL2_SITES",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:annunciation-church-houston-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-3AF61C17A39B"
+      ],
+      "independent_source_url": "https://annunciationcc.org/events/archangels",
+      "evidence": "Houston Annunciation Catholic Church, 1618 Texas Ave, is the same named institution as the CL2 Houston locality-only record. Parish explicitly advertises an Extraordinary Form High Mass dated September 29 2026; source URL differs from archive's http://www.annunciationcc.org/ and is already represented in CL2 as https://annunciationcc.org/mass.",
+      "rite": "Older rite supported by dated first-party event; not approval to copy a weekly schedule.",
+      "action": "EXISTING_IDENTITY_OWNER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:annunciation-church-yonkers-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-FC18299DDF0F"
+      ],
+      "independent_source_url": "https://annunciation-fatima.com/mass-devotions",
+      "evidence": "Annunciation Church in Crestwood/Yonkers belongs to Annunciation–Our Lady of Fatima parish; CL2 records the named combined parish at 470 Westchester Ave. First-party Mass page attributes its Latin Mass specifically to Annunciation's LOWER CHURCH, not to the separate Our Lady of Fatima church.",
+      "rite": "Latin Mass advertised; 1962 use not independently established by the cited schedule.",
+      "action": "EXISTING_IDENTITY_LOWER_CHURCH_SCOPE_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:basilica-shrine-of-saint-mary-wilmington-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-ABD010C7A5D7"
+      ],
+      "independent_source_url": "https://www.traditionallatinmasswilmingtonnc.com/",
+      "evidence": "Wilmington NC Traditional Latin Mass organiser explicitly names Basilica Shrine of St Mary, 412 Ann St, matching existing CL2 Basilica of St Mary record with identical address. Its 2026 schedule includes November; no copied time or recurrence is published through this audit.",
+      "rite": "Traditional Latin Mass attested by local organiser, not silently converted into CL27 timetable.",
+      "action": "EXISTING_IDENTITY_OWNER_ORGANISER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:blessed-sacrament-church-honolulu-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-9F7550645D32"
+      ],
+      "independent_source_url": "https://blessedsacramentpauoa.blogspot.com/p/latin-mass.html",
+      "evidence": "Blessed Sacrament Church, Pauoa at 2124 Pauoa Rd, Honolulu, matches CL2 Blessed Sacrament Church, Pauoa. Parish itself explicitly says its Traditional Latin Mass follows the 1962 Missal. CL2 location is currently locality-only; do not overwrite coordinates without Excel review.",
+      "rite": "1962 Missal explicitly confirmed by parish.",
+      "action": "EXISTING_IDENTITY_OWNER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-fairfield-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-C51DCE8B1899"
+      ],
+      "independent_source_url": "https://www.fairfieldcarmelites.org/the-nuns-of-fairfield",
+      "evidence": "Owner confirms Carmel of Jesus, Mary & Joseph at 327 Water St, Fairfield PA, same named physical monastery as CL2. Its official page says it primarily uses the Extraordinary Form. Historic LMD listing labels a 1937 Carmelite Rite; do NOT assert equivalence to the 1962 Roman Missal or infer a precise stable current chapel schedule.",
+      "rite": "Owner explicitly says Extraordinary Form; precise liturgical books/1937 Carmelite Rite discrepancy held.",
+      "action": "EXISTING_IDENTITY_RUBRICAL_BASIS_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-valparaiso-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-0ECBB0E72D34"
+      ],
+      "independent_source_url": "https://www.lincolndiocese.org/directory/women-religious/217-carmelite-sisters",
+      "evidence": "Archived source points to Lincoln diocesan Carmelite Sisters. Existing CL2 site separately identifies Carmel of Jesus, Mary and Joseph at 9300 W Agnew Road, Valparaiso NE. Same named monastery and locality are corroborated internally; a new 2026 first-party 1962-Missal timetable was not established in this review.",
+      "rite": "Current specific rite and schedule held.",
+      "action": "EXISTING_MONASTERY_IDENTITY_CURRENT_RITE_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:cathedral-of-the-holy-cross-blessed-sacrament-chapel-boston-united-states",
+      "category": "SAME_BUILDING_HISTORIC_CHAPEL_NAME_CONFLICT",
+      "cl2_ids": [
+        "RG-AAEB19C81AB3"
+      ],
+      "independent_source_url": "https://bostoncathedral.com/mass-times/",
+      "evidence": "Archived LMD name says Blessed Sacrament Chapel, but current cathedral Mass page locates the Sunday Latin Mass in Our Lady's Chapel and separately places weekday Masses in Blessed Sacrament Chapel. Historical cathedral bulletins previously used Blessed Sacrament Chapel for older-rite worship; existing CL2 properly names the current Our Lady's Chapel. Same cathedral complex, not proof that the two chapels are the same room.",
+      "rite": "Current Latin Mass at Our Lady's Chapel; no timetable transfer from named archive chapel.",
+      "action": "HISTORIC_CHAPEL_REASSIGNMENT_NOT_NEW_BUILDING",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:chapel-of-saint-mary-of-the-angels-winona-united-states",
+      "category": "NEW_SITE_EXCEL_CANDIDATE",
+      "cl2_ids": [],
+      "independent_source_url": "https://www.basilicawinona.org/latin-mass",
+      "additional_source_url": "https://www.smumn.edu/about/our-mission/history-heritage/",
+      "evidence": "Basilica of St Stanislaus in Winona explicitly announces November 2026 Latin Masses according to 1962 Missal in Chapel of St Mary of the Angels, 1160 West Wabasha Street. St Mary's University confirms it retained ownership of this named chapel. Current 2,580-site CL2 physical index has no Winona physical-site record. Independently supported candidate only, subject to original CL2 Excel duplicate/source review and approval.",
+      "rite": "1962 Missal explicitly stated with dated November 2026 church-organiser schedule.",
+      "action": "PROPOSE_EXCEL_REVIEW_NEW_PHYSICAL_SITE_NO_CL2_ADMISSION",
+      "excel_approved": false
+    }
+  ]
+}

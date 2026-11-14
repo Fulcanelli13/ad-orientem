@@ -1,0 +1,99 @@
+{
+  "schema": "AO_LMD_V2_ARCHIVE_FIRSTPARTY_CONFIRMATIONS_V1",
+  "observed_date": "2026-11-11",
+  "scope": "Select five high-specificity singles from 1118-row secondary archive textual screen; independently verify existing physical CL2 identities from official church, order, and diocese sources, without mass schedule import.",
+  "source_archive": "data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json",
+  "counts": {
+    "reviewed": 5,
+    "existing_cl2_physical_site_identities_confirmed": 5,
+    "additional_cl2_sites_approved": 0,
+    "source_id_reassigned_in_cl2": 0,
+    "public_cards_changed": 0,
+    "imported_schedules": 0,
+    "explicit_1962_or_extraordinary_form_notices": 3
+  },
+  "cases": [
+    {
+      "source_id": "LMD:church-of-all-saints-minneapolis-united-states",
+      "cl2_id": "RG-C7B3D8B5A0B3",
+      "church": "Church of All Saints",
+      "country": "US",
+      "location": "434 5th Avenue NE, Minneapolis, MN 55413",
+      "evidence_urls": [
+        "https://www.fsspminneapolis.org/",
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "evidence_status": "CONFIRMED_EXISTING_BUILDING_AND_TRADITIONAL_ROMAN_RITE",
+      "liturgical_evidence": "FSSP parish explicitly identifies liturgies in the Usus Antiquior at this church.",
+      "source_exception": "The parish's PUBLIC VISITOR address is 434 5th Avenue NE. Its parish-registration mailing address and FSSP international listing use 435 4th Street NE. Preserve both address roles; do not replace physical entrance with administration/mail.",
+      "production_action": "NO_NEW_SITE_OR_SCHEDULE"
+    },
+    {
+      "source_id": "LMD:church-of-saint-agnes-saint-paul-united-states",
+      "cl2_id": "RG-368B7B3B5FA3",
+      "church": "Church of Saint Agnes",
+      "country": "US",
+      "location": "535 Thomas Avenue, Saint Paul, MN 55103",
+      "evidence_urls": [
+        "https://churchofsaintagnes.org/home",
+        "https://churchofsaintagnes.org/contact",
+        "https://www.archspm.org/location/st-agnes-catholic-church/"
+      ],
+      "evidence_status": "CONFIRMED_EXISTING_BUILDING_AND_EXPLICIT_EXTRAORDINARY_FORM_MASS",
+      "liturgical_evidence": "Parish explicitly labels Sunday 8 AM as EF Latin Low Mass; it also lists a 10:30 sung Latin Mass but that label alone is not proof of the same rite.",
+      "source_exception": "Do not infer the exact form of every Latin liturgy solely from language.",
+      "production_action": "NO_NEW_SITE_OR_SCHEDULE"
+    },
+    {
+      "source_id": "LMD:holy-rosary-parish-indianapolis-united-states",
+      "cl2_id": "RG-CF187910B7D3",
+      "church": "Our Lady of the Most Holy Rosary",
+      "country": "US",
+      "location": "520 Stevens Street, Indianapolis, IN 46203",
+      "evidence_urls": [
+        "https://www.holyrosaryindy.org/events/low-mass-extraordinary-form/20261115",
+        "https://archindy.org/traditional-latin-mass"
+      ],
+      "evidence_status": "CONFIRMED_EXISTING_BUILDING_AND_1962_MISSAL_MASS",
+      "liturgical_evidence": "Owner's dated 15 November 2026 event explicitly calls the celebration a 1962 Missal Low Mass, and the archdiocese lists the same building as a Traditional Latin Mass venue.",
+      "source_exception": "The published event is prospective as of 11 November 2026; do not treat the event as already held or import a guaranteed recurring time.",
+      "production_action": "NO_NEW_SITE_OR_SCHEDULE"
+    },
+    {
+      "source_id": "LMD:old-saint-patrick-oratory-kansas-city-united-states",
+      "cl2_id": "RG-AA3084B4438A",
+      "church": "Old St Patrick Oratory",
+      "country": "US",
+      "location": "806 Cherry Street, Kansas City, MO 64106",
+      "evidence_urls": [
+        "https://www.institute-christ-king.org/kansascity-home/",
+        "https://kcsjcatholic.org/locator/"
+      ],
+      "evidence_status": "CONFIRMED_EXISTING_BUILDING_AND_1962_MISSAL_MASS",
+      "liturgical_evidence": "Kansas City-St Joseph diocese explicitly states the oratory celebrates rites of the 1962 Missale Romanum, with institute owner location and Mass information.",
+      "source_exception": "Institute mailing address at 2123 Erie Street, North Kansas City, differs from the church at 806 Cherry Street; keep addresses role-scoped.",
+      "production_action": "NO_NEW_SITE_OR_SCHEDULE"
+    },
+    {
+      "source_id": "LMD:christ-the-king-church-sarasota-united-states",
+      "cl2_id": "RG-7120BD16562F",
+      "church": "Christ the King Catholic Church",
+      "country": "US",
+      "location": "1900 Meadowood Street, Sarasota, FL 34231",
+      "evidence_urls": [
+        "https://christthekingsarasota.org/about/",
+        "https://dioceseofvenice.org/find-a-parish/"
+      ],
+      "evidence_status": "CONFIRMED_EXISTING_BUILDING_AND_TRADITIONAL_ROMAN_RITE",
+      "liturgical_evidence": "FSSP parish explicitly describes its Traditional Form apostolate at this address; diocese independently lists Christ the King as its Latin Mass parish.",
+      "source_exception": "Do not convert current diocese timetable into approved CL27 schedules automatically.",
+      "production_action": "NO_NEW_SITE_OR_SCHEDULE"
+    }
+  ],
+  "guardrails": [
+    "Cite first-party, diocesan and institute evidence for independently reviewed existing physical identities; do not treat archive slugs as a current LMD source of Mass times.",
+    "Do not equate a liturgy's use of Latin with the 1962 Missal without a corresponding rubrical statement.",
+    "Church address, mail/office address, and contact location must be independently classified rather than reused as coordinates.",
+    "The wider 281 single candidates remain unverified until separately owner-confirmed; these five are a subset, not five additional archive positions."
+  ]
+}

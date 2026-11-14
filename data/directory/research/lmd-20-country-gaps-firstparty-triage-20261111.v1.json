@@ -1,0 +1,384 @@
+{
+  "schema": "AO_LMD_20_COUNTRY_GAP_TRIAGE_V1",
+  "snapshot_date": "2026-11-11",
+  "source": "Existing October LMD archive + current public country-level LMD descriptions; independent parish/diocesan/owner evidence",
+  "classification_is_new_site_approval": false,
+  "summary": {
+    "candidate_positions": 20,
+    "countries": 14,
+    "archived_positions_reused": 17,
+    "live_country_only_leads": 3,
+    "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION": 5,
+    "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED": 5,
+    "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED": 8,
+    "INDEPENDENT_OLD_RITE_SIGN_OF_LIFE_BUILDING_SCOPE_HOLD": 1,
+    "HISTORICAL_TRADITIONAL_RITE_CURRENT_STATUS_HOLD": 1,
+    "approved_for_cl2_import": 0,
+    "approved_coordinates": 0,
+    "approved_schedules": 0
+  },
+  "statuses": [
+    "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+    "HISTORICAL_TRADITIONAL_RITE_CURRENT_STATUS_HOLD",
+    "INDEPENDENT_OLD_RITE_SIGN_OF_LIFE_BUILDING_SCOPE_HOLD",
+    "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+    "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION"
+  ],
+  "caveats": [
+    "Five independently supported 1962/traditional candidates are eligible for an Excel identity review, not admitted to CL2.",
+    "At least two Vatican City LMD positions share St Peter's physical basilica, not independently countable as two new building sites.",
+    "Liechtenstein's St Martin listing has a chapel-versus-parish-church identity distinction; no speculative map pins.",
+    "Guaynabo and Arecibo Mass times have contradictory source history; publication schedule hold.",
+    "A Latin-language Mass is not automatically a 1962-Missal Mass; Monaco retains a rite hold.",
+    "A current LMD record alone cannot certify current institutional rite or recurrence.",
+    "This is bounded triage of all 20 LMD positions in 14 countries not represented in current CL2; it is not a global venue-level rescan.",
+    "Original LMD venue content, photographs, timetables and geocoordinates have not been copied into this research report."
+  ],
+  "rows": [
+    {
+      "candidate_key": "LMD:capilla-de-san-miguel-la-paz-bolivia",
+      "country_code": "BO",
+      "working_name": "Capilla San Miguel, La Paz",
+      "archive_source_id": "LMD:capilla-de-san-miguel-la-paz-bolivia",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/capilla-de-san-miguel-la-paz-bolivia/",
+      "status": "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION",
+      "independent_source_urls": [],
+      "evidence_summary": "LMD described occasional Mass; no institutional site-plus-1962 confirmation was independently established. No recurring time.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_INSTITUTION_AND_PHYSICAL_SITE"
+    },
+    {
+      "candidate_key": "LMD:iglesia-de-san-juan-de-dios-la-paz-bolivia",
+      "country_code": "BO",
+      "working_name": "San Juan de Dios, La Paz",
+      "archive_source_id": "LMD:iglesia-de-san-juan-de-dios-la-paz-bolivia",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/iglesia-de-san-juan-de-dios-la-paz-bolivia/",
+      "status": "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION",
+      "independent_source_urls": [],
+      "evidence_summary": "No independently corroborated 1962 Mass or current exact building found.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_INSTITUTION_AND_PHYSICAL_SITE"
+    },
+    {
+      "candidate_key": "LMD:jesu-hjerte-kirke-church-of-the-sacred-heart-of-jesus-kobenhavn-denmark",
+      "country_code": "DK",
+      "working_name": "Jesu Hjerte Kirke, Copenhagen",
+      "archive_source_id": "LMD:jesu-hjerte-kirke-church-of-the-sacred-heart-of-jesus-kobenhavn-denmark",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/jesu-hjerte-kirke-church-of-the-sacred-heart-of-jesus-kobenhavn-denmark/",
+      "status": "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+      "independent_source_urls": [
+        "https://www.jesuhjertekirke.dk/en/kalenderen-og-faste-messetider/",
+        "https://gammel.katolsk.dk/menigheder/menigheder/jesu-hjerte-41"
+      ],
+      "evidence_summary": "Parish publishes 18:00 Sunday Mass in the extraordinary form; building at Stenosgade 4. Do not import clock time without CL27 approval.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "STAGE_CANONICAL_IDENTITY_IN_EXISTING_EXCEL_FOR_APPROVAL"
+    },
+    {
+      "candidate_key": "LMD:sankt-norberts-kirke-saint-norberts-church-vejle-denmark",
+      "country_code": "DK",
+      "working_name": "Sankt Norberts Kirke, Vejle",
+      "archive_source_id": "LMD:sankt-norberts-kirke-saint-norberts-church-vejle-denmark",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/sankt-norberts-kirke-saint-norberts-church-vejle-denmark/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.katolsk.dk/menigheder/menigheder/vejle-55"
+      ],
+      "evidence_summary": "Copenhagen Diocese verifies parish church at Fjellegade 2; accessible official schedule does not substantiate the older Missal.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:saint-marys-church-stanley-falkland-islands-islas-malvinas",
+      "country_code": "FK",
+      "working_name": "St Mary's Catholic Church, Stanley",
+      "archive_source_id": "LMD:saint-marys-church-stanley-falkland-islands-islas-malvinas",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/saint-marys-church-stanley-falkland-islands-islas-malvinas/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://prefecturemission.org/island-parishes/falkland-islands/"
+      ],
+      "evidence_summary": "Roman Catholic prefecture verifies church at Ross Road; listed Masses do not specify the 1962 Missal.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:pyhan-marian-kirkko-sankta-maria-kyrka-helsinki-finland",
+      "country_code": "FI",
+      "working_name": "St Mary's Church, Helsinki",
+      "archive_source_id": "LMD:pyhan-marian-kirkko-sankta-maria-kyrka-helsinki-finland",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/pyhan-marian-kirkko-sankta-maria-kyrka-helsinki-finland/",
+      "status": "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+      "independent_source_urls": [
+        "https://fides.katolinen.fi/en/let-us-remain-in-full-communion-with-the-church/",
+        "https://katolinen.fi/seurakunnat/"
+      ],
+      "evidence_summary": "Bishop Raimo Goyarrola explicitly attested monthly 1962 Missal Mass on 7 July 2026; diocesan site lists building at Mäntytie 2. No exact upcoming date certified.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "STAGE_CANONICAL_IDENTITY_IN_EXISTING_EXCEL_FOR_APPROVAL"
+    },
+    {
+      "candidate_key": "LMD:saint-fidelis-friary-agana-heights-guam",
+      "country_code": "GU",
+      "working_name": "St Fidelis Friary, Agana Heights",
+      "archive_source_id": "LMD:saint-fidelis-friary-agana-heights-guam",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/saint-fidelis-friary-agana-heights-guam/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.archagana.org/parishfinder",
+        "https://archagana.org/capuchins"
+      ],
+      "evidence_summary": "Archdiocese verifies Capuchin friary and its ordinary weekday Mass; does not currently attest the LMD Sunday older-rite claim.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:bocciata-chapel-in-the-crypt-of-st-peters-basilica-citta-del-vaticano-vatican-city",
+      "country_code": "VA",
+      "working_name": "Bocciata Chapel, St Peter's crypt",
+      "archive_source_id": "LMD:bocciata-chapel-in-the-crypt-of-st-peters-basilica-citta-del-vaticano-vatican-city",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/bocciata-chapel-in-the-crypt-of-st-peters-basilica-citta-del-vaticano-vatican-city/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.basilicasanpietro.va/en/holy-masses",
+        "https://www.vatican.va/content/vatican/en/info.html"
+      ],
+      "evidence_summary": "Site is within St Peter's Basilica. Official published Mass timetable does not certify a public older-rite service here. Same building as Clementine chapel; do not create duplicate physical sites. Private access/authorisation hold.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:sacellum-clementinum-la-clementina-clementine-chapel-citta-del-vaticano-vatican-city",
+      "country_code": "VA",
+      "working_name": "Clementine Chapel, St Peter's crypt",
+      "archive_source_id": "LMD:sacellum-clementinum-la-clementina-clementine-chapel-citta-del-vaticano-vatican-city",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/sacellum-clementinum-la-clementina-clementine-chapel-citta-del-vaticano-vatican-city/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.basilicasanpietro.va/en/holy-masses",
+        "https://www.vatican.va/content/vatican/en/info.html"
+      ],
+      "evidence_summary": "Site is within the same Basilica building as Bocciata. No recurring public 1962 schedule independently certified; chapel-vs-building identity and access hold.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD_COUNTRY_LIST_ONLY:IL:HOLY_FAMILY_CHURCH_JERUSALEM",
+      "country_code": "IL",
+      "working_name": "Holy Family Church, Jerusalem",
+      "archive_source_id": null,
+      "lmd_listing_reference": "https://www.latinmassdir.org/country/il/?view=list",
+      "status": "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION",
+      "independent_source_urls": [],
+      "evidence_summary": "Live LMD country-list-only lead; independent exact building and current old-rite event not confirmed. No source ID invented.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_INSTITUTION_AND_PHYSICAL_SITE"
+    },
+    {
+      "candidate_key": "LMD:port-antonio-oratory-saint-anthonys-church-port-antonio-jamaica",
+      "country_code": "JM",
+      "working_name": "St Anthony's Church, Port Antonio",
+      "archive_source_id": "LMD:port-antonio-oratory-saint-anthonys-church-port-antonio-jamaica",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/port-antonio-oratory-saint-anthonys-church-port-antonio-jamaica/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.oratoryofportantonio.org/about/",
+        "https://www.oratoryofportantonio.org/vocations-inquires-and-contacts/"
+      ],
+      "evidence_summary": "Oratorians confirm their Port Antonio church; no independent claim of regular 1962 Missal celebrations located.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:frauenkloster-der-schwestern-vom-kostbaren-blut-schellenberg-liechtenstein",
+      "country_code": "LI",
+      "working_name": "Precious Blood Sisters' Monastery, Schellenberg",
+      "archive_source_id": "LMD:frauenkloster-der-schwestern-vom-kostbaren-blut-schellenberg-liechtenstein",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/frauenkloster-der-schwestern-vom-kostbaren-blut-schellenberg-liechtenstein/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://www.schellenberg.li/gemeinde/kirche/frauenkloster"
+      ],
+      "evidence_summary": "Municipality confirms convent and monastery church at Dorf 35; current old-rite celebration not verified.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:pfarrkirche-sankt-martin-parish-church-of-saint-martin-eschen-liechtenstein",
+      "country_code": "LI",
+      "working_name": "St Martin church-associated chapel, Eschen",
+      "archive_source_id": "LMD:pfarrkirche-sankt-martin-parish-church-of-saint-martin-eschen-liechtenstein",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/pfarrkirche-sankt-martin-parish-church-of-saint-martin-eschen-liechtenstein/",
+      "status": "INDEPENDENT_OLD_RITE_SIGN_OF_LIFE_BUILDING_SCOPE_HOLD",
+      "independent_source_urls": [
+        "https://www.eschen.li/leben-soziales/kirche/kirche-st-martin/",
+        "https://gocath.org/de/messefinder/eschen",
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+      ],
+      "evidence_summary": "2026 independent calendar-derived index lists Alte Messe in a chapel of St Martin, but municipality lists its parish church separately. Precise worship space must be reconciled before admission; not a certified recurring rule.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_CURRENT_RITE_AND_WORSHIP_SPACE"
+    },
+    {
+      "candidate_key": "LMD:sainte-cunegonde-sankt-kunigunde-saint-cunigunde-luxembourg",
+      "country_code": "LU",
+      "working_name": "Sainte Cunégonde, Luxembourg-Clausen",
+      "archive_source_id": "LMD:sainte-cunegonde-sankt-kunigunde-saint-cunigunde-luxembourg",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/sainte-cunegonde-sankt-kunigunde-saint-cunigunde-luxembourg/",
+      "status": "HISTORICAL_TRADITIONAL_RITE_CURRENT_STATUS_HOLD",
+      "independent_source_urls": [
+        "https://messe-latin-luxembourg.blogspot.com/p/blog-page_5.html",
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+      ],
+      "evidence_summary": "Organiser/source describes Tridentine rite but visible direct scheduling is anchored to 2024 and older listings; no fresh 2026 institutional timetable. Do not promote as currently guaranteed.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_CURRENT_RITE_AND_WORSHIP_SPACE"
+    },
+    {
+      "candidate_key": "LMD:knisja-tal-gizwiti-church-of-the-jesuits-valletta-malta",
+      "country_code": "MT",
+      "working_name": "Jesuits' Church, Valletta",
+      "archive_source_id": "LMD:knisja-tal-gizwiti-church-of-the-jesuits-valletta-malta",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/knisja-tal-gizwiti-church-of-the-jesuits-valletta-malta/",
+      "status": "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+      "independent_source_urls": [
+        "https://www.jesuitschurchfoundation.org/liturgy",
+        "https://church.mt/holy-masses-in-malta-in-english-and-foreign-languages/"
+      ],
+      "evidence_summary": "Church foundation and archdiocese confirm historic physical church and current Sunday sung traditional Mass; original source dates and liturgical setting supported. No schedule auto-import.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "STAGE_CANONICAL_IDENTITY_IN_EXISTING_EXCEL_FOR_APPROVAL"
+    },
+    {
+      "candidate_key": "LMD:chapelle-de-la-misericorde-chapel-of-mercy-monaco",
+      "country_code": "MC",
+      "working_name": "Chapelle de la Miséricorde, Monaco",
+      "archive_source_id": "LMD:chapelle-de-la-misericorde-chapel-of-mercy-monaco",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/chapelle-de-la-misericorde-chapel-of-mercy-monaco/",
+      "status": "INDEPENDENT_BUILDING_CONFIRMED_1962_RITE_NOT_CONFIRMED",
+      "independent_source_urls": [
+        "https://diocese.mc/service/liturgie-et-sacrements/actualites/horaires-des-celebrations-de-la-semaine-sainte",
+        "https://diocese.mc/annuaire_diocesain_2026.pdf"
+      ],
+      "evidence_summary": "Diocesan material verifies chapel and some Latin Masses, but Latin language by itself does not establish celebration according to the 1962 books.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_1962_RITE_AND_RECURRENT_ACTIVITY"
+    },
+    {
+      "candidate_key": "LMD:parroquia-san-jose-saint-joseph-parish-guaynabo-puerto-rico",
+      "country_code": "PR",
+      "working_name": "San José Parish, Villa Caparra, Guaynabo",
+      "archive_source_id": "LMD:parroquia-san-jose-saint-joseph-parish-guaynabo-puerto-rico",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/parroquia-san-jose-saint-joseph-parish-guaynabo-puerto-rico/",
+      "status": "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+      "independent_source_urls": [
+        "https://unavocepr.blogspot.com/p/misas-tradicionales-en-puerto-rico.html",
+        "https://parroquiasanjosepr.org/contactanos/",
+        "https://www.arqsj.org/directorio-parroquial?comp-muali19i_page=3"
+      ],
+      "evidence_summary": "Parish/diocese identifies church at 215 Carr. 2; traditional Mass organiser lists first/second Sunday celebrations but the parish's public regular Mass list omits them. Organiser postings give differing historic second-Sunday hours; manual CL27 recurrence verification required.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "STAGE_CANONICAL_IDENTITY_IN_EXISTING_EXCEL_FOR_APPROVAL"
+    },
+    {
+      "candidate_key": "LMD:parroquia-san-martin-de-porres-saint-martin-de-porres-parish-arecibo-puerto-rico",
+      "country_code": "PR",
+      "working_name": "San Martín de Porres Parish, Arecibo",
+      "archive_source_id": "LMD:parroquia-san-martin-de-porres-saint-martin-de-porres-parish-arecibo-puerto-rico",
+      "lmd_listing_reference": "https://www.latinmassdir.org/venue/parroquia-san-martin-de-porres-saint-martin-de-porres-parish-arecibo-puerto-rico/",
+      "status": "INDEPENDENT_TRADITIONAL_RITE_AND_BUILDING_SUPPORTED",
+      "independent_source_urls": [
+        "https://unavocepr.blogspot.com/p/misas-tradicionales-en-puerto-rico.html",
+        "https://diocesisdearecibo.org/parroquias",
+        "https://unavocepr.blogspot.com/"
+      ],
+      "evidence_summary": "Diocese identifies parish and Sunday traditional Latin Mass; 2026 organiser update says 13:00 whereas diocesan parish timetable still lists 14:00. Explicit conflicting time hold; never auto-publish either.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "STAGE_CANONICAL_IDENTITY_IN_EXISTING_EXCEL_FOR_APPROVAL"
+    },
+    {
+      "candidate_key": "LMD_COUNTRY_LIST_ONLY:UA:SUPERIOR_INSTITUTE_OF_RELIGIOUS_SCIENCES_KYIV",
+      "country_code": "UA",
+      "working_name": "Superior Institute of Religious Sciences, Kyiv",
+      "archive_source_id": null,
+      "lmd_listing_reference": "https://www.latinmassdir.org/country/ua/?view=list",
+      "status": "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION",
+      "independent_source_urls": [],
+      "evidence_summary": "Current LMD country list lead; identity of worship venue and present 1962/Dominican-rite celebration lacks independent current institutional confirmation.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_INSTITUTION_AND_PHYSICAL_SITE"
+    },
+    {
+      "candidate_key": "LMD_COUNTRY_LIST_ONLY:UA:ROZEN_S_CHAPEL_LVIV",
+      "country_code": "UA",
+      "working_name": "Rozen's Chapel, Lviv",
+      "archive_source_id": null,
+      "lmd_listing_reference": "https://www.latinmassdir.org/country/ua/?view=list",
+      "status": "LMD_ARCHIVED_OR_COUNTRY_LIST_ONLY_NO_INDEPENDENT_CONFIRMATION",
+      "independent_source_urls": [],
+      "evidence_summary": "Current LMD country-list-only lead; exact independently evidenced Catholic site and currently celebrated 1962 Mass unconfirmed.",
+      "canonical_cl2_match": null,
+      "exact_visitor_entrance_approved": false,
+      "schedule_publication_approved": false,
+      "new_site_admission_approved": false,
+      "next_action": "VERIFY_INSTITUTION_AND_PHYSICAL_SITE"
+    }
+  ]
+}

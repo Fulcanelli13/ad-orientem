@@ -1,0 +1,304 @@
+{
+  "schema": "AO_LMD_V2_SIXTEEN_COMPETING_CANDIDATES_FIRSTPARTY_DISPOSITION_V1",
+  "audit_date": "2026-11-11",
+  "source_crosswalk": "data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json",
+  "source_cl2_index": "data/directory/generated/cl2-physical-site-index.v1.json",
+  "scope": "16 archive rows from the 1118-record V2 title-and-locality pass with multiple machine candidate IDs; reviewed against entire CL2 index and available institutional records, not by LMD website bulk extraction.",
+  "counts": {
+    "all_rows_reviewed": 16,
+    "NEW_PHYSICAL_SITE_EXCEL_CANDIDATE": 1,
+    "SAME_BUILDING_DOUBLE_CL2_REVIEW": 4,
+    "EXISTING_SINGLE_CL2_FALSE_ALTERNATIVE": 4,
+    "SAME_PARISH_DIFFERENT_WORSHIP_BUILDINGS_HOLD": 1,
+    "EXISTING_CL2_OUTSIDE_MATCHER_TEMPORAL_VENUE": 1,
+    "EXISTING_CL2_OUTSIDE_MATCHER_DISTINCT_RITE": 1,
+    "EXISTING_SINGLE_CL2_DIFFERENT_LOCAL_VENUES": 1,
+    "EXISTING_SINGLE_CL2_FALSE_CITY_TOKEN": 1,
+    "EXISTING_CL2_OUTSIDE_MATCHER": 2,
+    "confirmed_new_site_excel_candidates": 1,
+    "production_sites_created": 0,
+    "source_ids_automatically_linked": 0,
+    "canonical_merges": 0,
+    "imported_schedules": 0
+  },
+  "cases": [
+    {
+      "slug": "christ-the-king-church-kansas-city-united-states",
+      "type": "NEW_PHYSICAL_SITE_EXCEL_CANDIDATE",
+      "id": null,
+      "related": [
+        "RG-1219EF56C316",
+        "RG-23A785A0A399"
+      ],
+      "sources": [
+        "https://www.ctkkcmo.org/",
+        "https://ctkkcmo.org/events/traditional-latin-mass"
+      ],
+      "note": "Official Christ the King Catholic Church is at 8510 Wornall Road, Kansas City, Missouri, and currently advertises Traditional Latin Mass. Both machine candidates are different sites: Christ the King Convent 1409 E Meyer Blvd MO and an unverified Kansas City KS entry. No CL2 record at 8510 Wornall found in full 2580-site index. Distinct new physical-site candidate, requires Excel identity approval; no inferred coordinates or schedules.",
+      "rite": "Parish explicitly Traditional Latin Mass",
+      "excel": false,
+      "source_id": "LMD:christ-the-king-church-kansas-city-united-states"
+    },
+    {
+      "slug": "church-of-saint-dominic-brick-township-united-states",
+      "type": "SAME_BUILDING_DOUBLE_CL2_REVIEW",
+      "id": "RG-4EBF82DFE117",
+      "related": [
+        "RG-4EBF82DFE117",
+        "RG-86A7C04C87B8"
+      ],
+      "sources": [
+        "https://stdominicsparish.com/"
+      ],
+      "note": "Two existing CL2 entries have same official St Dominic parish web source and refer to Brick Township/Brick NJ. Current owner church address 250 Old Squan Road. Strong same-building duplicate identity, no automatic merge.",
+      "rite": "Traditional Latin Mass explicitly advertised by parish",
+      "excel": false,
+      "source_id": "LMD:church-of-saint-dominic-brick-township-united-states"
+    },
+    {
+      "slug": "holy-innocents-church-neptune-city-united-states",
+      "type": "SAME_BUILDING_DOUBLE_CL2_REVIEW",
+      "id": "RG-476BA44067AE",
+      "related": [
+        "RG-476BA44067AE",
+        "RG-B119D4B2F3CE"
+      ],
+      "sources": [
+        "https://holyinnocentschurch.net/venue/holy-innocents-church/",
+        "https://dioceseoftrenton.org/parishfinder"
+      ],
+      "note": "Both CL2 records share parish source and refer to the same Holy Innocents parish in Neptune/Neptune City NJ. Owner names one church at 3455 West Bangs Avenue, Neptune; the source's municipality Neptune City label should not cause a separate physical venue.",
+      "rite": "Parish event lists Traditional Latin Mass with chant Nov 2026; 1962 rubrical basis not separately recertified",
+      "excel": false,
+      "source_id": "LMD:holy-innocents-church-neptune-city-united-states"
+    },
+    {
+      "slug": "holy-name-church-providence-united-states",
+      "type": "SAME_BUILDING_DOUBLE_CL2_REVIEW",
+      "id": "RG-FF973A70A17F",
+      "related": [
+        "RG-C9E134BD039D",
+        "RG-FF973A70A17F"
+      ],
+      "sources": [
+        "https://holynameprovidence.org/contact-us",
+        "https://holynameprovidence.org/latin-mass"
+      ],
+      "note": "Both CL2 entries share owner web source and name Holy Name of Jesus in Providence RI. Physical address 99 Camp Street. The longer-titled entry has street; generic entry is locality-only. Strong duplicate candidate, not authority to merge without Excel roles review.",
+      "rite": "Owner explicitly states 1962 liturgical books",
+      "excel": false,
+      "source_id": "LMD:holy-name-church-providence-united-states"
+    },
+    {
+      "slug": "our-lady-of-mount-carmel-littleton-united-states",
+      "type": "EXISTING_SINGLE_CL2_FALSE_ALTERNATIVE",
+      "id": "RG-619323A26D92",
+      "related": [
+        "RG-39B6ED4989DF"
+      ],
+      "sources": [
+        "https://www.olmcfssp.org/welcome/about/",
+        "https://www.carmeliteslittleton.org/"
+      ],
+      "note": "The LMD named Our Lady of Mount Carmel church corresponds to FSSP parish at 5612 South Hickory Street Littleton, not the distinct Carmel of the Holy Spirit monastery at 6138 South Gallup Street. Preserve both physical venues.",
+      "rite": "FSSP owner says 1962 Missal",
+      "excel": false,
+      "source_id": "LMD:our-lady-of-mount-carmel-littleton-united-states"
+    },
+    {
+      "slug": "saint-augustine-church-south-saint-paul-united-states",
+      "type": "SAME_BUILDING_DOUBLE_CL2_REVIEW",
+      "id": "RG-90591ACAA073",
+      "related": [
+        "RG-19FC3C61905B",
+        "RG-90591ACAA073"
+      ],
+      "sources": [
+        "https://www.holytrinitysspmn.org/",
+        "https://www.holytrinitysspmn.org/join"
+      ],
+      "note": "Holy Trinity parish identifies Saint Augustine Oratory at 408 3rd Street North and Holy Trinity Church at separate 749 6th Avenue South. Two CL2 St Augustine records appear to refer to the same oratory (one locality-only); preserve the separate Holy Trinity church. Excel alias review before merge.",
+      "rite": "Parish explicitly identifies 1962 Tridentine Mass in Saint Augustine Oratory",
+      "excel": false,
+      "source_id": "LMD:saint-augustine-church-south-saint-paul-united-states"
+    },
+    {
+      "slug": "saint-patrick-church-fredericksburg-united-states",
+      "type": "SAME_PARISH_DIFFERENT_WORSHIP_BUILDINGS_HOLD",
+      "id": "RG-1F4B6AFB7CE1",
+      "related": [
+        "RG-27DBA41B403D"
+      ],
+      "sources": [
+        "https://stpatrick.latinmassarlington.org/",
+        "https://www.saintpatrickparish.org/"
+      ],
+      "note": "The current TLM organiser says Mass is held in historic parish chapel; owner also describes a new St Patrick church at 9149 Elys Ford Road. Historic chapel and newer church are distinct on one parish campus; the locality-only generic CL2 record needs exact building scope, so not an automatic duplicate/merge.",
+      "rite": "TLM organiser explicitly identifies traditional Mass in historic chapel",
+      "excel": false,
+      "source_id": "LMD:saint-patrick-church-fredericksburg-united-states"
+    },
+    {
+      "slug": "st-mary-parish-akron-united-states",
+      "type": "EXISTING_SINGLE_CL2_FALSE_ALTERNATIVE",
+      "id": "RG-FA7101FE83D3",
+      "related": [
+        "RG-4D8B8597ACEA"
+      ],
+      "sources": [
+        "https://latinmasscleveland.weebly.com/",
+        "https://www.stmaryakron.com/"
+      ],
+      "note": "St Mary Parish at 750 South Main Street Akron matches CL2 RG-FA7101FE83D3. Alternative RG-4D8... is SSPX-linked Immaculate Heart of Mary Chapel at 2935 Chenoweth Road, a different venue and affiliation. Independent organizer lists 1962 Missal Mass, but no primary parish/diocese 1962 timetable was established here.",
+      "rite": "Independent traditional-Mass organizer; current owner mass recurrence hold",
+      "excel": false,
+      "source_id": "LMD:st-mary-parish-akron-united-states"
+    },
+    {
+      "slug": "basilica-di-san-giovanni-battista-dei-fiorentini-roma-italy",
+      "type": "EXISTING_CL2_OUTSIDE_MATCHER_TEMPORAL_VENUE",
+      "id": "RG-C11191C53318",
+      "related": [
+        "RG-A10546242DF4",
+        "RG-C14F352FA2E8"
+      ],
+      "sources": [
+        "https://www.diocesidiroma.it/phpenti/ente/?ID=43",
+        "https://www.icrss.it/roma/",
+        "https://www.icrss.it/roma/wp-content/uploads/sites/3/2026/01/Settimana-dal-11-al-18-gennaio-2026.pdf"
+      ],
+      "note": "Full-index search found existing Basilica San Giovanni dei Fiorentini CL2 site RG-C11191C53318 omitted by overly broad Roma-city candidate matcher. Diocese identifies Via Acciaioli 2/Piazza dell'Oro; ICRSS January 2026 bulletin documented temporary older-rite celebrations there during Santi Celso e Giuliano restoration. Current ICRSS Roma page instead situates its activities at Immacolata dei Miracoli. DO NOT imply San Giovanni is a current regular 1962 venue from historical evidence.",
+      "rite": "Earlier 2026 use; present regular recurrence held",
+      "excel": false,
+      "source_id": "LMD:basilica-di-san-giovanni-battista-dei-fiorentini-roma-italy"
+    },
+    {
+      "slug": "cappella-dellistituto-immacolata-dei-miracoli-roma-italy",
+      "type": "EXISTING_SINGLE_CL2_FALSE_ALTERNATIVE",
+      "id": "RG-C14F352FA2E8",
+      "related": [
+        "RG-A10546242DF4"
+      ],
+      "sources": [
+        "https://www.icrss.it/roma/"
+      ],
+      "note": "ICRSS's current Roma apostolate explicitly names Chiesa dell'Immacolata dei Miracoli at Via Sebastiano Veniero 1, matching named existing CL2 physical site RG-C14F352FA2E8 (whose old source description reads number 3). Different number 1 vs 3 requires building entrance/geocode validation. FSSP Trinita dei Pellegrini is another church and cannot be confused.",
+      "rite": "ICRSS owner current older-rite apostolate; no automatic schedule",
+      "excel": false,
+      "source_id": "LMD:cappella-dellistituto-immacolata-dei-miracoli-roma-italy"
+    },
+    {
+      "slug": "chiesa-dei-santi-domenico-e-sisto-church-of-saints-dominic-sixtus-roma-italy",
+      "type": "EXISTING_CL2_OUTSIDE_MATCHER_DISTINCT_RITE",
+      "id": "RG-2323CFCF49FD",
+      "related": [
+        "RG-0139779AA43D",
+        "RG-A10546242DF4",
+        "RG-C14F352FA2E8"
+      ],
+      "sources": [
+        "https://www.diocesidiroma.it/phpenti/ente/?ID=932",
+        "https://angelicum.it/it/ateneo/uffici/cappellania/"
+      ],
+      "note": "Full CL2 index already contains Chiesa dei SS Domenico e Sisto at Largo Angelicum 1, matching Rome diocese and Angelicum. University explicitly advertises a Wednesday Latin Mass according to Dominican Rite, not necessarily Roman Missal of 1962; rite taxonomy must be preserved. Three offered Roma candidates are unrelated churches.",
+      "rite": "Dominican Rite Latin; do not silently relabel as 1962 Roman",
+      "excel": false,
+      "source_id": "LMD:chiesa-dei-santi-domenico-e-sisto-church-of-saints-dominic-sixtus-roma-italy"
+    },
+    {
+      "slug": "santissima-trinita-dei-pellegrini-most-holy-trinity-of-the-pilgrims-roma-italy",
+      "type": "EXISTING_SINGLE_CL2_FALSE_ALTERNATIVE",
+      "id": "RG-A10546242DF4",
+      "related": [
+        "RG-C14F352FA2E8",
+        "RG-5DB8924C5BEB"
+      ],
+      "sources": [
+        "https://roma.fssp.it/",
+        "https://roma.fssp.it/parrocchia/"
+      ],
+      "note": "FSSP's named Santissima Trinità dei Pellegrini church is existing RG-A10546242DF4. Immacolata dei Miracoli RG-C14 is distinct. Another generic Rome Chiesa della Santissima Trinita RG-5DB... has unverified street and might be a duplicate of this named church; keep separate duplicate-suspect hold, not automatic alias.",
+      "rite": "FSSP confirms older Roman Rite",
+      "excel": false,
+      "source_id": "LMD:santissima-trinita-dei-pellegrini-most-holy-trinity-of-the-pilgrims-roma-italy"
+    },
+    {
+      "slug": "convento-de-la-concepcion-el-puerto-de-santa-maria-spain",
+      "type": "EXISTING_SINGLE_CL2_DIFFERENT_LOCAL_VENUES",
+      "id": "RG-9569B5F07DB8",
+      "related": [
+        "RG-71DC122F0292"
+      ],
+      "sources": [
+        "https://misas.org/p/concepcionistas-franciscanas-el-puerto-de-santa-maria",
+        "https://icrss.es/santa-misa-horarios/"
+      ],
+      "note": "The Concepcionist convent at Calle Pedro Muñoz Seca 45 is existing CL2 RG-9569B5F07DB8. Separately listed ICKSP Oratorio de la Inmaculada Concepción at San Bartolomé 5 is another physical chapel; do not merge Sunday convent liturgy with the other site. Exact present schedule in owner channel needs confirmation.",
+      "rite": "Independent 2026 source describes traditional Latin Mass; owner recurrence held",
+      "excel": false,
+      "source_id": "LMD:convento-de-la-concepcion-el-puerto-de-santa-maria-spain"
+    },
+    {
+      "slug": "kostel-nanebevzeti-panny-marie-church-of-the-assumption-of-the-virgin-mary-vyssi-brod-czechia",
+      "type": "EXISTING_SINGLE_CL2_FALSE_CITY_TOKEN",
+      "id": "RG-761A34E746A6",
+      "related": [
+        "RG-D61B27122B77"
+      ],
+      "sources": [
+        "https://www.klastervyssibrod.cz/prohlidky"
+      ],
+      "note": "Vyšší Brod Cistercian monastery's Assumption church is RG-761A34E746A6; SSPX chapel at Uherský Brod is in a different town. Matching only shared token Brod was erroneous. Monastery explicitly says Mass according to traditional Roman Rite, summer in abbey church and winter in convent chapel: keep church-vs-chapel seasonal distinction.",
+      "rite": "Traditional Roman Rite monastery confirmed",
+      "excel": false,
+      "source_id": "LMD:kostel-nanebevzeti-panny-marie-church-of-the-assumption-of-the-virgin-mary-vyssi-brod-czechia"
+    },
+    {
+      "slug": "parroquia-del-sagrado-corazon-de-jesus-y-san-pedro-apostol-ciudad-de-mexico-mexico",
+      "type": "EXISTING_CL2_OUTSIDE_MATCHER",
+      "id": "RG-2351B92BD2C6",
+      "related": [
+        "RG-0A4B8547401B",
+        "RG-1A777E5CB53F",
+        "RG-6FEB08A4B66F",
+        "RG-A74DC06D4545"
+      ],
+      "sources": [
+        "https://dondehaymisa.com/parroquia/4118",
+        "https://desdelafe.mx/noticias/iglesia-en-mexico/iglesia-sagrado-corazon-jesus-ciudad-mexico/"
+      ],
+      "note": "Full-index lookup found existing San Pedrito del Centro CL2 site RG-2351B92BD2C6 with address Francisco de Garay 6 Cuauhtémoc matching diocesan registry. Four candidate IDs from text matcher were unrelated other-state/other-site churches. Diocesan link confirms church, but specific FSSP use, service schedule and 1962 rite should not be inferred solely from this owner listing.",
+      "rite": "Physical identity diocesan confirmed; older-rite recurrence not freshly verified by institutional source in this audit",
+      "excel": false,
+      "source_id": "LMD:parroquia-del-sagrado-corazon-de-jesus-y-san-pedro-apostol-ciudad-de-mexico-mexico"
+    },
+    {
+      "slug": "capilla-nuestra-senora-de-fatima-la-maria-colombia",
+      "type": "EXISTING_CL2_OUTSIDE_MATCHER",
+      "id": "RG-1A1E54C59588",
+      "related": [
+        "RG-B5E56A36D683",
+        "RG-BB1EEB6D25A0",
+        "RG-CD10579C234D"
+      ],
+      "sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/",
+        "https://www.fsspcolombia.com/copia-de-bienvenidos-2",
+        "https://www.fsspcolombia.com/contact"
+      ],
+      "note": "FSSP's own records identify Capilla Nuestra Señora de Fatima at Casa San Martin de Porres, Vereda La Maria, Anolaima, Colombia, already in CL2 as RG-1A1E54C59588. Three machine candidates were different SSPX sites in Bogota/Medellin/Bucaramanga. The FSSP owner site and central FSSP directory give inconsistent time details; do not import either timetable.",
+      "rite": "FSSP older-rite chapel identification confirmed",
+      "excel": false,
+      "source_id": "LMD:capilla-nuestra-senora-de-fatima-la-maria-colombia"
+    }
+  ],
+  "guardrails": [
+    "A textual multi-match is not proof that any candidate represents the archived physical venue.",
+    "Search the entire canonical CL2 index, not only the candidate set returned by a first-pass title matcher; Rome, Mexico and Colombia demonstrate why.",
+    "A shared parish can operate distinct church and chapel structures; confirm which physical room hosts the traditional rite.",
+    "Keep different old rites (Dominican vs 1962 Roman) separately typed.",
+    "The presence of a current named site does not make historically recorded venue schedule current; preserve effective dates and source context.",
+    "Evidence overlay only: the original row source and matching disposition remain unchanged.",
+    "No new physical site, church pin, timetable or CL2 alias without owner's Excel approval."
+  ]
+}
