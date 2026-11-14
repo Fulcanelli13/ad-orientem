@@ -1,0 +1,25 @@
+name: B92 research core import gate
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/validate-b91-research-core.py"
+      - "tests/directory-b92-import-gate.py"
+      - ".github/workflows/directory-b92-import-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  test-import-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python source
+        run: python3 -m py_compile tools/directory/validate-b91-research-core.py
+      - name: Execute fail-closed gate regression tests
+        run: python3 tests/directory-b92-import-gate.py
+      - name: Note about full workbook verification
+        run: |
+          echo "Full B82/B91 workbook parity is not tested in this workflow."
+          echo "The Excel workbooks are not committed. Run the SHA-pinned CLI on both actual input files before import."
