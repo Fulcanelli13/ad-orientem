@@ -75,8 +75,11 @@ const state=(d=date,p=id,path=proper)=>({
 });
 assert.equal(approved2026HomeArtwork(state()),null,
  "Do not show Caravaggio or Thyssen-sourced photography without clearance");
-assert.equal(approved2026HomeArtwork(state("2026-04-07",tue.principalId,tue.properPath)),null,
- "Do not publish earlier Van Dyck or unverified Rubens source for the later approved date");
+const tuePhoto=approved2026HomeArtwork(state("2026-04-07",tue.principalId,tue.properPath));
+assert.equal(tuePhoto?.artworkId,"kmska-307",
+ "Later owner-selected Rubens panel must render, never stale Van Dyck");
+assert.equal(tuePhoto?.image,"/assets/home/class-i-2026/rubens-rockox-kmska307-central-panel-original.jpg");
+assert.equal(tuePhoto?.selectionKind,"FROZEN_CLASS_I_LATER_OWNER_RUBENS_KMSKA307_EXACT_LOCAL_CC0_PHOTO");
 assert.equal(approved2026HomeArtwork(state(date,id,"bad")),null);
 assert.equal(approved2026HomeArtwork(state(date,"wrong",proper)),null);
 assert.equal(approved2026HomeArtwork(state("2026-04-07",id,proper)),null);

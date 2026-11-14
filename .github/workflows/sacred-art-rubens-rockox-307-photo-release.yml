@@ -1,0 +1,55 @@
+name: Sacred Art KMSKA 307 exact Rubens centre-panel release
+on:
+  pull_request:
+    paths:
+      - 'src/home/released-class-i-rubens-rockox-307-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'assets/home/class-i-2026/rubens-rockox-kmska307-central-panel-original.jpg'
+      - 'data/artwork/releases/2026-04-07-rubens-rockox-kmska307-source.v1.json'
+      - 'tests/home-class-i-rubens-rockox-307-*.mjs'
+      - 'tests/home-approved-dated-2026-browser.mjs'
+      - 'tests/home-2026-annual-artwork-coverage.mjs'
+      - 'tools/build-web-preview.mjs'
+      - '.github/workflows/sacred-art-rubens-rockox-307-photo-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-identity-cc0-and-static-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact October 26 owner decision and KMSKA 307 CC0 bytes
+        run: |
+          node --check src/home/released-class-i-rubens-rockox-307-2026.js
+          node tests/home-class-i-stom-emmaus-later-owner-decision.mjs
+          node tests/home-class-i-rubens-rockox-307-2026.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
+      - name: Prove curated Pages includes exact image, no source metadata
+        run: |
+          node tools/build-web-preview.mjs
+          node tests/home-class-i-rubens-rockox-307-pages-payload.mjs
+  real-320-390-home:
+    needs: source-identity-cc0-and-static-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - run: node tests/home-class-i-rubens-rockox-307-phone.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubens-rockox-kmska307-easter-tuesday-320-390
+          path: artifacts/home-class-i-rockox-307-phone/
+          if-no-files-found: warn
+          retention-days: 14

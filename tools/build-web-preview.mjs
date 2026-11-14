@@ -30,6 +30,7 @@ const excludedResearchPaths=[
  "data/artwork/releases/2026-03-15-07-01-two-frozen-class-i-source-manifest.v1.json",
  "data/artwork/releases/2026-03-15-07-01-two-class-i-photo-byte-proof.v1.json",
  "data/artwork/releases/2026-11-01-saraceni-met-cc0-byte-proof.v1.json",
+ "data/artwork/releases/2026-04-07-rubens-rockox-kmska307-source.v1.json",
  "data/geography/research",
  "data/office/research",
  "data/prayer/stations/san-polo-tiepolo-oils-1747",
