@@ -1,0 +1,63 @@
+name: Prayer Church novena source export (R7)
+
+on:
+  pull_request:
+    paths:
+      - 'tools/pray/export-church-novena-review.mjs'
+      - 'src/pray/church-novena-ids.v1.js'
+      - 'src/pray/church-novena-route.v1.js'
+      - 'src/pray/browser-entry.js'
+      - 'tests/pray-church-novena-direct-route.mjs'
+      - 'tests/pray-church-novena-integrated-phone.mjs'
+      - 'tests/pray-church-novena-review-export.mjs'
+      - 'src/pray/novena-corpus*.js'
+      - 'src/pray/icksp-*-novena.v1.js'
+      - 'src/pray/holy-face-janvier-1887-b25.js'
+      - '.github/workflows/pray-church-novena-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test exact novena corpus and export
+        run: node tests/pray-church-novena-review-export.mjs
+      - name: Verify 19 Church reader hand-offs and Back restoration
+        run: node tests/pray-church-novena-direct-route.mjs
+      - name: Build review-only source snapshot
+        run: node tools/pray/export-church-novena-review.mjs --output "$RUNNER_TEMP/church-novenas-r7.json"
+      - name: Make review snapshot available without publishing it to Pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: church-novenas-r7-source-snapshot
+          path: ${{ runner.temp }}/church-novenas-r7.json
+          retention-days: 3
+
+  integrated-reader-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Test real served app, 19 novena routes, both languages and phone sizes
+        run: node tests/pray-church-novena-integrated-phone.mjs
+      - name: Attach route and return evidence for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: church-novena-r9-real-reader-phone-evidence
+          path: artifacts/pray-church-novena-integrated/*
+          retention-days: 5
+          if-no-files-found: warn

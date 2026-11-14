@@ -1,5 +1,6 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import { installLazyPrayRegistry } from "./lazy-module-registry.js";
+import { openChurchNovenaRoute as openChurchNovenaThroughN3 } from "./church-novena-route.v1.js";
 
 
 
@@ -233,7 +234,14 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     });
   }
 
-  return Object.freeze({version:VERSION,open,close,status});
+  // Optional Church integration: the Church owns location and return camera,
+  // while the one canonical N3 reader owns text/day/stage/language/calendar.
+  async function openChurchNovenaRoute(route,options={}){
+    return openChurchNovenaThroughN3(route,{
+      ...options,win,ensureReader:()=>ensurePrayReader({win})
+    });
+  }
+  return Object.freeze({version:VERSION,open,close,status,openChurchNovenaRoute});
 }
 
 export function installPrayBrowserOwner(win=globalThis){
