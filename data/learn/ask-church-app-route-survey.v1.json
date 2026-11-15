@@ -1,0 +1,1205 @@
+{
+  "schema": "AO_ASK_CHURCH_APP_ROUTE_SURVEY_V1",
+  "date": "2026-10-18",
+  "state": "RESEARCH_PREVIEW_ONLY_NOT_PUBLISHED",
+  "meaning": "A routing and explanatory-capability index, not duplicate content or a proof of browser availability",
+  "sourceFiles": [
+    "data/app/content-navigation-registry.v1.json",
+    "data/app/guide-coverage-two-function-audit.v1.json",
+    "data/app/content-items-apostolate.v1.json",
+    "src/learn/presentation.js",
+    "src/pray/internal-route-owner.js",
+    "src/pray/confession-paths.js"
+  ],
+  "rules": [
+    "Never synthesize or republish canonical module explanations from this routing metadata.",
+    "Retrieve explanatory text directly from its owning module with a per-module approved adapter; until then use navigation summary only.",
+    "No publication or one-click public linking for research-only Apologetics and Church Crisis dossiers.",
+    "No coercive goal classification or automatic navigation. Require an explicit user selection for each handoff.",
+    "Do not solicit or store sins, examination of conscience answers, personal culpability or private medical details.",
+    "Do not claim an Explore lens has been preselected when only the map surface can be opened.",
+    "Provide an explicit return-to-conversation contract and resume state before live deployment."
+  ],
+  "coverage": {
+    "navigationRegistryRoutes": 63,
+    "additionalCurrentSourceRoutes": 4,
+    "routeSurveyTotal": 67,
+    "apostolateScenarios": 36,
+    "apostolateSkills": 9,
+    "objectiveFamilies": 7,
+    "situationBranches": 26,
+    "publicationGatedRoutes": [
+      "learn.apologetics",
+      "learn.church_crisis"
+    ],
+    "browserHandoffsVerified": 0
+  },
+  "routes": [
+    {
+      "id": "home",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "mass",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/mass/reader-dom.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "calendar",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "GAP_CANDIDATE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/calendar/calendar-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "find",
+      "routeStatus": "NAV_VISIBLE_IN_SOURCE",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "settings",
+      "routeStatus": "ROUTABLE_IN_SOURCE",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "apostolate",
+      "routeStatus": "ROUTABLE_IN_SOURCE",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/apostolate/presentation.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.catechism.daily",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/browser-entry.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.catechism",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "EDITORIAL_PREVIEW_ONLY",
+      "evidenceFile": "src/learn/catechism-guided-reader.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.spiritual_life",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/spiritual-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "GAP_CANDIDATE",
+      "evidenceFile": "src/learn/sexual-ethics.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.scapular",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.mass",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/mass-formation.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.sick",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.baptism",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/learn/traditional-life.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.latin",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/latin-course-v2.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.glossary",
+      "routeStatus": "LAUNCHER_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/learn/presentation.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.hub",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.rosary",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.angelus_regina",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.angelus",
+      "routeStatus": "COMPATIBILITY_ALIAS",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.confession",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.benediction",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.adoration",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.stations",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.visit_blessed_sacrament",
+      "routeStatus": "REGISTRY_DECLARED_NOT_FAMILY",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.library",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "GAP_CANDIDATE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.litany_saints",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.seven_words",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.forty_hours",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.de_profundis",
+      "routeStatus": "REGISTRY_DECLARED_NOT_FAMILY",
+      "informationStatus": "GAP_CANDIDATE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.eternal_rest",
+      "routeStatus": "REGISTRY_DECLARED_NOT_FAMILY",
+      "informationStatus": "GAP_CANDIDATE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "programme.first_friday",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "programme.first_saturday",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/presentation-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.morning_evening",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.meal_prayers",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.nightly_examen",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.novenas",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/novena-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.sacred_heart",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "GAP_CANDIDATE",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.good_death",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.dying_companion",
+      "routeStatus": "FAMILY_OR_HUB_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "PARTIAL",
+      "evidenceFile": "src/pray/traditional-pray-runtime.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.tlm",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.shrines",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.apparitions",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.relics",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.traditions",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "explore.lens.pilgrimages",
+      "routeStatus": "LIVE_LENS_DECLARED",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "GAP_CANDIDATE",
+      "evidenceFile": "src/find/explore-projection.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "scripture",
+      "routeStatus": "CONTEXTUAL_OR_COMPATIBILITY",
+      "informationStatus": "PARTIAL",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": "src/scripture/browser-entry.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.apologetics",
+      "routeStatus": "PUBLICATION_GATED",
+      "informationStatus": "PUBLICATION_HOLD",
+      "walkthroughStatus": "PUBLICATION_HOLD",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "RESEARCH_ONLY"
+    },
+    {
+      "id": "learn.church_crisis",
+      "routeStatus": "PUBLICATION_GATED",
+      "informationStatus": "PUBLICATION_HOLD",
+      "walkthroughStatus": "PUBLICATION_HOLD",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "RESEARCH_ONLY"
+    },
+    {
+      "id": "learn.catholic_life",
+      "routeStatus": "RETIRED_OR_ALIAS",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.seasonal_rites",
+      "routeStatus": "RETIRED_OR_ALIAS",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "today.calendar",
+      "routeStatus": "CONTEXTUAL_OR_COMPATIBILITY",
+      "informationStatus": "NOT_APPLICABLE",
+      "walkthroughStatus": "NOT_APPLICABLE",
+      "evidenceFile": null,
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "learn.mass_explorer",
+      "routeStatus": "LAUNCHER_DECLARED_CURRENT_LEARN_LAYOUT",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/learn/mass-explorer.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.divine_mercy",
+      "routeStatus": "INTERNAL_PRAYER_VIEW",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/internal-route-owner.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.tenebrae",
+      "routeStatus": "INTERNAL_PRAYER_VIEW",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/internal-route-owner.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    },
+    {
+      "id": "pray.rosary_methods",
+      "routeStatus": "INTERNAL_PRAYER_VIEW",
+      "informationStatus": "CODE_PRESENT",
+      "walkthroughStatus": "CODE_PRESENT",
+      "evidenceFile": "src/pray/internal-route-owner.js",
+      "browserVerified": false,
+      "releaseGate": "SOURCE_DECLARED"
+    }
+  ],
+  "apostolateScenarios": [
+    {
+      "id": "apostolate:AQ01",
+      "topic": "Why do Catholics pray to Mary and the saints?",
+      "frenchTitle": "Pourquoi les catholiques prient-ils Marie et les saints ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ02",
+      "topic": "Why confess sins to a priest? Why not just tell God?",
+      "frenchTitle": "Pourquoi confesser ses péchés à un prêtre ? Pourquoi ne pas simplement les dire à Dieu ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ03",
+      "topic": "Why do Catholics obey the Pope? Is he infallible about everything?",
+      "frenchTitle": "Pourquoi les catholiques obéissent-ils au Pape ? Est-il infaillible en tout ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ04",
+      "topic": "Doesn’t the Mass sacrifice Jesus again?",
+      "frenchTitle": "La Messe ne sacrifie-t-elle pas Jésus une nouvelle fois ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ05",
+      "topic": "How can Catholics believe bread really becomes Jesus?",
+      "frenchTitle": "Comment les catholiques peuvent-ils croire que le pain devient réellement Jésus ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ06",
+      "topic": "Why Latin? And why the traditional Mass?",
+      "frenchTitle": "Pourquoi le latin ? Et pourquoi la Messe traditionnelle ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ07",
+      "topic": "Why Purgatory? Didn’t Jesus already pay for our sins?",
+      "frenchTitle": "Pourquoi le Purgatoire ? Jésus n’a-t-il pas déjà payé pour nos péchés ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:AQ08",
+      "topic": "Why isn’t the Bible alone enough?",
+      "frenchTitle": "Pourquoi la Bible seule ne suffit-elle pas ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/corpus.js"
+    },
+    {
+      "id": "apostolate:HS01",
+      "topic": "I want to come back to Mass. Where do I start?",
+      "frenchTitle": "Je veux revenir à la Messe. Par où commencer ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS02",
+      "topic": "I haven’t been to Confession in years. What do I do?",
+      "frenchTitle": "Je ne me suis pas confessé depuis des années. Que dois-je faire ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS03",
+      "topic": "I think I want to become Catholic. What should I do?",
+      "frenchTitle": "Je pense vouloir devenir catholique. Que dois-je faire ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS04",
+      "topic": "I don’t really know how to pray.",
+      "frenchTitle": "Je ne sais pas vraiment comment prier.",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS05",
+      "topic": "Someone has died. What can I do?",
+      "frenchTitle": "Quelqu’un est mort. Que puis-je faire ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS06",
+      "topic": "Someone is seriously ill or dying. What should I do?",
+      "frenchTitle": "Quelqu’un est gravement malade ou mourant. Que dois-je faire ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:HS07",
+      "topic": "Bad Catholics or bad clergy have made me distrust the Church.",
+      "frenchTitle": "De mauvais catholiques ou de mauvais clercs m’ont fait perdre confiance dans l’Église.",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/hs-corpus.js"
+    },
+    {
+      "id": "apostolate:FH01",
+      "topic": "How do I start a family Rosary?",
+      "frenchTitle": "Comment commencer le Rosaire en famille ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH02",
+      "topic": "How do we begin saying grace at meals?",
+      "frenchTitle": "Comment commencer le bénédicité aux repas ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH03",
+      "topic": "How do we establish morning and evening prayer at home?",
+      "frenchTitle": "Comment établir la prière du matin et du soir à la maison ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH04",
+      "topic": "How do I teach children their basic prayers?",
+      "frenchTitle": "Comment apprendre aux enfants leurs prières de base ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH05",
+      "topic": "How do I prepare a child for First Confession and First Communion?",
+      "frenchTitle": "Comment préparer un enfant à la première Confession et à la première Communion ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH06",
+      "topic": "What is a godparent actually supposed to do?",
+      "frenchTitle": "Quel est réellement le rôle d’un parrain ou d’une marraine ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH07",
+      "topic": "What should a Confirmation sponsor actually do?",
+      "frenchTitle": "Que doit réellement faire un parrain ou une marraine de Confirmation ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:FH08",
+      "topic": "How can a family begin devotion to the Sacred Heart?",
+      "frenchTitle": "Comment une famille peut-elle commencer la dévotion au Sacré-Cœur ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/fh-corpus.js"
+    },
+    {
+      "id": "apostolate:TF01",
+      "topic": "How do I explain a Catechism answer to a child?",
+      "frenchTitle": "Comment expliquer une réponse du Catéchisme à un enfant ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/tf-corpus.js"
+    },
+    {
+      "id": "apostolate:TF02",
+      "topic": "How do I explain Catholic doctrine to an adult who is new to it?",
+      "frenchTitle": "Comment expliquer la doctrine catholique à un adulte qui la découvre ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/tf-corpus.js"
+    },
+    {
+      "id": "apostolate:TF03",
+      "topic": "What should I do when I don’t know the answer?",
+      "frenchTitle": "Que faire lorsque je ne connais pas la réponse ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/tf-corpus.js"
+    },
+    {
+      "id": "apostolate:TF04",
+      "topic": "How do I teach someone to pray the Rosary?",
+      "frenchTitle": "Comment apprendre à quelqu’un à prier le Rosaire ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/tf-corpus.js"
+    },
+    {
+      "id": "apostolate:TF05",
+      "topic": "How do I explain the traditional Mass to a newcomer?",
+      "frenchTitle": "Comment expliquer la Messe traditionnelle à un nouveau venu ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/tf-corpus.js"
+    },
+    {
+      "id": "apostolate:DV01",
+      "topic": "Bring someone to the traditional Mass for the first time",
+      "frenchTitle": "Accompagner quelqu’un à la Messe traditionnelle pour la première fois",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/dv-corpus.js"
+    },
+    {
+      "id": "apostolate:DV02",
+      "topic": "Help somebody approach Confession for the first time",
+      "frenchTitle": "Aider quelqu’un à s’approcher de la Confession pour la première fois",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/dv-corpus.js"
+    },
+    {
+      "id": "apostolate:DV03",
+      "topic": "Introduce someone to Eucharistic Adoration or Benediction",
+      "frenchTitle": "Faire découvrir l’Adoration eucharistique ou la Bénédiction du Saint-Sacrement",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/dv-corpus.js"
+    },
+    {
+      "id": "apostolate:DV04",
+      "topic": "Help someone begin a novena",
+      "frenchTitle": "Aider quelqu’un à commencer une neuvaine",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/dv-corpus.js"
+    },
+    {
+      "id": "apostolate:DV05",
+      "topic": "Introduce someone to First Friday / Sacred Heart devotion",
+      "frenchTitle": "Faire découvrir le premier vendredi et la dévotion au Sacré-Cœur",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/dv-corpus.js"
+    },
+    {
+      "id": "apostolate:WC01",
+      "topic": "A colleague asks me a serious religious question",
+      "frenchTitle": "Un collègue me pose une question religieuse sérieuse",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/wc-corpus.js"
+    },
+    {
+      "id": "apostolate:WC02",
+      "topic": "Someone mocks or attacks the Faith",
+      "frenchTitle": "Quelqu’un se moque de la foi ou l’attaque",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/wc-corpus.js"
+    },
+    {
+      "id": "apostolate:WC03",
+      "topic": "How do I invite someone to Mass?",
+      "frenchTitle": "Comment inviter quelqu’un à la Messe ?",
+      "publicationState": "READY_IN_RUNTIME_SOT",
+      "source": "src/apostolate/wc-corpus.js"
+    }
+  ],
+  "apostolateSkills": [
+    {
+      "id": "apostolate-skill:APF01",
+      "topic": "Apostolic spirit",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF02",
+      "topic": "Listen before answering",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF03",
+      "topic": "Discern the real need",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF04",
+      "topic": "Explain clearly",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF05",
+      "topic": "Charity, fairness & tact",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF06",
+      "topic": "Handle objections without wrangling",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF07",
+      "topic": "Know what you do not know",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF08",
+      "topic": "Know your boundaries",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    },
+    {
+      "id": "apostolate-skill:APF09",
+      "topic": "Practise, follow up & deepen",
+      "publicationState": "SKILL_REGISTERED",
+      "source": "src/apostolate/contracts.js"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "defend",
+      "label": "Defend Catholic teaching",
+      "ask": "Who are you speaking with, and what was challenged?",
+      "paths": [
+        {
+          "id": "protestant",
+          "targets": [
+            "apostolate:AQ08",
+            "apostolate:AQ03",
+            "apostolate:AQ01",
+            "apostolate:WC01"
+          ]
+        },
+        {
+          "id": "critic",
+          "targets": [
+            "apostolate:WC02",
+            "apostolate:HS07",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "newcomer",
+          "targets": [
+            "apostolate:TF02",
+            "learn.catechism",
+            "apostolate:HS03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "understand",
+      "label": "Understand a doctrine",
+      "ask": "Is it about the Mass, the sacraments, Scripture, or Latin?",
+      "paths": [
+        {
+          "id": "mass",
+          "targets": [
+            "learn.mass_explorer",
+            "learn.mass",
+            "learn.glossary"
+          ]
+        },
+        {
+          "id": "sacraments",
+          "targets": [
+            "learn.catechism",
+            "learn.rites.baptism",
+            "pray.confession"
+          ]
+        },
+        {
+          "id": "scripture",
+          "targets": [
+            "scripture",
+            "apostolate:AQ08",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "latin",
+          "targets": [
+            "learn.latin",
+            "learn.mass_explorer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situation",
+      "label": "Discuss a personal situation",
+      "ask": "Which general situation applies? No need to share private sins.",
+      "paths": [
+        {
+          "id": "confession_return",
+          "targets": [
+            "apostolate:HS02",
+            "pray.confession",
+            "apostolate:AQ02"
+          ]
+        },
+        {
+          "id": "confession_question",
+          "targets": [
+            "apostolate:AQ02",
+            "pray.confession",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "illness",
+          "targets": [
+            "apostolate:HS06",
+            "learn.rites.sick",
+            "pray.dying_companion"
+          ]
+        },
+        {
+          "id": "bereavement",
+          "targets": [
+            "apostolate:HS05",
+            "pray.eternal_rest"
+          ]
+        },
+        {
+          "id": "moral",
+          "targets": [
+            "learn.sexual_ethics",
+            "learn.spiritual_life",
+            "pray.confession"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "label": "Practise a dialogue",
+      "ask": "What is the actual objection or situation?",
+      "paths": [
+        {
+          "id": "colleague",
+          "targets": [
+            "apostolate:WC01",
+            "apostolate:WC02",
+            "apostolate:TF02"
+          ]
+        },
+        {
+          "id": "scripture_alone",
+          "targets": [
+            "apostolate:AQ08",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "eucharist",
+          "targets": [
+            "apostolate:AQ05",
+            "apostolate:AQ04",
+            "learn.mass_explorer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prayer",
+      "label": "Develop a life of prayer",
+      "ask": "Are you beginning, praying as a family, or trying a devotion?",
+      "paths": [
+        {
+          "id": "begin",
+          "targets": [
+            "apostolate:HS04",
+            "pray.morning_evening",
+            "learn.spiritual_life"
+          ]
+        },
+        {
+          "id": "family",
+          "targets": [
+            "apostolate:FH01",
+            "pray.rosary",
+            "apostolate:FH03"
+          ]
+        },
+        {
+          "id": "adoration",
+          "targets": [
+            "pray.adoration",
+            "pray.benediction"
+          ]
+        },
+        {
+          "id": "devotions",
+          "targets": [
+            "pray.angelus_regina",
+            "pray.novenas",
+            "programme.first_friday",
+            "programme.first_saturday"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prepare",
+      "label": "Prepare for sacrament or event",
+      "ask": "What are you preparing for?",
+      "paths": [
+        {
+          "id": "first_communion",
+          "targets": [
+            "learn.rites.first_communion",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "baptism",
+          "targets": [
+            "learn.rites.baptism",
+            "learn.catechism"
+          ]
+        },
+        {
+          "id": "marriage",
+          "targets": [
+            "learn.rites.matrimony",
+            "learn.sexual_ethics"
+          ]
+        },
+        {
+          "id": "first_mass",
+          "targets": [
+            "apostolate:DV01",
+            "learn.mass_explorer",
+            "learn.glossary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "label": "Discover freely",
+      "ask": "Would you like to explore an idea, a place or a devotion?",
+      "paths": [
+        {
+          "id": "places",
+          "targets": [
+            "explore.lens.shrines",
+            "explore.lens.tlm"
+          ]
+        },
+        {
+          "id": "ideas",
+          "targets": [
+            "learn.catechism",
+            "learn.catechism.daily",
+            "apostolate:TF02"
+          ]
+        },
+        {
+          "id": "devotions",
+          "targets": [
+            "pray.rosary",
+            "pray.angelus_regina",
+            "pray.novenas"
+          ]
+        }
+      ]
+    }
+  ]
+}

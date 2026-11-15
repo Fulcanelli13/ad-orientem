@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#080c12"><title>Ask the Church — native-route integration preview</title><style>body{margin:0;background:#080c12;color:#ede4d7;font:16px Georgia,serif}#error{padding:2rem}</style></head><body><div id="error"></div><script type="module">
+import {mountAskChurchGuide} from '../src/learn/ask-church-guided-preview.js';
+try{await mountAskChurchGuide(window)}catch(e){document.getElementById('error').textContent='The source registry could not be loaded. Serve this page from the Ad Orientem repository root to use the preview: '+String(e?.message||e)}
+</script></body></html>
