@@ -1,0 +1,75 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B26_V1",
+  "date": "2026-11-16",
+  "publication": "RESEARCH_ONLY_NOT_CANONICAL",
+  "reconciliation": {
+    "main_registry": "data/geography/seed-registry.v1.json",
+    "main_counts": {
+      "places": 530,
+      "geoAreas": 146,
+      "directoryPlaceLinks": 26
+    },
+    "historical_philippines_checkpoint": 347,
+    "queue": "sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_blob_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "queue_rows_prior_baseline": 750,
+    "canonical_id_created": false,
+    "existing_registry_name_match": false
+  },
+  "records": [
+    {
+      "research_key": "phuoc-kieu-blessed-andrew-phu-yen",
+      "status": "VERIFIED_INSTITUTIONAL_IDENTITY_RESEARCH_CANDIDATE_NOT_CERTIFIED",
+      "name": "Đền Thánh Anrê Phú Yên – Phước Kiều",
+      "country": "Vietnam",
+      "diocese": "Đà Nẵng",
+      "deanery": "Hội An",
+      "saint": "Blessed Andrew of Phú Yên",
+      "facts": [
+        {
+          "claim": "The diocesan 2025 Jubilee handbook explicitly lists the shrine at Phước Kiều among five designated diocesan pilgrimage churches/sites",
+          "url": "https://www.giaophandanang.org/wp-content/uploads/2024/12/CAM-NANG-NAM-THANH-2025-DA-NANG-A5.pdf"
+        },
+        {
+          "claim": "Diocesan pilgrimage programme for 26 July 2025 and report on the celebration establish organised pilgrimage and veneration",
+          "url": "https://giaophandanang.org/chuong-trinh-hanh-huong-den-thanh-anre-phu-yen-phuoc-kieu-nam-2025/"
+        },
+        {
+          "claim": "Diocesan report dated 28 July 2026 documents over 1,000 pilgrims at the 27 July 2026 feast and shrine visits",
+          "url": "https://giaophandanang.org/dai-le-mung-kinh-chan-phuoc-anre-phu-yen-thay-giang-tu-dao-ky-niem-382-nam-an-phuc-tu-dao-1644-2026/"
+        },
+        {
+          "claim": "Pope John Paul II beatified Andrew on 5 March 2000",
+          "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000305_beatifications.html"
+        },
+        {
+          "claim": "The diocese announced a 5 March 2026 anniversary Mass at the shrine parish; separate from the July pilgrimage observance",
+          "url": "https://giaophandanang.org/wp-content/uploads/2026/02/THONG-BAO-SO-02.T02.2026.-THANH-LE-TA-ON-MUNG-26-NAM-TUYEN-PHONG-CHAN-PHUOC-ANRE-PHU-YEN.pdf"
+        }
+      ],
+      "en": "The Shrine of Blessed Andrew of Phú Yên at Phước Kiều, in the Diocese of Đà Nẵng, honours the young Vietnamese catechist and martyr beatified by John Paul II in 2000. The diocese lists the shrine as a Jubilee pilgrimage destination and documents pilgrimages around 26–27 July, including prayer and veneration. A separate anniversary Mass commemorated his beatification on 5 March 2026. Exact public entrance, coordinates and current visitor opening hours remain unverified.",
+      "fr": "Le sanctuaire du bienheureux André de Phú Yên à Phước Kiều, dans le diocèse de Đà Nẵng, honore le jeune catéchiste et martyr vietnamien béatifié par Jean-Paul II en 2000. Le diocèse l'a désigné comme lieu de pèlerinage jubilaire et atteste des pèlerinages autour des 26 et 27 juillet, avec prière et vénération. Une messe distincte a commémoré sa béatification le 5 mars 2026. L'entrée publique exacte, les coordonnées et les horaires actuels restent à vérifier.",
+      "holds": [
+        "No verified site entrance or coordinates",
+        "No independent confirmation of exact relic inventory or permanent custody",
+        "No assertion of national shrine title"
+      ],
+      "geometry": null
+    }
+  ],
+  "next_queue": [
+    "Phước Kiều exact entrance and relic custody",
+    "Tianjin direct diocesan current/former cathedral confirmation",
+    "Kolser original 1926 diocesan archives",
+    "Trà Kiệu verified visitor entrances",
+    "Nishizaka precise relic custody",
+    "Cupey permanent building status",
+    "Aitara national-shrine decree"
+  ],
+  "constraints": {
+    "no_merges": true,
+    "no_deploy": true,
+    "no_canonical_edits": true,
+    "no_invented_geometry": true
+  }
+}
