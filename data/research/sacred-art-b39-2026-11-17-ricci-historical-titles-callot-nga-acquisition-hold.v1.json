@@ -1,0 +1,68 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B39",
+  "asOf": "2026-11-17",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B38",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B39-01",
+      "kind": "CLASS_II_HISTORICAL_TITLE_DISAMBIGUATION",
+      "subject": "Sebastiano Ricci, The Exaltation of the True Cross, NGA 1939.1.72",
+      "findingEn": "The NGA's own bibliography and exhibition history document repeated historical titles identifying the same physical painting as The Finding of the True Cross or Saint Helen Finding the True Cross (1941, 1959, 1965, 1968, 1975, 1985; 1938 exhibitions). Its current NGA catalogue title is The Exaltation of the True Cross. Thus the Discovery/Exaltation ambiguity is a documented cataloguing history of one object, not evidence for two Ricci works. The historical iconographic attribution cannot be silently discarded: keep feast-specific exactness qualified pending NGA scholarly iconographic interpretation. The companion NGA 1939.1.71 remains a different physical painting.",
+      "findingFr": "La bibliographie et l'historique des expositions de la NGA attestent, pour la même œuvre 1939.1.72, les anciens titres The Finding of the True Cross et Saint Helen Finding the True Cross (notamment en 1938, 1941, 1959, 1965, 1968, 1975 et 1985). Le titre actuel est The Exaltation of the True Cross. L'ambiguïté Invention/Exaltation relève donc d'une histoire de catalogage d'un seul tableau, et non de deux œuvres de Ricci. Maintenir la réserve iconographique pour la fête jusqu'à l'examen de l'étude scientifique de la NGA.",
+      "sources": [
+        "https://www.nga.gov/artworks/213-exaltation-true-cross"
+      ],
+      "rightsStatus": "NGA_OBJECT_MEDIA_PUBLIC_DOMAIN",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B39-02",
+      "kind": "CLASS_II_INDEPENDENT_OPEN_ACCESS_ALTERNATE_DISTINCT_OBJECT",
+      "subject": "Jacques Callot, The Birth of the Virgin, NGA 1969.15.785",
+      "findingEn": "The NGA identifies an exact Nativity-of-the-Virgin subject by Jacques Callot, c. 1633/34, accession 1969.15.785, etching in The Life of the Virgin series, catalogue Lieure 1358, and explicitly labels the media public domain. This is a distinct print, not an alternate photograph of Andrea di Bartolo NGA 1939.1.42. It is a secondary research candidate only, subject to existing exclusions and ratings, not a replacement of the previously identified painted lead. A second NGA Callot record 1969.15.785 should not be duplicated merely because NGA exposes different artwork URLs.",
+      "findingFr": "La NGA conserve une eau-forte de Jacques Callot, La Naissance de la Vierge (vers 1633–1634), inv. 1969.15.785, de la série Vie de la Vierge, Lieure 1358, dont l'image est explicitement dans le domaine public. Il s'agit d'une estampe distincte du tableau d'Andrea di Bartolo, non d'une autre photographie. Candidature documentaire secondaire seulement, sans modifier les décisions existantes.",
+      "sources": [
+        "https://www.nga.gov/artworks/5313-birth-virgin",
+        "https://www.nga.gov/artworks/51940-birth-virgin"
+      ],
+      "rightsStatus": "NGA_OBJECT_MEDIA_PUBLIC_DOMAIN",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B39-03",
+      "kind": "ACQUISITION_RETRY_ENVIRONMENT_BLOCK",
+      "subject": "Andrea di Bartolo, NGA 1939.1.42, NGA IIIF image",
+      "findingEn": "Direct network retrieval of the known NGA IIIF URL using requests failed with DNS NameResolutionError for api.nga.gov before any HTTP response. No bytes, dimensions, SHA-256, crop or mobile QA were obtained. This is not evidence of image withdrawal. The NGA object page still explicitly states that media is free and public domain.",
+      "findingFr": "Une nouvelle tentative de récupération de l'image IIIF de la NGA a échoué au stade DNS pour api.nga.gov, avant toute réponse HTTP. Aucun fichier, dimension, empreinte SHA-256 ni contrôle de cadrage mobile n'a été obtenu. Cet échec technique ne démontre pas le retrait de l'image.",
+      "sources": [
+        "https://www.nga.gov/artworks/183-nativity-virgin",
+        "https://api.nga.gov/iiif/789d7bcb-9bb2-4fdc-b049-1c9e8ebcce51/full/full/0/default.jpg"
+      ],
+      "rightsStatus": "NGA_OBJECT_MEDIA_PUBLIC_DOMAIN_ACQUISITION_BLOCKED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Read NGA Ricci 1996 scholarly catalogue pp. 224–230 for iconographic argument behind renaming Finding to Exaltation",
+    "Find independently open exact photographs for approved Class I Benson, Carracci, Strozzi, Gaulli",
+    "Acquire/hash/QA NGA 1939.1.42 and 1939.1.72 and Städel 830 in network-enabled environment",
+    "Verify Esztergom custodial inventory and image rights; locate strict Lateran dedication scene"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
