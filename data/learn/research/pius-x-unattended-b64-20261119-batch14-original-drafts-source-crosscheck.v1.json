@@ -1,0 +1,101 @@
+{
+  "schema": "AO_SPX_B64_BATCH14_ORIGINAL_DRAFTS_V1",
+  "date": "2026-11-19",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_TRIAGE_NOT_CERTIFIED",
+  "parent": "B63",
+  "scope": {
+    "files": 5,
+    "holyOrdersAndMatrimony": 39,
+    "preliminaryLesson": 11,
+    "distinctCanonicalIds": 50,
+    "answerUnits": 100,
+    "completeEnglishFrenchQuestionResponseUnits": 100,
+    "ordersRange": "SPX-1905-O-817..O-836",
+    "matrimonyRange": "SPX-1905-M-837..M-855",
+    "preliminaryRange": "SPX-1905-PRELIM-001..011",
+    "duplicateIdsWithinFiles": 0
+  },
+  "sourceFiles": [
+    [
+      "pius-x-batch14-sacraments-a-20261020.v1.json",
+      "240bfeae510966e0b3434d7bdbcbe5ed5660cc17",
+      10
+    ],
+    [
+      "pius-x-batch14-sacraments-b-20261020.v1.json",
+      "a85f0bee249f982a706eaf2747196f43ad33c8df",
+      10
+    ],
+    [
+      "pius-x-batch14-sacraments-c-20261020.v1.json",
+      "eabf1d9743fbb1c9e9786d9c3947b3e93d5fe194",
+      10
+    ],
+    [
+      "pius-x-batch14-sacraments-d-20261020.v1.json",
+      "22c9f7cca570d2e6f492281168769b83bb9ed5c6",
+      9
+    ],
+    [
+      "pius-x-batch14-preliminary-e-20261020.v1.json",
+      "b4f48edfdb7f801aa3b599566dcb922d0b554be3",
+      11
+    ]
+  ],
+  "primarySource": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "type": "Institutional Italian transcription, not authenticated printed facsimile",
+    "crosschecks": [
+      {
+        "id": "SPX-1905-O-817",
+        "question": "PX1905-Q817",
+        "finding": "Source distinguishes directly instituted episcopacy/priesthood from diaconate through apostles; draft preserves historical framing",
+        "classification": "SOURCE_SUPPORTED_PARAPHRASE"
+      },
+      {
+        "id": "SPX-1905-M-837",
+        "question": "PX1905-Q837",
+        "finding": "Italian source calls spouses ministers of Matrimony; draft reflects Latin account and cautions Eastern traditions require separate treatment",
+        "classification": "SOURCE_SUPPORTED_PARAPHRASE_WITH_EDITORIAL_CONTEXT"
+      },
+      {
+        "id": "SPX-1905-M-847",
+        "question": "PX1905-Q847",
+        "finding": "Italian source lists forbidden times and simple vow of chastity as examples of historical prohibitive impediments; draft correctly signals historical law, not current legal determination",
+        "classification": "SOURCE_SUPPORTED_PARAPHRASE_WITH_HISTORICAL_LAW_GUARD"
+      }
+    ]
+  },
+  "proposedImprovement": {
+    "type": "CERTIFICATION_METADATA_NOT_NEW_ANSWER_REWRITE",
+    "en": "Treat Q817 as the 1905 catechism's historical formulation; Q837 as the Latin catechetical account, not an exhaustive statement about Eastern Catholic rites; Q847 as historical canonical categories, not a determination of present marriage validity.",
+    "fr": "Présenter Q817 comme la formulation historique du catéchisme de 1905 ; Q837 comme l'exposé catéchétique latin, non comme un traitement exhaustif des rites catholiques orientaux ; Q847 comme des catégories canoniques historiques, non comme une décision sur la validité actuelle d'un mariage.",
+    "classification": "EDITORIAL_PARAPHRASE_AND_CONTEXT_NOT_VERBATIM_PAPAL_SPEECH",
+    "reviewStatus": "READY_FOR_HUMAN_CERTIFICATION_REVIEW_NOT_CERTIFIED"
+  },
+  "cumulativeStructuralInventory": {
+    "previousB62B63Families": 150,
+    "additionalDistinctFamilies": 50,
+    "totalFamilies": 200,
+    "totalAnswerUnits": 400,
+    "note": "Structural inventory only, not improved or certified counts"
+  },
+  "holds": [
+    "Original English Chanoine inaccessible; do not reconstruct",
+    "Q18 full Creed translation pending",
+    "Q100 later Nostra aetate attribution separate from historical text",
+    "B39 and CSE142-143 unchanged"
+  ],
+  "nextQueue": [
+    "Inventory original batches 8–12 and deduplicate by canonical ID",
+    "Perform individual Italian answer parity checks for batch14 beyond the three sampled families",
+    "Compare current canonical law with historical marriage categories before any present-day advice",
+    "Build answer-level certification manifest; keep all proposals human-review-only"
+  ],
+  "newFamilies": 0,
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
