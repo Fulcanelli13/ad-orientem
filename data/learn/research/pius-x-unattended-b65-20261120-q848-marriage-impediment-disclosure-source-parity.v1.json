@@ -1,0 +1,57 @@
+{
+  "schema": "AO_SPX_B65_Q848_SOURCE_PARITY_V1",
+  "date": "2026-11-20",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "parent": "B64",
+  "sourceDraft": "data/learn/research/pius-x-batch14-sacraments-d-20261020.v1.json",
+  "primaryWitness": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "locator": "Parte quarta, Capo IX, §3, Q848–Q849",
+    "status": "institutional Italian transcription, not printed-facsimile collated"
+  },
+  "findings": [
+    {
+      "id": "SPX-1905-M-848",
+      "sourceQuestion": "I fedeli sono obbligati a manifestare all’autorità ecclesiastica gl’impedimenti matrimoniali che conoscono?",
+      "issue": "Opening draft asks only why banns were published and omits the direct affirmative obligation to disclose known impediments to ecclesiastical authority; original Q848 expressly states that obligation, with banns as consequence.",
+      "classification": "SUBSTANTIVE_SOURCE_PARITY_REPAIR",
+      "proposedOpening": {
+        "en": {
+          "question": "Does the 1905 Catechism require the faithful to disclose known marriage impediments?",
+          "answer": "Yes. The 1905 Catechism says the faithful are obliged to report marriage impediments known to them to ecclesiastical authority; it gives the publication of marriage banns as a means of bringing such impediments to light. This describes the historical catechism, not an assessment of any individual marriage under current law."
+        },
+        "fr": {
+          "question": "Le Catéchisme de 1905 demande-t-il aux fidèles de signaler les empêchements de mariage qu'ils connaissent ?",
+          "answer": "Oui. Le Catéchisme de 1905 enseigne que les fidèles doivent signaler à l'autorité ecclésiastique les empêchements de mariage dont ils ont connaissance ; il rattache à cette obligation la publication des bans. Il s'agit de l'enseignement historique du catéchisme, non d'une appréciation d'un mariage particulier selon le droit actuel."
+        }
+      },
+      "followup": "Retain existing confidentiality/no-gossip pastoral guard, subject to human review; it is an editorial application, not a verbatim answer to Q848.",
+      "quotationStatus": "BILINGUAL_EDITORIAL_PARAPHRASE_NOT_VERBATIM_NOT_PERSONAL_PAPAL_SPEECH"
+    },
+    {
+      "id": "SPX-1905-M-849",
+      "finding": "Draft appropriately distinguishes Church authority to establish and dispense from ecclesiastical impediments and to judge validity; retain separately from Q848, no duplicate improvement.",
+      "classification": "RETAIN_NO_NEW_IMPROVEMENT"
+    }
+  ],
+  "baseline": "21 October: 68 contexts examined, 65 improved families/130 answer units, 64 complete awaiting human certification, one Chanoine original-English hold; do not recount",
+  "structuralInventory": "B62–B64: 200 existing draft families / 400 answer units, not certified",
+  "holds": [
+    "Original English Chanoine inaccessible: do not reconstruct",
+    "Q18 complete Creed translation",
+    "Q100 historical vs 1965 attribution",
+    "B39",
+    "CSE142–143"
+  ],
+  "nextQueue": [
+    "Human review Q848 bilingual parity and pastoral followup; verify against printed Italian facsimile if available",
+    "Reconcile original batches 8–12 without guessing filenames; deduplicate against B61 and B62–B64",
+    "Check other Batch14 marriage-law drafts for source-parity omissions, retain historic/current-law separation",
+    "Build answer-level certification manifest; no automated certification"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
