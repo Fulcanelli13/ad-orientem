@@ -1,0 +1,97 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B30_V1",
+  "date": "2026-11-20",
+  "publication": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "reconciliation": {
+    "registry": "data/geography/seed-registry.v1.json",
+    "registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geoAreas": 146,
+    "directoryPlaceLinks": 26,
+    "queue": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_sha": "89e7def5214b7a937153305651c95dbe92d02cec",
+    "queue_rows": 750,
+    "queue_countries": 113,
+    "philippines_347_checkpoint": "historical",
+    "canonical_changes": 0
+  },
+  "records": [
+    {
+      "research_key": "nagasaki-nishizaka-twenty-six-martyrs",
+      "relation": "ADDITIVE_ENRICHMENT_EXISTING_B23_NOT_NEW_CANONICAL_PLACE",
+      "status": "VERIFIED_SITE_AND_VISITOR_EVIDENCE; RELIC_CUSTODY_HELD",
+      "facts": [
+        {
+          "claim": "Nagasaki City official tourism describes Nishizaka martyrdom on 5 February 1597, Pius XII designation in 1950, and memorial construction in 1962.",
+          "url": "https://www.at-nagasaki.jp/spot/113"
+        },
+        {
+          "claim": "Japan Tourism Agency text states that the museum includes bones attributed to Paul Miki, Jacob Kisai and John of Goto.",
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html"
+        },
+        {
+          "claim": "Nagasaki Prefecture official English tourism guide instead says bones of those three saints are stored at St Philip's Church; therefore exact custody remains disputed, not resolved.",
+          "url": "https://www.nagasakicity.com/spots/detail/208/back-1"
+        },
+        {
+          "claim": "Official visitor guide gives museum address Nishizaka-machi 7-8, Nagasaki City, opening 9:00–17:00 and listed museum admission JPY 500; these are published visitor details, not live confirmation.",
+          "url": "https://www.discover-nagasaki.com/en/sightseeing/60788"
+        }
+      ],
+      "summary_en": "Nishizaka Hill in Nagasaki commemorates the Twenty-Six Martyrs executed there in 1597. Its monument, museum and St Philip's Church are distinct parts of a Catholic pilgrimage site recognised in 1950. Official tourism sources disagree whether the bones attributed to three Jesuit martyrs are housed in the museum or church; the precise custody remains held pending a direct institutional inventory.",
+      "summary_fr": "La colline de Nishizaka à Nagasaki commémore les Vingt-Six Martyrs exécutés en 1597. Le monument, le musée et l'église Saint-Philippe constituent des lieux distincts d'un site de pèlerinage catholique reconnu en 1950. Les sources touristiques officielles divergent quant au lieu de conservation des ossements attribués à trois martyrs jésuites ; cette question reste en suspens dans l'attente d'un inventaire institutionnel direct.",
+      "holds": [
+        "Do not assign contested relics to a specific building",
+        "No surveyed entrance or walking geometry"
+      ],
+      "geometry": null
+    },
+    {
+      "research_key": "cupey-national-shrine-divine-providence",
+      "relation": "ADDITIVE_ENRICHMENT_EXISTING_B23_NOT_NEW_CANONICAL_PLACE",
+      "status": "VERIFIED_2026_PUBLIC_CELEBRATION_ANNOUNCEMENTS; PERMANENT_BUILDING_STATUS_HELD",
+      "facts": [
+        {
+          "claim": "Catholic newspaper reports the national shrine's 19 November 2026 patronal celebration and 5 December 2026 Marian Jubilee closing, citing the shrine vicar's 27 October letter; announcement does not prove the permanent church building was completed.",
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/"
+        },
+        {
+          "claim": "An archdiocesan liturgical-celebration social listing advertises a 10 October 2026 Rosary festival and noon Mass at the shrine, additional public devotional evidence, but it is a repost aggregator rather than direct architectural evidence.",
+          "url": "https://www.findglocal.com/PR/San-Juan/1302397079925007/Celebraciones-Lit%C3%BArgicas-Arquidi%C3%B3cesis-de-San-Juan-de-PR"
+        },
+        {
+          "claim": "Catholic directory lists shrine in Cupey Alto on Avenida Las Cumbres, Carretera 965 km 13; separate directory record lists Santa Teresa de Jesús Jornet parish hermitage at Camino los González, requiring identity separation.",
+          "url": "https://gcatholic.org/churches/centralamerica/4934"
+        },
+        {
+          "claim": "Separate hermitage listing confirms distinct institutional identity.",
+          "url": "https://gcatholic.org/churches/caribbean/15968.htm"
+        }
+      ],
+      "summary_en": "The National Shrine of Our Lady Mother of Divine Providence in Cupey, San Juan, has documented public Marian celebrations scheduled for October, November and December 2026. These notices establish active devotional use but do not verify completion of the proposed permanent shrine church. The shrine must remain distinct from the nearby Santa Teresa de Jesús Jornet parish hermitage.",
+      "summary_fr": "Le sanctuaire national Notre-Dame Mère de la Divine Providence, à Cupey (San Juan), fait l'objet d'annonces de célébrations mariales publiques en octobre, novembre et décembre 2026. Elles attestent une activité dévotionnelle, sans prouver l'achèvement de l'église permanente projetée. Le sanctuaire doit rester distinct de l'ermitage de la paroisse Sainte-Thérèse-de-Jésus-Jornet.",
+      "holds": [
+        "Permanent church completion and architectural status not verified",
+        "Do not confuse national shrine and nearby parish hermitage",
+        "Published celebrations are not live opening-hour confirmation"
+      ],
+      "geometry": null
+    }
+  ],
+  "next_queue": [
+    "Nishizaka direct museum and St Philip Church relic inventories",
+    "Cupey archdiocesan architectural completion evidence",
+    "Tianjin diocesan Wanghailou and Xikai identity",
+    "Aitara formal ecclesiastical shrine decree and present access",
+    "Kolser 1926 diocesan archive",
+    "Trà Kiệu independently sourced public entrances",
+    "Phước Kiều 2007 shrine decree and relic custody"
+  ],
+  "constraints": {
+    "no_merge": true,
+    "no_deploy": true,
+    "no_publication": true,
+    "no_paid_services": true,
+    "no_invented_coordinates": true
+  }
+}
