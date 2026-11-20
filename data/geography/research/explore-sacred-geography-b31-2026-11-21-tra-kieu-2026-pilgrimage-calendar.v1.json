@@ -1,0 +1,68 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B31_V1",
+  "date": "2026-11-21",
+  "publication": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "reconciliation": {
+    "registry": "data/geography/seed-registry.v1.json",
+    "registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geoAreas": 146,
+    "directoryPlaceLinks": 26,
+    "queue": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "queue_rows": 750,
+    "queue_countries": 113,
+    "philippines_347_checkpoint": "historical",
+    "canonical_changes": 0
+  },
+  "records": [
+    {
+      "research_key": "vn-tra-kieu-2026-monthly-pilgrimage",
+      "status": "VERIFIED_INSTITUTIONAL_EVENT_EVIDENCE_RESEARCH_ONLY",
+      "identity": "Trà Kiệu Marian Centre, Diocese of Đà Nẵng, Vietnam",
+      "finding": "From January 2026 the diocesan monthly pilgrimage shifted from first Saturday afternoons to 15:00 on the 13th of each month. Diocesan March report places Rosary at Bửu Châu Marian platform at 14:30 and pilgrimage Mass at 15:00. November 13 event independently documented in diocesan November 14 report. Published schedule is not real-time opening-hour guarantee.",
+      "sources": [
+        "https://giaophandanang.org/album-hanh-huong-me-tra-kieu-thang-02-2026/",
+        "https://giaophandanang.org/giao-phan-da-nang-hanh-huong-duc-me-tra-kieu-thang-3-2026/",
+        "https://www.giaophandanang.org/giao-hat-tra-kieu-quy-chuc-viec-tinh-tam-va-hanh-huong-kinh-duc-me/"
+      ],
+      "summary_en": "The Trà Kiệu Marian Centre holds a diocesan pilgrimage on the 13th of each month, a schedule adopted in January 2026. Diocesan reporting documents the Rosary at Bửu Châu and pilgrimage Mass, with participation confirmed as recently as November 2026. Verify the programme before travelling.",
+      "summary_fr": "Le Centre marial de Trà Kiệu accueille un pèlerinage diocésain le 13 de chaque mois, selon un calendrier adopté en janvier 2026. Les comptes rendus diocésains attestent le rosaire à Bửu Châu et la messe de pèlerinage, avec une participation encore constatée en novembre 2026. Le programme doit être vérifié avant le déplacement.",
+      "unresolved": [
+        "Current month-specific cancellations or changes",
+        "Exact visitor entrances"
+      ]
+    },
+    {
+      "research_key": "vn-tra-kieu-2026-annual-pilgrimage-and-anniversary",
+      "status": "VERIFIED_DIOCESAN_EVENT_EVIDENCE_RESEARCH_ONLY",
+      "identity": "Trà Kiệu Marian Centre, parish church, Bửu Châu platform and pilgrimage square",
+      "finding": "2026 annual pilgrimage was held May 29-30 rather than May 31 because May 31 coincided with Trinity Sunday. Diocese records procession from parish church toward pilgrimage square via provincial road 610, Eucharistic adoration at Bửu Châu, and confessions at several sites. September 11 anniversary Mass for the locally venerated 1885 Marian apparition was moved inside parish church due to storm weather. Named road does not establish surveyed walking route.",
+      "sources": [
+        "https://giaophandanang.org/dai-hoi-duc-me-tra-kieu-2026/",
+        "https://giaophandanang.org/thanh-le-ta-on-mung-ky-niem-141-nam-duc-me-hien-ra-tai-tra-kieu-1885-11-9-2026/"
+      ],
+      "summary_en": "Trà Kiệu's principal Marian pilgrimage took place on 29–30 May in 2026, moved from its customary 31 May date because of Trinity Sunday. Diocesan records distinguish the parish church, Bửu Châu sanctuary and pilgrimage square, documenting processions, adoration and confession. The 11 September anniversary commemorates a locally venerated 1885 Marian apparition.",
+      "summary_fr": "En 2026, le grand pèlerinage marial de Trà Kiệu s'est tenu les 29 et 30 mai, avancé par rapport au 31 mai habituel en raison de la fête de la Sainte-Trinité. Les sources diocésaines distinguent l'église paroissiale, le sanctuaire de Bửu Châu et l'esplanade, avec processions, adoration et confessions. Le 11 septembre commémore une apparition mariale de 1885 vénérée localement.",
+      "unresolved": [
+        "Surveyed pedestrian route and entrances",
+        "Do not extrapolate 2026 feast transfer to other years"
+      ]
+    }
+  ],
+  "next_queue": [
+    "Nishizaka direct relic inventory",
+    "Cupey permanent church completion documentation",
+    "Tianjin diocesan identification",
+    "Aitara formal ecclesiastical designation",
+    "Kolser diocesan archives",
+    "Phước Kiều 2007 shrine decree",
+    "Trà Kiệu verified entrances"
+  ],
+  "constraints": [
+    "No canonical ID changes",
+    "No invented coordinates or walking routes",
+    "No merge or deployment",
+    "No external contacts or purchases"
+  ]
+}

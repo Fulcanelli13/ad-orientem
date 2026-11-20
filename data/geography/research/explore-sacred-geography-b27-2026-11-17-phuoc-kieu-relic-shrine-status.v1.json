@@ -1,0 +1,67 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B27_V1",
+  "date": "2026-11-17",
+  "publication": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "reconciliation": {
+    "main_registry": "data/geography/seed-registry.v1.json",
+    "main_blob_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geoAreas": 146,
+    "directoryPlaceLinks": 26,
+    "queue": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_blob_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "queue_rows": 750,
+    "philippines_checkpoint_347": "historical",
+    "canonical_changes": 0
+  },
+  "records": [
+    {
+      "research_key": "phuoc-kieu-blessed-andrew-phu-yen",
+      "relation": "ADDITIVE_ENRICHMENT_OF_B26_NOT_NEW_CANDIDATE",
+      "status": "VERIFIED_DIOCESAN_HISTORICAL_EVIDENCE_RELIC_CUSTODY_CURRENTLY_HELD",
+      "facts": [
+        {
+          "claim": "Diocesan historical article dated 9 July 2018 says local chapel was elevated by diocesan authority to a shrine under Andrew of Phu Yen on 26 July 2007; describes location in Dien Phuong, Dien Ban, Quang Nam in administrative terms current in 2018.",
+          "url": "https://giaophandanang.org/den-thanh-anre-phu-yen-phuoc-kieu-trung-tam-hanh-huong-nam-thanh-ton-vinh-cac-thanh-tu-dao-viet-nam-tai-giao-phan-da-nang/"
+        },
+        {
+          "claim": "Diocesan 31 July 2015 account reports a procession of a relic described as five hairs of Blessed Andrew of Phu Yen on 25 July 2015; historical evidence of veneration, not proof of present permanent custody.",
+          "url": "https://giaophandanang.org/gp-da-nang-mung-371-nam-chan-phuoc-an-re-phu-yen/"
+        },
+        {
+          "claim": "Diocesan 2020 programme explicitly distinguishes shrine interior, shrine grounds, reception area and outdoor ceremonial platform, and describes relic procession; does not provide surveyed entrance or route geometry.",
+          "url": "https://giaophandanang.org/thong-bao-chuong-trinh-hanh-huong-den-thanh-anre-phu-yen-phuoc-kieu-25-25-7-2020/"
+        },
+        {
+          "claim": "Diocesan 27 July 2025 account documents thousands of pilgrims and sacramental celebrations at the shrine.",
+          "url": "https://giaophandanang.org/giao-phan-da-nang-mung-dai-le-anre-phu-yen-2025/"
+        }
+      ],
+      "summary_en": "The Shrine of Blessed Andrew of Phú Yên at Phước Kiều commemorates the young Vietnamese catechist martyred in 1644. According to a diocesan historical account, the local chapel was raised to shrine status by diocesan authority on 26 July 2007. Diocesan reports document a 2015 procession involving a relic described as five hairs and continuing large pilgrimages in July 2025. The relic's present custody, precise visitor entrance and current access arrangements remain unverified.",
+      "summary_fr": "Le sanctuaire du bienheureux André de Phú Yên à Phước Kiều rappelle le jeune catéchiste martyrisé en 1644. Selon un récit historique diocésain, la chapelle locale fut élevée au rang de sanctuaire par l'autorité diocésaine le 26 juillet 2007. Des comptes rendus diocésains attestent une procession en 2015 avec une relique décrite comme cinq cheveux, ainsi que d'importants pèlerinages en juillet 2025. La conservation actuelle de la relique, l'entrée précise et les conditions de visite restent à vérifier.",
+      "holds": [
+        "2007 elevation reported by diocese; original decree not retrieved",
+        "2015 relic procession is not proof of current relic inventory or custody",
+        "No precise entrance, coordinates, current opening hours or walking-route geometry",
+        "Do not assign national-shrine designation"
+      ],
+      "geometry": null
+    }
+  ],
+  "next_queue": [
+    "Phước Kiều original 2007 decree, current relic inventory and entrance",
+    "Tianjin Wanghailou/Xikai diocesan confirmation",
+    "Nishizaka relic custody via museum/church inventory",
+    "Cupey permanent shrine building status",
+    "Aitara formal shrine decree",
+    "Kolser 1926 diocesan archive",
+    "Trà Kiệu surveyed public entrances"
+  ],
+  "constraints": {
+    "no_canonical_ids_created": true,
+    "no_merge": true,
+    "no_deploy": true,
+    "no_contact": true,
+    "no_paid_extras": true
+  }
+}

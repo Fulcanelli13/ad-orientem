@@ -1,0 +1,73 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B28_V1",
+  "date": "2026-11-18",
+  "publication": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "reconciliation": {
+    "registry": "data/geography/seed-registry.v1.json",
+    "registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geoAreas": 146,
+    "directoryPlaceLinks": 26,
+    "queue": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "queue_rows": 750,
+    "queue_countries": 113,
+    "philippines_347_checkpoint": "historical",
+    "canonical_changes": 0
+  },
+  "records": [
+    {
+      "research_key": "phuoc-kieu-blessed-andrew-phu-yen",
+      "relation": "ADDITIVE_ENRICHMENT_B26_B27_NOT_NEW_CANDIDATE",
+      "status": "VERIFIED_DIOCESAN_PARISH_DECREE_AND_CURRENT_VISITOR_INFORMATION; RELIC_CUSTODY_AND_ENTRANCE_HELD",
+      "facts": [
+        {
+          "claim": "Diocesan decree No.12/2023/GM/QĐ, article 1 item 5, formally establishes Phước Kiều parish in Hội An deanery, Điện Phương, Điện Bàn, Quảng Nam (administrative address as stated in 2023 decree); parish status distinct from shrine designation in 2007.",
+          "url": "https://www.giaophandanang.org/wp-content/uploads/2023/06/QUYET-DINH-THANH-LAP-CAC-TAN-GIAO-XU-VA-GIAO-HO-BIET-LAP.2023.pdf"
+        },
+        {
+          "claim": "Diocesan 28 July 2023 report documents proclamation of parish-establishment instrument and appointment of first parish priest at 26 July celebration.",
+          "url": "https://giaophandanang.org/thanh-le-ta-on-mung-kinh-chan-phuoc-anre-phu-yen-va-thanh-lap-tan-giao-xu-den-thanh-anre-phu-yen-phuoc-kieu/"
+        },
+        {
+          "claim": "Current diocesan parish page identifies parish priest Gioan Baotixita Trần Ngọc Tuyến, around 280 parishioners and published Sunday and weekday Mass schedule; schedule is publication evidence not independently verified live hours.",
+          "url": "https://giaophandanang.org/category/giao-hat/giao-hat-hoi-an/giao-xu-phuoc-kieu/"
+        },
+        {
+          "claim": "Diocesan 2018 history identifies roadside pilgrim assembly ground and shrine relic displayed for veneration at that time; no surveyed entrance and no present relic custody proof.",
+          "url": "https://giaophandanang.org/den-thanh-anre-phu-yen-phuoc-kieu-trung-tam-hanh-huong-nam-thanh-ton-vinh-cac-thanh-tu-dao-viet-nam-tai-giao-phan-da-nang/"
+        },
+        {
+          "claim": "October 2023 diocesan personnel announcement documents priest transfer to Phước Kiều, corroborating later current directory listing.",
+          "url": "https://giaophandanang.org/thuyen-chuyen-va-bo-nhiem-linh-muc-giao-phan-da-nang-nam-2023/"
+        }
+      ],
+      "summary_en": "The Shrine of Blessed Andrew of Phú Yên at Phước Kiều is also the church of Phước Kiều parish, formally established by a diocesan decree in 2023. The shrine itself dates from the chapel's diocesan elevation in 2007 and commemorates the young Vietnamese catechist martyred in 1644. The diocese publishes a current parish Mass timetable and records annual July pilgrimages. Precise entrance, current relic custody and independent verification of service times remain outstanding.",
+      "summary_fr": "Le sanctuaire du bienheureux André de Phú Yên à Phước Kiều est également l'église de la paroisse de Phước Kiều, érigée officiellement par décret diocésain en 2023. Le sanctuaire remonte à l'élévation de la chapelle en 2007 et commémore le jeune catéchiste martyrisé en 1644. Le diocèse publie des horaires de messe paroissiaux et atteste les pèlerinages annuels de juillet. L'entrée exacte, la conservation actuelle des reliques et la vérification indépendante des horaires restent à établir.",
+      "holds": [
+        "2007 shrine decree original not retrieved; 2023 parish decree does not replace it",
+        "Current relic inventory and custody unverified",
+        "Published Mass timetable not real-time confirmation",
+        "No entrance geometry or walking routes",
+        "Do not create another Place for parish versus shrine without physical site distinction"
+      ],
+      "geometry": null
+    }
+  ],
+  "next_queue": [
+    "Nishizaka direct church/museum relic inventory; avoid unrelated 26martyrs.com site",
+    "Cupey permanent national-shrine building status from archdiocese",
+    "Tianjin Wanghailou/Xikai diocesan identity and access",
+    "Aitara ecclesiastical national-shrine decree",
+    "Kolser 1926 diocesan archives",
+    "Trà Kiệu public entrances via authoritative maps or site records",
+    "Phước Kiều original 2007 shrine decree and present relic inventory"
+  ],
+  "constraints": {
+    "no_canonical_ids_created": true,
+    "no_merge": true,
+    "no_deploy": true,
+    "no_contact": true,
+    "no_paid_extras": true
+  }
+}

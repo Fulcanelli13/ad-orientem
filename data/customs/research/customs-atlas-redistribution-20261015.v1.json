@@ -1,0 +1,281 @@
+{
+  "schema": "AO_CUSTOMS_ATLAS_SOURCE_PRESERVING_REDISTRIBUTION_V1",
+  "as_of": "2026-10-15",
+  "status": "RESEARCH_ONLY_NO_NAVIGATION_OR_SOURCE_CHANGES",
+  "disposition": "REPLACE_STANDALONE_CUSTOMS_MAP_WITH_CONTEXTUAL_PRESENTATION_AFTER_ROUTING_VERIFICATION",
+  "original_canonical_seed": "data/customs/customs-atlas-seed.v1.json",
+  "original_extended_inventory": [
+    "data/customs/sot07-full-recovery.review.v1.json",
+    "data/customs/sot07g-geographic-full-inventory.review.v1.json"
+  ],
+  "counts": {
+    "customs": 13,
+    "attestations": 71,
+    "exact_place_attestations": 58,
+    "context_only_attestations": 13
+  },
+  "invariants": [
+    "Do not delete the original 13 customs or 71 attestations; retain IDs, sources, and negative knowledge.",
+    "Do not put regional or universal customs on a fabricated point map.",
+    "The target module owns presentation/links, not a cloned practice data corpus.",
+    "Local Calendar observances are not universal 1962 Roman feasts.",
+    "Provenance survives navigation retirement.",
+    "Historical local practices are not prescribed rubrics."
+  ],
+  "migration_order": [
+    "Prepare contextual views and source links in Formation, PRAY, Calendar and place profiles.",
+    "Verify each of 13 custom IDs and 71 source attestations is accessible in at least one appropriate user route, including French presentation.",
+    "Hide the standalone Customs Atlas link and map lens only after owner-route tests pass.",
+    "Retain original source corpus in version control; never delete the evidence when navigation is removed."
+  ],
+  "records": [
+    {
+      "custom_id": "DOM-002",
+      "title": "Domestic holy-water font / bénitier de chevet",
+      "family": "Home & family",
+      "publication_state": "PUBLISHED",
+      "primary_target": "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+      "contextual_targets": [
+        "PRAY_SACRAMENTALS_CONTEXT"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 1,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DOM-006",
+      "title": "Family consecration to the Sacred Heart",
+      "family": "Sacred Heart",
+      "publication_state": "PUBLISHED",
+      "primary_target": "PRAY_SACRED_HEART",
+      "contextual_targets": [
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+        "CALENDAR_CONTEXT"
+      ],
+      "current_owner_hint": [
+        "Pray",
+        "Calendar",
+        "Learn"
+      ],
+      "attestation_count": 2,
+      "exact_place_attestation_count": 1,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": "Sacred Heart season / family use",
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DOM-007",
+      "title": "Intronement of a Sacred Heart image in the home",
+      "family": "Sacred Heart",
+      "publication_state": "PUBLISHED",
+      "primary_target": "PRAY_SACRED_HEART",
+      "contextual_targets": [
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Pray",
+        "Learn"
+      ],
+      "attestation_count": 2,
+      "exact_place_attestation_count": 1,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "LIFE-002",
+      "title": "Relevailles / blessing after childbirth",
+      "family": "Life events",
+      "publication_state": "PUBLISHED",
+      "primary_target": "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+      "contextual_targets": [
+        "PRAY_THANKSGIVING_CONTEXT"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 1,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEV-001",
+      "title": "May as the month of Mary",
+      "family": "Marian domestic devotion",
+      "publication_state": "PUBLISHED",
+      "primary_target": "CALENDAR_DEVOTIONAL_SEASON",
+      "contextual_targets": [
+        "PRAY_MARIAN",
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
+      "attestation_count": 1,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": "May",
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEV-006",
+      "title": "Pilgrimage to a shrine or holy place",
+      "family": "Pilgrimage",
+      "publication_state": "PUBLISHED",
+      "primary_target": "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+      "contextual_targets": [
+        "PILGRIMAGE_PLACES_HELP"
+      ],
+      "current_owner_hint": [
+        "Learn",
+        "Calendar"
+      ],
+      "attestation_count": 13,
+      "exact_place_attestation_count": 11,
+      "area_or_unmapped_count": 2,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEV-007",
+      "title": "Regional pardons and shrine anniversaries",
+      "family": "Pilgrimage",
+      "publication_state": "CONTEXT_ONLY",
+      "primary_target": "PILGRIMAGE_PLACE_LOCAL_TRADITIONS",
+      "contextual_targets": [
+        "CALENDAR_LOCAL_CONTEXT"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 36,
+      "exact_place_attestation_count": 35,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEV-009",
+      "title": "Ex-votos",
+      "family": "Sacred objects",
+      "publication_state": "PUBLISHED",
+      "primary_target": "PILGRIMAGE_PLACE_LOCAL_TRADITIONS",
+      "contextual_targets": [
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 2,
+      "exact_place_attestation_count": 2,
+      "area_or_unmapped_count": 0,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEV-010",
+      "title": "Votive candle at a shrine",
+      "family": "Sacred objects",
+      "publication_state": "PUBLISHED",
+      "primary_target": "PILGRIMAGE_PLACE_LOCAL_TRADITIONS",
+      "contextual_targets": [
+        "PRAY_PRIVATE_DEVOTION",
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Learn",
+        "Pray"
+      ],
+      "attestation_count": 7,
+      "exact_place_attestation_count": 7,
+      "area_or_unmapped_count": 0,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEAD-001",
+      "title": "Prayerful cemetery visit",
+      "family": "Death & Holy Souls",
+      "publication_state": "PUBLISHED",
+      "primary_target": "PRAY_HOLY_SOULS",
+      "contextual_targets": [
+        "CALENDAR_ALL_SOULS_SEASON",
+        "FORMATION_CATHOLIC_LIFE_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Calendar",
+        "Pray",
+        "Learn"
+      ],
+      "attestation_count": 2,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 2,
+      "calendar_trigger_hint": "02/11; November; anniversaries",
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "DEAD-003",
+      "title": "Prayer for the dead on 2 November",
+      "family": "Death & Holy Souls",
+      "publication_state": "PUBLISHED",
+      "primary_target": "CALENDAR_ALL_SOULS",
+      "contextual_targets": [
+        "PRAY_HOLY_SOULS"
+      ],
+      "current_owner_hint": [
+        "Calendar",
+        "Pray"
+      ],
+      "attestation_count": 2,
+      "exact_place_attestation_count": 1,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": "02/11",
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "BELL-004",
+      "title": "Glas / death bell",
+      "family": "Sacred time & bells",
+      "publication_state": "CONTEXT_ONLY",
+      "primary_target": "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+      "contextual_targets": [
+        "PILGRIMAGE_PLACE_LOCAL_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 1,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    },
+    {
+      "custom_id": "FOOD-001",
+      "title": "Pain bénit",
+      "family": "Food & sacramentals",
+      "publication_state": "CONTEXT_ONLY",
+      "primary_target": "FORMATION_CATHOLIC_LIFE_TRADITIONS",
+      "contextual_targets": [
+        "PILGRIMAGE_PLACE_LOCAL_TRADITIONS"
+      ],
+      "current_owner_hint": [
+        "Learn"
+      ],
+      "attestation_count": 1,
+      "exact_place_attestation_count": 0,
+      "area_or_unmapped_count": 1,
+      "calendar_trigger_hint": null,
+      "rule": "Reuse original claims and source IDs; do not synthesize a global feast or map a country custom as a precise Place. Keep the original custom_id for cross-module links."
+    }
+  ]
+}

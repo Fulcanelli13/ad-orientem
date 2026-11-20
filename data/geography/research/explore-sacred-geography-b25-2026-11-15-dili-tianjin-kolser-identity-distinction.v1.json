@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "batch": "B25",
+  "date": "2026-11-15",
+  "scope": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": {
+    "registry_path": "data/geography/seed-registry.v1.json",
+    "registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geo_areas": 146,
+    "directory_place_links": 26,
+    "queue_last_confirmed": 750,
+    "philippines_347": "HISTORICAL",
+    "previous_batch": "B24"
+  },
+  "records": [
+    {
+      "record_id": "SG-B25-DILI-CRISTO-REI-IDENTITY",
+      "status": "VERIFIED_VISITOR_SOURCE_CANONICAL_ID_HELD",
+      "name": "Cristo Rei of Dili, Cape Fatucama, Timor-Leste",
+      "summary_en": "The Timor-Leste tourism portal identifies the 27-metre Cristo Rei statue at Cape Fatucama as a monument inaugurated in 1996. Visitors ascend more than 500 steps past fourteen Stations of the Cross. It is a distinct outdoor devotional monument, not Dili's Immaculate Conception Cathedral or Motael parish church. The source describes a visitor ascent but supplies no independently surveyed route geometry.",
+      "summary_fr": "Le portail touristique du Timor oriental situe la statue du Christ-Roi de 27 mètres au cap Fatucama, inaugurée en 1996. Plus de 500 marches permettent de monter en passant devant quatorze stations du chemin de croix. Il s'agit d'un monument dévotionnel extérieur distinct de la cathédrale de l'Immaculée-Conception et de l'église paroissiale de Motael. Aucun tracé piéton géoréférencé n'est établi.",
+      "sources": [
+        {
+          "url": "https://timorleste.tl/pt/destinations/cristo-rei",
+          "supports": "Official tourism identity, year, stations, visitor ascent"
+        }
+      ],
+      "holds": [
+        "Do not treat the monument as a cathedral or parish church",
+        "No canonical ID or coordinates assigned",
+        "Current opening/access restrictions unverified"
+      ]
+    },
+    {
+      "record_id": "SG-B25-TIANJIN-WANGHAILOU-CATHEDRAL-DISTINCTION",
+      "status": "PROVISIONAL_SECONDARY_IDENTITY_NEEDS_DIOCESAN_SOURCE",
+      "name": "Our Lady of Victory (Wanghailou), Tianjin, China",
+      "summary_en": "The Catholic church directory identifies Wanghailou / Our Lady of Victory as a former cathedral at 292 Shizilin Street in Tianjin's Hebei District, distinct from the current St Joseph Cathedral (Xikai) in Heping District. The former-cathedral classification is directory evidence, not a verified contemporary diocesan declaration. Do not collapse the two buildings or infer public access from a directory address.",
+      "summary_fr": "Un annuaire catholique identifie Notre-Dame-des-Victoires (Wanghailou) comme ancienne cathédrale, au 292 rue Shizilin, district de Hebei, distincte de la cathédrale actuelle Saint-Joseph (Xikai), dans le district de Heping. Le statut historique repose ici sur une source secondaire et reste à corroborer par une source diocésaine actuelle. Les deux édifices ne doivent pas être fusionnés.",
+      "sources": [
+        {
+          "url": "https://gcatholic.org/churches/asia/1890",
+          "supports": "Former-cathedral identity, patronage, address, distinction from St Joseph"
+        }
+      ],
+      "holds": [
+        "Diocesan first-party confirmation missing",
+        "Visitor opening and access unverified",
+        "No canonical ID or coordinate inferred"
+      ]
+    },
+    {
+      "record_id": "SG-B25-KOLSER-LANGGUR-DISTINCT-SITES",
+      "status": "VERIFIED_CATHOLIC_REPORTING_PRIMARY_DIOCESAN_ARCHIVE_HELD",
+      "name": "Kolser Immaculate Conception grotto versus Langgur Martyrs Pilgrimage Park, Kei Kecil, Indonesia",
+      "summary_en": "Catholic reporting dated 4 November 2026 identifies the Marian grotto at Kolser, blessed 8 December 1926, as a living place of Marian prayer with a centenary planned for 8 December 2026. Separate reporting dated 5 January 2026 identifies the Kei Martyrs Pilgrimage Park at Langgur as the site of the 30 December 2025 opening stage of the cause of Bishop Aerts and twelve MSC missionaries killed in 1942. The two sites have different devotions and physical identities; the reported bishop's role at Kolser does not make the grotto the martyr park.",
+      "summary_fr": "Un reportage catholique du 4 novembre 2026 décrit la grotte de l'Immaculée-Conception à Kolser, bénie le 8 décembre 1926, comme lieu de prière mariale, avec un centenaire annoncé pour décembre 2026. Un autre reportage du 5 janvier 2026 situe au parc de pèlerinage des Martyrs de Kei, à Langgur, l'étape inaugurale de la cause de Mgr Aerts et de douze missionnaires MSC, célébrée le 30 décembre 2025. Ces deux lieux, aux dévotions distinctes, ne doivent pas être confondus.",
+      "sources": [
+        {
+          "url": "https://www.ucanews.com/amp/indonesias-century-old-marian-shrine-testifies-to-legacy-of-faith/116022",
+          "supports": "Kolser grotto and 1926 blessing, 2026 planned centenary"
+        },
+        {
+          "url": "https://www.licas.news/2026/01/05/beatification-process-opens-for-bishop-aerts-12-missionaries-martyred-in-world-war-ii/",
+          "supports": "Langgur martyr park and December 2025 cause event"
+        }
+      ],
+      "holds": [
+        "Direct diocesan archives for Kolser not located",
+        "Cause opened is not beatification completed",
+        "December 2026 centenary is future scheduled, not completed",
+        "No canonical IDs, entrance coordinates or routes"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Direct diocesan evidence for Tianjin Wanghailou and Xikai distinct buildings",
+    "Timor-Leste church authority sources for Dili devotional sites",
+    "Kolser 1926 plaque and Amboina diocesan archive",
+    "Trà Kiệu entrances",
+    "Nishizaka relic custody",
+    "Cupey permanent building status",
+    "Aitara decree"
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 3,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "restrictions": [
+    "No canonical Place records altered",
+    "No merges, production changes, deployment, contact or spending"
+  ]
+}
