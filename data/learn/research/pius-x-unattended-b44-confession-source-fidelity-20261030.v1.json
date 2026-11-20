@@ -1,0 +1,123 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B44_CONFESSION_SOURCE_FIDELITY_V1",
+  "asOf": "2026-10-30",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": "After B42–B43 draft parity; source checked 16 existing P751–766 families, no new canonical identities",
+  "historicalSource": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "loci": "Q751–766",
+    "witness": "1905 Italian online transcription; printed edition not collated"
+  },
+  "laterSource": {
+    "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+    "loci": "§§1451–1458",
+    "witness": "later doctrinal cross-reference, not verbatim historic speech"
+  },
+  "originalDraftsRead": [
+    "pius-x-batch12-confession-d-20261020.v1.json",
+    "pius-x-batch12-confession-e-20261020.v1.json"
+  ],
+  "coverage": {
+    "range": "P751–766",
+    "familiesInspected": 16,
+    "existingBilingualDraftsLocated": 16
+  },
+  "proposals": [
+    {
+      "id": "SPX-1905-P-756",
+      "kind": "SUBSTANTIVE_HISTORICAL_OMISSION",
+      "existingProblem": "Existing opening softens Q756's explicit instruction to repeat confessions since the last good confession after culpable concealment of a known mortal sin; the historical rule must be accurately reported while avoiding its application to doubt or innocent forgetfulness.",
+      "proposedOpening": {
+        "en": "For someone who knowingly concealed a mortal sin in Confession, the 1905 Catechism directs them to disclose the concealed sin, explain in how many confessions it was concealed, and repeat the confessions since the last good one. This historical instruction concerns culpable concealment, not honest forgetfulness or uncertainty; its application belongs with the confessor.",
+        "fr": "Pour celui qui a volontairement caché un péché mortel en confession, le Catéchisme de 1905 demande de déclarer le péché caché, d'indiquer dans combien de confessions il l'a dissimulé et de refaire les confessions depuis la dernière bonne. Cette instruction historique concerne une dissimulation coupable, non un oubli sincère ou une incertitude ; son application doit être discernée avec le confesseur."
+      },
+      "sourceLoci": [
+        "PX1905-Q753",
+        "PX1905-Q754",
+        "PX1905-Q755",
+        "PX1905-Q756"
+      ],
+      "evidenceClass": "HISTORICAL_SOURCE_PARAPHRASE_PLUS_EXPLICIT_EDITORIAL_PASTORAL_BOUNDARY",
+      "reviewGate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_SCRUPULOSITY_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-765",
+      "kind": "HISTORICAL_DETAIL_OMISSION",
+      "existingProblem": "Q765's period formula explicitly mentions having gone to Communion after previous confession, alongside absolution and completion of penance; the current paraphrase omits Communion.",
+      "proposedOpening": {
+        "en": "In the historical model, the penitent states when they last confessed, that they received absolution, completed their penance and went to Communion, and then confesses their sins. This is a period-specific model, not a requirement to invent details that do not apply.",
+        "fr": "Dans ce modèle historique, le pénitent indique quand il s'est confessé, qu'il a reçu l'absolution, accompli sa pénitence et communié, puis il accuse ses péchés. C'est un modèle propre à son époque, non une obligation d'inventer des faits qui ne s'appliquent pas."
+      },
+      "sourceLoci": [
+        "PX1905-Q765"
+      ],
+      "evidenceClass": "HISTORICAL_PARAPHRASE_WITH_EDITORIAL_PERIOD_QUALIFIER",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_VOICE_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-1905-P-766",
+      "kind": "SOURCE_VS_EDITORIAL_NORMATIVE_DISTINCTION",
+      "existingProblem": "The original Q766 prescribes a traditional closing formula naming past sins; existing draft rightly avoids imposing compulsive repetition today but must label optionality as editorial application rather than 1905 wording.",
+      "proposal": {
+        "en": "Keep existing non-compulsory pastoral wording but annotate: 'Q766 describes a historical prescribed formula; presenting it as optional today is an editorial pastoral qualification, not a translation of the original imperative.'",
+        "fr": "Conserver la formulation pastorale non obligatoire, mais annoter : « Q766 décrit une formule historique prescrite ; la présenter aujourd'hui comme facultative est une qualification pastorale éditoriale, non une traduction de l'impératif original. »"
+      },
+      "sourceLoci": [
+        "PX1905-Q766"
+      ],
+      "evidenceClass": "EDITORIAL_PASTORAL_INFERENCE_NOT_HISTORICAL_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_AND_SCRUPULOSITY_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "noRewrite": {
+    "count": 13,
+    "ids": [
+      "SPX-1905-P-751",
+      "SPX-1905-P-752",
+      "SPX-1905-P-753",
+      "SPX-1905-P-754",
+      "SPX-1905-P-755",
+      "SPX-1905-P-757",
+      "SPX-1905-P-758",
+      "SPX-1905-P-759",
+      "SPX-1905-P-760",
+      "SPX-1905-P-761",
+      "SPX-1905-P-762",
+      "SPX-1905-P-763",
+      "SPX-1905-P-764"
+    ],
+    "reason": "Existing English/French drafts materially consistent with the 1905 Italian transcription; avoid redundant rewriting."
+  },
+  "chanoine": {
+    "newProposals": 0,
+    "originalEnglishHistoricalWitnessBlocked": true,
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "counts": {
+    "familiesInspected": 16,
+    "substantiveSourceFidelityProposals": 2,
+    "attributionRepairs": 1,
+    "bilingualOpeningAnswerUnits": 4,
+    "humanCertifications": 0,
+    "productionChanges": 0
+  },
+  "nextQueue": [
+    "Human source/pastoral review of P756 before any answer replacement; explicitly distinguish deliberate concealment from forgotten sin and scruples",
+    "Human review P765 historical Communion clause and P766 optionality attribution",
+    "Audit Q767–775 against existing batch13 files; avoid redoing completed source checks",
+    "Consolidate B42–B44 source-only fixes into a single human-certification queue without overwriting canonical answers",
+    "Original English Chanoine and specialist clinical holds remain blocked"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "scrupulositySpecialistApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}

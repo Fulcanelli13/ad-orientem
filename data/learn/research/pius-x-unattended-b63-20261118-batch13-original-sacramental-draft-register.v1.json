@@ -1,0 +1,65 @@
+{
+  "schema": "AO_SPX_B63_BATCH13_ORIGINAL_DRAFT_REGISTER_V1",
+  "date": "2026-11-18",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_TRIAGE_NOT_CERTIFIED",
+  "parent": "B62",
+  "scope": {
+    "files": 5,
+    "distinctCanonicalIds": 50,
+    "range": "SPX-1905-P-767 through SPX-1905-S-816",
+    "openingTurns": 50,
+    "followupTurns": 50,
+    "totalDraftAnswerUnits": 100,
+    "completeBilingualQuestionResponseFields": 100
+  },
+  "files": [
+    [
+      "pius-x-batch13-sacraments-a-20261020.v1.json",
+      "de96901278bc6e5516d683f51e61b5cceaabd450",
+      "P-767..P-776"
+    ],
+    [
+      "pius-x-batch13-sacraments-b-20261020.v1.json",
+      "532bd14c6d8f1e8fbf2f82dc821b44959adc8fda",
+      "P-777..P-786"
+    ],
+    [
+      "pius-x-batch13-sacraments-c-20261020.v1.json",
+      "4a87c7f1e41a1fbab0d2543e14f6e04f98ef25c4",
+      "P-787..P-796"
+    ],
+    [
+      "pius-x-batch13-sacraments-d-20261020.v1.json",
+      "1bf700e95fe29bddbe9478dea3720122272efa02",
+      "I-797..I-806"
+    ],
+    [
+      "pius-x-batch13-sacraments-e-20261020.v1.json",
+      "57090289fc7dfe85be8d3c6ed40288d755d3891c",
+      "S-807..S-816"
+    ]
+  ],
+  "primaryWitness": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "type": "Museum transcription of 1905 Catechism; not collated with printed facsimile",
+    "editorialRule": "Attribute to papally prescribed catechism, not personally spoken words of Pius X; source Italian must control bilingual paraphrases."
+  },
+  "classification": "Structural validation only; 50 existing draft families, not 50 newly improved or doctrinally certified families",
+  "holds": [
+    "Original English Chanoine inaccessible; no reconstructed English",
+    "Q18 full Creed recitation translation pending",
+    "Q100 1965 Nostra aetate attribution separate from historical catechism",
+    "B39 and CSE142-143 remain blocked"
+  ],
+  "nextQueue": [
+    "Inspect original batch14 Holy Orders and Matrimony files, then batches 8–12; reconcile canonical IDs and original source numbers",
+    "Compare batch13 candidate answers against Italian museum witness by individual question before human certification",
+    "Prepare complete answer-level manifest with verbatim/paraphrase/inference flags"
+  ],
+  "newFamilies": 0,
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

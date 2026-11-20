@@ -1,0 +1,164 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B26_EASTER_COMMUNION_CHILD_DISCIPLINE_V1",
+  "asOf": "2026-10-22",
+  "status": "RESEARCH_ONLY_HUMAN_CERTIFICATION_REQUIRED",
+  "ownerBranch": "prototype/pius-x-standalone-study-20261021",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "SPX-1905-E-646",
+      "sourceQuestionId": "PX1905-Q646",
+      "originalItalianQuestion": "Quando vi è l’obbligo di comunicarsi?",
+      "ownerPath": "data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json",
+      "ownerBlob": "e02e92f2f3d57d16e2f36ba28efa27daeecf613a",
+      "proposedOpening": {
+        "en": "The 1905 Catechism states an annual obligation to receive Communion at Easter in one's own parish, and mentions Communion in danger of death. The parish wording belongs to the historical discipline.",
+        "fr": "Le Catéchisme de 1905 énonce l’obligation annuelle de communier à Pâques dans sa propre paroisse et mentionne la Communion en danger de mort. La précision paroissiale relève de la discipline historique."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "At what age does the Easter Communion precept begin to bind according to the 1905 text?",
+          "fr": "À quel âge le précepte de la Communion pascale commence-t-il selon le texte de 1905 ?"
+        },
+        "response": {
+          "en": "The Catechism connects the child's obligation with the capacity to receive with the requisite dispositions; it does not give a fixed birthday in this answer.",
+          "fr": "Le Catéchisme rattache l’obligation de l’enfant à sa capacité de communier avec les dispositions nécessaires ; cette réponse ne fixe pas un anniversaire précis."
+        }
+      },
+      "sourceRefs": [
+        "PX646",
+        "PX647"
+      ],
+      "sourcePrecisionDelta": "Contrast with current CIC can.920 and can.921 without rewriting the historical catechism. Do not present 'own parish' as a present universal requirement.",
+      "speaker": "DOCUMENTARY_CATECHETICAL_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-647",
+      "sourceQuestionId": "PX1905-Q647",
+      "originalItalianQuestion": "In quale età comincia ad obbligare il comandamento della Comunione pasquale?",
+      "ownerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "ownerBlob": "ac0fed4b369277ed51d2a0491e046843e71e486d",
+      "proposedOpening": {
+        "en": "The historical text places the beginning of the Easter Communion obligation at the child's ability to receive with the required dispositions, not at a fixed age stated in that answer.",
+        "fr": "Le texte historique fait commencer le précepte pascal lorsque l’enfant est capable de communier avec les dispositions nécessaires, sans donner d’âge fixe dans cette réponse."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "How does the historical Catechism speak about unjustified postponement of First Communion?",
+          "fr": "Comment le Catéchisme historique parle-t-il du report injustifié de la première Communion ?"
+        },
+        "response": {
+          "en": "The subsequent 1910 decree Quam singulari clarifies the age of discretion as around seven, sometimes earlier or later, and does not require complete catechetical knowledge before First Communion.",
+          "fr": "Le décret ultérieur Quam singulari de 1910 précise que l’âge de raison se situe vers sept ans, parfois avant ou après, et n’exige pas une connaissance complète du catéchisme avant la première Communion."
+        }
+      },
+      "sourceRefs": [
+        "PX647",
+        "QS-I-III"
+      ],
+      "sourcePrecisionDelta": "The 1910 decree is issued by the Congregation of the Discipline of the Sacraments with Pius X's approval; do not describe it as a direct quotation or private autobiographical speech of the Pope.",
+      "speaker": "DOCUMENTARY_CATECHETICAL_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-648",
+      "sourceQuestionId": "PX1905-Q648",
+      "originalItalianQuestion": "Peccano coloro che hanno l’età capace per essere ammessi alla comunione e non si comunicano?",
+      "ownerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "ownerBlob": "ac0fed4b369277ed51d2a0491e046843e71e486d",
+      "proposedOpening": {
+        "en": "The historical Catechism seriously warns against culpable failure to receive Communion once capable, and against parents' culpable neglect in preparing the child. It does not establish culpability for any named family.",
+        "fr": "Le Catéchisme historique avertit sévèrement contre le refus coupable de communier lorsqu’on en est capable et contre la négligence coupable des parents dans la préparation de l’enfant. Il ne permet pas de juger une famille particulière."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the Catechism encourage frequent Holy Communion?",
+          "fr": "Le Catéchisme encourage-t-il la Communion fréquente ?"
+        },
+        "response": {
+          "en": "The 1910 decree assigns care for the child's admission and preparation to parents, confessor, teachers and pastor; it also promotes continued catechesis after First Communion.",
+          "fr": "Le décret de 1910 confie le soin de l’admission et de la préparation de l’enfant aux parents, au confesseur, aux éducateurs et au curé ; il encourage aussi la catéchèse après la première Communion."
+        }
+      },
+      "sourceRefs": [
+        "PX648",
+        "QS-IV-VI"
+      ],
+      "sourcePrecisionDelta": "The original 1905 warning is stronger than a neutral pastoral paraphrase, but a modern visitor's subjective guilt cannot be inferred from it. Do not claim Quam singulari was part of the 1905 catechism.",
+      "speaker": "DOCUMENTARY_CATECHETICAL_PARAPHRASE_NOT_AUTHENTIC_PIUS_X_PERSONAL_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "original1905PrintCollated": false,
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "evidence": {
+    "PX646-648": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "work": "Catechismo maggiore, Parte IV Capo IV §5, editorial questions 646–648",
+      "sourceType": "Italian HTML witness; original print not collated"
+    },
+    "QS-I-III": {
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=582",
+      "work": "Sacred Congregation for Discipline of Sacraments, Quam singulari, AAS 2 (1910) printed p.582, rules I–III",
+      "sourceType": "Official Latin AAS text; around age seven and age-appropriate knowledge"
+    },
+    "QS-IV-VI": {
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=582",
+      "work": "Quam singulari, printed pp.582–583, rules IV–VI",
+      "sourceType": "Official Latin AAS text; parents/confessor/teachers/pastor and ongoing catechesis"
+    },
+    "QS-DATE": {
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf#page=583",
+      "work": "Quam singulari, printed p.583, approved by Pius X on 7 August 1910, Congregation's dateline 8 August 1910",
+      "sourceType": "Official Latin AAS text"
+    },
+    "CIC920-921": {
+      "url": "https://press.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html",
+      "work": "1983 CIC canons 920–921",
+      "sourceType": "Current legal context, not a 1905 historical source"
+    }
+  },
+  "duplicates": [
+    "PX647 is the followup of E646 and opening of E647; retain both family identities.",
+    "PX648 is the followup of E647 and opening of E648; retain both family identities.",
+    "PX649 is the followup of E648 and opening of E649, previously source-checked in B18; do not re-count."
+  ],
+  "humanDecisions": [
+    "Verify exact 1905 original printed wording and editorial numbering before release.",
+    "Review historical canon law distinctions between the parish Easter precept and modern canon 920.",
+    "Review age/discretion application; no automated determination of a child's eligibility or family culpability."
+  ],
+  "nextQueue": [
+    "Resume from non-duplicate SPX-1905-E-651 onward after excluding prior packets.",
+    "CSE070 and CSE071–080: check Chanoine composite and specialist holds before source pass."
+  ],
+  "approvalsChanged": false
+}

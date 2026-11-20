@@ -1,0 +1,52 @@
+{
+  "schema": "AO_SPX_B60_RESEARCH_ONLY_V1",
+  "date": "2026-11-15",
+  "status": "READY_FOR_HUMAN_ATTRIBUTION_REVIEW_NOT_CERTIFIED",
+  "parent": "B59 commit 385136a8e917b9d86010694f8d08a6f431399072",
+  "scope": "Existing SPX-1905-C-100 / PX1905-Q100; provenance-only repair, not new family or substantive replacement",
+  "records": [
+    {
+      "id": "SPX-1905-C-100",
+      "sourceQuestionId": "PX1905-Q100",
+      "classification": "LATER_MAGISTERIAL_SAFEGUARD_WITH_EXPLICIT_DATE_AND_AUTHORSHIP",
+      "finding": "Nostra aetate §4, promulgated 28 October 1965 under Paul VI, expressly rejects indiscriminate attribution of responsibility for the Passion to all Jews then living or to Jews today, rejects presenting Jews as accursed or rejected by God, and deplores antisemitism. This cannot be attributed as wording of Pius X's 1905 catechism. The source also teaches Christ freely underwent the Passion for the sins of all.",
+      "editorialEnglish": "The historical catechism's account of Christ's Passion must not be read as assigning collective guilt to Jewish people. The later declaration Nostra aetate (28 October 1965), §4, explicitly rejects indiscriminate blame of Jews living at the time or today, and condemns antisemitism. This is a later editorial clarification, not a quotation from the 1905 catechism.",
+      "editorialFrench": "Le récit de la Passion dans le catéchisme historique ne doit pas être interprété comme imputant une culpabilité collective au peuple juif. La déclaration ultérieure Nostra aetate (28 octobre 1965), §4, rejette explicitement l'imputation indistincte aux Juifs de l'époque ou d'aujourd'hui et déplore l'antisémitisme. Il s'agit d'une précision éditoriale postérieure, non d'une citation du catéchisme de 1905.",
+      "textType": "EDITORIAL_PARAPHRASE_OF_LATER_SOURCE_NOT_PIUS_X_VOICE",
+      "sources": [
+        {
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+          "locus": "§4, paragraphs beginning 'True, the Jewish authorities' and 'Besides, as the Church has always held'"
+        },
+        {
+          "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_fr.html",
+          "locus": "§4, paragraphs beginning 'Encore que des autorités juives' and 'D’ailleurs, comme l’Église'"
+        }
+      ],
+      "gate": "HUMAN_SOURCE_AND_DOCTRINAL_REVIEW_ONLY; preserve existing Q100 answer pending review"
+    }
+  ],
+  "guards": [
+    "No quotation of original 1905 Italian Q100 claimed as newly collated in this pass",
+    "Do not place 1965 council words in historical Pius X first-person plural",
+    "Do not infer collective guilt from the Passion narratives",
+    "Do not alter Q18 full-Creed translation hold",
+    "B39 original Chanoine English witness and CSE142–143 remain blocked",
+    "EXP-048/SPX-032 alias retained; no duplicate credit"
+  ],
+  "nextQueue": [
+    "Reconcile B59 labelled 61 entries with nested arrays and original answer drafts, deduplicating aliases and successive revisions",
+    "Check the 1905 printed catechism witness before any definitive source parity certification",
+    "Human review of Q100 later-source attribution and retained answer",
+    "Continue distinct unresolved families only when original drafts and primary sources are accessible"
+  ],
+  "counts": {
+    "newFamilies": 0,
+    "existingFamilyProvenanceRepairs": 1,
+    "humanCertified": 0
+  },
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

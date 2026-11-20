@@ -1,0 +1,53 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B30B_SOURCE_REVIEW_V1",
+  "asOf": "2026-10-23",
+  "status": "RESEARCH_ONLY",
+  "sourceLinks": [
+    "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_3/v_the_sacramental_sacrifice_thanksgiving_memorial_presence.index.html"
+  ],
+  "records": [
+    {
+      "familyId": "SPX-1905-E-660",
+      "proposedOpening": {
+        "en": "Christ is the first and principal offerer of Mass; the ordained priest is His minister, offering the same sacrifice to the Father.",
+        "fr": "Le Christ est le premier et principal offrant de la Messe ; le prêtre ordonné est son ministre, offrant le même sacrifice au Père."
+      },
+      "sourceLocus": "Q660; CCC 1367",
+      "sourcePrecisionDelta": "Do not present priest as an independent principal sacrificer.",
+      "originalPrintCollated": false,
+      "humanCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "familyId": "SPX-1905-E-661",
+      "proposedOpening": {
+        "en": "Christ instituted the sacrifice of Mass at the institution of the Eucharist, commanding its memorial in remembrance of His Passion.",
+        "fr": "Le Christ a institué le sacrifice de la Messe en instituant l'Eucharistie, ordonnant son mémorial en souvenir de sa Passion."
+      },
+      "sourceLocus": "Q661; CCC 1362–1366",
+      "sourcePrecisionDelta": "Later Catechism making-present language is editorial corroboration, not verbatim Pius X.",
+      "originalPrintCollated": false,
+      "humanCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "familyId": "SPX-1905-E-662",
+      "proposedOpening": {
+        "en": "The Mass is offered to God alone, even when celebrated in honour of Mary or the saints.",
+        "fr": "La Messe est offerte à Dieu seul, même lorsqu'elle est célébrée en l'honneur de Marie ou des saints."
+      },
+      "sourceLocus": "Q662–663",
+      "sourcePrecisionDelta": "Distinguish recipient of sacrifice from saints' intercession and honour.",
+      "originalPrintCollated": false,
+      "humanCertified": false,
+      "publicationApproved": false
+    }
+  ],
+  "nextQueue": [
+    "E663 onward after deduplication",
+    "1905 original print facsimile",
+    "Human bilingual and theological review"
+  ],
+  "approvalsChanged": false
+}

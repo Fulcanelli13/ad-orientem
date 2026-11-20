@@ -1,0 +1,65 @@
+{
+  "schema": "AO_SPX_B66_MATRIMONY_CIVIL_FORMALITIES_V1",
+  "date": "2026-11-21",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "parent": "B65",
+  "sourceDraft": "data/learn/research/pius-x-batch14-sacraments-d-20261020.v1.json",
+  "source": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "locator": "Parte quarta, Capo IX, §3, Q850–Q855",
+    "witness": "institutional Italian transcription, not independently collated against printed facsimile"
+  },
+  "findings": [
+    {
+      "id": "SPX-1905-M-855",
+      "classification": "SOURCE_PARITY_PRECISION_PROPOSAL",
+      "finding": "Opening answer accurately covers civil rights but omits source's specific historical general rule: ecclesiastical authorities normally did not permit religious marriage before prescribed civil-law acts had been initiated. Do not confuse initiation with completed civil marriage, or apply as universal present-day law.",
+      "proposedOpening": {
+        "en": {
+          "question": "Why did the 1905 Catechism also require civil marriage formalities?",
+          "answer": "The catechism says that civil formalities safeguard the civil rights of spouses and children. It adds that, as a general rule at the time, ecclesiastical authority did not permit religious marriage unless the acts required by civil law had at least been initiated. This is a historical disciplinary description, not a universal ruling about present-day marriage procedures."
+        },
+        "fr": {
+          "question": "Pourquoi le Catéchisme de 1905 demandait-il aussi les formalités du mariage civil ?",
+          "answer": "Le catéchisme explique que les formalités civiles protègent les droits civils des époux et de leurs enfants. Il ajoute qu'en règle générale, à cette époque, l'autorité ecclésiastique ne permettait pas le mariage religieux avant que les démarches prescrites par la loi civile aient au moins été engagées. Il s'agit d'une description disciplinaire historique, non d'une règle universelle applicable aujourd'hui."
+        }
+      },
+      "quotationStatus": "EDITORIAL_BILINGUAL_PARAPHRASE_NOT_VERBATIM_NOT_PERSONAL_PAPAL_SPEECH",
+      "followup": "Retain existing family-rights followup; no separate improvement credit"
+    },
+    {
+      "id": "SPX-1905-M-852",
+      "classification": "RETAIN_NO_NEW_IMPROVEMENT",
+      "finding": "Source Q852 identifies civil marriage as a legal formality securing civil effects for spouses and offspring; existing bilingual answer preserves this."
+    },
+    {
+      "id": "SPX-1905-M-853",
+      "classification": "RETAIN_WITH_HISTORICAL_SCOPE_GUARD",
+      "finding": "Q853 categorical historical language is already framed in draft as historical general rule with specialist review for exceptions; do not transpose directly to individual present-day validity."
+    },
+    {
+      "id": "SPX-1905-M-851",
+      "classification": "RETAIN_WITH_PASTORAL_SOURCE_BOUNDARY",
+      "finding": "Q851 says civil divorce cannot dissolve Christian matrimonial bond; draft's safety/protection followup is editorial pastoral guidance, not a verbatim assertion from Q851."
+    }
+  ],
+  "baseline": "21 Oct: 68 contexts examined, 65 improved/130 units, 64 complete pending human certification, one blocked Chanoine English witness; no recount",
+  "holds": [
+    "Original English Chanoine witness inaccessible; do not fabricate",
+    "Q18 full Creed translation",
+    "Q100 historical vs 1965 attribution",
+    "B39",
+    "CSE142–143"
+  ],
+  "nextQueue": [
+    "Human review of Q855 precision and original Italian printed facsimile if accessible",
+    "Check Batch14 Q843–846 for historical canonical impediment distinctions",
+    "Reconcile original batches 8–12 and deduplicate against B61–B65",
+    "Build answer-level bilingual human certification manifest"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

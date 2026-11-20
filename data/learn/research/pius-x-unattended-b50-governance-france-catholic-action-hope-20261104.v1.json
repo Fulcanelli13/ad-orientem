@@ -1,0 +1,91 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B50_HISTORICAL_GOVERNANCE_SOURCE_PARITY_V1",
+  "asOf": "2026-11-04",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED",
+  "continuity": {
+    "prior": "B49 2026-11-03 verified; 21 Oct baseline 68 contexts 65 improved 64 complete pending human certification; Chanoine English original blocked",
+    "sourceDraft": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+    "manifest": "data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json",
+    "existingIDsPreserved": true
+  },
+  "counts": {
+    "familiesChecked": 4,
+    "substantiveCorrections": 2,
+    "sourcePrecisionRepairs": 1,
+    "retained": 1,
+    "certified": 0
+  },
+  "records": [
+    {
+      "id": "SPX-EXP-024",
+      "decision": "SUBSTANTIVE_BILINGUAL_CORRECTION",
+      "issue": "Original draft is too generic and cites §§1–12 while the formal condemnation is §13. Avoid framing the encyclical as a blanket adjudication of every later country's law.",
+      "en": "In Vehementer nos (1906), Pius X condemned the French separation law not merely because it ended the Concordat unilaterally, but because he judged its provisions to infringe the Church's freedom, hierarchical constitution, and property rights. The formal condemnation is in §13. The judgment concerns that law in its historical circumstances; applying it to another legal regime requires separate analysis.",
+      "fr": "Dans Vehementer nos (1906), Pie X condamne la loi française de séparation non seulement parce qu'elle rompt unilatéralement le Concordat, mais aussi parce qu'il estime qu'elle porte atteinte à la liberté, à la constitution hiérarchique et aux droits patrimoniaux de l'Église. La condamnation formelle figure au §13. Ce jugement porte sur cette loi et son contexte historique ; son application à un autre régime juridique demande un examen distinct.",
+      "loci": {
+        "en": "Vehementer nos §§5,7–10,13",
+        "fr": "Vehementer nos, passages sur le Concordat, les associations cultuelles et la condamnation finale; verify French unnumbered headings against English §13"
+      },
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html"
+      ]
+    },
+    {
+      "id": "SPX-EXP-026",
+      "decision": "SOURCE_SCOPE_PRECISION",
+      "issue": "The historical directive concerns Catholic Action and associations in Italy, not a timeless exhaustive rule for every civil association; do not conflate this with EXP-027's distinct ordinary-lay participation intent.",
+      "en": "In Il fermo proposito, addressed to the bishops of Italy, Pius X places organised Catholic apostolic activity in cooperation with ecclesiastical authority. Lay initiative does not supersede the bishops' pastoral responsibility. This is a historical directive about Catholic Action, not a complete modern legal classification of all lay associations.",
+      "fr": "Dans Il fermo proposito, adressée aux évêques d'Italie, Pie X situe l'apostolat catholique organisé dans la coopération avec l'autorité ecclésiastique. L'initiative des laïcs ne remplace pas la responsabilité pastorale des évêques. Il s'agit d'une directive historique sur l'Action catholique, et non d'une classification juridique exhaustive de toutes les associations actuelles.",
+      "loci": {
+        "en": "Il fermo proposito, introduction and §§18–22",
+        "fr": "Il fermo proposito, introduction et développements sur la conduite des évêques; paragraph alignment pending"
+      },
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+      ]
+    },
+    {
+      "id": "SPX-EXP-027",
+      "decision": "RETAIN_DISTINCT_INTENT",
+      "reason": "Unlike EXP-026 (governance), asks about practical participation by the faithful. Existing charity/formation/social action answer is supported by Il fermo proposito; preserve separate ID pending human overlap review.",
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+      ]
+    },
+    {
+      "id": "SPX-EXP-028",
+      "decision": "SUBSTANTIVE_HISTORICAL_VOICE_REPAIR",
+      "issue": "Existing answer generalises a personal papal programme into a generic reassurance; ground in the papal motto and Christological basis without promising political success.",
+      "en": "In E supremi, Pius X acknowledges the grave opposition facing religion, yet declares his programme to be the restoration of all things in Christ. His confidence rests in Christ and divine help, not in a prediction that society will soon become religious. Perseverance in teaching and Christian example follows from that programme.",
+      "fr": "Dans E supremi, Pie X reconnaît la gravité de l'opposition à la religion, mais affirme que son programme est de tout restaurer dans le Christ. Sa confiance repose sur le Christ et le secours divin, non sur la prédiction d'un prochain retour religieux de la société. La persévérance dans l'enseignement et l'exemple chrétien découle de ce programme.",
+      "loci": {
+        "en": "E supremi §§4,8 and surrounding programme",
+        "fr": "Cross-language paragraph matching pending"
+      },
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+      ]
+    }
+  ],
+  "provenance": "All proposed bilingual passages are editorial paraphrases, not verbatim quotations or simulated speech by Pius X. No claims of personally uttered words.",
+  "chanoine": {
+    "originalEnglishWitness": "BLOCKED_NOT_RECONSTRUCTED",
+    "existingB39": "PRESERVED",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "nextQueue": [
+    "Review SPX-EXP-019/023 episcopal precautions alias without duplicate rewriting",
+    "Check SPX-EXP-016/033 biblical criticism overlap",
+    "Collate French source paragraph locators for EXP-026/028",
+    "Consolidate B43–B50 certification queue excluding B41 duplicates",
+    "Keep Chanoine original English and specialist cases held"
+  ],
+  "publication": false,
+  "merge": false,
+  "deploy": false
+}
