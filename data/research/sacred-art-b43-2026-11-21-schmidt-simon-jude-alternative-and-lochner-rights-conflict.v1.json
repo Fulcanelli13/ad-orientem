@@ -1,0 +1,53 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B43",
+  "asOf": "2026-11-21",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B42",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B43-01",
+      "subject": "Class II Saints Simon and Jude: Martin Johann Schmidt, Martyrdom of Saint Simon Zelotes and Saint Judas Thaddeus",
+      "findingEn": "New distinct exact paired-subject alternative: Spencer Museum of Art accession 1951.0070, circa 1796, oil on canvas 68.6 x 43.2 cm. Institutional label identifies the work as a contract sketch for the larger altarpiece in Kilb, Lower Austria; these are separate physical works. Commons hosts a 1122 x 1800 JPEG marked public domain under PD-Art, but the museum object page requests image-reproduction enquiries, so museum-origin exact-photograph reuse is not independently cleared. Research candidate only; no editorial promotion.",
+      "findingFr": "Nouvelle œuvre distincte représentant le martyre conjoint de Simon et Jude : Martin Johann Schmidt, vers 1796, Spencer Museum of Art, inv. 1951.0070. Esquisse contractuelle pour le retable de Kilb, qui est un autre objet physique. Une image Commons de 1 122 × 1 800 pixels est signalée comme domaine public selon PD-Art, mais la page du musée renvoie à une demande de reproduction. Droits de la photographie institutionnelle non confirmés.",
+      "sources": [
+        "https://spencerart.ku.edu/art/collections-online/object/9137",
+        "https://commons.wikimedia.org/wiki/File:Martyrdom_of_Saint_Simon_Zelotes_and_Saint_Judas_Thaddeus,_circa_1796.jpg"
+      ],
+      "status": "NEW_DISTINCT_EXACT_SUBJECT_ALTERNATIVE_RIGHTS_QUALIFIED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B43-02",
+      "subject": "Stefan Lochner, Städel 830, 2020 Commons full-resolution PNG rights provenance",
+      "findingEn": "Source-specific conflict characterized: Commons file page identifies photographer Horst Ziegenfusz in EXIF, with 'Copyrighted' metadata, and structured data simultaneously marks copyrighted/CC BY-SA 4.0; the Commons licensing section declares PDM 1.0 by copyright holder. The institutional Städel object page separately identifies picture copyright as Public Domain. Do not treat EXIF or Commons structured metadata as overriding the museum policy automatically, nor treat Public Domain Mark as a CC0 licence. Keep the conflict visible and prefer institution-controlled reproduction route where possible.",
+      "findingFr": "Conflit de métadonnées précisé : la photographie porte le nom de Horst Ziegenfusz et la mention « Copyrighted » dans les données EXIF ; les données structurées Commons indiquent CC BY-SA 4.0 tandis que la section de licence indique PDM 1.0. La notice institutionnelle du Städel qualifie l'image de domaine public. Le marquage PDM ne doit pas être assimilé à une licence CC0.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Martyrdom_of_Ss_Simon_and_Judas_(SM_830).png",
+        "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas"
+      ],
+      "status": "EXACT_FILE_RIGHTS_METADATA_CONFLICT_DOCUMENTED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "Direct Commons request from execution container failed at DNS/network resolution before image bytes could be received. No file acquisition or local pixel inspection. Source-reported pixel dimensions only.",
+  "nextQueue": [
+    "Attempt acquisition of NGA-origin Andrea and Ricci CC0 Commons reproductions and Städel Lochner original in network-enabled environment; record SHA-256 and mobile composition QA",
+    "Seek exact Class I Benson, Carracci, Strozzi and Gaulli reusable photographs with institution-backed object identity and photo rights",
+    "Check Schmidt Commons original against Spencer photograph; preserve reproduction-request caveat and separate Kilb altarpiece",
+    "Continue Esztergom object inventory, Ricci 1996 catalogue interpretation and strict Lateran dedication iconography"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B40",
+  "asOf": "2026-11-18",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B39",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B40-01",
+      "kind": "CLASS_II_NGA_INSTITUTIONAL_DERIVATIVE_ROUTE",
+      "subject": "Sebastiano Ricci, The Exaltation of the True Cross, NGA 1939.1.72",
+      "findingEn": "An NGA-attributed CC0 Wikimedia Commons file of the exact painting provides an independently discoverable 1,648 × 4,000 pixel institutional reproduction (7.47 MB), uploaded 14 August 2019. This is distinct from a 1,740 × 3,677 pixel independently photographed CC BY 4.0 file uploaded June 2026. Prefer the NGA-attributed CC0 file for future acquisition and compare against the NGA original. The prior DNS-blocked api.nga.gov route need not prevent investigation of this alternative. Historical Finding/Exaltation iconographic ambiguity remains qualified; no production promotion.",
+      "findingFr": "Une reproduction de l'œuvre exacte, créditée à la National Gallery of Art et publiée sous CC0 sur Wikimedia Commons, mesure 1 648 × 4 000 pixels (7,47 Mo ; dépôt du 14 août 2019). Elle est distincte d'une photographie indépendante de 1 740 × 3 677 pixels sous CC BY 4.0 déposée en juin 2026. Privilégier la version attribuée à la NGA lors d'une acquisition ultérieure. La réserve iconographique entre Invention et Exaltation demeure.",
+      "sources": [
+        "https://www.nga.gov/artworks/213-exaltation-true-cross",
+        "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci,_The_Exaltation_of_the_True_Cross,_1733,_NGA_213.jpg",
+        "https://commons.wikimedia.org/wiki/File:The_Exaltation_of_the_True_Cross_by_Sebastiano_Ricci,_National_Gallery_of_Art.jpg"
+      ],
+      "rightsStatus": "NGA_OBJECT_PUBLIC_DOMAIN_AND_NGA_ATTRIBUTED_CC0_DERIVATIVE; VERIFY_BYTES",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B40-02",
+      "kind": "CLASS_II_PHOTOGRAPHIC_SOURCE_DISAMBIGUATION",
+      "subject": "Ricci NGA 1939.1.72 independently photographed 2026 Commons file",
+      "findingEn": "The 14 June 2026 photograph is explicitly described as own work by APK, photographed with an iPhone 14 Pro, published under CC BY 4.0. Its dimensions are 1,740 × 3,677 pixels. Do not mislabel this file as the NGA CC0 download; attribution and licence conditions differ.",
+      "findingFr": "La photographie indépendante réalisée le 14 juin 2026 (APK, iPhone 14 Pro) est diffusée sous CC BY 4.0 et mesure 1 740 × 3 677 pixels. Ne pas la confondre avec la reproduction NGA sous CC0 : les obligations de crédit diffèrent.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:The_Exaltation_of_the_True_Cross_by_Sebastiano_Ricci,_National_Gallery_of_Art.jpg"
+      ],
+      "rightsStatus": "CC_BY_4_0_PHOTOGRAPHER_CLAIM",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B40-03",
+      "kind": "ESZTERGOM_CUSTODIAN_GENERAL_CONFIRMATION_ONLY",
+      "subject": "Andrea di Bartolo, Joachim Leaving Jerusalem, reported Keresztény Múzeum",
+      "findingEn": "Esztergom's municipal visitor portal confirms that Keresztény Múzeum is an established church-art collection at the Primate's Palace. It does not supply an object-specific inventory or reusable image of Joachim Leaving Jerusalem. NGA scholarly identification from B37 remains the object-level lead; do not upgrade rights status.",
+      "findingFr": "Le portail municipal d'Esztergom confirme l'existence du Keresztény Múzeum dans le palais primatial, sans fournir de numéro d'inventaire ni d'image réutilisable pour Joachim quittant Jérusalem. Conserver la référence scientifique de la NGA sans relever le statut des droits.",
+      "sources": [
+        "https://visitesztergom.hu/en/culture/christian-museum/",
+        "https://www.nga.gov/research/publications/italian-paintings-thirteenth-and-fourteenth-centuries-0/italian-paintings-thirteenth-and-fourteenth-centuries-presentation-virgin-temple-c-14001405"
+      ],
+      "rightsStatus": "EXACT_PHOTOGRAPH_NOT_VERIFIED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Acquire and hash Commons NGA-attributed CC0 Ricci 1648×4000 and compare image integrity/crop to NGA object",
+    "Find approved Class I Benson, Carracci, Strozzi, Gaulli independently reusable exact-image routes",
+    "Acquire/hash/QA Andrea NGA 1939.1.42 and Lochner Städel 830",
+    "Read NGA 1996 Ricci scholarly iconographic discussion; identify Esztergom object inventory and exact Lateran dedication scene"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

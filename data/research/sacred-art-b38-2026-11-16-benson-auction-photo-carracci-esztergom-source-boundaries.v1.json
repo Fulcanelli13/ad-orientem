@@ -1,0 +1,68 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B38",
+  "asOf": "2026-11-16",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B37",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B38-01",
+      "kind": "CLASS_I_EXACT_PHOTO_PROVENANCE_RIGHTS_BOUNDARY",
+      "subject": "Ambrosius Benson, Salvator Mundi, Christ the King",
+      "findingEn": "Christie's 3 December 2019 London lot 4 identifies the exact oil-on-panel artwork (91.4 × 86.1 cm) and provenance, matching the Commons 2987 × 3200 JPEG whose source is that auction photograph. Commons labels the reproduction public domain under its PD-Art rationale; this does not constitute a separate open-image permission statement from Christie's or an institutional museum. Existing owner selection stays approved aesthetically; exact auction-photo clearance remains on hold.",
+      "findingFr": "Christie's identifie le Salvator Mundi de Benson (huile sur panneau, 91,4 × 86,1 cm), lot 4 du 3 décembre 2019. Le fichier Commons de 2 987 × 3 200 pixels provient de la photographie de vente et porte une mention de domaine public selon la doctrine PD-Art de Commons, sans autorisation distincte établie de Christie's. Le choix artistique reste approuvé; les droits de cette photographie restent en attente.",
+      "sources": [
+        "https://www.christies.com/zh/lot/lot-6238407",
+        "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+      ],
+      "rightsStatus": "COMMONS_PD_ART_ONLY_AUCTION_PHOTO_RIGHTS_NOT_INDEPENDENTLY_CLEARED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B38-02",
+      "kind": "CLASS_I_PHOTO_RESOLUTION_LIMIT",
+      "subject": "Ludovico Carracci, An Angel Frees the Souls of Purgatory, All Souls",
+      "findingEn": "Commons source file Carracci-Purgatory.jpg (866 × 1200 px, uploaded 2009) traces to a noncustodial image site and claims PD-Art; the Web Gallery of Art gives the same 866 × 1200 image and reports physical dimensions 44 × 51 cm. Portrait pixel aspect conflicts with landscape-ordered dimensions. Neither is a custodial Vatican catalogue inventory or independently verified Vatican photographic licence. Keep source/crop and exact inventory unresolved.",
+      "findingFr": "Le fichier Commons Carracci-Purgatory.jpg (866 × 1 200 pixels) provient d'un site non institutionnel; la Web Gallery of Art donne les mêmes dimensions de fichier et une toile de 44 × 51 cm. L'orientation du fichier et l'ordre des dimensions physiques divergent. Ni le numéro d'inventaire du Vatican ni une licence photographique institutionnelle ne sont établis.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+        "https://www.wga.hu/html/c/carracci/lodovico/purgator.html"
+      ],
+      "rightsStatus": "NONINSTITUTIONAL_PD_ART_ROUTE_ONLY",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B38-03",
+      "kind": "ESZTERGOM_RECONSTRUCTION_SOURCE_BOUNDARY",
+      "subject": "Andrea di Bartolo, Joachim Leaving Jerusalem, Esztergom",
+      "findingEn": "The NGA scholarly PDF explicitly captions a grayscale figure of the Esztergom panel and separately labels the reconstruction of the dispersed altarpiece, with multiple lost or conjectural positions. The figure is documentary comparative evidence, not an object-specific open image licence or a downloadable high-resolution Esztergom master. No museum inventory number established in this pass.",
+      "findingFr": "Le catalogue scientifique de la NGA reproduit en grisaille le panneau d'Esztergom et présente séparément une reconstitution hypothétique du retable dispersé, avec plusieurs panneaux perdus. Cette illustration documentaire ne constitue ni une licence ouverte de l'image d'Esztergom ni un original haute résolution vérifié.",
+      "sources": [
+        "https://www.nga.gov/sites/default/files/2025-01/2016-03-21_italian-paintings-of-the-thirteenth-and-fourteenth-centuries.pdf"
+      ],
+      "rightsStatus": "ESZTERGOM_OBJECT_PHOTO_RIGHTS_UNKNOWN",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Locate custodial Esztergom inventory and photograph licence for Joachim Leaving Jerusalem",
+    "Find independent exact-image reuse grants for Benson, Carracci, Strozzi, Gaulli",
+    "Acquire and SHA-256 hash NGA 1939.1.42 and 1939.1.72, Städel 830; inspect mobile crops",
+    "Find strict Lateran dedication iconography and custodial photo rights"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

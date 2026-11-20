@@ -1,0 +1,71 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B42",
+  "asOf": "2026-11-20",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B41",
+  "researchBranchHeadBefore": "8190cfabad0c39d3b712947edb4b3d17dee4b6e2",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B42-01",
+      "subject": "Approved Gaudete: Bernardo Strozzi, Saint John the Baptist interrogated about Christ, National Trust 108873",
+      "findingEn": "Commons search surfaces multiple Strozzi Saint John works, but the San Marino Saint John the Baptist portrait and Accademia Ligustica Saint John painting and fresco are different physical objects. Their Commons PD-Art or photographer CC0/CC-BY permissions cannot clear the National Trust Kedleston painting or Andrew Patterson photograph. Exact-image rights hold unchanged.",
+      "findingFr": "Les images Commons de saint Jean-Baptiste par Strozzi conservées à Saint-Marin et à Gênes concernent des œuvres physiques différentes du tableau approuvé de Kedleston Hall. Leurs licences ne libèrent pas la photographie du National Trust.",
+      "sources": [
+        "https://www.nationaltrustcollections.org.uk/object/108873",
+        "https://commons.wikimedia.org/wiki/File:Bernardo_strozzi_san_giovani_battista.jpg",
+        "https://commons.wikimedia.org/wiki/File:Bernardo_strozzi,_san_giovanni_battista,_1615-20_ca._02.JPG",
+        "https://commons.wikimedia.org/wiki/File:Head_of_John_the_Baptist_by_Bernardo_Strozzi,_undated,_fresco_from_the_Church_of_St_Dominic_-_Accademia_Ligustica_di_Belle_Arti_-_DSC02095.JPG"
+      ],
+      "status": "EXACT_OBJECT_NOT_FOUND_RIGHTS_HOLD",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B42-02",
+      "subject": "Approved Advent IV: Giovanni Battista Gaulli, La Prédication de saint Jean Baptiste, Louvre INV 20298",
+      "findingEn": "Commons title-matched preaching images by Abraham Bloemaert (Nancy), Pieter Brueghel II (Lille), Étienne/Joseph Parrocel, and a Rembrandt Louvre drawing are not Gaulli's Louvre INV 20298. A Louvre-held drawing by another artist does not resolve exact Gaulli photograph rights. Preserve hold and do not substitute.",
+      "findingFr": "Les résultats Commons portant le titre Prédication de saint Jean-Baptiste sont des œuvres distinctes de Gaulli INV 20298, notamment Bloemaert, Brueghel, Parrocel et un dessin de Rembrandt. Aucun ne constitue une reproduction exacte autorisée du tableau approuvé.",
+      "sources": [
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+        "https://commons.wikimedia.org/wiki/File:Pr%C3%A9dication_de_saint_Jean-Baptiste.jpg",
+        "https://commons.wikimedia.org/wiki/File:La_pr%C3%A9dication_de_saint_Jean-Baptiste_-_Brueghel.jpg",
+        "https://commons.wikimedia.org/wiki/File:Rembrandt_-_La_pr%C3%A9dication_de_saint_Jean-Baptiste,_RF_4667,_Recto.jpg"
+      ],
+      "status": "TITLE_COLLISION_DISTINCT_PHYSICAL_OBJECTS",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B42-03",
+      "subject": "Approved All Souls: Ludovico Carracci, An Angel Frees the Souls of Purgatory",
+      "findingEn": "Commons file Carracci-Purgatory.jpg remains only 866×1200 pixels and credits a noninstitutional lib-art.com source; Commons PD-Art rationale does not independently verify Vatican custodial photograph rights. Its 44×51 cm catalogue dimensions still conflict with portrait pixels. Not a newly cleared image.",
+      "findingFr": "La reproduction Commons de Carracci reste limitée à 866 × 1 200 pixels, avec une source non institutionnelle. L'écart entre dimensions physiques et orientation numérique ainsi que les droits photographiques demeurent non résolus.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      ],
+      "status": "LOW_RES_SOURCE_AND_PHYSICAL_ORIENTATION_HOLD",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "No image file downloaded in this pass. Source pages and GitHub records were read; dimensions cited from external metadata only.",
+  "nextQueue": [
+    "Prioritise downloading the existing NGA Andrea and Ricci CC0 files and Städel Lochner image; compute SHA256 and mobile crop QA before more rights-only rechecks",
+    "Resolve Städel 830 Commons structured metadata conflict against institutional object-specific public-domain declaration",
+    "Seek object-specific open image routes for National Trust 108873 and Louvre INV 20298; do not accept title-matched substitute objects",
+    "Resolve Benson auction-image photographic reuse, Carracci Vatican inventory, Esztergom inventory and exact Lateran dedication depiction"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

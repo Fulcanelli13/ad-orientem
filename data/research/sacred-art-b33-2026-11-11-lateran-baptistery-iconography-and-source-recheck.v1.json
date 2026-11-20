@@ -1,0 +1,62 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B33",
+  "asOf": "2026-11-11",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B32",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B33-01",
+      "kind": "LATERAN_RELATED_IN_SITU_ICONOGRAPHY_NOT_EXACT_DEDICATION",
+      "subject": "9 November Lateran dedication",
+      "source": "https://www.basilicasangiovanni.va/en/san-giovanni-in-laterano/battistero/il-battistero-barocco.html",
+      "findingEn": "The Archbasilica's own visitor history identifies five seventeenth-century Constantine frescoes in the Lateran Baptistery. The fourth depicts the overthrow of idols and Exaltation of the Cross, relating Helena and the Holy Sepulchre. This is a site-authentic alternative contextual illustration, but neither the consecration nor dedication of the Lateran church. Individual fresco author, exact photographic rights and original file remain unverified.",
+      "findingFr": "Le site officiel de l'archibasilique décrit cinq fresques du XVIIe siècle consacrées à Constantin dans le baptistère du Latran. La quatrième représente le renversement des idoles et l'Exaltation de la Croix, avec une référence à sainte Hélène. Cette image appartient bien au complexe du Latran, mais ne représente pas la dédicace de la basilique. Attribution précise, droits photographiques et fichier original à vérifier.",
+      "rights": "UNVERIFIED_EXACT_PHOTOGRAPH",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B33-02",
+      "kind": "LATERAN_FALSE_POSITIVE_EXCLUDED",
+      "subject": "Lateran dedication",
+      "source": "https://www.metmuseum.org/art/collection/search/467417",
+      "findingEn": "The Met object 31.134.5 depicts Saint Dominic supporting the collapsing Lateran church in Pope Innocent III's dream. It is an authentic Lateran-related miniature, not a dedication or consecration scene. Do not count as exact feast coverage or conflate with the building's foundation.",
+      "findingFr": "L'enluminure du Met 31.134.5 montre saint Dominique soutenant l'église du Latran dans le songe d'Innocent III. Il ne s'agit pas d'une scène de dédicace : ne pas la comptabiliser comme couverture iconographique exacte.",
+      "rights": "MET_PAGE_PUBLIC_DOMAIN_STATUS_NOT_CONFIRMED_IN_THIS_PASS",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B33-03",
+      "kind": "CLASS_II_SOURCE_RECONFIRMATION_NO_NEW_ACQUISITION",
+      "subject": "Simon and Jude / Nativity of Mary",
+      "sources": [
+        "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+        "https://www.nga.gov/artworks/183-nativity-virgin"
+      ],
+      "findingEn": "Current institutional records continue to identify Städel inventory 830 as panel 10 of 12, Public Domain, and NGA 1939.1.42 as the Nativity of the Virgin with object media public domain. These remain distinct works and already-known research leads; no new master or coverage count is claimed.",
+      "findingFr": "Les notices institutionnelles confirment le panneau 830 du Städel (10e scène sur 12, domaine public) et la Nativité de la Vierge NGA 1939.1.42 (image déclarée du domaine public). Aucune acquisition ni certification nouvelle.",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Prioritise actual acquisition, hashes and mobile QA for NGA 1939.1.42, NGA 1939.1.72 and Städel 830",
+    "Resolve Strozzi NT 108873 independent exact-photo rights",
+    "Resolve Benson auction-image rights, Carracci Vatican inventory and Gaulli Louvre photograph",
+    "Find exact Lateran dedication depiction; retain site-authentic Constantine frescoes as related only"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

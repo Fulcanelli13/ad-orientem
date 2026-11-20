@@ -1,0 +1,359 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B25",
+  "asOf": "2026-11-03",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "reconciliation": {
+    "latestPrevious": "data/research/sacred-art-b24-2026-11-02-approved-murillo-open-route-john-evangelist-and-archive.v1.json",
+    "historical": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json",
+    "candidate": "platform/885-sacred-art-candidates:data/calendar/sacred-art-candidates.v1.json",
+    "candidateCount": 281,
+    "intake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "intakeCount": 451,
+    "dedupe": "Exact accession checks across 281-candidate source branch, 451-work intake and all accessible B01–B24 research records. Existing Met 32.100.127 = met-437738 was detected and excluded as new. Nine new distinct accession-level physical leads absent from checked datasets; no claim of global dedupe across other unpublished historical workbooks or parallel branches."
+  },
+  "policy": {
+    "preserveUserSelectionsAndRatings": true,
+    "excludePrado": true,
+    "excludeFraAngelico": true,
+    "excludeElGreco": true,
+    "noNewCanonicalIds": true,
+    "noContact": true,
+    "noPaidExtras": true,
+    "noMerge": true,
+    "noPublish": true,
+    "noDeploy": true,
+    "mastersCertified": false
+  },
+  "records": [
+    {
+      "researchId": "B25-01",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SCENE_OIL",
+      "subject": "29 Aug — Beheading of St John the Baptist (Class II)",
+      "artist": "Jacob Duck",
+      "title": "Salome with the Head of Saint John the Baptist",
+      "accession": "Cleveland Museum of Art 1975.79",
+      "objectUrl": "https://www.clevelandart.org/art/1975.79",
+      "rightsStatus": "CMA object-specific Open Access, unrestricted reuse; official download available",
+      "summaryEn": "Dutch oil on wood, mid-1600s, unframed 71 × 54.6 cm. The execution is already over; Salome and Herodias receive the Baptist's head. A strong vertical Baroque candidate, but not the actual moment of execution and not yet an approved calendar hero.",
+      "summaryFr": "Huile sur bois néerlandaise du milieu du XVIIe siècle, 71 × 54,6 cm hors cadre. La décollation est déjà accomplie : Salomé et Hérodiade reçoivent la tête du Baptiste. Candidat baroque vertical, mais non la scène même de l'exécution et non approuvé pour le calendrier.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on wood",
+      "imageRoute": "official CMA object page download; do not preserve ephemeral signed Piction thumbnail URL",
+      "iconographicRelation": "AFTERMATH_NOT_EXECUTION",
+      "evidence": [
+        "https://www.clevelandart.org/art/1975.79",
+        "https://www.clevelandart.org/open-access"
+      ]
+    },
+    {
+      "researchId": "B25-02",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SCENE_OIL",
+      "subject": "29 Aug — Beheading of St John the Baptist (Class II)",
+      "artist": "Andrea Solario",
+      "title": "Salome with the Head of Saint John the Baptist",
+      "accession": "Metropolitan Museum 32.100.81; Met object 437699",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437699",
+      "rightsStatus": "Object image Public Domain; Met Open Access CC0",
+      "summaryEn": "Italian oil on wood c.1507–1509, 57.2 × 47 cm. The executioner's hand alone appears, presenting John's head to Salome. Exact physical object and unrestricted museum image route; subject is the aftermath, not the act of beheading.",
+      "summaryFr": "Huile sur bois italienne vers 1507–1509, 57,2 × 47 cm. Seule la main du bourreau apparaît, présentant la tête de Jean à Salomé. Objet et voie d'image libre identifiés ; scène postérieure à l'exécution.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on wood",
+      "imageRoute": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437699/793893/main-image",
+      "imageRouteNote": "Official object page exposes this IIIF path; bytes not fetched in this pass",
+      "iconographicRelation": "AFTERMATH_NOT_EXECUTION",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/437699",
+        "https://www.metmuseum.org/hubs/open-access"
+      ]
+    },
+    {
+      "researchId": "B25-03",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SCENE_OIL_ATTRIBUTION_GUARD",
+      "subject": "29 Aug — Beheading of St John the Baptist (Class II)",
+      "artist": "Follower of Bernardino Luini (current main CMA attribution)",
+      "title": "Salome with the Head of Saint John the Baptist",
+      "accession": "Cleveland Museum of Art 1916.824",
+      "objectUrl": "https://www.clevelandart.org/art/1916.824",
+      "rightsStatus": "CMA object-specific Open Access, unrestricted reuse; official download available",
+      "summaryEn": "Oil on canvas, 1500s or later, unframed 46.6 × 59.7 cm. Dark horizontal composition with Salome, Herodias and the Baptist's head. The main institutional heading says follower of Bernardino Luini, although a lower page label says Bernardino Luini: retain follower attribution and flag internal display inconsistency.",
+      "summaryFr": "Huile sur toile, XVIe siècle ou plus tard, 46,6 × 59,7 cm hors cadre. Composition sombre horizontale montrant Salomé, Hérodiade et la tête du Baptiste. La notice principale attribue l'œuvre à un suiveur de Bernardino Luini ; un libellé secondaire indique Luini lui-même. Conserver l'attribution prudente.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on canvas",
+      "imageRoute": "official CMA object page download; avoid ephemeral signed thumbnail",
+      "iconographicRelation": "AFTERMATH_NOT_EXECUTION",
+      "evidence": [
+        "https://www.clevelandart.org/art/1916.824",
+        "https://www.clevelandart.org/open-access"
+      ]
+    },
+    {
+      "researchId": "B25-04",
+      "kind": "NEW_DISTINCT_CLASS_II_FULL_NARRATIVE_PANEL",
+      "subject": "29 Aug — Beheading of St John the Baptist (Class II)",
+      "artist": "Giovanni Baronzio",
+      "title": "The Feast of Herod and the Beheading of the Baptist",
+      "accession": "Metropolitan Museum 1975.1.103; Met object 459045",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/459045",
+      "rightsStatus": "Object image Public Domain; Met Open Access CC0",
+      "summaryEn": "A c.1330–1335 tempera, gold and silver panel, 44.1 × 49.8 cm, from a dispersed Baptist altarpiece. The Met identifies both Herod's feast and the martyrdom narrative. Strong literal subject but medieval rather than the preferred dark Baroque oil.",
+      "summaryFr": "Panneau à tempera, or et argent, vers 1330–1335, 44,1 × 49,8 cm, issu d'un retable dispersé consacré au Baptiste. La notice du Met documente le banquet d'Hérode et la décollation. Sujet exact mais esthétique médiévale, non baroque.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "tempera on wood, gold ground and silver",
+      "imageRoute": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/459045/913433/main-image",
+      "imageRouteNote": "Official object page exposed this IIIF route; bytes not acquired",
+      "iconographicRelation": "FULL_NARRATIVE_EXACT",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/459045",
+        "https://www.metmuseum.org/hubs/open-access"
+      ]
+    },
+    {
+      "researchId": "B25-05",
+      "kind": "EXISTING_CANDIDATE_DEDUPE_NO_NEW_LEAD",
+      "subject": "29 Aug — Beheading of St John the Baptist (Class II)",
+      "artist": "Spanish (Catalan) Painter",
+      "title": "The Beheading of Saint John the Baptist",
+      "accession": "Metropolitan Museum 32.100.127; canonical candidate met-437738",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "rightsStatus": "Met object image Public Domain; existing candidate already records this work",
+      "summaryEn": "The exact beheading panel was already present as met-437738 in both the 281-work candidate registry and 451-work intake. Retain the prior ID and all decisions; do not count it as a newly discovered painting or assign a replacement ID.",
+      "summaryFr": "Le panneau représentant la décollation figure déjà sous met-437738 dans les catalogues de 281 et 451 œuvres. Conserver cet identifiant et les décisions antérieures ; ne pas le compter comme une découverte.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "existingCanonicalCandidateId": "met-437738",
+      "countAsNewPhysicalLead": false,
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/437738"
+      ]
+    },
+    {
+      "researchId": "B25-06",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SCENE_OIL_IMAGE_LICENSE_GATE",
+      "subject": "22 Feb — Chair of St Peter (Class II)",
+      "artist": "Peter Paul Rubens",
+      "title": "Christ Giving the Keys of Heaven to Saint Peter",
+      "accession": "Staatliche Museen zu Berlin, Gemäldegalerie B.116; obj:863360",
+      "objectUrl": "https://search.smb.museum/object/obj-863360",
+      "rightsStatus": "Institutional 2022 Open Access initiative supports high-resolution free reproductions of public-domain works; exact downloadable file's license still to inspect",
+      "summaryEn": "Oil on oak, dated by the custodian 1613/15, 182.5 × 159 cm. The museum connects the handing over of the keys with the papal office. Relevant to Matthew 16:13–19 in the Chair of Peter Mass but not a depiction of the historic Antioch cathedra. Download is exposed; image-specific license and native pixels remain unverified.",
+      "summaryFr": "Huile sur chêne, datée 1613–1615 par le musée, 182,5 × 159 cm. La remise des clefs évoque la primauté de Pierre et Matthieu 16, mais non le siège historique d'Antioche. Téléchargement annoncé ; licence propre au fichier et pixels natifs non contrôlés.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on oak panel",
+      "iconographicRelation": "GOSPEL_KEYS_RELATED_NOT_LITERAL_CATHEDRA",
+      "imageRoute": "official SMB object page Download; no unverified static image URL",
+      "evidence": [
+        "https://search.smb.museum/object/obj-863360",
+        "https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2022/06/SMB_220627_SammlungenOnline_CreativeCommons_Wikimedia_PM.pdf",
+        "https://latinmasspropers.com/mass/chair-of-st-peter/"
+      ]
+    },
+    {
+      "researchId": "B25-07",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SAINT_OIL_CC0",
+      "subject": "22 Feb — Chair of St Peter (Class II)",
+      "artist": "Anonymous artist, related to Peter Paul Rubens",
+      "title": "Saint Peter",
+      "accession": "National Gallery of Art 1960.6.32",
+      "objectUrl": "https://www.nga.gov/artworks/46056-saint-peter",
+      "rightsStatus": "NGA object-specific public domain free image",
+      "summaryEn": "Oil on panel c.1616/1618, 92 × 67.5 cm, showing Peter holding two keys against a dark ground. NGA states the design derives from Rubens's Saint Philip in the Lerma series, NOT a personally painted Rubens Saint Peter. The Prado original is not an eligible image source. This is an apostle portrait, not the Chair scene.",
+      "summaryFr": "Huile sur bois vers 1616–1618, 92 × 67,5 cm, saint Pierre portant deux clefs sur fond sombre. La NGA explique que le modèle reprend le saint Philippe de la série Lerma de Rubens ; l'œuvre n'est pas un portrait autographe de Rubens. L'original du Prado reste exclu. Portrait apparenté, non scène de la Chaire.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on panel",
+      "iconographicRelation": "PETER_WITH_KEYS_RELATED_NOT_CATHEDRA",
+      "imageRoute": "NGA object-page free download",
+      "evidence": [
+        "https://www.nga.gov/artworks/46056-saint-peter",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ]
+    },
+    {
+      "researchId": "B25-08",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_KEYS_MINIATURE_CC0",
+      "subject": "22 Feb — Chair of St Peter (Class II)",
+      "artist": "Lorenzo Monaco",
+      "title": "Christ Giving the Keys to Saint Peter",
+      "accession": "National Gallery of Art 1958.8.105",
+      "objectUrl": "https://www.nga.gov/artworks/45750-christ-giving-keys-saint-peter",
+      "rightsStatus": "NGA object-specific public domain free image",
+      "summaryEn": "Tempera and gold leaf on vellum, c.1395–1400, 34.4 × 31.4 cm. Exact Matthew 16 keys scene, not a painting of the Chair itself. The NGA's 2008 attribution correction confirms Lorenzo Monaco rather than a generic Italian fifteenth-century painter. A secondary miniature, not a Baroque hero recommendation.",
+      "summaryFr": "Miniature à tempera et or sur vélin, vers 1395–1400, 34,4 × 31,4 cm. Scène exacte de la remise des clefs selon Matthieu 16, non représentation de la Chaire. La NGA a confirmé l'attribution à Lorenzo Monaco en 2008. Illustration secondaire, non proposition de héros baroque.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "tempera and gold leaf on vellum",
+      "iconographicRelation": "GOSPEL_KEYS_RELATED_NOT_LITERAL_CATHEDRA",
+      "imageRoute": "NGA object-page free download",
+      "evidence": [
+        "https://www.nga.gov/artworks/45750-christ-giving-keys-saint-peter",
+        "https://www.nga.gov/content/dam/ngaweb/About/pdf/annual-reports/annual-report-2008.pdf"
+      ]
+    },
+    {
+      "researchId": "B25-09",
+      "kind": "NEW_DISTINCT_CLASS_II_RELATED_SCENE_OIL_RIGHTS_HELD",
+      "subject": "22 Feb — Chair of St Peter (Class II)",
+      "artist": "Nicolas Poussin",
+      "title": "The Sacrament of Ordination (Christ Presenting the Keys to Saint Peter)",
+      "accession": "Kimbell Art Museum, collection route ap-201101",
+      "objectUrl": "https://kimbellart.org/collection/ap-201101",
+      "rightsStatus": "Official object and oil identity verified; freely reusable exact photograph NOT verified",
+      "summaryEn": "Poussin's c.1636–1640 oil on canvas, 95.9 × 121.6 cm, shows Christ entrusting keys to Peter. An exact physical painting and compelling Matthew 16 link, but the Kimbell page did not establish a no-fee commercial-use image licence; do not infer one from the age of the painting.",
+      "summaryFr": "Huile sur toile de Poussin vers 1636–1640, 95,9 × 121,6 cm, représentant la remise des clefs. L'objet physique et son rapport à Matthieu 16 sont identifiés, mais la réutilisation commerciale gratuite de la photographie n'est pas établie ; conserver le blocage.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on canvas",
+      "iconographicRelation": "GOSPEL_KEYS_RELATED_NOT_LITERAL_CATHEDRA",
+      "imageRoute": null,
+      "evidence": [
+        "https://kimbellart.org/collection/ap-201101"
+      ]
+    },
+    {
+      "researchId": "B25-10",
+      "kind": "NEW_DISTINCT_CLASS_II_ROSARY_DRAWING_CC0_NON_HERO",
+      "subject": "7 Oct — Our Lady of the Rosary (Class II)",
+      "artist": "Vicente Salvador Gómez",
+      "title": "The Madonna of the Rosary",
+      "accession": "National Gallery of Art 1995.8.2",
+      "objectUrl": "https://www.nga.gov/artworks/91441-madonna-rosary",
+      "rightsStatus": "NGA object-specific public domain free image",
+      "summaryEn": "Signed and dated 1674 pen-and-ink drawing, 32.3 × 24 cm, with Madonna, Child, cherubs and rosary beads. Exact devotional subject with free image route, but a drawing rather than the requested high-impact oil hero. Keep for supporting illustration only.",
+      "summaryFr": "Dessin à la plume signé et daté 1674, 32,3 × 24 cm, montrant la Vierge, l'Enfant, des chérubins et des chapelets. Sujet dévotionnel exact et image libre, mais dessin secondaire plutôt que peinture à l'huile héroïque.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "pen and brown ink on laid paper",
+      "iconographicRelation": "EXACT_ROSARY_DEVOTION_NON_HERO",
+      "imageRoute": "NGA object-page free download",
+      "evidence": [
+        "https://www.nga.gov/artworks/91441-madonna-rosary",
+        "https://www.nga.gov/artworks/free-images-and-open-access"
+      ]
+    },
+    {
+      "researchId": "B25-11",
+      "kind": "EXISTING_FAMOUS_CLASS_II_ROSARY_OIL_RIGHTS_GUARD",
+      "subject": "7 Oct — Our Lady of the Rosary (Class II)",
+      "artist": "Caravaggio",
+      "title": "Madonna of the Rosary",
+      "accession": "Kunsthistorisches Museum Vienna, Gemäldegalerie inv. 147",
+      "objectUrl": "https://www.khm.at/en/objectdb/detail/425/",
+      "rightsStatus": "KHM object page displays Copyright Kunsthistorisches Museum, Gemäldegalerie; independent freely reusable exact photograph not established",
+      "summaryEn": "The custodian identifies the oil painting as c.1603, 364.5 × 249.5 cm, showing Saint Dominic distributing rosaries. A third-party site calls the reproduction CC0, but that cannot override the museum's explicit image copyright statement. Do not acquire or publish an image based only on the aggregator claim.",
+      "summaryFr": "Le musée attribue cette huile à Caravage, vers 1603, 364,5 × 249,5 cm ; saint Dominique y distribue des chapelets. Une plateforme tierce qualifie la reproduction de CC0, mais la notice du dépositaire indique explicitement un copyright. Ne pas publier sur cette seule base.",
+      "imageAcquired": false,
+      "nativePixelQa": false,
+      "mobileCropQa": false,
+      "masterCertified": false,
+      "medium": "oil on canvas",
+      "iconographicRelation": "EXACT_ROSARY_DEVOTION",
+      "imageRoute": null,
+      "evidence": [
+        "https://www.khm.at/en/objectdb/detail/425/",
+        "https://caravaggio-bernini.khm.at/en/visione/"
+      ]
+    },
+    {
+      "researchId": "B25-12",
+      "kind": "URGENT_ARCHIVE_EXPIRY_READBACK",
+      "subject": "Three pre-B26 original source ZIPs",
+      "artifacts": [
+        {
+          "id": 11664124885,
+          "runId": 38038829532,
+          "name": "sacred-art-originals-review",
+          "sizeBytes": 125908252,
+          "expiresAt": "2026-11-09T08:43:46Z",
+          "expired": false
+        },
+        {
+          "id": 11666577879,
+          "runId": 38044853035,
+          "name": "sacred-art-wide-devotion",
+          "sizeBytes": 116548990,
+          "expiresAt": "2026-11-09T10:32:31Z",
+          "expired": false
+        },
+        {
+          "id": 11667353162,
+          "runId": 38044853035,
+          "name": "sacred-art-wide-calendar",
+          "sizeBytes": 118285106,
+          "expiresAt": "2026-11-09T10:33:24Z",
+          "expired": false
+        }
+      ],
+      "summaryEn": "GitHub Actions lists confirm all three source ZIPs remain available on 3 November 2026. They are multi-image packages (about 126 MB, 117 MB and 118 MB), not one-painting images. The previously reviewed B26/B27 rescue inventory omitted their artifact IDs. No durable byte-for-byte archive copy or SHA-256 match was established in this pass. Preserve before 9 November via existing zero-cost rescue only, without modifying this research branch's production assets.",
+      "summaryFr": "Les listes GitHub Actions confirment la disponibilité des trois ZIP le 3 novembre 2026. Ce sont des archives de plusieurs images (environ 126, 117 et 118 Mo). Les inventaires de sauvegarde B26/B27 précédemment consultés n'incluaient pas ces identifiants. Aucune copie durable vérifiée par SHA-256 n'a été établie dans ce passage. Sauvegarder avant le 9 novembre via le dispositif gratuit existant.",
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38038829532",
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035"
+      ],
+      "archivePreservedThisPass": false,
+      "hashMatchedThisPass": false,
+      "masterCertified": false
+    }
+  ],
+  "totals": {
+    "researchRecords": 12,
+    "newDistinctPhysicalObjectLeads": 9,
+    "newClassIIBaptistPhysicalLeads": 4,
+    "newChairOfPeterRelatedPhysicalLeads": 4,
+    "newRosaryDrawingLeads": 1,
+    "existingCandidateDuplicatesPrevented": 1,
+    "rightsHeldObjects": 2,
+    "urgentArchiveRechecks": 1,
+    "sourceImageFilesAcquired": 0,
+    "newSHA256": 0,
+    "nativePixelQA": 0,
+    "mobileCropQA": 0,
+    "newCanonicalIds": 0,
+    "changedUserRatings": 0,
+    "certifiedMasters": 0
+  },
+  "limitations": "Web object previews and official download routes were inspected. No original image bytes or ICC/EXIF/390px crops were acquired or certified; direct remote hosts are not accessible from the local execution container. The official KHM and Kimbell photographs remain rights-held pending independent published image-level permission. B25 is research only.",
+  "nextQueue": [
+    "Before 2026-11-09 08:43 UTC, confirm SHA-256-matched durable copies of three multi-image Actions archives using the existing zero-cost rescue process; avoid duplicating rescue workflows.",
+    "Acquire exact official CMA Duck 1975.79 and Met Solario 32.100.81, Baronzio 1975.1.103; record original bytes, dimensions, hashes, ICC and 390px crops. Compare against already-listed Met Catalan met-437738 and NGA Gozzoli, without replacing existing decisions.",
+    "Acquire and crop-test NGA Saint Peter 1960.6.32 and Lorenzo Monaco 1958.8.105; inspect SMB Rubens B.116 downloadable file's precise licence before any commercial app use. Poussin Kimbell remains rights-held.",
+    "Keep Caravaggio KHM Rosary inv.147 photo rights-held despite third-party CC0 claims; compare rights-cleared official alternatives and existing approved art for 7 Oct.",
+    "Continue approved Class I Benson, Strozzi, Gaulli, All Souls Carracci and KMSKA van Dyck exact-image holds; do not substitute paintings or infer photo rights.",
+    "Derive next genuinely missing Class II subjects from observed 1962 calendar and current canonical art placements; prioritize paintings over prints and do not count related iconography as strict feast coverage."
+  ],
+  "publicationGate": {
+    "researchOnly": true,
+    "humanReviewRequired": true,
+    "imageRightsAndNativeQaRequired": true,
+    "merge": false,
+    "publish": false,
+    "deploy": false
+  }
+}
