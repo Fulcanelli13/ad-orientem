@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SPX_B67_Q844_SOURCE_PARITY_V1",
+  "date": "2026-11-22",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "parent": "B66",
+  "draft": "data/learn/research/pius-x-batch14-sacraments-c-20261020.v1.json",
+  "source": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "locator": "Parte quarta, Capo IX, §3, Q843–846",
+    "witness": "Institutional Italian transcription, not printed facsimile"
+  },
+  "findings": [
+    {
+      "id": "SPX-1905-M-844",
+      "classification": "SOURCE_PARITY_PRECISION_PROPOSAL",
+      "finding": "Existing opening reduces 'in istato di grazia, altrimenti si commetterebbe un sacrilegio' to generic proper spiritual disposition; the original explicitly requires state of grace and warns of sacrilege. Preserve distinction between liceity and validity and historical disciplinary context.",
+      "proposedOpening": {
+        "en": {
+          "question": "What did the 1905 Catechism require for the lawful celebration of Christian marriage?",
+          "answer": "The catechism distinguishes lawful celebration from validity. It requires freedom from prohibitive matrimonial impediments, knowledge of the principal teachings of religion, and the state of grace; it warns that proceeding without that spiritual disposition would be sacrilegious. Its historical impediment terminology should not be treated as a current universal legal classification."
+        },
+        "fr": {
+          "question": "Que demandait le Catéchisme de 1905 pour célébrer licitement un mariage chrétien ?",
+          "answer": "Le catéchisme distingue la licéité de la validité. Il demande l'absence d'empêchements prohibitifs, la connaissance des principaux enseignements de la religion et l'état de grâce ; il avertit qu'une célébration sans cette disposition spirituelle constituerait un sacrilège. Sa terminologie historique des empêchements ne doit pas être présentée comme la classification juridique universelle actuelle."
+        }
+      },
+      "quotationStatus": "EDITORIAL_PARAPHRASE_NOT_VERBATIM_NOT_PERSONAL_PAPAL_SPEECH",
+      "followup": "Retain existing validity-versus-liceity followup; no separate improvement credit"
+    },
+    {
+      "id": "SPX-1905-M-843",
+      "classification": "RETAIN",
+      "finding": "Draft correctly preserves freedom of consent, diriment impediment and historical canonical form; note the historical form is not universal for every current canonical case."
+    },
+    {
+      "id": "SPX-1905-M-845",
+      "classification": "RETAIN",
+      "finding": "Draft correctly distinguishes diriment from impedient classifications in historical source."
+    },
+    {
+      "id": "SPX-1905-M-846",
+      "classification": "RETAIN_WITH_TRANSLATION_NOTE",
+      "finding": "Draft captures historical examples. Prefer technical term 'disparity of cult' over 'disparity of worship'; avoid applying historical fourth-degree calculation to current law."
+    }
+  ],
+  "holds": [
+    "Inaccessible original English Chanoine witness: blocked, no reconstruction",
+    "Q18 complete Creed",
+    "Q100 later magisterial attribution",
+    "B39",
+    "CSE142–143"
+  ],
+  "nextQueue": [
+    "Human certification of Q844 with original Italian and English/French paraphrase",
+    "Verify Q846 canonical technical terminology and historical degree calculation with authoritative primary law before any change",
+    "Reconcile original draft batches 8–12",
+    "Build exhaustive answer-level bilingual certification register"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
