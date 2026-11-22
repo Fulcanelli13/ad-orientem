@@ -1,0 +1,127 @@
+{
+  "schema": "AO_SPX_P49_REAL_LOCAL_QWEN_MODEL_OBSERVED_RESULTS_V1",
+  "asOf": "2026-10-24",
+  "method": "Executed actual, non-mock, local llama.cpp inference using GitHub Actions free public standard Ubuntu runner; through SPX composer and verifier, not through ChatGPT text generation.",
+  "status": "REAL_MODEL_SMOKE_PASSED_ENGINEERING_CONNECTION_ALL_SIX_EDITORIAL_DRAFTS_HELD",
+  "provenance": {
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40093973189",
+    "jobId": 120872264152,
+    "model": "Qwen2.5-0.5B-Instruct-Q4_K_M",
+    "sourceModel": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "modelWeightSHA256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "modelFileSizeBytesAbout": 491000000,
+    "runtime": "llama.cpp locally hosted OpenAI-compatible server",
+    "sourceOwnerLibrary": "106 subjects/423 original dialogue nodes",
+    "rawWorkflowArtifact": "spx-p49-real-openweight-inference-no-approvals",
+    "originalArtifactRetentionDays": 7,
+    "evidence": "Workflow SUCCESS plus six P49_REAL_TURN logged events and one PASS SPX_P49_REAL_OPEN_WEIGHT_INFERENCE_COMPLETE summary",
+    "publicRunnerBilling": "Standard GitHub-hosted Ubuntu runner on confirmed public repository; no paid model service",
+    "modelRepresentativeOfTargetGPT6": false,
+    "claimOfActualLiveModelInference": true
+  },
+  "summary": {
+    "attemptedTurns": 6,
+    "attemptedEnglish": 3,
+    "attemptedFrench": 3,
+    "acceptedEditorialDrafts": 0,
+    "heldOrRejected": 6,
+    "actualModelComposeRequests": 6,
+    "modelVerificationRequests": 0,
+    "exactOriginalWitnessIDsInAcceptedReplies": 0,
+    "errors": {
+      "out_of_covered_sources": 3,
+      "invalid_generated_content_or_reference": 2,
+      "model_or_verifier_unavailable": 1
+    },
+    "abstainedWithoutInvocationOfModelForSafety": 2,
+    "newlyCertifiedSources": 0,
+    "approvedTranslations": 0,
+    "historicalVoiceAuthenticated": 0,
+    "published": 0,
+    "productionSourceOwnerEdits": 0
+  },
+  "attemptedSourceQuestions": [
+    {
+      "language": "en",
+      "turn": 1,
+      "reason": "out_of_covered_sources",
+      "ms": 12752,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    },
+    {
+      "language": "en",
+      "turn": 2,
+      "reason": "out_of_covered_sources",
+      "ms": 7774,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    },
+    {
+      "language": "en",
+      "turn": 3,
+      "reason": "invalid_generated_content_or_reference",
+      "ms": 5995,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    },
+    {
+      "language": "fr",
+      "turn": 1,
+      "reason": "out_of_covered_sources",
+      "ms": 9917,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    },
+    {
+      "language": "fr",
+      "turn": 2,
+      "reason": "model_or_verifier_unavailable",
+      "ms": 20002,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    },
+    {
+      "language": "fr",
+      "turn": 3,
+      "reason": "invalid_generated_content_or_reference",
+      "ms": 6616,
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "status": "held",
+      "actualModelDraft": null,
+      "actualModelWasInvoked": true,
+      "sourceOnlyOriginalAnswerNotMutated": true
+    }
+  ],
+  "interpretation": [
+    "Engineering connectivity demonstrated: model file hash check, runtime build, localhost server, actual six model calls, report and Actions artifact all succeeded.",
+    "Zero drafts passed the existing strict SPX composer precheck; therefore the verifier model phase was never reached.",
+    "The observed 0/6 output acceptance is a result for THIS 0.5B model and prompt contract, not a general GPT-6 or avatar-quality score.",
+    "Out-of-covered-sources includes deliberate model abstentions; other failures include malformed/unsupported generated references or model/verifier call failure including a 20-second timeout.",
+    "Next engineering work should benchmark a substantially stronger free local model or adjust the prompt format carefully without relaxing attribution and provenance requirements.",
+    "No reviewer, institution or individual was contacted; no paid service or production deployment."
+  ],
+  "releaseGates": {
+    "humanOriginalSourceApproval": false,
+    "humanEnglishApproval": false,
+    "humanFrenchApproval": false,
+    "actualHistoricPapalQuote": false,
+    "publication": false,
+    "unchanged423DialogueNodes": true
+  }
+}

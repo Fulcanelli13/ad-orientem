@@ -1,0 +1,173 @@
+{
+  "schema": "AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V2",
+  "status": "PRIVATE_ORIGINAL_LANGUAGE_EXCERPT_SPOTCHECK_UNAPPROVED",
+  "originalRegistryUnmodified": true,
+  "editorialApproval": false,
+  "publicationApproved": false,
+  "approvedAsAuthenticQuotation": false,
+  "witnessCompleteness": "BOUNDED_PASSAGE_SPOTCHECK_NOT_COMPLETE_DOCUMENT_COLLATION",
+  "chapterId": "SPX-NEW-012",
+  "document": {
+    "title": "Tribus circiter",
+    "date": "1906-04-05",
+    "author": "Pius X",
+    "languageOfOriginal": "la",
+    "sites": {
+      "original": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "english": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html"
+    }
+  },
+  "sourceWitnesses": [
+    {
+      "id": "TC-SUPPRESS",
+      "locus": "§11, suppression of the Mariavite association",
+      "text": "omnino supprimitur",
+      "meaning": "The particular Mariavite society is suppressed",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 65,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-REPENT",
+      "locus": "§12, condition of sincere repentance",
+      "text": "statim ac sincere resipuerint",
+      "meaning": "Reception follows genuine repentance",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-MERCY",
+      "locus": "§12, exhortation to bishops",
+      "text": "paterna charitate amplectamini",
+      "meaning": "Receive repentant erring priests with fatherly charity",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-WORTHY",
+      "locus": "§12, qualified return",
+      "text": "eosque rite probatos",
+      "meaning": "Suitability must first be established",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-EPISCOPAL",
+      "locus": "§12, episcopal direction",
+      "text": "ductu vestro",
+      "meaning": "Return takes place under the bishops' direction",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-FAITHFUL",
+      "locus": "§12, care for those misled",
+      "text": "in rectam reducere viam studeatis",
+      "meaning": "Bishops are urged to guide misled faithful back to the right path",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "TC-PIETY",
+      "locus": "§12, approved devotions",
+      "text": "christianae pietatis exercitia",
+      "meaning": "Encouragement of Catholic devotional practices within official approval context",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    }
+  ],
+  "dialogueMappings": [
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.OPEN",
+      "witnessIds": [
+        "TC-SUPPRESS",
+        "TC-REPENT",
+        "TC-MERCY",
+        "TC-WORTHY",
+        "TC-EPISCOPAL",
+        "TC-FAITHFUL",
+        "TC-PIETY"
+      ],
+      "editorialWarnings": [
+        "These directions concern the specific Mariavite dispute in 1906, not today's individual canonical status",
+        "No automatic restoration of sacerdotal faculties is implied"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_1",
+      "witnessIds": [
+        "TC-SUPPRESS",
+        "TC-MERCY",
+        "TC-REPENT"
+      ],
+      "editorialWarnings": [
+        "The stated motive that correction was not for the satisfaction of excluding people is editorial theological synthesis, not a verbatim stated intention"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_2",
+      "witnessIds": [
+        "TC-WORTHY",
+        "TC-EPISCOPAL"
+      ],
+      "editorialWarnings": [
+        "Return to duty is conditional; do not transpose this to automatic restoration of current faculties"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_3",
+      "witnessIds": [
+        "TC-WORTHY",
+        "TC-EPISCOPAL"
+      ],
+      "editorialWarnings": [
+        "PRESENT_LAW_NOT_IN_SOURCE: no 1906 passage determines modern cases or penalties",
+        "This is editorial boundary guidance, not an answer Pius X gave about online declarations"
+      ]
+    }
+  ],
+  "findings": [
+    "Original Latin paragraph 12 makes conditional reception and restoration explicit",
+    "Source-owner citation §§11–13 broadly includes the relevant material, though restoration comes from §12",
+    "Present-day disciplinary status is not determined by a 1906 document"
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 7,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
+}

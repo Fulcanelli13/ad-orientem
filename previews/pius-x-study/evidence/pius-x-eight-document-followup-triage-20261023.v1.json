@@ -1,0 +1,410 @@
+{
+  "schema": "AO_SPX_P2_EIGHT_DOCUMENT_FOLLOWUP_TRIAGE_V1",
+  "status": "PRIVATE_FOLLOWUP_EVIDENCE_BOUNDED_UNAPPROVED",
+  "asOf": "2026-10-23",
+  "summary": {
+    "documents": 8,
+    "followupNodes": 22,
+    "boundedFollowupCandidates": 14,
+    "heldFollowupNodes": 8,
+    "newOriginalWitnessFragments": 3,
+    "fullAnswersVerified": 0,
+    "translationsCertified": 0,
+    "published": 0
+  },
+  "additionalOriginalWitnesses": [
+    {
+      "id": "TLS-CHANT",
+      "originalText": "il canto gregoriano fu sempre considerato come il supremo modello della musica sacra",
+      "webLine": 66,
+      "readingNote": "Gregorian chant as principal model",
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_VERBATIM_SPOTCHECK_NOT_TRANSLATION_APPROVED"
+    },
+    {
+      "id": "TLS-POLYPHONY",
+      "originalText": "Le anzidette qualità sono pure possedute in ottimo grado dalla classica polifonia",
+      "webLine": 70,
+      "readingNote": "Classical polyphony meets the sacred-music criteria",
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_VERBATIM_SPOTCHECK_NOT_TRANSLATION_APPROVED"
+    },
+    {
+      "id": "TLS-MODERN",
+      "originalText": "la musica più moderna è pure ammessa in chiesa",
+      "webLine": 73,
+      "readingNote": "Some modern composition admitted, subject to conditions",
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_VERBATIM_SPOTCHECK_NOT_TRANSLATION_APPROVED"
+    }
+  ],
+  "followups": [
+    {
+      "chapterId": "SPX-PILOT-07",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_1",
+      "questionEn": "Why did you describe Modernism as a connected system?",
+      "documentKey": "pascendi-dominici-gregis",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "PD-SYSTEM",
+        "PD-AGNOST",
+        "PD-SENT",
+        "PD-DOGMA"
+      ],
+      "narrowAnswerScope": "Connected Modernist views",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-PILOT-07",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_2",
+      "questionEn": "Does that mean you have judged every present-day scholar called a Modernist?",
+      "documentKey": "pascendi-dominici-gregis",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "No ruling on present-day scholar's personal culpability",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_1",
+      "questionEn": "Why involve lay helpers instead of leaving everything to priests?",
+      "documentKey": "acerbo-nimis",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "AN-PARISH",
+        "AN-SHORTAGE",
+        "AN-LAY"
+      ],
+      "narrowAnswerScope": "Lay helpers address shortage under pastoral authority",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_2",
+      "questionEn": "Does enthusiasm replace the need to know the Catechism?",
+      "documentKey": "acerbo-nimis",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Catechist competence needs wider original passage",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_3",
+      "questionEn": "May a volunteer decide doctrine independently of the parish?",
+      "documentKey": "acerbo-nimis",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "AN-PARISH",
+        "AN-LAY"
+      ],
+      "narrowAnswerScope": "Parish-based help, not new authority to invent doctrine",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_1",
+      "questionEn": "Is a strong personal desire enough to prove a vocation?",
+      "documentKey": "pieni-l-animo",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "PL-NOTTRADE",
+        "PL-ASPIRANTS",
+        "PL-NEEDS",
+        "PL-FIT"
+      ],
+      "narrowAnswerScope": "Personal desire is not entitlement to ordination",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_2",
+      "questionEn": "Why mention pride when discussing candidates?",
+      "documentKey": "pieni-l-animo",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "PL-DISC",
+        "PL-NOTTRADE"
+      ],
+      "narrowAnswerScope": "Indiscipline and intellectual pride cautioned against",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_3",
+      "questionEn": "Should a disappointed applicant simply abandon the faith?",
+      "documentKey": "pieni-l-animo",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Individual disappointment needs pastoral judgment not historical text",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-037",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_037.F1",
+      "questionEn": "Does that mean artistic quality is unimportant?",
+      "documentKey": "sollecitudini",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "TLS-ART",
+        "TLS-HOLY",
+        "TLS-LITURGY"
+      ],
+      "narrowAnswerScope": "True art serves the sacred liturgy",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-037",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_037.F2",
+      "questionEn": "Is all music other than Gregorian chant excluded?",
+      "documentKey": "sollecitudini",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "TLS-CHANT",
+        "TLS-POLYPHONY",
+        "TLS-MODERN"
+      ],
+      "narrowAnswerScope": "Gregorian chant model, polyphony affirmed, modern composition conditional",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-003",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_1",
+      "questionEn": "Were certain psalms being neglected?",
+      "documentKey": "divino-afflatu",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "DA-OFFICES",
+        "DA-OMISSIONS",
+        "DA-RESTORE"
+      ],
+      "narrowAnswerScope": "Saints' offices displaced weekly Psalms",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-003",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_2",
+      "questionEn": "Why does variety in the psalms matter for prayer?",
+      "documentKey": "divino-afflatu",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Prayer variety and attention claim needs further source",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-003",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_3",
+      "questionEn": "Must every lay Catholic now recite your 1911 Breviary?",
+      "documentKey": "divino-afflatu",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "DA-OBLIGED",
+        "DA-RESTORE"
+      ],
+      "narrowAnswerScope": "1911 rule addressed those obliged to the canonical hours",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-008",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_1",
+      "questionEn": "Can a labour contract be legally valid and morally unjust?",
+      "documentKey": "singulari-quadam",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "SQ-WAGES",
+        "SQ-NOTECON",
+        "SQ-MORALS"
+      ],
+      "narrowAnswerScope": "Wages and contracts subject to moral considerations",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-008",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_2",
+      "questionEn": "Did you encourage hatred between employers and employees?",
+      "documentKey": "singulari-quadam",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "SQ-PEACE",
+        "SQ-GERMANY"
+      ],
+      "narrowAnswerScope": "Promoted mutual charity rather than class hostility",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-008",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_3",
+      "questionEn": "Does the encyclical tell me what salary to demand today?",
+      "documentKey": "singulari-quadam",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "No current salary amount established",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_1",
+      "questionEn": "Is admiration enough to imitate a saint?",
+      "documentKey": "editae-saepe",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "ES-IMITATE",
+        "ES-CHRIST"
+      ],
+      "narrowAnswerScope": "Saints' example for Christian conduct",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_2",
+      "questionEn": "Why did you so often return to earlier bishops?",
+      "documentKey": "editae-saepe",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Pastoral teaching virtues of bishops need fuller document",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_3",
+      "questionEn": "Does reform mean introducing something new at every opportunity?",
+      "documentKey": "editae-saepe",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Categorical novelty principle needs additional text",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_013.F1",
+      "questionEn": "Does Marian intercession replace the Saviour?",
+      "documentKey": "ad-diem-illum-laetissimum",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "ADI-CHRIST",
+        "ADI-MEDIATOR",
+        "ADI-GRACE"
+      ],
+      "narrowAnswerScope": "Christ sole source and mediator",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_013.F2",
+      "questionEn": "Why turn to Mary if Christ alone saves us?",
+      "documentKey": "ad-diem-illum-laetissimum",
+      "status": "BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE",
+      "witnessIds": [
+        "ADI-MARY",
+        "ADI-CHRIST",
+        "ADI-FOUNTAIN"
+      ],
+      "narrowAnswerScope": "Mary's role dependent on Christ; Pius IX quotation identified",
+      "holdReason": null,
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_013.F3",
+      "questionEn": "What should true Marian devotion change in someone's life?",
+      "documentKey": "ad-diem-illum-laetissimum",
+      "status": "HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS",
+      "witnessIds": [],
+      "narrowAnswerScope": null,
+      "holdReason": "Practical devotion and interior state need direct supporting text",
+      "caution": "Only specified papal text snippets are evidence. Original complete P6 answer is unapproved. Do not issue modern individual or canonical rulings.",
+      "translationApproved": false,
+      "completeAnswerApproved": false,
+      "publicationApproved": false
+    }
+  ]
+}

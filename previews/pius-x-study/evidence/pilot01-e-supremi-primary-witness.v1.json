@@ -1,0 +1,240 @@
+{
+  "schema": "AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V1",
+  "status": "PRIVATE_SOURCE_COLLATION_CANDIDATE_NOT_PUBLICATION_APPROVED",
+  "owner": "St Pius X source evidence owner #1458 / visual novel #1551 / P2 experiment #1570",
+  "chapterId": "SPX-PILOT-01",
+  "originalRegistryUnmodified": true,
+  "document": {
+    "title": "E supremi",
+    "date": "1903-10-04",
+    "author": "Pius X",
+    "languageOfOriginal": "la",
+    "sites": {
+      "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+    }
+  },
+  "sourceWitnesses": [
+    {
+      "id": "ES-INTRO-TEARS",
+      "locus": "Opening, before numbered §2",
+      "latin": "quibus Nos lacrymis magnisque precibus formidolosum hoc pontificatus onus depellere a Nobis conati simus",
+      "meaning": "He tried with tears and prayers to avert the pontificate",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 46,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-INTRO-ANSELM",
+      "locus": "Opening embedded citation of St Anselm",
+      "latin": "Testantur, sic ille",
+      "meaning": "Quoted third-party testimony by Anselm; do not transfer his specific personal experiences to Pius X",
+      "speaker": "ANSELM_QUOTED_BY_PIUS_X",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "footnoteCaveat": "Vatican edition inserts a numbered citation marker after ille, before the quoted Anselm testimony continues; do not concatenate across marker",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 47,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-2-UNWORTHY",
+      "locus": "§2, Latin continuation of introduction",
+      "latin": "honore pontificatus, ob tenuitatem Nostram, nullo pacto Nos dignaremur",
+      "meaning": "His own sense of unworthiness",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 51,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-2-PREDECESSOR",
+      "locus": "§2, Latin continuation of introduction",
+      "latin": "ei se successorem designari",
+      "meaning": "The burden of succession to a long-serving and admired predecessor; predecessor is not named in this sentence",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 51,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-3-FEAR",
+      "locus": "§3",
+      "latin": "conscii Nobis infirmitatis Nostrae",
+      "meaning": "Consciousness of his weakness while considering society's condition",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 53,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-4-STRENGTH",
+      "locus": "§4",
+      "latin": "erigimus animum in eo qui Nos confortat",
+      "meaning": "Finding courage in the divine strength on accepting the office",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 54,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-4-MOTTO",
+      "locus": "§4",
+      "latin": "instaurare omnia in Christo",
+      "meaning": "The declared governing purpose of his pontificate",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 54,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "ES-8-CHRIST",
+      "locus": "§8",
+      "latin": "ut genus hominum in Christi ditionem redigamus",
+      "meaning": "Lead humanity to Christ, and thereby to God; outside the source-owner's current opening and §§1–4 range",
+      "speaker": "PIUS_X_AUTHOR",
+      "checkedLanguages": [
+        "la",
+        "fr",
+        "en"
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    }
+  ],
+  "dialogueMappings": [
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "currentlyCitedLocus": "Opening and §§1–4",
+      "witnessIds": [
+        "ES-INTRO-TEARS",
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-4-STRENGTH",
+        "ES-4-MOTTO"
+      ],
+      "alignedClaims": [
+        "Tears/prayers when resisting election",
+        "Sense of unworthiness",
+        "The gravity of succeeding an admired predecessor",
+        "Reliance upon divine strength",
+        "Desire to restore all things in Christ"
+      ],
+      "editorialFlags": [
+        "Name 'Leo XIII' is historically correct but not explicitly given in the quoted §2 wording",
+        "Do not present St Anselm's quoted personal experiences as Pius X's own"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "currentlyCitedLocus": "Opening and §§1–4",
+      "witnessIds": [
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-3-FEAR",
+        "ES-4-STRENGTH"
+      ],
+      "alignedClaims": [
+        "Personal weakness before the office",
+        "Difficult succession and conditions of society",
+        "Turn to God's strength"
+      ],
+      "editorialFlags": [
+        "Pius's self-assessment is his stated testimony, not license to invent private experiences"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "currentlyCitedLocus": "Opening and §§1–4",
+      "witnessIds": [
+        "ES-4-MOTTO",
+        "ES-8-CHRIST"
+      ],
+      "alignedClaims": [
+        "Restoration of all things in Christ",
+        "Leading humanity under Christ as the route to God"
+      ],
+      "editorialFlags": [
+        "REQUIRES_LOCUS_EXTENSION_TO_§8: second claim lies outside currently cited §§1–4",
+        "Claim about not separating this goal from 'government of the Church' is an editorial synthesis, not verbatim primary text"
+      ]
+    }
+  ],
+  "witnessCompleteness": "BOUNDED_NODE_LEVEL_SPOT_CHECK_NOT_FULL_PASSAGE_COLLATION",
+  "approvedForModelResearch": true,
+  "approvedAsAuthenticQuotation": false,
+  "originalSourceTextCopiedInFull": false,
+  "editorialApproval": false,
+  "publicationApproved": false,
+  "findings": [
+    "Anselm's embedded quotation is a separate speaker; text should not imply that every first-person line in the introduction is direct personal reminiscence by Pius X.",
+    "The third node's source owner's locus needs §8 added to support its Christ-to-God theme.",
+    "The source text describes the predecessor without giving the predecessor's personal name in the relevant sentence.",
+    "This annex is external review metadata and does not change original dialogue answers or global registry."
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 8,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
+}

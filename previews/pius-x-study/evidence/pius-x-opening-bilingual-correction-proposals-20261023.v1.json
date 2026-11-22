@@ -1,0 +1,105 @@
+{
+  "schema": "AO_SPX_P2_SELECTED_BILINGUAL_CORRECTIONS_PROPOSED_V1",
+  "status": "APPLIED_PRIVATE_P2_EDITORIAL_CORRECTIONS_NOT_PUBLICATION_CERTIFIED",
+  "asOf": "2026-10-23",
+  "target": "Existing P6 rendered opening text; preserve source-owner canonical data and P5/P6 provenance",
+  "summary": {
+    "proposals": 4,
+    "distinctChapters": 3,
+    "appliedInPrivateBranch": 4,
+    "mergedToMain": 0,
+    "released": 0,
+    "translationsCertified": 0
+  },
+  "proposals": [
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+      "priority": "P1",
+      "evidenceIds": [
+        "PL-DISC"
+      ],
+      "issue": "The source names indiscipline and its intellectual-pride cause; the present voice says the candidate actively disdains obedience.",
+      "current": {
+        "en": "A spirit that disdains obedience, however learned or ardent it appears, is a danger in one who would serve at the altar.",
+        "fr": "L'esprit d'indépendance qui méprise l'obéissance est dangereux chez celui qui veut servir à l'autel."
+      },
+      "suggested": {
+        "en": "Indiscipline, particularly when fostered by intellectual pride, is a danger in one preparing for the priesthood.",
+        "fr": "L'indiscipline, particulièrement lorsqu'elle est nourrie par l'orgueil de l'esprit, est dangereuse chez celui qui se prépare au sacerdoce."
+      },
+      "originalText": "la indisciplinatezza e ciò che la genera, l'orgoglio della mente",
+      "source": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p5-conversational-voice-revisions-4.v1.json"
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+      "priority": "P2",
+      "evidenceIds": [
+        "PL-ASPIRANTS"
+      ],
+      "issue": "The admonition on hasty laying on of hands is explicitly St Paul's teaching to Timothy quoted by Pius X.",
+      "current": {
+        "en": "We urged bishops not to lay hands hastily upon candidates, even where their zeal seems abundant.",
+        "fr": "Nous avons exhorté les évêques à ne pas imposer les mains avec précipitation, si grand que paraisse le zèle d'un candidat."
+      },
+      "suggested": {
+        "en": "We recalled the Apostle's warning to Timothy against hastily laying hands upon candidates; zeal alone cannot substitute for discernment.",
+        "fr": "Nous rappelions l'avertissement de l'Apôtre à Timothée de ne pas imposer les mains avec précipitation : le zèle ne remplace pas le discernement."
+      },
+      "originalText": "alto ammonimento dell'Apostolo a Timoteo",
+      "source": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p5-conversational-voice-revisions-4.v1.json"
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN",
+      "priority": "P1",
+      "evidenceIds": [
+        "ES-THREE"
+      ],
+      "issue": "The original comparison lists Gregory the Great, John Chrysostom and Anselm, while both language drafts omit Chrysostom.",
+      "current": {
+        "en": "Gregory the Great and Anselm",
+        "fr": "Grégoire le Grand et Anselme"
+      },
+      "suggested": {
+        "en": "Gregory the Great, John Chrysostom and Anselm",
+        "fr": "Grégoire le Grand, Jean Chrysostome et Anselme"
+      },
+      "originalText": "Gregorius Magnus, Ioannes Chrysostomus et Augustanus Anselmus",
+      "source": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p3-new-chapters-saints-social-4.v1.json"
+    },
+    {
+      "chapterId": "SPX-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_013.OPEN",
+      "priority": "P1",
+      "evidenceIds": [
+        "ADI-CHRIST",
+        "ADI-MARY"
+      ],
+      "issue": "The reply's last sentence describes an app visitor and historical authenticity, breaking the papal-study narrative voice. Transparency belongs in source-drawer/interface text.",
+      "current": {
+        "en": "These are principles of Our published encyclical, not a claim that We privately answered this visitor in person.",
+        "fr": "Ce sont les principes de Notre encyclique publiée, non la prétention d'avoir personnellement répondu au visiteur."
+      },
+      "suggested": {
+        "en": "",
+        "fr": ""
+      },
+      "displayPolicy": "Preserve a prominent, non-speech label outside character dialogue: EDITORIAL ADAPTATION — NOT A HISTORICAL QUOTATION (and French equivalent).",
+      "source": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p1-openings-bio-partial-16.v1.json"
+    }
+  ]
+}

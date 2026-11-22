@@ -1,0 +1,1064 @@
+{
+  "schema": "AO_SPX_P2_SIX_DOCUMENT_BULK_WAVE2_V1",
+  "status": "PRIVATE_BOUNDED_SOURCE_RESEARCH_WITH_IMMUTABLE_P6_PARTIAL_HOLDS",
+  "asOf": "2026-10-23",
+  "summary": {
+    "documents": 6,
+    "distinctChapters": 25,
+    "newlyMappedNodes": 46,
+    "newOriginalLanguageSnippets": 35,
+    "completeAnswersCertified": 0,
+    "publicationApprovals": 0,
+    "screenedExistingNodeIDs": 51,
+    "boundedEligibleNodeCandidates": 46,
+    "originalP6PartialHolds": 5,
+    "eligibleOriginalSubjects": 21
+  },
+  "witnesses": [
+    {
+      "id": "P-THOMAS",
+      "originalText": "philosophiam scholasticam quum sequendam praescribimus",
+      "readingNote": "Scholastic philosophy in priestly education",
+      "webLine": 274,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "P-HISTORY",
+      "originalText": "theologiam positivam, mutuato a veri nominis historia lumine",
+      "readingNote": "Genuine historical study can illuminate positive theology",
+      "webLine": 278,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "P-BOOKS",
+      "originalText": "Episcoporum pariter officium est modernistarum scripta",
+      "readingNote": "Bishops charged with overseeing specified writings",
+      "webLine": 289,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "P-BISHOPS",
+      "originalText": "vigilantiam, diligentiam, fortitudinem vestram",
+      "readingNote": "Episcopal vigilance and courage",
+      "webLine": 272,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "P-SEMINARY",
+      "originalText": "Episcoporum erit, sicubi in Seminariis neglecta haec fuerint",
+      "readingNote": "Duty to oversee seminary formation",
+      "webLine": 274,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-IGNORANCE",
+      "originalText": "ex divinarum ignoratione rerum praecipue sunt repetenda",
+      "readingNote": "Religious ignorance linked to moral problems",
+      "webLine": 53,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-EDUCATED",
+      "originalText": "profana quidem eruditione affatim pollent",
+      "readingNote": "Secular education can coexist with religious ignorance",
+      "webLine": 56,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-CHILDREN",
+      "originalText": "pueros et puellas de iis, quae quisque credere agereque debeant",
+      "readingNote": "Children catechized in belief and conduct",
+      "webLine": 99,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-COMMUNION",
+      "originalText": "ut sancte sancta primum de altari libent",
+      "readingNote": "First Communion preparation",
+      "webLine": 102,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-SCHOOL",
+      "originalText": "iuventam, quae publicas scholas celebrat, ubi religiosae rei mentio nulla iniicitur",
+      "readingNote": "Religious education for youth in nonreligious schools",
+      "webLine": 104,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-ADULT",
+      "originalText": "grandior aetas non secus ac puerilis religiosa eget institutione",
+      "readingNote": "Adults need catechetical teaching",
+      "webLine": 105,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-HOMILY",
+      "originalText": "praeter consuetam homiliam de Evangelio",
+      "readingNote": "Separate catechetical instruction in addition to sermons",
+      "webLine": 105,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-SIMPLE",
+      "originalText": "facili quidem sermone et ad captum accommodato",
+      "readingNote": "Simple teaching adapted to listeners",
+      "webLine": 105,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-CYCLE",
+      "originalText": "quadriennii vel quinquennii spatio totam materiam pertractent",
+      "readingNote": "Systematic instruction over four or five years",
+      "webLine": 106,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "A-TOPICS",
+      "originalText": "de Symbolo est, de Sacramentis, de Decalogo, de Oratione et de praeceptis Ecclesiae",
+      "readingNote": "Creed sacraments commandments prayer and precepts",
+      "webLine": 106,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "E-CHARITY",
+      "originalText": "nihil omnino esse caritate efficacius",
+      "readingNote": "Charity most efficacious in religious instruction",
+      "webLine": 85,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "E-GENTLE",
+      "originalText": "Quanta enimvero in divino illo magistro mansuetudo",
+      "readingNote": "Christ's gentleness the example",
+      "webLine": 87,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "E-HOPE",
+      "originalText": "Quidni speremus christianae caritatis flammam",
+      "readingNote": "Hope through Christian charity",
+      "webLine": 89,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "E-ALL",
+      "originalText": "universos prorsus fideles rationibus Dei et animorum adlaborare oportet",
+      "readingNote": "All faithful called to participate",
+      "webLine": 90,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "E-PATIENT",
+      "originalText": "caritas sustentatione nunquam defatigatur",
+      "readingNote": "Charity perseveres without immediate fruit",
+      "webLine": 89,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "I-AUTH",
+      "originalText": "non si possono per niun modo concepire indipendenti dal consiglio e dall’alta direzione dell’Autorità ecclesiastica",
+      "readingNote": "Catholic action under religious oversight",
+      "webLine": 129,
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "I-FREEDOM",
+      "originalText": "si debbono muovere con la conveniente ragionevole libertà",
+      "readingNote": "Reasonable practical freedom",
+      "webLine": 130,
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "I-NEED",
+      "originalText": "agli interessi morali e materiali, soprattutto del popolo e delle classi diseredate",
+      "readingNote": "Disadvantaged people's moral and material needs",
+      "webLine": 97,
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "I-DIVERSITY",
+      "originalText": "non esclude che si favoriscano e si promuovano anche altre opere di vario genere",
+      "readingNote": "Diverse forms of social action",
+      "webLine": 123,
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "I-FORMS",
+      "originalText": "una certa libertà di organizzazione",
+      "readingNote": "Freedom of organizational forms",
+      "webLine": 124,
+      "originalLanguage": "it",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "T-LICENSE",
+      "originalText": "absque ulla legitimorum Praesulum licentia",
+      "readingNote": "Illicit association without episcopal leave",
+      "webLine": 45,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "T-DEVOTION",
+      "originalText": "ceteroquin, si rite fiant, maxime commendanda",
+      "readingNote": "Devotions themselves praiseworthy if rightly observed",
+      "webLine": 47,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "T-REVELATION",
+      "originalText": "posthabitis vanarum revelationum fallaciis",
+      "readingNote": "Reject false private revelation claims",
+      "webLine": 54,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "T-PASTORS",
+      "originalText": "salutifero Praesulum suorum regimini sincere subderent",
+      "readingNote": "Return to pastors' legitimate rule",
+      "webLine": 54,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-EXAMPLE",
+      "originalText": "institutionem eiusmodi pro nihilo fere esse, si, quae sacerdos verbo tradat, exemplo suo non comprobet",
+      "readingNote": "Good priestly example required alongside teaching",
+      "webLine": 47,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-MEDITATE",
+      "originalText": "Summum igitur studium nostrum sit in vita Iesu Christi meditari",
+      "readingNote": "Meditation on the life of Jesus",
+      "webLine": 104,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-READ",
+      "originalText": "sacerdos piorum librorum lectionem, eorum in primis qui divinitus inspirati sunt",
+      "readingNote": "Priestly spiritual reading especially Scripture",
+      "webLine": 105,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-BOOKS",
+      "originalText": "amicos vere fideles adscribere ipsi nobis pios libros debemus",
+      "readingNote": "Pious books compared to faithful friends",
+      "webLine": 108,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-PENANCE",
+      "originalText": "ipsum negligant poenitentiae sacramentum",
+      "readingNote": "Priests warned against neglecting personal confession",
+      "webLine": 121,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    },
+    {
+      "id": "H-GIFT",
+      "originalText": "eritque hoc a vobis in quinquagesimo sacerdotii Nostri natali pulcherrimum acceptissimumque munus",
+      "readingNote": "Priestly renewal as jubilee gift",
+      "webLine": 43,
+      "originalLanguage": "la",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "speaker": "PIUS_X_AUTHOR",
+      "status": "VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION"
+    }
+  ],
+  "records": [
+    {
+      "chapterId": "SPX-EXP-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_012.OPEN",
+      "questionEn": "Can reason discover anything certain about God?",
+      "witnessIds": [
+        "PD-AGNOST"
+      ],
+      "narrowClaimScope": "He identifies agnosticism in his account of Modernist philosophy",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_012.F1",
+      "questionEn": "Is faith, then, nothing more than a feeling?",
+      "witnessIds": [
+        "PD-SENT"
+      ],
+      "narrowClaimScope": "He characterizes Modernists' reduction of faith to religious feeling",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_013.OPEN",
+      "questionEn": "Is a sincere religious experience enough to establish revealed truth?",
+      "witnessIds": [
+        "PD-SENT",
+        "PD-AGNOST"
+      ],
+      "narrowClaimScope": "He characterizes Modernists' reduction of faith to religious feeling; He identifies agnosticism in his account of Modernist philosophy",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-014",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_014.OPEN",
+      "questionEn": "Can a revealed dogma become false when religious opinions change?",
+      "witnessIds": [
+        "PD-DOGMA"
+      ],
+      "narrowClaimScope": null,
+      "status": "HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false,
+      "holdReason": "Original immutable P6 source-owner chapter is partial and disallows generated speech even if a nearby Vatican excerpt is located"
+    },
+    {
+      "chapterId": "SPX-EXP-015",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_015.OPEN",
+      "questionEn": "Were you opposed to scientific research?",
+      "witnessIds": [
+        "P-HISTORY"
+      ],
+      "narrowClaimScope": null,
+      "status": "HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false,
+      "holdReason": "Original immutable P6 source-owner chapter is partial and disallows generated speech even if a nearby Vatican excerpt is located"
+    },
+    {
+      "chapterId": "SPX-EXP-019",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_019.OPEN",
+      "questionEn": "Why did you ask bishops to take special care over seminaries and books?",
+      "witnessIds": [
+        "P-SEMINARY",
+        "P-BOOKS"
+      ],
+      "narrowClaimScope": "Duty to oversee seminary formation; Bishops charged with overseeing specified writings",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-019",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_019.F1",
+      "questionEn": "Why did philosophical formation matter so much?",
+      "witnessIds": [
+        "P-THOMAS"
+      ],
+      "narrowClaimScope": "Scholastic philosophy in priestly education",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-022",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_022.OPEN",
+      "questionEn": "What can Catholics learn from your warnings about doctrinal error among clergy?",
+      "witnessIds": [
+        "P-BISHOPS",
+        "P-BOOKS"
+      ],
+      "narrowClaimScope": null,
+      "status": "HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false,
+      "holdReason": "Original immutable P6 source-owner chapter is partial and disallows generated speech even if a nearby Vatican excerpt is located"
+    },
+    {
+      "chapterId": "SPX-EXP-022",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_022.F2",
+      "questionEn": "Who has the formal duty to oversee teaching in the diocese?",
+      "witnessIds": [
+        "P-BOOKS"
+      ],
+      "narrowClaimScope": null,
+      "status": "HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false,
+      "holdReason": "Original immutable P6 source-owner chapter is partial and disallows generated speech even if a nearby Vatican excerpt is located"
+    },
+    {
+      "chapterId": "SPX-EXP-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_023.OPEN",
+      "questionEn": "What duty does a bishop have when doctrine is endangered?",
+      "witnessIds": [
+        "P-BISHOPS",
+        "P-BOOKS"
+      ],
+      "narrowClaimScope": "Episcopal vigilance and courage; Bishops charged with overseeing specified writings",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_023.F2",
+      "questionEn": "Why did you give special attention to seminaries?",
+      "witnessIds": [
+        "P-SEMINARY",
+        "P-THOMAS"
+      ],
+      "narrowClaimScope": "Duty to oversee seminary formation; Scholastic philosophy in priestly education",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-PILOT-08",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_08.OPEN",
+      "questionEn": "Why did you insist on teaching the Catechism to adults?",
+      "witnessIds": [
+        "A-ADULT",
+        "A-HOMILY"
+      ],
+      "narrowClaimScope": "Adults need catechetical teaching; Separate catechetical instruction in addition to sermons",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-PILOT-08",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_1",
+      "questionEn": "Why was an ordinary Sunday sermon not enough?",
+      "witnessIds": [
+        "A-HOMILY"
+      ],
+      "narrowClaimScope": "Separate catechetical instruction in addition to sermons",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-043",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_043.OPEN",
+      "questionEn": "How should a priest teach adults with little religious knowledge?",
+      "witnessIds": [
+        "A-ADULT",
+        "A-SIMPLE"
+      ],
+      "narrowClaimScope": "Adults need catechetical teaching; Simple teaching adapted to listeners",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-043",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_1",
+      "questionEn": "Does explaining simply mean teaching less carefully?",
+      "witnessIds": [
+        "A-SIMPLE"
+      ],
+      "narrowClaimScope": "Simple teaching adapted to listeners",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-044",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_044.OPEN",
+      "questionEn": "What provision did you urge for children in secular schools?",
+      "witnessIds": [
+        "A-SCHOOL",
+        "AN-SCHOOL"
+      ],
+      "narrowClaimScope": null,
+      "status": "HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false,
+      "holdReason": "Original immutable P6 source-owner chapter is partial and disallows generated speech even if a nearby Vatican excerpt is located"
+    },
+    {
+      "chapterId": "SPX-NEW-022",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-022.OPEN",
+      "questionEn": "What about young people whose schools teach no religion?",
+      "witnessIds": [
+        "A-SCHOOL",
+        "AN-SCHOOL"
+      ],
+      "narrowClaimScope": "Religious education for youth in nonreligious schools; Establish religious instruction schools for secular students",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-022",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_1",
+      "questionEn": "Can a highly educated student still lack religious knowledge?",
+      "witnessIds": [
+        "A-EDUCATED"
+      ],
+      "narrowClaimScope": "Secular education can coexist with religious ignorance",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-023.OPEN",
+      "questionEn": "Why should catechesis continue through several years of adult life?",
+      "witnessIds": [
+        "A-ADULT",
+        "A-CYCLE"
+      ],
+      "narrowClaimScope": "Adults need catechetical teaching; Systematic instruction over four or five years",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_1",
+      "questionEn": "Which subjects belonged in this course?",
+      "witnessIds": [
+        "A-TOPICS"
+      ],
+      "narrowClaimScope": "Creed sacraments commandments prayer and precepts",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_2",
+      "questionEn": "Could the Sunday homily replace the entire course?",
+      "witnessIds": [
+        "A-HOMILY",
+        "A-CYCLE"
+      ],
+      "narrowClaimScope": "Separate catechetical instruction in addition to sermons; Systematic instruction over four or five years",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-023",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_3",
+      "questionEn": "Does systematic teaching mean using difficult words?",
+      "witnessIds": [
+        "A-SIMPLE"
+      ],
+      "narrowClaimScope": "Simple teaching adapted to listeners",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-024",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-024.OPEN",
+      "questionEn": "Why does knowing the faith matter when someone is trying to live well?",
+      "witnessIds": [
+        "A-IGNORANCE"
+      ],
+      "narrowClaimScope": "Religious ignorance linked to moral problems",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-024",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_2",
+      "questionEn": "Why connect ignorance with unjust conduct?",
+      "witnessIds": [
+        "A-IGNORANCE",
+        "A-EDUCATED"
+      ],
+      "narrowClaimScope": "Religious ignorance linked to moral problems; Secular education can coexist with religious ignorance",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_021.OPEN",
+      "questionEn": "What did you mean by restoring all things in Christ?",
+      "witnessIds": [
+        "ES-4-MOTTO",
+        "ES-8-CHRIST"
+      ],
+      "narrowClaimScope": "The declared governing purpose of his pontificate; Lead humanity to Christ, and thereby to God; outside the source-owner's current opening and §§1–4 range",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_1",
+      "questionEn": "Does restoring all things in Christ mean simply changing institutions?",
+      "witnessIds": [
+        "ES-8-CHRIST"
+      ],
+      "narrowClaimScope": "Lead humanity to Christ, and thereby to God; outside the source-owner's current opening and §§1–4 range",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-028",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_028.OPEN",
+      "questionEn": "How can Christians avoid discouragement when society loses faith?",
+      "witnessIds": [
+        "E-HOPE",
+        "E-CHARITY"
+      ],
+      "narrowClaimScope": "Hope through Christian charity; Charity most efficacious in religious instruction",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-028",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_028.F1",
+      "questionEn": "Does Christian hope mean denying that the crisis is real?",
+      "witnessIds": [
+        "E-PATIENT",
+        "E-HOPE"
+      ],
+      "narrowClaimScope": "Charity perseveres without immediate fruit; Hope through Christian charity",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-048",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_048.OPEN",
+      "questionEn": "How can a Catholic defend doctrine firmly without treating opponents harshly?",
+      "witnessIds": [
+        "E-CHARITY",
+        "E-GENTLE"
+      ],
+      "narrowClaimScope": "Charity most efficacious in religious instruction; Christ's gentleness the example",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-048",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_048.F1",
+      "questionEn": "Does charity mean never correcting a false idea?",
+      "witnessIds": [
+        "E-CHARITY"
+      ],
+      "narrowClaimScope": "Charity most efficacious in religious instruction",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-032",
+      "nodeId": "SPX.DIALOGUE.SPX-032.OPEN",
+      "questionEn": "How should I correct someone without bitterness?",
+      "witnessIds": [
+        "E-CHARITY",
+        "E-GENTLE"
+      ],
+      "narrowClaimScope": "Charity most efficacious in religious instruction; Christ's gentleness the example",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-032",
+      "nodeId": "SPX.DIALOGUE.SPX-032.F1",
+      "questionEn": "Does patience require pretending that error is truth?",
+      "witnessIds": [
+        "E-CHARITY"
+      ],
+      "narrowClaimScope": "Charity most efficacious in religious instruction",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-032",
+      "nodeId": "SPX.DIALOGUE.SPX-032.F2",
+      "questionEn": "How can a firm correction still be charitable?",
+      "witnessIds": [
+        "E-GENTLE",
+        "E-PATIENT"
+      ],
+      "narrowClaimScope": "Christ's gentleness the example; Charity perseveres without immediate fruit",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-026",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_026.OPEN",
+      "questionEn": "What role should bishops have in Catholic lay associations?",
+      "witnessIds": [
+        "I-AUTH",
+        "I-FREEDOM"
+      ],
+      "narrowClaimScope": "Catholic action under religious oversight; Reasonable practical freedom",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-026",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_1",
+      "questionEn": "Must bishops personally decide every practical detail of a lay association?",
+      "witnessIds": [
+        "I-FREEDOM",
+        "I-FORMS"
+      ],
+      "narrowClaimScope": "Reasonable practical freedom; Freedom of organizational forms",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-026",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_2",
+      "questionEn": "May an association ignore the faith because it deals with social questions?",
+      "witnessIds": [
+        "I-AUTH"
+      ],
+      "narrowClaimScope": "Catholic action under religious oversight",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-027",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_027.OPEN",
+      "questionEn": "How can ordinary Catholics serve the Church's mission?",
+      "witnessIds": [
+        "I-DIVERSITY",
+        "I-NEED"
+      ],
+      "narrowClaimScope": "Diverse forms of social action; Disadvantaged people's moral and material needs",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-027",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_1",
+      "questionEn": "Did you think the laity should remain passive in the face of poverty?",
+      "witnessIds": [
+        "I-NEED"
+      ],
+      "narrowClaimScope": "Disadvantaged people's moral and material needs",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-011",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-011.OPEN",
+      "questionEn": "Can impressive devotional practices excuse rejecting the Church's pastors?",
+      "witnessIds": [
+        "T-LICENSE",
+        "T-PASTORS"
+      ],
+      "narrowClaimScope": "Illicit association without episcopal leave; Return to pastors' legitimate rule",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-011",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-011.FOLLOW_1",
+      "questionEn": "Were adoration and frequent Communion themselves condemned?",
+      "witnessIds": [
+        "T-DEVOTION"
+      ],
+      "narrowClaimScope": "Devotions themselves praiseworthy if rightly observed",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-011",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-011.FOLLOW_2",
+      "questionEn": "Can an alleged private revelation override the bishops?",
+      "witnessIds": [
+        "T-REVELATION",
+        "T-PASTORS"
+      ],
+      "narrowClaimScope": "Reject false private revelation claims; Return to pastors' legitimate rule",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-046",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_046.OPEN",
+      "questionEn": "Why should a priest's example matter as much as his preaching?",
+      "witnessIds": [
+        "H-EXAMPLE"
+      ],
+      "narrowClaimScope": "Good priestly example required alongside teaching",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-EXP-046",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_046.F1",
+      "questionEn": "Does eloquent preaching excuse a priest from personal discipline?",
+      "witnessIds": [
+        "H-EXAMPLE"
+      ],
+      "narrowClaimScope": "Good priestly example required alongside teaching",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-034",
+      "nodeId": "SPX.DIALOGUE.SPX-034.OPEN",
+      "questionEn": "How should I meditate on Christ?",
+      "witnessIds": [
+        "H-MEDITATE"
+      ],
+      "narrowClaimScope": "Meditation on the life of Jesus",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-034",
+      "nodeId": "SPX.DIALOGUE.SPX-034.F2",
+      "questionEn": "Why meditate on Christ rather than merely study principles?",
+      "witnessIds": [
+        "H-MEDITATE"
+      ],
+      "narrowClaimScope": "Meditation on the life of Jesus",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-035",
+      "nodeId": "SPX.DIALOGUE.SPX-035.OPEN",
+      "questionEn": "Why read Scripture and spiritual books regularly?",
+      "witnessIds": [
+        "H-READ",
+        "H-BOOKS"
+      ],
+      "narrowClaimScope": "Priestly spiritual reading especially Scripture; Pious books compared to faithful friends",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-035",
+      "nodeId": "SPX.DIALOGUE.SPX-035.F2",
+      "questionEn": "How can spiritual reading assist a priest's prayer?",
+      "witnessIds": [
+        "H-READ",
+        "H-BOOKS"
+      ],
+      "narrowClaimScope": "Priestly spiritual reading especially Scripture; Pious books compared to faithful friends",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-017",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-017.OPEN",
+      "questionEn": "Why should a priest who hears confessions also confess his own sins?",
+      "witnessIds": [
+        "H-PENANCE"
+      ],
+      "narrowClaimScope": "Priests warned against neglecting personal confession",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-017",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_2",
+      "questionEn": "Can a preacher neglect the medicine he recommends to others?",
+      "witnessIds": [
+        "H-PENANCE"
+      ],
+      "narrowClaimScope": "Priests warned against neglecting personal confession",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-020",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-020.OPEN",
+      "questionEn": "What did your fiftieth anniversary as a priest mean to you?",
+      "witnessIds": [
+        "H-GIFT"
+      ],
+      "narrowClaimScope": "Priestly renewal as jubilee gift",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-020",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_2",
+      "questionEn": "What gift did you most wish to receive for the anniversary?",
+      "witnessIds": [
+        "H-GIFT"
+      ],
+      "narrowClaimScope": "Priestly renewal as jubilee gift",
+      "status": "ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED",
+      "translationApproved": false,
+      "fullAnswerApproved": false,
+      "publicationApproved": false
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "AO_SPX_P54_REAL_7B_BILINGUAL_HISTORICAL_VOICE_RESEARCH_V1",
+  "asOf": "2026-10-24",
+  "chapterId": "SPX-PILOT-01",
+  "document": "E supremi (1903)",
+  "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40108274544",
+  "workflowJobId": 120914419143,
+  "model": "Qwen2.5-7B-Instruct-Q4_K_M",
+  "modelWeightSHA256": "65b8fcd92af6b4fefa935c625d1ac27ea29dcb6ee14589c55a8f115ceaaa1423",
+  "modelOriginalLicense": "Apache-2.0",
+  "modelWeightSource": "bartowski/Qwen2.5-7B-Instruct-GGUF",
+  "execution": "ACTUAL_LLAMA_CPP_CPU_LOCAL_INFERENCE_NOT_MOCK",
+  "inputRegister": "historical",
+  "sourceProfile": "P53_ATOMIC_CLAIM_CUES",
+  "replyStatus": "UNAPPROVED_EDITORIAL_HISTORICAL_VOICE_EXPERIMENT",
+  "approvals": {
+    "publication": false,
+    "verbatimPapalSpeech": false,
+    "independentSourceReview": false,
+    "translationCertified": false,
+    "liveProductIntegration": false
+  },
+  "counts": {
+    "attempts": 4,
+    "english": 2,
+    "french": 2,
+    "structurallyAccepted": 4,
+    "held": 0,
+    "composeRequests": 4,
+    "verifierRequests": 4,
+    "validModelJSON": 8,
+    "independentlyApproved": 0
+  },
+  "cautions": [
+    "The machine verifier used the same model family as the composer, not independent scholarly certification.",
+    "Generated first-person sentences are reconstructions; they are not personal quotations from Pius X.",
+    "This benchmark used two source-limited topics per language, not an open-ended cross-domain conversation.",
+    "The original source owner and 423 dialogue nodes were not changed; no approved translations or release."
+  ],
+  "turns": [
+    {
+      "language": "en",
+      "turn": 1,
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "question": "Why did you resist the papal election?",
+      "text": "We felt unworthy of the honor of pontificate and were moved by the weight of succeeding a greatly esteemed predecessor, but we relied on the strength granted by God to accept this office and to restore all things in Christ.",
+      "witnessIds": [
+        "ES-INTRO-TEARS",
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-4-STRENGTH",
+        "ES-4-MOTTO"
+      ],
+      "latencyMs": 235624,
+      "editorialConcern": "Awkward English 'honor of pontificate'; repeats unworthiness in next turn; first-person construction not a documented quotation.",
+      "status": "DRAFT_STRUCTURALLY_ACCEPTED_NOT_PUBLISHED",
+      "selectedOriginalEvidenceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "sourceWitnessIds": [
+        "ES-INTRO-TEARS",
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-4-STRENGTH",
+        "ES-4-MOTTO"
+      ],
+      "independentHumanApproval": false
+    },
+    {
+      "language": "en",
+      "turn": 2,
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "question": "Did you consider yourself unworthy of this office?",
+      "text": "We felt ourselves unworthy of this high office due to our personal sense of unworthiness and the weight of succeeding a greatly esteemed predecessor.",
+      "witnessIds": [
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR"
+      ],
+      "latencyMs": 163105,
+      "editorialConcern": "Tautological repetition of 'unworthy/unworthiness'; does not progress the conversation.",
+      "status": "DRAFT_STRUCTURALLY_ACCEPTED_NOT_PUBLISHED",
+      "selectedOriginalEvidenceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "sourceWitnessIds": [
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR"
+      ],
+      "independentHumanApproval": false
+    },
+    {
+      "language": "fr",
+      "turn": 1,
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "question": "Pourquoi avez-vous résisté à la papauté ?",
+      "text": "Nous avons résisté à la papauté par réticence devant ce fardeau, pleurant et implorant Dieu de nous en décharger.",
+      "witnessIds": [
+        "ES-INTRO-TEARS"
+      ],
+      "latencyMs": 190425,
+      "editorialConcern": "Understandable French but 'papauté' is less historically precise than 'charge pontificale'; words were generated, not translated or authenticated.",
+      "status": "DRAFT_STRUCTURALLY_ACCEPTED_NOT_PUBLISHED",
+      "selectedOriginalEvidenceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "sourceWitnessIds": [
+        "ES-INTRO-TEARS"
+      ],
+      "independentHumanApproval": false
+    },
+    {
+      "language": "fr",
+      "turn": 2,
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "question": "Le poids de votre prédécesseur vous effrayait-il ?",
+      "text": "Le poids de succéder à un prédécesseur estimé nous effrayait, mais Dieu nous a donné la force pour assumer cette charge.",
+      "witnessIds": [
+        "ES-2-PREDECESSOR",
+        "ES-4-STRENGTH"
+      ],
+      "latencyMs": 168943,
+      "editorialConcern": "More coherent French, but 'effrayait' must not be confused with a documented exact phrase in the source; generated first-person construction.",
+      "status": "DRAFT_STRUCTURALLY_ACCEPTED_NOT_PUBLISHED",
+      "selectedOriginalEvidenceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "sourceWitnessIds": [
+        "ES-2-PREDECESSOR",
+        "ES-4-STRENGTH"
+      ],
+      "independentHumanApproval": false
+    }
+  ]
+}

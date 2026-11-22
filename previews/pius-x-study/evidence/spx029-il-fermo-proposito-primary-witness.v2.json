@@ -1,0 +1,126 @@
+{
+  "schema": "AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V2",
+  "status": "PRIVATE_ORIGINAL_LANGUAGE_EXCERPT_SPOTCHECK_UNAPPROVED",
+  "originalRegistryUnmodified": true,
+  "editorialApproval": false,
+  "publicationApproved": false,
+  "approvedAsAuthenticQuotation": false,
+  "witnessCompleteness": "BOUNDED_PASSAGE_SPOTCHECK_NOT_COMPLETE_DOCUMENT_COLLATION",
+  "chapterId": "SPX-029",
+  "document": {
+    "title": "Il fermo proposito",
+    "date": "1905-06-11",
+    "author": "Pius X",
+    "languageOfOriginal": "it",
+    "sites": {
+      "original": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "vaticanLatinVersion": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+    }
+  },
+  "sourceWitnesses": [
+    {
+      "id": "IF-TRUTH",
+      "locus": "§3, charitable action and revealed truth",
+      "text": "diffusione della verità rivelata",
+      "meaning": "Spreading revealed truth is one dimension of Catholic action",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "IF-VIRTUE",
+      "locus": "§3, practice of Christian virtues",
+      "text": "esercizio delle virtù cristiane",
+      "meaning": "Practice of Christian virtues is included",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "IF-MERCY",
+      "locus": "§3, spiritual and corporal works",
+      "text": "opere di carità o di misericordia spirituale e corporale",
+      "meaning": "Works of charity or mercy address both spiritual and bodily needs",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "IF-INDIVIDUAL",
+      "locus": "§3, individual cooperation",
+      "text": "necessità del concorso individuale",
+      "meaning": "Individual cooperation is required; does NOT expressly say association membership is never needed",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    }
+  ],
+  "dialogueMappings": [
+    {
+      "nodeId": "SPX.DIALOGUE.SPX-029.OPEN",
+      "witnessIds": [
+        "IF-TRUTH",
+        "IF-VIRTUE",
+        "IF-MERCY"
+      ],
+      "editorialWarnings": [
+        "Instruction is a reasonable interpretation of spreading revealed truth, not a separate verbatim expression in §3",
+        "This is a programme for Catholic Action, not only a generic treatise on almsgiving"
+      ]
+    },
+    {
+      "nodeId": "SPX.DIALOGUE.SPX-029.F1",
+      "witnessIds": [
+        "IF-MERCY"
+      ],
+      "editorialWarnings": []
+    },
+    {
+      "nodeId": "SPX.DIALOGUE.SPX-029.F2",
+      "witnessIds": [
+        "IF-MERCY",
+        "IF-TRUTH",
+        "IF-VIRTUE"
+      ],
+      "editorialWarnings": [
+        "Social care is treated in the surrounding encyclical and historical Catholic Action programme; §3 alone does not independently list all modern social-care categories"
+      ]
+    },
+    {
+      "nodeId": "SPX.DIALOGUE.SPX-029.F3",
+      "witnessIds": [
+        "IF-INDIVIDUAL"
+      ],
+      "editorialWarnings": [
+        "NEGATIVE_CLAIM_NOT_DIRECTLY_ATTESTED: absence of association-membership requirement is an editorial inference; passage praises individual cooperation but does not expressly adjudicate all organizational conditions",
+        "Do not present a modern association-membership rule as Pius X's verbatim legal or doctrinal ruling"
+      ]
+    }
+  ],
+  "findings": [
+    "Original language for this encyclical on the Vatican Italian page is Italian; the Vatican Latin Certum consilium is a version, not the source of the Italian snippets",
+    "Spiritual/corporal works expressly supported in §3",
+    "Personal freedom from association membership is editorial interpretation, not a direct quotation or categorical ruling"
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 4,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
+}

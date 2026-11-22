@@ -1,0 +1,131 @@
+{
+  "schema": "AO_SPX_P52_REAL_QWEN3B_BILINGUAL_EDITORIAL_RESULTS_V1",
+  "date": "2026-10-24",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40098051879",
+  "sourceRunJobId": 120884333784,
+  "artifact": "spx-p52-actual-3b-french-aid-retest-no-release",
+  "model": "Qwen2.5-3B-Instruct-Q4_K_M",
+  "modelWeightsSHA256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "modelInference": "REAL_LOCAL_LLAMA_CPP_CPU_ON_FREE_PUBLIC_GITHUB_RUNNER_NOT_A_MOCK",
+  "modelLegalStatus": "research-only baseline; no commercial release authorization inferred",
+  "experimentalComposerProfile": "P52_FR_UNAPPROVED_GLOSS_AID",
+  "evidenceOwnership": "Original source-bound Latin witnesses and 423 dialogue nodes unchanged; verifier sees original English glosses and Latin, not experimental French language aids",
+  "summary": {
+    "attemptedTurns": 6,
+    "englishTurns": 3,
+    "frenchTurns": 3,
+    "acceptedByExistingStructuralPipeline": 3,
+    "acceptedEnglish": 1,
+    "acceptedFrench": 2,
+    "heldEnglish": 2,
+    "heldFrench": 1,
+    "composeCalls": 6,
+    "modelVerifierCalls": 3,
+    "validJSONResponses": 9,
+    "invalidJSONResponses": 0,
+    "modelTimeouts": 0,
+    "forbiddenRequestsStoppedBeforeModel": 2,
+    "originalSourceOwnerRecordsChanged": 0,
+    "originalTextCertified": 0,
+    "bilingualTranslationCertified": 0,
+    "papalSpeechAuthenticated": 0,
+    "published": 0
+  },
+  "p50Comparison": {
+    "baselineRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40095180443",
+    "baselineStructuralAccepted": 3,
+    "baselineEnglishStructuralAccepted": 1,
+    "baselineFrenchStructuralAccepted": 2,
+    "note": "P50's two structurally accepted French outputs were actually in English. P2.51 would now reject both; these P2.50 figures do NOT represent two usable French answers.",
+    "correctedBaselineUsableFrenchOnSurface": 0,
+    "p52FrenchDraftsInCorrectLanguage": 2,
+    "overallPassCountChange": 0,
+    "caution": "The new P2.51 quality filter and P2.52 composer changes mean this is an observational pilot comparison, not a controlled clinical-quality model evaluation."
+  },
+  "cases": [
+    {
+      "language": "en",
+      "turn": 1,
+      "status": "held",
+      "reason": "source_glosses_spliced_as_reply",
+      "latencyMs": 60267,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "rawModelText": "He tried with tears and prayers to avert the pontificate, acknowledging his own sense of unworthiness and the burden of succession to a long-serving and admired predecessor, but found courage in the divine strength to accept the office and govern with the purpose of restoring all things in Christ.",
+      "acceptedByStructuralGate": false,
+      "humanEditorialApproval": false
+    },
+    {
+      "language": "en",
+      "turn": 2,
+      "status": "held",
+      "reason": "source_glosses_spliced_as_reply",
+      "latencyMs": 34446,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "rawModelText": "His own sense of unworthiness, the burden of succession to a long-serving and admired predecessor, and consciousness of his weakness while considering society's condition all made the responsibility so grave to him.",
+      "acceptedByStructuralGate": false,
+      "humanEditorialApproval": false
+    },
+    {
+      "language": "en",
+      "turn": 3,
+      "status": "draft",
+      "reason": null,
+      "latencyMs": 50073,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "rawModelText": "Once he accepted, his intention was to lead humanity to Christ, thereby leading them to God.",
+      "acceptedByStructuralGate": true,
+      "humanEditorialApproval": false
+    },
+    {
+      "language": "fr",
+      "turn": 1,
+      "status": "held",
+      "reason": "invalid_generated_content_or_reference",
+      "latencyMs": 49997,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "rawModelText": "Il témoigne avoir essayé, par des larmes et des prières, d’écarter la charge pontificale, reconnaissant sa propre indignité devant le pontificat, et cherchant dans le secours de Dieu la force nécessaire pour accepter la charge, déclarant que son pontificat a pour but de tout restaurer dans le Christ.",
+      "acceptedByStructuralGate": false,
+      "humanEditorialApproval": false
+    },
+    {
+      "language": "fr",
+      "turn": 2,
+      "status": "draft",
+      "reason": null,
+      "latencyMs": 74113,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "rawModelText": "Il reconnaît sa propre indignité devant le pontificat, mais cherche dans le secours de Dieu la force nécessaire pour accepter la charge, malgré la difficulté de succéder à un prédécesseur éminent.",
+      "acceptedByStructuralGate": true,
+      "humanEditorialApproval": false
+    },
+    {
+      "language": "fr",
+      "turn": 3,
+      "status": "draft",
+      "reason": null,
+      "latencyMs": 57329,
+      "node": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "rawModelText": "Il veut conduire les hommes au Christ et, par Lui, à Dieu; cette affirmation appartient au paragraphe 8, et il poursuit son pontificat avec l’objectif de restaurer tout le monde dans le Christ.",
+      "acceptedByStructuralGate": true,
+      "humanEditorialApproval": false
+    }
+  ],
+  "sourceQualityFlags": [
+    "English turns 1–2 were held because the model recycled multiple research glosses as its answer.",
+    "French turn 1 generated French prose but omitted the required exact evidenceIds/witnessIds and was correctly held.",
+    "French turn 2 formed an understandable sentence, but largely recombined supplied French research glosses rather than demonstrating independent historical voice.",
+    "French turn 3 includes editorial metacommentary about paragraph 8 and an awkward 'restaurer tout le monde' formulation; a mechanical verifier accepted it, but it is NOT publication-ready.",
+    "English turn 3 is short and structurally source-bounded, but still a third-person documentary synopsis, not a distinctive St Pius X persona.",
+    "The same 3B model acted as composer and verifier, so verifier success is NOT independent theological or historical authentication."
+  ],
+  "technicalStatus": "EXPERIMENT_COMPLETED_NO_PRODUCTION_PROMOTION",
+  "releaseGates": {
+    "originalSourceApproved": false,
+    "frTranslationApproved": false,
+    "enTranslationApproved": false,
+    "papalSpeechApproved": false,
+    "appIntegrated": false,
+    "mergeApproved": false
+  },
+  "nextImplementationPriority": "Reduce imitation of unpublished editor glosses and meta-paragraph commentary, then evaluate 3–5 unprepared multi-turn user questions using the same strict source gates, without increasing research scope."
+}

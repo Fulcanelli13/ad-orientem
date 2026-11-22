@@ -1,0 +1,119 @@
+{
+  "schema": "AO_SPX_P53_REAL_UNPREPARED_QWEN3B_EDITORIAL_RESULTS_V1",
+  "date": "2026-10-24",
+  "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40099689091",
+  "model": "Qwen2.5-3B-Instruct-Q4_K_M",
+  "modelRuntime": "llama.cpp CPU on GitHub public free standard runner",
+  "actualModelInference": true,
+  "mode": "documentary",
+  "experiment": "P53_ATOMIC_CLAIM_CUES",
+  "approved": false,
+  "publishingApproved": false,
+  "originalCorpus": {
+    "subjects": 106,
+    "nodes": 423,
+    "sourceOwnerChanged": false
+  },
+  "observations": {
+    "attemptedTurns": 6,
+    "acceptedByPreexistingStructuralRules": 4,
+    "heldByVerifier": 2,
+    "composeCalls": 6,
+    "verifyCalls": 6,
+    "validJSONResponses": 12,
+    "invalidJSONResponses": 0,
+    "modelTimeouts": 0,
+    "outOfScopeProbesHeldBeforeModel": 2,
+    "sourceCertification": 0,
+    "independentEditorialApprovals": 0,
+    "criticalQuality": "All four mechanically accepted drafts contain disqualifying style/provenance defects under documentary-mode presentation; do not treat 4/6 as conversational success."
+  },
+  "cases": [
+    {
+      "language": "en",
+      "turn": 1,
+      "question": "Why did you resist the papal election?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "oldStatus": "draft",
+      "oldReason": null,
+      "rawModelText": "I resisted the papal election due to the weight of succeeding a greatly esteemed predecessor and the sense of personal unworthiness, but I was consoled by the strength granted by God and the purpose of restoring all things in Christ.",
+      "latencyMs": 66156,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "First-person historical reconstruction in documentary mode"
+    },
+    {
+      "language": "en",
+      "turn": 2,
+      "question": "Did you consider yourself unworthy of this office?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "oldStatus": "draft",
+      "oldReason": null,
+      "rawModelText": "Honored pontificate, by my own weakness, I cannot be worthy of this office.",
+      "latencyMs": 45981,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "Ungrammatical English first-person address"
+    },
+    {
+      "language": "en",
+      "turn": 3,
+      "question": "What did you hope to restore in Christ?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "oldStatus": "held",
+      "oldReason": "unsupported_or_unverified_generated_claim",
+      "rawModelText": "I hoped to restore all things in Christ, aiming to bring humanity to Christ and through Christ to God.",
+      "latencyMs": 34756,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "Model verifier rejected generated proposition"
+    },
+    {
+      "language": "fr",
+      "turn": 1,
+      "question": "Pourquoi avez-vous résisté à la papauté ?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "oldStatus": "draft",
+      "oldReason": null,
+      "rawModelText": "Nous avons résisté à la papauté en raison des larmes et des prières que nous avons adressées, ainsi que par le poids de succéder à un prédécesseur estimé et la force reçue de Dieu pour assumer la charge, en espérant restaurer toutes choses dans le Christ.",
+      "latencyMs": 54161,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "First-person historical roleplay in documentary mode"
+    },
+    {
+      "language": "fr",
+      "turn": 2,
+      "question": "Le poids de votre prédécesseur vous effrayait-il ?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "oldStatus": "held",
+      "oldReason": "unsupported_or_unverified_generated_claim",
+      "rawModelText": "La charge me paraissait si redoutable que je ne pouvais envisager de la confier à un prédécesseur estimé, et je me suis donc opposé à la papauté.",
+      "latencyMs": 48406,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "Model verifier rejected generated proposition"
+    },
+    {
+      "language": "fr",
+      "turn": 3,
+      "question": "Vouliez-vous tout restaurer dans le Christ ?",
+      "sourceNodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "oldStatus": "draft",
+      "oldReason": null,
+      "rawModelText": "Vouliez-vous tout restaurer dans le Christ ? Je voulais conduire les hommes au Christ et, par le Christ, à Dieu, comme l'encyclopédie de Pius X l'indique.",
+      "latencyMs": 35118,
+      "sourcePublisherApproved": false,
+      "humanVoiceEvaluation": "NOT_APPROVED",
+      "surfaceObservations": "Question repeated verbatim and fictitious encyclopedia reference"
+    }
+  ],
+  "interpretation": [
+    "Six new visitor phrasings successfully routed to one of three original E supremi nodes in the selected subject, not a wide-open world-knowledge conversation.",
+    "Four drafts passed weak mechanical composer/verifier checks, but those four are not acceptable papal-character responses.",
+    "The 3B model sometimes invents wording and sources and does not reliably respect the documentary register.",
+    "Two rejections came from the machine verifier; machine self-verification is not a historically independent endorsement.",
+    "These observations justify adding pre-verifier controls for documentary voice leakage, verbatim visitor-question echo, and invented secondary-source references.",
+    "No external contact, payments, source-owner updates, merge or public release."
+  ]
+}
