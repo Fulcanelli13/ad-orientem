@@ -1,0 +1,110 @@
+{
+  "schema": "AO_LIVING_CHURCH_SPX_LITURGICAL_SOURCE_SCOPE_REGRESSION_V1",
+  "date": "2026-10-19",
+  "resultType": "ISOLATED_EXECUTION_OF_EXACT_REPOSITORY_JAVASCRIPT_NOT_CI_CERTIFICATION",
+  "implementationSource": "src/learn/living-church-liturgical-source-scope.js",
+  "roleFrameOwner": "PR #1443",
+  "historicalEvidenceOwner": "PR #1458",
+  "subjectScopes": [
+    "SPX-PILOT-02: lay Rosary prayer at Mass, 1905 long catechism questions 667-669",
+    "SPX-PILOT-04: thanksgiving after an individual's reception of Holy Communion, Salzano editorial questions 506-508",
+    "SPX-PILOT-09: priest's interior meditation under Haerent animo, not lay participation",
+    "mass.postcommunion: priest's Mass oration backed by AO.CARD.027, owned by Canon and original Mass Guide"
+  ],
+  "protectedRoutingRules": [
+    "Two independent indicators are needed for Rosary at Mass, or reception timing and inward devotional practice for post-Communion thanksgiving.",
+    "A generic faithful prayer or meditation at Mass without a sufficiently specific historical passage safely abstains.",
+    "A priest's official Postcommunion and a layperson's private thanksgiving are separate source scopes.",
+    "French apostrophes and accents are normalized as word boundaries, not ignored mid-token.",
+    "Personal-spiritual state diagnosis remains held before source matching.",
+    "No source match creates an answer, and external document confirmation must reject tampered URLs.",
+    "The source-owning Mass Guide retains AO.CARD.027; only voluntary handoff may move the Canon question from St Pius X."
+  ],
+  "exactComparisons": {
+    "sourceContrastFixture": "data/learn/living-church-pius-x-liturgical-scope-26.v1.json",
+    "sourceContrastCount": 26,
+    "shared": {
+      "passes": 26,
+      "failures": 0
+    },
+    "hybrid": {
+      "passes": 26,
+      "failures": 0
+    },
+    "previousFirstRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39272885295",
+    "previousFirstRunStatus": "ASSISTANT_AUTHORED_NEW_AT_TIME_NOT_INDEPENDENT_VISITOR_TEST",
+    "formerFirstRun": {
+      "sourceCorrect": 10,
+      "sourceSafeUnresolved": 28,
+      "sourceWrong": 2,
+      "heldSafe": 7,
+      "heldUnsafe": 1,
+      "outOfScopeSafe": 12
+    },
+    "afterPersonalVerdictSafety": {
+      "sourceCorrect": 10,
+      "sourceSafeUnresolved": 28,
+      "sourceWrong": 2,
+      "heldSafe": 8,
+      "heldUnsafe": 0,
+      "outOfScopeSafe": 12
+    },
+    "currentRepeatedRegression": {
+      "shared": {
+        "historicalSourceCorrect": 17,
+        "historicalSafeUnresolved": 23,
+        "historicalWrongSpecific": 0,
+        "heldSafe": 8,
+        "heldUnsafe": 0,
+        "outOfScopeSafe": 12,
+        "englishDocumentCorrect": 10,
+        "frenchDocumentCorrect": 7
+      },
+      "hybrid": {
+        "historicalSourceCorrect": 17,
+        "historicalSafeUnresolved": 23,
+        "historicalWrongSpecific": 0,
+        "heldSafe": 8,
+        "heldUnsafe": 0,
+        "outOfScopeSafe": 12,
+        "englishDocumentCorrect": 10,
+        "frenchDocumentCorrect": 7
+      }
+    },
+    "officialCanonPostcommunion": {
+      "example": "What is the Postcommunion prayer?",
+      "bothRouters": "source_navigation",
+      "currentCharacter": "canon",
+      "sourceRef": "AO.CARD.027"
+    },
+    "urlConfirmation": {
+      "kind": "confirmed_source_navigation",
+      "route": "historical.external_document",
+      "originalLinkPreserved": true,
+      "forgedLinkRejected": true,
+      "visitorConfirmationNeeded": true
+    }
+  },
+  "unresolved": {
+    "exactDocumentRecallStillWeak": "23 of 40 historical source-intent questions safely abstain in this reused editorial cohort.",
+    "categories": [
+      "Election/personal program in E supremi",
+      "Sarto involuntary temptation and consent",
+      "grace theology without keyword overlaps",
+      "historical sacred-music reform explained without liturgical key terms",
+      "Modernism concept paraphrases",
+      "adult catechesis",
+      "historical age of reason"
+    ],
+    "caution": "Safe refusal is not a doctrinal answer; no 17/40 estimate can be generalized. This cohort was inspected and reused, not independent user traffic. Further changes require new untouched bilingual evaluations.",
+    "passGates": {
+      "negativeWrongSourceRegression": true,
+      "originalSourceOwnerParity": true,
+      "personalSafetyHeld": true,
+      "independentRetrievalCertification": false,
+      "approvedHistoricallyVoicedReplies": 0,
+      "published": false
+    },
+    "ciStatusAtRecording": "GITHUB_QUEUED"
+  }
+}

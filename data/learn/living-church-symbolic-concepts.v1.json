@@ -1,0 +1,879 @@
+{
+  "schema": "AO_LIVING_CHURCH_SYMBOLIC_CONCEPTS_V1",
+  "status": "RESEARCH_ONLY_NO_EMBEDDINGS",
+  "method": "Bilingual subject-concept lexicon grounded in canonical topic identities; semantic-proxy classification only, no neural vectors",
+  "policy": {
+    "originalSourcesNotAnswers": true,
+    "noPastoralConclusions": true,
+    "termsAreSearchMetadata": true,
+    "sourceMustExistInOriginalCatalog": true,
+    "neverOverrideBlockedRules": true,
+    "onlyExplicitUserConfirmationForApproximateMatches": true,
+    "conceptLinksAreNotHistoricalAssertions": true,
+    "genericRolesAndTemporalMarkersRequireSourceNavigationOnly": true
+  },
+  "concepts": [
+    {
+      "id": "eucharistic_substance",
+      "terms": {
+        "en": [
+          "real presence",
+          "eucharist",
+          "wafer",
+          "bread",
+          "under appearances",
+          "looks like bread",
+          "christ present",
+          "really jesus",
+          "really christ",
+          "is it christ",
+          "body of christ"
+        ],
+        "fr": [
+          "présence réelle",
+          "eucharistie",
+          "hostie",
+          "pain",
+          "apparences du pain",
+          "corps du christ",
+          "c est jésus",
+          "est ce jésus"
+        ]
+      },
+      "targets": {
+        "faith.real_presence": 1,
+        "faith.whole_christ": 0.25,
+        "canon.apologetics_apol_030": 0.5
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "eucharistic_wholeness",
+      "terms": {
+        "en": [
+          "body and blood",
+          "blood of christ",
+          "whole christ",
+          "entire christ",
+          "under one species",
+          "under both species",
+          "chalice also christ",
+          "chalice contains christ",
+          "also christ under wine",
+          "wine really christ"
+        ],
+        "fr": [
+          "corps et sang",
+          "sang du christ",
+          "christ tout entier",
+          "sous une seule espèce",
+          "calice aussi le christ",
+          "le calice est aussi le christ",
+          "sous apparence du vin",
+          "le christ entier sous le vin"
+        ]
+      },
+      "targets": {
+        "faith.whole_christ": 1,
+        "mass.consecration_chalice": 0.35
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "consecration",
+      "terms": {
+        "en": [
+          "consecrated",
+          "consecration",
+          "words over the bread",
+          "changed bread",
+          "becomes christ"
+        ],
+        "fr": [
+          "consécration",
+          "consacrée",
+          "consacré",
+          "change le pain",
+          "devient le corps"
+        ]
+      },
+      "targets": {
+        "faith.real_presence": 0.65,
+        "mass.consecration_chalice": 0.35,
+        "mass.elevation": 0.2
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "saints_mediation",
+      "terms": {
+        "en": [
+          "saints",
+          "intercession",
+          "intercede",
+          "mediators",
+          "asking saints",
+          "praying to saints",
+          "mary instead of jesus",
+          "saints between us and god"
+        ],
+        "fr": [
+          "saints",
+          "intercession",
+          "intercéder",
+          "invoquer les saints",
+          "prier les saints",
+          "au lieu du christ",
+          "sainte vierge"
+        ]
+      },
+      "targets": {
+        "mary.intercession": 1,
+        "canon.apologetics_apol_035": 0.6
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "papal_infallibility",
+      "terms": {
+        "en": [
+          "pope mistaken",
+          "pope make mistakes",
+          "papal infallibility",
+          "pope err",
+          "infallible pope",
+          "teaching error"
+        ],
+        "fr": [
+          "pape se tromper",
+          "infaillibilité",
+          "pape infaillible",
+          "pape peut il se tromper"
+        ]
+      },
+      "targets": {
+        "church.papal_infallibility": 1,
+        "canon.apologetics_apol_020": 0.6
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "confession_contrition",
+      "terms": {
+        "en": [
+          "perfect contrition",
+          "sorry for sin",
+          "feel ashamed",
+          "contrite",
+          "sorrow for sins",
+          "regret sins"
+        ],
+        "fr": [
+          "contrition",
+          "regretter les péchés",
+          "honte de mes péchés",
+          "regret des fautes"
+        ]
+      },
+      "targets": {
+        "penance.contrition": 1,
+        "penance.confession": 0.15
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "confession_rite",
+      "terms": {
+        "en": [
+          "confess to a priest",
+          "sacrament of penance",
+          "confession",
+          "forgiven mortal sins",
+          "absolution"
+        ],
+        "fr": [
+          "confession",
+          "sacrement de pénitence",
+          "absolution",
+          "péchés mortels pardonnés"
+        ]
+      },
+      "targets": {
+        "penance.confession": 1,
+        "canon.apologetics_apol_026": 0.5
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "examination",
+      "terms": {
+        "en": [
+          "examination of conscience",
+          "examine conscience",
+          "before confession"
+        ],
+        "fr": [
+          "examen de conscience",
+          "avant la confession"
+        ]
+      },
+      "targets": {
+        "penance.examination": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "sacred_vestments",
+      "terms": {
+        "en": [
+          "vestments",
+          "clerical garments",
+          "priest wearing",
+          "priest clothes",
+          "priest robes"
+        ],
+        "fr": [
+          "ornements liturgiques",
+          "ornements sacrés",
+          "vêtements sacerdotaux",
+          "habits du prêtre"
+        ]
+      },
+      "targets": {
+        "objects.vestments": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "liturgical_colors",
+      "terms": {
+        "en": [
+          "liturgical colours",
+          "vestment colours",
+          "vestment color",
+          "colour of vestments",
+          "colors of vestments"
+        ],
+        "fr": [
+          "couleurs liturgiques",
+          "couleur des ornements",
+          "couleur de la chasuble",
+          "couleurs à la messe"
+        ]
+      },
+      "targets": {
+        "mass.colors_meaning": 1,
+        "objects.vestments": 0.3
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "altar_pall",
+      "terms": {
+        "en": [
+          "pall",
+          "square cloth",
+          "square over chalice",
+          "square linen",
+          "square over the chalice"
+        ],
+        "fr": [
+          "pale",
+          "tissu carré",
+          "carré blanc sur le calice",
+          "carré qui couvre le calice"
+        ]
+      },
+      "targets": {
+        "objects.pall": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "chalice",
+      "terms": {
+        "en": [
+          "chalice",
+          "cup at mass",
+          "sacred cup",
+          "wine cup"
+        ],
+        "fr": [
+          "calice",
+          "coupe du prêtre",
+          "coupe sacrée"
+        ]
+      },
+      "targets": {
+        "objects.chalice": 1,
+        "mass.consecration_chalice": 0.25
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "paten",
+      "terms": {
+        "en": [
+          "paten",
+          "small plate under host"
+        ],
+        "fr": [
+          "patène",
+          "petite assiette sous l hostie"
+        ]
+      },
+      "targets": {
+        "objects.paten": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "ciborium",
+      "terms": {
+        "en": [
+          "ciborium",
+          "hosts in vessel",
+          "vessel for hosts"
+        ],
+        "fr": [
+          "ciboire",
+          "vase des hosties"
+        ]
+      },
+      "targets": {
+        "objects.ciborium": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "tabernacle_reservation",
+      "terms": {
+        "en": [
+          "tabernacle",
+          "hosts kept between masses",
+          "reserved sacrament",
+          "reserved hosts"
+        ],
+        "fr": [
+          "tabernacle",
+          "hosties conservées",
+          "réserve eucharistique"
+        ]
+      },
+      "targets": {
+        "objects.tabernacle": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "sanctuary_lamp",
+      "terms": {
+        "en": [
+          "red light",
+          "red lamp",
+          "lamp near tabernacle",
+          "sanctuary lamp",
+          "lit lamp",
+          "light beside tabernacle"
+        ],
+        "fr": [
+          "lampe rouge",
+          "lampe du sanctuaire",
+          "lumière du tabernacle",
+          "lampe",
+          "lampe allumée",
+          "lampe près du tabernacle"
+        ]
+      },
+      "targets": {
+        "objects.sanctuary_lamp": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "corporal",
+      "terms": {
+        "en": [
+          "corporal",
+          "cloth beneath sacred vessels",
+          "cloth under host",
+          "linen beneath chalice",
+          "cloth beneath vessels",
+          "linen under host",
+          "cloth laid beneath"
+        ],
+        "fr": [
+          "corporal",
+          "linge sous l hostie",
+          "linge sous le calice",
+          "linge",
+          "linge sous les vases sacrés"
+        ]
+      },
+      "targets": {
+        "objects.corporal": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "purificator",
+      "terms": {
+        "en": [
+          "purificator",
+          "cloth wiping chalice",
+          "wipe the chalice"
+        ],
+        "fr": [
+          "purificatoire",
+          "linge pour essuyer le calice",
+          "essuyer le calice"
+        ]
+      },
+      "targets": {
+        "objects.purificator": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "missal_stand",
+      "terms": {
+        "en": [
+          "missal stand",
+          "missal support",
+          "where priest reads from",
+          "sloping bookstand",
+          "priest reads from",
+          "where the priest reads from"
+        ],
+        "fr": [
+          "pupitre du missel",
+          "support du missel",
+          "support où lit le prêtre"
+        ]
+      },
+      "targets": {
+        "objects.missal_stand": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "altar_cards",
+      "terms": {
+        "en": [
+          "altar cards",
+          "cards behind candles",
+          "three altar cards",
+          "cards",
+          "little cards"
+        ],
+        "fr": [
+          "canons d autel",
+          "cartons d autel",
+          "cartons derrière les cierges"
+        ]
+      },
+      "targets": {
+        "objects.altar_cards": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "incense",
+      "terms": {
+        "en": [
+          "incense",
+          "thurible",
+          "censer",
+          "smoke at mass"
+        ],
+        "fr": [
+          "encens",
+          "encensoir",
+          "fumée de l encens"
+        ]
+      },
+      "targets": {
+        "objects.glossary_g194": 0.5,
+        "objects.glossary_g231": 0.7
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "thurifer_person",
+      "terms": {
+        "en": [
+          "thurifer",
+          "person carrying incense",
+          "man with incense",
+          "who carries incense",
+          "man carrying incense",
+          "who carries the incense"
+        ],
+        "fr": [
+          "thuriféraire",
+          "personne qui porte l encens",
+          "porteur de l encensoir"
+        ]
+      },
+      "targets": {
+        "objects.glossary_g221": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "stole",
+      "terms": {
+        "en": [
+          "stole",
+          "cloth around the priest neck",
+          "long strip at neck"
+        ],
+        "fr": [
+          "étole",
+          "bande autour du cou du prêtre"
+        ]
+      },
+      "targets": {
+        "objects.glossary_g199": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "dalmatic",
+      "terms": {
+        "en": [
+          "dalmatic",
+          "what deacon wears",
+          "deacon robe"
+        ],
+        "fr": [
+          "dalmatique",
+          "vêtement du diacre",
+          "habit du diacre"
+        ]
+      },
+      "targets": {
+        "objects.glossary_g201": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "biretta",
+      "terms": {
+        "en": [
+          "biretta",
+          "priest square cap",
+          "priest square hat"
+        ],
+        "fr": [
+          "barrette",
+          "bonnet carré du prêtre"
+        ]
+      },
+      "targets": {
+        "objects.glossary_g208": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "pater_noster",
+      "terms": {
+        "en": [
+          "our father at mass",
+          "pater noster",
+          "lord s prayer during mass"
+        ],
+        "fr": [
+          "notre père à la messe",
+          "pater noster"
+        ]
+      },
+      "targets": {
+        "mass.pater_noster": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "roman_canon",
+      "terms": {
+        "en": [
+          "roman canon",
+          "silent canon",
+          "quiet prayer during mass"
+        ],
+        "fr": [
+          "canon romain",
+          "canon silencieux",
+          "prière silencieuse de la messe"
+        ]
+      },
+      "targets": {
+        "mass.roman_canon": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "elevation",
+      "terms": {
+        "en": [
+          "lift the host",
+          "host raised",
+          "host elevated",
+          "bow at elevation"
+        ],
+        "fr": [
+          "élévation",
+          "élève l hostie",
+          "hostie élevée"
+        ]
+      },
+      "targets": {
+        "mass.elevation": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "minor_elevation",
+      "terms": {
+        "en": [
+          "minor elevation",
+          "second elevation",
+          "end of canon raising chalice",
+          "small elevation",
+          "second time",
+          "second lifting of chalice",
+          "raised again at end of canon"
+        ],
+        "fr": [
+          "petite élévation",
+          "élévation mineure",
+          "seconde élévation",
+          "la seconde fois",
+          "une deuxième fois",
+          "seconde élévation du calice"
+        ]
+      },
+      "targets": {
+        "mass.minor_elevation": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "mass_preface",
+      "terms": {
+        "en": [
+          "preface at mass",
+          "prayer before sanctus",
+          "before the sanctus",
+          "immediately before sanctus"
+        ],
+        "fr": [
+          "préface à la messe",
+          "prière avant sanctus",
+          "avant le sanctus",
+          "juste avant le sanctus"
+        ]
+      },
+      "targets": {
+        "mass.preface": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "mass_sanctus",
+      "terms": {
+        "en": [
+          "sanctus",
+          "after the preface",
+          "holy holy holy"
+        ],
+        "fr": [
+          "sanctus",
+          "après la préface",
+          "saint saint saint"
+        ]
+      },
+      "targets": {
+        "mass.sanctus": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "altar_kiss",
+      "terms": {
+        "en": [
+          "altar kissed",
+          "kiss the altar",
+          "altar kiss"
+        ],
+        "fr": [
+          "baiser de l autel",
+          "embrasse l autel",
+          "baise l autel"
+        ]
+      },
+      "targets": {
+        "mass.altar_reverence": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "ssp_x_status",
+      "terms": {
+        "en": [
+          "sspx",
+          "society of saint pius x",
+          "fsspx",
+          "fraternity of saint pius x"
+        ],
+        "fr": [
+          "fsspx",
+          "fraternité saint pie x",
+          "fraternité sacerdotale saint pie x"
+        ]
+      },
+      "targets": {
+        "canon.church_crisis_cr_ecc_05": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "vatican2_liturgy",
+      "terms": {
+        "en": [
+          "vatican ii mass",
+          "council changed mass",
+          "reform of mass"
+        ],
+        "fr": [
+          "vatican ii messe",
+          "concile et liturgie",
+          "réforme de la messe"
+        ]
+      },
+      "targets": {
+        "canon.church_crisis_cr_lit_05": 0.65,
+        "canon.church_crisis_cr_lit_02": 0.65
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "sola_scriptura",
+      "terms": {
+        "en": [
+          "sola scriptura",
+          "scripture alone",
+          "bible alone"
+        ],
+        "fr": [
+          "sola scriptura",
+          "écriture seule",
+          "bible seule"
+        ]
+      },
+      "targets": {
+        "canon.apologetics_apol_014": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "resurrection",
+      "terms": {
+        "en": [
+          "resurrection",
+          "rose from dead",
+          "risen from the dead"
+        ],
+        "fr": [
+          "résurrection",
+          "ressuscité des morts"
+        ]
+      },
+      "targets": {
+        "canon.apologetics_apol_009": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "immaculate_conception",
+      "terms": {
+        "en": [
+          "immaculate conception",
+          "mary born without sin",
+          "mary without original sin"
+        ],
+        "fr": [
+          "immaculée conception",
+          "marie sans péché originel"
+        ]
+      },
+      "targets": {
+        "canon.apologetics_apol_033": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "natural_law",
+      "terms": {
+        "en": [
+          "natural law",
+          "objective morality"
+        ],
+        "fr": [
+          "loi naturelle",
+          "morale objective"
+        ]
+      },
+      "targets": {
+        "canon.apologetics_apol_050": 1
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "offertory_ritual",
+      "terms": {
+        "en": [
+          "offertory chant",
+          "offers bread and wine",
+          "priest offers bread",
+          "priest offering",
+          "at the offertory"
+        ],
+        "fr": [
+          "chant d offertoire",
+          "prêtre offre le pain et le vin",
+          "offertoire"
+        ]
+      },
+      "targets": {
+        "mass.offertory": 1,
+        "canon.apologetics_apol_031": 0.2
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    },
+    {
+      "id": "liturgical_celebrant_action",
+      "terms": {
+        "en": [
+          "why does priest raise",
+          "priest lifts",
+          "priest elevates",
+          "priest bows",
+          "priest kneels"
+        ],
+        "fr": [
+          "pourquoi le prêtre élève",
+          "prêtre soulève",
+          "prêtre s incline",
+          "prêtre s agenouille"
+        ]
+      },
+      "targets": {
+        "mass.elevation": 0.3,
+        "mass.consecration_chalice": 0.25,
+        "mass.gestures_meaning": 0.2
+      },
+      "provenance": "EDITORIAL_TOPIC_MATCHING_ONLY"
+    }
+  ]
+}

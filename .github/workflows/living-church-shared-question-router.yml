@@ -1,0 +1,168 @@
+name: Living Church shared question router
+on:
+  push:
+    branches:
+      - feature/living-church-shared-question-routing-20261019
+    paths:
+      - data/learn/living-church-shared-question-routing-pilot.v1.json
+      - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+      - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
+      - data/learn/living-church-personal-verdict-boundary-48.v1.json
+      - data/learn/living-church-pius-x-liturgical-scope-26.v1.json
+      - data/learn/living-church-pius-x-source-concept-facets.v1.json
+      - data/learn/living-church-pius-x-doctrinal-concept-frozen-46.v1.json
+      - src/learn/living-church-shared-question-router.js
+      - src/learn/living-church-historical-focus.js
+      - src/learn/living-church-personal-verdict-gate.js
+      - src/learn/living-church-liturgical-source-scope.js
+      - src/learn/living-church-pius-x-source-concepts.js
+      - src/learn/living-church-contemporary-discipline-scope.js
+      - src/learn/living-church-hybrid-question-router.js
+      - src/learn/living-church-embedding-candidate-router.js
+      - src/learn/living-church-evaluation-gate.js
+      - tests/living-church-evaluation-gate.mjs
+      - tests/living-church-embedding-candidate-router.mjs
+      - data/learn/living-church-symbolic-concepts.v1.json
+      - tests/living-church-hybrid-question-router.mjs
+      - tests/living-church-shared-question-router.mjs
+      - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-three-document-route-parity.mjs
+      - tests/living-church-pius-x-next11-independent-route-probes.mjs
+      - tests/living-church-pius-x-prospective-concept-probes.mjs
+      - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
+      - tests/living-church-personal-verdict-safety.mjs
+      - tests/living-church-liturgical-source-scope.mjs
+      - tests/living-church-pius-x-doctrinal-concept-regression.mjs
+      - tests/living-church-question-retrieval-probes.mjs
+      - tests/living-church-routing-holdout.mjs
+      - tests/living-church-fresh-question-probes.mjs
+      - data/learn/living-church-fresh-question-probes.v1.json
+      - .github/workflows/living-church-shared-question-router.yml
+  pull_request:
+    paths:
+      - data/learn/living-church-shared-question-routing-pilot.v1.json
+      - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+      - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
+      - data/learn/living-church-personal-verdict-boundary-48.v1.json
+      - data/learn/living-church-pius-x-liturgical-scope-26.v1.json
+      - data/learn/living-church-pius-x-source-concept-facets.v1.json
+      - data/learn/living-church-pius-x-doctrinal-concept-frozen-46.v1.json
+      - src/learn/living-church-shared-question-router.js
+      - src/learn/living-church-historical-focus.js
+      - src/learn/living-church-personal-verdict-gate.js
+      - src/learn/living-church-liturgical-source-scope.js
+      - src/learn/living-church-pius-x-source-concepts.js
+      - src/learn/living-church-contemporary-discipline-scope.js
+      - src/learn/living-church-hybrid-question-router.js
+      - src/learn/living-church-embedding-candidate-router.js
+      - src/learn/living-church-evaluation-gate.js
+      - tests/living-church-evaluation-gate.mjs
+      - tests/living-church-embedding-candidate-router.mjs
+      - data/learn/living-church-symbolic-concepts.v1.json
+      - tests/living-church-hybrid-question-router.mjs
+      - tests/living-church-shared-question-router.mjs
+      - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-three-document-route-parity.mjs
+      - tests/living-church-pius-x-next11-independent-route-probes.mjs
+      - tests/living-church-pius-x-prospective-concept-probes.mjs
+      - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
+      - tests/living-church-personal-verdict-safety.mjs
+      - tests/living-church-liturgical-source-scope.mjs
+      - tests/living-church-pius-x-doctrinal-concept-regression.mjs
+      - tests/living-church-question-retrieval-probes.mjs
+      - tests/living-church-routing-holdout.mjs
+      - tests/living-church-fresh-question-probes.mjs
+      - data/learn/living-church-fresh-question-probes.v1.json
+      - .github/workflows/living-church-shared-question-router.yml
+permissions:
+  contents: read
+jobs:
+  source-only-topic-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage PR #1458 frozen prompts without copying content ownership into router
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '88da215a9a8c06ffa6fca6528ce91c2135445b1d'
+          test "$(git rev-parse FETCH_HEAD)" = '88da215a9a8c06ffa6fca6528ce91c2135445b1d'
+          for file in \
+            data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json \
+            data/learn/research/pius-x-next11-pre-evaluation-paraphrase-pairs-20261021.v1.json
+          do
+            dest="research-out/pr1458-next11-question-probes/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Stage pre-expansion bilingual prospective editorial questions from content owner
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'cffd128a5b37a784ddfc461e59fb306304b0a2d3'
+          test "$(git rev-parse FETCH_HEAD)" = 'cffd128a5b37a784ddfc461e59fb306304b0a2d3'
+          file='data/learn/research/pius-x-prospective-bilingual-concept-probes-20261021.v1.json'
+          dest="research-out/pr1458-prospective-concept-fixture/$file"
+          mkdir -p "$(dirname "$dest")"
+          git show "FETCH_HEAD:$file" > "$dest"
+      - name: Validate all topic links and question/referral scenarios
+        run: |
+          node --check src/learn/living-church-shared-question-router.js
+          node --check src/learn/living-church-historical-focus.js
+          node --check src/learn/living-church-personal-verdict-gate.js
+          node --check src/learn/living-church-liturgical-source-scope.js
+          node --check src/learn/living-church-pius-x-source-concepts.js
+          node --check src/learn/living-church-contemporary-discipline-scope.js
+          node --check src/learn/living-church-hybrid-question-router.js
+          node --check src/learn/living-church-embedding-candidate-router.js
+          node --check src/learn/living-church-evaluation-gate.js
+          node tests/living-church-shared-question-router.mjs
+          node tests/living-church-historical-document-navigation.mjs
+          node tests/living-church-pius-x-three-document-route-parity.mjs
+          node tests/living-church-pius-x-next11-independent-route-probes.mjs
+          node tests/living-church-pius-x-prospective-concept-probes.mjs
+          node tests/living-church-personal-verdict-safety.mjs
+          node tests/living-church-liturgical-source-scope.mjs
+          node tests/living-church-pius-x-doctrinal-concept-regression.mjs
+          node tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
+          node tests/living-church-question-retrieval-probes.mjs
+          node tests/living-church-routing-holdout.mjs
+          node tests/living-church-fresh-question-probes.mjs
+          node tests/living-church-hybrid-question-router.mjs
+          node tests/living-church-embedding-candidate-router.mjs
+          node tests/living-church-evaluation-gate.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-fresh-bilingual-60-plus-8-report
+          path: research-out/living-church-pius-x-fresh-60-plus-8-results.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-next11-source-routing-observations
+          path: research-out/living-church-pius-x-next11-probe-observations.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-prospective-bilingual-concept-evaluation
+          path: research-out/pius-x-prospective-bilingual-concept-first-run.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-source-concept-safety-regression
+          path: research-out/living-church-pius-x-doctrinal-concept-regression.v1.json
+          if-no-files-found: warn
+          retention-days: 30

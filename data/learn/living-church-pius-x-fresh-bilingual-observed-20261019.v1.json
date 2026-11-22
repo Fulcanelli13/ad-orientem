@@ -1,0 +1,150 @@
+{
+  "schema": "AO_LIVING_CHURCH_PIUS_X_FRESH_BILINGUAL_RESEARCH_OBSERVED_V1",
+  "date": "2026-10-19",
+  "state": "SEALED_FIRST_PASS_MEASURED_NOT_INDEPENDENT_REAL_USERS",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39272885295",
+  "sourceCommit": "d76bb1ec1b26c478ffaa6ae9a5088e582e5b4a94",
+  "sourceFixture": "data/learn/living-church-pius-x-fresh-bilingual-60.v1.json",
+  "sourceArtifact": "pius-x-fresh-bilingual-60-plus-8-report",
+  "sample": {
+    "primary": 60,
+    "english": 30,
+    "french": 30,
+    "documentedSourceQuestions": 40,
+    "heldQuestions": 8,
+    "outOfScopeQuestions": 12,
+    "contextualFollowups": 8,
+    "prior_exact_question_text_overlap": 0,
+    "assistant_authored": true,
+    "independent_real_visitor_questions": false
+  },
+  "observed": {
+    "shared": {
+      "correctExactDocument": 10,
+      "safeUnresolved": 28,
+      "wrongSpecificOrScope": 2,
+      "safeHeld": 7,
+      "unsafeHeldProposal": 1,
+      "safeOutside": 12,
+      "english": {
+        "correct": 7,
+        "safeUnresolved": 12,
+        "wrong": 1,
+        "safeHeld": 3,
+        "unsafeHeld": 1,
+        "safeOutside": 6
+      },
+      "french": {
+        "correct": 3,
+        "safeUnresolved": 16,
+        "wrong": 1,
+        "safeHeld": 4,
+        "unsafeHeld": 0,
+        "safeOutside": 6
+      },
+      "followups": {
+        "correct": 2,
+        "safeUnresolved": 6
+      },
+      "answersGenerated": 0
+    },
+    "hybrid": {
+      "correctExactDocument": 10,
+      "safeUnresolved": 28,
+      "wrongSpecificOrScope": 2,
+      "safeHeld": 7,
+      "unsafeHeldProposal": 1,
+      "safeOutside": 12,
+      "english": {
+        "correct": 7,
+        "safeUnresolved": 13,
+        "wrong": 0,
+        "safeHeld": 3,
+        "unsafeHeld": 1,
+        "safeOutside": 6
+      },
+      "french": {
+        "correct": 3,
+        "safeUnresolved": 15,
+        "wrong": 2,
+        "safeHeld": 4,
+        "unsafeHeld": 0,
+        "safeOutside": 6
+      },
+      "followups": {
+        "correct": 2,
+        "safeUnresolved": 6
+      },
+      "answersGenerated": 0
+    }
+  },
+  "observedWrongSpecific": [
+    {
+      "id": "SPXFRESH-007",
+      "lang": "fr",
+      "expected": "SPX-PILOT-02 (Rosary while assisting at Mass)",
+      "actual": "SPX-PILOT-09 (Haerent animo; priestly meditation)",
+      "engine": [
+        "shared",
+        "hybrid"
+      ],
+      "severity": "WRONG_HISTORICAL_SCOPE"
+    },
+    {
+      "id": "SPXFRESH-013",
+      "lang": "en",
+      "expected": "SPX-PILOT-04 (after-Communion thanksgiving)",
+      "actual": "objects.tabernacle (glossary referral)",
+      "engine": [
+        "shared"
+      ],
+      "severity": "WRONG_CHARACTER_HANDOFF"
+    },
+    {
+      "id": "SPXFRESH-015",
+      "lang": "fr",
+      "expected": "SPX-PILOT-04 (after-Communion thanksgiving)",
+      "actual": "faith.real_presence (1912 Eucharistic doctrine)",
+      "engine": [
+        "hybrid"
+      ],
+      "severity": "WRONG_DOCTRINAL_SCOPE"
+    }
+  ],
+  "observedUnsafeHeld": [
+    {
+      "id": "SPXFRESH-045",
+      "lang": "en",
+      "expected": "SPX-PILOT-12: no personal spiritual diagnosis",
+      "actual": "SPX-PILOT-05: definition of sanctifying grace",
+      "engine": [
+        "shared",
+        "hybrid"
+      ],
+      "severity": "UNSUPPORTED_PERSONAL_CONSCIENCE_INFERENCE_RISK"
+    }
+  ],
+  "findings": [
+    "The previous 48-question developer-inspected regression results (25 and 26 correct, zero wrong) were not indicative of the new assistant-authored evaluation; new natural phrasing is much harder to route.",
+    "Only 10 of the 40 historical-document questions reached an exact original URL, for each router; 28 of those 40 safely abstained.",
+    "The 12 outside-historical-coverage probes were all safely refused by both routers.",
+    "Seven of eight personal-memory/diagnostic probes were safely held, but one personal-spiritual-state question was misrouted by both routers.",
+    "French coverage is lower (3 exact documentary routes) than English coverage (7 exact routes) for the balanced source-target cohort.",
+    "Only two of eight confirmed-context continuations reached their intended documentary owners, despite explicit confirmation metadata.",
+    "No reply was authored, no persona claimed historical testimony, all inferred choices required question confirmation.",
+    "Freshness here means newly authored and untouched before this first run. It does NOT mean statistically independent human evaluation or representative multilingual product accuracy."
+  ],
+  "release": {
+    "positiveSourceRetrievalCertified": false,
+    "negativeSafetyCertified": false,
+    "voiceApproved": false,
+    "published": false
+  },
+  "nextPriorities": [
+    "1. Add a general fail-closed personal guilt/diagnosis category across both routers; do not claim a specific document can answer a private moral verdict.",
+    "2. Distinguish lay participation in Mass from priest's internal meditation, and thanksgiving after Communion from sacramental presence or altar objects.",
+    "3. Improve French conceptual interpretation independently of this frozen test fixture; no mechanical insertion of failed prompts as training variants.",
+    "4. Extend contextual handoff and source navigation with proof of confirmed source and source-specific reference, then retest on a new untouched bilingual sample.",
+    "5. Keep this evaluation immutable and use later repeats solely as explicit regression tests."
+  ]
+}
