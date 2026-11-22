@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SPX_B68_Q854_SOURCE_PARITY_V1",
+  "date": "2026-11-23",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "parent": "B67",
+  "draft": "data/learn/research/pius-x-batch14-sacraments-d-20261020.v1.json",
+  "source": {
+    "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "locator": "Parte quarta, Capo IX, §3, Q850–855",
+    "witness": "Institutional Italian transcription; printed facsimile not collated"
+  },
+  "findings": [
+    {
+      "id": "SPX-1905-M-854",
+      "classification": "SOURCE_PARITY_PRECISION_PROPOSAL",
+      "issue": "Current opening substitutes 'severe moral language' for the catechism's explicit 'in istato di continuo peccato mortale' and 'illegittima innanzi a Dio e alla Chiesa'. Preserve historic assertion without applying a categorical individual judgment to modern cases.",
+      "proposedOpening": {
+        "en": {
+          "question": "How did the 1905 Catechism describe spouses cohabiting after only a civil marriage?",
+          "answer": "The 1905 Catechism described spouses living together after only a civil marriage as being in a continuing state of mortal sin, and their union as illegitimate before God and the Church. This is the catechism's historical general formulation, not a determination of any particular couple's canonical status or personal culpability; those questions require assessment of the applicable law, form, dispensations, knowledge and freedom."
+        },
+        "fr": {
+          "question": "Comment le Catéchisme de 1905 décrivait-il les époux vivant ensemble après un mariage uniquement civil ?",
+          "answer": "Le Catéchisme de 1905 décrivait les époux vivant ensemble après le seul mariage civil comme étant dans un état continu de péché mortel, et leur union comme illégitime devant Dieu et l'Église. Il s'agit de la formulation générale historique du catéchisme, non d'un jugement sur le statut canonique ou la culpabilité personnelle d'un couple particulier ; ces questions exigent l'examen du droit applicable, de la forme, des dispenses, de la connaissance et de la liberté."
+        }
+      },
+      "quotationStatus": "EDITORIAL_PARAPHRASE_NOT_VERBATIM_NOT_PERSONAL_PAPAL_SPEECH",
+      "followup": "Retain existing caution against automated verdicts; no duplicate credit"
+    },
+    {
+      "id": "SPX-1905-M-850",
+      "classification": "RETAIN",
+      "finding": "Contract/sacrament inseparability and ecclesiastical authority accurately summarized; no revision"
+    },
+    {
+      "id": "SPX-1905-M-853",
+      "classification": "RETAIN",
+      "finding": "Civil-only form historic qualification and specialist caveat preserved; no revision"
+    },
+    {
+      "id": "SPX-1905-M-855",
+      "classification": "PREVIOUSLY_PROPOSED_B66_NO_DUPLICATE_CREDIT",
+      "finding": "B66 correction concerning initiation of civil acts remains pending human certification"
+    }
+  ],
+  "holds": [
+    "Original English Chanoine witness inaccessible; no reconstruction",
+    "Q18 complete Creed source-parity hold",
+    "Q100 historical versus 1965 attribution",
+    "B39",
+    "CSE142–143"
+  ],
+  "nextQueue": [
+    "Human certification of Q854 bilingual historical assertion versus individualized culpability safeguard",
+    "Human certification of B65 Q848, B66 Q855, B67 Q844 without duplicate credit",
+    "Verify Q846 technical terminology against primary canon law before changing",
+    "Reconcile original draft batches 8–12 and build exhaustive answer-level bilingual certification register"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
