@@ -1,0 +1,78 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B46",
+  "asOf": "2026-11-24",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B45",
+  "baselineChecked": "B03",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B46-01",
+      "subject": "Approved Advent IV Gaulli, Louvre INV 20298",
+      "findingEn": "New exact-object photographic route: Commons File:Baciccio, predica del battista, seconda metà del xvii sec.JPG identifies Gaulli's Louvre INV 20298 and offers Sailko's independently taken 15 November 2013 photograph, 2964x2452 pixels, 3.89 MB. Photographer expressly licenses this file CC BY-SA 3.0 Unported; commercial reuse is permitted subject to attribution, licence link, modification notice and share-alike conditions for adaptations. This is not a Louvre-issued photographic licence or CC0, and is not a production master. A second Commons WGA image of the exact painting exists at 1000x1072, but no photographer-issued open licence is established for that file in this pass.",
+      "findingFr": "Nouvelle photographie de l'œuvre exacte de Gaulli, Louvre INV 20298 : cliché personnel de Sailko daté du 15 novembre 2013, 2964 × 2452 pixels, sous CC BY-SA 3.0. Réutilisation commerciale conditionnelle (attribution et partage dans les mêmes conditions pour adaptations). Ce n'est ni une licence du Louvre ni un master validé.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Baciccio,_predica_del_battista,_seconda_met%C3%A0_del_xvii_sec.JPG",
+        "https://commons.wikimedia.org/wiki/Category:The_Sermon_of_St._John_the_Baptist_-_Giovanni_Battista_Gaulli_-_Louvre_INV_20298",
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348"
+      ],
+      "status": "EXACT_OBJECT_PHOTOGRAPHER_LICENSED_ROUTE_FOUND",
+      "reportedPixels": [
+        2964,
+        2452
+      ],
+      "licence": "CC BY-SA 3.0 Unported",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B46-02",
+      "subject": "Approved Gaudete Strozzi, National Trust 108873",
+      "findingEn": "New exact-object Commons file indexed by three independent Commons categories: 'Bernardo Strozzi (1581-1644) - Saint John the Baptist Interrogated about Christ - 108873 - National Trust.jpg', reported 1200x932 pixels, 123 KB. The filename and accession align with the approved National Trust painting. However the individual file description and its licence could not be opened reliably; Art UK separately credits National Trust Images. Thus this is a source-discovery lead, NOT independently cleared photographic reuse. Keep photographic-rights hold.",
+      "findingFr": "Fichier Commons retrouvé pour le tableau exact de Strozzi, NT 108873 (1200 × 932 pixels). La notice de licence propre au fichier n'a pas pu être vérifiée; Art UK crédite National Trust Images. Maintenir le blocage des droits photographiques.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/Category:New_Testament_paintings_by_Bernardo_Strozzi",
+        "https://www.nationaltrustcollections.org.uk/object/108873",
+        "https://shop.artuk.org/saint-john-the-baptist-interrogated-about-christ-172159.html"
+      ],
+      "status": "EXACT_OBJECT_COMMONS_FILE_INDEXED_RIGHTS_UNVERIFIED",
+      "reportedPixels": [
+        1200,
+        932
+      ],
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B46-03",
+      "subject": "Approved Christ the King Benson, Christie's London lot 4 2019",
+      "findingEn": "Commons file Ambrosius Benson - Salvator Mundi.jpeg is the exact Christie’s lot 4 painting (91.4x86.1cm) at 2987x3200 pixels. Commons applies PD-Art/Public Domain Mark to faithful reproduction, explicitly warning that reuse may be restricted outside the United States. This does not amount to a Christie’s photographic licence. Rights hold remains; potential jurisdiction-specific PD-Art review, no automatic production clearance.",
+      "findingFr": "Le fichier Commons de Benson correspond au lot 4 de Christie's (2987 × 3200 pixels), mais sa déclaration PD-Art n'est pas une licence photographique de Christie's. Réserve juridique inchangée.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+      ],
+      "status": "EXACT_OBJECT_PD_ART_ROUTE_RECONFIRMED_NOT_RIGHTS_CLEARED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "2026-11-24: container HTTPS request to Commons failed DNS resolution before any image bytes; all dimensions above are Commons-reported. No SHA-256 or mobile composition QA.",
+  "nextQueue": [
+    "Acquire and hash exact Gaulli Sailko CC BY-SA 3.0 file; check image quality, perspective, crop, attribution/share-alike implementation",
+    "Inspect exact Strozzi NT 108873 Commons file page and provenance/photographic licence; do not assume Commons indexing equals permission",
+    "Acquire and mobile-QA NGA Andrea di Bartolo/Ricci and Städel Lochner; reconcile Lochner metadata",
+    "Resolve Carracci custodial image route, Esztergom inventory, Ricci iconography and genuine Lateran dedication ceremony depiction"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
