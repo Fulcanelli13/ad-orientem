@@ -1,0 +1,56 @@
+{
+  "schema": "AO_SPX_B62_CREED_ORIGINAL_DRAFT_STRUCTURAL_REGISTER_V1",
+  "date": "2026-11-17",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_TRIAGE_NOT_CERTIFIED",
+  "parent": "B61 2026-11-16",
+  "method": "Fetched and JSON-parsed ten existing batch15/16 Creed draft files on the same research branch; counted records and turns from original arrays, not prior B59 labels.",
+  "scope": {
+    "files": 10,
+    "sourceRange": "SPX-1905-C-012 through SPX-1905-C-111",
+    "distinctCanonicalIds": 100,
+    "openingTurns": 100,
+    "followupTurns": 100,
+    "totalDraftAnswerUnits": 200,
+    "allTenFilesTenRecordsEach": true,
+    "allRecordsTwoTurnsEach": true
+  },
+  "sourceFiles": [
+    "data/learn/research/pius-x-batch15-creed-a-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-b-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-c-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-d-20261020.v1.json",
+    "data/learn/research/pius-x-batch15-creed-e-20261020.v1.json",
+    "data/learn/research/pius-x-batch16-creed-a-20261020.v1.json",
+    "data/learn/research/pius-x-batch16-creed-b-20261020.v1.json",
+    "data/learn/research/pius-x-batch16-creed-c-20261020.v1.json",
+    "data/learn/research/pius-x-batch16-creed-d-20261020.v1.json",
+    "data/learn/research/pius-x-batch16-creed-e-20261020.v1.json"
+  ],
+  "confirmedSourceDraftIssue": {
+    "id": "SPX-1905-C-018",
+    "sourceQuestionId": "PX1905-Q18",
+    "originalItalianQuestion": "Recitateli.",
+    "draftQuestionEnglish": "Can you outline the twelve articles of the Apostles' Creed?",
+    "draftQuestionFrench": "Pouvez-vous résumer les douze articles du Symbole des Apôtres ?",
+    "finding": "Original question requests recitation; bilingual draft supplies an outline. B48 already documented the mismatch. Original source and draft both verified at record level; no translation invented.",
+    "status": "PREVIOUSLY_DOCUMENTED_HOLD_NOT_NEW_IMPROVEMENT"
+  },
+  "previouslyDocumentedOtherHolds": [
+    "SPX-1905-C-100 later Nostra aetate editorial attribution; not Pius X speech",
+    "Chanoine inaccessible original English; B39 and CSE142-143 specialist holds"
+  ],
+  "interpretation": "This is a structural certification inventory for 100 Creed families/200 answer units, not a new count of the 21 October 65 improved families or proof of doctrinal correctness. Source parity and human certification remain pending.",
+  "nextQueue": [
+    "Extend original-draft structural extraction to sacrament and EXP batches; reconcile overlaps by canonical IDs",
+    "Human source/translation review of B48 six corrections and Q18 full recitation witness",
+    "Retain Q100 historical-versus-1965 editorial provenance distinction",
+    "Skip inaccessible original English Chanoine witness and CSE142-143 until authentic source/specialist review"
+  ],
+  "newFamilies": 0,
+  "humanCertified": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

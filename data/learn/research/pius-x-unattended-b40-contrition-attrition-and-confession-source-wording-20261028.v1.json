@@ -1,0 +1,188 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B40_CONTRITION_SOURCE_WORDING_V1",
+  "asOf": "2026-10-28",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": {
+    "latestExisting": "B38 2026-10-27; batch11 part D/E P702–711 read; batch12 starts P717",
+    "scope": "Existing SPX-1905-P-702 through P-711; no new IDs",
+    "source": "Museo San Pio X Italian online transcription, original printed 1905 edition uncollated",
+    "voice": "Documentary catechism paraphrase, not authenticated spontaneous speech of Pius X"
+  },
+  "sources": {
+    "PX1905": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q702–711, Q715–716",
+      "class": "Italian online catechism transcription, not print-collated"
+    },
+    "CCC1451": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "§§1451–1453",
+      "class": "Later Catechism cross-reference, not original 1905 wording"
+    }
+  },
+  "proposals": [
+    {
+      "id": "SPX-1905-P-707",
+      "sourceQuestionId": "PX1905-Q707",
+      "change": "ANCHOR_INTERNAL_CONTRITION_FOLLOWUP_IN_Q715_716",
+      "proposedOpening": {
+        "en": "The Catechism calls sorrow for sin a sincere displeasure at, and rejection of, the offence given to God. This concerns the heart and the will, not merely words pronounced aloud.",
+        "fr": "Le Catéchisme appelle douleur des péchés un regret sincère et une détestation de l'offense faite à Dieu. Il s'agit du cœur et de la volonté, et non de simples paroles prononcées."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "If I say an act of contrition without inwardly meaning it, is that enough?",
+          "fr": "Suffit-il de réciter un acte de contrition sans y adhérer intérieurement ?"
+        },
+        "answer": {
+          "en": "No. Question 707 defines sorrow for sin; questions 715–716 explicitly require it to be inward, in the heart and will, rather than in words alone. This is the source's teaching, not an invented personal remark by Pius X.",
+          "fr": "Non. La question 707 définit la douleur des péchés ; les questions 715–716 exigent expressément qu'elle soit intérieure, dans le cœur et la volonté, et non dans les seules paroles. Il s'agit de l'enseignement du texte, non d'une parole personnelle inventée de Pie X."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q707",
+        "PX1905 Q715–716"
+      ],
+      "evidenceClass": "ITALIAN_HTML_WITNESS_LOCATORS_VERIFIED_EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_AND_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-708",
+      "sourceQuestionId": "PX1905-Q708",
+      "change": "SPECIFY_ATTRITION_AS_REAL_BUT_DISTINCT_AND_AVOID_SACRAMENTAL_EQUIVALENCE",
+      "proposedOpening": {
+        "en": "The Catechism distinguishes perfect sorrow, called contrition, from imperfect sorrow, called attrition. The distinction concerns the motive of repentance, not merely the strength of an emotion.",
+        "fr": "Le Catéchisme distingue la douleur parfaite, appelée contrition, de la douleur imparfaite, appelée attrition. Cette distinction porte sur le motif du repentir, non simplement sur l'intensité d'une émotion."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is imperfect contrition useless, or the same as perfect contrition?",
+          "fr": "La contrition imparfaite est-elle inutile, ou identique à la contrition parfaite ?"
+        },
+        "answer": {
+          "en": "Neither. Question 708 distinguishes the two; questions 709 and 713 explain their motives. The later Catechism §1453 explicitly calls attrition a gift of God preparing the penitent for forgiveness in the sacrament, while distinguishing it from perfect contrition.",
+          "fr": "Ni l'un ni l'autre. La question 708 distingue les deux ; les questions 709 et 713 expliquent leurs motifs. Le Catéchisme ultérieur, §1453, appelle expressément l'attrition un don de Dieu qui prépare au pardon dans le sacrement, tout en la distinguant de la contrition parfaite."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q708–709, Q713",
+        "CCC1451 §1453 (later cross-reference)"
+      ],
+      "evidenceClass": "1905_ITALIAN_WITNESS_PLUS_LATER_CCC_DISTINGUISHED_EN_FR_EDITORIAL_PARAPHRASE",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_AND_HISTORICAL_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-711",
+      "sourceQuestionId": "PX1905-Q711",
+      "change": "REMOVE_UNLOCATED_AT_LEAST_IMPLICITLY_FROM_ATTRIBUTED_1905_Q711_ANSWER",
+      "proposedOpening": {
+        "en": "The 1905 Catechism says that perfect contrition does not obtain pardon independently of confession, because it always includes the will to confess. It therefore must not be used as a pretext to reject the sacrament.",
+        "fr": "Le Catéchisme de 1905 dit que la contrition parfaite n'obtient pas le pardon indépendamment de la confession, puisqu'elle inclut toujours la volonté de se confesser. Elle ne doit donc pas servir de prétexte pour rejeter le sacrement."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the original question 711 itself use the phrase 'at least implicitly'?",
+          "fr": "La question 711 originale emploie-t-elle elle-même les mots « au moins implicitement » ?"
+        },
+        "answer": {
+          "en": "No. The inspected Italian transcription says that perfect contrition always includes the will to confess; it does not contain those exact qualifying words in question 711. Later Catechism §1452 expressly requires the firm resolution to confess as soon as possible. Do not conflate their wording.",
+          "fr": "Non. La transcription italienne examinée dit que la contrition parfaite inclut toujours la volonté de se confesser ; elle ne contient pas ces mots précis à la question 711. Le Catéchisme ultérieur, §1452, exige expressément la ferme résolution de se confesser dès que possible. Il ne faut pas confondre les formulations."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q710–711",
+        "CCC1451 §1452 (later cross-reference)"
+      ],
+      "evidenceClass": "DIRECT_ITALIAN_SOURCE_WORDING_CORRECTION_EN_FR_EDITORIAL_PARAPHRASE",
+      "reviewGate": "READY_FOR_HUMAN_ITALIAN_TEXT_AND_TRANSLATION_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    }
+  ],
+  "noRewrite": [
+    {
+      "id": "SPX-1905-P-702",
+      "reason": "Knowledge of grave wrongdoing matches Q702."
+    },
+    {
+      "id": "SPX-1905-P-703",
+      "reason": "Deliberate consent distinction matches Q703."
+    },
+    {
+      "id": "SPX-1905-P-704",
+      "reason": "Diligence in examination matches Q704."
+    },
+    {
+      "id": "SPX-1905-P-705",
+      "reason": "Proportional examination time matches Q705."
+    },
+    {
+      "id": "SPX-1905-P-706",
+      "reason": "Nightly examination advice matches Q706."
+    },
+    {
+      "id": "SPX-1905-P-709",
+      "reason": "Perfect contrition motive accurately matches Q709."
+    },
+    {
+      "id": "SPX-1905-P-710",
+      "reason": "Two reasons and continuing confession duty source-consistent."
+    }
+  ],
+  "sourceWitnessCaution": {
+    "Q707": "Italian online transcription visibly reads 'Che cosa il dolore dei peccati?' (missing verb); preserve witness verbatim, do not silently emend without print collation.",
+    "Q711": "The phrase 'at least implicitly' in existing English/French draft is not attested in Q711 itself; remove from attributed 1905 sentence unless separately grounded."
+  },
+  "nextQueue": [
+    "P712–721: check batch11/12 ownership and exact Italian loci before editing",
+    "Human certification P707/P708/P711 with print collation when available",
+    "P711 check no historical wording overclaim about implicit intention",
+    "No generic Denzinger mining"
+  ],
+  "counts": {
+    "existingFamiliesScoped": 10,
+    "proposedDistinctFamilies": 3,
+    "bilingualAnswerUnitsProposed": 6,
+    "noRewrite": 7,
+    "newCanonicalIds": 0,
+    "humanCertified": 0
+  },
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false,
+    "original1905PrintCollated": false
+  }
+}

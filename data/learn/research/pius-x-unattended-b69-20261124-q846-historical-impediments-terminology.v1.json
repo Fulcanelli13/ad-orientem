@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SPX_B69_Q846_HISTORICAL_IMPEDIMENTS_V1",
+  "date": "2026-11-24",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "parent": "B68",
+  "draft": "data/learn/research/pius-x-batch14-sacraments-c-20261020.v1.json",
+  "sourceWitness": {
+    "historical": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+    "locator": "Part IV, Chapter IX, section 3, Q846",
+    "quality": "Institutional Italian transcription, not collated with printed facsimile"
+  },
+  "crossChecks": [
+    {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "locators": [
+        "can. 1086",
+        "can. 1088",
+        "can. 1091"
+      ]
+    },
+    {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann96-123_en.html",
+      "locators": [
+        "can. 108 §§1–3"
+      ]
+    },
+    {
+      "url": "https://press.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann1083-1094_fr.html",
+      "locators": [
+        "can. 1086",
+        "can. 1088",
+        "can. 1091"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "SPX-1905-M-846",
+      "classification": "BILINGUAL_TERMINOLOGY_AND_SOURCE_PARITY_PROPOSAL",
+      "issue": "Existing English 'disparity of worship' should be technical 'disparity of cult'; existing opening omits explicit fourth-degree historical figure, while French already has disparité de culte. Current can. 1091 also mentions fourth degree but uses a distinct computation under can. 108, so numeric identity must not be inferred. Modern can. 1088 describes a public perpetual vow in a religious institute, not any unspecified solemn vow. Spiritual kinship in historical list must not be presented as current Latin universal diriment impediment.",
+      "proposedOpening": {
+        "en": {
+          "question": "Which diriment impediments did the 1905 Catechism list?",
+          "answer": "The 1905 Catechism gives consanguinity up to the fourth degree under the reckoning of its time, spiritual kinship, a solemn vow of chastity, and disparity of cult between baptized and unbaptized persons. These are historical examples, not a present-day checklist: the applicable degrees, impediments and dispensations must be assessed under the relevant canon law."
+        },
+        "fr": {
+          "question": "Quels empêchements dirimants le Catéchisme de 1905 énumérait-il ?",
+          "answer": "Le Catéchisme de 1905 cite la consanguinité jusqu'au quatrième degré selon le calcul de son époque, la parenté spirituelle, le vœu solennel de chasteté et la disparité de culte entre personnes baptisées et non baptisées. Ce sont des exemples historiques, non une liste applicable telle quelle aujourd'hui : les degrés, empêchements et dispenses relèvent du droit canonique pertinent."
+        }
+      },
+      "quotationStatus": "EDITORIAL_PARAPHRASE_NOT_VERBATIM_NOT_PERSONAL_PAPAL_SPEECH",
+      "followup": "Retain existing degree-computation warning; requires specialist historical-law confirmation before human certification."
+    },
+    {
+      "id": "SPX-1905-M-843",
+      "classification": "RETAIN_NO_DUPLICATE_CREDIT"
+    },
+    {
+      "id": "SPX-1905-M-845",
+      "classification": "RETAIN_NO_DUPLICATE_CREDIT"
+    },
+    {
+      "id": "SPX-1905-M-844",
+      "classification": "PREVIOUSLY_PROPOSED_B67_NO_DUPLICATE_CREDIT"
+    }
+  ],
+  "holds": [
+    "Historical fourth-degree computation not independently verified against printed 1905 or pre-1917 law",
+    "Original English Chanoine witness inaccessible; no reconstruction",
+    "Q18 complete Creed source parity",
+    "Q100 later 1965 attribution",
+    "B39",
+    "CSE142–143"
+  ],
+  "nextQueue": [
+    "Human specialist check Q846 historical degree calculation, then certify or revise bilingual wording",
+    "Human review B65 Q848, B66 Q855, B67 Q844, B68 Q854 without duplicate credit",
+    "Original draft reconciliation batches 8–12 and answer-level certification register",
+    "Continue distinct families outside Matrimony where originals and sources accessible"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

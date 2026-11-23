@@ -1,0 +1,90 @@
+{
+  "schema": "AO_SPX_B61_NESTED_ID_RECONCILIATION_V1",
+  "date": "2026-11-16",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_TRIAGE_NOT_CERTIFIED",
+  "baseline": "21 Oct 68 examined contexts; 65 improved families; 130 answer units; 64 complete packets and one partly blocked. Historical baseline not recounted.",
+  "parent": "B60 provenance ledger 2026-11-15; B59 triage manifest 2026-11-14",
+  "method": "Read all sixteen B43-B58 JSON source ledgers from existing research branch; recursively traverse structured objects and arrays to depth seven, capturing explicit id/existingFamily/sourceQuestionId values beginning SPX- or PX1905-. Count record occurrences separately from distinct ID strings. Retained/alias/hold records included in discovery, not claimed as improvements.",
+  "reconciliation": {
+    "sourceBatches": 16,
+    "structuredIdOccurrences": 69,
+    "distinctIdStrings": 55,
+    "priorB59ExplicitLabelledEntries": 61,
+    "scopeLimit": "These are structured identifiers in research ledgers, not an exhaustive source draft or all 130 bilingual answer units; retainedWithoutRewrite arrays and prose references can omit IDs.",
+    "newlySurfacedRelativeToB59": [
+      {
+        "id": "SPX-1905-P-711",
+        "batch": "B43",
+        "path": "relatedPreviouslyDocumentedHold",
+        "status": "PREVIOUSLY_DOCUMENTED_HOLD_NOT_NEW_PROPOSAL"
+      },
+      {
+        "id": "SPX-1905-C-018",
+        "batch": "B48",
+        "path": "questionSourceParityHold[0]",
+        "status": "HOLD_FULL_CREED_RECITATION_WITNESS"
+      },
+      {
+        "id": "SPX-EXP-035",
+        "batch": "B49",
+        "path": "retainedWithoutRewrite[0]",
+        "status": "RETAINED_NO_REWRITE"
+      },
+      {
+        "id": "SPX-EXP-036",
+        "batch": "B49",
+        "path": "retainedWithoutRewrite[1]",
+        "status": "RETAINED_NO_REWRITE"
+      },
+      {
+        "id": "SPX-EXP-048",
+        "batch": "B49",
+        "path": "knownAlias[0]",
+        "status": "ALIAS_OF_SPX-032_NO_DUPLICATE_CREDIT"
+      }
+    ],
+    "previouslyUnindexedLaterRecords": [
+      {
+        "batch": "B56",
+        "id": "SPX-EXP-026",
+        "occurrences": 2,
+        "classification": "ITALIAN_SOURCE_COLLATION_AND_CONFIRMATION_ONLY"
+      },
+      {
+        "batch": "B57",
+        "id": "SPX-EXP-027",
+        "occurrences": 1,
+        "classification": "BILINGUAL_PARAPHRASE_PROPOSAL"
+      }
+    ],
+    "b60Additional": {
+      "id": "SPX-1905-C-100",
+      "sourceQuestionId": "PX1905-Q100",
+      "classification": "LATER_1965_SOURCE_PROVENANCE_ONLY; already in B48; no duplicate credit"
+    }
+  },
+  "humanReviewGuards": [
+    "No human certification, production edits, merge, deployment or publication",
+    "B59's 61 entries are record occurrences, not 61 distinct answer families",
+    "Do not treat SPX-EXP-048 and SPX-032 as two families",
+    "Q18 must recite complete twelve articles, not substitute an outline; original translation remains held",
+    "Q100 Nostra aetate 1965 clarification is editorial and must not be voiced as Pius X",
+    "Original English Chanoine witness inaccessible; B39 and CSE142-143 remain blocked",
+    "Pius X first-person plural only for attributed historical-voice paraphrases, always marked non-verbatim",
+    "EXP-026 governance and EXP-027 lay participation remain distinct",
+    "Il fermo proposito Italian original attributes initial restriction to Pius IX; English edition variant retained"
+  ],
+  "nextQueue": [
+    "Extract original draft answer arrays and their paired EN/FR opening and follow-up IDs before claiming exhaustive certification manifest",
+    "Human review of newly surfaced holds and retained entries, with no automatic certification",
+    "Collate printed 1905 Italian catechism for Q18 and Q100 before historical text parity",
+    "Seek authentic original English Chanoine witness; skip blocked B39 and CSE142-143 until available",
+    "For next distinct substantive family, require original draft and precise primary source before rewriting"
+  ],
+  "newFamilies": 0,
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

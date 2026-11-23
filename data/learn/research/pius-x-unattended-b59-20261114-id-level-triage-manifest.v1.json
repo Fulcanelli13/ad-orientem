@@ -1,0 +1,610 @@
+{
+  "schema": "AO_SPX_B59_ID_LEVEL_RESEARCH_TRIAGE_V1",
+  "date": "2026-11-14",
+  "status": "RESEARCH_ONLY_HUMAN_CERTIFICATION_REQUIRED",
+  "baseline": "21 October historical 68 contexts, 65 improved families, 130 answer units, 64 complete packets, one Chanoine English witness blocked; not recounted",
+  "scope": "Index of explicitly labelled entries in B43-B58 only; nested entries and unlabeled arrays may be absent, not exhaustive certification manifest",
+  "batches": [
+    {
+      "batch": "B43",
+      "file": "pius-x-unattended-b43-purpose-and-confession-draft-parity-20261030.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-P-739",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-736",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-745",
+          "kind": "proposals"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "sourceWitness",
+        "laterSource",
+        "originalDraftsRead",
+        "coverage",
+        "proposals",
+        "noRewrite",
+        "relatedPreviouslyDocumentedHold",
+        "chanoine",
+        "counts",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B44",
+      "file": "pius-x-unattended-b44-confession-source-fidelity-20261030.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-P-756",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-765",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-766",
+          "kind": "proposals"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "historicalSource",
+        "laterSource",
+        "originalDraftsRead",
+        "coverage",
+        "proposals",
+        "noRewrite",
+        "chanoine",
+        "counts",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B45",
+      "file": "pius-x-unattended-b45-batch13-source-fidelity-20261031.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-P-772",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-781",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-794",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-I-805",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-S-809",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-S-812",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-P-767",
+          "kind": "provenanceOnly"
+        },
+        {
+          "id": "SPX-1905-P-783",
+          "kind": "provenanceOnly"
+        },
+        {
+          "id": "SPX-1905-P-784",
+          "kind": "provenanceOnly"
+        },
+        {
+          "id": "SPX-1905-P-786",
+          "kind": "provenanceOnly"
+        },
+        {
+          "id": "SPX-1905-I-803",
+          "kind": "provenanceOnly"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "draftsRead",
+        "coverage",
+        "sourceWitnesses",
+        "proposals",
+        "provenanceOnly",
+        "retainWithoutRewrite",
+        "chanoine",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B46",
+      "file": "pius-x-unattended-b46-batch14-orders-marriage-source-parity-20261031.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-O-823",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-O-827",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-O-828",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-839",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-844",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-O-817",
+          "kind": "attributionOnly"
+        },
+        {
+          "id": "SPX-1905-O-832",
+          "kind": "attributionOnly"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "draftsRead",
+        "coverage",
+        "sourceWitnesses",
+        "proposals",
+        "attributionOnly",
+        "retainWithoutRewrite",
+        "chanoine",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B47",
+      "file": "pius-x-unattended-b47-batch14-final-matrimony-source-parity-20261101.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-M-848",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-849",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-853",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-854",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-855",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-M-851",
+          "kind": "attributionOnly"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "coverage",
+        "sources",
+        "proposals",
+        "attributionOnly",
+        "retainedWithoutRewrite",
+        "chanoine",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B48",
+      "file": "pius-x-unattended-b48-creed-batch15-16-source-parity-20261102.v1.json",
+      "entries": [
+        {
+          "id": "SPX-1905-C-019",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-039",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-041",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-061",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-070",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-104",
+          "kind": "proposals"
+        },
+        {
+          "id": "SPX-1905-C-100",
+          "kind": "attributionOnly"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "coverage",
+        "sources",
+        "proposals",
+        "questionSourceParityHold",
+        "attributionOnly",
+        "chanoine",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B49",
+      "file": "pius-x-unattended-b49-batch50-primary-locus-and-bilingual-source-parity-20261103.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-031",
+          "kind": "substantiveProposals"
+        },
+        {
+          "id": "SPX-EXP-032",
+          "kind": "substantiveProposals"
+        },
+        {
+          "id": "SPX-EXP-037",
+          "kind": "substantiveProposals"
+        },
+        {
+          "id": "SPX-EXP-038",
+          "kind": "locatorAndAttributionRepairs"
+        },
+        {
+          "id": "SPX-EXP-046",
+          "kind": "locatorAndAttributionRepairs"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "coverage",
+        "primarySources",
+        "substantiveProposals",
+        "locatorAndAttributionRepairs",
+        "retainedWithoutRewrite",
+        "knownAlias",
+        "chanoine",
+        "nextQueue",
+        "release"
+      ]
+    },
+    {
+      "batch": "B50",
+      "file": "pius-x-unattended-b50-governance-france-catholic-action-hope-20261104.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-024",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-026",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-027",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-028",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "counts",
+        "records",
+        "provenance",
+        "chanoine",
+        "nextQueue",
+        "publication",
+        "merge",
+        "deploy"
+      ]
+    },
+    {
+      "batch": "B51",
+      "file": "pius-x-unattended-b51-overlap-biblical-criticism-episcopal-precautions-20261105.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-016",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-033",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-019",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-023",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "asOf",
+        "status",
+        "continuity",
+        "counts",
+        "records",
+        "sourceUrls",
+        "classification",
+        "chanoine",
+        "nextQueue",
+        "publication",
+        "merge",
+        "deploy"
+      ]
+    },
+    {
+      "batch": "B52",
+      "file": "pius-x-unattended-b52-pascendi-en-fr-remedies-crosswalk-20261106.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-016",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-033",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-019",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-023",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-026",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "prior",
+        "finding",
+        "records",
+        "sourceUrls",
+        "classification",
+        "chanoine",
+        "nextQueue",
+        "certified",
+        "merge",
+        "publish",
+        "deploy"
+      ]
+    },
+    {
+      "batch": "B53",
+      "file": "pius-x-unattended-b53-20261108-vehementer-e-supremi-precise-source-boundaries.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-024",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-028",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "records",
+        "counts",
+        "chanoine",
+        "nextQueue",
+        "merge",
+        "publish",
+        "deploy",
+        "paidServices"
+      ]
+    },
+    {
+      "batch": "B54",
+      "file": "pius-x-unattended-b54-20261109-e-supremi-french-anchor-crosswalk.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-028",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "records",
+        "holds",
+        "nextQueue",
+        "merge",
+        "publish",
+        "deploy",
+        "paidExtras"
+      ]
+    },
+    {
+      "batch": "B55",
+      "file": "pius-x-unattended-b55-20261110-il-fermo-governance-freedom-bilingual-variant.v1.json",
+      "entries": [
+        {
+          "id": "SPX-EXP-026",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-027",
+          "kind": "records"
+        },
+        {
+          "id": "SPX-EXP-026",
+          "kind": "records"
+        }
+      ],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "records",
+        "sources",
+        "holds",
+        "nextQueue",
+        "merge",
+        "publish",
+        "deploy",
+        "paidExtras"
+      ]
+    },
+    {
+      "batch": "B56",
+      "file": "pius-x-unattended-b56-20261111-italian-il-fermo-proposito-attribution-collation.v1.json",
+      "entries": [],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "records",
+        "editorialNote",
+        "sources",
+        "holds",
+        "nextQueue",
+        "merge",
+        "publish",
+        "deploy",
+        "paidExtras"
+      ]
+    },
+    {
+      "batch": "B57",
+      "file": "pius-x-unattended-b57-20261112-exp027-lay-practical-action-source-crosswalk.v1.json",
+      "entries": [],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "records",
+        "sources",
+        "holds",
+        "nextQueue",
+        "merge",
+        "publish",
+        "deploy",
+        "paidExtras"
+      ]
+    },
+    {
+      "batch": "B58",
+      "file": "pius-x-unattended-b58-20261113-certification-queue-and-catholic-action-guard.v1.json",
+      "entries": [],
+      "keys": [
+        "schema",
+        "date",
+        "status",
+        "continuity",
+        "reviewGroups",
+        "newSourceCheck",
+        "holds",
+        "nextQueue",
+        "certified",
+        "merge",
+        "publish",
+        "deploy",
+        "paidExtras"
+      ]
+    }
+  ],
+  "guards": [
+    "B41 redundant proposals excluded from new-family counts",
+    "SPX-EXP-048/SPX-032 alias not double counted",
+    "EXP-026 and EXP-027 distinct intents",
+    "Pascendi French remedies begin §62; English remedy numbering must not be copied",
+    "Il fermo proposito original Italian identifies Pius IX as initial author of Italian restriction; English §18 differs",
+    "Clergy-specific episcopal consent in Il fermo proposito §25 must not be imposed as universal lay restriction",
+    "Q18 complete Creed and Q100 provenance remain held",
+    "Chanoine original English unavailable; B39 and CSE142-143 unchanged"
+  ],
+  "sourceGuard": {
+    "document": "Pius X, Il fermo proposito (11 June 1905)",
+    "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "loci": "§§20,22,24–26",
+    "en": "The encyclical distinguishes reasonable freedom of lay temporal associations from the distinct discipline governing priests' participation; editorial paraphrase, not quotation.",
+    "fr": "L'encyclique distingue la juste liberté d'organisation des œuvres temporelles des laïcs des règles particulières concernant la participation des prêtres ; paraphrase éditoriale, non citation."
+  },
+  "nextQueue": [
+    "Expand nested per-answer IDs from original draft arrays before claiming exhaustive manifest",
+    "Human doctrinal and bilingual review of indexed proposals; do not certify automatically",
+    "Collate 1905 printed catechism against online Italian witness",
+    "Resolve Q18/Q100 and Chanoine original witness only with authentic sources"
+  ],
+  "humanCertified": 0,
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}

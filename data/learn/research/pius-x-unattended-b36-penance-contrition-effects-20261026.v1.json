@@ -1,0 +1,275 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B36_PENANCE_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-26",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "baseline": "21 Oct consolidated packet; B34 P672–681",
+    "current": "P682–691 already authored in batch11 parts B/C 2026-10-20; no duplicate E-series or new P-series created",
+    "originalPrintCollation": "NOT_DONE",
+    "sourceClass": "1905 catechism online Italian witness; NOT authentic personal papal dialogue",
+    "policy": "Later Catechism and 1983 canon law cited as modern editorial clarifications, never as statements spoken by Pius X"
+  },
+  "sources": {
+    "PX1905": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q682–691; online transcription; original printed edition uncollated"
+    },
+    "CCC1450": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "1451–1460"
+    },
+    "CCC1468": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/ix_the_effects_of_this_sacrament.index.html",
+      "loci": "1468–1469"
+    },
+    "CCC1857": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/iv_the_gravity_of_sin_mortal_and_venial_sin.html",
+      "loci": "1857–1860"
+    },
+    "CIC1983": {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "loci": "can. 988 §1"
+    }
+  },
+  "proposals": [
+    {
+      "existingFamilyId": "SPX-1905-P-685",
+      "sourceQuestionId": "PX1905-Q685",
+      "proposedOpening": {
+        "en": "The 1905 Catechism describes confession as a distinct acknowledgment of one's own sins to a confessor, with a view to absolution and penance. It is not an invitation to supply irrelevant intimate detail.",
+        "fr": "Le Catéchisme de 1905 décrit la confession comme l'aveu distinct de ses propres péchés au confesseur, en vue de l'absolution et de la pénitence. Il ne demande pas de livrer des détails intimes sans pertinence."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What does current law ask about grave sins?",
+          "fr": "Que demande le droit actuel concernant les péchés graves ?"
+        },
+        "answer": {
+          "en": "Canon 988 §1 requires confession of grave sins in kind and number, after diligent examination, when they have not already been directly remitted or individually confessed. This later legal specification must not be attributed as the wording of question 685.",
+          "fr": "Le canon 988 §1 demande l'aveu des péchés graves selon leur espèce et leur nombre, après un examen diligent, lorsqu'ils n'ont pas déjà été remis directement ou accusés individuellement. Cette précision juridique ultérieure n'est pas la formulation de la question 685."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q685",
+        "CCC §§1455–1456",
+        "CIC1983 can. 988 §1"
+      ],
+      "sourcePrecisionDelta": "Distinguish original 1905 brief definition from current canon's kind/number norm; no speculative intimate detail.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_WITH_LATER_DOCUMENTS_EXPLICITLY_SEPARATED_NOT_PAPAL_PERSONAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-687",
+      "sourceQuestionId": "PX1905-Q687",
+      "proposedOpening": {
+        "en": "The Catechism calls satisfaction the prayer or other good work imposed by the confessor as penance. It belongs to conversion and reparation, not to a transaction by which grace is purchased.",
+        "fr": "Le Catéchisme appelle satisfaction la prière ou autre bonne œuvre imposée par le confesseur comme pénitence. Elle appartient à la conversion et à la réparation, non à un marché par lequel on achèterait la grâce."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Must every penance be the same, regardless of circumstances?",
+          "fr": "Toute pénitence doit-elle être identique, quelles que soient les circonstances ?"
+        },
+        "answer": {
+          "en": "No. The later Catechism §1460 requires attention to the penitent's personal situation and spiritual good, and permits prayer, works of mercy and other suitable acts.",
+          "fr": "Non. Le Catéchisme ultérieur, au §1460, demande de tenir compte de la situation personnelle et du bien spirituel du pénitent ; il admet la prière, les œuvres de miséricorde et d'autres actes appropriés."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q687",
+        "CCC §§1459–1460"
+      ],
+      "sourcePrecisionDelta": "No transaction/payment framing; later guidance distinguished from 1905 historical voice.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_WITH_LATER_DOCUMENTS_EXPLICITLY_SEPARATED_NOT_PAPAL_PERSONAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-689",
+      "sourceQuestionId": "PX1905-Q689",
+      "proposedOpening": {
+        "en": "Among the penitent's acts, the 1905 Catechism calls contrition indispensable. It also expressly teaches that perfect contrition may obtain forgiveness when joined to the desire, at least implicit, to confess; it does not make the sacrament superfluous.",
+        "fr": "Parmi les actes du pénitent, le Catéchisme de 1905 dit la contrition indispensable. Il enseigne aussi expressément que la contrition parfaite peut obtenir le pardon lorsqu'elle est unie au désir, au moins implicite, de se confesser ; elle ne rend pas le sacrement superflu."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "How is this stated in the later Catechism?",
+          "fr": "Comment le Catéchisme ultérieur l'exprime-t-il ?"
+        },
+        "answer": {
+          "en": "CCC §1452 specifies a firm resolution to have recourse to sacramental confession as soon as possible. Keep this later formulation separate from the 1905 wording 'at least implicit'.",
+          "fr": "Le §1452 du Catéchisme ultérieur précise la ferme résolution de recourir à la confession sacramentelle dès que possible. Il faut distinguer cette formulation ultérieure des mots de 1905 « au moins implicite »."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q689",
+        "CCC §1452"
+      ],
+      "sourcePrecisionDelta": "Original 1905 Q689 itself contains perfect-contrition exception; do not imply the nuance originated only with later Catechism.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_WITH_LATER_DOCUMENTS_EXPLICITLY_SEPARATED_NOT_PAPAL_PERSONAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-690",
+      "sourceQuestionId": "PX1905-Q690",
+      "proposedOpening": {
+        "en": "The 1905 Catechism lists several effects of Penance: forgiveness and sanctifying grace, the change of eternal punishment into temporal punishment with remission according to disposition, restoration of prior merits, help against future sin, and peace of conscience.",
+        "fr": "Le Catéchisme de 1905 énumère plusieurs effets de la Pénitence : pardon et grâce sanctifiante, conversion de la peine éternelle en peine temporelle avec remise selon les dispositions, restitution des mérites antérieurs, secours contre de nouvelles fautes et paix de la conscience."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does absolution automatically remove every temporal consequence of sin?",
+          "fr": "L'absolution supprime-t-elle automatiquement toute conséquence temporelle du péché ?"
+        },
+        "answer": {
+          "en": "No. Question 690 expressly qualifies the remission of temporal punishment by the penitent's dispositions; CCC §§1459–1460 likewise distinguish forgiveness from remaining disorder and the work of satisfaction.",
+          "fr": "Non. La question 690 qualifie expressément la remise de la peine temporelle selon les dispositions du pénitent ; les §§1459–1460 distinguent également le pardon des désordres subsistants et du travail de satisfaction."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q690",
+        "CCC §§1459–1460",
+        "CCC §§1468–1469"
+      ],
+      "sourcePrecisionDelta": "Preserve five source-listed effects, avoid flattening eternal and temporal punishment or promising identical subjective peace.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_WITH_LATER_DOCUMENTS_EXPLICITLY_SEPARATED_NOT_PAPAL_PERSONAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-691",
+      "sourceQuestionId": "PX1905-Q691",
+      "proposedOpening": {
+        "en": "The 1905 Catechism says Penance is necessary for those who have committed mortal sin after Baptism. This concerns a real mortal sin, not every intrusive thought, involuntary reaction or fear of having sinned.",
+        "fr": "Le Catéchisme de 1905 dit que la Pénitence est nécessaire à ceux qui ont commis un péché mortel après le Baptême. Il s'agit d'un véritable péché mortel, non de toute pensée intrusive, réaction involontaire ou crainte d'avoir péché."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Can one infer mortal sin merely from grave subject matter?",
+          "fr": "Peut-on conclure à un péché mortel à partir de la seule gravité de la matière ?"
+        },
+        "answer": {
+          "en": "No. The later Catechism §§1857–1860 requires grave matter, full knowledge and deliberate consent. Its §1452 also explains perfect contrition's relation to the intention of subsequent sacramental confession.",
+          "fr": "Non. Le Catéchisme ultérieur, aux §§1857–1860, exige matière grave, pleine connaissance et consentement délibéré. Son §1452 explique aussi le rapport de la contrition parfaite à l'intention d'une confession sacramentelle ultérieure."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q691",
+        "CCC §§1857–1860",
+        "CCC §1452"
+      ],
+      "sourcePrecisionDelta": "Distinguish objective necessity from scrupulosity and involuntary experiences; modern gloss is not personal Pius X speech.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_1905_ITALIAN_WITH_LATER_DOCUMENTS_EXPLICITLY_SEPARATED_NOT_PAPAL_PERSONAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "original1905PrintCollated": false,
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "noChange": [
+    {
+      "existingFamilyId": "SPX-1905-P-682",
+      "sourceQuestionId": "PX1905-Q682",
+      "result": "SOURCE_WITNESS_CONSISTENT_NO_SUBSTANTIVE_REWRITE",
+      "witness": "Museo San Pio X Q682",
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-683",
+      "sourceQuestionId": "PX1905-Q683",
+      "result": "SOURCE_WITNESS_CONSISTENT_NO_SUBSTANTIVE_REWRITE",
+      "witness": "Museo San Pio X Q683",
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-684",
+      "sourceQuestionId": "PX1905-Q684",
+      "result": "SOURCE_WITNESS_CONSISTENT_NO_SUBSTANTIVE_REWRITE",
+      "witness": "Museo San Pio X Q684",
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-686",
+      "sourceQuestionId": "PX1905-Q686",
+      "result": "SOURCE_WITNESS_CONSISTENT_NO_SUBSTANTIVE_REWRITE",
+      "witness": "Museo San Pio X Q686",
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    },
+    {
+      "existingFamilyId": "SPX-1905-P-688",
+      "sourceQuestionId": "PX1905-Q688",
+      "result": "SOURCE_WITNESS_CONSISTENT_NO_SUBSTANTIVE_REWRITE",
+      "witness": "Museo San Pio X Q688",
+      "original1905PrintCollated": false,
+      "humanCertified": false
+    }
+  ],
+  "counts": {
+    "existingFamiliesExamined": 10,
+    "sourceBoundProposals": 5,
+    "bilingualAnswerUnitsProposed": 10,
+    "noChange": 5,
+    "newCanonicalFamilies": 0,
+    "humanCertified": 0
+  },
+  "nextQueue": [
+    "P692–701: check existing batch11 and batch12 ownership before drafting",
+    "P689: human compare 1905 'at least implicit' with later CCC §1452 wording",
+    "P690: human theological precision check of temporal punishment and restored merits",
+    "1905 print facsimile collation remains outstanding; do not claim verified printed text",
+    "Human source, French translation, and historical voice certification for B34–B36"
+  ],
+  "release": {
+    "original1905PrintCollated": false,
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "historicalVoiceApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
