@@ -1,0 +1,68 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_B29_V1",
+  "date": "2026-11-19",
+  "publication": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "reconciliation": {
+    "registry": "data/geography/seed-registry.v1.json",
+    "registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "places": 530,
+    "geoAreas": 146,
+    "directoryPlaceLinks": 26,
+    "queue": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "queue_sha": "89e7def5214b7a937153305651c95dbe92d02cec",
+    "queue_rows": 750,
+    "queue_countries": 113,
+    "philippines_347_checkpoint": "historical",
+    "canonical_changes": 0
+  },
+  "records": [
+    {
+      "research_key": "phuoc-kieu-blessed-andrew-phu-yen",
+      "relation": "ADDITIVE_ENRICHMENT_B26_B27_B28_NOT_NEW_CANDIDATE",
+      "status": "VERIFIED_DIOCESAN_2026_SITE_FUNCTIONS; CURRENT_RELIC_CUSTODY_PROVISIONAL; ENTRANCE_HELD",
+      "facts": [
+        {
+          "claim": "Diocesan report dated 28 July 2026 describes more than 1,000 pilgrims on 27 July 2026; catechetical presentations and confessions took place at the Phước Kiều church/grounds, while a procession went from the church grounds to the Blessed Andrew shrine and returned with the statue and relic for Mass. This is evidence of distinct liturgical locations within the complex, not surveyed route geometry.",
+          "url": "https://giaophandanang.org/dai-le-mung-kinh-chan-phuoc-anre-phu-yen-thay-giang-tu-dao-ky-niem-382-nam-an-phuc-tu-dao-1644-2026/"
+        },
+        {
+          "claim": "The 2026 report describes incensation of a relic and a relic procession, supporting public relic veneration in July 2026 but not permanent relic inventory, authenticity documentation or current storage location.",
+          "url": "https://giaophandanang.org/dai-le-mung-kinh-chan-phuoc-anre-phu-yen-thay-giang-tu-dao-ky-niem-382-nam-an-phuc-tu-dao-1644-2026/"
+        },
+        {
+          "claim": "A 6 March 2026 diocesan report documents 5 March anniversary Mass at the shrine/parish, distinct from July martyrdom commemoration.",
+          "url": "https://giaophandanang.org/thanh-le-ta-on-ky-niem-26-nam-ton-phong-chan-phuoc-anre-phu-yen/"
+        },
+        {
+          "claim": "Diocesan parish page explicitly states chapel raised to shrine on 26 July 2007, parish established in 2023; no second canonical Place should be inferred without site registry identity and building-level review.",
+          "url": "https://giaophandanang.org/category/giao-hat/giao-hat-hoi-an/giao-xu-phuoc-kieu/"
+        }
+      ],
+      "summary_en": "The Shrine of Blessed Andrew of Phú Yên at Phước Kiều is a pilgrimage centre in the Diocese of Đà Nẵng, associated with the parish established in 2023. A diocesan account of the July 2026 pilgrimage documents over 1,000 pilgrims, confession, catechetical activities and a procession between the parish church grounds and the shrine, with public veneration of a relic. The shrine and parish church have distinguishable liturgical functions, but their exact entrances and the relic's permanent custody remain unverified.",
+      "summary_fr": "Le sanctuaire du bienheureux André de Phú Yên à Phước Kiều est un lieu de pèlerinage du diocèse de Đà Nẵng, associé à la paroisse érigée en 2023. Un compte rendu diocésain du pèlerinage de juillet 2026 fait état de plus de 1 000 pèlerins, de confessions, d'activités catéchétiques et d'une procession entre les abords de l'église paroissiale et le sanctuaire, avec vénération publique d'une relique. Ces lieux ont des fonctions liturgiques distinctes, mais leurs entrées exactes et la conservation permanente de la relique restent à vérifier.",
+      "holds": [
+        "No exact entrances, coordinates or walking route inferred from procession description",
+        "No current relic inventory, authentication or permanent custody established",
+        "Original 2007 shrine decree not located",
+        "Physical distinction does not authorize duplicate canonical Place IDs"
+      ],
+      "geometry": null
+    }
+  ],
+  "next_queue": [
+    "Phước Kiều original 2007 shrine decree and building-level identity/entrances",
+    "Nishizaka direct museum and St Philip church relic inventories",
+    "Cupey archdiocesan evidence on permanent shrine building",
+    "Tianjin diocesan identity and current access for Wanghailou and Xikai",
+    "Aitara national shrine decree and current access",
+    "Kolser 1926 diocesan archival confirmation",
+    "Trà Kiệu independent entrance documentation"
+  ],
+  "constraints": {
+    "no_merge": true,
+    "no_deploy": true,
+    "no_publication": true,
+    "no_paid_services": true,
+    "no_invented_coordinates": true
+  }
+}

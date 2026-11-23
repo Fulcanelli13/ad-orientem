@@ -1,0 +1,82 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_V1",
+  "batch": "B34",
+  "date": "2026-11-24",
+  "publication": "RESEARCH_ONLY",
+  "baseline": {
+    "main_places_last_fully_parsed": 530,
+    "r70_queue_last_fully_parsed": 750,
+    "philippines_checkpoint": "historical 347 places; 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment",
+    "note": "B33 fetched from research branch. Current main registry and queue not freshly parsed in this run; counts are last confirmed, not current."
+  },
+  "records": [
+    {
+      "candidate_key": "CN-TIANJIN-XIKAI-ST-JOSEPH",
+      "status": "VERIFIED_IDENTITY_RESEARCH_ONLY",
+      "name": "St Joseph's Cathedral (Xikai / Laoxikai)",
+      "location": "9 Xining Road, Heping District, Tianjin, China (directory address; alternative address numbers appear in public sources)",
+      "evidence": [
+        {
+          "url": "https://gcatholic.org/churches/asia/1882",
+          "claim": "Catholic directory identifies current Roman Catholic cathedral and address 9 Xining Road."
+        },
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120428",
+          "claim": "Public tourism listing identifies 1916 church and narrates transfer of cathedral seat from Wanghailou to Xikai; publishes visiting times, which have not been confirmed as current."
+        },
+        {
+          "url": "https://www.visitbeijing.com.cn/article/47Qt4YPYTmA",
+          "date": "2018-11-02",
+          "claim": "Tourism article explicitly identifies Xikai as cathedral of Tianjin diocese."
+        }
+      ],
+      "summary_en": "St Joseph's Cathedral, also known as Xikai or Laoxikai Church, is the Roman Catholic cathedral of Tianjin. Built in the 1910s and associated with the transfer of the episcopal seat from Wanghailou, it remains distinct from the older Church of Our Lady of Victory. Published visitor hours are not verified as current.",
+      "summary_fr": "La cathédrale Saint-Joseph, dite Xikai ou Laoxikai, est la cathédrale catholique de Tianjin. Construite dans les années 1910 et liée au transfert du siège épiscopal depuis Wanghailou, elle demeure distincte de l'ancienne église Notre-Dame-des-Victoires. Les horaires de visite publiés ne sont pas confirmés comme actuels.",
+      "holds": [
+        "Current diocesan primary-source designation",
+        "Current visitor hours and accessible entrance",
+        "Conflicting public street-number variants",
+        "No relic inventory confirmed"
+      ]
+    },
+    {
+      "candidate_key": "CN-TIANJIN-WANGHAILOU-OUR-LADY-VICTORY",
+      "status": "PROVISIONAL_VISITOR_ACCESS",
+      "name": "Our Lady of Victory Church (Wanghailou)",
+      "location": "292 Shizilin Street, Hebei District, Tianjin, China (Catholic directory)",
+      "evidence": [
+        {
+          "url": "https://gcatholic.org/churches/asia/1890",
+          "claim": "Catholic directory identifies former cathedral and Marian patronage."
+        },
+        {
+          "url": "https://www.visitbeijing.com.cn/article/47Qt4YPYTmA",
+          "date": "2018-11-02",
+          "claim": "Public tourism article identifies the separate older Wanghailou church and historic preservation designation."
+        },
+        {
+          "url": "https://news.enorth.com.cn/system/2006/12/13/001489531.shtml",
+          "date": "2006-12-13",
+          "claim": "Local historical account locates church at Shizilin Bridge and records restoration and heritage status."
+        }
+      ],
+      "summary_en": "Our Lady of Victory, known as Wanghailou Church, is a historic Roman Catholic church in Tianjin's Hebei District and a former cathedral. Its history includes destruction and rebuilding in the nineteenth and early twentieth centuries. It must not be conflated with today's St Joseph's Cathedral at Xikai; present liturgical access remains unconfirmed.",
+      "summary_fr": "Notre-Dame-des-Victoires, dite église Wanghailou, est une église catholique historique du district de Hebei à Tianjin et une ancienne cathédrale. Son histoire comprend plusieurs destructions et reconstructions aux XIXe et XXe siècles. Elle ne doit pas être confondue avec la cathédrale actuelle Saint-Joseph de Xikai ; l'accès liturgique actuel reste à confirmer.",
+      "holds": [
+        "Current public worship and opening status",
+        "Direct diocesan corroboration",
+        "Relic and devotional programme not established"
+      ]
+    }
+  ],
+  "next_priorities": [
+    "Direct Tianjin diocesan evidence and present access for Wanghailou",
+    "Nishizaka relic custody via museum or church inventory",
+    "Cupey permanent building completion from archdiocesan documentation",
+    "Aitara shrine decree",
+    "Kolser original diocesan 1926 documentation",
+    "Núi Cúi relic custody and routine access",
+    "Tắc Sậy tomb inventory and routine access"
+  ],
+  "policy": "No new canonical IDs, coordinates, routes, merge, or deployment."
+}

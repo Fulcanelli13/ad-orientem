@@ -1,0 +1,90 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_V1",
+  "batch": "B33",
+  "date": "2026-11-23",
+  "publication": "RESEARCH_ONLY",
+  "baseline": {
+    "main_registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "main_places_last_parsed": 530,
+    "r70_queue_rows_last_parsed": 750,
+    "philippines_checkpoint": "historical 347 places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment"
+  },
+  "policy": "Additive evidence only. No canonical Place IDs assigned, no coordinates, entrance pins or route geometry inferred.",
+  "records": [
+    {
+      "candidate_key": "VN-NUI-CUI-IMMACULATE-CONCEPTION",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "finding": "POST_EVENT_DEDICATION_CONFIRMED",
+      "name": "Our Lady of Núi Cúi — Shrine of the Immaculate Conception",
+      "location": "Thống Nhất, Đồng Nai, Diocese of Xuân Lộc, Vietnam",
+      "evidence": [
+        {
+          "url": "https://hdgmvietnam.com/chi-tiet/thanh-le-ta-on-va-cung-hien-den-thanh-trung-tam-hanh-huong-duc-me-nui-cui-luc-0830-ngay-14102026",
+          "date": "2026-10-14",
+          "claim": "Vietnamese bishops' conference publishes post-event account confirming dedication Mass on 14 October 2026 at 08:30 by Bishop John Đỗ Văn Ngân, attended by tens of thousands. Procession started at Chapel of Vietnamese Martyrs and entered new shrine; a martyr relic was carried and altar consecrated. Martyr identity and current relic custody not given."
+        },
+        {
+          "url": "https://giaophanxuanloc.net/chi-tiet/giao-phan-xuan-loc-han-hoan-chao-don-quy-duc-giam-muc-ve-du-dai-le-tai-nui-cui",
+          "date": "2026-10",
+          "claim": "Diocesan pre-event visitor plan describes temporary restricted vehicle access 06:00–11:30 on dedication day and shuttle transport from 07:30; not current visiting policy."
+        }
+      ],
+      "summary_en": "The Marian pilgrimage centre of Núi Cúi, dedicated to the Immaculate Conception in the Diocese of Xuân Lộc, celebrated the dedication of its new shrine on 14 October 2026. The bishops' conference records the liturgy, procession from the Chapel of the Vietnamese Martyrs, and participation of large numbers of pilgrims. Visitor entrance, current hours and identity and custody of the martyr relic remain unverified.",
+      "summary_fr": "Le centre marial de Núi Cúi, consacré à l'Immaculée Conception dans le diocèse de Xuân Lộc, a célébré la dédicace de son nouveau sanctuaire le 14 octobre 2026. La conférence épiscopale atteste la liturgie, la procession depuis la chapelle des Martyrs vietnamiens et l'affluence de pèlerins. L'entrée, les horaires actuels ainsi que l'identité et la conservation de la relique du martyr restent à vérifier.",
+      "resolved": [
+        "post-event dedication confirmation"
+      ],
+      "holds": [
+        "current visitor hours and entrance",
+        "martyr relic identity and permanent custody",
+        "no permanent vehicle restriction inferred from ceremony day"
+      ]
+    },
+    {
+      "candidate_key": "VN-TAC-SAY-TRUONG-BUU-DIEP",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "finding": "CHURCH_TOMB_DISTINCTION_CORROBORATED",
+      "name": "Tắc Sậy Pilgrimage Centre — Blessed Francis Xavier Trương Bửu Diệp",
+      "location": "Phong Thạnh, Cà Mau, Diocese of Cần Thơ, Vietnam",
+      "evidence": [
+        {
+          "url": "https://tgpsaigon.net/bai-viet/hanh-huong-ve-nha-tho-tac-say-truoc-ngay-gio-cha-phanxico-truong-buu-diep-86137",
+          "date": "2026-03-09",
+          "claim": "Archdiocese of Saigon first-person pilgrimage account identifies tomb at Tắc Sậy church, describes visitors praying at tomb on 7 March, and annual 12 March death anniversary."
+        },
+        {
+          "url": "https://thanhnien.vn/vi-sao-nha-tho-tac-say-luon-tap-nap-khach-hanh-huong-185250920195019961.htm",
+          "date": "2025-09-21",
+          "claim": "Reporting distinguishes church and tomb building as two principal structures."
+        },
+        {
+          "url": "https://thanhnien.vn/nha-tho-tac-say-diem-hanh-huong-noi-tieng-bac-nhat-mien-tay-185260407223121476.htm",
+          "date": "2026-04-08",
+          "claim": "Local parish pastoral council chairman discusses historic parish and visitors; location beside National Highway 1."
+        }
+      ],
+      "summary_en": "Tắc Sậy pilgrimage centre in Phong Thạnh, Cà Mau, contains the parish church and a distinguishable tomb structure of Blessed Francis Xavier Trương Bửu Diệp, beatified there on 2 July 2026. A March 2026 Catholic pilgrimage report confirms prayer at his tomb and identifies 12 March as the annual death commemoration. Exact building entrances, current visiting hours and authenticated relic inventory remain unverified.",
+      "summary_fr": "Le centre de pèlerinage de Tắc Sậy, à Phong Thạnh dans la province de Cà Mau, comprend l'église paroissiale et un édifice funéraire distinct abritant la tombe du bienheureux François-Xavier Trương Bửu Diệp, béatifié sur place le 2 juillet 2026. Un reportage catholique de mars 2026 atteste la prière auprès de sa tombe et la commémoration annuelle du 12 mars. Les entrées exactes, les horaires et l'inventaire authentifié des reliques restent à vérifier.",
+      "resolved": [
+        "tomb is within pilgrimage complex and distinguishable from parish church",
+        "documented tomb veneration and 12 March anniversary"
+      ],
+      "holds": [
+        "precise building entrances and visitor hours",
+        "relic authentication and current inventory",
+        "no separate canonical IDs without site-level policy"
+      ]
+    }
+  ],
+  "next_priorities": [
+    "Núi Cúi martyr relic identity and routine access",
+    "Tắc Sậy current visitor hours and tomb custodial documentation",
+    "Nishizaka museum versus church relic inventory",
+    "Cupey permanent shrine construction completion",
+    "Tianjin direct diocesan cathedral identities",
+    "Aitara formal shrine decree",
+    "Kolser 1926 diocesan archive",
+    "Trà Kiệu exact public entrances",
+    "Phước Kiều original 2007 shrine decree"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "batch": "B20",
+  "date": "2026-11-10",
+  "scope": "research_only",
+  "baseline": {
+    "main_place_registry_count": 530,
+    "main_blob_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "r70_rows": 750,
+    "r70_blob_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "previous_batch": "B19",
+    "historical_philippines_checkpoint": 347
+  },
+  "records": [
+    {
+      "record_id": "SG-B20-AITARA-2025-JUBILEE-2022-TOURISM",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "PILGRIMAGE_PRACTICE_CORROBORATED_FORMAL_TITLE_HELD",
+      "name": "Nossa Senhora de Aitara, Soibada, Timor-Leste",
+      "summary_en": "A Timorese Catholic Jubilee reflection published by TATOLI on 30 December 2025 explicitly refers to a national pilgrimage to the Sanctuary of Aitara in Soibada. A 4 August 2022 TATOLI report independently includes the churches of Our Lady of Aitara in Soibada among sites identified for religious tourism. These corroborate national pilgrimage usage and local religious-tourism recognition, not a formal canonical decree or the exact identity of each physical building.",
+      "summary_fr": "Un texte catholique relatif au Jubilé, publié par TATOLI le 30 décembre 2025, mentionne expressément un pèlerinage national au sanctuaire d’Aitara à Soibada. Le 4 août 2022, TATOLI citait les églises Notre-Dame d’Aitara parmi les lieux repérés pour le tourisme religieux. Ces témoignages corroborent l’usage national et l’intérêt touristique religieux, sans établir un décret canonique ni identifier précisément chaque édifice.",
+      "sources": [
+        {
+          "url": "https://tatoli.tl/2025/12/30/tinan-jubileu-entre-peregrino-da-esperanca-no-esperansa-neebe-la-bosok/",
+          "supports": "national pilgrimage language in Jubilee reflection; not a decree"
+        },
+        {
+          "url": "https://pt.tatoli.tl/2022/08/04/atr-tl-identifica-15-locais-com-potencial-valor-para-turismo-religioso/",
+          "supports": "2022 religious tourism site inventory"
+        }
+      ],
+      "holds": [
+        "Formal national-shrine decree not independently authenticated",
+        "Keep parish church, hill chapel, and Hera grotto separate",
+        "No coordinates, visitor entrance or relic custody established"
+      ]
+    },
+    {
+      "record_id": "SG-B20-KOLSER-1926-MISSION-DETAILS",
+      "kind": "EXISTING_PROVISIONAL_DOSSIER_ENRICHMENT",
+      "status": "PROVISIONAL_SECONDARY_CATHOLIC_REPORTING",
+      "name": "Grotto of the Immaculate Conception, Kolser, Kei Kecil, Indonesia",
+      "summary_en": "A Catholic report dated 4 November 2026 specifies that the Kolser grotto was blessed on 8 December 1926 by Bishop Johannes Aerts, MSC, with a plaque signed by Fr Henricus Nollen, MSC. It describes a local mission station serving approximately 2,500 Catholics within Langgur Parish (approximately 15,000), Diocese of Amboina, and Marian visits in May and October. These details strengthen the institutional and devotional dossier but are reported testimony, not independently checked diocesan documents. The reported December 2026 centenary is prospective, not yet a completed event.",
+      "summary_fr": "Un reportage catholique du 4 novembre 2026 indique que la grotte de Kolser fut bénie le 8 décembre 1926 par Mgr Johannes Aerts, MSC, et que la plaque commémorative fut signée par le P. Henricus Nollen, MSC. Il décrit une station missionnaire d’environ 2 500 fidèles dépendant de la paroisse de Langgur (environ 15 000), dans le diocèse d’Amboina, et des dévotions mariales en mai et octobre. Ces renseignements restent issus d’un reportage, sans contrôle direct des archives diocésaines. Le centenaire annoncé pour décembre 2026 n’est pas encore un événement accompli.",
+      "sources": [
+        {
+          "url": "https://www.ucanews.com/news/indonesias-century-old-marian-shrine-testifies-to-legacy-of-faith/116022",
+          "supports": "bishop, plaque, mission, parish, devotions, centenary announcement, 4 November 2026"
+        },
+        {
+          "url": "https://indonesia.ucanews.com/2026/11/05/gua-maria-berusia-seabad-di-indonesia-menjadi-saksi-warisan-iman",
+          "supports": "Indonesian-language corroboration from same news organisation, not independent institutional confirmation"
+        }
+      ],
+      "holds": [
+        "First-party diocesan or parish archival confirmation outstanding",
+        "No exact coordinates, entrance or opening hours",
+        "No relics attested; do not infer any",
+        "Do not count 2026 centenary as completed"
+      ]
+    }
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_canonical_places": 0,
+    "new_coordinates": 0,
+    "new_routes": 0,
+    "certified": 0
+  },
+  "next_targets": [
+    "Kolser: diocesan/MSC archival evidence and exact entrance",
+    "Aitara: formal national-shrine decree and parish–chapel crosswalk",
+    "Kattimahana: competent diocese and decree",
+    "Trà Kiệu: physical visitor entrances",
+    "Nishizaka: direct custodian relic inventory",
+    "Cupey: permanent shrine building status",
+    "Dili/Tianjin identity holds"
+  ],
+  "restrictions": [
+    "No canonical ID changes, no merges, deployment, publication, contacts or expenses"
+  ]
+}

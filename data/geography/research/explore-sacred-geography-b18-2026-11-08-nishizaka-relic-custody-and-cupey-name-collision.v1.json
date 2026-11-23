@@ -1,0 +1,91 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B18_V1",
+  "research_date": "2026-11-08",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "reconciliation": {
+    "main_registry_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_places_count": 530,
+    "prior_queue_declared": 750,
+    "philippines_checkpoint": "historical 347 places; 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment",
+    "canonical_ids_added": 0
+  },
+  "records": [
+    {
+      "record_id": "SG-B18-NISHIZAKA-RELIC-CUSTODY-DISTINCTION",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_SITE_HISTORY_RELIC_CUSTODY_HOLD",
+      "name": "Nishizaka Twenty-Six Martyrs pilgrimage complex",
+      "summary_en": "Japan Tourism Agency documents the Nishizaka complex as a plaza, monument, Jesuit-operated museum and St Philip church, established in 1962; Pius XII designated the hill an official pilgrimage site in 1950. Its account describes martyr relics including bones of Paul Miki, Jacob Kisai and John of Goto in the museum, while the Nagasaki official tourism guide states that these saints' bones are kept in St Philip church. These accounts differ on the present building-level custody; record the complex-level relic association but hold any museum-versus-church assignment pending direct Jesuit/museum/church confirmation. The martyrs died 5 February 1597; this is historical event date, not automatically a liturgical feast calendar mapping.",
+      "summary_fr": "L'ensemble de Nishizaka comprend une place, un monument, un musée administré par les jésuites et l'église Saint-Philippe, construits pour le centenaire de la canonisation en 1962. Pie XII reconnut la colline comme lieu officiel de pèlerinage en 1950. L'Agence japonaise du tourisme mentionne au musée des reliques, dont des ossements des saints Paul Miki, Jacques Kisai et Jean de Goto; le guide touristique officiel de Nagasaki situe ces ossements dans l'église Saint-Philippe. La conservation précise par bâtiment reste donc à confirmer auprès des responsables. Le martyre eut lieu le 5 février 1597, sans que cette date doive être assimilée automatiquement à la fête liturgique.",
+      "sources": [
+        {
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html",
+          "support": "Japan Tourism Agency: site history, Jesuit management, museum relic statement"
+        },
+        {
+          "url": "https://nagasakicity.com/spots/detail/208/back-1",
+          "support": "Nagasaki official guide: church relic statement and pilgrim access"
+        },
+        {
+          "url": "https://www.at-nagasaki.jp/spot/113",
+          "support": "Nagasaki city tourism: 1950 pilgrimage designation and 1597 martyrdom"
+        }
+      ],
+      "holds": [
+        "Current building-level custody of the three martyrs' bones requires direct institutional verification",
+        "Do not infer present exhibition or veneration access from historical descriptions",
+        "Do not create distinct canonical Place IDs for each building without identity review"
+      ]
+    },
+    {
+      "record_id": "SG-B18-CUPEY-NAME-COLLISION",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_DISTINCT_DIRECTORY_IDENTITIES_BUILDING_STATUS_HOLD",
+      "name": "National Shrine of Our Lady Mother of Divine Providence, Cupey",
+      "summary_en": "The national shrine on Avenida Las Cumbres / Carretera 965 Km 13, Cupey Alto (GCatholic 4934), is distinct from the Church of Our Lady of Providence on Calle Santa Águeda 1730, Urbanización San Gerardo (GCatholic 15892). A third nearby parish, Santa Teresa de Jesús Jornet, has an associated hermitage under the Marian title (GCatholic 15968). These overlapping names create a serious deduplication and visitor-navigation risk. The Catholic press report of 27 October 2026 confirms upcoming 19 November patronal Mass and 5 December jubilee closure at the national shrine, but not completion of its planned permanent church.",
+      "summary_fr": "Le sanctuaire national de Notre-Dame Mère de la Divine Providence, avenue Las Cumbres / route 965, km 13, à Cupey Alto (GCatholic 4934), est distinct de l'église Notre-Dame de la Providence de la rue Santa Águeda 1730, urbanisation San Gerardo (GCatholic 15892). Une troisième paroisse voisine, Sainte-Thérèse de Jésus Jornet, possède un ermitage portant le titre marial (GCatholic 15968). Ces noms voisins exigent une vérification d'identité avant tout rapprochement cartographique. L'article catholique du 27 octobre 2026 confirme les célébrations prévues les 19 novembre et 5 décembre au sanctuaire national, mais non l'achèvement de son église permanente.",
+      "sources": [
+        {
+          "url": "https://gcatholic.org/churches/centralamerica/4934",
+          "support": "national shrine directory identity and address"
+        },
+        {
+          "url": "https://gcatholic.org/churches/caribbean/15892",
+          "support": "distinct Providence church address"
+        },
+        {
+          "url": "https://gcatholic.org/churches/caribbean/15968",
+          "support": "distinct Santa Teresa parish and hermitage"
+        },
+        {
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/",
+          "support": "2026-10-27 Catholic report of planned pilgrim events"
+        }
+      ],
+      "holds": [
+        "Permanent shrine church construction completion not confirmed",
+        "Do not collapse the three distinct directory identities",
+        "No new coordinates or routes"
+      ]
+    }
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_canonical_places": 0,
+    "new_coordinates": 0,
+    "new_routes": 0,
+    "certified": 0
+  },
+  "next_targets": [
+    "Nishizaka direct Jesuit museum/church relic inventory and access",
+    "Cupey official construction status and canonical site-versus-parish identity",
+    "Kolser diocesan first-party confirmation",
+    "Kattimahana jurisdiction/decree",
+    "Trà Kiệu building entrances",
+    "Aitara national title",
+    "Dili/Tianjin identity holds"
+  ],
+  "policy": [
+    "No publication, merge, deployment, contacts or paid services"
+  ]
+}

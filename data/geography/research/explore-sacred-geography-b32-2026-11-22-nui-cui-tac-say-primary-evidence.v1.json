@@ -1,0 +1,88 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_RESEARCH_V1",
+  "batch": "B32",
+  "date": "2026-11-22",
+  "publication": "RESEARCH_ONLY",
+  "baseline": {
+    "main_places": 530,
+    "main_registry_sha": "5c59fb8ebd4e0f57387485d9b0c008ef9c36a703",
+    "geo_areas": 146,
+    "directory_links": 26,
+    "r70_queue_rows": 750,
+    "r70_countries": 113,
+    "r70_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "philippines_checkpoint": "historical 347 places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment"
+  },
+  "policy": "No canonical IDs assigned; no coordinates or routes inferred; published registry untouched.",
+  "records": [
+    {
+      "candidate_key": "VN-NUI-CUI-IMMACULATE-CONCEPTION",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "name": "Our Lady of Núi Cúi Pilgrimage Centre — Shrine of the Immaculate Conception",
+      "country": "Vietnam",
+      "location": "Thống Nhất, Đồng Nai; Diocese of Xuân Lộc",
+      "evidence": [
+        {
+          "url": "https://giaophandanang.org/cong-dong-dan-chua-huong-ve-ngay-dai-le-khanh-thanh-va-cung-hien-den-thanh-duc-me-nui-cui/",
+          "date": "2026-10-09",
+          "claim": "Episcopal conference syndicated announcement locates the centre and describes new shrine, parking and facilities ahead of dedication."
+        },
+        {
+          "url": "https://giaophandanang.org/thanh-le-ta-on-va-cung-hien-den-thanh-trung-tam-hanh-huong-duc-me-nui-cui-luc-0830-ngay-14-10-2026/",
+          "date": "2026-10-13",
+          "claim": "Published programme and video for 14 October 2026 dedication by Bishop John Đỗ Văn Ngân; source announces ceremony, not independent post-event completion verification."
+        }
+      ],
+      "summary_en": "The Marian pilgrimage centre of Núi Cúi, in the Diocese of Xuân Lộc, is dedicated to the Immaculate Conception. Church communications announced the dedication of its shrine for 14 October 2026, with facilities for large pilgrimages near Trị An Lake. Completion of the ceremony, exact public entrance, opening hours and relic information require direct confirmation.",
+      "summary_fr": "Le centre de pèlerinage marial de Núi Cúi, dans le diocèse de Xuân Lộc, est consacré à l'Immaculée Conception. Des communications ecclésiales annonçaient la dédicace du sanctuaire pour le 14 octobre 2026, avec des installations destinées aux grands pèlerinages près du lac Trị An. La célébration effective, l'entrée exacte, les horaires et les éventuelles reliques restent à confirmer.",
+      "holds": [
+        "post-event confirmation of dedication",
+        "exact visitor entrance",
+        "opening hours",
+        "relic inventory"
+      ]
+    },
+    {
+      "candidate_key": "VN-TAC-SAY-TRUONG-BUU-DIEP",
+      "status": "VERIFIED_RESEARCH_ONLY",
+      "name": "Tắc Sậy Pilgrimage Centre — Blessed Francis Xavier Trương Bửu Diệp",
+      "country": "Vietnam",
+      "location": "Tắc Sậy, Cà Mau; Diocese of Cần Thơ",
+      "evidence": [
+        {
+          "url": "https://giaophandanang.org/toa-giam-muc-can-tho-thong-bao-le-phong-chan-phuoc-cho-toi-to-chua-cha-phanxico-truong-buu-diep/",
+          "claim": "Bishop of Cần Thơ identifies Tắc Sậy pilgrimage centre as location of 2 July 2026 beatification."
+        },
+        {
+          "url": "https://giaophandanang.org/thanh-le-tuyen-phong-chan-phuoc-cho-toi-to-chua-phanxico-xavie-truong-buu-diep/",
+          "date": "2026-07-02",
+          "claim": "Church report documents the actual beatification Mass celebrated by Cardinal Tagle on 2 July 2026."
+        },
+        {
+          "url": "https://giaophandanang.org/chuong-trinh-va-link-video-truc-tiep-thanh-le-tuyen-phong-chan-phuoc-cho-toi-to-chua-phanxico-xavie-truong-buu-diep-linh-muc-tu-dao-1897-1946/",
+          "date": "2026-06-30",
+          "claim": "Programme lists pilgrim Masses, Rosary and devotional events on 1–2 July."
+        }
+      ],
+      "summary_en": "Tắc Sậy Pilgrimage Centre in the Diocese of Cần Thơ honours Blessed Francis Xavier Trương Bửu Diệp (1897–1946), a priest remembered for his pastoral sacrifice. The centre hosted his beatification on 2 July 2026, with a published programme of Masses and prayers. The exact shrine-building identity, tomb or relic custody, entrance and routine visitor hours require separate verification.",
+      "summary_fr": "Le centre de pèlerinage de Tắc Sậy, dans le diocèse de Cần Thơ, honore le bienheureux François-Xavier Trương Bửu Diệp (1897–1946), prêtre commémoré pour son dévouement pastoral. Il accueillit sa béatification le 2 juillet 2026, accompagnée d'un programme de messes et de prières. L'identification précise des bâtiments, la tombe ou les reliques, l'entrée et les horaires habituels restent à vérifier.",
+      "holds": [
+        "building/tomb distinction",
+        "current relic custody",
+        "exact entrance",
+        "routine visiting hours"
+      ]
+    }
+  ],
+  "next_priorities": [
+    "Núi Cúi direct diocesan post-dedication report",
+    "Tắc Sậy shrine versus tomb architecture and visitor evidence",
+    "Nishizaka museum versus church relic inventory",
+    "Cupey permanent church completion",
+    "Tianjin diocesan identity",
+    "Aitara formal shrine decree",
+    "Kolser 1926 primary archive",
+    "Phước Kiều original 2007 shrine decree",
+    "Trà Kiệu entrance evidence"
+  ]
+}
