@@ -1,0 +1,51 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B44",
+  "asOf": "2026-11-22",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B43",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B44-01",
+      "subject": "Approved Class I Gaudete: Bernardo Strozzi, Saint John the Baptist interrogated about Christ, National Trust 108873",
+      "findingEn": "Institutional catalogue records that the exact painting was long misidentified as The Incredulity of St Thomas, but iconography is John 1:19-28, the priests and Levites questioning John. National Trust explicitly states its supposed pendant, Christ and the Woman of Samaria (NT 108872), is a later/artificial pairing: purchased and hung together but not originally painted as a pair. Distinct physical works; do not collapse IDs or treat the companion's images as a licence for the approved painting. The NT page offers 'Order this image', not a freely reusable exact photograph. Approval retained; image-rights hold retained.",
+      "findingFr": "La notice du National Trust précise que le tableau approuvé, inv. 108873, fut longtemps pris pour L'Incrédulité de saint Thomas, mais représente l'interrogation de Jean-Baptiste (Jn 1,19-28). Son prétendu pendant, Le Christ et la Samaritaine (inv. 108872), ne constitue qu'un rapprochement historique postérieur; les deux œuvres sont distinctes. La commande de photographie ne prouve aucune licence ouverte. Choix conservé, droits photographiques en attente.",
+      "sources": [
+        "https://www.nationaltrustcollections.org.uk/object/108873",
+        "https://www.nationaltrustcollections.org.uk/object/108872"
+      ],
+      "status": "NEW_INSTITUTIONAL_HISTORICAL_TITLE_AND_FALSE_PENDANT_DISAMBIGUATION",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B44-02",
+      "subject": "Approved Class I Advent IV: Gaulli, La Prédication de saint Jean Baptiste, Louvre INV 20298",
+      "findingEn": "Louvre object record establishes this painting was begun for Jesuits in Rome, acquired for Louis XIV in 1685, sent to Dijon in 1811 and returned to Louvre in 1968; it is the same physical painting across historical locations, not multiple candidate works. Current Louvre location Denon 717; collection record last updated 2025-11-18. No exact-photo open licence identified from the record; rights hold unchanged.",
+      "findingFr": "Le Louvre confirme le parcours du même tableau (INV 20298) : commencé pour les Jésuites à Rome, acquis pour Louis XIV en 1685, envoyé à Dijon en 1811 puis revenu au Louvre en 1968. Les lieux historiques ne représentent pas des œuvres distinctes. Aucune licence libre de photographie exacte établie.",
+      "sources": [
+        "https://collections.louvre.fr/ark:/53355/cl010062348"
+      ],
+      "status": "INSTITUTIONAL_PROVENANCE_DISAMBIGUATION_RIGHTS_HOLD",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "Network-enabled container attempted Wikimedia upload host on 2026-11-22; DNS NameResolutionError before HTTP response. No image bytes obtained, no SHA-256 or measured dimensions or crop QA.",
+  "nextQueue": [
+    "Obtain actual bytes for existing NGA Andrea/Ricci and Städel Lochner image routes; hash, inspect dimensions and mobile crops",
+    "Find exact-image institution-backed open routes for approved Class I Strozzi, Gaulli, Benson, Carracci; do not substitute companions or misidentified works",
+    "Investigate strict Lateran dedication depiction and Esztergom inventory; Ricci scholarly iconography"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

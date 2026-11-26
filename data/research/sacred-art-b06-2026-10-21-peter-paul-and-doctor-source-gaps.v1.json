@@ -1,0 +1,224 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B06_V1",
+  "batchId": "AO-ART-2026-10-21-B06",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Continue the W60 research queue after B05. Verify an existing approved apostle artwork's physical object and open image source; resume the explicit Doctor source shortage. Additive research only.",
+  "upstream": {
+    "b05": "data/research/sacred-art-b05-2026-10-21-kramskoi-raphael-rights-verification.v1.json",
+    "candidateCatalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates",
+    "doctorQueue": "data/calendar/sacred-art-two-options-matrix-wave32-20261014.v6.json on platform/885-sacred-art-candidates",
+    "priorCyrilResearch": "data/calendar/sacred-art-doctor-two-options-source-wave30-20261014.v1.json on platform/885-sacred-art-candidates",
+    "decisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "rules": {
+    "preserveAllUserRatingsAndSelections": true,
+    "noNewCanonicalArtworkIDs": true,
+    "noPradoOrMirrors": true,
+    "noPaidRightsOrInstitutionContact": true,
+    "noImageDownloadRetry": true,
+    "noPublicationOrProductionCertification": true,
+    "candidateStatusIsNotApproval": true
+  },
+  "records": [
+    {
+      "recordId": "B06-01",
+      "category": "Existing approved apostle painting / major feast source route",
+      "artworkId": "met-442491",
+      "decision": "Existing human-locked approval is preserved. The image master remains unreleased; this source verification does not authorize publication or replace any locked placement.",
+      "painting": {
+        "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+        "title": "Saints Peter and Paul",
+        "date": "1620s",
+        "institution": "The Metropolitan Museum of Art",
+        "collectionPageId": "442491",
+        "objectNumber": "2023.389",
+        "medium": "oil on canvas",
+        "dimensions": "55.6 × 71.8 cm",
+        "officialObjectUrl": "https://www.metmuseum.org/art/collection/search/442491"
+      },
+      "subjectRelation": "Exact double portrait of Saints Peter and Paul; the Met notes the tradition's Byzantine-icon origins and a possible division of execution between Manfredi and Tournier.",
+      "identityReconciliation": "The candidate ID met-442491 and source URL ending /442491 resolve to the same physical Met painting. The official object number is 2023.389; record it as the accession/object-number crosswalk, not as a replacement artwork ID.",
+      "image": {
+        "sourceUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/442491/2065620/main-image",
+        "source": "Official Met collection image endpoint linked by the object page",
+        "originalPixels": null,
+        "note": "The IIIF info.json endpoint was not accessible through the research browser; image dimensions and pixel-level crop checks remain pending. No raw image bytes were fetched."
+      },
+      "rights": {
+        "imageStatus": "The object page labels the image Public Domain and provides Download Image.",
+        "reuse": "Met Open Access states public-domain collection images are available under CC0 for unrestricted commercial and noncommercial use without permission or fee.",
+        "objectEvidenceUrl": "https://www.metmuseum.org/art/collection/search/442491",
+        "policyEvidenceUrl": "https://www.metmuseum.org/hubs/open-access",
+        "photoRightsStatus": "Explicit object-level Open Access / CC0 route verified."
+      },
+      "mobileQA": "The painted ratio is 71.8/55.6 = 1.29. Preserve the full horizontal double portrait; no image-byte crop inspection was performed.",
+      "state": "PHYSICAL_OBJECT_VERIFIED; EXISTING_CANONICAL_ID_CROSSWALK_CONFIRMED; OFFICIAL_IMAGE_ROUTE_AND_CC0_VERIFIED; PIXELS_AND_CROP_PENDING; IMAGE_NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B06-02",
+      "category": "Doctor source gap — Cyril of Alexandria, existing W30 identity lead",
+      "researchId": "G30-013",
+      "canonicalArtworkId": null,
+      "painting": {
+        "artist": "Anonymous Ligurian painter",
+        "title": "San Cirillo di Alessandria",
+        "date": "early 18th century (catalogue: after 1700, before 1749)",
+        "institution": "Historical Carmelite convent portrait cycle, Loano, Savona, Italy; religious entity ownership recorded",
+        "catalogueNumber": "Italian National Catalogue 0700018145",
+        "objectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
+        "medium": "oil on canvas",
+        "dimensions": "97 × 78.5 cm"
+      },
+      "subjectRelation": "The Italian state catalogue explicitly identifies Cyril, Patriarch of Alexandria (412–444), describes the Theotokos/Ephesus context, and transcribes the upper-edge inscription “S. CYRILLUS EPISC. ALEX”. This resolves the older W30 identity hold for this distinct physical portrait.",
+      "photo": {
+        "source": "No catalogue-linked image file was exposed or independently matched to this Loano painting in the available record.",
+        "pixels": null,
+        "acquired": false
+      },
+      "rights": {
+        "catalogueMetadataLicence": "CC BY 4.0 applies to catalogue metadata only.",
+        "photoReuse": "No photograph-specific licence or reusable high-resolution source was verified.",
+        "status": "Physical painting identity verified; reproduction route and photo rights remain open."
+      },
+      "state": "EXISTING_RESEARCH_IDENTITY_VERIFIED; NO_IMAGE_SOURCE_OR_PHOTO_RIGHTS; NOT_A_CANONICAL_CATALOGUE_ADDITION"
+    },
+    {
+      "recordId": "B06-03",
+      "category": "New Doctor painting lead — Cyril of Alexandria, distinct from Loano record",
+      "researchId": null,
+      "canonicalArtworkId": null,
+      "painting": {
+        "artist": "Unknown",
+        "title": "Saint Cyril of Alexandria",
+        "date": "18th century",
+        "institution": "Igreja do Carmo, Braga, Portugal (current location described in the photograph record)",
+        "objectUrl": "https://commons.wikimedia.org/wiki/File:Painting_of_Cyril_of_Alexandria.jpg",
+        "medium": "oil on canvas",
+        "subjectInscription": "S. Cyrillus Alexandrinus",
+        "physicalIdentity": "Separate from Loano 0700018145: Commons photo metadata places this portrait at Carmo Church, Braga, and identifies another church painting."
+      },
+      "subjectRelation": "Exact saint portrait by file description and visible inscription reported in the description; no official per-object museum or church inventory record was located in this search, so the physical-object identity remains provisional.",
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Painting_of_Cyril_of_Alexandria.jpg",
+        "photographer": "José Goncalves",
+        "sourceCitation": "Photographer states own work; source context cites Lúcia Maria Rodrigues Marinho, Universidade de Lisboa PhD thesis (2018).",
+        "pixels": "2376 × 2409",
+        "fileSize": "1.04 MB",
+        "integrity": "Dimensions and file size verified from the file page only; file not downloaded, hashed, or visually inspected."
+      },
+      "rights": {
+        "photoLicence": "Explicit CC BY 3.0 for the photograph; attribution, licence link, and modification notice required.",
+        "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Painting_of_Cyril_of_Alexandria.jpg",
+        "limitation": "This licence evidence clears the photographer's file under the stated licence but does not independently establish church custody, object provenance, or artistic/editorial approval.",
+        "status": "Photo reuse terms explicit; object-level institutional cross-reference still provisional."
+      },
+      "mobileQA": "Near-square ratio 0.986 is suitable in principle for a square or portrait card; image was not visually inspected and no crop is approved.",
+      "state": "CANDIDATE_DISCOVERED; PHYSICAL_IDENTITY_PROVISIONAL; PHOTO_DIMENSIONS_AND_CC_BY_3_0_EVIDENCE_VERIFIED; FILE_NOT_ACQUIRED; NOT_APPROVED"
+    },
+    {
+      "recordId": "B06-04",
+      "category": "Doctor source gap — Cyril of Jerusalem",
+      "status": "RESEARCH_GAP_REMAINS; NO_CANONICAL_ID_OR_COVERAGE_ADDED",
+      "findings": [
+        {
+          "objectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+          "identification": "1637 Antonio Nannoni-attributed fresco titled San Cirillo di Gerusalemme; state catalogue reports a name cartiglio.",
+          "disposition": "Keep identity unresolved for the exact historical Doctor: this is the same disputed Carmelite-cycle record held in W30 because of historical Cyril-of-Constantinople/Alexandria/Jerusalem conflation. Fresco is also outside the current research queue's preferred portable oil-portrait route."
+        },
+        {
+          "objectUrl": "https://commons.wikimedia.org/wiki/File:Cyril_of_Jerusalem.jpg",
+          "identification": "Anonymous 18th-century image described by Commons as an icon; only 140 × 600 pixels; source attribution points to an unrelated personal site.",
+          "disposition": "Insufficient resolution, weak provenance, and icon format inconsistent with the established naturalistic historical-oil priority. Do not count toward the two-option research minimum."
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [
+    {
+      "source": "National Gallery of Ireland NGI.72 Lanfranco image licensing endpoint",
+      "previousStatus": "B04 recorded official License image and Download image links but could not verify the per-image CC badge after the National Gallery Images host redirected outside research-browser access.",
+      "currentDisposition": "Pending technical/source-browser access; no repeated file download attempt; continue to independent queue items."
+    }
+  ],
+  "totals": {
+    "batchTargets": 4,
+    "existingPhysicalIdentityReconfirmations": 1,
+    "existingResearchIdentityHoldsResolved": 1,
+    "newPaintingCandidatesDiscovered": 1,
+    "newCandidatesWithOfficialInstitutionalObjectRecord": 0,
+    "sourceRoutesIdentified": 2,
+    "explicitPhotographReuseLicencesFound": 1,
+    "explicitMuseumOpenAccessRoutesVerified": 1,
+    "originalsAcquired": 0,
+    "hashesRecorded": 0,
+    "mobileCropInspections": 0,
+    "userRatingsChanged": 0,
+    "userApprovalsChanged": 0,
+    "canonicalArtworkIDsAdded": 0,
+    "strictCoverageChanges": 0,
+    "productionMastersCertified": 0
+  },
+  "progress": {
+    "baseline": {
+      "calendarCatalogue": 451,
+      "pr887CatalogueSnapshot": 281,
+      "userApprovedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicalW64FivePhysicalIDs": 109,
+      "physicalIdentityMasterLeads": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "productionMastersCertified": 0
+    },
+    "afterB06": {
+      "calendarCatalogue": 451,
+      "pr887CatalogueSnapshot": 281,
+      "userApprovedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicalW64FivePhysicalIDs": 109,
+      "physicalIdentityMasterLeads": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "cumulativeB01toB06": {
+        "verifiedOrReconfirmedPhysicalIdentityTargets": 29,
+        "sourceRoutes": 26,
+        "sourceRightsFindings": 25,
+        "rawImageFilesAcquired": 0,
+        "newCanonicalArtworkIDs": 0,
+        "ratingsOrApprovalsChanged": 0,
+        "productionMastersCertified": 0
+      },
+      "classIDateAssociations": "53/53 unchanged",
+      "classIStrict": "18/53 unchanged",
+      "majorClassIIStrict": "13/24 unchanged",
+      "otherClassIIStrict": "6/52 unchanged"
+    },
+    "correctionToB05": "B05's first commit had inaccurate cumulative target counts; its same-branch correction commit updates the total to 27 identity targets, 24 source routes, and 23 rights findings through B05.",
+    "correctionToB06": "Cumulative tally reconciled: B01–B05 had 27 identity targets, 24 source routes, 23 rights findings; B06 adds 2 identity confirmations, 2 routes, and 2 explicit rights findings."
+  },
+  "queue": {
+    "highPriorityNext": [
+      "Continue the approved Class I and major Class II image-route queue: resolve source/photo gaps only when object-specific reproduction evidence is accessible; no raw file acquisition retry in this environment.",
+      "Research remaining genuine major Class II uncovered subjects after excluding B01–B03 records and preserving locked associations.",
+      "Continue exact, source-backed original paintings for the two explicit Doctor shortages, Cyril of Alexandria and Cyril of Jerusalem; Loano Cyril now has one physically verified original; Braga is provisional; Jerusalem remains unfilled."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B07 — continue from the latest W60 branch state; first investigate a genuine uncovered major Class II subject and its free image-source rights, then pursue the next approved source gap or unresolved Doctor identity."
+  },
+  "reportingState": {
+    "candidateDiscovered": 1,
+    "identityVerified": "Met Saints Peter and Paul existing artwork; Loano Cyril research lead",
+    "sourceAcquired": 0,
+    "rightsVerified": "Met CC0 route; Braga photograph CC BY 3.0 (provisional object association)",
+    "editorialApproved": 0,
+    "productionCertified": 0
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B45",
+  "asOf": "2026-11-23",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B44",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B45-01",
+      "subject": "Lateran dedication strict-scene gap",
+      "findingEn": "Met object 41.71.1.16(11), Piranesi, Interior view of the Basilica of St. John Lateran, ca.1750-78, etching: exact basilica architectural subject, not an actual depiction of the dedication or consecration; museum reports no image available. Do not count as strict feast depiction or acquired open-access image.",
+      "findingFr": "La vue intérieure de Saint-Jean-de-Latran par Piranèse (Met 41.71.1.16(11)) représente l'édifice et non sa dédicace liturgique; le musée ne fournit aucune image. Ne pas compter comme représentation exacte.",
+      "sources": [
+        "https://www.metmuseum.org/art/collection/search/366673"
+      ],
+      "status": "INSTITUTIONAL_PHYSICAL_OBJECT_VERIFIED_STRICT_SUBJECT_REJECTED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B45-02",
+      "subject": "Lateran procession false-positive",
+      "findingEn": "Met object 51.501.4028, Antonio Tempesta, Section 6 of the Procession of the Pope to St. John Lateran, 1570-91, etching. A papal procession to the basilica is not evidence of a dedication/consecration ceremony; no image available on Met record. Distinct from Piranesi architectural view.",
+      "findingFr": "La procession pontificale vers Saint-Jean-de-Latran gravée par Antonio Tempesta (Met 51.501.4028) ne constitue pas une représentation attestée de la dédicace; aucune image n'est disponible dans la notice.",
+      "sources": [
+        "https://www.metmuseum.org/art/collection/search/401787"
+      ],
+      "status": "INSTITUTIONAL_PHYSICAL_OBJECT_VERIFIED_STRICT_SUBJECT_REJECTED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B45-03",
+      "subject": "Approved Advent IV Gaulli exact-artwork identity collision",
+      "findingEn": "Louvre INV 20298 (Gaulli, oil painting) is not Louvre MNR 462 (Bloemaert, painting), INV 10084 recto (Neroni drawing), or INV 1081/MR 588 (Filippo Napoletano copper painting), despite closely identical titles about the preaching of St John Baptist. These cannot substitute for Gaulli or transfer photographic rights. Approved Gaulli image-rights hold persists.",
+      "findingFr": "Le tableau de Gaulli INV 20298 ne doit pas être confondu avec le tableau de Bloemaert MNR 462, le dessin de Neroni INV 10084 recto ni le cuivre de Filippo Napoletano INV 1081/MR 588. Les licences photographiques ne se transfèrent pas.",
+      "sources": [
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+        "https://collections.louvre.fr/en/ark:/53355/cl010064556",
+        "https://collections.louvre.fr/ark:/53355/cl020200034",
+        "https://collections.louvre.fr/en/ark:/53355/cl010062432"
+      ],
+      "status": "INSTITUTIONAL_DISTINCT_OBJECT_TITLE_COLLISION",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "2026-11-23: network-enabled container request to upload.wikimedia.org failed DNS resolution before HTTP response. No image bytes, hash, local dimensions or mobile QA.",
+  "nextQueue": [
+    "Acquire and SHA-256 hash exact Andrea di Bartolo NGA, Ricci NGA and Lochner Städel images from established Commons routes; measure and inspect mobile crops",
+    "Resolve exact image rights for approved Benson, Carracci, Strozzi and Gaulli, without substituting title matches",
+    "Find an institutionally identified depiction of Lateran dedication ceremony rather than a building view or papal procession; pursue Esztergom inventory and Ricci iconography"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

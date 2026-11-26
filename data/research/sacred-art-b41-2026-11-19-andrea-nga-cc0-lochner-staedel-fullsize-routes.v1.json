@@ -1,0 +1,78 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B41",
+  "asOf": "2026-11-19",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B40",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B41-01",
+      "subject": "Andrea di Bartolo, Nativity of the Virgin, NGA 1939.1.42",
+      "findingEn": "New high-resolution exact-image route bypasses the inaccessible NGA IIIF host: NGA-donated Wikimedia Commons file, 2957 × 4000 px, 14.12 MB, deposited 13 August 2019, identifies NGA accession 1939.1.42 and NGA as source/provider; metadata asserts CC0. This is an NGA-origin derivative rather than a visitor photo. Do not count as acquired until bytes, hash and mobile composition are inspected.",
+      "findingFr": "Une reproduction exacte de la NGA, versée sur Wikimedia Commons le 13 août 2019, mesure 2 957 × 4 000 pixels (14,12 Mo). La provenance NGA et la déclaration CC0 sont explicites. L'acquisition, le hachage et le contrôle de cadrage mobile restent à réaliser.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Andrea_di_Bartolo,_The_Nativity_of_the_Virgin,_c._1400-1405,_NGA_183.jpg",
+        "https://www.nga.gov/artworks/183-nativity-virgin"
+      ],
+      "rightsStatus": "NGA_DONATED_CC0_EXACT_IMAGE_ROUTE",
+      "pixelsClaimed": [
+        2957,
+        4000
+      ],
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B41-02",
+      "subject": "Stefan Lochner, Martyrdom of Ss Simon and Judas, Städel inventory 830",
+      "findingEn": "A previously unlogged full-resolution exact-image route on Commons holds a 7799 × 7712 px, 108.16 MB PNG, uploaded 25 November 2020 as a Städel museum upload. The Commons page displays Public Domain Mark from the institution, but embedded EXIF copyright and structured-data CC BY-SA claims conflict. Treat museum object-page Public Domain designation as the stronger institutional evidence, while documenting the conflicting metadata and resolving it before selecting an exact downloadable derivative. Large original may require a smaller QA derivative.",
+      "findingFr": "Une reproduction PNG exacte de 7 799 × 7 712 pixels (108,16 Mo), déposée le 25 novembre 2020 à partir du Städel, est repérée. Le marquage Public Domain du musée coexiste avec des métadonnées EXIF et structurées contradictoires. Conserver cette divergence avant toute promotion.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:Martyrdom_of_Ss_Simon_and_Judas_(SM_830).png",
+        "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas"
+      ],
+      "rightsStatus": "INSTITUTIONAL_PUBLIC_DOMAIN_WITH_COMMONS_METADATA_CONFLICT",
+      "pixelsClaimed": [
+        7799,
+        7712
+      ],
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B41-03",
+      "subject": "Andrea di Bartolo, Nativity of the Virgin, independent visitor photo",
+      "findingEn": "A separate 3240 × 4320 px image photographed by Daderot on 24 April 2013 is explicitly dedicated CC0 by the photographer. Keep separate from NGA-donated exact reproduction; independent photo may introduce framing and lighting distortion. Backup only.",
+      "findingFr": "Une photographie indépendante de Daderot (24 avril 2013), 3 240 × 4 320 pixels, est diffusée sous CC0. Il s'agit d'une source distincte de la reproduction institutionnelle NGA, à conserver comme solution de repli.",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/File:The_Nativity_of_the_Virgin_by_Andrea_di_Bartolo,_c._1400,_tempera_on_panel_-_National_Gallery_of_Art,_Washington_-_DSC00162.JPG"
+      ],
+      "rightsStatus": "PHOTOGRAPHER_CC0_CLAIM",
+      "pixelsClaimed": [
+        3240,
+        4320
+      ],
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "acquisitionAttempt": "Direct Wikimedia Commons download attempted in container; DNS resolution failed. No bytes downloaded; no SHA256, pixel inspection or mobile QA.",
+  "nextQueue": [
+    "Acquire and hash NGA-donated Andrea 2957×4000, Ricci NGA-attributed 1648×4000 and Städel Lochner 7799×7712; compare composition and crop",
+    "Resolve Städel PNG embedded/structured copyright metadata conflict against museum public-domain policy",
+    "Find independently reusable exact images for approved Class I Benson, Carracci, Strozzi and Gaulli",
+    "Read NGA Ricci scholarly iconography, verify Esztergom inventory, find exact Lateran dedication imagery"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

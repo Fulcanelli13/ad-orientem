@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B32",
+  "asOf": "2026-11-10",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B31",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "records": [
+    {
+      "researchId": "B32-01",
+      "kind": "APPROVED_CLASS_I_INSTITUTIONAL_PHOTO_RIGHTS_HOLD",
+      "subject": "Gaudete Sunday: Bernardo Strozzi, Saint John the Baptist interrogated about Christ",
+      "object": "National Trust Kedleston Hall, NT 108873",
+      "objectUrl": "https://www.nationaltrustcollections.org.uk/object/108873",
+      "findingEn": "National Trust identifies the exact approved painting as Strozzi, c. 1618–20, oil on canvas, 1100 x 1150 mm. It was historically misidentified as The Incredulity of Saint Thomas; museum corrects subject to John 1:19–28, the questioning of John by priests and Levites. The displayed image is credited © National Trust / Andrew Patterson and the catalogue offers 'Order this image': no free exact-photo licence demonstrated. The alleged pendant Christ and the Woman of Samaria is not an original pendant, per the curator.",
+      "findingFr": "Le National Trust identifie le tableau retenu de Strozzi (vers 1618–1620, huile sur toile, 110 × 115 cm), conservé à Kedleston Hall sous le numéro 108873. Jadis interprété comme L'Incrédulité de saint Thomas, il représente l'interrogatoire de Jean-Baptiste selon Jn 1,19–28. La photographie est créditée © National Trust / Andrew Patterson et proposée à la commande ; aucune licence de réutilisation gratuite de cette photographie précise n'est établie. Son pendant actuel n'était pas un pendant d'origine.",
+      "rights": "EXACT_INSTITUTIONAL_PHOTOGRAPH_COPYRIGHT_MARKED; FREE_REUSE_NOT_ESTABLISHED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B32-02",
+      "kind": "APPROVED_CLASS_I_AUCTION_IMAGE_RIGHTS_CLARIFICATION",
+      "subject": "Christ the King: Ambrosius Benson, Salvator Mundi",
+      "objectUrl": "https://www.christies.com/zh-cn/lot/lot-6238407",
+      "imageUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "findingEn": "Christie's identifies the approved panel as Benson's Salvator Mundi, 2019 lot 4, and suggests it was originally placed high in an altarpiece because of Christ's downward gaze. Commons lists a 2987 x 3200 JPEG derived from the Christie's photograph under PD-Art, but this does not independently establish the auction photographer's rights or universally unrestricted reuse. Existing B21 hold stands.",
+      "findingFr": "Christie's identifie le panneau de Benson, lot 4 en 2019, et suggère une position élevée dans un retable d'après le regard abaissé du Christ. Commons propose une reproduction de 2 987 × 3 200 pixels issue de la photographie de vente sous PD-Art, sans preuve indépendante d'une licence universelle de cette photographie. Le blocage B21 demeure.",
+      "rights": "COMMONS_PD_ART_CLAIM; INDEPENDENT_AUCTION_PHOTO_REUSE_NOT_VERIFIED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B32-03",
+      "kind": "APPROVED_CLASS_I_SOURCE_DIMENSION_CONFLICT_RECONFIRMED",
+      "subject": "All Souls: Ludovico Carracci, An Angel Frees the Souls of Purgatory",
+      "objectUrl": "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5",
+      "imageUrl": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "findingEn": "WGA explicitly reports oil on canvas 44 x 51 cm and 866 x 1200 portrait JPEG. Commons file history records the same dimensions and image size, so the inconsistency is present in the source chain rather than caused by our ingestion. WGA describes the painting as probably a sketch for a Carracci-workshop altarpiece, not a confirmed standalone finished altarpiece. No custodial Vatican inventory or image master located; keep hold.",
+      "findingFr": "Le Web Gallery of Art donne une toile de 44 × 51 cm et une reproduction verticale de 866 × 1 200 pixels. L'historique Commons confirme ces chiffres : la divergence existe déjà dans les sources. Le tableau serait probablement une esquisse pour un retable de l'atelier Carracci, hypothèse et non certitude. Sans inventaire du Vatican ni photographie de référence, maintenir le blocage.",
+      "rights": "LOW_RES_COMMONS_PD_ART; VATICAN_CUSTODIAL_ROUTE_MISSING",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Strozzi NT 108873: find independently open exact reproduction without bypassing NT rights",
+    "Benson: source-neutral museum or otherwise clearly licensed exact photograph; inspect framing and pixels",
+    "Carracci: Vatican accession, orientation and custodial image",
+    "Gaulli Louvre INV 20298: photo reuse rights",
+    "Acquire and hash NGA 1939.1.42 and 1939.1.72 and Städel 830; assess mobile crops",
+    "Lateran dedication exact artwork"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "productionChanges": 0,
+  "certifiedMasters": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

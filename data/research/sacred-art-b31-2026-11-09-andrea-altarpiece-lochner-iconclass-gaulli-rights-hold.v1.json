@@ -1,0 +1,66 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B31",
+  "asOf": "2026-11-09",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B30",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "sourceRegistrySha": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5",
+  "records": [
+    {
+      "researchId": "B31-01",
+      "kind": "PHYSICAL_PARENT_RECONSTRUCTION_CAUTION",
+      "existingResearchRecord": "B03-01",
+      "object": "Andrea di Bartolo, The Nativity of the Virgin",
+      "accession": "NGA 1939.1.42",
+      "objectUrl": "https://www.nga.gov/artworks/183-nativity-virgin",
+      "findingEn": "NGA states this panel and 1939.1.41 and 1939.1.43 came from one Marian childhood altarpiece; original arrangement is scholarly reconstruction, other panels are lost, and center subject unknown. Link known surviving panels as related physical components, but do not invent a complete reconstructed altarpiece or duplicate artwork count.",
+      "findingFr": "La NGA rattache ce panneau aux numéros 1939.1.41 et 1939.1.43 d'un même retable consacré à l'enfance de Marie. L'agencement originel demeure hypothétique et le sujet central est inconnu. Ne pas inventer de retable intégral ni dédoubler les œuvres.",
+      "rights": "NGA object page explicitly public domain",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B31-02",
+      "kind": "CLASS_II_EXACT_SCENE_DETAIL",
+      "existingResearchRecord": "B03-04",
+      "object": "Stefan Lochner, Martyrdom of Ss Simon and Judas",
+      "inventory": "Städel 830",
+      "objectUrl": "https://sammlung.staedelmuseum.de/en/work/martyrdom-of-ss-simon-and-judas",
+      "findingEn": "Museum's indexed Iconclass specifies Simon the Zealot beheaded (73F3321) and Jude Thaddeus beaten and beheaded (73F324). This supports precise identification of the paired martyrdom scene, not an assertion of historically established death circumstances. The 10/12 parent-cycle relationship from B30 remains.",
+      "findingFr": "L'indexation Iconclass du Städel distingue la décapitation de Simon (73F3321) et le martyre de Jude Thaddée, battu et décapité (73F324). Il s'agit d'une identification iconographique, non d'une preuve historique des circonstances du martyre.",
+      "rights": "Museum image marked Public Domain",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    },
+    {
+      "researchId": "B31-03",
+      "kind": "APPROVED_CLASS_I_OBJECT_IDENTITY_RIGHTS_HOLD",
+      "object": "Giovanni Battista Gaulli, La Prédication de saint Jean Baptiste",
+      "inventory": "Louvre INV 20298",
+      "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+      "findingEn": "Louvre confirms Gaulli attribution, oil on canvas, 182 x 172 cm, Denon room 717, and provenance: begun for Jesuits in Rome, acquired for Louis XIV in 1685. This authenticates the approved Advent IV physical painting. Catalogue access is not evidence of a freely reusable exact photograph; no image licence or museum download was validated in this pass.",
+      "findingFr": "Le Louvre confirme l'attribution à Gaulli, la toile de 182 × 172 cm, l'exposition salle 717 et la provenance (commande jésuite à Rome, acquisition pour Louis XIV en 1685). L'accès à la notice ne constitue pas une autorisation de réutilisation de la photographie.",
+      "rights": "EXACT_IMAGE_REUSE_UNVERIFIED",
+      "acquiredThisPass": false,
+      "mobileQaThisPass": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Approved Class I Benson, Strozzi, Carracci: exact-image rights and high-quality institutional reproductions",
+    "Gaulli INV 20298: establish exact photograph reuse terms, then acquire and assess pixels",
+    "B03 NGA 1939.1.42/1939.1.72 and Städel 830/2054: acquire originals, hash and 390px QA",
+    "Preserve three recovered B27 archives with independently checked destination hashes",
+    "Lateran dedication: exact scene still unresolved; do not promote documentary fresco"
+  ],
+  "canonicalIdsChanged": 0,
+  "ratingsChanged": 0,
+  "productionChanges": 0,
+  "certifiedMasters": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}

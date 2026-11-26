@@ -1,0 +1,135 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B05_V1",
+  "batchId": "AO-ART-2026-10-21-B05",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Reconcile image-source photography identity, dimensions, and reuse evidence for two already approved Class I paintings. No image bytes acquired; no ratings, canonical IDs, selections, or production records changed.",
+  "upstream": {
+    "b02": "data/research/sacred-art-b02-2026-10-21-continued-sources-and-class-ii-leads.v1.json",
+    "b04": "data/research/sacred-art-b04-2026-10-21-approved-class-i-source-rights-routes.v1.json",
+    "decisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "policy": {
+    "preserveExistingDecisions": true,
+    "noPradoOrMirrors": true,
+    "doNotRetryBlockedImageByteAcquisition": true,
+    "noRightsHolderContactOrPurchase": true,
+    "noPublicationOrCertification": true
+  },
+  "records": [
+    {
+      "recordId": "B05-01",
+      "scope": "Existing approved Class I — 22 February",
+      "artworkId": null,
+      "painting": {
+        "artist": "Ivan Kramskoi",
+        "title": "Christ in the Wilderness (Christ in the Desert)",
+        "date": "1872",
+        "institution": "State Tretyakov Gallery",
+        "accession": "651",
+        "officialObjectUrl": "https://my.tretyakov.ru/app/masterpiece/8448"
+      },
+      "subjectRelation": "Related to Matthew 4:1–11: Christ's solitude and inner struggle; the image does not show Satan or a literal confrontation.",
+      "reproduction": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_in_the_Wilderness_-_Ivan_Kramskoy_-_Google_Cultural_Institute.jpg",
+        "sourceDescription": "Google Cultural Institute reproduction hosted on Wikimedia Commons",
+        "pixels": "4000 × 3507",
+        "fileSize": "4.89 MB",
+        "accessionCrosswalk": "Commons file metadata identifies Tretyakov accession 651 and the 1872 oil-on-canvas painting.",
+        "photographicIdentity": "Source metadata names Google Cultural Institute reproduction; exact pixel comparison to Tretyakov's current object image was unavailable."
+      },
+      "rights": {
+        "evidence": "File-specific Public Domain Mark / PD-Art record states this is a faithful reproduction of a two-dimensional public-domain painting and no known copyright or neighbouring right is asserted.",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Christ_in_the_Wilderness_-_Ivan_Kramskoy_-_Google_Cultural_Institute.jpg",
+        "reuseStatus": "Provisional by jurisdiction; Commons itself cautions that reuse may differ outside the United States. The artist died in 1887; underlying painting is public domain in life-plus-100 jurisdictions, but that does not independently clear this photographic reproduction worldwide.",
+        "commercialReuse": "Not globally verified."
+      },
+      "mobileQA": "Source ratio 1.141 versus painted dimensions 180 × 210 cm (ratio 0.857, noting Tretyakov/record orientation may need confirmation); no pixel inspection or crop certification. Avoid tight portrait crop until photo-to-object comparison.",
+      "state": "IDENTITY_AND_ACCESSION_RECONFIRMED; SOURCE_DIMENSIONS_VERIFIED; US_PD_ART_EVIDENCE; PHOTO_JURISDICTION_AND_PIXEL_IDENTITY_PROVISIONAL; FILE_NOT_ACQUIRED"
+    },
+    {
+      "recordId": "B05-02",
+      "scope": "Existing approved Class I — 1 March; same painting also used as a source route for 6 August Transfiguration",
+      "artworkId": null,
+      "painting": {
+        "artist": "Raphael",
+        "title": "The Transfiguration",
+        "date": "1516–1520",
+        "institution": "Vatican Museums, Pinacoteca",
+        "accession": "Inv. 4",
+        "officialObjectUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html"
+      },
+      "subjectRelation": "Exact Transfiguration in the upper register; the same full panel includes the healing of the possessed boy in the lower register.",
+      "reproduction": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg",
+        "pixels": "6349 × 9381",
+        "fileSize": "39.74 MB",
+        "photographer": "Matthieu.lett.ube",
+        "photoDate": "2025-11-19",
+        "photoIdentity": "Commons file identifies Vatican Pinacoteca inv. 4; its attribution and image ratio closely match the official painting record. No pixel comparison was possible.",
+        "dimensionNote": "The file title gives 405 × 278 cm; structured metadata reports 410 × 279 cm. This small catalogue discrepancy does not alter the accession match."
+      },
+      "rights": {
+        "photoLicence": "Explicit Creative Commons Attribution 4.0 International (CC BY 4.0) for the photograph, with attribution, licence link, and indication of modifications required.",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg",
+        "paintingRights": "Underlying Renaissance painting is public domain. The explicit CC BY 4.0 evidence applies to the photographer's reproduction and is the controlling image-use route for this file.",
+        "reuseStatus": "Image-level reuse route found; retain attribution and licence. Vatican's own image terms are not being treated as a licence for this Commons photograph."
+      },
+      "mobileQA": "Image ratio 0.677; painted dimensions 278/405 = 0.686, close (about 1.3% difference). Preserve the full vertical panel because the lower register is integral; no pixel crop QA or production certification.",
+      "state": "IDENTITY_VERIFIED; PHOTOGRAPHER_AND_CC_BY_4_0_EVIDENCE_VERIFIED; PIXEL_DIMENSIONS_VERIFIED; FILE_NOT_ACQUIRED"
+    }
+  ],
+  "totals": {
+    "targetPaintings": 2,
+    "existingApprovalsPreserved": 2,
+    "newArtworkIDs": 0,
+    "sourceRoutesReconciled": 2,
+    "sourcePixelDimensionsVerified": 2,
+    "explicitPhotoReuseEvidence": 2,
+    "globalRightsClearance": "1 explicit CC BY 4.0 route with attribution conditions; 1 jurisdiction-provisional PD-Art route",
+    "rawImagesAcquired": 0,
+    "imageIntegrityChecks": 0,
+    "cropInspections": 0,
+    "ratingsChanged": 0,
+    "approvalsChanged": 0,
+    "productionMastersCertified": 0
+  },
+  "inventoryAfter": {
+    "catalogueEntries": 451,
+    "pr887CatalogueSnapshot": 281,
+    "approvedIDs": 107,
+    "lockedIDs": 90,
+    "permanentRejections": 68,
+    "historicW64FivePhysicalIDs": 109,
+    "sourceIdentityMaster": {
+      "total": 222,
+      "archivedOriginals": 8,
+      "pending": 214
+    },
+    "cumulativeBatchIdentityVerifications": "27 across B01–B05 (9+8+4+4+2 target identities verified/reconfirmed)",
+    "cumulativeBatchSourceRoutes": "24 across B01–B05 (6+8+4+4+2 routes)",
+    "cumulativeBatchRightsFindings": "23 across B01–B05 (B01 6; B02 cumulative 14; B03 4; B04 3; B05 2)",
+    "cumulativeRawImagesAcquired": 0,
+    "productionCertifiedMasters": 0,
+    "classIDateAssociations": "53/53",
+    "classIStrict": "18/53",
+    "majorClassIIStrict": "13/24",
+    "otherClassIIStrict": "6/52"
+  },
+  "unresolved": [
+    "Kramskoi photo jurisdiction and pixel-level photo-to-Tretyakov-object match.",
+    "Raw image acquisition is deferred after one sandbox-approval rejection and failed network fetch; do not retry this same blocked operation in the current environment.",
+    "No source files were acquired, hashed, or visually crop-tested; neither target is production-certified."
+  ],
+  "queue": {
+    "nextPriority": [
+      "Continue approved Class I source-rights gaps: resolve NGI per-image CC badge for Lanfranco NGI.72 from the official image licence endpoint if accessible through metadata, without retrying image-byte acquisition.",
+      "Audit an approved Class I source gap for photo identity and exact reproduction rights; prioritize existing physical record with missing photo/licence evidence.",
+      "Then continue highest-priority uncovered major Class II subject rows and unresolved approved apostle/saint source identities."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B06 — continue source/rights work from the reconciled W60 queue; target the next approved Class I source gap with a verifiable object-level photo and reproduction licence, then proceed to major Class II subject gaps."
+  },
+  "metricCorrection": "Corrected cumulative research tallies from the first B05 commit; per-batch counts and frozen inventory are unchanged."
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem · Class I Art Pilot</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--card:#121820;--line:#323431;--gold:#bca37b;--ink:#eae4d8;--muted:#9c988f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#1e2531,var(--bg) 62%);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+header{position:sticky;top:0;z-index:4;backdrop-filter:blur(18px);background:#080c12eb;border-bottom:1px solid #6d60482b}
+.top{max-width:1000px;margin:auto;min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 20px}
+.brand{font-size:16px;letter-spacing:.21em;color:#e6d7be}.sub{font-size:10px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}.symbol{font-size:20px;color:var(--gold)}
+main{max-width:1000px;margin:0 auto;padding:25px 19px 50px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:var(--gold)}
+h1{font-size:clamp(29px,6vw,51px);font-weight:400;margin:13px 0 7px;line-height:1.08}h2{font-weight:normal;letter-spacing:.02em}
+nav{display:flex;gap:7px;overflow-x:auto;padding:15px 0 19px}button{cursor:pointer;font:inherit;color:var(--muted);background:#ffffff08;border:1px solid #655d4b55;border-radius:2px;padding:11px 14px;white-space:nowrap}button[aria-pressed=true]{background:#bba47e1e;border-color:var(--gold);color:var(--ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);border:1px solid #88795d54;background:#0b1016;min-height:400px}
+.picture{min-width:0;position:relative;display:flex;justify-content:center;align-items:center;background:#080808;overflow:hidden;min-height:460px}
+.picture img{display:block;width:100%;height:100%;max-height:75vh;object-fit:contain;transition:object-fit .2s}
+.picture.cover img{object-fit:cover}
+.viewing{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#050609c9);padding:22px 14px 9px;text-align:right;font-size:10px;color:#e9dfcc;pointer-events:none}
+.content{padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}.reference{font-size:17px;font-style:italic;color:#d7c7ac}.blurb{line-height:1.6;color:#c6c2bb;margin:0}
+.source{border-top:1px solid #ffffff20;margin-top:15px;padding-top:15px;font-size:12px;line-height:1.6;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}
+.notice{padding-top:16px;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:710px){.top{min-height:58px}.hero{display:flex;flex-direction:column}.picture{height:50vh;min-height:320px;max-height:620px}.picture img{max-height:none}.content{padding:23px 19px}main{padding:18px 13px 35px}h1{font-size:34px}.sub{font-size:9px}.brand{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.picture img{transition:none}}
+</style></head>
+<body><header><div class="top"><div><div class="brand">AD ORIENTEM</div><div class="sub">Class I · Sacred Art · exact-source pilot</div></div><span class="symbol">✠</span></div></header>
+<main>
+<div class="eyebrow">Calendarium Romanum · 1962</div>
+<nav id="choices" aria-label="Select a verified feast art preview"><button data-id="annunciation" aria-pressed="true">Annunciation</button><button data-id="epiphany" aria-pressed="false">Epiphany</button><button data-id="ascension" aria-pressed="false">Ascension</button></nav>
+<div class="hero"><div class="picture" id="picture"><img id="painting" src="../assets/staged/sacred-art/met-438724-champaigne-annunciation-original.jpg" alt="Philippe de Champaigne, The Annunciation" loading="eager"><div class="viewing" id="viewing">Complete painting · no crop</div></div>
+<section class="content"><div class="date" id="date">25 March · I class</div><h1 id="feast">Annunciation of the Blessed Virgin Mary</h1><div class="reference" id="gospel">Luke 1:26–38</div><p class="blurb" id="blurb">The angel Gabriel announces the Incarnation. An exact Gospel subject rather than a generic Marian image.</p><div class="source" id="source">Philippe de Champaigne · ca. 1644 · The Metropolitan Museum of Art · 2004.31 · Met Open Access</div>
+<div class="actions"><button id="full" aria-pressed="true">Full painting</button><button id="crop" aria-pressed="false">Home crop simulation</button></div>
+</section></div>
+<p class="notice"><strong>Technical review, not a published Calendar asset.</strong> These are user-approved physical artworks with acquired reproductions. The simulated cover crop is only a presentation test; it does not certify final crop, phone acceptance, rights by jurisdiction or the resolved Proper. No previously rejected work is shown.</p>
+</main>
+<script>
+"use strict";
+const paintings={
+ annunciation:{date:"25 March · I class",feast:"Annunciation of the Blessed Virgin Mary",gospel:"Luke 1:26–38",blurb:"The angel Gabriel announces the Incarnation. An exact Gospel subject rather than a generic Marian image.",src:"../assets/staged/sacred-art/met-438724-champaigne-annunciation-original.jpg",alt:"Philippe de Champaigne, The Annunciation",source:"Philippe de Champaigne · ca. 1644 · The Metropolitan Museum of Art · 2004.31 · Met Open Access"},
+ epiphany:{date:"6 January · I class",feast:"Epiphany of Our Lord",gospel:"Matthew 2:1–12",blurb:"The Magi adore the Christ Child. Rubens's Prado original depicts the Gospel event appointed for Epiphany.",src:"../assets/staged/sacred-art/commons-rubens-prado-adoration-original.jpg",alt:"Peter Paul Rubens, Adoration of the Magi",source:"Peter Paul Rubens · 1609 / 1628–29 · Museo del Prado · P001638 · Commons public-domain faithful reproduction"},
+ ascension:{date:"14 May 2026 · I class",feast:"Ascension of Our Lord",gospel:"Mark 16:14–20",blurb:"Christ ascends to Heaven before the apostles. This is the approved painting from the Antwerp Rosary cycle.",src:"../assets/staged/sacred-art/commons-wolffort-ascension-original.jpg",alt:"Artus Wolffort, Ascension of Jesus Christ",source:"Artus Wolffort · c. 1617 · St Paul's Church, Antwerp · Commons public-domain faithful reproduction"}
+};
+const $=id=>document.getElementById(id);
+let selected="annunciation",isCrop=false;
+function paint(){const p=paintings[selected];for(const k of ["date","feast","gospel","blurb","source"])$(k).textContent=p[k];$("painting").src=p.src;$("painting").alt=p.alt;
+$("picture").classList.toggle("cover",isCrop);$("viewing").textContent=isCrop?"Simulated Home crop":"Complete painting · no crop";
+$("full").setAttribute("aria-pressed",String(!isCrop));$("crop").setAttribute("aria-pressed",String(isCrop));
+document.querySelectorAll("button[data-id]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===selected)));}
+document.querySelectorAll("button[data-id]").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.id;paint()}));
+$("full").addEventListener("click",()=>{isCrop=false;paint()});
+$("crop").addEventListener("click",()=>{isCrop=true;paint()});
+</script></body></html>
